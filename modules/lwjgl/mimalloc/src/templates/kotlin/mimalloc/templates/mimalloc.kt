@@ -13,7 +13,7 @@ val mimalloc = "mimalloc".nativeClass(Module.MIMALLOC, prefix = "mi", prefixMeth
     bundledWithLWJGL = true
 )) {
     IntConstant(
-        "MI_MALLOC_VERSION".."30401"
+        "MI_MALLOC_VERSION".."30405"
     ).noPrefix()
 
     IntConstant(
@@ -50,7 +50,7 @@ val mimalloc = "mimalloc".nativeClass(Module.MIMALLOC, prefix = "mi", prefixMeth
         "option_deprecated_purge_extend_delay".enum,
         "option_disallow_arena_alloc".enum,
         "option_retry_on_oom".enum,
-        "option_visit_abandoned".enum,
+        "option_deprecated_visit_abandoned".enum,
         "option_guarded_min".enum,
         "option_guarded_max".enum,
         "option_guarded_precise".enum,

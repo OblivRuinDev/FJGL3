@@ -170,7 +170,7 @@ public class mimalloc {
         return MIMALLOC;
     }
 
-    public static final int MI_MALLOC_VERSION = 30401;
+    public static final int MI_MALLOC_VERSION = 30405;
 
     public static final int
         MI_SMALL_WSIZE_MAX = 128,
@@ -205,7 +205,7 @@ public class mimalloc {
         mi_option_deprecated_purge_extend_delay   = 25,
         mi_option_disallow_arena_alloc            = 26,
         mi_option_retry_on_oom                    = 27,
-        mi_option_visit_abandoned                 = 28,
+        mi_option_deprecated_visit_abandoned      = 28,
         mi_option_guarded_min                     = 29,
         mi_option_guarded_max                     = 30,
         mi_option_guarded_precise                 = 31,
