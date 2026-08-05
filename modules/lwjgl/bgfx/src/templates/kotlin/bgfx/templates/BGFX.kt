@@ -9,7 +9,7 @@ import org.lwjgl.generator.*
 
 val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx_", binding = BGFX_BINDING) {
     IntConstant(
-        "API_VERSION".."151"
+        "API_VERSION".."153"
     )
 
     ShortConstant(
@@ -593,8 +593,11 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "TEXTURE_FORMAT_BC2".enum,
         "TEXTURE_FORMAT_BC3".enum,
         "TEXTURE_FORMAT_BC4".enum,
+        "TEXTURE_FORMAT_BC4S".enum,
         "TEXTURE_FORMAT_BC5".enum,
+        "TEXTURE_FORMAT_BC5S".enum,
         "TEXTURE_FORMAT_BC6H".enum,
+        "TEXTURE_FORMAT_BC6HU".enum,
         "TEXTURE_FORMAT_BC7".enum,
         "TEXTURE_FORMAT_ETC1".enum,
         "TEXTURE_FORMAT_ETC2".enum,
@@ -681,6 +684,7 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "TEXTURE_FORMAT_BGR5A1".enum,
         "TEXTURE_FORMAT_RGB5A1".enum,
         "TEXTURE_FORMAT_RGB10A2".enum,
+        "TEXTURE_FORMAT_RGB10A2U".enum,
         "TEXTURE_FORMAT_RG11B10F".enum,
 
         "TEXTURE_FORMAT_UNKNOWN_DEPTH".enum,
@@ -692,6 +696,7 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "TEXTURE_FORMAT_D16F".enum,
         "TEXTURE_FORMAT_D24F".enum,
         "TEXTURE_FORMAT_D32F".enum,
+        "TEXTURE_FORMAT_D32FS8".enum,
         "TEXTURE_FORMAT_D0S8".enum,
 
         "TEXTURE_FORMAT_COUNT".enum
@@ -1651,8 +1656,8 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "set_view_rect",
 
         MapToInt..bgfx_view_id_t("_id"),
-        MapToInt..uint16_t("_x"),
-        MapToInt..uint16_t("_y"),
+        MapToInt..int16_t("_x"),
+        MapToInt..int16_t("_y"),
         MapToInt..uint16_t("_width"),
         MapToInt..uint16_t("_height")
     )
@@ -1661,8 +1666,8 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "set_view_rect_ratio",
 
         MapToInt..bgfx_view_id_t("_id"),
-        MapToInt..uint16_t("_x"),
-        MapToInt..uint16_t("_y"),
+        MapToInt..int16_t("_x"),
+        MapToInt..int16_t("_y"),
         bgfx_backbuffer_ratio_t("_ratio")
     )
 
