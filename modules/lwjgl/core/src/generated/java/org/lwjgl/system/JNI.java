@@ -563,6 +563,7 @@ public final class JNI {
     public static native void invokePPPV(long param0, int param1, long param2, int param3, long param4, int param5, long __functionAddress);
     public static native void invokePPPV(long param0, int param1, long param2, long param3, int param4, int param5, long __functionAddress);
     public static native void invokePPPV(long param0, long param1, int param2, int param3, int param4, long param5, long __functionAddress);
+    public static native void invokePPPV(long param0, long param1, int param2, long param3, int param4, int param5, long __functionAddress);
     public static native void invokePPPV(long param0, long param1, long param2, int param3, boolean param4, boolean param5, long __functionAddress);
     public static native void invokePPPV(long param0, boolean param1, int param2, long param3, long param4, int param5, long __functionAddress);
     public static native void invokePPPV(long param0, int param1, int param2, float param3, float param4, long param5, long param6, long __functionAddress);
@@ -601,6 +602,7 @@ public final class JNI {
     public static native void invokePUPCV(long param0, byte param1, long param2, int param3, int param4, short param5, long __functionAddress);
     public static native void invokeCCCUV(short param0, short param1, short param2, int param3, int param4, int param5, byte param6, long __functionAddress);
     public static native void invokePCCUV(long param0, short param1, short param2, int param3, int param4, int param5, byte param6, long __functionAddress);
+    public static native void invokePPPPV(long param0, long param1, int param2, long param3, int param4, int param5, long param6, long __functionAddress);
     public static native void invokePPPPV(long param0, long param1, long param2, float param3, float param4, float param5, float param6, long param7, long __functionAddress);
     public static native void invokePPPPV(long param0, long param1, long param2, int param3, int param4, int param5, float param6, long param7, long __functionAddress);
     public static native void invokePPPPV(float param0, float param1, float param2, float param3, float param4, float param5, long param6, long param7, long param8, long param9, long __functionAddress);

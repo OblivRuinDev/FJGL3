@@ -660,6 +660,22 @@ val hb_paint_color_glyph_func_t = Module.HARFBUZZ.callback {
     )
 }
 
+val hb_paint_fill_glyph_func_t = Module.HARFBUZZ.callback {
+    void(
+        "hb_paint_fill_glyph_func_t",
+
+        hb_paint_funcs_t.p("funcs"),
+        nullable..opaque_p("paint_data"),
+        hb_codepoint_t("glyph"),
+        hb_font_t.p("font"),
+        hb_bool_t("is_foreground"),
+        hb_color_t("color"),
+        nullable..opaque_p("user_data"),
+
+        nativeType = "hb_paint_fill_glyph_func_t"
+    )
+}
+
 val hb_paint_push_clip_glyph_func_t = Module.HARFBUZZ.callback {
     void(
         "hb_paint_push_clip_glyph_func_t",
@@ -991,7 +1007,7 @@ val hb_get_table_tags_func_t = Module.HARFBUZZ.callback {
         hb_face_t.const.p("face"),
         unsigned_int("start_offset"),
         Check(1)..unsigned_int.p("table_count"),
-        hb_tag_t.p("table_tags"),
+        nullable..hb_tag_t.p("table_tags"),
         nullable..opaque_p("user_data"),
 
         nativeType = "hb_get_table_tags_func_t"
