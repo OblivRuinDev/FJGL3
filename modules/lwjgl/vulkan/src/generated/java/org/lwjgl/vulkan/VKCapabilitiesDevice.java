@@ -1357,6 +1357,8 @@ public class VKCapabilitiesDevice {
     public final boolean VK_EXT_image_robustness;
     /** When true, {@code EXT_image_sliced_view_of_3d} is supported. */
     public final boolean VK_EXT_image_sliced_view_of_3d;
+    /** When true, {@code EXT_image_tiling_control} is supported. */
+    public final boolean VK_EXT_image_tiling_control;
     /** When true, {@code EXT_image_view_min_lod} is supported. */
     public final boolean VK_EXT_image_view_min_lod;
     /** When true, {@code EXT_index_type_uint8} is supported. */
@@ -2121,6 +2123,7 @@ public class VKCapabilitiesDevice {
         VK_EXT_image_drm_format_modifier = check_EXT_image_drm_format_modifier(provider, caps, ext);
         VK_EXT_image_robustness = ext.contains("VK_EXT_image_robustness");
         VK_EXT_image_sliced_view_of_3d = ext.contains("VK_EXT_image_sliced_view_of_3d");
+        VK_EXT_image_tiling_control = ext.contains("VK_EXT_image_tiling_control");
         VK_EXT_image_view_min_lod = ext.contains("VK_EXT_image_view_min_lod");
         VK_EXT_index_type_uint8 = ext.contains("VK_EXT_index_type_uint8");
         VK_EXT_inline_uniform_block = ext.contains("VK_EXT_inline_uniform_block");

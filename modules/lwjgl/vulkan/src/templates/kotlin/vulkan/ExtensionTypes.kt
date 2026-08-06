@@ -319,6 +319,7 @@ val VkImageUsageFlagBits2KHR = "VkImageUsageFlagBits2KHR".enumType
 val VkImageCreateFlagBits2KHR = "VkImageCreateFlagBits2KHR".enumType
 val VkThrottleHintTypeSEC = "VkThrottleHintTypeSEC".enumType
 val VkNeuralAcceleratorStatisticsModeARM = "VkNeuralAcceleratorStatisticsModeARM".enumType
+val VkImageTilingControlEXT = "VkImageTilingControlEXT".enumType
 
 // Bitmask types
 val VkSurfaceTransformFlagsKHR = typedef(VkFlags, "VkSurfaceTransformFlagsKHR")
@@ -10722,9 +10723,9 @@ val VkPhysicalDeviceVideoEncodeFeedback2FeaturesKHR = struct(Module.VULKAN, "VkP
     VkBool32("videoEncodeFeedback2")
 }
 
-val VkVideoEncodeFeedback2CapabilitiesKHR = struct(Module.VULKAN, "VkVideoEncodeFeedback2CapabilitiesKHR") {
-    Expression("#STRUCTURE_TYPE_VIDEO_ENCODE_FEEDBACK_2_CAPABILITIES_KHR")..VkStructureType("sType")
-    nullable..opaque_p("pNext")
+val VkVideoEncodeFeedback2CapabilitiesKHR = struct(Module.VULKAN, "VkVideoEncodeFeedback2CapabilitiesKHR", mutable = false) {
+    Expression("#STRUCTURE_TYPE_VIDEO_ENCODE_FEEDBACK_2_CAPABILITIES_KHR")..VkStructureType("sType").mutable()
+    nullable..opaque_p("pNext").mutable()
     uint32_t("maxPerPartitionFeedbackEntries")
     VkVideoEncodePerPartitionFeedbackFlagsKHR("supportedPerPartitionEncodeFeedbackFlags")
 }
@@ -11307,6 +11308,18 @@ val VkPhysicalDevicePrimitiveRestartIndexFeaturesEXT = struct(Module.VULKAN, "Vk
     Expression("#STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIMITIVE_RESTART_INDEX_FEATURES_EXT")..VkStructureType("sType")
     nullable..opaque_p("pNext")
     VkBool32("primitiveRestartIndex")
+}
+
+val VkPhysicalDeviceImageTilingControlFeaturesEXT = struct(Module.VULKAN, "VkPhysicalDeviceImageTilingControlFeaturesEXT") {
+    Expression("#STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_TILING_CONTROL_FEATURES_EXT")..VkStructureType("sType")
+    nullable..opaque_p("pNext")
+    VkBool32("imageTilingControl")
+}
+
+val VkImageTilingControlCreateInfoEXT = struct(Module.VULKAN, "VkImageTilingControlCreateInfoEXT") {
+    Expression("#STRUCTURE_TYPE_IMAGE_TILING_CONTROL_CREATE_INFO_EXT")..VkStructureType("sType")
+    nullable..opaque_const_p("pNext")
+    VkImageTilingControlEXT("tilingControl")
 }
 
 val VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV = struct(Module.VULKAN, "VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV") {
