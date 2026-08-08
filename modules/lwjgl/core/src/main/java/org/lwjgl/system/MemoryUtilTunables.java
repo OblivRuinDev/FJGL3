@@ -9,7 +9,7 @@ import static org.lwjgl.system.Checks.*;
 import static org.lwjgl.system.MemoryUtil.*;
 import static org.lwjgl.system.Pointer.*;
 import static org.lwjgl.system.libc.LibCString.*;
-import static sun.misc.Unsafe.*;
+import static jdk.internal.misc.Unsafe.*;
 
 /** Multi-release backend for memset & memcpy. */
 final class MemoryUtilTunables {
@@ -78,111 +78,104 @@ final class MemoryUtilTunables {
 
         // Aligned body
         for (int aligned = limit & ~3; offset < aligned; offset += 4) {
-            UNSAFE.putInt(null, Integer.toUnsignedLong(ptr + offset), i);
+            UNSAFE.putInt(null, (ptr + offset) & 0xFFFF_FFFFL, i);
         }
 
         // Unaligned tail
         if (offset < (limit & ~1)) {
-            UNSAFE.putShort(null, Integer.toUnsignedLong(ptr + offset), (short)i);
+            UNSAFE.putShort(null, ptr + offset, (short)i);
             offset += 2;
         }
 
         if (offset < limit) {
-            UNSAFE.putByte(null, Integer.toUnsignedLong(ptr + offset), (byte)i);
+            UNSAFE.putByte(null, ptr + offset, (byte)i);
         }
     }
 
     static void memcpy(long src, long dst, long bytes) {
-        // A custom Java loop is fastest at small sizes, approximately up to 160 bytes.
-        if (BITS64 && bytes <= 160L && ((src | dst) & 7L) == 0L) {
-            // both src and dst are aligned to 8 bytes
-            memcpyAligned64(src, dst, bytes);
+        // Much better performance on Java 16+
+        //UNSAFE.copyMemory(null, src, null, dst, bytes);
+
+        // On x64, copyMemory has degraded performance with byte counts that are multiple of 4.
+        // Workaround by copying all but the last byte with copyMemory, then copying the last byte separately.
+        // Does not hurt on non-x64.
+        if (bytes <= 0L) {
             return;
         }
 
-        // Fastest at bigger sizes, when the JNI overhead becomes negligible.
-        nmemcpy(dst, src, bytes);
-    }
-    private static void memcpyAligned64(long src, long dst, long bytes) {
-        int limit = (int)bytes & 0xFF;
-
-        // Aligned body
-        int offset = 0;
-        for (int aligned = limit & ~7; offset < aligned; offset += 8) {
-            UNSAFE.putLong(null, dst + offset, UNSAFE.getLong(null, src + offset));
-        }
-
-        // Unaligned tail
-        if (offset < (limit & ~3)) {
-            UNSAFE.putInt(null, dst + offset, UNSAFE.getInt(null, src + offset));
-            offset += 4;
-        }
-
-        if (offset < (limit & ~1)) {
-            UNSAFE.putShort(null, dst + offset, UNSAFE.getShort(null, src + offset));
-            offset += 2;
-        }
-
-        if (offset < limit) {
-            UNSAFE.putByte(null, dst + offset, UNSAFE.getByte(null, src + offset));
-        }
+        var lastByteIndex = bytes - 1L;
+        UNSAFE.copyMemory(null, src, null, dst, lastByteIndex + (bytes & 1L));
+        UNSAFE.putByte(null, dst + lastByteIndex, UNSAFE.getByte(null, src + lastByteIndex));
     }
 
-    private static final long BASE_OFFSET_BYTE   = Integer.toUnsignedLong(ARRAY_BYTE_BASE_OFFSET);
-    private static final long BASE_OFFSET_SHORT  = Integer.toUnsignedLong(ARRAY_SHORT_BASE_OFFSET);
-    private static final long BASE_OFFSET_INT    = Integer.toUnsignedLong(ARRAY_INT_BASE_OFFSET);
-    private static final long BASE_OFFSET_LONG   = Integer.toUnsignedLong(ARRAY_LONG_BASE_OFFSET);
-    private static final long BASE_OFFSET_FLOAT  = Integer.toUnsignedLong(ARRAY_FLOAT_BASE_OFFSET);
-    private static final long BASE_OFFSET_DOUBLE = Integer.toUnsignedLong(ARRAY_DOUBLE_BASE_OFFSET);
+    private static void memcpy(Object src, long dst, long srcOffset, long bytes) {
+        if (bytes <= 0L) {
+            return;
+        }
 
+        var lastByteIndex = bytes - 1L;
+
+        UNSAFE.copyMemory(src, srcOffset, null, dst, lastByteIndex + (bytes & 1L));
+        UNSAFE.putByte(null, dst + lastByteIndex, UNSAFE.getByte(src, srcOffset + lastByteIndex));
+    }
     static void memcpy(byte[] src, long dst, int offset, int size) {
         checkMemcpy(dst, offset, size, src.length);
-        UNSAFE.copyMemory(src, BASE_OFFSET_BYTE + offset, null, dst, size);
+        memcpy(src, dst, ARRAY_BYTE_BASE_OFFSET + offset, size);
     }
     static void memcpy(short[] src, long dst, int offset, int size) {
         checkMemcpy(dst, offset, size, src.length);
-        UNSAFE.copyMemory(src, BASE_OFFSET_SHORT + apiGetBytes(offset, 1), null, dst, apiGetBytes(size, 1));
+        memcpy(src, dst, ARRAY_SHORT_BASE_OFFSET + apiGetBytes(offset, 1), apiGetBytes(size, 1));
     }
     static void memcpy(int[] src, long dst, int offset, int size) {
         checkMemcpy(dst, offset, size, src.length);
-        UNSAFE.copyMemory(src, BASE_OFFSET_INT + apiGetBytes(offset, 2), null, dst, apiGetBytes(size, 2));
+        memcpy(src, dst, ARRAY_INT_BASE_OFFSET + apiGetBytes(offset, 2), apiGetBytes(size, 2));
     }
     static void memcpy(long[] src, long dst, int offset, int size) {
         checkMemcpy(dst, offset, size, src.length);
-        UNSAFE.copyMemory(src, BASE_OFFSET_LONG + apiGetBytes(offset, 3), null, dst, apiGetBytes(size, 3));
+        memcpy(src, dst, ARRAY_LONG_BASE_OFFSET + apiGetBytes(offset, 3), apiGetBytes(size, 3));
     }
     static void memcpy(float[] src, long dst, int offset, int size) {
         checkMemcpy(dst, offset, size, src.length);
-        UNSAFE.copyMemory(src, BASE_OFFSET_FLOAT + apiGetBytes(offset, 2), null, dst, apiGetBytes(size, 2));
+        memcpy(src, dst, ARRAY_FLOAT_BASE_OFFSET + apiGetBytes(offset, 2), apiGetBytes(size, 2));
     }
     static void memcpy(double[] src, long dst, int offset, int size) {
         checkMemcpy(dst, offset, size, src.length);
-        UNSAFE.copyMemory(src, BASE_OFFSET_DOUBLE + apiGetBytes(offset, 3), null, dst, apiGetBytes(size, 3));
+        memcpy(src, dst, ARRAY_DOUBLE_BASE_OFFSET + apiGetBytes(offset, 3), apiGetBytes(size, 3));
     }
 
+    private static void memcpy(long src, Object dst, long dstOffset, long bytes) {
+        if (bytes <= 0L) {
+            return;
+        }
+
+        var lastByteIndex = bytes - 1L;
+
+        UNSAFE.copyMemory(null, src, dst, dstOffset, lastByteIndex + (bytes & 1L));
+        UNSAFE.putByte(dst, dstOffset + lastByteIndex, UNSAFE.getByte(null, src + lastByteIndex));
+    }
     static void memcpy(long src, byte[] dst, int offset, int size) {
         checkMemcpy(src, offset, size, dst.length);
-        UNSAFE.copyMemory(null, src, dst, BASE_OFFSET_BYTE + offset, size);
+        memcpy(src, dst, ARRAY_BYTE_BASE_OFFSET + offset, size);
     }
     static void memcpy(long src, short[] dst, int offset, int size) {
         checkMemcpy(src, offset, size, dst.length);
-        UNSAFE.copyMemory(null, src, dst, BASE_OFFSET_SHORT + apiGetBytes(offset, 1), apiGetBytes(size, 1));
+        memcpy(src, dst, ARRAY_SHORT_BASE_OFFSET + apiGetBytes(offset, 1), apiGetBytes(size, 1));
     }
     static void memcpy(long src, int[] dst, int offset, int size) {
         checkMemcpy(src, offset, size, dst.length);
-        UNSAFE.copyMemory(null, src, dst, BASE_OFFSET_INT + apiGetBytes(offset, 2), apiGetBytes(size, 2));
+        memcpy(src, dst, ARRAY_INT_BASE_OFFSET + apiGetBytes(offset, 2), apiGetBytes(size, 2));
     }
     static void memcpy(long src, long[] dst, int offset, int size) {
         checkMemcpy(src, offset, size, dst.length);
-        UNSAFE.copyMemory(null, src, dst, BASE_OFFSET_LONG + apiGetBytes(offset, 3), apiGetBytes(size, 3));
+        memcpy(src, dst, ARRAY_LONG_BASE_OFFSET + apiGetBytes(offset, 3), apiGetBytes(size, 3));
     }
     static void memcpy(long src, float[] dst, int offset, int size) {
         checkMemcpy(src, offset, size, dst.length);
-        UNSAFE.copyMemory(null, src, dst, BASE_OFFSET_FLOAT + apiGetBytes(offset, 2), apiGetBytes(size, 2));
+        memcpy(src, dst, ARRAY_FLOAT_BASE_OFFSET + apiGetBytes(offset, 2), apiGetBytes(size, 2));
     }
     static void memcpy(long src, double[] dst, int offset, int size) {
         checkMemcpy(src, offset, size, dst.length);
-        UNSAFE.copyMemory(null, src, dst, BASE_OFFSET_DOUBLE + apiGetBytes(offset, 3), apiGetBytes(size, 3));
+        memcpy(src, dst, ARRAY_DOUBLE_BASE_OFFSET + apiGetBytes(offset, 3), apiGetBytes(size, 3));
     }
 
 }
