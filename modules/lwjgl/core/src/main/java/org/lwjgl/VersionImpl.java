@@ -4,11 +4,12 @@
  */
 package org.lwjgl;
 
+import java.lang.module.*;
+
 /**
  * Finds the LWJGL implementation version (build type/number).
  *
- * <p>Base implementation for Java 8. When run in the module path, it cannot find the implementation version without reading the JAR manifest. See the
- * {@code lwjgl.core9} module for the module-aware implementation.</p>
+ * <p>Module-aware implementation for Java 9 or higher.</p>
  */
 final class VersionImpl {
 
@@ -21,7 +22,25 @@ final class VersionImpl {
             return Version.createImplementation(specVersion, implVersion);
         }
 
-        String version = Version.findImplementationFromManifest();
+        var module = Version.class.getModule();
+        if ("org.lwjgl".equals(module.getName())) {
+            var moduleVersion = module.getDescriptor()
+                .version()
+                .map(ModuleDescriptor.Version::toString)
+                .orElse(null);
+
+            if (moduleVersion != null) {
+                var plusIndex = moduleVersion.indexOf('+');
+                if (plusIndex != -1) {
+                    return Version.createImplementation(
+                        moduleVersion.substring(0, plusIndex),
+                        moduleVersion.substring(plusIndex + 1)
+                    );
+                }
+            }
+        }
+
+        var version = Version.findImplementationFromManifest();
         if (version != null) {
             return version;
         }

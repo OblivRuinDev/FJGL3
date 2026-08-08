@@ -4,35 +4,24 @@
  */
 package org.lwjgl.system;
 
-/**
- * Simple index checks.
- *
- * <p>On Java 9 these checks are replaced with the corresponding {@link java.util.Objects} methods, which perform better.</p>
- */
+import java.util.*;
+
+/** Java 9 version of {@code CheckIntrinsics}. */
 public final class CheckIntrinsics {
 
     private CheckIntrinsics() {
     }
 
     public static int checkIndex(int index, int length) {
-        if (index < 0 || length <= index) {
-            throw new IndexOutOfBoundsException();
-        }
-        return index;
+        return Objects.checkIndex(index, length);
     }
 
     public static int checkFromToIndex(int fromIndex, int toIndex, int length) {
-        if (fromIndex < 0 || toIndex < fromIndex || length < toIndex) {
-            throw new IndexOutOfBoundsException();
-        }
-        return fromIndex;
+        return Objects.checkFromToIndex(fromIndex, toIndex, length);
     }
 
     public static int checkFromIndexSize(int fromIndex, int size, int length) {
-        if ((length | fromIndex | size) < 0 || length - fromIndex < size) {
-            throw new IndexOutOfBoundsException();
-        }
-        return fromIndex;
+        return Objects.checkFromIndexSize(fromIndex, size, length);
     }
 
 }
