@@ -14,7 +14,7 @@ This script is included in /build.xml and /config/update-dependencies.xml.
     <!-- Compile custom Ant tasks -->
     <mkdir dir="bin/classes/ant"/>
     <javac
-        sourcepath="" debug="yes" source="8" target="8" encoding="UTF-8" includeantruntime="false" nowarn="true"
+        sourcepath="" debug="yes" source="25" target="25" encoding="UTF-8" includeantruntime="false" nowarn="true"
 
         destdir="bin/classes/ant"
         classpath="${ant.core.lib}"
@@ -217,12 +217,13 @@ This script is included in /build.xml and /config/update-dependencies.xml.
     </presetdef>
 
     <presetdef name="lwjgl.javac">
-        <javac sourcepath="" debug="yes" source="8" target="8" encoding="UTF-8" includeantruntime="false">
-            <compilerarg line='--boot-class-path "${env.JAVA8_HOME}/jre/lib/rt.jar"' if:set="set-boot-class-path"/>
-            <compilerarg line="-proc:full" if:set="jdk11"/>
-            <compilerarg value="-Xlint:all" unless:set="jdk21"/>
-            <compilerarg line="-Xlint:all,-options" if:set="jdk21"/>
+        <javac sourcepath="" debug="yes" source="25" target="25" encoding="UTF-8" includeantruntime="false">
+            <compilerarg line="--release 25"/>
+            <compilerarg line="-proc:full"/>
+            <compilerarg value="-Xlint:all"/>
             <compilerarg value="-XDignore.symbol.file"/> <!-- Suppresses internal API (e.g. Unsafe) usage warnings -->
+            <compilerarg value="--add-export=java.base/jdk.internal.access=ALL-UNNAMED"/>
+            <compilerarg value="--add-export=java.base/jdk.internal.misc=ALL-UNNAMED"/>
         </javac>
     </presetdef>
 
