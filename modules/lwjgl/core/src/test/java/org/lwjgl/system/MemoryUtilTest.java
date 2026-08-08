@@ -4,6 +4,7 @@
  */
 package org.lwjgl.system;
 
+import jdk.internal.access.*;
 import org.lwjgl.*;
 import org.testng.*;
 import org.testng.annotations.*;
@@ -185,6 +186,21 @@ public class MemoryUtilTest {
         assertTrue(address != NULL);
 
         ByteBuffer view = Objects.requireNonNull(NewDirectByteBuffer(address + 8, 16));
+        assertEquals(view.order(), ByteOrder.BIG_ENDIAN);
+        for (int i = 0; i < view.capacity(); i++) {
+            assertEquals(view.get(i), buffer.get(i + 8));
+        }
+    }
+    public void testNioAccessNewBuffer() {
+        ByteBuffer buffer = BufferUtils.createByteBuffer(32);
+        for (int i = 0; i < buffer.capacity(); i++) {
+            buffer.put(i, (byte)i);
+        }
+
+        long address = SharedSecrets.getJavaNioAccess().getBufferAddress(buffer);
+        assertTrue(address != NULL);
+
+        ByteBuffer view = SharedSecrets.getJavaNioAccess().newDirectByteBuffer(address + 8, 16);
         assertEquals(view.order(), ByteOrder.BIG_ENDIAN);
         for (int i = 0; i < view.capacity(); i++) {
             assertEquals(view.get(i), buffer.get(i + 8));

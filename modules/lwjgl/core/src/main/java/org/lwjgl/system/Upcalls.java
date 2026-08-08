@@ -4,101 +4,60 @@
  */
 package org.lwjgl.system;
 
-import org.lwjgl.*;
-import org.lwjgl.system.libffi.*;
+import org.jspecify.annotations.*;
+import org.lwjgl.system.ffm.*;
 
-import java.lang.reflect.*;
+import java.lang.foreign.*;
+import java.lang.invoke.*;
 import java.util.concurrent.*;
+import java.util.function.*;
 
 import static org.lwjgl.system.APIUtil.*;
-import static org.lwjgl.system.MemoryStack.*;
-import static org.lwjgl.system.MemoryUtil.*;
-import static org.lwjgl.system.jni.JNINativeInterface.*;
-import static org.lwjgl.system.libffi.LibFFI.*;
+import static org.lwjgl.system.ffm.FFM.*;
 
-/**
- * Multi-release backend for upcalls.
- *
- * <p>The default backend uses libffi to implement upcalls. The public API also uses libffi FFICIF structures to configure upcalls. Any new backend should be
- * compatible with the same API.</p>
- */
+/** FFM backend for upcalls. */
 final class Upcalls {
 
     private static final boolean DEBUG_ALLOCATOR = Configuration.DEBUG_MEMORY_ALLOCATOR.get(false);
 
-    private static final int CLOSURE_SIZE = (int)ffi_get_closure_size();
+    private static final ConcurrentHashMap<Class<?>, Class<?>>        CALLBACK_INTERFACE_CACHE = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<Class<?>, UpcallBinder<?>> BINDER_CACHE             = new ConcurrentHashMap<>();
 
-    private static final ClosureRegistry CLOSURE_REGISTRY;
+    private record Upcall(
+        Arena arena,
+        Object javaCallback
+    ) { }
 
-    private interface ClosureRegistry {
-        void put(long executableAddress, FFIClosure closure);
-        FFIClosure get(long executableAddress);
-        FFIClosure remove(long executableAddress);
+    private static final ConcurrentHashMap<Long, Upcall> UPCALL_REGISTRY = new ConcurrentHashMap<>();
+
+    private enum ArenaType {
+        AUTO {
+            @Override Arena create() { return Arena.ofAuto(); }
+            @Override boolean isCloseable() { return false; }
+        },
+        CONFINED {
+            @Override Arena create() { return Arena.ofConfined(); }
+            @Override boolean isCloseable() { return true; }
+        },
+        SHARED {
+            @Override Arena create() { return Arena.ofShared(); }
+            @Override boolean isCloseable() { return true; }
+        };
+
+        abstract Arena create();
+        abstract boolean isCloseable();
     }
 
-    static {
-        // Detect whether we need to maintain a mapping from executable addresses to FFIClosure structs.
-        try (MemoryStack stack = stackPush()) {
-            PointerBuffer code = stack.mallocPointer(1);
-
-            FFIClosure closure = ffi_closure_alloc(CLOSURE_SIZE, code);
-            if (closure == null) {
-                throw new OutOfMemoryError();
-            }
-
-            if (code.get(0) == closure.address()) {
-                apiLog("Closure Registry: simple");
-
-                // When the closure address matches the executable address, we don't have to maintain any mappings.
-                // We can simply cast the executable address to ffi_closure. This is true on many platforms.
-                CLOSURE_REGISTRY = new ClosureRegistry() {
-                    @Override
-                    public void put(long executableAddress, FFIClosure closure) {
-                        // no-op
-                    }
-                    @Override
-                    public FFIClosure get(long executableAddress) {
-                        return FFIClosure.create(executableAddress);
-                    }
-                    @Override
-                    public FFIClosure remove(long executableAddress) {
-                        return get(executableAddress);
-                    }
-                };
-            } else {
-                apiLog("Closure Registry: ConcurrentHashMap");
-
-                CLOSURE_REGISTRY = new ClosureRegistry() {
-                    private final ConcurrentHashMap<Long, FFIClosure> map = new ConcurrentHashMap<>();
-
-                    @Override
-                    public void put(long executableAddress, FFIClosure closure) {
-                        map.put(executableAddress, closure);
-                    }
-                    @Override
-                    public FFIClosure get(long executableAddress) {
-                        return map.get(executableAddress);
-                    }
-                    @Override
-                    public FFIClosure remove(long executableAddress) {
-                        return map.remove(executableAddress);
-                    }
-                };
-            }
-            ffi_closure_free(closure);
-        }
-    }
-
-    /** Address of the native upcall handler that will call the Java method when the native callback function is invoked. */
-    private static final long CALLBACK_HANDLER;
+    private static final ArenaType ARENA_TYPE = switch (Configuration.FFM_UPCALL_ARENA.get("auto")) {
+        case "auto" -> ArenaType.AUTO;
+        case "confined" -> ArenaType.CONFINED;
+        case "shared" -> ArenaType.SHARED;
+        default -> throw new IllegalArgumentException("Unsupported arena type specified: " + Configuration.FFM_UPCALL_ARENA.get());
+    };
 
     static {
-        // Setup the native callback handler.
-        try {
-            CALLBACK_HANDLER = getCallbackHandler(CallbackI.class.getDeclaredMethod("callback", long.class, long.class));
-        } catch (Exception e) {
-            throw new IllegalStateException("Failed to initialize the native callback handler.", e);
-        }
+        apiLog("Upcall Arena: " + ARENA_TYPE.name().toLowerCase());
+        apiLog("Upcall Registry: ConcurrentHashMap");
 
         MemoryUtil.getAllocator();
     }
@@ -106,51 +65,66 @@ final class Upcalls {
     private Upcalls() {
     }
 
-    private static native long getCallbackHandler(Method callback);
+    static long upcallCreate(Callback.Descriptor callbackDescriptor, Object instance) {
+        // mapping from callback interface to upcall binder
+        var binder = BINDER_CACHE
+            .computeIfAbsent(callbackDescriptor.type, it -> {
+                FFM.ffmConfig(it, FFM.ffmConfigBuilder(callbackDescriptor.lookup)
+                    .build());
 
-    /**
-     * Creates a native function that delegates to the specified instance when called.
-     *
-     * <p>The native function uses the default calling convention.</p>
-     *
-     * @param descriptor      the upcall descriptor
-     * @param instance the callback instance
-     *
-     * @return the dynamically generated native function
-     */
-    static long upcallCreate(Callback.Descriptor descriptor, Object instance) {
-        FFIClosure closure;
+                return FFM.ffmUpcall(it, callbackDescriptor.cif);
+            });
 
-        long executableAddress;
-        try (MemoryStack stack = stackPush()) {
-            PointerBuffer code = stack.mallocPointer(1);
+        var descriptor = binder.descriptor();
 
-            closure = ffi_closure_alloc(CLOSURE_SIZE, code);
-            if (closure == null) {
-                throw new OutOfMemoryError();
-            }
-            executableAddress = code.get(0);
-            if (DEBUG_ALLOCATOR) {
-                MemoryManage.DebugAllocator.track(executableAddress, CLOSURE_SIZE);
-            }
+        var scopedArena = FFM.ffmScopedArena();
+        var arena = scopedArena.isBound()
+            ? scopedArena.get()
+            : ARENA_TYPE.create();
+
+        var handle = binder
+            .handle()
+            .bindTo(instance);
+
+        var stack = binder.stack();
+        if (stack != null) {
+            handle = handle.bindTo(arena.allocate(stack));
         }
 
-        long user_data = NewGlobalRef(instance);
-
-        int errcode = ffi_prep_closure_loc(closure, descriptor.cif, CALLBACK_HANDLER, user_data, executableAddress);
-        if (errcode != FFI_OK) {
-            DeleteGlobalRef(user_data);
-            ffi_closure_free(closure);
-            throw new RuntimeException("Failed to prepare the libffi closure");
+        if (Configuration.FFM_UPCALL_EXCEPTION_CATCH.get(true)) {
+            handle = MethodHandles.catchException(handle, Throwable.class, wrapException(descriptor));
         }
 
-        CLOSURE_REGISTRY.put(executableAddress, closure);
+        //long t = System.nanoTime();
 
-        return executableAddress;
+        var upcall = Linker.nativeLinker()
+            .upcallStub(
+                handle,
+                descriptor,
+                arena
+            );
+
+        //t = System.nanoTime() - t;
+        //System.err.println(t);
+
+        if (DEBUG_ALLOCATOR) {
+            /*
+            AI estimations based on HotSpot code analysis:
+
+            x86_64 : about 1.3-1.4   KiB persistent per stub, plus one JNI global handle.
+            aarch64: about 1.15-1.25 KiB persistent per stub, plus one JNI global handle.
+             */
+            MemoryManage.DebugAllocator.track(upcall.address(), 1024L); // underestimated, but roughly accurate
+        }
+
+        UPCALL_REGISTRY.put(upcall.address(), new Upcall(arena, instance));
+
+        return upcall.address();
     }
 
+    @SuppressWarnings("unchecked")
     static <T extends CallbackI> T upcallGet(long functionPointer) {
-        return memGlobalRefToObject(CLOSURE_REGISTRY.get(functionPointer).user_data());
+        return (T)UPCALL_REGISTRY.get(functionPointer).javaCallback;
     }
 
     static void upcallFree(long functionPointer) {
@@ -158,11 +132,172 @@ final class Upcalls {
             MemoryManage.DebugAllocator.untrack(functionPointer);
         }
 
-        FFIClosure closure = CLOSURE_REGISTRY.remove(functionPointer);
-
-        DeleteGlobalRef(closure.user_data());
-        ffi_closure_free(closure);
+        var upcall = UPCALL_REGISTRY.remove(functionPointer);
+        if (upcall != null && ARENA_TYPE.isCloseable()) {
+            upcall.arena.close();
+        }
     }
 
+    // EXCEPTION WRAPPERS
+
+    private static final MethodHandle WRAP_EXCEPTION_V;
+    private static final MethodHandle WRAP_EXCEPTION_B;
+    private static final MethodHandle WRAP_EXCEPTION_S;
+    private static final MethodHandle WRAP_EXCEPTION_I;
+    private static final MethodHandle WRAP_EXCEPTION_J;
+    private static final MethodHandle WRAP_EXCEPTION_F;
+    private static final MethodHandle WRAP_EXCEPTION_D;
+    private static final MethodHandle WRAP_EXCEPTION_A;
+
+    static {
+        var lookup = MethodHandles.lookup();
+
+        try {
+            WRAP_EXCEPTION_V = lookup.findStatic(Upcalls.class, "wrapExceptionV", MethodType.methodType(void.class, Throwable.class));
+            WRAP_EXCEPTION_B = lookup.findStatic(Upcalls.class, "wrapExceptionB", MethodType.methodType(byte.class, Throwable.class));
+            WRAP_EXCEPTION_S = lookup.findStatic(Upcalls.class, "wrapExceptionS", MethodType.methodType(short.class, Throwable.class));
+            WRAP_EXCEPTION_I = lookup.findStatic(Upcalls.class, "wrapExceptionI", MethodType.methodType(int.class, Throwable.class));
+            WRAP_EXCEPTION_J = lookup.findStatic(Upcalls.class, "wrapExceptionJ", MethodType.methodType(long.class, Throwable.class));
+            WRAP_EXCEPTION_F = lookup.findStatic(Upcalls.class, "wrapExceptionF", MethodType.methodType(float.class, Throwable.class));
+            WRAP_EXCEPTION_D = lookup.findStatic(Upcalls.class, "wrapExceptionD", MethodType.methodType(double.class, Throwable.class));
+            WRAP_EXCEPTION_A = lookup.findStatic(Upcalls.class, "wrapExceptionA", MethodType.methodType(MemorySegment.class, Throwable.class));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static MethodHandle wrapException(FunctionDescriptor descriptor) {
+        return descriptor.returnLayout()
+            .map(it -> switch (it) {
+                case ValueLayout.OfByte _ -> WRAP_EXCEPTION_B;
+                case ValueLayout.OfShort _ -> WRAP_EXCEPTION_S;
+                case ValueLayout.OfInt _ -> WRAP_EXCEPTION_I;
+                case ValueLayout.OfLong _ -> WRAP_EXCEPTION_J;
+                case ValueLayout.OfFloat _ -> WRAP_EXCEPTION_F;
+                case ValueLayout.OfDouble _ -> WRAP_EXCEPTION_D;
+                case AddressLayout _, GroupLayout _ -> WRAP_EXCEPTION_A;
+                default -> throw new UnsupportedOperationException("Unsupported callback return type: " + it);
+            })
+            .orElse(WRAP_EXCEPTION_V);
+    }
+
+    @SuppressWarnings("unchecked")
+    @Nullable
+    private static Consumer<Throwable> getUncaughtExceptionHandlerInstance(Object handler) {
+        var className = handler.toString();
+        try {
+            return (Consumer<Throwable>)Class
+                .forName(className)
+                .getConstructor()
+                .newInstance();
+        } catch (Throwable t) {
+            if (Checks.DEBUG) {
+                t.printStackTrace(DEBUG_STREAM);
+            }
+            apiLog(String.format("Warning: Failed to instantiate uncaught exception handler: %s. Using the default.", className));
+            return null;
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private static void wrapException(Throwable t) {
+        var handler = Configuration.FFM_UPCALL_EXCEPTION_HANDLER.get();
+
+        if (handler != null && !"default".equals(handler)) {
+            if (handler instanceof Consumer<?> consumer) {
+                ((Consumer<Throwable>)consumer).accept(t);
+                return;
+            }
+
+            var consumer = getUncaughtExceptionHandlerInstance(handler);
+            if (consumer != null) {
+                consumer.accept(t);
+                return;
+            }
+        }
+
+        DEBUG_STREAM.println("[LWJGL] Unhandled exception in callback:");
+        t.printStackTrace(DEBUG_STREAM);
+    }
+
+    private static void wrapExceptionV(Throwable t) {
+        wrapException(t);
+    }
+
+    private static byte wrapExceptionB(Throwable t) {
+        wrapException(t);
+        return (byte)0;
+    }
+
+    private static short wrapExceptionS(Throwable t) {
+        wrapException(t);
+        return (short)0;
+    }
+
+    private static int wrapExceptionI(Throwable t) {
+        wrapException(t);
+        return 0;
+    }
+
+    private static long wrapExceptionJ(Throwable t) {
+        wrapException(t);
+        return 0L;
+    }
+
+    private static float wrapExceptionF(Throwable t) {
+        wrapException(t);
+        return 0.0f;
+    }
+
+    private static double wrapExceptionD(Throwable t) {
+        wrapException(t);
+        return 0.0;
+    }
+
+    private static MemorySegment wrapExceptionA(Throwable t) {
+        wrapException(t);
+        return MemorySegment.NULL;
+    }
+
+    /*
+    // INTEGER BOOLEAN HELPERS
+
+    private static final MethodHandle Bo2Bt;
+    private static final MethodHandle B2S;
+    private static final MethodHandle B2I;
+    private static final MethodHandle B2L;
+
+    private static final MethodHandle By2Bo;
+    private static final MethodHandle S2B;
+    private static final MethodHandle I2B;
+    private static final MethodHandle L2B;
+
+    static {
+        var lookup = MethodHandles.lookup();
+
+        try {
+            Bo2Bt = lookup.findStatic(CallbackImpl.class, "b2b", MethodType.methodType(byte.class, boolean.class));
+            B2S = lookup.findStatic(CallbackImpl.class, "b2s", MethodType.methodType(short.class, boolean.class));
+            B2I = lookup.findStatic(CallbackImpl.class, "b2i", MethodType.methodType(int.class, boolean.class));
+            B2L = lookup.findStatic(CallbackImpl.class, "b2l", MethodType.methodType(long.class, boolean.class));
+
+            By2Bo = lookup.findStatic(CallbackImpl.class, "b2b", MethodType.methodType(boolean.class, byte.class));
+            S2B = lookup.findStatic(CallbackImpl.class, "s2b", MethodType.methodType(boolean.class, short.class));
+            I2B = lookup.findStatic(CallbackImpl.class, "i2b", MethodType.methodType(boolean.class, int.class));
+            L2B = lookup.findStatic(CallbackImpl.class, "l2b", MethodType.methodType(boolean.class, long.class));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static byte b2b(boolean value)  { return value ? (byte)1 : (byte)0; }
+    private static short b2s(boolean value) { return value ? (short)1 : (short)0; }
+    private static int b2i(boolean value)   { return value ? 1 : 0; }
+    private static long b2l(boolean value)  { return value ? 1L : 0L; }
+
+    private static boolean b2b(byte value)  { return value != 0; }
+    private static boolean s2b(short value) { return value != 0; }
+    private static boolean i2b(int value)   { return value != 0; }
+    private static boolean l2b(long value)  { return value != 0L; }*/
 
 }
