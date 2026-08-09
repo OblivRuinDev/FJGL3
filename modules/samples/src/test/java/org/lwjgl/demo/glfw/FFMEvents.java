@@ -179,9 +179,9 @@ public final class FFMEvents {
         try (var s = MemoryStack.stackPush()) {
             // TODO: migrate to FFM API
 
-            var w = s.mallocInt(1);
-            var h = s.mallocInt(1);
-            var       comp = s.mallocInt(1);
+            var w    = s.mallocInt(1);
+            var h    = s.mallocInt(1);
+            var comp = s.mallocInt(1);
 
             // Cursor
 

@@ -64,6 +64,8 @@ public class BufferTest {
             assertEquals(buffer.get(buffer.limit() - 1), (short)0xBEEF);
         } catch (IllegalStateException e) {
             throw new SkipException("Large buffer allocation failed (FFM backend)"); // FFM backend
+        } catch (IllegalArgumentException e) {
+            throw new SkipException("Large buffer allocation failed (JNI)", e);
         } finally {
             nmemFree(a);
         }

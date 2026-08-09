@@ -94,8 +94,28 @@ public final class MemoryUtil {
             throw (NoSuchFieldError) new NoSuchFieldError("java.nio.Buffer#address").initCause(e);
         }
 
-        PAGE_SIZE = UNSAFE.pageSize();
-        CACHE_LINE_SIZE = 64; // TODO: Can we do better?
+        PAGE_SIZE = getPageSize();
+        CACHE_LINE_SIZE = getCacheLineSize();
+    }
+
+    static native int ngetPageSize();
+    static int getPageSize() {
+        int pageSize = ngetPageSize();
+        if (pageSize <= 0 || (pageSize & (pageSize - 1)) != 0) {
+            apiLog("Failed to query system page size: " + pageSize);
+            return Platform.get() == Platform.MACOSX && Platform.getArchitecture() == Platform.Architecture.ARM64 ? 16384 : 4096;
+        }
+        return pageSize;
+    }
+
+    static native int ngetCacheLineSize();
+    static int getCacheLineSize() {
+        int cacheLineSize = ngetCacheLineSize();
+        if (cacheLineSize <= 0 || 4096 < cacheLineSize || (cacheLineSize & (cacheLineSize - 1)) != 0) {
+            apiLog("Failed to query CPU cache line size: " + cacheLineSize);
+            return Platform.get() == Platform.MACOSX && Platform.getArchitecture() == Platform.Architecture.ARM64 ? 128 : 64;
+        }
+        return cacheLineSize;
     }
 
     static final class LazyInit {
@@ -232,6 +252,15 @@ public final class MemoryUtil {
      */
     public static ByteBuffer memAlloc(int size) {
         return wrapBufferByte(nmemAllocChecked(size), size);
+    }
+
+    /**
+     * CharBuffer version of {@link #memAlloc}.
+     *
+     * @param size the number of char values to allocate.
+     */
+    public static CharBuffer memAllocChar(int size) {
+        return wrapBufferChar(nmemAllocChecked(getAllocationSize(size, 1)), size);
     }
 
     /**
@@ -425,6 +454,15 @@ public final class MemoryUtil {
     }
 
     /**
+     * CharBuffer version of {@link #memCalloc}.
+     *
+     * @param num the number of short values to allocate.
+     */
+    public static CharBuffer memCallocChar(int num) {
+        return wrapBufferChar(nmemCallocChecked(num, 2), num);
+    }
+
+    /**
      * ShortBuffer version of {@link #memCalloc}.
      *
      * @param num the number of short values to allocate.
@@ -538,6 +576,15 @@ public final class MemoryUtil {
      */
     public static ByteBuffer memRealloc(@Nullable ByteBuffer ptr, int size) {
         return realloc(ptr, memByteBuffer(nmemReallocChecked(ptr == null ? NULL : UNSAFE.getLong(ptr, ADDRESS), size), size), size);
+    }
+
+    /**
+     * CharBuffer version of {@link #memRealloc}.
+     *
+     * @param size the number of char values to allocate.
+     */
+    public static CharBuffer memRealloc(@Nullable CharBuffer ptr, int size) {
+        return realloc(ptr, memCharBuffer(nmemReallocChecked(ptr == null ? NULL : UNSAFE.getLong(ptr, ADDRESS), getAllocationSize(size, 1)), size), size);
     }
 
     /**
@@ -1304,7 +1351,7 @@ public final class MemoryUtil {
      * @return the sliced buffer
      */
     public static ByteBuffer memSlice(ByteBuffer buffer) {
-        return buffer.slice().order(NATIVE_ORDER);
+        return buffer.slice().order(buffer.order());
     }
 
     /**
@@ -1403,7 +1450,7 @@ public final class MemoryUtil {
      * @return the sliced buffer
      */
     public static ByteBuffer memSlice(ByteBuffer buffer, int offset, int capacity) {
-        return buffer.slice(buffer.position() + offset, capacity).order(NATIVE_ORDER);
+        return buffer.slice(buffer.position() + offset, capacity).order(buffer.order());
     }
 
     /**
@@ -1416,7 +1463,7 @@ public final class MemoryUtil {
      * @param capacity the slice length, it must be &le; {@code buffer.capacity() - (buffer.position() + offset)}
      *
      * @return the sliced buffer
-     */
+     *///fixme: MemoryUtilTest#testSliceBufferAbsPastLimit failed: (java checks)  java.lang.IndexOutOfBoundsException: Range [6, 6 + 8) out of bounds for length 8
     public static ShortBuffer memSlice(ShortBuffer buffer, int offset, int capacity) {
         return buffer.slice(buffer.position() + offset, capacity);
     }
@@ -1724,6 +1771,31 @@ public final class MemoryUtil {
      * @param src the source array
      * @param dst the destination buffer
      */
+    public static void memCopy(char[] src, ByteBuffer dst) {
+        if (CHECKS) {
+            check(dst, apiGetBytes(src.length, 1));
+        }
+        memcpy(src, memAddress(dst), 0, src.length);
+    }
+    /**
+     * Copies the source array to the current position of the destination buffer.
+     *
+     * @param src the source array
+     * @param dst the destination buffer
+     */
+    public static void memCopy(char[] src, CharBuffer dst) {
+        if (CHECKS) {
+            check((Buffer)dst, src.length);
+        }
+        memcpy(src, memAddress(dst), 0, src.length);
+    }
+
+    /**
+     * Copies the source array to the current position of the destination buffer.
+     *
+     * @param src the source array
+     * @param dst the destination buffer
+     */
     public static void memCopy(short[] src, ByteBuffer dst) {
         if (CHECKS) {
             check(dst, apiGetBytes(src.length, 1));
@@ -1854,6 +1926,35 @@ public final class MemoryUtil {
     public static void memCopy(byte[] src, ByteBuffer dst, int offset, int size) {
         if (CHECKS) {
             check(dst, size);
+        }
+        memcpy(src, memAddress(dst), offset, size);
+    }
+
+    /**
+     * Copies {@code size} elements from the source array, starting at {@code offset}, to the current position of the destination buffer.
+     *
+     * @param src    the source array
+     * @param dst    the destination buffer
+     * @param offset the offset into the source array
+     * @param size   the number of elements to copy
+     */
+    public static void memCopy(char[] src, ByteBuffer dst, int offset, int size) {
+        if (CHECKS) {
+            check(dst, apiGetBytes(size, 1));
+        }
+        memcpy(src, memAddress(dst), offset, size);
+    }
+    /**
+     * Copies {@code size} elements from the source array, starting at {@code offset}, to the current position of the destination buffer.
+     *
+     * @param src    the source array
+     * @param dst    the destination buffer
+     * @param offset the offset into the source array
+     * @param size   the number of elements to copy
+     */
+    public static void memCopy(char[] src, CharBuffer dst, int offset, int size) {
+        if (CHECKS) {
+            check((Buffer)dst, size);
         }
         memcpy(src, memAddress(dst), offset, size);
     }
@@ -2024,6 +2125,31 @@ public final class MemoryUtil {
      * @param src the source buffer
      * @param dst the destination array
      */
+    public static void memCopy(ByteBuffer src, char[] dst) {
+        if (CHECKS) {
+            check(src, apiGetBytes(dst.length, 1));
+        }
+        memcpy(memAddress(src), dst, 0, dst.length);
+    }
+    /**
+     * Copies the source buffer to the destination array.
+     *
+     * @param src the source buffer
+     * @param dst the destination array
+     */
+    public static void memCopy(CharBuffer src, char[] dst) {
+        if (CHECKS) {
+            check((Buffer)src, dst.length);
+        }
+        memcpy(memAddress(src), dst, 0, dst.length);
+    }
+
+    /**
+     * Copies the source buffer to the destination array.
+     *
+     * @param src the source buffer
+     * @param dst the destination array
+     */
     public static void memCopy(ByteBuffer src, short[] dst) {
         if (CHECKS) {
             check(src, apiGetBytes(dst.length, 1));
@@ -2154,6 +2280,35 @@ public final class MemoryUtil {
     public static void memCopy(ByteBuffer src, byte[] dst, int offset, int size) {
         if (CHECKS) {
             check(src, size);
+        }
+        memcpy(memAddress(src), dst, offset, size);
+    }
+
+    /**
+     * Copies {@code size} elements from the source buffer to the destination array, starting at {@code offset}.
+     *
+     * @param src    the source buffer
+     * @param dst    the destination array
+     * @param offset the offset into the destination array
+     * @param size   the number of elements to copy
+     */
+    public static void memCopy(ByteBuffer src, char[] dst, int offset, int size) {
+        if (CHECKS) {
+            check(src, apiGetBytes(size, 1));
+        }
+        memcpy(memAddress(src), dst, offset, size);
+    }
+    /**
+     * Copies {@code size} elements from the source buffer to the destination array, starting at {@code offset}.
+     *
+     * @param src    the source buffer
+     * @param dst    the destination array
+     * @param offset the offset into the destination array
+     * @param size   the number of elements to copy
+     */
+    public static void memCopy(CharBuffer src, char[] dst, int offset, int size) {
+        if (CHECKS) {
+            check((Buffer)src, size);
         }
         memcpy(memAddress(src), dst, offset, size);
     }
@@ -2338,6 +2493,7 @@ public final class MemoryUtil {
     }
 
     public static void memCopy(byte[] src, long dst)                         { memcpy(src, dst, 0, src.length); }
+    public static void memCopy(char[] src, long dst)                         { memcpy(src, dst, 0, src.length); }
     public static void memCopy(short[] src, long dst)                        { memcpy(src, dst, 0, src.length); }
     public static void memCopy(int[] src, long dst)                          { memcpy(src, dst, 0, src.length); }
     public static void memCopy(long[] src, long dst)                         { memcpy(src, dst, 0, src.length); }
@@ -2345,6 +2501,7 @@ public final class MemoryUtil {
     public static void memCopy(double[] src, long dst)                       { memcpy(src, dst, 0, src.length); }
 
     public static void memCopy(byte[] src, long dst, int offset, int size)   { memcpy(src, dst, offset, size); }
+    public static void memCopy(char[] src, long dst, int offset, int size)   { memcpy(src, dst, offset, size); }
     public static void memCopy(short[] src, long dst, int offset, int size)  { memcpy(src, dst, offset, size); }
     public static void memCopy(int[] src, long dst, int offset, int size)    { memcpy(src, dst, offset, size); }
     public static void memCopy(long[] src, long dst, int offset, int size)   { memcpy(src, dst, offset, size); }
@@ -2352,6 +2509,7 @@ public final class MemoryUtil {
     public static void memCopy(double[] src, long dst, int offset, int size) { memcpy(src, dst, offset, size); }
 
     public static void memCopy(long src, byte[] dst)                         { memcpy(src, dst, 0, dst.length); }
+    public static void memCopy(long src, char[] dst)                         { memcpy(src, dst, 0, dst.length); }
     public static void memCopy(long src, short[] dst)                        { memcpy(src, dst, 0, dst.length); }
     public static void memCopy(long src, int[] dst)                          { memcpy(src, dst, 0, dst.length); }
     public static void memCopy(long src, long[] dst)                         { memcpy(src, dst, 0, dst.length); }
@@ -2359,6 +2517,7 @@ public final class MemoryUtil {
     public static void memCopy(long src, double[] dst)                       { memcpy(src, dst, 0, dst.length); }
 
     public static void memCopy(long src, byte[] dst, int offset, int size)   { memcpy(src, dst, offset, size); }
+    public static void memCopy(long src, char[] dst, int offset, int size)   { memcpy(src, dst, offset, size); }
     public static void memCopy(long src, short[] dst, int offset, int size)  { memcpy(src, dst, offset, size); }
     public static void memCopy(long src, int[] dst, int offset, int size)    { memcpy(src, dst, offset, size); }
     public static void memCopy(long src, long[] dst, int offset, int size)   { memcpy(src, dst, offset, size); }
@@ -2369,6 +2528,7 @@ public final class MemoryUtil {
 
     public static boolean memGetBoolean(long ptr) { return UNSAFE.getBoolean(null, ptr); }
     public static byte memGetByte(long ptr)       { return UNSAFE.getByte   (null, ptr); }
+    public static char memGetChar(long ptr)       { return UNSAFE.getChar   (null, ptr); }
     public static short memGetShort(long ptr)     { return UNSAFE.getShort  (null, ptr); }
     public static int memGetInt(long ptr)         { return UNSAFE.getInt    (null, ptr); }
     public static long memGetLong(long ptr)       { return UNSAFE.getLong   (null, ptr); }
@@ -2386,7 +2546,9 @@ public final class MemoryUtil {
             : UNSAFE.getInt(null, ptr) & 0xFFFF_FFFFL;
     }
 
+    public static void memPutBoolean(long ptr, boolean value) { UNSAFE.putBoolean(null, ptr, value); }
     public static void memPutByte(long ptr, byte value)     { UNSAFE.putByte  (null, ptr, value); }
+    public static void memPutChar(long ptr, char value)     { UNSAFE.putChar  (null, ptr, value); }
     public static void memPutShort(long ptr, short value)   { UNSAFE.putShort (null, ptr, value); }
     public static void memPutInt(long ptr, int value)       { UNSAFE.putInt   (null, ptr, value); }
     public static void memPutLong(long ptr, long value)     { UNSAFE.putLong  (null, ptr, value); }
@@ -2411,15 +2573,17 @@ public final class MemoryUtil {
     // Used internally for packed struct member access
     // see java.lang.invoke.VarHandleSegmentAsDoubles
     // see java.lang.invoke.VarHandleSegmentAsFloat
+    public static char memGetCharUnaligned(long ptr)                 { return UNSAFE.getCharUnaligned(null, ptr); }
     public static short memGetShortUnaligned(long ptr)               { return UNSAFE.getShortUnaligned(null, ptr); }
     public static int memGetIntUnaligned(long ptr)                   { return UNSAFE.getIntUnaligned(null, ptr); }
     public static long memGetLongUnaligned(long ptr)                 { return UNSAFE.getLongUnaligned(null, ptr); }
     public static float memGetFloatUnaligned(long ptr)               { return Float.intBitsToFloat(UNSAFE.getIntUnaligned(null, ptr)); }
     public static double memGetDoubleUnaligned(long ptr)             { return Double.longBitsToDouble(UNSAFE.getLongUnaligned(null, ptr)); }
 
+    public static void memPutCharUnaligned(long ptr, char value)     { UNSAFE.putCharUnaligned(null, ptr, value); }
     public static void memPutShortUnaligned(long ptr, short value)   { UNSAFE.putShortUnaligned(null, ptr, value); }
     public static void memPutIntUnaligned(long ptr, int value)       { UNSAFE.putIntUnaligned(null, ptr, value); }
-    public static void memPutLongUnaligned(long ptr, int value)      { UNSAFE.putLongUnaligned(null, ptr, value); }
+    public static void memPutLongUnaligned(long ptr, long value)      { UNSAFE.putLongUnaligned(null, ptr, value); }
     public static void memPutFloatUnaligned(long ptr, float value)   { UNSAFE.putIntUnaligned(null, ptr, Float.floatToRawIntBits(value)); }
     public static void memPutDoubleUnaligned(long ptr, double value) { UNSAFE.putLongUnaligned(null, ptr, Double.doubleToRawLongBits(value)); }
 
@@ -2533,6 +2697,125 @@ public final class MemoryUtil {
             segment.setAtIndex(JAVA_INT, index, (int)value);
         }
     }
+
+    // Unsafe accessors that bypass buffer bounds & session liveness checks.
+
+    public static byte memGet(ByteBuffer buffer, long offset)                                   { return memGetByte(memAddress0(buffer) + offset); }
+
+    public static char memGet(CharBuffer buffer, long offset)                                   { return memGetChar(memAddress0(buffer) + offset); }
+    public static short memGet(ShortBuffer buffer, long offset)                                 { return memGetShort(memAddress0(buffer) + offset); }
+    public static int memGet(IntBuffer buffer, long offset)                                     { return memGetInt(memAddress0(buffer) + offset); }
+    public static long memGet(LongBuffer buffer, long offset)                                   { return memGetLong(memAddress0(buffer) + offset); }
+    public static float memGet(FloatBuffer buffer, long offset)                                 { return memGetFloat(memAddress0(buffer) + offset); }
+    public static double memGet(DoubleBuffer buffer, long offset)                               { return memGetDouble(memAddress0(buffer) + offset); }
+
+    public static char memGetAtIndex(CharBuffer buffer, int index)                              { return memGetChar(memAddress0(buffer) + ((long)index << 1)); }
+    public static short memGetAtIndex(ShortBuffer buffer, int index)                            { return memGetShort(memAddress0(buffer) + ((long)index << 1)); }
+    public static int memGetAtIndex(IntBuffer buffer, int index)                                { return memGetInt(memAddress0(buffer) + ((long)index << 2)); }
+    public static long memGetAtIndex(LongBuffer buffer, int index)                              { return memGetLong(memAddress0(buffer) + ((long)index << 3)); }
+    public static float memGetAtIndex(FloatBuffer buffer, int index)                            { return memGetFloat(memAddress0(buffer) + ((long)index << 2)); }
+    public static double memGetAtIndex(DoubleBuffer buffer, int index)                          { return memGetDouble(memAddress0(buffer) + ((long)index << 3)); }
+
+    public static boolean memGetBoolean(ByteBuffer buffer, long offset)                         { return memGetBoolean(memAddress0(buffer) + offset); }
+
+    public static char memGetChar(ByteBuffer buffer, long offset)                               { return memGetChar(memAddress0(buffer) + offset); }
+    public static char memGetCharAtIndex(ByteBuffer buffer, int index)                          { return memGetChar(memAddress0(buffer) + ((long)index << 1)); }
+    public static char memGetCharUnaligned(ByteBuffer buffer, long offset)                      { return memGetCharUnaligned(memAddress0(buffer) + offset); }
+    public static char memGetCharUnalignedAtIndex(ByteBuffer buffer, int index)                 { return memGetCharUnaligned(memAddress0(buffer) + ((long)index << 1)); }
+
+    public static short memGetShort(ByteBuffer buffer, long offset)                             { return memGetShort(memAddress0(buffer) + offset); }
+    public static short memGetShortAtIndex(ByteBuffer buffer, int index)                        { return memGetShort(memAddress0(buffer) + ((long)index << 1)); }
+    public static short memGetShortUnaligned(ByteBuffer buffer, long offset)                    { return memGetShortUnaligned(memAddress0(buffer) + offset); }
+    public static short memGetShortUnalignedAtIndex(ByteBuffer buffer, int index)               { return memGetShortUnaligned(memAddress0(buffer) + ((long)index << 1)); }
+
+    public static int memGetInt(ByteBuffer buffer, long offset)                                 { return memGetInt(memAddress0(buffer) + offset); }
+    public static int memGetIntAtIndex(ByteBuffer buffer, int index)                            { return memGetInt(memAddress0(buffer) + ((long)index << 2)); }
+    public static int memGetIntUnaligned(ByteBuffer buffer, long offset)                        { return memGetIntUnaligned(memAddress0(buffer) + offset); }
+    public static int memGetIntUnalignedAtIndex(ByteBuffer buffer, int index)                   { return memGetIntUnaligned(memAddress0(buffer) + ((long)index << 2)); }
+
+    public static long memGetLong(ByteBuffer buffer, long offset)                               { return memGetLong(memAddress0(buffer) + offset); }
+    public static long memGetLongAtIndex(ByteBuffer buffer, int index)                          { return memGetLong(memAddress0(buffer) + ((long)index << 3)); }
+    public static long memGetLongUnaligned(ByteBuffer buffer, long offset)                      { return memGetLongUnaligned(memAddress0(buffer) + offset); }
+    public static long memGetLongUnalignedAtIndex(ByteBuffer buffer, int index)                 { return memGetLongUnaligned(memAddress0(buffer) + ((long)index << 3)); }
+
+    public static float memGetFloat(ByteBuffer buffer, long offset)                             { return memGetFloat(memAddress0(buffer) + offset); }
+    public static float memGetFloatAtIndex(ByteBuffer buffer, int index)                        { return memGetFloat(memAddress0(buffer) + ((long)index << 2)); }
+    public static float memGetFloatUnaligned(ByteBuffer buffer, long offset)                    { return memGetFloatUnaligned(memAddress0(buffer) + offset); }
+    public static float memGetFloatUnalignedAtIndex(ByteBuffer buffer, int index)               { return memGetFloatUnaligned(memAddress0(buffer) + ((long)index << 2)); }
+
+    public static double memGetDouble(ByteBuffer buffer, long offset)                           { return memGetDouble(memAddress0(buffer) + offset); }
+    public static double memGetDoubleAtIndex(ByteBuffer buffer, int index)                      { return memGetDouble(memAddress0(buffer) + ((long)index << 3)); }
+    public static double memGetDoubleUnaligned(ByteBuffer buffer, long offset)                  { return memGetDoubleUnaligned(memAddress0(buffer) + offset); }
+    public static double memGetDoubleUnalignedAtIndex(ByteBuffer buffer, int index)             { return memGetDoubleUnaligned(memAddress0(buffer) + ((long)index << 3)); }
+
+    public static long memGetCLong(ByteBuffer buffer, long offset)                              { return memGetCLong(memAddress0(buffer) + offset); }
+    public static long memGetCLongAtIndex(ByteBuffer buffer, int index)                         { return memGetCLong(memAddress0(buffer) + ((long)index << CLONG_SHIFT)); }
+    public static long memGetCLongUnaligned(ByteBuffer buffer, long offset)                     { return memGetCLongUnaligned(memAddress0(buffer) + offset); }
+    public static long memGetCLongUnalignedAtIndex(ByteBuffer buffer, int index)                { return memGetCLongUnaligned(memAddress0(buffer) + ((long)index << CLONG_SHIFT)); }
+
+    public static long memGetAddress(ByteBuffer buffer, long offset)                            { return memGetAddress(memAddress0(buffer) + offset); }
+    public static long memGetAddressAtIndex(ByteBuffer buffer, int index)                       { return memGetAddress(memAddress0(buffer) + ((long)index << POINTER_SHIFT)); }
+    public static long memGetAddressUnaligned(ByteBuffer buffer, long offset)                   { return memGetAddressUnaligned(memAddress0(buffer) + offset); }
+    public static long memGetAddressUnalignedAtIndex(ByteBuffer buffer, int index)              { return memGetAddressUnaligned(memAddress0(buffer) + ((long)index << POINTER_SHIFT)); }
+
+    public static void memPut(ByteBuffer buffer, long offset, byte value)                       { memPutByte(memAddress0(buffer) + offset, value); }
+
+    public static void memPut(CharBuffer buffer, long offset, char value)                       { memPutChar(memAddress0(buffer) + offset, value); }
+    public static void memPut(ShortBuffer buffer, long offset, short value)                     { memPutShort(memAddress0(buffer) + offset, value); }
+    public static void memPut(IntBuffer buffer, long offset, int value)                         { memPutInt(memAddress0(buffer) + offset, value); }
+    public static void memPut(LongBuffer buffer, long offset, long value)                       { memPutLong(memAddress0(buffer) + offset, value); }
+    public static void memPut(FloatBuffer buffer, long offset, float value)                     { memPutFloat(memAddress0(buffer) + offset, value); }
+    public static void memPut(DoubleBuffer buffer, long offset, double value)                   { memPutDouble(memAddress0(buffer) + offset, value); }
+
+    public static void memPutAtIndex(CharBuffer buffer, int index, char value)                  { memPutChar(memAddress0(buffer) + ((long)index << 1), value); }
+    public static void memPutAtIndex(ShortBuffer buffer, int index, short value)                { memPutShort(memAddress0(buffer) + ((long)index << 1), value); }
+    public static void memPutAtIndex(IntBuffer buffer, int index, int value)                    { memPutInt(memAddress0(buffer) + ((long)index << 2), value); }
+    public static void memPutAtIndex(LongBuffer buffer, int index, long value)                  { memPutLong(memAddress0(buffer) + ((long)index << 3), value); }
+    public static void memPutAtIndex(FloatBuffer buffer, int index, float value)                { memPutFloat(memAddress0(buffer) + ((long)index << 2), value); }
+    public static void memPutAtIndex(DoubleBuffer buffer, int index, double value)              { memPutDouble(memAddress0(buffer) + ((long)index << 3), value); }
+
+    public static void memPutBoolean(ByteBuffer buffer, long offset, boolean value)             { memPutBoolean(memAddress0(buffer) + offset, value); }
+
+    public static void memPutChar(ByteBuffer buffer, long offset, char value)                   { memPutChar(memAddress0(buffer) + offset, value); }
+    public static void memPutCharAtIndex(ByteBuffer buffer, int index, char value)              { memPutChar(memAddress0(buffer) + ((long)index << 1), value); }
+    public static void memPutCharUnaligned(ByteBuffer buffer, long offset, char value)          { memPutCharUnaligned(memAddress0(buffer) + offset, value); }
+    public static void memPutCharUnalignedAtIndex(ByteBuffer buffer, int index, char value)     { memPutCharUnaligned(memAddress0(buffer) + ((long)index << 1), value); }
+
+    public static void memPutShort(ByteBuffer buffer, long offset, short value)                 { memPutShort(memAddress0(buffer) + offset, value); }
+    public static void memPutShortAtIndex(ByteBuffer buffer, int index, short value)            { memPutShort(memAddress0(buffer) + ((long)index << 1), value); }
+    public static void memPutShortUnaligned(ByteBuffer buffer, long offset, short value)        { memPutShortUnaligned(memAddress0(buffer) + offset, value); }
+    public static void memPutShortUnalignedAtIndex(ByteBuffer buffer, int index, short value)   { memPutShortUnaligned(memAddress0(buffer) + ((long)index << 1), value); }
+
+    public static void memPutInt(ByteBuffer buffer, long offset, int value)                     { memPutInt(memAddress0(buffer) + offset, value); }
+    public static void memPutIntAtIndex(ByteBuffer buffer, int index, int value)                { memPutInt(memAddress0(buffer) + ((long)index << 2), value); }
+    public static void memPutIntUnaligned(ByteBuffer buffer, long offset, int value)            { memPutIntUnaligned(memAddress0(buffer) + offset, value); }
+    public static void memPutIntUnalignedAtIndex(ByteBuffer buffer, int index, int value)       { memPutIntUnaligned(memAddress0(buffer) + ((long)index << 2), value); }
+
+    public static void memPutLong(ByteBuffer buffer, long offset, long value)                   { memPutLong(memAddress0(buffer) + offset, value); }
+    public static void memPutLongAtIndex(ByteBuffer buffer, int index, long value)              { memPutLong(memAddress0(buffer) + ((long)index << 3), value); }
+    public static void memPutLongUnaligned(ByteBuffer buffer, long offset, long value)          { memPutLongUnaligned(memAddress0(buffer) + offset, value); }
+    public static void memPutLongUnalignedAtIndex(ByteBuffer buffer, int index, long value)     { memPutLongUnaligned(memAddress0(buffer) + ((long)index << 3), value); }
+
+    public static void memPutFloat(ByteBuffer buffer, long offset, float value)                 { memPutFloat(memAddress0(buffer) + offset, value); }
+    public static void memPutFloatAtIndex(ByteBuffer buffer, int index, float value)            { memPutFloat(memAddress0(buffer) + ((long)index << 2), value); }
+    public static void memPutFloatUnaligned(ByteBuffer buffer, long offset, float value)        { memPutFloatUnaligned(memAddress0(buffer) + offset, value); }
+    public static void memPutFloatUnalignedAtIndex(ByteBuffer buffer, int index, float value)   { memPutFloatUnaligned(memAddress0(buffer) + ((long)index << 2), value); }
+
+    public static void memPutDouble(ByteBuffer buffer, long offset, double value)               { memPutDouble(memAddress0(buffer) + offset, value); }
+    public static void memPutDoubleAtIndex(ByteBuffer buffer, int index, double value)          { memPutDouble(memAddress0(buffer) + ((long)index << 3), value); }
+    public static void memPutDoubleUnaligned(ByteBuffer buffer, long offset, double value)      { memPutDoubleUnaligned(memAddress0(buffer) + offset, value); }
+    public static void memPutDoubleUnalignedAtIndex(ByteBuffer buffer, int index, double value) { memPutDoubleUnaligned(memAddress0(buffer) + ((long)index << 3), value); }
+
+    public static void memPutCLong(ByteBuffer buffer, long offset, long value)                  { memPutCLong(memAddress0(buffer) + offset, value); }
+    public static void memPutCLongAtIndex(ByteBuffer buffer, int index, long value)             { memPutCLong(memAddress0(buffer) + ((long)index << CLONG_SHIFT), value); }
+    public static void memPutCLongUnaligned(ByteBuffer buffer, long offset, long value)         { memPutCLongUnaligned(memAddress0(buffer) + offset, value); }
+    public static void memPutCLongUnalignedAtIndex(ByteBuffer buffer, int index, long value)    { memPutCLongUnaligned(memAddress0(buffer) + ((long)index << CLONG_SHIFT), value); }
+
+    public static void memPutAddress(ByteBuffer buffer, long offset, long value)                { memPutAddress(memAddress0(buffer) + offset, value); }
+    public static void memPutAddressAtIndex(ByteBuffer buffer, int index, long value)           { memPutAddress(memAddress0(buffer) + ((long)index << POINTER_SHIFT), value); }
+    public static void memPutAddressUnaligned(ByteBuffer buffer, long offset, long value)       { memPutAddressUnaligned(memAddress0(buffer) + offset, value); }
+    public static void memPutAddressUnalignedAtIndex(ByteBuffer buffer, int index, long value)  { memPutAddressUnaligned(memAddress0(buffer) + ((long)index << POINTER_SHIFT), value); }
+
 
     /*  -------------------------------------
         -------------------------------------

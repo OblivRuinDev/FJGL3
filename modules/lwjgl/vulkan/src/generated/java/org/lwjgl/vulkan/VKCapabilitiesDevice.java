@@ -1231,6 +1231,8 @@ public class VKCapabilitiesDevice {
     public final boolean VK_ARM_shader_core_properties;
     /** When true, {@code ARM_shader_instrumentation} is supported. */
     public final boolean VK_ARM_shader_instrumentation;
+    /** When true, {@code ARM_tensor_controls} is supported. */
+    public final boolean VK_ARM_tensor_controls;
     /** When true, {@code ARM_tensors} is supported. */
     public final boolean VK_ARM_tensors;
     /** When true, {@code EXT_4444_formats} is supported. */
@@ -1375,6 +1377,8 @@ public class VKCapabilitiesDevice {
     public final boolean VK_EXT_multi_draw;
     /** When true, {@code EXT_multisampled_render_to_single_sampled} is supported. */
     public final boolean VK_EXT_multisampled_render_to_single_sampled;
+    /** When true, {@code EXT_multisampled_render_to_swapchain} is supported. */
+    public final boolean VK_EXT_multisampled_render_to_swapchain;
     /** When true, {@code EXT_mutable_descriptor_type} is supported. */
     public final boolean VK_EXT_mutable_descriptor_type;
     /** When true, {@code EXT_nested_command_buffer} is supported. */
@@ -1453,6 +1457,8 @@ public class VKCapabilitiesDevice {
     public final boolean VK_EXT_shader_module_identifier;
     /** When true, {@code EXT_shader_object} is supported. */
     public final boolean VK_EXT_shader_object;
+    /** When true, {@code EXT_shader_ocp_microscaling_types} is supported. */
+    public final boolean VK_EXT_shader_ocp_microscaling_types;
     /** When true, {@code EXT_shader_replicated_composites} is supported. */
     public final boolean VK_EXT_shader_replicated_composites;
     /** When true, {@code EXT_shader_split_barrier} is supported. */
@@ -1519,6 +1525,8 @@ public class VKCapabilitiesDevice {
     public final boolean VK_HUAWEI_subpass_shading;
     /** When true, {@code IMG_filter_cubic} is supported. */
     public final boolean VK_IMG_filter_cubic;
+    /** When true, {@code IMG_filter_linear_2d} is supported. */
+    public final boolean VK_IMG_filter_linear_2d;
     /** When true, {@code IMG_format_pvrtc} is supported. */
     public final boolean VK_IMG_format_pvrtc;
     /** When true, {@code IMG_relaxed_line_rasterization} is supported. */
@@ -1575,6 +1583,8 @@ public class VKCapabilitiesDevice {
     public final boolean VK_KHR_dynamic_rendering;
     /** When true, {@code KHR_dynamic_rendering_local_read} is supported. */
     public final boolean VK_KHR_dynamic_rendering_local_read;
+    /** When true, {@code KHR_extended_flags} is supported. */
+    public final boolean VK_KHR_extended_flags;
     /** When true, {@code KHR_external_fence} is supported. */
     public final boolean VK_KHR_external_fence;
     /** When true, {@code KHR_external_fence_fd} is supported. */
@@ -1763,6 +1773,8 @@ public class VKCapabilitiesDevice {
     public final boolean VK_KHR_video_decode_vp9;
     /** When true, {@code KHR_video_encode_av1} is supported. */
     public final boolean VK_KHR_video_encode_av1;
+    /** When true, {@code KHR_video_encode_feedback2} is supported. */
+    public final boolean VK_KHR_video_encode_feedback2;
     /** When true, {@code KHR_video_encode_h264} is supported. */
     public final boolean VK_KHR_video_encode_h264;
     /** When true, {@code KHR_video_encode_h265} is supported. */
@@ -1807,6 +1819,8 @@ public class VKCapabilitiesDevice {
     public final boolean VK_NV_cooperative_matrix;
     /** When true, {@code NV_cooperative_matrix2} is supported. */
     public final boolean VK_NV_cooperative_matrix2;
+    /** When true, {@code NV_cooperative_matrix_decode_vector} is supported. */
+    public final boolean VK_NV_cooperative_matrix_decode_vector;
     /** When true, {@code NV_cooperative_vector} is supported. */
     public final boolean VK_NV_cooperative_vector;
     /** When true, {@code NV_copy_memory_indirect} is supported. */
@@ -2039,6 +2053,7 @@ public class VKCapabilitiesDevice {
         VK_ARM_shader_core_builtins = ext.contains("VK_ARM_shader_core_builtins");
         VK_ARM_shader_core_properties = ext.contains("VK_ARM_shader_core_properties");
         VK_ARM_shader_instrumentation = check_ARM_shader_instrumentation(provider, caps, ext);
+        VK_ARM_tensor_controls = ext.contains("VK_ARM_tensor_controls");
         VK_ARM_tensors = check_ARM_tensors(provider, caps, ext);
         VK_EXT_4444_formats = ext.contains("VK_EXT_4444_formats");
         VK_EXT_astc_decode_mode = ext.contains("VK_EXT_astc_decode_mode");
@@ -2111,6 +2126,7 @@ public class VKCapabilitiesDevice {
         VK_EXT_metal_objects = check_EXT_metal_objects(provider, caps, ext);
         VK_EXT_multi_draw = check_EXT_multi_draw(provider, caps, ext);
         VK_EXT_multisampled_render_to_single_sampled = ext.contains("VK_EXT_multisampled_render_to_single_sampled");
+        VK_EXT_multisampled_render_to_swapchain = ext.contains("VK_EXT_multisampled_render_to_swapchain");
         VK_EXT_mutable_descriptor_type = ext.contains("VK_EXT_mutable_descriptor_type");
         VK_EXT_nested_command_buffer = ext.contains("VK_EXT_nested_command_buffer");
         VK_EXT_non_seamless_cube_map = ext.contains("VK_EXT_non_seamless_cube_map");
@@ -2150,6 +2166,7 @@ public class VKCapabilitiesDevice {
         VK_EXT_shader_long_vector = ext.contains("VK_EXT_shader_long_vector");
         VK_EXT_shader_module_identifier = check_EXT_shader_module_identifier(provider, caps, ext);
         VK_EXT_shader_object = check_EXT_shader_object(provider, caps, ext);
+        VK_EXT_shader_ocp_microscaling_types = ext.contains("VK_EXT_shader_ocp_microscaling_types");
         VK_EXT_shader_replicated_composites = ext.contains("VK_EXT_shader_replicated_composites");
         VK_EXT_shader_split_barrier = ext.contains("VK_EXT_shader_split_barrier");
         VK_EXT_shader_stencil_export = ext.contains("VK_EXT_shader_stencil_export");
@@ -2183,6 +2200,7 @@ public class VKCapabilitiesDevice {
         VK_HUAWEI_invocation_mask = check_HUAWEI_invocation_mask(provider, caps, ext);
         VK_HUAWEI_subpass_shading = check_HUAWEI_subpass_shading(provider, caps, ext);
         VK_IMG_filter_cubic = ext.contains("VK_IMG_filter_cubic");
+        VK_IMG_filter_linear_2d = ext.contains("VK_IMG_filter_linear_2d");
         VK_IMG_format_pvrtc = ext.contains("VK_IMG_format_pvrtc");
         VK_IMG_relaxed_line_rasterization = ext.contains("VK_IMG_relaxed_line_rasterization");
         VK_INTEL_performance_query = check_INTEL_performance_query(provider, caps, ext);
@@ -2211,6 +2229,7 @@ public class VKCapabilitiesDevice {
         VK_KHR_driver_properties = ext.contains("VK_KHR_driver_properties");
         VK_KHR_dynamic_rendering = check_KHR_dynamic_rendering(provider, caps, ext);
         VK_KHR_dynamic_rendering_local_read = check_KHR_dynamic_rendering_local_read(provider, caps, ext);
+        VK_KHR_extended_flags = ext.contains("VK_KHR_extended_flags");
         VK_KHR_external_fence = ext.contains("VK_KHR_external_fence");
         VK_KHR_external_fence_fd = check_KHR_external_fence_fd(provider, caps, ext);
         VK_KHR_external_fence_win32 = check_KHR_external_fence_win32(provider, caps, ext);
@@ -2305,6 +2324,7 @@ public class VKCapabilitiesDevice {
         VK_KHR_video_decode_queue = check_KHR_video_decode_queue(provider, caps, ext);
         VK_KHR_video_decode_vp9 = ext.contains("VK_KHR_video_decode_vp9");
         VK_KHR_video_encode_av1 = ext.contains("VK_KHR_video_encode_av1");
+        VK_KHR_video_encode_feedback2 = ext.contains("VK_KHR_video_encode_feedback2");
         VK_KHR_video_encode_h264 = ext.contains("VK_KHR_video_encode_h264");
         VK_KHR_video_encode_h265 = ext.contains("VK_KHR_video_encode_h265");
         VK_KHR_video_encode_intra_refresh = ext.contains("VK_KHR_video_encode_intra_refresh");
@@ -2327,6 +2347,7 @@ public class VKCapabilitiesDevice {
         VK_NV_compute_shader_derivatives = ext.contains("VK_NV_compute_shader_derivatives");
         VK_NV_cooperative_matrix = ext.contains("VK_NV_cooperative_matrix");
         VK_NV_cooperative_matrix2 = ext.contains("VK_NV_cooperative_matrix2");
+        VK_NV_cooperative_matrix_decode_vector = ext.contains("VK_NV_cooperative_matrix_decode_vector");
         VK_NV_cooperative_vector = check_NV_cooperative_vector(provider, caps, ext);
         VK_NV_copy_memory_indirect = check_NV_copy_memory_indirect(provider, caps, ext);
         VK_NV_corner_sampled_image = ext.contains("VK_NV_corner_sampled_image");
@@ -3597,7 +3618,7 @@ public class VKCapabilitiesDevice {
         int flag5 = ext.contains("VK_EXT_sample_locations") ? 0 : Integer.MIN_VALUE;
         int flag6 = ext.contains("VK_EXT_blend_operation_advanced") ? 0 : Integer.MIN_VALUE;
         int flag7 = ext.contains("VK_EXT_provoking_vertex") ? 0 : Integer.MIN_VALUE;
-        int flag8 = ext.contains("VK_EXT_line_rasterization") ? 0 : Integer.MIN_VALUE;
+        int flag8 = ext.contains("Vulkan14") || ext.contains("VK_KHR_line_rasterization") || ext.contains("VK_EXT_line_rasterization") ? 0 : Integer.MIN_VALUE;
         int flag10 = ext.contains("VK_EXT_depth_clip_control") ? 0 : Integer.MIN_VALUE;
         int flag11 = ext.contains("VK_NV_clip_space_w_scaling") ? 0 : Integer.MIN_VALUE;
         int flag12 = ext.contains("VK_NV_viewport_swizzle") ? 0 : Integer.MIN_VALUE;
@@ -3906,7 +3927,7 @@ public class VKCapabilitiesDevice {
         int flag4 = ext.contains("VK_EXT_sample_locations") ? 0 : Integer.MIN_VALUE;
         int flag5 = ext.contains("VK_EXT_blend_operation_advanced") ? 0 : Integer.MIN_VALUE;
         int flag6 = ext.contains("VK_EXT_provoking_vertex") ? 0 : Integer.MIN_VALUE;
-        int flag7 = ext.contains("VK_EXT_line_rasterization") ? 0 : Integer.MIN_VALUE;
+        int flag7 = ext.contains("Vulkan14") || ext.contains("VK_KHR_line_rasterization") || ext.contains("VK_EXT_line_rasterization") ? 0 : Integer.MIN_VALUE;
         int flag9 = ext.contains("VK_EXT_depth_clip_control") ? 0 : Integer.MIN_VALUE;
         int flag10 = ext.contains("VK_NV_clip_space_w_scaling") ? 0 : Integer.MIN_VALUE;
         int flag11 = ext.contains("VK_NV_viewport_swizzle") ? 0 : Integer.MIN_VALUE;

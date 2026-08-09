@@ -79,6 +79,7 @@ final class BCDescriptors {
         MTD_GroupBinder_MemorySegment_Object                   = MethodTypeDesc.of(CD_GroupBinder, CD_MemorySegment, CD_Object),
         MTD_GroupLayout                                        = MethodTypeDesc.of(CD_GroupLayout),
         MTD_int                                                = MethodTypeDesc.of(CD_int),
+        MTD_int_String_boolean_long_int                        = MethodTypeDesc.of(CD_int, CD_String, CD_boolean, CD_long, CD_int),
         MTD_int_long                                           = MethodTypeDesc.of(CD_int, CD_long),
         MTD_int_Object                                         = MethodTypeDesc.of(CD_int, CD_Object),
         MTD_int_ValueLayout$OfInt_long                         = MethodTypeDesc.of(CD_int, CD_ValueLayout$OfInt, CD_long),
@@ -115,6 +116,7 @@ final class BCDescriptors {
         MTD_SegmentStack                                       = MethodTypeDesc.of(CD_SegmentStack),
         MTD_String                                             = MethodTypeDesc.of(CD_String),
         MTD_String_long                                        = MethodTypeDesc.of(CD_String, CD_long),
+        MTD_String_long_int                                    = MethodTypeDesc.of(CD_String, CD_long, CD_int),
         MTD_String_long_Charset                                = MethodTypeDesc.of(CD_String, CD_long, CD_Charset),
         MTD_String_String                                      = MethodTypeDesc.of(CD_String, CD_String),
         MTD_void_byteArray_Charset                             = MethodTypeDesc.of(CD_void, CDA_byte, CD_Charset),
@@ -122,7 +124,9 @@ final class BCDescriptors {
         MTD_void_long_byte                                     = MethodTypeDesc.of(CD_void, CD_long, CD_byte),
         MTD_void_long_short                                    = MethodTypeDesc.of(CD_void, CD_long, CD_short),
         MTD_void_long_int                                      = MethodTypeDesc.of(CD_void, CD_long, CD_int),
+        MTD_void_long_int_long                                 = MethodTypeDesc.of(CD_void, CD_long, CD_int, CD_long),
         MTD_void_long_long                                     = MethodTypeDesc.of(CD_void, CD_long, CD_long),
+        MTD_void_long_long_long                                = MethodTypeDesc.of(CD_void, CD_long, CD_long, CD_long),
         MTD_void_long_float                                    = MethodTypeDesc.of(CD_void, CD_long, CD_float),
         MTD_void_long_double                                   = MethodTypeDesc.of(CD_void, CD_long, CD_double),
         MTD_void_long_String_Charset                           = MethodTypeDesc.of(CD_void, CD_long, CD_String, CD_Charset),
@@ -178,8 +182,7 @@ final class BCDescriptors {
         DMHD_StringConcatFactory_makeConcatWithConstants,
         "makeConcatWithConstants",
         MTD_String_String,
-        new String[] {"0x\u0001"}
-    );
+        "0x\u0001");
 
     private BCDescriptors() {
     }

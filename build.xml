@@ -467,6 +467,7 @@
             <compileBinding binding="lmdb"/>
             <compileBinding binding="lz4"/>
             <compileBinding binding="meshoptimizer"/>
+            <compileBinding binding="mimalloc"/>
             <compileBinding binding="msdfgen"/>
             <compileBinding binding="nanovg"/>
             <compileBinding binding="nfd"/>
@@ -978,6 +979,7 @@
             <arg line="-notimestamp"/>
             <arg value="-html5"/>
             <arg line="-J-Dfile.encoding=UTF-8 -J-Dstdout.encoding=UTF-8 -J-Dstderr.encoding=UTF-8 -J-Dline.separator=&#10;"/>
+            <arg line="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED"/>
             <arg line="--add-exports jdk.javadoc/com.sun.tools.doclets=ALL-UNNAMED"/>
         </javadoc>
         <get-quiet name="favicon" url="https://www.lwjgl.org/favicon.ico" dest="${bin.javadoc}"/>
@@ -990,11 +992,12 @@
         <property name="revision" value="liblwjgl.dylib.git" if:set="platform.macos"/>
         <property name="revision" value="lwjgl.dll.git" if:set="platform.windows"/>
 
-        <exec executable="git" failonerror="true" output="${lib.native}/org/lwjgl/${revision}" taskname="Git revision">
+        <exec executable="git" failonerror="true" taskname="Git revision">
             <arg value="log"/>
             <arg value="--first-parent"/>
             <arg value="--pretty=format:%H"/>
-            <arg value="HEAD~2..HEAD~1"/> <!-- Skip the CI commit -->
+            <arg line="--skip 1 -n 1"/> <!-- Skip the CI commit -->
+            <redirector output="${lib.native}/org/lwjgl/${revision}" binaryOutput="true" logError="true"/>
         </exec>
 
         <apply executable="aws" failonerror="true" relative="true" taskname="S3 upload">
@@ -1365,6 +1368,7 @@
                 <arg line="-notimestamp"/>
                 <arg value="-html5"/>
                 <arg line="-J-Dfile.encoding=UTF-8 -J-Dstdout.encoding=UTF-8 -J-Dstderr.encoding=UTF-8 -J-Dline.separator=&#10;"/>
+                <arg line="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED"/>
                 <arg line="--add-exports jdk.javadoc/com.sun.tools.doclets=ALL-UNNAMED"/>
             </javadoc>
             <get-quiet name="favicon" url="https://www.lwjgl.org/favicon.ico" dest="${release}/${module}/javadoc" unless:set="javadoc.skip"/>
@@ -1744,6 +1748,9 @@
 
         <!-- meshoptimizer -->
         <release-module name="meshoptimizer" native-library="lwjgl_meshoptimizer" title="meshoptimizer" if:true="${binding.meshoptimizer}"/>
+
+        <!-- mimalloc -->
+        <release-module name="mimalloc" native-library="mimalloc" title="mimalloc" if:true="${binding.mimalloc}"/>
 
         <!-- msdfgen -->
         <release-module name="msdfgen" native-library="lwjgl_msdfgen" title="msdfgen" if:true="${binding.msdfgen}"/>

@@ -122,6 +122,11 @@ final class MemoryUtilTunables {
         checkMemcpy(dst, offset, size, src.length);
         memcpy(src, dst, ARRAY_BYTE_BASE_OFFSET + offset, size);
     }
+
+    static void memcpy(char[] src, long dst, int offset, int size) {
+        checkMemcpy(dst, offset, size, src.length);
+        memcpy(src, dst, ARRAY_SHORT_BASE_OFFSET + apiGetBytes(offset, 1), apiGetBytes(size, 1));
+    }
     static void memcpy(short[] src, long dst, int offset, int size) {
         checkMemcpy(dst, offset, size, src.length);
         memcpy(src, dst, ARRAY_SHORT_BASE_OFFSET + apiGetBytes(offset, 1), apiGetBytes(size, 1));
@@ -156,6 +161,10 @@ final class MemoryUtilTunables {
     static void memcpy(long src, byte[] dst, int offset, int size) {
         checkMemcpy(src, offset, size, dst.length);
         memcpy(src, dst, ARRAY_BYTE_BASE_OFFSET + offset, size);
+    }
+    static void memcpy(long src, char[] dst, int offset, int size) {
+        checkMemcpy(src, offset, size, dst.length);
+        memcpy(src, dst, ARRAY_SHORT_BASE_OFFSET + apiGetBytes(offset, 1), apiGetBytes(size, 1));
     }
     static void memcpy(long src, short[] dst, int offset, int size) {
         checkMemcpy(src, offset, size, dst.length);

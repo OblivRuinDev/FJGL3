@@ -17,6 +17,7 @@ import static org.lwjgl.system.MemoryUtil.*;
  * <pre>{@code
  * struct hwloc_numanode_attr_s {
  *     hwloc_uint64_t local_memory;
+ *     int memory_tier;
  * }}</pre>
  */
 public class hwloc_numanode_attr_s extends Struct<hwloc_numanode_attr_s> {
@@ -29,17 +30,20 @@ public class hwloc_numanode_attr_s extends Struct<hwloc_numanode_attr_s> {
 
     /** The struct member offsets. */
     public static final int
-        LOCAL_MEMORY;
+        LOCAL_MEMORY,
+        MEMORY_TIER;
 
     static {
         Layout layout = __struct(
-            __member(8)
+            __member(8),
+            __member(4)
         );
 
         SIZEOF = layout.getSize();
         ALIGNOF = layout.getAlignment();
 
         LOCAL_MEMORY = layout.offsetof(0);
+        MEMORY_TIER = layout.offsetof(1);
     }
 
     protected hwloc_numanode_attr_s(long address, @Nullable ByteBuffer container) {
@@ -67,6 +71,8 @@ public class hwloc_numanode_attr_s extends Struct<hwloc_numanode_attr_s> {
     /** @return the value of the {@code local_memory} field. */
     @NativeType("hwloc_uint64_t")
     public long local_memory() { return nlocal_memory(address()); }
+    /** @return the value of the {@code memory_tier} field. */
+    public int memory_tier() { return nmemory_tier(address()); }
 
     // -----------------------------------
 
@@ -99,6 +105,8 @@ public class hwloc_numanode_attr_s extends Struct<hwloc_numanode_attr_s> {
 
     /** Unsafe version of {@link #local_memory}. */
     public static long nlocal_memory(long struct) { return memGetLong(struct + hwloc_numanode_attr_s.LOCAL_MEMORY); }
+    /** Unsafe version of {@link #memory_tier}. */
+    public static int nmemory_tier(long struct) { return memGetInt(struct + hwloc_numanode_attr_s.MEMORY_TIER); }
 
     // -----------------------------------
 
@@ -146,6 +154,8 @@ public class hwloc_numanode_attr_s extends Struct<hwloc_numanode_attr_s> {
         /** @return the value of the {@code local_memory} field. */
         @NativeType("hwloc_uint64_t")
         public long local_memory() { return hwloc_numanode_attr_s.nlocal_memory(address()); }
+        /** @return the value of the {@code memory_tier} field. */
+        public int memory_tier() { return hwloc_numanode_attr_s.nmemory_tier(address()); }
 
     }
 
