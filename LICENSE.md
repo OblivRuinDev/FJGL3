@@ -1,4 +1,5 @@
 Copyright (c) 2012-present Lightweight Java Game Library
+Copyright (c) 2026-present OblivRuinDev
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
