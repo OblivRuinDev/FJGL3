@@ -94,5 +94,5 @@ Upcalls and structs/unions require the definition of a binder instance for each 
 ### Examples
 
 * For complete demos, see the `modules/samples/src/test/java25/org/lwjgl/demo` package.
-* For benchmarks, see the `modules/samples/src/test/java25/org/lwjgl/jmh` package.
+* For benchmarks, see the `../modules/samples/src/test/java/org/lwjgl/jmh` package.
 * For struct/union examples, see the `/modules/lwjgl/core/src/test/java/org/lwjgl/system/ffm/StructTest.java` unit test.
