@@ -4,7 +4,6 @@
  */
 package org.lwjgl.generator
 
-import org.lwjgl.generator.JNI.generateJavaFFM
 import java.io.*
 import java.lang.reflect.*
 import java.nio.*
@@ -113,7 +112,6 @@ fun main(args: Array<String>) {
 
                 submit {
                     generateSimple(JNI) { it.generateJava() }
-                    generateSimple(JNI, version = "25", forceSkipNative = true) { it.generateJavaFFM() }
                 }
 
                 latch.await()
