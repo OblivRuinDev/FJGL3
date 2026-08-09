@@ -174,19 +174,7 @@ This script is included in /build.xml and /config/update-dependencies.xml.
 
     <detectJDKVersion/>
 
-    <!-- May be set in the ant command line to test multi-release implementations. -->
-    <condition property="core.java21"><isset property="core.java25"/></condition>
-    <condition property="core.java17"><isset property="core.java21"/></condition>
-    <condition property="core.java11"><isset property="core.java17"/></condition>
-
-    <property name="jni.headers" location="${java.home}/include" if:set="jdk11"/>
-    <property name="jni.headers" location="${java.home}/../include" unless:set="jdk11"/>
-    <condition property="set-boot-class-path">
-        <and>
-            <isset property="jdk11"/>
-            <isset property="env.JAVA8_HOME"/>
-        </and>
-    </condition>
+    <property name="jni.headers" location="${java.home}/include"/>
 
     <!-- Different location per platform/architecture. This is intentional. -->
     <property name="bin.native" location="bin/${platform}/${build.arch}" relative="true"/>
@@ -218,48 +206,12 @@ This script is included in /build.xml and /config/update-dependencies.xml.
 
     <presetdef name="lwjgl.javac">
         <javac sourcepath="" debug="yes" source="25" target="25" encoding="UTF-8" includeantruntime="false">
-            <compilerarg line="--release 25"/>
-            <compilerarg line="-proc:full"/>
-            <compilerarg value="-Xlint:all"/>
-            <compilerarg value="-XDignore.symbol.file"/> <!-- Suppresses internal API (e.g. Unsafe) usage warnings -->
-            <compilerarg value="--add-export=java.base/jdk.internal.access=ALL-UNNAMED"/>
-            <compilerarg value="--add-export=java.base/jdk.internal.misc=ALL-UNNAMED"/>
-        </javac>
-    </presetdef>
-
-    <presetdef name="lwjgl.javac11">
-        <javac sourcepath="" debug="yes" encoding="UTF-8" includeantruntime="false">
-            <compilerarg line="--release 11"/>
-            <compilerarg value="-proc:full"/>
-            <compilerarg value="-Xlint:all"/>
-            <compilerarg value="-XDignore.symbol.file"/>
-        </javac>
-    </presetdef>
-
-    <presetdef name="lwjgl.javac17">
-        <javac sourcepath="" debug="yes" encoding="UTF-8" includeantruntime="false">
-            <compilerarg line="--release 17"/>
-            <compilerarg value="-proc:full"/>
-            <compilerarg value="-Xlint:all"/>
-            <compilerarg value="-XDignore.symbol.file"/>
-        </javac>
-    </presetdef>
-
-    <presetdef name="lwjgl.javac21">
-        <javac sourcepath="" debug="yes" encoding="UTF-8" includeantruntime="false">
-            <compilerarg line="--release 21"/>
-            <compilerarg value="-proc:full"/>
-            <compilerarg value="-Xlint:all"/>
-            <compilerarg value="-XDignore.symbol.file"/>
-        </javac>
-    </presetdef>
-
-    <presetdef name="lwjgl.javac25">
-        <javac sourcepath="" debug="yes" encoding="UTF-8" includeantruntime="false">
-            <compilerarg line="--release 25"/>
             <compilerarg line="-proc:full"/>
             <compilerarg value="-Xlint:all,-restricted"/>
-            <compilerarg value="-XDignore.symbol.file"/>
+            <compilerarg value="-XDignore.symbol.file"/> <!-- Suppresses internal API (e.g. Unsafe) usage warnings -->
+            <compilerarg value="--add-exports=java.base/jdk.internal.access=ALL-UNNAMED"/>
+            <compilerarg value="--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"/>
+            <compilerarg value="--add-exports=java.base/jdk.internal.util=ALL-UNNAMED"/>
         </javac>
     </presetdef>
 
