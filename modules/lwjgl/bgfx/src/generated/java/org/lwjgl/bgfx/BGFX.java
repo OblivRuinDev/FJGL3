@@ -240,7 +240,7 @@ public class BGFX {
         return BGFX;
     }
 
-    public static final int BGFX_API_VERSION = 153;
+    public static final int BGFX_API_VERSION = 155;
 
     public static final short BGFX_INVALID_HANDLE = (short)0xFFFF;
 
