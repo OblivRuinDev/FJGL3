@@ -3864,9 +3864,9 @@ val hb = "HarfBuzz".nativeClass(Module.HARFBUZZ, prefix = "HB", prefixMethod = "
 
     IntConstant("VERSION_MAJOR".."14")
     IntConstant("VERSION_MINOR".."3")
-    IntConstant("VERSION_MICRO".."0")
+    IntConstant("VERSION_MICRO".."1")
 
-    StringConstant("VERSION_STRING".."14.3.0")
+    StringConstant("VERSION_STRING".."14.3.1")
 
     customMethod("""
     public static boolean HB_VERSION_ATLEAST(int major, int minor, int micro) {
