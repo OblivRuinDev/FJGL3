@@ -314,6 +314,7 @@ val VkDataGraphOpticalFlowGridSizeFlagBitsARM = "VkDataGraphOpticalFlowGridSizeF
 val VkDataGraphOpticalFlowExecuteFlagBitsARM = "VkDataGraphOpticalFlowExecuteFlagBitsARM".enumType
 val VkDataGraphPipelineNodeTypeARM = "VkDataGraphPipelineNodeTypeARM".enumType
 val VkDataGraphPipelineNodeConnectionTypeARM = "VkDataGraphPipelineNodeConnectionTypeARM".enumType
+val VkCooperativeMatrixFlagBitsEXT = "VkCooperativeMatrixFlagBitsEXT".enumType
 val VkFormatFeatureFlagBits4KHR = "VkFormatFeatureFlagBits4KHR".enumType
 val VkImageUsageFlagBits2KHR = "VkImageUsageFlagBits2KHR".enumType
 val VkImageCreateFlagBits2KHR = "VkImageCreateFlagBits2KHR".enumType
@@ -491,6 +492,7 @@ val VkDataGraphOpticalFlowGridSizeFlagsARM = typedef(VkFlags, "VkDataGraphOptica
 val VkDataGraphOpticalFlowCreateFlagsARM = typedef(VkFlags, "VkDataGraphOpticalFlowCreateFlagsARM")
 val VkDataGraphOpticalFlowImageUsageFlagsARM = typedef(VkFlags, "VkDataGraphOpticalFlowImageUsageFlagsARM")
 val VkDataGraphOpticalFlowExecuteFlagsARM = typedef(VkFlags, "VkDataGraphOpticalFlowExecuteFlagsARM")
+val VkCooperativeMatrixFlagsEXT = typedef(VkFlags, "VkCooperativeMatrixFlagsEXT")
 val VkUbmSurfaceCreateFlagsSEC = typedef(VkFlags, "VkUbmSurfaceCreateFlagsSEC")
 val VkFormatFeatureFlags4KHR = typedef(VkFlags64, "VkFormatFeatureFlags4KHR")
 val VkImageUsageFlags2KHR = typedef(VkFlags64, "VkImageUsageFlags2KHR")
@@ -11196,6 +11198,37 @@ val VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR = struct(Module.VU
     Expression("#STRUCTURE_TYPE_QUEUE_FAMILY_OPTIMAL_IMAGE_TRANSFER_GRANULARITY_PROPERTIES_KHR")..VkStructureType("sType").mutable()
     nullable..opaque_p("pNext").mutable()
     VkExtent3D("optimalImageTransferGranularity")
+}
+
+val VkCooperativeMatrixProperties2EXT = struct(Module.VULKAN, "VkCooperativeMatrixProperties2EXT", mutable = false) {
+    Expression("#STRUCTURE_TYPE_COOPERATIVE_MATRIX_PROPERTIES_2_EXT")..VkStructureType("sType").mutable()
+    nullable..opaque_p("pNext").mutable()
+    uint32_t("MGranularity")
+    uint32_t("NGranularity")
+    uint32_t("KGranularity")
+    VkComponentTypeKHR("AType")
+    VkComponentTypeKHR("BType")
+    VkComponentTypeKHR("CType")
+    VkComponentTypeKHR("ResultType")
+}
+
+val VkPhysicalDeviceCooperativeMatrixInfo2EXT = struct(Module.VULKAN, "VkPhysicalDeviceCooperativeMatrixInfo2EXT") {
+    Expression("#STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_INFO_2_EXT")..VkStructureType("sType")
+    nullable..opaque_const_p("pNext")
+    VkScopeKHR("scope")
+    uint32_t("invocations")
+    uint32_t("subgroupSize")
+    VkCooperativeMatrixFlagsEXT("flags")
+}
+
+val VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT = struct(Module.VULKAN, "VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT") {
+    Expression("#STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_MAINTENANCE_1_FEATURES_EXT")..VkStructureType("sType")
+    nullable..opaque_p("pNext")
+    VkBool32("cooperativeMatrixProperties2")
+    VkBool32("cooperativeMatrixReductions")
+    VkBool32("cooperativeMatrixConversions")
+    VkBool32("cooperativeMatrixPerElementOperations")
+    VkBool32("cooperativeMatrixGetCoordinate")
 }
 
 val VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT = struct(Module.VULKAN, "VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT") {

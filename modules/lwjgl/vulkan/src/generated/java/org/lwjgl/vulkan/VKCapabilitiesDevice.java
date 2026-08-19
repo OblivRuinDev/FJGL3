@@ -1267,6 +1267,8 @@ public class VKCapabilitiesDevice {
     public final boolean VK_EXT_conditional_rendering;
     /** When true, {@code EXT_conservative_rasterization} is supported. */
     public final boolean VK_EXT_conservative_rasterization;
+    /** When true, {@code EXT_cooperative_matrix_maintenance1} is supported. */
+    public final boolean VK_EXT_cooperative_matrix_maintenance1;
     /** When true, {@code EXT_custom_border_color} is supported. */
     public final boolean VK_EXT_custom_border_color;
     /** When true, {@code EXT_custom_resolve} is supported. */
@@ -2078,6 +2080,7 @@ public class VKCapabilitiesDevice {
         VK_EXT_color_write_enable = check_EXT_color_write_enable(provider, caps, ext);
         VK_EXT_conditional_rendering = check_EXT_conditional_rendering(provider, caps, ext);
         VK_EXT_conservative_rasterization = ext.contains("VK_EXT_conservative_rasterization");
+        VK_EXT_cooperative_matrix_maintenance1 = ext.contains("VK_EXT_cooperative_matrix_maintenance1");
         VK_EXT_custom_border_color = ext.contains("VK_EXT_custom_border_color");
         VK_EXT_custom_resolve = check_EXT_custom_resolve(provider, caps, ext);
         VK_EXT_debug_marker = check_EXT_debug_marker(provider, caps, ext);
