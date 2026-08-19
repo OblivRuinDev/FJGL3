@@ -13,7 +13,7 @@ val mimalloc = "mimalloc".nativeClass(Module.MIMALLOC, prefix = "mi", prefixMeth
     bundledWithLWJGL = true
 )) {
     IntConstant(
-        "MI_MALLOC_VERSION".."30405"
+        "MI_MALLOC_VERSION".."30500"
     ).noPrefix()
 
     IntConstant(
@@ -175,6 +175,13 @@ val mimalloc = "mimalloc".nativeClass(Module.MIMALLOC, prefix = "mi", prefixMeth
         "good_size",
 
         size_t("size")
+    )
+
+    void(
+        "free_size",
+
+        MultiTypeAll..nullable..void.p("p"),
+        AutoSize("p")..size_t("size")
     )
 
     void(
@@ -805,6 +812,12 @@ val mimalloc = "mimalloc".nativeClass(Module.MIMALLOC, prefix = "mi", prefixMeth
         void()
     )
 
+    size_t(
+        "arena_max_object_size",
+
+        void()
+    )
+
     void.p(
         "arena_area",
 
@@ -967,7 +980,23 @@ val mimalloc = "mimalloc".nativeClass(Module.MIMALLOC, prefix = "mi", prefixMeth
     )
 
     void.p(
+        "theap_zalloc_aligned",
+
+        mi_theap_t.p("theap"),
+        AutoSizeResult..size_t("size"),
+        size_t("alignment")
+    )
+
+    void.p(
         "theap_realloc",
+
+        mi_theap_t.p("theap"),
+        Unsafe..nullable..void.p("p"),
+        AutoSizeResult..size_t("newsize")
+    )
+
+    void.p(
+        "theap_rezalloc",
 
         mi_theap_t.p("theap"),
         Unsafe..nullable..void.p("p"),
