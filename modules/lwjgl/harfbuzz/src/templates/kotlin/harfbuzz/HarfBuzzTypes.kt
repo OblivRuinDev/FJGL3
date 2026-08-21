@@ -51,19 +51,31 @@ val HARFBUZZ_BINDING_DELEGATE = HARFBUZZ_BINDING.delegate("HarfBuzz.getLibrary()
 val HARFBUZZ_GPU_BINDING = simpleBinding(
     Module.HARFBUZZ,
     libraryExpression = """Configuration.HARFBUZZ_GPU_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("harfbuzz-gpu"))""",
-    bundledWithLWJGL = true
+    bundledWithLWJGL = true,
+    preamble = """
+    static {
+        HarfBuzz.getLibrary();
+    }"""
 )
 
 val HARFBUZZ_RASTER_BINDING = simpleBinding(
     Module.HARFBUZZ,
     libraryExpression = """Configuration.HARFBUZZ_RASTER_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("harfbuzz-raster"))""",
-    bundledWithLWJGL = true
+    bundledWithLWJGL = true,
+    preamble = """
+    static {
+        HarfBuzz.getLibrary();
+    }"""
 )
 
 val HARFBUZZ_VECTOR_BINDING = simpleBinding(
     Module.HARFBUZZ,
     libraryExpression = """Configuration.HARFBUZZ_VECTOR_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("harfbuzz-vector"))""",
-    bundledWithLWJGL = true
+    bundledWithLWJGL = true,
+    preamble = """
+    static {
+        HarfBuzz.getLibrary();
+    }"""
 )
 
 val hb_language_t = "hb_language_t".handle
