@@ -9,7 +9,7 @@ import org.lwjgl.generator.*
 
 val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx_", binding = BGFX_BINDING) {
     IntConstant(
-        "API_VERSION".."155"
+        "API_VERSION".."156"
     )
 
     ShortConstant(
@@ -237,26 +237,6 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         | BGFX_BUFFER_COMPUTE_READ
         | BGFX_BUFFER_COMPUTE_WRITE)
         """
-    )
-
-    ShortConstant(
-        "BUFFER_COMPUTE_FORMAT_8x1"..0x0001.s,
-        "BUFFER_COMPUTE_FORMAT_8x2"..0x0002.s,
-        "BUFFER_COMPUTE_FORMAT_8x4"..0x0003.s,
-        "BUFFER_COMPUTE_FORMAT_16x1"..0x0004.s,
-        "BUFFER_COMPUTE_FORMAT_16x2"..0x0005.s,
-        "BUFFER_COMPUTE_FORMAT_16x4"..0x0006.s,
-        "BUFFER_COMPUTE_FORMAT_32x1"..0x0007.s,
-        "BUFFER_COMPUTE_FORMAT_32x2"..0x0008.s,
-        "BUFFER_COMPUTE_FORMAT_32x4"..0x0009.s,
-        "BUFFER_COMPUTE_FORMAT_SHIFT".."0",
-        "BUFFER_COMPUTE_FORMAT_MASK"..0x000f.s,
-
-        "BUFFER_COMPUTE_TYPE_INT"..0x0010.s,
-        "BUFFER_COMPUTE_TYPE_UINT"..0x0020.s,
-        "BUFFER_COMPUTE_TYPE_FLOAT"..0x0030.s,
-        "BUFFER_COMPUTE_TYPE_SHIFT".."4",
-        "BUFFER_COMPUTE_TYPE_MASK"..0x0030.s
     )
 
     LongConstant(

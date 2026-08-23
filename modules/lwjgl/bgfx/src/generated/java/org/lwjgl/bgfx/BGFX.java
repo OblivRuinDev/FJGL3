@@ -240,7 +240,7 @@ public class BGFX {
         return BGFX;
     }
 
-    public static final int BGFX_API_VERSION = 155;
+    public static final int BGFX_API_VERSION = 156;
 
     public static final short BGFX_INVALID_HANDLE = (short)0xFFFF;
 
@@ -431,24 +431,6 @@ public class BGFX {
         | BGFX_BUFFER_COMPUTE_READ
         | BGFX_BUFFER_COMPUTE_WRITE)
         ;
-
-    public static final short
-        BGFX_BUFFER_COMPUTE_FORMAT_8x1   = 0x1,
-        BGFX_BUFFER_COMPUTE_FORMAT_8x2   = 0x2,
-        BGFX_BUFFER_COMPUTE_FORMAT_8x4   = 0x3,
-        BGFX_BUFFER_COMPUTE_FORMAT_16x1  = 0x4,
-        BGFX_BUFFER_COMPUTE_FORMAT_16x2  = 0x5,
-        BGFX_BUFFER_COMPUTE_FORMAT_16x4  = 0x6,
-        BGFX_BUFFER_COMPUTE_FORMAT_32x1  = 0x7,
-        BGFX_BUFFER_COMPUTE_FORMAT_32x2  = 0x8,
-        BGFX_BUFFER_COMPUTE_FORMAT_32x4  = 0x9,
-        BGFX_BUFFER_COMPUTE_FORMAT_SHIFT = 0,
-        BGFX_BUFFER_COMPUTE_FORMAT_MASK  = 0xF,
-        BGFX_BUFFER_COMPUTE_TYPE_INT     = 0x10,
-        BGFX_BUFFER_COMPUTE_TYPE_UINT    = 0x20,
-        BGFX_BUFFER_COMPUTE_TYPE_FLOAT   = 0x30,
-        BGFX_BUFFER_COMPUTE_TYPE_SHIFT   = 4,
-        BGFX_BUFFER_COMPUTE_TYPE_MASK    = 0x30;
 
     public static final long
         BGFX_TEXTURE_NONE            = 0x0L,
