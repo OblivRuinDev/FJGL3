@@ -22,7 +22,7 @@ public interface spng_rw_fnI extends CallbackI {
         spng_rw_fnI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            ffi_type_void,
+            ffi_type_sint32,
             ffi_type_pointer, ffi_type_pointer, ffi_type_pointer, ffi_type_pointer
         )
     );
@@ -32,15 +32,16 @@ public interface spng_rw_fnI extends CallbackI {
 
     @Override
     default void callback(long ret, long args) {
-        invoke(
+        int __result = invoke(
             memGetAddress(memGetAddress(args)),
             memGetAddress(memGetAddress(args + POINTER_SIZE)),
             memGetAddress(memGetAddress(args + 2 * POINTER_SIZE)),
             memGetAddress(memGetAddress(args + 3 * POINTER_SIZE))
         );
+        apiClosureRet(ret, __result);
     }
 
-    /** {@code void (* spng_rw_fn *) (spng_ctx * ctx, void * user, void * dest, size_t length)} */
-    void invoke(@NativeType("spng_ctx *") long ctx, @NativeType("void *") long user, @NativeType("void *") long dest, @NativeType("size_t") long length);
+    /** {@code int (* spng_rw_fn *) (spng_ctx * ctx, void * user, void * dst_src, size_t length)} */
+    int invoke(@NativeType("spng_ctx *") long ctx, @NativeType("void *") long user, @NativeType("void *") long dst_src, @NativeType("size_t") long length);
 
 }
