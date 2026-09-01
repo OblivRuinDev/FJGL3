@@ -119,11 +119,7 @@
 #include <string.h>
 
 #if defined(__GLIBC__)
-/* @@@ version check glibc more precisely... dl_iterate_phdr(): glibc ver >= 2.2.4*/
-#  if (__GLIBC__ >= 2) && (__GLIBC_MINOR__ >= 3)
-#    define DL_USE_GLIBC_ITER_PHDR
-#  endif
-/* to access dl_iterate_phdr(), and related w/ glibc */
+/* to access dlinfo(), dl_iterate_phdr() and related definitions */
 #  ifndef _GNU_SOURCE
 #    define _GNU_SOURCE
 #    define __USE_GNU
@@ -153,13 +149,12 @@ static int dl_strlen_strcpy(char* dst, const char* src, int dstSize)
 
 /* code for dlGetLibraryPath() is platform specific */
 
-/* if dlinfo() exists use it (except on glibc, where it exists since version
- * 2.3.3, but its implementation is dangerous, as no checks are done whether
- * the handle is valid, thus rendering the returned values useless) check for
- * RTLD_DI_LINKMAP and RTLD_SELF, which are #defines used by dlinfo() on most
- * supported targets, or specifically check the OS (e.g. dlinfo() is originally
- * from Solaris) */
-#if ((defined(RTLD_DI_LINKMAP) && defined(RTLD_SELF)) || defined(OS_SunOS)) && !defined(DL_USE_GLIBC_ITER_PHDR)
+/* If dlinfo() supports both link-map lookup and a handle for the process
+ * itself, use it for all requests. glibc does not provide RTLD_SELF and is
+ * handled separately below. Check for RTLD_DI_LINKMAP and RTLD_SELF, which are
+ * #defines used by dlinfo() on most supported targets, or specifically check
+ * the OS (e.g. dlinfo() is originally from Solaris). */
+#if (defined(RTLD_DI_LINKMAP) && defined(RTLD_SELF)) || defined(OS_SunOS)
 
 #include <link.h>
 
@@ -234,11 +229,11 @@ JNIEXPORT int JNICALL Java_org_lwjgl_system_SharedLibraryUtil_getLibraryPath(JNI
 EXTERN_C_EXIT
 
 
-/* - OpenBSD >= 3.7 has dl_iterate_phdr(), as well as glibc >= 2.2.4
+/* - OpenBSD >= 3.7 and glibc provide dl_iterate_phdr()
    - also some libc impls (like musl) provide dlinfo(), but not RTLD_SELF (see above), however they might come
      with dl_iterate_phdr (which comes from ELF program header iteration), so base it on that
    - skip and use dladdr()-based guessing (see below) if explicitly requested, e.g. by ./configure */
-#elif !defined(DL_DLADDR_TO_LIBPATH) && (defined(OS_OpenBSD) || defined(DL_USE_GLIBC_ITER_PHDR) || (!defined(RTLD_SELF) && defined(__ELF__)))
+#elif !defined(DL_DLADDR_TO_LIBPATH) && (defined(OS_OpenBSD) || (!defined(RTLD_SELF) && defined(__ELF__)))
 
 #include <sys/types.h>
 #include <link.h>
@@ -247,6 +242,8 @@ typedef struct {
   void* pLib;
   char*  sOut;
   int    bufSize;
+  void*  vladdr;
+  int    useDladdr;
 } iter_phdr_data;
 
 static int iter_phdr_cb(struct dl_phdr_info* info, size_t size, void* data)
@@ -256,7 +253,9 @@ static int iter_phdr_cb(struct dl_phdr_info* info, size_t size, void* data)
   iter_phdr_data* d = (iter_phdr_data*)data;
   void* lib = NULL;
 
-  /* get loaded object's handle if not requesting info about process itself */
+  /* glibc handles are resolved with dlinfo() before iteration. Other
+     platforms compare handles by reopening already-loaded objects. */
+#if !defined(__GLIBC__)
   if(d->pLib != NULL) {
     /* unable to relate info->dlpi_addr directly to our dlopen handle, let's
      * do what we do on macOS above, re-dlopen the already loaded lib (just
@@ -266,26 +265,25 @@ static int iter_phdr_cb(struct dl_phdr_info* info, size_t size, void* data)
     if(lib)
       dlclose(lib);
   }
+#endif
 
   /* compare handles and get name if found; if d->pLib == NULL this will
      enter info on first iterated object, which is the process itself */
   if(lib == (void*)d->pLib) {
     l = dl_strlen_strcpy(d->sOut, info->dlpi_name, d->bufSize);
 
-    /* if dlpi_name is empty, lookup name via dladdr(proc_load_addr, ...) */
+    /* If dlpi_name is empty, save the process load address. dladdr() must be
+       called after iteration because it may acquire another loader lock. */
     if(l == 0 && d->pLib == NULL) {
-      /* dlpi_addr is the reloc base (0 if PIE), find real virtual load addr */
-      void* vladdr = (void*)info->dlpi_addr;
+      d->vladdr = (void*)info->dlpi_addr;
       int i = 0;
       for(; i < info->dlpi_phnum; ++i) {
         if(info->dlpi_phdr[i].p_type == PT_LOAD) {
-          vladdr = (void*)(info->dlpi_addr + info->dlpi_phdr[i].p_vaddr);
+          d->vladdr = (void*)(info->dlpi_addr + info->dlpi_phdr[i].p_vaddr);
           break;
         }
       }
-      Dl_info di;
-      if(dladdr(vladdr, &di) != 0)
-        l = dl_strlen_strcpy(d->sOut, di.dli_fname, d->bufSize);
+      d->useDladdr = 1;
     }
   }
 
@@ -300,16 +298,30 @@ JNIEXPORT int JNICALL Java_org_lwjgl_system_SharedLibraryUtil_getLibraryPath(JNI
   void *pLib = (void *)(uintptr_t)pLibAddress;
   char *sOut = (char *)(uintptr_t)sOutAddress;
 
-  iter_phdr_data d = { pLib, sOut, bufSize };
-  return dl_iterate_phdr(iter_phdr_cb, &d);
+#if defined(__GLIBC__)
+  if(pLib != NULL) {
+    struct link_map* p = NULL;
+    int l = -1;
+    if(dlinfo(pLib, RTLD_DI_LINKMAP, &p) == 0)
+      l = dl_strlen_strcpy(sOut, p->l_name, bufSize);
+    return l+1; /* strlen + '\0' */
+  }
+#endif
+
+  {
+    iter_phdr_data d = { pLib, sOut, bufSize, NULL, 0 };
+    int result = dl_iterate_phdr(iter_phdr_cb, &d);
+    if(d.useDladdr) {
+      Dl_info di;
+      if(dladdr(d.vladdr, &di) != 0)
+        return dl_strlen_strcpy(sOut, di.dli_fname, bufSize)+1;
+      return 0;
+    }
+    return result;
+  }
 }
 
 EXTERN_C_EXIT
-
-/* glibc with neither dl_iterate_phdr() nor dlinfo() (latter introduced after former) @@@
-#elif defined(__GLIBC__) && !defined(DL_USE_GLIBC_ITER_PHDR)
-
-@@@impl */
 
 /* fallback to dladdr() hack */
 #else
