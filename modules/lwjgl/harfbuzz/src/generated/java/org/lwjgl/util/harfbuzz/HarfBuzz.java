@@ -419,6 +419,7 @@ public class HarfBuzz {
             set_del                                       = apiGetFunctionAddress(HARFBUZZ, "hb_set_del"),
             set_del_range                                 = apiGetFunctionAddress(HARFBUZZ, "hb_set_del_range"),
             set_is_equal                                  = apiGetFunctionAddress(HARFBUZZ, "hb_set_is_equal"),
+            set_intersects                                = apiGetFunctionAddress(HARFBUZZ, "hb_set_intersects"),
             set_hash                                      = apiGetFunctionAddress(HARFBUZZ, "hb_set_hash"),
             set_is_subset                                 = apiGetFunctionAddress(HARFBUZZ, "hb_set_is_subset"),
             set_set                                       = apiGetFunctionAddress(HARFBUZZ, "hb_set_set"),
@@ -900,11 +901,11 @@ public class HarfBuzz {
 
     public static final int HB_VERSION_MAJOR = 14;
 
-    public static final int HB_VERSION_MINOR = 3;
+    public static final int HB_VERSION_MINOR = 4;
 
-    public static final int HB_VERSION_MICRO = 1;
+    public static final int HB_VERSION_MICRO = 0;
 
-    public static final String HB_VERSION_STRING = "14.3.1";
+    public static final String HB_VERSION_STRING = "14.4.0";
 
     protected HarfBuzz() {
         throw new UnsupportedOperationException();
@@ -6307,6 +6308,19 @@ public class HarfBuzz {
     @NativeType("hb_bool_t")
     public static boolean hb_set_is_equal(@NativeType("hb_set_t const *") long set, @NativeType("hb_set_t const *") long other) {
         long __functionAddress = Functions.set_is_equal;
+        if (CHECKS) {
+            check(set);
+            check(other);
+        }
+        return invokePPI(set, other, __functionAddress) != 0;
+    }
+
+    // --- [ hb_set_intersects ] ---
+
+    /** {@code hb_bool_t hb_set_intersects(hb_set_t const * set, hb_set_t const * other)} */
+    @NativeType("hb_bool_t")
+    public static boolean hb_set_intersects(@NativeType("hb_set_t const *") long set, @NativeType("hb_set_t const *") long other) {
+        long __functionAddress = Functions.set_intersects;
         if (CHECKS) {
             check(set);
             check(other);

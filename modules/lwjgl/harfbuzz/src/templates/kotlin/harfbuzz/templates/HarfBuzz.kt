@@ -3324,6 +3324,13 @@ val hb = "HarfBuzz".nativeClass(Module.HARFBUZZ, prefix = "HB", prefixMethod = "
         hb_set_t.const.p("other")
     )
 
+    hb_bool_t(
+        "set_intersects",
+
+        hb_set_t.const.p("set"),
+        hb_set_t.const.p("other")
+    )
+
     unsigned_int(
         "set_hash",
 
@@ -3863,10 +3870,10 @@ val hb = "HarfBuzz".nativeClass(Module.HARFBUZZ, prefix = "HB", prefixMethod = "
     // hb-version.h
 
     IntConstant("VERSION_MAJOR".."14")
-    IntConstant("VERSION_MINOR".."3")
-    IntConstant("VERSION_MICRO".."1")
+    IntConstant("VERSION_MINOR".."4")
+    IntConstant("VERSION_MICRO".."0")
 
-    StringConstant("VERSION_STRING".."14.3.1")
+    StringConstant("VERSION_STRING".."14.4.0")
 
     customMethod("""
     public static boolean HB_VERSION_ATLEAST(int major, int minor, int micro) {
