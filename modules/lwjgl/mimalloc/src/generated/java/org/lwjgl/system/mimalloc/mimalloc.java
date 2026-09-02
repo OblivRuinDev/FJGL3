@@ -47,6 +47,7 @@ public class mimalloc {
             good_size                          = apiGetFunctionAddress(MIMALLOC, "mi_good_size"),
             free_size                          = apiGetFunctionAddress(MIMALLOC, "mi_free_size"),
             free_small                         = apiGetFunctionAddress(MIMALLOC, "mi_free_small"),
+            free_small_nonnull                 = apiGetFunctionAddress(MIMALLOC, "mi_free_small_nonnull"),
             malloc_aligned                     = apiGetFunctionAddress(MIMALLOC, "mi_malloc_aligned"),
             malloc_aligned_at                  = apiGetFunctionAddress(MIMALLOC, "mi_malloc_aligned_at"),
             zalloc_aligned                     = apiGetFunctionAddress(MIMALLOC, "mi_zalloc_aligned"),
@@ -174,7 +175,7 @@ public class mimalloc {
         return MIMALLOC;
     }
 
-    public static final int MI_MALLOC_VERSION = 30500;
+    public static final int MI_MALLOC_VERSION = 30501;
 
     public static final int
         MI_SMALL_WSIZE_MAX = 128,
@@ -533,6 +534,49 @@ public class mimalloc {
     /** {@code void mi_free_small(void * p)} */
     public static void mi_free_small(@NativeType("void *") @Nullable PointerBuffer p) {
         nmi_free_small(memAddressSafe(p));
+    }
+
+    // --- [ mi_free_small_nonnull ] ---
+
+    /** {@code void mi_free_small_nonnull(void * p)} */
+    public static void nmi_free_small_nonnull(long p) {
+        long __functionAddress = Functions.free_small_nonnull;
+        invokePV(p, __functionAddress);
+    }
+
+    /** {@code void mi_free_small_nonnull(void * p)} */
+    public static void mi_free_small_nonnull(@NativeType("void *") @Nullable ByteBuffer p) {
+        nmi_free_small_nonnull(memAddressSafe(p));
+    }
+
+    /** {@code void mi_free_small_nonnull(void * p)} */
+    public static void mi_free_small_nonnull(@NativeType("void *") @Nullable ShortBuffer p) {
+        nmi_free_small_nonnull(memAddressSafe(p));
+    }
+
+    /** {@code void mi_free_small_nonnull(void * p)} */
+    public static void mi_free_small_nonnull(@NativeType("void *") @Nullable IntBuffer p) {
+        nmi_free_small_nonnull(memAddressSafe(p));
+    }
+
+    /** {@code void mi_free_small_nonnull(void * p)} */
+    public static void mi_free_small_nonnull(@NativeType("void *") @Nullable LongBuffer p) {
+        nmi_free_small_nonnull(memAddressSafe(p));
+    }
+
+    /** {@code void mi_free_small_nonnull(void * p)} */
+    public static void mi_free_small_nonnull(@NativeType("void *") @Nullable FloatBuffer p) {
+        nmi_free_small_nonnull(memAddressSafe(p));
+    }
+
+    /** {@code void mi_free_small_nonnull(void * p)} */
+    public static void mi_free_small_nonnull(@NativeType("void *") @Nullable DoubleBuffer p) {
+        nmi_free_small_nonnull(memAddressSafe(p));
+    }
+
+    /** {@code void mi_free_small_nonnull(void * p)} */
+    public static void mi_free_small_nonnull(@NativeType("void *") @Nullable PointerBuffer p) {
+        nmi_free_small_nonnull(memAddressSafe(p));
     }
 
     // --- [ mi_malloc_aligned ] ---
