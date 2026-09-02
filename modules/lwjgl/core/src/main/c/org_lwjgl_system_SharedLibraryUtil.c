@@ -190,36 +190,48 @@ JNIEXPORT int JNICALL Java_org_lwjgl_system_SharedLibraryUtil_getLibraryPath(JNI
   void *pLib = (void *)(uintptr_t)pLibAddress;
   char *sOut = (char *)(uintptr_t)sOutAddress;
 
-  uint32_t i;
   int l = -1;
 
-  UNUSED_PARAMS(env, clazz)
-
-  /* request info about own process? lookup first loaded image */
+  /* request info about own process */
   if(pLib == NULL) {
-    const char* libPath = _dyld_get_image_name(0); //@@@ consider using _NSGetExecutablePath()
-    if(libPath)
-      l = dl_strlen_strcpy(sOut, libPath, bufSize);
-  }
-  else {
+    uint32_t size = (uint32_t)bufSize;
+    if(_NSGetExecutablePath(sOut, &size) != 0)
+      return (int)size;
+    l = (int)strlen(sOut);
+  } else {
     /* Darwin's code doesn't come with (non-standard) dlinfo(), so use dyld(1)
      * code. There doesn't seem to be a direct way to query the library path,
      * so "double-load" temporarily all already loaded images (just increases
      * ref count) and compare handles until we found ours. Return the name. */
-    for(i=_dyld_image_count(); i>0;) /* backwards, ours is more likely at end */
-    {
-      const char* libPath = _dyld_get_image_name(--i);
-      void* lib = dlopen(libPath, RTLD_LIGHTEST);
-      if(lib) {
-        dlclose(lib);
+    for(int attempt = 0; attempt < 3 && l == -1; ++attempt) {
+      uint32_t count = _dyld_image_count();
+      uint32_t i = count;
+      int stable = 1;
 
-        /* compare handle pointers' high bits (in low 2 bits some flags might */
-        /* be stored - should be safe b/c address needs alignment, anyways) */
-        if(((uintptr_t)pLib ^ (uintptr_t)lib) < 4) {
-          l = dl_strlen_strcpy(sOut, libPath, bufSize);
-          break;
+      while(i > 0) { /* backwards, ours is more likely at end */
+        const char* libPath = _dyld_get_image_name(--i);
+        if(libPath == NULL) {
+          stable = 0;
+          continue;
         }
+
+        void* lib = dlopen(libPath, RTLD_LIGHTEST);
+        if(lib) {
+          /* Compare handle pointers' high bits. Flags may be stored in the
+             low two bits, which are otherwise zero due to alignment. */
+          if(((uintptr_t)pLib ^ (uintptr_t)lib) < 4)
+            l = dl_strlen_strcpy(sOut, libPath, bufSize);
+          dlclose(lib);
+        }
+
+        if(l != -1)
+          break;
       }
+
+      /* Apple documents count-based iteration as not thread-safe. Retry if
+         an image disappeared or the image count changed during the scan. */
+      if(l != -1 || (stable && count == _dyld_image_count()))
+        break;
     }
   }
 
