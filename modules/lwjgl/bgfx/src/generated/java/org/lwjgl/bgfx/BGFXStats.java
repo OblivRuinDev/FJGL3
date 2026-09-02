@@ -31,6 +31,7 @@ import static org.lwjgl.bgfx.BGFX.BGFX_TOPOLOGY_COUNT;
  *     uint32_t numDraw;
  *     uint32_t numCompute;
  *     uint32_t numBlit;
+ *     uint32_t numBlitRepack;
  *     uint32_t numDrawCallsPeak;
  *     uint32_t maxGpuLatency;
  *     uint32_t gpuFrameNum;
@@ -85,6 +86,7 @@ public class BGFXStats extends Struct<BGFXStats> {
         NUMDRAW,
         NUMCOMPUTE,
         NUMBLIT,
+        NUMBLITREPACK,
         NUMDRAWCALLSPEAK,
         MAXGPULATENCY,
         GPUFRAMENUM,
@@ -126,6 +128,7 @@ public class BGFXStats extends Struct<BGFXStats> {
             __member(8),
             __member(8),
             __member(8),
+            __member(4),
             __member(4),
             __member(4),
             __member(4),
@@ -175,35 +178,36 @@ public class BGFXStats extends Struct<BGFXStats> {
         NUMDRAW = layout.offsetof(9);
         NUMCOMPUTE = layout.offsetof(10);
         NUMBLIT = layout.offsetof(11);
-        NUMDRAWCALLSPEAK = layout.offsetof(12);
-        MAXGPULATENCY = layout.offsetof(13);
-        GPUFRAMENUM = layout.offsetof(14);
-        NUMDYNAMICINDEXBUFFERS = layout.offsetof(15);
-        NUMDYNAMICVERTEXBUFFERS = layout.offsetof(16);
-        NUMFRAMEBUFFERS = layout.offsetof(17);
-        NUMINDEXBUFFERS = layout.offsetof(18);
-        NUMOCCLUSIONQUERIES = layout.offsetof(19);
-        NUMPROGRAMS = layout.offsetof(20);
-        NUMSHADERS = layout.offsetof(21);
-        NUMTEXTURES = layout.offsetof(22);
-        NUMUNIFORMS = layout.offsetof(23);
-        NUMVERTEXBUFFERS = layout.offsetof(24);
-        NUMVERTEXLAYOUTS = layout.offsetof(25);
-        TEXTUREMEMORYUSED = layout.offsetof(26);
-        RTMEMORYUSED = layout.offsetof(27);
-        TRANSIENTVBUSED = layout.offsetof(28);
-        TRANSIENTIBUSED = layout.offsetof(29);
-        NUMPRIMS = layout.offsetof(30);
-        GPUMEMORYMAX = layout.offsetof(31);
-        GPUMEMORYUSED = layout.offsetof(32);
-        WIDTH = layout.offsetof(33);
-        HEIGHT = layout.offsetof(34);
-        TEXTWIDTH = layout.offsetof(35);
-        TEXTHEIGHT = layout.offsetof(36);
-        NUMVIEWS = layout.offsetof(37);
-        VIEWSTATS = layout.offsetof(38);
-        NUMENCODERS = layout.offsetof(39);
-        ENCODERSTATS = layout.offsetof(40);
+        NUMBLITREPACK = layout.offsetof(12);
+        NUMDRAWCALLSPEAK = layout.offsetof(13);
+        MAXGPULATENCY = layout.offsetof(14);
+        GPUFRAMENUM = layout.offsetof(15);
+        NUMDYNAMICINDEXBUFFERS = layout.offsetof(16);
+        NUMDYNAMICVERTEXBUFFERS = layout.offsetof(17);
+        NUMFRAMEBUFFERS = layout.offsetof(18);
+        NUMINDEXBUFFERS = layout.offsetof(19);
+        NUMOCCLUSIONQUERIES = layout.offsetof(20);
+        NUMPROGRAMS = layout.offsetof(21);
+        NUMSHADERS = layout.offsetof(22);
+        NUMTEXTURES = layout.offsetof(23);
+        NUMUNIFORMS = layout.offsetof(24);
+        NUMVERTEXBUFFERS = layout.offsetof(25);
+        NUMVERTEXLAYOUTS = layout.offsetof(26);
+        TEXTUREMEMORYUSED = layout.offsetof(27);
+        RTMEMORYUSED = layout.offsetof(28);
+        TRANSIENTVBUSED = layout.offsetof(29);
+        TRANSIENTIBUSED = layout.offsetof(30);
+        NUMPRIMS = layout.offsetof(31);
+        GPUMEMORYMAX = layout.offsetof(32);
+        GPUMEMORYUSED = layout.offsetof(33);
+        WIDTH = layout.offsetof(34);
+        HEIGHT = layout.offsetof(35);
+        TEXTWIDTH = layout.offsetof(36);
+        TEXTHEIGHT = layout.offsetof(37);
+        NUMVIEWS = layout.offsetof(38);
+        VIEWSTATS = layout.offsetof(39);
+        NUMENCODERS = layout.offsetof(40);
+        ENCODERSTATS = layout.offsetof(41);
     }
 
     protected BGFXStats(long address, @Nullable ByteBuffer container) {
@@ -264,6 +268,9 @@ public class BGFXStats extends Struct<BGFXStats> {
     /** @return the value of the {@code numBlit} field. */
     @NativeType("uint32_t")
     public int numBlit() { return nnumBlit(address()); }
+    /** @return the value of the {@code numBlitRepack} field. */
+    @NativeType("uint32_t")
+    public int numBlitRepack() { return nnumBlitRepack(address()); }
     /** @return the value of the {@code numDrawCallsPeak} field. */
     @NativeType("uint32_t")
     public int numDrawCallsPeak() { return nnumDrawCallsPeak(address()); }
@@ -408,6 +415,8 @@ public class BGFXStats extends Struct<BGFXStats> {
     public static int nnumCompute(long struct) { return memGetInt(struct + BGFXStats.NUMCOMPUTE); }
     /** Unsafe version of {@link #numBlit}. */
     public static int nnumBlit(long struct) { return memGetInt(struct + BGFXStats.NUMBLIT); }
+    /** Unsafe version of {@link #numBlitRepack}. */
+    public static int nnumBlitRepack(long struct) { return memGetInt(struct + BGFXStats.NUMBLITREPACK); }
     /** Unsafe version of {@link #numDrawCallsPeak}. */
     public static int nnumDrawCallsPeak(long struct) { return memGetInt(struct + BGFXStats.NUMDRAWCALLSPEAK); }
     /** Unsafe version of {@link #maxGpuLatency}. */
@@ -550,6 +559,9 @@ public class BGFXStats extends Struct<BGFXStats> {
         /** @return the value of the {@code numBlit} field. */
         @NativeType("uint32_t")
         public int numBlit() { return BGFXStats.nnumBlit(address()); }
+        /** @return the value of the {@code numBlitRepack} field. */
+        @NativeType("uint32_t")
+        public int numBlitRepack() { return BGFXStats.nnumBlitRepack(address()); }
         /** @return the value of the {@code numDrawCallsPeak} field. */
         @NativeType("uint32_t")
         public int numDrawCallsPeak() { return BGFXStats.nnumDrawCallsPeak(address()); }

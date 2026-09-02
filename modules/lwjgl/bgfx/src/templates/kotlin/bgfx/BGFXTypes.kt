@@ -52,6 +52,11 @@ val bgfx_uniform_handle_t = BGFX_HANDLE_T("uniform")
 val bgfx_vertex_buffer_handle_t = BGFX_HANDLE_T("vertex_buffer")
 val bgfx_vertex_layout_handle_t = BGFX_HANDLE_T("vertex_layout")
 
+val bgfx_buffer_handle_t = struct(Module.BGFX, "BGFXBufferHandle", nativeName = "bgfx_buffer_handle_t") {
+    uint16_t("idx")
+    uint16_t("type")
+}
+
 val bgfx_release_fn_t = Module.BGFX.callback {
     void(
         "BGFXReleaseFunctionCallback",
@@ -105,6 +110,7 @@ val bgfx_stats_t = struct(Module.BGFX, "BGFXStats", nativeName = "bgfx_stats_t",
     uint32_t("numDraw")
     uint32_t("numCompute")
     uint32_t("numBlit")
+    uint32_t("numBlitRepack")
     uint32_t("numDrawCallsPeak")
     uint32_t("maxGpuLatency")
     uint32_t("gpuFrameNum")
@@ -176,6 +182,25 @@ val bgfx_instance_data_buffer_t = struct(Module.BGFX, "BGFXInstanceDataBuffer", 
     uint32_t("num")
     uint16_t("stride")
     bgfx_vertex_buffer_handle_t("handle")
+}
+
+val bgfx_texture_region_t = struct(Module.BGFX, "BGFXTextureRegion", nativeName = "bgfx_texture_region_t") {
+    bgfx_texture_handle_t("handle")
+    uint8_t("mip")
+    uint16_t("x")
+    uint16_t("y")
+    uint16_t("z")
+    uint16_t("width")
+    uint16_t("height")
+    uint16_t("depth")
+}
+
+val bgfx_buffer_region_t = struct(Module.BGFX, "BGFXBufferRegion", nativeName = "bgfx_buffer_region_t") {
+    bgfx_buffer_handle_t("handle")
+    uint32_t("offset")
+    uint32_t("size")
+    uint32_t("rowPitch")
+    uint32_t("slicePitch")
 }
 
 val bgfx_texture_info_t = struct(Module.BGFX, "BGFXTextureInfo", nativeName = "bgfx_texture_info_t", mutable = false) {
@@ -261,6 +286,8 @@ val bgfx_caps_limits_t = struct(Module.BGFX, "BGFXCapsLimits", nativeName = "bgf
     uint32_t("maxTransientVbSize")
     uint32_t("maxTransientIbSize")
     uint32_t("minUniformBufferSize")
+    uint32_t("blitRowPitchAlign")
+    uint32_t("blitOffsetAlign")
 }
 
 val bgfx_caps_t = struct(Module.BGFX, "BGFXCaps", nativeName = "bgfx_caps_t", mutable = false, skipBuffer = true) {

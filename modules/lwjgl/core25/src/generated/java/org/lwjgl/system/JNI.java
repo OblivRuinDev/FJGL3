@@ -144,7 +144,6 @@ public final class JNI {
         int invokePPPI(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, int param1, int param2, int param3, int param4, @FFMNullable @FFMPointer long param5, @FFMNullable @FFMPointer long param6);
         int invokePPPI(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, int param1, int param2, int param3, @FFMNullable @FFMPointer long param4, @FFMNullable @FFMPointer long param5, int param6);
         int invokePPPI(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, int param1, int param2, @FFMNullable @FFMPointer long param3, int param4, @FFMNullable @FFMPointer long param5, int param6, int param7);
-        int invokeCPCUI(MemorySegment __functionAddress, short param0, @FFMNullable @FFMPointer long param1, short param2, byte param3);
         int invokePNPPI(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, @FFMCLong long param1, @FFMNullable @FFMPointer long param2, @FFMNullable @FFMPointer long param3);
         int invokePPNNI(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, @FFMNullable @FFMPointer long param1, @FFMCLong long param2, @FFMCLong long param3);
         int invokePPNPI(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, @FFMNullable @FFMPointer long param1, @FFMCLong long param2, @FFMNullable @FFMPointer long param3);
@@ -557,6 +556,7 @@ public final class JNI {
         void invokeCCPCV(MemorySegment __functionAddress, short param0, short param1, @FFMNullable @FFMPointer long param2, short param3);
         void invokeCCUPV(MemorySegment __functionAddress, short param0, short param1, byte param2, @FFMNullable @FFMPointer long param3);
         void invokePCPCV(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, short param1, @FFMNullable @FFMPointer long param2, short param3);
+        void invokePCPPV(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, short param1, @FFMNullable @FFMPointer long param2, @FFMNullable @FFMPointer long param3);
         void invokePNPPV(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, @FFMCLong long param1, @FFMNullable @FFMPointer long param2, @FFMNullable @FFMPointer long param3);
         void invokePPPPV(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, @FFMNullable @FFMPointer long param1, @FFMNullable @FFMPointer long param2, @FFMNullable @FFMPointer long param3);
         void invokeCCCUV(MemorySegment __functionAddress, short param0, short param1, short param2, int param3, byte param4);
@@ -607,6 +607,7 @@ public final class JNI {
         void invokeCCCCUV(MemorySegment __functionAddress, short param0, short param1, short param2, int param3, short param4, int param5, int param6, int param7, byte param8);
         void invokePPPPPV(MemorySegment __functionAddress, int param0, @FFMNullable @FFMPointer long param1, int param2, @FFMNullable @FFMPointer long param3, @FFMNullable @FFMPointer long param4, @FFMNullable @FFMPointer long param5, int param6, @FFMNullable @FFMPointer long param7, int param8, boolean param9);
         void invokeCCCCPCV(MemorySegment __functionAddress, short param0, short param1, short param2, short param3, @FFMNullable @FFMPointer long param4, short param5);
+        void invokePCCCCCV(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, short param1, short param2, short param3, short param4, short param5);
         void invokePPPPPPV(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, @FFMNullable @FFMPointer long param1, @FFMNullable @FFMPointer long param2, @FFMNullable @FFMPointer long param3, @FFMNullable @FFMPointer long param4, @FFMNullable @FFMPointer long param5);
         void invokePCCCCUV(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, short param1, int param2, short param3, short param4, short param5, byte param6);
         void invokePPPPPPV(MemorySegment __functionAddress, int param0, @FFMNullable @FFMPointer long param1, @FFMNullable @FFMPointer long param2, @FFMNullable @FFMPointer long param3, @FFMNullable @FFMPointer long param4, @FFMNullable @FFMPointer long param5, @FFMNullable @FFMPointer long param6);
@@ -621,8 +622,6 @@ public final class JNI {
         void invokeCUCCCCCCPV(MemorySegment __functionAddress, short param0, byte param1, short param2, short param3, short param4, short param5, short param6, short param7, @FFMNullable @FFMPointer long param8);
         void invokeCCUUCCCCPCV(MemorySegment __functionAddress, short param0, short param1, byte param2, byte param3, short param4, short param5, short param6, short param7, @FFMNullable @FFMPointer long param8, short param9);
         void invokeCCUUUUUUUUUV(MemorySegment __functionAddress, short param0, short param1, float param2, byte param3, byte param4, byte param5, byte param6, byte param7, byte param8, byte param9, byte param10, byte param11);
-        void invokeCCUCCCCUCCCCCCV(MemorySegment __functionAddress, short param0, short param1, byte param2, short param3, short param4, short param5, short param6, byte param7, short param8, short param9, short param10, short param11, short param12, short param13);
-        void invokePCCUCCCCUCCCCCCV(MemorySegment __functionAddress, @FFMNullable @FFMPointer long param0, short param1, short param2, byte param3, short param4, short param5, short param6, short param7, byte param8, short param9, short param10, short param11, short param12, short param13, short param14);
         boolean invokeZ(MemorySegment __functionAddress);
         boolean invokeZ(MemorySegment __functionAddress, int param0);
         boolean invokeZ(MemorySegment __functionAddress, boolean param0);
@@ -1478,7 +1477,6 @@ public final class JNI {
     public static int invokePPPI(long param0, int param1, int param2, int param3, int param4, long param5, long param6, long __functionAddress) { return jni.invokePPPI(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5, param6); }
     public static int invokePPPI(long param0, int param1, int param2, int param3, long param4, long param5, int param6, long __functionAddress) { return jni.invokePPPI(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5, param6); }
     public static int invokePPPI(long param0, int param1, int param2, long param3, int param4, long param5, int param6, int param7, long __functionAddress) { return jni.invokePPPI(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5, param6, param7); }
-    public static int invokeCPCUI(short param0, long param1, short param2, byte param3, long __functionAddress) { return jni.invokeCPCUI(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3); }
     public static int invokePNPPI(long param0, long param1, long param2, long param3, long __functionAddress) { return jni.invokePNPPI(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3); }
     public static int invokePPNNI(long param0, long param1, long param2, long param3, long __functionAddress) { return jni.invokePPNNI(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3); }
     public static int invokePPNPI(long param0, long param1, long param2, long param3, long __functionAddress) { return jni.invokePPNPI(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3); }
@@ -1891,6 +1889,7 @@ public final class JNI {
     public static void invokeCCPCV(short param0, short param1, long param2, short param3, long __functionAddress) { jni.invokeCCPCV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3); }
     public static void invokeCCUPV(short param0, short param1, byte param2, long param3, long __functionAddress) { jni.invokeCCUPV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3); }
     public static void invokePCPCV(long param0, short param1, long param2, short param3, long __functionAddress) { jni.invokePCPCV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3); }
+    public static void invokePCPPV(long param0, short param1, long param2, long param3, long __functionAddress) { jni.invokePCPPV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3); }
     public static void invokePNPPV(long param0, long param1, long param2, long param3, long __functionAddress) { jni.invokePNPPV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3); }
     public static void invokePPPPV(long param0, long param1, long param2, long param3, long __functionAddress) { jni.invokePPPPV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3); }
     public static void invokeCCCUV(short param0, short param1, short param2, int param3, byte param4, long __functionAddress) { jni.invokeCCCUV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4); }
@@ -1941,6 +1940,7 @@ public final class JNI {
     public static void invokeCCCCUV(short param0, short param1, short param2, int param3, short param4, int param5, int param6, int param7, byte param8, long __functionAddress) { jni.invokeCCCCUV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5, param6, param7, param8); }
     public static void invokePPPPPV(int param0, long param1, int param2, long param3, long param4, long param5, int param6, long param7, int param8, boolean param9, long __functionAddress) { jni.invokePPPPPV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5, param6, param7, param8, param9); }
     public static void invokeCCCCPCV(short param0, short param1, short param2, short param3, long param4, short param5, long __functionAddress) { jni.invokeCCCCPCV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5); }
+    public static void invokePCCCCCV(long param0, short param1, short param2, short param3, short param4, short param5, long __functionAddress) { jni.invokePCCCCCV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5); }
     public static void invokePPPPPPV(long param0, long param1, long param2, long param3, long param4, long param5, long __functionAddress) { jni.invokePPPPPPV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5); }
     public static void invokePCCCCUV(long param0, short param1, int param2, short param3, short param4, short param5, byte param6, long __functionAddress) { jni.invokePCCCCUV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5, param6); }
     public static void invokePPPPPPV(int param0, long param1, long param2, long param3, long param4, long param5, long param6, long __functionAddress) { jni.invokePPPPPPV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5, param6); }
@@ -1955,8 +1955,6 @@ public final class JNI {
     public static void invokeCUCCCCCCPV(short param0, byte param1, short param2, short param3, short param4, short param5, short param6, short param7, long param8, long __functionAddress) { jni.invokeCUCCCCCCPV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5, param6, param7, param8); }
     public static void invokeCCUUCCCCPCV(short param0, short param1, byte param2, byte param3, short param4, short param5, short param6, short param7, long param8, short param9, long __functionAddress) { jni.invokeCCUUCCCCPCV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5, param6, param7, param8, param9); }
     public static void invokeCCUUUUUUUUUV(short param0, short param1, float param2, byte param3, byte param4, byte param5, byte param6, byte param7, byte param8, byte param9, byte param10, byte param11, long __functionAddress) { jni.invokeCCUUUUUUUUUV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11); }
-    public static void invokeCCUCCCCUCCCCCCV(short param0, short param1, byte param2, short param3, short param4, short param5, short param6, byte param7, short param8, short param9, short param10, short param11, short param12, short param13, long __functionAddress) { jni.invokeCCUCCCCUCCCCCCV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13); }
-    public static void invokePCCUCCCCUCCCCCCV(long param0, short param1, short param2, byte param3, short param4, short param5, short param6, short param7, byte param8, short param9, short param10, short param11, short param12, short param13, short param14, long __functionAddress) { jni.invokePCCUCCCCUCCCCCCV(MemorySegment.ofAddress(__functionAddress), param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13, param14); }
     public static boolean invokeZ(long __functionAddress) { return jni.invokeZ(MemorySegment.ofAddress(__functionAddress)); }
     public static boolean invokeZ(int param0, long __functionAddress) { return jni.invokeZ(MemorySegment.ofAddress(__functionAddress), param0); }
     public static boolean invokeZ(boolean param0, long __functionAddress) { return jni.invokeZ(MemorySegment.ofAddress(__functionAddress), param0); }
@@ -2641,13 +2639,15 @@ public final class JNI {
     public static native short invokeCPCC(short param0, short @Nullable [] param1, short param2, long __functionAddress);
     public static native int invokeCPI(short param0, int @Nullable [] param1, long __functionAddress);
     public static native int invokePCI(float @Nullable [] param0, short param1, long __functionAddress);
+    public static native int invokePPI(long param0, double @Nullable [] param1, long __functionAddress);
+    public static native int invokePPI(long param0, float @Nullable [] param1, long __functionAddress);
+    public static native int invokePPI(long param0, int @Nullable [] param1, long __functionAddress);
+    public static native int invokePPI(long param0, long @Nullable [] param1, long __functionAddress);
+    public static native int invokePPI(long param0, short @Nullable [] param1, long __functionAddress);
     public static native int invokePPI(int param0, long param1, int @Nullable [] param2, long __functionAddress);
     public static native int invokePPI(int param0, int @Nullable [] param1, int param2, int @Nullable [] param3, int param4, boolean param5, long __functionAddress);
     public static native int invokePPI(int param0, short @Nullable [] param1, int param2, short @Nullable [] param3, int param4, boolean param5, long __functionAddress);
     public static native int invokePPCI(long param0, float @Nullable [] param1, short param2, long __functionAddress);
-    public static native int invokeCPCUI(short param0, float @Nullable [] param1, short param2, byte param3, long __functionAddress);
-    public static native int invokeCPCUI(short param0, int @Nullable [] param1, short param2, byte param3, long __functionAddress);
-    public static native int invokeCPCUI(short param0, short @Nullable [] param1, short param2, byte param3, long __functionAddress);
     public static native int invokePPPPI(long param0, long param1, long param2, long @Nullable [] param3, long __functionAddress);
     public static native int invokePPPPI(long param0, long param1, int param2, int param3, float @Nullable [] param4, int @Nullable [] param5, long __functionAddress);
     public static native int invokePPPPI(long param0, long param1, int param2, int param3, int @Nullable [] param4, int @Nullable [] param5, long __functionAddress);

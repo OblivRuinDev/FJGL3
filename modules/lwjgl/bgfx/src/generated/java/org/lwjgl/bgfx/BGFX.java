@@ -12,10 +12,12 @@ import java.nio.*;
 import org.lwjgl.*;
 
 import org.lwjgl.system.*;
+import org.lwjgl.system.libffi.*;
 
 import static org.lwjgl.system.APIUtil.*;
 import static org.lwjgl.system.Checks.*;
 import static org.lwjgl.system.JNI.*;
+import static org.lwjgl.system.libffi.LibFFI.*;
 import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
@@ -30,6 +32,9 @@ public class BGFX {
 
         /** Function address. */
         public static final long
+            texture_region_init                                  = apiGetFunctionAddress(BGFX, "bgfx_texture_region_init"),
+            buffer_region_init_texture                           = apiGetFunctionAddress(BGFX, "bgfx_buffer_region_init_texture"),
+            buffer_region_init_buffer                            = apiGetFunctionAddress(BGFX, "bgfx_buffer_region_init_buffer"),
             attachment_init                                      = apiGetFunctionAddress(BGFX, "bgfx_attachment_init"),
             vertex_layout_begin                                  = apiGetFunctionAddress(BGFX, "bgfx_vertex_layout_begin"),
             vertex_layout_add                                    = apiGetFunctionAddress(BGFX, "bgfx_vertex_layout_add"),
@@ -65,6 +70,7 @@ public class BGFX {
             dbg_text_vprintf                                     = apiGetFunctionAddress(BGFX, "bgfx_dbg_text_vprintf"),
             dbg_text_image                                       = apiGetFunctionAddress(BGFX, "bgfx_dbg_text_image"),
             create_index_buffer                                  = apiGetFunctionAddress(BGFX, "bgfx_create_index_buffer"),
+            read_buffer                                          = apiGetFunctionAddress(BGFX, "bgfx_read_buffer"),
             set_index_buffer_name                                = apiGetFunctionAddress(BGFX, "bgfx_set_index_buffer_name"),
             destroy_index_buffer                                 = apiGetFunctionAddress(BGFX, "bgfx_destroy_index_buffer"),
             create_vertex_layout                                 = apiGetFunctionAddress(BGFX, "bgfx_create_vertex_layout"),
@@ -189,6 +195,9 @@ public class BGFX {
             encoder_dispatch_indirect                            = apiGetFunctionAddress(BGFX, "bgfx_encoder_dispatch_indirect"),
             encoder_discard                                      = apiGetFunctionAddress(BGFX, "bgfx_encoder_discard"),
             encoder_blit                                         = apiGetFunctionAddress(BGFX, "bgfx_encoder_blit"),
+            encoder_blit_buffer                                  = apiGetFunctionAddress(BGFX, "bgfx_encoder_blit_buffer"),
+            encoder_blit_to_buffer                               = apiGetFunctionAddress(BGFX, "bgfx_encoder_blit_to_buffer"),
+            encoder_blit_from_buffer                             = apiGetFunctionAddress(BGFX, "bgfx_encoder_blit_from_buffer"),
             request_screen_shot                                  = apiGetFunctionAddress(BGFX, "bgfx_request_screen_shot"),
             set_marker                                           = apiGetFunctionAddress(BGFX, "bgfx_set_marker"),
             set_state                                            = apiGetFunctionAddress(BGFX, "bgfx_set_state"),
@@ -231,7 +240,10 @@ public class BGFX {
             dispatch                                             = apiGetFunctionAddress(BGFX, "bgfx_dispatch"),
             dispatch_indirect                                    = apiGetFunctionAddress(BGFX, "bgfx_dispatch_indirect"),
             discard                                              = apiGetFunctionAddress(BGFX, "bgfx_discard"),
-            blit                                                 = apiGetFunctionAddress(BGFX, "bgfx_blit");
+            blit                                                 = apiGetFunctionAddress(BGFX, "bgfx_blit"),
+            blit_buffer                                          = apiGetFunctionAddress(BGFX, "bgfx_blit_buffer"),
+            blit_to_buffer                                       = apiGetFunctionAddress(BGFX, "bgfx_blit_to_buffer"),
+            blit_from_buffer                                     = apiGetFunctionAddress(BGFX, "bgfx_blit_from_buffer");
 
     }
 
@@ -240,7 +252,7 @@ public class BGFX {
         return BGFX;
     }
 
-    public static final int BGFX_API_VERSION = 156;
+    public static final int BGFX_API_VERSION = 157;
 
     public static final short BGFX_INVALID_HANDLE = (short)0xFFFF;
 
@@ -925,6 +937,63 @@ public class BGFX {
         throw new UnsupportedOperationException();
     }
 
+    // --- [ bgfx_texture_region_init ] ---
+
+    /** {@code void bgfx_texture_region_init(bgfx_texture_region_t * _this, bgfx_texture_handle_t _handle, uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height)} */
+    public static void nbgfx_texture_region_init(long _this, short _handle, short _x, short _y, short _width, short _height) {
+        long __functionAddress = Functions.texture_region_init;
+        invokePCCCCCV(_this, _handle, _x, _y, _width, _height, __functionAddress);
+    }
+
+    /** {@code void bgfx_texture_region_init(bgfx_texture_region_t * _this, bgfx_texture_handle_t _handle, uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height)} */
+    public static void bgfx_texture_region_init(@NativeType("bgfx_texture_region_t *") BGFXTextureRegion _this, @NativeType("bgfx_texture_handle_t") short _handle, @NativeType("uint16_t") int _x, @NativeType("uint16_t") int _y, @NativeType("uint16_t") int _width, @NativeType("uint16_t") int _height) {
+        nbgfx_texture_region_init(_this.address(), _handle, (short)_x, (short)_y, (short)_width, (short)_height);
+    }
+
+    // --- [ bgfx_buffer_region_init_texture ] ---
+
+    /** {@code void bgfx_buffer_region_init_texture(bgfx_buffer_region_t * _this, bgfx_texture_region_t const * _texture)} */
+    public static void nbgfx_buffer_region_init_texture(long _this, long _texture) {
+        long __functionAddress = Functions.buffer_region_init_texture;
+        invokePPV(_this, _texture, __functionAddress);
+    }
+
+    /** {@code void bgfx_buffer_region_init_texture(bgfx_buffer_region_t * _this, bgfx_texture_region_t const * _texture)} */
+    public static void bgfx_buffer_region_init_texture(@NativeType("bgfx_buffer_region_t *") BGFXBufferRegion _this, @NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _texture) {
+        nbgfx_buffer_region_init_texture(_this.address(), _texture.address());
+    }
+
+    // --- [ bgfx_buffer_region_init_buffer ] ---
+
+    private static final class bgfx_buffer_region_init_buffer {
+        static final FFICIF CIF = apiCreateCIF(
+            ffi_type_void,
+            ffi_type_pointer, apiCreateStruct(ffi_type_uint16, ffi_type_uint16), ffi_type_uint32, ffi_type_uint32
+        );
+    }
+
+    /** {@code void bgfx_buffer_region_init_buffer(bgfx_buffer_region_t * _this, bgfx_buffer_handle_t _handle, uint32_t _offset, uint32_t _size)} */
+    public static void nbgfx_buffer_region_init_buffer(long _this, long _handle, int _offset, int _size) {
+        long __functionAddress = Functions.buffer_region_init_buffer;
+        MemoryStack stack = stackGet(); int stackPointer = stack.getPointer();
+        try {
+            long arguments = stack.nmalloc(POINTER_SIZE, POINTER_SIZE * 4);
+            memPutAddress(arguments, stack.npointer(_this));
+            memPutAddress(arguments + POINTER_SIZE, _handle);
+            memPutAddress(arguments + 2 * POINTER_SIZE, stack.nint(_offset));
+            memPutAddress(arguments + 3 * POINTER_SIZE, stack.nint(_size));
+
+            nffi_call(bgfx_buffer_region_init_buffer.CIF.address(), __functionAddress, NULL, arguments);
+        } finally {
+            stack.setPointer(stackPointer);
+        }
+    }
+
+    /** {@code void bgfx_buffer_region_init_buffer(bgfx_buffer_region_t * _this, bgfx_buffer_handle_t _handle, uint32_t _offset, uint32_t _size)} */
+    public static void bgfx_buffer_region_init_buffer(@NativeType("bgfx_buffer_region_t *") BGFXBufferRegion _this, @NativeType("bgfx_buffer_handle_t") BGFXBufferHandle _handle, @NativeType("uint32_t") int _offset, @NativeType("uint32_t") int _size) {
+        nbgfx_buffer_region_init_buffer(_this.address(), _handle.address(), _offset, _size);
+    }
+
     // --- [ bgfx_attachment_init ] ---
 
     /** {@code void bgfx_attachment_init(bgfx_attachment_t * _this, bgfx_texture_handle_t _handle, bgfx_access_t _access, uint16_t _layer, uint16_t _numLayers, uint16_t _mip, uint8_t _resolve)} */
@@ -1604,6 +1673,56 @@ public class BGFX {
         return nbgfx_create_index_buffer(_mem.address(), (short)_flags);
     }
 
+    // --- [ bgfx_read_buffer ] ---
+
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    public static int nbgfx_read_buffer(long _src, long _data) {
+        long __functionAddress = Functions.read_buffer;
+        return invokePPI(_src, _data, __functionAddress);
+    }
+
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    @NativeType("uint32_t")
+    public static int bgfx_read_buffer(@NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src, @NativeType("void *") ByteBuffer _data) {
+        return nbgfx_read_buffer(_src.address(), memAddress(_data));
+    }
+
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    @NativeType("uint32_t")
+    public static int bgfx_read_buffer(@NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src, @NativeType("void *") ShortBuffer _data) {
+        return nbgfx_read_buffer(_src.address(), memAddress(_data));
+    }
+
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    @NativeType("uint32_t")
+    public static int bgfx_read_buffer(@NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src, @NativeType("void *") IntBuffer _data) {
+        return nbgfx_read_buffer(_src.address(), memAddress(_data));
+    }
+
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    @NativeType("uint32_t")
+    public static int bgfx_read_buffer(@NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src, @NativeType("void *") LongBuffer _data) {
+        return nbgfx_read_buffer(_src.address(), memAddress(_data));
+    }
+
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    @NativeType("uint32_t")
+    public static int bgfx_read_buffer(@NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src, @NativeType("void *") FloatBuffer _data) {
+        return nbgfx_read_buffer(_src.address(), memAddress(_data));
+    }
+
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    @NativeType("uint32_t")
+    public static int bgfx_read_buffer(@NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src, @NativeType("void *") DoubleBuffer _data) {
+        return nbgfx_read_buffer(_src.address(), memAddress(_data));
+    }
+
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    @NativeType("uint32_t")
+    public static int bgfx_read_buffer(@NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src, @NativeType("void *") PointerBuffer _data) {
+        return nbgfx_read_buffer(_src.address(), memAddress(_data));
+    }
+
     // --- [ bgfx_set_index_buffer_name ] ---
 
     /** {@code void bgfx_set_index_buffer_name(bgfx_index_buffer_handle_t _handle, char const * _name, int32_t _len)} */
@@ -2216,34 +2335,34 @@ public class BGFX {
 
     // --- [ bgfx_read_texture ] ---
 
-    /** {@code uint32_t bgfx_read_texture(bgfx_texture_handle_t _handle, void * _data, uint16_t _layer, uint8_t _mip)} */
-    public static int nbgfx_read_texture(short _handle, long _data, short _layer, byte _mip) {
+    /** {@code uint32_t bgfx_read_texture(bgfx_texture_region_t const * _src, void * _data)} */
+    public static int nbgfx_read_texture(long _src, long _data) {
         long __functionAddress = Functions.read_texture;
-        return invokeCPCUI(_handle, _data, _layer, _mip, __functionAddress);
+        return invokePPI(_src, _data, __functionAddress);
     }
 
-    /** {@code uint32_t bgfx_read_texture(bgfx_texture_handle_t _handle, void * _data, uint16_t _layer, uint8_t _mip)} */
+    /** {@code uint32_t bgfx_read_texture(bgfx_texture_region_t const * _src, void * _data)} */
     @NativeType("uint32_t")
-    public static int bgfx_read_texture(@NativeType("bgfx_texture_handle_t") short _handle, @NativeType("void *") ByteBuffer _data, @NativeType("uint16_t") int _layer, @NativeType("uint8_t") int _mip) {
-        return nbgfx_read_texture(_handle, memAddress(_data), (short)_layer, (byte)_mip);
+    public static int bgfx_read_texture(@NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _src, @NativeType("void *") ByteBuffer _data) {
+        return nbgfx_read_texture(_src.address(), memAddress(_data));
     }
 
-    /** {@code uint32_t bgfx_read_texture(bgfx_texture_handle_t _handle, void * _data, uint16_t _layer, uint8_t _mip)} */
+    /** {@code uint32_t bgfx_read_texture(bgfx_texture_region_t const * _src, void * _data)} */
     @NativeType("uint32_t")
-    public static int bgfx_read_texture(@NativeType("bgfx_texture_handle_t") short _handle, @NativeType("void *") ShortBuffer _data, @NativeType("uint16_t") int _layer, @NativeType("uint8_t") int _mip) {
-        return nbgfx_read_texture(_handle, memAddress(_data), (short)_layer, (byte)_mip);
+    public static int bgfx_read_texture(@NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _src, @NativeType("void *") ShortBuffer _data) {
+        return nbgfx_read_texture(_src.address(), memAddress(_data));
     }
 
-    /** {@code uint32_t bgfx_read_texture(bgfx_texture_handle_t _handle, void * _data, uint16_t _layer, uint8_t _mip)} */
+    /** {@code uint32_t bgfx_read_texture(bgfx_texture_region_t const * _src, void * _data)} */
     @NativeType("uint32_t")
-    public static int bgfx_read_texture(@NativeType("bgfx_texture_handle_t") short _handle, @NativeType("void *") IntBuffer _data, @NativeType("uint16_t") int _layer, @NativeType("uint8_t") int _mip) {
-        return nbgfx_read_texture(_handle, memAddress(_data), (short)_layer, (byte)_mip);
+    public static int bgfx_read_texture(@NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _src, @NativeType("void *") IntBuffer _data) {
+        return nbgfx_read_texture(_src.address(), memAddress(_data));
     }
 
-    /** {@code uint32_t bgfx_read_texture(bgfx_texture_handle_t _handle, void * _data, uint16_t _layer, uint8_t _mip)} */
+    /** {@code uint32_t bgfx_read_texture(bgfx_texture_region_t const * _src, void * _data)} */
     @NativeType("uint32_t")
-    public static int bgfx_read_texture(@NativeType("bgfx_texture_handle_t") short _handle, @NativeType("void *") FloatBuffer _data, @NativeType("uint16_t") int _layer, @NativeType("uint8_t") int _mip) {
-        return nbgfx_read_texture(_handle, memAddress(_data), (short)_layer, (byte)_mip);
+    public static int bgfx_read_texture(@NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _src, @NativeType("void *") FloatBuffer _data) {
+        return nbgfx_read_texture(_src.address(), memAddress(_data));
     }
 
     // --- [ bgfx_set_texture_name ] ---
@@ -3503,18 +3622,66 @@ public class BGFX {
 
     // --- [ bgfx_encoder_blit ] ---
 
-    /** {@code void bgfx_encoder_blit(bgfx_encoder_t * _this, bgfx_view_id_t _id, bgfx_texture_handle_t _dst, uint8_t _dstMip, uint16_t _dstX, uint16_t _dstY, uint16_t _dstZ, bgfx_texture_handle_t _src, uint8_t _srcMip, uint16_t _srcX, uint16_t _srcY, uint16_t _srcZ, uint16_t _width, uint16_t _height, uint16_t _depth)} */
-    public static void nbgfx_encoder_blit(long _this, short _id, short _dst, byte _dstMip, short _dstX, short _dstY, short _dstZ, short _src, byte _srcMip, short _srcX, short _srcY, short _srcZ, short _width, short _height, short _depth) {
+    /** {@code void bgfx_encoder_blit(bgfx_encoder_t * _this, bgfx_view_id_t _id, bgfx_texture_region_t const * _dst, bgfx_texture_region_t const * _src)} */
+    public static void nbgfx_encoder_blit(long _this, short _id, long _dst, long _src) {
         long __functionAddress = Functions.encoder_blit;
         if (CHECKS) {
             check(_this);
         }
-        invokePCCUCCCCUCCCCCCV(_this, _id, _dst, _dstMip, _dstX, _dstY, _dstZ, _src, _srcMip, _srcX, _srcY, _srcZ, _width, _height, _depth, __functionAddress);
+        invokePCPPV(_this, _id, _dst, _src, __functionAddress);
     }
 
-    /** {@code void bgfx_encoder_blit(bgfx_encoder_t * _this, bgfx_view_id_t _id, bgfx_texture_handle_t _dst, uint8_t _dstMip, uint16_t _dstX, uint16_t _dstY, uint16_t _dstZ, bgfx_texture_handle_t _src, uint8_t _srcMip, uint16_t _srcX, uint16_t _srcY, uint16_t _srcZ, uint16_t _width, uint16_t _height, uint16_t _depth)} */
-    public static void bgfx_encoder_blit(@NativeType("bgfx_encoder_t *") long _this, @NativeType("bgfx_view_id_t") int _id, @NativeType("bgfx_texture_handle_t") short _dst, @NativeType("uint8_t") int _dstMip, @NativeType("uint16_t") int _dstX, @NativeType("uint16_t") int _dstY, @NativeType("uint16_t") int _dstZ, @NativeType("bgfx_texture_handle_t") short _src, @NativeType("uint8_t") int _srcMip, @NativeType("uint16_t") int _srcX, @NativeType("uint16_t") int _srcY, @NativeType("uint16_t") int _srcZ, @NativeType("uint16_t") int _width, @NativeType("uint16_t") int _height, @NativeType("uint16_t") int _depth) {
-        nbgfx_encoder_blit(_this, (short)_id, _dst, (byte)_dstMip, (short)_dstX, (short)_dstY, (short)_dstZ, _src, (byte)_srcMip, (short)_srcX, (short)_srcY, (short)_srcZ, (short)_width, (short)_height, (short)_depth);
+    /** {@code void bgfx_encoder_blit(bgfx_encoder_t * _this, bgfx_view_id_t _id, bgfx_texture_region_t const * _dst, bgfx_texture_region_t const * _src)} */
+    public static void bgfx_encoder_blit(@NativeType("bgfx_encoder_t *") long _this, @NativeType("bgfx_view_id_t") int _id, @NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _dst, @NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _src) {
+        nbgfx_encoder_blit(_this, (short)_id, _dst.address(), _src.address());
+    }
+
+    // --- [ bgfx_encoder_blit_buffer ] ---
+
+    /** {@code void bgfx_encoder_blit_buffer(bgfx_encoder_t * _this, bgfx_view_id_t _id, bgfx_buffer_region_t const * _dst, bgfx_buffer_region_t const * _src)} */
+    public static void nbgfx_encoder_blit_buffer(long _this, short _id, long _dst, long _src) {
+        long __functionAddress = Functions.encoder_blit_buffer;
+        if (CHECKS) {
+            check(_this);
+        }
+        invokePCPPV(_this, _id, _dst, _src, __functionAddress);
+    }
+
+    /** {@code void bgfx_encoder_blit_buffer(bgfx_encoder_t * _this, bgfx_view_id_t _id, bgfx_buffer_region_t const * _dst, bgfx_buffer_region_t const * _src)} */
+    public static void bgfx_encoder_blit_buffer(@NativeType("bgfx_encoder_t *") long _this, @NativeType("bgfx_view_id_t") int _id, @NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _dst, @NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src) {
+        nbgfx_encoder_blit_buffer(_this, (short)_id, _dst.address(), _src.address());
+    }
+
+    // --- [ bgfx_encoder_blit_to_buffer ] ---
+
+    /** {@code void bgfx_encoder_blit_to_buffer(bgfx_encoder_t * _this, bgfx_view_id_t _id, bgfx_buffer_region_t const * _dst, bgfx_texture_region_t const * _src)} */
+    public static void nbgfx_encoder_blit_to_buffer(long _this, short _id, long _dst, long _src) {
+        long __functionAddress = Functions.encoder_blit_to_buffer;
+        if (CHECKS) {
+            check(_this);
+        }
+        invokePCPPV(_this, _id, _dst, _src, __functionAddress);
+    }
+
+    /** {@code void bgfx_encoder_blit_to_buffer(bgfx_encoder_t * _this, bgfx_view_id_t _id, bgfx_buffer_region_t const * _dst, bgfx_texture_region_t const * _src)} */
+    public static void bgfx_encoder_blit_to_buffer(@NativeType("bgfx_encoder_t *") long _this, @NativeType("bgfx_view_id_t") int _id, @NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _dst, @NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _src) {
+        nbgfx_encoder_blit_to_buffer(_this, (short)_id, _dst.address(), _src.address());
+    }
+
+    // --- [ bgfx_encoder_blit_from_buffer ] ---
+
+    /** {@code void bgfx_encoder_blit_from_buffer(bgfx_encoder_t * _this, bgfx_view_id_t _id, bgfx_texture_region_t const * _dst, bgfx_buffer_region_t const * _src)} */
+    public static void nbgfx_encoder_blit_from_buffer(long _this, short _id, long _dst, long _src) {
+        long __functionAddress = Functions.encoder_blit_from_buffer;
+        if (CHECKS) {
+            check(_this);
+        }
+        invokePCPPV(_this, _id, _dst, _src, __functionAddress);
+    }
+
+    /** {@code void bgfx_encoder_blit_from_buffer(bgfx_encoder_t * _this, bgfx_view_id_t _id, bgfx_texture_region_t const * _dst, bgfx_buffer_region_t const * _src)} */
+    public static void bgfx_encoder_blit_from_buffer(@NativeType("bgfx_encoder_t *") long _this, @NativeType("bgfx_view_id_t") int _id, @NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _dst, @NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src) {
+        nbgfx_encoder_blit_from_buffer(_this, (short)_id, _dst.address(), _src.address());
     }
 
     // --- [ bgfx_request_screen_shot ] ---
@@ -4093,15 +4260,54 @@ public class BGFX {
 
     // --- [ bgfx_blit ] ---
 
-    /** {@code void bgfx_blit(bgfx_view_id_t _id, bgfx_texture_handle_t _dst, uint8_t _dstMip, uint16_t _dstX, uint16_t _dstY, uint16_t _dstZ, bgfx_texture_handle_t _src, uint8_t _srcMip, uint16_t _srcX, uint16_t _srcY, uint16_t _srcZ, uint16_t _width, uint16_t _height, uint16_t _depth)} */
-    public static void nbgfx_blit(short _id, short _dst, byte _dstMip, short _dstX, short _dstY, short _dstZ, short _src, byte _srcMip, short _srcX, short _srcY, short _srcZ, short _width, short _height, short _depth) {
+    /** {@code void bgfx_blit(bgfx_view_id_t _id, bgfx_texture_region_t const * _dst, bgfx_texture_region_t const * _src)} */
+    public static void nbgfx_blit(short _id, long _dst, long _src) {
         long __functionAddress = Functions.blit;
-        invokeCCUCCCCUCCCCCCV(_id, _dst, _dstMip, _dstX, _dstY, _dstZ, _src, _srcMip, _srcX, _srcY, _srcZ, _width, _height, _depth, __functionAddress);
+        invokeCPPV(_id, _dst, _src, __functionAddress);
     }
 
-    /** {@code void bgfx_blit(bgfx_view_id_t _id, bgfx_texture_handle_t _dst, uint8_t _dstMip, uint16_t _dstX, uint16_t _dstY, uint16_t _dstZ, bgfx_texture_handle_t _src, uint8_t _srcMip, uint16_t _srcX, uint16_t _srcY, uint16_t _srcZ, uint16_t _width, uint16_t _height, uint16_t _depth)} */
-    public static void bgfx_blit(@NativeType("bgfx_view_id_t") int _id, @NativeType("bgfx_texture_handle_t") short _dst, @NativeType("uint8_t") int _dstMip, @NativeType("uint16_t") int _dstX, @NativeType("uint16_t") int _dstY, @NativeType("uint16_t") int _dstZ, @NativeType("bgfx_texture_handle_t") short _src, @NativeType("uint8_t") int _srcMip, @NativeType("uint16_t") int _srcX, @NativeType("uint16_t") int _srcY, @NativeType("uint16_t") int _srcZ, @NativeType("uint16_t") int _width, @NativeType("uint16_t") int _height, @NativeType("uint16_t") int _depth) {
-        nbgfx_blit((short)_id, _dst, (byte)_dstMip, (short)_dstX, (short)_dstY, (short)_dstZ, _src, (byte)_srcMip, (short)_srcX, (short)_srcY, (short)_srcZ, (short)_width, (short)_height, (short)_depth);
+    /** {@code void bgfx_blit(bgfx_view_id_t _id, bgfx_texture_region_t const * _dst, bgfx_texture_region_t const * _src)} */
+    public static void bgfx_blit(@NativeType("bgfx_view_id_t") int _id, @NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _dst, @NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _src) {
+        nbgfx_blit((short)_id, _dst.address(), _src.address());
+    }
+
+    // --- [ bgfx_blit_buffer ] ---
+
+    /** {@code void bgfx_blit_buffer(bgfx_view_id_t _id, bgfx_buffer_region_t const * _dst, bgfx_buffer_region_t const * _src)} */
+    public static void nbgfx_blit_buffer(short _id, long _dst, long _src) {
+        long __functionAddress = Functions.blit_buffer;
+        invokeCPPV(_id, _dst, _src, __functionAddress);
+    }
+
+    /** {@code void bgfx_blit_buffer(bgfx_view_id_t _id, bgfx_buffer_region_t const * _dst, bgfx_buffer_region_t const * _src)} */
+    public static void bgfx_blit_buffer(@NativeType("bgfx_view_id_t") int _id, @NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _dst, @NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src) {
+        nbgfx_blit_buffer((short)_id, _dst.address(), _src.address());
+    }
+
+    // --- [ bgfx_blit_to_buffer ] ---
+
+    /** {@code void bgfx_blit_to_buffer(bgfx_view_id_t _id, bgfx_buffer_region_t const * _dst, bgfx_texture_region_t const * _src)} */
+    public static void nbgfx_blit_to_buffer(short _id, long _dst, long _src) {
+        long __functionAddress = Functions.blit_to_buffer;
+        invokeCPPV(_id, _dst, _src, __functionAddress);
+    }
+
+    /** {@code void bgfx_blit_to_buffer(bgfx_view_id_t _id, bgfx_buffer_region_t const * _dst, bgfx_texture_region_t const * _src)} */
+    public static void bgfx_blit_to_buffer(@NativeType("bgfx_view_id_t") int _id, @NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _dst, @NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _src) {
+        nbgfx_blit_to_buffer((short)_id, _dst.address(), _src.address());
+    }
+
+    // --- [ bgfx_blit_from_buffer ] ---
+
+    /** {@code void bgfx_blit_from_buffer(bgfx_view_id_t _id, bgfx_texture_region_t const * _dst, bgfx_buffer_region_t const * _src)} */
+    public static void nbgfx_blit_from_buffer(short _id, long _dst, long _src) {
+        long __functionAddress = Functions.blit_from_buffer;
+        invokeCPPV(_id, _dst, _src, __functionAddress);
+    }
+
+    /** {@code void bgfx_blit_from_buffer(bgfx_view_id_t _id, bgfx_texture_region_t const * _dst, bgfx_buffer_region_t const * _src)} */
+    public static void bgfx_blit_from_buffer(@NativeType("bgfx_view_id_t") int _id, @NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _dst, @NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src) {
+        nbgfx_blit_from_buffer((short)_id, _dst.address(), _src.address());
     }
 
     // --- [ BGFX_STATE_ALPHA_REF ] ---
@@ -4369,6 +4575,41 @@ public class BGFX {
         return BGFXMemory.createSafe(__result);
     }
 
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    @NativeType("uint32_t")
+    public static int bgfx_read_buffer(@NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src, @NativeType("void *") short[] _data) {
+        long __functionAddress = Functions.read_buffer;
+        return invokePPI(_src.address(), _data, __functionAddress);
+    }
+
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    @NativeType("uint32_t")
+    public static int bgfx_read_buffer(@NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src, @NativeType("void *") int[] _data) {
+        long __functionAddress = Functions.read_buffer;
+        return invokePPI(_src.address(), _data, __functionAddress);
+    }
+
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    @NativeType("uint32_t")
+    public static int bgfx_read_buffer(@NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src, @NativeType("void *") long[] _data) {
+        long __functionAddress = Functions.read_buffer;
+        return invokePPI(_src.address(), _data, __functionAddress);
+    }
+
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    @NativeType("uint32_t")
+    public static int bgfx_read_buffer(@NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src, @NativeType("void *") float[] _data) {
+        long __functionAddress = Functions.read_buffer;
+        return invokePPI(_src.address(), _data, __functionAddress);
+    }
+
+    /** {@code uint32_t bgfx_read_buffer(bgfx_buffer_region_t const * _src, void * _data)} */
+    @NativeType("uint32_t")
+    public static int bgfx_read_buffer(@NativeType("bgfx_buffer_region_t const *") BGFXBufferRegion _src, @NativeType("void *") double[] _data) {
+        long __functionAddress = Functions.read_buffer;
+        return invokePPI(_src.address(), _data, __functionAddress);
+    }
+
     /** {@code uint16_t bgfx_get_shader_uniforms(bgfx_shader_handle_t _handle, bgfx_uniform_handle_t * _uniforms, uint16_t _max)} */
     @NativeType("uint16_t")
     public static short bgfx_get_shader_uniforms(@NativeType("bgfx_shader_handle_t") short _handle, @NativeType("bgfx_uniform_handle_t *") short[] _uniforms) {
@@ -4376,25 +4617,25 @@ public class BGFX {
         return invokeCPCC(_handle, _uniforms, (short)_uniforms.length, __functionAddress);
     }
 
-    /** {@code uint32_t bgfx_read_texture(bgfx_texture_handle_t _handle, void * _data, uint16_t _layer, uint8_t _mip)} */
+    /** {@code uint32_t bgfx_read_texture(bgfx_texture_region_t const * _src, void * _data)} */
     @NativeType("uint32_t")
-    public static int bgfx_read_texture(@NativeType("bgfx_texture_handle_t") short _handle, @NativeType("void *") short[] _data, @NativeType("uint16_t") int _layer, @NativeType("uint8_t") int _mip) {
+    public static int bgfx_read_texture(@NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _src, @NativeType("void *") short[] _data) {
         long __functionAddress = Functions.read_texture;
-        return invokeCPCUI(_handle, _data, (short)_layer, (byte)_mip, __functionAddress);
+        return invokePPI(_src.address(), _data, __functionAddress);
     }
 
-    /** {@code uint32_t bgfx_read_texture(bgfx_texture_handle_t _handle, void * _data, uint16_t _layer, uint8_t _mip)} */
+    /** {@code uint32_t bgfx_read_texture(bgfx_texture_region_t const * _src, void * _data)} */
     @NativeType("uint32_t")
-    public static int bgfx_read_texture(@NativeType("bgfx_texture_handle_t") short _handle, @NativeType("void *") int[] _data, @NativeType("uint16_t") int _layer, @NativeType("uint8_t") int _mip) {
+    public static int bgfx_read_texture(@NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _src, @NativeType("void *") int[] _data) {
         long __functionAddress = Functions.read_texture;
-        return invokeCPCUI(_handle, _data, (short)_layer, (byte)_mip, __functionAddress);
+        return invokePPI(_src.address(), _data, __functionAddress);
     }
 
-    /** {@code uint32_t bgfx_read_texture(bgfx_texture_handle_t _handle, void * _data, uint16_t _layer, uint8_t _mip)} */
+    /** {@code uint32_t bgfx_read_texture(bgfx_texture_region_t const * _src, void * _data)} */
     @NativeType("uint32_t")
-    public static int bgfx_read_texture(@NativeType("bgfx_texture_handle_t") short _handle, @NativeType("void *") float[] _data, @NativeType("uint16_t") int _layer, @NativeType("uint8_t") int _mip) {
+    public static int bgfx_read_texture(@NativeType("bgfx_texture_region_t const *") BGFXTextureRegion _src, @NativeType("void *") float[] _data) {
         long __functionAddress = Functions.read_texture;
-        return invokeCPCUI(_handle, _data, (short)_layer, (byte)_mip, __functionAddress);
+        return invokePPI(_src.address(), _data, __functionAddress);
     }
 
     /** {@code bgfx_frame_buffer_handle_t bgfx_create_frame_buffer_from_handles(uint8_t _num, bgfx_texture_handle_t const * _handles, bool _destroyTextures)} */
