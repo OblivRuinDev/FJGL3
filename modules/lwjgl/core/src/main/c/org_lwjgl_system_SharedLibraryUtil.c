@@ -256,6 +256,7 @@ typedef struct {
   int    bufSize;
   void*  vladdr;
   int    useDladdr;
+  size_t namesLength;
 } iter_phdr_data;
 
 static int iter_phdr_cb(struct dl_phdr_info* info, size_t size, void* data)
@@ -263,40 +264,35 @@ static int iter_phdr_cb(struct dl_phdr_info* info, size_t size, void* data)
   UNUSED_PARAM(size);
   int l = -1;
   iter_phdr_data* d = (iter_phdr_data*)data;
-  void* lib = NULL;
 
-  /* glibc handles are resolved with dlinfo() before iteration. Other
-     platforms compare handles by reopening already-loaded objects. */
-#if !defined(__GLIBC__)
+  /* Snapshot image names for reopening after iteration returns. */
   if(d->pLib != NULL) {
-    /* unable to relate info->dlpi_addr directly to our dlopen handle, let's
-     * do what we do on macOS above, re-dlopen the already loaded lib (just
-     * increases ref count) and compare handles */
-    /* @@@ might be b/c it's the reloc addr... see below */
-    lib = dlopen(info->dlpi_name, RTLD_LIGHTEST);
-    if(lib)
-      dlclose(lib);
+    const char* name = info->dlpi_name;
+    if(name == NULL || name[0] == '\0')
+      return 0;
+
+    size_t nameLength = strlen(name) + 1;
+
+    if(0 < d->bufSize && d->namesLength + nameLength <= (size_t)d->bufSize)
+      memcpy(d->sOut + d->namesLength, name, nameLength);
+    d->namesLength += nameLength;
+    return 0;
   }
-#endif
 
-  /* compare handles and get name if found; if d->pLib == NULL this will
-     enter info on first iterated object, which is the process itself */
-  if(lib == (void*)d->pLib) {
-    l = dl_strlen_strcpy(d->sOut, info->dlpi_name, d->bufSize);
+  /* The first iterated object is the process itself. */
+  l = dl_strlen_strcpy(d->sOut, info->dlpi_name, d->bufSize);
 
-    /* If dlpi_name is empty, save the process load address. dladdr() must be
-       called after iteration because it may acquire another loader lock. */
-    if(l == 0 && d->pLib == NULL) {
-      d->vladdr = (void*)info->dlpi_addr;
-      int i = 0;
-      for(; i < info->dlpi_phnum; ++i) {
-        if(info->dlpi_phdr[i].p_type == PT_LOAD) {
-          d->vladdr = (void*)(info->dlpi_addr + info->dlpi_phdr[i].p_vaddr);
-          break;
-        }
+  /* If dlpi_name is empty, save the process load address. dladdr() must be
+     called after iteration because it may acquire another loader lock. */
+  if(l == 0) {
+    d->vladdr = (void*)info->dlpi_addr;
+    for(int i = 0; i < info->dlpi_phnum; ++i) {
+      if(info->dlpi_phdr[i].p_type == PT_LOAD) {
+        d->vladdr = (void*)(info->dlpi_addr + info->dlpi_phdr[i].p_vaddr);
+        break;
       }
-      d->useDladdr = 1;
     }
+    d->useDladdr = 1;
   }
 
   return l+1; /* strlen + '\0'; is 0 if lib not found, which continues iter */
@@ -321,8 +317,37 @@ JNIEXPORT int JNICALL Java_org_lwjgl_system_SharedLibraryUtil_getLibraryPath(JNI
 #endif
 
   {
-    iter_phdr_data d = { pLib, sOut, bufSize, NULL, 0 };
+    iter_phdr_data d = { pLib, sOut, bufSize, NULL, 0, 0 };
     int result = dl_iterate_phdr(iter_phdr_cb, &d);
+
+    if(pLib != NULL) {
+      if((size_t)bufSize < d.namesLength)
+        return (int)d.namesLength;
+
+      char* name = sOut;
+      char* end = name + d.namesLength;
+
+      /* The callback packed the image names as consecutive null-terminated
+         strings. Reopen and compare each one, advancing to the next string. */
+      while(name < end) {
+        size_t nameLength = strlen(name) + 1;
+
+        void* lib = dlopen(name, RTLD_LIGHTEST);
+        if(lib != NULL) {
+          int found = lib == pLib;
+          dlclose(lib);
+          if(found) {
+            memmove(sOut, name, nameLength);
+            return (int)nameLength;
+          }
+        }
+
+        name += nameLength;
+      }
+
+      return 0;
+    }
+
     if(d.useDladdr) {
       Dl_info di;
       if(dladdr(d.vladdr, &di) != 0)
