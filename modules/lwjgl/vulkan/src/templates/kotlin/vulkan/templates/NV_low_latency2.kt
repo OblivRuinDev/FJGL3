@@ -10,7 +10,7 @@ import vulkan.*
 
 val NV_low_latency2 = "NVLowLatency2".nativeClassVK("NV_low_latency2", type = "device", postfix = "NV") {
     IntConstant(
-        "NV_LOW_LATENCY_2_SPEC_VERSION".."2"
+        "NV_LOW_LATENCY_2_SPEC_VERSION".."3"
     )
 
     StringConstant(

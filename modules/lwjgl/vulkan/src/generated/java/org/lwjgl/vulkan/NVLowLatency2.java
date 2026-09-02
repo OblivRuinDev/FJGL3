@@ -12,7 +12,7 @@ import static org.lwjgl.system.JNI.*;
 
 public class NVLowLatency2 {
 
-    public static final int VK_NV_LOW_LATENCY_2_SPEC_VERSION = 2;
+    public static final int VK_NV_LOW_LATENCY_2_SPEC_VERSION = 3;
 
     public static final String VK_NV_LOW_LATENCY_2_EXTENSION_NAME = "VK_NV_low_latency2";
 

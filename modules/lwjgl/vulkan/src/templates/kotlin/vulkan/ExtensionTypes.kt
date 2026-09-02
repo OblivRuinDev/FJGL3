@@ -185,6 +185,7 @@ val VkIndirectCommandsTokenTypeNV = "VkIndirectCommandsTokenTypeNV".enumType
 val VkIndirectCommandsLayoutUsageFlagBitsNV = "VkIndirectCommandsLayoutUsageFlagBitsNV".enumType
 val VkDepthBiasRepresentationEXT = "VkDepthBiasRepresentationEXT".enumType
 val VkDeviceMemoryReportEventTypeEXT = "VkDeviceMemoryReportEventTypeEXT".enumType
+val VkPrivateDataSlotCreateFlagBitsEXT = "VkPrivateDataSlotCreateFlagBitsEXT".enumType
 val VkVideoEncodeCapabilityFlagBitsKHR = "VkVideoEncodeCapabilityFlagBitsKHR".enumType
 val VkVideoEncodeFeedbackFlagBitsKHR = "VkVideoEncodeFeedbackFlagBitsKHR".enumType
 val VkVideoEncodeUsageFlagBitsKHR = "VkVideoEncodeUsageFlagBitsKHR".enumType
@@ -11359,4 +11360,10 @@ val VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV = struct(Module.VULK
     Expression("#STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_DECODE_VECTOR_FEATURES_NV")..VkStructureType("sType")
     nullable..opaque_p("pNext")
     VkBool32("cooperativeMatrixDecodeVector")
+}
+
+val VkPhysicalDevicePrivateDataBaseHandleFeaturesNV = struct(Module.VULKAN, "VkPhysicalDevicePrivateDataBaseHandleFeaturesNV") {
+    Expression("#STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIVATE_DATA_BASE_HANDLE_FEATURES_NV")..VkStructureType("sType")
+    nullable..opaque_p("pNext")
+    VkBool32("privateDataBaseHandle")
 }
