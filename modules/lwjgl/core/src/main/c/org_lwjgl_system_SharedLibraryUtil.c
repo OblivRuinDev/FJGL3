@@ -365,9 +365,8 @@ EXTERN_C_EXIT
 
 #warning "Using non-optimal code for dlGetLibraryPath() b/c of platform limitations."
 
-/* if nothing else is available, fall back to guessing using dladdr() - this */
-/* might not always work, as it's trying to getit via the _fini() symbol,    */
-/* which is usually defined in ELF files, but not guaranteed                 */
+/* If nothing else is available, fall back to guessing with dladdr() on the
+   conventional _fini symbol, which is not guaranteed to exist. */
 
 /* @@@Note: On some platforms this might be improved, e.g. on BeOS we have */
 /* lt_dlgetinfo, which requires iterating over ltdl stuff, but was unable  */
@@ -381,15 +380,27 @@ JNIEXPORT int JNICALL Java_org_lwjgl_system_SharedLibraryUtil_getLibraryPath(JNI
   void *pLib = (void *)(uintptr_t)pLibAddress;
   char *sOut = (char *)(uintptr_t)sOutAddress;
 
-/*@@@ missing handler for pLib == NULL*/
-  /* cross fingers that shared object is standard ELF and look for _fini */
+  void* lib = pLib != NULL ? pLib : dlopen(NULL, RTLD_LAZY);
   int l = -1;
-  void* s = dlsym((void*)pLib, "_fini");
-  if(s) {
+
+  if(lib != NULL) {
+    void* s = dlsym(lib, "_fini");
     Dl_info i;
-    if(dladdr(s, &i) != 0)
-      l = dl_strlen_strcpy(sOut, i.dli_fname, bufSize);
+
+    if(s != NULL && dladdr(s, &i) != 0 && i.dli_fname != NULL) {
+      /* dlsym may find _fini in a dependency. Verify the resolved path. */
+      void* candidate = dlopen(i.dli_fname, RTLD_LIGHTEST);
+      if(candidate != NULL) {
+        if(candidate == lib)
+          l = dl_strlen_strcpy(sOut, i.dli_fname, bufSize);
+        dlclose(candidate);
+      }
+    }
   }
+
+  if(pLib == NULL && lib != NULL)
+    dlclose(lib);
+
   return l+1; /* strlen + '\0' */
 }
 
