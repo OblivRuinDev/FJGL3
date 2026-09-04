@@ -114,7 +114,7 @@ jobs:
         run: cat bin/test/testng-results.xml
         if: failure()
       - name: Run demo with OpenJDK
-        run: ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4
+        run: ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4 -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
       - name: Build GraalVM Native Image
         run: |
           source /opt/rh/gcc-toolset-15/enable || true
@@ -132,6 +132,7 @@ jobs:
           bin/libs/native:\
           config/native-image \
           org.lwjgl.demo.util.lz4.HelloLZ4 --verbose --no-fallback \
+          --add-exports java.base/jdk.internal.access=ALL-UNNAMED \
           --add-exports java.base/jdk.internal.misc=ALL-UNNAMED \
           --enable-native-access=ALL-UNNAMED
       - name: Run demo with GraalVM JIT
@@ -317,13 +318,13 @@ jobs:
         run: ant -emacs compile-native -Dclang.version.print=true
       - name: Run tests
         shell: cpa.sh {0} # zizmor: ignore[misfeature] cpa.sh runs the step inside the FreeBSD VM
-        run: ant -emacs tests
+        run: ant -emacs tests -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
       - name: Print test results
         run: cat bin/test/testng-results.xml
         if: failure()
       - name: Run demo with OpenJDK
         shell: cpa.sh {0} # zizmor: ignore[misfeature] cpa.sh runs the step inside the FreeBSD VM
-        run: ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4
+        run: ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4 -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
 
   macos:
     name: macOS
@@ -377,7 +378,7 @@ jobs:
         run: cat bin/test/testng-results.xml
         if: failure()
       - name: Run demo with OpenJDK
-        run: ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4
+        run: ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4 -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
       - name: Build GraalVM Native Image
         run: |
           mkdir jdk-graalvm
@@ -394,6 +395,7 @@ jobs:
           bin/libs/native:\
           config/native-image \
           org.lwjgl.demo.util.lz4.HelloLZ4 --verbose --no-fallback \
+          --add-exports java.base/jdk.internal.access=ALL-UNNAMED \
           --add-exports java.base/jdk.internal.misc=ALL-UNNAMED \
           --enable-native-access=ALL-UNNAMED
       - name: Run demo with GraalVM JIT
@@ -476,7 +478,7 @@ jobs:
         run: type bin\test\testng-results.xml
         if: failure()
       - name: Run demo with OpenJDK
-        run: ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4
+        run: ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4 -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
         if: matrix.ARCH == 'x64'
       - name: Download GraalVM
         run: |
@@ -499,13 +501,14 @@ jobs:
           bin/libs/native;^
           config/native-image ^
           org.lwjgl.demo.util.lz4.HelloLZ4 --verbose --no-fallback ^
+          --add-exports java.base/jdk.internal.access=ALL-UNNAMED ^
           --add-exports java.base/jdk.internal.misc=ALL-UNNAMED ^
           --enable-native-access=ALL-UNNAMED
         if: matrix.ARCH == 'x64'
       - name: Run demo with GraalVM JIT
         run: |
           set JAVA_HOME=jdk-graalvm
-          ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4
+          ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4 -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
         if: matrix.ARCH == 'x64'
       - name: Run demo with GraalVM Native Image
         run: org.lwjgl.demo.util.lz4.hellolz4.exe
