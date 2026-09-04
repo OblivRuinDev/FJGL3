@@ -41,20 +41,6 @@
     }
 #endif
 
-static int64_t queryPageSize(void) {
-#if defined(LWJGL_MACOS) || defined(LWJGL_FREEBSD)
-    return getpagesize();
-#elif defined(LWJGL_LINUX)
-    return sysconf(_SC_PAGESIZE);
-#elif defined(LWJGL_WINDOWS)
-    SYSTEM_INFO systemInfo;
-    GetSystemInfo(&systemInfo);
-    return systemInfo.dwPageSize;
-#else
-    return 0;
-#endif
-}
-
 static int64_t queryCacheLineSize(void) {
 #if defined(LWJGL_FREEBSD)
     return sysctlbyname_i64("machdep.cacheline_size");
@@ -113,12 +99,6 @@ static int64_t queryCacheLineSize(void) {
 }
 
 EXTERN_C_ENTER
-
-// ngetPageSize()I
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_MemoryUtil_ngetPageSize(JNIEnv *env, jclass clazz) {
-    UNUSED_PARAMS(env, clazz)
-    return (int)queryPageSize();
-}
 
 // ngetCacheLineSize()I
 JNIEXPORT jint JNICALL Java_org_lwjgl_system_MemoryUtil_ngetCacheLineSize(JNIEnv *env, jclass clazz) {

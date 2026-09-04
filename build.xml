@@ -599,6 +599,7 @@
                     <pathelement path="${bin.lwjgl}/${module}"/>
                     <pathelement path="${lib}/java/jspecify.jar"/>
                     <pathelement path="${lib}/java/testng.jar"/>
+                    <pathelement path="${bin.lwjgl}/sdl"/> <!-- for the struct-by-value test -->
                 </classpath>
             </lwjgl.javac>
         </forEachModule>
@@ -861,6 +862,9 @@
             <jvmarg value="-Dorg.lwjgl.util.Debug=true"/>
             <jvmarg value="-Dorg.lwjgl.util.DebugAllocator=true"/>
             <jvmarg value="--enable-native-access=ALL-UNNAMED"/>
+            <jvmarg value="--add-exports=java.base/jdk.internal.access=ALL-UNNAMED"/>
+            <jvmarg value="--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"/>
+            <jvmarg value="--add-exports=java.base/jdk.internal.util=ALL-UNNAMED"/>
             <jvmarg value="-XstartOnFirstThread" if:set="platform.macos"/>
             <jvmarg value="-Xss256k" if:set="build.arch.x64|x86"/> <!-- for StackTest::testSOE -->
             <jvmarg line="${jvmargs}" if:set="jvmargs"/>

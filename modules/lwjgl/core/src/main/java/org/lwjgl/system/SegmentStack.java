@@ -19,6 +19,8 @@ import static org.lwjgl.system.StackWalkUtil.*;
  *
  * <p>This class should be used in a thread-local manner for stack allocations.</p>
  *
+ * <p>This class can be replaced by MemoryStack as it implement all methods in this.</p>
+ *
  * @see Configuration#STACK_SIZE
  * @see Configuration#DEBUG_STACK
  */

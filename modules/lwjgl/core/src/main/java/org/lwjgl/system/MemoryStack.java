@@ -6,7 +6,9 @@ package org.lwjgl.system;
 
 import org.jspecify.annotations.*;
 import org.lwjgl.*;
+import org.lwjgl.system.ffm.*;
 
+import java.lang.foreign.*;
 import java.nio.*;
 import java.util.*;
 
@@ -23,7 +25,7 @@ import static org.lwjgl.system.StackWalkUtil.*;
  * @see Configuration#STACK_SIZE
  * @see Configuration#DEBUG_STACK
  */
-public class MemoryStack extends Pointer.Default implements AutoCloseable {
+public class MemoryStack extends Pointer.Default implements StackAllocator<MemoryStack>, AutoCloseable {
 
     private static final int DEFAULT_STACK_SIZE   = Configuration.STACK_SIZE.get(64) * 1024;
     private static final int DEFAULT_STACK_FRAMES = 8;
@@ -66,6 +68,7 @@ public class MemoryStack extends Pointer.Default implements AutoCloseable {
 
     @SuppressWarnings({"FieldCanBeLocal", "unused"})
     private final @Nullable ByteBuffer container;
+    private final MemorySegment segment;
 
     private final int size;
 
@@ -86,10 +89,29 @@ public class MemoryStack extends Pointer.Default implements AutoCloseable {
     protected MemoryStack(@Nullable ByteBuffer container, long address, int size) {
         super(address);
         this.container = container;
+        MemorySegment seg = null;
+        if (container != null) {
+            seg = JDK.nioAccess.bufferSegment(container);
+        }
+        this.segment = seg != null ? seg : MemorySegment.ofAddress(address).reinterpret(size);
 
         this.size = size;
         this.pointer = address + size;
 
+        this.frames = new long[DEFAULT_STACK_FRAMES];
+    }
+
+    protected MemoryStack(MemorySegment container) {
+        super(container.address());
+
+        this.container = null;
+        this.segment = container;
+        long byteSize = container.byteSize();
+        if (byteSize > Integer.MAX_VALUE) {
+            throw new IllegalArgumentException("MemorySegment too large: " + byteSize);
+        }
+        this.size = (int) byteSize;
+        this.pointer = address + size;
         this.frames = new long[DEFAULT_STACK_FRAMES];
     }
 
@@ -126,6 +148,19 @@ public class MemoryStack extends Pointer.Default implements AutoCloseable {
         return Configuration.DEBUG_STACK.get(false)
             ? new DebugMemoryStack(buffer, address, size)
             : new MemoryStack(buffer, address, size);
+    }
+
+    /**
+     * Creates a new {@code MemoryStack} backed by the specified memory segment.
+     *
+     * <p>In the initial state, there is no active stack frame. The {@link #push} method must be used before any allocations.</p>
+     *
+     * @param segment the backing memory segment
+     */
+    public static MemoryStack create(MemorySegment segment) {
+        return Configuration.DEBUG_STACK.get(false)
+            ? new MemoryStack.DebugMemoryStack(segment)
+            : new MemoryStack(segment);
     }
 
     /**
@@ -204,7 +239,10 @@ public class MemoryStack extends Pointer.Default implements AutoCloseable {
             super(buffer, address, size);
             debugFrames = new Object[DEFAULT_STACK_FRAMES];
         }
-
+        protected DebugMemoryStack(MemorySegment container) {
+            super(container);
+            debugFrames = new Object[DEFAULT_STACK_FRAMES];
+        }
         @Override
         public MemoryStack push() {
             if (frameIndex == debugFrames.length) {
@@ -319,6 +357,11 @@ public class MemoryStack extends Pointer.Default implements AutoCloseable {
             throw new IllegalArgumentException("Alignment must be a power-of-two value.");
         }
     }
+    private static void checkAlignment(long alignment) {
+        if (Long.bitCount(alignment) != 1) {
+            throw new IllegalArgumentException("Alignment must be a power-of-two value.");
+        }
+    }
 
     /**
      * Calls {@link #nmalloc(int, int)} with {@code alignment} equal to {@link Pointer#POINTER_SIZE POINTER_SIZE}.
@@ -406,6 +449,76 @@ public class MemoryStack extends Pointer.Default implements AutoCloseable {
     /** Calloc version of {@link #malloc(int)}. */
     public ByteBuffer calloc(int size) {
         return wrapBufferByte(ncalloc(POINTER_SIZE, size, 1), size);
+    }
+
+    /** Same as {@link Arena#allocate(long, long)}, but without zero-initialization. */
+    @Override
+    public MemorySegment allocate(long byteSize, long byteAlignment) {
+        if (DEBUG) {
+            checkAlignment(byteAlignment);
+        }
+        var address = (pointer - byteSize) & -byteAlignment;
+
+        if (CHECKS && address < this.address) {
+            throw new OutOfMemoryError("Out of stack space.");
+        }
+
+        pointer = address;
+        return segment.asSlice(address - this.address, byteSize, 1L);
+    }
+
+    //todo: Overriding the default method without implementation may lead to potential performance degradation.
+    // wait upstream give an answer
+    /** Same as {@link Arena#allocate(long)}, but with {@link ValueLayout#ADDRESS} alignment and no zero-initialization. */
+    @Override
+    public MemorySegment allocate(long byteSize) {
+        return allocate(byteSize, ValueLayout.ADDRESS.byteAlignment()/* TODO: compatible with LWJGL3, restore to 1? */);
+    }
+
+    // allocate(MemoryLayout) and allocate(MemoryLayout, long) below have the same implementation
+    // as Arena, the overrides exist simply to document the lack of zero-initialization.
+
+    /** Same as {@link Arena#allocate(MemoryLayout)}, but without zero-initialization. */
+    @Override
+    public MemorySegment allocate(MemoryLayout layout) {
+        Objects.requireNonNull(layout);
+        return allocate(layout.byteSize(), layout.byteAlignment());
+    }
+
+    /** Same as {@link Arena#allocate(MemoryLayout, long)}, but without zero-initialization. */
+    @Override
+    public MemorySegment allocate(MemoryLayout elementLayout, long count) {
+        // TODO: these checks (and the ones in MemoryLayout.sequenceLayout) are overkill, consider eliminating in non-DEBUG mode. (bytecode-gen?)
+        Objects.requireNonNull(elementLayout);
+        if (count < 0) {
+            throw new IllegalArgumentException("Negative array size");
+        }
+        var layout = MemoryLayout.sequenceLayout(count, elementLayout);
+        return allocate(layout.byteSize(), layout.byteAlignment());
+    }
+
+    /** Same as {@link Arena#allocate(long)}. */
+    public MemorySegment calloc(long byteSize) {
+        return allocate(byteSize)
+            .fill((byte)0);
+    }
+
+    /** Same as {@link Arena#allocate(long, long)}. */
+    public MemorySegment calloc(long byteSize, long byteAlignment) {
+        return allocate(byteSize, byteAlignment)
+            .fill((byte)0);
+    }
+
+    /** Same as {@link Arena#allocate(MemoryLayout)}. */
+    public MemorySegment calloc(MemoryLayout layout) {
+        return allocate(layout)
+            .fill((byte)0);
+    }
+
+    /** Same as {@link Arena#allocate(MemoryLayout, long)}. */
+    public MemorySegment calloc(MemoryLayout elementLayout, long count) {
+        return allocate(elementLayout, count)
+            .fill((byte)0);
     }
 
     /** Unsafe version of {@link #bytes(byte)}. */
