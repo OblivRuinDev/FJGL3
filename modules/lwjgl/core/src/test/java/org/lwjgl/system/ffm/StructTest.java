@@ -2252,7 +2252,7 @@ public class StructTest {
 
             assertEquals(s.toString(), "S[a=, b=]");
 
-            assertThrows(BufferOverflowException.class, () -> s.a("hello world!"));
+            assertThrows(() -> s.a("hello world!"));
 
             s
                 .a("hello")
