@@ -33,7 +33,7 @@ jobs:
         uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
         with:
           distribution: 'zulu'
-          java-version: '8'
+          java-version: '25'
           check-latest: true
       - name: Compile templates
         run: |
@@ -74,10 +74,7 @@ jobs:
         uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
         with:
           distribution: 'zulu'
-          java-version: |
-            27-ea
-            25
-            8
+          java-version: 25
           check-latest: true
       - name: Install build dependencies # make is necessary for -flto=auto
         run: |
@@ -110,27 +107,9 @@ jobs:
           source /opt/rh/gcc-toolset-15/enable || true
           ant -emacs compile-native -Dgcc.version.print=true
       - name: Run tests
-        run: ant -emacs tests
-      - name: Print test results
-        run: cat bin/test/testng-results.xml
-        if: failure()
-      - name: Run tests (JDK 25)
         run: |
           source /opt/rh/gcc-toolset-15/enable || true
-          export JAVA_HOME=$JAVA_HOME_25_X64 
-          ant -emacs tests -Dcore.java25=true
-          ant -emacs tests -Dcore.java25=true -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED"
-          ant -emacs tests -Dcore.java25=true -Djvmargs="-Dorg.lwjgl.system.memoryBackend=ffm"
-      - name: Print test results
-        run: cat bin/test/testng-results.xml
-        if: failure()
-      - name: Run tests (JDK 27)
-        run: |
-          source /opt/rh/gcc-toolset-15/enable || true
-          export JAVA_HOME=$JAVA_HOME_27_X64
-          ant -emacs tests -Dcore.java27=true
-          ant -emacs tests -Dcore.java27=true -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED"
-          ant -emacs tests -Dcore.java27=true -Djvmargs="-Dorg.lwjgl.system.memoryBackend=ffm"
+          ant -emacs tests -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
       - name: Print test results
         run: cat bin/test/testng-results.xml
         if: failure()
@@ -204,7 +183,7 @@ jobs:
         uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
         with:
           distribution: 'zulu'
-          java-version: '8'
+          java-version: '25'
           check-latest: true
       - name: Install dependencies # make is necessary for -flto=auto
         run: |
@@ -304,7 +283,7 @@ jobs:
         uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
         with:
           distribution: 'zulu'
-          java-version: '8'
+          java-version: '25'
           check-latest: true
       - name: Restore kotlinc output
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
@@ -375,10 +354,7 @@ jobs:
         uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
         with:
           distribution: 'zulu'
-          java-version: |
-            27-ea
-            25
-            8
+          java-version: 25
           check-latest: true
       - name: Restore kotlinc output
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
@@ -396,25 +372,7 @@ jobs:
       - name: Build native
         run: ant -emacs compile-native -Dclang.version.print=true
       - name: Run tests
-        run: ant -emacs tests
-      - name: Print test results
-        run: cat bin/test/testng-results.xml
-        if: failure()
-      - name: Run tests (JDK25)
-        run: |
-          export JAVA_HOME=$JAVA_HOME_25_${{ matrix.JAVA_HOME_ARCH }}
-          ant -emacs tests -Dcore.java25=true
-          ant -emacs tests -Dcore.java25=true -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED"
-          ant -emacs tests -Dcore.java25=true -Djvmargs="-Dorg.lwjgl.system.memoryBackend=ffm"
-      - name: Print test results
-        run: cat bin/test/testng-results.xml
-        if: failure()
-      - name: Run tests (JDK27)
-        run: |
-          export JAVA_HOME=$JAVA_HOME_27_${{ matrix.JAVA_HOME_ARCH }}
-          ant -emacs tests -Dcore.java27=true
-          ant -emacs tests -Dcore.java27=true -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED"
-          ant -emacs tests -Dcore.java27=true -Djvmargs="-Dorg.lwjgl.system.memoryBackend=ffm"
+        run: ant -emacs tests -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
       - name: Print test results
         run: cat bin/test/testng-results.xml
         if: failure()
@@ -485,17 +443,14 @@ jobs:
         uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
         with:
           distribution: 'zulu'
-          java-version: |
-            27-ea
-            25
-            8
+          java-version: 25
           check-latest: true
         if: matrix.ARCH != 'x86'
       - name: Setup Java x86
         uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
         with:
           distribution: 'zulu'
-          java-version: 8
+          java-version: 25
           architecture: x86
           check-latest: true
         if: matrix.ARCH == 'x86'
@@ -528,28 +483,8 @@ jobs:
           set PATH=%PATH:C:\Program Files\LLVM\bin;=%
           ant -emacs compile-native -Dcl.version.print=true
       - name: Run tests
-        run: ant -emacs tests
+        run: ant -emacs tests -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
         if: contains(matrix.ARCH, 'arm') != true
-      - name: Print test results
-        run: type bin\test\testng-results.xml
-        if: failure()
-      - name: Run tests (JDK25)
-        run: |
-          set JAVA_HOME=%JAVA_HOME_25_X64%
-          ant -emacs tests -Dcore.java25=true
-          ant -emacs tests -Dcore.java25=true -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED"
-          ant -emacs tests -Dcore.java25=true -Djvmargs="-Dorg.lwjgl.system.memoryBackend=ffm"
-        if: matrix.ARCH == 'x64'
-      - name: Print test results
-        run: type bin\test\testng-results.xml
-        if: failure()
-      - name: Run tests (JDK27)
-        run: |
-          set JAVA_HOME=%JAVA_HOME_27_X64%
-          ant -emacs tests -Dcore.java27=true
-          ant -emacs tests -Dcore.java27=true -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED"
-          ant -emacs tests -Dcore.java27=true -Djvmargs="-Dorg.lwjgl.system.memoryBackend=ffm"
-        if: matrix.ARCH == 'x64'
       - name: Print test results
         run: type bin\test\testng-results.xml
         if: failure()
