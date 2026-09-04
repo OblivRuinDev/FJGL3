@@ -1,6 +1,6 @@
-# Builds LWJGL and runs tests.
+# Builds FJGL and runs tests.
 # No artifacts are uploaded, see LWJGL-CI/lwjgl3 for that.
-name: LWJGL Build
+name: FJGL Build
 
 on:
   workflow_dispatch:
@@ -408,12 +408,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ARCH: [x86, x64, arm64]
+        ARCH: [x64, arm64]
         include:
-          - ARCH: x86
-            MSVC_ARCH: amd64_x86
-            #MSVC_ARCH: x86
-            #VCTOOLS: x86.x64
           - ARCH: x64
             MSVC_ARCH: amd64
             #VCTOOLS: x86.x64
@@ -445,15 +441,6 @@ jobs:
           distribution: 'zulu'
           java-version: 25
           check-latest: true
-        if: matrix.ARCH != 'x86'
-      - name: Setup Java x86
-        uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
-        with:
-          distribution: 'zulu'
-          java-version: 25
-          architecture: x86
-          check-latest: true
-        if: matrix.ARCH == 'x86'
 #      - name: Install Visual Studio 2026 Build Tools
 #        shell: pwsh
 #        run: |
