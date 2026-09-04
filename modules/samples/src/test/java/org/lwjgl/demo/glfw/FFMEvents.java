@@ -23,6 +23,7 @@ import static org.lwjgl.system.APIUtil.*;
 import static org.lwjgl.system.MemoryUtil.*;
 import static org.lwjgl.system.SegmentStack.*;
 import static org.lwjgl.system.ffm.FFM.*;
+import static org.lwjgl.system.ffm.MemoryUtilFFM.*;
 
 /** FFM port of the GLFW events demo. */
 public final class FFMEvents {
