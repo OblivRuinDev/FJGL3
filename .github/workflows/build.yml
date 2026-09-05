@@ -136,7 +136,7 @@ jobs:
           --add-exports java.base/jdk.internal.misc=ALL-UNNAMED \
           --enable-native-access=ALL-UNNAMED
       - name: Run demo with GraalVM JIT
-        run: JAVA_HOME=jdk-graalvm ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4
+        run: JAVA_HOME=jdk-graalvm ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4 -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
       - name: Run demo with GraalVM Native Image
         run: ./org.lwjgl.demo.util.lz4.hellolz4
 
@@ -399,7 +399,7 @@ jobs:
           --add-exports java.base/jdk.internal.misc=ALL-UNNAMED \
           --enable-native-access=ALL-UNNAMED
       - name: Run demo with GraalVM JIT
-        run: JAVA_HOME=jdk-graalvm/Home ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4
+        run: JAVA_HOME=jdk-graalvm/Home ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4 -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
       - name: Run demo with GraalVM Native Image
         run: ./org.lwjgl.demo.util.lz4.hellolz4
 
