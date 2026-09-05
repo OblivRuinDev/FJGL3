@@ -13,6 +13,7 @@ import org.lwjgl.system.macosx.*;
 import org.lwjgl.system.windows.*;
 
 import java.io.*;
+import java.lang.foreign.*;
 import java.lang.reflect.*;
 import java.nio.*;
 import java.nio.file.*;
@@ -22,6 +23,7 @@ import java.util.regex.*;
 import java.util.stream.*;
 
 import static org.lwjgl.system.Checks.*;
+import static org.lwjgl.system.Configuration.FORCE_USE_JAVA_FOREIGN_LINKER;
 import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.MemoryUtil.*;
 import static org.lwjgl.system.libffi.LibFFI.*;
@@ -42,6 +44,7 @@ public final class APIUtil {
     public static final PrintStream DEBUG_STREAM = getDebugStream();
 
     private static final Pattern API_VERSION_PATTERN;
+    private static final boolean USE_JAVA_FOREIGN_LINKER;
 
     static {
         String PREFIX         = "[^\\d\\n\\r]*";
@@ -49,6 +52,19 @@ public final class APIUtil {
         String IMPLEMENTATION = "(?:\\s+(.+?))?\\s*";
 
         API_VERSION_PATTERN = Pattern.compile("^" + PREFIX + VERSION + IMPLEMENTATION + "$", Pattern.DOTALL);
+
+        boolean useJavaForeign = FORCE_USE_JAVA_FOREIGN_LINKER.get(false);
+
+        try {
+            Class<?> linkerC = Linker.nativeLinker().getClass();
+            if (!linkerC.getName().contains("fallback") && !linkerC.getName().contains("Fallback") && !linkerC.getName().contains("ffi"))
+                useJavaForeign = true;
+        } catch (UnsupportedOperationException e) {
+            if (useJavaForeign) {
+                throw new IllegalArgumentException("Force use java foreign linker bu it is unavailble", e);
+            }
+        }
+        USE_JAVA_FOREIGN_LINKER = useJavaForeign;
     }
 
     @SuppressWarnings({"unchecked", "UseOfSystemOutOrSystemErr"})
@@ -612,6 +628,10 @@ public final class APIUtil {
         return FFIType.create(allocator.calloc(1, FFIType.SIZEOF))
             .type(FFI_TYPE_STRUCT)
             .elements(elementBuffer);
+    }
+
+    public static boolean apiUseJavaForeignLinker() {
+        return USE_JAVA_FOREIGN_LINKER;
     }
 
     /** Allocates and prepares a libffi CIF using the default ABI. */

@@ -465,6 +465,8 @@ public class Configuration<T> {
      */
     public static final Configuration<Object> FFM_UPCALL_EXCEPTION_HANDLER = new Configuration<>("org.lwjgl.system.ffm.upcall.exception.handler", StateInit.STRING);
 
+    public static final Configuration<Boolean> FORCE_USE_JAVA_FOREIGN_LINKER = new Configuration<>("org.lwjgl.system.api.forceUseJavaForeignLinker", StateInit.BOOLEAN);
+
     // -- ASSIMP
 
     /** Similar to {@link #LIBRARY_NAME} for the AssImp library (<b>org.lwjgl.assimp.libname</b>). */
