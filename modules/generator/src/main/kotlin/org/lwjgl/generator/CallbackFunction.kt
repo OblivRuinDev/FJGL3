@@ -67,6 +67,41 @@ class CallbackFunction internal constructor(
             is VoidType       -> "ffi_type_void"
             else              -> throw IllegalArgumentException("Unsupported native type: $this")
         }
+    private val NativeType.ffmMapping
+        get(): String = when (this) {
+            is PointerType<*> -> "address__pointer"
+            is IntegerType    -> when (mapping) {
+                PrimitiveMapping.BYTE    -> if (this.unsigned) "byte__uint8" else "byte__sint8"
+                PrimitiveMapping.SHORT   -> if (this.unsigned) "short__uint16" else "short__sint16"
+                PrimitiveMapping.INT     -> if (this.unsigned) "int__uint32" else "int__sint32"
+                PrimitiveMapping.LONG    -> if (this.unsigned) "long__uint64" else "long__sint64"
+                PrimitiveMapping.CLONG   -> if (this.unsigned) "long__ulong" else "long__slong"
+                PrimitiveMapping.POINTER -> "address__pointer"
+                else                     -> throw IllegalArgumentException("Unsupported callback native type: $this")
+            }
+            is PrimitiveType  -> when (mapping) {
+                PrimitiveMapping.BOOLEAN  -> "boolean__uint8"
+                PrimitiveMapping.BOOLEAN2 -> "short__uint16"
+                PrimitiveMapping.BOOLEAN4 -> "int__uint32"
+                PrimitiveMapping.FLOAT    -> "float__float"
+                PrimitiveMapping.DOUBLE   -> "double__double"
+                else                      -> throw IllegalArgumentException("Unsupported callback native type: $this")
+            }
+            is StructType     -> if (this.definition.nativeLayout)
+                throw IllegalArgumentException("Unsupported struct type with native layout: $this")
+            else
+                "apiCreate${if (this.definition.union) "Union" else "Struct"}(${
+                    this.definition.members.joinToString(", ") { member ->
+                        if (member is StructMemberArray) {
+                            "sequenceLayout(${member.size}, ${member.nativeType.ffmMapping})"
+                        } else {
+                            member.nativeType.ffmMapping
+                        }
+                    }
+                }).withName(\"${this.definition.className}\")"
+            is VoidType       -> "null"
+            else              -> throw IllegalArgumentException("Unsupported native type: $this")
+        }
 
     private val NativeType.memGetType
         get() = if (isPointer) "Address" else when (mapping) {
@@ -161,10 +196,16 @@ import static org.lwjgl.system.MemoryUtil.*;
         println("import org.lwjgl.system.*;\n")
         println("import java.lang.invoke.*;\n")
         println("import static org.lwjgl.system.APIUtil.*;")
+        val isDefCall = callingConvention === CallingConvention.DEFAULT
         if (signature.isNotEmpty()) {
             println("import static org.lwjgl.system.MemoryUtil.*;")
         }
-        println("import static org.lwjgl.system.libffi.LibFFI.*;")
+        if (isDefCall) {
+            println("import static java.lang.foreign.MemoryLayout.*;\n")
+            println("import static org.lwjgl.system.ffm.mapping.FFIMapping.*;")
+        } else {
+            println("import static org.lwjgl.system.libffi.LibFFI.*;")
+        }
         println()
 
         generateDocumentation()
@@ -175,11 +216,11 @@ ${access.modifier}interface ${className}I extends CallbackI {
     Callback.Descriptor DESCRIPTOR = new Callback.Descriptor(
         ${className}I.class,
         MethodHandles.lookup(),
-        apiCreateCIF(${if (callingConvention === CallingConvention.STDCALL) """
-            apiStdcall(),""" else ""}
-            ${returns.libffi}${if (signature.isEmpty()) "" else """,
-            ${signature.joinToString(", ") { it.nativeType.libffi }}"""}
-        )
+        ${if (callingConvention === CallingConvention.STDCALL) """
+        apiStdcall(),""" else ""}
+        ${if (isDefCall) returns.ffmMapping else returns.libffi}${if (signature.isEmpty()) "" else """,
+        ${signature.joinToString(", ") { if (isDefCall) it.nativeType.ffmMapping else it.nativeType.libffi }}"""}
+        
     );
 
     @Override

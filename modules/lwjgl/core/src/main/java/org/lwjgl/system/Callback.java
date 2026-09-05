@@ -7,11 +7,14 @@ package org.lwjgl.system;
 import org.jspecify.annotations.*;
 import org.lwjgl.system.libffi.*;
 
+import java.lang.foreign.*;
 import java.lang.invoke.*;
 
+import static org.lwjgl.system.APIUtil.*;
 import static org.lwjgl.system.Checks.*;
 import static org.lwjgl.system.MemoryUtil.*;
 import static org.lwjgl.system.Upcalls.*;
+import static org.lwjgl.system.libffi.LibFFI.*;
 
 /**
  * Base class for dynamically created native functions that call into Java code.
@@ -109,7 +112,8 @@ public abstract class Callback implements Pointer, NativeResource {
 
         final MethodHandles.Lookup lookup;
 
-        final FFICIF cif;
+        FFICIF cif;
+        FunctionDescriptor desc;
 
         public Descriptor(Class<? extends CallbackI> type, MethodHandles.Lookup lookup, FFICIF cif) {
             this.type = type;
@@ -117,6 +121,34 @@ public abstract class Callback implements Pointer, NativeResource {
             this.cif = cif;
         }
 
+        public Descriptor(Class<? extends CallbackI> type, MethodHandles.Lookup lookup, int abi, FFIType rtype, FFIType... atypes) {
+            this.type = type;
+            this.lookup = lookup;
+            if (abi == FFI_DEFAULT_ABI && apiUseJavaForeignLinker()) {
+                initDesc(rtype, atypes);
+            } else {
+                initCif(abi, rtype, atypes);
+            }
+        }
+        public Descriptor(Class<? extends CallbackI> type, MethodHandles.Lookup lookup, MemoryLayout rtype, MemoryLayout... atypes) {
+            this.type = type;
+            this.lookup = lookup;
+            if (apiUseJavaForeignLinker()) {
+                initDesc(rtype, atypes);
+            } else {
+                initCif(FFI_DEFAULT_ABI, rtype, atypes);
+            }
+        }
+        private void initCif(int abi, FFIType rtype, FFIType... atypes) {
+            this.cif = apiCreateCIF(abi, rtype, atypes);
+        }
+        private void initDesc(@Nullable MemoryLayout rtype, MemoryLayout... atypes) {
+            if (rtype == null) {
+                this.desc = FunctionDescriptor.ofVoid(atypes);
+            } else {
+                this.desc = FunctionDescriptor.of(rtype, atypes);
+            }
+        }
     }
 
 }
