@@ -134,6 +134,7 @@ jobs:
           org.lwjgl.demo.util.lz4.HelloLZ4 --verbose --no-fallback \
           --add-exports java.base/jdk.internal.access=ALL-UNNAMED \
           --add-exports java.base/jdk.internal.misc=ALL-UNNAMED \
+          --add-exports java.base/jdk.internal.vm.annotation=ALL-UNNAMED \
           --enable-native-access=ALL-UNNAMED
       - name: Run demo with GraalVM JIT
         run: JAVA_HOME=jdk-graalvm ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4 -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
@@ -397,6 +398,7 @@ jobs:
           org.lwjgl.demo.util.lz4.HelloLZ4 --verbose --no-fallback \
           --add-exports java.base/jdk.internal.access=ALL-UNNAMED \
           --add-exports java.base/jdk.internal.misc=ALL-UNNAMED \
+          --add-exports java.base/jdk.internal.vm.annotation=ALL-UNNAMED \
           --enable-native-access=ALL-UNNAMED
       - name: Run demo with GraalVM JIT
         run: JAVA_HOME=jdk-graalvm/Home ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4 -Djvmargs="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED --add-exports java.base/jdk.internal.access=ALL-UNNAMED"
@@ -503,6 +505,7 @@ jobs:
           org.lwjgl.demo.util.lz4.HelloLZ4 --verbose --no-fallback ^
           --add-exports java.base/jdk.internal.access=ALL-UNNAMED ^
           --add-exports java.base/jdk.internal.misc=ALL-UNNAMED ^
+          --add-exports java.base/jdk.internal.vm.annotation=ALL-UNNAMED ^
           --enable-native-access=ALL-UNNAMED
         if: matrix.ARCH == 'x64'
       - name: Run demo with GraalVM JIT
