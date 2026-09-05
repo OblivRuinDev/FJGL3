@@ -47,11 +47,6 @@ static inline void putAddress(void *ptr, uintptr_t value) { *(uintptr_t *)ptr = 
 
 EXTERN_C_ENTER
 
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_MemoryAccessJNI_getPointerSize(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)sizeof(void *);
-}
-
 JNIEXPORT jlong JNICALL Java_org_lwjgl_system_MemoryAccessJNI_malloc(JNIEnv *__env, jclass clazz) {
     UNUSED_PARAMS(__env, clazz)
     return (jlong)(uintptr_t)&malloc;

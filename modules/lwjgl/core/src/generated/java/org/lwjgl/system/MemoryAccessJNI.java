@@ -16,11 +16,6 @@ final class MemoryAccessJNI {
         throw new UnsupportedOperationException();
     }
 
-    // --- [ getPointerSize ] ---
-
-    /** {@code int getPointerSize(void)} */
-    static native int getPointerSize();
-
     // --- [ malloc ] ---
 
     @NativeType("void * (*) (size_t)")

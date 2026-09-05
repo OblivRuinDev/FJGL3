@@ -2620,40 +2620,24 @@ public final class MemoryUtil {
     public static long memGetLong(long ptr)       { return UNSAFE.getLong   (null, ptr); }
     public static float memGetFloat(long ptr)     { return UNSAFE.getFloat  (null, ptr); }
     public static double memGetDouble(long ptr)   { return UNSAFE.getDouble (null, ptr); }
+    public static long memGetAddress(long ptr)    { return UNSAFE.getAddress(ptr); }
     public static long memGetCLong(long ptr) {
-        return CLONG_SIZE == 8
-            ? UNSAFE.getLong(null, ptr)
-            : UNSAFE.getInt(null, ptr);
-    }
-
-    public static long memGetAddress(long ptr) {
-        return BITS64
-            ? UNSAFE.getLong(null, ptr)
-            : UNSAFE.getInt(null, ptr) & 0xFFFF_FFFFL;
+        return CLONG_SIZE == 8 ? UNSAFE.getLong(null, ptr)
+                               : UNSAFE.getInt (null, ptr);
     }
 
     public static void memPutBoolean(long ptr, boolean value) { UNSAFE.putBoolean(null, ptr, value); }
-    public static void memPutByte(long ptr, byte value)     { UNSAFE.putByte  (null, ptr, value); }
-    public static void memPutChar(long ptr, char value)     { UNSAFE.putChar  (null, ptr, value); }
-    public static void memPutShort(long ptr, short value)   { UNSAFE.putShort (null, ptr, value); }
-    public static void memPutInt(long ptr, int value)       { UNSAFE.putInt   (null, ptr, value); }
-    public static void memPutLong(long ptr, long value)     { UNSAFE.putLong  (null, ptr, value); }
-    public static void memPutFloat(long ptr, float value)   { UNSAFE.putFloat (null, ptr, value); }
-    public static void memPutDouble(long ptr, double value) { UNSAFE.putDouble(null, ptr, value); }
+    public static void memPutByte(long ptr, byte value)       { UNSAFE.putByte   (null, ptr, value); }
+    public static void memPutChar(long ptr, char value)       { UNSAFE.putChar   (null, ptr, value); }
+    public static void memPutShort(long ptr, short value)     { UNSAFE.putShort  (null, ptr, value); }
+    public static void memPutInt(long ptr, int value)         { UNSAFE.putInt    (null, ptr, value); }
+    public static void memPutLong(long ptr, long value)       { UNSAFE.putLong   (null, ptr, value); }
+    public static void memPutFloat(long ptr, float value)     { UNSAFE.putFloat  (null, ptr, value); }
+    public static void memPutDouble(long ptr, double value)   { UNSAFE.putDouble (null, ptr, value); }
+    public static void memPutAddress(long ptr, long value)    { UNSAFE.putAddress(null, ptr, value); }
     public static void memPutCLong(long ptr, long value) {
-        if (CLONG_SIZE == 8) {
-            UNSAFE.putLong(null, ptr, value);
-        } else {
-            UNSAFE.putInt(null, ptr, (int)value);
-        }
-    }
-
-    public static void memPutAddress(long ptr, long value) {
-        if (BITS64) {
-            UNSAFE.putLong(null, ptr, value);
-        } else {
-            UNSAFE.putInt(null, ptr, (int)value);
-        }
+        if (CLONG_SIZE == 8) UNSAFE.putLong(null, ptr, value);
+        else                 UNSAFE.putInt(null, ptr, (int)value);
     }
 
     // Used internally for packed struct member access
@@ -2665,33 +2649,28 @@ public final class MemoryUtil {
     public static long memGetLongUnaligned(long ptr)                 { return UNSAFE.getLongUnaligned(null, ptr); }
     public static float memGetFloatUnaligned(long ptr)               { return Float.intBitsToFloat(UNSAFE.getIntUnaligned(null, ptr)); }
     public static double memGetDoubleUnaligned(long ptr)             { return Double.longBitsToDouble(UNSAFE.getLongUnaligned(null, ptr)); }
+    public static long memGetAddressUnaligned(long ptr) {
+        return BITS64 ? UNSAFE.getLongUnaligned(null, ptr)
+                      : UNSAFE.getIntUnaligned (null, ptr) & 0xFFFFFFFFL;
+    }
+    public static long memGetCLongUnaligned(long ptr) {
+        return CLONG_SIZE == 8 ? UNSAFE.getLongUnaligned(null, ptr)
+                               : UNSAFE.getIntUnaligned (null, ptr);
+    }
 
     public static void memPutCharUnaligned(long ptr, char value)     { UNSAFE.putCharUnaligned(null, ptr, value); }
     public static void memPutShortUnaligned(long ptr, short value)   { UNSAFE.putShortUnaligned(null, ptr, value); }
     public static void memPutIntUnaligned(long ptr, int value)       { UNSAFE.putIntUnaligned(null, ptr, value); }
-    public static void memPutLongUnaligned(long ptr, long value)      { UNSAFE.putLongUnaligned(null, ptr, value); }
+    public static void memPutLongUnaligned(long ptr, long value)     { UNSAFE.putLongUnaligned(null, ptr, value); }
     public static void memPutFloatUnaligned(long ptr, float value)   { UNSAFE.putIntUnaligned(null, ptr, Float.floatToRawIntBits(value)); }
     public static void memPutDoubleUnaligned(long ptr, double value) { UNSAFE.putLongUnaligned(null, ptr, Double.doubleToRawLongBits(value)); }
-
-    public static long memGetCLongUnaligned(long ptr) {
-        return CLONG_SIZE == 8 ? UNSAFE.getLongUnaligned(null, ptr) : UNSAFE.getIntUnaligned(null, ptr);
-    }
-    public static long memGetAddressUnaligned(long ptr) {
-        return BITS64 ? UNSAFE.getLongUnaligned(null, ptr) : UNSAFE.getIntUnaligned(null, ptr) & 0xFFFFFFFFL;
+    public static void memPutAddressUnaligned(long ptr, long value) {
+        if (BITS64) UNSAFE.putLongUnaligned(null, ptr,      value);
+        else        UNSAFE.putIntUnaligned (null, ptr, (int)value);
     }
     public static void memPutCLongUnaligned(long ptr, long value) {
-        if (CLONG_SIZE == 8) {
-            UNSAFE.putLongUnaligned(null, ptr, value);
-        } else {
-            UNSAFE.putIntUnaligned(null, ptr, (int)value);
-        }
-    }
-    public static void memPutAddressUnaligned(long ptr, long value) {
-        if (BITS64) {
-            UNSAFE.putLongUnaligned(null, ptr, value);
-        } else {
-            UNSAFE.putIntUnaligned(null, ptr, (int)value);
-        }
+        if (CLONG_SIZE == 8) UNSAFE.putLongUnaligned(null, ptr,      value);
+        else                 UNSAFE.putIntUnaligned (null, ptr, (int)value);
     }
 
     // Unsafe accessors that bypass buffer bounds & session liveness checks.

@@ -4,6 +4,7 @@
  */
 package org.lwjgl.system;
 
+import jdk.internal.misc.*;
 import org.jspecify.annotations.*;
 import org.lwjgl.*;
 
@@ -23,7 +24,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 public interface Pointer {
 
     /** The pointer size in bytes. Will be 4 on a 32bit JVM and 8 on a 64bit one. */
-    int POINTER_SIZE = MemoryAccessJNI.getPointerSize();
+    int POINTER_SIZE = Unsafe.getUnsafe().addressSize();
 
     /** The pointer size power-of-two. Will be 2 on a 32bit JVM and 3 on a 64bit one. */
     int POINTER_SHIFT = POINTER_SIZE == 8 ? 3 : 2;

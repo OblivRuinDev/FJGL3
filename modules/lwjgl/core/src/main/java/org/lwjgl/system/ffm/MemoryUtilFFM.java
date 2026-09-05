@@ -620,62 +620,55 @@ public final class MemoryUtilFFM {
 
 
     public static long memGetCLong(MemorySegment segment, long offset) {
-        return CLONG_SIZE == 8 ? memGetLong(segment, offset) : memGetInt(segment, offset);
+        return MemoryUtil.memGetCLong(segment.address() + offset);
     }
     public static long memGetCLongAtIndex(MemorySegment segment, long index) {
-        return CLONG_SIZE == 8 ? memGetLongAtIndex(segment, index) : memGetIntAtIndex(segment, index);
+        return MemoryUtil.memGetCLong(segment.address() + (index << CLONG_SHIFT));
     }
     public static long memGetCLongUnaligned(MemorySegment segment, long offset) {
-        return CLONG_SIZE == 8 ? memGetLongUnaligned(segment, offset) : memGetIntUnaligned(segment, offset);
+        return MemoryUtil.memGetCLongUnaligned(segment.address() + offset);
     }
     public static long memGetCLongUnalignedAtIndex(MemorySegment segment, long index) {
-        return CLONG_SIZE == 8 ? memGetLongUnalignedAtIndex(segment, index) : memGetIntUnalignedAtIndex(segment, index);
+        return MemoryUtil.memGetCLongUnaligned(segment.address() + (index << CLONG_SHIFT));
     }
+
     public static void memPutCLong(MemorySegment segment, long offset, long value) {
-        if (CLONG_SIZE == 8) memPutLong(segment, offset,      value);
-        else                 memPutInt (segment, offset, (int)value);
+        MemoryUtil.memPutCLong(segment.address() + offset, value);
     }
     public static void memPutCLongAtIndex(MemorySegment segment, long index, long value) {
-        if (CLONG_SIZE == 8) memPutLongAtIndex(segment, index,      value);
-        else                 memPutIntAtIndex (segment, index, (int)value);
+        MemoryUtil.memPutCLong(segment.address() + (index << CLONG_SHIFT), value);
     }
     public static void memPutCLongUnaligned(MemorySegment segment, long offset, long value) {
-        if (CLONG_SIZE == 8) memPutLongUnaligned(segment, offset,      value);
-        else                 memPutIntUnaligned (segment, offset, (int)value);
+        MemoryUtil.memPutCLongUnaligned(segment.address() + offset, value);
     }
     public static void memPutCLongUnalignedAtIndex(MemorySegment segment, long index, long value) {
-        if (CLONG_SIZE == 8) memPutLongUnalignedAtIndex(segment, index,      value);
-        else                 memPutIntUnalignedAtIndex (segment, index, (int)value);
+        MemoryUtil.memPutCLongUnaligned(segment.address() + (index << CLONG_SHIFT), value);
     }
 
     public static long memGetAddress(MemorySegment segment, long offset) {
-        return POINTER_SIZE == 8 ? memGetLong(segment, offset) : memGetInt(segment, offset) & 0xFFFF_FFFFL;
+        return UNSAFE.getAddress(segment.address() + offset);
     }
     public static long memGetAddressAtIndex(MemorySegment segment, long index) {
-        return POINTER_SIZE == 8 ? memGetLongAtIndex(segment, index) : memGetIntAtIndex(segment, index) & 0xFFFF_FFFFL;
+        return UNSAFE.getAddress(segment.address() + (index << POINTER_SHIFT));
     }
     public static long memGetAddressUnaligned(MemorySegment segment, long offset) {
-        return POINTER_SIZE == 8 ? memGetLongUnaligned(segment, offset) : memGetIntUnaligned(segment, offset) & 0xFFFF_FFFFL;
+        return MemoryUtil.memGetAddressUnaligned(segment.address() + offset);
     }
     public static long memGetAddressUnalignedAtIndex(MemorySegment segment, long index) {
-        return POINTER_SIZE == 8 ? memGetLongUnalignedAtIndex(segment, index) : memGetIntUnalignedAtIndex(segment, index) & 0xFFFF_FFFFL;
+        return MemoryUtil.memGetAddressUnaligned(segment.address() + (index << POINTER_SHIFT));
     }
 
     public static void memPutAddress(MemorySegment segment, long offset, long value) {
-        if (POINTER_SIZE == 8) memPutLong(segment, offset,      value);
-        else                   memPutInt (segment, offset, (int)value);
+        UNSAFE.putAddress(segment.address() + offset, value);
     }
     public static void memPutAddressAtIndex(MemorySegment segment, long index, long value) {
-        if (POINTER_SIZE == 8) memPutLongAtIndex(segment, index,      value);
-        else                   memPutIntAtIndex (segment, index, (int)value);
+        UNSAFE.putAddress(segment.address() + (index << POINTER_SHIFT), value);
     }
     public static void memPutAddressUnaligned(MemorySegment segment, long offset, long value) {
-        if (POINTER_SIZE == 8) memPutLongUnaligned(segment, offset,      value);
-        else                   memPutIntUnaligned (segment, offset, (int)value);
+        MemoryUtil.memPutAddressUnaligned(segment.address() + offset, value);
     }
     public static void memPutAddressUnalignedAtIndex(MemorySegment segment, long index, long value) {
-        if (POINTER_SIZE == 8) memPutLongUnalignedAtIndex(segment, index,      value);
-        else                   memPutIntUnalignedAtIndex (segment, index, (int)value);
+        MemoryUtil.memPutAddressUnaligned(segment.address() + (index << POINTER_SHIFT), value);
     }
 
     private static void check(MemorySegment segment, long size) {

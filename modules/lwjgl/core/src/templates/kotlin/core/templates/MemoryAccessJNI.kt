@@ -13,12 +13,6 @@ val MemoryAccessJNI = "MemoryAccessJNI".nativeClass(Module.CORE) {
     )
 
     access = Access.INTERNAL
-    Code(
-        nativeCall = "${t}return (jint)sizeof(void *);"
-    )..int(
-        "getPointerSize",
-        void()
-    )
 
     val primitives = arrayOf(
         Triple(int8_t, "Byte", "a byte value"),
