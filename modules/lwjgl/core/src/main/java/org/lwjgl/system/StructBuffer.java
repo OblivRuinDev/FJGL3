@@ -166,27 +166,34 @@ public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffe
         return new StructIterator<>(address, container, (Class<T>) getElementClass(), sizeof(), position, limit);
     }
 
-    // This class is static to avoid capturing the StructBuffer instance. Hotspot trivially marks the instance
-    // as escaping when this happens, even if the iterator instance is not escaping and scalar replaced. This
-    // is not a problem on Graal. Also, see JDK-8166840.
-    private static class StructIterator<T extends Struct<T>> implements Iterator<T> {
-        private long address;
-
-        private @Nullable ByteBuffer container;
-
-        private Class<T> type;
-        private int sizeof;
-
-        private int index;
-        private int fence;
-
-        StructIterator(long address, @Nullable ByteBuffer container, Class<T> type, int sizeof, int position, int limit) {
+    static class BaseIter<T extends Struct<T>> {
+        protected final long       address;
+        @Nullable
+        protected final ByteBuffer container;
+        protected final Class<T>   type;
+        protected final int        sizeof;
+        protected       int        index;
+        protected final int        fence;
+        BaseIter(long address, @Nullable ByteBuffer container, Class<T> type, int sizeof, int position, int limit) {
             this.address = address;
             this.container = container;
             this.type = type;
             this.sizeof = sizeof;
             this.index = position;
             this.fence = limit;
+        }
+
+        final T getAt(int i) {
+            return Struct.create(type, address + Integer.toUnsignedLong(i) * sizeof, container);
+        }
+    }
+    // This class is static to avoid capturing the StructBuffer instance. Hotspot trivially marks the instance
+    // as escaping when this happens, even if the iterator instance is not escaping and scalar replaced. This
+    // is not a problem on Graal. Also, see JDK-8166840.
+    static class StructIterator<T extends Struct<T>> extends BaseIter<T> implements Iterator<T> {
+
+        StructIterator(long address, @Nullable ByteBuffer container, Class<T> type, int sizeof, int position, int limit) {
+            super(address, container, type, sizeof, position, limit);
         }
 
         @Override public boolean hasNext() {
@@ -197,7 +204,7 @@ public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffe
             if (CHECKS && fence <= index) {
                 throw new NoSuchElementException();
             }
-            return Struct.create(type, address + Integer.toUnsignedLong(index++) * sizeof, container);
+            return getAt(index++);
         }
 
         @Override public void forEachRemaining(Consumer<? super T> action) {
@@ -205,7 +212,7 @@ public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffe
             int i = index;
             try {
                 for (; i < fence; i++) {
-                    action.accept(Struct.create(type, address + Integer.toUnsignedLong(i) * sizeof, container));
+                    action.accept(getAt(i));
                 }
             } finally {
                 index = i;
@@ -228,24 +235,9 @@ public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffe
         return new StructSpliterator<>(address, container, (Class<T>) getElementClass(), sizeof(), position, limit);
     }
 
-    private static class StructSpliterator<T extends Struct<T>> implements Spliterator<T> {
-        private long address;
-
-        private @Nullable ByteBuffer container;
-
-        private Class<T> type;
-        private int sizeof;
-
-        private int index;
-        private int fence;
-
+    static class StructSpliterator<T extends Struct<T>> extends BaseIter<T> implements Spliterator<T> {
         StructSpliterator(long address, @Nullable ByteBuffer container, Class<T> type, int sizeof, int position, int limit) {
-            this.address = address;
-            this.container = container;
-            this.type = type;
-            this.sizeof = sizeof;
-            this.index = position;
-            this.fence = limit;
+            super(address, container, type, sizeof, position, limit);
         }
 
         @Override
@@ -253,7 +245,7 @@ public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffe
             Objects.requireNonNull(action);
 
             if (index < fence) {
-                action.accept(Struct.create(type, address + Integer.toUnsignedLong(index++) * sizeof, container));
+                action.accept(getAt(index++));
                 return true;
             }
 
@@ -286,7 +278,7 @@ public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffe
             int i = index;
             try {
                 for (; i < fence; i++) {
-                    action.accept(Struct.create(type, address + Integer.toUnsignedLong(i) * sizeof, container));
+                    action.accept(getAt(i));
                 }
             } finally {
                 index = i;
