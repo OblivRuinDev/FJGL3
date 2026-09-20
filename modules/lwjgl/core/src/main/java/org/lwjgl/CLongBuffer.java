@@ -62,16 +62,6 @@ public class CLongBuffer extends CustomBuffer<CLongBuffer> implements Comparable
     }
 
     @Override
-    protected CLongBuffer self() {
-        return this;
-    }
-
-    @Override
-    protected CLongBuffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-        return new CLongBuffer(address, container, mark, position, limit, capacity);
-    }
-
-    @Override
     public int sizeof() {
         return CLONG_SIZE;
     }

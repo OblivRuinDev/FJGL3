@@ -4,13 +4,16 @@
  */
 package org.lwjgl.system;
 
+import jdk.internal.vm.annotation.*;
 import org.jspecify.annotations.*;
 
 import java.nio.*;
 
+import static org.lwjgl.system.Checks.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
 /** Base class of custom buffers with an API that mirrors {@code java.nio} for convenience. */
+@SuppressWarnings("unchecked")
 public abstract class CustomBuffer<SELF extends CustomBuffer<SELF>> extends Pointer.Default {
 
     protected @Nullable ByteBuffer container;
@@ -95,7 +98,7 @@ public abstract class CustomBuffer<SELF extends CustomBuffer<SELF>> extends Poin
         if (position < mark) {
             mark = -1;
         }
-        return self();
+        return (SELF)this;
     }
 
     /**
@@ -128,7 +131,7 @@ public abstract class CustomBuffer<SELF extends CustomBuffer<SELF>> extends Poin
         if (limit < mark) {
             mark = -1;
         }
-        return self();
+        return (SELF)this;
     }
 
     /**
@@ -138,7 +141,7 @@ public abstract class CustomBuffer<SELF extends CustomBuffer<SELF>> extends Poin
      */
     public SELF mark() {
         mark = position;
-        return self();
+        return (SELF)this;
     }
 
     /**
@@ -156,7 +159,7 @@ public abstract class CustomBuffer<SELF extends CustomBuffer<SELF>> extends Poin
             throw new InvalidMarkException();
         }
         position = m;
-        return self();
+        return (SELF)this;
     }
 
     /**
@@ -177,7 +180,7 @@ public abstract class CustomBuffer<SELF extends CustomBuffer<SELF>> extends Poin
         position = 0;
         limit = capacity;
         mark = -1;
-        return self();
+        return (SELF)this;
     }
 
     /**
@@ -200,7 +203,7 @@ public abstract class CustomBuffer<SELF extends CustomBuffer<SELF>> extends Poin
         limit = position;
         position = 0;
         mark = -1;
-        return self();
+        return (SELF)this;
     }
 
     /**
@@ -219,7 +222,7 @@ public abstract class CustomBuffer<SELF extends CustomBuffer<SELF>> extends Poin
     public SELF rewind() {
         position = 0;
         mark = -1;
-        return self();
+        return (SELF)this;
     }
 
     /**
@@ -332,7 +335,7 @@ public abstract class CustomBuffer<SELF extends CustomBuffer<SELF>> extends Poin
         memCopy(src.address(), this.address(), Integer.toUnsignedLong(n) * sizeof());
         position += n;
 
-        return self();
+        return (SELF)this;
     }
 
     /**
@@ -357,7 +360,7 @@ public abstract class CustomBuffer<SELF extends CustomBuffer<SELF>> extends Poin
         limit(capacity());
         mark = -1;
 
-        return self();
+        return (SELF) this;
     }
 
     /**
@@ -371,9 +374,52 @@ public abstract class CustomBuffer<SELF extends CustomBuffer<SELF>> extends Poin
 
     // -----------------------------
 
-    protected abstract SELF self();
-
-    protected abstract SELF create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity);
+    /**
+     * Do not override me! It will be removed soon!
+     */
+    @Deprecated(forRemoval = true)
+    protected SELF self() {
+        return (SELF) this;
+    }
+    @Deprecated
+    protected SELF create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
+        return (SELF) create(this.getClass(), address, container, mark, position, limit, capacity);
+    }
+    /**
+     * @param type      the custom buffer class; must not be {@code null} and must not declare instance fields
+     * @param address   the custom buffer memory; must not be {@code NULL} when {@link Checks#CHECKS checks} are enabled
+     * @param <T>       the custom buffer type
+     *
+     * @return a new {@code CustomBuffer} instance
+     *
+     * @throws NullPointerException      if {@code type} is {@code null}, or if {@code address} is {@code NULL} and
+     *                                   {@link Checks#CHECKS checks} are enabled
+     * @throws InstanceAllocateException if {@code clazz} cannot be instantiated
+     */
+    @ForceInline
+    public static <T extends CustomBuffer<T>> T create(Class<T> type, long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
+        //noinspection ConstantValue
+        if (type == null) { // must check here to avoid crash jvm!
+            throw new NullPointerException("type is null!");
+        }
+        if (CHECKS) {
+            if (address == NULL) {
+                throw new NullPointerException("address is null");
+            }
+        }
+        try {
+            T instance = (T) UNSAFE.allocateInstance(type);
+            UNSAFE.putLong(instance, POINTER_DEF_ADDRESS, address);
+            instance.container = container;
+            instance.mark = mark;
+            instance.position = position;
+            instance.limit = limit;
+            instance.capacity = capacity;
+            return instance;
+        } catch (InstantiationException e) {
+            throw new AssertionError(e);
+        }
+    }
 
     protected final int nextGetIndex() {
         if (position < limit) {

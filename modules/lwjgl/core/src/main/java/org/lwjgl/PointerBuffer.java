@@ -57,16 +57,6 @@ public class PointerBuffer extends CustomBuffer<PointerBuffer> implements Compar
     }
 
     @Override
-    protected PointerBuffer self() {
-        return this;
-    }
-
-    @Override
-    protected PointerBuffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-        return new PointerBuffer(address, container, mark, position, limit, capacity);
-    }
-
-    @Override
     public int sizeof() {
         return POINTER_SIZE;
     }

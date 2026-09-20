@@ -15,6 +15,7 @@ import static org.lwjgl.system.Checks.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
 /** Base class of struct custom buffers. */
+@SuppressWarnings("unchecked")
 public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffer<T, SELF>> extends CustomBuffer<SELF> implements Iterable<T> {
 
     protected StructBuffer(ByteBuffer container, int remaining) {
@@ -55,7 +56,7 @@ public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffe
     public SELF get(T value) {
         int sizeof = getElementFactory().sizeof();
         memCopy(address + Integer.toUnsignedLong(nextGetIndex()) * sizeof, value.address(), sizeof);
-        return self();
+        return (SELF) this;
     }
 
     /**
@@ -73,7 +74,7 @@ public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffe
     public SELF put(T value) {
         int sizeof = getElementFactory().sizeof();
         memCopy(value.address(), address + Integer.toUnsignedLong(nextPutIndex()) * sizeof, sizeof);
-        return self();
+        return (SELF) this;
     }
 
     /**
@@ -105,7 +106,7 @@ public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffe
     public SELF get(int index, T value) {
         int sizeof = getElementFactory().sizeof();
         memCopy(address + Checks.check(index, limit) * sizeof, value.address(), sizeof);
-        return self();
+        return (SELF) this;
     }
 
     /**
@@ -124,7 +125,7 @@ public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffe
     public SELF put(int index, T value) {
         int sizeof = getElementFactory().sizeof();
         memCopy(value.address(), address + Checks.check(index, limit) * sizeof, sizeof);
-        return self();
+        return (SELF) this;
     }
 
     /**
@@ -138,7 +139,7 @@ public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffe
      */
     public SELF apply(Consumer<T> consumer) {
         consumer.accept(get());
-        return self();
+        return (SELF) this;
     }
 
     /**
@@ -154,7 +155,7 @@ public abstract class StructBuffer<T extends Struct<T>, SELF extends StructBuffe
      */
     public SELF apply(int index, Consumer<T> consumer) {
         consumer.accept(get(index));
-        return self();
+        return (SELF) this;
     }
 
     // --------------------------------------
