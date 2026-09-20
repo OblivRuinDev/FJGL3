@@ -237,9 +237,6 @@ public class FSBANK_STATEDATA_FAILED extends Struct<FSBANK_STATEDATA_FAILED> imp
 
     /** An array of {@link FSBANK_STATEDATA_FAILED} structs. */
     public static class Buffer extends StructBuffer<FSBANK_STATEDATA_FAILED, Buffer> implements NativeResource {
-
-        private static final FSBANK_STATEDATA_FAILED ELEMENT_FACTORY = FSBANK_STATEDATA_FAILED.create(-1L);
-
         /**
          * Creates a new {@code FSBANK_STATEDATA_FAILED.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class FSBANK_STATEDATA_FAILED extends Struct<FSBANK_STATEDATA_FAILED> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FSBANK_STATEDATA_FAILED getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FSBANK_STATEDATA_FAILED.class;
         }
 
         /** @return the value of the {@code errorCode} field. */

@@ -290,9 +290,6 @@ public class VkMemoryMarkerInfoAMD extends Struct<VkMemoryMarkerInfoAMD> impleme
 
     /** An array of {@link VkMemoryMarkerInfoAMD} structs. */
     public static class Buffer extends StructBuffer<VkMemoryMarkerInfoAMD, Buffer> implements NativeResource {
-
-        private static final VkMemoryMarkerInfoAMD ELEMENT_FACTORY = VkMemoryMarkerInfoAMD.create(-1L);
-
         /**
          * Creates a new {@code VkMemoryMarkerInfoAMD.Buffer} instance backed by the specified container.
          *
@@ -315,18 +312,13 @@ public class VkMemoryMarkerInfoAMD extends Struct<VkMemoryMarkerInfoAMD> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMemoryMarkerInfoAMD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMemoryMarkerInfoAMD.class;
         }
 
         /** @return the value of the {@code sType} field. */

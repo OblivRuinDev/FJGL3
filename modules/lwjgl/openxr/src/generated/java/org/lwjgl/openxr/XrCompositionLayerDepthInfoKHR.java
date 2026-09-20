@@ -310,9 +310,6 @@ public class XrCompositionLayerDepthInfoKHR extends Struct<XrCompositionLayerDep
 
     /** An array of {@link XrCompositionLayerDepthInfoKHR} structs. */
     public static class Buffer extends StructBuffer<XrCompositionLayerDepthInfoKHR, Buffer> implements NativeResource {
-
-        private static final XrCompositionLayerDepthInfoKHR ELEMENT_FACTORY = XrCompositionLayerDepthInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code XrCompositionLayerDepthInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -335,18 +332,13 @@ public class XrCompositionLayerDepthInfoKHR extends Struct<XrCompositionLayerDep
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrCompositionLayerDepthInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrCompositionLayerDepthInfoKHR.class;
         }
 
         /** @return the value of the {@code type} field. */

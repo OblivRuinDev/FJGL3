@@ -263,9 +263,6 @@ public class XrSenseDataProviderCreateInfoDynamicObjectBD extends Struct<XrSense
 
     /** An array of {@link XrSenseDataProviderCreateInfoDynamicObjectBD} structs. */
     public static class Buffer extends StructBuffer<XrSenseDataProviderCreateInfoDynamicObjectBD, Buffer> implements NativeResource {
-
-        private static final XrSenseDataProviderCreateInfoDynamicObjectBD ELEMENT_FACTORY = XrSenseDataProviderCreateInfoDynamicObjectBD.create(-1L);
-
         /**
          * Creates a new {@code XrSenseDataProviderCreateInfoDynamicObjectBD.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrSenseDataProviderCreateInfoDynamicObjectBD extends Struct<XrSense
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSenseDataProviderCreateInfoDynamicObjectBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSenseDataProviderCreateInfoDynamicObjectBD.class;
         }
 
         /** @return the value of the {@code type} field. */

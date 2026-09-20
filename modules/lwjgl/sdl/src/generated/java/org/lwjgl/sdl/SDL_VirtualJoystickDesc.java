@@ -603,9 +603,6 @@ public class SDL_VirtualJoystickDesc extends Struct<SDL_VirtualJoystickDesc> imp
 
     /** An array of {@link SDL_VirtualJoystickDesc} structs. */
     public static class Buffer extends StructBuffer<SDL_VirtualJoystickDesc, Buffer> implements NativeResource {
-
-        private static final SDL_VirtualJoystickDesc ELEMENT_FACTORY = SDL_VirtualJoystickDesc.create(-1L);
-
         /**
          * Creates a new {@code SDL_VirtualJoystickDesc.Buffer} instance backed by the specified container.
          *
@@ -628,18 +625,13 @@ public class SDL_VirtualJoystickDesc extends Struct<SDL_VirtualJoystickDesc> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_VirtualJoystickDesc getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_VirtualJoystickDesc.class;
         }
 
         /** @return the value of the {@code version} field. */

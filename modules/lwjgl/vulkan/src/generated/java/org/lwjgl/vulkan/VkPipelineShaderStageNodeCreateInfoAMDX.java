@@ -266,9 +266,6 @@ public class VkPipelineShaderStageNodeCreateInfoAMDX extends Struct<VkPipelineSh
 
     /** An array of {@link VkPipelineShaderStageNodeCreateInfoAMDX} structs. */
     public static class Buffer extends StructBuffer<VkPipelineShaderStageNodeCreateInfoAMDX, Buffer> implements NativeResource {
-
-        private static final VkPipelineShaderStageNodeCreateInfoAMDX ELEMENT_FACTORY = VkPipelineShaderStageNodeCreateInfoAMDX.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineShaderStageNodeCreateInfoAMDX.Buffer} instance backed by the specified container.
          *
@@ -291,18 +288,13 @@ public class VkPipelineShaderStageNodeCreateInfoAMDX extends Struct<VkPipelineSh
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineShaderStageNodeCreateInfoAMDX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineShaderStageNodeCreateInfoAMDX.class;
         }
 
         /** @return the value of the {@code sType} field. */

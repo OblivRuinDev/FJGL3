@@ -260,9 +260,6 @@ public class VkSamplerCustomBorderColorCreateInfoEXT extends Struct<VkSamplerCus
 
     /** An array of {@link VkSamplerCustomBorderColorCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkSamplerCustomBorderColorCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkSamplerCustomBorderColorCreateInfoEXT ELEMENT_FACTORY = VkSamplerCustomBorderColorCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkSamplerCustomBorderColorCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class VkSamplerCustomBorderColorCreateInfoEXT extends Struct<VkSamplerCus
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSamplerCustomBorderColorCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSamplerCustomBorderColorCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

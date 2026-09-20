@@ -143,9 +143,6 @@ public class ParShapesMesh extends Struct<ParShapesMesh> {
 
     /** An array of {@link ParShapesMesh} structs. */
     public static class Buffer extends StructBuffer<ParShapesMesh, Buffer> {
-
-        private static final ParShapesMesh ELEMENT_FACTORY = ParShapesMesh.create(-1L);
-
         /**
          * Creates a new {@code ParShapesMesh.Buffer} instance backed by the specified container.
          *
@@ -168,18 +165,13 @@ public class ParShapesMesh extends Struct<ParShapesMesh> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ParShapesMesh getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ParShapesMesh.class;
         }
 
         /** @return a {@link FloatBuffer} view of the data pointed to by the {@code points} field. */

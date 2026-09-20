@@ -237,9 +237,6 @@ public class VkAttachmentSampleLocationsEXT extends Struct<VkAttachmentSampleLoc
 
     /** An array of {@link VkAttachmentSampleLocationsEXT} structs. */
     public static class Buffer extends StructBuffer<VkAttachmentSampleLocationsEXT, Buffer> implements NativeResource {
-
-        private static final VkAttachmentSampleLocationsEXT ELEMENT_FACTORY = VkAttachmentSampleLocationsEXT.create(-1L);
-
         /**
          * Creates a new {@code VkAttachmentSampleLocationsEXT.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class VkAttachmentSampleLocationsEXT extends Struct<VkAttachmentSampleLoc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAttachmentSampleLocationsEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAttachmentSampleLocationsEXT.class;
         }
 
         /** @return the value of the {@code attachmentIndex} field. */

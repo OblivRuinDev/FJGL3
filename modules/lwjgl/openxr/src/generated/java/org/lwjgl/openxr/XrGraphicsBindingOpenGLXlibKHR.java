@@ -318,9 +318,6 @@ public class XrGraphicsBindingOpenGLXlibKHR extends Struct<XrGraphicsBindingOpen
 
     /** An array of {@link XrGraphicsBindingOpenGLXlibKHR} structs. */
     public static class Buffer extends StructBuffer<XrGraphicsBindingOpenGLXlibKHR, Buffer> implements NativeResource {
-
-        private static final XrGraphicsBindingOpenGLXlibKHR ELEMENT_FACTORY = XrGraphicsBindingOpenGLXlibKHR.create(-1L);
-
         /**
          * Creates a new {@code XrGraphicsBindingOpenGLXlibKHR.Buffer} instance backed by the specified container.
          *
@@ -343,18 +340,13 @@ public class XrGraphicsBindingOpenGLXlibKHR extends Struct<XrGraphicsBindingOpen
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrGraphicsBindingOpenGLXlibKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrGraphicsBindingOpenGLXlibKHR.class;
         }
 
         /** @return the value of the {@code type} field. */

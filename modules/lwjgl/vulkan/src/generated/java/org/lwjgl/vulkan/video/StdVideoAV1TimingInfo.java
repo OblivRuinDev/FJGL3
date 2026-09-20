@@ -258,9 +258,6 @@ public class StdVideoAV1TimingInfo extends Struct<StdVideoAV1TimingInfo> impleme
 
     /** An array of {@link StdVideoAV1TimingInfo} structs. */
     public static class Buffer extends StructBuffer<StdVideoAV1TimingInfo, Buffer> implements NativeResource {
-
-        private static final StdVideoAV1TimingInfo ELEMENT_FACTORY = StdVideoAV1TimingInfo.create(-1L);
-
         /**
          * Creates a new {@code StdVideoAV1TimingInfo.Buffer} instance backed by the specified container.
          *
@@ -283,18 +280,13 @@ public class StdVideoAV1TimingInfo extends Struct<StdVideoAV1TimingInfo> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoAV1TimingInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoAV1TimingInfo.class;
         }
 
         /** @return a {@link StdVideoAV1TimingInfoFlags} view of the {@code flags} field. */

@@ -193,9 +193,6 @@ public class XrSpaceLocationsKHR extends XrSpaceLocations {
 
     /** An array of {@link XrSpaceLocationsKHR} structs. */
     public static class Buffer extends XrSpaceLocations.Buffer {
-
-        private static final XrSpaceLocationsKHR ELEMENT_FACTORY = XrSpaceLocationsKHR.create(-1L);
-
         /**
          * Creates a new {@code XrSpaceLocationsKHR.Buffer} instance backed by the specified container.
          *
@@ -218,18 +215,13 @@ public class XrSpaceLocationsKHR extends XrSpaceLocations {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpaceLocationsKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpaceLocationsKHR.class;
         }
 
         /** Sets the specified value to the {@code type} field. */

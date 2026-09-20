@@ -272,9 +272,6 @@ public class VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV extends Struct<V
 
     /** An array of {@link VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV ELEMENT_FACTORY = VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV extends Struct<V
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

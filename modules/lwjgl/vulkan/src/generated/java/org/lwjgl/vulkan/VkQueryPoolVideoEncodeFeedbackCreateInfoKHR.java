@@ -242,9 +242,6 @@ public class VkQueryPoolVideoEncodeFeedbackCreateInfoKHR extends Struct<VkQueryP
 
     /** An array of {@link VkQueryPoolVideoEncodeFeedbackCreateInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkQueryPoolVideoEncodeFeedbackCreateInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkQueryPoolVideoEncodeFeedbackCreateInfoKHR ELEMENT_FACTORY = VkQueryPoolVideoEncodeFeedbackCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkQueryPoolVideoEncodeFeedbackCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkQueryPoolVideoEncodeFeedbackCreateInfoKHR extends Struct<VkQueryP
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkQueryPoolVideoEncodeFeedbackCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkQueryPoolVideoEncodeFeedbackCreateInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

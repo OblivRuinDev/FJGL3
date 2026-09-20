@@ -433,9 +433,6 @@ public class GLSLangInput extends Struct<GLSLangInput> implements NativeResource
 
     /** An array of {@link GLSLangInput} structs. */
     public static class Buffer extends StructBuffer<GLSLangInput, Buffer> implements NativeResource {
-
-        private static final GLSLangInput ELEMENT_FACTORY = GLSLangInput.create(-1L);
-
         /**
          * Creates a new {@code GLSLangInput.Buffer} instance backed by the specified container.
          *
@@ -458,18 +455,13 @@ public class GLSLangInput extends Struct<GLSLangInput> implements NativeResource
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected GLSLangInput getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return GLSLangInput.class;
         }
 
         /** @return the value of the {@code language} field. */

@@ -193,9 +193,6 @@ public class VkRenderPassInputAttachmentAspectCreateInfoKHR extends VkRenderPass
 
     /** An array of {@link VkRenderPassInputAttachmentAspectCreateInfoKHR} structs. */
     public static class Buffer extends VkRenderPassInputAttachmentAspectCreateInfo.Buffer {
-
-        private static final VkRenderPassInputAttachmentAspectCreateInfoKHR ELEMENT_FACTORY = VkRenderPassInputAttachmentAspectCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkRenderPassInputAttachmentAspectCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -218,18 +215,13 @@ public class VkRenderPassInputAttachmentAspectCreateInfoKHR extends VkRenderPass
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderPassInputAttachmentAspectCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderPassInputAttachmentAspectCreateInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

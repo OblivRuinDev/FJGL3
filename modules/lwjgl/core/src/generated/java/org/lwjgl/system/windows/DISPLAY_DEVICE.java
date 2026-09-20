@@ -266,9 +266,6 @@ public class DISPLAY_DEVICE extends Struct<DISPLAY_DEVICE> implements NativeReso
 
     /** An array of {@link DISPLAY_DEVICE} structs. */
     public static class Buffer extends StructBuffer<DISPLAY_DEVICE, Buffer> implements NativeResource {
-
-        private static final DISPLAY_DEVICE ELEMENT_FACTORY = DISPLAY_DEVICE.create(-1L);
-
         /**
          * Creates a new {@code DISPLAY_DEVICE.Buffer} instance backed by the specified container.
          *
@@ -291,18 +288,13 @@ public class DISPLAY_DEVICE extends Struct<DISPLAY_DEVICE> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected DISPLAY_DEVICE getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return DISPLAY_DEVICE.class;
         }
 
         /** @return the value of the {@code cb} field. */

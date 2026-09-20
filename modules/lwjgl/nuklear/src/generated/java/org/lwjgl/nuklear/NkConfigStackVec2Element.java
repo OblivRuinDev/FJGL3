@@ -111,9 +111,6 @@ class NkConfigStackVec2Element extends Struct<NkConfigStackVec2Element> {
 
     /** An array of {@link NkConfigStackVec2Element} structs. */
     public static class Buffer extends StructBuffer<NkConfigStackVec2Element, Buffer> {
-
-        private static final NkConfigStackVec2Element ELEMENT_FACTORY = NkConfigStackVec2Element.create(-1L);
-
         /**
          * Creates a new {@code NkConfigStackVec2Element.Buffer} instance backed by the specified container.
          *
@@ -136,18 +133,13 @@ class NkConfigStackVec2Element extends Struct<NkConfigStackVec2Element> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkConfigStackVec2Element getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkConfigStackVec2Element.class;
         }
 
         /** @return a {@link NkVec2} view of the struct pointed to by the {@code pValues} field. */

@@ -289,9 +289,6 @@ public class StdVideoH265HrdFlags extends Struct<StdVideoH265HrdFlags> implement
 
     /** An array of {@link StdVideoH265HrdFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoH265HrdFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoH265HrdFlags ELEMENT_FACTORY = StdVideoH265HrdFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoH265HrdFlags.Buffer} instance backed by the specified container.
          *
@@ -314,18 +311,13 @@ public class StdVideoH265HrdFlags extends Struct<StdVideoH265HrdFlags> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoH265HrdFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoH265HrdFlags.class;
         }
 
         /** @return the value of the {@code nal_hrd_parameters_present_flag} field. */

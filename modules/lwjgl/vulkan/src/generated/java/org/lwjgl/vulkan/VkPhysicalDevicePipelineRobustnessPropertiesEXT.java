@@ -189,9 +189,6 @@ public class VkPhysicalDevicePipelineRobustnessPropertiesEXT extends VkPhysicalD
 
     /** An array of {@link VkPhysicalDevicePipelineRobustnessPropertiesEXT} structs. */
     public static class Buffer extends VkPhysicalDevicePipelineRobustnessProperties.Buffer {
-
-        private static final VkPhysicalDevicePipelineRobustnessPropertiesEXT ELEMENT_FACTORY = VkPhysicalDevicePipelineRobustnessPropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDevicePipelineRobustnessPropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -214,18 +211,13 @@ public class VkPhysicalDevicePipelineRobustnessPropertiesEXT extends VkPhysicalD
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDevicePipelineRobustnessPropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDevicePipelineRobustnessPropertiesEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

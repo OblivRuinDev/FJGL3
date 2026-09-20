@@ -225,9 +225,6 @@ public class XrSystemTrackingProperties extends Struct<XrSystemTrackingPropertie
 
     /** An array of {@link XrSystemTrackingProperties} structs. */
     public static class Buffer extends StructBuffer<XrSystemTrackingProperties, Buffer> implements NativeResource {
-
-        private static final XrSystemTrackingProperties ELEMENT_FACTORY = XrSystemTrackingProperties.create(-1L);
-
         /**
          * Creates a new {@code XrSystemTrackingProperties.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class XrSystemTrackingProperties extends Struct<XrSystemTrackingPropertie
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemTrackingProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemTrackingProperties.class;
         }
 
         /** @return the value of the {@code orientationTracking} field. */

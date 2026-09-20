@@ -242,9 +242,6 @@ public class VkDisplayEventInfoEXT extends Struct<VkDisplayEventInfoEXT> impleme
 
     /** An array of {@link VkDisplayEventInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkDisplayEventInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkDisplayEventInfoEXT ELEMENT_FACTORY = VkDisplayEventInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDisplayEventInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkDisplayEventInfoEXT extends Struct<VkDisplayEventInfoEXT> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDisplayEventInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDisplayEventInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -252,9 +252,6 @@ public class XrLoaderInitPropertyValueEXT extends Struct<XrLoaderInitPropertyVal
 
     /** An array of {@link XrLoaderInitPropertyValueEXT} structs. */
     public static class Buffer extends StructBuffer<XrLoaderInitPropertyValueEXT, Buffer> implements NativeResource {
-
-        private static final XrLoaderInitPropertyValueEXT ELEMENT_FACTORY = XrLoaderInitPropertyValueEXT.create(-1L);
-
         /**
          * Creates a new {@code XrLoaderInitPropertyValueEXT.Buffer} instance backed by the specified container.
          *
@@ -277,18 +274,13 @@ public class XrLoaderInitPropertyValueEXT extends Struct<XrLoaderInitPropertyVal
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrLoaderInitPropertyValueEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrLoaderInitPropertyValueEXT.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code name} field. */

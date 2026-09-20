@@ -199,9 +199,6 @@ public class VkExtensionProperties extends Struct<VkExtensionProperties> impleme
 
     /** An array of {@link VkExtensionProperties} structs. */
     public static class Buffer extends StructBuffer<VkExtensionProperties, Buffer> implements NativeResource {
-
-        private static final VkExtensionProperties ELEMENT_FACTORY = VkExtensionProperties.create(-1L);
-
         /**
          * Creates a new {@code VkExtensionProperties.Buffer} instance backed by the specified container.
          *
@@ -224,18 +221,13 @@ public class VkExtensionProperties extends Struct<VkExtensionProperties> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExtensionProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExtensionProperties.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code extensionName} field. */

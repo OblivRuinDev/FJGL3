@@ -122,9 +122,6 @@ public class LZ4Stream extends Struct<LZ4Stream> {
 
     /** An array of {@link LZ4Stream} structs. */
     public static class Buffer extends StructBuffer<LZ4Stream, Buffer> {
-
-        private static final LZ4Stream ELEMENT_FACTORY = LZ4Stream.create(-1L);
-
         /**
          * Creates a new {@code LZ4Stream.Buffer} instance backed by the specified container.
          *
@@ -147,18 +144,13 @@ public class LZ4Stream extends Struct<LZ4Stream> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected LZ4Stream getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return LZ4Stream.class;
         }
 
         /** @return a {@link PointerBuffer} view of the {@code table} field. */

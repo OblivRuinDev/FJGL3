@@ -186,9 +186,6 @@ public class VkPhysicalDeviceMemoryProperties2KHR extends VkPhysicalDeviceMemory
 
     /** An array of {@link VkPhysicalDeviceMemoryProperties2KHR} structs. */
     public static class Buffer extends VkPhysicalDeviceMemoryProperties2.Buffer {
-
-        private static final VkPhysicalDeviceMemoryProperties2KHR ELEMENT_FACTORY = VkPhysicalDeviceMemoryProperties2KHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceMemoryProperties2KHR.Buffer} instance backed by the specified container.
          *
@@ -211,18 +208,13 @@ public class VkPhysicalDeviceMemoryProperties2KHR extends VkPhysicalDeviceMemory
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceMemoryProperties2KHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceMemoryProperties2KHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

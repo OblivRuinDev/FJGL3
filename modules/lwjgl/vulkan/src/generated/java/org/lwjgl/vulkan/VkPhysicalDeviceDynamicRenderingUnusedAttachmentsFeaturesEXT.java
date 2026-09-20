@@ -242,9 +242,6 @@ public class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT extend
 
     /** An array of {@link VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT extend
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

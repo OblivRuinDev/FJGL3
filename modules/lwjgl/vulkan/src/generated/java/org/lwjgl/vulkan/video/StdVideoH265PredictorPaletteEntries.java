@@ -220,9 +220,6 @@ public class StdVideoH265PredictorPaletteEntries extends Struct<StdVideoH265Pred
 
     /** An array of {@link StdVideoH265PredictorPaletteEntries} structs. */
     public static class Buffer extends StructBuffer<StdVideoH265PredictorPaletteEntries, Buffer> implements NativeResource {
-
-        private static final StdVideoH265PredictorPaletteEntries ELEMENT_FACTORY = StdVideoH265PredictorPaletteEntries.create(-1L);
-
         /**
          * Creates a new {@code StdVideoH265PredictorPaletteEntries.Buffer} instance backed by the specified container.
          *
@@ -245,18 +242,13 @@ public class StdVideoH265PredictorPaletteEntries extends Struct<StdVideoH265Pred
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoH265PredictorPaletteEntries getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoH265PredictorPaletteEntries.class;
         }
 
         /** @return a {@link ShortBuffer} view of the {@code PredictorPaletteEntries} field. */

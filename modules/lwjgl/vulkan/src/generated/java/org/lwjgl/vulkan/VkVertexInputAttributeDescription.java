@@ -255,9 +255,6 @@ public class VkVertexInputAttributeDescription extends Struct<VkVertexInputAttri
 
     /** An array of {@link VkVertexInputAttributeDescription} structs. */
     public static class Buffer extends StructBuffer<VkVertexInputAttributeDescription, Buffer> implements NativeResource {
-
-        private static final VkVertexInputAttributeDescription ELEMENT_FACTORY = VkVertexInputAttributeDescription.create(-1L);
-
         /**
          * Creates a new {@code VkVertexInputAttributeDescription.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class VkVertexInputAttributeDescription extends Struct<VkVertexInputAttri
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVertexInputAttributeDescription getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVertexInputAttributeDescription.class;
         }
 
         /** @return the value of the {@code location} field. */

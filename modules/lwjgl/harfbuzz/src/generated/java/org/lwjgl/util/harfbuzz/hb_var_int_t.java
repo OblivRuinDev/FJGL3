@@ -331,9 +331,6 @@ public class hb_var_int_t extends Struct<hb_var_int_t> implements NativeResource
 
     /** An array of {@link hb_var_int_t} structs. */
     public static class Buffer extends StructBuffer<hb_var_int_t, Buffer> implements NativeResource {
-
-        private static final hb_var_int_t ELEMENT_FACTORY = hb_var_int_t.create(-1L);
-
         /**
          * Creates a new {@code hb_var_int_t.Buffer} instance backed by the specified container.
          *
@@ -356,18 +353,13 @@ public class hb_var_int_t extends Struct<hb_var_int_t> implements NativeResource
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected hb_var_int_t getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return hb_var_int_t.class;
         }
 
         /** @return the value of the {@code u32} field. */

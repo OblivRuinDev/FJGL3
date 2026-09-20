@@ -127,9 +127,6 @@ public class CXIdxImportedASTFileInfo extends Struct<CXIdxImportedASTFileInfo> {
 
     /** An array of {@link CXIdxImportedASTFileInfo} structs. */
     public static class Buffer extends StructBuffer<CXIdxImportedASTFileInfo, Buffer> {
-
-        private static final CXIdxImportedASTFileInfo ELEMENT_FACTORY = CXIdxImportedASTFileInfo.create(-1L);
-
         /**
          * Creates a new {@code CXIdxImportedASTFileInfo.Buffer} instance backed by the specified container.
          *
@@ -152,18 +149,13 @@ public class CXIdxImportedASTFileInfo extends Struct<CXIdxImportedASTFileInfo> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXIdxImportedASTFileInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXIdxImportedASTFileInfo.class;
         }
 
         /** @return the value of the {@code file} field. */

@@ -242,9 +242,6 @@ public class XrEyeGazeFB extends Struct<XrEyeGazeFB> implements NativeResource {
 
     /** An array of {@link XrEyeGazeFB} structs. */
     public static class Buffer extends StructBuffer<XrEyeGazeFB, Buffer> implements NativeResource {
-
-        private static final XrEyeGazeFB ELEMENT_FACTORY = XrEyeGazeFB.create(-1L);
-
         /**
          * Creates a new {@code XrEyeGazeFB.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrEyeGazeFB extends Struct<XrEyeGazeFB> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEyeGazeFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEyeGazeFB.class;
         }
 
         /** @return the value of the {@code isValid} field. */

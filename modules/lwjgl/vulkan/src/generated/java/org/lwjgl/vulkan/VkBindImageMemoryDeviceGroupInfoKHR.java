@@ -200,9 +200,6 @@ public class VkBindImageMemoryDeviceGroupInfoKHR extends VkBindImageMemoryDevice
 
     /** An array of {@link VkBindImageMemoryDeviceGroupInfoKHR} structs. */
     public static class Buffer extends VkBindImageMemoryDeviceGroupInfo.Buffer {
-
-        private static final VkBindImageMemoryDeviceGroupInfoKHR ELEMENT_FACTORY = VkBindImageMemoryDeviceGroupInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkBindImageMemoryDeviceGroupInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -225,18 +222,13 @@ public class VkBindImageMemoryDeviceGroupInfoKHR extends VkBindImageMemoryDevice
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBindImageMemoryDeviceGroupInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBindImageMemoryDeviceGroupInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

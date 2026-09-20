@@ -468,9 +468,6 @@ public class StdVideoH265HrdParameters extends Struct<StdVideoH265HrdParameters>
 
     /** An array of {@link StdVideoH265HrdParameters} structs. */
     public static class Buffer extends StructBuffer<StdVideoH265HrdParameters, Buffer> implements NativeResource {
-
-        private static final StdVideoH265HrdParameters ELEMENT_FACTORY = StdVideoH265HrdParameters.create(-1L);
-
         /**
          * Creates a new {@code StdVideoH265HrdParameters.Buffer} instance backed by the specified container.
          *
@@ -493,18 +490,13 @@ public class StdVideoH265HrdParameters extends Struct<StdVideoH265HrdParameters>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoH265HrdParameters getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoH265HrdParameters.class;
         }
 
         /** @return a {@link StdVideoH265HrdFlags} view of the {@code flags} field. */

@@ -293,9 +293,6 @@ public class VkImportMemoryWin32HandleInfoKHR extends Struct<VkImportMemoryWin32
 
     /** An array of {@link VkImportMemoryWin32HandleInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkImportMemoryWin32HandleInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkImportMemoryWin32HandleInfoKHR ELEMENT_FACTORY = VkImportMemoryWin32HandleInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkImportMemoryWin32HandleInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -318,18 +315,13 @@ public class VkImportMemoryWin32HandleInfoKHR extends Struct<VkImportMemoryWin32
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImportMemoryWin32HandleInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImportMemoryWin32HandleInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

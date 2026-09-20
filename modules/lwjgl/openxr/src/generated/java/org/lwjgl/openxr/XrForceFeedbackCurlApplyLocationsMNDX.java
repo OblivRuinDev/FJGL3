@@ -263,9 +263,6 @@ public class XrForceFeedbackCurlApplyLocationsMNDX extends Struct<XrForceFeedbac
 
     /** An array of {@link XrForceFeedbackCurlApplyLocationsMNDX} structs. */
     public static class Buffer extends StructBuffer<XrForceFeedbackCurlApplyLocationsMNDX, Buffer> implements NativeResource {
-
-        private static final XrForceFeedbackCurlApplyLocationsMNDX ELEMENT_FACTORY = XrForceFeedbackCurlApplyLocationsMNDX.create(-1L);
-
         /**
          * Creates a new {@code XrForceFeedbackCurlApplyLocationsMNDX.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrForceFeedbackCurlApplyLocationsMNDX extends Struct<XrForceFeedbac
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrForceFeedbackCurlApplyLocationsMNDX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrForceFeedbackCurlApplyLocationsMNDX.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -285,9 +285,6 @@ public class VkWin32SurfaceCreateInfoKHR extends Struct<VkWin32SurfaceCreateInfo
 
     /** An array of {@link VkWin32SurfaceCreateInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkWin32SurfaceCreateInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkWin32SurfaceCreateInfoKHR ELEMENT_FACTORY = VkWin32SurfaceCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkWin32SurfaceCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -310,18 +307,13 @@ public class VkWin32SurfaceCreateInfoKHR extends Struct<VkWin32SurfaceCreateInfo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkWin32SurfaceCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkWin32SurfaceCreateInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

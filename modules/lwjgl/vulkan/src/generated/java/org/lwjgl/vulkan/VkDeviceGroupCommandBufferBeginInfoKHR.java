@@ -191,9 +191,6 @@ public class VkDeviceGroupCommandBufferBeginInfoKHR extends VkDeviceGroupCommand
 
     /** An array of {@link VkDeviceGroupCommandBufferBeginInfoKHR} structs. */
     public static class Buffer extends VkDeviceGroupCommandBufferBeginInfo.Buffer {
-
-        private static final VkDeviceGroupCommandBufferBeginInfoKHR ELEMENT_FACTORY = VkDeviceGroupCommandBufferBeginInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceGroupCommandBufferBeginInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkDeviceGroupCommandBufferBeginInfoKHR extends VkDeviceGroupCommand
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceGroupCommandBufferBeginInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceGroupCommandBufferBeginInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

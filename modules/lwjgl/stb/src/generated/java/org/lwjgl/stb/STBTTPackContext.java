@@ -270,9 +270,6 @@ public class STBTTPackContext extends Struct<STBTTPackContext> implements Native
 
     /** An array of {@link STBTTPackContext} structs. */
     public static class Buffer extends StructBuffer<STBTTPackContext, Buffer> implements NativeResource {
-
-        private static final STBTTPackContext ELEMENT_FACTORY = STBTTPackContext.create(-1L);
-
         /**
          * Creates a new {@code STBTTPackContext.Buffer} instance backed by the specified container.
          *
@@ -295,18 +292,13 @@ public class STBTTPackContext extends Struct<STBTTPackContext> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected STBTTPackContext getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return STBTTPackContext.class;
         }
 
         /** @return the value of the {@code user_allocator_context} field. */

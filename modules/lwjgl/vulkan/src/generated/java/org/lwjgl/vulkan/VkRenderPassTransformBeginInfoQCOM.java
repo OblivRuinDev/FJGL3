@@ -242,9 +242,6 @@ public class VkRenderPassTransformBeginInfoQCOM extends Struct<VkRenderPassTrans
 
     /** An array of {@link VkRenderPassTransformBeginInfoQCOM} structs. */
     public static class Buffer extends StructBuffer<VkRenderPassTransformBeginInfoQCOM, Buffer> implements NativeResource {
-
-        private static final VkRenderPassTransformBeginInfoQCOM ELEMENT_FACTORY = VkRenderPassTransformBeginInfoQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkRenderPassTransformBeginInfoQCOM.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkRenderPassTransformBeginInfoQCOM extends Struct<VkRenderPassTrans
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderPassTransformBeginInfoQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderPassTransformBeginInfoQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

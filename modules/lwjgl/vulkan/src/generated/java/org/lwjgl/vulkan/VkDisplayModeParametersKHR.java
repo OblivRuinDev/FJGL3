@@ -228,9 +228,6 @@ public class VkDisplayModeParametersKHR extends Struct<VkDisplayModeParametersKH
 
     /** An array of {@link VkDisplayModeParametersKHR} structs. */
     public static class Buffer extends StructBuffer<VkDisplayModeParametersKHR, Buffer> implements NativeResource {
-
-        private static final VkDisplayModeParametersKHR ELEMENT_FACTORY = VkDisplayModeParametersKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDisplayModeParametersKHR.Buffer} instance backed by the specified container.
          *
@@ -253,18 +250,13 @@ public class VkDisplayModeParametersKHR extends Struct<VkDisplayModeParametersKH
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDisplayModeParametersKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDisplayModeParametersKHR.class;
         }
 
         /** @return a {@link VkExtent2D} view of the {@code visibleRegion} field. */

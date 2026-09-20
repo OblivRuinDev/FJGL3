@@ -236,9 +236,6 @@ public class XrSystemBodyTrackingPropertiesHTC extends Struct<XrSystemBodyTracki
 
     /** An array of {@link XrSystemBodyTrackingPropertiesHTC} structs. */
     public static class Buffer extends StructBuffer<XrSystemBodyTrackingPropertiesHTC, Buffer> implements NativeResource {
-
-        private static final XrSystemBodyTrackingPropertiesHTC ELEMENT_FACTORY = XrSystemBodyTrackingPropertiesHTC.create(-1L);
-
         /**
          * Creates a new {@code XrSystemBodyTrackingPropertiesHTC.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemBodyTrackingPropertiesHTC extends Struct<XrSystemBodyTracki
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemBodyTrackingPropertiesHTC getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemBodyTrackingPropertiesHTC.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -326,9 +326,6 @@ public class STBTTPackedchar extends Struct<STBTTPackedchar> implements NativeRe
 
     /** An array of {@link STBTTPackedchar} structs. */
     public static class Buffer extends StructBuffer<STBTTPackedchar, Buffer> implements NativeResource {
-
-        private static final STBTTPackedchar ELEMENT_FACTORY = STBTTPackedchar.create(-1L);
-
         /**
          * Creates a new {@code STBTTPackedchar.Buffer} instance backed by the specified container.
          *
@@ -351,18 +348,13 @@ public class STBTTPackedchar extends Struct<STBTTPackedchar> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected STBTTPackedchar getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return STBTTPackedchar.class;
         }
 
         /** @return the value of the {@code x0} field. */

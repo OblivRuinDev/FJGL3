@@ -227,9 +227,6 @@ public class XrQueriedSenseDataGetInfoBD extends Struct<XrQueriedSenseDataGetInf
 
     /** An array of {@link XrQueriedSenseDataGetInfoBD} structs. */
     public static class Buffer extends StructBuffer<XrQueriedSenseDataGetInfoBD, Buffer> implements NativeResource {
-
-        private static final XrQueriedSenseDataGetInfoBD ELEMENT_FACTORY = XrQueriedSenseDataGetInfoBD.create(-1L);
-
         /**
          * Creates a new {@code XrQueriedSenseDataGetInfoBD.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrQueriedSenseDataGetInfoBD extends Struct<XrQueriedSenseDataGetInf
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrQueriedSenseDataGetInfoBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrQueriedSenseDataGetInfoBD.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -286,9 +286,6 @@ public class BGFXVideoDecoderFrame extends Struct<BGFXVideoDecoderFrame> impleme
 
     /** An array of {@link BGFXVideoDecoderFrame} structs. */
     public static class Buffer extends StructBuffer<BGFXVideoDecoderFrame, Buffer> implements NativeResource {
-
-        private static final BGFXVideoDecoderFrame ELEMENT_FACTORY = BGFXVideoDecoderFrame.create(-1L);
-
         /**
          * Creates a new {@code BGFXVideoDecoderFrame.Buffer} instance backed by the specified container.
          *
@@ -311,18 +308,13 @@ public class BGFXVideoDecoderFrame extends Struct<BGFXVideoDecoderFrame> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected BGFXVideoDecoderFrame getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return BGFXVideoDecoderFrame.class;
         }
 
         /** @return the value of the {@code magic} field. */

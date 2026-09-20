@@ -302,9 +302,6 @@ public class VkPhysicalDeviceDataGraphFeaturesARM extends Struct<VkPhysicalDevic
 
     /** An array of {@link VkPhysicalDeviceDataGraphFeaturesARM} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceDataGraphFeaturesARM, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceDataGraphFeaturesARM ELEMENT_FACTORY = VkPhysicalDeviceDataGraphFeaturesARM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDataGraphFeaturesARM.Buffer} instance backed by the specified container.
          *
@@ -327,18 +324,13 @@ public class VkPhysicalDeviceDataGraphFeaturesARM extends Struct<VkPhysicalDevic
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDataGraphFeaturesARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDataGraphFeaturesARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

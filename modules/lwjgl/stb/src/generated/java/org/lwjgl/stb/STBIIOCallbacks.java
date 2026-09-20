@@ -257,9 +257,6 @@ public class STBIIOCallbacks extends Struct<STBIIOCallbacks> implements NativeRe
 
     /** An array of {@link STBIIOCallbacks} structs. */
     public static class Buffer extends StructBuffer<STBIIOCallbacks, Buffer> implements NativeResource {
-
-        private static final STBIIOCallbacks ELEMENT_FACTORY = STBIIOCallbacks.create(-1L);
-
         /**
          * Creates a new {@code STBIIOCallbacks.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class STBIIOCallbacks extends Struct<STBIIOCallbacks> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected STBIIOCallbacks getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return STBIIOCallbacks.class;
         }
 
         /** @return the value of the {@code read} field. */

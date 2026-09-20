@@ -125,9 +125,6 @@ public class FT_PaintLinearGradient extends Struct<FT_PaintLinearGradient> {
 
     /** An array of {@link FT_PaintLinearGradient} structs. */
     public static class Buffer extends StructBuffer<FT_PaintLinearGradient, Buffer> {
-
-        private static final FT_PaintLinearGradient ELEMENT_FACTORY = FT_PaintLinearGradient.create(-1L);
-
         /**
          * Creates a new {@code FT_PaintLinearGradient.Buffer} instance backed by the specified container.
          *
@@ -150,18 +147,13 @@ public class FT_PaintLinearGradient extends Struct<FT_PaintLinearGradient> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_PaintLinearGradient getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_PaintLinearGradient.class;
         }
 
         /** @return a {@link FT_ColorLine} view of the {@code colorline} field. */

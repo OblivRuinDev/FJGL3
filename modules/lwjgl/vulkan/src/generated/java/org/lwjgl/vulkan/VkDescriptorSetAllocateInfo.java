@@ -282,9 +282,6 @@ public class VkDescriptorSetAllocateInfo extends Struct<VkDescriptorSetAllocateI
 
     /** An array of {@link VkDescriptorSetAllocateInfo} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorSetAllocateInfo, Buffer> implements NativeResource {
-
-        private static final VkDescriptorSetAllocateInfo ELEMENT_FACTORY = VkDescriptorSetAllocateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorSetAllocateInfo.Buffer} instance backed by the specified container.
          *
@@ -307,18 +304,13 @@ public class VkDescriptorSetAllocateInfo extends Struct<VkDescriptorSetAllocateI
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorSetAllocateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorSetAllocateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -345,9 +345,6 @@ public class VkAccelerationStructureGeometryTrianglesDataKHR extends Struct<VkAc
 
     /** An array of {@link VkAccelerationStructureGeometryTrianglesDataKHR} structs. */
     public static class Buffer extends StructBuffer<VkAccelerationStructureGeometryTrianglesDataKHR, Buffer> implements NativeResource {
-
-        private static final VkAccelerationStructureGeometryTrianglesDataKHR ELEMENT_FACTORY = VkAccelerationStructureGeometryTrianglesDataKHR.create(-1L);
-
         /**
          * Creates a new {@code VkAccelerationStructureGeometryTrianglesDataKHR.Buffer} instance backed by the specified container.
          *
@@ -370,18 +367,13 @@ public class VkAccelerationStructureGeometryTrianglesDataKHR extends Struct<VkAc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAccelerationStructureGeometryTrianglesDataKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAccelerationStructureGeometryTrianglesDataKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

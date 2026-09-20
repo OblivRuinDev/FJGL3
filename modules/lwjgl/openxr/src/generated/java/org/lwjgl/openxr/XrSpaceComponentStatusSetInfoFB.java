@@ -272,9 +272,6 @@ public class XrSpaceComponentStatusSetInfoFB extends Struct<XrSpaceComponentStat
 
     /** An array of {@link XrSpaceComponentStatusSetInfoFB} structs. */
     public static class Buffer extends StructBuffer<XrSpaceComponentStatusSetInfoFB, Buffer> implements NativeResource {
-
-        private static final XrSpaceComponentStatusSetInfoFB ELEMENT_FACTORY = XrSpaceComponentStatusSetInfoFB.create(-1L);
-
         /**
          * Creates a new {@code XrSpaceComponentStatusSetInfoFB.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class XrSpaceComponentStatusSetInfoFB extends Struct<XrSpaceComponentStat
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpaceComponentStatusSetInfoFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpaceComponentStatusSetInfoFB.class;
         }
 
         /** @return the value of the {@code type} field. */

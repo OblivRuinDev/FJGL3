@@ -246,9 +246,6 @@ public class XrSenseDataProviderCreateInfoBD extends Struct<XrSenseDataProviderC
 
     /** An array of {@link XrSenseDataProviderCreateInfoBD} structs. */
     public static class Buffer extends StructBuffer<XrSenseDataProviderCreateInfoBD, Buffer> implements NativeResource {
-
-        private static final XrSenseDataProviderCreateInfoBD ELEMENT_FACTORY = XrSenseDataProviderCreateInfoBD.create(-1L);
-
         /**
          * Creates a new {@code XrSenseDataProviderCreateInfoBD.Buffer} instance backed by the specified container.
          *
@@ -271,18 +268,13 @@ public class XrSenseDataProviderCreateInfoBD extends Struct<XrSenseDataProviderC
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSenseDataProviderCreateInfoBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSenseDataProviderCreateInfoBD.class;
         }
 
         /** @return the value of the {@code type} field. */

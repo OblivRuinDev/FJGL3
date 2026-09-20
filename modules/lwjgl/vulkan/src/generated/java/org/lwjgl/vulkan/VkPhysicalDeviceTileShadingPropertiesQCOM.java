@@ -263,9 +263,6 @@ public class VkPhysicalDeviceTileShadingPropertiesQCOM extends Struct<VkPhysical
 
     /** An array of {@link VkPhysicalDeviceTileShadingPropertiesQCOM} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceTileShadingPropertiesQCOM, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceTileShadingPropertiesQCOM ELEMENT_FACTORY = VkPhysicalDeviceTileShadingPropertiesQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceTileShadingPropertiesQCOM.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class VkPhysicalDeviceTileShadingPropertiesQCOM extends Struct<VkPhysical
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceTileShadingPropertiesQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceTileShadingPropertiesQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

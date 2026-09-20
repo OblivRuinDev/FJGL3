@@ -186,9 +186,6 @@ public class NkPopupState extends Struct<NkPopupState> {
 
     /** An array of {@link NkPopupState} structs. */
     public static class Buffer extends StructBuffer<NkPopupState, Buffer> {
-
-        private static final NkPopupState ELEMENT_FACTORY = NkPopupState.create(-1L);
-
         /**
          * Creates a new {@code NkPopupState.Buffer} instance backed by the specified container.
          *
@@ -211,18 +208,13 @@ public class NkPopupState extends Struct<NkPopupState> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkPopupState getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkPopupState.class;
         }
 
         /** @return a {@link NkWindow} view of the struct pointed to by the {@code win} field. */

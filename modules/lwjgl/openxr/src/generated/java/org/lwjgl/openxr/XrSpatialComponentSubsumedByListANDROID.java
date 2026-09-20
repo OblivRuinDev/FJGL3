@@ -263,9 +263,6 @@ public class XrSpatialComponentSubsumedByListANDROID extends Struct<XrSpatialCom
 
     /** An array of {@link XrSpatialComponentSubsumedByListANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSpatialComponentSubsumedByListANDROID, Buffer> implements NativeResource {
-
-        private static final XrSpatialComponentSubsumedByListANDROID ELEMENT_FACTORY = XrSpatialComponentSubsumedByListANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialComponentSubsumedByListANDROID.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrSpatialComponentSubsumedByListANDROID extends Struct<XrSpatialCom
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialComponentSubsumedByListANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialComponentSubsumedByListANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

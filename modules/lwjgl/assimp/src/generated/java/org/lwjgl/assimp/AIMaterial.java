@@ -247,9 +247,6 @@ public class AIMaterial extends Struct<AIMaterial> implements NativeResource {
 
     /** An array of {@link AIMaterial} structs. */
     public static class Buffer extends StructBuffer<AIMaterial, Buffer> implements NativeResource {
-
-        private static final AIMaterial ELEMENT_FACTORY = AIMaterial.create(-1L);
-
         /**
          * Creates a new {@code AIMaterial.Buffer} instance backed by the specified container.
          *
@@ -272,18 +269,13 @@ public class AIMaterial extends Struct<AIMaterial> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIMaterial getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIMaterial.class;
         }
 
         /** @return a {@link PointerBuffer} view of the data pointed to by the {@code mProperties} field. */

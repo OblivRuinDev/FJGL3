@@ -246,9 +246,6 @@ public class XrEventDataSenseDataUpdatedBD extends Struct<XrEventDataSenseDataUp
 
     /** An array of {@link XrEventDataSenseDataUpdatedBD} structs. */
     public static class Buffer extends StructBuffer<XrEventDataSenseDataUpdatedBD, Buffer> implements NativeResource {
-
-        private static final XrEventDataSenseDataUpdatedBD ELEMENT_FACTORY = XrEventDataSenseDataUpdatedBD.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataSenseDataUpdatedBD.Buffer} instance backed by the specified container.
          *
@@ -271,18 +268,13 @@ public class XrEventDataSenseDataUpdatedBD extends Struct<XrEventDataSenseDataUp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataSenseDataUpdatedBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataSenseDataUpdatedBD.class;
         }
 
         /** @return the value of the {@code type} field. */

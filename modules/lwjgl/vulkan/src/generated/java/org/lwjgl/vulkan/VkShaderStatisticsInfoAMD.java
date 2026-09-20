@@ -162,9 +162,6 @@ public class VkShaderStatisticsInfoAMD extends Struct<VkShaderStatisticsInfoAMD>
 
     /** An array of {@link VkShaderStatisticsInfoAMD} structs. */
     public static class Buffer extends StructBuffer<VkShaderStatisticsInfoAMD, Buffer> {
-
-        private static final VkShaderStatisticsInfoAMD ELEMENT_FACTORY = VkShaderStatisticsInfoAMD.create(-1L);
-
         /**
          * Creates a new {@code VkShaderStatisticsInfoAMD.Buffer} instance backed by the specified container.
          *
@@ -187,18 +184,13 @@ public class VkShaderStatisticsInfoAMD extends Struct<VkShaderStatisticsInfoAMD>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkShaderStatisticsInfoAMD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkShaderStatisticsInfoAMD.class;
         }
 
         /** @return the value of the {@code shaderStageMask} field. */

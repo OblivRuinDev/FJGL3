@@ -227,9 +227,6 @@ public class XrInteractionRenderModelSubactionPathInfoEXT extends Struct<XrInter
 
     /** An array of {@link XrInteractionRenderModelSubactionPathInfoEXT} structs. */
     public static class Buffer extends StructBuffer<XrInteractionRenderModelSubactionPathInfoEXT, Buffer> implements NativeResource {
-
-        private static final XrInteractionRenderModelSubactionPathInfoEXT ELEMENT_FACTORY = XrInteractionRenderModelSubactionPathInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code XrInteractionRenderModelSubactionPathInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrInteractionRenderModelSubactionPathInfoEXT extends Struct<XrInter
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrInteractionRenderModelSubactionPathInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrInteractionRenderModelSubactionPathInfoEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

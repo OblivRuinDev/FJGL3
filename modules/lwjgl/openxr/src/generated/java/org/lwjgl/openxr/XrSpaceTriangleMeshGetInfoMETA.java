@@ -227,9 +227,6 @@ public class XrSpaceTriangleMeshGetInfoMETA extends Struct<XrSpaceTriangleMeshGe
 
     /** An array of {@link XrSpaceTriangleMeshGetInfoMETA} structs. */
     public static class Buffer extends StructBuffer<XrSpaceTriangleMeshGetInfoMETA, Buffer> implements NativeResource {
-
-        private static final XrSpaceTriangleMeshGetInfoMETA ELEMENT_FACTORY = XrSpaceTriangleMeshGetInfoMETA.create(-1L);
-
         /**
          * Creates a new {@code XrSpaceTriangleMeshGetInfoMETA.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrSpaceTriangleMeshGetInfoMETA extends Struct<XrSpaceTriangleMeshGe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpaceTriangleMeshGetInfoMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpaceTriangleMeshGetInfoMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

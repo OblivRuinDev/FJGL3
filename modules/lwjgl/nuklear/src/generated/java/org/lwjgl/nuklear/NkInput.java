@@ -196,9 +196,6 @@ public class NkInput extends Struct<NkInput> implements NativeResource {
 
     /** An array of {@link NkInput} structs. */
     public static class Buffer extends StructBuffer<NkInput, Buffer> implements NativeResource {
-
-        private static final NkInput ELEMENT_FACTORY = NkInput.create(-1L);
-
         /**
          * Creates a new {@code NkInput.Buffer} instance backed by the specified container.
          *
@@ -221,18 +218,13 @@ public class NkInput extends Struct<NkInput> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkInput getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkInput.class;
         }
 
         /** @return a {@link NkKeyboard} view of the {@code keyboard} field. */

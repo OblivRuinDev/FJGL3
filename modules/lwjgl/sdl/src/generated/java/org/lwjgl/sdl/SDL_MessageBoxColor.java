@@ -240,9 +240,6 @@ public class SDL_MessageBoxColor extends Struct<SDL_MessageBoxColor> implements 
 
     /** An array of {@link SDL_MessageBoxColor} structs. */
     public static class Buffer extends StructBuffer<SDL_MessageBoxColor, Buffer> implements NativeResource {
-
-        private static final SDL_MessageBoxColor ELEMENT_FACTORY = SDL_MessageBoxColor.create(-1L);
-
         /**
          * Creates a new {@code SDL_MessageBoxColor.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class SDL_MessageBoxColor extends Struct<SDL_MessageBoxColor> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_MessageBoxColor getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_MessageBoxColor.class;
         }
 
         /** @return the value of the {@code r} field. */

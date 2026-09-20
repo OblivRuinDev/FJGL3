@@ -257,9 +257,6 @@ public class VkGetLatencyMarkerInfoNV extends Struct<VkGetLatencyMarkerInfoNV> i
 
     /** An array of {@link VkGetLatencyMarkerInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkGetLatencyMarkerInfoNV, Buffer> implements NativeResource {
-
-        private static final VkGetLatencyMarkerInfoNV ELEMENT_FACTORY = VkGetLatencyMarkerInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkGetLatencyMarkerInfoNV.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkGetLatencyMarkerInfoNV extends Struct<VkGetLatencyMarkerInfoNV> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkGetLatencyMarkerInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkGetLatencyMarkerInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

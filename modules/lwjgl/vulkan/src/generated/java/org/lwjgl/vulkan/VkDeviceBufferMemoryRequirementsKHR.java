@@ -192,9 +192,6 @@ public class VkDeviceBufferMemoryRequirementsKHR extends VkDeviceBufferMemoryReq
 
     /** An array of {@link VkDeviceBufferMemoryRequirementsKHR} structs. */
     public static class Buffer extends VkDeviceBufferMemoryRequirements.Buffer {
-
-        private static final VkDeviceBufferMemoryRequirementsKHR ELEMENT_FACTORY = VkDeviceBufferMemoryRequirementsKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceBufferMemoryRequirementsKHR.Buffer} instance backed by the specified container.
          *
@@ -217,18 +214,13 @@ public class VkDeviceBufferMemoryRequirementsKHR extends VkDeviceBufferMemoryReq
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceBufferMemoryRequirementsKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceBufferMemoryRequirementsKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

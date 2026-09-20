@@ -242,9 +242,6 @@ public class XrViewLocateFoveatedRenderingVARJO extends Struct<XrViewLocateFovea
 
     /** An array of {@link XrViewLocateFoveatedRenderingVARJO} structs. */
     public static class Buffer extends StructBuffer<XrViewLocateFoveatedRenderingVARJO, Buffer> implements NativeResource {
-
-        private static final XrViewLocateFoveatedRenderingVARJO ELEMENT_FACTORY = XrViewLocateFoveatedRenderingVARJO.create(-1L);
-
         /**
          * Creates a new {@code XrViewLocateFoveatedRenderingVARJO.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrViewLocateFoveatedRenderingVARJO extends Struct<XrViewLocateFovea
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrViewLocateFoveatedRenderingVARJO getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrViewLocateFoveatedRenderingVARJO.class;
         }
 
         /** @return the value of the {@code type} field. */

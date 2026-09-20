@@ -230,9 +230,6 @@ public class XrSceneOrientedBoxBoundMSFT extends Struct<XrSceneOrientedBoxBoundM
 
     /** An array of {@link XrSceneOrientedBoxBoundMSFT} structs. */
     public static class Buffer extends StructBuffer<XrSceneOrientedBoxBoundMSFT, Buffer> implements NativeResource {
-
-        private static final XrSceneOrientedBoxBoundMSFT ELEMENT_FACTORY = XrSceneOrientedBoxBoundMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrSceneOrientedBoxBoundMSFT.Buffer} instance backed by the specified container.
          *
@@ -255,18 +252,13 @@ public class XrSceneOrientedBoxBoundMSFT extends Struct<XrSceneOrientedBoxBoundM
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSceneOrientedBoxBoundMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSceneOrientedBoxBoundMSFT.class;
         }
 
         /** @return a {@link XrPosef} view of the {@code pose} field. */

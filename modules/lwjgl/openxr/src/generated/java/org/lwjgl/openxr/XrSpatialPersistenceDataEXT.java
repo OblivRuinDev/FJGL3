@@ -228,9 +228,6 @@ public class XrSpatialPersistenceDataEXT extends Struct<XrSpatialPersistenceData
 
     /** An array of {@link XrSpatialPersistenceDataEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialPersistenceDataEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialPersistenceDataEXT ELEMENT_FACTORY = XrSpatialPersistenceDataEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialPersistenceDataEXT.Buffer} instance backed by the specified container.
          *
@@ -253,18 +250,13 @@ public class XrSpatialPersistenceDataEXT extends Struct<XrSpatialPersistenceData
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialPersistenceDataEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialPersistenceDataEXT.class;
         }
 
         /** @return a {@link XrUuid} view of the {@code persistUuid} field. */

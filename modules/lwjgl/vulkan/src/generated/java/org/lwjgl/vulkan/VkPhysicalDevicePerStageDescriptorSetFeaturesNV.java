@@ -257,9 +257,6 @@ public class VkPhysicalDevicePerStageDescriptorSetFeaturesNV extends Struct<VkPh
 
     /** An array of {@link VkPhysicalDevicePerStageDescriptorSetFeaturesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDevicePerStageDescriptorSetFeaturesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDevicePerStageDescriptorSetFeaturesNV ELEMENT_FACTORY = VkPhysicalDevicePerStageDescriptorSetFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDevicePerStageDescriptorSetFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkPhysicalDevicePerStageDescriptorSetFeaturesNV extends Struct<VkPh
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDevicePerStageDescriptorSetFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDevicePerStageDescriptorSetFeaturesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -240,9 +240,6 @@ public class VkStridedDeviceAddressRegionKHR extends Struct<VkStridedDeviceAddre
 
     /** An array of {@link VkStridedDeviceAddressRegionKHR} structs. */
     public static class Buffer extends StructBuffer<VkStridedDeviceAddressRegionKHR, Buffer> implements NativeResource {
-
-        private static final VkStridedDeviceAddressRegionKHR ELEMENT_FACTORY = VkStridedDeviceAddressRegionKHR.create(-1L);
-
         /**
          * Creates a new {@code VkStridedDeviceAddressRegionKHR.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class VkStridedDeviceAddressRegionKHR extends Struct<VkStridedDeviceAddre
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkStridedDeviceAddressRegionKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkStridedDeviceAddressRegionKHR.class;
         }
 
         /** @return the value of the {@code deviceAddress} field. */

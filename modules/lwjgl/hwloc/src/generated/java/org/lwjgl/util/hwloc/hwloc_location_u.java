@@ -108,9 +108,6 @@ public class hwloc_location_u extends Struct<hwloc_location_u> {
 
     /** An array of {@link hwloc_location_u} structs. */
     public static class Buffer extends StructBuffer<hwloc_location_u, Buffer> {
-
-        private static final hwloc_location_u ELEMENT_FACTORY = hwloc_location_u.create(-1L);
-
         /**
          * Creates a new {@code hwloc_location_u.Buffer} instance backed by the specified container.
          *
@@ -133,18 +130,13 @@ public class hwloc_location_u extends Struct<hwloc_location_u> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected hwloc_location_u getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return hwloc_location_u.class;
         }
 
         /** @return the value of the {@code cpuset} field. */

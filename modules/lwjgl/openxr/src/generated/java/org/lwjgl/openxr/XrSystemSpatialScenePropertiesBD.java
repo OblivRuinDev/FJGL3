@@ -236,9 +236,6 @@ public class XrSystemSpatialScenePropertiesBD extends Struct<XrSystemSpatialScen
 
     /** An array of {@link XrSystemSpatialScenePropertiesBD} structs. */
     public static class Buffer extends StructBuffer<XrSystemSpatialScenePropertiesBD, Buffer> implements NativeResource {
-
-        private static final XrSystemSpatialScenePropertiesBD ELEMENT_FACTORY = XrSystemSpatialScenePropertiesBD.create(-1L);
-
         /**
          * Creates a new {@code XrSystemSpatialScenePropertiesBD.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemSpatialScenePropertiesBD extends Struct<XrSystemSpatialScen
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemSpatialScenePropertiesBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemSpatialScenePropertiesBD.class;
         }
 
         /** @return the value of the {@code type} field. */

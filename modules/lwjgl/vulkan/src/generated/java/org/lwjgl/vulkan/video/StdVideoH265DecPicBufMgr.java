@@ -291,9 +291,6 @@ public class StdVideoH265DecPicBufMgr extends Struct<StdVideoH265DecPicBufMgr> i
 
     /** An array of {@link StdVideoH265DecPicBufMgr} structs. */
     public static class Buffer extends StructBuffer<StdVideoH265DecPicBufMgr, Buffer> implements NativeResource {
-
-        private static final StdVideoH265DecPicBufMgr ELEMENT_FACTORY = StdVideoH265DecPicBufMgr.create(-1L);
-
         /**
          * Creates a new {@code StdVideoH265DecPicBufMgr.Buffer} instance backed by the specified container.
          *
@@ -316,18 +313,13 @@ public class StdVideoH265DecPicBufMgr extends Struct<StdVideoH265DecPicBufMgr> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoH265DecPicBufMgr getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoH265DecPicBufMgr.class;
         }
 
         /** @return a {@link IntBuffer} view of the {@code max_latency_increase_plus1} field. */

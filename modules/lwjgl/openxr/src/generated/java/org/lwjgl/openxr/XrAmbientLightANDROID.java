@@ -276,9 +276,6 @@ public class XrAmbientLightANDROID extends Struct<XrAmbientLightANDROID> impleme
 
     /** An array of {@link XrAmbientLightANDROID} structs. */
     public static class Buffer extends StructBuffer<XrAmbientLightANDROID, Buffer> implements NativeResource {
-
-        private static final XrAmbientLightANDROID ELEMENT_FACTORY = XrAmbientLightANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrAmbientLightANDROID.Buffer} instance backed by the specified container.
          *
@@ -301,18 +298,13 @@ public class XrAmbientLightANDROID extends Struct<XrAmbientLightANDROID> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrAmbientLightANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrAmbientLightANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

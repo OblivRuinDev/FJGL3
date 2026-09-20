@@ -100,9 +100,6 @@ public class FT_PaintColrLayers extends Struct<FT_PaintColrLayers> {
 
     /** An array of {@link FT_PaintColrLayers} structs. */
     public static class Buffer extends StructBuffer<FT_PaintColrLayers, Buffer> {
-
-        private static final FT_PaintColrLayers ELEMENT_FACTORY = FT_PaintColrLayers.create(-1L);
-
         /**
          * Creates a new {@code FT_PaintColrLayers.Buffer} instance backed by the specified container.
          *
@@ -125,18 +122,13 @@ public class FT_PaintColrLayers extends Struct<FT_PaintColrLayers> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_PaintColrLayers getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_PaintColrLayers.class;
         }
 
         /** @return a {@link FT_LayerIterator} view of the {@code layer_iterator} field. */

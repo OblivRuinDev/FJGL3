@@ -118,9 +118,6 @@ public class ktxOrientation extends Struct<ktxOrientation> {
 
     /** An array of {@link ktxOrientation} structs. */
     public static class Buffer extends StructBuffer<ktxOrientation, Buffer> {
-
-        private static final ktxOrientation ELEMENT_FACTORY = ktxOrientation.create(-1L);
-
         /**
          * Creates a new {@code ktxOrientation.Buffer} instance backed by the specified container.
          *
@@ -143,18 +140,13 @@ public class ktxOrientation extends Struct<ktxOrientation> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ktxOrientation getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ktxOrientation.class;
         }
 
         /** @return the value of the {@code x} field. */

@@ -192,9 +192,6 @@ public class VkBindMemoryStatusKHR extends VkBindMemoryStatus {
 
     /** An array of {@link VkBindMemoryStatusKHR} structs. */
     public static class Buffer extends VkBindMemoryStatus.Buffer {
-
-        private static final VkBindMemoryStatusKHR ELEMENT_FACTORY = VkBindMemoryStatusKHR.create(-1L);
-
         /**
          * Creates a new {@code VkBindMemoryStatusKHR.Buffer} instance backed by the specified container.
          *
@@ -217,18 +214,13 @@ public class VkBindMemoryStatusKHR extends VkBindMemoryStatus {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBindMemoryStatusKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBindMemoryStatusKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

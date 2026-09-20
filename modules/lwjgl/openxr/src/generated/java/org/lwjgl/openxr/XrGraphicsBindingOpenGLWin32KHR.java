@@ -270,9 +270,6 @@ public class XrGraphicsBindingOpenGLWin32KHR extends Struct<XrGraphicsBindingOpe
 
     /** An array of {@link XrGraphicsBindingOpenGLWin32KHR} structs. */
     public static class Buffer extends StructBuffer<XrGraphicsBindingOpenGLWin32KHR, Buffer> implements NativeResource {
-
-        private static final XrGraphicsBindingOpenGLWin32KHR ELEMENT_FACTORY = XrGraphicsBindingOpenGLWin32KHR.create(-1L);
-
         /**
          * Creates a new {@code XrGraphicsBindingOpenGLWin32KHR.Buffer} instance backed by the specified container.
          *
@@ -295,18 +292,13 @@ public class XrGraphicsBindingOpenGLWin32KHR extends Struct<XrGraphicsBindingOpe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrGraphicsBindingOpenGLWin32KHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrGraphicsBindingOpenGLWin32KHR.class;
         }
 
         /** @return the value of the {@code type} field. */

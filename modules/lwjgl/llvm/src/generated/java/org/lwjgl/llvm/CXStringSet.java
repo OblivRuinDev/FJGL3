@@ -108,9 +108,6 @@ public class CXStringSet extends Struct<CXStringSet> {
 
     /** An array of {@link CXStringSet} structs. */
     public static class Buffer extends StructBuffer<CXStringSet, Buffer> {
-
-        private static final CXStringSet ELEMENT_FACTORY = CXStringSet.create(-1L);
-
         /**
          * Creates a new {@code CXStringSet.Buffer} instance backed by the specified container.
          *
@@ -133,18 +130,13 @@ public class CXStringSet extends Struct<CXStringSet> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXStringSet getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXStringSet.class;
         }
 
         /** @return a {@link CXString.Buffer} view of the struct array pointed to by the {@code Strings} field. */

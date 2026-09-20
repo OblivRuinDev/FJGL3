@@ -257,9 +257,6 @@ public class VkWriteDescriptorSetPartitionedAccelerationStructureNV extends Stru
 
     /** An array of {@link VkWriteDescriptorSetPartitionedAccelerationStructureNV} structs. */
     public static class Buffer extends StructBuffer<VkWriteDescriptorSetPartitionedAccelerationStructureNV, Buffer> implements NativeResource {
-
-        private static final VkWriteDescriptorSetPartitionedAccelerationStructureNV ELEMENT_FACTORY = VkWriteDescriptorSetPartitionedAccelerationStructureNV.create(-1L);
-
         /**
          * Creates a new {@code VkWriteDescriptorSetPartitionedAccelerationStructureNV.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkWriteDescriptorSetPartitionedAccelerationStructureNV extends Stru
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkWriteDescriptorSetPartitionedAccelerationStructureNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkWriteDescriptorSetPartitionedAccelerationStructureNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

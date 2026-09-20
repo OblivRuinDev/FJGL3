@@ -242,9 +242,6 @@ public class VkExternalComputeQueueDataParamsNV extends Struct<VkExternalCompute
 
     /** An array of {@link VkExternalComputeQueueDataParamsNV} structs. */
     public static class Buffer extends StructBuffer<VkExternalComputeQueueDataParamsNV, Buffer> implements NativeResource {
-
-        private static final VkExternalComputeQueueDataParamsNV ELEMENT_FACTORY = VkExternalComputeQueueDataParamsNV.create(-1L);
-
         /**
          * Creates a new {@code VkExternalComputeQueueDataParamsNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkExternalComputeQueueDataParamsNV extends Struct<VkExternalCompute
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExternalComputeQueueDataParamsNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExternalComputeQueueDataParamsNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

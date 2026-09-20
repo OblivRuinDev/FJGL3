@@ -242,9 +242,6 @@ public class VkPartitionedAccelerationStructureFlagsNV extends Struct<VkPartitio
 
     /** An array of {@link VkPartitionedAccelerationStructureFlagsNV} structs. */
     public static class Buffer extends StructBuffer<VkPartitionedAccelerationStructureFlagsNV, Buffer> implements NativeResource {
-
-        private static final VkPartitionedAccelerationStructureFlagsNV ELEMENT_FACTORY = VkPartitionedAccelerationStructureFlagsNV.create(-1L);
-
         /**
          * Creates a new {@code VkPartitionedAccelerationStructureFlagsNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPartitionedAccelerationStructureFlagsNV extends Struct<VkPartitio
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPartitionedAccelerationStructureFlagsNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPartitionedAccelerationStructureFlagsNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -300,9 +300,6 @@ public class spng_trns extends Struct<spng_trns> implements NativeResource {
 
     /** An array of {@link spng_trns} structs. */
     public static class Buffer extends StructBuffer<spng_trns, Buffer> implements NativeResource {
-
-        private static final spng_trns ELEMENT_FACTORY = spng_trns.create(-1L);
-
         /**
          * Creates a new {@code spng_trns.Buffer} instance backed by the specified container.
          *
@@ -325,18 +322,13 @@ public class spng_trns extends Struct<spng_trns> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected spng_trns getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return spng_trns.class;
         }
 
         /** @return the value of the {@code gray} field. */

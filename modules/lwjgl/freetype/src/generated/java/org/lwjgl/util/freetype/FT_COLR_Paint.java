@@ -293,9 +293,6 @@ public class FT_COLR_Paint extends Struct<FT_COLR_Paint> implements NativeResour
 
     /** An array of {@link FT_COLR_Paint} structs. */
     public static class Buffer extends StructBuffer<FT_COLR_Paint, Buffer> implements NativeResource {
-
-        private static final FT_COLR_Paint ELEMENT_FACTORY = FT_COLR_Paint.create(-1L);
-
         /**
          * Creates a new {@code FT_COLR_Paint.Buffer} instance backed by the specified container.
          *
@@ -318,18 +315,13 @@ public class FT_COLR_Paint extends Struct<FT_COLR_Paint> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_COLR_Paint getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_COLR_Paint.class;
         }
 
         /** @return the value of the {@code format} field. */

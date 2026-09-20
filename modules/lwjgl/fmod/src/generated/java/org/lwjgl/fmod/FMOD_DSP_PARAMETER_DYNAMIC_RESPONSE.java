@@ -240,9 +240,6 @@ public class FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE extends Struct<FMOD_DSP_PARAMET
 
     /** An array of {@link FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE} structs. */
     public static class Buffer extends StructBuffer<FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE, Buffer> implements NativeResource {
-
-        private static final FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE ELEMENT_FACTORY = FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE.create(-1L);
-
         /**
          * Creates a new {@code FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE extends Struct<FMOD_DSP_PARAMET
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE.class;
         }
 
         /** @return the value of the {@code numchannels} field. */

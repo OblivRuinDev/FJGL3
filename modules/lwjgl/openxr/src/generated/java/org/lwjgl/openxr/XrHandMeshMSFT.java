@@ -307,9 +307,6 @@ public class XrHandMeshMSFT extends Struct<XrHandMeshMSFT> implements NativeReso
 
     /** An array of {@link XrHandMeshMSFT} structs. */
     public static class Buffer extends StructBuffer<XrHandMeshMSFT, Buffer> implements NativeResource {
-
-        private static final XrHandMeshMSFT ELEMENT_FACTORY = XrHandMeshMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrHandMeshMSFT.Buffer} instance backed by the specified container.
          *
@@ -332,18 +329,13 @@ public class XrHandMeshMSFT extends Struct<XrHandMeshMSFT> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHandMeshMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHandMeshMSFT.class;
         }
 
         /** @return the value of the {@code type} field. */

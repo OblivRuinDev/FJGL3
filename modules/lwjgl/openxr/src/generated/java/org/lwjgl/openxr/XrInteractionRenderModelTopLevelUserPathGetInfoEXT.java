@@ -263,9 +263,6 @@ public class XrInteractionRenderModelTopLevelUserPathGetInfoEXT extends Struct<X
 
     /** An array of {@link XrInteractionRenderModelTopLevelUserPathGetInfoEXT} structs. */
     public static class Buffer extends StructBuffer<XrInteractionRenderModelTopLevelUserPathGetInfoEXT, Buffer> implements NativeResource {
-
-        private static final XrInteractionRenderModelTopLevelUserPathGetInfoEXT ELEMENT_FACTORY = XrInteractionRenderModelTopLevelUserPathGetInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code XrInteractionRenderModelTopLevelUserPathGetInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrInteractionRenderModelTopLevelUserPathGetInfoEXT extends Struct<X
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrInteractionRenderModelTopLevelUserPathGetInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrInteractionRenderModelTopLevelUserPathGetInfoEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -336,9 +336,6 @@ public class VkPhysicalDeviceHostImageCopyProperties extends Struct<VkPhysicalDe
 
     /** An array of {@link VkPhysicalDeviceHostImageCopyProperties} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceHostImageCopyProperties, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceHostImageCopyProperties ELEMENT_FACTORY = VkPhysicalDeviceHostImageCopyProperties.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceHostImageCopyProperties.Buffer} instance backed by the specified container.
          *
@@ -361,18 +358,13 @@ public class VkPhysicalDeviceHostImageCopyProperties extends Struct<VkPhysicalDe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceHostImageCopyProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceHostImageCopyProperties.class;
         }
 
         /** @return the value of the {@code sType} field. */

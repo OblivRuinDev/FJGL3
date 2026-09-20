@@ -286,9 +286,6 @@ public class FT_Raster_Funcs extends Struct<FT_Raster_Funcs> implements NativeRe
 
     /** An array of {@link FT_Raster_Funcs} structs. */
     public static class Buffer extends StructBuffer<FT_Raster_Funcs, Buffer> implements NativeResource {
-
-        private static final FT_Raster_Funcs ELEMENT_FACTORY = FT_Raster_Funcs.create(-1L);
-
         /**
          * Creates a new {@code FT_Raster_Funcs.Buffer} instance backed by the specified container.
          *
@@ -311,18 +308,13 @@ public class FT_Raster_Funcs extends Struct<FT_Raster_Funcs> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Raster_Funcs getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Raster_Funcs.class;
         }
 
         /** @return the value of the {@code glyph_format} field. */

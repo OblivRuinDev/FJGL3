@@ -242,9 +242,6 @@ public class XrSpatialAnchorSpaceFromIdCreateInfoANDROID extends Struct<XrSpatia
 
     /** An array of {@link XrSpatialAnchorSpaceFromIdCreateInfoANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSpatialAnchorSpaceFromIdCreateInfoANDROID, Buffer> implements NativeResource {
-
-        private static final XrSpatialAnchorSpaceFromIdCreateInfoANDROID ELEMENT_FACTORY = XrSpatialAnchorSpaceFromIdCreateInfoANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialAnchorSpaceFromIdCreateInfoANDROID.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrSpatialAnchorSpaceFromIdCreateInfoANDROID extends Struct<XrSpatia
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialAnchorSpaceFromIdCreateInfoANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialAnchorSpaceFromIdCreateInfoANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

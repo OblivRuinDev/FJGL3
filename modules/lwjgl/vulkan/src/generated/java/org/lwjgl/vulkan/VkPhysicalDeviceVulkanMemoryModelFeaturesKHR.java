@@ -203,9 +203,6 @@ public class VkPhysicalDeviceVulkanMemoryModelFeaturesKHR extends VkPhysicalDevi
 
     /** An array of {@link VkPhysicalDeviceVulkanMemoryModelFeaturesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceVulkanMemoryModelFeatures.Buffer {
-
-        private static final VkPhysicalDeviceVulkanMemoryModelFeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceVulkanMemoryModelFeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceVulkanMemoryModelFeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -228,18 +225,13 @@ public class VkPhysicalDeviceVulkanMemoryModelFeaturesKHR extends VkPhysicalDevi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceVulkanMemoryModelFeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceVulkanMemoryModelFeaturesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

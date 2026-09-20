@@ -335,9 +335,6 @@ public class EXRImage extends Struct<EXRImage> implements NativeResource {
 
     /** An array of {@link EXRImage} structs. */
     public static class Buffer extends StructBuffer<EXRImage, Buffer> implements NativeResource {
-
-        private static final EXRImage ELEMENT_FACTORY = EXRImage.create(-1L);
-
         /**
          * Creates a new {@code EXRImage.Buffer} instance backed by the specified container.
          *
@@ -360,18 +357,13 @@ public class EXRImage extends Struct<EXRImage> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected EXRImage getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return EXRImage.class;
         }
 
         /** @return a {@link EXRTile.Buffer} view of the struct array pointed to by the {@code tiles} field. */

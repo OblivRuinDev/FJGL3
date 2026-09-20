@@ -242,9 +242,6 @@ public class VkDeviceDiagnosticsConfigCreateInfoNV extends Struct<VkDeviceDiagno
 
     /** An array of {@link VkDeviceDiagnosticsConfigCreateInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkDeviceDiagnosticsConfigCreateInfoNV, Buffer> implements NativeResource {
-
-        private static final VkDeviceDiagnosticsConfigCreateInfoNV ELEMENT_FACTORY = VkDeviceDiagnosticsConfigCreateInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceDiagnosticsConfigCreateInfoNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkDeviceDiagnosticsConfigCreateInfoNV extends Struct<VkDeviceDiagno
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceDiagnosticsConfigCreateInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceDiagnosticsConfigCreateInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

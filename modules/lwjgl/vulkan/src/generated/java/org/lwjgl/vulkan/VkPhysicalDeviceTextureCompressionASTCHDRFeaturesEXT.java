@@ -191,9 +191,6 @@ public class VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT extends VkPhys
 
     /** An array of {@link VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT} structs. */
     public static class Buffer extends VkPhysicalDeviceTextureCompressionASTCHDRFeatures.Buffer {
-
-        private static final VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT extends VkPhys
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

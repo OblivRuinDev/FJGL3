@@ -227,9 +227,6 @@ public class XrInteractionRenderModelIdsEnumerateInfoEXT extends Struct<XrIntera
 
     /** An array of {@link XrInteractionRenderModelIdsEnumerateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<XrInteractionRenderModelIdsEnumerateInfoEXT, Buffer> implements NativeResource {
-
-        private static final XrInteractionRenderModelIdsEnumerateInfoEXT ELEMENT_FACTORY = XrInteractionRenderModelIdsEnumerateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code XrInteractionRenderModelIdsEnumerateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrInteractionRenderModelIdsEnumerateInfoEXT extends Struct<XrIntera
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrInteractionRenderModelIdsEnumerateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrInteractionRenderModelIdsEnumerateInfoEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

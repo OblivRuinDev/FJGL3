@@ -242,9 +242,6 @@ public class XrSecondaryViewConfigurationSwapchainCreateInfoMSFT extends Struct<
 
     /** An array of {@link XrSecondaryViewConfigurationSwapchainCreateInfoMSFT} structs. */
     public static class Buffer extends StructBuffer<XrSecondaryViewConfigurationSwapchainCreateInfoMSFT, Buffer> implements NativeResource {
-
-        private static final XrSecondaryViewConfigurationSwapchainCreateInfoMSFT ELEMENT_FACTORY = XrSecondaryViewConfigurationSwapchainCreateInfoMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrSecondaryViewConfigurationSwapchainCreateInfoMSFT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrSecondaryViewConfigurationSwapchainCreateInfoMSFT extends Struct<
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSecondaryViewConfigurationSwapchainCreateInfoMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSecondaryViewConfigurationSwapchainCreateInfoMSFT.class;
         }
 
         /** @return the value of the {@code type} field. */

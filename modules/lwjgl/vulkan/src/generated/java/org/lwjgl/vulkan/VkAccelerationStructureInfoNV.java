@@ -310,9 +310,6 @@ public class VkAccelerationStructureInfoNV extends Struct<VkAccelerationStructur
 
     /** An array of {@link VkAccelerationStructureInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkAccelerationStructureInfoNV, Buffer> implements NativeResource {
-
-        private static final VkAccelerationStructureInfoNV ELEMENT_FACTORY = VkAccelerationStructureInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkAccelerationStructureInfoNV.Buffer} instance backed by the specified container.
          *
@@ -335,18 +332,13 @@ public class VkAccelerationStructureInfoNV extends Struct<VkAccelerationStructur
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAccelerationStructureInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAccelerationStructureInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

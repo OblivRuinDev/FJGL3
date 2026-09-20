@@ -290,9 +290,6 @@ public class XrHandJointLocationsEXT extends Struct<XrHandJointLocationsEXT> imp
 
     /** An array of {@link XrHandJointLocationsEXT} structs. */
     public static class Buffer extends StructBuffer<XrHandJointLocationsEXT, Buffer> implements NativeResource {
-
-        private static final XrHandJointLocationsEXT ELEMENT_FACTORY = XrHandJointLocationsEXT.create(-1L);
-
         /**
          * Creates a new {@code XrHandJointLocationsEXT.Buffer} instance backed by the specified container.
          *
@@ -315,18 +312,13 @@ public class XrHandJointLocationsEXT extends Struct<XrHandJointLocationsEXT> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHandJointLocationsEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHandJointLocationsEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

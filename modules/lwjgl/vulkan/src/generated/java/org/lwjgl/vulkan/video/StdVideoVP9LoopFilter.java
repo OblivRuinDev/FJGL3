@@ -338,9 +338,6 @@ public class StdVideoVP9LoopFilter extends Struct<StdVideoVP9LoopFilter> impleme
 
     /** An array of {@link StdVideoVP9LoopFilter} structs. */
     public static class Buffer extends StructBuffer<StdVideoVP9LoopFilter, Buffer> implements NativeResource {
-
-        private static final StdVideoVP9LoopFilter ELEMENT_FACTORY = StdVideoVP9LoopFilter.create(-1L);
-
         /**
          * Creates a new {@code StdVideoVP9LoopFilter.Buffer} instance backed by the specified container.
          *
@@ -363,18 +360,13 @@ public class StdVideoVP9LoopFilter extends Struct<StdVideoVP9LoopFilter> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoVP9LoopFilter getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoVP9LoopFilter.class;
         }
 
         /** @return a {@link StdVideoVP9LoopFilterFlags} view of the {@code flags} field. */

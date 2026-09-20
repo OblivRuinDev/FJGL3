@@ -229,9 +229,6 @@ public class MDBStat extends Struct<MDBStat> implements NativeResource {
 
     /** An array of {@link MDBStat} structs. */
     public static class Buffer extends StructBuffer<MDBStat, Buffer> implements NativeResource {
-
-        private static final MDBStat ELEMENT_FACTORY = MDBStat.create(-1L);
-
         /**
          * Creates a new {@code MDBStat.Buffer} instance backed by the specified container.
          *
@@ -254,18 +251,13 @@ public class MDBStat extends Struct<MDBStat> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected MDBStat getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return MDBStat.class;
         }
 
         /** @return the value of the {@code ms_psize} field. */

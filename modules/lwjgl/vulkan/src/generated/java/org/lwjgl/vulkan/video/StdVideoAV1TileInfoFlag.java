@@ -211,9 +211,6 @@ public class StdVideoAV1TileInfoFlag extends Struct<StdVideoAV1TileInfoFlag> imp
 
     /** An array of {@link StdVideoAV1TileInfoFlag} structs. */
     public static class Buffer extends StructBuffer<StdVideoAV1TileInfoFlag, Buffer> implements NativeResource {
-
-        private static final StdVideoAV1TileInfoFlag ELEMENT_FACTORY = StdVideoAV1TileInfoFlag.create(-1L);
-
         /**
          * Creates a new {@code StdVideoAV1TileInfoFlag.Buffer} instance backed by the specified container.
          *
@@ -236,18 +233,13 @@ public class StdVideoAV1TileInfoFlag extends Struct<StdVideoAV1TileInfoFlag> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoAV1TileInfoFlag getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoAV1TileInfoFlag.class;
         }
 
         /** @return the value of the {@code uniform_tile_spacing_flag} field. */

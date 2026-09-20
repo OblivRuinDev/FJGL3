@@ -246,9 +246,6 @@ public class SDL_JoyDeviceEvent extends Struct<SDL_JoyDeviceEvent> implements Na
 
     /** An array of {@link SDL_JoyDeviceEvent} structs. */
     public static class Buffer extends StructBuffer<SDL_JoyDeviceEvent, Buffer> implements NativeResource {
-
-        private static final SDL_JoyDeviceEvent ELEMENT_FACTORY = SDL_JoyDeviceEvent.create(-1L);
-
         /**
          * Creates a new {@code SDL_JoyDeviceEvent.Buffer} instance backed by the specified container.
          *
@@ -271,18 +268,13 @@ public class SDL_JoyDeviceEvent extends Struct<SDL_JoyDeviceEvent> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_JoyDeviceEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_JoyDeviceEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -257,9 +257,6 @@ public class XrSceneMeshingTrackerCreateInfoANDROID extends Struct<XrSceneMeshin
 
     /** An array of {@link XrSceneMeshingTrackerCreateInfoANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSceneMeshingTrackerCreateInfoANDROID, Buffer> implements NativeResource {
-
-        private static final XrSceneMeshingTrackerCreateInfoANDROID ELEMENT_FACTORY = XrSceneMeshingTrackerCreateInfoANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSceneMeshingTrackerCreateInfoANDROID.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class XrSceneMeshingTrackerCreateInfoANDROID extends Struct<XrSceneMeshin
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSceneMeshingTrackerCreateInfoANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSceneMeshingTrackerCreateInfoANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

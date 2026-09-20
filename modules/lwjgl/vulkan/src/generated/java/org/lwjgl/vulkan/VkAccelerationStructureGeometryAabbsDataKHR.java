@@ -260,9 +260,6 @@ public class VkAccelerationStructureGeometryAabbsDataKHR extends Struct<VkAccele
 
     /** An array of {@link VkAccelerationStructureGeometryAabbsDataKHR} structs. */
     public static class Buffer extends StructBuffer<VkAccelerationStructureGeometryAabbsDataKHR, Buffer> implements NativeResource {
-
-        private static final VkAccelerationStructureGeometryAabbsDataKHR ELEMENT_FACTORY = VkAccelerationStructureGeometryAabbsDataKHR.create(-1L);
-
         /**
          * Creates a new {@code VkAccelerationStructureGeometryAabbsDataKHR.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class VkAccelerationStructureGeometryAabbsDataKHR extends Struct<VkAccele
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAccelerationStructureGeometryAabbsDataKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAccelerationStructureGeometryAabbsDataKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -245,9 +245,6 @@ public class VkPhysicalDeviceCudaKernelLaunchPropertiesNV extends Struct<VkPhysi
 
     /** An array of {@link VkPhysicalDeviceCudaKernelLaunchPropertiesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceCudaKernelLaunchPropertiesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceCudaKernelLaunchPropertiesNV ELEMENT_FACTORY = VkPhysicalDeviceCudaKernelLaunchPropertiesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceCudaKernelLaunchPropertiesNV.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkPhysicalDeviceCudaKernelLaunchPropertiesNV extends Struct<VkPhysi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceCudaKernelLaunchPropertiesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceCudaKernelLaunchPropertiesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -269,9 +269,6 @@ public class FMOD_CODEC_STATE extends Struct<FMOD_CODEC_STATE> implements Native
 
     /** An array of {@link FMOD_CODEC_STATE} structs. */
     public static class Buffer extends StructBuffer<FMOD_CODEC_STATE, Buffer> implements NativeResource {
-
-        private static final FMOD_CODEC_STATE ELEMENT_FACTORY = FMOD_CODEC_STATE.create(-1L);
-
         /**
          * Creates a new {@code FMOD_CODEC_STATE.Buffer} instance backed by the specified container.
          *
@@ -294,18 +291,13 @@ public class FMOD_CODEC_STATE extends Struct<FMOD_CODEC_STATE> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_CODEC_STATE getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_CODEC_STATE.class;
         }
 
         /** @return a {@link ByteBuffer} view of the data pointed to by the {@code plugindata} field. */

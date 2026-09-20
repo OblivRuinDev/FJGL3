@@ -292,9 +292,6 @@ public class XGenericEvent extends Struct<XGenericEvent> implements NativeResour
 
     /** An array of {@link XGenericEvent} structs. */
     public static class Buffer extends StructBuffer<XGenericEvent, Buffer> implements NativeResource {
-
-        private static final XGenericEvent ELEMENT_FACTORY = XGenericEvent.create(-1L);
-
         /**
          * Creates a new {@code XGenericEvent.Buffer} instance backed by the specified container.
          *
@@ -317,18 +314,13 @@ public class XGenericEvent extends Struct<XGenericEvent> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XGenericEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XGenericEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

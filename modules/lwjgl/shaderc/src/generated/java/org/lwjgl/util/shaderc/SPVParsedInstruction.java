@@ -319,9 +319,6 @@ public class SPVParsedInstruction extends Struct<SPVParsedInstruction> implement
 
     /** An array of {@link SPVParsedInstruction} structs. */
     public static class Buffer extends StructBuffer<SPVParsedInstruction, Buffer> implements NativeResource {
-
-        private static final SPVParsedInstruction ELEMENT_FACTORY = SPVParsedInstruction.create(-1L);
-
         /**
          * Creates a new {@code SPVParsedInstruction.Buffer} instance backed by the specified container.
          *
@@ -344,18 +341,13 @@ public class SPVParsedInstruction extends Struct<SPVParsedInstruction> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SPVParsedInstruction getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SPVParsedInstruction.class;
         }
 
         /** @return a {@link IntBuffer} view of the data pointed to by the {@code words} field. */

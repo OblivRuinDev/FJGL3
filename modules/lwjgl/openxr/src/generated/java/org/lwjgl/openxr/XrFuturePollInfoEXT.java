@@ -242,9 +242,6 @@ public class XrFuturePollInfoEXT extends Struct<XrFuturePollInfoEXT> implements 
 
     /** An array of {@link XrFuturePollInfoEXT} structs. */
     public static class Buffer extends StructBuffer<XrFuturePollInfoEXT, Buffer> implements NativeResource {
-
-        private static final XrFuturePollInfoEXT ELEMENT_FACTORY = XrFuturePollInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code XrFuturePollInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrFuturePollInfoEXT extends Struct<XrFuturePollInfoEXT> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFuturePollInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFuturePollInfoEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

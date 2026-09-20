@@ -238,9 +238,6 @@ public class XrHandGestureQCOM extends Struct<XrHandGestureQCOM> implements Nati
 
     /** An array of {@link XrHandGestureQCOM} structs. */
     public static class Buffer extends StructBuffer<XrHandGestureQCOM, Buffer> implements NativeResource {
-
-        private static final XrHandGestureQCOM ELEMENT_FACTORY = XrHandGestureQCOM.create(-1L);
-
         /**
          * Creates a new {@code XrHandGestureQCOM.Buffer} instance backed by the specified container.
          *
@@ -263,18 +260,13 @@ public class XrHandGestureQCOM extends Struct<XrHandGestureQCOM> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHandGestureQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHandGestureQCOM.class;
         }
 
         /** @return the value of the {@code gesture} field. */

@@ -211,9 +211,6 @@ public class ZSTDSequence extends Struct<ZSTDSequence> implements NativeResource
 
     /** An array of {@link ZSTDSequence} structs. */
     public static class Buffer extends StructBuffer<ZSTDSequence, Buffer> implements NativeResource {
-
-        private static final ZSTDSequence ELEMENT_FACTORY = ZSTDSequence.create(-1L);
-
         /**
          * Creates a new {@code ZSTDSequence.Buffer} instance backed by the specified container.
          *
@@ -236,18 +233,13 @@ public class ZSTDSequence extends Struct<ZSTDSequence> implements NativeResource
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ZSTDSequence getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ZSTDSequence.class;
         }
 
         /** @return the value of the {@code offset} field. */

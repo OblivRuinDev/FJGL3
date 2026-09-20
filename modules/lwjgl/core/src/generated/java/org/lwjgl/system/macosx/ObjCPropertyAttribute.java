@@ -253,9 +253,6 @@ public class ObjCPropertyAttribute extends Struct<ObjCPropertyAttribute> impleme
 
     /** An array of {@link ObjCPropertyAttribute} structs. */
     public static class Buffer extends StructBuffer<ObjCPropertyAttribute, Buffer> implements NativeResource {
-
-        private static final ObjCPropertyAttribute ELEMENT_FACTORY = ObjCPropertyAttribute.create(-1L);
-
         /**
          * Creates a new {@code ObjCPropertyAttribute.Buffer} instance backed by the specified container.
          *
@@ -278,18 +275,13 @@ public class ObjCPropertyAttribute extends Struct<ObjCPropertyAttribute> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ObjCPropertyAttribute getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ObjCPropertyAttribute.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code name} field. */

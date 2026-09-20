@@ -246,9 +246,6 @@ public class VkSparseImageOpaqueMemoryBindInfo extends Struct<VkSparseImageOpaqu
 
     /** An array of {@link VkSparseImageOpaqueMemoryBindInfo} structs. */
     public static class Buffer extends StructBuffer<VkSparseImageOpaqueMemoryBindInfo, Buffer> implements NativeResource {
-
-        private static final VkSparseImageOpaqueMemoryBindInfo ELEMENT_FACTORY = VkSparseImageOpaqueMemoryBindInfo.create(-1L);
-
         /**
          * Creates a new {@code VkSparseImageOpaqueMemoryBindInfo.Buffer} instance backed by the specified container.
          *
@@ -271,18 +268,13 @@ public class VkSparseImageOpaqueMemoryBindInfo extends Struct<VkSparseImageOpaqu
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSparseImageOpaqueMemoryBindInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSparseImageOpaqueMemoryBindInfo.class;
         }
 
         /** @return the value of the {@code image} field. */

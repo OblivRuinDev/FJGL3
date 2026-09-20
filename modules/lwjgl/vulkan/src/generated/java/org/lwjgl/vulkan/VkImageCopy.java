@@ -279,9 +279,6 @@ public class VkImageCopy extends Struct<VkImageCopy> implements NativeResource {
 
     /** An array of {@link VkImageCopy} structs. */
     public static class Buffer extends StructBuffer<VkImageCopy, Buffer> implements NativeResource {
-
-        private static final VkImageCopy ELEMENT_FACTORY = VkImageCopy.create(-1L);
-
         /**
          * Creates a new {@code VkImageCopy.Buffer} instance backed by the specified container.
          *
@@ -304,18 +301,13 @@ public class VkImageCopy extends Struct<VkImageCopy> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageCopy getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageCopy.class;
         }
 
         /** @return a {@link VkImageSubresourceLayers} view of the {@code srcSubresource} field. */

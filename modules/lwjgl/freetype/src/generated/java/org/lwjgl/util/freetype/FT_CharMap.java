@@ -126,9 +126,6 @@ public class FT_CharMap extends Struct<FT_CharMap> {
 
     /** An array of {@link FT_CharMap} structs. */
     public static class Buffer extends StructBuffer<FT_CharMap, Buffer> {
-
-        private static final FT_CharMap ELEMENT_FACTORY = FT_CharMap.create(-1L);
-
         /**
          * Creates a new {@code FT_CharMap.Buffer} instance backed by the specified container.
          *
@@ -151,18 +148,13 @@ public class FT_CharMap extends Struct<FT_CharMap> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_CharMap getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_CharMap.class;
         }
 
         /** @return a {@link FT_Face} view of the struct pointed to by the {@code face} field. */

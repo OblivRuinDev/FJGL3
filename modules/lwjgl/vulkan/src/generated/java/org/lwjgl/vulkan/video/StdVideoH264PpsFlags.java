@@ -296,9 +296,6 @@ public class StdVideoH264PpsFlags extends Struct<StdVideoH264PpsFlags> implement
 
     /** An array of {@link StdVideoH264PpsFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoH264PpsFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoH264PpsFlags ELEMENT_FACTORY = StdVideoH264PpsFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoH264PpsFlags.Buffer} instance backed by the specified container.
          *
@@ -321,18 +318,13 @@ public class StdVideoH264PpsFlags extends Struct<StdVideoH264PpsFlags> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoH264PpsFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoH264PpsFlags.class;
         }
 
         /** @return the value of the {@code transform_8x8_mode_flag} field. */

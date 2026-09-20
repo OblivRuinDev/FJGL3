@@ -108,9 +108,6 @@ public class XrSceneMarkerQRCodeMSFT extends Struct<XrSceneMarkerQRCodeMSFT> {
 
     /** An array of {@link XrSceneMarkerQRCodeMSFT} structs. */
     public static class Buffer extends StructBuffer<XrSceneMarkerQRCodeMSFT, Buffer> {
-
-        private static final XrSceneMarkerQRCodeMSFT ELEMENT_FACTORY = XrSceneMarkerQRCodeMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrSceneMarkerQRCodeMSFT.Buffer} instance backed by the specified container.
          *
@@ -133,18 +130,13 @@ public class XrSceneMarkerQRCodeMSFT extends Struct<XrSceneMarkerQRCodeMSFT> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSceneMarkerQRCodeMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSceneMarkerQRCodeMSFT.class;
         }
 
         /** @return the value of the {@code symbolType} field. */

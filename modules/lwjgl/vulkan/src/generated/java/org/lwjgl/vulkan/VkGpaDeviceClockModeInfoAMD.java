@@ -270,9 +270,6 @@ public class VkGpaDeviceClockModeInfoAMD extends Struct<VkGpaDeviceClockModeInfo
 
     /** An array of {@link VkGpaDeviceClockModeInfoAMD} structs. */
     public static class Buffer extends StructBuffer<VkGpaDeviceClockModeInfoAMD, Buffer> implements NativeResource {
-
-        private static final VkGpaDeviceClockModeInfoAMD ELEMENT_FACTORY = VkGpaDeviceClockModeInfoAMD.create(-1L);
-
         /**
          * Creates a new {@code VkGpaDeviceClockModeInfoAMD.Buffer} instance backed by the specified container.
          *
@@ -295,18 +292,13 @@ public class VkGpaDeviceClockModeInfoAMD extends Struct<VkGpaDeviceClockModeInfo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkGpaDeviceClockModeInfoAMD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkGpaDeviceClockModeInfoAMD.class;
         }
 
         /** @return the value of the {@code sType} field. */

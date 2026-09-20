@@ -298,9 +298,6 @@ public class VkPhysicalDeviceShaderEnqueuePropertiesAMDX extends Struct<VkPhysic
 
     /** An array of {@link VkPhysicalDeviceShaderEnqueuePropertiesAMDX} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceShaderEnqueuePropertiesAMDX, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceShaderEnqueuePropertiesAMDX ELEMENT_FACTORY = VkPhysicalDeviceShaderEnqueuePropertiesAMDX.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderEnqueuePropertiesAMDX.Buffer} instance backed by the specified container.
          *
@@ -323,18 +320,13 @@ public class VkPhysicalDeviceShaderEnqueuePropertiesAMDX extends Struct<VkPhysic
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderEnqueuePropertiesAMDX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderEnqueuePropertiesAMDX.class;
         }
 
         /** @return the value of the {@code sType} field. */

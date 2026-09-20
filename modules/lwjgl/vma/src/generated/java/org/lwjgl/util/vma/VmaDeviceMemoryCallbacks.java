@@ -243,9 +243,6 @@ public class VmaDeviceMemoryCallbacks extends Struct<VmaDeviceMemoryCallbacks> i
 
     /** An array of {@link VmaDeviceMemoryCallbacks} structs. */
     public static class Buffer extends StructBuffer<VmaDeviceMemoryCallbacks, Buffer> implements NativeResource {
-
-        private static final VmaDeviceMemoryCallbacks ELEMENT_FACTORY = VmaDeviceMemoryCallbacks.create(-1L);
-
         /**
          * Creates a new {@code VmaDeviceMemoryCallbacks.Buffer} instance backed by the specified container.
          *
@@ -268,18 +265,13 @@ public class VmaDeviceMemoryCallbacks extends Struct<VmaDeviceMemoryCallbacks> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VmaDeviceMemoryCallbacks getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VmaDeviceMemoryCallbacks.class;
         }
 
         /** @return the value of the {@code pfnAllocate} field. */

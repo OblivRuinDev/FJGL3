@@ -260,9 +260,6 @@ public class StdVideoAV1Segmentation extends Struct<StdVideoAV1Segmentation> imp
 
     /** An array of {@link StdVideoAV1Segmentation} structs. */
     public static class Buffer extends StructBuffer<StdVideoAV1Segmentation, Buffer> implements NativeResource {
-
-        private static final StdVideoAV1Segmentation ELEMENT_FACTORY = StdVideoAV1Segmentation.create(-1L);
-
         /**
          * Creates a new {@code StdVideoAV1Segmentation.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class StdVideoAV1Segmentation extends Struct<StdVideoAV1Segmentation> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoAV1Segmentation getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoAV1Segmentation.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code FeatureEnabled} field. */

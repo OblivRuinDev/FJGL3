@@ -272,9 +272,6 @@ public class VkCommandBufferInheritanceViewportScissorInfoNV extends Struct<VkCo
 
     /** An array of {@link VkCommandBufferInheritanceViewportScissorInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkCommandBufferInheritanceViewportScissorInfoNV, Buffer> implements NativeResource {
-
-        private static final VkCommandBufferInheritanceViewportScissorInfoNV ELEMENT_FACTORY = VkCommandBufferInheritanceViewportScissorInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkCommandBufferInheritanceViewportScissorInfoNV.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkCommandBufferInheritanceViewportScissorInfoNV extends Struct<VkCo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCommandBufferInheritanceViewportScissorInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCommandBufferInheritanceViewportScissorInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

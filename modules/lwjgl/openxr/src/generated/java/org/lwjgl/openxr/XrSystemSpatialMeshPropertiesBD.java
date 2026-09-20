@@ -236,9 +236,6 @@ public class XrSystemSpatialMeshPropertiesBD extends Struct<XrSystemSpatialMeshP
 
     /** An array of {@link XrSystemSpatialMeshPropertiesBD} structs. */
     public static class Buffer extends StructBuffer<XrSystemSpatialMeshPropertiesBD, Buffer> implements NativeResource {
-
-        private static final XrSystemSpatialMeshPropertiesBD ELEMENT_FACTORY = XrSystemSpatialMeshPropertiesBD.create(-1L);
-
         /**
          * Creates a new {@code XrSystemSpatialMeshPropertiesBD.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemSpatialMeshPropertiesBD extends Struct<XrSystemSpatialMeshP
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemSpatialMeshPropertiesBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemSpatialMeshPropertiesBD.class;
         }
 
         /** @return the value of the {@code type} field. */

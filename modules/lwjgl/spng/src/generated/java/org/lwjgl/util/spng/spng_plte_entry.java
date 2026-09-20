@@ -256,9 +256,6 @@ public class spng_plte_entry extends Struct<spng_plte_entry> implements NativeRe
 
     /** An array of {@link spng_plte_entry} structs. */
     public static class Buffer extends StructBuffer<spng_plte_entry, Buffer> implements NativeResource {
-
-        private static final spng_plte_entry ELEMENT_FACTORY = spng_plte_entry.create(-1L);
-
         /**
          * Creates a new {@code spng_plte_entry.Buffer} instance backed by the specified container.
          *
@@ -281,18 +278,13 @@ public class spng_plte_entry extends Struct<spng_plte_entry> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected spng_plte_entry getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return spng_plte_entry.class;
         }
 
         /** @return the value of the {@code red} field. */

@@ -250,9 +250,6 @@ public class VkDisplayPlaneCapabilitiesKHR extends Struct<VkDisplayPlaneCapabili
 
     /** An array of {@link VkDisplayPlaneCapabilitiesKHR} structs. */
     public static class Buffer extends StructBuffer<VkDisplayPlaneCapabilitiesKHR, Buffer> implements NativeResource {
-
-        private static final VkDisplayPlaneCapabilitiesKHR ELEMENT_FACTORY = VkDisplayPlaneCapabilitiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDisplayPlaneCapabilitiesKHR.Buffer} instance backed by the specified container.
          *
@@ -275,18 +272,13 @@ public class VkDisplayPlaneCapabilitiesKHR extends Struct<VkDisplayPlaneCapabili
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDisplayPlaneCapabilitiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDisplayPlaneCapabilitiesKHR.class;
         }
 
         /** @return the value of the {@code supportedAlpha} field. */

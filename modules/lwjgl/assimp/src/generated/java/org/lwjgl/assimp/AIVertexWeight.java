@@ -225,9 +225,6 @@ public class AIVertexWeight extends Struct<AIVertexWeight> implements NativeReso
 
     /** An array of {@link AIVertexWeight} structs. */
     public static class Buffer extends StructBuffer<AIVertexWeight, Buffer> implements NativeResource {
-
-        private static final AIVertexWeight ELEMENT_FACTORY = AIVertexWeight.create(-1L);
-
         /**
          * Creates a new {@code AIVertexWeight.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class AIVertexWeight extends Struct<AIVertexWeight> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIVertexWeight getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIVertexWeight.class;
         }
 
         /** @return the value of the {@code mVertexId} field. */

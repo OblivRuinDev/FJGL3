@@ -202,9 +202,6 @@ public class FFIClosure extends Struct<FFIClosure> implements NativeResource {
 
     /** An array of {@link FFIClosure} structs. */
     public static class Buffer extends StructBuffer<FFIClosure, Buffer> implements NativeResource {
-
-        private static final FFIClosure ELEMENT_FACTORY = FFIClosure.create(-1L);
-
         /**
          * Creates a new {@code FFIClosure.Buffer} instance backed by the specified container.
          *
@@ -227,18 +224,13 @@ public class FFIClosure extends Struct<FFIClosure> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FFIClosure getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FFIClosure.class;
         }
 
         /** @return a {@link FFICIF} view of the struct pointed to by the {@code cif} field. */

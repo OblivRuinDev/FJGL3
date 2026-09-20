@@ -263,9 +263,6 @@ public class XrLocalizationMapImportInfoML extends Struct<XrLocalizationMapImpor
 
     /** An array of {@link XrLocalizationMapImportInfoML} structs. */
     public static class Buffer extends StructBuffer<XrLocalizationMapImportInfoML, Buffer> implements NativeResource {
-
-        private static final XrLocalizationMapImportInfoML ELEMENT_FACTORY = XrLocalizationMapImportInfoML.create(-1L);
-
         /**
          * Creates a new {@code XrLocalizationMapImportInfoML.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrLocalizationMapImportInfoML extends Struct<XrLocalizationMapImpor
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrLocalizationMapImportInfoML getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrLocalizationMapImportInfoML.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -245,9 +245,6 @@ public class XrViveTrackerPathsHTCX extends Struct<XrViveTrackerPathsHTCX> imple
 
     /** An array of {@link XrViveTrackerPathsHTCX} structs. */
     public static class Buffer extends StructBuffer<XrViveTrackerPathsHTCX, Buffer> implements NativeResource {
-
-        private static final XrViveTrackerPathsHTCX ELEMENT_FACTORY = XrViveTrackerPathsHTCX.create(-1L);
-
         /**
          * Creates a new {@code XrViveTrackerPathsHTCX.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class XrViveTrackerPathsHTCX extends Struct<XrViveTrackerPathsHTCX> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrViveTrackerPathsHTCX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrViveTrackerPathsHTCX.class;
         }
 
         /** @return the value of the {@code type} field. */

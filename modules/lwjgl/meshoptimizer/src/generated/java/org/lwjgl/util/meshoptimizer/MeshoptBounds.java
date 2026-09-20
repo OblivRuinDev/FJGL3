@@ -262,9 +262,6 @@ public class MeshoptBounds extends Struct<MeshoptBounds> implements NativeResour
 
     /** An array of {@link MeshoptBounds} structs. */
     public static class Buffer extends StructBuffer<MeshoptBounds, Buffer> implements NativeResource {
-
-        private static final MeshoptBounds ELEMENT_FACTORY = MeshoptBounds.create(-1L);
-
         /**
          * Creates a new {@code MeshoptBounds.Buffer} instance backed by the specified container.
          *
@@ -287,18 +284,13 @@ public class MeshoptBounds extends Struct<MeshoptBounds> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected MeshoptBounds getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return MeshoptBounds.class;
         }
 
         /** @return a {@link FloatBuffer} view of the {@code center} field. */

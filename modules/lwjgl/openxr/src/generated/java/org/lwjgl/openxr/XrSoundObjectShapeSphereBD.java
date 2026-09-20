@@ -241,9 +241,6 @@ public class XrSoundObjectShapeSphereBD extends Struct<XrSoundObjectShapeSphereB
 
     /** An array of {@link XrSoundObjectShapeSphereBD} structs. */
     public static class Buffer extends StructBuffer<XrSoundObjectShapeSphereBD, Buffer> implements NativeResource {
-
-        private static final XrSoundObjectShapeSphereBD ELEMENT_FACTORY = XrSoundObjectShapeSphereBD.create(-1L);
-
         /**
          * Creates a new {@code XrSoundObjectShapeSphereBD.Buffer} instance backed by the specified container.
          *
@@ -266,18 +263,13 @@ public class XrSoundObjectShapeSphereBD extends Struct<XrSoundObjectShapeSphereB
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSoundObjectShapeSphereBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSoundObjectShapeSphereBD.class;
         }
 
         /** @return the value of the {@code type} field. */

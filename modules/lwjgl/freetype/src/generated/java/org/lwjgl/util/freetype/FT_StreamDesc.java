@@ -213,9 +213,6 @@ public class FT_StreamDesc extends Struct<FT_StreamDesc> implements NativeResour
 
     /** An array of {@link FT_StreamDesc} structs. */
     public static class Buffer extends StructBuffer<FT_StreamDesc, Buffer> implements NativeResource {
-
-        private static final FT_StreamDesc ELEMENT_FACTORY = FT_StreamDesc.create(-1L);
-
         /**
          * Creates a new {@code FT_StreamDesc.Buffer} instance backed by the specified container.
          *
@@ -238,18 +235,13 @@ public class FT_StreamDesc extends Struct<FT_StreamDesc> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_StreamDesc getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_StreamDesc.class;
         }
 
         /** @return the value of the {@code value} field. */

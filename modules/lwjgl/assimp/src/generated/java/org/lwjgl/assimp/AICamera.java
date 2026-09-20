@@ -337,9 +337,6 @@ public class AICamera extends Struct<AICamera> implements NativeResource {
 
     /** An array of {@link AICamera} structs. */
     public static class Buffer extends StructBuffer<AICamera, Buffer> implements NativeResource {
-
-        private static final AICamera ELEMENT_FACTORY = AICamera.create(-1L);
-
         /**
          * Creates a new {@code AICamera.Buffer} instance backed by the specified container.
          *
@@ -362,18 +359,13 @@ public class AICamera extends Struct<AICamera> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AICamera getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AICamera.class;
         }
 
         /** @return a {@link AIString} view of the {@code mName} field. */

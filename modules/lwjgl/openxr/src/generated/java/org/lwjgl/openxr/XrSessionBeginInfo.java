@@ -244,9 +244,6 @@ public class XrSessionBeginInfo extends Struct<XrSessionBeginInfo> implements Na
 
     /** An array of {@link XrSessionBeginInfo} structs. */
     public static class Buffer extends StructBuffer<XrSessionBeginInfo, Buffer> implements NativeResource {
-
-        private static final XrSessionBeginInfo ELEMENT_FACTORY = XrSessionBeginInfo.create(-1L);
-
         /**
          * Creates a new {@code XrSessionBeginInfo.Buffer} instance backed by the specified container.
          *
@@ -269,18 +266,13 @@ public class XrSessionBeginInfo extends Struct<XrSessionBeginInfo> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSessionBeginInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSessionBeginInfo.class;
         }
 
         /** @return the value of the {@code type} field. */

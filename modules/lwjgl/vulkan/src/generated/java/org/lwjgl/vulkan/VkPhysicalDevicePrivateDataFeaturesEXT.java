@@ -191,9 +191,6 @@ public class VkPhysicalDevicePrivateDataFeaturesEXT extends VkPhysicalDevicePriv
 
     /** An array of {@link VkPhysicalDevicePrivateDataFeaturesEXT} structs. */
     public static class Buffer extends VkPhysicalDevicePrivateDataFeatures.Buffer {
-
-        private static final VkPhysicalDevicePrivateDataFeaturesEXT ELEMENT_FACTORY = VkPhysicalDevicePrivateDataFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDevicePrivateDataFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDevicePrivateDataFeaturesEXT extends VkPhysicalDevicePriv
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDevicePrivateDataFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDevicePrivateDataFeaturesEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

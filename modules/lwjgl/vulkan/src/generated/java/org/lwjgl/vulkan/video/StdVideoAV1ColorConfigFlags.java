@@ -256,9 +256,6 @@ public class StdVideoAV1ColorConfigFlags extends Struct<StdVideoAV1ColorConfigFl
 
     /** An array of {@link StdVideoAV1ColorConfigFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoAV1ColorConfigFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoAV1ColorConfigFlags ELEMENT_FACTORY = StdVideoAV1ColorConfigFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoAV1ColorConfigFlags.Buffer} instance backed by the specified container.
          *
@@ -281,18 +278,13 @@ public class StdVideoAV1ColorConfigFlags extends Struct<StdVideoAV1ColorConfigFl
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoAV1ColorConfigFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoAV1ColorConfigFlags.class;
         }
 
         /** @return the value of the {@code mono_chrome} field. */

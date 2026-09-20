@@ -257,9 +257,6 @@ public class VkBindImageMemorySwapchainInfoKHR extends Struct<VkBindImageMemoryS
 
     /** An array of {@link VkBindImageMemorySwapchainInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkBindImageMemorySwapchainInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkBindImageMemorySwapchainInfoKHR ELEMENT_FACTORY = VkBindImageMemorySwapchainInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkBindImageMemorySwapchainInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkBindImageMemorySwapchainInfoKHR extends Struct<VkBindImageMemoryS
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBindImageMemorySwapchainInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBindImageMemorySwapchainInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

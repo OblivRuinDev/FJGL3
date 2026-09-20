@@ -224,9 +224,6 @@ public class StdVideoH265ShortTermRefPicSetFlags extends Struct<StdVideoH265Shor
 
     /** An array of {@link StdVideoH265ShortTermRefPicSetFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoH265ShortTermRefPicSetFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoH265ShortTermRefPicSetFlags ELEMENT_FACTORY = StdVideoH265ShortTermRefPicSetFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoH265ShortTermRefPicSetFlags.Buffer} instance backed by the specified container.
          *
@@ -249,18 +246,13 @@ public class StdVideoH265ShortTermRefPicSetFlags extends Struct<StdVideoH265Shor
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoH265ShortTermRefPicSetFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoH265ShortTermRefPicSetFlags.class;
         }
 
         /** @return the value of the {@code inter_ref_pic_set_prediction_flag} field. */

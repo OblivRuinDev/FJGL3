@@ -319,9 +319,6 @@ public class XrGeometryInstanceCreateInfoFB extends Struct<XrGeometryInstanceCre
 
     /** An array of {@link XrGeometryInstanceCreateInfoFB} structs. */
     public static class Buffer extends StructBuffer<XrGeometryInstanceCreateInfoFB, Buffer> implements NativeResource {
-
-        private static final XrGeometryInstanceCreateInfoFB ELEMENT_FACTORY = XrGeometryInstanceCreateInfoFB.create(-1L);
-
         /**
          * Creates a new {@code XrGeometryInstanceCreateInfoFB.Buffer} instance backed by the specified container.
          *
@@ -344,18 +341,13 @@ public class XrGeometryInstanceCreateInfoFB extends Struct<XrGeometryInstanceCre
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrGeometryInstanceCreateInfoFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrGeometryInstanceCreateInfoFB.class;
         }
 
         /** @return the value of the {@code type} field. */

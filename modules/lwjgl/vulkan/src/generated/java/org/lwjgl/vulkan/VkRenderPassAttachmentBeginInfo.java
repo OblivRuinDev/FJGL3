@@ -265,9 +265,6 @@ public class VkRenderPassAttachmentBeginInfo extends Struct<VkRenderPassAttachme
 
     /** An array of {@link VkRenderPassAttachmentBeginInfo} structs. */
     public static class Buffer extends StructBuffer<VkRenderPassAttachmentBeginInfo, Buffer> implements NativeResource {
-
-        private static final VkRenderPassAttachmentBeginInfo ELEMENT_FACTORY = VkRenderPassAttachmentBeginInfo.create(-1L);
-
         /**
          * Creates a new {@code VkRenderPassAttachmentBeginInfo.Buffer} instance backed by the specified container.
          *
@@ -290,18 +287,13 @@ public class VkRenderPassAttachmentBeginInfo extends Struct<VkRenderPassAttachme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderPassAttachmentBeginInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderPassAttachmentBeginInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

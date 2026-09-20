@@ -441,9 +441,6 @@ public class IOURingSQ extends Struct<IOURingSQ> implements NativeResource {
 
     /** An array of {@link IOURingSQ} structs. */
     public static class Buffer extends StructBuffer<IOURingSQ, Buffer> implements NativeResource {
-
-        private static final IOURingSQ ELEMENT_FACTORY = IOURingSQ.create(-1L);
-
         /**
          * Creates a new {@code IOURingSQ.Buffer} instance backed by the specified container.
          *
@@ -466,18 +463,13 @@ public class IOURingSQ extends Struct<IOURingSQ> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingSQ getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingSQ.class;
         }
 
         /** @return a {@link IntBuffer} view of the data pointed to by the {@code khead} field. */

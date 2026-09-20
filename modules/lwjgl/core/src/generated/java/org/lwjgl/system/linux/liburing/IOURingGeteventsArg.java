@@ -256,9 +256,6 @@ public class IOURingGeteventsArg extends Struct<IOURingGeteventsArg> implements 
 
     /** An array of {@link IOURingGeteventsArg} structs. */
     public static class Buffer extends StructBuffer<IOURingGeteventsArg, Buffer> implements NativeResource {
-
-        private static final IOURingGeteventsArg ELEMENT_FACTORY = IOURingGeteventsArg.create(-1L);
-
         /**
          * Creates a new {@code IOURingGeteventsArg.Buffer} instance backed by the specified container.
          *
@@ -281,18 +278,13 @@ public class IOURingGeteventsArg extends Struct<IOURingGeteventsArg> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingGeteventsArg getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingGeteventsArg.class;
         }
 
         /** @return the value of the {@code sigmask} field. */

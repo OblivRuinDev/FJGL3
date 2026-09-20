@@ -132,9 +132,6 @@ public class SPVParsedHeader extends Struct<SPVParsedHeader> {
 
     /** An array of {@link SPVParsedHeader} structs. */
     public static class Buffer extends StructBuffer<SPVParsedHeader, Buffer> {
-
-        private static final SPVParsedHeader ELEMENT_FACTORY = SPVParsedHeader.create(-1L);
-
         /**
          * Creates a new {@code SPVParsedHeader.Buffer} instance backed by the specified container.
          *
@@ -157,18 +154,13 @@ public class SPVParsedHeader extends Struct<SPVParsedHeader> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SPVParsedHeader getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SPVParsedHeader.class;
         }
 
         /** @return the value of the {@code magic} field. */

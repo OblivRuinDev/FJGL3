@@ -126,9 +126,6 @@ public class NVGLUFramebuffer extends Struct<NVGLUFramebuffer> {
 
     /** An array of {@link NVGLUFramebuffer} structs. */
     public static class Buffer extends StructBuffer<NVGLUFramebuffer, Buffer> {
-
-        private static final NVGLUFramebuffer ELEMENT_FACTORY = NVGLUFramebuffer.create(-1L);
-
         /**
          * Creates a new {@code NVGLUFramebuffer.Buffer} instance backed by the specified container.
          *
@@ -151,18 +148,13 @@ public class NVGLUFramebuffer extends Struct<NVGLUFramebuffer> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NVGLUFramebuffer getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NVGLUFramebuffer.class;
         }
 
         /** @return the value of the {@code fbo} field. */

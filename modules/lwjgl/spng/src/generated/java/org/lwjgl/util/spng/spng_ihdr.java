@@ -301,9 +301,6 @@ public class spng_ihdr extends Struct<spng_ihdr> implements NativeResource {
 
     /** An array of {@link spng_ihdr} structs. */
     public static class Buffer extends StructBuffer<spng_ihdr, Buffer> implements NativeResource {
-
-        private static final spng_ihdr ELEMENT_FACTORY = spng_ihdr.create(-1L);
-
         /**
          * Creates a new {@code spng_ihdr.Buffer} instance backed by the specified container.
          *
@@ -326,18 +323,13 @@ public class spng_ihdr extends Struct<spng_ihdr> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected spng_ihdr getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return spng_ihdr.class;
         }
 
         /** @return the value of the {@code width} field. */

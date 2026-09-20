@@ -242,9 +242,6 @@ public class XrSpaceUserCreateInfoFB extends Struct<XrSpaceUserCreateInfoFB> imp
 
     /** An array of {@link XrSpaceUserCreateInfoFB} structs. */
     public static class Buffer extends StructBuffer<XrSpaceUserCreateInfoFB, Buffer> implements NativeResource {
-
-        private static final XrSpaceUserCreateInfoFB ELEMENT_FACTORY = XrSpaceUserCreateInfoFB.create(-1L);
-
         /**
          * Creates a new {@code XrSpaceUserCreateInfoFB.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrSpaceUserCreateInfoFB extends Struct<XrSpaceUserCreateInfoFB> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpaceUserCreateInfoFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpaceUserCreateInfoFB.class;
         }
 
         /** @return the value of the {@code type} field. */

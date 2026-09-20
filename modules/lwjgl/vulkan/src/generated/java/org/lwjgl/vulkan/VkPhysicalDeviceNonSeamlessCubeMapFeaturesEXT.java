@@ -242,9 +242,6 @@ public class VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT extends Struct<VkPhys
 
     /** An array of {@link VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT extends Struct<VkPhys
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

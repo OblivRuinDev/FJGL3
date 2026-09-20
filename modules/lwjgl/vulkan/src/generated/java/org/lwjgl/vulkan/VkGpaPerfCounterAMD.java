@@ -240,9 +240,6 @@ public class VkGpaPerfCounterAMD extends Struct<VkGpaPerfCounterAMD> implements 
 
     /** An array of {@link VkGpaPerfCounterAMD} structs. */
     public static class Buffer extends StructBuffer<VkGpaPerfCounterAMD, Buffer> implements NativeResource {
-
-        private static final VkGpaPerfCounterAMD ELEMENT_FACTORY = VkGpaPerfCounterAMD.create(-1L);
-
         /**
          * Creates a new {@code VkGpaPerfCounterAMD.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class VkGpaPerfCounterAMD extends Struct<VkGpaPerfCounterAMD> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkGpaPerfCounterAMD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkGpaPerfCounterAMD.class;
         }
 
         /** @return the value of the {@code blockType} field. */

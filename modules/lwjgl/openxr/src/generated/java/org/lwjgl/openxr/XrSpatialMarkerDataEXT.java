@@ -243,9 +243,6 @@ public class XrSpatialMarkerDataEXT extends Struct<XrSpatialMarkerDataEXT> imple
 
     /** An array of {@link XrSpatialMarkerDataEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialMarkerDataEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialMarkerDataEXT ELEMENT_FACTORY = XrSpatialMarkerDataEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialMarkerDataEXT.Buffer} instance backed by the specified container.
          *
@@ -268,18 +265,13 @@ public class XrSpatialMarkerDataEXT extends Struct<XrSpatialMarkerDataEXT> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialMarkerDataEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialMarkerDataEXT.class;
         }
 
         /** @return the value of the {@code capability} field. */

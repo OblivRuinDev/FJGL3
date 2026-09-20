@@ -260,9 +260,6 @@ public class XrHandTrackingScaleFB extends Struct<XrHandTrackingScaleFB> impleme
 
     /** An array of {@link XrHandTrackingScaleFB} structs. */
     public static class Buffer extends StructBuffer<XrHandTrackingScaleFB, Buffer> implements NativeResource {
-
-        private static final XrHandTrackingScaleFB ELEMENT_FACTORY = XrHandTrackingScaleFB.create(-1L);
-
         /**
          * Creates a new {@code XrHandTrackingScaleFB.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class XrHandTrackingScaleFB extends Struct<XrHandTrackingScaleFB> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHandTrackingScaleFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHandTrackingScaleFB.class;
         }
 
         /** @return the value of the {@code type} field. */

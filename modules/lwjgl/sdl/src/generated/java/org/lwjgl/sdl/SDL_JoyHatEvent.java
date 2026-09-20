@@ -288,9 +288,6 @@ public class SDL_JoyHatEvent extends Struct<SDL_JoyHatEvent> implements NativeRe
 
     /** An array of {@link SDL_JoyHatEvent} structs. */
     public static class Buffer extends StructBuffer<SDL_JoyHatEvent, Buffer> implements NativeResource {
-
-        private static final SDL_JoyHatEvent ELEMENT_FACTORY = SDL_JoyHatEvent.create(-1L);
-
         /**
          * Creates a new {@code SDL_JoyHatEvent.Buffer} instance backed by the specified container.
          *
@@ -313,18 +310,13 @@ public class SDL_JoyHatEvent extends Struct<SDL_JoyHatEvent> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_JoyHatEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_JoyHatEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

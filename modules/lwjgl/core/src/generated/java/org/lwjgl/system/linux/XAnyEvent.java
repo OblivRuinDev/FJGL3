@@ -279,9 +279,6 @@ public class XAnyEvent extends Struct<XAnyEvent> implements NativeResource {
 
     /** An array of {@link XAnyEvent} structs. */
     public static class Buffer extends StructBuffer<XAnyEvent, Buffer> implements NativeResource {
-
-        private static final XAnyEvent ELEMENT_FACTORY = XAnyEvent.create(-1L);
-
         /**
          * Creates a new {@code XAnyEvent.Buffer} instance backed by the specified container.
          *
@@ -304,18 +301,13 @@ public class XAnyEvent extends Struct<XAnyEvent> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XAnyEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XAnyEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

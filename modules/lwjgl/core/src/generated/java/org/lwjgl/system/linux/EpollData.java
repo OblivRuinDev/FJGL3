@@ -241,9 +241,6 @@ public class EpollData extends Struct<EpollData> implements NativeResource {
 
     /** An array of {@link EpollData} structs. */
     public static class Buffer extends StructBuffer<EpollData, Buffer> implements NativeResource {
-
-        private static final EpollData ELEMENT_FACTORY = EpollData.create(-1L);
-
         /**
          * Creates a new {@code EpollData.Buffer} instance backed by the specified container.
          *
@@ -266,18 +263,13 @@ public class EpollData extends Struct<EpollData> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected EpollData getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return EpollData.class;
         }
 
         /** @return the value of the {@code ptr} field. */

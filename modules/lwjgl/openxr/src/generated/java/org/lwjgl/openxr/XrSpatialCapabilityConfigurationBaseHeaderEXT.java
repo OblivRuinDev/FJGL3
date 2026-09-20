@@ -356,9 +356,6 @@ public class XrSpatialCapabilityConfigurationBaseHeaderEXT extends Struct<XrSpat
 
     /** An array of {@link XrSpatialCapabilityConfigurationBaseHeaderEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialCapabilityConfigurationBaseHeaderEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialCapabilityConfigurationBaseHeaderEXT ELEMENT_FACTORY = XrSpatialCapabilityConfigurationBaseHeaderEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialCapabilityConfigurationBaseHeaderEXT.Buffer} instance backed by the specified container.
          *
@@ -381,18 +378,13 @@ public class XrSpatialCapabilityConfigurationBaseHeaderEXT extends Struct<XrSpat
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialCapabilityConfigurationBaseHeaderEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialCapabilityConfigurationBaseHeaderEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

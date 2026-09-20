@@ -225,9 +225,6 @@ public class VkDeviceAddressRangeKHR extends Struct<VkDeviceAddressRangeKHR> imp
 
     /** An array of {@link VkDeviceAddressRangeKHR} structs. */
     public static class Buffer extends StructBuffer<VkDeviceAddressRangeKHR, Buffer> implements NativeResource {
-
-        private static final VkDeviceAddressRangeKHR ELEMENT_FACTORY = VkDeviceAddressRangeKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceAddressRangeKHR.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class VkDeviceAddressRangeKHR extends Struct<VkDeviceAddressRangeKHR> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceAddressRangeKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceAddressRangeKHR.class;
         }
 
         /** @return the value of the {@code address} field. */

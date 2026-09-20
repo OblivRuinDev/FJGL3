@@ -222,9 +222,6 @@ public class XrPassthroughColorLutDataMETA extends Struct<XrPassthroughColorLutD
 
     /** An array of {@link XrPassthroughColorLutDataMETA} structs. */
     public static class Buffer extends StructBuffer<XrPassthroughColorLutDataMETA, Buffer> implements NativeResource {
-
-        private static final XrPassthroughColorLutDataMETA ELEMENT_FACTORY = XrPassthroughColorLutDataMETA.create(-1L);
-
         /**
          * Creates a new {@code XrPassthroughColorLutDataMETA.Buffer} instance backed by the specified container.
          *
@@ -247,18 +244,13 @@ public class XrPassthroughColorLutDataMETA extends Struct<XrPassthroughColorLutD
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrPassthroughColorLutDataMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrPassthroughColorLutDataMETA.class;
         }
 
         /** @return the value of the {@code bufferSize} field. */

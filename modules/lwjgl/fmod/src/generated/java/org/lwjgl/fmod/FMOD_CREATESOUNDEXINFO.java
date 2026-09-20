@@ -748,9 +748,6 @@ public class FMOD_CREATESOUNDEXINFO extends Struct<FMOD_CREATESOUNDEXINFO> imple
 
     /** An array of {@link FMOD_CREATESOUNDEXINFO} structs. */
     public static class Buffer extends StructBuffer<FMOD_CREATESOUNDEXINFO, Buffer> implements NativeResource {
-
-        private static final FMOD_CREATESOUNDEXINFO ELEMENT_FACTORY = FMOD_CREATESOUNDEXINFO.create(-1L);
-
         /**
          * Creates a new {@code FMOD_CREATESOUNDEXINFO.Buffer} instance backed by the specified container.
          *
@@ -773,18 +770,13 @@ public class FMOD_CREATESOUNDEXINFO extends Struct<FMOD_CREATESOUNDEXINFO> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_CREATESOUNDEXINFO getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_CREATESOUNDEXINFO.class;
         }
 
         /** @return the value of the {@code cbsize} field. */

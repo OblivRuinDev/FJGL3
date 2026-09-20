@@ -252,9 +252,6 @@ public class ParSLViewport extends Struct<ParSLViewport> implements NativeResour
 
     /** An array of {@link ParSLViewport} structs. */
     public static class Buffer extends StructBuffer<ParSLViewport, Buffer> implements NativeResource {
-
-        private static final ParSLViewport ELEMENT_FACTORY = ParSLViewport.create(-1L);
-
         /**
          * Creates a new {@code ParSLViewport.Buffer} instance backed by the specified container.
          *
@@ -277,18 +274,13 @@ public class ParSLViewport extends Struct<ParSLViewport> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ParSLViewport getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ParSLViewport.class;
         }
 
         /** @return the value of the {@code left} field. */

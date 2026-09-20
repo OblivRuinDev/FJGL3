@@ -299,9 +299,6 @@ public class IOURingZCRXRQ extends Struct<IOURingZCRXRQ> implements NativeResour
 
     /** An array of {@link IOURingZCRXRQ} structs. */
     public static class Buffer extends StructBuffer<IOURingZCRXRQ, Buffer> implements NativeResource {
-
-        private static final IOURingZCRXRQ ELEMENT_FACTORY = IOURingZCRXRQ.create(-1L);
-
         /**
          * Creates a new {@code IOURingZCRXRQ.Buffer} instance backed by the specified container.
          *
@@ -324,18 +321,13 @@ public class IOURingZCRXRQ extends Struct<IOURingZCRXRQ> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingZCRXRQ getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingZCRXRQ.class;
         }
 
         /** @return a {@link IntBuffer} view of the data pointed to by the {@code khead} field. */

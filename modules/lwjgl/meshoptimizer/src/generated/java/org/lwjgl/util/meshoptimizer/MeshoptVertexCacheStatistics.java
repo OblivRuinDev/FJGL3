@@ -209,9 +209,6 @@ public class MeshoptVertexCacheStatistics extends Struct<MeshoptVertexCacheStati
 
     /** An array of {@link MeshoptVertexCacheStatistics} structs. */
     public static class Buffer extends StructBuffer<MeshoptVertexCacheStatistics, Buffer> implements NativeResource {
-
-        private static final MeshoptVertexCacheStatistics ELEMENT_FACTORY = MeshoptVertexCacheStatistics.create(-1L);
-
         /**
          * Creates a new {@code MeshoptVertexCacheStatistics.Buffer} instance backed by the specified container.
          *
@@ -234,18 +231,13 @@ public class MeshoptVertexCacheStatistics extends Struct<MeshoptVertexCacheStati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected MeshoptVertexCacheStatistics getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return MeshoptVertexCacheStatistics.class;
         }
 
         /** @return the value of the {@code vertices_transformed} field. */

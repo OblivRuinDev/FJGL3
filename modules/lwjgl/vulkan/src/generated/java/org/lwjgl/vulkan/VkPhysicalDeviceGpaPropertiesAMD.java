@@ -272,9 +272,6 @@ public class VkPhysicalDeviceGpaPropertiesAMD extends Struct<VkPhysicalDeviceGpa
 
     /** An array of {@link VkPhysicalDeviceGpaPropertiesAMD} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceGpaPropertiesAMD, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceGpaPropertiesAMD ELEMENT_FACTORY = VkPhysicalDeviceGpaPropertiesAMD.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceGpaPropertiesAMD.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkPhysicalDeviceGpaPropertiesAMD extends Struct<VkPhysicalDeviceGpa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceGpaPropertiesAMD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceGpaPropertiesAMD.class;
         }
 
         /** @return the value of the {@code sType} field. */

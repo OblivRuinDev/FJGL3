@@ -263,9 +263,6 @@ public class XrSpaceVelocities extends Struct<XrSpaceVelocities> implements Nati
 
     /** An array of {@link XrSpaceVelocities} structs. */
     public static class Buffer extends StructBuffer<XrSpaceVelocities, Buffer> implements NativeResource {
-
-        private static final XrSpaceVelocities ELEMENT_FACTORY = XrSpaceVelocities.create(-1L);
-
         /**
          * Creates a new {@code XrSpaceVelocities.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrSpaceVelocities extends Struct<XrSpaceVelocities> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpaceVelocities getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpaceVelocities.class;
         }
 
         /** @return the value of the {@code type} field. */

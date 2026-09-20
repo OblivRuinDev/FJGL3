@@ -225,9 +225,6 @@ public class TT_MaxProfile extends Struct<TT_MaxProfile> {
 
     /** An array of {@link TT_MaxProfile} structs. */
     public static class Buffer extends StructBuffer<TT_MaxProfile, Buffer> {
-
-        private static final TT_MaxProfile ELEMENT_FACTORY = TT_MaxProfile.create(-1L);
-
         /**
          * Creates a new {@code TT_MaxProfile.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class TT_MaxProfile extends Struct<TT_MaxProfile> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected TT_MaxProfile getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return TT_MaxProfile.class;
         }
 
         /** @return the value of the {@code version} field. */

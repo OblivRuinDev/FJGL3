@@ -227,9 +227,6 @@ public class XrSwapchainImageReleaseInfo extends Struct<XrSwapchainImageReleaseI
 
     /** An array of {@link XrSwapchainImageReleaseInfo} structs. */
     public static class Buffer extends StructBuffer<XrSwapchainImageReleaseInfo, Buffer> implements NativeResource {
-
-        private static final XrSwapchainImageReleaseInfo ELEMENT_FACTORY = XrSwapchainImageReleaseInfo.create(-1L);
-
         /**
          * Creates a new {@code XrSwapchainImageReleaseInfo.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrSwapchainImageReleaseInfo extends Struct<XrSwapchainImageReleaseI
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSwapchainImageReleaseInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSwapchainImageReleaseInfo.class;
         }
 
         /** @return the value of the {@code type} field. */

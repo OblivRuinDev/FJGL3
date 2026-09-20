@@ -242,9 +242,6 @@ public class VkPhysicalDeviceSynchronization2Features extends Struct<VkPhysicalD
 
     /** An array of {@link VkPhysicalDeviceSynchronization2Features} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceSynchronization2Features, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceSynchronization2Features ELEMENT_FACTORY = VkPhysicalDeviceSynchronization2Features.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceSynchronization2Features.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceSynchronization2Features extends Struct<VkPhysicalD
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceSynchronization2Features getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceSynchronization2Features.class;
         }
 
         /** @return the value of the {@code sType} field. */

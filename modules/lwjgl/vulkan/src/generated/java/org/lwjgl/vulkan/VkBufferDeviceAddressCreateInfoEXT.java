@@ -242,9 +242,6 @@ public class VkBufferDeviceAddressCreateInfoEXT extends Struct<VkBufferDeviceAdd
 
     /** An array of {@link VkBufferDeviceAddressCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkBufferDeviceAddressCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkBufferDeviceAddressCreateInfoEXT ELEMENT_FACTORY = VkBufferDeviceAddressCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkBufferDeviceAddressCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkBufferDeviceAddressCreateInfoEXT extends Struct<VkBufferDeviceAdd
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBufferDeviceAddressCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBufferDeviceAddressCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

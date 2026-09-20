@@ -186,9 +186,6 @@ public class VkSubresourceHostMemcpySizeEXT extends VkSubresourceHostMemcpySize 
 
     /** An array of {@link VkSubresourceHostMemcpySizeEXT} structs. */
     public static class Buffer extends VkSubresourceHostMemcpySize.Buffer {
-
-        private static final VkSubresourceHostMemcpySizeEXT ELEMENT_FACTORY = VkSubresourceHostMemcpySizeEXT.create(-1L);
-
         /**
          * Creates a new {@code VkSubresourceHostMemcpySizeEXT.Buffer} instance backed by the specified container.
          *
@@ -211,18 +208,13 @@ public class VkSubresourceHostMemcpySizeEXT extends VkSubresourceHostMemcpySize 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSubresourceHostMemcpySizeEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSubresourceHostMemcpySizeEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

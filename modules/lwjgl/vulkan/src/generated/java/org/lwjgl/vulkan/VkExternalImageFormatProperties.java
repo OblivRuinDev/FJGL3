@@ -237,9 +237,6 @@ public class VkExternalImageFormatProperties extends Struct<VkExternalImageForma
 
     /** An array of {@link VkExternalImageFormatProperties} structs. */
     public static class Buffer extends StructBuffer<VkExternalImageFormatProperties, Buffer> implements NativeResource {
-
-        private static final VkExternalImageFormatProperties ELEMENT_FACTORY = VkExternalImageFormatProperties.create(-1L);
-
         /**
          * Creates a new {@code VkExternalImageFormatProperties.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class VkExternalImageFormatProperties extends Struct<VkExternalImageForma
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExternalImageFormatProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExternalImageFormatProperties.class;
         }
 
         /** @return the value of the {@code sType} field. */

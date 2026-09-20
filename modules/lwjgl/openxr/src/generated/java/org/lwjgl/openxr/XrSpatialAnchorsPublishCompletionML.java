@@ -290,9 +290,6 @@ public class XrSpatialAnchorsPublishCompletionML extends Struct<XrSpatialAnchors
 
     /** An array of {@link XrSpatialAnchorsPublishCompletionML} structs. */
     public static class Buffer extends StructBuffer<XrSpatialAnchorsPublishCompletionML, Buffer> implements NativeResource {
-
-        private static final XrSpatialAnchorsPublishCompletionML ELEMENT_FACTORY = XrSpatialAnchorsPublishCompletionML.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialAnchorsPublishCompletionML.Buffer} instance backed by the specified container.
          *
@@ -315,18 +312,13 @@ public class XrSpatialAnchorsPublishCompletionML extends Struct<XrSpatialAnchors
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialAnchorsPublishCompletionML getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialAnchorsPublishCompletionML.class;
         }
 
         /** @return the value of the {@code type} field. */

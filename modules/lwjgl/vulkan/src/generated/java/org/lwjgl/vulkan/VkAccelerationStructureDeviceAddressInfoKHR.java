@@ -242,9 +242,6 @@ public class VkAccelerationStructureDeviceAddressInfoKHR extends Struct<VkAccele
 
     /** An array of {@link VkAccelerationStructureDeviceAddressInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkAccelerationStructureDeviceAddressInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkAccelerationStructureDeviceAddressInfoKHR ELEMENT_FACTORY = VkAccelerationStructureDeviceAddressInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkAccelerationStructureDeviceAddressInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkAccelerationStructureDeviceAddressInfoKHR extends Struct<VkAccele
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAccelerationStructureDeviceAddressInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAccelerationStructureDeviceAddressInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -566,9 +566,6 @@ public class NkStyleScrollbar extends Struct<NkStyleScrollbar> implements Native
 
     /** An array of {@link NkStyleScrollbar} structs. */
     public static class Buffer extends StructBuffer<NkStyleScrollbar, Buffer> implements NativeResource {
-
-        private static final NkStyleScrollbar ELEMENT_FACTORY = NkStyleScrollbar.create(-1L);
-
         /**
          * Creates a new {@code NkStyleScrollbar.Buffer} instance backed by the specified container.
          *
@@ -591,18 +588,13 @@ public class NkStyleScrollbar extends Struct<NkStyleScrollbar> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkStyleScrollbar getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkStyleScrollbar.class;
         }
 
         /** @return a {@link NkStyleItem} view of the {@code normal} field. */

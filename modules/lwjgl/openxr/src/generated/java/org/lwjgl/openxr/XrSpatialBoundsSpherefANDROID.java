@@ -285,9 +285,6 @@ public class XrSpatialBoundsSpherefANDROID extends Struct<XrSpatialBoundsSpheref
 
     /** An array of {@link XrSpatialBoundsSpherefANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSpatialBoundsSpherefANDROID, Buffer> implements NativeResource {
-
-        private static final XrSpatialBoundsSpherefANDROID ELEMENT_FACTORY = XrSpatialBoundsSpherefANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialBoundsSpherefANDROID.Buffer} instance backed by the specified container.
          *
@@ -310,18 +307,13 @@ public class XrSpatialBoundsSpherefANDROID extends Struct<XrSpatialBoundsSpheref
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialBoundsSpherefANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialBoundsSpherefANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

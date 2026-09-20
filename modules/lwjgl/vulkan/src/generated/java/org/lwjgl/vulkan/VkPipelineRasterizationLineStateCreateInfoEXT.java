@@ -209,9 +209,6 @@ public class VkPipelineRasterizationLineStateCreateInfoEXT extends VkPipelineRas
 
     /** An array of {@link VkPipelineRasterizationLineStateCreateInfoEXT} structs. */
     public static class Buffer extends VkPipelineRasterizationLineStateCreateInfo.Buffer {
-
-        private static final VkPipelineRasterizationLineStateCreateInfoEXT ELEMENT_FACTORY = VkPipelineRasterizationLineStateCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineRasterizationLineStateCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -234,18 +231,13 @@ public class VkPipelineRasterizationLineStateCreateInfoEXT extends VkPipelineRas
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineRasterizationLineStateCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineRasterizationLineStateCreateInfoEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

@@ -201,9 +201,6 @@ public class VkIndirectCommandsVertexBufferTokenEXT extends Struct<VkIndirectCom
 
     /** An array of {@link VkIndirectCommandsVertexBufferTokenEXT} structs. */
     public static class Buffer extends StructBuffer<VkIndirectCommandsVertexBufferTokenEXT, Buffer> implements NativeResource {
-
-        private static final VkIndirectCommandsVertexBufferTokenEXT ELEMENT_FACTORY = VkIndirectCommandsVertexBufferTokenEXT.create(-1L);
-
         /**
          * Creates a new {@code VkIndirectCommandsVertexBufferTokenEXT.Buffer} instance backed by the specified container.
          *
@@ -226,18 +223,13 @@ public class VkIndirectCommandsVertexBufferTokenEXT extends Struct<VkIndirectCom
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkIndirectCommandsVertexBufferTokenEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkIndirectCommandsVertexBufferTokenEXT.class;
         }
 
         /** @return the value of the {@code vertexBindingUnit} field. */

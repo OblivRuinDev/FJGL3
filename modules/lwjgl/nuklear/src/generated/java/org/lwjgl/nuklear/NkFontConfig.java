@@ -471,9 +471,6 @@ public class NkFontConfig extends Struct<NkFontConfig> implements NativeResource
 
     /** An array of {@link NkFontConfig} structs. */
     public static class Buffer extends StructBuffer<NkFontConfig, Buffer> implements NativeResource {
-
-        private static final NkFontConfig ELEMENT_FACTORY = NkFontConfig.create(-1L);
-
         /**
          * Creates a new {@code NkFontConfig.Buffer} instance backed by the specified container.
          *
@@ -496,18 +493,13 @@ public class NkFontConfig extends Struct<NkFontConfig> implements NativeResource
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkFontConfig getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkFontConfig.class;
         }
 
         /** @return a {@link NkFontConfig} view of the struct pointed to by the {@code next} field. */

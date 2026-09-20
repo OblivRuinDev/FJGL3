@@ -242,9 +242,6 @@ public class VkPhysicalDeviceHostQueryResetFeatures extends Struct<VkPhysicalDev
 
     /** An array of {@link VkPhysicalDeviceHostQueryResetFeatures} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceHostQueryResetFeatures, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceHostQueryResetFeatures ELEMENT_FACTORY = VkPhysicalDeviceHostQueryResetFeatures.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceHostQueryResetFeatures.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceHostQueryResetFeatures extends Struct<VkPhysicalDev
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceHostQueryResetFeatures getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceHostQueryResetFeatures.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -322,9 +322,6 @@ public class AIMatrix3x3 extends Struct<AIMatrix3x3> implements NativeResource {
 
     /** An array of {@link AIMatrix3x3} structs. */
     public static class Buffer extends StructBuffer<AIMatrix3x3, Buffer> implements NativeResource {
-
-        private static final AIMatrix3x3 ELEMENT_FACTORY = AIMatrix3x3.create(-1L);
-
         /**
          * Creates a new {@code AIMatrix3x3.Buffer} instance backed by the specified container.
          *
@@ -347,18 +344,13 @@ public class AIMatrix3x3 extends Struct<AIMatrix3x3> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIMatrix3x3 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIMatrix3x3.class;
         }
 
         /** @return the value of the {@code a1} field. */

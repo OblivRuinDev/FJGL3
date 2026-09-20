@@ -265,9 +265,6 @@ public class IOURingZCRXCtrl extends Struct<IOURingZCRXCtrl> implements NativeRe
 
     /** An array of {@link IOURingZCRXCtrl} structs. */
     public static class Buffer extends StructBuffer<IOURingZCRXCtrl, Buffer> implements NativeResource {
-
-        private static final IOURingZCRXCtrl ELEMENT_FACTORY = IOURingZCRXCtrl.create(-1L);
-
         /**
          * Creates a new {@code IOURingZCRXCtrl.Buffer} instance backed by the specified container.
          *
@@ -290,18 +287,13 @@ public class IOURingZCRXCtrl extends Struct<IOURingZCRXCtrl> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingZCRXCtrl getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingZCRXCtrl.class;
         }
 
         /** @return the value of the {@code zcrx_id} field. */

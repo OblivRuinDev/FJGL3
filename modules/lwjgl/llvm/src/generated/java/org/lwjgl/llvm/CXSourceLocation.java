@@ -200,9 +200,6 @@ public class CXSourceLocation extends Struct<CXSourceLocation> implements Native
 
     /** An array of {@link CXSourceLocation} structs. */
     public static class Buffer extends StructBuffer<CXSourceLocation, Buffer> implements NativeResource {
-
-        private static final CXSourceLocation ELEMENT_FACTORY = CXSourceLocation.create(-1L);
-
         /**
          * Creates a new {@code CXSourceLocation.Buffer} instance backed by the specified container.
          *
@@ -225,18 +222,13 @@ public class CXSourceLocation extends Struct<CXSourceLocation> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXSourceLocation getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXSourceLocation.class;
         }
 
         /** @return a {@link PointerBuffer} view of the {@code ptr_data} field. */

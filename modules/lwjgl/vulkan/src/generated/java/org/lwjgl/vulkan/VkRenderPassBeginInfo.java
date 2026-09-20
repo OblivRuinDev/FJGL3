@@ -323,9 +323,6 @@ public class VkRenderPassBeginInfo extends Struct<VkRenderPassBeginInfo> impleme
 
     /** An array of {@link VkRenderPassBeginInfo} structs. */
     public static class Buffer extends StructBuffer<VkRenderPassBeginInfo, Buffer> implements NativeResource {
-
-        private static final VkRenderPassBeginInfo ELEMENT_FACTORY = VkRenderPassBeginInfo.create(-1L);
-
         /**
          * Creates a new {@code VkRenderPassBeginInfo.Buffer} instance backed by the specified container.
          *
@@ -348,18 +345,13 @@ public class VkRenderPassBeginInfo extends Struct<VkRenderPassBeginInfo> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderPassBeginInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderPassBeginInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -261,9 +261,6 @@ public class VkCommandBufferBeginInfo extends Struct<VkCommandBufferBeginInfo> i
 
     /** An array of {@link VkCommandBufferBeginInfo} structs. */
     public static class Buffer extends StructBuffer<VkCommandBufferBeginInfo, Buffer> implements NativeResource {
-
-        private static final VkCommandBufferBeginInfo ELEMENT_FACTORY = VkCommandBufferBeginInfo.create(-1L);
-
         /**
          * Creates a new {@code VkCommandBufferBeginInfo.Buffer} instance backed by the specified container.
          *
@@ -286,18 +283,13 @@ public class VkCommandBufferBeginInfo extends Struct<VkCommandBufferBeginInfo> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCommandBufferBeginInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCommandBufferBeginInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

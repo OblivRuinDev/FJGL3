@@ -197,9 +197,6 @@ public class VkDescriptorSetLayoutBindingFlagsCreateInfoEXT extends VkDescriptor
 
     /** An array of {@link VkDescriptorSetLayoutBindingFlagsCreateInfoEXT} structs. */
     public static class Buffer extends VkDescriptorSetLayoutBindingFlagsCreateInfo.Buffer {
-
-        private static final VkDescriptorSetLayoutBindingFlagsCreateInfoEXT ELEMENT_FACTORY = VkDescriptorSetLayoutBindingFlagsCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorSetLayoutBindingFlagsCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -222,18 +219,13 @@ public class VkDescriptorSetLayoutBindingFlagsCreateInfoEXT extends VkDescriptor
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorSetLayoutBindingFlagsCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorSetLayoutBindingFlagsCreateInfoEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

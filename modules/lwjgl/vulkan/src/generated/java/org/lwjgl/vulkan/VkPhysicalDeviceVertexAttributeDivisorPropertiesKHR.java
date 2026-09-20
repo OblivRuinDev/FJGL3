@@ -187,9 +187,6 @@ public class VkPhysicalDeviceVertexAttributeDivisorPropertiesKHR extends VkPhysi
 
     /** An array of {@link VkPhysicalDeviceVertexAttributeDivisorPropertiesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceVertexAttributeDivisorProperties.Buffer {
-
-        private static final VkPhysicalDeviceVertexAttributeDivisorPropertiesKHR ELEMENT_FACTORY = VkPhysicalDeviceVertexAttributeDivisorPropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceVertexAttributeDivisorPropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -212,18 +209,13 @@ public class VkPhysicalDeviceVertexAttributeDivisorPropertiesKHR extends VkPhysi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceVertexAttributeDivisorPropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceVertexAttributeDivisorPropertiesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

@@ -287,9 +287,6 @@ public class VkVideoEncodeH264GopRemainingFrameInfoKHR extends Struct<VkVideoEnc
 
     /** An array of {@link VkVideoEncodeH264GopRemainingFrameInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoEncodeH264GopRemainingFrameInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoEncodeH264GopRemainingFrameInfoKHR ELEMENT_FACTORY = VkVideoEncodeH264GopRemainingFrameInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoEncodeH264GopRemainingFrameInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -312,18 +309,13 @@ public class VkVideoEncodeH264GopRemainingFrameInfoKHR extends Struct<VkVideoEnc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoEncodeH264GopRemainingFrameInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoEncodeH264GopRemainingFrameInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

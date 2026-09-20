@@ -222,9 +222,6 @@ public class VkShadingRatePaletteNV extends Struct<VkShadingRatePaletteNV> imple
 
     /** An array of {@link VkShadingRatePaletteNV} structs. */
     public static class Buffer extends StructBuffer<VkShadingRatePaletteNV, Buffer> implements NativeResource {
-
-        private static final VkShadingRatePaletteNV ELEMENT_FACTORY = VkShadingRatePaletteNV.create(-1L);
-
         /**
          * Creates a new {@code VkShadingRatePaletteNV.Buffer} instance backed by the specified container.
          *
@@ -247,18 +244,13 @@ public class VkShadingRatePaletteNV extends Struct<VkShadingRatePaletteNV> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkShadingRatePaletteNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkShadingRatePaletteNV.class;
         }
 
         /** @return the value of the {@code shadingRatePaletteEntryCount} field. */

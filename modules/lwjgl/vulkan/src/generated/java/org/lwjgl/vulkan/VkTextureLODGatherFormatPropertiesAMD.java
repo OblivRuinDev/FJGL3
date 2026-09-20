@@ -236,9 +236,6 @@ public class VkTextureLODGatherFormatPropertiesAMD extends Struct<VkTextureLODGa
 
     /** An array of {@link VkTextureLODGatherFormatPropertiesAMD} structs. */
     public static class Buffer extends StructBuffer<VkTextureLODGatherFormatPropertiesAMD, Buffer> implements NativeResource {
-
-        private static final VkTextureLODGatherFormatPropertiesAMD ELEMENT_FACTORY = VkTextureLODGatherFormatPropertiesAMD.create(-1L);
-
         /**
          * Creates a new {@code VkTextureLODGatherFormatPropertiesAMD.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkTextureLODGatherFormatPropertiesAMD extends Struct<VkTextureLODGa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkTextureLODGatherFormatPropertiesAMD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkTextureLODGatherFormatPropertiesAMD.class;
         }
 
         /** @return the value of the {@code sType} field. */

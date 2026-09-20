@@ -242,9 +242,6 @@ public class VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM extends Str
 
     /** An array of {@link VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM ELEMENT_FACTORY = VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM extends Str
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

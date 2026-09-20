@@ -280,9 +280,6 @@ public class XrHapticVibration extends Struct<XrHapticVibration> implements Nati
 
     /** An array of {@link XrHapticVibration} structs. */
     public static class Buffer extends StructBuffer<XrHapticVibration, Buffer> implements NativeResource {
-
-        private static final XrHapticVibration ELEMENT_FACTORY = XrHapticVibration.create(-1L);
-
         /**
          * Creates a new {@code XrHapticVibration.Buffer} instance backed by the specified container.
          *
@@ -305,18 +302,13 @@ public class XrHapticVibration extends Struct<XrHapticVibration> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHapticVibration getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHapticVibration.class;
         }
 
         /** @return the value of the {@code type} field. */

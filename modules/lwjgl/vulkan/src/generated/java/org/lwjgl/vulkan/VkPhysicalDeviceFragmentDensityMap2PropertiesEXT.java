@@ -263,9 +263,6 @@ public class VkPhysicalDeviceFragmentDensityMap2PropertiesEXT extends Struct<VkP
 
     /** An array of {@link VkPhysicalDeviceFragmentDensityMap2PropertiesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceFragmentDensityMap2PropertiesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceFragmentDensityMap2PropertiesEXT ELEMENT_FACTORY = VkPhysicalDeviceFragmentDensityMap2PropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceFragmentDensityMap2PropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class VkPhysicalDeviceFragmentDensityMap2PropertiesEXT extends Struct<VkP
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceFragmentDensityMap2PropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceFragmentDensityMap2PropertiesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

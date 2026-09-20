@@ -242,9 +242,6 @@ public class VkPhysicalDeviceRawAccessChainsFeaturesNV extends Struct<VkPhysical
 
     /** An array of {@link VkPhysicalDeviceRawAccessChainsFeaturesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceRawAccessChainsFeaturesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceRawAccessChainsFeaturesNV ELEMENT_FACTORY = VkPhysicalDeviceRawAccessChainsFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceRawAccessChainsFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceRawAccessChainsFeaturesNV extends Struct<VkPhysical
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceRawAccessChainsFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceRawAccessChainsFeaturesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

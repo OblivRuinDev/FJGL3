@@ -272,9 +272,6 @@ public class VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT extends Struct<V
 
     /** An array of {@link VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT extends Struct<V
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

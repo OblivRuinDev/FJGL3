@@ -365,9 +365,6 @@ public class NkFontGlyph extends Struct<NkFontGlyph> implements NativeResource {
 
     /** An array of {@link NkFontGlyph} structs. */
     public static class Buffer extends StructBuffer<NkFontGlyph, Buffer> implements NativeResource {
-
-        private static final NkFontGlyph ELEMENT_FACTORY = NkFontGlyph.create(-1L);
-
         /**
          * Creates a new {@code NkFontGlyph.Buffer} instance backed by the specified container.
          *
@@ -390,18 +387,13 @@ public class NkFontGlyph extends Struct<NkFontGlyph> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkFontGlyph getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkFontGlyph.class;
         }
 
         /** @return the value of the {@code codepoint} field. */

@@ -227,9 +227,6 @@ public class XrEyeTrackerCreateInfoFB extends Struct<XrEyeTrackerCreateInfoFB> i
 
     /** An array of {@link XrEyeTrackerCreateInfoFB} structs. */
     public static class Buffer extends StructBuffer<XrEyeTrackerCreateInfoFB, Buffer> implements NativeResource {
-
-        private static final XrEyeTrackerCreateInfoFB ELEMENT_FACTORY = XrEyeTrackerCreateInfoFB.create(-1L);
-
         /**
          * Creates a new {@code XrEyeTrackerCreateInfoFB.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrEyeTrackerCreateInfoFB extends Struct<XrEyeTrackerCreateInfoFB> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEyeTrackerCreateInfoFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEyeTrackerCreateInfoFB.class;
         }
 
         /** @return the value of the {@code type} field. */

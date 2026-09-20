@@ -231,9 +231,6 @@ public class VkImageToMemoryCopyEXT extends VkImageToMemoryCopy {
 
     /** An array of {@link VkImageToMemoryCopyEXT} structs. */
     public static class Buffer extends VkImageToMemoryCopy.Buffer {
-
-        private static final VkImageToMemoryCopyEXT ELEMENT_FACTORY = VkImageToMemoryCopyEXT.create(-1L);
-
         /**
          * Creates a new {@code VkImageToMemoryCopyEXT.Buffer} instance backed by the specified container.
          *
@@ -256,18 +253,13 @@ public class VkImageToMemoryCopyEXT extends VkImageToMemoryCopy {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageToMemoryCopyEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageToMemoryCopyEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

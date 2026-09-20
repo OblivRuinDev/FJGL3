@@ -281,9 +281,6 @@ public class LLVMMCJITCompilerOptions extends Struct<LLVMMCJITCompilerOptions> i
 
     /** An array of {@link LLVMMCJITCompilerOptions} structs. */
     public static class Buffer extends StructBuffer<LLVMMCJITCompilerOptions, Buffer> implements NativeResource {
-
-        private static final LLVMMCJITCompilerOptions ELEMENT_FACTORY = LLVMMCJITCompilerOptions.create(-1L);
-
         /**
          * Creates a new {@code LLVMMCJITCompilerOptions.Buffer} instance backed by the specified container.
          *
@@ -306,18 +303,13 @@ public class LLVMMCJITCompilerOptions extends Struct<LLVMMCJITCompilerOptions> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected LLVMMCJITCompilerOptions getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return LLVMMCJITCompilerOptions.class;
         }
 
         /** @return the value of the {@code OptLevel} field. */

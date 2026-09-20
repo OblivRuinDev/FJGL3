@@ -289,9 +289,6 @@ public class VkPipelineCacheHeaderVersionOne extends Struct<VkPipelineCacheHeade
 
     /** An array of {@link VkPipelineCacheHeaderVersionOne} structs. */
     public static class Buffer extends StructBuffer<VkPipelineCacheHeaderVersionOne, Buffer> implements NativeResource {
-
-        private static final VkPipelineCacheHeaderVersionOne ELEMENT_FACTORY = VkPipelineCacheHeaderVersionOne.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineCacheHeaderVersionOne.Buffer} instance backed by the specified container.
          *
@@ -314,18 +311,13 @@ public class VkPipelineCacheHeaderVersionOne extends Struct<VkPipelineCacheHeade
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineCacheHeaderVersionOne getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineCacheHeaderVersionOne.class;
         }
 
         /** @return the value of the {@code headerSize} field. */

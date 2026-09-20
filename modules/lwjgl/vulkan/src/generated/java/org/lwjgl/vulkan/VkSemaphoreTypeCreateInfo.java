@@ -257,9 +257,6 @@ public class VkSemaphoreTypeCreateInfo extends Struct<VkSemaphoreTypeCreateInfo>
 
     /** An array of {@link VkSemaphoreTypeCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkSemaphoreTypeCreateInfo, Buffer> implements NativeResource {
-
-        private static final VkSemaphoreTypeCreateInfo ELEMENT_FACTORY = VkSemaphoreTypeCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkSemaphoreTypeCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkSemaphoreTypeCreateInfo extends Struct<VkSemaphoreTypeCreateInfo>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSemaphoreTypeCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSemaphoreTypeCreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

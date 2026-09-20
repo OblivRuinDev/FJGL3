@@ -242,9 +242,6 @@ public class VkDevicePipelineBinaryInternalCacheControlKHR extends Struct<VkDevi
 
     /** An array of {@link VkDevicePipelineBinaryInternalCacheControlKHR} structs. */
     public static class Buffer extends StructBuffer<VkDevicePipelineBinaryInternalCacheControlKHR, Buffer> implements NativeResource {
-
-        private static final VkDevicePipelineBinaryInternalCacheControlKHR ELEMENT_FACTORY = VkDevicePipelineBinaryInternalCacheControlKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDevicePipelineBinaryInternalCacheControlKHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkDevicePipelineBinaryInternalCacheControlKHR extends Struct<VkDevi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDevicePipelineBinaryInternalCacheControlKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDevicePipelineBinaryInternalCacheControlKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

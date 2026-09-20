@@ -191,9 +191,6 @@ public class VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV extends VkPhysi
 
     /** An array of {@link VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV} structs. */
     public static class Buffer extends VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR.Buffer {
-
-        private static final VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV ELEMENT_FACTORY = VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV extends VkPhysi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

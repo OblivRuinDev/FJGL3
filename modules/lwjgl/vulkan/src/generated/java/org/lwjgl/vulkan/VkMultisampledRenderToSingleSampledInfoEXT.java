@@ -257,9 +257,6 @@ public class VkMultisampledRenderToSingleSampledInfoEXT extends Struct<VkMultisa
 
     /** An array of {@link VkMultisampledRenderToSingleSampledInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkMultisampledRenderToSingleSampledInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkMultisampledRenderToSingleSampledInfoEXT ELEMENT_FACTORY = VkMultisampledRenderToSingleSampledInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkMultisampledRenderToSingleSampledInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkMultisampledRenderToSingleSampledInfoEXT extends Struct<VkMultisa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMultisampledRenderToSingleSampledInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMultisampledRenderToSingleSampledInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

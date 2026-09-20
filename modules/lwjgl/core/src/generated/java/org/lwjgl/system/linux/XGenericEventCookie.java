@@ -323,9 +323,6 @@ public class XGenericEventCookie extends Struct<XGenericEventCookie> implements 
 
     /** An array of {@link XGenericEventCookie} structs. */
     public static class Buffer extends StructBuffer<XGenericEventCookie, Buffer> implements NativeResource {
-
-        private static final XGenericEventCookie ELEMENT_FACTORY = XGenericEventCookie.create(-1L);
-
         /**
          * Creates a new {@code XGenericEventCookie.Buffer} instance backed by the specified container.
          *
@@ -348,18 +345,13 @@ public class XGenericEventCookie extends Struct<XGenericEventCookie> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XGenericEventCookie getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XGenericEventCookie.class;
         }
 
         /** @return the value of the {@code type} field. */

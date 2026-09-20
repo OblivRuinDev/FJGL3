@@ -260,9 +260,6 @@ public class XrDebugUtilsLabelEXT extends Struct<XrDebugUtilsLabelEXT> implement
 
     /** An array of {@link XrDebugUtilsLabelEXT} structs. */
     public static class Buffer extends StructBuffer<XrDebugUtilsLabelEXT, Buffer> implements NativeResource {
-
-        private static final XrDebugUtilsLabelEXT ELEMENT_FACTORY = XrDebugUtilsLabelEXT.create(-1L);
-
         /**
          * Creates a new {@code XrDebugUtilsLabelEXT.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class XrDebugUtilsLabelEXT extends Struct<XrDebugUtilsLabelEXT> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrDebugUtilsLabelEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrDebugUtilsLabelEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

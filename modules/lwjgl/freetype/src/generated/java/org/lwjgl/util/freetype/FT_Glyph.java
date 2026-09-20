@@ -124,9 +124,6 @@ public class FT_Glyph extends Struct<FT_Glyph> {
 
     /** An array of {@link FT_Glyph} structs. */
     public static class Buffer extends StructBuffer<FT_Glyph, Buffer> {
-
-        private static final FT_Glyph ELEMENT_FACTORY = FT_Glyph.create(-1L);
-
         /**
          * Creates a new {@code FT_Glyph.Buffer} instance backed by the specified container.
          *
@@ -149,18 +146,13 @@ public class FT_Glyph extends Struct<FT_Glyph> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Glyph getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Glyph.class;
         }
 
         /** @return the value of the {@code library} field. */

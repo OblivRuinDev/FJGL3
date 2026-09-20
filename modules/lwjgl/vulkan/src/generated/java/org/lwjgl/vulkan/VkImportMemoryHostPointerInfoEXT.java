@@ -267,9 +267,6 @@ public class VkImportMemoryHostPointerInfoEXT extends Struct<VkImportMemoryHostP
 
     /** An array of {@link VkImportMemoryHostPointerInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkImportMemoryHostPointerInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkImportMemoryHostPointerInfoEXT ELEMENT_FACTORY = VkImportMemoryHostPointerInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkImportMemoryHostPointerInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -292,18 +289,13 @@ public class VkImportMemoryHostPointerInfoEXT extends Struct<VkImportMemoryHostP
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImportMemoryHostPointerInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImportMemoryHostPointerInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

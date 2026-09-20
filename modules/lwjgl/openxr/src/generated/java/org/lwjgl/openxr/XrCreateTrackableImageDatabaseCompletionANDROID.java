@@ -277,9 +277,6 @@ public class XrCreateTrackableImageDatabaseCompletionANDROID extends Struct<XrCr
 
     /** An array of {@link XrCreateTrackableImageDatabaseCompletionANDROID} structs. */
     public static class Buffer extends StructBuffer<XrCreateTrackableImageDatabaseCompletionANDROID, Buffer> implements NativeResource {
-
-        private static final XrCreateTrackableImageDatabaseCompletionANDROID ELEMENT_FACTORY = XrCreateTrackableImageDatabaseCompletionANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrCreateTrackableImageDatabaseCompletionANDROID.Buffer} instance backed by the specified container.
          *
@@ -302,18 +299,13 @@ public class XrCreateTrackableImageDatabaseCompletionANDROID extends Struct<XrCr
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrCreateTrackableImageDatabaseCompletionANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrCreateTrackableImageDatabaseCompletionANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

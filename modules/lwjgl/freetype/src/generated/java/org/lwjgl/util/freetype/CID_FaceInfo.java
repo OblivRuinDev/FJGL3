@@ -278,9 +278,6 @@ public class CID_FaceInfo extends Struct<CID_FaceInfo> {
 
     /** An array of {@link CID_FaceInfo} structs. */
     public static class Buffer extends StructBuffer<CID_FaceInfo, Buffer> {
-
-        private static final CID_FaceInfo ELEMENT_FACTORY = CID_FaceInfo.create(-1L);
-
         /**
          * Creates a new {@code CID_FaceInfo.Buffer} instance backed by the specified container.
          *
@@ -303,18 +300,13 @@ public class CID_FaceInfo extends Struct<CID_FaceInfo> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CID_FaceInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CID_FaceInfo.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code cid_font_name} field. */

@@ -272,9 +272,6 @@ public class XrSpatialCapabilityComponentTypesEXT extends Struct<XrSpatialCapabi
 
     /** An array of {@link XrSpatialCapabilityComponentTypesEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialCapabilityComponentTypesEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialCapabilityComponentTypesEXT ELEMENT_FACTORY = XrSpatialCapabilityComponentTypesEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialCapabilityComponentTypesEXT.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class XrSpatialCapabilityComponentTypesEXT extends Struct<XrSpatialCapabi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialCapabilityComponentTypesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialCapabilityComponentTypesEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

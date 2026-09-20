@@ -267,9 +267,6 @@ public class XrSpaceLocations extends Struct<XrSpaceLocations> implements Native
 
     /** An array of {@link XrSpaceLocations} structs. */
     public static class Buffer extends StructBuffer<XrSpaceLocations, Buffer> implements NativeResource {
-
-        private static final XrSpaceLocations ELEMENT_FACTORY = XrSpaceLocations.create(-1L);
-
         /**
          * Creates a new {@code XrSpaceLocations.Buffer} instance backed by the specified container.
          *
@@ -292,18 +289,13 @@ public class XrSpaceLocations extends Struct<XrSpaceLocations> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpaceLocations getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpaceLocations.class;
         }
 
         /** @return the value of the {@code type} field. */

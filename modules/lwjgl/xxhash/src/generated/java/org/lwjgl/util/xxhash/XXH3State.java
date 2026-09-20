@@ -310,9 +310,6 @@ public class XXH3State extends Struct<XXH3State> implements NativeResource {
 
     /** An array of {@link XXH3State} structs. */
     public static class Buffer extends StructBuffer<XXH3State, Buffer> implements NativeResource {
-
-        private static final XXH3State ELEMENT_FACTORY = XXH3State.create(-1L);
-
         /**
          * Creates a new {@code XXH3State.Buffer} instance backed by the specified container.
          *
@@ -335,18 +332,13 @@ public class XXH3State extends Struct<XXH3State> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XXH3State getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XXH3State.class;
         }
 
         /** @return a {@link LongBuffer} view of the {@code acc} field. */

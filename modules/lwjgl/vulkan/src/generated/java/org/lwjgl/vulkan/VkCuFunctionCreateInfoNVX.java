@@ -275,9 +275,6 @@ public class VkCuFunctionCreateInfoNVX extends Struct<VkCuFunctionCreateInfoNVX>
 
     /** An array of {@link VkCuFunctionCreateInfoNVX} structs. */
     public static class Buffer extends StructBuffer<VkCuFunctionCreateInfoNVX, Buffer> implements NativeResource {
-
-        private static final VkCuFunctionCreateInfoNVX ELEMENT_FACTORY = VkCuFunctionCreateInfoNVX.create(-1L);
-
         /**
          * Creates a new {@code VkCuFunctionCreateInfoNVX.Buffer} instance backed by the specified container.
          *
@@ -300,18 +297,13 @@ public class VkCuFunctionCreateInfoNVX extends Struct<VkCuFunctionCreateInfoNVX>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCuFunctionCreateInfoNVX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCuFunctionCreateInfoNVX.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -246,9 +246,6 @@ public class XrEventDataVirtualKeyboardBackspaceMETA extends Struct<XrEventDataV
 
     /** An array of {@link XrEventDataVirtualKeyboardBackspaceMETA} structs. */
     public static class Buffer extends StructBuffer<XrEventDataVirtualKeyboardBackspaceMETA, Buffer> implements NativeResource {
-
-        private static final XrEventDataVirtualKeyboardBackspaceMETA ELEMENT_FACTORY = XrEventDataVirtualKeyboardBackspaceMETA.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataVirtualKeyboardBackspaceMETA.Buffer} instance backed by the specified container.
          *
@@ -271,18 +268,13 @@ public class XrEventDataVirtualKeyboardBackspaceMETA extends Struct<XrEventDataV
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataVirtualKeyboardBackspaceMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataVirtualKeyboardBackspaceMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

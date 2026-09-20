@@ -236,9 +236,6 @@ public class VkMemoryFdPropertiesKHR extends Struct<VkMemoryFdPropertiesKHR> imp
 
     /** An array of {@link VkMemoryFdPropertiesKHR} structs. */
     public static class Buffer extends StructBuffer<VkMemoryFdPropertiesKHR, Buffer> implements NativeResource {
-
-        private static final VkMemoryFdPropertiesKHR ELEMENT_FACTORY = VkMemoryFdPropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkMemoryFdPropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkMemoryFdPropertiesKHR extends Struct<VkMemoryFdPropertiesKHR> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMemoryFdPropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMemoryFdPropertiesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

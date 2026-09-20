@@ -191,9 +191,6 @@ public class VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT extends V
 
     /** An array of {@link VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT} structs. */
     public static class Buffer extends VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures.Buffer {
-
-        private static final VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT extends V
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

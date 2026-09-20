@@ -224,9 +224,6 @@ public class SDL_VirtualJoystickSensorDesc extends Struct<SDL_VirtualJoystickSen
 
     /** An array of {@link SDL_VirtualJoystickSensorDesc} structs. */
     public static class Buffer extends StructBuffer<SDL_VirtualJoystickSensorDesc, Buffer> implements NativeResource {
-
-        private static final SDL_VirtualJoystickSensorDesc ELEMENT_FACTORY = SDL_VirtualJoystickSensorDesc.create(-1L);
-
         /**
          * Creates a new {@code SDL_VirtualJoystickSensorDesc.Buffer} instance backed by the specified container.
          *
@@ -249,18 +246,13 @@ public class SDL_VirtualJoystickSensorDesc extends Struct<SDL_VirtualJoystickSen
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_VirtualJoystickSensorDesc getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_VirtualJoystickSensorDesc.class;
         }
 
         /** @return the value of the {@code type} field. */

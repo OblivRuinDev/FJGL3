@@ -253,9 +253,6 @@ public class LLVMOrcCSymbolDependenceGroup extends Struct<LLVMOrcCSymbolDependen
 
     /** An array of {@link LLVMOrcCSymbolDependenceGroup} structs. */
     public static class Buffer extends StructBuffer<LLVMOrcCSymbolDependenceGroup, Buffer> implements NativeResource {
-
-        private static final LLVMOrcCSymbolDependenceGroup ELEMENT_FACTORY = LLVMOrcCSymbolDependenceGroup.create(-1L);
-
         /**
          * Creates a new {@code LLVMOrcCSymbolDependenceGroup.Buffer} instance backed by the specified container.
          *
@@ -278,18 +275,13 @@ public class LLVMOrcCSymbolDependenceGroup extends Struct<LLVMOrcCSymbolDependen
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected LLVMOrcCSymbolDependenceGroup getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return LLVMOrcCSymbolDependenceGroup.class;
         }
 
         /** @return a {@link LLVMOrcCSymbolsList} view of the {@code Symbols} field. */

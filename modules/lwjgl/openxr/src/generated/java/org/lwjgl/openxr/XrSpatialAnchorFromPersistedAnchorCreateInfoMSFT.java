@@ -270,9 +270,6 @@ public class XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT extends Struct<XrS
 
     /** An array of {@link XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT, Buffer> implements NativeResource {
-
-        private static final XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT ELEMENT_FACTORY = XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT.Buffer} instance backed by the specified container.
          *
@@ -295,18 +292,13 @@ public class XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT extends Struct<XrS
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT.class;
         }
 
         /** @return the value of the {@code type} field. */

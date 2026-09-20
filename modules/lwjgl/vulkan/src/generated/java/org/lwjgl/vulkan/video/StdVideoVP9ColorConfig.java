@@ -279,9 +279,6 @@ public class StdVideoVP9ColorConfig extends Struct<StdVideoVP9ColorConfig> imple
 
     /** An array of {@link StdVideoVP9ColorConfig} structs. */
     public static class Buffer extends StructBuffer<StdVideoVP9ColorConfig, Buffer> implements NativeResource {
-
-        private static final StdVideoVP9ColorConfig ELEMENT_FACTORY = StdVideoVP9ColorConfig.create(-1L);
-
         /**
          * Creates a new {@code StdVideoVP9ColorConfig.Buffer} instance backed by the specified container.
          *
@@ -304,18 +301,13 @@ public class StdVideoVP9ColorConfig extends Struct<StdVideoVP9ColorConfig> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoVP9ColorConfig getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoVP9ColorConfig.class;
         }
 
         /** @return a {@link StdVideoVP9ColorConfigFlags} view of the {@code flags} field. */

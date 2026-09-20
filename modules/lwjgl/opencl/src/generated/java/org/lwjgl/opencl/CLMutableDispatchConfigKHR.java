@@ -371,9 +371,6 @@ public class CLMutableDispatchConfigKHR extends Struct<CLMutableDispatchConfigKH
 
     /** An array of {@link CLMutableDispatchConfigKHR} structs. */
     public static class Buffer extends StructBuffer<CLMutableDispatchConfigKHR, Buffer> implements NativeResource {
-
-        private static final CLMutableDispatchConfigKHR ELEMENT_FACTORY = CLMutableDispatchConfigKHR.create(-1L);
-
         /**
          * Creates a new {@code CLMutableDispatchConfigKHR.Buffer} instance backed by the specified container.
          *
@@ -396,18 +393,13 @@ public class CLMutableDispatchConfigKHR extends Struct<CLMutableDispatchConfigKH
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CLMutableDispatchConfigKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CLMutableDispatchConfigKHR.class;
         }
 
         /** @return the value of the {@code command} field. */

@@ -235,9 +235,6 @@ public class SDL_CursorFrameInfo extends Struct<SDL_CursorFrameInfo> implements 
 
     /** An array of {@link SDL_CursorFrameInfo} structs. */
     public static class Buffer extends StructBuffer<SDL_CursorFrameInfo, Buffer> implements NativeResource {
-
-        private static final SDL_CursorFrameInfo ELEMENT_FACTORY = SDL_CursorFrameInfo.create(-1L);
-
         /**
          * Creates a new {@code SDL_CursorFrameInfo.Buffer} instance backed by the specified container.
          *
@@ -260,18 +257,13 @@ public class SDL_CursorFrameInfo extends Struct<SDL_CursorFrameInfo> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_CursorFrameInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_CursorFrameInfo.class;
         }
 
         /** @return a {@link SDL_Surface} view of the struct pointed to by the {@code surface} field. */

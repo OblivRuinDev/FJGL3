@@ -246,9 +246,6 @@ public class XrEventDataPassthroughStateChangedFB extends Struct<XrEventDataPass
 
     /** An array of {@link XrEventDataPassthroughStateChangedFB} structs. */
     public static class Buffer extends StructBuffer<XrEventDataPassthroughStateChangedFB, Buffer> implements NativeResource {
-
-        private static final XrEventDataPassthroughStateChangedFB ELEMENT_FACTORY = XrEventDataPassthroughStateChangedFB.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataPassthroughStateChangedFB.Buffer} instance backed by the specified container.
          *
@@ -271,18 +268,13 @@ public class XrEventDataPassthroughStateChangedFB extends Struct<XrEventDataPass
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataPassthroughStateChangedFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataPassthroughStateChangedFB.class;
         }
 
         /** @return the value of the {@code type} field. */

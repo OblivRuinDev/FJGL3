@@ -191,9 +191,6 @@ public class VkPhysicalDeviceExternalFenceInfoKHR extends VkPhysicalDeviceExtern
 
     /** An array of {@link VkPhysicalDeviceExternalFenceInfoKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceExternalFenceInfo.Buffer {
-
-        private static final VkPhysicalDeviceExternalFenceInfoKHR ELEMENT_FACTORY = VkPhysicalDeviceExternalFenceInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceExternalFenceInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceExternalFenceInfoKHR extends VkPhysicalDeviceExtern
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceExternalFenceInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceExternalFenceInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

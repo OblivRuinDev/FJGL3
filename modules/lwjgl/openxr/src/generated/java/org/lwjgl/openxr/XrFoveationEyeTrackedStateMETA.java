@@ -256,9 +256,6 @@ public class XrFoveationEyeTrackedStateMETA extends Struct<XrFoveationEyeTracked
 
     /** An array of {@link XrFoveationEyeTrackedStateMETA} structs. */
     public static class Buffer extends StructBuffer<XrFoveationEyeTrackedStateMETA, Buffer> implements NativeResource {
-
-        private static final XrFoveationEyeTrackedStateMETA ELEMENT_FACTORY = XrFoveationEyeTrackedStateMETA.create(-1L);
-
         /**
          * Creates a new {@code XrFoveationEyeTrackedStateMETA.Buffer} instance backed by the specified container.
          *
@@ -281,18 +278,13 @@ public class XrFoveationEyeTrackedStateMETA extends Struct<XrFoveationEyeTracked
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFoveationEyeTrackedStateMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFoveationEyeTrackedStateMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

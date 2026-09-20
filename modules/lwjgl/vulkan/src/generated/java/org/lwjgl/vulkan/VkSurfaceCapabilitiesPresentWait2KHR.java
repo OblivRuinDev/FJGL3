@@ -242,9 +242,6 @@ public class VkSurfaceCapabilitiesPresentWait2KHR extends Struct<VkSurfaceCapabi
 
     /** An array of {@link VkSurfaceCapabilitiesPresentWait2KHR} structs. */
     public static class Buffer extends StructBuffer<VkSurfaceCapabilitiesPresentWait2KHR, Buffer> implements NativeResource {
-
-        private static final VkSurfaceCapabilitiesPresentWait2KHR ELEMENT_FACTORY = VkSurfaceCapabilitiesPresentWait2KHR.create(-1L);
-
         /**
          * Creates a new {@code VkSurfaceCapabilitiesPresentWait2KHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkSurfaceCapabilitiesPresentWait2KHR extends Struct<VkSurfaceCapabi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSurfaceCapabilitiesPresentWait2KHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSurfaceCapabilitiesPresentWait2KHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

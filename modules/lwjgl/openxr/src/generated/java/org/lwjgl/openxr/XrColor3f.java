@@ -237,9 +237,6 @@ public class XrColor3f extends Struct<XrColor3f> implements NativeResource {
 
     /** An array of {@link XrColor3f} structs. */
     public static class Buffer extends StructBuffer<XrColor3f, Buffer> implements NativeResource {
-
-        private static final XrColor3f ELEMENT_FACTORY = XrColor3f.create(-1L);
-
         /**
          * Creates a new {@code XrColor3f.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class XrColor3f extends Struct<XrColor3f> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrColor3f getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrColor3f.class;
         }
 
         /** @return the value of the {@code r} field. */

@@ -242,9 +242,6 @@ public class XrSpatialPersistenceContextCreateInfoEXT extends Struct<XrSpatialPe
 
     /** An array of {@link XrSpatialPersistenceContextCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialPersistenceContextCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialPersistenceContextCreateInfoEXT ELEMENT_FACTORY = XrSpatialPersistenceContextCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialPersistenceContextCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrSpatialPersistenceContextCreateInfoEXT extends Struct<XrSpatialPe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialPersistenceContextCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialPersistenceContextCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

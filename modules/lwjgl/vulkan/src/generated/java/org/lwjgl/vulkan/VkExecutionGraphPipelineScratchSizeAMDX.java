@@ -272,9 +272,6 @@ public class VkExecutionGraphPipelineScratchSizeAMDX extends Struct<VkExecutionG
 
     /** An array of {@link VkExecutionGraphPipelineScratchSizeAMDX} structs. */
     public static class Buffer extends StructBuffer<VkExecutionGraphPipelineScratchSizeAMDX, Buffer> implements NativeResource {
-
-        private static final VkExecutionGraphPipelineScratchSizeAMDX ELEMENT_FACTORY = VkExecutionGraphPipelineScratchSizeAMDX.create(-1L);
-
         /**
          * Creates a new {@code VkExecutionGraphPipelineScratchSizeAMDX.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkExecutionGraphPipelineScratchSizeAMDX extends Struct<VkExecutionG
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExecutionGraphPipelineScratchSizeAMDX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExecutionGraphPipelineScratchSizeAMDX.class;
         }
 
         /** @return the value of the {@code sType} field. */

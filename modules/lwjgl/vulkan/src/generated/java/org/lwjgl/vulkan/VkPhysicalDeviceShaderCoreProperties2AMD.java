@@ -245,9 +245,6 @@ public class VkPhysicalDeviceShaderCoreProperties2AMD extends Struct<VkPhysicalD
 
     /** An array of {@link VkPhysicalDeviceShaderCoreProperties2AMD} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceShaderCoreProperties2AMD, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceShaderCoreProperties2AMD ELEMENT_FACTORY = VkPhysicalDeviceShaderCoreProperties2AMD.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderCoreProperties2AMD.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkPhysicalDeviceShaderCoreProperties2AMD extends Struct<VkPhysicalD
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderCoreProperties2AMD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderCoreProperties2AMD.class;
         }
 
         /** @return the value of the {@code sType} field. */

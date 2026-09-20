@@ -340,9 +340,6 @@ public class VkBindDescriptorSetsInfo extends Struct<VkBindDescriptorSetsInfo> i
 
     /** An array of {@link VkBindDescriptorSetsInfo} structs. */
     public static class Buffer extends StructBuffer<VkBindDescriptorSetsInfo, Buffer> implements NativeResource {
-
-        private static final VkBindDescriptorSetsInfo ELEMENT_FACTORY = VkBindDescriptorSetsInfo.create(-1L);
-
         /**
          * Creates a new {@code VkBindDescriptorSetsInfo.Buffer} instance backed by the specified container.
          *
@@ -365,18 +362,13 @@ public class VkBindDescriptorSetsInfo extends Struct<VkBindDescriptorSetsInfo> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBindDescriptorSetsInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBindDescriptorSetsInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

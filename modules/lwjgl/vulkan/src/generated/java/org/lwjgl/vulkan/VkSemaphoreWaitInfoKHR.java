@@ -210,9 +210,6 @@ public class VkSemaphoreWaitInfoKHR extends VkSemaphoreWaitInfo {
 
     /** An array of {@link VkSemaphoreWaitInfoKHR} structs. */
     public static class Buffer extends VkSemaphoreWaitInfo.Buffer {
-
-        private static final VkSemaphoreWaitInfoKHR ELEMENT_FACTORY = VkSemaphoreWaitInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkSemaphoreWaitInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -235,18 +232,13 @@ public class VkSemaphoreWaitInfoKHR extends VkSemaphoreWaitInfo {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSemaphoreWaitInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSemaphoreWaitInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

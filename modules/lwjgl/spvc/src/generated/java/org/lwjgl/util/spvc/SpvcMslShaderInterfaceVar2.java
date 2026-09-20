@@ -271,9 +271,6 @@ public class SpvcMslShaderInterfaceVar2 extends Struct<SpvcMslShaderInterfaceVar
 
     /** An array of {@link SpvcMslShaderInterfaceVar2} structs. */
     public static class Buffer extends StructBuffer<SpvcMslShaderInterfaceVar2, Buffer> implements NativeResource {
-
-        private static final SpvcMslShaderInterfaceVar2 ELEMENT_FACTORY = SpvcMslShaderInterfaceVar2.create(-1L);
-
         /**
          * Creates a new {@code SpvcMslShaderInterfaceVar2.Buffer} instance backed by the specified container.
          *
@@ -296,18 +293,13 @@ public class SpvcMslShaderInterfaceVar2 extends Struct<SpvcMslShaderInterfaceVar
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SpvcMslShaderInterfaceVar2 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SpvcMslShaderInterfaceVar2.class;
         }
 
         /** @return the value of the {@code location} field. */

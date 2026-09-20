@@ -242,9 +242,6 @@ public class VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE extends Struc
 
     /** An array of {@link VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE ELEMENT_FACTORY = VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE extends Struc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE.class;
         }
 
         /** @return the value of the {@code sType} field. */

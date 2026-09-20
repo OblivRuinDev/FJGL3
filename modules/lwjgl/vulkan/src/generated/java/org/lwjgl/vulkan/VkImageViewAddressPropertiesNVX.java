@@ -245,9 +245,6 @@ public class VkImageViewAddressPropertiesNVX extends Struct<VkImageViewAddressPr
 
     /** An array of {@link VkImageViewAddressPropertiesNVX} structs. */
     public static class Buffer extends StructBuffer<VkImageViewAddressPropertiesNVX, Buffer> implements NativeResource {
-
-        private static final VkImageViewAddressPropertiesNVX ELEMENT_FACTORY = VkImageViewAddressPropertiesNVX.create(-1L);
-
         /**
          * Creates a new {@code VkImageViewAddressPropertiesNVX.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkImageViewAddressPropertiesNVX extends Struct<VkImageViewAddressPr
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageViewAddressPropertiesNVX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageViewAddressPropertiesNVX.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -260,9 +260,6 @@ public class StdVideoAV1GlobalMotion extends Struct<StdVideoAV1GlobalMotion> imp
 
     /** An array of {@link StdVideoAV1GlobalMotion} structs. */
     public static class Buffer extends StructBuffer<StdVideoAV1GlobalMotion, Buffer> implements NativeResource {
-
-        private static final StdVideoAV1GlobalMotion ELEMENT_FACTORY = StdVideoAV1GlobalMotion.create(-1L);
-
         /**
          * Creates a new {@code StdVideoAV1GlobalMotion.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class StdVideoAV1GlobalMotion extends Struct<StdVideoAV1GlobalMotion> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoAV1GlobalMotion getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoAV1GlobalMotion.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code GmType} field. */

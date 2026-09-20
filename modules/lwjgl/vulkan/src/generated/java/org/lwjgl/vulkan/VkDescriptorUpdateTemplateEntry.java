@@ -285,9 +285,6 @@ public class VkDescriptorUpdateTemplateEntry extends Struct<VkDescriptorUpdateTe
 
     /** An array of {@link VkDescriptorUpdateTemplateEntry} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorUpdateTemplateEntry, Buffer> implements NativeResource {
-
-        private static final VkDescriptorUpdateTemplateEntry ELEMENT_FACTORY = VkDescriptorUpdateTemplateEntry.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorUpdateTemplateEntry.Buffer} instance backed by the specified container.
          *
@@ -310,18 +307,13 @@ public class VkDescriptorUpdateTemplateEntry extends Struct<VkDescriptorUpdateTe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorUpdateTemplateEntry getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorUpdateTemplateEntry.class;
         }
 
         /** @return the value of the {@code dstBinding} field. */

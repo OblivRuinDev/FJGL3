@@ -375,9 +375,6 @@ public class XrCompositionLayerEquirectKHR extends Struct<XrCompositionLayerEqui
 
     /** An array of {@link XrCompositionLayerEquirectKHR} structs. */
     public static class Buffer extends StructBuffer<XrCompositionLayerEquirectKHR, Buffer> implements NativeResource {
-
-        private static final XrCompositionLayerEquirectKHR ELEMENT_FACTORY = XrCompositionLayerEquirectKHR.create(-1L);
-
         /**
          * Creates a new {@code XrCompositionLayerEquirectKHR.Buffer} instance backed by the specified container.
          *
@@ -400,18 +397,13 @@ public class XrCompositionLayerEquirectKHR extends Struct<XrCompositionLayerEqui
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrCompositionLayerEquirectKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrCompositionLayerEquirectKHR.class;
         }
 
         /** @return the value of the {@code type} field. */

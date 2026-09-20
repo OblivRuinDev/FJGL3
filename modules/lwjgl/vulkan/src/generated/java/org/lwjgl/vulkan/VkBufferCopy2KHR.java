@@ -203,9 +203,6 @@ public class VkBufferCopy2KHR extends VkBufferCopy2 {
 
     /** An array of {@link VkBufferCopy2KHR} structs. */
     public static class Buffer extends VkBufferCopy2.Buffer {
-
-        private static final VkBufferCopy2KHR ELEMENT_FACTORY = VkBufferCopy2KHR.create(-1L);
-
         /**
          * Creates a new {@code VkBufferCopy2KHR.Buffer} instance backed by the specified container.
          *
@@ -228,18 +225,13 @@ public class VkBufferCopy2KHR extends VkBufferCopy2 {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBufferCopy2KHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBufferCopy2KHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

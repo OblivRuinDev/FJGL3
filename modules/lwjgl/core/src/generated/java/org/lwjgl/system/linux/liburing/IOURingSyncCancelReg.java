@@ -308,9 +308,6 @@ public class IOURingSyncCancelReg extends Struct<IOURingSyncCancelReg> implement
 
     /** An array of {@link IOURingSyncCancelReg} structs. */
     public static class Buffer extends StructBuffer<IOURingSyncCancelReg, Buffer> implements NativeResource {
-
-        private static final IOURingSyncCancelReg ELEMENT_FACTORY = IOURingSyncCancelReg.create(-1L);
-
         /**
          * Creates a new {@code IOURingSyncCancelReg.Buffer} instance backed by the specified container.
          *
@@ -333,18 +330,13 @@ public class IOURingSyncCancelReg extends Struct<IOURingSyncCancelReg> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingSyncCancelReg getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingSyncCancelReg.class;
         }
 
         /** @return the value of the {@code addr} field. */

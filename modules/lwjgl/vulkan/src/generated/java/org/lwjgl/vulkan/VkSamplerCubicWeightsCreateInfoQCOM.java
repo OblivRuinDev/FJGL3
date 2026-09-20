@@ -242,9 +242,6 @@ public class VkSamplerCubicWeightsCreateInfoQCOM extends Struct<VkSamplerCubicWe
 
     /** An array of {@link VkSamplerCubicWeightsCreateInfoQCOM} structs. */
     public static class Buffer extends StructBuffer<VkSamplerCubicWeightsCreateInfoQCOM, Buffer> implements NativeResource {
-
-        private static final VkSamplerCubicWeightsCreateInfoQCOM ELEMENT_FACTORY = VkSamplerCubicWeightsCreateInfoQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkSamplerCubicWeightsCreateInfoQCOM.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkSamplerCubicWeightsCreateInfoQCOM extends Struct<VkSamplerCubicWe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSamplerCubicWeightsCreateInfoQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSamplerCubicWeightsCreateInfoQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

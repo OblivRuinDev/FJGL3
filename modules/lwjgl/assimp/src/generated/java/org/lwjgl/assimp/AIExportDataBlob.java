@@ -266,9 +266,6 @@ public class AIExportDataBlob extends Struct<AIExportDataBlob> implements Native
 
     /** An array of {@link AIExportDataBlob} structs. */
     public static class Buffer extends StructBuffer<AIExportDataBlob, Buffer> implements NativeResource {
-
-        private static final AIExportDataBlob ELEMENT_FACTORY = AIExportDataBlob.create(-1L);
-
         /**
          * Creates a new {@code AIExportDataBlob.Buffer} instance backed by the specified container.
          *
@@ -291,18 +288,13 @@ public class AIExportDataBlob extends Struct<AIExportDataBlob> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIExportDataBlob getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIExportDataBlob.class;
         }
 
         /** @return the value of the {@code size} field. */

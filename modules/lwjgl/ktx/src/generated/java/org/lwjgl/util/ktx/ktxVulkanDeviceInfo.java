@@ -350,9 +350,6 @@ public class ktxVulkanDeviceInfo extends Struct<ktxVulkanDeviceInfo> implements 
 
     /** An array of {@link ktxVulkanDeviceInfo} structs. */
     public static class Buffer extends StructBuffer<ktxVulkanDeviceInfo, Buffer> implements NativeResource {
-
-        private static final ktxVulkanDeviceInfo ELEMENT_FACTORY = ktxVulkanDeviceInfo.create(-1L);
-
         /**
          * Creates a new {@code ktxVulkanDeviceInfo.Buffer} instance backed by the specified container.
          *
@@ -375,18 +372,13 @@ public class ktxVulkanDeviceInfo extends Struct<ktxVulkanDeviceInfo> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ktxVulkanDeviceInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ktxVulkanDeviceInfo.class;
         }
 
         /** @return the value of the {@code instance} field. */

@@ -226,9 +226,6 @@ public class AIString extends Struct<AIString> implements NativeResource {
 
     /** An array of {@link AIString} structs. */
     public static class Buffer extends StructBuffer<AIString, Buffer> implements NativeResource {
-
-        private static final AIString ELEMENT_FACTORY = AIString.create(-1L);
-
         /**
          * Creates a new {@code AIString.Buffer} instance backed by the specified container.
          *
@@ -251,18 +248,13 @@ public class AIString extends Struct<AIString> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIString getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIString.class;
         }
 
         /** @return the value of the {@code length} field. */

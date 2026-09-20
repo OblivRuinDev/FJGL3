@@ -296,9 +296,6 @@ public class VkExportSemaphoreWin32HandleInfoKHR extends Struct<VkExportSemaphor
 
     /** An array of {@link VkExportSemaphoreWin32HandleInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkExportSemaphoreWin32HandleInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkExportSemaphoreWin32HandleInfoKHR ELEMENT_FACTORY = VkExportSemaphoreWin32HandleInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkExportSemaphoreWin32HandleInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -321,18 +318,13 @@ public class VkExportSemaphoreWin32HandleInfoKHR extends Struct<VkExportSemaphor
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExportSemaphoreWin32HandleInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExportSemaphoreWin32HandleInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

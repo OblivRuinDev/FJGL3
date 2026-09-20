@@ -285,9 +285,6 @@ public class VkColorBlendEquationEXT extends Struct<VkColorBlendEquationEXT> imp
 
     /** An array of {@link VkColorBlendEquationEXT} structs. */
     public static class Buffer extends StructBuffer<VkColorBlendEquationEXT, Buffer> implements NativeResource {
-
-        private static final VkColorBlendEquationEXT ELEMENT_FACTORY = VkColorBlendEquationEXT.create(-1L);
-
         /**
          * Creates a new {@code VkColorBlendEquationEXT.Buffer} instance backed by the specified container.
          *
@@ -310,18 +307,13 @@ public class VkColorBlendEquationEXT extends Struct<VkColorBlendEquationEXT> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkColorBlendEquationEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkColorBlendEquationEXT.class;
         }
 
         /** @return the value of the {@code srcColorBlendFactor} field. */

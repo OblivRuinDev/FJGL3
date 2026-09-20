@@ -138,9 +138,6 @@ public class JAWTDrawingSurfaceInfo extends Struct<JAWTDrawingSurfaceInfo> {
 
     /** An array of {@link JAWTDrawingSurfaceInfo} structs. */
     public static class Buffer extends StructBuffer<JAWTDrawingSurfaceInfo, Buffer> {
-
-        private static final JAWTDrawingSurfaceInfo ELEMENT_FACTORY = JAWTDrawingSurfaceInfo.create(-1L);
-
         /**
          * Creates a new {@code JAWTDrawingSurfaceInfo.Buffer} instance backed by the specified container.
          *
@@ -163,18 +160,13 @@ public class JAWTDrawingSurfaceInfo extends Struct<JAWTDrawingSurfaceInfo> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected JAWTDrawingSurfaceInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return JAWTDrawingSurfaceInfo.class;
         }
 
         /** @return the value of the {@code platformInfo} field. */

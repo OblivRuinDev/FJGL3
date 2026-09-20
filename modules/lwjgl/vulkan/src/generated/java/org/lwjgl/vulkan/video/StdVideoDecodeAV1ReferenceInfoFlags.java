@@ -232,9 +232,6 @@ public class StdVideoDecodeAV1ReferenceInfoFlags extends Struct<StdVideoDecodeAV
 
     /** An array of {@link StdVideoDecodeAV1ReferenceInfoFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoDecodeAV1ReferenceInfoFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoDecodeAV1ReferenceInfoFlags ELEMENT_FACTORY = StdVideoDecodeAV1ReferenceInfoFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoDecodeAV1ReferenceInfoFlags.Buffer} instance backed by the specified container.
          *
@@ -257,18 +254,13 @@ public class StdVideoDecodeAV1ReferenceInfoFlags extends Struct<StdVideoDecodeAV
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoDecodeAV1ReferenceInfoFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoDecodeAV1ReferenceInfoFlags.class;
         }
 
         /** @return the value of the {@code disable_frame_end_update_cdf} field. */

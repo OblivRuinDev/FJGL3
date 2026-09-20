@@ -197,9 +197,6 @@ public class VkPhysicalDeviceShaderAtomicInt64FeaturesKHR extends VkPhysicalDevi
 
     /** An array of {@link VkPhysicalDeviceShaderAtomicInt64FeaturesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceShaderAtomicInt64Features.Buffer {
-
-        private static final VkPhysicalDeviceShaderAtomicInt64FeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceShaderAtomicInt64FeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderAtomicInt64FeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -222,18 +219,13 @@ public class VkPhysicalDeviceShaderAtomicInt64FeaturesKHR extends VkPhysicalDevi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderAtomicInt64FeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderAtomicInt64FeaturesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

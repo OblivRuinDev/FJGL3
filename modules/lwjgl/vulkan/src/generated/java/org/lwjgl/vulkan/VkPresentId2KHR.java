@@ -257,9 +257,6 @@ public class VkPresentId2KHR extends Struct<VkPresentId2KHR> implements NativeRe
 
     /** An array of {@link VkPresentId2KHR} structs. */
     public static class Buffer extends StructBuffer<VkPresentId2KHR, Buffer> implements NativeResource {
-
-        private static final VkPresentId2KHR ELEMENT_FACTORY = VkPresentId2KHR.create(-1L);
-
         /**
          * Creates a new {@code VkPresentId2KHR.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkPresentId2KHR extends Struct<VkPresentId2KHR> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPresentId2KHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPresentId2KHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

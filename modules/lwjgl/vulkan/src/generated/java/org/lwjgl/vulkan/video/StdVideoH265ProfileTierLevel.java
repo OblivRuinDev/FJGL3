@@ -243,9 +243,6 @@ public class StdVideoH265ProfileTierLevel extends Struct<StdVideoH265ProfileTier
 
     /** An array of {@link StdVideoH265ProfileTierLevel} structs. */
     public static class Buffer extends StructBuffer<StdVideoH265ProfileTierLevel, Buffer> implements NativeResource {
-
-        private static final StdVideoH265ProfileTierLevel ELEMENT_FACTORY = StdVideoH265ProfileTierLevel.create(-1L);
-
         /**
          * Creates a new {@code StdVideoH265ProfileTierLevel.Buffer} instance backed by the specified container.
          *
@@ -268,18 +265,13 @@ public class StdVideoH265ProfileTierLevel extends Struct<StdVideoH265ProfileTier
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoH265ProfileTierLevel getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoH265ProfileTierLevel.class;
         }
 
         /** @return a {@link StdVideoH265ProfileTierLevelFlags} view of the {@code flags} field. */

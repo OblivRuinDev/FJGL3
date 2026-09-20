@@ -242,9 +242,6 @@ public class VkPhysicalDeviceMemoryDecompressionFeaturesEXT extends Struct<VkPhy
 
     /** An array of {@link VkPhysicalDeviceMemoryDecompressionFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceMemoryDecompressionFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceMemoryDecompressionFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceMemoryDecompressionFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceMemoryDecompressionFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceMemoryDecompressionFeaturesEXT extends Struct<VkPhy
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceMemoryDecompressionFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceMemoryDecompressionFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

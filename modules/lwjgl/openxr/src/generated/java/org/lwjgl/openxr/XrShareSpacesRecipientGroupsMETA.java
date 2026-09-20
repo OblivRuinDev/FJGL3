@@ -273,9 +273,6 @@ public class XrShareSpacesRecipientGroupsMETA extends Struct<XrShareSpacesRecipi
 
     /** An array of {@link XrShareSpacesRecipientGroupsMETA} structs. */
     public static class Buffer extends StructBuffer<XrShareSpacesRecipientGroupsMETA, Buffer> implements NativeResource {
-
-        private static final XrShareSpacesRecipientGroupsMETA ELEMENT_FACTORY = XrShareSpacesRecipientGroupsMETA.create(-1L);
-
         /**
          * Creates a new {@code XrShareSpacesRecipientGroupsMETA.Buffer} instance backed by the specified container.
          *
@@ -298,18 +295,13 @@ public class XrShareSpacesRecipientGroupsMETA extends Struct<XrShareSpacesRecipi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrShareSpacesRecipientGroupsMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrShareSpacesRecipientGroupsMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

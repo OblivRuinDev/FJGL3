@@ -366,9 +366,6 @@ public class SDL_GamepadBinding extends Struct<SDL_GamepadBinding> implements Na
 
     /** An array of {@link SDL_GamepadBinding} structs. */
     public static class Buffer extends StructBuffer<SDL_GamepadBinding, Buffer> implements NativeResource {
-
-        private static final SDL_GamepadBinding ELEMENT_FACTORY = SDL_GamepadBinding.create(-1L);
-
         /**
          * Creates a new {@code SDL_GamepadBinding.Buffer} instance backed by the specified container.
          *
@@ -391,18 +388,13 @@ public class SDL_GamepadBinding extends Struct<SDL_GamepadBinding> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GamepadBinding getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GamepadBinding.class;
         }
 
         /** @return the value of the {@code input_type} field. */

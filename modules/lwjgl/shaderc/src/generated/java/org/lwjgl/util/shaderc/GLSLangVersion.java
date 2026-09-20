@@ -213,9 +213,6 @@ public class GLSLangVersion extends Struct<GLSLangVersion> implements NativeReso
 
     /** An array of {@link GLSLangVersion} structs. */
     public static class Buffer extends StructBuffer<GLSLangVersion, Buffer> implements NativeResource {
-
-        private static final GLSLangVersion ELEMENT_FACTORY = GLSLangVersion.create(-1L);
-
         /**
          * Creates a new {@code GLSLangVersion.Buffer} instance backed by the specified container.
          *
@@ -238,18 +235,13 @@ public class GLSLangVersion extends Struct<GLSLangVersion> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected GLSLangVersion getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return GLSLangVersion.class;
         }
 
         /** @return the value of the {@code major} field. */

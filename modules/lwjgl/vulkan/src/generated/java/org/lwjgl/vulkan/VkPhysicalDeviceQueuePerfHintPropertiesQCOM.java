@@ -236,9 +236,6 @@ public class VkPhysicalDeviceQueuePerfHintPropertiesQCOM extends Struct<VkPhysic
 
     /** An array of {@link VkPhysicalDeviceQueuePerfHintPropertiesQCOM} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceQueuePerfHintPropertiesQCOM, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceQueuePerfHintPropertiesQCOM ELEMENT_FACTORY = VkPhysicalDeviceQueuePerfHintPropertiesQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceQueuePerfHintPropertiesQCOM.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkPhysicalDeviceQueuePerfHintPropertiesQCOM extends Struct<VkPhysic
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceQueuePerfHintPropertiesQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceQueuePerfHintPropertiesQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -240,9 +240,6 @@ public class VkMicromapUsageEXT extends Struct<VkMicromapUsageEXT> implements Na
 
     /** An array of {@link VkMicromapUsageEXT} structs. */
     public static class Buffer extends StructBuffer<VkMicromapUsageEXT, Buffer> implements NativeResource {
-
-        private static final VkMicromapUsageEXT ELEMENT_FACTORY = VkMicromapUsageEXT.create(-1L);
-
         /**
          * Creates a new {@code VkMicromapUsageEXT.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class VkMicromapUsageEXT extends Struct<VkMicromapUsageEXT> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMicromapUsageEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMicromapUsageEXT.class;
         }
 
         /** @return the value of the {@code count} field. */

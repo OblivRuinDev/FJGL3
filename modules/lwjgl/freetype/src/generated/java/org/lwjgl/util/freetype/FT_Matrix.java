@@ -255,9 +255,6 @@ public class FT_Matrix extends Struct<FT_Matrix> implements NativeResource {
 
     /** An array of {@link FT_Matrix} structs. */
     public static class Buffer extends StructBuffer<FT_Matrix, Buffer> implements NativeResource {
-
-        private static final FT_Matrix ELEMENT_FACTORY = FT_Matrix.create(-1L);
-
         /**
          * Creates a new {@code FT_Matrix.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class FT_Matrix extends Struct<FT_Matrix> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Matrix getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Matrix.class;
         }
 
         /** @return the value of the {@code xx} field. */

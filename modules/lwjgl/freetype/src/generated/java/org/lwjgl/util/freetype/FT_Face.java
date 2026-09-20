@@ -352,9 +352,6 @@ public class FT_Face extends Struct<FT_Face> {
 
     /** An array of {@link FT_Face} structs. */
     public static class Buffer extends StructBuffer<FT_Face, Buffer> {
-
-        private static final FT_Face ELEMENT_FACTORY = FT_Face.create(-1L);
-
         /**
          * Creates a new {@code FT_Face.Buffer} instance backed by the specified container.
          *
@@ -377,18 +374,13 @@ public class FT_Face extends Struct<FT_Face> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Face getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Face.class;
         }
 
         /** @return the value of the {@code num_faces} field. */

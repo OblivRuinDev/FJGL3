@@ -263,9 +263,6 @@ public class XrSpatialComponentMarkerListEXT extends Struct<XrSpatialComponentMa
 
     /** An array of {@link XrSpatialComponentMarkerListEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialComponentMarkerListEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialComponentMarkerListEXT ELEMENT_FACTORY = XrSpatialComponentMarkerListEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialComponentMarkerListEXT.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrSpatialComponentMarkerListEXT extends Struct<XrSpatialComponentMa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialComponentMarkerListEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialComponentMarkerListEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

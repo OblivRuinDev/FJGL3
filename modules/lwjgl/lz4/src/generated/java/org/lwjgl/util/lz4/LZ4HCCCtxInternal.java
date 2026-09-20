@@ -215,9 +215,6 @@ public class LZ4HCCCtxInternal extends Struct<LZ4HCCCtxInternal> {
 
     /** An array of {@link LZ4HCCCtxInternal} structs. */
     public static class Buffer extends StructBuffer<LZ4HCCCtxInternal, Buffer> {
-
-        private static final LZ4HCCCtxInternal ELEMENT_FACTORY = LZ4HCCCtxInternal.create(-1L);
-
         /**
          * Creates a new {@code LZ4HCCCtxInternal.Buffer} instance backed by the specified container.
          *
@@ -240,18 +237,13 @@ public class LZ4HCCCtxInternal extends Struct<LZ4HCCCtxInternal> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected LZ4HCCCtxInternal getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return LZ4HCCCtxInternal.class;
         }
 
         /** @return a {@link IntBuffer} view of the {@code hashTable} field. */

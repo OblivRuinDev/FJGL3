@@ -192,9 +192,6 @@ public class FT_SfntLangTag extends Struct<FT_SfntLangTag> implements NativeReso
 
     /** An array of {@link FT_SfntLangTag} structs. */
     public static class Buffer extends StructBuffer<FT_SfntLangTag, Buffer> implements NativeResource {
-
-        private static final FT_SfntLangTag ELEMENT_FACTORY = FT_SfntLangTag.create(-1L);
-
         /**
          * Creates a new {@code FT_SfntLangTag.Buffer} instance backed by the specified container.
          *
@@ -217,18 +214,13 @@ public class FT_SfntLangTag extends Struct<FT_SfntLangTag> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_SfntLangTag getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_SfntLangTag.class;
         }
 
         /** @return a {@link ByteBuffer} view of the data pointed to by the {@code string} field. */

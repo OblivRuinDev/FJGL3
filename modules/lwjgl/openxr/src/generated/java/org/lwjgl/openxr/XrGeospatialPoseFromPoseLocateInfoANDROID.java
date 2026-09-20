@@ -285,9 +285,6 @@ public class XrGeospatialPoseFromPoseLocateInfoANDROID extends Struct<XrGeospati
 
     /** An array of {@link XrGeospatialPoseFromPoseLocateInfoANDROID} structs. */
     public static class Buffer extends StructBuffer<XrGeospatialPoseFromPoseLocateInfoANDROID, Buffer> implements NativeResource {
-
-        private static final XrGeospatialPoseFromPoseLocateInfoANDROID ELEMENT_FACTORY = XrGeospatialPoseFromPoseLocateInfoANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrGeospatialPoseFromPoseLocateInfoANDROID.Buffer} instance backed by the specified container.
          *
@@ -310,18 +307,13 @@ public class XrGeospatialPoseFromPoseLocateInfoANDROID extends Struct<XrGeospati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrGeospatialPoseFromPoseLocateInfoANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrGeospatialPoseFromPoseLocateInfoANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

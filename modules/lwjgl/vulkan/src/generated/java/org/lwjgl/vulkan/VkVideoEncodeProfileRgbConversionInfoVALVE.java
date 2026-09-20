@@ -242,9 +242,6 @@ public class VkVideoEncodeProfileRgbConversionInfoVALVE extends Struct<VkVideoEn
 
     /** An array of {@link VkVideoEncodeProfileRgbConversionInfoVALVE} structs. */
     public static class Buffer extends StructBuffer<VkVideoEncodeProfileRgbConversionInfoVALVE, Buffer> implements NativeResource {
-
-        private static final VkVideoEncodeProfileRgbConversionInfoVALVE ELEMENT_FACTORY = VkVideoEncodeProfileRgbConversionInfoVALVE.create(-1L);
-
         /**
          * Creates a new {@code VkVideoEncodeProfileRgbConversionInfoVALVE.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkVideoEncodeProfileRgbConversionInfoVALVE extends Struct<VkVideoEn
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoEncodeProfileRgbConversionInfoVALVE getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoEncodeProfileRgbConversionInfoVALVE.class;
         }
 
         /** @return the value of the {@code sType} field. */

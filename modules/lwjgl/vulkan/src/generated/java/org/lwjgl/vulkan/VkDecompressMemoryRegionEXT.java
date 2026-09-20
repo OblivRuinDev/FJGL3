@@ -255,9 +255,6 @@ public class VkDecompressMemoryRegionEXT extends Struct<VkDecompressMemoryRegion
 
     /** An array of {@link VkDecompressMemoryRegionEXT} structs. */
     public static class Buffer extends StructBuffer<VkDecompressMemoryRegionEXT, Buffer> implements NativeResource {
-
-        private static final VkDecompressMemoryRegionEXT ELEMENT_FACTORY = VkDecompressMemoryRegionEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDecompressMemoryRegionEXT.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class VkDecompressMemoryRegionEXT extends Struct<VkDecompressMemoryRegion
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDecompressMemoryRegionEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDecompressMemoryRegionEXT.class;
         }
 
         /** @return the value of the {@code srcAddress} field. */

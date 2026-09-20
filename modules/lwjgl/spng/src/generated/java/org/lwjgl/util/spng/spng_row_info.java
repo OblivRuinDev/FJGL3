@@ -210,9 +210,6 @@ public class spng_row_info extends Struct<spng_row_info> implements NativeResour
 
     /** An array of {@link spng_row_info} structs. */
     public static class Buffer extends StructBuffer<spng_row_info, Buffer> implements NativeResource {
-
-        private static final spng_row_info ELEMENT_FACTORY = spng_row_info.create(-1L);
-
         /**
          * Creates a new {@code spng_row_info.Buffer} instance backed by the specified container.
          *
@@ -235,18 +232,13 @@ public class spng_row_info extends Struct<spng_row_info> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected spng_row_info getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return spng_row_info.class;
         }
 
         /** @return the value of the {@code scanline_idx} field. */

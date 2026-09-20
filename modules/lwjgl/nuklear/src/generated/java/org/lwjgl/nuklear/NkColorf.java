@@ -252,9 +252,6 @@ public class NkColorf extends Struct<NkColorf> implements NativeResource {
 
     /** An array of {@link NkColorf} structs. */
     public static class Buffer extends StructBuffer<NkColorf, Buffer> implements NativeResource {
-
-        private static final NkColorf ELEMENT_FACTORY = NkColorf.create(-1L);
-
         /**
          * Creates a new {@code NkColorf.Buffer} instance backed by the specified container.
          *
@@ -277,18 +274,13 @@ public class NkColorf extends Struct<NkColorf> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkColorf getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkColorf.class;
         }
 
         /** @return the value of the {@code r} field. */

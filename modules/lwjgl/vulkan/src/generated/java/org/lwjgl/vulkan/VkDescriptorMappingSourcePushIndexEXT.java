@@ -345,9 +345,6 @@ public class VkDescriptorMappingSourcePushIndexEXT extends Struct<VkDescriptorMa
 
     /** An array of {@link VkDescriptorMappingSourcePushIndexEXT} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorMappingSourcePushIndexEXT, Buffer> implements NativeResource {
-
-        private static final VkDescriptorMappingSourcePushIndexEXT ELEMENT_FACTORY = VkDescriptorMappingSourcePushIndexEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorMappingSourcePushIndexEXT.Buffer} instance backed by the specified container.
          *
@@ -370,18 +367,13 @@ public class VkDescriptorMappingSourcePushIndexEXT extends Struct<VkDescriptorMa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorMappingSourcePushIndexEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorMappingSourcePushIndexEXT.class;
         }
 
         /** @return the value of the {@code heapOffset} field. */

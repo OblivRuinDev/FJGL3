@@ -263,9 +263,6 @@ public class XrSpatialComponentBounded2DListEXT extends Struct<XrSpatialComponen
 
     /** An array of {@link XrSpatialComponentBounded2DListEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialComponentBounded2DListEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialComponentBounded2DListEXT ELEMENT_FACTORY = XrSpatialComponentBounded2DListEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialComponentBounded2DListEXT.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrSpatialComponentBounded2DListEXT extends Struct<XrSpatialComponen
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialComponentBounded2DListEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialComponentBounded2DListEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

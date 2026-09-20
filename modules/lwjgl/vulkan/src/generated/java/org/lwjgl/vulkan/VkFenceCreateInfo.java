@@ -248,9 +248,6 @@ public class VkFenceCreateInfo extends Struct<VkFenceCreateInfo> implements Nati
 
     /** An array of {@link VkFenceCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkFenceCreateInfo, Buffer> implements NativeResource {
-
-        private static final VkFenceCreateInfo ELEMENT_FACTORY = VkFenceCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkFenceCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -273,18 +270,13 @@ public class VkFenceCreateInfo extends Struct<VkFenceCreateInfo> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkFenceCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkFenceCreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

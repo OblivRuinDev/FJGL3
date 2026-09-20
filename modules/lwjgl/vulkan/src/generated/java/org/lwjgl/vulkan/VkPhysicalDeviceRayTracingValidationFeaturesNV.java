@@ -242,9 +242,6 @@ public class VkPhysicalDeviceRayTracingValidationFeaturesNV extends Struct<VkPhy
 
     /** An array of {@link VkPhysicalDeviceRayTracingValidationFeaturesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceRayTracingValidationFeaturesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceRayTracingValidationFeaturesNV ELEMENT_FACTORY = VkPhysicalDeviceRayTracingValidationFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceRayTracingValidationFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceRayTracingValidationFeaturesNV extends Struct<VkPhy
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceRayTracingValidationFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceRayTracingValidationFeaturesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -191,9 +191,6 @@ public class VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT extends VkP
 
     /** An array of {@link VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT} structs. */
     public static class Buffer extends VkPhysicalDevicePipelineCreationCacheControlFeatures.Buffer {
-
-        private static final VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT ELEMENT_FACTORY = VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT extends VkP
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

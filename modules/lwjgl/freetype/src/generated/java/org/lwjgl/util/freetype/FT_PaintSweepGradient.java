@@ -127,9 +127,6 @@ public class FT_PaintSweepGradient extends Struct<FT_PaintSweepGradient> {
 
     /** An array of {@link FT_PaintSweepGradient} structs. */
     public static class Buffer extends StructBuffer<FT_PaintSweepGradient, Buffer> {
-
-        private static final FT_PaintSweepGradient ELEMENT_FACTORY = FT_PaintSweepGradient.create(-1L);
-
         /**
          * Creates a new {@code FT_PaintSweepGradient.Buffer} instance backed by the specified container.
          *
@@ -152,18 +149,13 @@ public class FT_PaintSweepGradient extends Struct<FT_PaintSweepGradient> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_PaintSweepGradient getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_PaintSweepGradient.class;
         }
 
         /** @return a {@link FT_ColorLine} view of the {@code colorline} field. */

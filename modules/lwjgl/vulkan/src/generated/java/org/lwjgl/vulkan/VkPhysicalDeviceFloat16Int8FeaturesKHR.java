@@ -197,9 +197,6 @@ public class VkPhysicalDeviceFloat16Int8FeaturesKHR extends VkPhysicalDeviceShad
 
     /** An array of {@link VkPhysicalDeviceFloat16Int8FeaturesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceShaderFloat16Int8Features.Buffer {
-
-        private static final VkPhysicalDeviceFloat16Int8FeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceFloat16Int8FeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceFloat16Int8FeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -222,18 +219,13 @@ public class VkPhysicalDeviceFloat16Int8FeaturesKHR extends VkPhysicalDeviceShad
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceFloat16Int8FeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceFloat16Int8FeaturesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

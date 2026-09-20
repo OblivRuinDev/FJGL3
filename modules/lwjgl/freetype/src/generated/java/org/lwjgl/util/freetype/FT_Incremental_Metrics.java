@@ -127,9 +127,6 @@ public class FT_Incremental_Metrics extends Struct<FT_Incremental_Metrics> {
 
     /** An array of {@link FT_Incremental_Metrics} structs. */
     public static class Buffer extends StructBuffer<FT_Incremental_Metrics, Buffer> {
-
-        private static final FT_Incremental_Metrics ELEMENT_FACTORY = FT_Incremental_Metrics.create(-1L);
-
         /**
          * Creates a new {@code FT_Incremental_Metrics.Buffer} instance backed by the specified container.
          *
@@ -152,18 +149,13 @@ public class FT_Incremental_Metrics extends Struct<FT_Incremental_Metrics> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Incremental_Metrics getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Incremental_Metrics.class;
         }
 
         /** @return the value of the {@code bearing_x} field. */

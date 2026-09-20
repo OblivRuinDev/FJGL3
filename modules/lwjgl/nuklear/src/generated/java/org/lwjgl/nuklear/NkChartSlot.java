@@ -179,9 +179,6 @@ public class NkChartSlot extends Struct<NkChartSlot> {
 
     /** An array of {@link NkChartSlot} structs. */
     public static class Buffer extends StructBuffer<NkChartSlot, Buffer> {
-
-        private static final NkChartSlot ELEMENT_FACTORY = NkChartSlot.create(-1L);
-
         /**
          * Creates a new {@code NkChartSlot.Buffer} instance backed by the specified container.
          *
@@ -204,18 +201,13 @@ public class NkChartSlot extends Struct<NkChartSlot> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkChartSlot getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkChartSlot.class;
         }
 
         /** @return the value of the {@code type} field. */

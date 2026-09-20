@@ -257,9 +257,6 @@ public class VkLatencySleepInfoNV extends Struct<VkLatencySleepInfoNV> implement
 
     /** An array of {@link VkLatencySleepInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkLatencySleepInfoNV, Buffer> implements NativeResource {
-
-        private static final VkLatencySleepInfoNV ELEMENT_FACTORY = VkLatencySleepInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkLatencySleepInfoNV.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkLatencySleepInfoNV extends Struct<VkLatencySleepInfoNV> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkLatencySleepInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkLatencySleepInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

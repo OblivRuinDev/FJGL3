@@ -242,9 +242,6 @@ public class XrFaceExpressionInfo2FB extends Struct<XrFaceExpressionInfo2FB> imp
 
     /** An array of {@link XrFaceExpressionInfo2FB} structs. */
     public static class Buffer extends StructBuffer<XrFaceExpressionInfo2FB, Buffer> implements NativeResource {
-
-        private static final XrFaceExpressionInfo2FB ELEMENT_FACTORY = XrFaceExpressionInfo2FB.create(-1L);
-
         /**
          * Creates a new {@code XrFaceExpressionInfo2FB.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrFaceExpressionInfo2FB extends Struct<XrFaceExpressionInfo2FB> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFaceExpressionInfo2FB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFaceExpressionInfo2FB.class;
         }
 
         /** @return the value of the {@code type} field. */

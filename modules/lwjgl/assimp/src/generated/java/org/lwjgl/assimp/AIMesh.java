@@ -565,9 +565,6 @@ public class AIMesh extends Struct<AIMesh> implements NativeResource {
 
     /** An array of {@link AIMesh} structs. */
     public static class Buffer extends StructBuffer<AIMesh, Buffer> implements NativeResource {
-
-        private static final AIMesh ELEMENT_FACTORY = AIMesh.create(-1L);
-
         /**
          * Creates a new {@code AIMesh.Buffer} instance backed by the specified container.
          *
@@ -590,18 +587,13 @@ public class AIMesh extends Struct<AIMesh> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIMesh getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIMesh.class;
         }
 
         /** @return the value of the {@code mPrimitiveTypes} field. */

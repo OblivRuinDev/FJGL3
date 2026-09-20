@@ -252,9 +252,6 @@ public class VkDataGraphPipelineBuiltinModelCreateInfoQCOM extends Struct<VkData
 
     /** An array of {@link VkDataGraphPipelineBuiltinModelCreateInfoQCOM} structs. */
     public static class Buffer extends StructBuffer<VkDataGraphPipelineBuiltinModelCreateInfoQCOM, Buffer> implements NativeResource {
-
-        private static final VkDataGraphPipelineBuiltinModelCreateInfoQCOM ELEMENT_FACTORY = VkDataGraphPipelineBuiltinModelCreateInfoQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkDataGraphPipelineBuiltinModelCreateInfoQCOM.Buffer} instance backed by the specified container.
          *
@@ -277,18 +274,13 @@ public class VkDataGraphPipelineBuiltinModelCreateInfoQCOM extends Struct<VkData
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDataGraphPipelineBuiltinModelCreateInfoQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDataGraphPipelineBuiltinModelCreateInfoQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

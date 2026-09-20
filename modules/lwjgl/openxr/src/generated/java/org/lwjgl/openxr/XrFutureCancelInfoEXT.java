@@ -242,9 +242,6 @@ public class XrFutureCancelInfoEXT extends Struct<XrFutureCancelInfoEXT> impleme
 
     /** An array of {@link XrFutureCancelInfoEXT} structs. */
     public static class Buffer extends StructBuffer<XrFutureCancelInfoEXT, Buffer> implements NativeResource {
-
-        private static final XrFutureCancelInfoEXT ELEMENT_FACTORY = XrFutureCancelInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code XrFutureCancelInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrFutureCancelInfoEXT extends Struct<XrFutureCancelInfoEXT> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFutureCancelInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFutureCancelInfoEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

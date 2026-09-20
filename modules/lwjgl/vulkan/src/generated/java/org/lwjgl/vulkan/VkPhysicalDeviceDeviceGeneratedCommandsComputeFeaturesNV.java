@@ -272,9 +272,6 @@ public class VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV extends St
 
     /** An array of {@link VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV ELEMENT_FACTORY = VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV extends St
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

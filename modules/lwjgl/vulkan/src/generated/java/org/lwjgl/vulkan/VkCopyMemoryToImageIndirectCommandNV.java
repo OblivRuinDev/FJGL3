@@ -215,9 +215,6 @@ public class VkCopyMemoryToImageIndirectCommandNV extends VkCopyMemoryToImageInd
 
     /** An array of {@link VkCopyMemoryToImageIndirectCommandNV} structs. */
     public static class Buffer extends VkCopyMemoryToImageIndirectCommandKHR.Buffer {
-
-        private static final VkCopyMemoryToImageIndirectCommandNV ELEMENT_FACTORY = VkCopyMemoryToImageIndirectCommandNV.create(-1L);
-
         /**
          * Creates a new {@code VkCopyMemoryToImageIndirectCommandNV.Buffer} instance backed by the specified container.
          *
@@ -240,18 +237,13 @@ public class VkCopyMemoryToImageIndirectCommandNV extends VkCopyMemoryToImageInd
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCopyMemoryToImageIndirectCommandNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCopyMemoryToImageIndirectCommandNV.class;
         }
 
         /** Sets the specified value to the {@code srcAddress} field. */

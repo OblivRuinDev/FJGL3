@@ -267,9 +267,6 @@ public class XrSceneMeshSnapshotCreationResultANDROID extends Struct<XrSceneMesh
 
     /** An array of {@link XrSceneMeshSnapshotCreationResultANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSceneMeshSnapshotCreationResultANDROID, Buffer> implements NativeResource {
-
-        private static final XrSceneMeshSnapshotCreationResultANDROID ELEMENT_FACTORY = XrSceneMeshSnapshotCreationResultANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSceneMeshSnapshotCreationResultANDROID.Buffer} instance backed by the specified container.
          *
@@ -292,18 +289,13 @@ public class XrSceneMeshSnapshotCreationResultANDROID extends Struct<XrSceneMesh
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSceneMeshSnapshotCreationResultANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSceneMeshSnapshotCreationResultANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

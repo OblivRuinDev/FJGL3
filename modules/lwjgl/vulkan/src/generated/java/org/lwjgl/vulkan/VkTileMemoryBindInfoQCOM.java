@@ -242,9 +242,6 @@ public class VkTileMemoryBindInfoQCOM extends Struct<VkTileMemoryBindInfoQCOM> i
 
     /** An array of {@link VkTileMemoryBindInfoQCOM} structs. */
     public static class Buffer extends StructBuffer<VkTileMemoryBindInfoQCOM, Buffer> implements NativeResource {
-
-        private static final VkTileMemoryBindInfoQCOM ELEMENT_FACTORY = VkTileMemoryBindInfoQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkTileMemoryBindInfoQCOM.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkTileMemoryBindInfoQCOM extends Struct<VkTileMemoryBindInfoQCOM> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkTileMemoryBindInfoQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkTileMemoryBindInfoQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -257,9 +257,6 @@ public class XrFacialExpressionClientCreateInfoML extends Struct<XrFacialExpress
 
     /** An array of {@link XrFacialExpressionClientCreateInfoML} structs. */
     public static class Buffer extends StructBuffer<XrFacialExpressionClientCreateInfoML, Buffer> implements NativeResource {
-
-        private static final XrFacialExpressionClientCreateInfoML ELEMENT_FACTORY = XrFacialExpressionClientCreateInfoML.create(-1L);
-
         /**
          * Creates a new {@code XrFacialExpressionClientCreateInfoML.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class XrFacialExpressionClientCreateInfoML extends Struct<XrFacialExpress
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFacialExpressionClientCreateInfoML getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFacialExpressionClientCreateInfoML.class;
         }
 
         /** @return the value of the {@code type} field. */

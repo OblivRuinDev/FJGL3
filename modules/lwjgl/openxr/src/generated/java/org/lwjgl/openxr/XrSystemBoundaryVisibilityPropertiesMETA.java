@@ -236,9 +236,6 @@ public class XrSystemBoundaryVisibilityPropertiesMETA extends Struct<XrSystemBou
 
     /** An array of {@link XrSystemBoundaryVisibilityPropertiesMETA} structs. */
     public static class Buffer extends StructBuffer<XrSystemBoundaryVisibilityPropertiesMETA, Buffer> implements NativeResource {
-
-        private static final XrSystemBoundaryVisibilityPropertiesMETA ELEMENT_FACTORY = XrSystemBoundaryVisibilityPropertiesMETA.create(-1L);
-
         /**
          * Creates a new {@code XrSystemBoundaryVisibilityPropertiesMETA.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemBoundaryVisibilityPropertiesMETA extends Struct<XrSystemBou
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemBoundaryVisibilityPropertiesMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemBoundaryVisibilityPropertiesMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

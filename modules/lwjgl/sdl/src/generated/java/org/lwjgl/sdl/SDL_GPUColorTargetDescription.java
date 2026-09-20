@@ -228,9 +228,6 @@ public class SDL_GPUColorTargetDescription extends Struct<SDL_GPUColorTargetDesc
 
     /** An array of {@link SDL_GPUColorTargetDescription} structs. */
     public static class Buffer extends StructBuffer<SDL_GPUColorTargetDescription, Buffer> implements NativeResource {
-
-        private static final SDL_GPUColorTargetDescription ELEMENT_FACTORY = SDL_GPUColorTargetDescription.create(-1L);
-
         /**
          * Creates a new {@code SDL_GPUColorTargetDescription.Buffer} instance backed by the specified container.
          *
@@ -253,18 +250,13 @@ public class SDL_GPUColorTargetDescription extends Struct<SDL_GPUColorTargetDesc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GPUColorTargetDescription getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GPUColorTargetDescription.class;
         }
 
         /** @return the value of the {@code format} field. */

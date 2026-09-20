@@ -242,9 +242,6 @@ public class VkReleaseCapturedPipelineDataInfoKHR extends Struct<VkReleaseCaptur
 
     /** An array of {@link VkReleaseCapturedPipelineDataInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkReleaseCapturedPipelineDataInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkReleaseCapturedPipelineDataInfoKHR ELEMENT_FACTORY = VkReleaseCapturedPipelineDataInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkReleaseCapturedPipelineDataInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkReleaseCapturedPipelineDataInfoKHR extends Struct<VkReleaseCaptur
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkReleaseCapturedPipelineDataInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkReleaseCapturedPipelineDataInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

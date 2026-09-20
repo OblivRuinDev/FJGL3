@@ -263,9 +263,6 @@ public class MSDFGenBitmap extends Struct<MSDFGenBitmap> implements NativeResour
 
     /** An array of {@link MSDFGenBitmap} structs. */
     public static class Buffer extends StructBuffer<MSDFGenBitmap, Buffer> implements NativeResource {
-
-        private static final MSDFGenBitmap ELEMENT_FACTORY = MSDFGenBitmap.create(-1L);
-
         /**
          * Creates a new {@code MSDFGenBitmap.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class MSDFGenBitmap extends Struct<MSDFGenBitmap> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected MSDFGenBitmap getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return MSDFGenBitmap.class;
         }
 
         /** @return the value of the {@code type} field. */

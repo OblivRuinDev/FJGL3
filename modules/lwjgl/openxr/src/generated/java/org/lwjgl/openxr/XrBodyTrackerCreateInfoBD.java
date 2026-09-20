@@ -242,9 +242,6 @@ public class XrBodyTrackerCreateInfoBD extends Struct<XrBodyTrackerCreateInfoBD>
 
     /** An array of {@link XrBodyTrackerCreateInfoBD} structs. */
     public static class Buffer extends StructBuffer<XrBodyTrackerCreateInfoBD, Buffer> implements NativeResource {
-
-        private static final XrBodyTrackerCreateInfoBD ELEMENT_FACTORY = XrBodyTrackerCreateInfoBD.create(-1L);
-
         /**
          * Creates a new {@code XrBodyTrackerCreateInfoBD.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrBodyTrackerCreateInfoBD extends Struct<XrBodyTrackerCreateInfoBD>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBodyTrackerCreateInfoBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBodyTrackerCreateInfoBD.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -280,9 +280,6 @@ public class VkDeviceGroupRenderPassBeginInfo extends Struct<VkDeviceGroupRender
 
     /** An array of {@link VkDeviceGroupRenderPassBeginInfo} structs. */
     public static class Buffer extends StructBuffer<VkDeviceGroupRenderPassBeginInfo, Buffer> implements NativeResource {
-
-        private static final VkDeviceGroupRenderPassBeginInfo ELEMENT_FACTORY = VkDeviceGroupRenderPassBeginInfo.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceGroupRenderPassBeginInfo.Buffer} instance backed by the specified container.
          *
@@ -305,18 +302,13 @@ public class VkDeviceGroupRenderPassBeginInfo extends Struct<VkDeviceGroupRender
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceGroupRenderPassBeginInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceGroupRenderPassBeginInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

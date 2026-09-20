@@ -277,9 +277,6 @@ public class XrSwapchainStateFoveationFB extends Struct<XrSwapchainStateFoveatio
 
     /** An array of {@link XrSwapchainStateFoveationFB} structs. */
     public static class Buffer extends StructBuffer<XrSwapchainStateFoveationFB, Buffer> implements NativeResource {
-
-        private static final XrSwapchainStateFoveationFB ELEMENT_FACTORY = XrSwapchainStateFoveationFB.create(-1L);
-
         /**
          * Creates a new {@code XrSwapchainStateFoveationFB.Buffer} instance backed by the specified container.
          *
@@ -302,18 +299,13 @@ public class XrSwapchainStateFoveationFB extends Struct<XrSwapchainStateFoveatio
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSwapchainStateFoveationFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSwapchainStateFoveationFB.class;
         }
 
         /** @return the value of the {@code type} field. */

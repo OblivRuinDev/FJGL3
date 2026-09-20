@@ -233,9 +233,6 @@ public class LARGE_INTEGER extends Struct<LARGE_INTEGER> implements NativeResour
 
     /** An array of {@link LARGE_INTEGER} structs. */
     public static class Buffer extends StructBuffer<LARGE_INTEGER, Buffer> implements NativeResource {
-
-        private static final LARGE_INTEGER ELEMENT_FACTORY = LARGE_INTEGER.create(-1L);
-
         /**
          * Creates a new {@code LARGE_INTEGER.Buffer} instance backed by the specified container.
          *
@@ -258,18 +255,13 @@ public class LARGE_INTEGER extends Struct<LARGE_INTEGER> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected LARGE_INTEGER getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return LARGE_INTEGER.class;
         }
 
         /** @return the value of the {@code u.LowPart} field. */

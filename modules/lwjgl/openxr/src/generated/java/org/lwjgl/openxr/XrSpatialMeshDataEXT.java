@@ -246,9 +246,6 @@ public class XrSpatialMeshDataEXT extends Struct<XrSpatialMeshDataEXT> implement
 
     /** An array of {@link XrSpatialMeshDataEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialMeshDataEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialMeshDataEXT ELEMENT_FACTORY = XrSpatialMeshDataEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialMeshDataEXT.Buffer} instance backed by the specified container.
          *
@@ -271,18 +268,13 @@ public class XrSpatialMeshDataEXT extends Struct<XrSpatialMeshDataEXT> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialMeshDataEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialMeshDataEXT.class;
         }
 
         /** @return a {@link XrPosef} view of the {@code origin} field. */

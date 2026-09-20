@@ -242,9 +242,6 @@ public class VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT exten
 
     /** An array of {@link VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT exten
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

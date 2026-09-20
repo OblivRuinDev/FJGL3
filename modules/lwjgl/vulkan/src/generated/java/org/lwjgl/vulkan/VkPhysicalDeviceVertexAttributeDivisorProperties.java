@@ -245,9 +245,6 @@ public class VkPhysicalDeviceVertexAttributeDivisorProperties extends Struct<VkP
 
     /** An array of {@link VkPhysicalDeviceVertexAttributeDivisorProperties} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceVertexAttributeDivisorProperties, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceVertexAttributeDivisorProperties ELEMENT_FACTORY = VkPhysicalDeviceVertexAttributeDivisorProperties.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceVertexAttributeDivisorProperties.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkPhysicalDeviceVertexAttributeDivisorProperties extends Struct<VkP
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceVertexAttributeDivisorProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceVertexAttributeDivisorProperties.class;
         }
 
         /** @return the value of the {@code sType} field. */

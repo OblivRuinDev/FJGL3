@@ -242,9 +242,6 @@ public class VkPhysicalDeviceImagelessFramebufferFeatures extends Struct<VkPhysi
 
     /** An array of {@link VkPhysicalDeviceImagelessFramebufferFeatures} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceImagelessFramebufferFeatures, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceImagelessFramebufferFeatures ELEMENT_FACTORY = VkPhysicalDeviceImagelessFramebufferFeatures.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceImagelessFramebufferFeatures.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceImagelessFramebufferFeatures extends Struct<VkPhysi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceImagelessFramebufferFeatures getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceImagelessFramebufferFeatures.class;
         }
 
         /** @return the value of the {@code sType} field. */

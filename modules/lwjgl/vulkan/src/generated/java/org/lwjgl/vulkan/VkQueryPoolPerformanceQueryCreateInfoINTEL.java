@@ -242,9 +242,6 @@ public class VkQueryPoolPerformanceQueryCreateInfoINTEL extends Struct<VkQueryPo
 
     /** An array of {@link VkQueryPoolPerformanceQueryCreateInfoINTEL} structs. */
     public static class Buffer extends StructBuffer<VkQueryPoolPerformanceQueryCreateInfoINTEL, Buffer> implements NativeResource {
-
-        private static final VkQueryPoolPerformanceQueryCreateInfoINTEL ELEMENT_FACTORY = VkQueryPoolPerformanceQueryCreateInfoINTEL.create(-1L);
-
         /**
          * Creates a new {@code VkQueryPoolPerformanceQueryCreateInfoINTEL.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkQueryPoolPerformanceQueryCreateInfoINTEL extends Struct<VkQueryPo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkQueryPoolPerformanceQueryCreateInfoINTEL getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkQueryPoolPerformanceQueryCreateInfoINTEL.class;
         }
 
         /** @return the value of the {@code sType} field. */

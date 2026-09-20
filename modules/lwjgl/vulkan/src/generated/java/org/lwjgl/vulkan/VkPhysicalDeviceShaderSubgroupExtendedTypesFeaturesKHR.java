@@ -191,9 +191,6 @@ public class VkPhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR extends VkPh
 
     /** An array of {@link VkPhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceShaderSubgroupExtendedTypesFeatures.Buffer {
-
-        private static final VkPhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR extends VkPh
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

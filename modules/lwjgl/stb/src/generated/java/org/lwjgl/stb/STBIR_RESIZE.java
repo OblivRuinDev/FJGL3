@@ -731,9 +731,6 @@ public class STBIR_RESIZE extends Struct<STBIR_RESIZE> implements NativeResource
 
     /** An array of {@link STBIR_RESIZE} structs. */
     public static class Buffer extends StructBuffer<STBIR_RESIZE, Buffer> implements NativeResource {
-
-        private static final STBIR_RESIZE ELEMENT_FACTORY = STBIR_RESIZE.create(-1L);
-
         /**
          * Creates a new {@code STBIR_RESIZE.Buffer} instance backed by the specified container.
          *
@@ -756,18 +753,13 @@ public class STBIR_RESIZE extends Struct<STBIR_RESIZE> implements NativeResource
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected STBIR_RESIZE getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return STBIR_RESIZE.class;
         }
 
         /** @return the value of the {@code user_data} field. */

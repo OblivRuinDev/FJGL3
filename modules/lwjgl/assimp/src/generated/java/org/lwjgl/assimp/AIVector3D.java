@@ -238,9 +238,6 @@ public class AIVector3D extends Struct<AIVector3D> implements NativeResource {
 
     /** An array of {@link AIVector3D} structs. */
     public static class Buffer extends StructBuffer<AIVector3D, Buffer> implements NativeResource {
-
-        private static final AIVector3D ELEMENT_FACTORY = AIVector3D.create(-1L);
-
         /**
          * Creates a new {@code AIVector3D.Buffer} instance backed by the specified container.
          *
@@ -263,18 +260,13 @@ public class AIVector3D extends Struct<AIVector3D> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIVector3D getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIVector3D.class;
         }
 
         /** @return the value of the {@code x} field. */

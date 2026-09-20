@@ -226,9 +226,6 @@ public class CLImageFormat extends Struct<CLImageFormat> implements NativeResour
 
     /** An array of {@link CLImageFormat} structs. */
     public static class Buffer extends StructBuffer<CLImageFormat, Buffer> implements NativeResource {
-
-        private static final CLImageFormat ELEMENT_FACTORY = CLImageFormat.create(-1L);
-
         /**
          * Creates a new {@code CLImageFormat.Buffer} instance backed by the specified container.
          *
@@ -251,18 +248,13 @@ public class CLImageFormat extends Struct<CLImageFormat> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CLImageFormat getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CLImageFormat.class;
         }
 
         /** @return the value of the {@code image_channel_order} field. */

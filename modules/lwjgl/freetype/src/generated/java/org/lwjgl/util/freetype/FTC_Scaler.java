@@ -145,9 +145,6 @@ public class FTC_Scaler extends Struct<FTC_Scaler> {
 
     /** An array of {@link FTC_Scaler} structs. */
     public static class Buffer extends StructBuffer<FTC_Scaler, Buffer> {
-
-        private static final FTC_Scaler ELEMENT_FACTORY = FTC_Scaler.create(-1L);
-
         /**
          * Creates a new {@code FTC_Scaler.Buffer} instance backed by the specified container.
          *
@@ -170,18 +167,13 @@ public class FTC_Scaler extends Struct<FTC_Scaler> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FTC_Scaler getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FTC_Scaler.class;
         }
 
         /** @return the value of the {@code face_id} field. */

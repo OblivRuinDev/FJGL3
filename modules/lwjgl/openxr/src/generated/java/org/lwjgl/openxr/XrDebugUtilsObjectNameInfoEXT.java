@@ -281,9 +281,6 @@ public class XrDebugUtilsObjectNameInfoEXT extends Struct<XrDebugUtilsObjectName
 
     /** An array of {@link XrDebugUtilsObjectNameInfoEXT} structs. */
     public static class Buffer extends StructBuffer<XrDebugUtilsObjectNameInfoEXT, Buffer> implements NativeResource {
-
-        private static final XrDebugUtilsObjectNameInfoEXT ELEMENT_FACTORY = XrDebugUtilsObjectNameInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code XrDebugUtilsObjectNameInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -306,18 +303,13 @@ public class XrDebugUtilsObjectNameInfoEXT extends Struct<XrDebugUtilsObjectName
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrDebugUtilsObjectNameInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrDebugUtilsObjectNameInfoEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

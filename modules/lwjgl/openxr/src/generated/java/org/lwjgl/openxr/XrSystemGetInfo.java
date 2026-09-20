@@ -242,9 +242,6 @@ public class XrSystemGetInfo extends Struct<XrSystemGetInfo> implements NativeRe
 
     /** An array of {@link XrSystemGetInfo} structs. */
     public static class Buffer extends StructBuffer<XrSystemGetInfo, Buffer> implements NativeResource {
-
-        private static final XrSystemGetInfo ELEMENT_FACTORY = XrSystemGetInfo.create(-1L);
-
         /**
          * Creates a new {@code XrSystemGetInfo.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrSystemGetInfo extends Struct<XrSystemGetInfo> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemGetInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemGetInfo.class;
         }
 
         /** @return the value of the {@code type} field. */

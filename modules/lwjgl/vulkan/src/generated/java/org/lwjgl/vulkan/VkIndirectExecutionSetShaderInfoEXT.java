@@ -326,9 +326,6 @@ public class VkIndirectExecutionSetShaderInfoEXT extends Struct<VkIndirectExecut
 
     /** An array of {@link VkIndirectExecutionSetShaderInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkIndirectExecutionSetShaderInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkIndirectExecutionSetShaderInfoEXT ELEMENT_FACTORY = VkIndirectExecutionSetShaderInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkIndirectExecutionSetShaderInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -351,18 +348,13 @@ public class VkIndirectExecutionSetShaderInfoEXT extends Struct<VkIndirectExecut
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkIndirectExecutionSetShaderInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkIndirectExecutionSetShaderInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -280,9 +280,6 @@ public class RMTPropertyValue extends Struct<RMTPropertyValue> implements Native
 
     /** An array of {@link RMTPropertyValue} structs. */
     public static class Buffer extends StructBuffer<RMTPropertyValue, Buffer> implements NativeResource {
-
-        private static final RMTPropertyValue ELEMENT_FACTORY = RMTPropertyValue.create(-1L);
-
         /**
          * Creates a new {@code RMTPropertyValue.Buffer} instance backed by the specified container.
          *
@@ -305,18 +302,13 @@ public class RMTPropertyValue extends Struct<RMTPropertyValue> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected RMTPropertyValue getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return RMTPropertyValue.class;
         }
 
         /** @return the value of the {@code Bool} field. */

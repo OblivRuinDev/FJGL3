@@ -271,9 +271,6 @@ public class VkVideoEncodeH265NaluSliceSegmentInfoKHR extends Struct<VkVideoEnco
 
     /** An array of {@link VkVideoEncodeH265NaluSliceSegmentInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoEncodeH265NaluSliceSegmentInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoEncodeH265NaluSliceSegmentInfoKHR ELEMENT_FACTORY = VkVideoEncodeH265NaluSliceSegmentInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoEncodeH265NaluSliceSegmentInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -296,18 +293,13 @@ public class VkVideoEncodeH265NaluSliceSegmentInfoKHR extends Struct<VkVideoEnco
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoEncodeH265NaluSliceSegmentInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoEncodeH265NaluSliceSegmentInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

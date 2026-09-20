@@ -209,9 +209,6 @@ public class SPVDiagnostic extends Struct<SPVDiagnostic> implements NativeResour
 
     /** An array of {@link SPVDiagnostic} structs. */
     public static class Buffer extends StructBuffer<SPVDiagnostic, Buffer> implements NativeResource {
-
-        private static final SPVDiagnostic ELEMENT_FACTORY = SPVDiagnostic.create(-1L);
-
         /**
          * Creates a new {@code SPVDiagnostic.Buffer} instance backed by the specified container.
          *
@@ -234,18 +231,13 @@ public class SPVDiagnostic extends Struct<SPVDiagnostic> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SPVDiagnostic getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SPVDiagnostic.class;
         }
 
         /** @return a {@link SPVPosition} view of the {@code position} field. */

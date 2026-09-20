@@ -263,9 +263,6 @@ public class VkCudaModuleCreateInfoNV extends Struct<VkCudaModuleCreateInfoNV> i
 
     /** An array of {@link VkCudaModuleCreateInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkCudaModuleCreateInfoNV, Buffer> implements NativeResource {
-
-        private static final VkCudaModuleCreateInfoNV ELEMENT_FACTORY = VkCudaModuleCreateInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkCudaModuleCreateInfoNV.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class VkCudaModuleCreateInfoNV extends Struct<VkCudaModuleCreateInfoNV> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCudaModuleCreateInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCudaModuleCreateInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

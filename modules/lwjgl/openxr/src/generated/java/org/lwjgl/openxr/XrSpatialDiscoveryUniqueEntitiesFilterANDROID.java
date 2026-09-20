@@ -227,9 +227,6 @@ public class XrSpatialDiscoveryUniqueEntitiesFilterANDROID extends Struct<XrSpat
 
     /** An array of {@link XrSpatialDiscoveryUniqueEntitiesFilterANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSpatialDiscoveryUniqueEntitiesFilterANDROID, Buffer> implements NativeResource {
-
-        private static final XrSpatialDiscoveryUniqueEntitiesFilterANDROID ELEMENT_FACTORY = XrSpatialDiscoveryUniqueEntitiesFilterANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialDiscoveryUniqueEntitiesFilterANDROID.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrSpatialDiscoveryUniqueEntitiesFilterANDROID extends Struct<XrSpat
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialDiscoveryUniqueEntitiesFilterANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialDiscoveryUniqueEntitiesFilterANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

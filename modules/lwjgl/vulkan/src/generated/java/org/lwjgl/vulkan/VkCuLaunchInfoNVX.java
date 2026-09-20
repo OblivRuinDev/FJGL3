@@ -414,9 +414,6 @@ public class VkCuLaunchInfoNVX extends Struct<VkCuLaunchInfoNVX> implements Nati
 
     /** An array of {@link VkCuLaunchInfoNVX} structs. */
     public static class Buffer extends StructBuffer<VkCuLaunchInfoNVX, Buffer> implements NativeResource {
-
-        private static final VkCuLaunchInfoNVX ELEMENT_FACTORY = VkCuLaunchInfoNVX.create(-1L);
-
         /**
          * Creates a new {@code VkCuLaunchInfoNVX.Buffer} instance backed by the specified container.
          *
@@ -439,18 +436,13 @@ public class VkCuLaunchInfoNVX extends Struct<VkCuLaunchInfoNVX> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCuLaunchInfoNVX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCuLaunchInfoNVX.class;
         }
 
         /** @return the value of the {@code sType} field. */

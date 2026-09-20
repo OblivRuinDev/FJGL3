@@ -342,9 +342,6 @@ public class XrCompositionLayerPassthroughANDROID extends Struct<XrCompositionLa
 
     /** An array of {@link XrCompositionLayerPassthroughANDROID} structs. */
     public static class Buffer extends StructBuffer<XrCompositionLayerPassthroughANDROID, Buffer> implements NativeResource {
-
-        private static final XrCompositionLayerPassthroughANDROID ELEMENT_FACTORY = XrCompositionLayerPassthroughANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrCompositionLayerPassthroughANDROID.Buffer} instance backed by the specified container.
          *
@@ -367,18 +364,13 @@ public class XrCompositionLayerPassthroughANDROID extends Struct<XrCompositionLa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrCompositionLayerPassthroughANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrCompositionLayerPassthroughANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

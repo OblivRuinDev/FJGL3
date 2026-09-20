@@ -418,9 +418,6 @@ public class SpvcMslConstexprSampler extends Struct<SpvcMslConstexprSampler> imp
 
     /** An array of {@link SpvcMslConstexprSampler} structs. */
     public static class Buffer extends StructBuffer<SpvcMslConstexprSampler, Buffer> implements NativeResource {
-
-        private static final SpvcMslConstexprSampler ELEMENT_FACTORY = SpvcMslConstexprSampler.create(-1L);
-
         /**
          * Creates a new {@code SpvcMslConstexprSampler.Buffer} instance backed by the specified container.
          *
@@ -443,18 +440,13 @@ public class SpvcMslConstexprSampler extends Struct<SpvcMslConstexprSampler> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SpvcMslConstexprSampler getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SpvcMslConstexprSampler.class;
         }
 
         /** @return the value of the {@code coord} field. */

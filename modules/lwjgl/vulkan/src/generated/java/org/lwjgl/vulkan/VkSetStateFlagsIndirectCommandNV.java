@@ -201,9 +201,6 @@ public class VkSetStateFlagsIndirectCommandNV extends Struct<VkSetStateFlagsIndi
 
     /** An array of {@link VkSetStateFlagsIndirectCommandNV} structs. */
     public static class Buffer extends StructBuffer<VkSetStateFlagsIndirectCommandNV, Buffer> implements NativeResource {
-
-        private static final VkSetStateFlagsIndirectCommandNV ELEMENT_FACTORY = VkSetStateFlagsIndirectCommandNV.create(-1L);
-
         /**
          * Creates a new {@code VkSetStateFlagsIndirectCommandNV.Buffer} instance backed by the specified container.
          *
@@ -226,18 +223,13 @@ public class VkSetStateFlagsIndirectCommandNV extends Struct<VkSetStateFlagsIndi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSetStateFlagsIndirectCommandNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSetStateFlagsIndirectCommandNV.class;
         }
 
         /** @return the value of the {@code data} field. */

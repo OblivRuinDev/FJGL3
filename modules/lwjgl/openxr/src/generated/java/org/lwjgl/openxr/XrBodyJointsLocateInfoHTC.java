@@ -267,9 +267,6 @@ public class XrBodyJointsLocateInfoHTC extends Struct<XrBodyJointsLocateInfoHTC>
 
     /** An array of {@link XrBodyJointsLocateInfoHTC} structs. */
     public static class Buffer extends StructBuffer<XrBodyJointsLocateInfoHTC, Buffer> implements NativeResource {
-
-        private static final XrBodyJointsLocateInfoHTC ELEMENT_FACTORY = XrBodyJointsLocateInfoHTC.create(-1L);
-
         /**
          * Creates a new {@code XrBodyJointsLocateInfoHTC.Buffer} instance backed by the specified container.
          *
@@ -292,18 +289,13 @@ public class XrBodyJointsLocateInfoHTC extends Struct<XrBodyJointsLocateInfoHTC>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBodyJointsLocateInfoHTC getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBodyJointsLocateInfoHTC.class;
         }
 
         /** @return the value of the {@code type} field. */

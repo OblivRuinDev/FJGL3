@@ -255,9 +255,6 @@ public class XrEventDataMainSessionVisibilityChangedEXTX extends Struct<XrEventD
 
     /** An array of {@link XrEventDataMainSessionVisibilityChangedEXTX} structs. */
     public static class Buffer extends StructBuffer<XrEventDataMainSessionVisibilityChangedEXTX, Buffer> implements NativeResource {
-
-        private static final XrEventDataMainSessionVisibilityChangedEXTX ELEMENT_FACTORY = XrEventDataMainSessionVisibilityChangedEXTX.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataMainSessionVisibilityChangedEXTX.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class XrEventDataMainSessionVisibilityChangedEXTX extends Struct<XrEventD
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataMainSessionVisibilityChangedEXTX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataMainSessionVisibilityChangedEXTX.class;
         }
 
         /** @return the value of the {@code type} field. */

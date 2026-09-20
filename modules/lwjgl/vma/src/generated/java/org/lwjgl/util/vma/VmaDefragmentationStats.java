@@ -210,9 +210,6 @@ public class VmaDefragmentationStats extends Struct<VmaDefragmentationStats> imp
 
     /** An array of {@link VmaDefragmentationStats} structs. */
     public static class Buffer extends StructBuffer<VmaDefragmentationStats, Buffer> implements NativeResource {
-
-        private static final VmaDefragmentationStats ELEMENT_FACTORY = VmaDefragmentationStats.create(-1L);
-
         /**
          * Creates a new {@code VmaDefragmentationStats.Buffer} instance backed by the specified container.
          *
@@ -235,18 +232,13 @@ public class VmaDefragmentationStats extends Struct<VmaDefragmentationStats> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VmaDefragmentationStats getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VmaDefragmentationStats.class;
         }
 
         /** @return the value of the {@code bytesMoved} field. */

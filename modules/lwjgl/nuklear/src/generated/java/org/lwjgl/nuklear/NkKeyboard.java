@@ -136,9 +136,6 @@ public class NkKeyboard extends Struct<NkKeyboard> {
 
     /** An array of {@link NkKeyboard} structs. */
     public static class Buffer extends StructBuffer<NkKeyboard, Buffer> {
-
-        private static final NkKeyboard ELEMENT_FACTORY = NkKeyboard.create(-1L);
-
         /**
          * Creates a new {@code NkKeyboard.Buffer} instance backed by the specified container.
          *
@@ -161,18 +158,13 @@ public class NkKeyboard extends Struct<NkKeyboard> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkKeyboard getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkKeyboard.class;
         }
 
         /** @return a {@link NkKey}.Buffer view of the {@code keys} field. */

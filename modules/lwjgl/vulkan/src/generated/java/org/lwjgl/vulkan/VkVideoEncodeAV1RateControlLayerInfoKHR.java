@@ -323,9 +323,6 @@ public class VkVideoEncodeAV1RateControlLayerInfoKHR extends Struct<VkVideoEncod
 
     /** An array of {@link VkVideoEncodeAV1RateControlLayerInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoEncodeAV1RateControlLayerInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoEncodeAV1RateControlLayerInfoKHR ELEMENT_FACTORY = VkVideoEncodeAV1RateControlLayerInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoEncodeAV1RateControlLayerInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -348,18 +345,13 @@ public class VkVideoEncodeAV1RateControlLayerInfoKHR extends Struct<VkVideoEncod
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoEncodeAV1RateControlLayerInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoEncodeAV1RateControlLayerInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

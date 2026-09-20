@@ -118,9 +118,6 @@ class NkConfigStackFloat extends Struct<NkConfigStackFloat> {
 
     /** An array of {@link NkConfigStackFloat} structs. */
     public static class Buffer extends StructBuffer<NkConfigStackFloat, Buffer> {
-
-        private static final NkConfigStackFloat ELEMENT_FACTORY = NkConfigStackFloat.create(-1L);
-
         /**
          * Creates a new {@code NkConfigStackFloat.Buffer} instance backed by the specified container.
          *
@@ -143,18 +140,13 @@ class NkConfigStackFloat extends Struct<NkConfigStackFloat> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkConfigStackFloat getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkConfigStackFloat.class;
         }
 
         /** @return the value of the {@code head} field. */

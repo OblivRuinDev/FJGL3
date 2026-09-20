@@ -108,9 +108,6 @@ public class VkPipelineCreationFeedback extends Struct<VkPipelineCreationFeedbac
 
     /** An array of {@link VkPipelineCreationFeedback} structs. */
     public static class Buffer extends StructBuffer<VkPipelineCreationFeedback, Buffer> {
-
-        private static final VkPipelineCreationFeedback ELEMENT_FACTORY = VkPipelineCreationFeedback.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineCreationFeedback.Buffer} instance backed by the specified container.
          *
@@ -133,18 +130,13 @@ public class VkPipelineCreationFeedback extends Struct<VkPipelineCreationFeedbac
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineCreationFeedback getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineCreationFeedback.class;
         }
 
         /** @return the value of the {@code flags} field. */

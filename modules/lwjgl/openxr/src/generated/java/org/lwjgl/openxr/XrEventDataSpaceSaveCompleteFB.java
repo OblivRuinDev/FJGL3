@@ -283,9 +283,6 @@ public class XrEventDataSpaceSaveCompleteFB extends Struct<XrEventDataSpaceSaveC
 
     /** An array of {@link XrEventDataSpaceSaveCompleteFB} structs. */
     public static class Buffer extends StructBuffer<XrEventDataSpaceSaveCompleteFB, Buffer> implements NativeResource {
-
-        private static final XrEventDataSpaceSaveCompleteFB ELEMENT_FACTORY = XrEventDataSpaceSaveCompleteFB.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataSpaceSaveCompleteFB.Buffer} instance backed by the specified container.
          *
@@ -308,18 +305,13 @@ public class XrEventDataSpaceSaveCompleteFB extends Struct<XrEventDataSpaceSaveC
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataSpaceSaveCompleteFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataSpaceSaveCompleteFB.class;
         }
 
         /** @return the value of the {@code type} field. */

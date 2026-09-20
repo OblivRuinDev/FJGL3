@@ -252,9 +252,6 @@ public class VkPerformanceCounterDescriptionARM extends Struct<VkPerformanceCoun
 
     /** An array of {@link VkPerformanceCounterDescriptionARM} structs. */
     public static class Buffer extends StructBuffer<VkPerformanceCounterDescriptionARM, Buffer> implements NativeResource {
-
-        private static final VkPerformanceCounterDescriptionARM ELEMENT_FACTORY = VkPerformanceCounterDescriptionARM.create(-1L);
-
         /**
          * Creates a new {@code VkPerformanceCounterDescriptionARM.Buffer} instance backed by the specified container.
          *
@@ -277,18 +274,13 @@ public class VkPerformanceCounterDescriptionARM extends Struct<VkPerformanceCoun
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPerformanceCounterDescriptionARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPerformanceCounterDescriptionARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

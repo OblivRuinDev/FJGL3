@@ -261,9 +261,6 @@ public class XrSpatialComponentDataQueryConditionEXT extends Struct<XrSpatialCom
 
     /** An array of {@link XrSpatialComponentDataQueryConditionEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialComponentDataQueryConditionEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialComponentDataQueryConditionEXT ELEMENT_FACTORY = XrSpatialComponentDataQueryConditionEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialComponentDataQueryConditionEXT.Buffer} instance backed by the specified container.
          *
@@ -286,18 +283,13 @@ public class XrSpatialComponentDataQueryConditionEXT extends Struct<XrSpatialCom
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialComponentDataQueryConditionEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialComponentDataQueryConditionEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

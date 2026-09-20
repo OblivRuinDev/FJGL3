@@ -227,9 +227,6 @@ public class XrFrameWaitInfo extends Struct<XrFrameWaitInfo> implements NativeRe
 
     /** An array of {@link XrFrameWaitInfo} structs. */
     public static class Buffer extends StructBuffer<XrFrameWaitInfo, Buffer> implements NativeResource {
-
-        private static final XrFrameWaitInfo ELEMENT_FACTORY = XrFrameWaitInfo.create(-1L);
-
         /**
          * Creates a new {@code XrFrameWaitInfo.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrFrameWaitInfo extends Struct<XrFrameWaitInfo> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFrameWaitInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFrameWaitInfo.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -186,9 +186,6 @@ public class VkExternalImageFormatPropertiesKHR extends VkExternalImageFormatPro
 
     /** An array of {@link VkExternalImageFormatPropertiesKHR} structs. */
     public static class Buffer extends VkExternalImageFormatProperties.Buffer {
-
-        private static final VkExternalImageFormatPropertiesKHR ELEMENT_FACTORY = VkExternalImageFormatPropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkExternalImageFormatPropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -211,18 +208,13 @@ public class VkExternalImageFormatPropertiesKHR extends VkExternalImageFormatPro
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExternalImageFormatPropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExternalImageFormatPropertiesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

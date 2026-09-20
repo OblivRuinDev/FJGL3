@@ -242,9 +242,6 @@ public class XrCompositionLayerSecureContentFB extends Struct<XrCompositionLayer
 
     /** An array of {@link XrCompositionLayerSecureContentFB} structs. */
     public static class Buffer extends StructBuffer<XrCompositionLayerSecureContentFB, Buffer> implements NativeResource {
-
-        private static final XrCompositionLayerSecureContentFB ELEMENT_FACTORY = XrCompositionLayerSecureContentFB.create(-1L);
-
         /**
          * Creates a new {@code XrCompositionLayerSecureContentFB.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrCompositionLayerSecureContentFB extends Struct<XrCompositionLayer
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrCompositionLayerSecureContentFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrCompositionLayerSecureContentFB.class;
         }
 
         /** @return the value of the {@code type} field. */

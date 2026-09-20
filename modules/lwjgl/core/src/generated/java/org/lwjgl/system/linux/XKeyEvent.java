@@ -425,9 +425,6 @@ public class XKeyEvent extends Struct<XKeyEvent> implements NativeResource {
 
     /** An array of {@link XKeyEvent} structs. */
     public static class Buffer extends StructBuffer<XKeyEvent, Buffer> implements NativeResource {
-
-        private static final XKeyEvent ELEMENT_FACTORY = XKeyEvent.create(-1L);
-
         /**
          * Creates a new {@code XKeyEvent.Buffer} instance backed by the specified container.
          *
@@ -450,18 +447,13 @@ public class XKeyEvent extends Struct<XKeyEvent> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XKeyEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XKeyEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

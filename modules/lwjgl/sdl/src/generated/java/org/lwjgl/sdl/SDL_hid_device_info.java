@@ -462,9 +462,6 @@ public class SDL_hid_device_info extends Struct<SDL_hid_device_info> implements 
 
     /** An array of {@link SDL_hid_device_info} structs. */
     public static class Buffer extends StructBuffer<SDL_hid_device_info, Buffer> implements NativeResource {
-
-        private static final SDL_hid_device_info ELEMENT_FACTORY = SDL_hid_device_info.create(-1L);
-
         /**
          * Creates a new {@code SDL_hid_device_info.Buffer} instance backed by the specified container.
          *
@@ -487,18 +484,13 @@ public class SDL_hid_device_info extends Struct<SDL_hid_device_info> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_hid_device_info getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_hid_device_info.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code path} field. */

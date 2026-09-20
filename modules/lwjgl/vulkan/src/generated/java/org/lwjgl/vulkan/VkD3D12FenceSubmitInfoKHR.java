@@ -287,9 +287,6 @@ public class VkD3D12FenceSubmitInfoKHR extends Struct<VkD3D12FenceSubmitInfoKHR>
 
     /** An array of {@link VkD3D12FenceSubmitInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkD3D12FenceSubmitInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkD3D12FenceSubmitInfoKHR ELEMENT_FACTORY = VkD3D12FenceSubmitInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkD3D12FenceSubmitInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -312,18 +309,13 @@ public class VkD3D12FenceSubmitInfoKHR extends Struct<VkD3D12FenceSubmitInfoKHR>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkD3D12FenceSubmitInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkD3D12FenceSubmitInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

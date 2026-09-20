@@ -118,9 +118,6 @@ class NkConfigStackStyleItem extends Struct<NkConfigStackStyleItem> {
 
     /** An array of {@link NkConfigStackStyleItem} structs. */
     public static class Buffer extends StructBuffer<NkConfigStackStyleItem, Buffer> {
-
-        private static final NkConfigStackStyleItem ELEMENT_FACTORY = NkConfigStackStyleItem.create(-1L);
-
         /**
          * Creates a new {@code NkConfigStackStyleItem.Buffer} instance backed by the specified container.
          *
@@ -143,18 +140,13 @@ class NkConfigStackStyleItem extends Struct<NkConfigStackStyleItem> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkConfigStackStyleItem getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkConfigStackStyleItem.class;
         }
 
         /** @return the value of the {@code head} field. */

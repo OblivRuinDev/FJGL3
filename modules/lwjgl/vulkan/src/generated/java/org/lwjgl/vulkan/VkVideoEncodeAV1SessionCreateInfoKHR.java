@@ -259,9 +259,6 @@ public class VkVideoEncodeAV1SessionCreateInfoKHR extends Struct<VkVideoEncodeAV
 
     /** An array of {@link VkVideoEncodeAV1SessionCreateInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoEncodeAV1SessionCreateInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoEncodeAV1SessionCreateInfoKHR ELEMENT_FACTORY = VkVideoEncodeAV1SessionCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoEncodeAV1SessionCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -284,18 +281,13 @@ public class VkVideoEncodeAV1SessionCreateInfoKHR extends Struct<VkVideoEncodeAV
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoEncodeAV1SessionCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoEncodeAV1SessionCreateInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

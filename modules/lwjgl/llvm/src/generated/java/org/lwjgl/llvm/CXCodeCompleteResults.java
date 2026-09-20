@@ -192,9 +192,6 @@ public class CXCodeCompleteResults extends Struct<CXCodeCompleteResults> impleme
 
     /** An array of {@link CXCodeCompleteResults} structs. */
     public static class Buffer extends StructBuffer<CXCodeCompleteResults, Buffer> implements NativeResource {
-
-        private static final CXCodeCompleteResults ELEMENT_FACTORY = CXCodeCompleteResults.create(-1L);
-
         /**
          * Creates a new {@code CXCodeCompleteResults.Buffer} instance backed by the specified container.
          *
@@ -217,18 +214,13 @@ public class CXCodeCompleteResults extends Struct<CXCodeCompleteResults> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXCodeCompleteResults getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXCodeCompleteResults.class;
         }
 
         /** @return a {@link CXCompletionResult.Buffer} view of the struct array pointed to by the {@code Results} field. */

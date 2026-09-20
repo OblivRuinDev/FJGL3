@@ -201,9 +201,6 @@ public class VkClusterAccelerationStructureGetTemplateIndicesInfoNV extends Stru
 
     /** An array of {@link VkClusterAccelerationStructureGetTemplateIndicesInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkClusterAccelerationStructureGetTemplateIndicesInfoNV, Buffer> implements NativeResource {
-
-        private static final VkClusterAccelerationStructureGetTemplateIndicesInfoNV ELEMENT_FACTORY = VkClusterAccelerationStructureGetTemplateIndicesInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkClusterAccelerationStructureGetTemplateIndicesInfoNV.Buffer} instance backed by the specified container.
          *
@@ -226,18 +223,13 @@ public class VkClusterAccelerationStructureGetTemplateIndicesInfoNV extends Stru
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkClusterAccelerationStructureGetTemplateIndicesInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkClusterAccelerationStructureGetTemplateIndicesInfoNV.class;
         }
 
         /** @return the value of the {@code clusterTemplateAddress} field. */

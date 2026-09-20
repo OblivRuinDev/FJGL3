@@ -170,9 +170,6 @@ public class VkTransformMatrixNV extends VkTransformMatrixKHR {
 
     /** An array of {@link VkTransformMatrixNV} structs. */
     public static class Buffer extends VkTransformMatrixKHR.Buffer {
-
-        private static final VkTransformMatrixNV ELEMENT_FACTORY = VkTransformMatrixNV.create(-1L);
-
         /**
          * Creates a new {@code VkTransformMatrixNV.Buffer} instance backed by the specified container.
          *
@@ -195,18 +192,13 @@ public class VkTransformMatrixNV extends VkTransformMatrixKHR {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkTransformMatrixNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkTransformMatrixNV.class;
         }
 
         /** Copies the specified {@link FloatBuffer} to the {@code matrix} field. */

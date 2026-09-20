@@ -315,9 +315,6 @@ public class SDL_DisplayMode extends Struct<SDL_DisplayMode> implements NativeRe
 
     /** An array of {@link SDL_DisplayMode} structs. */
     public static class Buffer extends StructBuffer<SDL_DisplayMode, Buffer> implements NativeResource {
-
-        private static final SDL_DisplayMode ELEMENT_FACTORY = SDL_DisplayMode.create(-1L);
-
         /**
          * Creates a new {@code SDL_DisplayMode.Buffer} instance backed by the specified container.
          *
@@ -340,18 +337,13 @@ public class SDL_DisplayMode extends Struct<SDL_DisplayMode> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_DisplayMode getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_DisplayMode.class;
         }
 
         /** @return the value of the {@code displayID} field. */

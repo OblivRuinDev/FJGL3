@@ -302,9 +302,6 @@ public class VkBindDataGraphPipelineSessionMemoryInfoARM extends Struct<VkBindDa
 
     /** An array of {@link VkBindDataGraphPipelineSessionMemoryInfoARM} structs. */
     public static class Buffer extends StructBuffer<VkBindDataGraphPipelineSessionMemoryInfoARM, Buffer> implements NativeResource {
-
-        private static final VkBindDataGraphPipelineSessionMemoryInfoARM ELEMENT_FACTORY = VkBindDataGraphPipelineSessionMemoryInfoARM.create(-1L);
-
         /**
          * Creates a new {@code VkBindDataGraphPipelineSessionMemoryInfoARM.Buffer} instance backed by the specified container.
          *
@@ -327,18 +324,13 @@ public class VkBindDataGraphPipelineSessionMemoryInfoARM extends Struct<VkBindDa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBindDataGraphPipelineSessionMemoryInfoARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBindDataGraphPipelineSessionMemoryInfoARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -186,9 +186,6 @@ public class VkSubresourceLayout2KHR extends VkSubresourceLayout2 {
 
     /** An array of {@link VkSubresourceLayout2KHR} structs. */
     public static class Buffer extends VkSubresourceLayout2.Buffer {
-
-        private static final VkSubresourceLayout2KHR ELEMENT_FACTORY = VkSubresourceLayout2KHR.create(-1L);
-
         /**
          * Creates a new {@code VkSubresourceLayout2KHR.Buffer} instance backed by the specified container.
          *
@@ -211,18 +208,13 @@ public class VkSubresourceLayout2KHR extends VkSubresourceLayout2 {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSubresourceLayout2KHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSubresourceLayout2KHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

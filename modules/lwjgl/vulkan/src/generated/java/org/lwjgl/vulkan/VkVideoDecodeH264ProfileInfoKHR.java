@@ -259,9 +259,6 @@ public class VkVideoDecodeH264ProfileInfoKHR extends Struct<VkVideoDecodeH264Pro
 
     /** An array of {@link VkVideoDecodeH264ProfileInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoDecodeH264ProfileInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoDecodeH264ProfileInfoKHR ELEMENT_FACTORY = VkVideoDecodeH264ProfileInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoDecodeH264ProfileInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -284,18 +281,13 @@ public class VkVideoDecodeH264ProfileInfoKHR extends Struct<VkVideoDecodeH264Pro
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoDecodeH264ProfileInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoDecodeH264ProfileInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -270,9 +270,6 @@ public class VkSparseMemoryBind extends Struct<VkSparseMemoryBind> implements Na
 
     /** An array of {@link VkSparseMemoryBind} structs. */
     public static class Buffer extends StructBuffer<VkSparseMemoryBind, Buffer> implements NativeResource {
-
-        private static final VkSparseMemoryBind ELEMENT_FACTORY = VkSparseMemoryBind.create(-1L);
-
         /**
          * Creates a new {@code VkSparseMemoryBind.Buffer} instance backed by the specified container.
          *
@@ -295,18 +292,13 @@ public class VkSparseMemoryBind extends Struct<VkSparseMemoryBind> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSparseMemoryBind getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSparseMemoryBind.class;
         }
 
         /** @return the value of the {@code resourceOffset} field. */

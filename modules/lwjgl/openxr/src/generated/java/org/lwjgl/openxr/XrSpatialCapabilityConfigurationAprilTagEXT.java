@@ -307,9 +307,6 @@ public class XrSpatialCapabilityConfigurationAprilTagEXT extends Struct<XrSpatia
 
     /** An array of {@link XrSpatialCapabilityConfigurationAprilTagEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialCapabilityConfigurationAprilTagEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialCapabilityConfigurationAprilTagEXT ELEMENT_FACTORY = XrSpatialCapabilityConfigurationAprilTagEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialCapabilityConfigurationAprilTagEXT.Buffer} instance backed by the specified container.
          *
@@ -332,18 +329,13 @@ public class XrSpatialCapabilityConfigurationAprilTagEXT extends Struct<XrSpatia
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialCapabilityConfigurationAprilTagEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialCapabilityConfigurationAprilTagEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

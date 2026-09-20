@@ -275,9 +275,6 @@ public class XrApiLayerProperties extends Struct<XrApiLayerProperties> implement
 
     /** An array of {@link XrApiLayerProperties} structs. */
     public static class Buffer extends StructBuffer<XrApiLayerProperties, Buffer> implements NativeResource {
-
-        private static final XrApiLayerProperties ELEMENT_FACTORY = XrApiLayerProperties.create(-1L);
-
         /**
          * Creates a new {@code XrApiLayerProperties.Buffer} instance backed by the specified container.
          *
@@ -300,18 +297,13 @@ public class XrApiLayerProperties extends Struct<XrApiLayerProperties> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrApiLayerProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrApiLayerProperties.class;
         }
 
         /** @return the value of the {@code type} field. */

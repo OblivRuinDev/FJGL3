@@ -494,9 +494,6 @@ public class StdVideoEncodeH264WeightTable extends Struct<StdVideoEncodeH264Weig
 
     /** An array of {@link StdVideoEncodeH264WeightTable} structs. */
     public static class Buffer extends StructBuffer<StdVideoEncodeH264WeightTable, Buffer> implements NativeResource {
-
-        private static final StdVideoEncodeH264WeightTable ELEMENT_FACTORY = StdVideoEncodeH264WeightTable.create(-1L);
-
         /**
          * Creates a new {@code StdVideoEncodeH264WeightTable.Buffer} instance backed by the specified container.
          *
@@ -519,18 +516,13 @@ public class StdVideoEncodeH264WeightTable extends Struct<StdVideoEncodeH264Weig
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoEncodeH264WeightTable getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoEncodeH264WeightTable.class;
         }
 
         /** @return a {@link StdVideoEncodeH264WeightTableFlags} view of the {@code flags} field. */

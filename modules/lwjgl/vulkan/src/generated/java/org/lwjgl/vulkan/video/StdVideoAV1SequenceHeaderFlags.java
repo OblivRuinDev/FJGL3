@@ -436,9 +436,6 @@ public class StdVideoAV1SequenceHeaderFlags extends Struct<StdVideoAV1SequenceHe
 
     /** An array of {@link StdVideoAV1SequenceHeaderFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoAV1SequenceHeaderFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoAV1SequenceHeaderFlags ELEMENT_FACTORY = StdVideoAV1SequenceHeaderFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoAV1SequenceHeaderFlags.Buffer} instance backed by the specified container.
          *
@@ -461,18 +458,13 @@ public class StdVideoAV1SequenceHeaderFlags extends Struct<StdVideoAV1SequenceHe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoAV1SequenceHeaderFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoAV1SequenceHeaderFlags.class;
         }
 
         /** @return the value of the {@code still_picture} field. */

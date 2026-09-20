@@ -257,9 +257,6 @@ public class VkDisplayPlaneInfo2KHR extends Struct<VkDisplayPlaneInfo2KHR> imple
 
     /** An array of {@link VkDisplayPlaneInfo2KHR} structs. */
     public static class Buffer extends StructBuffer<VkDisplayPlaneInfo2KHR, Buffer> implements NativeResource {
-
-        private static final VkDisplayPlaneInfo2KHR ELEMENT_FACTORY = VkDisplayPlaneInfo2KHR.create(-1L);
-
         /**
          * Creates a new {@code VkDisplayPlaneInfo2KHR.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkDisplayPlaneInfo2KHR extends Struct<VkDisplayPlaneInfo2KHR> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDisplayPlaneInfo2KHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDisplayPlaneInfo2KHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

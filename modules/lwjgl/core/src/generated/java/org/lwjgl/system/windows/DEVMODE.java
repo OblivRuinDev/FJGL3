@@ -554,9 +554,6 @@ public class DEVMODE extends Struct<DEVMODE> implements NativeResource {
 
     /** An array of {@link DEVMODE} structs. */
     public static class Buffer extends StructBuffer<DEVMODE, Buffer> implements NativeResource {
-
-        private static final DEVMODE ELEMENT_FACTORY = DEVMODE.create(-1L);
-
         /**
          * Creates a new {@code DEVMODE.Buffer} instance backed by the specified container.
          *
@@ -579,18 +576,13 @@ public class DEVMODE extends Struct<DEVMODE> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected DEVMODE getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return DEVMODE.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code dmDeviceName} field. */

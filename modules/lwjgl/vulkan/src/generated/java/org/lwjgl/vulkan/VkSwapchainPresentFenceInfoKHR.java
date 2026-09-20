@@ -257,9 +257,6 @@ public class VkSwapchainPresentFenceInfoKHR extends Struct<VkSwapchainPresentFen
 
     /** An array of {@link VkSwapchainPresentFenceInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkSwapchainPresentFenceInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkSwapchainPresentFenceInfoKHR ELEMENT_FACTORY = VkSwapchainPresentFenceInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkSwapchainPresentFenceInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkSwapchainPresentFenceInfoKHR extends Struct<VkSwapchainPresentFen
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSwapchainPresentFenceInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSwapchainPresentFenceInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

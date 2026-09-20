@@ -302,9 +302,6 @@ public class VkVideoEncodeH265RateControlInfoKHR extends Struct<VkVideoEncodeH26
 
     /** An array of {@link VkVideoEncodeH265RateControlInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoEncodeH265RateControlInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoEncodeH265RateControlInfoKHR ELEMENT_FACTORY = VkVideoEncodeH265RateControlInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoEncodeH265RateControlInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -327,18 +324,13 @@ public class VkVideoEncodeH265RateControlInfoKHR extends Struct<VkVideoEncodeH26
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoEncodeH265RateControlInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoEncodeH265RateControlInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

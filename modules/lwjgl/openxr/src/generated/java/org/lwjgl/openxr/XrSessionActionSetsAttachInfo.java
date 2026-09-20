@@ -263,9 +263,6 @@ public class XrSessionActionSetsAttachInfo extends Struct<XrSessionActionSetsAtt
 
     /** An array of {@link XrSessionActionSetsAttachInfo} structs. */
     public static class Buffer extends StructBuffer<XrSessionActionSetsAttachInfo, Buffer> implements NativeResource {
-
-        private static final XrSessionActionSetsAttachInfo ELEMENT_FACTORY = XrSessionActionSetsAttachInfo.create(-1L);
-
         /**
          * Creates a new {@code XrSessionActionSetsAttachInfo.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrSessionActionSetsAttachInfo extends Struct<XrSessionActionSetsAtt
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSessionActionSetsAttachInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSessionActionSetsAttachInfo.class;
         }
 
         /** @return the value of the {@code type} field. */

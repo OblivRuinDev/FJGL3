@@ -375,9 +375,6 @@ public class ktxTextureCreateInfo extends Struct<ktxTextureCreateInfo> implement
 
     /** An array of {@link ktxTextureCreateInfo} structs. */
     public static class Buffer extends StructBuffer<ktxTextureCreateInfo, Buffer> implements NativeResource {
-
-        private static final ktxTextureCreateInfo ELEMENT_FACTORY = ktxTextureCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code ktxTextureCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -400,18 +397,13 @@ public class ktxTextureCreateInfo extends Struct<ktxTextureCreateInfo> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ktxTextureCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ktxTextureCreateInfo.class;
         }
 
         /** @return the value of the {@code glInternalformat} field. */

@@ -242,9 +242,6 @@ public class VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR extends Struc
 
     /** An array of {@link VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR extends Struc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

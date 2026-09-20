@@ -198,9 +198,6 @@ public class XrSwapchainImageVulkan2KHR extends XrSwapchainImageVulkanKHR {
 
     /** An array of {@link XrSwapchainImageVulkan2KHR} structs. */
     public static class Buffer extends XrSwapchainImageVulkanKHR.Buffer {
-
-        private static final XrSwapchainImageVulkan2KHR ELEMENT_FACTORY = XrSwapchainImageVulkan2KHR.create(-1L);
-
         /**
          * Creates a new {@code XrSwapchainImageVulkan2KHR.Buffer} instance backed by the specified container.
          *
@@ -223,18 +220,13 @@ public class XrSwapchainImageVulkan2KHR extends XrSwapchainImageVulkanKHR {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSwapchainImageVulkan2KHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSwapchainImageVulkan2KHR.class;
         }
 
         /** Sets the specified value to the {@code type} field. */

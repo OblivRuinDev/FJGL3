@@ -201,9 +201,6 @@ public class SDL_Palette extends Struct<SDL_Palette> implements NativeResource {
 
     /** An array of {@link SDL_Palette} structs. */
     public static class Buffer extends StructBuffer<SDL_Palette, Buffer> implements NativeResource {
-
-        private static final SDL_Palette ELEMENT_FACTORY = SDL_Palette.create(-1L);
-
         /**
          * Creates a new {@code SDL_Palette.Buffer} instance backed by the specified container.
          *
@@ -226,18 +223,13 @@ public class SDL_Palette extends Struct<SDL_Palette> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_Palette getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_Palette.class;
         }
 
         /** @return the value of the {@code ncolors} field. */

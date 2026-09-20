@@ -200,9 +200,6 @@ public class CXType extends Struct<CXType> implements NativeResource {
 
     /** An array of {@link CXType} structs. */
     public static class Buffer extends StructBuffer<CXType, Buffer> implements NativeResource {
-
-        private static final CXType ELEMENT_FACTORY = CXType.create(-1L);
-
         /**
          * Creates a new {@code CXType.Buffer} instance backed by the specified container.
          *
@@ -225,18 +222,13 @@ public class CXType extends Struct<CXType> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXType getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXType.class;
         }
 
         /** @return the value of the {@code kind} field. */

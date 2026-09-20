@@ -278,9 +278,6 @@ public class VkReleaseSwapchainImagesInfoKHR extends Struct<VkReleaseSwapchainIm
 
     /** An array of {@link VkReleaseSwapchainImagesInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkReleaseSwapchainImagesInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkReleaseSwapchainImagesInfoKHR ELEMENT_FACTORY = VkReleaseSwapchainImagesInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkReleaseSwapchainImagesInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -303,18 +300,13 @@ public class VkReleaseSwapchainImagesInfoKHR extends Struct<VkReleaseSwapchainIm
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkReleaseSwapchainImagesInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkReleaseSwapchainImagesInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

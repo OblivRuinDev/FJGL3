@@ -218,9 +218,6 @@ public class XrKeyboardTrackingDescriptionFB extends Struct<XrKeyboardTrackingDe
 
     /** An array of {@link XrKeyboardTrackingDescriptionFB} structs. */
     public static class Buffer extends StructBuffer<XrKeyboardTrackingDescriptionFB, Buffer> implements NativeResource {
-
-        private static final XrKeyboardTrackingDescriptionFB ELEMENT_FACTORY = XrKeyboardTrackingDescriptionFB.create(-1L);
-
         /**
          * Creates a new {@code XrKeyboardTrackingDescriptionFB.Buffer} instance backed by the specified container.
          *
@@ -243,18 +240,13 @@ public class XrKeyboardTrackingDescriptionFB extends Struct<XrKeyboardTrackingDe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrKeyboardTrackingDescriptionFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrKeyboardTrackingDescriptionFB.class;
         }
 
         /** @return the value of the {@code trackedKeyboardId} field. */

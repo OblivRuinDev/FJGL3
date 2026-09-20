@@ -255,9 +255,6 @@ public class XrEventDataColocationAdvertisementCompleteMETA extends Struct<XrEve
 
     /** An array of {@link XrEventDataColocationAdvertisementCompleteMETA} structs. */
     public static class Buffer extends StructBuffer<XrEventDataColocationAdvertisementCompleteMETA, Buffer> implements NativeResource {
-
-        private static final XrEventDataColocationAdvertisementCompleteMETA ELEMENT_FACTORY = XrEventDataColocationAdvertisementCompleteMETA.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataColocationAdvertisementCompleteMETA.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class XrEventDataColocationAdvertisementCompleteMETA extends Struct<XrEve
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataColocationAdvertisementCompleteMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataColocationAdvertisementCompleteMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

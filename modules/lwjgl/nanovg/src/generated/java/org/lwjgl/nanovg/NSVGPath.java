@@ -142,9 +142,6 @@ public class NSVGPath extends Struct<NSVGPath> {
 
     /** An array of {@link NSVGPath} structs. */
     public static class Buffer extends StructBuffer<NSVGPath, Buffer> {
-
-        private static final NSVGPath ELEMENT_FACTORY = NSVGPath.create(-1L);
-
         /**
          * Creates a new {@code NSVGPath.Buffer} instance backed by the specified container.
          *
@@ -167,18 +164,13 @@ public class NSVGPath extends Struct<NSVGPath> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NSVGPath getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NSVGPath.class;
         }
 
         /** @return a {@link FloatBuffer} view of the data pointed to by the {@code pts} field. */

@@ -406,9 +406,6 @@ public class VkPipelineRasterizationStateCreateInfo extends Struct<VkPipelineRas
 
     /** An array of {@link VkPipelineRasterizationStateCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkPipelineRasterizationStateCreateInfo, Buffer> implements NativeResource {
-
-        private static final VkPipelineRasterizationStateCreateInfo ELEMENT_FACTORY = VkPipelineRasterizationStateCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineRasterizationStateCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -431,18 +428,13 @@ public class VkPipelineRasterizationStateCreateInfo extends Struct<VkPipelineRas
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineRasterizationStateCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineRasterizationStateCreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

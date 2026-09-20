@@ -274,9 +274,6 @@ public class NVGColor extends Struct<NVGColor> implements NativeResource {
 
     /** An array of {@link NVGColor} structs. */
     public static class Buffer extends StructBuffer<NVGColor, Buffer> implements NativeResource {
-
-        private static final NVGColor ELEMENT_FACTORY = NVGColor.create(-1L);
-
         /**
          * Creates a new {@code NVGColor.Buffer} instance backed by the specified container.
          *
@@ -299,18 +296,13 @@ public class NVGColor extends Struct<NVGColor> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NVGColor getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NVGColor.class;
         }
 
         /** @return a {@link FloatBuffer} view of the {@code rgba} field. */

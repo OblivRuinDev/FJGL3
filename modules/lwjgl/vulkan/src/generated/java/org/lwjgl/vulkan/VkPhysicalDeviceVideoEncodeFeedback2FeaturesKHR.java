@@ -242,9 +242,6 @@ public class VkPhysicalDeviceVideoEncodeFeedback2FeaturesKHR extends Struct<VkPh
 
     /** An array of {@link VkPhysicalDeviceVideoEncodeFeedback2FeaturesKHR} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceVideoEncodeFeedback2FeaturesKHR, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceVideoEncodeFeedback2FeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceVideoEncodeFeedback2FeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceVideoEncodeFeedback2FeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceVideoEncodeFeedback2FeaturesKHR extends Struct<VkPh
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceVideoEncodeFeedback2FeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceVideoEncodeFeedback2FeaturesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

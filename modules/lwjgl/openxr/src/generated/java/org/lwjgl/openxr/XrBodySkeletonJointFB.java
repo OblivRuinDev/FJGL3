@@ -243,9 +243,6 @@ public class XrBodySkeletonJointFB extends Struct<XrBodySkeletonJointFB> impleme
 
     /** An array of {@link XrBodySkeletonJointFB} structs. */
     public static class Buffer extends StructBuffer<XrBodySkeletonJointFB, Buffer> implements NativeResource {
-
-        private static final XrBodySkeletonJointFB ELEMENT_FACTORY = XrBodySkeletonJointFB.create(-1L);
-
         /**
          * Creates a new {@code XrBodySkeletonJointFB.Buffer} instance backed by the specified container.
          *
@@ -268,18 +265,13 @@ public class XrBodySkeletonJointFB extends Struct<XrBodySkeletonJointFB> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBodySkeletonJointFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBodySkeletonJointFB.class;
         }
 
         /** @return the value of the {@code joint} field. */

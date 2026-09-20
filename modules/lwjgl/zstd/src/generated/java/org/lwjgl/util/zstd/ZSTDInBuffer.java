@@ -247,9 +247,6 @@ public class ZSTDInBuffer extends Struct<ZSTDInBuffer> implements NativeResource
 
     /** An array of {@link ZSTDInBuffer} structs. */
     public static class Buffer extends StructBuffer<ZSTDInBuffer, Buffer> implements NativeResource {
-
-        private static final ZSTDInBuffer ELEMENT_FACTORY = ZSTDInBuffer.create(-1L);
-
         /**
          * Creates a new {@code ZSTDInBuffer.Buffer} instance backed by the specified container.
          *
@@ -272,18 +269,13 @@ public class ZSTDInBuffer extends Struct<ZSTDInBuffer> implements NativeResource
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ZSTDInBuffer getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ZSTDInBuffer.class;
         }
 
         /** @return a {@link ByteBuffer} view of the data pointed to by the {@code src} field. */

@@ -236,9 +236,6 @@ public class VkQueueFamilyCheckpointPropertiesNV extends Struct<VkQueueFamilyChe
 
     /** An array of {@link VkQueueFamilyCheckpointPropertiesNV} structs. */
     public static class Buffer extends StructBuffer<VkQueueFamilyCheckpointPropertiesNV, Buffer> implements NativeResource {
-
-        private static final VkQueueFamilyCheckpointPropertiesNV ELEMENT_FACTORY = VkQueueFamilyCheckpointPropertiesNV.create(-1L);
-
         /**
          * Creates a new {@code VkQueueFamilyCheckpointPropertiesNV.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkQueueFamilyCheckpointPropertiesNV extends Struct<VkQueueFamilyChe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkQueueFamilyCheckpointPropertiesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkQueueFamilyCheckpointPropertiesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

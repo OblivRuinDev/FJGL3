@@ -236,9 +236,6 @@ public class VkPhysicalDeviceLayeredDriverPropertiesMSFT extends Struct<VkPhysic
 
     /** An array of {@link VkPhysicalDeviceLayeredDriverPropertiesMSFT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceLayeredDriverPropertiesMSFT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceLayeredDriverPropertiesMSFT ELEMENT_FACTORY = VkPhysicalDeviceLayeredDriverPropertiesMSFT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceLayeredDriverPropertiesMSFT.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkPhysicalDeviceLayeredDriverPropertiesMSFT extends Struct<VkPhysic
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceLayeredDriverPropertiesMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceLayeredDriverPropertiesMSFT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -242,9 +242,6 @@ public class XrHandJointsMotionRangeInfoEXT extends Struct<XrHandJointsMotionRan
 
     /** An array of {@link XrHandJointsMotionRangeInfoEXT} structs. */
     public static class Buffer extends StructBuffer<XrHandJointsMotionRangeInfoEXT, Buffer> implements NativeResource {
-
-        private static final XrHandJointsMotionRangeInfoEXT ELEMENT_FACTORY = XrHandJointsMotionRangeInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code XrHandJointsMotionRangeInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrHandJointsMotionRangeInfoEXT extends Struct<XrHandJointsMotionRan
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHandJointsMotionRangeInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHandJointsMotionRangeInfoEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

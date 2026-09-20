@@ -330,9 +330,6 @@ public class XrSoundObstacleMaterialConfigBD extends Struct<XrSoundObstacleMater
 
     /** An array of {@link XrSoundObstacleMaterialConfigBD} structs. */
     public static class Buffer extends StructBuffer<XrSoundObstacleMaterialConfigBD, Buffer> implements NativeResource {
-
-        private static final XrSoundObstacleMaterialConfigBD ELEMENT_FACTORY = XrSoundObstacleMaterialConfigBD.create(-1L);
-
         /**
          * Creates a new {@code XrSoundObstacleMaterialConfigBD.Buffer} instance backed by the specified container.
          *
@@ -355,18 +352,13 @@ public class XrSoundObstacleMaterialConfigBD extends Struct<XrSoundObstacleMater
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSoundObstacleMaterialConfigBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSoundObstacleMaterialConfigBD.class;
         }
 
         /** @return the value of the {@code type} field. */

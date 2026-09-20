@@ -257,9 +257,6 @@ public class VkFenceGetWin32HandleInfoKHR extends Struct<VkFenceGetWin32HandleIn
 
     /** An array of {@link VkFenceGetWin32HandleInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkFenceGetWin32HandleInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkFenceGetWin32HandleInfoKHR ELEMENT_FACTORY = VkFenceGetWin32HandleInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkFenceGetWin32HandleInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkFenceGetWin32HandleInfoKHR extends Struct<VkFenceGetWin32HandleIn
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkFenceGetWin32HandleInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkFenceGetWin32HandleInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

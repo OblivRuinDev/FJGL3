@@ -242,9 +242,6 @@ public class VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE extends Stru
 
     /** An array of {@link VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE ELEMENT_FACTORY = VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE extends Stru
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE.class;
         }
 
         /** @return the value of the {@code sType} field. */

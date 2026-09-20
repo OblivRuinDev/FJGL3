@@ -223,9 +223,6 @@ public class VkDepthClampRangeEXT extends Struct<VkDepthClampRangeEXT> implement
 
     /** An array of {@link VkDepthClampRangeEXT} structs. */
     public static class Buffer extends StructBuffer<VkDepthClampRangeEXT, Buffer> implements NativeResource {
-
-        private static final VkDepthClampRangeEXT ELEMENT_FACTORY = VkDepthClampRangeEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDepthClampRangeEXT.Buffer} instance backed by the specified container.
          *
@@ -248,18 +245,13 @@ public class VkDepthClampRangeEXT extends Struct<VkDepthClampRangeEXT> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDepthClampRangeEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDepthClampRangeEXT.class;
         }
 
         /** @return the value of the {@code minDepthClamp} field. */

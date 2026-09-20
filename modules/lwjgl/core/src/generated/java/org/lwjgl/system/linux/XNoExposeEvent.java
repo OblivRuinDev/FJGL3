@@ -307,9 +307,6 @@ public class XNoExposeEvent extends Struct<XNoExposeEvent> implements NativeReso
 
     /** An array of {@link XNoExposeEvent} structs. */
     public static class Buffer extends StructBuffer<XNoExposeEvent, Buffer> implements NativeResource {
-
-        private static final XNoExposeEvent ELEMENT_FACTORY = XNoExposeEvent.create(-1L);
-
         /**
          * Creates a new {@code XNoExposeEvent.Buffer} instance backed by the specified container.
          *
@@ -332,18 +329,13 @@ public class XNoExposeEvent extends Struct<XNoExposeEvent> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XNoExposeEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XNoExposeEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

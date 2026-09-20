@@ -258,9 +258,6 @@ public class spng_iccp extends Struct<spng_iccp> implements NativeResource {
 
     /** An array of {@link spng_iccp} structs. */
     public static class Buffer extends StructBuffer<spng_iccp, Buffer> implements NativeResource {
-
-        private static final spng_iccp ELEMENT_FACTORY = spng_iccp.create(-1L);
-
         /**
          * Creates a new {@code spng_iccp.Buffer} instance backed by the specified container.
          *
@@ -283,18 +280,13 @@ public class spng_iccp extends Struct<spng_iccp> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected spng_iccp getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return spng_iccp.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code profile_name} field. */

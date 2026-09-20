@@ -191,9 +191,6 @@ public class VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR extends VkPh
 
     /** An array of {@link VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures.Buffer {
-
-        private static final VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR extends VkPh
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

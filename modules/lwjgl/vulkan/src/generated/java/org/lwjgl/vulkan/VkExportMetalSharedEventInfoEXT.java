@@ -282,9 +282,6 @@ public class VkExportMetalSharedEventInfoEXT extends Struct<VkExportMetalSharedE
 
     /** An array of {@link VkExportMetalSharedEventInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkExportMetalSharedEventInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkExportMetalSharedEventInfoEXT ELEMENT_FACTORY = VkExportMetalSharedEventInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkExportMetalSharedEventInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -307,18 +304,13 @@ public class VkExportMetalSharedEventInfoEXT extends Struct<VkExportMetalSharedE
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExportMetalSharedEventInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExportMetalSharedEventInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

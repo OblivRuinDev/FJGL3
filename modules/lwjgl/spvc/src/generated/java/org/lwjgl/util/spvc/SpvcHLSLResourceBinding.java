@@ -311,9 +311,6 @@ public class SpvcHLSLResourceBinding extends Struct<SpvcHLSLResourceBinding> imp
 
     /** An array of {@link SpvcHLSLResourceBinding} structs. */
     public static class Buffer extends StructBuffer<SpvcHLSLResourceBinding, Buffer> implements NativeResource {
-
-        private static final SpvcHLSLResourceBinding ELEMENT_FACTORY = SpvcHLSLResourceBinding.create(-1L);
-
         /**
          * Creates a new {@code SpvcHLSLResourceBinding.Buffer} instance backed by the specified container.
          *
@@ -336,18 +333,13 @@ public class SpvcHLSLResourceBinding extends Struct<SpvcHLSLResourceBinding> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SpvcHLSLResourceBinding getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SpvcHLSLResourceBinding.class;
         }
 
         /** @return the value of the {@code stage} field. */

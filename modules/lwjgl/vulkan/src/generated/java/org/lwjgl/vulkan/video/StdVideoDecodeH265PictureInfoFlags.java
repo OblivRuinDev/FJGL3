@@ -248,9 +248,6 @@ public class StdVideoDecodeH265PictureInfoFlags extends Struct<StdVideoDecodeH26
 
     /** An array of {@link StdVideoDecodeH265PictureInfoFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoDecodeH265PictureInfoFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoDecodeH265PictureInfoFlags ELEMENT_FACTORY = StdVideoDecodeH265PictureInfoFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoDecodeH265PictureInfoFlags.Buffer} instance backed by the specified container.
          *
@@ -273,18 +270,13 @@ public class StdVideoDecodeH265PictureInfoFlags extends Struct<StdVideoDecodeH26
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoDecodeH265PictureInfoFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoDecodeH265PictureInfoFlags.class;
         }
 
         /** @return the value of the {@code IrapPicFlag} field. */

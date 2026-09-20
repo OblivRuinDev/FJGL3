@@ -108,9 +108,6 @@ public class VkMemoryHeap extends Struct<VkMemoryHeap> {
 
     /** An array of {@link VkMemoryHeap} structs. */
     public static class Buffer extends StructBuffer<VkMemoryHeap, Buffer> {
-
-        private static final VkMemoryHeap ELEMENT_FACTORY = VkMemoryHeap.create(-1L);
-
         /**
          * Creates a new {@code VkMemoryHeap.Buffer} instance backed by the specified container.
          *
@@ -133,18 +130,13 @@ public class VkMemoryHeap extends Struct<VkMemoryHeap> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMemoryHeap getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMemoryHeap.class;
         }
 
         /** @return the value of the {@code size} field. */

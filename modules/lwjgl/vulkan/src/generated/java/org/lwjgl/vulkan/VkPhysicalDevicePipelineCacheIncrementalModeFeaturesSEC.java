@@ -242,9 +242,6 @@ public class VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC extends Str
 
     /** An array of {@link VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC ELEMENT_FACTORY = VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC extends Str
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC.class;
         }
 
         /** @return the value of the {@code sType} field. */

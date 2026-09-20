@@ -242,9 +242,6 @@ public class VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures extends Stru
 
     /** An array of {@link VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures ELEMENT_FACTORY = VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures extends Stru
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures.class;
         }
 
         /** @return the value of the {@code sType} field. */

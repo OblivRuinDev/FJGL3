@@ -353,9 +353,6 @@ public class VkLatencyTimingsFrameReportNV extends Struct<VkLatencyTimingsFrameR
 
     /** An array of {@link VkLatencyTimingsFrameReportNV} structs. */
     public static class Buffer extends StructBuffer<VkLatencyTimingsFrameReportNV, Buffer> implements NativeResource {
-
-        private static final VkLatencyTimingsFrameReportNV ELEMENT_FACTORY = VkLatencyTimingsFrameReportNV.create(-1L);
-
         /**
          * Creates a new {@code VkLatencyTimingsFrameReportNV.Buffer} instance backed by the specified container.
          *
@@ -378,18 +375,13 @@ public class VkLatencyTimingsFrameReportNV extends Struct<VkLatencyTimingsFrameR
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkLatencyTimingsFrameReportNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkLatencyTimingsFrameReportNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

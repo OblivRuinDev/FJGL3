@@ -202,9 +202,6 @@ public class rpmalloc_heap_statistics_t extends Struct<rpmalloc_heap_statistics_
 
     /** An array of {@link rpmalloc_heap_statistics_t} structs. */
     public static class Buffer extends StructBuffer<rpmalloc_heap_statistics_t, Buffer> implements NativeResource {
-
-        private static final rpmalloc_heap_statistics_t ELEMENT_FACTORY = rpmalloc_heap_statistics_t.create(-1L);
-
         /**
          * Creates a new {@code rpmalloc_heap_statistics_t.Buffer} instance backed by the specified container.
          *
@@ -227,18 +224,13 @@ public class rpmalloc_heap_statistics_t extends Struct<rpmalloc_heap_statistics_
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected rpmalloc_heap_statistics_t getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return rpmalloc_heap_statistics_t.class;
         }
 
         /** @return the value of the {@code allocated_size} field. */

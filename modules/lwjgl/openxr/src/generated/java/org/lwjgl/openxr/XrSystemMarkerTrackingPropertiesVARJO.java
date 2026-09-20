@@ -236,9 +236,6 @@ public class XrSystemMarkerTrackingPropertiesVARJO extends Struct<XrSystemMarker
 
     /** An array of {@link XrSystemMarkerTrackingPropertiesVARJO} structs. */
     public static class Buffer extends StructBuffer<XrSystemMarkerTrackingPropertiesVARJO, Buffer> implements NativeResource {
-
-        private static final XrSystemMarkerTrackingPropertiesVARJO ELEMENT_FACTORY = XrSystemMarkerTrackingPropertiesVARJO.create(-1L);
-
         /**
          * Creates a new {@code XrSystemMarkerTrackingPropertiesVARJO.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemMarkerTrackingPropertiesVARJO extends Struct<XrSystemMarker
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemMarkerTrackingPropertiesVARJO getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemMarkerTrackingPropertiesVARJO.class;
         }
 
         /** @return the value of the {@code type} field. */

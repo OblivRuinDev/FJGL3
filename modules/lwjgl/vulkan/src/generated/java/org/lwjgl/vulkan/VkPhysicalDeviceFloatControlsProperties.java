@@ -380,9 +380,6 @@ public class VkPhysicalDeviceFloatControlsProperties extends Struct<VkPhysicalDe
 
     /** An array of {@link VkPhysicalDeviceFloatControlsProperties} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceFloatControlsProperties, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceFloatControlsProperties ELEMENT_FACTORY = VkPhysicalDeviceFloatControlsProperties.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceFloatControlsProperties.Buffer} instance backed by the specified container.
          *
@@ -405,18 +402,13 @@ public class VkPhysicalDeviceFloatControlsProperties extends Struct<VkPhysicalDe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceFloatControlsProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceFloatControlsProperties.class;
         }
 
         /** @return the value of the {@code sType} field. */

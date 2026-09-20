@@ -238,9 +238,6 @@ public class VkVideoDecodeVP9CapabilitiesKHR extends Struct<VkVideoDecodeVP9Capa
 
     /** An array of {@link VkVideoDecodeVP9CapabilitiesKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoDecodeVP9CapabilitiesKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoDecodeVP9CapabilitiesKHR ELEMENT_FACTORY = VkVideoDecodeVP9CapabilitiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoDecodeVP9CapabilitiesKHR.Buffer} instance backed by the specified container.
          *
@@ -263,18 +260,13 @@ public class VkVideoDecodeVP9CapabilitiesKHR extends Struct<VkVideoDecodeVP9Capa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoDecodeVP9CapabilitiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoDecodeVP9CapabilitiesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

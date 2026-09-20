@@ -253,9 +253,6 @@ public class NFDFilterItem extends Struct<NFDFilterItem> implements NativeResour
 
     /** An array of {@link NFDFilterItem} structs. */
     public static class Buffer extends StructBuffer<NFDFilterItem, Buffer> implements NativeResource {
-
-        private static final NFDFilterItem ELEMENT_FACTORY = NFDFilterItem.create(-1L);
-
         /**
          * Creates a new {@code NFDFilterItem.Buffer} instance backed by the specified container.
          *
@@ -278,18 +275,13 @@ public class NFDFilterItem extends Struct<NFDFilterItem> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NFDFilterItem getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NFDFilterItem.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code name} field. */

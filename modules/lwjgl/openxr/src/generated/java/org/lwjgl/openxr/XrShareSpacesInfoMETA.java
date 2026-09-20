@@ -279,9 +279,6 @@ public class XrShareSpacesInfoMETA extends Struct<XrShareSpacesInfoMETA> impleme
 
     /** An array of {@link XrShareSpacesInfoMETA} structs. */
     public static class Buffer extends StructBuffer<XrShareSpacesInfoMETA, Buffer> implements NativeResource {
-
-        private static final XrShareSpacesInfoMETA ELEMENT_FACTORY = XrShareSpacesInfoMETA.create(-1L);
-
         /**
          * Creates a new {@code XrShareSpacesInfoMETA.Buffer} instance backed by the specified container.
          *
@@ -304,18 +301,13 @@ public class XrShareSpacesInfoMETA extends Struct<XrShareSpacesInfoMETA> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrShareSpacesInfoMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrShareSpacesInfoMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -241,9 +241,6 @@ public class VkImageViewMinLodCreateInfoEXT extends Struct<VkImageViewMinLodCrea
 
     /** An array of {@link VkImageViewMinLodCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkImageViewMinLodCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkImageViewMinLodCreateInfoEXT ELEMENT_FACTORY = VkImageViewMinLodCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkImageViewMinLodCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -266,18 +263,13 @@ public class VkImageViewMinLodCreateInfoEXT extends Struct<VkImageViewMinLodCrea
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageViewMinLodCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageViewMinLodCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

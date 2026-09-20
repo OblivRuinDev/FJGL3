@@ -245,9 +245,6 @@ public class VkDeviceFaultShaderAbortMessageInfoKHR extends Struct<VkDeviceFault
 
     /** An array of {@link VkDeviceFaultShaderAbortMessageInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkDeviceFaultShaderAbortMessageInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkDeviceFaultShaderAbortMessageInfoKHR ELEMENT_FACTORY = VkDeviceFaultShaderAbortMessageInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceFaultShaderAbortMessageInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkDeviceFaultShaderAbortMessageInfoKHR extends Struct<VkDeviceFault
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceFaultShaderAbortMessageInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceFaultShaderAbortMessageInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

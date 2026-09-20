@@ -218,9 +218,6 @@ public class XrUuidMSFT extends Struct<XrUuidMSFT> implements NativeResource {
 
     /** An array of {@link XrUuidMSFT} structs. */
     public static class Buffer extends StructBuffer<XrUuidMSFT, Buffer> implements NativeResource {
-
-        private static final XrUuidMSFT ELEMENT_FACTORY = XrUuidMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrUuidMSFT.Buffer} instance backed by the specified container.
          *
@@ -243,18 +240,13 @@ public class XrUuidMSFT extends Struct<XrUuidMSFT> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrUuidMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrUuidMSFT.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code bytes} field. */

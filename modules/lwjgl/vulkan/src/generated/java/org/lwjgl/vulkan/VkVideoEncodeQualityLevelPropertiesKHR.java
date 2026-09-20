@@ -251,9 +251,6 @@ public class VkVideoEncodeQualityLevelPropertiesKHR extends Struct<VkVideoEncode
 
     /** An array of {@link VkVideoEncodeQualityLevelPropertiesKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoEncodeQualityLevelPropertiesKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoEncodeQualityLevelPropertiesKHR ELEMENT_FACTORY = VkVideoEncodeQualityLevelPropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoEncodeQualityLevelPropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -276,18 +273,13 @@ public class VkVideoEncodeQualityLevelPropertiesKHR extends Struct<VkVideoEncode
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoEncodeQualityLevelPropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoEncodeQualityLevelPropertiesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -198,9 +198,6 @@ public class hwloc_infos_s extends Struct<hwloc_infos_s> implements NativeResour
 
     /** An array of {@link hwloc_infos_s} structs. */
     public static class Buffer extends StructBuffer<hwloc_infos_s, Buffer> implements NativeResource {
-
-        private static final hwloc_infos_s ELEMENT_FACTORY = hwloc_infos_s.create(-1L);
-
         /**
          * Creates a new {@code hwloc_infos_s.Buffer} instance backed by the specified container.
          *
@@ -223,18 +220,13 @@ public class hwloc_infos_s extends Struct<hwloc_infos_s> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected hwloc_infos_s getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return hwloc_infos_s.class;
         }
 
         /** @return a {@link hwloc_info_s.Buffer} view of the struct array pointed to by the {@code array} field. */

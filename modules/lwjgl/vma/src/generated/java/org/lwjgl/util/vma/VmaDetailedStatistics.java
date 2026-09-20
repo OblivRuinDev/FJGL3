@@ -229,9 +229,6 @@ public class VmaDetailedStatistics extends Struct<VmaDetailedStatistics> impleme
 
     /** An array of {@link VmaDetailedStatistics} structs. */
     public static class Buffer extends StructBuffer<VmaDetailedStatistics, Buffer> implements NativeResource {
-
-        private static final VmaDetailedStatistics ELEMENT_FACTORY = VmaDetailedStatistics.create(-1L);
-
         /**
          * Creates a new {@code VmaDetailedStatistics.Buffer} instance backed by the specified container.
          *
@@ -254,18 +251,13 @@ public class VmaDetailedStatistics extends Struct<VmaDetailedStatistics> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VmaDetailedStatistics getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VmaDetailedStatistics.class;
         }
 
         /** @return a {@link VmaStatistics} view of the {@code statistics} field. */

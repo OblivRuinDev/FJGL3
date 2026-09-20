@@ -257,9 +257,6 @@ public class VkPhysicalDeviceCustomBorderColorFeaturesEXT extends Struct<VkPhysi
 
     /** An array of {@link VkPhysicalDeviceCustomBorderColorFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceCustomBorderColorFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceCustomBorderColorFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceCustomBorderColorFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceCustomBorderColorFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkPhysicalDeviceCustomBorderColorFeaturesEXT extends Struct<VkPhysi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceCustomBorderColorFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceCustomBorderColorFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

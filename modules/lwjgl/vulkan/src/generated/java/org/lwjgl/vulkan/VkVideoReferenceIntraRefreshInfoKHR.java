@@ -242,9 +242,6 @@ public class VkVideoReferenceIntraRefreshInfoKHR extends Struct<VkVideoReference
 
     /** An array of {@link VkVideoReferenceIntraRefreshInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoReferenceIntraRefreshInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoReferenceIntraRefreshInfoKHR ELEMENT_FACTORY = VkVideoReferenceIntraRefreshInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoReferenceIntraRefreshInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkVideoReferenceIntraRefreshInfoKHR extends Struct<VkVideoReference
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoReferenceIntraRefreshInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoReferenceIntraRefreshInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

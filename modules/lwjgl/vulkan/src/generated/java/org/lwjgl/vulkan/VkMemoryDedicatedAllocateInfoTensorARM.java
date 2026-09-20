@@ -242,9 +242,6 @@ public class VkMemoryDedicatedAllocateInfoTensorARM extends Struct<VkMemoryDedic
 
     /** An array of {@link VkMemoryDedicatedAllocateInfoTensorARM} structs. */
     public static class Buffer extends StructBuffer<VkMemoryDedicatedAllocateInfoTensorARM, Buffer> implements NativeResource {
-
-        private static final VkMemoryDedicatedAllocateInfoTensorARM ELEMENT_FACTORY = VkMemoryDedicatedAllocateInfoTensorARM.create(-1L);
-
         /**
          * Creates a new {@code VkMemoryDedicatedAllocateInfoTensorARM.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkMemoryDedicatedAllocateInfoTensorARM extends Struct<VkMemoryDedic
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMemoryDedicatedAllocateInfoTensorARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMemoryDedicatedAllocateInfoTensorARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

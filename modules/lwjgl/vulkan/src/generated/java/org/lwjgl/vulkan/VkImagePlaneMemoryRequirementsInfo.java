@@ -242,9 +242,6 @@ public class VkImagePlaneMemoryRequirementsInfo extends Struct<VkImagePlaneMemor
 
     /** An array of {@link VkImagePlaneMemoryRequirementsInfo} structs. */
     public static class Buffer extends StructBuffer<VkImagePlaneMemoryRequirementsInfo, Buffer> implements NativeResource {
-
-        private static final VkImagePlaneMemoryRequirementsInfo ELEMENT_FACTORY = VkImagePlaneMemoryRequirementsInfo.create(-1L);
-
         /**
          * Creates a new {@code VkImagePlaneMemoryRequirementsInfo.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkImagePlaneMemoryRequirementsInfo extends Struct<VkImagePlaneMemor
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImagePlaneMemoryRequirementsInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImagePlaneMemoryRequirementsInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

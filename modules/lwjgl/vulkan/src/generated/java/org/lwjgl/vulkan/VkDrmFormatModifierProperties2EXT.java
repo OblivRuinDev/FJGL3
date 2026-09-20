@@ -117,9 +117,6 @@ public class VkDrmFormatModifierProperties2EXT extends Struct<VkDrmFormatModifie
 
     /** An array of {@link VkDrmFormatModifierProperties2EXT} structs. */
     public static class Buffer extends StructBuffer<VkDrmFormatModifierProperties2EXT, Buffer> {
-
-        private static final VkDrmFormatModifierProperties2EXT ELEMENT_FACTORY = VkDrmFormatModifierProperties2EXT.create(-1L);
-
         /**
          * Creates a new {@code VkDrmFormatModifierProperties2EXT.Buffer} instance backed by the specified container.
          *
@@ -142,18 +139,13 @@ public class VkDrmFormatModifierProperties2EXT extends Struct<VkDrmFormatModifie
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDrmFormatModifierProperties2EXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDrmFormatModifierProperties2EXT.class;
         }
 
         /** @return the value of the {@code drmFormatModifier} field. */

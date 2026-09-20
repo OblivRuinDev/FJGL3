@@ -201,9 +201,6 @@ public class CID_FaceDict extends Struct<CID_FaceDict> {
 
     /** An array of {@link CID_FaceDict} structs. */
     public static class Buffer extends StructBuffer<CID_FaceDict, Buffer> {
-
-        private static final CID_FaceDict ELEMENT_FACTORY = CID_FaceDict.create(-1L);
-
         /**
          * Creates a new {@code CID_FaceDict.Buffer} instance backed by the specified container.
          *
@@ -226,18 +223,13 @@ public class CID_FaceDict extends Struct<CID_FaceDict> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CID_FaceDict getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CID_FaceDict.class;
         }
 
         /** @return a {@link PS_Private} view of the {@code private_dict} field. */

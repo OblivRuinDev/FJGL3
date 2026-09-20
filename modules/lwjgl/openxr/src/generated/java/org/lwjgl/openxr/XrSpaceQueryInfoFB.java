@@ -312,9 +312,6 @@ public class XrSpaceQueryInfoFB extends Struct<XrSpaceQueryInfoFB> implements Na
 
     /** An array of {@link XrSpaceQueryInfoFB} structs. */
     public static class Buffer extends StructBuffer<XrSpaceQueryInfoFB, Buffer> implements NativeResource {
-
-        private static final XrSpaceQueryInfoFB ELEMENT_FACTORY = XrSpaceQueryInfoFB.create(-1L);
-
         /**
          * Creates a new {@code XrSpaceQueryInfoFB.Buffer} instance backed by the specified container.
          *
@@ -337,18 +334,13 @@ public class XrSpaceQueryInfoFB extends Struct<XrSpaceQueryInfoFB> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpaceQueryInfoFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpaceQueryInfoFB.class;
         }
 
         /** @return the value of the {@code type} field. */

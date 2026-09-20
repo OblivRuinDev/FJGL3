@@ -231,9 +231,6 @@ public class SDL_CommonEvent extends Struct<SDL_CommonEvent> implements NativeRe
 
     /** An array of {@link SDL_CommonEvent} structs. */
     public static class Buffer extends StructBuffer<SDL_CommonEvent, Buffer> implements NativeResource {
-
-        private static final SDL_CommonEvent ELEMENT_FACTORY = SDL_CommonEvent.create(-1L);
-
         /**
          * Creates a new {@code SDL_CommonEvent.Buffer} instance backed by the specified container.
          *
@@ -256,18 +253,13 @@ public class SDL_CommonEvent extends Struct<SDL_CommonEvent> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_CommonEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_CommonEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

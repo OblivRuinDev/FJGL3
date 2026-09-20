@@ -269,9 +269,6 @@ public class XrVulkanGraphicsDeviceGetInfoKHR extends Struct<XrVulkanGraphicsDev
 
     /** An array of {@link XrVulkanGraphicsDeviceGetInfoKHR} structs. */
     public static class Buffer extends StructBuffer<XrVulkanGraphicsDeviceGetInfoKHR, Buffer> implements NativeResource {
-
-        private static final XrVulkanGraphicsDeviceGetInfoKHR ELEMENT_FACTORY = XrVulkanGraphicsDeviceGetInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code XrVulkanGraphicsDeviceGetInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -294,18 +291,13 @@ public class XrVulkanGraphicsDeviceGetInfoKHR extends Struct<XrVulkanGraphicsDev
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrVulkanGraphicsDeviceGetInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrVulkanGraphicsDeviceGetInfoKHR.class;
         }
 
         /** @return the value of the {@code type} field. */

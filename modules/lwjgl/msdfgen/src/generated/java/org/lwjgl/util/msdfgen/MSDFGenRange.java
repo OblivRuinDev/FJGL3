@@ -224,9 +224,6 @@ public class MSDFGenRange extends Struct<MSDFGenRange> implements NativeResource
 
     /** An array of {@link MSDFGenRange} structs. */
     public static class Buffer extends StructBuffer<MSDFGenRange, Buffer> implements NativeResource {
-
-        private static final MSDFGenRange ELEMENT_FACTORY = MSDFGenRange.create(-1L);
-
         /**
          * Creates a new {@code MSDFGenRange.Buffer} instance backed by the specified container.
          *
@@ -249,18 +246,13 @@ public class MSDFGenRange extends Struct<MSDFGenRange> implements NativeResource
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected MSDFGenRange getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return MSDFGenRange.class;
         }
 
         /** @return the value of the {@code lower} field. */

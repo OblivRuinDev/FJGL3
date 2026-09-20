@@ -312,9 +312,6 @@ public class VkPushConstantsInfo extends Struct<VkPushConstantsInfo> implements 
 
     /** An array of {@link VkPushConstantsInfo} structs. */
     public static class Buffer extends StructBuffer<VkPushConstantsInfo, Buffer> implements NativeResource {
-
-        private static final VkPushConstantsInfo ELEMENT_FACTORY = VkPushConstantsInfo.create(-1L);
-
         /**
          * Creates a new {@code VkPushConstantsInfo.Buffer} instance backed by the specified container.
          *
@@ -337,18 +334,13 @@ public class VkPushConstantsInfo extends Struct<VkPushConstantsInfo> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPushConstantsInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPushConstantsInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

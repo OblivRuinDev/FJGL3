@@ -302,9 +302,6 @@ public class NFDSaveDialogArgs extends Struct<NFDSaveDialogArgs> implements Nati
 
     /** An array of {@link NFDSaveDialogArgs} structs. */
     public static class Buffer extends StructBuffer<NFDSaveDialogArgs, Buffer> implements NativeResource {
-
-        private static final NFDSaveDialogArgs ELEMENT_FACTORY = NFDSaveDialogArgs.create(-1L);
-
         /**
          * Creates a new {@code NFDSaveDialogArgs.Buffer} instance backed by the specified container.
          *
@@ -327,18 +324,13 @@ public class NFDSaveDialogArgs extends Struct<NFDSaveDialogArgs> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NFDSaveDialogArgs getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NFDSaveDialogArgs.class;
         }
 
         /** @return a {@link NFDFilterItem.Buffer} view of the struct array pointed to by the {@code filterList} field. */

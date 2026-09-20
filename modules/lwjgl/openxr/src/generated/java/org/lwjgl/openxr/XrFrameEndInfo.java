@@ -295,9 +295,6 @@ public class XrFrameEndInfo extends Struct<XrFrameEndInfo> implements NativeReso
 
     /** An array of {@link XrFrameEndInfo} structs. */
     public static class Buffer extends StructBuffer<XrFrameEndInfo, Buffer> implements NativeResource {
-
-        private static final XrFrameEndInfo ELEMENT_FACTORY = XrFrameEndInfo.create(-1L);
-
         /**
          * Creates a new {@code XrFrameEndInfo.Buffer} instance backed by the specified container.
          *
@@ -320,18 +317,13 @@ public class XrFrameEndInfo extends Struct<XrFrameEndInfo> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFrameEndInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFrameEndInfo.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -109,9 +109,6 @@ public class BGFXEncoderStats extends Struct<BGFXEncoderStats> {
 
     /** An array of {@link BGFXEncoderStats} structs. */
     public static class Buffer extends StructBuffer<BGFXEncoderStats, Buffer> {
-
-        private static final BGFXEncoderStats ELEMENT_FACTORY = BGFXEncoderStats.create(-1L);
-
         /**
          * Creates a new {@code BGFXEncoderStats.Buffer} instance backed by the specified container.
          *
@@ -134,18 +131,13 @@ public class BGFXEncoderStats extends Struct<BGFXEncoderStats> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected BGFXEncoderStats getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return BGFXEncoderStats.class;
         }
 
         /** @return the value of the {@code cpuTimeBegin} field. */

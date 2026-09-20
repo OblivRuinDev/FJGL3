@@ -272,9 +272,6 @@ public class VkMicromapBuildSizesInfoEXT extends Struct<VkMicromapBuildSizesInfo
 
     /** An array of {@link VkMicromapBuildSizesInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkMicromapBuildSizesInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkMicromapBuildSizesInfoEXT ELEMENT_FACTORY = VkMicromapBuildSizesInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkMicromapBuildSizesInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkMicromapBuildSizesInfoEXT extends Struct<VkMicromapBuildSizesInfo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMicromapBuildSizesInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMicromapBuildSizesInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

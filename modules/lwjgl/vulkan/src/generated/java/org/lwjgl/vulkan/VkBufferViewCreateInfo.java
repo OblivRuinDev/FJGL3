@@ -308,9 +308,6 @@ public class VkBufferViewCreateInfo extends Struct<VkBufferViewCreateInfo> imple
 
     /** An array of {@link VkBufferViewCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkBufferViewCreateInfo, Buffer> implements NativeResource {
-
-        private static final VkBufferViewCreateInfo ELEMENT_FACTORY = VkBufferViewCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkBufferViewCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -333,18 +330,13 @@ public class VkBufferViewCreateInfo extends Struct<VkBufferViewCreateInfo> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBufferViewCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBufferViewCreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

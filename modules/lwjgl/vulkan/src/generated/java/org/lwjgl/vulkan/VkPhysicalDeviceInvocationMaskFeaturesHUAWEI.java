@@ -242,9 +242,6 @@ public class VkPhysicalDeviceInvocationMaskFeaturesHUAWEI extends Struct<VkPhysi
 
     /** An array of {@link VkPhysicalDeviceInvocationMaskFeaturesHUAWEI} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceInvocationMaskFeaturesHUAWEI, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceInvocationMaskFeaturesHUAWEI ELEMENT_FACTORY = VkPhysicalDeviceInvocationMaskFeaturesHUAWEI.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceInvocationMaskFeaturesHUAWEI.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceInvocationMaskFeaturesHUAWEI extends Struct<VkPhysi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceInvocationMaskFeaturesHUAWEI getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceInvocationMaskFeaturesHUAWEI.class;
         }
 
         /** @return the value of the {@code sType} field. */

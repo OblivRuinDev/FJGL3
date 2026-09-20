@@ -223,9 +223,6 @@ public class BGFXMemory extends Struct<BGFXMemory> implements NativeResource {
 
     /** An array of {@link BGFXMemory} structs. */
     public static class Buffer extends StructBuffer<BGFXMemory, Buffer> implements NativeResource {
-
-        private static final BGFXMemory ELEMENT_FACTORY = BGFXMemory.create(-1L);
-
         /**
          * Creates a new {@code BGFXMemory.Buffer} instance backed by the specified container.
          *
@@ -248,18 +245,13 @@ public class BGFXMemory extends Struct<BGFXMemory> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected BGFXMemory getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return BGFXMemory.class;
         }
 
         /** @return a {@link ByteBuffer} view of the data pointed to by the {@code data} field. */

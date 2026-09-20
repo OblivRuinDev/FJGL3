@@ -272,9 +272,6 @@ public class VkBufferCopy2 extends Struct<VkBufferCopy2> implements NativeResour
 
     /** An array of {@link VkBufferCopy2} structs. */
     public static class Buffer extends StructBuffer<VkBufferCopy2, Buffer> implements NativeResource {
-
-        private static final VkBufferCopy2 ELEMENT_FACTORY = VkBufferCopy2.create(-1L);
-
         /**
          * Creates a new {@code VkBufferCopy2.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkBufferCopy2 extends Struct<VkBufferCopy2> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBufferCopy2 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBufferCopy2.class;
         }
 
         /** @return the value of the {@code sType} field. */

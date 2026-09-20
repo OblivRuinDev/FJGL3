@@ -277,9 +277,6 @@ public class NkImage extends Struct<NkImage> implements NativeResource {
 
     /** An array of {@link NkImage} structs. */
     public static class Buffer extends StructBuffer<NkImage, Buffer> implements NativeResource {
-
-        private static final NkImage ELEMENT_FACTORY = NkImage.create(-1L);
-
         /**
          * Creates a new {@code NkImage.Buffer} instance backed by the specified container.
          *
@@ -302,18 +299,13 @@ public class NkImage extends Struct<NkImage> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkImage getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkImage.class;
         }
 
         /** @return a {@link NkHandle} view of the {@code handle} field. */

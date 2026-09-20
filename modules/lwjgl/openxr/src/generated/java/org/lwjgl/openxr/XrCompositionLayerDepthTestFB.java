@@ -257,9 +257,6 @@ public class XrCompositionLayerDepthTestFB extends Struct<XrCompositionLayerDept
 
     /** An array of {@link XrCompositionLayerDepthTestFB} structs. */
     public static class Buffer extends StructBuffer<XrCompositionLayerDepthTestFB, Buffer> implements NativeResource {
-
-        private static final XrCompositionLayerDepthTestFB ELEMENT_FACTORY = XrCompositionLayerDepthTestFB.create(-1L);
-
         /**
          * Creates a new {@code XrCompositionLayerDepthTestFB.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class XrCompositionLayerDepthTestFB extends Struct<XrCompositionLayerDept
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrCompositionLayerDepthTestFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrCompositionLayerDepthTestFB.class;
         }
 
         /** @return the value of the {@code type} field. */

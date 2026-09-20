@@ -200,9 +200,6 @@ public class XrFrustumfKHR extends XrFrustumf {
 
     /** An array of {@link XrFrustumfKHR} structs. */
     public static class Buffer extends XrFrustumf.Buffer {
-
-        private static final XrFrustumfKHR ELEMENT_FACTORY = XrFrustumfKHR.create(-1L);
-
         /**
          * Creates a new {@code XrFrustumfKHR.Buffer} instance backed by the specified container.
          *
@@ -225,18 +222,13 @@ public class XrFrustumfKHR extends XrFrustumf {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFrustumfKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFrustumfKHR.class;
         }
 
         /** Copies the specified {@link XrPosef} to the {@code pose} field. */

@@ -186,9 +186,6 @@ public class VkExternalBufferPropertiesKHR extends VkExternalBufferProperties {
 
     /** An array of {@link VkExternalBufferPropertiesKHR} structs. */
     public static class Buffer extends VkExternalBufferProperties.Buffer {
-
-        private static final VkExternalBufferPropertiesKHR ELEMENT_FACTORY = VkExternalBufferPropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkExternalBufferPropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -211,18 +208,13 @@ public class VkExternalBufferPropertiesKHR extends VkExternalBufferProperties {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExternalBufferPropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExternalBufferPropertiesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

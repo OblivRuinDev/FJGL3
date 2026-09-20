@@ -245,9 +245,6 @@ public class VkDrmFormatModifierPropertiesList2EXT extends Struct<VkDrmFormatMod
 
     /** An array of {@link VkDrmFormatModifierPropertiesList2EXT} structs. */
     public static class Buffer extends StructBuffer<VkDrmFormatModifierPropertiesList2EXT, Buffer> implements NativeResource {
-
-        private static final VkDrmFormatModifierPropertiesList2EXT ELEMENT_FACTORY = VkDrmFormatModifierPropertiesList2EXT.create(-1L);
-
         /**
          * Creates a new {@code VkDrmFormatModifierPropertiesList2EXT.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkDrmFormatModifierPropertiesList2EXT extends Struct<VkDrmFormatMod
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDrmFormatModifierPropertiesList2EXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDrmFormatModifierPropertiesList2EXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

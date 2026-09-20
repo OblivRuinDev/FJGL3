@@ -300,9 +300,6 @@ public class VkStencilOpState extends Struct<VkStencilOpState> implements Native
 
     /** An array of {@link VkStencilOpState} structs. */
     public static class Buffer extends StructBuffer<VkStencilOpState, Buffer> implements NativeResource {
-
-        private static final VkStencilOpState ELEMENT_FACTORY = VkStencilOpState.create(-1L);
-
         /**
          * Creates a new {@code VkStencilOpState.Buffer} instance backed by the specified container.
          *
@@ -325,18 +322,13 @@ public class VkStencilOpState extends Struct<VkStencilOpState> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkStencilOpState getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkStencilOpState.class;
         }
 
         /** @return the value of the {@code failOp} field. */

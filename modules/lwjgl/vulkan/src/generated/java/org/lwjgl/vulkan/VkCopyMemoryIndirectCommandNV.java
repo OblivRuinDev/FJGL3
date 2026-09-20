@@ -188,9 +188,6 @@ public class VkCopyMemoryIndirectCommandNV extends VkCopyMemoryIndirectCommandKH
 
     /** An array of {@link VkCopyMemoryIndirectCommandNV} structs. */
     public static class Buffer extends VkCopyMemoryIndirectCommandKHR.Buffer {
-
-        private static final VkCopyMemoryIndirectCommandNV ELEMENT_FACTORY = VkCopyMemoryIndirectCommandNV.create(-1L);
-
         /**
          * Creates a new {@code VkCopyMemoryIndirectCommandNV.Buffer} instance backed by the specified container.
          *
@@ -213,18 +210,13 @@ public class VkCopyMemoryIndirectCommandNV extends VkCopyMemoryIndirectCommandKH
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCopyMemoryIndirectCommandNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCopyMemoryIndirectCommandNV.class;
         }
 
         /** Sets the specified value to the {@code srcAddress} field. */

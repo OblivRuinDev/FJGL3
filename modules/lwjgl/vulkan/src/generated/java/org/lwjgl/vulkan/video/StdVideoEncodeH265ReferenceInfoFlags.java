@@ -232,9 +232,6 @@ public class StdVideoEncodeH265ReferenceInfoFlags extends Struct<StdVideoEncodeH
 
     /** An array of {@link StdVideoEncodeH265ReferenceInfoFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoEncodeH265ReferenceInfoFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoEncodeH265ReferenceInfoFlags ELEMENT_FACTORY = StdVideoEncodeH265ReferenceInfoFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoEncodeH265ReferenceInfoFlags.Buffer} instance backed by the specified container.
          *
@@ -257,18 +254,13 @@ public class StdVideoEncodeH265ReferenceInfoFlags extends Struct<StdVideoEncodeH
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoEncodeH265ReferenceInfoFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoEncodeH265ReferenceInfoFlags.class;
         }
 
         /** @return the value of the {@code used_for_long_term_reference} field. */

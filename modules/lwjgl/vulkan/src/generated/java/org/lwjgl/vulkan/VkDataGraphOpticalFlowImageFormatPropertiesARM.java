@@ -236,9 +236,6 @@ public class VkDataGraphOpticalFlowImageFormatPropertiesARM extends Struct<VkDat
 
     /** An array of {@link VkDataGraphOpticalFlowImageFormatPropertiesARM} structs. */
     public static class Buffer extends StructBuffer<VkDataGraphOpticalFlowImageFormatPropertiesARM, Buffer> implements NativeResource {
-
-        private static final VkDataGraphOpticalFlowImageFormatPropertiesARM ELEMENT_FACTORY = VkDataGraphOpticalFlowImageFormatPropertiesARM.create(-1L);
-
         /**
          * Creates a new {@code VkDataGraphOpticalFlowImageFormatPropertiesARM.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkDataGraphOpticalFlowImageFormatPropertiesARM extends Struct<VkDat
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDataGraphOpticalFlowImageFormatPropertiesARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDataGraphOpticalFlowImageFormatPropertiesARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -127,9 +127,6 @@ public class XrHandCapsuleFB extends Struct<XrHandCapsuleFB> {
 
     /** An array of {@link XrHandCapsuleFB} structs. */
     public static class Buffer extends StructBuffer<XrHandCapsuleFB, Buffer> {
-
-        private static final XrHandCapsuleFB ELEMENT_FACTORY = XrHandCapsuleFB.create(-1L);
-
         /**
          * Creates a new {@code XrHandCapsuleFB.Buffer} instance backed by the specified container.
          *
@@ -152,18 +149,13 @@ public class XrHandCapsuleFB extends Struct<XrHandCapsuleFB> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHandCapsuleFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHandCapsuleFB.class;
         }
 
         /** @return a {@link XrVector3f}.Buffer view of the {@code points} field. */

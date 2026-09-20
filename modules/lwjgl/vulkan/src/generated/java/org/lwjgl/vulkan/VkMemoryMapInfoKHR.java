@@ -209,9 +209,6 @@ public class VkMemoryMapInfoKHR extends VkMemoryMapInfo {
 
     /** An array of {@link VkMemoryMapInfoKHR} structs. */
     public static class Buffer extends VkMemoryMapInfo.Buffer {
-
-        private static final VkMemoryMapInfoKHR ELEMENT_FACTORY = VkMemoryMapInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkMemoryMapInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -234,18 +231,13 @@ public class VkMemoryMapInfoKHR extends VkMemoryMapInfo {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMemoryMapInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMemoryMapInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

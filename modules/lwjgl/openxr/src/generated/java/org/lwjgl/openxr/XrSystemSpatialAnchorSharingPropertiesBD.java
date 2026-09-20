@@ -236,9 +236,6 @@ public class XrSystemSpatialAnchorSharingPropertiesBD extends Struct<XrSystemSpa
 
     /** An array of {@link XrSystemSpatialAnchorSharingPropertiesBD} structs. */
     public static class Buffer extends StructBuffer<XrSystemSpatialAnchorSharingPropertiesBD, Buffer> implements NativeResource {
-
-        private static final XrSystemSpatialAnchorSharingPropertiesBD ELEMENT_FACTORY = XrSystemSpatialAnchorSharingPropertiesBD.create(-1L);
-
         /**
          * Creates a new {@code XrSystemSpatialAnchorSharingPropertiesBD.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemSpatialAnchorSharingPropertiesBD extends Struct<XrSystemSpa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemSpatialAnchorSharingPropertiesBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemSpatialAnchorSharingPropertiesBD.class;
         }
 
         /** @return the value of the {@code type} field. */

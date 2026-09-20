@@ -287,9 +287,6 @@ public class VkPipelineRobustnessCreateInfo extends Struct<VkPipelineRobustnessC
 
     /** An array of {@link VkPipelineRobustnessCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkPipelineRobustnessCreateInfo, Buffer> implements NativeResource {
-
-        private static final VkPipelineRobustnessCreateInfo ELEMENT_FACTORY = VkPipelineRobustnessCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineRobustnessCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -312,18 +309,13 @@ public class VkPipelineRobustnessCreateInfo extends Struct<VkPipelineRobustnessC
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineRobustnessCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineRobustnessCreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -368,9 +368,6 @@ public class VkAttachmentDescription2 extends Struct<VkAttachmentDescription2> i
 
     /** An array of {@link VkAttachmentDescription2} structs. */
     public static class Buffer extends StructBuffer<VkAttachmentDescription2, Buffer> implements NativeResource {
-
-        private static final VkAttachmentDescription2 ELEMENT_FACTORY = VkAttachmentDescription2.create(-1L);
-
         /**
          * Creates a new {@code VkAttachmentDescription2.Buffer} instance backed by the specified container.
          *
@@ -393,18 +390,13 @@ public class VkAttachmentDescription2 extends Struct<VkAttachmentDescription2> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAttachmentDescription2 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAttachmentDescription2.class;
         }
 
         /** @return the value of the {@code sType} field. */

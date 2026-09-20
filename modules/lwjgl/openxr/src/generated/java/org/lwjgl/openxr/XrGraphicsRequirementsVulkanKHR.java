@@ -257,9 +257,6 @@ public class XrGraphicsRequirementsVulkanKHR extends Struct<XrGraphicsRequiremen
 
     /** An array of {@link XrGraphicsRequirementsVulkanKHR} structs. */
     public static class Buffer extends StructBuffer<XrGraphicsRequirementsVulkanKHR, Buffer> implements NativeResource {
-
-        private static final XrGraphicsRequirementsVulkanKHR ELEMENT_FACTORY = XrGraphicsRequirementsVulkanKHR.create(-1L);
-
         /**
          * Creates a new {@code XrGraphicsRequirementsVulkanKHR.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class XrGraphicsRequirementsVulkanKHR extends Struct<XrGraphicsRequiremen
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrGraphicsRequirementsVulkanKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrGraphicsRequirementsVulkanKHR.class;
         }
 
         /** @return the value of the {@code type} field. */

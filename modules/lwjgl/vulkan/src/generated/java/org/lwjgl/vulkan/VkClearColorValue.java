@@ -275,9 +275,6 @@ public class VkClearColorValue extends Struct<VkClearColorValue> implements Nati
 
     /** An array of {@link VkClearColorValue} structs. */
     public static class Buffer extends StructBuffer<VkClearColorValue, Buffer> implements NativeResource {
-
-        private static final VkClearColorValue ELEMENT_FACTORY = VkClearColorValue.create(-1L);
-
         /**
          * Creates a new {@code VkClearColorValue.Buffer} instance backed by the specified container.
          *
@@ -300,18 +297,13 @@ public class VkClearColorValue extends Struct<VkClearColorValue> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkClearColorValue getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkClearColorValue.class;
         }
 
         /** @return a {@link FloatBuffer} view of the {@code float32} field. */

@@ -275,9 +275,6 @@ public class NkNineSlice extends Struct<NkNineSlice> implements NativeResource {
 
     /** An array of {@link NkNineSlice} structs. */
     public static class Buffer extends StructBuffer<NkNineSlice, Buffer> implements NativeResource {
-
-        private static final NkNineSlice ELEMENT_FACTORY = NkNineSlice.create(-1L);
-
         /**
          * Creates a new {@code NkNineSlice.Buffer} instance backed by the specified container.
          *
@@ -300,18 +297,13 @@ public class NkNineSlice extends Struct<NkNineSlice> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkNineSlice getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkNineSlice.class;
         }
 
         /** @return a {@link NkImage} view of the {@code img} field. */

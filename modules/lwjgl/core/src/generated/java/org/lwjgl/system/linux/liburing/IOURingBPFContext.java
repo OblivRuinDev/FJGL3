@@ -351,9 +351,6 @@ public class IOURingBPFContext extends Struct<IOURingBPFContext> implements Nati
 
     /** An array of {@link IOURingBPFContext} structs. */
     public static class Buffer extends StructBuffer<IOURingBPFContext, Buffer> implements NativeResource {
-
-        private static final IOURingBPFContext ELEMENT_FACTORY = IOURingBPFContext.create(-1L);
-
         /**
          * Creates a new {@code IOURingBPFContext.Buffer} instance backed by the specified container.
          *
@@ -376,18 +373,13 @@ public class IOURingBPFContext extends Struct<IOURingBPFContext> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingBPFContext getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingBPFContext.class;
         }
 
         /** @return the value of the {@code user_data} field. */

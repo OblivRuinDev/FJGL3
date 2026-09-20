@@ -285,9 +285,6 @@ public class IOURingProbe extends Struct<IOURingProbe> implements NativeResource
 
     /** An array of {@link IOURingProbe} structs. */
     public static class Buffer extends StructBuffer<IOURingProbe, Buffer> implements NativeResource {
-
-        private static final IOURingProbe ELEMENT_FACTORY = IOURingProbe.create(-1L);
-
         /**
          * Creates a new {@code IOURingProbe.Buffer} instance backed by the specified container.
          *
@@ -310,18 +307,13 @@ public class IOURingProbe extends Struct<IOURingProbe> implements NativeResource
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingProbe getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingProbe.class;
         }
 
         /** @return the value of the {@code last_op} field. */

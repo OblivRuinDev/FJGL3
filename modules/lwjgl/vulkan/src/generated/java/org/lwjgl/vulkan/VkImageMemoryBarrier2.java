@@ -386,9 +386,6 @@ public class VkImageMemoryBarrier2 extends Struct<VkImageMemoryBarrier2> impleme
 
     /** An array of {@link VkImageMemoryBarrier2} structs. */
     public static class Buffer extends StructBuffer<VkImageMemoryBarrier2, Buffer> implements NativeResource {
-
-        private static final VkImageMemoryBarrier2 ELEMENT_FACTORY = VkImageMemoryBarrier2.create(-1L);
-
         /**
          * Creates a new {@code VkImageMemoryBarrier2.Buffer} instance backed by the specified container.
          *
@@ -411,18 +408,13 @@ public class VkImageMemoryBarrier2 extends Struct<VkImageMemoryBarrier2> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageMemoryBarrier2 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageMemoryBarrier2.class;
         }
 
         /** @return the value of the {@code sType} field. */

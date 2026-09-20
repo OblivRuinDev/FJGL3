@@ -172,9 +172,6 @@ public class XrUuidEXT extends XrUuid {
 
     /** An array of {@link XrUuidEXT} structs. */
     public static class Buffer extends XrUuid.Buffer {
-
-        private static final XrUuidEXT ELEMENT_FACTORY = XrUuidEXT.create(-1L);
-
         /**
          * Creates a new {@code XrUuidEXT.Buffer} instance backed by the specified container.
          *
@@ -197,18 +194,13 @@ public class XrUuidEXT extends XrUuid {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrUuidEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrUuidEXT.class;
         }
 
         /** Copies the specified {@link ByteBuffer} to the {@code data} field. */

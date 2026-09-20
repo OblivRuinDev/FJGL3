@@ -185,9 +185,6 @@ public class XrSpherefKHR extends XrSpheref {
 
     /** An array of {@link XrSpherefKHR} structs. */
     public static class Buffer extends XrSpheref.Buffer {
-
-        private static final XrSpherefKHR ELEMENT_FACTORY = XrSpherefKHR.create(-1L);
-
         /**
          * Creates a new {@code XrSpherefKHR.Buffer} instance backed by the specified container.
          *
@@ -210,18 +207,13 @@ public class XrSpherefKHR extends XrSpheref {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpherefKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpherefKHR.class;
         }
 
         /** Copies the specified {@link XrPosef} to the {@code center} field. */

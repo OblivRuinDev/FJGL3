@@ -271,9 +271,6 @@ public class VkDataGraphPipelineConstantARM extends Struct<VkDataGraphPipelineCo
 
     /** An array of {@link VkDataGraphPipelineConstantARM} structs. */
     public static class Buffer extends StructBuffer<VkDataGraphPipelineConstantARM, Buffer> implements NativeResource {
-
-        private static final VkDataGraphPipelineConstantARM ELEMENT_FACTORY = VkDataGraphPipelineConstantARM.create(-1L);
-
         /**
          * Creates a new {@code VkDataGraphPipelineConstantARM.Buffer} instance backed by the specified container.
          *
@@ -296,18 +293,13 @@ public class VkDataGraphPipelineConstantARM extends Struct<VkDataGraphPipelineCo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDataGraphPipelineConstantARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDataGraphPipelineConstantARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

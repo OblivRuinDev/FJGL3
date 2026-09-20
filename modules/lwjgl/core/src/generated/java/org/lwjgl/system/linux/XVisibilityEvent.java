@@ -293,9 +293,6 @@ public class XVisibilityEvent extends Struct<XVisibilityEvent> implements Native
 
     /** An array of {@link XVisibilityEvent} structs. */
     public static class Buffer extends StructBuffer<XVisibilityEvent, Buffer> implements NativeResource {
-
-        private static final XVisibilityEvent ELEMENT_FACTORY = XVisibilityEvent.create(-1L);
-
         /**
          * Creates a new {@code XVisibilityEvent.Buffer} instance backed by the specified container.
          *
@@ -318,18 +315,13 @@ public class XVisibilityEvent extends Struct<XVisibilityEvent> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XVisibilityEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XVisibilityEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

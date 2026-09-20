@@ -245,9 +245,6 @@ public class VkSwapchainTimingPropertiesEXT extends Struct<VkSwapchainTimingProp
 
     /** An array of {@link VkSwapchainTimingPropertiesEXT} structs. */
     public static class Buffer extends StructBuffer<VkSwapchainTimingPropertiesEXT, Buffer> implements NativeResource {
-
-        private static final VkSwapchainTimingPropertiesEXT ELEMENT_FACTORY = VkSwapchainTimingPropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkSwapchainTimingPropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkSwapchainTimingPropertiesEXT extends Struct<VkSwapchainTimingProp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSwapchainTimingPropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSwapchainTimingPropertiesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

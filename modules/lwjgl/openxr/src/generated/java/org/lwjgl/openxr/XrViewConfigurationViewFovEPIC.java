@@ -261,9 +261,6 @@ public class XrViewConfigurationViewFovEPIC extends Struct<XrViewConfigurationVi
 
     /** An array of {@link XrViewConfigurationViewFovEPIC} structs. */
     public static class Buffer extends StructBuffer<XrViewConfigurationViewFovEPIC, Buffer> implements NativeResource {
-
-        private static final XrViewConfigurationViewFovEPIC ELEMENT_FACTORY = XrViewConfigurationViewFovEPIC.create(-1L);
-
         /**
          * Creates a new {@code XrViewConfigurationViewFovEPIC.Buffer} instance backed by the specified container.
          *
@@ -286,18 +283,13 @@ public class XrViewConfigurationViewFovEPIC extends Struct<XrViewConfigurationVi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrViewConfigurationViewFovEPIC getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrViewConfigurationViewFovEPIC.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -299,9 +299,6 @@ public class XrDebugUtilsMessengerCreateInfoEXT extends Struct<XrDebugUtilsMesse
 
     /** An array of {@link XrDebugUtilsMessengerCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<XrDebugUtilsMessengerCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final XrDebugUtilsMessengerCreateInfoEXT ELEMENT_FACTORY = XrDebugUtilsMessengerCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code XrDebugUtilsMessengerCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -324,18 +321,13 @@ public class XrDebugUtilsMessengerCreateInfoEXT extends Struct<XrDebugUtilsMesse
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrDebugUtilsMessengerCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrDebugUtilsMessengerCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

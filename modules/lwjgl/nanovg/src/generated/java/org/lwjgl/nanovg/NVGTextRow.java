@@ -226,9 +226,6 @@ public class NVGTextRow extends Struct<NVGTextRow> implements NativeResource {
 
     /** An array of {@link NVGTextRow} structs. */
     public static class Buffer extends StructBuffer<NVGTextRow, Buffer> implements NativeResource {
-
-        private static final NVGTextRow ELEMENT_FACTORY = NVGTextRow.create(-1L);
-
         /**
          * Creates a new {@code NVGTextRow.Buffer} instance backed by the specified container.
          *
@@ -251,18 +248,13 @@ public class NVGTextRow extends Struct<NVGTextRow> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NVGTextRow getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NVGTextRow.class;
         }
 
         /** @return the value of the {@code start} field. */

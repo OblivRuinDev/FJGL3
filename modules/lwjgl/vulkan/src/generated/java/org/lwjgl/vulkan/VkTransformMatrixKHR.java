@@ -217,9 +217,6 @@ public class VkTransformMatrixKHR extends Struct<VkTransformMatrixKHR> implement
 
     /** An array of {@link VkTransformMatrixKHR} structs. */
     public static class Buffer extends StructBuffer<VkTransformMatrixKHR, Buffer> implements NativeResource {
-
-        private static final VkTransformMatrixKHR ELEMENT_FACTORY = VkTransformMatrixKHR.create(-1L);
-
         /**
          * Creates a new {@code VkTransformMatrixKHR.Buffer} instance backed by the specified container.
          *
@@ -242,18 +239,13 @@ public class VkTransformMatrixKHR extends Struct<VkTransformMatrixKHR> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkTransformMatrixKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkTransformMatrixKHR.class;
         }
 
         /** @return a {@link FloatBuffer} view of the {@code matrix} field. */

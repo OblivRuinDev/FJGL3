@@ -125,9 +125,6 @@ public class VkPipelineExecutableStatisticValueKHR extends Struct<VkPipelineExec
 
     /** An array of {@link VkPipelineExecutableStatisticValueKHR} structs. */
     public static class Buffer extends StructBuffer<VkPipelineExecutableStatisticValueKHR, Buffer> {
-
-        private static final VkPipelineExecutableStatisticValueKHR ELEMENT_FACTORY = VkPipelineExecutableStatisticValueKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineExecutableStatisticValueKHR.Buffer} instance backed by the specified container.
          *
@@ -150,18 +147,13 @@ public class VkPipelineExecutableStatisticValueKHR extends Struct<VkPipelineExec
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineExecutableStatisticValueKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineExecutableStatisticValueKHR.class;
         }
 
         /** @return the value of the {@code b32} field. */

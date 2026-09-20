@@ -186,9 +186,6 @@ public class VkSparseImageFormatProperties2KHR extends VkSparseImageFormatProper
 
     /** An array of {@link VkSparseImageFormatProperties2KHR} structs. */
     public static class Buffer extends VkSparseImageFormatProperties2.Buffer {
-
-        private static final VkSparseImageFormatProperties2KHR ELEMENT_FACTORY = VkSparseImageFormatProperties2KHR.create(-1L);
-
         /**
          * Creates a new {@code VkSparseImageFormatProperties2KHR.Buffer} instance backed by the specified container.
          *
@@ -211,18 +208,13 @@ public class VkSparseImageFormatProperties2KHR extends VkSparseImageFormatProper
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSparseImageFormatProperties2KHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSparseImageFormatProperties2KHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

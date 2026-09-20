@@ -302,9 +302,6 @@ public class XrGeometryInstanceTransformFB extends Struct<XrGeometryInstanceTran
 
     /** An array of {@link XrGeometryInstanceTransformFB} structs. */
     public static class Buffer extends StructBuffer<XrGeometryInstanceTransformFB, Buffer> implements NativeResource {
-
-        private static final XrGeometryInstanceTransformFB ELEMENT_FACTORY = XrGeometryInstanceTransformFB.create(-1L);
-
         /**
          * Creates a new {@code XrGeometryInstanceTransformFB.Buffer} instance backed by the specified container.
          *
@@ -327,18 +324,13 @@ public class XrGeometryInstanceTransformFB extends Struct<XrGeometryInstanceTran
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrGeometryInstanceTransformFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrGeometryInstanceTransformFB.class;
         }
 
         /** @return the value of the {@code type} field. */

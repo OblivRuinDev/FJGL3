@@ -242,9 +242,6 @@ public class VkShaderModuleValidationCacheCreateInfoEXT extends Struct<VkShaderM
 
     /** An array of {@link VkShaderModuleValidationCacheCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkShaderModuleValidationCacheCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkShaderModuleValidationCacheCreateInfoEXT ELEMENT_FACTORY = VkShaderModuleValidationCacheCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkShaderModuleValidationCacheCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkShaderModuleValidationCacheCreateInfoEXT extends Struct<VkShaderM
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkShaderModuleValidationCacheCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkShaderModuleValidationCacheCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

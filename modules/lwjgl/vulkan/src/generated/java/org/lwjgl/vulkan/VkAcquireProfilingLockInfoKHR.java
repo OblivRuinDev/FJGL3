@@ -257,9 +257,6 @@ public class VkAcquireProfilingLockInfoKHR extends Struct<VkAcquireProfilingLock
 
     /** An array of {@link VkAcquireProfilingLockInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkAcquireProfilingLockInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkAcquireProfilingLockInfoKHR ELEMENT_FACTORY = VkAcquireProfilingLockInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkAcquireProfilingLockInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkAcquireProfilingLockInfoKHR extends Struct<VkAcquireProfilingLock
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAcquireProfilingLockInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAcquireProfilingLockInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

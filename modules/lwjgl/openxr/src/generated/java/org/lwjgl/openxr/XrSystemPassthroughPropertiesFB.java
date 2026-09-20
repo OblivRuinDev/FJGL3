@@ -236,9 +236,6 @@ public class XrSystemPassthroughPropertiesFB extends Struct<XrSystemPassthroughP
 
     /** An array of {@link XrSystemPassthroughPropertiesFB} structs. */
     public static class Buffer extends StructBuffer<XrSystemPassthroughPropertiesFB, Buffer> implements NativeResource {
-
-        private static final XrSystemPassthroughPropertiesFB ELEMENT_FACTORY = XrSystemPassthroughPropertiesFB.create(-1L);
-
         /**
          * Creates a new {@code XrSystemPassthroughPropertiesFB.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemPassthroughPropertiesFB extends Struct<XrSystemPassthroughP
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemPassthroughPropertiesFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemPassthroughPropertiesFB.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -107,9 +107,6 @@ public class FT_Prop_GlyphToScriptMap extends Struct<FT_Prop_GlyphToScriptMap> {
 
     /** An array of {@link FT_Prop_GlyphToScriptMap} structs. */
     public static class Buffer extends StructBuffer<FT_Prop_GlyphToScriptMap, Buffer> {
-
-        private static final FT_Prop_GlyphToScriptMap ELEMENT_FACTORY = FT_Prop_GlyphToScriptMap.create(-1L);
-
         /**
          * Creates a new {@code FT_Prop_GlyphToScriptMap.Buffer} instance backed by the specified container.
          *
@@ -132,18 +129,13 @@ public class FT_Prop_GlyphToScriptMap extends Struct<FT_Prop_GlyphToScriptMap> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Prop_GlyphToScriptMap getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Prop_GlyphToScriptMap.class;
         }
 
         /** @return a {@link FT_Face} view of the struct pointed to by the {@code face} field. */

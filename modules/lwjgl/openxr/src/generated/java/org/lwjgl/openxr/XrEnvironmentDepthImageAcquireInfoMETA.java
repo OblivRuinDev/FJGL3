@@ -267,9 +267,6 @@ public class XrEnvironmentDepthImageAcquireInfoMETA extends Struct<XrEnvironment
 
     /** An array of {@link XrEnvironmentDepthImageAcquireInfoMETA} structs. */
     public static class Buffer extends StructBuffer<XrEnvironmentDepthImageAcquireInfoMETA, Buffer> implements NativeResource {
-
-        private static final XrEnvironmentDepthImageAcquireInfoMETA ELEMENT_FACTORY = XrEnvironmentDepthImageAcquireInfoMETA.create(-1L);
-
         /**
          * Creates a new {@code XrEnvironmentDepthImageAcquireInfoMETA.Buffer} instance backed by the specified container.
          *
@@ -292,18 +289,13 @@ public class XrEnvironmentDepthImageAcquireInfoMETA extends Struct<XrEnvironment
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEnvironmentDepthImageAcquireInfoMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEnvironmentDepthImageAcquireInfoMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

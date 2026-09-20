@@ -337,9 +337,6 @@ public class SDL_GPUDepthStencilState extends Struct<SDL_GPUDepthStencilState> i
 
     /** An array of {@link SDL_GPUDepthStencilState} structs. */
     public static class Buffer extends StructBuffer<SDL_GPUDepthStencilState, Buffer> implements NativeResource {
-
-        private static final SDL_GPUDepthStencilState ELEMENT_FACTORY = SDL_GPUDepthStencilState.create(-1L);
-
         /**
          * Creates a new {@code SDL_GPUDepthStencilState.Buffer} instance backed by the specified container.
          *
@@ -362,18 +359,13 @@ public class SDL_GPUDepthStencilState extends Struct<SDL_GPUDepthStencilState> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GPUDepthStencilState getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GPUDepthStencilState.class;
         }
 
         /** @return the value of the {@code compare_op} field. */

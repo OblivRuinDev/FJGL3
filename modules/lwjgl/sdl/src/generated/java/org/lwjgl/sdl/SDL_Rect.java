@@ -251,9 +251,6 @@ public class SDL_Rect extends Struct<SDL_Rect> implements NativeResource {
 
     /** An array of {@link SDL_Rect} structs. */
     public static class Buffer extends StructBuffer<SDL_Rect, Buffer> implements NativeResource {
-
-        private static final SDL_Rect ELEMENT_FACTORY = SDL_Rect.create(-1L);
-
         /**
          * Creates a new {@code SDL_Rect.Buffer} instance backed by the specified container.
          *
@@ -276,18 +273,13 @@ public class SDL_Rect extends Struct<SDL_Rect> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_Rect getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_Rect.class;
         }
 
         /** @return the value of the {@code x} field. */

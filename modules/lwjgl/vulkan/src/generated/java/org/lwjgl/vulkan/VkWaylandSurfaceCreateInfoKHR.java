@@ -274,9 +274,6 @@ public class VkWaylandSurfaceCreateInfoKHR extends Struct<VkWaylandSurfaceCreate
 
     /** An array of {@link VkWaylandSurfaceCreateInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkWaylandSurfaceCreateInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkWaylandSurfaceCreateInfoKHR ELEMENT_FACTORY = VkWaylandSurfaceCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkWaylandSurfaceCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -299,18 +296,13 @@ public class VkWaylandSurfaceCreateInfoKHR extends Struct<VkWaylandSurfaceCreate
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkWaylandSurfaceCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkWaylandSurfaceCreateInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

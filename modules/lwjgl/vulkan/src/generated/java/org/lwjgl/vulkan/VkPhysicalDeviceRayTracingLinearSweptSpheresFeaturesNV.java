@@ -257,9 +257,6 @@ public class VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV extends Stru
 
     /** An array of {@link VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV ELEMENT_FACTORY = VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV extends Stru
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

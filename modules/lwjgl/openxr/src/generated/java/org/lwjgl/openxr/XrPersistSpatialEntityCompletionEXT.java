@@ -285,9 +285,6 @@ public class XrPersistSpatialEntityCompletionEXT extends Struct<XrPersistSpatial
 
     /** An array of {@link XrPersistSpatialEntityCompletionEXT} structs. */
     public static class Buffer extends StructBuffer<XrPersistSpatialEntityCompletionEXT, Buffer> implements NativeResource {
-
-        private static final XrPersistSpatialEntityCompletionEXT ELEMENT_FACTORY = XrPersistSpatialEntityCompletionEXT.create(-1L);
-
         /**
          * Creates a new {@code XrPersistSpatialEntityCompletionEXT.Buffer} instance backed by the specified container.
          *
@@ -310,18 +307,13 @@ public class XrPersistSpatialEntityCompletionEXT extends Struct<XrPersistSpatial
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrPersistSpatialEntityCompletionEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrPersistSpatialEntityCompletionEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

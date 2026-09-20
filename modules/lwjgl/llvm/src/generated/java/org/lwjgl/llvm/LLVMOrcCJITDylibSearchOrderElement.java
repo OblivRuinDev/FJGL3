@@ -235,9 +235,6 @@ public class LLVMOrcCJITDylibSearchOrderElement extends Struct<LLVMOrcCJITDylibS
 
     /** An array of {@link LLVMOrcCJITDylibSearchOrderElement} structs. */
     public static class Buffer extends StructBuffer<LLVMOrcCJITDylibSearchOrderElement, Buffer> implements NativeResource {
-
-        private static final LLVMOrcCJITDylibSearchOrderElement ELEMENT_FACTORY = LLVMOrcCJITDylibSearchOrderElement.create(-1L);
-
         /**
          * Creates a new {@code LLVMOrcCJITDylibSearchOrderElement.Buffer} instance backed by the specified container.
          *
@@ -260,18 +257,13 @@ public class LLVMOrcCJITDylibSearchOrderElement extends Struct<LLVMOrcCJITDylibS
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected LLVMOrcCJITDylibSearchOrderElement getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return LLVMOrcCJITDylibSearchOrderElement.class;
         }
 
         /** @return the value of the {@code JD} field. */

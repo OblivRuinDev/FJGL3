@@ -269,9 +269,6 @@ public class EXRVersion extends Struct<EXRVersion> implements NativeResource {
 
     /** An array of {@link EXRVersion} structs. */
     public static class Buffer extends StructBuffer<EXRVersion, Buffer> implements NativeResource {
-
-        private static final EXRVersion ELEMENT_FACTORY = EXRVersion.create(-1L);
-
         /**
          * Creates a new {@code EXRVersion.Buffer} instance backed by the specified container.
          *
@@ -294,18 +291,13 @@ public class EXRVersion extends Struct<EXRVersion> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected EXRVersion getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return EXRVersion.class;
         }
 
         /** @return the value of the {@code version} field. */

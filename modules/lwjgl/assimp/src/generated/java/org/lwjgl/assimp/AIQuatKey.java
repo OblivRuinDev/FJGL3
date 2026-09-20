@@ -244,9 +244,6 @@ public class AIQuatKey extends Struct<AIQuatKey> implements NativeResource {
 
     /** An array of {@link AIQuatKey} structs. */
     public static class Buffer extends StructBuffer<AIQuatKey, Buffer> implements NativeResource {
-
-        private static final AIQuatKey ELEMENT_FACTORY = AIQuatKey.create(-1L);
-
         /**
          * Creates a new {@code AIQuatKey.Buffer} instance backed by the specified container.
          *
@@ -269,18 +266,13 @@ public class AIQuatKey extends Struct<AIQuatKey> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIQuatKey getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIQuatKey.class;
         }
 
         /** @return the value of the {@code mTime} field. */

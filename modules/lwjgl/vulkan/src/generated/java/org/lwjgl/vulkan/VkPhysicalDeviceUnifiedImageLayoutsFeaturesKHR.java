@@ -257,9 +257,6 @@ public class VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR extends Struct<VkPhy
 
     /** An array of {@link VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR extends Struct<VkPhy
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

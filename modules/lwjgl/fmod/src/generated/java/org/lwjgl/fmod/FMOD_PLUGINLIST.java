@@ -235,9 +235,6 @@ public class FMOD_PLUGINLIST extends Struct<FMOD_PLUGINLIST> implements NativeRe
 
     /** An array of {@link FMOD_PLUGINLIST} structs. */
     public static class Buffer extends StructBuffer<FMOD_PLUGINLIST, Buffer> implements NativeResource {
-
-        private static final FMOD_PLUGINLIST ELEMENT_FACTORY = FMOD_PLUGINLIST.create(-1L);
-
         /**
          * Creates a new {@code FMOD_PLUGINLIST.Buffer} instance backed by the specified container.
          *
@@ -260,18 +257,13 @@ public class FMOD_PLUGINLIST extends Struct<FMOD_PLUGINLIST> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_PLUGINLIST getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_PLUGINLIST.class;
         }
 
         /** @return the value of the {@code type} field. */

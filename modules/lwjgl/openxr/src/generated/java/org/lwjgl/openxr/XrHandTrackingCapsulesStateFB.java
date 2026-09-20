@@ -247,9 +247,6 @@ public class XrHandTrackingCapsulesStateFB extends Struct<XrHandTrackingCapsules
 
     /** An array of {@link XrHandTrackingCapsulesStateFB} structs. */
     public static class Buffer extends StructBuffer<XrHandTrackingCapsulesStateFB, Buffer> implements NativeResource {
-
-        private static final XrHandTrackingCapsulesStateFB ELEMENT_FACTORY = XrHandTrackingCapsulesStateFB.create(-1L);
-
         /**
          * Creates a new {@code XrHandTrackingCapsulesStateFB.Buffer} instance backed by the specified container.
          *
@@ -272,18 +269,13 @@ public class XrHandTrackingCapsulesStateFB extends Struct<XrHandTrackingCapsules
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHandTrackingCapsulesStateFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHandTrackingCapsulesStateFB.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -362,9 +362,6 @@ public class XrFaceStateANDROID extends Struct<XrFaceStateANDROID> implements Na
 
     /** An array of {@link XrFaceStateANDROID} structs. */
     public static class Buffer extends StructBuffer<XrFaceStateANDROID, Buffer> implements NativeResource {
-
-        private static final XrFaceStateANDROID ELEMENT_FACTORY = XrFaceStateANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrFaceStateANDROID.Buffer} instance backed by the specified container.
          *
@@ -387,18 +384,13 @@ public class XrFaceStateANDROID extends Struct<XrFaceStateANDROID> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFaceStateANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFaceStateANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

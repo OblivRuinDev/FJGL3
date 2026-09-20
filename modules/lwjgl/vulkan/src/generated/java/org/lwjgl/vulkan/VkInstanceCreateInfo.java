@@ -338,9 +338,6 @@ public class VkInstanceCreateInfo extends Struct<VkInstanceCreateInfo> implement
 
     /** An array of {@link VkInstanceCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkInstanceCreateInfo, Buffer> implements NativeResource {
-
-        private static final VkInstanceCreateInfo ELEMENT_FACTORY = VkInstanceCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkInstanceCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -363,18 +360,13 @@ public class VkInstanceCreateInfo extends Struct<VkInstanceCreateInfo> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkInstanceCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkInstanceCreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

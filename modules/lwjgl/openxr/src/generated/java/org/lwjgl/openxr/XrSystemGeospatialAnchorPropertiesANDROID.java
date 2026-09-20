@@ -236,9 +236,6 @@ public class XrSystemGeospatialAnchorPropertiesANDROID extends Struct<XrSystemGe
 
     /** An array of {@link XrSystemGeospatialAnchorPropertiesANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSystemGeospatialAnchorPropertiesANDROID, Buffer> implements NativeResource {
-
-        private static final XrSystemGeospatialAnchorPropertiesANDROID ELEMENT_FACTORY = XrSystemGeospatialAnchorPropertiesANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSystemGeospatialAnchorPropertiesANDROID.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemGeospatialAnchorPropertiesANDROID extends Struct<XrSystemGe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemGeospatialAnchorPropertiesANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemGeospatialAnchorPropertiesANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

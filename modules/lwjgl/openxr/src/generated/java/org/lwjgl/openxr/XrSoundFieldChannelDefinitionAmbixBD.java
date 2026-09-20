@@ -242,9 +242,6 @@ public class XrSoundFieldChannelDefinitionAmbixBD extends Struct<XrSoundFieldCha
 
     /** An array of {@link XrSoundFieldChannelDefinitionAmbixBD} structs. */
     public static class Buffer extends StructBuffer<XrSoundFieldChannelDefinitionAmbixBD, Buffer> implements NativeResource {
-
-        private static final XrSoundFieldChannelDefinitionAmbixBD ELEMENT_FACTORY = XrSoundFieldChannelDefinitionAmbixBD.create(-1L);
-
         /**
          * Creates a new {@code XrSoundFieldChannelDefinitionAmbixBD.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrSoundFieldChannelDefinitionAmbixBD extends Struct<XrSoundFieldCha
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSoundFieldChannelDefinitionAmbixBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSoundFieldChannelDefinitionAmbixBD.class;
         }
 
         /** @return the value of the {@code type} field. */

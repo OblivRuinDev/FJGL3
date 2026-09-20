@@ -211,9 +211,6 @@ public class VkCopyBufferToImageInfo2KHR extends VkCopyBufferToImageInfo2 {
 
     /** An array of {@link VkCopyBufferToImageInfo2KHR} structs. */
     public static class Buffer extends VkCopyBufferToImageInfo2.Buffer {
-
-        private static final VkCopyBufferToImageInfo2KHR ELEMENT_FACTORY = VkCopyBufferToImageInfo2KHR.create(-1L);
-
         /**
          * Creates a new {@code VkCopyBufferToImageInfo2KHR.Buffer} instance backed by the specified container.
          *
@@ -236,18 +233,13 @@ public class VkCopyBufferToImageInfo2KHR extends VkCopyBufferToImageInfo2 {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCopyBufferToImageInfo2KHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCopyBufferToImageInfo2KHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

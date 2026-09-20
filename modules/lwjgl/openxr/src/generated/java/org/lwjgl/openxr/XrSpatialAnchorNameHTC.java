@@ -215,9 +215,6 @@ public class XrSpatialAnchorNameHTC extends Struct<XrSpatialAnchorNameHTC> imple
 
     /** An array of {@link XrSpatialAnchorNameHTC} structs. */
     public static class Buffer extends StructBuffer<XrSpatialAnchorNameHTC, Buffer> implements NativeResource {
-
-        private static final XrSpatialAnchorNameHTC ELEMENT_FACTORY = XrSpatialAnchorNameHTC.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialAnchorNameHTC.Buffer} instance backed by the specified container.
          *
@@ -240,18 +237,13 @@ public class XrSpatialAnchorNameHTC extends Struct<XrSpatialAnchorNameHTC> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialAnchorNameHTC getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialAnchorNameHTC.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code name} field. */

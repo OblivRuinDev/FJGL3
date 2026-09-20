@@ -242,9 +242,6 @@ public class VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV extends Stru
 
     /** An array of {@link VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV ELEMENT_FACTORY = VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV extends Stru
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

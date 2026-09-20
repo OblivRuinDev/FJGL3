@@ -120,9 +120,6 @@ public class NkCommand extends Struct<NkCommand> {
 
     /** An array of {@link NkCommand} structs. */
     public static class Buffer extends StructBuffer<NkCommand, Buffer> {
-
-        private static final NkCommand ELEMENT_FACTORY = NkCommand.create(-1L);
-
         /**
          * Creates a new {@code NkCommand.Buffer} instance backed by the specified container.
          *
@@ -145,18 +142,13 @@ public class NkCommand extends Struct<NkCommand> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkCommand getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkCommand.class;
         }
 
         /** @return the value of the {@code type} field. */

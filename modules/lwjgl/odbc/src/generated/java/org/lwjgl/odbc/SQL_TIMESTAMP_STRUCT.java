@@ -300,9 +300,6 @@ public class SQL_TIMESTAMP_STRUCT extends Struct<SQL_TIMESTAMP_STRUCT> implement
 
     /** An array of {@link SQL_TIMESTAMP_STRUCT} structs. */
     public static class Buffer extends StructBuffer<SQL_TIMESTAMP_STRUCT, Buffer> implements NativeResource {
-
-        private static final SQL_TIMESTAMP_STRUCT ELEMENT_FACTORY = SQL_TIMESTAMP_STRUCT.create(-1L);
-
         /**
          * Creates a new {@code SQL_TIMESTAMP_STRUCT.Buffer} instance backed by the specified container.
          *
@@ -325,18 +322,13 @@ public class SQL_TIMESTAMP_STRUCT extends Struct<SQL_TIMESTAMP_STRUCT> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SQL_TIMESTAMP_STRUCT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SQL_TIMESTAMP_STRUCT.class;
         }
 
         /** @return the value of the {@code year} field. */

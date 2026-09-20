@@ -448,9 +448,6 @@ public class NkStyleWindowHeader extends Struct<NkStyleWindowHeader> implements 
 
     /** An array of {@link NkStyleWindowHeader} structs. */
     public static class Buffer extends StructBuffer<NkStyleWindowHeader, Buffer> implements NativeResource {
-
-        private static final NkStyleWindowHeader ELEMENT_FACTORY = NkStyleWindowHeader.create(-1L);
-
         /**
          * Creates a new {@code NkStyleWindowHeader.Buffer} instance backed by the specified container.
          *
@@ -473,18 +470,13 @@ public class NkStyleWindowHeader extends Struct<NkStyleWindowHeader> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkStyleWindowHeader getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkStyleWindowHeader.class;
         }
 
         /** @return a {@link NkStyleItem} view of the {@code normal} field. */

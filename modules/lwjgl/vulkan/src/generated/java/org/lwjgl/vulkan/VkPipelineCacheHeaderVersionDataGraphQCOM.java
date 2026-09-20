@@ -289,9 +289,6 @@ public class VkPipelineCacheHeaderVersionDataGraphQCOM extends Struct<VkPipeline
 
     /** An array of {@link VkPipelineCacheHeaderVersionDataGraphQCOM} structs. */
     public static class Buffer extends StructBuffer<VkPipelineCacheHeaderVersionDataGraphQCOM, Buffer> implements NativeResource {
-
-        private static final VkPipelineCacheHeaderVersionDataGraphQCOM ELEMENT_FACTORY = VkPipelineCacheHeaderVersionDataGraphQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineCacheHeaderVersionDataGraphQCOM.Buffer} instance backed by the specified container.
          *
@@ -314,18 +311,13 @@ public class VkPipelineCacheHeaderVersionDataGraphQCOM extends Struct<VkPipeline
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineCacheHeaderVersionDataGraphQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineCacheHeaderVersionDataGraphQCOM.class;
         }
 
         /** @return the value of the {@code headerSize} field. */

@@ -287,9 +287,6 @@ public class IOURingZCRXAreaReg extends Struct<IOURingZCRXAreaReg> implements Na
 
     /** An array of {@link IOURingZCRXAreaReg} structs. */
     public static class Buffer extends StructBuffer<IOURingZCRXAreaReg, Buffer> implements NativeResource {
-
-        private static final IOURingZCRXAreaReg ELEMENT_FACTORY = IOURingZCRXAreaReg.create(-1L);
-
         /**
          * Creates a new {@code IOURingZCRXAreaReg.Buffer} instance backed by the specified container.
          *
@@ -312,18 +309,13 @@ public class IOURingZCRXAreaReg extends Struct<IOURingZCRXAreaReg> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingZCRXAreaReg getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingZCRXAreaReg.class;
         }
 
         /** @return the value of the {@code addr} field. */

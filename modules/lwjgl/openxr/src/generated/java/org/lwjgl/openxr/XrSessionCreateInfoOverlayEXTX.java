@@ -257,9 +257,6 @@ public class XrSessionCreateInfoOverlayEXTX extends Struct<XrSessionCreateInfoOv
 
     /** An array of {@link XrSessionCreateInfoOverlayEXTX} structs. */
     public static class Buffer extends StructBuffer<XrSessionCreateInfoOverlayEXTX, Buffer> implements NativeResource {
-
-        private static final XrSessionCreateInfoOverlayEXTX ELEMENT_FACTORY = XrSessionCreateInfoOverlayEXTX.create(-1L);
-
         /**
          * Creates a new {@code XrSessionCreateInfoOverlayEXTX.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class XrSessionCreateInfoOverlayEXTX extends Struct<XrSessionCreateInfoOv
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSessionCreateInfoOverlayEXTX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSessionCreateInfoOverlayEXTX.class;
         }
 
         /** @return the value of the {@code type} field. */

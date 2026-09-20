@@ -227,9 +227,6 @@ public class VkPerTileBeginInfoQCOM extends Struct<VkPerTileBeginInfoQCOM> imple
 
     /** An array of {@link VkPerTileBeginInfoQCOM} structs. */
     public static class Buffer extends StructBuffer<VkPerTileBeginInfoQCOM, Buffer> implements NativeResource {
-
-        private static final VkPerTileBeginInfoQCOM ELEMENT_FACTORY = VkPerTileBeginInfoQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkPerTileBeginInfoQCOM.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class VkPerTileBeginInfoQCOM extends Struct<VkPerTileBeginInfoQCOM> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPerTileBeginInfoQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPerTileBeginInfoQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

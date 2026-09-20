@@ -242,9 +242,6 @@ public class VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures extends Struc
 
     /** An array of {@link VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures ELEMENT_FACTORY = VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures extends Struc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures.class;
         }
 
         /** @return the value of the {@code sType} field. */

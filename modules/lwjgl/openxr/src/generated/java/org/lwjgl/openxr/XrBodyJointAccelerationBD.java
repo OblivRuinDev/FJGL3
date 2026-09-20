@@ -244,9 +244,6 @@ public class XrBodyJointAccelerationBD extends Struct<XrBodyJointAccelerationBD>
 
     /** An array of {@link XrBodyJointAccelerationBD} structs. */
     public static class Buffer extends StructBuffer<XrBodyJointAccelerationBD, Buffer> implements NativeResource {
-
-        private static final XrBodyJointAccelerationBD ELEMENT_FACTORY = XrBodyJointAccelerationBD.create(-1L);
-
         /**
          * Creates a new {@code XrBodyJointAccelerationBD.Buffer} instance backed by the specified container.
          *
@@ -269,18 +266,13 @@ public class XrBodyJointAccelerationBD extends Struct<XrBodyJointAccelerationBD>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBodyJointAccelerationBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBodyJointAccelerationBD.class;
         }
 
         /** @return the value of the {@code accelerationFlags} field. */

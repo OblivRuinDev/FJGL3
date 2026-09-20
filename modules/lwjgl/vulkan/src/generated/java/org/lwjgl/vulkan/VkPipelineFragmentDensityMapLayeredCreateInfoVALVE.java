@@ -242,9 +242,6 @@ public class VkPipelineFragmentDensityMapLayeredCreateInfoVALVE extends Struct<V
 
     /** An array of {@link VkPipelineFragmentDensityMapLayeredCreateInfoVALVE} structs. */
     public static class Buffer extends StructBuffer<VkPipelineFragmentDensityMapLayeredCreateInfoVALVE, Buffer> implements NativeResource {
-
-        private static final VkPipelineFragmentDensityMapLayeredCreateInfoVALVE ELEMENT_FACTORY = VkPipelineFragmentDensityMapLayeredCreateInfoVALVE.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineFragmentDensityMapLayeredCreateInfoVALVE.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPipelineFragmentDensityMapLayeredCreateInfoVALVE extends Struct<V
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineFragmentDensityMapLayeredCreateInfoVALVE getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineFragmentDensityMapLayeredCreateInfoVALVE.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -270,9 +270,6 @@ public class VkDescriptorMappingSourceConstantOffsetEXT extends Struct<VkDescrip
 
     /** An array of {@link VkDescriptorMappingSourceConstantOffsetEXT} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorMappingSourceConstantOffsetEXT, Buffer> implements NativeResource {
-
-        private static final VkDescriptorMappingSourceConstantOffsetEXT ELEMENT_FACTORY = VkDescriptorMappingSourceConstantOffsetEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorMappingSourceConstantOffsetEXT.Buffer} instance backed by the specified container.
          *
@@ -295,18 +292,13 @@ public class VkDescriptorMappingSourceConstantOffsetEXT extends Struct<VkDescrip
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorMappingSourceConstantOffsetEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorMappingSourceConstantOffsetEXT.class;
         }
 
         /** @return the value of the {@code heapOffset} field. */

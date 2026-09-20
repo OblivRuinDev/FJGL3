@@ -245,9 +245,6 @@ public class VkCheckpointData2NV extends Struct<VkCheckpointData2NV> implements 
 
     /** An array of {@link VkCheckpointData2NV} structs. */
     public static class Buffer extends StructBuffer<VkCheckpointData2NV, Buffer> implements NativeResource {
-
-        private static final VkCheckpointData2NV ELEMENT_FACTORY = VkCheckpointData2NV.create(-1L);
-
         /**
          * Creates a new {@code VkCheckpointData2NV.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkCheckpointData2NV extends Struct<VkCheckpointData2NV> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCheckpointData2NV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCheckpointData2NV.class;
         }
 
         /** @return the value of the {@code sType} field. */

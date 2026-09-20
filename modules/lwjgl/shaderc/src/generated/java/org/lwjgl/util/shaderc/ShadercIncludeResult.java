@@ -290,9 +290,6 @@ public class ShadercIncludeResult extends Struct<ShadercIncludeResult> implement
 
     /** An array of {@link ShadercIncludeResult} structs. */
     public static class Buffer extends StructBuffer<ShadercIncludeResult, Buffer> implements NativeResource {
-
-        private static final ShadercIncludeResult ELEMENT_FACTORY = ShadercIncludeResult.create(-1L);
-
         /**
          * Creates a new {@code ShadercIncludeResult.Buffer} instance backed by the specified container.
          *
@@ -315,18 +312,13 @@ public class ShadercIncludeResult extends Struct<ShadercIncludeResult> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ShadercIncludeResult getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ShadercIncludeResult.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code source_name} field. */

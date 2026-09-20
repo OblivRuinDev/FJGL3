@@ -285,9 +285,6 @@ public class XrActionSpaceCreateInfo extends Struct<XrActionSpaceCreateInfo> imp
 
     /** An array of {@link XrActionSpaceCreateInfo} structs. */
     public static class Buffer extends StructBuffer<XrActionSpaceCreateInfo, Buffer> implements NativeResource {
-
-        private static final XrActionSpaceCreateInfo ELEMENT_FACTORY = XrActionSpaceCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code XrActionSpaceCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -310,18 +307,13 @@ public class XrActionSpaceCreateInfo extends Struct<XrActionSpaceCreateInfo> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrActionSpaceCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrActionSpaceCreateInfo.class;
         }
 
         /** @return the value of the {@code type} field. */

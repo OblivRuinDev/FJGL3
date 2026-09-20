@@ -349,9 +349,6 @@ public class VkPartitionedAccelerationStructureWriteInstanceDataNV extends Struc
 
     /** An array of {@link VkPartitionedAccelerationStructureWriteInstanceDataNV} structs. */
     public static class Buffer extends StructBuffer<VkPartitionedAccelerationStructureWriteInstanceDataNV, Buffer> implements NativeResource {
-
-        private static final VkPartitionedAccelerationStructureWriteInstanceDataNV ELEMENT_FACTORY = VkPartitionedAccelerationStructureWriteInstanceDataNV.create(-1L);
-
         /**
          * Creates a new {@code VkPartitionedAccelerationStructureWriteInstanceDataNV.Buffer} instance backed by the specified container.
          *
@@ -374,18 +371,13 @@ public class VkPartitionedAccelerationStructureWriteInstanceDataNV extends Struc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPartitionedAccelerationStructureWriteInstanceDataNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPartitionedAccelerationStructureWriteInstanceDataNV.class;
         }
 
         /** @return a {@link VkTransformMatrixKHR} view of the {@code transform} field. */

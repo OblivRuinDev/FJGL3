@@ -262,9 +262,6 @@ public class XrEventDataVirtualKeyboardCommitTextMETA extends Struct<XrEventData
 
     /** An array of {@link XrEventDataVirtualKeyboardCommitTextMETA} structs. */
     public static class Buffer extends StructBuffer<XrEventDataVirtualKeyboardCommitTextMETA, Buffer> implements NativeResource {
-
-        private static final XrEventDataVirtualKeyboardCommitTextMETA ELEMENT_FACTORY = XrEventDataVirtualKeyboardCommitTextMETA.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataVirtualKeyboardCommitTextMETA.Buffer} instance backed by the specified container.
          *
@@ -287,18 +284,13 @@ public class XrEventDataVirtualKeyboardCommitTextMETA extends Struct<XrEventData
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataVirtualKeyboardCommitTextMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataVirtualKeyboardCommitTextMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

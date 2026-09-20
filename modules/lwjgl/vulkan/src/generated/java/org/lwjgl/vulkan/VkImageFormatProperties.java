@@ -220,9 +220,6 @@ public class VkImageFormatProperties extends Struct<VkImageFormatProperties> imp
 
     /** An array of {@link VkImageFormatProperties} structs. */
     public static class Buffer extends StructBuffer<VkImageFormatProperties, Buffer> implements NativeResource {
-
-        private static final VkImageFormatProperties ELEMENT_FACTORY = VkImageFormatProperties.create(-1L);
-
         /**
          * Creates a new {@code VkImageFormatProperties.Buffer} instance backed by the specified container.
          *
@@ -245,18 +242,13 @@ public class VkImageFormatProperties extends Struct<VkImageFormatProperties> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageFormatProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageFormatProperties.class;
         }
 
         /** @return a {@link VkExtent3D} view of the {@code maxExtent} field. */

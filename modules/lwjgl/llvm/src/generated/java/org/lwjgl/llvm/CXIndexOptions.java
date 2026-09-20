@@ -333,9 +333,6 @@ public class CXIndexOptions extends Struct<CXIndexOptions> implements NativeReso
 
     /** An array of {@link CXIndexOptions} structs. */
     public static class Buffer extends StructBuffer<CXIndexOptions, Buffer> implements NativeResource {
-
-        private static final CXIndexOptions ELEMENT_FACTORY = CXIndexOptions.create(-1L);
-
         /**
          * Creates a new {@code CXIndexOptions.Buffer} instance backed by the specified container.
          *
@@ -358,18 +355,13 @@ public class CXIndexOptions extends Struct<CXIndexOptions> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXIndexOptions getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXIndexOptions.class;
         }
 
         /** @return the value of the {@code Size} field. */

@@ -191,9 +191,6 @@ public class VkPhysicalDeviceDepthClampZeroOneFeaturesEXT extends VkPhysicalDevi
 
     /** An array of {@link VkPhysicalDeviceDepthClampZeroOneFeaturesEXT} structs. */
     public static class Buffer extends VkPhysicalDeviceDepthClampZeroOneFeaturesKHR.Buffer {
-
-        private static final VkPhysicalDeviceDepthClampZeroOneFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceDepthClampZeroOneFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDepthClampZeroOneFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceDepthClampZeroOneFeaturesEXT extends VkPhysicalDevi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDepthClampZeroOneFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDepthClampZeroOneFeaturesEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

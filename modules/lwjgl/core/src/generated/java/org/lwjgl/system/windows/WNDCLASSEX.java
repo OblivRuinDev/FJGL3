@@ -402,9 +402,6 @@ public class WNDCLASSEX extends Struct<WNDCLASSEX> implements NativeResource {
 
     /** An array of {@link WNDCLASSEX} structs. */
     public static class Buffer extends StructBuffer<WNDCLASSEX, Buffer> implements NativeResource {
-
-        private static final WNDCLASSEX ELEMENT_FACTORY = WNDCLASSEX.create(-1L);
-
         /**
          * Creates a new {@code WNDCLASSEX.Buffer} instance backed by the specified container.
          *
@@ -427,18 +424,13 @@ public class WNDCLASSEX extends Struct<WNDCLASSEX> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected WNDCLASSEX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return WNDCLASSEX.class;
         }
 
         /** @return the value of the {@code cbSize} field. */

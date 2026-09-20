@@ -271,9 +271,6 @@ public class FT_Size_Request extends Struct<FT_Size_Request> implements NativeRe
 
     /** An array of {@link FT_Size_Request} structs. */
     public static class Buffer extends StructBuffer<FT_Size_Request, Buffer> implements NativeResource {
-
-        private static final FT_Size_Request ELEMENT_FACTORY = FT_Size_Request.create(-1L);
-
         /**
          * Creates a new {@code FT_Size_Request.Buffer} instance backed by the specified container.
          *
@@ -296,18 +293,13 @@ public class FT_Size_Request extends Struct<FT_Size_Request> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Size_Request getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Size_Request.class;
         }
 
         /** @return the value of the {@code type} field. */

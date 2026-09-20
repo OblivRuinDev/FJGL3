@@ -254,9 +254,6 @@ public class XrSystemQrCodeTrackingPropertiesANDROID extends Struct<XrSystemQrCo
 
     /** An array of {@link XrSystemQrCodeTrackingPropertiesANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSystemQrCodeTrackingPropertiesANDROID, Buffer> implements NativeResource {
-
-        private static final XrSystemQrCodeTrackingPropertiesANDROID ELEMENT_FACTORY = XrSystemQrCodeTrackingPropertiesANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSystemQrCodeTrackingPropertiesANDROID.Buffer} instance backed by the specified container.
          *
@@ -279,18 +276,13 @@ public class XrSystemQrCodeTrackingPropertiesANDROID extends Struct<XrSystemQrCo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemQrCodeTrackingPropertiesANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemQrCodeTrackingPropertiesANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

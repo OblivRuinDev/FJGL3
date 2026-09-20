@@ -327,9 +327,6 @@ public class XrSurfaceAnchorCreateInfoANDROID extends Struct<XrSurfaceAnchorCrea
 
     /** An array of {@link XrSurfaceAnchorCreateInfoANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSurfaceAnchorCreateInfoANDROID, Buffer> implements NativeResource {
-
-        private static final XrSurfaceAnchorCreateInfoANDROID ELEMENT_FACTORY = XrSurfaceAnchorCreateInfoANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSurfaceAnchorCreateInfoANDROID.Buffer} instance backed by the specified container.
          *
@@ -352,18 +349,13 @@ public class XrSurfaceAnchorCreateInfoANDROID extends Struct<XrSurfaceAnchorCrea
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSurfaceAnchorCreateInfoANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSurfaceAnchorCreateInfoANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

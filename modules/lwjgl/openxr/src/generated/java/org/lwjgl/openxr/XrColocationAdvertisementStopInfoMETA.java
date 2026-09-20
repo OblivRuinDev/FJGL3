@@ -227,9 +227,6 @@ public class XrColocationAdvertisementStopInfoMETA extends Struct<XrColocationAd
 
     /** An array of {@link XrColocationAdvertisementStopInfoMETA} structs. */
     public static class Buffer extends StructBuffer<XrColocationAdvertisementStopInfoMETA, Buffer> implements NativeResource {
-
-        private static final XrColocationAdvertisementStopInfoMETA ELEMENT_FACTORY = XrColocationAdvertisementStopInfoMETA.create(-1L);
-
         /**
          * Creates a new {@code XrColocationAdvertisementStopInfoMETA.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrColocationAdvertisementStopInfoMETA extends Struct<XrColocationAd
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrColocationAdvertisementStopInfoMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrColocationAdvertisementStopInfoMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

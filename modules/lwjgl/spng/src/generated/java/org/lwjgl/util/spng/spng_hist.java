@@ -219,9 +219,6 @@ public class spng_hist extends Struct<spng_hist> implements NativeResource {
 
     /** An array of {@link spng_hist} structs. */
     public static class Buffer extends StructBuffer<spng_hist, Buffer> implements NativeResource {
-
-        private static final spng_hist ELEMENT_FACTORY = spng_hist.create(-1L);
-
         /**
          * Creates a new {@code spng_hist.Buffer} instance backed by the specified container.
          *
@@ -244,18 +241,13 @@ public class spng_hist extends Struct<spng_hist> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected spng_hist getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return spng_hist.class;
         }
 
         /** @return a {@link ShortBuffer} view of the {@code frequency} field. */

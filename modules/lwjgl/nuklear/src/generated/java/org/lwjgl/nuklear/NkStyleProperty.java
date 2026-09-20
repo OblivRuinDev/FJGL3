@@ -525,9 +525,6 @@ public class NkStyleProperty extends Struct<NkStyleProperty> implements NativeRe
 
     /** An array of {@link NkStyleProperty} structs. */
     public static class Buffer extends StructBuffer<NkStyleProperty, Buffer> implements NativeResource {
-
-        private static final NkStyleProperty ELEMENT_FACTORY = NkStyleProperty.create(-1L);
-
         /**
          * Creates a new {@code NkStyleProperty.Buffer} instance backed by the specified container.
          *
@@ -550,18 +547,13 @@ public class NkStyleProperty extends Struct<NkStyleProperty> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkStyleProperty getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkStyleProperty.class;
         }
 
         /** @return a {@link NkStyleItem} view of the {@code normal} field. */

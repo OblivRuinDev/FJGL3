@@ -230,9 +230,6 @@ public class XrBoxf extends Struct<XrBoxf> implements NativeResource {
 
     /** An array of {@link XrBoxf} structs. */
     public static class Buffer extends StructBuffer<XrBoxf, Buffer> implements NativeResource {
-
-        private static final XrBoxf ELEMENT_FACTORY = XrBoxf.create(-1L);
-
         /**
          * Creates a new {@code XrBoxf.Buffer} instance backed by the specified container.
          *
@@ -255,18 +252,13 @@ public class XrBoxf extends Struct<XrBoxf> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBoxf getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBoxf.class;
         }
 
         /** @return a {@link XrPosef} view of the {@code center} field. */

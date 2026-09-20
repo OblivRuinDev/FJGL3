@@ -188,9 +188,6 @@ public class XrColor3fKHR extends XrColor3f {
 
     /** An array of {@link XrColor3fKHR} structs. */
     public static class Buffer extends XrColor3f.Buffer {
-
-        private static final XrColor3fKHR ELEMENT_FACTORY = XrColor3fKHR.create(-1L);
-
         /**
          * Creates a new {@code XrColor3fKHR.Buffer} instance backed by the specified container.
          *
@@ -213,18 +210,13 @@ public class XrColor3fKHR extends XrColor3f {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrColor3fKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrColor3fKHR.class;
         }
 
         /** Sets the specified value to the {@code r} field. */

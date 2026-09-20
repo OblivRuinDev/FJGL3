@@ -302,9 +302,6 @@ public class XrGraphicsBindingEGLMNDX extends Struct<XrGraphicsBindingEGLMNDX> i
 
     /** An array of {@link XrGraphicsBindingEGLMNDX} structs. */
     public static class Buffer extends StructBuffer<XrGraphicsBindingEGLMNDX, Buffer> implements NativeResource {
-
-        private static final XrGraphicsBindingEGLMNDX ELEMENT_FACTORY = XrGraphicsBindingEGLMNDX.create(-1L);
-
         /**
          * Creates a new {@code XrGraphicsBindingEGLMNDX.Buffer} instance backed by the specified container.
          *
@@ -327,18 +324,13 @@ public class XrGraphicsBindingEGLMNDX extends Struct<XrGraphicsBindingEGLMNDX> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrGraphicsBindingEGLMNDX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrGraphicsBindingEGLMNDX.class;
         }
 
         /** @return the value of the {@code type} field. */

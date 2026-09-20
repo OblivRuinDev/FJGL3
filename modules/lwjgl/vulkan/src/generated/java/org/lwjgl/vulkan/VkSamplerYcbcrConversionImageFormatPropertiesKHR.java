@@ -186,9 +186,6 @@ public class VkSamplerYcbcrConversionImageFormatPropertiesKHR extends VkSamplerY
 
     /** An array of {@link VkSamplerYcbcrConversionImageFormatPropertiesKHR} structs. */
     public static class Buffer extends VkSamplerYcbcrConversionImageFormatProperties.Buffer {
-
-        private static final VkSamplerYcbcrConversionImageFormatPropertiesKHR ELEMENT_FACTORY = VkSamplerYcbcrConversionImageFormatPropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkSamplerYcbcrConversionImageFormatPropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -211,18 +208,13 @@ public class VkSamplerYcbcrConversionImageFormatPropertiesKHR extends VkSamplerY
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSamplerYcbcrConversionImageFormatPropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSamplerYcbcrConversionImageFormatPropertiesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

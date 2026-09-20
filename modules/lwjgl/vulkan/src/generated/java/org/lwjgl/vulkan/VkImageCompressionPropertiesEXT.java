@@ -245,9 +245,6 @@ public class VkImageCompressionPropertiesEXT extends Struct<VkImageCompressionPr
 
     /** An array of {@link VkImageCompressionPropertiesEXT} structs. */
     public static class Buffer extends StructBuffer<VkImageCompressionPropertiesEXT, Buffer> implements NativeResource {
-
-        private static final VkImageCompressionPropertiesEXT ELEMENT_FACTORY = VkImageCompressionPropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkImageCompressionPropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkImageCompressionPropertiesEXT extends Struct<VkImageCompressionPr
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageCompressionPropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageCompressionPropertiesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

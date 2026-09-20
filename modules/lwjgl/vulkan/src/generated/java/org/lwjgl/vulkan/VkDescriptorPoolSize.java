@@ -225,9 +225,6 @@ public class VkDescriptorPoolSize extends Struct<VkDescriptorPoolSize> implement
 
     /** An array of {@link VkDescriptorPoolSize} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorPoolSize, Buffer> implements NativeResource {
-
-        private static final VkDescriptorPoolSize ELEMENT_FACTORY = VkDescriptorPoolSize.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorPoolSize.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class VkDescriptorPoolSize extends Struct<VkDescriptorPoolSize> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorPoolSize getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorPoolSize.class;
         }
 
         /** @return the value of the {@code type} field. */

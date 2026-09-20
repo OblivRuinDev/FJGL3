@@ -260,9 +260,6 @@ public class VkIndirectExecutionSetCreateInfoEXT extends Struct<VkIndirectExecut
 
     /** An array of {@link VkIndirectExecutionSetCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkIndirectExecutionSetCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkIndirectExecutionSetCreateInfoEXT ELEMENT_FACTORY = VkIndirectExecutionSetCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkIndirectExecutionSetCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class VkIndirectExecutionSetCreateInfoEXT extends Struct<VkIndirectExecut
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkIndirectExecutionSetCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkIndirectExecutionSetCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

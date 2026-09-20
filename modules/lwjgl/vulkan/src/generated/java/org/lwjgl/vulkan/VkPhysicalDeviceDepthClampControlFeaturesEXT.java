@@ -242,9 +242,6 @@ public class VkPhysicalDeviceDepthClampControlFeaturesEXT extends Struct<VkPhysi
 
     /** An array of {@link VkPhysicalDeviceDepthClampControlFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceDepthClampControlFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceDepthClampControlFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceDepthClampControlFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDepthClampControlFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceDepthClampControlFeaturesEXT extends Struct<VkPhysi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDepthClampControlFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDepthClampControlFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

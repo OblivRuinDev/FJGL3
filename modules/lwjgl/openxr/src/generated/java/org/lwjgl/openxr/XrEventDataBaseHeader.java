@@ -745,9 +745,6 @@ public class XrEventDataBaseHeader extends Struct<XrEventDataBaseHeader> impleme
 
     /** An array of {@link XrEventDataBaseHeader} structs. */
     public static class Buffer extends StructBuffer<XrEventDataBaseHeader, Buffer> implements NativeResource {
-
-        private static final XrEventDataBaseHeader ELEMENT_FACTORY = XrEventDataBaseHeader.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataBaseHeader.Buffer} instance backed by the specified container.
          *
@@ -770,18 +767,13 @@ public class XrEventDataBaseHeader extends Struct<XrEventDataBaseHeader> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataBaseHeader getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataBaseHeader.class;
         }
 
         /** @return the value of the {@code type} field. */

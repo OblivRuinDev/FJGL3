@@ -256,9 +256,6 @@ public class FFIType extends Struct<FFIType> implements NativeResource {
 
     /** An array of {@link FFIType} structs. */
     public static class Buffer extends StructBuffer<FFIType, Buffer> implements NativeResource {
-
-        private static final FFIType ELEMENT_FACTORY = FFIType.create(-1L);
-
         /**
          * Creates a new {@code FFIType.Buffer} instance backed by the specified container.
          *
@@ -281,18 +278,13 @@ public class FFIType extends Struct<FFIType> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FFIType getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FFIType.class;
         }
 
         /** @return the value of the {@code size} field. */

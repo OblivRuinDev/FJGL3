@@ -245,9 +245,6 @@ public class VkRenderPassStripeInfoARM extends Struct<VkRenderPassStripeInfoARM>
 
     /** An array of {@link VkRenderPassStripeInfoARM} structs. */
     public static class Buffer extends StructBuffer<VkRenderPassStripeInfoARM, Buffer> implements NativeResource {
-
-        private static final VkRenderPassStripeInfoARM ELEMENT_FACTORY = VkRenderPassStripeInfoARM.create(-1L);
-
         /**
          * Creates a new {@code VkRenderPassStripeInfoARM.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkRenderPassStripeInfoARM extends Struct<VkRenderPassStripeInfoARM>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderPassStripeInfoARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderPassStripeInfoARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -307,9 +307,6 @@ public class XrTrackableObjectANDROID extends Struct<XrTrackableObjectANDROID> i
 
     /** An array of {@link XrTrackableObjectANDROID} structs. */
     public static class Buffer extends StructBuffer<XrTrackableObjectANDROID, Buffer> implements NativeResource {
-
-        private static final XrTrackableObjectANDROID ELEMENT_FACTORY = XrTrackableObjectANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrTrackableObjectANDROID.Buffer} instance backed by the specified container.
          *
@@ -332,18 +329,13 @@ public class XrTrackableObjectANDROID extends Struct<XrTrackableObjectANDROID> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrTrackableObjectANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrTrackableObjectANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

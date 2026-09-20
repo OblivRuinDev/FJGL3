@@ -100,9 +100,6 @@ public class FT_PaintSolid extends Struct<FT_PaintSolid> {
 
     /** An array of {@link FT_PaintSolid} structs. */
     public static class Buffer extends StructBuffer<FT_PaintSolid, Buffer> {
-
-        private static final FT_PaintSolid ELEMENT_FACTORY = FT_PaintSolid.create(-1L);
-
         /**
          * Creates a new {@code FT_PaintSolid.Buffer} instance backed by the specified container.
          *
@@ -125,18 +122,13 @@ public class FT_PaintSolid extends Struct<FT_PaintSolid> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_PaintSolid getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_PaintSolid.class;
         }
 
         /** @return a {@link FT_ColorIndex} view of the {@code color} field. */

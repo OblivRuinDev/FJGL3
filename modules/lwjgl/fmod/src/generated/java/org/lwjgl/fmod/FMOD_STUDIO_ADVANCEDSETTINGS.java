@@ -315,9 +315,6 @@ public class FMOD_STUDIO_ADVANCEDSETTINGS extends Struct<FMOD_STUDIO_ADVANCEDSET
 
     /** An array of {@link FMOD_STUDIO_ADVANCEDSETTINGS} structs. */
     public static class Buffer extends StructBuffer<FMOD_STUDIO_ADVANCEDSETTINGS, Buffer> implements NativeResource {
-
-        private static final FMOD_STUDIO_ADVANCEDSETTINGS ELEMENT_FACTORY = FMOD_STUDIO_ADVANCEDSETTINGS.create(-1L);
-
         /**
          * Creates a new {@code FMOD_STUDIO_ADVANCEDSETTINGS.Buffer} instance backed by the specified container.
          *
@@ -340,18 +337,13 @@ public class FMOD_STUDIO_ADVANCEDSETTINGS extends Struct<FMOD_STUDIO_ADVANCEDSET
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_STUDIO_ADVANCEDSETTINGS getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_STUDIO_ADVANCEDSETTINGS.class;
         }
 
         /** @return the value of the {@code cbsize} field. */

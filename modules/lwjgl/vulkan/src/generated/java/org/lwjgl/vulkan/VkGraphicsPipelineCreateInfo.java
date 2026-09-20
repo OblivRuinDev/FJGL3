@@ -552,9 +552,6 @@ public class VkGraphicsPipelineCreateInfo extends Struct<VkGraphicsPipelineCreat
 
     /** An array of {@link VkGraphicsPipelineCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkGraphicsPipelineCreateInfo, Buffer> implements NativeResource {
-
-        private static final VkGraphicsPipelineCreateInfo ELEMENT_FACTORY = VkGraphicsPipelineCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkGraphicsPipelineCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -577,18 +574,13 @@ public class VkGraphicsPipelineCreateInfo extends Struct<VkGraphicsPipelineCreat
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkGraphicsPipelineCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkGraphicsPipelineCreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

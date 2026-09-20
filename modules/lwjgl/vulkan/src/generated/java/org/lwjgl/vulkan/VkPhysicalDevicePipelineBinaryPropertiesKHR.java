@@ -272,9 +272,6 @@ public class VkPhysicalDevicePipelineBinaryPropertiesKHR extends Struct<VkPhysic
 
     /** An array of {@link VkPhysicalDevicePipelineBinaryPropertiesKHR} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDevicePipelineBinaryPropertiesKHR, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDevicePipelineBinaryPropertiesKHR ELEMENT_FACTORY = VkPhysicalDevicePipelineBinaryPropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDevicePipelineBinaryPropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkPhysicalDevicePipelineBinaryPropertiesKHR extends Struct<VkPhysic
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDevicePipelineBinaryPropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDevicePipelineBinaryPropertiesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

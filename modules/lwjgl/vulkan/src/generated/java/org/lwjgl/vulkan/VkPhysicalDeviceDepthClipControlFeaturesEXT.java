@@ -242,9 +242,6 @@ public class VkPhysicalDeviceDepthClipControlFeaturesEXT extends Struct<VkPhysic
 
     /** An array of {@link VkPhysicalDeviceDepthClipControlFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceDepthClipControlFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceDepthClipControlFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceDepthClipControlFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDepthClipControlFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceDepthClipControlFeaturesEXT extends Struct<VkPhysic
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDepthClipControlFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDepthClipControlFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

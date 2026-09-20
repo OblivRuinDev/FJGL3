@@ -237,9 +237,6 @@ public class VkSparseImageFormatProperties2 extends Struct<VkSparseImageFormatPr
 
     /** An array of {@link VkSparseImageFormatProperties2} structs. */
     public static class Buffer extends StructBuffer<VkSparseImageFormatProperties2, Buffer> implements NativeResource {
-
-        private static final VkSparseImageFormatProperties2 ELEMENT_FACTORY = VkSparseImageFormatProperties2.create(-1L);
-
         /**
          * Creates a new {@code VkSparseImageFormatProperties2.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class VkSparseImageFormatProperties2 extends Struct<VkSparseImageFormatPr
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSparseImageFormatProperties2 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSparseImageFormatProperties2.class;
         }
 
         /** @return the value of the {@code sType} field. */

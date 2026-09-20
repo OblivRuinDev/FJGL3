@@ -191,9 +191,6 @@ public class VkPhysicalDeviceHostImageCopyFeaturesEXT extends VkPhysicalDeviceHo
 
     /** An array of {@link VkPhysicalDeviceHostImageCopyFeaturesEXT} structs. */
     public static class Buffer extends VkPhysicalDeviceHostImageCopyFeatures.Buffer {
-
-        private static final VkPhysicalDeviceHostImageCopyFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceHostImageCopyFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceHostImageCopyFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceHostImageCopyFeaturesEXT extends VkPhysicalDeviceHo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceHostImageCopyFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceHostImageCopyFeaturesEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

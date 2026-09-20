@@ -257,9 +257,6 @@ public class VkSetPresentConfigNV extends Struct<VkSetPresentConfigNV> implement
 
     /** An array of {@link VkSetPresentConfigNV} structs. */
     public static class Buffer extends StructBuffer<VkSetPresentConfigNV, Buffer> implements NativeResource {
-
-        private static final VkSetPresentConfigNV ELEMENT_FACTORY = VkSetPresentConfigNV.create(-1L);
-
         /**
          * Creates a new {@code VkSetPresentConfigNV.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkSetPresentConfigNV extends Struct<VkSetPresentConfigNV> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSetPresentConfigNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSetPresentConfigNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

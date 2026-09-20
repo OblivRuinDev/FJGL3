@@ -406,9 +406,6 @@ public class ktxTexture1 extends Struct<ktxTexture1> implements NativeResource {
 
     /** An array of {@link ktxTexture1} structs. */
     public static class Buffer extends StructBuffer<ktxTexture1, Buffer> implements NativeResource {
-
-        private static final ktxTexture1 ELEMENT_FACTORY = ktxTexture1.create(-1L);
-
         /**
          * Creates a new {@code ktxTexture1.Buffer} instance backed by the specified container.
          *
@@ -431,18 +428,13 @@ public class ktxTexture1 extends Struct<ktxTexture1> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ktxTexture1 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ktxTexture1.class;
         }
 
         /** @return the value of the {@code classId} field. */

@@ -272,9 +272,6 @@ public class VkDeviceQueueInfo2 extends Struct<VkDeviceQueueInfo2> implements Na
 
     /** An array of {@link VkDeviceQueueInfo2} structs. */
     public static class Buffer extends StructBuffer<VkDeviceQueueInfo2, Buffer> implements NativeResource {
-
-        private static final VkDeviceQueueInfo2 ELEMENT_FACTORY = VkDeviceQueueInfo2.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceQueueInfo2.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkDeviceQueueInfo2 extends Struct<VkDeviceQueueInfo2> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceQueueInfo2 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceQueueInfo2.class;
         }
 
         /** @return the value of the {@code sType} field. */

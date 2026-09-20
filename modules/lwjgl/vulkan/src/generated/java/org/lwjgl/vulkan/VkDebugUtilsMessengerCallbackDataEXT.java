@@ -407,9 +407,6 @@ public class VkDebugUtilsMessengerCallbackDataEXT extends Struct<VkDebugUtilsMes
 
     /** An array of {@link VkDebugUtilsMessengerCallbackDataEXT} structs. */
     public static class Buffer extends StructBuffer<VkDebugUtilsMessengerCallbackDataEXT, Buffer> implements NativeResource {
-
-        private static final VkDebugUtilsMessengerCallbackDataEXT ELEMENT_FACTORY = VkDebugUtilsMessengerCallbackDataEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDebugUtilsMessengerCallbackDataEXT.Buffer} instance backed by the specified container.
          *
@@ -432,18 +429,13 @@ public class VkDebugUtilsMessengerCallbackDataEXT extends Struct<VkDebugUtilsMes
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDebugUtilsMessengerCallbackDataEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDebugUtilsMessengerCallbackDataEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

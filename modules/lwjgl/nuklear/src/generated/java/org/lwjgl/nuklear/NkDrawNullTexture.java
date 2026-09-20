@@ -233,9 +233,6 @@ public class NkDrawNullTexture extends Struct<NkDrawNullTexture> implements Nati
 
     /** An array of {@link NkDrawNullTexture} structs. */
     public static class Buffer extends StructBuffer<NkDrawNullTexture, Buffer> implements NativeResource {
-
-        private static final NkDrawNullTexture ELEMENT_FACTORY = NkDrawNullTexture.create(-1L);
-
         /**
          * Creates a new {@code NkDrawNullTexture.Buffer} instance backed by the specified container.
          *
@@ -258,18 +255,13 @@ public class NkDrawNullTexture extends Struct<NkDrawNullTexture> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkDrawNullTexture getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkDrawNullTexture.class;
         }
 
         /** @return a {@link NkHandle} view of the {@code texture} field. */

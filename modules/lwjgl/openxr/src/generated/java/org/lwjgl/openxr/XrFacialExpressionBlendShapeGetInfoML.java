@@ -227,9 +227,6 @@ public class XrFacialExpressionBlendShapeGetInfoML extends Struct<XrFacialExpres
 
     /** An array of {@link XrFacialExpressionBlendShapeGetInfoML} structs. */
     public static class Buffer extends StructBuffer<XrFacialExpressionBlendShapeGetInfoML, Buffer> implements NativeResource {
-
-        private static final XrFacialExpressionBlendShapeGetInfoML ELEMENT_FACTORY = XrFacialExpressionBlendShapeGetInfoML.create(-1L);
-
         /**
          * Creates a new {@code XrFacialExpressionBlendShapeGetInfoML.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrFacialExpressionBlendShapeGetInfoML extends Struct<XrFacialExpres
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFacialExpressionBlendShapeGetInfoML getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFacialExpressionBlendShapeGetInfoML.class;
         }
 
         /** @return the value of the {@code type} field. */

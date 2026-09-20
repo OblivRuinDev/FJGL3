@@ -257,9 +257,6 @@ public class XrInputSourceLocalizedNameGetInfo extends Struct<XrInputSourceLocal
 
     /** An array of {@link XrInputSourceLocalizedNameGetInfo} structs. */
     public static class Buffer extends StructBuffer<XrInputSourceLocalizedNameGetInfo, Buffer> implements NativeResource {
-
-        private static final XrInputSourceLocalizedNameGetInfo ELEMENT_FACTORY = XrInputSourceLocalizedNameGetInfo.create(-1L);
-
         /**
          * Creates a new {@code XrInputSourceLocalizedNameGetInfo.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class XrInputSourceLocalizedNameGetInfo extends Struct<XrInputSourceLocal
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrInputSourceLocalizedNameGetInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrInputSourceLocalizedNameGetInfo.class;
         }
 
         /** @return the value of the {@code type} field. */

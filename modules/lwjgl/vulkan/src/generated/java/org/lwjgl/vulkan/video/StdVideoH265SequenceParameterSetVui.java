@@ -573,9 +573,6 @@ public class StdVideoH265SequenceParameterSetVui extends Struct<StdVideoH265Sequ
 
     /** An array of {@link StdVideoH265SequenceParameterSetVui} structs. */
     public static class Buffer extends StructBuffer<StdVideoH265SequenceParameterSetVui, Buffer> implements NativeResource {
-
-        private static final StdVideoH265SequenceParameterSetVui ELEMENT_FACTORY = StdVideoH265SequenceParameterSetVui.create(-1L);
-
         /**
          * Creates a new {@code StdVideoH265SequenceParameterSetVui.Buffer} instance backed by the specified container.
          *
@@ -598,18 +595,13 @@ public class StdVideoH265SequenceParameterSetVui extends Struct<StdVideoH265Sequ
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoH265SequenceParameterSetVui getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoH265SequenceParameterSetVui.class;
         }
 
         /** @return a {@link StdVideoH265SpsVuiFlags} view of the {@code flags} field. */

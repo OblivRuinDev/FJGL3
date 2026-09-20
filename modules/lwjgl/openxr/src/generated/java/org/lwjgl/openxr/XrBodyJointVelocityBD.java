@@ -244,9 +244,6 @@ public class XrBodyJointVelocityBD extends Struct<XrBodyJointVelocityBD> impleme
 
     /** An array of {@link XrBodyJointVelocityBD} structs. */
     public static class Buffer extends StructBuffer<XrBodyJointVelocityBD, Buffer> implements NativeResource {
-
-        private static final XrBodyJointVelocityBD ELEMENT_FACTORY = XrBodyJointVelocityBD.create(-1L);
-
         /**
          * Creates a new {@code XrBodyJointVelocityBD.Buffer} instance backed by the specified container.
          *
@@ -269,18 +266,13 @@ public class XrBodyJointVelocityBD extends Struct<XrBodyJointVelocityBD> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBodyJointVelocityBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBodyJointVelocityBD.class;
         }
 
         /** @return the value of the {@code velocityFlags} field. */

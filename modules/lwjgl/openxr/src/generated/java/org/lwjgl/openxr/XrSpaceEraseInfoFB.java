@@ -267,9 +267,6 @@ public class XrSpaceEraseInfoFB extends Struct<XrSpaceEraseInfoFB> implements Na
 
     /** An array of {@link XrSpaceEraseInfoFB} structs. */
     public static class Buffer extends StructBuffer<XrSpaceEraseInfoFB, Buffer> implements NativeResource {
-
-        private static final XrSpaceEraseInfoFB ELEMENT_FACTORY = XrSpaceEraseInfoFB.create(-1L);
-
         /**
          * Creates a new {@code XrSpaceEraseInfoFB.Buffer} instance backed by the specified container.
          *
@@ -292,18 +289,13 @@ public class XrSpaceEraseInfoFB extends Struct<XrSpaceEraseInfoFB> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpaceEraseInfoFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpaceEraseInfoFB.class;
         }
 
         /** @return the value of the {@code type} field. */

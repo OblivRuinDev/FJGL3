@@ -257,9 +257,6 @@ public class VkMemoryAllocateFlagsInfo extends Struct<VkMemoryAllocateFlagsInfo>
 
     /** An array of {@link VkMemoryAllocateFlagsInfo} structs. */
     public static class Buffer extends StructBuffer<VkMemoryAllocateFlagsInfo, Buffer> implements NativeResource {
-
-        private static final VkMemoryAllocateFlagsInfo ELEMENT_FACTORY = VkMemoryAllocateFlagsInfo.create(-1L);
-
         /**
          * Creates a new {@code VkMemoryAllocateFlagsInfo.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkMemoryAllocateFlagsInfo extends Struct<VkMemoryAllocateFlagsInfo>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMemoryAllocateFlagsInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMemoryAllocateFlagsInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

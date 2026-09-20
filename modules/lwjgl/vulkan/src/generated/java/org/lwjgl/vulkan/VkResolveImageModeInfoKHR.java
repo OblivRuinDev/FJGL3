@@ -272,9 +272,6 @@ public class VkResolveImageModeInfoKHR extends Struct<VkResolveImageModeInfoKHR>
 
     /** An array of {@link VkResolveImageModeInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkResolveImageModeInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkResolveImageModeInfoKHR ELEMENT_FACTORY = VkResolveImageModeInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkResolveImageModeInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkResolveImageModeInfoKHR extends Struct<VkResolveImageModeInfoKHR>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkResolveImageModeInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkResolveImageModeInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

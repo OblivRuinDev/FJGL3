@@ -346,9 +346,6 @@ public class GLSLangSPVOptions extends Struct<GLSLangSPVOptions> implements Nati
 
     /** An array of {@link GLSLangSPVOptions} structs. */
     public static class Buffer extends StructBuffer<GLSLangSPVOptions, Buffer> implements NativeResource {
-
-        private static final GLSLangSPVOptions ELEMENT_FACTORY = GLSLangSPVOptions.create(-1L);
-
         /**
          * Creates a new {@code GLSLangSPVOptions.Buffer} instance backed by the specified container.
          *
@@ -371,18 +368,13 @@ public class GLSLangSPVOptions extends Struct<GLSLangSPVOptions> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected GLSLangSPVOptions getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return GLSLangSPVOptions.class;
         }
 
         /** @return the value of the {@code generate_debug_info} field. */

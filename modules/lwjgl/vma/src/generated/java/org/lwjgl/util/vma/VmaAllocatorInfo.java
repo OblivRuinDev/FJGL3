@@ -201,9 +201,6 @@ public class VmaAllocatorInfo extends Struct<VmaAllocatorInfo> implements Native
 
     /** An array of {@link VmaAllocatorInfo} structs. */
     public static class Buffer extends StructBuffer<VmaAllocatorInfo, Buffer> implements NativeResource {
-
-        private static final VmaAllocatorInfo ELEMENT_FACTORY = VmaAllocatorInfo.create(-1L);
-
         /**
          * Creates a new {@code VmaAllocatorInfo.Buffer} instance backed by the specified container.
          *
@@ -226,18 +223,13 @@ public class VmaAllocatorInfo extends Struct<VmaAllocatorInfo> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VmaAllocatorInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VmaAllocatorInfo.class;
         }
 
         /** @return the value of the {@code instance} field. */

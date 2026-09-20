@@ -118,9 +118,6 @@ public class FT_Size_Internal extends Struct<FT_Size_Internal> {
 
     /** An array of {@link FT_Size_Internal} structs. */
     public static class Buffer extends StructBuffer<FT_Size_Internal, Buffer> {
-
-        private static final FT_Size_Internal ELEMENT_FACTORY = FT_Size_Internal.create(-1L);
-
         /**
          * Creates a new {@code FT_Size_Internal.Buffer} instance backed by the specified container.
          *
@@ -143,18 +140,13 @@ public class FT_Size_Internal extends Struct<FT_Size_Internal> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Size_Internal getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Size_Internal.class;
         }
 
         /** @return the value of the {@code module_data} field. */

@@ -251,9 +251,6 @@ public class SDL_FColor extends Struct<SDL_FColor> implements NativeResource {
 
     /** An array of {@link SDL_FColor} structs. */
     public static class Buffer extends StructBuffer<SDL_FColor, Buffer> implements NativeResource {
-
-        private static final SDL_FColor ELEMENT_FACTORY = SDL_FColor.create(-1L);
-
         /**
          * Creates a new {@code SDL_FColor.Buffer} instance backed by the specified container.
          *
@@ -276,18 +273,13 @@ public class SDL_FColor extends Struct<SDL_FColor> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_FColor getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_FColor.class;
         }
 
         /** @return the value of the {@code r} field. */

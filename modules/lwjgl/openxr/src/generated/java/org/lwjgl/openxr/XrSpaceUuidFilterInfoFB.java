@@ -273,9 +273,6 @@ public class XrSpaceUuidFilterInfoFB extends Struct<XrSpaceUuidFilterInfoFB> imp
 
     /** An array of {@link XrSpaceUuidFilterInfoFB} structs. */
     public static class Buffer extends StructBuffer<XrSpaceUuidFilterInfoFB, Buffer> implements NativeResource {
-
-        private static final XrSpaceUuidFilterInfoFB ELEMENT_FACTORY = XrSpaceUuidFilterInfoFB.create(-1L);
-
         /**
          * Creates a new {@code XrSpaceUuidFilterInfoFB.Buffer} instance backed by the specified container.
          *
@@ -298,18 +295,13 @@ public class XrSpaceUuidFilterInfoFB extends Struct<XrSpaceUuidFilterInfoFB> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpaceUuidFilterInfoFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpaceUuidFilterInfoFB.class;
         }
 
         /** @return the value of the {@code type} field. */

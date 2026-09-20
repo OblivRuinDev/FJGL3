@@ -568,9 +568,6 @@ public class StdVideoH264SequenceParameterSet extends Struct<StdVideoH264Sequenc
 
     /** An array of {@link StdVideoH264SequenceParameterSet} structs. */
     public static class Buffer extends StructBuffer<StdVideoH264SequenceParameterSet, Buffer> implements NativeResource {
-
-        private static final StdVideoH264SequenceParameterSet ELEMENT_FACTORY = StdVideoH264SequenceParameterSet.create(-1L);
-
         /**
          * Creates a new {@code StdVideoH264SequenceParameterSet.Buffer} instance backed by the specified container.
          *
@@ -593,18 +590,13 @@ public class StdVideoH264SequenceParameterSet extends Struct<StdVideoH264Sequenc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoH264SequenceParameterSet getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoH264SequenceParameterSet.class;
         }
 
         /** @return a {@link StdVideoH264SpsFlags} view of the {@code flags} field. */

@@ -256,9 +256,6 @@ public class SpvcHlslRootConstants extends Struct<SpvcHlslRootConstants> impleme
 
     /** An array of {@link SpvcHlslRootConstants} structs. */
     public static class Buffer extends StructBuffer<SpvcHlslRootConstants, Buffer> implements NativeResource {
-
-        private static final SpvcHlslRootConstants ELEMENT_FACTORY = SpvcHlslRootConstants.create(-1L);
-
         /**
          * Creates a new {@code SpvcHlslRootConstants.Buffer} instance backed by the specified container.
          *
@@ -281,18 +278,13 @@ public class SpvcHlslRootConstants extends Struct<SpvcHlslRootConstants> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SpvcHlslRootConstants getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SpvcHlslRootConstants.class;
         }
 
         /** @return the value of the {@code start} field. */

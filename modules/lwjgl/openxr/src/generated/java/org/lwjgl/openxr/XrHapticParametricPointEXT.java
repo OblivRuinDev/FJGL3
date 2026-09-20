@@ -224,9 +224,6 @@ public class XrHapticParametricPointEXT extends Struct<XrHapticParametricPointEX
 
     /** An array of {@link XrHapticParametricPointEXT} structs. */
     public static class Buffer extends StructBuffer<XrHapticParametricPointEXT, Buffer> implements NativeResource {
-
-        private static final XrHapticParametricPointEXT ELEMENT_FACTORY = XrHapticParametricPointEXT.create(-1L);
-
         /**
          * Creates a new {@code XrHapticParametricPointEXT.Buffer} instance backed by the specified container.
          *
@@ -249,18 +246,13 @@ public class XrHapticParametricPointEXT extends Struct<XrHapticParametricPointEX
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHapticParametricPointEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHapticParametricPointEXT.class;
         }
 
         /** @return the value of the {@code time} field. */

@@ -272,9 +272,6 @@ public class XrPlaneDetectorPolygonBufferEXT extends Struct<XrPlaneDetectorPolyg
 
     /** An array of {@link XrPlaneDetectorPolygonBufferEXT} structs. */
     public static class Buffer extends StructBuffer<XrPlaneDetectorPolygonBufferEXT, Buffer> implements NativeResource {
-
-        private static final XrPlaneDetectorPolygonBufferEXT ELEMENT_FACTORY = XrPlaneDetectorPolygonBufferEXT.create(-1L);
-
         /**
          * Creates a new {@code XrPlaneDetectorPolygonBufferEXT.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class XrPlaneDetectorPolygonBufferEXT extends Struct<XrPlaneDetectorPolyg
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrPlaneDetectorPolygonBufferEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrPlaneDetectorPolygonBufferEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

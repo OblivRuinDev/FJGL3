@@ -274,9 +274,6 @@ public class XrFrameState extends Struct<XrFrameState> implements NativeResource
 
     /** An array of {@link XrFrameState} structs. */
     public static class Buffer extends StructBuffer<XrFrameState, Buffer> implements NativeResource {
-
-        private static final XrFrameState ELEMENT_FACTORY = XrFrameState.create(-1L);
-
         /**
          * Creates a new {@code XrFrameState.Buffer} instance backed by the specified container.
          *
@@ -299,18 +296,13 @@ public class XrFrameState extends Struct<XrFrameState> implements NativeResource
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFrameState getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFrameState.class;
         }
 
         /** @return the value of the {@code type} field. */

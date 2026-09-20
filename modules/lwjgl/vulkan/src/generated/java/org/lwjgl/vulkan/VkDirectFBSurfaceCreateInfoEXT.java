@@ -272,9 +272,6 @@ public class VkDirectFBSurfaceCreateInfoEXT extends Struct<VkDirectFBSurfaceCrea
 
     /** An array of {@link VkDirectFBSurfaceCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkDirectFBSurfaceCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkDirectFBSurfaceCreateInfoEXT ELEMENT_FACTORY = VkDirectFBSurfaceCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDirectFBSurfaceCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkDirectFBSurfaceCreateInfoEXT extends Struct<VkDirectFBSurfaceCrea
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDirectFBSurfaceCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDirectFBSurfaceCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

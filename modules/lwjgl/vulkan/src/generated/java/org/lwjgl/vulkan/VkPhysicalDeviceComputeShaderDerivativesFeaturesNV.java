@@ -197,9 +197,6 @@ public class VkPhysicalDeviceComputeShaderDerivativesFeaturesNV extends VkPhysic
 
     /** An array of {@link VkPhysicalDeviceComputeShaderDerivativesFeaturesNV} structs. */
     public static class Buffer extends VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR.Buffer {
-
-        private static final VkPhysicalDeviceComputeShaderDerivativesFeaturesNV ELEMENT_FACTORY = VkPhysicalDeviceComputeShaderDerivativesFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceComputeShaderDerivativesFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -222,18 +219,13 @@ public class VkPhysicalDeviceComputeShaderDerivativesFeaturesNV extends VkPhysic
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceComputeShaderDerivativesFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceComputeShaderDerivativesFeaturesNV.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

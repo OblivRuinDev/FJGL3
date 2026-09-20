@@ -248,9 +248,6 @@ public class StdVideoH265VpsFlags extends Struct<StdVideoH265VpsFlags> implement
 
     /** An array of {@link StdVideoH265VpsFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoH265VpsFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoH265VpsFlags ELEMENT_FACTORY = StdVideoH265VpsFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoH265VpsFlags.Buffer} instance backed by the specified container.
          *
@@ -273,18 +270,13 @@ public class StdVideoH265VpsFlags extends Struct<StdVideoH265VpsFlags> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoH265VpsFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoH265VpsFlags.class;
         }
 
         /** @return the value of the {@code vps_temporal_id_nesting_flag} field. */

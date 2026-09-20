@@ -272,9 +272,6 @@ public class VkPipelineViewportWScalingStateCreateInfoNV extends Struct<VkPipeli
 
     /** An array of {@link VkPipelineViewportWScalingStateCreateInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkPipelineViewportWScalingStateCreateInfoNV, Buffer> implements NativeResource {
-
-        private static final VkPipelineViewportWScalingStateCreateInfoNV ELEMENT_FACTORY = VkPipelineViewportWScalingStateCreateInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineViewportWScalingStateCreateInfoNV.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkPipelineViewportWScalingStateCreateInfoNV extends Struct<VkPipeli
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineViewportWScalingStateCreateInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineViewportWScalingStateCreateInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

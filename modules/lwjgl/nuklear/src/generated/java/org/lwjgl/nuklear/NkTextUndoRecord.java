@@ -123,9 +123,6 @@ public class NkTextUndoRecord extends Struct<NkTextUndoRecord> {
 
     /** An array of {@link NkTextUndoRecord} structs. */
     public static class Buffer extends StructBuffer<NkTextUndoRecord, Buffer> {
-
-        private static final NkTextUndoRecord ELEMENT_FACTORY = NkTextUndoRecord.create(-1L);
-
         /**
          * Creates a new {@code NkTextUndoRecord.Buffer} instance backed by the specified container.
          *
@@ -148,18 +145,13 @@ public class NkTextUndoRecord extends Struct<NkTextUndoRecord> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkTextUndoRecord getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkTextUndoRecord.class;
         }
 
         /** @return the value of the {@code where} field. */

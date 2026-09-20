@@ -191,9 +191,6 @@ public class VkSubpassBeginInfoKHR extends VkSubpassBeginInfo {
 
     /** An array of {@link VkSubpassBeginInfoKHR} structs. */
     public static class Buffer extends VkSubpassBeginInfo.Buffer {
-
-        private static final VkSubpassBeginInfoKHR ELEMENT_FACTORY = VkSubpassBeginInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkSubpassBeginInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkSubpassBeginInfoKHR extends VkSubpassBeginInfo {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSubpassBeginInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSubpassBeginInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

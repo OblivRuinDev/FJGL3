@@ -265,9 +265,6 @@ public class XrMarkerDetectorCreateInfoML extends Struct<XrMarkerDetectorCreateI
 
     /** An array of {@link XrMarkerDetectorCreateInfoML} structs. */
     public static class Buffer extends StructBuffer<XrMarkerDetectorCreateInfoML, Buffer> implements NativeResource {
-
-        private static final XrMarkerDetectorCreateInfoML ELEMENT_FACTORY = XrMarkerDetectorCreateInfoML.create(-1L);
-
         /**
          * Creates a new {@code XrMarkerDetectorCreateInfoML.Buffer} instance backed by the specified container.
          *
@@ -290,18 +287,13 @@ public class XrMarkerDetectorCreateInfoML extends Struct<XrMarkerDetectorCreateI
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrMarkerDetectorCreateInfoML getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrMarkerDetectorCreateInfoML.class;
         }
 
         /** @return the value of the {@code type} field. */

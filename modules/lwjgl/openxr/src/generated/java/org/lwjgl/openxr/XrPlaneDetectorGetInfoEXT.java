@@ -267,9 +267,6 @@ public class XrPlaneDetectorGetInfoEXT extends Struct<XrPlaneDetectorGetInfoEXT>
 
     /** An array of {@link XrPlaneDetectorGetInfoEXT} structs. */
     public static class Buffer extends StructBuffer<XrPlaneDetectorGetInfoEXT, Buffer> implements NativeResource {
-
-        private static final XrPlaneDetectorGetInfoEXT ELEMENT_FACTORY = XrPlaneDetectorGetInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code XrPlaneDetectorGetInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -292,18 +289,13 @@ public class XrPlaneDetectorGetInfoEXT extends Struct<XrPlaneDetectorGetInfoEXT>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrPlaneDetectorGetInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrPlaneDetectorGetInfoEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

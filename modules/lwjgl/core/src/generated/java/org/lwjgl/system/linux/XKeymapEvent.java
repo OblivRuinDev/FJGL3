@@ -310,9 +310,6 @@ public class XKeymapEvent extends Struct<XKeymapEvent> implements NativeResource
 
     /** An array of {@link XKeymapEvent} structs. */
     public static class Buffer extends StructBuffer<XKeymapEvent, Buffer> implements NativeResource {
-
-        private static final XKeymapEvent ELEMENT_FACTORY = XKeymapEvent.create(-1L);
-
         /**
          * Creates a new {@code XKeymapEvent.Buffer} instance backed by the specified container.
          *
@@ -335,18 +332,13 @@ public class XKeymapEvent extends Struct<XKeymapEvent> implements NativeResource
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XKeymapEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XKeymapEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

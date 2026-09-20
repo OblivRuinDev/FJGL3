@@ -191,9 +191,6 @@ public class VkPhysicalDeviceShaderDrawParameterFeatures extends VkPhysicalDevic
 
     /** An array of {@link VkPhysicalDeviceShaderDrawParameterFeatures} structs. */
     public static class Buffer extends VkPhysicalDeviceShaderDrawParametersFeatures.Buffer {
-
-        private static final VkPhysicalDeviceShaderDrawParameterFeatures ELEMENT_FACTORY = VkPhysicalDeviceShaderDrawParameterFeatures.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderDrawParameterFeatures.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceShaderDrawParameterFeatures extends VkPhysicalDevic
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderDrawParameterFeatures getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderDrawParameterFeatures.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

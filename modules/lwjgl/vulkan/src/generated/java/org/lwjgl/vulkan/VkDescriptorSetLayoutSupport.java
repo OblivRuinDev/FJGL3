@@ -240,9 +240,6 @@ public class VkDescriptorSetLayoutSupport extends Struct<VkDescriptorSetLayoutSu
 
     /** An array of {@link VkDescriptorSetLayoutSupport} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorSetLayoutSupport, Buffer> implements NativeResource {
-
-        private static final VkDescriptorSetLayoutSupport ELEMENT_FACTORY = VkDescriptorSetLayoutSupport.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorSetLayoutSupport.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class VkDescriptorSetLayoutSupport extends Struct<VkDescriptorSetLayoutSu
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorSetLayoutSupport getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorSetLayoutSupport.class;
         }
 
         /** @return the value of the {@code sType} field. */

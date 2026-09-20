@@ -193,9 +193,6 @@ public class XrSpaceQueryResultFB extends Struct<XrSpaceQueryResultFB> implement
 
     /** An array of {@link XrSpaceQueryResultFB} structs. */
     public static class Buffer extends StructBuffer<XrSpaceQueryResultFB, Buffer> implements NativeResource {
-
-        private static final XrSpaceQueryResultFB ELEMENT_FACTORY = XrSpaceQueryResultFB.create(-1L);
-
         /**
          * Creates a new {@code XrSpaceQueryResultFB.Buffer} instance backed by the specified container.
          *
@@ -218,18 +215,13 @@ public class XrSpaceQueryResultFB extends Struct<XrSpaceQueryResultFB> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpaceQueryResultFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpaceQueryResultFB.class;
         }
 
         /** @return the value of the {@code space} field. */

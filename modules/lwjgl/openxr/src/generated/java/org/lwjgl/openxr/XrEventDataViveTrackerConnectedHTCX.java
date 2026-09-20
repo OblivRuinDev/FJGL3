@@ -246,9 +246,6 @@ public class XrEventDataViveTrackerConnectedHTCX extends Struct<XrEventDataViveT
 
     /** An array of {@link XrEventDataViveTrackerConnectedHTCX} structs. */
     public static class Buffer extends StructBuffer<XrEventDataViveTrackerConnectedHTCX, Buffer> implements NativeResource {
-
-        private static final XrEventDataViveTrackerConnectedHTCX ELEMENT_FACTORY = XrEventDataViveTrackerConnectedHTCX.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataViveTrackerConnectedHTCX.Buffer} instance backed by the specified container.
          *
@@ -271,18 +268,13 @@ public class XrEventDataViveTrackerConnectedHTCX extends Struct<XrEventDataViveT
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataViveTrackerConnectedHTCX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataViveTrackerConnectedHTCX.class;
         }
 
         /** @return the value of the {@code type} field. */

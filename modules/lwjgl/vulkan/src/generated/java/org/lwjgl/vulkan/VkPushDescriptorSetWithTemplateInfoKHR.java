@@ -210,9 +210,6 @@ public class VkPushDescriptorSetWithTemplateInfoKHR extends VkPushDescriptorSetW
 
     /** An array of {@link VkPushDescriptorSetWithTemplateInfoKHR} structs. */
     public static class Buffer extends VkPushDescriptorSetWithTemplateInfo.Buffer {
-
-        private static final VkPushDescriptorSetWithTemplateInfoKHR ELEMENT_FACTORY = VkPushDescriptorSetWithTemplateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPushDescriptorSetWithTemplateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -235,18 +232,13 @@ public class VkPushDescriptorSetWithTemplateInfoKHR extends VkPushDescriptorSetW
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPushDescriptorSetWithTemplateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPushDescriptorSetWithTemplateInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

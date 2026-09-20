@@ -224,9 +224,6 @@ public class MSDFGenVector2 extends Struct<MSDFGenVector2> implements NativeReso
 
     /** An array of {@link MSDFGenVector2} structs. */
     public static class Buffer extends StructBuffer<MSDFGenVector2, Buffer> implements NativeResource {
-
-        private static final MSDFGenVector2 ELEMENT_FACTORY = MSDFGenVector2.create(-1L);
-
         /**
          * Creates a new {@code MSDFGenVector2.Buffer} instance backed by the specified container.
          *
@@ -249,18 +246,13 @@ public class MSDFGenVector2 extends Struct<MSDFGenVector2> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected MSDFGenVector2 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return MSDFGenVector2.class;
         }
 
         /** @return the value of the {@code x} field. */

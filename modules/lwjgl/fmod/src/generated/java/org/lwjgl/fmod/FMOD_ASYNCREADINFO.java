@@ -324,9 +324,6 @@ public class FMOD_ASYNCREADINFO extends Struct<FMOD_ASYNCREADINFO> implements Na
 
     /** An array of {@link FMOD_ASYNCREADINFO} structs. */
     public static class Buffer extends StructBuffer<FMOD_ASYNCREADINFO, Buffer> implements NativeResource {
-
-        private static final FMOD_ASYNCREADINFO ELEMENT_FACTORY = FMOD_ASYNCREADINFO.create(-1L);
-
         /**
          * Creates a new {@code FMOD_ASYNCREADINFO.Buffer} instance backed by the specified container.
          *
@@ -349,18 +346,13 @@ public class FMOD_ASYNCREADINFO extends Struct<FMOD_ASYNCREADINFO> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_ASYNCREADINFO getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_ASYNCREADINFO.class;
         }
 
         /** @return the value of the {@code handle} field. */

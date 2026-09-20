@@ -292,9 +292,6 @@ public class BGFXInstanceDataBuffer extends Struct<BGFXInstanceDataBuffer> imple
 
     /** An array of {@link BGFXInstanceDataBuffer} structs. */
     public static class Buffer extends StructBuffer<BGFXInstanceDataBuffer, Buffer> implements NativeResource {
-
-        private static final BGFXInstanceDataBuffer ELEMENT_FACTORY = BGFXInstanceDataBuffer.create(-1L);
-
         /**
          * Creates a new {@code BGFXInstanceDataBuffer.Buffer} instance backed by the specified container.
          *
@@ -317,18 +314,13 @@ public class BGFXInstanceDataBuffer extends Struct<BGFXInstanceDataBuffer> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected BGFXInstanceDataBuffer getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return BGFXInstanceDataBuffer.class;
         }
 
         /** @return a {@link ByteBuffer} view of the data pointed to by the {@code data} field. */

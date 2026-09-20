@@ -241,9 +241,6 @@ public class SpvcCombinedImageSampler extends Struct<SpvcCombinedImageSampler> i
 
     /** An array of {@link SpvcCombinedImageSampler} structs. */
     public static class Buffer extends StructBuffer<SpvcCombinedImageSampler, Buffer> implements NativeResource {
-
-        private static final SpvcCombinedImageSampler ELEMENT_FACTORY = SpvcCombinedImageSampler.create(-1L);
-
         /**
          * Creates a new {@code SpvcCombinedImageSampler.Buffer} instance backed by the specified container.
          *
@@ -266,18 +263,13 @@ public class SpvcCombinedImageSampler extends Struct<SpvcCombinedImageSampler> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SpvcCombinedImageSampler getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SpvcCombinedImageSampler.class;
         }
 
         /** @return the value of the {@code combined_id} field. */

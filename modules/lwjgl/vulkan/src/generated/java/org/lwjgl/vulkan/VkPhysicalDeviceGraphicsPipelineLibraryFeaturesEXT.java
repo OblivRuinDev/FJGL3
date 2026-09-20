@@ -242,9 +242,6 @@ public class VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT extends Struct<V
 
     /** An array of {@link VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT extends Struct<V
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

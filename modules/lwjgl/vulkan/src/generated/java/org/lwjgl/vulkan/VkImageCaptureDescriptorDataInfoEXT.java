@@ -242,9 +242,6 @@ public class VkImageCaptureDescriptorDataInfoEXT extends Struct<VkImageCaptureDe
 
     /** An array of {@link VkImageCaptureDescriptorDataInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkImageCaptureDescriptorDataInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkImageCaptureDescriptorDataInfoEXT ELEMENT_FACTORY = VkImageCaptureDescriptorDataInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkImageCaptureDescriptorDataInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkImageCaptureDescriptorDataInfoEXT extends Struct<VkImageCaptureDe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageCaptureDescriptorDataInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageCaptureDescriptorDataInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

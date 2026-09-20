@@ -334,9 +334,6 @@ public class VkBufferMemoryBarrier extends Struct<VkBufferMemoryBarrier> impleme
 
     /** An array of {@link VkBufferMemoryBarrier} structs. */
     public static class Buffer extends StructBuffer<VkBufferMemoryBarrier, Buffer> implements NativeResource {
-
-        private static final VkBufferMemoryBarrier ELEMENT_FACTORY = VkBufferMemoryBarrier.create(-1L);
-
         /**
          * Creates a new {@code VkBufferMemoryBarrier.Buffer} instance backed by the specified container.
          *
@@ -359,18 +356,13 @@ public class VkBufferMemoryBarrier extends Struct<VkBufferMemoryBarrier> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBufferMemoryBarrier getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBufferMemoryBarrier.class;
         }
 
         /** @return the value of the {@code sType} field. */

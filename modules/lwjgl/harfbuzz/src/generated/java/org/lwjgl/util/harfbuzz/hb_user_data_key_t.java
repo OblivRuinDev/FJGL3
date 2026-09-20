@@ -180,9 +180,6 @@ public class hb_user_data_key_t extends Struct<hb_user_data_key_t> implements Na
 
     /** An array of {@link hb_user_data_key_t} structs. */
     public static class Buffer extends StructBuffer<hb_user_data_key_t, Buffer> implements NativeResource {
-
-        private static final hb_user_data_key_t ELEMENT_FACTORY = hb_user_data_key_t.create(-1L);
-
         /**
          * Creates a new {@code hb_user_data_key_t.Buffer} instance backed by the specified container.
          *
@@ -205,18 +202,13 @@ public class hb_user_data_key_t extends Struct<hb_user_data_key_t> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected hb_user_data_key_t getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return hb_user_data_key_t.class;
         }
 
     }

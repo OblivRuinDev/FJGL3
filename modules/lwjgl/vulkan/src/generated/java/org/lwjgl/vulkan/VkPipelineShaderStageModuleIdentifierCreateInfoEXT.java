@@ -265,9 +265,6 @@ public class VkPipelineShaderStageModuleIdentifierCreateInfoEXT extends Struct<V
 
     /** An array of {@link VkPipelineShaderStageModuleIdentifierCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkPipelineShaderStageModuleIdentifierCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkPipelineShaderStageModuleIdentifierCreateInfoEXT ELEMENT_FACTORY = VkPipelineShaderStageModuleIdentifierCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineShaderStageModuleIdentifierCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -290,18 +287,13 @@ public class VkPipelineShaderStageModuleIdentifierCreateInfoEXT extends Struct<V
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineShaderStageModuleIdentifierCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineShaderStageModuleIdentifierCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

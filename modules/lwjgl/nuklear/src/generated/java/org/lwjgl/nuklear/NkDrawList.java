@@ -323,9 +323,6 @@ public class NkDrawList extends Struct<NkDrawList> implements NativeResource {
 
     /** An array of {@link NkDrawList} structs. */
     public static class Buffer extends StructBuffer<NkDrawList, Buffer> implements NativeResource {
-
-        private static final NkDrawList ELEMENT_FACTORY = NkDrawList.create(-1L);
-
         /**
          * Creates a new {@code NkDrawList.Buffer} instance backed by the specified container.
          *
@@ -348,18 +345,13 @@ public class NkDrawList extends Struct<NkDrawList> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkDrawList getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkDrawList.class;
         }
 
         /** @return a {@link NkRect} view of the {@code clip_rect} field. */

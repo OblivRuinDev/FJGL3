@@ -315,9 +315,6 @@ public class VkPipelineColorBlendAttachmentState extends Struct<VkPipelineColorB
 
     /** An array of {@link VkPipelineColorBlendAttachmentState} structs. */
     public static class Buffer extends StructBuffer<VkPipelineColorBlendAttachmentState, Buffer> implements NativeResource {
-
-        private static final VkPipelineColorBlendAttachmentState ELEMENT_FACTORY = VkPipelineColorBlendAttachmentState.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineColorBlendAttachmentState.Buffer} instance backed by the specified container.
          *
@@ -340,18 +337,13 @@ public class VkPipelineColorBlendAttachmentState extends Struct<VkPipelineColorB
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineColorBlendAttachmentState getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineColorBlendAttachmentState.class;
         }
 
         /** @return the value of the {@code blendEnable} field. */

@@ -257,9 +257,6 @@ public class VkPresentWait2InfoKHR extends Struct<VkPresentWait2InfoKHR> impleme
 
     /** An array of {@link VkPresentWait2InfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkPresentWait2InfoKHR, Buffer> implements NativeResource {
-
-        private static final VkPresentWait2InfoKHR ELEMENT_FACTORY = VkPresentWait2InfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPresentWait2InfoKHR.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkPresentWait2InfoKHR extends Struct<VkPresentWait2InfoKHR> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPresentWait2InfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPresentWait2InfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

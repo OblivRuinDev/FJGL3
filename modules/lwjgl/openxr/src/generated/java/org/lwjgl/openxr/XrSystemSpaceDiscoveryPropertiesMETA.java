@@ -236,9 +236,6 @@ public class XrSystemSpaceDiscoveryPropertiesMETA extends Struct<XrSystemSpaceDi
 
     /** An array of {@link XrSystemSpaceDiscoveryPropertiesMETA} structs. */
     public static class Buffer extends StructBuffer<XrSystemSpaceDiscoveryPropertiesMETA, Buffer> implements NativeResource {
-
-        private static final XrSystemSpaceDiscoveryPropertiesMETA ELEMENT_FACTORY = XrSystemSpaceDiscoveryPropertiesMETA.create(-1L);
-
         /**
          * Creates a new {@code XrSystemSpaceDiscoveryPropertiesMETA.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemSpaceDiscoveryPropertiesMETA extends Struct<XrSystemSpaceDi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemSpaceDiscoveryPropertiesMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemSpaceDiscoveryPropertiesMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

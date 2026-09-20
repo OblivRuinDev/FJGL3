@@ -260,9 +260,6 @@ public class SDL_PinchFingerEvent extends Struct<SDL_PinchFingerEvent> implement
 
     /** An array of {@link SDL_PinchFingerEvent} structs. */
     public static class Buffer extends StructBuffer<SDL_PinchFingerEvent, Buffer> implements NativeResource {
-
-        private static final SDL_PinchFingerEvent ELEMENT_FACTORY = SDL_PinchFingerEvent.create(-1L);
-
         /**
          * Creates a new {@code SDL_PinchFingerEvent.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class SDL_PinchFingerEvent extends Struct<SDL_PinchFingerEvent> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_PinchFingerEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_PinchFingerEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

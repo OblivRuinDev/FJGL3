@@ -262,9 +262,6 @@ public class CLKernelAllocationInfoINTEL extends Struct<CLKernelAllocationInfoIN
 
     /** An array of {@link CLKernelAllocationInfoINTEL} structs. */
     public static class Buffer extends StructBuffer<CLKernelAllocationInfoINTEL, Buffer> implements NativeResource {
-
-        private static final CLKernelAllocationInfoINTEL ELEMENT_FACTORY = CLKernelAllocationInfoINTEL.create(-1L);
-
         /**
          * Creates a new {@code CLKernelAllocationInfoINTEL.Buffer} instance backed by the specified container.
          *
@@ -287,18 +284,13 @@ public class CLKernelAllocationInfoINTEL extends Struct<CLKernelAllocationInfoIN
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CLKernelAllocationInfoINTEL getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CLKernelAllocationInfoINTEL.class;
         }
 
         /** @return a {@link ByteBuffer} view of the data pointed to by the {@code base} field. */

@@ -225,9 +225,6 @@ public class VkOffset2D extends Struct<VkOffset2D> implements NativeResource {
 
     /** An array of {@link VkOffset2D} structs. */
     public static class Buffer extends StructBuffer<VkOffset2D, Buffer> implements NativeResource {
-
-        private static final VkOffset2D ELEMENT_FACTORY = VkOffset2D.create(-1L);
-
         /**
          * Creates a new {@code VkOffset2D.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class VkOffset2D extends Struct<VkOffset2D> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkOffset2D getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkOffset2D.class;
         }
 
         /** @return the value of the {@code x} field. */

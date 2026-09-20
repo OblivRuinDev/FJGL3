@@ -236,9 +236,6 @@ public class XrSystemHapticParametricPropertiesEXT extends Struct<XrSystemHaptic
 
     /** An array of {@link XrSystemHapticParametricPropertiesEXT} structs. */
     public static class Buffer extends StructBuffer<XrSystemHapticParametricPropertiesEXT, Buffer> implements NativeResource {
-
-        private static final XrSystemHapticParametricPropertiesEXT ELEMENT_FACTORY = XrSystemHapticParametricPropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSystemHapticParametricPropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemHapticParametricPropertiesEXT extends Struct<XrSystemHaptic
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemHapticParametricPropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemHapticParametricPropertiesEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

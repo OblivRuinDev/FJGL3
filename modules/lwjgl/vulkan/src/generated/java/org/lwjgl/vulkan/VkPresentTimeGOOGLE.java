@@ -225,9 +225,6 @@ public class VkPresentTimeGOOGLE extends Struct<VkPresentTimeGOOGLE> implements 
 
     /** An array of {@link VkPresentTimeGOOGLE} structs. */
     public static class Buffer extends StructBuffer<VkPresentTimeGOOGLE, Buffer> implements NativeResource {
-
-        private static final VkPresentTimeGOOGLE ELEMENT_FACTORY = VkPresentTimeGOOGLE.create(-1L);
-
         /**
          * Creates a new {@code VkPresentTimeGOOGLE.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class VkPresentTimeGOOGLE extends Struct<VkPresentTimeGOOGLE> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPresentTimeGOOGLE getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPresentTimeGOOGLE.class;
         }
 
         /** @return the value of the {@code presentID} field. */

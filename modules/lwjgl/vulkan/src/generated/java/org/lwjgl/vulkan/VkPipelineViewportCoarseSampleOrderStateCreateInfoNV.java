@@ -283,9 +283,6 @@ public class VkPipelineViewportCoarseSampleOrderStateCreateInfoNV extends Struct
 
     /** An array of {@link VkPipelineViewportCoarseSampleOrderStateCreateInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkPipelineViewportCoarseSampleOrderStateCreateInfoNV, Buffer> implements NativeResource {
-
-        private static final VkPipelineViewportCoarseSampleOrderStateCreateInfoNV ELEMENT_FACTORY = VkPipelineViewportCoarseSampleOrderStateCreateInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineViewportCoarseSampleOrderStateCreateInfoNV.Buffer} instance backed by the specified container.
          *
@@ -308,18 +305,13 @@ public class VkPipelineViewportCoarseSampleOrderStateCreateInfoNV extends Struct
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineViewportCoarseSampleOrderStateCreateInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineViewportCoarseSampleOrderStateCreateInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

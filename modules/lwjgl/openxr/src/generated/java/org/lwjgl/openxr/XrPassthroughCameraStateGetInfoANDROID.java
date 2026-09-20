@@ -227,9 +227,6 @@ public class XrPassthroughCameraStateGetInfoANDROID extends Struct<XrPassthrough
 
     /** An array of {@link XrPassthroughCameraStateGetInfoANDROID} structs. */
     public static class Buffer extends StructBuffer<XrPassthroughCameraStateGetInfoANDROID, Buffer> implements NativeResource {
-
-        private static final XrPassthroughCameraStateGetInfoANDROID ELEMENT_FACTORY = XrPassthroughCameraStateGetInfoANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrPassthroughCameraStateGetInfoANDROID.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrPassthroughCameraStateGetInfoANDROID extends Struct<XrPassthrough
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrPassthroughCameraStateGetInfoANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrPassthroughCameraStateGetInfoANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

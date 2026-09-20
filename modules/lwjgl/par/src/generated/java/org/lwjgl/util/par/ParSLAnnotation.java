@@ -123,9 +123,6 @@ public class ParSLAnnotation extends Struct<ParSLAnnotation> {
 
     /** An array of {@link ParSLAnnotation} structs. */
     public static class Buffer extends StructBuffer<ParSLAnnotation, Buffer> {
-
-        private static final ParSLAnnotation ELEMENT_FACTORY = ParSLAnnotation.create(-1L);
-
         /**
          * Creates a new {@code ParSLAnnotation.Buffer} instance backed by the specified container.
          *
@@ -148,18 +145,13 @@ public class ParSLAnnotation extends Struct<ParSLAnnotation> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ParSLAnnotation getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ParSLAnnotation.class;
         }
 
         /** @return the value of the {@code u_along_curve} field. */

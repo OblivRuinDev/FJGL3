@@ -308,9 +308,6 @@ public class spng_chrm extends Struct<spng_chrm> implements NativeResource {
 
     /** An array of {@link spng_chrm} structs. */
     public static class Buffer extends StructBuffer<spng_chrm, Buffer> implements NativeResource {
-
-        private static final spng_chrm ELEMENT_FACTORY = spng_chrm.create(-1L);
-
         /**
          * Creates a new {@code spng_chrm.Buffer} instance backed by the specified container.
          *
@@ -333,18 +330,13 @@ public class spng_chrm extends Struct<spng_chrm> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected spng_chrm getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return spng_chrm.class;
         }
 
         /** @return the value of the {@code white_point_x} field. */

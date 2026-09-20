@@ -242,9 +242,6 @@ public class TT_HoriHeader extends Struct<TT_HoriHeader> {
 
     /** An array of {@link TT_HoriHeader} structs. */
     public static class Buffer extends StructBuffer<TT_HoriHeader, Buffer> {
-
-        private static final TT_HoriHeader ELEMENT_FACTORY = TT_HoriHeader.create(-1L);
-
         /**
          * Creates a new {@code TT_HoriHeader.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class TT_HoriHeader extends Struct<TT_HoriHeader> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected TT_HoriHeader getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return TT_HoriHeader.class;
         }
 
         /** @return the value of the {@code Version} field. */

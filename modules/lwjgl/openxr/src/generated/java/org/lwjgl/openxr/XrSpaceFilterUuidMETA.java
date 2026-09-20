@@ -273,9 +273,6 @@ public class XrSpaceFilterUuidMETA extends Struct<XrSpaceFilterUuidMETA> impleme
 
     /** An array of {@link XrSpaceFilterUuidMETA} structs. */
     public static class Buffer extends StructBuffer<XrSpaceFilterUuidMETA, Buffer> implements NativeResource {
-
-        private static final XrSpaceFilterUuidMETA ELEMENT_FACTORY = XrSpaceFilterUuidMETA.create(-1L);
-
         /**
          * Creates a new {@code XrSpaceFilterUuidMETA.Buffer} instance backed by the specified container.
          *
@@ -298,18 +295,13 @@ public class XrSpaceFilterUuidMETA extends Struct<XrSpaceFilterUuidMETA> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpaceFilterUuidMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpaceFilterUuidMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

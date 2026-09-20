@@ -301,9 +301,6 @@ public class mi_heap_area_t extends Struct<mi_heap_area_t> implements NativeReso
 
     /** An array of {@link mi_heap_area_t} structs. */
     public static class Buffer extends StructBuffer<mi_heap_area_t, Buffer> implements NativeResource {
-
-        private static final mi_heap_area_t ELEMENT_FACTORY = mi_heap_area_t.create(-1L);
-
         /**
          * Creates a new {@code mi_heap_area_t.Buffer} instance backed by the specified container.
          *
@@ -326,18 +323,13 @@ public class mi_heap_area_t extends Struct<mi_heap_area_t> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected mi_heap_area_t getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return mi_heap_area_t.class;
         }
 
         /** @return the value of the {@code blocks} field. */

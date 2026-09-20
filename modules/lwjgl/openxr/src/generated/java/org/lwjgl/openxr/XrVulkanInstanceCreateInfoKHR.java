@@ -317,9 +317,6 @@ public class XrVulkanInstanceCreateInfoKHR extends Struct<XrVulkanInstanceCreate
 
     /** An array of {@link XrVulkanInstanceCreateInfoKHR} structs. */
     public static class Buffer extends StructBuffer<XrVulkanInstanceCreateInfoKHR, Buffer> implements NativeResource {
-
-        private static final XrVulkanInstanceCreateInfoKHR ELEMENT_FACTORY = XrVulkanInstanceCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code XrVulkanInstanceCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -342,18 +339,13 @@ public class XrVulkanInstanceCreateInfoKHR extends Struct<XrVulkanInstanceCreate
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrVulkanInstanceCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrVulkanInstanceCreateInfoKHR.class;
         }
 
         /** @return the value of the {@code type} field. */

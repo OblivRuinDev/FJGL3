@@ -308,9 +308,6 @@ public class STBTTPackRange extends Struct<STBTTPackRange> implements NativeReso
 
     /** An array of {@link STBTTPackRange} structs. */
     public static class Buffer extends StructBuffer<STBTTPackRange, Buffer> implements NativeResource {
-
-        private static final STBTTPackRange ELEMENT_FACTORY = STBTTPackRange.create(-1L);
-
         /**
          * Creates a new {@code STBTTPackRange.Buffer} instance backed by the specified container.
          *
@@ -333,18 +330,13 @@ public class STBTTPackRange extends Struct<STBTTPackRange> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected STBTTPackRange getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return STBTTPackRange.class;
         }
 
         /** @return the value of the {@code font_size} field. */

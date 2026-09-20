@@ -216,9 +216,6 @@ public class CLQueueFamilyPropertiesINTEL extends Struct<CLQueueFamilyProperties
 
     /** An array of {@link CLQueueFamilyPropertiesINTEL} structs. */
     public static class Buffer extends StructBuffer<CLQueueFamilyPropertiesINTEL, Buffer> implements NativeResource {
-
-        private static final CLQueueFamilyPropertiesINTEL ELEMENT_FACTORY = CLQueueFamilyPropertiesINTEL.create(-1L);
-
         /**
          * Creates a new {@code CLQueueFamilyPropertiesINTEL.Buffer} instance backed by the specified container.
          *
@@ -241,18 +238,13 @@ public class CLQueueFamilyPropertiesINTEL extends Struct<CLQueueFamilyProperties
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CLQueueFamilyPropertiesINTEL getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CLQueueFamilyPropertiesINTEL.class;
         }
 
         /** @return the value of the {@code properties} field. */

@@ -346,9 +346,6 @@ public class VkDescriptorMappingSourceDataEXT extends Struct<VkDescriptorMapping
 
     /** An array of {@link VkDescriptorMappingSourceDataEXT} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorMappingSourceDataEXT, Buffer> implements NativeResource {
-
-        private static final VkDescriptorMappingSourceDataEXT ELEMENT_FACTORY = VkDescriptorMappingSourceDataEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorMappingSourceDataEXT.Buffer} instance backed by the specified container.
          *
@@ -371,18 +368,13 @@ public class VkDescriptorMappingSourceDataEXT extends Struct<VkDescriptorMapping
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorMappingSourceDataEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorMappingSourceDataEXT.class;
         }
 
         /** @return a {@link VkDescriptorMappingSourceConstantOffsetEXT} view of the {@code constantOffset} field. */

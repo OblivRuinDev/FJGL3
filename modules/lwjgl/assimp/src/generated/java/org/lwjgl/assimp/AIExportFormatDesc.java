@@ -277,9 +277,6 @@ public class AIExportFormatDesc extends Struct<AIExportFormatDesc> implements Na
 
     /** An array of {@link AIExportFormatDesc} structs. */
     public static class Buffer extends StructBuffer<AIExportFormatDesc, Buffer> implements NativeResource {
-
-        private static final AIExportFormatDesc ELEMENT_FACTORY = AIExportFormatDesc.create(-1L);
-
         /**
          * Creates a new {@code AIExportFormatDesc.Buffer} instance backed by the specified container.
          *
@@ -302,18 +299,13 @@ public class AIExportFormatDesc extends Struct<AIExportFormatDesc> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIExportFormatDesc getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIExportFormatDesc.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code id} field. */

@@ -254,9 +254,6 @@ public class XrSystemHandTrackingMeshPropertiesMSFT extends Struct<XrSystemHandT
 
     /** An array of {@link XrSystemHandTrackingMeshPropertiesMSFT} structs. */
     public static class Buffer extends StructBuffer<XrSystemHandTrackingMeshPropertiesMSFT, Buffer> implements NativeResource {
-
-        private static final XrSystemHandTrackingMeshPropertiesMSFT ELEMENT_FACTORY = XrSystemHandTrackingMeshPropertiesMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrSystemHandTrackingMeshPropertiesMSFT.Buffer} instance backed by the specified container.
          *
@@ -279,18 +276,13 @@ public class XrSystemHandTrackingMeshPropertiesMSFT extends Struct<XrSystemHandT
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemHandTrackingMeshPropertiesMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemHandTrackingMeshPropertiesMSFT.class;
         }
 
         /** @return the value of the {@code type} field. */

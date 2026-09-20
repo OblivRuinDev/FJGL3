@@ -256,9 +256,6 @@ public class StdVideoAV1FilmGrainFlags extends Struct<StdVideoAV1FilmGrainFlags>
 
     /** An array of {@link StdVideoAV1FilmGrainFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoAV1FilmGrainFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoAV1FilmGrainFlags ELEMENT_FACTORY = StdVideoAV1FilmGrainFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoAV1FilmGrainFlags.Buffer} instance backed by the specified container.
          *
@@ -281,18 +278,13 @@ public class StdVideoAV1FilmGrainFlags extends Struct<StdVideoAV1FilmGrainFlags>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoAV1FilmGrainFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoAV1FilmGrainFlags.class;
         }
 
         /** @return the value of the {@code chroma_scaling_from_luma} field. */

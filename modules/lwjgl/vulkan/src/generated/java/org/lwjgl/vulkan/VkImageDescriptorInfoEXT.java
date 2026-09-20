@@ -267,9 +267,6 @@ public class VkImageDescriptorInfoEXT extends Struct<VkImageDescriptorInfoEXT> i
 
     /** An array of {@link VkImageDescriptorInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkImageDescriptorInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkImageDescriptorInfoEXT ELEMENT_FACTORY = VkImageDescriptorInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkImageDescriptorInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -292,18 +289,13 @@ public class VkImageDescriptorInfoEXT extends Struct<VkImageDescriptorInfoEXT> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageDescriptorInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageDescriptorInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -225,9 +225,6 @@ public class StdVideoEncodeAV1ExtensionHeader extends Struct<StdVideoEncodeAV1Ex
 
     /** An array of {@link StdVideoEncodeAV1ExtensionHeader} structs. */
     public static class Buffer extends StructBuffer<StdVideoEncodeAV1ExtensionHeader, Buffer> implements NativeResource {
-
-        private static final StdVideoEncodeAV1ExtensionHeader ELEMENT_FACTORY = StdVideoEncodeAV1ExtensionHeader.create(-1L);
-
         /**
          * Creates a new {@code StdVideoEncodeAV1ExtensionHeader.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class StdVideoEncodeAV1ExtensionHeader extends Struct<StdVideoEncodeAV1Ex
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoEncodeAV1ExtensionHeader getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoEncodeAV1ExtensionHeader.class;
         }
 
         /** @return the value of the {@code temporal_id} field. */

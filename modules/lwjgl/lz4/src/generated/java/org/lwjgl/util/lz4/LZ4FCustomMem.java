@@ -272,9 +272,6 @@ public class LZ4FCustomMem extends Struct<LZ4FCustomMem> implements NativeResour
 
     /** An array of {@link LZ4FCustomMem} structs. */
     public static class Buffer extends StructBuffer<LZ4FCustomMem, Buffer> implements NativeResource {
-
-        private static final LZ4FCustomMem ELEMENT_FACTORY = LZ4FCustomMem.create(-1L);
-
         /**
          * Creates a new {@code LZ4FCustomMem.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class LZ4FCustomMem extends Struct<LZ4FCustomMem> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected LZ4FCustomMem getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return LZ4FCustomMem.class;
         }
 
         /** @return the value of the {@code customAlloc} field. */

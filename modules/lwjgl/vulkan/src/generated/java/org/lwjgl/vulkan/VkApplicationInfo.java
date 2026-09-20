@@ -319,9 +319,6 @@ public class VkApplicationInfo extends Struct<VkApplicationInfo> implements Nati
 
     /** An array of {@link VkApplicationInfo} structs. */
     public static class Buffer extends StructBuffer<VkApplicationInfo, Buffer> implements NativeResource {
-
-        private static final VkApplicationInfo ELEMENT_FACTORY = VkApplicationInfo.create(-1L);
-
         /**
          * Creates a new {@code VkApplicationInfo.Buffer} instance backed by the specified container.
          *
@@ -344,18 +341,13 @@ public class VkApplicationInfo extends Struct<VkApplicationInfo> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkApplicationInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkApplicationInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -236,9 +236,6 @@ public class VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM extends Stru
 
     /** An array of {@link VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM ELEMENT_FACTORY = VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM extends Stru
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

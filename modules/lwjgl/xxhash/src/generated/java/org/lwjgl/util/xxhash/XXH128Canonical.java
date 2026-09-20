@@ -192,9 +192,6 @@ public class XXH128Canonical extends Struct<XXH128Canonical> implements NativeRe
 
     /** An array of {@link XXH128Canonical} structs. */
     public static class Buffer extends StructBuffer<XXH128Canonical, Buffer> implements NativeResource {
-
-        private static final XXH128Canonical ELEMENT_FACTORY = XXH128Canonical.create(-1L);
-
         /**
          * Creates a new {@code XXH128Canonical.Buffer} instance backed by the specified container.
          *
@@ -217,18 +214,13 @@ public class XXH128Canonical extends Struct<XXH128Canonical> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XXH128Canonical getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XXH128Canonical.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code digest} field. */

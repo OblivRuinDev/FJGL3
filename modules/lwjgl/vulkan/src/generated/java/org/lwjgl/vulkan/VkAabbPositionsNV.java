@@ -206,9 +206,6 @@ public class VkAabbPositionsNV extends VkAabbPositionsKHR {
 
     /** An array of {@link VkAabbPositionsNV} structs. */
     public static class Buffer extends VkAabbPositionsKHR.Buffer {
-
-        private static final VkAabbPositionsNV ELEMENT_FACTORY = VkAabbPositionsNV.create(-1L);
-
         /**
          * Creates a new {@code VkAabbPositionsNV.Buffer} instance backed by the specified container.
          *
@@ -231,18 +228,13 @@ public class VkAabbPositionsNV extends VkAabbPositionsKHR {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAabbPositionsNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAabbPositionsNV.class;
         }
 
         /** Sets the specified value to the {@code minX} field. */

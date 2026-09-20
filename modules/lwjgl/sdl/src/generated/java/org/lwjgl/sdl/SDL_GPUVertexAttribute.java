@@ -255,9 +255,6 @@ public class SDL_GPUVertexAttribute extends Struct<SDL_GPUVertexAttribute> imple
 
     /** An array of {@link SDL_GPUVertexAttribute} structs. */
     public static class Buffer extends StructBuffer<SDL_GPUVertexAttribute, Buffer> implements NativeResource {
-
-        private static final SDL_GPUVertexAttribute ELEMENT_FACTORY = SDL_GPUVertexAttribute.create(-1L);
-
         /**
          * Creates a new {@code SDL_GPUVertexAttribute.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class SDL_GPUVertexAttribute extends Struct<SDL_GPUVertexAttribute> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GPUVertexAttribute getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GPUVertexAttribute.class;
         }
 
         /** @return the value of the {@code location} field. */

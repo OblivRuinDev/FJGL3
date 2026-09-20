@@ -244,9 +244,6 @@ public class XXH32State extends Struct<XXH32State> implements NativeResource {
 
     /** An array of {@link XXH32State} structs. */
     public static class Buffer extends StructBuffer<XXH32State, Buffer> implements NativeResource {
-
-        private static final XXH32State ELEMENT_FACTORY = XXH32State.create(-1L);
-
         /**
          * Creates a new {@code XXH32State.Buffer} instance backed by the specified container.
          *
@@ -269,18 +266,13 @@ public class XXH32State extends Struct<XXH32State> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XXH32State getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XXH32State.class;
         }
 
         /** @return the value of the {@code total_len_32} field. */

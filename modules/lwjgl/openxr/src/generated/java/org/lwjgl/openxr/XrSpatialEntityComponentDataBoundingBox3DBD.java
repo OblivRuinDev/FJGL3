@@ -245,9 +245,6 @@ public class XrSpatialEntityComponentDataBoundingBox3DBD extends Struct<XrSpatia
 
     /** An array of {@link XrSpatialEntityComponentDataBoundingBox3DBD} structs. */
     public static class Buffer extends StructBuffer<XrSpatialEntityComponentDataBoundingBox3DBD, Buffer> implements NativeResource {
-
-        private static final XrSpatialEntityComponentDataBoundingBox3DBD ELEMENT_FACTORY = XrSpatialEntityComponentDataBoundingBox3DBD.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialEntityComponentDataBoundingBox3DBD.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class XrSpatialEntityComponentDataBoundingBox3DBD extends Struct<XrSpatia
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialEntityComponentDataBoundingBox3DBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialEntityComponentDataBoundingBox3DBD.class;
         }
 
         /** @return the value of the {@code type} field. */

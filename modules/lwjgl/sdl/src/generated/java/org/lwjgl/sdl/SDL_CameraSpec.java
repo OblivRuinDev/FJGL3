@@ -281,9 +281,6 @@ public class SDL_CameraSpec extends Struct<SDL_CameraSpec> implements NativeReso
 
     /** An array of {@link SDL_CameraSpec} structs. */
     public static class Buffer extends StructBuffer<SDL_CameraSpec, Buffer> implements NativeResource {
-
-        private static final SDL_CameraSpec ELEMENT_FACTORY = SDL_CameraSpec.create(-1L);
-
         /**
          * Creates a new {@code SDL_CameraSpec.Buffer} instance backed by the specified container.
          *
@@ -306,18 +303,13 @@ public class SDL_CameraSpec extends Struct<SDL_CameraSpec> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_CameraSpec getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_CameraSpec.class;
         }
 
         /** @return the value of the {@code format} field. */

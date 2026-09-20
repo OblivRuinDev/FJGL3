@@ -170,9 +170,6 @@ public class hwloc_bridge_attr_s extends Struct<hwloc_bridge_attr_s> {
 
     /** An array of {@link hwloc_bridge_attr_s} structs. */
     public static class Buffer extends StructBuffer<hwloc_bridge_attr_s, Buffer> {
-
-        private static final hwloc_bridge_attr_s ELEMENT_FACTORY = hwloc_bridge_attr_s.create(-1L);
-
         /**
          * Creates a new {@code hwloc_bridge_attr_s.Buffer} instance backed by the specified container.
          *
@@ -195,18 +192,13 @@ public class hwloc_bridge_attr_s extends Struct<hwloc_bridge_attr_s> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected hwloc_bridge_attr_s getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return hwloc_bridge_attr_s.class;
         }
 
         /** @return a {@link hwloc_pcidev_attr_s} view of the {@code upstream.pci} field. */

@@ -211,9 +211,6 @@ public class MeshoptMeshlet extends Struct<MeshoptMeshlet> implements NativeReso
 
     /** An array of {@link MeshoptMeshlet} structs. */
     public static class Buffer extends StructBuffer<MeshoptMeshlet, Buffer> implements NativeResource {
-
-        private static final MeshoptMeshlet ELEMENT_FACTORY = MeshoptMeshlet.create(-1L);
-
         /**
          * Creates a new {@code MeshoptMeshlet.Buffer} instance backed by the specified container.
          *
@@ -236,18 +233,13 @@ public class MeshoptMeshlet extends Struct<MeshoptMeshlet> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected MeshoptMeshlet getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return MeshoptMeshlet.class;
         }
 
         /** @return the value of the {@code vertex_offset} field. */

@@ -317,9 +317,6 @@ public class VkCooperativeVectorPropertiesNV extends Struct<VkCooperativeVectorP
 
     /** An array of {@link VkCooperativeVectorPropertiesNV} structs. */
     public static class Buffer extends StructBuffer<VkCooperativeVectorPropertiesNV, Buffer> implements NativeResource {
-
-        private static final VkCooperativeVectorPropertiesNV ELEMENT_FACTORY = VkCooperativeVectorPropertiesNV.create(-1L);
-
         /**
          * Creates a new {@code VkCooperativeVectorPropertiesNV.Buffer} instance backed by the specified container.
          *
@@ -342,18 +339,13 @@ public class VkCooperativeVectorPropertiesNV extends Struct<VkCooperativeVectorP
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCooperativeVectorPropertiesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCooperativeVectorPropertiesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

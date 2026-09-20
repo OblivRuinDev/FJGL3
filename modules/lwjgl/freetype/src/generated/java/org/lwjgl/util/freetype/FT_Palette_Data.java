@@ -219,9 +219,6 @@ public class FT_Palette_Data extends Struct<FT_Palette_Data> implements NativeRe
 
     /** An array of {@link FT_Palette_Data} structs. */
     public static class Buffer extends StructBuffer<FT_Palette_Data, Buffer> implements NativeResource {
-
-        private static final FT_Palette_Data ELEMENT_FACTORY = FT_Palette_Data.create(-1L);
-
         /**
          * Creates a new {@code FT_Palette_Data.Buffer} instance backed by the specified container.
          *
@@ -244,18 +241,13 @@ public class FT_Palette_Data extends Struct<FT_Palette_Data> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Palette_Data getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Palette_Data.class;
         }
 
         /** @return the value of the {@code num_palettes} field. */

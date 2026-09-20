@@ -255,9 +255,6 @@ public class XrEventDataHeadsetFitChangedML extends Struct<XrEventDataHeadsetFit
 
     /** An array of {@link XrEventDataHeadsetFitChangedML} structs. */
     public static class Buffer extends StructBuffer<XrEventDataHeadsetFitChangedML, Buffer> implements NativeResource {
-
-        private static final XrEventDataHeadsetFitChangedML ELEMENT_FACTORY = XrEventDataHeadsetFitChangedML.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataHeadsetFitChangedML.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class XrEventDataHeadsetFitChangedML extends Struct<XrEventDataHeadsetFit
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataHeadsetFitChangedML getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataHeadsetFitChangedML.class;
         }
 
         /** @return the value of the {@code type} field. */

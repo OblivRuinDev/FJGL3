@@ -242,9 +242,6 @@ public class VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT extends Struct<Vk
 
     /** An array of {@link VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT extends Struct<Vk
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -235,9 +235,6 @@ public class XrEnvironmentRaycastFilterBaseHeaderMETA extends Struct<XrEnvironme
 
     /** An array of {@link XrEnvironmentRaycastFilterBaseHeaderMETA} structs. */
     public static class Buffer extends StructBuffer<XrEnvironmentRaycastFilterBaseHeaderMETA, Buffer> implements NativeResource {
-
-        private static final XrEnvironmentRaycastFilterBaseHeaderMETA ELEMENT_FACTORY = XrEnvironmentRaycastFilterBaseHeaderMETA.create(-1L);
-
         /**
          * Creates a new {@code XrEnvironmentRaycastFilterBaseHeaderMETA.Buffer} instance backed by the specified container.
          *
@@ -260,18 +257,13 @@ public class XrEnvironmentRaycastFilterBaseHeaderMETA extends Struct<XrEnvironme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEnvironmentRaycastFilterBaseHeaderMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEnvironmentRaycastFilterBaseHeaderMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

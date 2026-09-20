@@ -204,9 +204,6 @@ public class XrBodySkeletonJointHTC extends Struct<XrBodySkeletonJointHTC> imple
 
     /** An array of {@link XrBodySkeletonJointHTC} structs. */
     public static class Buffer extends StructBuffer<XrBodySkeletonJointHTC, Buffer> implements NativeResource {
-
-        private static final XrBodySkeletonJointHTC ELEMENT_FACTORY = XrBodySkeletonJointHTC.create(-1L);
-
         /**
          * Creates a new {@code XrBodySkeletonJointHTC.Buffer} instance backed by the specified container.
          *
@@ -229,18 +226,13 @@ public class XrBodySkeletonJointHTC extends Struct<XrBodySkeletonJointHTC> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBodySkeletonJointHTC getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBodySkeletonJointHTC.class;
         }
 
         /** @return a {@link XrPosef} view of the {@code pose} field. */

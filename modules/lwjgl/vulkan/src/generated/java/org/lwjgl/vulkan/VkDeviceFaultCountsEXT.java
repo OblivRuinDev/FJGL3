@@ -272,9 +272,6 @@ public class VkDeviceFaultCountsEXT extends Struct<VkDeviceFaultCountsEXT> imple
 
     /** An array of {@link VkDeviceFaultCountsEXT} structs. */
     public static class Buffer extends StructBuffer<VkDeviceFaultCountsEXT, Buffer> implements NativeResource {
-
-        private static final VkDeviceFaultCountsEXT ELEMENT_FACTORY = VkDeviceFaultCountsEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceFaultCountsEXT.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkDeviceFaultCountsEXT extends Struct<VkDeviceFaultCountsEXT> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceFaultCountsEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceFaultCountsEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

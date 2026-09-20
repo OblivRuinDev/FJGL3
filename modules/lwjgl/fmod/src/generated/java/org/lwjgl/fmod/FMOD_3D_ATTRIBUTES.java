@@ -261,9 +261,6 @@ public class FMOD_3D_ATTRIBUTES extends Struct<FMOD_3D_ATTRIBUTES> implements Na
 
     /** An array of {@link FMOD_3D_ATTRIBUTES} structs. */
     public static class Buffer extends StructBuffer<FMOD_3D_ATTRIBUTES, Buffer> implements NativeResource {
-
-        private static final FMOD_3D_ATTRIBUTES ELEMENT_FACTORY = FMOD_3D_ATTRIBUTES.create(-1L);
-
         /**
          * Creates a new {@code FMOD_3D_ATTRIBUTES.Buffer} instance backed by the specified container.
          *
@@ -286,18 +283,13 @@ public class FMOD_3D_ATTRIBUTES extends Struct<FMOD_3D_ATTRIBUTES> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_3D_ATTRIBUTES getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_3D_ATTRIBUTES.class;
         }
 
         /** @return a {@link FMOD_VECTOR} view of the {@code position} field. */

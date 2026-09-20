@@ -154,9 +154,6 @@ public class VkDeviceFaultVendorInfoEXT extends VkDeviceFaultVendorInfoKHR {
 
     /** An array of {@link VkDeviceFaultVendorInfoEXT} structs. */
     public static class Buffer extends VkDeviceFaultVendorInfoKHR.Buffer {
-
-        private static final VkDeviceFaultVendorInfoEXT ELEMENT_FACTORY = VkDeviceFaultVendorInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceFaultVendorInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -179,18 +176,13 @@ public class VkDeviceFaultVendorInfoEXT extends VkDeviceFaultVendorInfoKHR {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceFaultVendorInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceFaultVendorInfoEXT.class;
         }
 
     }

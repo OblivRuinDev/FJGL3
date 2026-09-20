@@ -352,9 +352,6 @@ public class StdVideoAV1CDEF extends Struct<StdVideoAV1CDEF> implements NativeRe
 
     /** An array of {@link StdVideoAV1CDEF} structs. */
     public static class Buffer extends StructBuffer<StdVideoAV1CDEF, Buffer> implements NativeResource {
-
-        private static final StdVideoAV1CDEF ELEMENT_FACTORY = StdVideoAV1CDEF.create(-1L);
-
         /**
          * Creates a new {@code StdVideoAV1CDEF.Buffer} instance backed by the specified container.
          *
@@ -377,18 +374,13 @@ public class StdVideoAV1CDEF extends Struct<StdVideoAV1CDEF> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoAV1CDEF getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoAV1CDEF.class;
         }
 
         /** @return the value of the {@code cdef_damping_minus_3} field. */

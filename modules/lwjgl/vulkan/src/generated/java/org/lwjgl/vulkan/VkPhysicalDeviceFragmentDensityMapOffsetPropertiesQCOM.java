@@ -186,9 +186,6 @@ public class VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM extends VkPh
 
     /** An array of {@link VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM} structs. */
     public static class Buffer extends VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT.Buffer {
-
-        private static final VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM ELEMENT_FACTORY = VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM.Buffer} instance backed by the specified container.
          *
@@ -211,18 +208,13 @@ public class VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM extends VkPh
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

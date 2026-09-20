@@ -299,9 +299,6 @@ public class VkQueueFamilyDataGraphOpticalFlowPropertiesARM extends Struct<VkQue
 
     /** An array of {@link VkQueueFamilyDataGraphOpticalFlowPropertiesARM} structs. */
     public static class Buffer extends StructBuffer<VkQueueFamilyDataGraphOpticalFlowPropertiesARM, Buffer> implements NativeResource {
-
-        private static final VkQueueFamilyDataGraphOpticalFlowPropertiesARM ELEMENT_FACTORY = VkQueueFamilyDataGraphOpticalFlowPropertiesARM.create(-1L);
-
         /**
          * Creates a new {@code VkQueueFamilyDataGraphOpticalFlowPropertiesARM.Buffer} instance backed by the specified container.
          *
@@ -324,18 +321,13 @@ public class VkQueueFamilyDataGraphOpticalFlowPropertiesARM extends Struct<VkQue
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkQueueFamilyDataGraphOpticalFlowPropertiesARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkQueueFamilyDataGraphOpticalFlowPropertiesARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

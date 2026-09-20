@@ -273,9 +273,6 @@ public class spng_chunk extends Struct<spng_chunk> implements NativeResource {
 
     /** An array of {@link spng_chunk} structs. */
     public static class Buffer extends StructBuffer<spng_chunk, Buffer> implements NativeResource {
-
-        private static final spng_chunk ELEMENT_FACTORY = spng_chunk.create(-1L);
-
         /**
          * Creates a new {@code spng_chunk.Buffer} instance backed by the specified container.
          *
@@ -298,18 +295,13 @@ public class spng_chunk extends Struct<spng_chunk> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected spng_chunk getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return spng_chunk.class;
         }
 
         /** @return the value of the {@code offset} field. */

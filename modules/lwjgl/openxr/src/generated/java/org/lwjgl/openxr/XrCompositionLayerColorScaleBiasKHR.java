@@ -261,9 +261,6 @@ public class XrCompositionLayerColorScaleBiasKHR extends Struct<XrCompositionLay
 
     /** An array of {@link XrCompositionLayerColorScaleBiasKHR} structs. */
     public static class Buffer extends StructBuffer<XrCompositionLayerColorScaleBiasKHR, Buffer> implements NativeResource {
-
-        private static final XrCompositionLayerColorScaleBiasKHR ELEMENT_FACTORY = XrCompositionLayerColorScaleBiasKHR.create(-1L);
-
         /**
          * Creates a new {@code XrCompositionLayerColorScaleBiasKHR.Buffer} instance backed by the specified container.
          *
@@ -286,18 +283,13 @@ public class XrCompositionLayerColorScaleBiasKHR extends Struct<XrCompositionLay
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrCompositionLayerColorScaleBiasKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrCompositionLayerColorScaleBiasKHR.class;
         }
 
         /** @return the value of the {@code type} field. */

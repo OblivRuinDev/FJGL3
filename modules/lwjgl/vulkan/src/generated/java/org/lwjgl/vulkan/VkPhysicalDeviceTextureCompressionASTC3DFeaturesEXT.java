@@ -242,9 +242,6 @@ public class VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT extends Struct<
 
     /** An array of {@link VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT extends Struct<
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -303,9 +303,6 @@ public class NSVGShape extends Struct<NSVGShape> {
 
     /** An array of {@link NSVGShape} structs. */
     public static class Buffer extends StructBuffer<NSVGShape, Buffer> {
-
-        private static final NSVGShape ELEMENT_FACTORY = NSVGShape.create(-1L);
-
         /**
          * Creates a new {@code NSVGShape.Buffer} instance backed by the specified container.
          *
@@ -328,18 +325,13 @@ public class NSVGShape extends Struct<NSVGShape> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NSVGShape getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NSVGShape.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code id} field. */

@@ -118,9 +118,6 @@ class NkConfigStackButtonBehavior extends Struct<NkConfigStackButtonBehavior> {
 
     /** An array of {@link NkConfigStackButtonBehavior} structs. */
     public static class Buffer extends StructBuffer<NkConfigStackButtonBehavior, Buffer> {
-
-        private static final NkConfigStackButtonBehavior ELEMENT_FACTORY = NkConfigStackButtonBehavior.create(-1L);
-
         /**
          * Creates a new {@code NkConfigStackButtonBehavior.Buffer} instance backed by the specified container.
          *
@@ -143,18 +140,13 @@ class NkConfigStackButtonBehavior extends Struct<NkConfigStackButtonBehavior> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkConfigStackButtonBehavior getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkConfigStackButtonBehavior.class;
         }
 
         /** @return the value of the {@code head} field. */

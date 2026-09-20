@@ -224,9 +224,6 @@ public class VkClearDepthStencilValue extends Struct<VkClearDepthStencilValue> i
 
     /** An array of {@link VkClearDepthStencilValue} structs. */
     public static class Buffer extends StructBuffer<VkClearDepthStencilValue, Buffer> implements NativeResource {
-
-        private static final VkClearDepthStencilValue ELEMENT_FACTORY = VkClearDepthStencilValue.create(-1L);
-
         /**
          * Creates a new {@code VkClearDepthStencilValue.Buffer} instance backed by the specified container.
          *
@@ -249,18 +246,13 @@ public class VkClearDepthStencilValue extends Struct<VkClearDepthStencilValue> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkClearDepthStencilValue getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkClearDepthStencilValue.class;
         }
 
         /** @return the value of the {@code depth} field. */

@@ -194,9 +194,6 @@ public class NkStr extends Struct<NkStr> implements NativeResource {
 
     /** An array of {@link NkStr} structs. */
     public static class Buffer extends StructBuffer<NkStr, Buffer> implements NativeResource {
-
-        private static final NkStr ELEMENT_FACTORY = NkStr.create(-1L);
-
         /**
          * Creates a new {@code NkStr.Buffer} instance backed by the specified container.
          *
@@ -219,18 +216,13 @@ public class NkStr extends Struct<NkStr> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkStr getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkStr.class;
         }
 
         /** @return a {@link NkBuffer} view of the {@code buffer} field. */

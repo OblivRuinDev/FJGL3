@@ -272,9 +272,6 @@ public class XrBoundary2DFB extends Struct<XrBoundary2DFB> implements NativeReso
 
     /** An array of {@link XrBoundary2DFB} structs. */
     public static class Buffer extends StructBuffer<XrBoundary2DFB, Buffer> implements NativeResource {
-
-        private static final XrBoundary2DFB ELEMENT_FACTORY = XrBoundary2DFB.create(-1L);
-
         /**
          * Creates a new {@code XrBoundary2DFB.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class XrBoundary2DFB extends Struct<XrBoundary2DFB> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBoundary2DFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBoundary2DFB.class;
         }
 
         /** @return the value of the {@code type} field. */

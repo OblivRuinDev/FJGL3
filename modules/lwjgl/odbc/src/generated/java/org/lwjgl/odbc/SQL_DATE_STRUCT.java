@@ -240,9 +240,6 @@ public class SQL_DATE_STRUCT extends Struct<SQL_DATE_STRUCT> implements NativeRe
 
     /** An array of {@link SQL_DATE_STRUCT} structs. */
     public static class Buffer extends StructBuffer<SQL_DATE_STRUCT, Buffer> implements NativeResource {
-
-        private static final SQL_DATE_STRUCT ELEMENT_FACTORY = SQL_DATE_STRUCT.create(-1L);
-
         /**
          * Creates a new {@code SQL_DATE_STRUCT.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class SQL_DATE_STRUCT extends Struct<SQL_DATE_STRUCT> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SQL_DATE_STRUCT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SQL_DATE_STRUCT.class;
         }
 
         /** @return the value of the {@code year} field. */

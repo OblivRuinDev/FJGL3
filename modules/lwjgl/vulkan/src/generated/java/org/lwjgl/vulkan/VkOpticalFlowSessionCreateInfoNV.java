@@ -364,9 +364,6 @@ public class VkOpticalFlowSessionCreateInfoNV extends Struct<VkOpticalFlowSessio
 
     /** An array of {@link VkOpticalFlowSessionCreateInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkOpticalFlowSessionCreateInfoNV, Buffer> implements NativeResource {
-
-        private static final VkOpticalFlowSessionCreateInfoNV ELEMENT_FACTORY = VkOpticalFlowSessionCreateInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkOpticalFlowSessionCreateInfoNV.Buffer} instance backed by the specified container.
          *
@@ -389,18 +386,13 @@ public class VkOpticalFlowSessionCreateInfoNV extends Struct<VkOpticalFlowSessio
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkOpticalFlowSessionCreateInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkOpticalFlowSessionCreateInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

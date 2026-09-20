@@ -194,9 +194,6 @@ public class VkConformanceVersionKHR extends VkConformanceVersion {
 
     /** An array of {@link VkConformanceVersionKHR} structs. */
     public static class Buffer extends VkConformanceVersion.Buffer {
-
-        private static final VkConformanceVersionKHR ELEMENT_FACTORY = VkConformanceVersionKHR.create(-1L);
-
         /**
          * Creates a new {@code VkConformanceVersionKHR.Buffer} instance backed by the specified container.
          *
@@ -219,18 +216,13 @@ public class VkConformanceVersionKHR extends VkConformanceVersion {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkConformanceVersionKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkConformanceVersionKHR.class;
         }
 
         /** Sets the specified value to the {@code major} field. */

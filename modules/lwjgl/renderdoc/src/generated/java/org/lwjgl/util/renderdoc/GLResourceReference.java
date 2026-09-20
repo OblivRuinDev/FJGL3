@@ -225,9 +225,6 @@ public class GLResourceReference extends Struct<GLResourceReference> implements 
 
     /** An array of {@link GLResourceReference} structs. */
     public static class Buffer extends StructBuffer<GLResourceReference, Buffer> implements NativeResource {
-
-        private static final GLResourceReference ELEMENT_FACTORY = GLResourceReference.create(-1L);
-
         /**
          * Creates a new {@code GLResourceReference.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class GLResourceReference extends Struct<GLResourceReference> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected GLResourceReference getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return GLResourceReference.class;
         }
 
         /** @return the value of the {@code identifier} field. */

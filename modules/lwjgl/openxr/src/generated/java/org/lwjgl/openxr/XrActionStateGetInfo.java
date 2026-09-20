@@ -267,9 +267,6 @@ public class XrActionStateGetInfo extends Struct<XrActionStateGetInfo> implement
 
     /** An array of {@link XrActionStateGetInfo} structs. */
     public static class Buffer extends StructBuffer<XrActionStateGetInfo, Buffer> implements NativeResource {
-
-        private static final XrActionStateGetInfo ELEMENT_FACTORY = XrActionStateGetInfo.create(-1L);
-
         /**
          * Creates a new {@code XrActionStateGetInfo.Buffer} instance backed by the specified container.
          *
@@ -292,18 +289,13 @@ public class XrActionStateGetInfo extends Struct<XrActionStateGetInfo> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrActionStateGetInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrActionStateGetInfo.class;
         }
 
         /** @return the value of the {@code type} field. */

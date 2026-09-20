@@ -252,9 +252,6 @@ public class VkExportMetalDeviceInfoEXT extends Struct<VkExportMetalDeviceInfoEX
 
     /** An array of {@link VkExportMetalDeviceInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkExportMetalDeviceInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkExportMetalDeviceInfoEXT ELEMENT_FACTORY = VkExportMetalDeviceInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkExportMetalDeviceInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -277,18 +274,13 @@ public class VkExportMetalDeviceInfoEXT extends Struct<VkExportMetalDeviceInfoEX
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExportMetalDeviceInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExportMetalDeviceInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

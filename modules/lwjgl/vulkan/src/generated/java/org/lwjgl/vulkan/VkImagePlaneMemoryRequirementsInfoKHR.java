@@ -191,9 +191,6 @@ public class VkImagePlaneMemoryRequirementsInfoKHR extends VkImagePlaneMemoryReq
 
     /** An array of {@link VkImagePlaneMemoryRequirementsInfoKHR} structs. */
     public static class Buffer extends VkImagePlaneMemoryRequirementsInfo.Buffer {
-
-        private static final VkImagePlaneMemoryRequirementsInfoKHR ELEMENT_FACTORY = VkImagePlaneMemoryRequirementsInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkImagePlaneMemoryRequirementsInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkImagePlaneMemoryRequirementsInfoKHR extends VkImagePlaneMemoryReq
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImagePlaneMemoryRequirementsInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImagePlaneMemoryRequirementsInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

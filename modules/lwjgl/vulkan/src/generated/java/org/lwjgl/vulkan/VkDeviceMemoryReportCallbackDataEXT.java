@@ -290,9 +290,6 @@ public class VkDeviceMemoryReportCallbackDataEXT extends Struct<VkDeviceMemoryRe
 
     /** An array of {@link VkDeviceMemoryReportCallbackDataEXT} structs. */
     public static class Buffer extends StructBuffer<VkDeviceMemoryReportCallbackDataEXT, Buffer> implements NativeResource {
-
-        private static final VkDeviceMemoryReportCallbackDataEXT ELEMENT_FACTORY = VkDeviceMemoryReportCallbackDataEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceMemoryReportCallbackDataEXT.Buffer} instance backed by the specified container.
          *
@@ -315,18 +312,13 @@ public class VkDeviceMemoryReportCallbackDataEXT extends Struct<VkDeviceMemoryRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceMemoryReportCallbackDataEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceMemoryReportCallbackDataEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -290,9 +290,6 @@ public class VkHostImageLayoutTransitionInfo extends Struct<VkHostImageLayoutTra
 
     /** An array of {@link VkHostImageLayoutTransitionInfo} structs. */
     public static class Buffer extends StructBuffer<VkHostImageLayoutTransitionInfo, Buffer> implements NativeResource {
-
-        private static final VkHostImageLayoutTransitionInfo ELEMENT_FACTORY = VkHostImageLayoutTransitionInfo.create(-1L);
-
         /**
          * Creates a new {@code VkHostImageLayoutTransitionInfo.Buffer} instance backed by the specified container.
          *
@@ -315,18 +312,13 @@ public class VkHostImageLayoutTransitionInfo extends Struct<VkHostImageLayoutTra
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkHostImageLayoutTransitionInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkHostImageLayoutTransitionInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

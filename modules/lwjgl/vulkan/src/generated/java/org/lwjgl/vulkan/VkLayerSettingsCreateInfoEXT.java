@@ -268,9 +268,6 @@ public class VkLayerSettingsCreateInfoEXT extends Struct<VkLayerSettingsCreateIn
 
     /** An array of {@link VkLayerSettingsCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkLayerSettingsCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkLayerSettingsCreateInfoEXT ELEMENT_FACTORY = VkLayerSettingsCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkLayerSettingsCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -293,18 +290,13 @@ public class VkLayerSettingsCreateInfoEXT extends Struct<VkLayerSettingsCreateIn
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkLayerSettingsCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkLayerSettingsCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -276,9 +276,6 @@ public class VkPipelineExecutableStatisticKHR extends Struct<VkPipelineExecutabl
 
     /** An array of {@link VkPipelineExecutableStatisticKHR} structs. */
     public static class Buffer extends StructBuffer<VkPipelineExecutableStatisticKHR, Buffer> implements NativeResource {
-
-        private static final VkPipelineExecutableStatisticKHR ELEMENT_FACTORY = VkPipelineExecutableStatisticKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineExecutableStatisticKHR.Buffer} instance backed by the specified container.
          *
@@ -301,18 +298,13 @@ public class VkPipelineExecutableStatisticKHR extends Struct<VkPipelineExecutabl
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineExecutableStatisticKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineExecutableStatisticKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

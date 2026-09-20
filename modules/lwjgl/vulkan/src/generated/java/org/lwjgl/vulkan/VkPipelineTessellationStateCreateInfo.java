@@ -261,9 +261,6 @@ public class VkPipelineTessellationStateCreateInfo extends Struct<VkPipelineTess
 
     /** An array of {@link VkPipelineTessellationStateCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkPipelineTessellationStateCreateInfo, Buffer> implements NativeResource {
-
-        private static final VkPipelineTessellationStateCreateInfo ELEMENT_FACTORY = VkPipelineTessellationStateCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineTessellationStateCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -286,18 +283,13 @@ public class VkPipelineTessellationStateCreateInfo extends Struct<VkPipelineTess
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineTessellationStateCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineTessellationStateCreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

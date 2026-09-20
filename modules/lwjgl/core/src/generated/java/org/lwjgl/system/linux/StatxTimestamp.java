@@ -232,9 +232,6 @@ public class StatxTimestamp extends Struct<StatxTimestamp> implements NativeReso
 
     /** An array of {@link StatxTimestamp} structs. */
     public static class Buffer extends StructBuffer<StatxTimestamp, Buffer> implements NativeResource {
-
-        private static final StatxTimestamp ELEMENT_FACTORY = StatxTimestamp.create(-1L);
-
         /**
          * Creates a new {@code StatxTimestamp.Buffer} instance backed by the specified container.
          *
@@ -257,18 +254,13 @@ public class StatxTimestamp extends Struct<StatxTimestamp> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StatxTimestamp getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StatxTimestamp.class;
         }
 
         /** @return the value of the {@code tv_sec} field. */

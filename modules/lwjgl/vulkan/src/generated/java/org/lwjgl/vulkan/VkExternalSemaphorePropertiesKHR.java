@@ -188,9 +188,6 @@ public class VkExternalSemaphorePropertiesKHR extends VkExternalSemaphorePropert
 
     /** An array of {@link VkExternalSemaphorePropertiesKHR} structs. */
     public static class Buffer extends VkExternalSemaphoreProperties.Buffer {
-
-        private static final VkExternalSemaphorePropertiesKHR ELEMENT_FACTORY = VkExternalSemaphorePropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkExternalSemaphorePropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -213,18 +210,13 @@ public class VkExternalSemaphorePropertiesKHR extends VkExternalSemaphorePropert
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExternalSemaphorePropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExternalSemaphorePropertiesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

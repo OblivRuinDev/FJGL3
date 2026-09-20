@@ -272,9 +272,6 @@ public class XrRoomMeshFaceIndicesMETA extends Struct<XrRoomMeshFaceIndicesMETA>
 
     /** An array of {@link XrRoomMeshFaceIndicesMETA} structs. */
     public static class Buffer extends StructBuffer<XrRoomMeshFaceIndicesMETA, Buffer> implements NativeResource {
-
-        private static final XrRoomMeshFaceIndicesMETA ELEMENT_FACTORY = XrRoomMeshFaceIndicesMETA.create(-1L);
-
         /**
          * Creates a new {@code XrRoomMeshFaceIndicesMETA.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class XrRoomMeshFaceIndicesMETA extends Struct<XrRoomMeshFaceIndicesMETA>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrRoomMeshFaceIndicesMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrRoomMeshFaceIndicesMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

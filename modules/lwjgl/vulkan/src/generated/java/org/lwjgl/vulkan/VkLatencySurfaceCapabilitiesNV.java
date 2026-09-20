@@ -257,9 +257,6 @@ public class VkLatencySurfaceCapabilitiesNV extends Struct<VkLatencySurfaceCapab
 
     /** An array of {@link VkLatencySurfaceCapabilitiesNV} structs. */
     public static class Buffer extends StructBuffer<VkLatencySurfaceCapabilitiesNV, Buffer> implements NativeResource {
-
-        private static final VkLatencySurfaceCapabilitiesNV ELEMENT_FACTORY = VkLatencySurfaceCapabilitiesNV.create(-1L);
-
         /**
          * Creates a new {@code VkLatencySurfaceCapabilitiesNV.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkLatencySurfaceCapabilitiesNV extends Struct<VkLatencySurfaceCapab
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkLatencySurfaceCapabilitiesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkLatencySurfaceCapabilitiesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

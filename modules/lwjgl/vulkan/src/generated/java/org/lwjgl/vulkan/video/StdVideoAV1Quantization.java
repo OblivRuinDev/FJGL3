@@ -348,9 +348,6 @@ public class StdVideoAV1Quantization extends Struct<StdVideoAV1Quantization> imp
 
     /** An array of {@link StdVideoAV1Quantization} structs. */
     public static class Buffer extends StructBuffer<StdVideoAV1Quantization, Buffer> implements NativeResource {
-
-        private static final StdVideoAV1Quantization ELEMENT_FACTORY = StdVideoAV1Quantization.create(-1L);
-
         /**
          * Creates a new {@code StdVideoAV1Quantization.Buffer} instance backed by the specified container.
          *
@@ -373,18 +370,13 @@ public class StdVideoAV1Quantization extends Struct<StdVideoAV1Quantization> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoAV1Quantization getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoAV1Quantization.class;
         }
 
         /** @return a {@link StdVideoAV1QuantizationFlags} view of the {@code flags} field. */

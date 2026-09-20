@@ -226,9 +226,6 @@ public class KernelTimespec extends Struct<KernelTimespec> implements NativeReso
 
     /** An array of {@link KernelTimespec} structs. */
     public static class Buffer extends StructBuffer<KernelTimespec, Buffer> implements NativeResource {
-
-        private static final KernelTimespec ELEMENT_FACTORY = KernelTimespec.create(-1L);
-
         /**
          * Creates a new {@code KernelTimespec.Buffer} instance backed by the specified container.
          *
@@ -251,18 +248,13 @@ public class KernelTimespec extends Struct<KernelTimespec> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected KernelTimespec getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return KernelTimespec.class;
         }
 
         /** @return the value of the {@code tv_sec} field. */

@@ -252,9 +252,6 @@ public class VkRenderPassSubpassFeedbackCreateInfoEXT extends Struct<VkRenderPas
 
     /** An array of {@link VkRenderPassSubpassFeedbackCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkRenderPassSubpassFeedbackCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkRenderPassSubpassFeedbackCreateInfoEXT ELEMENT_FACTORY = VkRenderPassSubpassFeedbackCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkRenderPassSubpassFeedbackCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -277,18 +274,13 @@ public class VkRenderPassSubpassFeedbackCreateInfoEXT extends Struct<VkRenderPas
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderPassSubpassFeedbackCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderPassSubpassFeedbackCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

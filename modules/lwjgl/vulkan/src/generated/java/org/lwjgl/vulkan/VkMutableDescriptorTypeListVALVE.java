@@ -168,9 +168,6 @@ public class VkMutableDescriptorTypeListVALVE extends VkMutableDescriptorTypeLis
 
     /** An array of {@link VkMutableDescriptorTypeListVALVE} structs. */
     public static class Buffer extends VkMutableDescriptorTypeListEXT.Buffer {
-
-        private static final VkMutableDescriptorTypeListVALVE ELEMENT_FACTORY = VkMutableDescriptorTypeListVALVE.create(-1L);
-
         /**
          * Creates a new {@code VkMutableDescriptorTypeListVALVE.Buffer} instance backed by the specified container.
          *
@@ -193,18 +190,13 @@ public class VkMutableDescriptorTypeListVALVE extends VkMutableDescriptorTypeLis
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMutableDescriptorTypeListVALVE getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMutableDescriptorTypeListVALVE.class;
         }
 
         /** Sets the address of the specified {@link IntBuffer} to the {@code pDescriptorTypes} field. */

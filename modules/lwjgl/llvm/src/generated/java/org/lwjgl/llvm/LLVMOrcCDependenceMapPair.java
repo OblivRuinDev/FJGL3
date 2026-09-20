@@ -239,9 +239,6 @@ public class LLVMOrcCDependenceMapPair extends Struct<LLVMOrcCDependenceMapPair>
 
     /** An array of {@link LLVMOrcCDependenceMapPair} structs. */
     public static class Buffer extends StructBuffer<LLVMOrcCDependenceMapPair, Buffer> implements NativeResource {
-
-        private static final LLVMOrcCDependenceMapPair ELEMENT_FACTORY = LLVMOrcCDependenceMapPair.create(-1L);
-
         /**
          * Creates a new {@code LLVMOrcCDependenceMapPair.Buffer} instance backed by the specified container.
          *
@@ -264,18 +261,13 @@ public class LLVMOrcCDependenceMapPair extends Struct<LLVMOrcCDependenceMapPair>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected LLVMOrcCDependenceMapPair getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return LLVMOrcCDependenceMapPair.class;
         }
 
         /** @return the value of the {@code JD} field. */

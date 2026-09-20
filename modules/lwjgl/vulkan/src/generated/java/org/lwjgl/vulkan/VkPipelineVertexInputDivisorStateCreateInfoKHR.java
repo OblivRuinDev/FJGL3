@@ -193,9 +193,6 @@ public class VkPipelineVertexInputDivisorStateCreateInfoKHR extends VkPipelineVe
 
     /** An array of {@link VkPipelineVertexInputDivisorStateCreateInfoKHR} structs. */
     public static class Buffer extends VkPipelineVertexInputDivisorStateCreateInfo.Buffer {
-
-        private static final VkPipelineVertexInputDivisorStateCreateInfoKHR ELEMENT_FACTORY = VkPipelineVertexInputDivisorStateCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineVertexInputDivisorStateCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -218,18 +215,13 @@ public class VkPipelineVertexInputDivisorStateCreateInfoKHR extends VkPipelineVe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineVertexInputDivisorStateCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineVertexInputDivisorStateCreateInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

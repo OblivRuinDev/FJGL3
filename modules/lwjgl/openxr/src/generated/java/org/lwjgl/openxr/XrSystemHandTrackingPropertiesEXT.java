@@ -236,9 +236,6 @@ public class XrSystemHandTrackingPropertiesEXT extends Struct<XrSystemHandTracki
 
     /** An array of {@link XrSystemHandTrackingPropertiesEXT} structs. */
     public static class Buffer extends StructBuffer<XrSystemHandTrackingPropertiesEXT, Buffer> implements NativeResource {
-
-        private static final XrSystemHandTrackingPropertiesEXT ELEMENT_FACTORY = XrSystemHandTrackingPropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSystemHandTrackingPropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemHandTrackingPropertiesEXT extends Struct<XrSystemHandTracki
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemHandTrackingPropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemHandTrackingPropertiesEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

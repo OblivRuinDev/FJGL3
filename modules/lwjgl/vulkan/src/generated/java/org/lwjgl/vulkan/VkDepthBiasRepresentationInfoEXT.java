@@ -257,9 +257,6 @@ public class VkDepthBiasRepresentationInfoEXT extends Struct<VkDepthBiasRepresen
 
     /** An array of {@link VkDepthBiasRepresentationInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkDepthBiasRepresentationInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkDepthBiasRepresentationInfoEXT ELEMENT_FACTORY = VkDepthBiasRepresentationInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDepthBiasRepresentationInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkDepthBiasRepresentationInfoEXT extends Struct<VkDepthBiasRepresen
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDepthBiasRepresentationInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDepthBiasRepresentationInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

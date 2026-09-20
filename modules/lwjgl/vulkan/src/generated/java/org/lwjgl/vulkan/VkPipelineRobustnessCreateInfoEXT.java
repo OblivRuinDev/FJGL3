@@ -209,9 +209,6 @@ public class VkPipelineRobustnessCreateInfoEXT extends VkPipelineRobustnessCreat
 
     /** An array of {@link VkPipelineRobustnessCreateInfoEXT} structs. */
     public static class Buffer extends VkPipelineRobustnessCreateInfo.Buffer {
-
-        private static final VkPipelineRobustnessCreateInfoEXT ELEMENT_FACTORY = VkPipelineRobustnessCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineRobustnessCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -234,18 +231,13 @@ public class VkPipelineRobustnessCreateInfoEXT extends VkPipelineRobustnessCreat
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineRobustnessCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineRobustnessCreateInfoEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

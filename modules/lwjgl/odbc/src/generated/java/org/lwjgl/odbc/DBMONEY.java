@@ -225,9 +225,6 @@ public class DBMONEY extends Struct<DBMONEY> implements NativeResource {
 
     /** An array of {@link DBMONEY} structs. */
     public static class Buffer extends StructBuffer<DBMONEY, Buffer> implements NativeResource {
-
-        private static final DBMONEY ELEMENT_FACTORY = DBMONEY.create(-1L);
-
         /**
          * Creates a new {@code DBMONEY.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class DBMONEY extends Struct<DBMONEY> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected DBMONEY getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return DBMONEY.class;
         }
 
         /** @return the value of the {@code mnyhigh} field. */

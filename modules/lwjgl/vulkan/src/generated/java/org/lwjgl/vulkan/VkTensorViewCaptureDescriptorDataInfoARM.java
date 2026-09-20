@@ -242,9 +242,6 @@ public class VkTensorViewCaptureDescriptorDataInfoARM extends Struct<VkTensorVie
 
     /** An array of {@link VkTensorViewCaptureDescriptorDataInfoARM} structs. */
     public static class Buffer extends StructBuffer<VkTensorViewCaptureDescriptorDataInfoARM, Buffer> implements NativeResource {
-
-        private static final VkTensorViewCaptureDescriptorDataInfoARM ELEMENT_FACTORY = VkTensorViewCaptureDescriptorDataInfoARM.create(-1L);
-
         /**
          * Creates a new {@code VkTensorViewCaptureDescriptorDataInfoARM.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkTensorViewCaptureDescriptorDataInfoARM extends Struct<VkTensorVie
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkTensorViewCaptureDescriptorDataInfoARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkTensorViewCaptureDescriptorDataInfoARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

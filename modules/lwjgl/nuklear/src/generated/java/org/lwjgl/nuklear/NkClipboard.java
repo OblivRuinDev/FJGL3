@@ -247,9 +247,6 @@ public class NkClipboard extends Struct<NkClipboard> implements NativeResource {
 
     /** An array of {@link NkClipboard} structs. */
     public static class Buffer extends StructBuffer<NkClipboard, Buffer> implements NativeResource {
-
-        private static final NkClipboard ELEMENT_FACTORY = NkClipboard.create(-1L);
-
         /**
          * Creates a new {@code NkClipboard.Buffer} instance backed by the specified container.
          *
@@ -272,18 +269,13 @@ public class NkClipboard extends Struct<NkClipboard> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkClipboard getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkClipboard.class;
         }
 
         /** @return a {@link NkHandle} view of the {@code userdata} field. */

@@ -274,9 +274,6 @@ public class VkXlibSurfaceCreateInfoKHR extends Struct<VkXlibSurfaceCreateInfoKH
 
     /** An array of {@link VkXlibSurfaceCreateInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkXlibSurfaceCreateInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkXlibSurfaceCreateInfoKHR ELEMENT_FACTORY = VkXlibSurfaceCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkXlibSurfaceCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -299,18 +296,13 @@ public class VkXlibSurfaceCreateInfoKHR extends Struct<VkXlibSurfaceCreateInfoKH
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkXlibSurfaceCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkXlibSurfaceCreateInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

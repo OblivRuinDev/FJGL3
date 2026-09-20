@@ -185,9 +185,6 @@ public class VkSubpassEndInfoKHR extends VkSubpassEndInfo {
 
     /** An array of {@link VkSubpassEndInfoKHR} structs. */
     public static class Buffer extends VkSubpassEndInfo.Buffer {
-
-        private static final VkSubpassEndInfoKHR ELEMENT_FACTORY = VkSubpassEndInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkSubpassEndInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -210,18 +207,13 @@ public class VkSubpassEndInfoKHR extends VkSubpassEndInfo {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSubpassEndInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSubpassEndInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

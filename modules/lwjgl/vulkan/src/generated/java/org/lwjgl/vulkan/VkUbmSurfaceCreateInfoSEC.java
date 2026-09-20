@@ -272,9 +272,6 @@ public class VkUbmSurfaceCreateInfoSEC extends Struct<VkUbmSurfaceCreateInfoSEC>
 
     /** An array of {@link VkUbmSurfaceCreateInfoSEC} structs. */
     public static class Buffer extends StructBuffer<VkUbmSurfaceCreateInfoSEC, Buffer> implements NativeResource {
-
-        private static final VkUbmSurfaceCreateInfoSEC ELEMENT_FACTORY = VkUbmSurfaceCreateInfoSEC.create(-1L);
-
         /**
          * Creates a new {@code VkUbmSurfaceCreateInfoSEC.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkUbmSurfaceCreateInfoSEC extends Struct<VkUbmSurfaceCreateInfoSEC>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkUbmSurfaceCreateInfoSEC getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkUbmSurfaceCreateInfoSEC.class;
         }
 
         /** @return the value of the {@code sType} field. */

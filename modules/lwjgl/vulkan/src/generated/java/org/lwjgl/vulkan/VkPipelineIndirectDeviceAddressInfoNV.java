@@ -257,9 +257,6 @@ public class VkPipelineIndirectDeviceAddressInfoNV extends Struct<VkPipelineIndi
 
     /** An array of {@link VkPipelineIndirectDeviceAddressInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkPipelineIndirectDeviceAddressInfoNV, Buffer> implements NativeResource {
-
-        private static final VkPipelineIndirectDeviceAddressInfoNV ELEMENT_FACTORY = VkPipelineIndirectDeviceAddressInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineIndirectDeviceAddressInfoNV.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkPipelineIndirectDeviceAddressInfoNV extends Struct<VkPipelineIndi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineIndirectDeviceAddressInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineIndirectDeviceAddressInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

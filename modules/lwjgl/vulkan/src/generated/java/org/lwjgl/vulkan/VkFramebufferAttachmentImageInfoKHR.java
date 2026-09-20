@@ -223,9 +223,6 @@ public class VkFramebufferAttachmentImageInfoKHR extends VkFramebufferAttachment
 
     /** An array of {@link VkFramebufferAttachmentImageInfoKHR} structs. */
     public static class Buffer extends VkFramebufferAttachmentImageInfo.Buffer {
-
-        private static final VkFramebufferAttachmentImageInfoKHR ELEMENT_FACTORY = VkFramebufferAttachmentImageInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkFramebufferAttachmentImageInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -248,18 +245,13 @@ public class VkFramebufferAttachmentImageInfoKHR extends VkFramebufferAttachment
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkFramebufferAttachmentImageInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkFramebufferAttachmentImageInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

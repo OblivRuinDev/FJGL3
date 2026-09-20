@@ -317,9 +317,6 @@ public class XrVisibilityMaskKHR extends Struct<XrVisibilityMaskKHR> implements 
 
     /** An array of {@link XrVisibilityMaskKHR} structs. */
     public static class Buffer extends StructBuffer<XrVisibilityMaskKHR, Buffer> implements NativeResource {
-
-        private static final XrVisibilityMaskKHR ELEMENT_FACTORY = XrVisibilityMaskKHR.create(-1L);
-
         /**
          * Creates a new {@code XrVisibilityMaskKHR.Buffer} instance backed by the specified container.
          *
@@ -342,18 +339,13 @@ public class XrVisibilityMaskKHR extends Struct<XrVisibilityMaskKHR> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrVisibilityMaskKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrVisibilityMaskKHR.class;
         }
 
         /** @return the value of the {@code type} field. */

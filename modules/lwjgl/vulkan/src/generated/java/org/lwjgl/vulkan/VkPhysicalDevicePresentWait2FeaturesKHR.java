@@ -242,9 +242,6 @@ public class VkPhysicalDevicePresentWait2FeaturesKHR extends Struct<VkPhysicalDe
 
     /** An array of {@link VkPhysicalDevicePresentWait2FeaturesKHR} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDevicePresentWait2FeaturesKHR, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDevicePresentWait2FeaturesKHR ELEMENT_FACTORY = VkPhysicalDevicePresentWait2FeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDevicePresentWait2FeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDevicePresentWait2FeaturesKHR extends Struct<VkPhysicalDe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDevicePresentWait2FeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDevicePresentWait2FeaturesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

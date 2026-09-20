@@ -290,9 +290,6 @@ public class VkDebugMarkerObjectNameInfoEXT extends Struct<VkDebugMarkerObjectNa
 
     /** An array of {@link VkDebugMarkerObjectNameInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkDebugMarkerObjectNameInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkDebugMarkerObjectNameInfoEXT ELEMENT_FACTORY = VkDebugMarkerObjectNameInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDebugMarkerObjectNameInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -315,18 +312,13 @@ public class VkDebugMarkerObjectNameInfoEXT extends Struct<VkDebugMarkerObjectNa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDebugMarkerObjectNameInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDebugMarkerObjectNameInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

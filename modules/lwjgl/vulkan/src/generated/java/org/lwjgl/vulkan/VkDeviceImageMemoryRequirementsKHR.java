@@ -198,9 +198,6 @@ public class VkDeviceImageMemoryRequirementsKHR extends VkDeviceImageMemoryRequi
 
     /** An array of {@link VkDeviceImageMemoryRequirementsKHR} structs. */
     public static class Buffer extends VkDeviceImageMemoryRequirements.Buffer {
-
-        private static final VkDeviceImageMemoryRequirementsKHR ELEMENT_FACTORY = VkDeviceImageMemoryRequirementsKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceImageMemoryRequirementsKHR.Buffer} instance backed by the specified container.
          *
@@ -223,18 +220,13 @@ public class VkDeviceImageMemoryRequirementsKHR extends VkDeviceImageMemoryRequi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceImageMemoryRequirementsKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceImageMemoryRequirementsKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

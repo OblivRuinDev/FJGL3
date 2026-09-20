@@ -211,9 +211,6 @@ public class VkQueueFamilyProperties extends Struct<VkQueueFamilyProperties> imp
 
     /** An array of {@link VkQueueFamilyProperties} structs. */
     public static class Buffer extends StructBuffer<VkQueueFamilyProperties, Buffer> implements NativeResource {
-
-        private static final VkQueueFamilyProperties ELEMENT_FACTORY = VkQueueFamilyProperties.create(-1L);
-
         /**
          * Creates a new {@code VkQueueFamilyProperties.Buffer} instance backed by the specified container.
          *
@@ -236,18 +233,13 @@ public class VkQueueFamilyProperties extends Struct<VkQueueFamilyProperties> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkQueueFamilyProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkQueueFamilyProperties.class;
         }
 
         /** @return the value of the {@code queueFlags} field. */

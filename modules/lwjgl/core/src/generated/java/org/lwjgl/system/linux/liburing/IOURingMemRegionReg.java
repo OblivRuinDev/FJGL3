@@ -242,9 +242,6 @@ public class IOURingMemRegionReg extends Struct<IOURingMemRegionReg> implements 
 
     /** An array of {@link IOURingMemRegionReg} structs. */
     public static class Buffer extends StructBuffer<IOURingMemRegionReg, Buffer> implements NativeResource {
-
-        private static final IOURingMemRegionReg ELEMENT_FACTORY = IOURingMemRegionReg.create(-1L);
-
         /**
          * Creates a new {@code IOURingMemRegionReg.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class IOURingMemRegionReg extends Struct<IOURingMemRegionReg> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingMemRegionReg getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingMemRegionReg.class;
         }
 
         /** @return the value of the {@code region_uptr} field. */

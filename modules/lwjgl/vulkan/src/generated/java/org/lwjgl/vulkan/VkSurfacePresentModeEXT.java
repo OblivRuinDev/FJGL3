@@ -191,9 +191,6 @@ public class VkSurfacePresentModeEXT extends VkSurfacePresentModeKHR {
 
     /** An array of {@link VkSurfacePresentModeEXT} structs. */
     public static class Buffer extends VkSurfacePresentModeKHR.Buffer {
-
-        private static final VkSurfacePresentModeEXT ELEMENT_FACTORY = VkSurfacePresentModeEXT.create(-1L);
-
         /**
          * Creates a new {@code VkSurfacePresentModeEXT.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkSurfacePresentModeEXT extends VkSurfacePresentModeKHR {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSurfacePresentModeEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSurfacePresentModeEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

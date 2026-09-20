@@ -240,9 +240,6 @@ public class VkVideoEncodeSessionParametersFeedbackInfoKHR extends Struct<VkVide
 
     /** An array of {@link VkVideoEncodeSessionParametersFeedbackInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoEncodeSessionParametersFeedbackInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoEncodeSessionParametersFeedbackInfoKHR ELEMENT_FACTORY = VkVideoEncodeSessionParametersFeedbackInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoEncodeSessionParametersFeedbackInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class VkVideoEncodeSessionParametersFeedbackInfoKHR extends Struct<VkVide
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoEncodeSessionParametersFeedbackInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoEncodeSessionParametersFeedbackInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

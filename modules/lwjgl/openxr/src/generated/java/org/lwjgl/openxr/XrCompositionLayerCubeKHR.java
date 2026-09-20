@@ -341,9 +341,6 @@ public class XrCompositionLayerCubeKHR extends Struct<XrCompositionLayerCubeKHR>
 
     /** An array of {@link XrCompositionLayerCubeKHR} structs. */
     public static class Buffer extends StructBuffer<XrCompositionLayerCubeKHR, Buffer> implements NativeResource {
-
-        private static final XrCompositionLayerCubeKHR ELEMENT_FACTORY = XrCompositionLayerCubeKHR.create(-1L);
-
         /**
          * Creates a new {@code XrCompositionLayerCubeKHR.Buffer} instance backed by the specified container.
          *
@@ -366,18 +363,13 @@ public class XrCompositionLayerCubeKHR extends Struct<XrCompositionLayerCubeKHR>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrCompositionLayerCubeKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrCompositionLayerCubeKHR.class;
         }
 
         /** @return the value of the {@code type} field. */

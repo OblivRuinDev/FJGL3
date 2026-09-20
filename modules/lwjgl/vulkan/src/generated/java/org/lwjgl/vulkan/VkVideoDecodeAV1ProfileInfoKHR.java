@@ -259,9 +259,6 @@ public class VkVideoDecodeAV1ProfileInfoKHR extends Struct<VkVideoDecodeAV1Profi
 
     /** An array of {@link VkVideoDecodeAV1ProfileInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoDecodeAV1ProfileInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoDecodeAV1ProfileInfoKHR ELEMENT_FACTORY = VkVideoDecodeAV1ProfileInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoDecodeAV1ProfileInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -284,18 +281,13 @@ public class VkVideoDecodeAV1ProfileInfoKHR extends Struct<VkVideoDecodeAV1Profi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoDecodeAV1ProfileInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoDecodeAV1ProfileInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

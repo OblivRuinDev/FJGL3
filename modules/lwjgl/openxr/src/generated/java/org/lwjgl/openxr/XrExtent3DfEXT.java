@@ -188,9 +188,6 @@ public class XrExtent3DfEXT extends XrExtent3Df {
 
     /** An array of {@link XrExtent3DfEXT} structs. */
     public static class Buffer extends XrExtent3Df.Buffer {
-
-        private static final XrExtent3DfEXT ELEMENT_FACTORY = XrExtent3DfEXT.create(-1L);
-
         /**
          * Creates a new {@code XrExtent3DfEXT.Buffer} instance backed by the specified container.
          *
@@ -213,18 +210,13 @@ public class XrExtent3DfEXT extends XrExtent3Df {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrExtent3DfEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrExtent3DfEXT.class;
         }
 
         /** Sets the specified value to the {@code width} field. */

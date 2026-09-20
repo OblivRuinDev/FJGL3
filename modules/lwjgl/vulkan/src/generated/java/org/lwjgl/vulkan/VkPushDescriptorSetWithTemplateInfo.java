@@ -299,9 +299,6 @@ public class VkPushDescriptorSetWithTemplateInfo extends Struct<VkPushDescriptor
 
     /** An array of {@link VkPushDescriptorSetWithTemplateInfo} structs. */
     public static class Buffer extends StructBuffer<VkPushDescriptorSetWithTemplateInfo, Buffer> implements NativeResource {
-
-        private static final VkPushDescriptorSetWithTemplateInfo ELEMENT_FACTORY = VkPushDescriptorSetWithTemplateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkPushDescriptorSetWithTemplateInfo.Buffer} instance backed by the specified container.
          *
@@ -324,18 +321,13 @@ public class VkPushDescriptorSetWithTemplateInfo extends Struct<VkPushDescriptor
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPushDescriptorSetWithTemplateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPushDescriptorSetWithTemplateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

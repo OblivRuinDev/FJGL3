@@ -208,9 +208,6 @@ public class NVGGlyphPosition extends Struct<NVGGlyphPosition> implements Native
 
     /** An array of {@link NVGGlyphPosition} structs. */
     public static class Buffer extends StructBuffer<NVGGlyphPosition, Buffer> implements NativeResource {
-
-        private static final NVGGlyphPosition ELEMENT_FACTORY = NVGGlyphPosition.create(-1L);
-
         /**
          * Creates a new {@code NVGGlyphPosition.Buffer} instance backed by the specified container.
          *
@@ -233,18 +230,13 @@ public class NVGGlyphPosition extends Struct<NVGGlyphPosition> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NVGGlyphPosition getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NVGGlyphPosition.class;
         }
 
         /** @return the value of the {@code str} field. */

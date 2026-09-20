@@ -285,9 +285,6 @@ public class XrMarkerSpaceCreateInfoML extends Struct<XrMarkerSpaceCreateInfoML>
 
     /** An array of {@link XrMarkerSpaceCreateInfoML} structs. */
     public static class Buffer extends StructBuffer<XrMarkerSpaceCreateInfoML, Buffer> implements NativeResource {
-
-        private static final XrMarkerSpaceCreateInfoML ELEMENT_FACTORY = XrMarkerSpaceCreateInfoML.create(-1L);
-
         /**
          * Creates a new {@code XrMarkerSpaceCreateInfoML.Buffer} instance backed by the specified container.
          *
@@ -310,18 +307,13 @@ public class XrMarkerSpaceCreateInfoML extends Struct<XrMarkerSpaceCreateInfoML>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrMarkerSpaceCreateInfoML getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrMarkerSpaceCreateInfoML.class;
         }
 
         /** @return the value of the {@code type} field. */

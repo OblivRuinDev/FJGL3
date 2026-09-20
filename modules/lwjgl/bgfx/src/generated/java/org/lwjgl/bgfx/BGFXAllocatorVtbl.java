@@ -214,9 +214,6 @@ public class BGFXAllocatorVtbl extends Struct<BGFXAllocatorVtbl> implements Nati
 
     /** An array of {@link BGFXAllocatorVtbl} structs. */
     public static class Buffer extends StructBuffer<BGFXAllocatorVtbl, Buffer> implements NativeResource {
-
-        private static final BGFXAllocatorVtbl ELEMENT_FACTORY = BGFXAllocatorVtbl.create(-1L);
-
         /**
          * Creates a new {@code BGFXAllocatorVtbl.Buffer} instance backed by the specified container.
          *
@@ -239,18 +236,13 @@ public class BGFXAllocatorVtbl extends Struct<BGFXAllocatorVtbl> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected BGFXAllocatorVtbl getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return BGFXAllocatorVtbl.class;
         }
 
         /** @return the value of the {@code realloc} field. */

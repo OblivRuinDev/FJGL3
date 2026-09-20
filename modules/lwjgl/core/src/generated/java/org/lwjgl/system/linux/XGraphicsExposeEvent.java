@@ -377,9 +377,6 @@ public class XGraphicsExposeEvent extends Struct<XGraphicsExposeEvent> implement
 
     /** An array of {@link XGraphicsExposeEvent} structs. */
     public static class Buffer extends StructBuffer<XGraphicsExposeEvent, Buffer> implements NativeResource {
-
-        private static final XGraphicsExposeEvent ELEMENT_FACTORY = XGraphicsExposeEvent.create(-1L);
-
         /**
          * Creates a new {@code XGraphicsExposeEvent.Buffer} instance backed by the specified container.
          *
@@ -402,18 +399,13 @@ public class XGraphicsExposeEvent extends Struct<XGraphicsExposeEvent> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XGraphicsExposeEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XGraphicsExposeEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

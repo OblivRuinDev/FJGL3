@@ -208,9 +208,6 @@ public class CXCursor extends Struct<CXCursor> implements NativeResource {
 
     /** An array of {@link CXCursor} structs. */
     public static class Buffer extends StructBuffer<CXCursor, Buffer> implements NativeResource {
-
-        private static final CXCursor ELEMENT_FACTORY = CXCursor.create(-1L);
-
         /**
          * Creates a new {@code CXCursor.Buffer} instance backed by the specified container.
          *
@@ -233,18 +230,13 @@ public class CXCursor extends Struct<CXCursor> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXCursor getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXCursor.class;
         }
 
         /** @return the value of the {@code kind} field. */

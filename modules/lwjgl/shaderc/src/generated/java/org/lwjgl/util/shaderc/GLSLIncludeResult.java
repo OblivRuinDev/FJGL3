@@ -250,9 +250,6 @@ public class GLSLIncludeResult extends Struct<GLSLIncludeResult> implements Nati
 
     /** An array of {@link GLSLIncludeResult} structs. */
     public static class Buffer extends StructBuffer<GLSLIncludeResult, Buffer> implements NativeResource {
-
-        private static final GLSLIncludeResult ELEMENT_FACTORY = GLSLIncludeResult.create(-1L);
-
         /**
          * Creates a new {@code GLSLIncludeResult.Buffer} instance backed by the specified container.
          *
@@ -275,18 +272,13 @@ public class GLSLIncludeResult extends Struct<GLSLIncludeResult> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected GLSLIncludeResult getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return GLSLIncludeResult.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code header_name} field. */

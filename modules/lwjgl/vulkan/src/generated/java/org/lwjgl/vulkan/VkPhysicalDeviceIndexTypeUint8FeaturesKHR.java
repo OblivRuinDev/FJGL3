@@ -191,9 +191,6 @@ public class VkPhysicalDeviceIndexTypeUint8FeaturesKHR extends VkPhysicalDeviceI
 
     /** An array of {@link VkPhysicalDeviceIndexTypeUint8FeaturesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceIndexTypeUint8Features.Buffer {
-
-        private static final VkPhysicalDeviceIndexTypeUint8FeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceIndexTypeUint8FeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceIndexTypeUint8FeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceIndexTypeUint8FeaturesKHR extends VkPhysicalDeviceI
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceIndexTypeUint8FeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceIndexTypeUint8FeaturesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

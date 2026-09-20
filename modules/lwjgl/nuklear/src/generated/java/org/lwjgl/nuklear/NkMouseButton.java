@@ -120,9 +120,6 @@ public class NkMouseButton extends Struct<NkMouseButton> {
 
     /** An array of {@link NkMouseButton} structs. */
     public static class Buffer extends StructBuffer<NkMouseButton, Buffer> {
-
-        private static final NkMouseButton ELEMENT_FACTORY = NkMouseButton.create(-1L);
-
         /**
          * Creates a new {@code NkMouseButton.Buffer} instance backed by the specified container.
          *
@@ -145,18 +142,13 @@ public class NkMouseButton extends Struct<NkMouseButton> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkMouseButton getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkMouseButton.class;
         }
 
         /** @return the value of the {@code down} field. */

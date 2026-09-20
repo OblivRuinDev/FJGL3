@@ -236,9 +236,6 @@ public class XrSystemColorSpacePropertiesFB extends Struct<XrSystemColorSpacePro
 
     /** An array of {@link XrSystemColorSpacePropertiesFB} structs. */
     public static class Buffer extends StructBuffer<XrSystemColorSpacePropertiesFB, Buffer> implements NativeResource {
-
-        private static final XrSystemColorSpacePropertiesFB ELEMENT_FACTORY = XrSystemColorSpacePropertiesFB.create(-1L);
-
         /**
          * Creates a new {@code XrSystemColorSpacePropertiesFB.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemColorSpacePropertiesFB extends Struct<XrSystemColorSpacePro
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemColorSpacePropertiesFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemColorSpacePropertiesFB.class;
         }
 
         /** @return the value of the {@code type} field. */

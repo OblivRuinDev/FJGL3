@@ -347,9 +347,6 @@ public class VkClusterAccelerationStructureTriangleClusterInputNV extends Struct
 
     /** An array of {@link VkClusterAccelerationStructureTriangleClusterInputNV} structs. */
     public static class Buffer extends StructBuffer<VkClusterAccelerationStructureTriangleClusterInputNV, Buffer> implements NativeResource {
-
-        private static final VkClusterAccelerationStructureTriangleClusterInputNV ELEMENT_FACTORY = VkClusterAccelerationStructureTriangleClusterInputNV.create(-1L);
-
         /**
          * Creates a new {@code VkClusterAccelerationStructureTriangleClusterInputNV.Buffer} instance backed by the specified container.
          *
@@ -372,18 +369,13 @@ public class VkClusterAccelerationStructureTriangleClusterInputNV extends Struct
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkClusterAccelerationStructureTriangleClusterInputNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkClusterAccelerationStructureTriangleClusterInputNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

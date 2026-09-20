@@ -266,9 +266,6 @@ public class AIMeshMorphKey extends Struct<AIMeshMorphKey> implements NativeReso
 
     /** An array of {@link AIMeshMorphKey} structs. */
     public static class Buffer extends StructBuffer<AIMeshMorphKey, Buffer> implements NativeResource {
-
-        private static final AIMeshMorphKey ELEMENT_FACTORY = AIMeshMorphKey.create(-1L);
-
         /**
          * Creates a new {@code AIMeshMorphKey.Buffer} instance backed by the specified container.
          *
@@ -291,18 +288,13 @@ public class AIMeshMorphKey extends Struct<AIMeshMorphKey> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIMeshMorphKey getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIMeshMorphKey.class;
         }
 
         /** @return the value of the {@code mTime} field. */

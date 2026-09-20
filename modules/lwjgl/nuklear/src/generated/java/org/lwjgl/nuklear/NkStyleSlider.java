@@ -637,9 +637,6 @@ public class NkStyleSlider extends Struct<NkStyleSlider> implements NativeResour
 
     /** An array of {@link NkStyleSlider} structs. */
     public static class Buffer extends StructBuffer<NkStyleSlider, Buffer> implements NativeResource {
-
-        private static final NkStyleSlider ELEMENT_FACTORY = NkStyleSlider.create(-1L);
-
         /**
          * Creates a new {@code NkStyleSlider.Buffer} instance backed by the specified container.
          *
@@ -662,18 +659,13 @@ public class NkStyleSlider extends Struct<NkStyleSlider> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkStyleSlider getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkStyleSlider.class;
         }
 
         /** @return a {@link NkStyleItem} view of the {@code normal} field. */

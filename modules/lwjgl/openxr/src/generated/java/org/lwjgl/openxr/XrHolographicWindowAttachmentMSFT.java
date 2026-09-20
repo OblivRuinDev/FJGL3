@@ -268,9 +268,6 @@ public class XrHolographicWindowAttachmentMSFT extends Struct<XrHolographicWindo
 
     /** An array of {@link XrHolographicWindowAttachmentMSFT} structs. */
     public static class Buffer extends StructBuffer<XrHolographicWindowAttachmentMSFT, Buffer> implements NativeResource {
-
-        private static final XrHolographicWindowAttachmentMSFT ELEMENT_FACTORY = XrHolographicWindowAttachmentMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrHolographicWindowAttachmentMSFT.Buffer} instance backed by the specified container.
          *
@@ -293,18 +290,13 @@ public class XrHolographicWindowAttachmentMSFT extends Struct<XrHolographicWindo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHolographicWindowAttachmentMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHolographicWindowAttachmentMSFT.class;
         }
 
         /** @return the value of the {@code type} field. */

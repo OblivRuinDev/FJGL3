@@ -212,9 +212,6 @@ public class VkHostImageLayoutTransitionInfoEXT extends VkHostImageLayoutTransit
 
     /** An array of {@link VkHostImageLayoutTransitionInfoEXT} structs. */
     public static class Buffer extends VkHostImageLayoutTransitionInfo.Buffer {
-
-        private static final VkHostImageLayoutTransitionInfoEXT ELEMENT_FACTORY = VkHostImageLayoutTransitionInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkHostImageLayoutTransitionInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -237,18 +234,13 @@ public class VkHostImageLayoutTransitionInfoEXT extends VkHostImageLayoutTransit
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkHostImageLayoutTransitionInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkHostImageLayoutTransitionInfoEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

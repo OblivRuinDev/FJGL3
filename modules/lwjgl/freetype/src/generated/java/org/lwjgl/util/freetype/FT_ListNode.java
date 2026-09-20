@@ -116,9 +116,6 @@ public class FT_ListNode extends Struct<FT_ListNode> {
 
     /** An array of {@link FT_ListNode} structs. */
     public static class Buffer extends StructBuffer<FT_ListNode, Buffer> {
-
-        private static final FT_ListNode ELEMENT_FACTORY = FT_ListNode.create(-1L);
-
         /**
          * Creates a new {@code FT_ListNode.Buffer} instance backed by the specified container.
          *
@@ -141,18 +138,13 @@ public class FT_ListNode extends Struct<FT_ListNode> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_ListNode getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_ListNode.class;
         }
 
         /** @return a {@link FT_ListNode} view of the struct pointed to by the {@code prev} field. */

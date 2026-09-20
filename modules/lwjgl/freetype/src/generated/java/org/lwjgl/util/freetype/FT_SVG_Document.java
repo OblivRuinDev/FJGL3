@@ -164,9 +164,6 @@ public class FT_SVG_Document extends Struct<FT_SVG_Document> {
 
     /** An array of {@link FT_SVG_Document} structs. */
     public static class Buffer extends StructBuffer<FT_SVG_Document, Buffer> {
-
-        private static final FT_SVG_Document ELEMENT_FACTORY = FT_SVG_Document.create(-1L);
-
         /**
          * Creates a new {@code FT_SVG_Document.Buffer} instance backed by the specified container.
          *
@@ -189,18 +186,13 @@ public class FT_SVG_Document extends Struct<FT_SVG_Document> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_SVG_Document getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_SVG_Document.class;
         }
 
         /** @return a {@link ByteBuffer} view of the data pointed to by the {@code svg_document} field. */

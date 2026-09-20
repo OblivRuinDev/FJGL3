@@ -245,9 +245,6 @@ public class XrFuturePollResultProgressBD extends Struct<XrFuturePollResultProgr
 
     /** An array of {@link XrFuturePollResultProgressBD} structs. */
     public static class Buffer extends StructBuffer<XrFuturePollResultProgressBD, Buffer> implements NativeResource {
-
-        private static final XrFuturePollResultProgressBD ELEMENT_FACTORY = XrFuturePollResultProgressBD.create(-1L);
-
         /**
          * Creates a new {@code XrFuturePollResultProgressBD.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class XrFuturePollResultProgressBD extends Struct<XrFuturePollResultProgr
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFuturePollResultProgressBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFuturePollResultProgressBD.class;
         }
 
         /** @return the value of the {@code type} field. */

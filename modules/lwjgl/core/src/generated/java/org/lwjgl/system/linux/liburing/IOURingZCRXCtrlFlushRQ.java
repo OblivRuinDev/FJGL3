@@ -107,9 +107,6 @@ public class IOURingZCRXCtrlFlushRQ extends Struct<IOURingZCRXCtrlFlushRQ> {
 
     /** An array of {@link IOURingZCRXCtrlFlushRQ} structs. */
     public static class Buffer extends StructBuffer<IOURingZCRXCtrlFlushRQ, Buffer> {
-
-        private static final IOURingZCRXCtrlFlushRQ ELEMENT_FACTORY = IOURingZCRXCtrlFlushRQ.create(-1L);
-
         /**
          * Creates a new {@code IOURingZCRXCtrlFlushRQ.Buffer} instance backed by the specified container.
          *
@@ -132,18 +129,13 @@ public class IOURingZCRXCtrlFlushRQ extends Struct<IOURingZCRXCtrlFlushRQ> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingZCRXCtrlFlushRQ getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingZCRXCtrlFlushRQ.class;
         }
 
     }

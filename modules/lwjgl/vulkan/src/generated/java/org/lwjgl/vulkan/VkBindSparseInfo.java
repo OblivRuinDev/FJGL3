@@ -402,9 +402,6 @@ public class VkBindSparseInfo extends Struct<VkBindSparseInfo> implements Native
 
     /** An array of {@link VkBindSparseInfo} structs. */
     public static class Buffer extends StructBuffer<VkBindSparseInfo, Buffer> implements NativeResource {
-
-        private static final VkBindSparseInfo ELEMENT_FACTORY = VkBindSparseInfo.create(-1L);
-
         /**
          * Creates a new {@code VkBindSparseInfo.Buffer} instance backed by the specified container.
          *
@@ -427,18 +424,13 @@ public class VkBindSparseInfo extends Struct<VkBindSparseInfo> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBindSparseInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBindSparseInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

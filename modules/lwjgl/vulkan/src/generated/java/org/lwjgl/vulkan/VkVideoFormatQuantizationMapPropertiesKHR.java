@@ -237,9 +237,6 @@ public class VkVideoFormatQuantizationMapPropertiesKHR extends Struct<VkVideoFor
 
     /** An array of {@link VkVideoFormatQuantizationMapPropertiesKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoFormatQuantizationMapPropertiesKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoFormatQuantizationMapPropertiesKHR ELEMENT_FACTORY = VkVideoFormatQuantizationMapPropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoFormatQuantizationMapPropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class VkVideoFormatQuantizationMapPropertiesKHR extends Struct<VkVideoFor
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoFormatQuantizationMapPropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoFormatQuantizationMapPropertiesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

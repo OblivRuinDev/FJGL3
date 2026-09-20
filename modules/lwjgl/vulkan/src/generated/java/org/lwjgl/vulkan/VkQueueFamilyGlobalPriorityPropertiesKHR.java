@@ -190,9 +190,6 @@ public class VkQueueFamilyGlobalPriorityPropertiesKHR extends VkQueueFamilyGloba
 
     /** An array of {@link VkQueueFamilyGlobalPriorityPropertiesKHR} structs. */
     public static class Buffer extends VkQueueFamilyGlobalPriorityProperties.Buffer {
-
-        private static final VkQueueFamilyGlobalPriorityPropertiesKHR ELEMENT_FACTORY = VkQueueFamilyGlobalPriorityPropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkQueueFamilyGlobalPriorityPropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -215,18 +212,13 @@ public class VkQueueFamilyGlobalPriorityPropertiesKHR extends VkQueueFamilyGloba
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkQueueFamilyGlobalPriorityPropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkQueueFamilyGlobalPriorityPropertiesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

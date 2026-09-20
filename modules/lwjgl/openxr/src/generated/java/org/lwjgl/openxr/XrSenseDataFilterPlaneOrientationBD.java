@@ -263,9 +263,6 @@ public class XrSenseDataFilterPlaneOrientationBD extends Struct<XrSenseDataFilte
 
     /** An array of {@link XrSenseDataFilterPlaneOrientationBD} structs. */
     public static class Buffer extends StructBuffer<XrSenseDataFilterPlaneOrientationBD, Buffer> implements NativeResource {
-
-        private static final XrSenseDataFilterPlaneOrientationBD ELEMENT_FACTORY = XrSenseDataFilterPlaneOrientationBD.create(-1L);
-
         /**
          * Creates a new {@code XrSenseDataFilterPlaneOrientationBD.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrSenseDataFilterPlaneOrientationBD extends Struct<XrSenseDataFilte
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSenseDataFilterPlaneOrientationBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSenseDataFilterPlaneOrientationBD.class;
         }
 
         /** @return the value of the {@code type} field. */

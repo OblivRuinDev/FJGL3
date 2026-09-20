@@ -242,9 +242,6 @@ public class XrHandPoseTypeInfoMSFT extends Struct<XrHandPoseTypeInfoMSFT> imple
 
     /** An array of {@link XrHandPoseTypeInfoMSFT} structs. */
     public static class Buffer extends StructBuffer<XrHandPoseTypeInfoMSFT, Buffer> implements NativeResource {
-
-        private static final XrHandPoseTypeInfoMSFT ELEMENT_FACTORY = XrHandPoseTypeInfoMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrHandPoseTypeInfoMSFT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrHandPoseTypeInfoMSFT extends Struct<XrHandPoseTypeInfoMSFT> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHandPoseTypeInfoMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHandPoseTypeInfoMSFT.class;
         }
 
         /** @return the value of the {@code type} field. */

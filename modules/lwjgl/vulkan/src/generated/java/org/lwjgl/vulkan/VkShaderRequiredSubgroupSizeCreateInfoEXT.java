@@ -191,9 +191,6 @@ public class VkShaderRequiredSubgroupSizeCreateInfoEXT extends VkPipelineShaderS
 
     /** An array of {@link VkShaderRequiredSubgroupSizeCreateInfoEXT} structs. */
     public static class Buffer extends VkPipelineShaderStageRequiredSubgroupSizeCreateInfo.Buffer {
-
-        private static final VkShaderRequiredSubgroupSizeCreateInfoEXT ELEMENT_FACTORY = VkShaderRequiredSubgroupSizeCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkShaderRequiredSubgroupSizeCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkShaderRequiredSubgroupSizeCreateInfoEXT extends VkPipelineShaderS
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkShaderRequiredSubgroupSizeCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkShaderRequiredSubgroupSizeCreateInfoEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

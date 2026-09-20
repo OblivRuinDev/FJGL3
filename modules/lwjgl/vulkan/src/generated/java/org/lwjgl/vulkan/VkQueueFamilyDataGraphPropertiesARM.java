@@ -246,9 +246,6 @@ public class VkQueueFamilyDataGraphPropertiesARM extends Struct<VkQueueFamilyDat
 
     /** An array of {@link VkQueueFamilyDataGraphPropertiesARM} structs. */
     public static class Buffer extends StructBuffer<VkQueueFamilyDataGraphPropertiesARM, Buffer> implements NativeResource {
-
-        private static final VkQueueFamilyDataGraphPropertiesARM ELEMENT_FACTORY = VkQueueFamilyDataGraphPropertiesARM.create(-1L);
-
         /**
          * Creates a new {@code VkQueueFamilyDataGraphPropertiesARM.Buffer} instance backed by the specified container.
          *
@@ -271,18 +268,13 @@ public class VkQueueFamilyDataGraphPropertiesARM extends Struct<VkQueueFamilyDat
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkQueueFamilyDataGraphPropertiesARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkQueueFamilyDataGraphPropertiesARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

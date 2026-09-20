@@ -257,9 +257,6 @@ public class VkWriteDescriptorSetTensorARM extends Struct<VkWriteDescriptorSetTe
 
     /** An array of {@link VkWriteDescriptorSetTensorARM} structs. */
     public static class Buffer extends StructBuffer<VkWriteDescriptorSetTensorARM, Buffer> implements NativeResource {
-
-        private static final VkWriteDescriptorSetTensorARM ELEMENT_FACTORY = VkWriteDescriptorSetTensorARM.create(-1L);
-
         /**
          * Creates a new {@code VkWriteDescriptorSetTensorARM.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkWriteDescriptorSetTensorARM extends Struct<VkWriteDescriptorSetTe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkWriteDescriptorSetTensorARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkWriteDescriptorSetTensorARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -237,9 +237,6 @@ public class XrVector3f extends Struct<XrVector3f> implements NativeResource {
 
     /** An array of {@link XrVector3f} structs. */
     public static class Buffer extends StructBuffer<XrVector3f, Buffer> implements NativeResource {
-
-        private static final XrVector3f ELEMENT_FACTORY = XrVector3f.create(-1L);
-
         /**
          * Creates a new {@code XrVector3f.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class XrVector3f extends Struct<XrVector3f> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrVector3f getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrVector3f.class;
         }
 
         /** @return the value of the {@code x} field. */

@@ -151,9 +151,6 @@ public class XrSpaceLocationDataKHR extends XrSpaceLocationData {
 
     /** An array of {@link XrSpaceLocationDataKHR} structs. */
     public static class Buffer extends XrSpaceLocationData.Buffer {
-
-        private static final XrSpaceLocationDataKHR ELEMENT_FACTORY = XrSpaceLocationDataKHR.create(-1L);
-
         /**
          * Creates a new {@code XrSpaceLocationDataKHR.Buffer} instance backed by the specified container.
          *
@@ -176,18 +173,13 @@ public class XrSpaceLocationDataKHR extends XrSpaceLocationData {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpaceLocationDataKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpaceLocationDataKHR.class;
         }
 
     }

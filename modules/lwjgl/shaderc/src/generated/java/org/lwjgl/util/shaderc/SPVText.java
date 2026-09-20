@@ -198,9 +198,6 @@ public class SPVText extends Struct<SPVText> implements NativeResource {
 
     /** An array of {@link SPVText} structs. */
     public static class Buffer extends StructBuffer<SPVText, Buffer> implements NativeResource {
-
-        private static final SPVText ELEMENT_FACTORY = SPVText.create(-1L);
-
         /**
          * Creates a new {@code SPVText.Buffer} instance backed by the specified container.
          *
@@ -223,18 +220,13 @@ public class SPVText extends Struct<SPVText> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SPVText getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SPVText.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code str} field. */

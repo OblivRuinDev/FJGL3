@@ -317,9 +317,6 @@ public class VkRayTracingShaderGroupCreateInfoKHR extends Struct<VkRayTracingSha
 
     /** An array of {@link VkRayTracingShaderGroupCreateInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkRayTracingShaderGroupCreateInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkRayTracingShaderGroupCreateInfoKHR ELEMENT_FACTORY = VkRayTracingShaderGroupCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkRayTracingShaderGroupCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -342,18 +339,13 @@ public class VkRayTracingShaderGroupCreateInfoKHR extends Struct<VkRayTracingSha
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRayTracingShaderGroupCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRayTracingShaderGroupCreateInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

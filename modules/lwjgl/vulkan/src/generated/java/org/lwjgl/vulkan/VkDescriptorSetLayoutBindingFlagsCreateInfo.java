@@ -257,9 +257,6 @@ public class VkDescriptorSetLayoutBindingFlagsCreateInfo extends Struct<VkDescri
 
     /** An array of {@link VkDescriptorSetLayoutBindingFlagsCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorSetLayoutBindingFlagsCreateInfo, Buffer> implements NativeResource {
-
-        private static final VkDescriptorSetLayoutBindingFlagsCreateInfo ELEMENT_FACTORY = VkDescriptorSetLayoutBindingFlagsCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorSetLayoutBindingFlagsCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkDescriptorSetLayoutBindingFlagsCreateInfo extends Struct<VkDescri
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorSetLayoutBindingFlagsCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorSetLayoutBindingFlagsCreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

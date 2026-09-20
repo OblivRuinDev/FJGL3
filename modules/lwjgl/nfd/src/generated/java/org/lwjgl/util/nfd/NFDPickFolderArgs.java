@@ -239,9 +239,6 @@ public class NFDPickFolderArgs extends Struct<NFDPickFolderArgs> implements Nati
 
     /** An array of {@link NFDPickFolderArgs} structs. */
     public static class Buffer extends StructBuffer<NFDPickFolderArgs, Buffer> implements NativeResource {
-
-        private static final NFDPickFolderArgs ELEMENT_FACTORY = NFDPickFolderArgs.create(-1L);
-
         /**
          * Creates a new {@code NFDPickFolderArgs.Buffer} instance backed by the specified container.
          *
@@ -264,18 +261,13 @@ public class NFDPickFolderArgs extends Struct<NFDPickFolderArgs> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NFDPickFolderArgs getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NFDPickFolderArgs.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code defaultPath} field. */

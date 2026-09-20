@@ -122,9 +122,6 @@ public class NSVGPaint extends Struct<NSVGPaint> {
 
     /** An array of {@link NSVGPaint} structs. */
     public static class Buffer extends StructBuffer<NSVGPaint, Buffer> {
-
-        private static final NSVGPaint ELEMENT_FACTORY = NSVGPaint.create(-1L);
-
         /**
          * Creates a new {@code NSVGPaint.Buffer} instance backed by the specified container.
          *
@@ -147,18 +144,13 @@ public class NSVGPaint extends Struct<NSVGPaint> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NSVGPaint getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NSVGPaint.class;
         }
 
         /** @return the value of the {@code type} field. */

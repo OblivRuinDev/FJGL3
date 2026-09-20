@@ -191,9 +191,6 @@ public class VkExternalMemoryImageCreateInfoKHR extends VkExternalMemoryImageCre
 
     /** An array of {@link VkExternalMemoryImageCreateInfoKHR} structs. */
     public static class Buffer extends VkExternalMemoryImageCreateInfo.Buffer {
-
-        private static final VkExternalMemoryImageCreateInfoKHR ELEMENT_FACTORY = VkExternalMemoryImageCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkExternalMemoryImageCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkExternalMemoryImageCreateInfoKHR extends VkExternalMemoryImageCre
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExternalMemoryImageCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExternalMemoryImageCreateInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

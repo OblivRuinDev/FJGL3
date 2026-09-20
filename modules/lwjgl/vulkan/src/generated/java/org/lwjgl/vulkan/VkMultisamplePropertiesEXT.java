@@ -237,9 +237,6 @@ public class VkMultisamplePropertiesEXT extends Struct<VkMultisamplePropertiesEX
 
     /** An array of {@link VkMultisamplePropertiesEXT} structs. */
     public static class Buffer extends StructBuffer<VkMultisamplePropertiesEXT, Buffer> implements NativeResource {
-
-        private static final VkMultisamplePropertiesEXT ELEMENT_FACTORY = VkMultisamplePropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkMultisamplePropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class VkMultisamplePropertiesEXT extends Struct<VkMultisamplePropertiesEX
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMultisamplePropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMultisamplePropertiesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

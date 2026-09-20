@@ -246,9 +246,6 @@ public class XrSwapchainImageOpenGLKHR extends Struct<XrSwapchainImageOpenGLKHR>
 
     /** An array of {@link XrSwapchainImageOpenGLKHR} structs. */
     public static class Buffer extends StructBuffer<XrSwapchainImageOpenGLKHR, Buffer> implements NativeResource {
-
-        private static final XrSwapchainImageOpenGLKHR ELEMENT_FACTORY = XrSwapchainImageOpenGLKHR.create(-1L);
-
         /**
          * Creates a new {@code XrSwapchainImageOpenGLKHR.Buffer} instance backed by the specified container.
          *
@@ -271,18 +268,13 @@ public class XrSwapchainImageOpenGLKHR extends Struct<XrSwapchainImageOpenGLKHR>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSwapchainImageOpenGLKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSwapchainImageOpenGLKHR.class;
         }
 
         /** @return the value of the {@code type} field. */

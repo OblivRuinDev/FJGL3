@@ -237,9 +237,6 @@ public class FMOD_VECTOR extends Struct<FMOD_VECTOR> implements NativeResource {
 
     /** An array of {@link FMOD_VECTOR} structs. */
     public static class Buffer extends StructBuffer<FMOD_VECTOR, Buffer> implements NativeResource {
-
-        private static final FMOD_VECTOR ELEMENT_FACTORY = FMOD_VECTOR.create(-1L);
-
         /**
          * Creates a new {@code FMOD_VECTOR.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class FMOD_VECTOR extends Struct<FMOD_VECTOR> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_VECTOR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_VECTOR.class;
         }
 
         /** @return the value of the {@code x} field. */

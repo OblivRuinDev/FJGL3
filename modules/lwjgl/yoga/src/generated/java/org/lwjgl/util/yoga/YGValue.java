@@ -224,9 +224,6 @@ public class YGValue extends Struct<YGValue> implements NativeResource {
 
     /** An array of {@link YGValue} structs. */
     public static class Buffer extends StructBuffer<YGValue, Buffer> implements NativeResource {
-
-        private static final YGValue ELEMENT_FACTORY = YGValue.create(-1L);
-
         /**
          * Creates a new {@code YGValue.Buffer} instance backed by the specified container.
          *
@@ -249,18 +246,13 @@ public class YGValue extends Struct<YGValue> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected YGValue getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return YGValue.class;
         }
 
         /** @return the value of the {@code value} field. */

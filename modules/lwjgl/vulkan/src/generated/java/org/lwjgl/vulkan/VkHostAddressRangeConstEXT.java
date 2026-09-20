@@ -222,9 +222,6 @@ public class VkHostAddressRangeConstEXT extends Struct<VkHostAddressRangeConstEX
 
     /** An array of {@link VkHostAddressRangeConstEXT} structs. */
     public static class Buffer extends StructBuffer<VkHostAddressRangeConstEXT, Buffer> implements NativeResource {
-
-        private static final VkHostAddressRangeConstEXT ELEMENT_FACTORY = VkHostAddressRangeConstEXT.create(-1L);
-
         /**
          * Creates a new {@code VkHostAddressRangeConstEXT.Buffer} instance backed by the specified container.
          *
@@ -247,18 +244,13 @@ public class VkHostAddressRangeConstEXT extends Struct<VkHostAddressRangeConstEX
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkHostAddressRangeConstEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkHostAddressRangeConstEXT.class;
         }
 
         /** @return a {@link ByteBuffer} view of the data pointed to by the {@code address} field. */

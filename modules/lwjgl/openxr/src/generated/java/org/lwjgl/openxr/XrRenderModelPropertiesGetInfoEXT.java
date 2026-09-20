@@ -227,9 +227,6 @@ public class XrRenderModelPropertiesGetInfoEXT extends Struct<XrRenderModelPrope
 
     /** An array of {@link XrRenderModelPropertiesGetInfoEXT} structs. */
     public static class Buffer extends StructBuffer<XrRenderModelPropertiesGetInfoEXT, Buffer> implements NativeResource {
-
-        private static final XrRenderModelPropertiesGetInfoEXT ELEMENT_FACTORY = XrRenderModelPropertiesGetInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code XrRenderModelPropertiesGetInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrRenderModelPropertiesGetInfoEXT extends Struct<XrRenderModelPrope
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrRenderModelPropertiesGetInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrRenderModelPropertiesGetInfoEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

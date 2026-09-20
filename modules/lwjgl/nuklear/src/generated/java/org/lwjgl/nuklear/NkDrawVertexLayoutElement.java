@@ -241,9 +241,6 @@ public class NkDrawVertexLayoutElement extends Struct<NkDrawVertexLayoutElement>
 
     /** An array of {@link NkDrawVertexLayoutElement} structs. */
     public static class Buffer extends StructBuffer<NkDrawVertexLayoutElement, Buffer> implements NativeResource {
-
-        private static final NkDrawVertexLayoutElement ELEMENT_FACTORY = NkDrawVertexLayoutElement.create(-1L);
-
         /**
          * Creates a new {@code NkDrawVertexLayoutElement.Buffer} instance backed by the specified container.
          *
@@ -266,18 +263,13 @@ public class NkDrawVertexLayoutElement extends Struct<NkDrawVertexLayoutElement>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkDrawVertexLayoutElement getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkDrawVertexLayoutElement.class;
         }
 
         /** @return the value of the {@code attribute} field. */

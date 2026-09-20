@@ -255,9 +255,6 @@ public class VkDeviceGroupPresentCapabilitiesKHR extends Struct<VkDeviceGroupPre
 
     /** An array of {@link VkDeviceGroupPresentCapabilitiesKHR} structs. */
     public static class Buffer extends StructBuffer<VkDeviceGroupPresentCapabilitiesKHR, Buffer> implements NativeResource {
-
-        private static final VkDeviceGroupPresentCapabilitiesKHR ELEMENT_FACTORY = VkDeviceGroupPresentCapabilitiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceGroupPresentCapabilitiesKHR.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class VkDeviceGroupPresentCapabilitiesKHR extends Struct<VkDeviceGroupPre
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceGroupPresentCapabilitiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceGroupPresentCapabilitiesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

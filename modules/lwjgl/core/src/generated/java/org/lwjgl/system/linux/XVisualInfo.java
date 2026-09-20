@@ -350,9 +350,6 @@ public class XVisualInfo extends Struct<XVisualInfo> implements NativeResource {
 
     /** An array of {@link XVisualInfo} structs. */
     public static class Buffer extends StructBuffer<XVisualInfo, Buffer> implements NativeResource {
-
-        private static final XVisualInfo ELEMENT_FACTORY = XVisualInfo.create(-1L);
-
         /**
          * Creates a new {@code XVisualInfo.Buffer} instance backed by the specified container.
          *
@@ -375,18 +372,13 @@ public class XVisualInfo extends Struct<XVisualInfo> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XVisualInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XVisualInfo.class;
         }
 
         /** @return a {@link Visual} view of the struct pointed to by the {@code visual} field. */

@@ -340,9 +340,6 @@ public class SDL_MouseButtonEvent extends Struct<SDL_MouseButtonEvent> implement
 
     /** An array of {@link SDL_MouseButtonEvent} structs. */
     public static class Buffer extends StructBuffer<SDL_MouseButtonEvent, Buffer> implements NativeResource {
-
-        private static final SDL_MouseButtonEvent ELEMENT_FACTORY = SDL_MouseButtonEvent.create(-1L);
-
         /**
          * Creates a new {@code SDL_MouseButtonEvent.Buffer} instance backed by the specified container.
          *
@@ -365,18 +362,13 @@ public class SDL_MouseButtonEvent extends Struct<SDL_MouseButtonEvent> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_MouseButtonEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_MouseButtonEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

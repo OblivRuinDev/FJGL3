@@ -238,9 +238,6 @@ public class FT_Incremental_Interface extends Struct<FT_Incremental_Interface> i
 
     /** An array of {@link FT_Incremental_Interface} structs. */
     public static class Buffer extends StructBuffer<FT_Incremental_Interface, Buffer> implements NativeResource {
-
-        private static final FT_Incremental_Interface ELEMENT_FACTORY = FT_Incremental_Interface.create(-1L);
-
         /**
          * Creates a new {@code FT_Incremental_Interface.Buffer} instance backed by the specified container.
          *
@@ -263,18 +260,13 @@ public class FT_Incremental_Interface extends Struct<FT_Incremental_Interface> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Incremental_Interface getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Incremental_Interface.class;
         }
 
         /** @return a {@link FT_Incremental_Funcs} view of the struct pointed to by the {@code funcs} field. */

@@ -263,9 +263,6 @@ public class VkDescriptorBufferBindingInfoEXT extends Struct<VkDescriptorBufferB
 
     /** An array of {@link VkDescriptorBufferBindingInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorBufferBindingInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkDescriptorBufferBindingInfoEXT ELEMENT_FACTORY = VkDescriptorBufferBindingInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorBufferBindingInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class VkDescriptorBufferBindingInfoEXT extends Struct<VkDescriptorBufferB
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorBufferBindingInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorBufferBindingInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

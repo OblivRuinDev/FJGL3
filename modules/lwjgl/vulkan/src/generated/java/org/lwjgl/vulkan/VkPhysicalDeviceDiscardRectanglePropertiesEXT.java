@@ -236,9 +236,6 @@ public class VkPhysicalDeviceDiscardRectanglePropertiesEXT extends Struct<VkPhys
 
     /** An array of {@link VkPhysicalDeviceDiscardRectanglePropertiesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceDiscardRectanglePropertiesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceDiscardRectanglePropertiesEXT ELEMENT_FACTORY = VkPhysicalDeviceDiscardRectanglePropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDiscardRectanglePropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkPhysicalDeviceDiscardRectanglePropertiesEXT extends Struct<VkPhys
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDiscardRectanglePropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDiscardRectanglePropertiesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -218,9 +218,6 @@ public class IOURingZCRXCtrlExport extends Struct<IOURingZCRXCtrlExport> impleme
 
     /** An array of {@link IOURingZCRXCtrlExport} structs. */
     public static class Buffer extends StructBuffer<IOURingZCRXCtrlExport, Buffer> implements NativeResource {
-
-        private static final IOURingZCRXCtrlExport ELEMENT_FACTORY = IOURingZCRXCtrlExport.create(-1L);
-
         /**
          * Creates a new {@code IOURingZCRXCtrlExport.Buffer} instance backed by the specified container.
          *
@@ -243,18 +240,13 @@ public class IOURingZCRXCtrlExport extends Struct<IOURingZCRXCtrlExport> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingZCRXCtrlExport getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingZCRXCtrlExport.class;
         }
 
         /** @return the value of the {@code zcrx_fd} field. */

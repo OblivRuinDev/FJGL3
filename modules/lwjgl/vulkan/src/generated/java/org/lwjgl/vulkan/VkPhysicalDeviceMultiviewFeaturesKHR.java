@@ -203,9 +203,6 @@ public class VkPhysicalDeviceMultiviewFeaturesKHR extends VkPhysicalDeviceMultiv
 
     /** An array of {@link VkPhysicalDeviceMultiviewFeaturesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceMultiviewFeatures.Buffer {
-
-        private static final VkPhysicalDeviceMultiviewFeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceMultiviewFeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceMultiviewFeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -228,18 +225,13 @@ public class VkPhysicalDeviceMultiviewFeaturesKHR extends VkPhysicalDeviceMultiv
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceMultiviewFeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceMultiviewFeaturesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

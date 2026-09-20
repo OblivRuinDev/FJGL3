@@ -127,9 +127,6 @@ public class FTC_ImageType extends Struct<FTC_ImageType> {
 
     /** An array of {@link FTC_ImageType} structs. */
     public static class Buffer extends StructBuffer<FTC_ImageType, Buffer> {
-
-        private static final FTC_ImageType ELEMENT_FACTORY = FTC_ImageType.create(-1L);
-
         /**
          * Creates a new {@code FTC_ImageType.Buffer} instance backed by the specified container.
          *
@@ -152,18 +149,13 @@ public class FTC_ImageType extends Struct<FTC_ImageType> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FTC_ImageType getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FTC_ImageType.class;
         }
 
         /** @return the value of the {@code face_id} field. */

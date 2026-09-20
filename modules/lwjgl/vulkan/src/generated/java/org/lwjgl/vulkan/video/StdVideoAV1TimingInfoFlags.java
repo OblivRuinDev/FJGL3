@@ -211,9 +211,6 @@ public class StdVideoAV1TimingInfoFlags extends Struct<StdVideoAV1TimingInfoFlag
 
     /** An array of {@link StdVideoAV1TimingInfoFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoAV1TimingInfoFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoAV1TimingInfoFlags ELEMENT_FACTORY = StdVideoAV1TimingInfoFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoAV1TimingInfoFlags.Buffer} instance backed by the specified container.
          *
@@ -236,18 +233,13 @@ public class StdVideoAV1TimingInfoFlags extends Struct<StdVideoAV1TimingInfoFlag
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoAV1TimingInfoFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoAV1TimingInfoFlags.class;
         }
 
         /** @return the value of the {@code equal_picture_interval} field. */

@@ -242,9 +242,6 @@ public class VkExternalComputeQueueDeviceCreateInfoNV extends Struct<VkExternalC
 
     /** An array of {@link VkExternalComputeQueueDeviceCreateInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkExternalComputeQueueDeviceCreateInfoNV, Buffer> implements NativeResource {
-
-        private static final VkExternalComputeQueueDeviceCreateInfoNV ELEMENT_FACTORY = VkExternalComputeQueueDeviceCreateInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkExternalComputeQueueDeviceCreateInfoNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkExternalComputeQueueDeviceCreateInfoNV extends Struct<VkExternalC
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExternalComputeQueueDeviceCreateInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExternalComputeQueueDeviceCreateInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

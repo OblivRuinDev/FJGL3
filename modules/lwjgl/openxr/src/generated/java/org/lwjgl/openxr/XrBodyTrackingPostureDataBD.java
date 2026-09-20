@@ -263,9 +263,6 @@ public class XrBodyTrackingPostureDataBD extends Struct<XrBodyTrackingPostureDat
 
     /** An array of {@link XrBodyTrackingPostureDataBD} structs. */
     public static class Buffer extends StructBuffer<XrBodyTrackingPostureDataBD, Buffer> implements NativeResource {
-
-        private static final XrBodyTrackingPostureDataBD ELEMENT_FACTORY = XrBodyTrackingPostureDataBD.create(-1L);
-
         /**
          * Creates a new {@code XrBodyTrackingPostureDataBD.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrBodyTrackingPostureDataBD extends Struct<XrBodyTrackingPostureDat
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBodyTrackingPostureDataBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBodyTrackingPostureDataBD.class;
         }
 
         /** @return the value of the {@code type} field. */

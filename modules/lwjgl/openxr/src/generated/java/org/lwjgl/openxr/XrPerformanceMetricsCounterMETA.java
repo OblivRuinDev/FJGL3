@@ -286,9 +286,6 @@ public class XrPerformanceMetricsCounterMETA extends Struct<XrPerformanceMetrics
 
     /** An array of {@link XrPerformanceMetricsCounterMETA} structs. */
     public static class Buffer extends StructBuffer<XrPerformanceMetricsCounterMETA, Buffer> implements NativeResource {
-
-        private static final XrPerformanceMetricsCounterMETA ELEMENT_FACTORY = XrPerformanceMetricsCounterMETA.create(-1L);
-
         /**
          * Creates a new {@code XrPerformanceMetricsCounterMETA.Buffer} instance backed by the specified container.
          *
@@ -311,18 +308,13 @@ public class XrPerformanceMetricsCounterMETA extends Struct<XrPerformanceMetrics
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrPerformanceMetricsCounterMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrPerformanceMetricsCounterMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

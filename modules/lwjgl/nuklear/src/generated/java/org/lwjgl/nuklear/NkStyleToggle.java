@@ -525,9 +525,6 @@ public class NkStyleToggle extends Struct<NkStyleToggle> implements NativeResour
 
     /** An array of {@link NkStyleToggle} structs. */
     public static class Buffer extends StructBuffer<NkStyleToggle, Buffer> implements NativeResource {
-
-        private static final NkStyleToggle ELEMENT_FACTORY = NkStyleToggle.create(-1L);
-
         /**
          * Creates a new {@code NkStyleToggle.Buffer} instance backed by the specified container.
          *
@@ -550,18 +547,13 @@ public class NkStyleToggle extends Struct<NkStyleToggle> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkStyleToggle getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkStyleToggle.class;
         }
 
         /** @return a {@link NkStyleItem} view of the {@code normal} field. */

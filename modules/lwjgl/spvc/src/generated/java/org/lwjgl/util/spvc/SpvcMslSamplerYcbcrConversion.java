@@ -348,9 +348,6 @@ public class SpvcMslSamplerYcbcrConversion extends Struct<SpvcMslSamplerYcbcrCon
 
     /** An array of {@link SpvcMslSamplerYcbcrConversion} structs. */
     public static class Buffer extends StructBuffer<SpvcMslSamplerYcbcrConversion, Buffer> implements NativeResource {
-
-        private static final SpvcMslSamplerYcbcrConversion ELEMENT_FACTORY = SpvcMslSamplerYcbcrConversion.create(-1L);
-
         /**
          * Creates a new {@code SpvcMslSamplerYcbcrConversion.Buffer} instance backed by the specified container.
          *
@@ -373,18 +370,13 @@ public class SpvcMslSamplerYcbcrConversion extends Struct<SpvcMslSamplerYcbcrCon
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SpvcMslSamplerYcbcrConversion getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SpvcMslSamplerYcbcrConversion.class;
         }
 
         /** @return the value of the {@code planes} field. */

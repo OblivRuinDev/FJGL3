@@ -283,9 +283,6 @@ public class IOURingBufRing extends Struct<IOURingBufRing> implements NativeReso
 
     /** An array of {@link IOURingBufRing} structs. */
     public static class Buffer extends StructBuffer<IOURingBufRing, Buffer> implements NativeResource {
-
-        private static final IOURingBufRing ELEMENT_FACTORY = IOURingBufRing.create(-1L);
-
         /**
          * Creates a new {@code IOURingBufRing.Buffer} instance backed by the specified container.
          *
@@ -308,18 +305,13 @@ public class IOURingBufRing extends Struct<IOURingBufRing> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingBufRing getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingBufRing.class;
         }
 
         /** @return the value of the {@code resv1} field. */

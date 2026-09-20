@@ -208,9 +208,6 @@ public class FT_ClipBox extends Struct<FT_ClipBox> implements NativeResource {
 
     /** An array of {@link FT_ClipBox} structs. */
     public static class Buffer extends StructBuffer<FT_ClipBox, Buffer> implements NativeResource {
-
-        private static final FT_ClipBox ELEMENT_FACTORY = FT_ClipBox.create(-1L);
-
         /**
          * Creates a new {@code FT_ClipBox.Buffer} instance backed by the specified container.
          *
@@ -233,18 +230,13 @@ public class FT_ClipBox extends Struct<FT_ClipBox> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_ClipBox getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_ClipBox.class;
         }
 
         /** @return a {@link FT_Vector} view of the {@code bottom_left} field. */

@@ -236,9 +236,6 @@ public class XrSystemFaceTrackingPropertiesANDROID extends Struct<XrSystemFaceTr
 
     /** An array of {@link XrSystemFaceTrackingPropertiesANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSystemFaceTrackingPropertiesANDROID, Buffer> implements NativeResource {
-
-        private static final XrSystemFaceTrackingPropertiesANDROID ELEMENT_FACTORY = XrSystemFaceTrackingPropertiesANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSystemFaceTrackingPropertiesANDROID.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemFaceTrackingPropertiesANDROID extends Struct<XrSystemFaceTr
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemFaceTrackingPropertiesANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemFaceTrackingPropertiesANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

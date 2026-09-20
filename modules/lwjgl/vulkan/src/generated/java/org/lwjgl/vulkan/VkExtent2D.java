@@ -225,9 +225,6 @@ public class VkExtent2D extends Struct<VkExtent2D> implements NativeResource {
 
     /** An array of {@link VkExtent2D} structs. */
     public static class Buffer extends StructBuffer<VkExtent2D, Buffer> implements NativeResource {
-
-        private static final VkExtent2D ELEMENT_FACTORY = VkExtent2D.create(-1L);
-
         /**
          * Creates a new {@code VkExtent2D.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class VkExtent2D extends Struct<VkExtent2D> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExtent2D getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExtent2D.class;
         }
 
         /** @return the value of the {@code width} field. */

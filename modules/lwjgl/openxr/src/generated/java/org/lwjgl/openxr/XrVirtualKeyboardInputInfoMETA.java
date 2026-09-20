@@ -290,9 +290,6 @@ public class XrVirtualKeyboardInputInfoMETA extends Struct<XrVirtualKeyboardInpu
 
     /** An array of {@link XrVirtualKeyboardInputInfoMETA} structs. */
     public static class Buffer extends StructBuffer<XrVirtualKeyboardInputInfoMETA, Buffer> implements NativeResource {
-
-        private static final XrVirtualKeyboardInputInfoMETA ELEMENT_FACTORY = XrVirtualKeyboardInputInfoMETA.create(-1L);
-
         /**
          * Creates a new {@code XrVirtualKeyboardInputInfoMETA.Buffer} instance backed by the specified container.
          *
@@ -315,18 +312,13 @@ public class XrVirtualKeyboardInputInfoMETA extends Struct<XrVirtualKeyboardInpu
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrVirtualKeyboardInputInfoMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrVirtualKeyboardInputInfoMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

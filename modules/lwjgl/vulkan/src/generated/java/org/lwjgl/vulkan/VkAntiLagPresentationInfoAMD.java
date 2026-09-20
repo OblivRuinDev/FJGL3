@@ -257,9 +257,6 @@ public class VkAntiLagPresentationInfoAMD extends Struct<VkAntiLagPresentationIn
 
     /** An array of {@link VkAntiLagPresentationInfoAMD} structs. */
     public static class Buffer extends StructBuffer<VkAntiLagPresentationInfoAMD, Buffer> implements NativeResource {
-
-        private static final VkAntiLagPresentationInfoAMD ELEMENT_FACTORY = VkAntiLagPresentationInfoAMD.create(-1L);
-
         /**
          * Creates a new {@code VkAntiLagPresentationInfoAMD.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkAntiLagPresentationInfoAMD extends Struct<VkAntiLagPresentationIn
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAntiLagPresentationInfoAMD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAntiLagPresentationInfoAMD.class;
         }
 
         /** @return the value of the {@code sType} field. */

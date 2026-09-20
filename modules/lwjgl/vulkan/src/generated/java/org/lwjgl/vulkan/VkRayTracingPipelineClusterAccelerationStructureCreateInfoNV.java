@@ -242,9 +242,6 @@ public class VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV extend
 
     /** An array of {@link VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV, Buffer> implements NativeResource {
-
-        private static final VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV ELEMENT_FACTORY = VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV extend
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

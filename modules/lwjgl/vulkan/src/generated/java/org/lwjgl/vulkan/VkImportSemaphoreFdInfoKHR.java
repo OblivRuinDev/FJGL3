@@ -286,9 +286,6 @@ public class VkImportSemaphoreFdInfoKHR extends Struct<VkImportSemaphoreFdInfoKH
 
     /** An array of {@link VkImportSemaphoreFdInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkImportSemaphoreFdInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkImportSemaphoreFdInfoKHR ELEMENT_FACTORY = VkImportSemaphoreFdInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkImportSemaphoreFdInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -311,18 +308,13 @@ public class VkImportSemaphoreFdInfoKHR extends Struct<VkImportSemaphoreFdInfoKH
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImportSemaphoreFdInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImportSemaphoreFdInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

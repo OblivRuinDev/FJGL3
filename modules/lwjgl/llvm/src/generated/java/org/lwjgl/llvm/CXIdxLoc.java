@@ -200,9 +200,6 @@ public class CXIdxLoc extends Struct<CXIdxLoc> implements NativeResource {
 
     /** An array of {@link CXIdxLoc} structs. */
     public static class Buffer extends StructBuffer<CXIdxLoc, Buffer> implements NativeResource {
-
-        private static final CXIdxLoc ELEMENT_FACTORY = CXIdxLoc.create(-1L);
-
         /**
          * Creates a new {@code CXIdxLoc.Buffer} instance backed by the specified container.
          *
@@ -225,18 +222,13 @@ public class CXIdxLoc extends Struct<CXIdxLoc> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXIdxLoc getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXIdxLoc.class;
         }
 
         /** @return a {@link PointerBuffer} view of the {@code ptr_data} field. */

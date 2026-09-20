@@ -370,9 +370,6 @@ public class XrCompositionLayerCylinderKHR extends Struct<XrCompositionLayerCyli
 
     /** An array of {@link XrCompositionLayerCylinderKHR} structs. */
     public static class Buffer extends StructBuffer<XrCompositionLayerCylinderKHR, Buffer> implements NativeResource {
-
-        private static final XrCompositionLayerCylinderKHR ELEMENT_FACTORY = XrCompositionLayerCylinderKHR.create(-1L);
-
         /**
          * Creates a new {@code XrCompositionLayerCylinderKHR.Buffer} instance backed by the specified container.
          *
@@ -395,18 +392,13 @@ public class XrCompositionLayerCylinderKHR extends Struct<XrCompositionLayerCyli
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrCompositionLayerCylinderKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrCompositionLayerCylinderKHR.class;
         }
 
         /** @return the value of the {@code type} field. */

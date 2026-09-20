@@ -240,9 +240,6 @@ public class ZDICTParams extends Struct<ZDICTParams> implements NativeResource {
 
     /** An array of {@link ZDICTParams} structs. */
     public static class Buffer extends StructBuffer<ZDICTParams, Buffer> implements NativeResource {
-
-        private static final ZDICTParams ELEMENT_FACTORY = ZDICTParams.create(-1L);
-
         /**
          * Creates a new {@code ZDICTParams.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class ZDICTParams extends Struct<ZDICTParams> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ZDICTParams getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ZDICTParams.class;
         }
 
         /** @return the value of the {@code compressionLevel} field. */

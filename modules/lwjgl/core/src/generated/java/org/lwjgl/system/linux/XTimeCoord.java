@@ -115,9 +115,6 @@ public class XTimeCoord extends Struct<XTimeCoord> {
 
     /** An array of {@link XTimeCoord} structs. */
     public static class Buffer extends StructBuffer<XTimeCoord, Buffer> {
-
-        private static final XTimeCoord ELEMENT_FACTORY = XTimeCoord.create(-1L);
-
         /**
          * Creates a new {@code XTimeCoord.Buffer} instance backed by the specified container.
          *
@@ -140,18 +137,13 @@ public class XTimeCoord extends Struct<XTimeCoord> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XTimeCoord getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XTimeCoord.class;
         }
 
         /** @return the value of the {@code time} field. */

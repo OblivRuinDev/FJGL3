@@ -248,9 +248,6 @@ public class XrTrackableMarkerDatabaseANDROID extends Struct<XrTrackableMarkerDa
 
     /** An array of {@link XrTrackableMarkerDatabaseANDROID} structs. */
     public static class Buffer extends StructBuffer<XrTrackableMarkerDatabaseANDROID, Buffer> implements NativeResource {
-
-        private static final XrTrackableMarkerDatabaseANDROID ELEMENT_FACTORY = XrTrackableMarkerDatabaseANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrTrackableMarkerDatabaseANDROID.Buffer} instance backed by the specified container.
          *
@@ -273,18 +270,13 @@ public class XrTrackableMarkerDatabaseANDROID extends Struct<XrTrackableMarkerDa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrTrackableMarkerDatabaseANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrTrackableMarkerDatabaseANDROID.class;
         }
 
         /** @return the value of the {@code dictionary} field. */

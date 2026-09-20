@@ -256,9 +256,6 @@ public class XrVirtualKeyboardAnimationStateMETA extends Struct<XrVirtualKeyboar
 
     /** An array of {@link XrVirtualKeyboardAnimationStateMETA} structs. */
     public static class Buffer extends StructBuffer<XrVirtualKeyboardAnimationStateMETA, Buffer> implements NativeResource {
-
-        private static final XrVirtualKeyboardAnimationStateMETA ELEMENT_FACTORY = XrVirtualKeyboardAnimationStateMETA.create(-1L);
-
         /**
          * Creates a new {@code XrVirtualKeyboardAnimationStateMETA.Buffer} instance backed by the specified container.
          *
@@ -281,18 +278,13 @@ public class XrVirtualKeyboardAnimationStateMETA extends Struct<XrVirtualKeyboar
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrVirtualKeyboardAnimationStateMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrVirtualKeyboardAnimationStateMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

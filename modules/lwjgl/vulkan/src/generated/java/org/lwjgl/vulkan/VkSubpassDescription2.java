@@ -414,9 +414,6 @@ public class VkSubpassDescription2 extends Struct<VkSubpassDescription2> impleme
 
     /** An array of {@link VkSubpassDescription2} structs. */
     public static class Buffer extends StructBuffer<VkSubpassDescription2, Buffer> implements NativeResource {
-
-        private static final VkSubpassDescription2 ELEMENT_FACTORY = VkSubpassDescription2.create(-1L);
-
         /**
          * Creates a new {@code VkSubpassDescription2.Buffer} instance backed by the specified container.
          *
@@ -439,18 +436,13 @@ public class VkSubpassDescription2 extends Struct<VkSubpassDescription2> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSubpassDescription2 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSubpassDescription2.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -287,9 +287,6 @@ public class VkDeviceAddressBindingCallbackDataEXT extends Struct<VkDeviceAddres
 
     /** An array of {@link VkDeviceAddressBindingCallbackDataEXT} structs. */
     public static class Buffer extends StructBuffer<VkDeviceAddressBindingCallbackDataEXT, Buffer> implements NativeResource {
-
-        private static final VkDeviceAddressBindingCallbackDataEXT ELEMENT_FACTORY = VkDeviceAddressBindingCallbackDataEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceAddressBindingCallbackDataEXT.Buffer} instance backed by the specified container.
          *
@@ -312,18 +309,13 @@ public class VkDeviceAddressBindingCallbackDataEXT extends Struct<VkDeviceAddres
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceAddressBindingCallbackDataEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceAddressBindingCallbackDataEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

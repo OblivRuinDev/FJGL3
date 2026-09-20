@@ -287,9 +287,6 @@ public class VkPhysicalDeviceDepthBiasControlFeaturesEXT extends Struct<VkPhysic
 
     /** An array of {@link VkPhysicalDeviceDepthBiasControlFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceDepthBiasControlFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceDepthBiasControlFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceDepthBiasControlFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDepthBiasControlFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -312,18 +309,13 @@ public class VkPhysicalDeviceDepthBiasControlFeaturesEXT extends Struct<VkPhysic
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDepthBiasControlFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDepthBiasControlFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

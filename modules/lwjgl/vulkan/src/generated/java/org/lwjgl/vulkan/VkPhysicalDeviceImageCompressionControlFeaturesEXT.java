@@ -242,9 +242,6 @@ public class VkPhysicalDeviceImageCompressionControlFeaturesEXT extends Struct<V
 
     /** An array of {@link VkPhysicalDeviceImageCompressionControlFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceImageCompressionControlFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceImageCompressionControlFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceImageCompressionControlFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceImageCompressionControlFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceImageCompressionControlFeaturesEXT extends Struct<V
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceImageCompressionControlFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceImageCompressionControlFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

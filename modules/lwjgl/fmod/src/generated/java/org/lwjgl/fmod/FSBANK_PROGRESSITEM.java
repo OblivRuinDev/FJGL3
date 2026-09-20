@@ -253,9 +253,6 @@ public class FSBANK_PROGRESSITEM extends Struct<FSBANK_PROGRESSITEM> implements 
 
     /** An array of {@link FSBANK_PROGRESSITEM} structs. */
     public static class Buffer extends StructBuffer<FSBANK_PROGRESSITEM, Buffer> implements NativeResource {
-
-        private static final FSBANK_PROGRESSITEM ELEMENT_FACTORY = FSBANK_PROGRESSITEM.create(-1L);
-
         /**
          * Creates a new {@code FSBANK_PROGRESSITEM.Buffer} instance backed by the specified container.
          *
@@ -278,18 +275,13 @@ public class FSBANK_PROGRESSITEM extends Struct<FSBANK_PROGRESSITEM> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FSBANK_PROGRESSITEM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FSBANK_PROGRESSITEM.class;
         }
 
         /** @return the value of the {@code subSoundIndex} field. */

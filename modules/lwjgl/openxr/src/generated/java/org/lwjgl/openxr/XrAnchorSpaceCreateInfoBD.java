@@ -270,9 +270,6 @@ public class XrAnchorSpaceCreateInfoBD extends Struct<XrAnchorSpaceCreateInfoBD>
 
     /** An array of {@link XrAnchorSpaceCreateInfoBD} structs. */
     public static class Buffer extends StructBuffer<XrAnchorSpaceCreateInfoBD, Buffer> implements NativeResource {
-
-        private static final XrAnchorSpaceCreateInfoBD ELEMENT_FACTORY = XrAnchorSpaceCreateInfoBD.create(-1L);
-
         /**
          * Creates a new {@code XrAnchorSpaceCreateInfoBD.Buffer} instance backed by the specified container.
          *
@@ -295,18 +292,13 @@ public class XrAnchorSpaceCreateInfoBD extends Struct<XrAnchorSpaceCreateInfoBD>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrAnchorSpaceCreateInfoBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrAnchorSpaceCreateInfoBD.class;
         }
 
         /** @return the value of the {@code type} field. */

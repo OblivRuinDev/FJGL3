@@ -197,9 +197,6 @@ public class VkSemaphoreTypeCreateInfoKHR extends VkSemaphoreTypeCreateInfo {
 
     /** An array of {@link VkSemaphoreTypeCreateInfoKHR} structs. */
     public static class Buffer extends VkSemaphoreTypeCreateInfo.Buffer {
-
-        private static final VkSemaphoreTypeCreateInfoKHR ELEMENT_FACTORY = VkSemaphoreTypeCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkSemaphoreTypeCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -222,18 +219,13 @@ public class VkSemaphoreTypeCreateInfoKHR extends VkSemaphoreTypeCreateInfo {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSemaphoreTypeCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSemaphoreTypeCreateInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

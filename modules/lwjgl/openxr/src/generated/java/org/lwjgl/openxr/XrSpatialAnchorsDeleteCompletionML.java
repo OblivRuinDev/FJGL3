@@ -254,9 +254,6 @@ public class XrSpatialAnchorsDeleteCompletionML extends Struct<XrSpatialAnchorsD
 
     /** An array of {@link XrSpatialAnchorsDeleteCompletionML} structs. */
     public static class Buffer extends StructBuffer<XrSpatialAnchorsDeleteCompletionML, Buffer> implements NativeResource {
-
-        private static final XrSpatialAnchorsDeleteCompletionML ELEMENT_FACTORY = XrSpatialAnchorsDeleteCompletionML.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialAnchorsDeleteCompletionML.Buffer} instance backed by the specified container.
          *
@@ -279,18 +276,13 @@ public class XrSpatialAnchorsDeleteCompletionML extends Struct<XrSpatialAnchorsD
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialAnchorsDeleteCompletionML getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialAnchorsDeleteCompletionML.class;
         }
 
         /** @return the value of the {@code type} field. */

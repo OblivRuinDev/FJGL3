@@ -136,9 +136,6 @@ public class CXIdxObjCCategoryDeclInfo extends Struct<CXIdxObjCCategoryDeclInfo>
 
     /** An array of {@link CXIdxObjCCategoryDeclInfo} structs. */
     public static class Buffer extends StructBuffer<CXIdxObjCCategoryDeclInfo, Buffer> {
-
-        private static final CXIdxObjCCategoryDeclInfo ELEMENT_FACTORY = CXIdxObjCCategoryDeclInfo.create(-1L);
-
         /**
          * Creates a new {@code CXIdxObjCCategoryDeclInfo.Buffer} instance backed by the specified container.
          *
@@ -161,18 +158,13 @@ public class CXIdxObjCCategoryDeclInfo extends Struct<CXIdxObjCCategoryDeclInfo>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXIdxObjCCategoryDeclInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXIdxObjCCategoryDeclInfo.class;
         }
 
         /** @return a {@link CXIdxObjCContainerDeclInfo} view of the struct pointed to by the {@code containerInfo} field. */

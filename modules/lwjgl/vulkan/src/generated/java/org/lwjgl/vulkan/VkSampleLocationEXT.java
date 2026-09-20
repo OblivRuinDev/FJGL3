@@ -223,9 +223,6 @@ public class VkSampleLocationEXT extends Struct<VkSampleLocationEXT> implements 
 
     /** An array of {@link VkSampleLocationEXT} structs. */
     public static class Buffer extends StructBuffer<VkSampleLocationEXT, Buffer> implements NativeResource {
-
-        private static final VkSampleLocationEXT ELEMENT_FACTORY = VkSampleLocationEXT.create(-1L);
-
         /**
          * Creates a new {@code VkSampleLocationEXT.Buffer} instance backed by the specified container.
          *
@@ -248,18 +245,13 @@ public class VkSampleLocationEXT extends Struct<VkSampleLocationEXT> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSampleLocationEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSampleLocationEXT.class;
         }
 
         /** @return the value of the {@code x} field. */

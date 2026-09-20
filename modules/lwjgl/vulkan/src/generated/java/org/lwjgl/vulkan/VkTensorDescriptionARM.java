@@ -327,9 +327,6 @@ public class VkTensorDescriptionARM extends Struct<VkTensorDescriptionARM> imple
 
     /** An array of {@link VkTensorDescriptionARM} structs. */
     public static class Buffer extends StructBuffer<VkTensorDescriptionARM, Buffer> implements NativeResource {
-
-        private static final VkTensorDescriptionARM ELEMENT_FACTORY = VkTensorDescriptionARM.create(-1L);
-
         /**
          * Creates a new {@code VkTensorDescriptionARM.Buffer} instance backed by the specified container.
          *
@@ -352,18 +349,13 @@ public class VkTensorDescriptionARM extends Struct<VkTensorDescriptionARM> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkTensorDescriptionARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkTensorDescriptionARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

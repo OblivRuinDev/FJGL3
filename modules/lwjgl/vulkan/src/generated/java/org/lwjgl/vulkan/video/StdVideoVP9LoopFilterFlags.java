@@ -232,9 +232,6 @@ public class StdVideoVP9LoopFilterFlags extends Struct<StdVideoVP9LoopFilterFlag
 
     /** An array of {@link StdVideoVP9LoopFilterFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoVP9LoopFilterFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoVP9LoopFilterFlags ELEMENT_FACTORY = StdVideoVP9LoopFilterFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoVP9LoopFilterFlags.Buffer} instance backed by the specified container.
          *
@@ -257,18 +254,13 @@ public class StdVideoVP9LoopFilterFlags extends Struct<StdVideoVP9LoopFilterFlag
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoVP9LoopFilterFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoVP9LoopFilterFlags.class;
         }
 
         /** @return the value of the {@code loop_filter_delta_enabled} field. */

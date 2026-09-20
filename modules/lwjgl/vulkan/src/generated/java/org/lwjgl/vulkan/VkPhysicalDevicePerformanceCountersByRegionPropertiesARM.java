@@ -273,9 +273,6 @@ public class VkPhysicalDevicePerformanceCountersByRegionPropertiesARM extends St
 
     /** An array of {@link VkPhysicalDevicePerformanceCountersByRegionPropertiesARM} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDevicePerformanceCountersByRegionPropertiesARM, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDevicePerformanceCountersByRegionPropertiesARM ELEMENT_FACTORY = VkPhysicalDevicePerformanceCountersByRegionPropertiesARM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDevicePerformanceCountersByRegionPropertiesARM.Buffer} instance backed by the specified container.
          *
@@ -298,18 +295,13 @@ public class VkPhysicalDevicePerformanceCountersByRegionPropertiesARM extends St
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDevicePerformanceCountersByRegionPropertiesARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDevicePerformanceCountersByRegionPropertiesARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

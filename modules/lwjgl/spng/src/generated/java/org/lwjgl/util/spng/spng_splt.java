@@ -273,9 +273,6 @@ public class spng_splt extends Struct<spng_splt> implements NativeResource {
 
     /** An array of {@link spng_splt} structs. */
     public static class Buffer extends StructBuffer<spng_splt, Buffer> implements NativeResource {
-
-        private static final spng_splt ELEMENT_FACTORY = spng_splt.create(-1L);
-
         /**
          * Creates a new {@code spng_splt.Buffer} instance backed by the specified container.
          *
@@ -298,18 +295,13 @@ public class spng_splt extends Struct<spng_splt> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected spng_splt getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return spng_splt.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code name} field. */

@@ -252,9 +252,6 @@ public class NkPanel extends Struct<NkPanel> {
 
     /** An array of {@link NkPanel} structs. */
     public static class Buffer extends StructBuffer<NkPanel, Buffer> {
-
-        private static final NkPanel ELEMENT_FACTORY = NkPanel.create(-1L);
-
         /**
          * Creates a new {@code NkPanel.Buffer} instance backed by the specified container.
          *
@@ -277,18 +274,13 @@ public class NkPanel extends Struct<NkPanel> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkPanel getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkPanel.class;
         }
 
         /** @return the value of the {@code type} field. */

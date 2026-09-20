@@ -308,9 +308,6 @@ public class XCirculateEvent extends Struct<XCirculateEvent> implements NativeRe
 
     /** An array of {@link XCirculateEvent} structs. */
     public static class Buffer extends StructBuffer<XCirculateEvent, Buffer> implements NativeResource {
-
-        private static final XCirculateEvent ELEMENT_FACTORY = XCirculateEvent.create(-1L);
-
         /**
          * Creates a new {@code XCirculateEvent.Buffer} instance backed by the specified container.
          *
@@ -333,18 +330,13 @@ public class XCirculateEvent extends Struct<XCirculateEvent> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XCirculateEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XCirculateEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

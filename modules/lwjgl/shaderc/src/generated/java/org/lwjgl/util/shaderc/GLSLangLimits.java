@@ -331,9 +331,6 @@ public class GLSLangLimits extends Struct<GLSLangLimits> implements NativeResour
 
     /** An array of {@link GLSLangLimits} structs. */
     public static class Buffer extends StructBuffer<GLSLangLimits, Buffer> implements NativeResource {
-
-        private static final GLSLangLimits ELEMENT_FACTORY = GLSLangLimits.create(-1L);
-
         /**
          * Creates a new {@code GLSLangLimits.Buffer} instance backed by the specified container.
          *
@@ -356,18 +353,13 @@ public class GLSLangLimits extends Struct<GLSLangLimits> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected GLSLangLimits getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return GLSLangLimits.class;
         }
 
         /** @return the value of the {@code non_inductive_for_loops} field. */

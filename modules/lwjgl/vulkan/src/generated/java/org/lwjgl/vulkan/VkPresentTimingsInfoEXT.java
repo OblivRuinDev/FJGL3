@@ -257,9 +257,6 @@ public class VkPresentTimingsInfoEXT extends Struct<VkPresentTimingsInfoEXT> imp
 
     /** An array of {@link VkPresentTimingsInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkPresentTimingsInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkPresentTimingsInfoEXT ELEMENT_FACTORY = VkPresentTimingsInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPresentTimingsInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkPresentTimingsInfoEXT extends Struct<VkPresentTimingsInfoEXT> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPresentTimingsInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPresentTimingsInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

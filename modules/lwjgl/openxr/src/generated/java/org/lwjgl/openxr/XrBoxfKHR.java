@@ -188,9 +188,6 @@ public class XrBoxfKHR extends XrBoxf {
 
     /** An array of {@link XrBoxfKHR} structs. */
     public static class Buffer extends XrBoxf.Buffer {
-
-        private static final XrBoxfKHR ELEMENT_FACTORY = XrBoxfKHR.create(-1L);
-
         /**
          * Creates a new {@code XrBoxfKHR.Buffer} instance backed by the specified container.
          *
@@ -213,18 +210,13 @@ public class XrBoxfKHR extends XrBoxf {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBoxfKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBoxfKHR.class;
         }
 
         /** Copies the specified {@link XrPosef} to the {@code center} field. */

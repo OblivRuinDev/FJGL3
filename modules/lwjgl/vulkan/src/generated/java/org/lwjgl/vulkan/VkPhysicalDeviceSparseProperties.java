@@ -135,9 +135,6 @@ public class VkPhysicalDeviceSparseProperties extends Struct<VkPhysicalDeviceSpa
 
     /** An array of {@link VkPhysicalDeviceSparseProperties} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceSparseProperties, Buffer> {
-
-        private static final VkPhysicalDeviceSparseProperties ELEMENT_FACTORY = VkPhysicalDeviceSparseProperties.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceSparseProperties.Buffer} instance backed by the specified container.
          *
@@ -160,18 +157,13 @@ public class VkPhysicalDeviceSparseProperties extends Struct<VkPhysicalDeviceSpa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceSparseProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceSparseProperties.class;
         }
 
         /** @return the value of the {@code residencyStandard2DBlockShape} field. */

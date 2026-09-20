@@ -181,9 +181,6 @@ public class FTC_SBit extends Struct<FTC_SBit> {
 
     /** An array of {@link FTC_SBit} structs. */
     public static class Buffer extends StructBuffer<FTC_SBit, Buffer> {
-
-        private static final FTC_SBit ELEMENT_FACTORY = FTC_SBit.create(-1L);
-
         /**
          * Creates a new {@code FTC_SBit.Buffer} instance backed by the specified container.
          *
@@ -206,18 +203,13 @@ public class FTC_SBit extends Struct<FTC_SBit> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FTC_SBit getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FTC_SBit.class;
         }
 
         /** @return the value of the {@code width} field. */

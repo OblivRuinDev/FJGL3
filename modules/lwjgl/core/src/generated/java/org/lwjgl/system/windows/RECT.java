@@ -255,9 +255,6 @@ public class RECT extends Struct<RECT> implements NativeResource {
 
     /** An array of {@link RECT} structs. */
     public static class Buffer extends StructBuffer<RECT, Buffer> implements NativeResource {
-
-        private static final RECT ELEMENT_FACTORY = RECT.create(-1L);
-
         /**
          * Creates a new {@code RECT.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class RECT extends Struct<RECT> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected RECT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return RECT.class;
         }
 
         /** @return the value of the {@code left} field. */

@@ -343,9 +343,6 @@ public class AISkeletonBone extends Struct<AISkeletonBone> implements NativeReso
 
     /** An array of {@link AISkeletonBone} structs. */
     public static class Buffer extends StructBuffer<AISkeletonBone, Buffer> implements NativeResource {
-
-        private static final AISkeletonBone ELEMENT_FACTORY = AISkeletonBone.create(-1L);
-
         /**
          * Creates a new {@code AISkeletonBone.Buffer} instance backed by the specified container.
          *
@@ -368,18 +365,13 @@ public class AISkeletonBone extends Struct<AISkeletonBone> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AISkeletonBone getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AISkeletonBone.class;
         }
 
         /** @return the value of the {@code mParent} field. */

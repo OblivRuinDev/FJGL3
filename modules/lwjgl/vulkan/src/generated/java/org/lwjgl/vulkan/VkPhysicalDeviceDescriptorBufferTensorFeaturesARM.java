@@ -242,9 +242,6 @@ public class VkPhysicalDeviceDescriptorBufferTensorFeaturesARM extends Struct<Vk
 
     /** An array of {@link VkPhysicalDeviceDescriptorBufferTensorFeaturesARM} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceDescriptorBufferTensorFeaturesARM, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceDescriptorBufferTensorFeaturesARM ELEMENT_FACTORY = VkPhysicalDeviceDescriptorBufferTensorFeaturesARM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDescriptorBufferTensorFeaturesARM.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceDescriptorBufferTensorFeaturesARM extends Struct<Vk
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDescriptorBufferTensorFeaturesARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDescriptorBufferTensorFeaturesARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

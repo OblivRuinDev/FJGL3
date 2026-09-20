@@ -326,9 +326,6 @@ public class VkCopyMemoryToImageIndirectInfoKHR extends Struct<VkCopyMemoryToIma
 
     /** An array of {@link VkCopyMemoryToImageIndirectInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkCopyMemoryToImageIndirectInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkCopyMemoryToImageIndirectInfoKHR ELEMENT_FACTORY = VkCopyMemoryToImageIndirectInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkCopyMemoryToImageIndirectInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -351,18 +348,13 @@ public class VkCopyMemoryToImageIndirectInfoKHR extends Struct<VkCopyMemoryToIma
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCopyMemoryToImageIndirectInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCopyMemoryToImageIndirectInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

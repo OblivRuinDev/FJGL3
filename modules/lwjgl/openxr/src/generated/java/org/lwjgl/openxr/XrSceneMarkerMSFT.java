@@ -127,9 +127,6 @@ public class XrSceneMarkerMSFT extends Struct<XrSceneMarkerMSFT> {
 
     /** An array of {@link XrSceneMarkerMSFT} structs. */
     public static class Buffer extends StructBuffer<XrSceneMarkerMSFT, Buffer> {
-
-        private static final XrSceneMarkerMSFT ELEMENT_FACTORY = XrSceneMarkerMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrSceneMarkerMSFT.Buffer} instance backed by the specified container.
          *
@@ -152,18 +149,13 @@ public class XrSceneMarkerMSFT extends Struct<XrSceneMarkerMSFT> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSceneMarkerMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSceneMarkerMSFT.class;
         }
 
         /** @return the value of the {@code markerType} field. */

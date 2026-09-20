@@ -317,9 +317,6 @@ public class XrTriangleMeshCreateInfoFB extends Struct<XrTriangleMeshCreateInfoF
 
     /** An array of {@link XrTriangleMeshCreateInfoFB} structs. */
     public static class Buffer extends StructBuffer<XrTriangleMeshCreateInfoFB, Buffer> implements NativeResource {
-
-        private static final XrTriangleMeshCreateInfoFB ELEMENT_FACTORY = XrTriangleMeshCreateInfoFB.create(-1L);
-
         /**
          * Creates a new {@code XrTriangleMeshCreateInfoFB.Buffer} instance backed by the specified container.
          *
@@ -342,18 +339,13 @@ public class XrTriangleMeshCreateInfoFB extends Struct<XrTriangleMeshCreateInfoF
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrTriangleMeshCreateInfoFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrTriangleMeshCreateInfoFB.class;
         }
 
         /** @return the value of the {@code type} field. */

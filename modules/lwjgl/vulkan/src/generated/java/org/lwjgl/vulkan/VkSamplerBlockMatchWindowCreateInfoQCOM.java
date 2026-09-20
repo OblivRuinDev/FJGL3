@@ -260,9 +260,6 @@ public class VkSamplerBlockMatchWindowCreateInfoQCOM extends Struct<VkSamplerBlo
 
     /** An array of {@link VkSamplerBlockMatchWindowCreateInfoQCOM} structs. */
     public static class Buffer extends StructBuffer<VkSamplerBlockMatchWindowCreateInfoQCOM, Buffer> implements NativeResource {
-
-        private static final VkSamplerBlockMatchWindowCreateInfoQCOM ELEMENT_FACTORY = VkSamplerBlockMatchWindowCreateInfoQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkSamplerBlockMatchWindowCreateInfoQCOM.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class VkSamplerBlockMatchWindowCreateInfoQCOM extends Struct<VkSamplerBlo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSamplerBlockMatchWindowCreateInfoQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSamplerBlockMatchWindowCreateInfoQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

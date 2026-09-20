@@ -362,9 +362,6 @@ public class VkFrameBoundaryEXT extends Struct<VkFrameBoundaryEXT> implements Na
 
     /** An array of {@link VkFrameBoundaryEXT} structs. */
     public static class Buffer extends StructBuffer<VkFrameBoundaryEXT, Buffer> implements NativeResource {
-
-        private static final VkFrameBoundaryEXT ELEMENT_FACTORY = VkFrameBoundaryEXT.create(-1L);
-
         /**
          * Creates a new {@code VkFrameBoundaryEXT.Buffer} instance backed by the specified container.
          *
@@ -387,18 +384,13 @@ public class VkFrameBoundaryEXT extends Struct<VkFrameBoundaryEXT> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkFrameBoundaryEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkFrameBoundaryEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

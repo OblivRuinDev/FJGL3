@@ -242,9 +242,6 @@ public class VkPhysicalDeviceCubicWeightsFeaturesQCOM extends Struct<VkPhysicalD
 
     /** An array of {@link VkPhysicalDeviceCubicWeightsFeaturesQCOM} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceCubicWeightsFeaturesQCOM, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceCubicWeightsFeaturesQCOM ELEMENT_FACTORY = VkPhysicalDeviceCubicWeightsFeaturesQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceCubicWeightsFeaturesQCOM.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceCubicWeightsFeaturesQCOM extends Struct<VkPhysicalD
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceCubicWeightsFeaturesQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceCubicWeightsFeaturesQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

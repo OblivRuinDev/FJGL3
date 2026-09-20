@@ -269,9 +269,6 @@ public class XrRecommendedLayerResolutionGetInfoMETA extends Struct<XrRecommende
 
     /** An array of {@link XrRecommendedLayerResolutionGetInfoMETA} structs. */
     public static class Buffer extends StructBuffer<XrRecommendedLayerResolutionGetInfoMETA, Buffer> implements NativeResource {
-
-        private static final XrRecommendedLayerResolutionGetInfoMETA ELEMENT_FACTORY = XrRecommendedLayerResolutionGetInfoMETA.create(-1L);
-
         /**
          * Creates a new {@code XrRecommendedLayerResolutionGetInfoMETA.Buffer} instance backed by the specified container.
          *
@@ -294,18 +291,13 @@ public class XrRecommendedLayerResolutionGetInfoMETA extends Struct<XrRecommende
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrRecommendedLayerResolutionGetInfoMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrRecommendedLayerResolutionGetInfoMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

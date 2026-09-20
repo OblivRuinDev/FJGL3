@@ -322,9 +322,6 @@ public class IOSQRingOffsets extends Struct<IOSQRingOffsets> implements NativeRe
 
     /** An array of {@link IOSQRingOffsets} structs. */
     public static class Buffer extends StructBuffer<IOSQRingOffsets, Buffer> implements NativeResource {
-
-        private static final IOSQRingOffsets ELEMENT_FACTORY = IOSQRingOffsets.create(-1L);
-
         /**
          * Creates a new {@code IOSQRingOffsets.Buffer} instance backed by the specified container.
          *
@@ -347,18 +344,13 @@ public class IOSQRingOffsets extends Struct<IOSQRingOffsets> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOSQRingOffsets getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOSQRingOffsets.class;
         }
 
         /** @return the value of the {@code head} field. */

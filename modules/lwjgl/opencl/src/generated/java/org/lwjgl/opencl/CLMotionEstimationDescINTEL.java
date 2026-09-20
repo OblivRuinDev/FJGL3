@@ -256,9 +256,6 @@ public class CLMotionEstimationDescINTEL extends Struct<CLMotionEstimationDescIN
 
     /** An array of {@link CLMotionEstimationDescINTEL} structs. */
     public static class Buffer extends StructBuffer<CLMotionEstimationDescINTEL, Buffer> implements NativeResource {
-
-        private static final CLMotionEstimationDescINTEL ELEMENT_FACTORY = CLMotionEstimationDescINTEL.create(-1L);
-
         /**
          * Creates a new {@code CLMotionEstimationDescINTEL.Buffer} instance backed by the specified container.
          *
@@ -281,18 +278,13 @@ public class CLMotionEstimationDescINTEL extends Struct<CLMotionEstimationDescIN
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CLMotionEstimationDescINTEL getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CLMotionEstimationDescINTEL.class;
         }
 
         /** @return the value of the {@code mb_block_type} field. */

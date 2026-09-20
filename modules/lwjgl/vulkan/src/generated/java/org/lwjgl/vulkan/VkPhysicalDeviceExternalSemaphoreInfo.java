@@ -246,9 +246,6 @@ public class VkPhysicalDeviceExternalSemaphoreInfo extends Struct<VkPhysicalDevi
 
     /** An array of {@link VkPhysicalDeviceExternalSemaphoreInfo} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceExternalSemaphoreInfo, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceExternalSemaphoreInfo ELEMENT_FACTORY = VkPhysicalDeviceExternalSemaphoreInfo.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceExternalSemaphoreInfo.Buffer} instance backed by the specified container.
          *
@@ -271,18 +268,13 @@ public class VkPhysicalDeviceExternalSemaphoreInfo extends Struct<VkPhysicalDevi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceExternalSemaphoreInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceExternalSemaphoreInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

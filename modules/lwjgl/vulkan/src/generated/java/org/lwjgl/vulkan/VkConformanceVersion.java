@@ -255,9 +255,6 @@ public class VkConformanceVersion extends Struct<VkConformanceVersion> implement
 
     /** An array of {@link VkConformanceVersion} structs. */
     public static class Buffer extends StructBuffer<VkConformanceVersion, Buffer> implements NativeResource {
-
-        private static final VkConformanceVersion ELEMENT_FACTORY = VkConformanceVersion.create(-1L);
-
         /**
          * Creates a new {@code VkConformanceVersion.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class VkConformanceVersion extends Struct<VkConformanceVersion> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkConformanceVersion getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkConformanceVersion.class;
         }
 
         /** @return the value of the {@code major} field. */

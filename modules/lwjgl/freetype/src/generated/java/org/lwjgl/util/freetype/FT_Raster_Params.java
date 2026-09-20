@@ -305,9 +305,6 @@ public class FT_Raster_Params extends Struct<FT_Raster_Params> implements Native
 
     /** An array of {@link FT_Raster_Params} structs. */
     public static class Buffer extends StructBuffer<FT_Raster_Params, Buffer> implements NativeResource {
-
-        private static final FT_Raster_Params ELEMENT_FACTORY = FT_Raster_Params.create(-1L);
-
         /**
          * Creates a new {@code FT_Raster_Params.Buffer} instance backed by the specified container.
          *
@@ -330,18 +327,13 @@ public class FT_Raster_Params extends Struct<FT_Raster_Params> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Raster_Params getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Raster_Params.class;
         }
 
         /** @return a {@link FT_Bitmap} view of the struct pointed to by the {@code target} field. */

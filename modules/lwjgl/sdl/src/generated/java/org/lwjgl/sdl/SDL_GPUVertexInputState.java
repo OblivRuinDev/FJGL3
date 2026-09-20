@@ -255,9 +255,6 @@ public class SDL_GPUVertexInputState extends Struct<SDL_GPUVertexInputState> imp
 
     /** An array of {@link SDL_GPUVertexInputState} structs. */
     public static class Buffer extends StructBuffer<SDL_GPUVertexInputState, Buffer> implements NativeResource {
-
-        private static final SDL_GPUVertexInputState ELEMENT_FACTORY = SDL_GPUVertexInputState.create(-1L);
-
         /**
          * Creates a new {@code SDL_GPUVertexInputState.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class SDL_GPUVertexInputState extends Struct<SDL_GPUVertexInputState> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GPUVertexInputState getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GPUVertexInputState.class;
         }
 
         /** @return a {@link SDL_GPUVertexBufferDescription.Buffer} view of the struct array pointed to by the {@code vertex_buffer_descriptions} field. */

@@ -255,9 +255,6 @@ public class SQL_SS_TIME2_STRUCT extends Struct<SQL_SS_TIME2_STRUCT> implements 
 
     /** An array of {@link SQL_SS_TIME2_STRUCT} structs. */
     public static class Buffer extends StructBuffer<SQL_SS_TIME2_STRUCT, Buffer> implements NativeResource {
-
-        private static final SQL_SS_TIME2_STRUCT ELEMENT_FACTORY = SQL_SS_TIME2_STRUCT.create(-1L);
-
         /**
          * Creates a new {@code SQL_SS_TIME2_STRUCT.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class SQL_SS_TIME2_STRUCT extends Struct<SQL_SS_TIME2_STRUCT> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SQL_SS_TIME2_STRUCT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SQL_SS_TIME2_STRUCT.class;
         }
 
         /** @return the value of the {@code hour} field. */

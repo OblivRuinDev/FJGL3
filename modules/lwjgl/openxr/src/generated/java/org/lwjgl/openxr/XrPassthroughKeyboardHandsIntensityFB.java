@@ -255,9 +255,6 @@ public class XrPassthroughKeyboardHandsIntensityFB extends Struct<XrPassthroughK
 
     /** An array of {@link XrPassthroughKeyboardHandsIntensityFB} structs. */
     public static class Buffer extends StructBuffer<XrPassthroughKeyboardHandsIntensityFB, Buffer> implements NativeResource {
-
-        private static final XrPassthroughKeyboardHandsIntensityFB ELEMENT_FACTORY = XrPassthroughKeyboardHandsIntensityFB.create(-1L);
-
         /**
          * Creates a new {@code XrPassthroughKeyboardHandsIntensityFB.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class XrPassthroughKeyboardHandsIntensityFB extends Struct<XrPassthroughK
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrPassthroughKeyboardHandsIntensityFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrPassthroughKeyboardHandsIntensityFB.class;
         }
 
         /** @return the value of the {@code type} field. */

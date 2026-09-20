@@ -212,9 +212,6 @@ public class FT_Multi_Master extends Struct<FT_Multi_Master> implements NativeRe
 
     /** An array of {@link FT_Multi_Master} structs. */
     public static class Buffer extends StructBuffer<FT_Multi_Master, Buffer> implements NativeResource {
-
-        private static final FT_Multi_Master ELEMENT_FACTORY = FT_Multi_Master.create(-1L);
-
         /**
          * Creates a new {@code FT_Multi_Master.Buffer} instance backed by the specified container.
          *
@@ -237,18 +234,13 @@ public class FT_Multi_Master extends Struct<FT_Multi_Master> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Multi_Master getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Multi_Master.class;
         }
 
         /** @return the value of the {@code num_axis} field. */

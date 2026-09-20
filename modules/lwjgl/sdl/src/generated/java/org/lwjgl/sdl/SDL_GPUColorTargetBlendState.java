@@ -342,9 +342,6 @@ public class SDL_GPUColorTargetBlendState extends Struct<SDL_GPUColorTargetBlend
 
     /** An array of {@link SDL_GPUColorTargetBlendState} structs. */
     public static class Buffer extends StructBuffer<SDL_GPUColorTargetBlendState, Buffer> implements NativeResource {
-
-        private static final SDL_GPUColorTargetBlendState ELEMENT_FACTORY = SDL_GPUColorTargetBlendState.create(-1L);
-
         /**
          * Creates a new {@code SDL_GPUColorTargetBlendState.Buffer} instance backed by the specified container.
          *
@@ -367,18 +364,13 @@ public class SDL_GPUColorTargetBlendState extends Struct<SDL_GPUColorTargetBlend
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GPUColorTargetBlendState getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GPUColorTargetBlendState.class;
         }
 
         /** @return the value of the {@code src_color_blendfactor} field. */

@@ -237,9 +237,6 @@ public class VkSubpassSampleLocationsEXT extends Struct<VkSubpassSampleLocations
 
     /** An array of {@link VkSubpassSampleLocationsEXT} structs. */
     public static class Buffer extends StructBuffer<VkSubpassSampleLocationsEXT, Buffer> implements NativeResource {
-
-        private static final VkSubpassSampleLocationsEXT ELEMENT_FACTORY = VkSubpassSampleLocationsEXT.create(-1L);
-
         /**
          * Creates a new {@code VkSubpassSampleLocationsEXT.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class VkSubpassSampleLocationsEXT extends Struct<VkSubpassSampleLocations
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSubpassSampleLocationsEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSubpassSampleLocationsEXT.class;
         }
 
         /** @return the value of the {@code subpassIndex} field. */

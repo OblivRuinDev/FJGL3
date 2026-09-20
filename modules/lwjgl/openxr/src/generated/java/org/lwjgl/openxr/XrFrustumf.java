@@ -258,9 +258,6 @@ public class XrFrustumf extends Struct<XrFrustumf> implements NativeResource {
 
     /** An array of {@link XrFrustumf} structs. */
     public static class Buffer extends StructBuffer<XrFrustumf, Buffer> implements NativeResource {
-
-        private static final XrFrustumf ELEMENT_FACTORY = XrFrustumf.create(-1L);
-
         /**
          * Creates a new {@code XrFrustumf.Buffer} instance backed by the specified container.
          *
@@ -283,18 +280,13 @@ public class XrFrustumf extends Struct<XrFrustumf> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFrustumf getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFrustumf.class;
         }
 
         /** @return a {@link XrPosef} view of the {@code pose} field. */

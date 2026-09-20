@@ -240,9 +240,6 @@ public class VkTraceRaysIndirectCommandKHR extends Struct<VkTraceRaysIndirectCom
 
     /** An array of {@link VkTraceRaysIndirectCommandKHR} structs. */
     public static class Buffer extends StructBuffer<VkTraceRaysIndirectCommandKHR, Buffer> implements NativeResource {
-
-        private static final VkTraceRaysIndirectCommandKHR ELEMENT_FACTORY = VkTraceRaysIndirectCommandKHR.create(-1L);
-
         /**
          * Creates a new {@code VkTraceRaysIndirectCommandKHR.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class VkTraceRaysIndirectCommandKHR extends Struct<VkTraceRaysIndirectCom
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkTraceRaysIndirectCommandKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkTraceRaysIndirectCommandKHR.class;
         }
 
         /** @return the value of the {@code width} field. */

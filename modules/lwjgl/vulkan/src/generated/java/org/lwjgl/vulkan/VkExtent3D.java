@@ -240,9 +240,6 @@ public class VkExtent3D extends Struct<VkExtent3D> implements NativeResource {
 
     /** An array of {@link VkExtent3D} structs. */
     public static class Buffer extends StructBuffer<VkExtent3D, Buffer> implements NativeResource {
-
-        private static final VkExtent3D ELEMENT_FACTORY = VkExtent3D.create(-1L);
-
         /**
          * Creates a new {@code VkExtent3D.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class VkExtent3D extends Struct<VkExtent3D> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExtent3D getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExtent3D.class;
         }
 
         /** @return the value of the {@code width} field. */

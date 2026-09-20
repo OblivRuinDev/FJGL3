@@ -240,9 +240,6 @@ public class VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV extend
 
     /** An array of {@link VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV, Buffer> implements NativeResource {
-
-        private static final VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV ELEMENT_FACTORY = VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV extend
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV.class;
         }
 
         /** @return the value of the {@code clusterReferencesCount} field. */

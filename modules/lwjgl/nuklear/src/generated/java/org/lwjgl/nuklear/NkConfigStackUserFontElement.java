@@ -110,9 +110,6 @@ class NkConfigStackUserFontElement extends Struct<NkConfigStackUserFontElement> 
 
     /** An array of {@link NkConfigStackUserFontElement} structs. */
     public static class Buffer extends StructBuffer<NkConfigStackUserFontElement, Buffer> {
-
-        private static final NkConfigStackUserFontElement ELEMENT_FACTORY = NkConfigStackUserFontElement.create(-1L);
-
         /**
          * Creates a new {@code NkConfigStackUserFontElement.Buffer} instance backed by the specified container.
          *
@@ -135,18 +132,13 @@ class NkConfigStackUserFontElement extends Struct<NkConfigStackUserFontElement> 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkConfigStackUserFontElement getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkConfigStackUserFontElement.class;
         }
 
         /** @return a {@link PointerBuffer} view of the data pointed to by the {@code pValues} field. */

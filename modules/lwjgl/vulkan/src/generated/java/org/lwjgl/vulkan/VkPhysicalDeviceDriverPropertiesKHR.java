@@ -191,9 +191,6 @@ public class VkPhysicalDeviceDriverPropertiesKHR extends VkPhysicalDeviceDriverP
 
     /** An array of {@link VkPhysicalDeviceDriverPropertiesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceDriverProperties.Buffer {
-
-        private static final VkPhysicalDeviceDriverPropertiesKHR ELEMENT_FACTORY = VkPhysicalDeviceDriverPropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDriverPropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceDriverPropertiesKHR extends VkPhysicalDeviceDriverP
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDriverPropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDriverPropertiesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

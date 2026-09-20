@@ -158,9 +158,6 @@ public class NkTextUndoState extends Struct<NkTextUndoState> {
 
     /** An array of {@link NkTextUndoState} structs. */
     public static class Buffer extends StructBuffer<NkTextUndoState, Buffer> {
-
-        private static final NkTextUndoState ELEMENT_FACTORY = NkTextUndoState.create(-1L);
-
         /**
          * Creates a new {@code NkTextUndoState.Buffer} instance backed by the specified container.
          *
@@ -183,18 +180,13 @@ public class NkTextUndoState extends Struct<NkTextUndoState> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkTextUndoState getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkTextUndoState.class;
         }
 
         /** @return a {@link NkTextUndoRecord}.Buffer view of the {@code undo_rec} field. */

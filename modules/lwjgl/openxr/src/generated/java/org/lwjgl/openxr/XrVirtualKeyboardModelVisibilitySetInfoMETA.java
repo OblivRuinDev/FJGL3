@@ -242,9 +242,6 @@ public class XrVirtualKeyboardModelVisibilitySetInfoMETA extends Struct<XrVirtua
 
     /** An array of {@link XrVirtualKeyboardModelVisibilitySetInfoMETA} structs. */
     public static class Buffer extends StructBuffer<XrVirtualKeyboardModelVisibilitySetInfoMETA, Buffer> implements NativeResource {
-
-        private static final XrVirtualKeyboardModelVisibilitySetInfoMETA ELEMENT_FACTORY = XrVirtualKeyboardModelVisibilitySetInfoMETA.create(-1L);
-
         /**
          * Creates a new {@code XrVirtualKeyboardModelVisibilitySetInfoMETA.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrVirtualKeyboardModelVisibilitySetInfoMETA extends Struct<XrVirtua
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrVirtualKeyboardModelVisibilitySetInfoMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrVirtualKeyboardModelVisibilitySetInfoMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

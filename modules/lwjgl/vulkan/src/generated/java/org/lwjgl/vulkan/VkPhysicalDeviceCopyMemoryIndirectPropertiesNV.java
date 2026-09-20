@@ -186,9 +186,6 @@ public class VkPhysicalDeviceCopyMemoryIndirectPropertiesNV extends VkPhysicalDe
 
     /** An array of {@link VkPhysicalDeviceCopyMemoryIndirectPropertiesNV} structs. */
     public static class Buffer extends VkPhysicalDeviceCopyMemoryIndirectPropertiesKHR.Buffer {
-
-        private static final VkPhysicalDeviceCopyMemoryIndirectPropertiesNV ELEMENT_FACTORY = VkPhysicalDeviceCopyMemoryIndirectPropertiesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceCopyMemoryIndirectPropertiesNV.Buffer} instance backed by the specified container.
          *
@@ -211,18 +208,13 @@ public class VkPhysicalDeviceCopyMemoryIndirectPropertiesNV extends VkPhysicalDe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceCopyMemoryIndirectPropertiesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceCopyMemoryIndirectPropertiesNV.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

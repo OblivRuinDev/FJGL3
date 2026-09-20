@@ -237,9 +237,6 @@ public class VkSparseImageMemoryRequirements2 extends Struct<VkSparseImageMemory
 
     /** An array of {@link VkSparseImageMemoryRequirements2} structs. */
     public static class Buffer extends StructBuffer<VkSparseImageMemoryRequirements2, Buffer> implements NativeResource {
-
-        private static final VkSparseImageMemoryRequirements2 ELEMENT_FACTORY = VkSparseImageMemoryRequirements2.create(-1L);
-
         /**
          * Creates a new {@code VkSparseImageMemoryRequirements2.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class VkSparseImageMemoryRequirements2 extends Struct<VkSparseImageMemory
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSparseImageMemoryRequirements2 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSparseImageMemoryRequirements2.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -242,9 +242,6 @@ public class VkSwapchainLatencyCreateInfoNV extends Struct<VkSwapchainLatencyCre
 
     /** An array of {@link VkSwapchainLatencyCreateInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkSwapchainLatencyCreateInfoNV, Buffer> implements NativeResource {
-
-        private static final VkSwapchainLatencyCreateInfoNV ELEMENT_FACTORY = VkSwapchainLatencyCreateInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkSwapchainLatencyCreateInfoNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkSwapchainLatencyCreateInfoNV extends Struct<VkSwapchainLatencyCre
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSwapchainLatencyCreateInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSwapchainLatencyCreateInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

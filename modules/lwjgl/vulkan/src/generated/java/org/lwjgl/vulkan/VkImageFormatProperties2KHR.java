@@ -186,9 +186,6 @@ public class VkImageFormatProperties2KHR extends VkImageFormatProperties2 {
 
     /** An array of {@link VkImageFormatProperties2KHR} structs. */
     public static class Buffer extends VkImageFormatProperties2.Buffer {
-
-        private static final VkImageFormatProperties2KHR ELEMENT_FACTORY = VkImageFormatProperties2KHR.create(-1L);
-
         /**
          * Creates a new {@code VkImageFormatProperties2KHR.Buffer} instance backed by the specified container.
          *
@@ -211,18 +208,13 @@ public class VkImageFormatProperties2KHR extends VkImageFormatProperties2 {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageFormatProperties2KHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageFormatProperties2KHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

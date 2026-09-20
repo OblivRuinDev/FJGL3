@@ -236,9 +236,6 @@ public class VkSharedPresentSurfaceCapabilitiesKHR extends Struct<VkSharedPresen
 
     /** An array of {@link VkSharedPresentSurfaceCapabilitiesKHR} structs. */
     public static class Buffer extends StructBuffer<VkSharedPresentSurfaceCapabilitiesKHR, Buffer> implements NativeResource {
-
-        private static final VkSharedPresentSurfaceCapabilitiesKHR ELEMENT_FACTORY = VkSharedPresentSurfaceCapabilitiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkSharedPresentSurfaceCapabilitiesKHR.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkSharedPresentSurfaceCapabilitiesKHR extends Struct<VkSharedPresen
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSharedPresentSurfaceCapabilitiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSharedPresentSurfaceCapabilitiesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

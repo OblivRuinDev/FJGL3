@@ -191,9 +191,6 @@ public class CXFileUniqueID extends Struct<CXFileUniqueID> implements NativeReso
 
     /** An array of {@link CXFileUniqueID} structs. */
     public static class Buffer extends StructBuffer<CXFileUniqueID, Buffer> implements NativeResource {
-
-        private static final CXFileUniqueID ELEMENT_FACTORY = CXFileUniqueID.create(-1L);
-
         /**
          * Creates a new {@code CXFileUniqueID.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class CXFileUniqueID extends Struct<CXFileUniqueID> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXFileUniqueID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXFileUniqueID.class;
         }
 
         /** @return a {@link LongBuffer} view of the {@code data} field. */

@@ -242,9 +242,6 @@ public class VkPrivateDataSlotCreateInfo extends Struct<VkPrivateDataSlotCreateI
 
     /** An array of {@link VkPrivateDataSlotCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkPrivateDataSlotCreateInfo, Buffer> implements NativeResource {
-
-        private static final VkPrivateDataSlotCreateInfo ELEMENT_FACTORY = VkPrivateDataSlotCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkPrivateDataSlotCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPrivateDataSlotCreateInfo extends Struct<VkPrivateDataSlotCreateI
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPrivateDataSlotCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPrivateDataSlotCreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

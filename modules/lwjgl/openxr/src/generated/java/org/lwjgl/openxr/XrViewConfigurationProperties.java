@@ -257,9 +257,6 @@ public class XrViewConfigurationProperties extends Struct<XrViewConfigurationPro
 
     /** An array of {@link XrViewConfigurationProperties} structs. */
     public static class Buffer extends StructBuffer<XrViewConfigurationProperties, Buffer> implements NativeResource {
-
-        private static final XrViewConfigurationProperties ELEMENT_FACTORY = XrViewConfigurationProperties.create(-1L);
-
         /**
          * Creates a new {@code XrViewConfigurationProperties.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class XrViewConfigurationProperties extends Struct<XrViewConfigurationPro
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrViewConfigurationProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrViewConfigurationProperties.class;
         }
 
         /** @return the value of the {@code type} field. */

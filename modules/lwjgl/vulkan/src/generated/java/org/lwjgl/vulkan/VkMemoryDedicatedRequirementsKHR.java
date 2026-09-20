@@ -187,9 +187,6 @@ public class VkMemoryDedicatedRequirementsKHR extends VkMemoryDedicatedRequireme
 
     /** An array of {@link VkMemoryDedicatedRequirementsKHR} structs. */
     public static class Buffer extends VkMemoryDedicatedRequirements.Buffer {
-
-        private static final VkMemoryDedicatedRequirementsKHR ELEMENT_FACTORY = VkMemoryDedicatedRequirementsKHR.create(-1L);
-
         /**
          * Creates a new {@code VkMemoryDedicatedRequirementsKHR.Buffer} instance backed by the specified container.
          *
@@ -212,18 +209,13 @@ public class VkMemoryDedicatedRequirementsKHR extends VkMemoryDedicatedRequireme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMemoryDedicatedRequirementsKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMemoryDedicatedRequirementsKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

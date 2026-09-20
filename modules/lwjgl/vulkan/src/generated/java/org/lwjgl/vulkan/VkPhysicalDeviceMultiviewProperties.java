@@ -245,9 +245,6 @@ public class VkPhysicalDeviceMultiviewProperties extends Struct<VkPhysicalDevice
 
     /** An array of {@link VkPhysicalDeviceMultiviewProperties} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceMultiviewProperties, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceMultiviewProperties ELEMENT_FACTORY = VkPhysicalDeviceMultiviewProperties.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceMultiviewProperties.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkPhysicalDeviceMultiviewProperties extends Struct<VkPhysicalDevice
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceMultiviewProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceMultiviewProperties.class;
         }
 
         /** @return the value of the {@code sType} field. */

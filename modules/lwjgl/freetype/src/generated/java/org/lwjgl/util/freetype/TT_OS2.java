@@ -456,9 +456,6 @@ public class TT_OS2 extends Struct<TT_OS2> {
 
     /** An array of {@link TT_OS2} structs. */
     public static class Buffer extends StructBuffer<TT_OS2, Buffer> {
-
-        private static final TT_OS2 ELEMENT_FACTORY = TT_OS2.create(-1L);
-
         /**
          * Creates a new {@code TT_OS2.Buffer} instance backed by the specified container.
          *
@@ -481,18 +478,13 @@ public class TT_OS2 extends Struct<TT_OS2> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected TT_OS2 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return TT_OS2.class;
         }
 
         /** @return the value of the {@code version} field. */

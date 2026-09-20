@@ -284,9 +284,6 @@ public class XrSpatialRaycastSnapshotCreateInfoANDROID extends Struct<XrSpatialR
 
     /** An array of {@link XrSpatialRaycastSnapshotCreateInfoANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSpatialRaycastSnapshotCreateInfoANDROID, Buffer> implements NativeResource {
-
-        private static final XrSpatialRaycastSnapshotCreateInfoANDROID ELEMENT_FACTORY = XrSpatialRaycastSnapshotCreateInfoANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialRaycastSnapshotCreateInfoANDROID.Buffer} instance backed by the specified container.
          *
@@ -309,18 +306,13 @@ public class XrSpatialRaycastSnapshotCreateInfoANDROID extends Struct<XrSpatialR
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialRaycastSnapshotCreateInfoANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialRaycastSnapshotCreateInfoANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

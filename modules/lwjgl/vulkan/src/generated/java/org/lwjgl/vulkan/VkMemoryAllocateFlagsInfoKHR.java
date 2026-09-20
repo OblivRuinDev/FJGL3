@@ -197,9 +197,6 @@ public class VkMemoryAllocateFlagsInfoKHR extends VkMemoryAllocateFlagsInfo {
 
     /** An array of {@link VkMemoryAllocateFlagsInfoKHR} structs. */
     public static class Buffer extends VkMemoryAllocateFlagsInfo.Buffer {
-
-        private static final VkMemoryAllocateFlagsInfoKHR ELEMENT_FACTORY = VkMemoryAllocateFlagsInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkMemoryAllocateFlagsInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -222,18 +219,13 @@ public class VkMemoryAllocateFlagsInfoKHR extends VkMemoryAllocateFlagsInfo {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMemoryAllocateFlagsInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMemoryAllocateFlagsInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

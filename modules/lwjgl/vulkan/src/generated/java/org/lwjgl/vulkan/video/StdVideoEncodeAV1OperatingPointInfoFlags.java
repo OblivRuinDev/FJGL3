@@ -244,9 +244,6 @@ public class StdVideoEncodeAV1OperatingPointInfoFlags extends Struct<StdVideoEnc
 
     /** An array of {@link StdVideoEncodeAV1OperatingPointInfoFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoEncodeAV1OperatingPointInfoFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoEncodeAV1OperatingPointInfoFlags ELEMENT_FACTORY = StdVideoEncodeAV1OperatingPointInfoFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoEncodeAV1OperatingPointInfoFlags.Buffer} instance backed by the specified container.
          *
@@ -269,18 +266,13 @@ public class StdVideoEncodeAV1OperatingPointInfoFlags extends Struct<StdVideoEnc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoEncodeAV1OperatingPointInfoFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoEncodeAV1OperatingPointInfoFlags.class;
         }
 
         /** @return the value of the {@code decoder_model_present_for_this_op} field. */

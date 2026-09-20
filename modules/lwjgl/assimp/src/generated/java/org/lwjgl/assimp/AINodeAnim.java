@@ -341,9 +341,6 @@ public class AINodeAnim extends Struct<AINodeAnim> implements NativeResource {
 
     /** An array of {@link AINodeAnim} structs. */
     public static class Buffer extends StructBuffer<AINodeAnim, Buffer> implements NativeResource {
-
-        private static final AINodeAnim ELEMENT_FACTORY = AINodeAnim.create(-1L);
-
         /**
          * Creates a new {@code AINodeAnim.Buffer} instance backed by the specified container.
          *
@@ -366,18 +363,13 @@ public class AINodeAnim extends Struct<AINodeAnim> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AINodeAnim getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AINodeAnim.class;
         }
 
         /** @return a {@link AIString} view of the {@code mNodeName} field. */

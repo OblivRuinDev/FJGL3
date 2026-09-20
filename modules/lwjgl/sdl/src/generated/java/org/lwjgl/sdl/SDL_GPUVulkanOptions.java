@@ -300,9 +300,6 @@ public class SDL_GPUVulkanOptions extends Struct<SDL_GPUVulkanOptions> implement
 
     /** An array of {@link SDL_GPUVulkanOptions} structs. */
     public static class Buffer extends StructBuffer<SDL_GPUVulkanOptions, Buffer> implements NativeResource {
-
-        private static final SDL_GPUVulkanOptions ELEMENT_FACTORY = SDL_GPUVulkanOptions.create(-1L);
-
         /**
          * Creates a new {@code SDL_GPUVulkanOptions.Buffer} instance backed by the specified container.
          *
@@ -325,18 +322,13 @@ public class SDL_GPUVulkanOptions extends Struct<SDL_GPUVulkanOptions> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GPUVulkanOptions getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GPUVulkanOptions.class;
         }
 
         /** @return the value of the {@code vulkan_api_version} field. */

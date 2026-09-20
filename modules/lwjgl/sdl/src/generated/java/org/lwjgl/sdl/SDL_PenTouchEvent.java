@@ -334,9 +334,6 @@ public class SDL_PenTouchEvent extends Struct<SDL_PenTouchEvent> implements Nati
 
     /** An array of {@link SDL_PenTouchEvent} structs. */
     public static class Buffer extends StructBuffer<SDL_PenTouchEvent, Buffer> implements NativeResource {
-
-        private static final SDL_PenTouchEvent ELEMENT_FACTORY = SDL_PenTouchEvent.create(-1L);
-
         /**
          * Creates a new {@code SDL_PenTouchEvent.Buffer} instance backed by the specified container.
          *
@@ -359,18 +356,13 @@ public class SDL_PenTouchEvent extends Struct<SDL_PenTouchEvent> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_PenTouchEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_PenTouchEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

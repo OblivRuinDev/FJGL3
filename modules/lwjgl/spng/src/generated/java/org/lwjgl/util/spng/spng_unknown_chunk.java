@@ -278,9 +278,6 @@ public class spng_unknown_chunk extends Struct<spng_unknown_chunk> implements Na
 
     /** An array of {@link spng_unknown_chunk} structs. */
     public static class Buffer extends StructBuffer<spng_unknown_chunk, Buffer> implements NativeResource {
-
-        private static final spng_unknown_chunk ELEMENT_FACTORY = spng_unknown_chunk.create(-1L);
-
         /**
          * Creates a new {@code spng_unknown_chunk.Buffer} instance backed by the specified container.
          *
@@ -303,18 +300,13 @@ public class spng_unknown_chunk extends Struct<spng_unknown_chunk> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected spng_unknown_chunk getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return spng_unknown_chunk.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code type} field. */

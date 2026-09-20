@@ -171,9 +171,6 @@ public class TT_Postscript extends Struct<TT_Postscript> {
 
     /** An array of {@link TT_Postscript} structs. */
     public static class Buffer extends StructBuffer<TT_Postscript, Buffer> {
-
-        private static final TT_Postscript ELEMENT_FACTORY = TT_Postscript.create(-1L);
-
         /**
          * Creates a new {@code TT_Postscript.Buffer} instance backed by the specified container.
          *
@@ -196,18 +193,13 @@ public class TT_Postscript extends Struct<TT_Postscript> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected TT_Postscript getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return TT_Postscript.class;
         }
 
         /** @return the value of the {@code FormatType} field. */

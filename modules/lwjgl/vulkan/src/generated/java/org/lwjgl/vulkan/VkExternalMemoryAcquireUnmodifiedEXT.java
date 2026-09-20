@@ -242,9 +242,6 @@ public class VkExternalMemoryAcquireUnmodifiedEXT extends Struct<VkExternalMemor
 
     /** An array of {@link VkExternalMemoryAcquireUnmodifiedEXT} structs. */
     public static class Buffer extends StructBuffer<VkExternalMemoryAcquireUnmodifiedEXT, Buffer> implements NativeResource {
-
-        private static final VkExternalMemoryAcquireUnmodifiedEXT ELEMENT_FACTORY = VkExternalMemoryAcquireUnmodifiedEXT.create(-1L);
-
         /**
          * Creates a new {@code VkExternalMemoryAcquireUnmodifiedEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkExternalMemoryAcquireUnmodifiedEXT extends Struct<VkExternalMemor
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExternalMemoryAcquireUnmodifiedEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExternalMemoryAcquireUnmodifiedEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -265,9 +265,6 @@ public class SDL_GPUTextureTransferInfo extends Struct<SDL_GPUTextureTransferInf
 
     /** An array of {@link SDL_GPUTextureTransferInfo} structs. */
     public static class Buffer extends StructBuffer<SDL_GPUTextureTransferInfo, Buffer> implements NativeResource {
-
-        private static final SDL_GPUTextureTransferInfo ELEMENT_FACTORY = SDL_GPUTextureTransferInfo.create(-1L);
-
         /**
          * Creates a new {@code SDL_GPUTextureTransferInfo.Buffer} instance backed by the specified container.
          *
@@ -290,18 +287,13 @@ public class SDL_GPUTextureTransferInfo extends Struct<SDL_GPUTextureTransferInf
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GPUTextureTransferInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GPUTextureTransferInfo.class;
         }
 
         /** @return the value of the {@code transfer_buffer} field. */

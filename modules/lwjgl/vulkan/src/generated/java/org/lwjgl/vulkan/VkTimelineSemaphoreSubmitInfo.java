@@ -287,9 +287,6 @@ public class VkTimelineSemaphoreSubmitInfo extends Struct<VkTimelineSemaphoreSub
 
     /** An array of {@link VkTimelineSemaphoreSubmitInfo} structs. */
     public static class Buffer extends StructBuffer<VkTimelineSemaphoreSubmitInfo, Buffer> implements NativeResource {
-
-        private static final VkTimelineSemaphoreSubmitInfo ELEMENT_FACTORY = VkTimelineSemaphoreSubmitInfo.create(-1L);
-
         /**
          * Creates a new {@code VkTimelineSemaphoreSubmitInfo.Buffer} instance backed by the specified container.
          *
@@ -312,18 +309,13 @@ public class VkTimelineSemaphoreSubmitInfo extends Struct<VkTimelineSemaphoreSub
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkTimelineSemaphoreSubmitInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkTimelineSemaphoreSubmitInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -246,9 +246,6 @@ public class XrEventDataEventsLost extends Struct<XrEventDataEventsLost> impleme
 
     /** An array of {@link XrEventDataEventsLost} structs. */
     public static class Buffer extends StructBuffer<XrEventDataEventsLost, Buffer> implements NativeResource {
-
-        private static final XrEventDataEventsLost ELEMENT_FACTORY = XrEventDataEventsLost.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataEventsLost.Buffer} instance backed by the specified container.
          *
@@ -271,18 +268,13 @@ public class XrEventDataEventsLost extends Struct<XrEventDataEventsLost> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataEventsLost getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataEventsLost.class;
         }
 
         /** @return the value of the {@code type} field. */

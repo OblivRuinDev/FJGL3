@@ -197,9 +197,6 @@ public class VkRenderingAttachmentLocationInfoKHR extends VkRenderingAttachmentL
 
     /** An array of {@link VkRenderingAttachmentLocationInfoKHR} structs. */
     public static class Buffer extends VkRenderingAttachmentLocationInfo.Buffer {
-
-        private static final VkRenderingAttachmentLocationInfoKHR ELEMENT_FACTORY = VkRenderingAttachmentLocationInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkRenderingAttachmentLocationInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -222,18 +219,13 @@ public class VkRenderingAttachmentLocationInfoKHR extends VkRenderingAttachmentL
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderingAttachmentLocationInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderingAttachmentLocationInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

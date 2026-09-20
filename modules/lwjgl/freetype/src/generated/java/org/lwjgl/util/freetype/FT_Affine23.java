@@ -144,9 +144,6 @@ public class FT_Affine23 extends Struct<FT_Affine23> {
 
     /** An array of {@link FT_Affine23} structs. */
     public static class Buffer extends StructBuffer<FT_Affine23, Buffer> {
-
-        private static final FT_Affine23 ELEMENT_FACTORY = FT_Affine23.create(-1L);
-
         /**
          * Creates a new {@code FT_Affine23.Buffer} instance backed by the specified container.
          *
@@ -169,18 +166,13 @@ public class FT_Affine23 extends Struct<FT_Affine23> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Affine23 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Affine23.class;
         }
 
         /** @return the value of the {@code xx} field. */

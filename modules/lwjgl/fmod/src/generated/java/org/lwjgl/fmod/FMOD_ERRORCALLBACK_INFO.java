@@ -298,9 +298,6 @@ public class FMOD_ERRORCALLBACK_INFO extends Struct<FMOD_ERRORCALLBACK_INFO> imp
 
     /** An array of {@link FMOD_ERRORCALLBACK_INFO} structs. */
     public static class Buffer extends StructBuffer<FMOD_ERRORCALLBACK_INFO, Buffer> implements NativeResource {
-
-        private static final FMOD_ERRORCALLBACK_INFO ELEMENT_FACTORY = FMOD_ERRORCALLBACK_INFO.create(-1L);
-
         /**
          * Creates a new {@code FMOD_ERRORCALLBACK_INFO.Buffer} instance backed by the specified container.
          *
@@ -323,18 +320,13 @@ public class FMOD_ERRORCALLBACK_INFO extends Struct<FMOD_ERRORCALLBACK_INFO> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_ERRORCALLBACK_INFO getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_ERRORCALLBACK_INFO.class;
         }
 
         /** @return the value of the {@code result} field. */

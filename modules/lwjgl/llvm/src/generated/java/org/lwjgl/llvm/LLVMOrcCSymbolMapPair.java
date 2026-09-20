@@ -238,9 +238,6 @@ public class LLVMOrcCSymbolMapPair extends Struct<LLVMOrcCSymbolMapPair> impleme
 
     /** An array of {@link LLVMOrcCSymbolMapPair} structs. */
     public static class Buffer extends StructBuffer<LLVMOrcCSymbolMapPair, Buffer> implements NativeResource {
-
-        private static final LLVMOrcCSymbolMapPair ELEMENT_FACTORY = LLVMOrcCSymbolMapPair.create(-1L);
-
         /**
          * Creates a new {@code LLVMOrcCSymbolMapPair.Buffer} instance backed by the specified container.
          *
@@ -263,18 +260,13 @@ public class LLVMOrcCSymbolMapPair extends Struct<LLVMOrcCSymbolMapPair> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected LLVMOrcCSymbolMapPair getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return LLVMOrcCSymbolMapPair.class;
         }
 
         /** @return the value of the {@code Name} field. */

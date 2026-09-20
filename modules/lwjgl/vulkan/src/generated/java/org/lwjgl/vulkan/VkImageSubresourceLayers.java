@@ -255,9 +255,6 @@ public class VkImageSubresourceLayers extends Struct<VkImageSubresourceLayers> i
 
     /** An array of {@link VkImageSubresourceLayers} structs. */
     public static class Buffer extends StructBuffer<VkImageSubresourceLayers, Buffer> implements NativeResource {
-
-        private static final VkImageSubresourceLayers ELEMENT_FACTORY = VkImageSubresourceLayers.create(-1L);
-
         /**
          * Creates a new {@code VkImageSubresourceLayers.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class VkImageSubresourceLayers extends Struct<VkImageSubresourceLayers> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageSubresourceLayers getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageSubresourceLayers.class;
         }
 
         /** @return the value of the {@code aspectMask} field. */

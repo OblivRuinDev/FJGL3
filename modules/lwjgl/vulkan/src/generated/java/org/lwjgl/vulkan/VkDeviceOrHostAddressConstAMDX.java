@@ -214,9 +214,6 @@ public class VkDeviceOrHostAddressConstAMDX extends Struct<VkDeviceOrHostAddress
 
     /** An array of {@link VkDeviceOrHostAddressConstAMDX} structs. */
     public static class Buffer extends StructBuffer<VkDeviceOrHostAddressConstAMDX, Buffer> implements NativeResource {
-
-        private static final VkDeviceOrHostAddressConstAMDX ELEMENT_FACTORY = VkDeviceOrHostAddressConstAMDX.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceOrHostAddressConstAMDX.Buffer} instance backed by the specified container.
          *
@@ -239,18 +236,13 @@ public class VkDeviceOrHostAddressConstAMDX extends Struct<VkDeviceOrHostAddress
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceOrHostAddressConstAMDX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceOrHostAddressConstAMDX.class;
         }
 
         /** @return the value of the {@code deviceAddress} field. */

@@ -277,9 +277,6 @@ public class XrSenseDataQueryCompletionBD extends Struct<XrSenseDataQueryComplet
 
     /** An array of {@link XrSenseDataQueryCompletionBD} structs. */
     public static class Buffer extends StructBuffer<XrSenseDataQueryCompletionBD, Buffer> implements NativeResource {
-
-        private static final XrSenseDataQueryCompletionBD ELEMENT_FACTORY = XrSenseDataQueryCompletionBD.create(-1L);
-
         /**
          * Creates a new {@code XrSenseDataQueryCompletionBD.Buffer} instance backed by the specified container.
          *
@@ -302,18 +299,13 @@ public class XrSenseDataQueryCompletionBD extends Struct<XrSenseDataQueryComplet
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSenseDataQueryCompletionBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSenseDataQueryCompletionBD.class;
         }
 
         /** @return the value of the {@code type} field. */

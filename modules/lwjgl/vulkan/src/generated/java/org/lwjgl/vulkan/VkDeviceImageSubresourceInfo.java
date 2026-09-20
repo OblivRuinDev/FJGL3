@@ -268,9 +268,6 @@ public class VkDeviceImageSubresourceInfo extends Struct<VkDeviceImageSubresourc
 
     /** An array of {@link VkDeviceImageSubresourceInfo} structs. */
     public static class Buffer extends StructBuffer<VkDeviceImageSubresourceInfo, Buffer> implements NativeResource {
-
-        private static final VkDeviceImageSubresourceInfo ELEMENT_FACTORY = VkDeviceImageSubresourceInfo.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceImageSubresourceInfo.Buffer} instance backed by the specified container.
          *
@@ -293,18 +290,13 @@ public class VkDeviceImageSubresourceInfo extends Struct<VkDeviceImageSubresourc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceImageSubresourceInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceImageSubresourceInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

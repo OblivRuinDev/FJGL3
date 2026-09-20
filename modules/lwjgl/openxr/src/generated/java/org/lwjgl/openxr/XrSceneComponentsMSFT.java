@@ -282,9 +282,6 @@ public class XrSceneComponentsMSFT extends Struct<XrSceneComponentsMSFT> impleme
 
     /** An array of {@link XrSceneComponentsMSFT} structs. */
     public static class Buffer extends StructBuffer<XrSceneComponentsMSFT, Buffer> implements NativeResource {
-
-        private static final XrSceneComponentsMSFT ELEMENT_FACTORY = XrSceneComponentsMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrSceneComponentsMSFT.Buffer} instance backed by the specified container.
          *
@@ -307,18 +304,13 @@ public class XrSceneComponentsMSFT extends Struct<XrSceneComponentsMSFT> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSceneComponentsMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSceneComponentsMSFT.class;
         }
 
         /** @return the value of the {@code type} field. */

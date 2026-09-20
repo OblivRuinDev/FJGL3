@@ -255,9 +255,6 @@ public class VkQueueFamilyGlobalPriorityProperties extends Struct<VkQueueFamilyG
 
     /** An array of {@link VkQueueFamilyGlobalPriorityProperties} structs. */
     public static class Buffer extends StructBuffer<VkQueueFamilyGlobalPriorityProperties, Buffer> implements NativeResource {
-
-        private static final VkQueueFamilyGlobalPriorityProperties ELEMENT_FACTORY = VkQueueFamilyGlobalPriorityProperties.create(-1L);
-
         /**
          * Creates a new {@code VkQueueFamilyGlobalPriorityProperties.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class VkQueueFamilyGlobalPriorityProperties extends Struct<VkQueueFamilyG
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkQueueFamilyGlobalPriorityProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkQueueFamilyGlobalPriorityProperties.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -257,9 +257,6 @@ public class XrScenePlaneAlignmentFilterInfoMSFT extends Struct<XrScenePlaneAlig
 
     /** An array of {@link XrScenePlaneAlignmentFilterInfoMSFT} structs. */
     public static class Buffer extends StructBuffer<XrScenePlaneAlignmentFilterInfoMSFT, Buffer> implements NativeResource {
-
-        private static final XrScenePlaneAlignmentFilterInfoMSFT ELEMENT_FACTORY = XrScenePlaneAlignmentFilterInfoMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrScenePlaneAlignmentFilterInfoMSFT.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class XrScenePlaneAlignmentFilterInfoMSFT extends Struct<XrScenePlaneAlig
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrScenePlaneAlignmentFilterInfoMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrScenePlaneAlignmentFilterInfoMSFT.class;
         }
 
         /** @return the value of the {@code type} field. */

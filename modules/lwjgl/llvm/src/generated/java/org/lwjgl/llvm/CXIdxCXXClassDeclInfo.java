@@ -118,9 +118,6 @@ public class CXIdxCXXClassDeclInfo extends Struct<CXIdxCXXClassDeclInfo> {
 
     /** An array of {@link CXIdxCXXClassDeclInfo} structs. */
     public static class Buffer extends StructBuffer<CXIdxCXXClassDeclInfo, Buffer> {
-
-        private static final CXIdxCXXClassDeclInfo ELEMENT_FACTORY = CXIdxCXXClassDeclInfo.create(-1L);
-
         /**
          * Creates a new {@code CXIdxCXXClassDeclInfo.Buffer} instance backed by the specified container.
          *
@@ -143,18 +140,13 @@ public class CXIdxCXXClassDeclInfo extends Struct<CXIdxCXXClassDeclInfo> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXIdxCXXClassDeclInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXIdxCXXClassDeclInfo.class;
         }
 
         /** @return a {@link CXIdxDeclInfo} view of the struct pointed to by the {@code declInfo} field. */

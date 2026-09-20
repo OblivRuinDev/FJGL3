@@ -242,9 +242,6 @@ public class VkPerformanceConfigurationAcquireInfoINTEL extends Struct<VkPerform
 
     /** An array of {@link VkPerformanceConfigurationAcquireInfoINTEL} structs. */
     public static class Buffer extends StructBuffer<VkPerformanceConfigurationAcquireInfoINTEL, Buffer> implements NativeResource {
-
-        private static final VkPerformanceConfigurationAcquireInfoINTEL ELEMENT_FACTORY = VkPerformanceConfigurationAcquireInfoINTEL.create(-1L);
-
         /**
          * Creates a new {@code VkPerformanceConfigurationAcquireInfoINTEL.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPerformanceConfigurationAcquireInfoINTEL extends Struct<VkPerform
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPerformanceConfigurationAcquireInfoINTEL getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPerformanceConfigurationAcquireInfoINTEL.class;
         }
 
         /** @return the value of the {@code sType} field. */

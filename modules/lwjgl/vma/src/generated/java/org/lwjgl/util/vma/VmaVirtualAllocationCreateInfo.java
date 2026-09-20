@@ -255,9 +255,6 @@ public class VmaVirtualAllocationCreateInfo extends Struct<VmaVirtualAllocationC
 
     /** An array of {@link VmaVirtualAllocationCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VmaVirtualAllocationCreateInfo, Buffer> implements NativeResource {
-
-        private static final VmaVirtualAllocationCreateInfo ELEMENT_FACTORY = VmaVirtualAllocationCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VmaVirtualAllocationCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class VmaVirtualAllocationCreateInfo extends Struct<VmaVirtualAllocationC
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VmaVirtualAllocationCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VmaVirtualAllocationCreateInfo.class;
         }
 
         /** @return the value of the {@code size} field. */

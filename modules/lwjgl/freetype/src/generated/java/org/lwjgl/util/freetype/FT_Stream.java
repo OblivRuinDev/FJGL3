@@ -323,9 +323,6 @@ public class FT_Stream extends Struct<FT_Stream> implements NativeResource {
 
     /** An array of {@link FT_Stream} structs. */
     public static class Buffer extends StructBuffer<FT_Stream, Buffer> implements NativeResource {
-
-        private static final FT_Stream ELEMENT_FACTORY = FT_Stream.create(-1L);
-
         /**
          * Creates a new {@code FT_Stream.Buffer} instance backed by the specified container.
          *
@@ -348,18 +345,13 @@ public class FT_Stream extends Struct<FT_Stream> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Stream getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Stream.class;
         }
 
         /** @return a {@link ByteBuffer} view of the data pointed to by the {@code base} field. */

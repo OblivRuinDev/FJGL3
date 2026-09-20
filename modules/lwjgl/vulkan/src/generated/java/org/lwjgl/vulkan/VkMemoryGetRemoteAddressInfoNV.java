@@ -257,9 +257,6 @@ public class VkMemoryGetRemoteAddressInfoNV extends Struct<VkMemoryGetRemoteAddr
 
     /** An array of {@link VkMemoryGetRemoteAddressInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkMemoryGetRemoteAddressInfoNV, Buffer> implements NativeResource {
-
-        private static final VkMemoryGetRemoteAddressInfoNV ELEMENT_FACTORY = VkMemoryGetRemoteAddressInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkMemoryGetRemoteAddressInfoNV.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkMemoryGetRemoteAddressInfoNV extends Struct<VkMemoryGetRemoteAddr
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMemoryGetRemoteAddressInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMemoryGetRemoteAddressInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

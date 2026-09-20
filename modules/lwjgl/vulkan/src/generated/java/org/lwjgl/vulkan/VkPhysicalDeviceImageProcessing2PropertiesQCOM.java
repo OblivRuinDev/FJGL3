@@ -237,9 +237,6 @@ public class VkPhysicalDeviceImageProcessing2PropertiesQCOM extends Struct<VkPhy
 
     /** An array of {@link VkPhysicalDeviceImageProcessing2PropertiesQCOM} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceImageProcessing2PropertiesQCOM, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceImageProcessing2PropertiesQCOM ELEMENT_FACTORY = VkPhysicalDeviceImageProcessing2PropertiesQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceImageProcessing2PropertiesQCOM.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class VkPhysicalDeviceImageProcessing2PropertiesQCOM extends Struct<VkPhy
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceImageProcessing2PropertiesQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceImageProcessing2PropertiesQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

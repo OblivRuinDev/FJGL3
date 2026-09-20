@@ -242,9 +242,6 @@ public class VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR extends
 
     /** An array of {@link VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR extends
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

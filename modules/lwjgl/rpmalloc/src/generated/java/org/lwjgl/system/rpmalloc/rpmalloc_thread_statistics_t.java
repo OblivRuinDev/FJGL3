@@ -251,9 +251,6 @@ public class rpmalloc_thread_statistics_t extends Struct<rpmalloc_thread_statist
 
     /** An array of {@link rpmalloc_thread_statistics_t} structs. */
     public static class Buffer extends StructBuffer<rpmalloc_thread_statistics_t, Buffer> implements NativeResource {
-
-        private static final rpmalloc_thread_statistics_t ELEMENT_FACTORY = rpmalloc_thread_statistics_t.create(-1L);
-
         /**
          * Creates a new {@code rpmalloc_thread_statistics_t.Buffer} instance backed by the specified container.
          *
@@ -276,18 +273,13 @@ public class rpmalloc_thread_statistics_t extends Struct<rpmalloc_thread_statist
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected rpmalloc_thread_statistics_t getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return rpmalloc_thread_statistics_t.class;
         }
 
         /** @return the value of the {@code sizecache} field. */
@@ -413,9 +405,6 @@ public class rpmalloc_thread_statistics_t extends Struct<rpmalloc_thread_statist
     
         /** An array of {@link span_use} structs. */
         public static class Buffer extends StructBuffer<span_use, Buffer> {
-    
-            private static final span_use ELEMENT_FACTORY = span_use.create(-1L);
-    
             /**
              * Creates a new {@code span_use.Buffer} instance backed by the specified container.
              *
@@ -438,18 +427,13 @@ public class rpmalloc_thread_statistics_t extends Struct<rpmalloc_thread_statist
             }
     
             @Override
-            protected Buffer self() {
-                return this;
+            public int sizeof() {
+                return SIZEOF;
             }
     
             @Override
-            protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-                return new Buffer(address, container, mark, position, limit, capacity);
-            }
-    
-            @Override
-            protected span_use getElementFactory() {
-                return ELEMENT_FACTORY;
+            public Class<?> getElementClass() {
+                return span_use.class;
             }
     
             /** @return the value of the {@code current} field. */
@@ -577,9 +561,6 @@ public class rpmalloc_thread_statistics_t extends Struct<rpmalloc_thread_statist
     
         /** An array of {@link size_use} structs. */
         public static class Buffer extends StructBuffer<size_use, Buffer> {
-    
-            private static final size_use ELEMENT_FACTORY = size_use.create(-1L);
-    
             /**
              * Creates a new {@code size_use.Buffer} instance backed by the specified container.
              *
@@ -602,18 +583,13 @@ public class rpmalloc_thread_statistics_t extends Struct<rpmalloc_thread_statist
             }
     
             @Override
-            protected Buffer self() {
-                return this;
+            public int sizeof() {
+                return SIZEOF;
             }
     
             @Override
-            protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-                return new Buffer(address, container, mark, position, limit, capacity);
-            }
-    
-            @Override
-            protected size_use getElementFactory() {
-                return ELEMENT_FACTORY;
+            public Class<?> getElementClass() {
+                return size_use.class;
             }
     
             /** @return the value of the {@code alloc_current} field. */

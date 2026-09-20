@@ -242,9 +242,6 @@ public class VkPipelineBinaryDataInfoKHR extends Struct<VkPipelineBinaryDataInfo
 
     /** An array of {@link VkPipelineBinaryDataInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkPipelineBinaryDataInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkPipelineBinaryDataInfoKHR ELEMENT_FACTORY = VkPipelineBinaryDataInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineBinaryDataInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPipelineBinaryDataInfoKHR extends Struct<VkPipelineBinaryDataInfo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineBinaryDataInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineBinaryDataInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

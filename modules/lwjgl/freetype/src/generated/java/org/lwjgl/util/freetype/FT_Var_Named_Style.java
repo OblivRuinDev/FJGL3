@@ -118,9 +118,6 @@ public class FT_Var_Named_Style extends Struct<FT_Var_Named_Style> {
 
     /** An array of {@link FT_Var_Named_Style} structs. */
     public static class Buffer extends StructBuffer<FT_Var_Named_Style, Buffer> {
-
-        private static final FT_Var_Named_Style ELEMENT_FACTORY = FT_Var_Named_Style.create(-1L);
-
         /**
          * Creates a new {@code FT_Var_Named_Style.Buffer} instance backed by the specified container.
          *
@@ -143,18 +140,13 @@ public class FT_Var_Named_Style extends Struct<FT_Var_Named_Style> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Var_Named_Style getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Var_Named_Style.class;
         }
 
         /** @return a {@link CLongBuffer} view of the data pointed to by the {@code coords} field. */

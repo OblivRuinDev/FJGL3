@@ -127,9 +127,6 @@ public class LZ4StreamDecodeInternal extends Struct<LZ4StreamDecodeInternal> {
 
     /** An array of {@link LZ4StreamDecodeInternal} structs. */
     public static class Buffer extends StructBuffer<LZ4StreamDecodeInternal, Buffer> {
-
-        private static final LZ4StreamDecodeInternal ELEMENT_FACTORY = LZ4StreamDecodeInternal.create(-1L);
-
         /**
          * Creates a new {@code LZ4StreamDecodeInternal.Buffer} instance backed by the specified container.
          *
@@ -152,18 +149,13 @@ public class LZ4StreamDecodeInternal extends Struct<LZ4StreamDecodeInternal> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected LZ4StreamDecodeInternal getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return LZ4StreamDecodeInternal.class;
         }
 
         /** @return a {@link ByteBuffer} view of the data pointed to by the {@code externalDict} field. */

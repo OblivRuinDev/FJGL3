@@ -238,9 +238,6 @@ public class XrHapticParametricTransientEXT extends Struct<XrHapticParametricTra
 
     /** An array of {@link XrHapticParametricTransientEXT} structs. */
     public static class Buffer extends StructBuffer<XrHapticParametricTransientEXT, Buffer> implements NativeResource {
-
-        private static final XrHapticParametricTransientEXT ELEMENT_FACTORY = XrHapticParametricTransientEXT.create(-1L);
-
         /**
          * Creates a new {@code XrHapticParametricTransientEXT.Buffer} instance backed by the specified container.
          *
@@ -263,18 +260,13 @@ public class XrHapticParametricTransientEXT extends Struct<XrHapticParametricTra
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHapticParametricTransientEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHapticParametricTransientEXT.class;
         }
 
         /** @return the value of the {@code time} field. */

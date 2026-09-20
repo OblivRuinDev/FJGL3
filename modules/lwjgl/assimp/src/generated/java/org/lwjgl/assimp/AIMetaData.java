@@ -255,9 +255,6 @@ public class AIMetaData extends Struct<AIMetaData> implements NativeResource {
 
     /** An array of {@link AIMetaData} structs. */
     public static class Buffer extends StructBuffer<AIMetaData, Buffer> implements NativeResource {
-
-        private static final AIMetaData ELEMENT_FACTORY = AIMetaData.create(-1L);
-
         /**
          * Creates a new {@code AIMetaData.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class AIMetaData extends Struct<AIMetaData> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIMetaData getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIMetaData.class;
         }
 
         /** @return the value of the {@code mNumProperties} field. */

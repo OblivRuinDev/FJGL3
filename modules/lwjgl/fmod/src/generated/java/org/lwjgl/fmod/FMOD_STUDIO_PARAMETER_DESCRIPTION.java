@@ -335,9 +335,6 @@ public class FMOD_STUDIO_PARAMETER_DESCRIPTION extends Struct<FMOD_STUDIO_PARAME
 
     /** An array of {@link FMOD_STUDIO_PARAMETER_DESCRIPTION} structs. */
     public static class Buffer extends StructBuffer<FMOD_STUDIO_PARAMETER_DESCRIPTION, Buffer> implements NativeResource {
-
-        private static final FMOD_STUDIO_PARAMETER_DESCRIPTION ELEMENT_FACTORY = FMOD_STUDIO_PARAMETER_DESCRIPTION.create(-1L);
-
         /**
          * Creates a new {@code FMOD_STUDIO_PARAMETER_DESCRIPTION.Buffer} instance backed by the specified container.
          *
@@ -360,18 +357,13 @@ public class FMOD_STUDIO_PARAMETER_DESCRIPTION extends Struct<FMOD_STUDIO_PARAME
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_STUDIO_PARAMETER_DESCRIPTION getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_STUDIO_PARAMETER_DESCRIPTION.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code name} field. */

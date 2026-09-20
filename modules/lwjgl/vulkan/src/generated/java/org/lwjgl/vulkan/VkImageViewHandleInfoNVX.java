@@ -272,9 +272,6 @@ public class VkImageViewHandleInfoNVX extends Struct<VkImageViewHandleInfoNVX> i
 
     /** An array of {@link VkImageViewHandleInfoNVX} structs. */
     public static class Buffer extends StructBuffer<VkImageViewHandleInfoNVX, Buffer> implements NativeResource {
-
-        private static final VkImageViewHandleInfoNVX ELEMENT_FACTORY = VkImageViewHandleInfoNVX.create(-1L);
-
         /**
          * Creates a new {@code VkImageViewHandleInfoNVX.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkImageViewHandleInfoNVX extends Struct<VkImageViewHandleInfoNVX> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageViewHandleInfoNVX getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageViewHandleInfoNVX.class;
         }
 
         /** @return the value of the {@code sType} field. */

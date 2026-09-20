@@ -241,9 +241,6 @@ public class VkIndirectCommandsTokenDataEXT extends Struct<VkIndirectCommandsTok
 
     /** An array of {@link VkIndirectCommandsTokenDataEXT} structs. */
     public static class Buffer extends StructBuffer<VkIndirectCommandsTokenDataEXT, Buffer> implements NativeResource {
-
-        private static final VkIndirectCommandsTokenDataEXT ELEMENT_FACTORY = VkIndirectCommandsTokenDataEXT.create(-1L);
-
         /**
          * Creates a new {@code VkIndirectCommandsTokenDataEXT.Buffer} instance backed by the specified container.
          *
@@ -266,18 +263,13 @@ public class VkIndirectCommandsTokenDataEXT extends Struct<VkIndirectCommandsTok
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkIndirectCommandsTokenDataEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkIndirectCommandsTokenDataEXT.class;
         }
 
         /** @return a {@link VkIndirectCommandsPushConstantTokenEXT} view of the struct pointed to by the {@code pPushConstant} field. */

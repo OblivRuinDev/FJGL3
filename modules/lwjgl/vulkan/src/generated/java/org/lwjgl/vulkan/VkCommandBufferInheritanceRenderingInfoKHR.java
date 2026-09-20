@@ -223,9 +223,6 @@ public class VkCommandBufferInheritanceRenderingInfoKHR extends VkCommandBufferI
 
     /** An array of {@link VkCommandBufferInheritanceRenderingInfoKHR} structs. */
     public static class Buffer extends VkCommandBufferInheritanceRenderingInfo.Buffer {
-
-        private static final VkCommandBufferInheritanceRenderingInfoKHR ELEMENT_FACTORY = VkCommandBufferInheritanceRenderingInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkCommandBufferInheritanceRenderingInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -248,18 +245,13 @@ public class VkCommandBufferInheritanceRenderingInfoKHR extends VkCommandBufferI
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCommandBufferInheritanceRenderingInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCommandBufferInheritanceRenderingInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

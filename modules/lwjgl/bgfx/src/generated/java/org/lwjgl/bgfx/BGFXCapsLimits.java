@@ -316,9 +316,6 @@ public class BGFXCapsLimits extends Struct<BGFXCapsLimits> {
 
     /** An array of {@link BGFXCapsLimits} structs. */
     public static class Buffer extends StructBuffer<BGFXCapsLimits, Buffer> {
-
-        private static final BGFXCapsLimits ELEMENT_FACTORY = BGFXCapsLimits.create(-1L);
-
         /**
          * Creates a new {@code BGFXCapsLimits.Buffer} instance backed by the specified container.
          *
@@ -341,18 +338,13 @@ public class BGFXCapsLimits extends Struct<BGFXCapsLimits> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected BGFXCapsLimits getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return BGFXCapsLimits.class;
         }
 
         /** @return the value of the {@code maxDrawCalls} field. */

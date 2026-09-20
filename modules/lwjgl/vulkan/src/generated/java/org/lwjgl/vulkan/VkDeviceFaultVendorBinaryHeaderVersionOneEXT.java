@@ -242,9 +242,6 @@ public class VkDeviceFaultVendorBinaryHeaderVersionOneEXT extends VkDeviceFaultV
 
     /** An array of {@link VkDeviceFaultVendorBinaryHeaderVersionOneEXT} structs. */
     public static class Buffer extends VkDeviceFaultVendorBinaryHeaderVersionOneKHR.Buffer {
-
-        private static final VkDeviceFaultVendorBinaryHeaderVersionOneEXT ELEMENT_FACTORY = VkDeviceFaultVendorBinaryHeaderVersionOneEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceFaultVendorBinaryHeaderVersionOneEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkDeviceFaultVendorBinaryHeaderVersionOneEXT extends VkDeviceFaultV
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceFaultVendorBinaryHeaderVersionOneEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceFaultVendorBinaryHeaderVersionOneEXT.class;
         }
 
         /** Sets the specified value to the {@code headerSize} field. */

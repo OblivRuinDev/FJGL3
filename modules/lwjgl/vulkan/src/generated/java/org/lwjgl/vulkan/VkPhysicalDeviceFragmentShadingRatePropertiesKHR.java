@@ -379,9 +379,6 @@ public class VkPhysicalDeviceFragmentShadingRatePropertiesKHR extends Struct<VkP
 
     /** An array of {@link VkPhysicalDeviceFragmentShadingRatePropertiesKHR} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceFragmentShadingRatePropertiesKHR, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceFragmentShadingRatePropertiesKHR ELEMENT_FACTORY = VkPhysicalDeviceFragmentShadingRatePropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceFragmentShadingRatePropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -404,18 +401,13 @@ public class VkPhysicalDeviceFragmentShadingRatePropertiesKHR extends Struct<VkP
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceFragmentShadingRatePropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceFragmentShadingRatePropertiesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

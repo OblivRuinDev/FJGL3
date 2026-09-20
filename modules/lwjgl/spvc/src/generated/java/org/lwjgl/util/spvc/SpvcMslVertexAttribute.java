@@ -301,9 +301,6 @@ public class SpvcMslVertexAttribute extends Struct<SpvcMslVertexAttribute> imple
 
     /** An array of {@link SpvcMslVertexAttribute} structs. */
     public static class Buffer extends StructBuffer<SpvcMslVertexAttribute, Buffer> implements NativeResource {
-
-        private static final SpvcMslVertexAttribute ELEMENT_FACTORY = SpvcMslVertexAttribute.create(-1L);
-
         /**
          * Creates a new {@code SpvcMslVertexAttribute.Buffer} instance backed by the specified container.
          *
@@ -326,18 +323,13 @@ public class SpvcMslVertexAttribute extends Struct<SpvcMslVertexAttribute> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SpvcMslVertexAttribute getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SpvcMslVertexAttribute.class;
         }
 
         /** @return the value of the {@code location} field. */

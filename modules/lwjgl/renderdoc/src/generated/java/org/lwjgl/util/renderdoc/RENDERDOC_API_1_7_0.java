@@ -435,9 +435,6 @@ public class RENDERDOC_API_1_7_0 extends Struct<RENDERDOC_API_1_7_0> implements 
 
     /** An array of {@link RENDERDOC_API_1_7_0} structs. */
     public static class Buffer extends StructBuffer<RENDERDOC_API_1_7_0, Buffer> implements NativeResource {
-
-        private static final RENDERDOC_API_1_7_0 ELEMENT_FACTORY = RENDERDOC_API_1_7_0.create(-1L);
-
         /**
          * Creates a new {@code RENDERDOC_API_1_7_0.Buffer} instance backed by the specified container.
          *
@@ -460,18 +457,13 @@ public class RENDERDOC_API_1_7_0 extends Struct<RENDERDOC_API_1_7_0> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected RENDERDOC_API_1_7_0 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return RENDERDOC_API_1_7_0.class;
         }
 
         /** @return the value of the {@code GetAPIVersion} field. */

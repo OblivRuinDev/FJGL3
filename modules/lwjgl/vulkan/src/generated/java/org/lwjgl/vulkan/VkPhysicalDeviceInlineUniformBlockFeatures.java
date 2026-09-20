@@ -257,9 +257,6 @@ public class VkPhysicalDeviceInlineUniformBlockFeatures extends Struct<VkPhysica
 
     /** An array of {@link VkPhysicalDeviceInlineUniformBlockFeatures} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceInlineUniformBlockFeatures, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceInlineUniformBlockFeatures ELEMENT_FACTORY = VkPhysicalDeviceInlineUniformBlockFeatures.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceInlineUniformBlockFeatures.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkPhysicalDeviceInlineUniformBlockFeatures extends Struct<VkPhysica
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceInlineUniformBlockFeatures getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceInlineUniformBlockFeatures.class;
         }
 
         /** @return the value of the {@code sType} field. */

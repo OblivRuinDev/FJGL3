@@ -607,9 +607,6 @@ public class FMOD_DSP_DESCRIPTION extends Struct<FMOD_DSP_DESCRIPTION> implement
 
     /** An array of {@link FMOD_DSP_DESCRIPTION} structs. */
     public static class Buffer extends StructBuffer<FMOD_DSP_DESCRIPTION, Buffer> implements NativeResource {
-
-        private static final FMOD_DSP_DESCRIPTION ELEMENT_FACTORY = FMOD_DSP_DESCRIPTION.create(-1L);
-
         /**
          * Creates a new {@code FMOD_DSP_DESCRIPTION.Buffer} instance backed by the specified container.
          *
@@ -632,18 +629,13 @@ public class FMOD_DSP_DESCRIPTION extends Struct<FMOD_DSP_DESCRIPTION> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_DSP_DESCRIPTION getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_DSP_DESCRIPTION.class;
         }
 
         /** @return the value of the {@code pluginsdkversion} field. */

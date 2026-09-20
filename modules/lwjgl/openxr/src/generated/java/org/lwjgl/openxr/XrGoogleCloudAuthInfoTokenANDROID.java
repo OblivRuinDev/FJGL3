@@ -270,9 +270,6 @@ public class XrGoogleCloudAuthInfoTokenANDROID extends Struct<XrGoogleCloudAuthI
 
     /** An array of {@link XrGoogleCloudAuthInfoTokenANDROID} structs. */
     public static class Buffer extends StructBuffer<XrGoogleCloudAuthInfoTokenANDROID, Buffer> implements NativeResource {
-
-        private static final XrGoogleCloudAuthInfoTokenANDROID ELEMENT_FACTORY = XrGoogleCloudAuthInfoTokenANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrGoogleCloudAuthInfoTokenANDROID.Buffer} instance backed by the specified container.
          *
@@ -295,18 +292,13 @@ public class XrGoogleCloudAuthInfoTokenANDROID extends Struct<XrGoogleCloudAuthI
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrGoogleCloudAuthInfoTokenANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrGoogleCloudAuthInfoTokenANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

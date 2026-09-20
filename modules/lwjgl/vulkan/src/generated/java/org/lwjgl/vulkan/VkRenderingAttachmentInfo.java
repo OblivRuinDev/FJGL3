@@ -354,9 +354,6 @@ public class VkRenderingAttachmentInfo extends Struct<VkRenderingAttachmentInfo>
 
     /** An array of {@link VkRenderingAttachmentInfo} structs. */
     public static class Buffer extends StructBuffer<VkRenderingAttachmentInfo, Buffer> implements NativeResource {
-
-        private static final VkRenderingAttachmentInfo ELEMENT_FACTORY = VkRenderingAttachmentInfo.create(-1L);
-
         /**
          * Creates a new {@code VkRenderingAttachmentInfo.Buffer} instance backed by the specified container.
          *
@@ -379,18 +376,13 @@ public class VkRenderingAttachmentInfo extends Struct<VkRenderingAttachmentInfo>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderingAttachmentInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderingAttachmentInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

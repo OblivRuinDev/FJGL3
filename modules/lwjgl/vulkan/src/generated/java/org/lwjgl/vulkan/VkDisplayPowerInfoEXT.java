@@ -242,9 +242,6 @@ public class VkDisplayPowerInfoEXT extends Struct<VkDisplayPowerInfoEXT> impleme
 
     /** An array of {@link VkDisplayPowerInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkDisplayPowerInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkDisplayPowerInfoEXT ELEMENT_FACTORY = VkDisplayPowerInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDisplayPowerInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkDisplayPowerInfoEXT extends Struct<VkDisplayPowerInfoEXT> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDisplayPowerInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDisplayPowerInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

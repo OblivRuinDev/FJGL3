@@ -242,9 +242,6 @@ public class VkSamplerCaptureDescriptorDataInfoEXT extends Struct<VkSamplerCaptu
 
     /** An array of {@link VkSamplerCaptureDescriptorDataInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkSamplerCaptureDescriptorDataInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkSamplerCaptureDescriptorDataInfoEXT ELEMENT_FACTORY = VkSamplerCaptureDescriptorDataInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkSamplerCaptureDescriptorDataInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkSamplerCaptureDescriptorDataInfoEXT extends Struct<VkSamplerCaptu
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSamplerCaptureDescriptorDataInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSamplerCaptureDescriptorDataInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

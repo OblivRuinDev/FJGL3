@@ -244,9 +244,6 @@ public class ktxTexture_vtbl extends Struct<ktxTexture_vtbl> {
 
     /** An array of {@link ktxTexture_vtbl} structs. */
     public static class Buffer extends StructBuffer<ktxTexture_vtbl, Buffer> {
-
-        private static final ktxTexture_vtbl ELEMENT_FACTORY = ktxTexture_vtbl.create(-1L);
-
         /**
          * Creates a new {@code ktxTexture_vtbl.Buffer} instance backed by the specified container.
          *
@@ -269,18 +266,13 @@ public class ktxTexture_vtbl extends Struct<ktxTexture_vtbl> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ktxTexture_vtbl getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ktxTexture_vtbl.class;
         }
 
         /** @return the value of the {@code Destroy} field. */

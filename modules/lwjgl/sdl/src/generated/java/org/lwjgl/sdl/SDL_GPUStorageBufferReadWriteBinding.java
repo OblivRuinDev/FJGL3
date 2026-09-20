@@ -253,9 +253,6 @@ public class SDL_GPUStorageBufferReadWriteBinding extends Struct<SDL_GPUStorageB
 
     /** An array of {@link SDL_GPUStorageBufferReadWriteBinding} structs. */
     public static class Buffer extends StructBuffer<SDL_GPUStorageBufferReadWriteBinding, Buffer> implements NativeResource {
-
-        private static final SDL_GPUStorageBufferReadWriteBinding ELEMENT_FACTORY = SDL_GPUStorageBufferReadWriteBinding.create(-1L);
-
         /**
          * Creates a new {@code SDL_GPUStorageBufferReadWriteBinding.Buffer} instance backed by the specified container.
          *
@@ -278,18 +275,13 @@ public class SDL_GPUStorageBufferReadWriteBinding extends Struct<SDL_GPUStorageB
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GPUStorageBufferReadWriteBinding getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GPUStorageBufferReadWriteBinding.class;
         }
 
         /** @return the value of the {@code buffer} field. */

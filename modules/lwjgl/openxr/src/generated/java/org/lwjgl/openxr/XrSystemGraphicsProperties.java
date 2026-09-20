@@ -240,9 +240,6 @@ public class XrSystemGraphicsProperties extends Struct<XrSystemGraphicsPropertie
 
     /** An array of {@link XrSystemGraphicsProperties} structs. */
     public static class Buffer extends StructBuffer<XrSystemGraphicsProperties, Buffer> implements NativeResource {
-
-        private static final XrSystemGraphicsProperties ELEMENT_FACTORY = XrSystemGraphicsProperties.create(-1L);
-
         /**
          * Creates a new {@code XrSystemGraphicsProperties.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class XrSystemGraphicsProperties extends Struct<XrSystemGraphicsPropertie
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemGraphicsProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemGraphicsProperties.class;
         }
 
         /** @return the value of the {@code maxSwapchainImageHeight} field. */

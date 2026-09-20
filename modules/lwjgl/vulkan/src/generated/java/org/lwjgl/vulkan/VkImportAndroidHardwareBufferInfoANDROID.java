@@ -252,9 +252,6 @@ public class VkImportAndroidHardwareBufferInfoANDROID extends Struct<VkImportAnd
 
     /** An array of {@link VkImportAndroidHardwareBufferInfoANDROID} structs. */
     public static class Buffer extends StructBuffer<VkImportAndroidHardwareBufferInfoANDROID, Buffer> implements NativeResource {
-
-        private static final VkImportAndroidHardwareBufferInfoANDROID ELEMENT_FACTORY = VkImportAndroidHardwareBufferInfoANDROID.create(-1L);
-
         /**
          * Creates a new {@code VkImportAndroidHardwareBufferInfoANDROID.Buffer} instance backed by the specified container.
          *
@@ -277,18 +274,13 @@ public class VkImportAndroidHardwareBufferInfoANDROID extends Struct<VkImportAnd
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImportAndroidHardwareBufferInfoANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImportAndroidHardwareBufferInfoANDROID.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -225,9 +225,6 @@ public class XrSpatialBufferEXT extends Struct<XrSpatialBufferEXT> implements Na
 
     /** An array of {@link XrSpatialBufferEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialBufferEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialBufferEXT ELEMENT_FACTORY = XrSpatialBufferEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialBufferEXT.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class XrSpatialBufferEXT extends Struct<XrSpatialBufferEXT> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialBufferEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialBufferEXT.class;
         }
 
         /** @return the value of the {@code bufferId} field. */

@@ -242,9 +242,6 @@ public class XrWorldMeshBufferSizeML extends Struct<XrWorldMeshBufferSizeML> imp
 
     /** An array of {@link XrWorldMeshBufferSizeML} structs. */
     public static class Buffer extends StructBuffer<XrWorldMeshBufferSizeML, Buffer> implements NativeResource {
-
-        private static final XrWorldMeshBufferSizeML ELEMENT_FACTORY = XrWorldMeshBufferSizeML.create(-1L);
-
         /**
          * Creates a new {@code XrWorldMeshBufferSizeML.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrWorldMeshBufferSizeML extends Struct<XrWorldMeshBufferSizeML> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrWorldMeshBufferSizeML getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrWorldMeshBufferSizeML.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -239,9 +239,6 @@ public class STBTTAlignedQuad extends Struct<STBTTAlignedQuad> implements Native
 
     /** An array of {@link STBTTAlignedQuad} structs. */
     public static class Buffer extends StructBuffer<STBTTAlignedQuad, Buffer> implements NativeResource {
-
-        private static final STBTTAlignedQuad ELEMENT_FACTORY = STBTTAlignedQuad.create(-1L);
-
         /**
          * Creates a new {@code STBTTAlignedQuad.Buffer} instance backed by the specified container.
          *
@@ -264,18 +261,13 @@ public class STBTTAlignedQuad extends Struct<STBTTAlignedQuad> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected STBTTAlignedQuad getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return STBTTAlignedQuad.class;
         }
 
         /** @return the value of the {@code x0} field. */

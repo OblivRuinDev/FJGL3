@@ -192,9 +192,6 @@ public class VkPresentStageTimeEXT extends Struct<VkPresentStageTimeEXT> impleme
 
     /** An array of {@link VkPresentStageTimeEXT} structs. */
     public static class Buffer extends StructBuffer<VkPresentStageTimeEXT, Buffer> implements NativeResource {
-
-        private static final VkPresentStageTimeEXT ELEMENT_FACTORY = VkPresentStageTimeEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPresentStageTimeEXT.Buffer} instance backed by the specified container.
          *
@@ -217,18 +214,13 @@ public class VkPresentStageTimeEXT extends Struct<VkPresentStageTimeEXT> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPresentStageTimeEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPresentStageTimeEXT.class;
         }
 
         /** @return the value of the {@code stage} field. */

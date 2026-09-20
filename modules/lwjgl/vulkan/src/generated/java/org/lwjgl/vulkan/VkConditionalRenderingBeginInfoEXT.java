@@ -272,9 +272,6 @@ public class VkConditionalRenderingBeginInfoEXT extends Struct<VkConditionalRend
 
     /** An array of {@link VkConditionalRenderingBeginInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkConditionalRenderingBeginInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkConditionalRenderingBeginInfoEXT ELEMENT_FACTORY = VkConditionalRenderingBeginInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkConditionalRenderingBeginInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkConditionalRenderingBeginInfoEXT extends Struct<VkConditionalRend
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkConditionalRenderingBeginInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkConditionalRenderingBeginInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

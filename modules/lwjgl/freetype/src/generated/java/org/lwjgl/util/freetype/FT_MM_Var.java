@@ -135,9 +135,6 @@ public class FT_MM_Var extends Struct<FT_MM_Var> {
 
     /** An array of {@link FT_MM_Var} structs. */
     public static class Buffer extends StructBuffer<FT_MM_Var, Buffer> {
-
-        private static final FT_MM_Var ELEMENT_FACTORY = FT_MM_Var.create(-1L);
-
         /**
          * Creates a new {@code FT_MM_Var.Buffer} instance backed by the specified container.
          *
@@ -160,18 +157,13 @@ public class FT_MM_Var extends Struct<FT_MM_Var> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_MM_Var getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_MM_Var.class;
         }
 
         /** @return the value of the {@code num_axis} field. */

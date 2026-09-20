@@ -265,9 +265,6 @@ public class VkPipelineLibraryCreateInfoKHR extends Struct<VkPipelineLibraryCrea
 
     /** An array of {@link VkPipelineLibraryCreateInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkPipelineLibraryCreateInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkPipelineLibraryCreateInfoKHR ELEMENT_FACTORY = VkPipelineLibraryCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineLibraryCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -290,18 +287,13 @@ public class VkPipelineLibraryCreateInfoKHR extends Struct<VkPipelineLibraryCrea
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineLibraryCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineLibraryCreateInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

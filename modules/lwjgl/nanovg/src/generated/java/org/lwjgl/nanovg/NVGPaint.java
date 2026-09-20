@@ -335,9 +335,6 @@ public class NVGPaint extends Struct<NVGPaint> implements NativeResource {
 
     /** An array of {@link NVGPaint} structs. */
     public static class Buffer extends StructBuffer<NVGPaint, Buffer> implements NativeResource {
-
-        private static final NVGPaint ELEMENT_FACTORY = NVGPaint.create(-1L);
-
         /**
          * Creates a new {@code NVGPaint.Buffer} instance backed by the specified container.
          *
@@ -360,18 +357,13 @@ public class NVGPaint extends Struct<NVGPaint> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NVGPaint getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NVGPaint.class;
         }
 
         /** @return a {@link FloatBuffer} view of the {@code xform} field. */

@@ -341,9 +341,6 @@ public class SDL_GPUGraphicsPipelineCreateInfo extends Struct<SDL_GPUGraphicsPip
 
     /** An array of {@link SDL_GPUGraphicsPipelineCreateInfo} structs. */
     public static class Buffer extends StructBuffer<SDL_GPUGraphicsPipelineCreateInfo, Buffer> implements NativeResource {
-
-        private static final SDL_GPUGraphicsPipelineCreateInfo ELEMENT_FACTORY = SDL_GPUGraphicsPipelineCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code SDL_GPUGraphicsPipelineCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -366,18 +363,13 @@ public class SDL_GPUGraphicsPipelineCreateInfo extends Struct<SDL_GPUGraphicsPip
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GPUGraphicsPipelineCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GPUGraphicsPipelineCreateInfo.class;
         }
 
         /** @return the value of the {@code vertex_shader} field. */

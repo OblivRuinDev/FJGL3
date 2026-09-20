@@ -227,9 +227,6 @@ public class XrSpatialGraphNodeBindingPropertiesGetInfoMSFT extends Struct<XrSpa
 
     /** An array of {@link XrSpatialGraphNodeBindingPropertiesGetInfoMSFT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialGraphNodeBindingPropertiesGetInfoMSFT, Buffer> implements NativeResource {
-
-        private static final XrSpatialGraphNodeBindingPropertiesGetInfoMSFT ELEMENT_FACTORY = XrSpatialGraphNodeBindingPropertiesGetInfoMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialGraphNodeBindingPropertiesGetInfoMSFT.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrSpatialGraphNodeBindingPropertiesGetInfoMSFT extends Struct<XrSpa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialGraphNodeBindingPropertiesGetInfoMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialGraphNodeBindingPropertiesGetInfoMSFT.class;
         }
 
         /** @return the value of the {@code type} field. */

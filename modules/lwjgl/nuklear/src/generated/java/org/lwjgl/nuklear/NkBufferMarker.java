@@ -109,9 +109,6 @@ public class NkBufferMarker extends Struct<NkBufferMarker> {
 
     /** An array of {@link NkBufferMarker} structs. */
     public static class Buffer extends StructBuffer<NkBufferMarker, Buffer> {
-
-        private static final NkBufferMarker ELEMENT_FACTORY = NkBufferMarker.create(-1L);
-
         /**
          * Creates a new {@code NkBufferMarker.Buffer} instance backed by the specified container.
          *
@@ -134,18 +131,13 @@ public class NkBufferMarker extends Struct<NkBufferMarker> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkBufferMarker getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkBufferMarker.class;
         }
 
         /** @return the value of the {@code active} field. */

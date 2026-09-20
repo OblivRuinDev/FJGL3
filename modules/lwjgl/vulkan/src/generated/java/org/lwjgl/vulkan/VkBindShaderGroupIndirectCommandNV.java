@@ -201,9 +201,6 @@ public class VkBindShaderGroupIndirectCommandNV extends Struct<VkBindShaderGroup
 
     /** An array of {@link VkBindShaderGroupIndirectCommandNV} structs. */
     public static class Buffer extends StructBuffer<VkBindShaderGroupIndirectCommandNV, Buffer> implements NativeResource {
-
-        private static final VkBindShaderGroupIndirectCommandNV ELEMENT_FACTORY = VkBindShaderGroupIndirectCommandNV.create(-1L);
-
         /**
          * Creates a new {@code VkBindShaderGroupIndirectCommandNV.Buffer} instance backed by the specified container.
          *
@@ -226,18 +223,13 @@ public class VkBindShaderGroupIndirectCommandNV extends Struct<VkBindShaderGroup
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBindShaderGroupIndirectCommandNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBindShaderGroupIndirectCommandNV.class;
         }
 
         /** @return the value of the {@code groupIndex} field. */

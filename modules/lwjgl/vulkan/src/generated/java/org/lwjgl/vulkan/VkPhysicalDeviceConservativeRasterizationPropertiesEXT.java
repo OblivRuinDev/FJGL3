@@ -305,9 +305,6 @@ public class VkPhysicalDeviceConservativeRasterizationPropertiesEXT extends Stru
 
     /** An array of {@link VkPhysicalDeviceConservativeRasterizationPropertiesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceConservativeRasterizationPropertiesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceConservativeRasterizationPropertiesEXT ELEMENT_FACTORY = VkPhysicalDeviceConservativeRasterizationPropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceConservativeRasterizationPropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -330,18 +327,13 @@ public class VkPhysicalDeviceConservativeRasterizationPropertiesEXT extends Stru
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceConservativeRasterizationPropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceConservativeRasterizationPropertiesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

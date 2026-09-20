@@ -274,9 +274,6 @@ public class SpvcReflectedResource extends Struct<SpvcReflectedResource> impleme
 
     /** An array of {@link SpvcReflectedResource} structs. */
     public static class Buffer extends StructBuffer<SpvcReflectedResource, Buffer> implements NativeResource {
-
-        private static final SpvcReflectedResource ELEMENT_FACTORY = SpvcReflectedResource.create(-1L);
-
         /**
          * Creates a new {@code SpvcReflectedResource.Buffer} instance backed by the specified container.
          *
@@ -299,18 +296,13 @@ public class SpvcReflectedResource extends Struct<SpvcReflectedResource> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SpvcReflectedResource getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SpvcReflectedResource.class;
         }
 
         /** @return the value of the {@code id} field. */

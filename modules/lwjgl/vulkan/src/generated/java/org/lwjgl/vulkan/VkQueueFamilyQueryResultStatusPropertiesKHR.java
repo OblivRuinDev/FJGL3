@@ -236,9 +236,6 @@ public class VkQueueFamilyQueryResultStatusPropertiesKHR extends Struct<VkQueueF
 
     /** An array of {@link VkQueueFamilyQueryResultStatusPropertiesKHR} structs. */
     public static class Buffer extends StructBuffer<VkQueueFamilyQueryResultStatusPropertiesKHR, Buffer> implements NativeResource {
-
-        private static final VkQueueFamilyQueryResultStatusPropertiesKHR ELEMENT_FACTORY = VkQueueFamilyQueryResultStatusPropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkQueueFamilyQueryResultStatusPropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkQueueFamilyQueryResultStatusPropertiesKHR extends Struct<VkQueueF
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkQueueFamilyQueryResultStatusPropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkQueueFamilyQueryResultStatusPropertiesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

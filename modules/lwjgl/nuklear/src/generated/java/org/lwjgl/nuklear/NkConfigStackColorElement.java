@@ -111,9 +111,6 @@ class NkConfigStackColorElement extends Struct<NkConfigStackColorElement> {
 
     /** An array of {@link NkConfigStackColorElement} structs. */
     public static class Buffer extends StructBuffer<NkConfigStackColorElement, Buffer> {
-
-        private static final NkConfigStackColorElement ELEMENT_FACTORY = NkConfigStackColorElement.create(-1L);
-
         /**
          * Creates a new {@code NkConfigStackColorElement.Buffer} instance backed by the specified container.
          *
@@ -136,18 +133,13 @@ class NkConfigStackColorElement extends Struct<NkConfigStackColorElement> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkConfigStackColorElement getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkConfigStackColorElement.class;
         }
 
         /** @return a {@link NkColor} view of the struct pointed to by the {@code pValues} field. */

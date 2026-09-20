@@ -255,9 +255,6 @@ public class VkDrawIndirectCommand extends Struct<VkDrawIndirectCommand> impleme
 
     /** An array of {@link VkDrawIndirectCommand} structs. */
     public static class Buffer extends StructBuffer<VkDrawIndirectCommand, Buffer> implements NativeResource {
-
-        private static final VkDrawIndirectCommand ELEMENT_FACTORY = VkDrawIndirectCommand.create(-1L);
-
         /**
          * Creates a new {@code VkDrawIndirectCommand.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class VkDrawIndirectCommand extends Struct<VkDrawIndirectCommand> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDrawIndirectCommand getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDrawIndirectCommand.class;
         }
 
         /** @return the value of the {@code vertexCount} field. */

@@ -263,9 +263,6 @@ public class VkRenderPassInputAttachmentAspectCreateInfo extends Struct<VkRender
 
     /** An array of {@link VkRenderPassInputAttachmentAspectCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkRenderPassInputAttachmentAspectCreateInfo, Buffer> implements NativeResource {
-
-        private static final VkRenderPassInputAttachmentAspectCreateInfo ELEMENT_FACTORY = VkRenderPassInputAttachmentAspectCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkRenderPassInputAttachmentAspectCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class VkRenderPassInputAttachmentAspectCreateInfo extends Struct<VkRender
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderPassInputAttachmentAspectCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderPassInputAttachmentAspectCreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

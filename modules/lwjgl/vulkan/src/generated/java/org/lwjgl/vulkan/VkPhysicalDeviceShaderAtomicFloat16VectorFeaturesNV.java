@@ -242,9 +242,6 @@ public class VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV extends Struct<
 
     /** An array of {@link VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV ELEMENT_FACTORY = VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV extends Struct<
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

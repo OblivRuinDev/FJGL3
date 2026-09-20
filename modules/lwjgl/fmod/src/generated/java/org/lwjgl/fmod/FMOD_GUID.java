@@ -272,9 +272,6 @@ public class FMOD_GUID extends Struct<FMOD_GUID> implements NativeResource {
 
     /** An array of {@link FMOD_GUID} structs. */
     public static class Buffer extends StructBuffer<FMOD_GUID, Buffer> implements NativeResource {
-
-        private static final FMOD_GUID ELEMENT_FACTORY = FMOD_GUID.create(-1L);
-
         /**
          * Creates a new {@code FMOD_GUID.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class FMOD_GUID extends Struct<FMOD_GUID> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_GUID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_GUID.class;
         }
 
         /** @return the value of the {@code Data1} field. */

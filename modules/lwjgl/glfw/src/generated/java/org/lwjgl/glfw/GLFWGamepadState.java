@@ -258,9 +258,6 @@ public class GLFWGamepadState extends Struct<GLFWGamepadState> implements Native
 
     /** An array of {@link GLFWGamepadState} structs. */
     public static class Buffer extends StructBuffer<GLFWGamepadState, Buffer> implements NativeResource {
-
-        private static final GLFWGamepadState ELEMENT_FACTORY = GLFWGamepadState.create(-1L);
-
         /**
          * Creates a new {@code GLFWGamepadState.Buffer} instance backed by the specified container.
          *
@@ -283,18 +280,13 @@ public class GLFWGamepadState extends Struct<GLFWGamepadState> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected GLFWGamepadState getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return GLFWGamepadState.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code buttons} field. */

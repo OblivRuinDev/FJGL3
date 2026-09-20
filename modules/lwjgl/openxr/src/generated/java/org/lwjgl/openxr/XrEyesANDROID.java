@@ -281,9 +281,6 @@ public class XrEyesANDROID extends Struct<XrEyesANDROID> implements NativeResour
 
     /** An array of {@link XrEyesANDROID} structs. */
     public static class Buffer extends StructBuffer<XrEyesANDROID, Buffer> implements NativeResource {
-
-        private static final XrEyesANDROID ELEMENT_FACTORY = XrEyesANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrEyesANDROID.Buffer} instance backed by the specified container.
          *
@@ -306,18 +303,13 @@ public class XrEyesANDROID extends Struct<XrEyesANDROID> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEyesANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEyesANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

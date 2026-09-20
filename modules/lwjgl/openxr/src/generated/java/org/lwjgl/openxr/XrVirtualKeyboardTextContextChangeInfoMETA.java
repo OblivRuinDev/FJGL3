@@ -260,9 +260,6 @@ public class XrVirtualKeyboardTextContextChangeInfoMETA extends Struct<XrVirtual
 
     /** An array of {@link XrVirtualKeyboardTextContextChangeInfoMETA} structs. */
     public static class Buffer extends StructBuffer<XrVirtualKeyboardTextContextChangeInfoMETA, Buffer> implements NativeResource {
-
-        private static final XrVirtualKeyboardTextContextChangeInfoMETA ELEMENT_FACTORY = XrVirtualKeyboardTextContextChangeInfoMETA.create(-1L);
-
         /**
          * Creates a new {@code XrVirtualKeyboardTextContextChangeInfoMETA.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class XrVirtualKeyboardTextContextChangeInfoMETA extends Struct<XrVirtual
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrVirtualKeyboardTextContextChangeInfoMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrVirtualKeyboardTextContextChangeInfoMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -242,9 +242,6 @@ public class VkDescriptorBufferBindingPushDescriptorBufferHandleEXT extends Stru
 
     /** An array of {@link VkDescriptorBufferBindingPushDescriptorBufferHandleEXT} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorBufferBindingPushDescriptorBufferHandleEXT, Buffer> implements NativeResource {
-
-        private static final VkDescriptorBufferBindingPushDescriptorBufferHandleEXT ELEMENT_FACTORY = VkDescriptorBufferBindingPushDescriptorBufferHandleEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorBufferBindingPushDescriptorBufferHandleEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkDescriptorBufferBindingPushDescriptorBufferHandleEXT extends Stru
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorBufferBindingPushDescriptorBufferHandleEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorBufferBindingPushDescriptorBufferHandleEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -251,9 +251,6 @@ public class VmaDefragmentationMove extends Struct<VmaDefragmentationMove> imple
 
     /** An array of {@link VmaDefragmentationMove} structs. */
     public static class Buffer extends StructBuffer<VmaDefragmentationMove, Buffer> implements NativeResource {
-
-        private static final VmaDefragmentationMove ELEMENT_FACTORY = VmaDefragmentationMove.create(-1L);
-
         /**
          * Creates a new {@code VmaDefragmentationMove.Buffer} instance backed by the specified container.
          *
@@ -276,18 +273,13 @@ public class VmaDefragmentationMove extends Struct<VmaDefragmentationMove> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VmaDefragmentationMove getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VmaDefragmentationMove.class;
         }
 
         /** @return the value of the {@code operation} field. */

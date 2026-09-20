@@ -286,9 +286,6 @@ public class VkImportFenceFdInfoKHR extends Struct<VkImportFenceFdInfoKHR> imple
 
     /** An array of {@link VkImportFenceFdInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkImportFenceFdInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkImportFenceFdInfoKHR ELEMENT_FACTORY = VkImportFenceFdInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkImportFenceFdInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -311,18 +308,13 @@ public class VkImportFenceFdInfoKHR extends Struct<VkImportFenceFdInfoKHR> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImportFenceFdInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImportFenceFdInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

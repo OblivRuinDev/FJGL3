@@ -109,9 +109,6 @@ public class FT_ColorLine extends Struct<FT_ColorLine> {
 
     /** An array of {@link FT_ColorLine} structs. */
     public static class Buffer extends StructBuffer<FT_ColorLine, Buffer> {
-
-        private static final FT_ColorLine ELEMENT_FACTORY = FT_ColorLine.create(-1L);
-
         /**
          * Creates a new {@code FT_ColorLine.Buffer} instance backed by the specified container.
          *
@@ -134,18 +131,13 @@ public class FT_ColorLine extends Struct<FT_ColorLine> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_ColorLine getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_ColorLine.class;
         }
 
         /** @return the value of the {@code extend} field. */

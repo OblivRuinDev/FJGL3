@@ -128,9 +128,6 @@ public class FT_PaintRotate extends Struct<FT_PaintRotate> {
 
     /** An array of {@link FT_PaintRotate} structs. */
     public static class Buffer extends StructBuffer<FT_PaintRotate, Buffer> {
-
-        private static final FT_PaintRotate ELEMENT_FACTORY = FT_PaintRotate.create(-1L);
-
         /**
          * Creates a new {@code FT_PaintRotate.Buffer} instance backed by the specified container.
          *
@@ -153,18 +150,13 @@ public class FT_PaintRotate extends Struct<FT_PaintRotate> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_PaintRotate getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_PaintRotate.class;
         }
 
         /** @return a {@link FT_OpaquePaint} view of the {@code paint} field. */

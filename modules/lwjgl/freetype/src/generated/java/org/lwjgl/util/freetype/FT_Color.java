@@ -255,9 +255,6 @@ public class FT_Color extends Struct<FT_Color> implements NativeResource {
 
     /** An array of {@link FT_Color} structs. */
     public static class Buffer extends StructBuffer<FT_Color, Buffer> implements NativeResource {
-
-        private static final FT_Color ELEMENT_FACTORY = FT_Color.create(-1L);
-
         /**
          * Creates a new {@code FT_Color.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class FT_Color extends Struct<FT_Color> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Color getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Color.class;
         }
 
         /** @return the value of the {@code blue} field. */

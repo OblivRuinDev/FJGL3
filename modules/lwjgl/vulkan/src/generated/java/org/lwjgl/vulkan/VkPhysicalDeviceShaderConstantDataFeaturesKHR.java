@@ -242,9 +242,6 @@ public class VkPhysicalDeviceShaderConstantDataFeaturesKHR extends Struct<VkPhys
 
     /** An array of {@link VkPhysicalDeviceShaderConstantDataFeaturesKHR} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceShaderConstantDataFeaturesKHR, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceShaderConstantDataFeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceShaderConstantDataFeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderConstantDataFeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceShaderConstantDataFeaturesKHR extends Struct<VkPhys
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderConstantDataFeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderConstantDataFeaturesKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

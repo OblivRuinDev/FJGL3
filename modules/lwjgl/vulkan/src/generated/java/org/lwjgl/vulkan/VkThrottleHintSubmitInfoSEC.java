@@ -242,9 +242,6 @@ public class VkThrottleHintSubmitInfoSEC extends Struct<VkThrottleHintSubmitInfo
 
     /** An array of {@link VkThrottleHintSubmitInfoSEC} structs. */
     public static class Buffer extends StructBuffer<VkThrottleHintSubmitInfoSEC, Buffer> implements NativeResource {
-
-        private static final VkThrottleHintSubmitInfoSEC ELEMENT_FACTORY = VkThrottleHintSubmitInfoSEC.create(-1L);
-
         /**
          * Creates a new {@code VkThrottleHintSubmitInfoSEC.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkThrottleHintSubmitInfoSEC extends Struct<VkThrottleHintSubmitInfo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkThrottleHintSubmitInfoSEC getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkThrottleHintSubmitInfoSEC.class;
         }
 
         /** @return the value of the {@code sType} field. */

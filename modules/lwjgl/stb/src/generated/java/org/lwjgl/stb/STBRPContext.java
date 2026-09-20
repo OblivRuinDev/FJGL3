@@ -260,9 +260,6 @@ public class STBRPContext extends Struct<STBRPContext> implements NativeResource
 
     /** An array of {@link STBRPContext} structs. */
     public static class Buffer extends StructBuffer<STBRPContext, Buffer> implements NativeResource {
-
-        private static final STBRPContext ELEMENT_FACTORY = STBRPContext.create(-1L);
-
         /**
          * Creates a new {@code STBRPContext.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class STBRPContext extends Struct<STBRPContext> implements NativeResource
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected STBRPContext getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return STBRPContext.class;
         }
 
         /** @return the value of the {@code width} field. */

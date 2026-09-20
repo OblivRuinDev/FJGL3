@@ -301,9 +301,6 @@ public class ZSTDCompressionParameters extends Struct<ZSTDCompressionParameters>
 
     /** An array of {@link ZSTDCompressionParameters} structs. */
     public static class Buffer extends StructBuffer<ZSTDCompressionParameters, Buffer> implements NativeResource {
-
-        private static final ZSTDCompressionParameters ELEMENT_FACTORY = ZSTDCompressionParameters.create(-1L);
-
         /**
          * Creates a new {@code ZSTDCompressionParameters.Buffer} instance backed by the specified container.
          *
@@ -326,18 +323,13 @@ public class ZSTDCompressionParameters extends Struct<ZSTDCompressionParameters>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ZSTDCompressionParameters getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ZSTDCompressionParameters.class;
         }
 
         /** @return the value of the {@code windowLog} field. */

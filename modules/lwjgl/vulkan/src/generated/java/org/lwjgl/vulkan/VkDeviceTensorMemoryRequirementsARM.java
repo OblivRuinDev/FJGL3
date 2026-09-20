@@ -254,9 +254,6 @@ public class VkDeviceTensorMemoryRequirementsARM extends Struct<VkDeviceTensorMe
 
     /** An array of {@link VkDeviceTensorMemoryRequirementsARM} structs. */
     public static class Buffer extends StructBuffer<VkDeviceTensorMemoryRequirementsARM, Buffer> implements NativeResource {
-
-        private static final VkDeviceTensorMemoryRequirementsARM ELEMENT_FACTORY = VkDeviceTensorMemoryRequirementsARM.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceTensorMemoryRequirementsARM.Buffer} instance backed by the specified container.
          *
@@ -279,18 +276,13 @@ public class VkDeviceTensorMemoryRequirementsARM extends Struct<VkDeviceTensorMe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceTensorMemoryRequirementsARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceTensorMemoryRequirementsARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

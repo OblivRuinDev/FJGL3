@@ -191,9 +191,6 @@ public class VkDeviceQueueGlobalPriorityCreateInfoKHR extends VkDeviceQueueGloba
 
     /** An array of {@link VkDeviceQueueGlobalPriorityCreateInfoKHR} structs. */
     public static class Buffer extends VkDeviceQueueGlobalPriorityCreateInfo.Buffer {
-
-        private static final VkDeviceQueueGlobalPriorityCreateInfoKHR ELEMENT_FACTORY = VkDeviceQueueGlobalPriorityCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceQueueGlobalPriorityCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkDeviceQueueGlobalPriorityCreateInfoKHR extends VkDeviceQueueGloba
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceQueueGlobalPriorityCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceQueueGlobalPriorityCreateInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

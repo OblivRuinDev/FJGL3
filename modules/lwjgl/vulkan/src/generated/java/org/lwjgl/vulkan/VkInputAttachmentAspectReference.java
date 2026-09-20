@@ -240,9 +240,6 @@ public class VkInputAttachmentAspectReference extends Struct<VkInputAttachmentAs
 
     /** An array of {@link VkInputAttachmentAspectReference} structs. */
     public static class Buffer extends StructBuffer<VkInputAttachmentAspectReference, Buffer> implements NativeResource {
-
-        private static final VkInputAttachmentAspectReference ELEMENT_FACTORY = VkInputAttachmentAspectReference.create(-1L);
-
         /**
          * Creates a new {@code VkInputAttachmentAspectReference.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class VkInputAttachmentAspectReference extends Struct<VkInputAttachmentAs
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkInputAttachmentAspectReference getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkInputAttachmentAspectReference.class;
         }
 
         /** @return the value of the {@code subpass} field. */

@@ -134,9 +134,6 @@ public class NkMenuState extends Struct<NkMenuState> {
 
     /** An array of {@link NkMenuState} structs. */
     public static class Buffer extends StructBuffer<NkMenuState, Buffer> {
-
-        private static final NkMenuState ELEMENT_FACTORY = NkMenuState.create(-1L);
-
         /**
          * Creates a new {@code NkMenuState.Buffer} instance backed by the specified container.
          *
@@ -159,18 +156,13 @@ public class NkMenuState extends Struct<NkMenuState> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkMenuState getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkMenuState.class;
         }
 
         /** @return the value of the {@code x} field. */

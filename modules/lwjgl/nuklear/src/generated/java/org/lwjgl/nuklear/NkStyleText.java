@@ -261,9 +261,6 @@ public class NkStyleText extends Struct<NkStyleText> implements NativeResource {
 
     /** An array of {@link NkStyleText} structs. */
     public static class Buffer extends StructBuffer<NkStyleText, Buffer> implements NativeResource {
-
-        private static final NkStyleText ELEMENT_FACTORY = NkStyleText.create(-1L);
-
         /**
          * Creates a new {@code NkStyleText.Buffer} instance backed by the specified container.
          *
@@ -286,18 +283,13 @@ public class NkStyleText extends Struct<NkStyleText> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkStyleText getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkStyleText.class;
         }
 
         /** @return a {@link NkColor} view of the {@code color} field. */

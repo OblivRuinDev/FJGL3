@@ -265,9 +265,6 @@ public class VkShaderDescriptorSetAndBindingMappingInfoEXT extends Struct<VkShad
 
     /** An array of {@link VkShaderDescriptorSetAndBindingMappingInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkShaderDescriptorSetAndBindingMappingInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkShaderDescriptorSetAndBindingMappingInfoEXT ELEMENT_FACTORY = VkShaderDescriptorSetAndBindingMappingInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkShaderDescriptorSetAndBindingMappingInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -290,18 +287,13 @@ public class VkShaderDescriptorSetAndBindingMappingInfoEXT extends Struct<VkShad
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkShaderDescriptorSetAndBindingMappingInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkShaderDescriptorSetAndBindingMappingInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

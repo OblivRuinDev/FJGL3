@@ -252,9 +252,6 @@ public class AIColor4D extends Struct<AIColor4D> implements NativeResource {
 
     /** An array of {@link AIColor4D} structs. */
     public static class Buffer extends StructBuffer<AIColor4D, Buffer> implements NativeResource {
-
-        private static final AIColor4D ELEMENT_FACTORY = AIColor4D.create(-1L);
-
         /**
          * Creates a new {@code AIColor4D.Buffer} instance backed by the specified container.
          *
@@ -277,18 +274,13 @@ public class AIColor4D extends Struct<AIColor4D> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIColor4D getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIColor4D.class;
         }
 
         /** @return the value of the {@code r} field. */

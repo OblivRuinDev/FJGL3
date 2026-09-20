@@ -264,9 +264,6 @@ public class VkPerformanceCounterResultKHR extends Struct<VkPerformanceCounterRe
 
     /** An array of {@link VkPerformanceCounterResultKHR} structs. */
     public static class Buffer extends StructBuffer<VkPerformanceCounterResultKHR, Buffer> implements NativeResource {
-
-        private static final VkPerformanceCounterResultKHR ELEMENT_FACTORY = VkPerformanceCounterResultKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPerformanceCounterResultKHR.Buffer} instance backed by the specified container.
          *
@@ -289,18 +286,13 @@ public class VkPerformanceCounterResultKHR extends Struct<VkPerformanceCounterRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPerformanceCounterResultKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPerformanceCounterResultKHR.class;
         }
 
         /** @return the value of the {@code int32} field. */

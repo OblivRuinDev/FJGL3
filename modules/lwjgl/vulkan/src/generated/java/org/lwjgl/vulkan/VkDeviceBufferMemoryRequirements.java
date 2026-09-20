@@ -252,9 +252,6 @@ public class VkDeviceBufferMemoryRequirements extends Struct<VkDeviceBufferMemor
 
     /** An array of {@link VkDeviceBufferMemoryRequirements} structs. */
     public static class Buffer extends StructBuffer<VkDeviceBufferMemoryRequirements, Buffer> implements NativeResource {
-
-        private static final VkDeviceBufferMemoryRequirements ELEMENT_FACTORY = VkDeviceBufferMemoryRequirements.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceBufferMemoryRequirements.Buffer} instance backed by the specified container.
          *
@@ -277,18 +274,13 @@ public class VkDeviceBufferMemoryRequirements extends Struct<VkDeviceBufferMemor
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceBufferMemoryRequirements getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceBufferMemoryRequirements.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -257,9 +257,6 @@ public class VkDedicatedAllocationMemoryAllocateInfoNV extends Struct<VkDedicate
 
     /** An array of {@link VkDedicatedAllocationMemoryAllocateInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkDedicatedAllocationMemoryAllocateInfoNV, Buffer> implements NativeResource {
-
-        private static final VkDedicatedAllocationMemoryAllocateInfoNV ELEMENT_FACTORY = VkDedicatedAllocationMemoryAllocateInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkDedicatedAllocationMemoryAllocateInfoNV.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkDedicatedAllocationMemoryAllocateInfoNV extends Struct<VkDedicate
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDedicatedAllocationMemoryAllocateInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDedicatedAllocationMemoryAllocateInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

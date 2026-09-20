@@ -292,9 +292,6 @@ public class SDL_SensorEvent extends Struct<SDL_SensorEvent> implements NativeRe
 
     /** An array of {@link SDL_SensorEvent} structs. */
     public static class Buffer extends StructBuffer<SDL_SensorEvent, Buffer> implements NativeResource {
-
-        private static final SDL_SensorEvent ELEMENT_FACTORY = SDL_SensorEvent.create(-1L);
-
         /**
          * Creates a new {@code SDL_SensorEvent.Buffer} instance backed by the specified container.
          *
@@ -317,18 +314,13 @@ public class SDL_SensorEvent extends Struct<SDL_SensorEvent> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_SensorEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_SensorEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

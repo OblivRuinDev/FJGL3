@@ -267,9 +267,6 @@ public class IOURingRestriction extends Struct<IOURingRestriction> implements Na
 
     /** An array of {@link IOURingRestriction} structs. */
     public static class Buffer extends StructBuffer<IOURingRestriction, Buffer> implements NativeResource {
-
-        private static final IOURingRestriction ELEMENT_FACTORY = IOURingRestriction.create(-1L);
-
         /**
          * Creates a new {@code IOURingRestriction.Buffer} instance backed by the specified container.
          *
@@ -292,18 +289,13 @@ public class IOURingRestriction extends Struct<IOURingRestriction> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingRestriction getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingRestriction.class;
         }
 
         /** @return the value of the {@code opcode} field. */

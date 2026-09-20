@@ -309,9 +309,6 @@ public class XSelectionClearEvent extends Struct<XSelectionClearEvent> implement
 
     /** An array of {@link XSelectionClearEvent} structs. */
     public static class Buffer extends StructBuffer<XSelectionClearEvent, Buffer> implements NativeResource {
-
-        private static final XSelectionClearEvent ELEMENT_FACTORY = XSelectionClearEvent.create(-1L);
-
         /**
          * Creates a new {@code XSelectionClearEvent.Buffer} instance backed by the specified container.
          *
@@ -334,18 +331,13 @@ public class XSelectionClearEvent extends Struct<XSelectionClearEvent> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XSelectionClearEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XSelectionClearEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

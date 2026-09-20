@@ -272,9 +272,6 @@ public class VkDescriptorAddressInfoEXT extends Struct<VkDescriptorAddressInfoEX
 
     /** An array of {@link VkDescriptorAddressInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorAddressInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkDescriptorAddressInfoEXT ELEMENT_FACTORY = VkDescriptorAddressInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorAddressInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkDescriptorAddressInfoEXT extends Struct<VkDescriptorAddressInfoEX
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorAddressInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorAddressInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

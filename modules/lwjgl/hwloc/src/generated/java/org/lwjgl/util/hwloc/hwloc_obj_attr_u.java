@@ -239,9 +239,6 @@ public class hwloc_obj_attr_u extends Struct<hwloc_obj_attr_u> implements Native
 
     /** An array of {@link hwloc_obj_attr_u} structs. */
     public static class Buffer extends StructBuffer<hwloc_obj_attr_u, Buffer> implements NativeResource {
-
-        private static final hwloc_obj_attr_u ELEMENT_FACTORY = hwloc_obj_attr_u.create(-1L);
-
         /**
          * Creates a new {@code hwloc_obj_attr_u.Buffer} instance backed by the specified container.
          *
@@ -264,18 +261,13 @@ public class hwloc_obj_attr_u extends Struct<hwloc_obj_attr_u> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected hwloc_obj_attr_u getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return hwloc_obj_attr_u.class;
         }
 
         /** @return a {@link hwloc_core_attr_s} view of the {@code core} field. */

@@ -237,9 +237,6 @@ public class FSBANK_STATEDATA_WARNING extends Struct<FSBANK_STATEDATA_WARNING> i
 
     /** An array of {@link FSBANK_STATEDATA_WARNING} structs. */
     public static class Buffer extends StructBuffer<FSBANK_STATEDATA_WARNING, Buffer> implements NativeResource {
-
-        private static final FSBANK_STATEDATA_WARNING ELEMENT_FACTORY = FSBANK_STATEDATA_WARNING.create(-1L);
-
         /**
          * Creates a new {@code FSBANK_STATEDATA_WARNING.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class FSBANK_STATEDATA_WARNING extends Struct<FSBANK_STATEDATA_WARNING> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FSBANK_STATEDATA_WARNING getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FSBANK_STATEDATA_WARNING.class;
         }
 
         /** @return the value of the {@code warnCode} field. */

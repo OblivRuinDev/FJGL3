@@ -263,9 +263,6 @@ public class VkPhysicalDeviceTexelBufferAlignmentProperties extends Struct<VkPhy
 
     /** An array of {@link VkPhysicalDeviceTexelBufferAlignmentProperties} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceTexelBufferAlignmentProperties, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceTexelBufferAlignmentProperties ELEMENT_FACTORY = VkPhysicalDeviceTexelBufferAlignmentProperties.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceTexelBufferAlignmentProperties.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class VkPhysicalDeviceTexelBufferAlignmentProperties extends Struct<VkPhy
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceTexelBufferAlignmentProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceTexelBufferAlignmentProperties.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -242,9 +242,6 @@ public class VkSurfaceFullScreenExclusiveInfoEXT extends Struct<VkSurfaceFullScr
 
     /** An array of {@link VkSurfaceFullScreenExclusiveInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkSurfaceFullScreenExclusiveInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkSurfaceFullScreenExclusiveInfoEXT ELEMENT_FACTORY = VkSurfaceFullScreenExclusiveInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkSurfaceFullScreenExclusiveInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkSurfaceFullScreenExclusiveInfoEXT extends Struct<VkSurfaceFullScr
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSurfaceFullScreenExclusiveInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSurfaceFullScreenExclusiveInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

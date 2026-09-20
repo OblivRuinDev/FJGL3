@@ -242,9 +242,6 @@ public class VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT extends Struct<VkPhy
 
     /** An array of {@link VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT extends Struct<VkPhy
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

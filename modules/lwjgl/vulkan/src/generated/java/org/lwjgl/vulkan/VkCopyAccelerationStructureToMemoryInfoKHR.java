@@ -275,9 +275,6 @@ public class VkCopyAccelerationStructureToMemoryInfoKHR extends Struct<VkCopyAcc
 
     /** An array of {@link VkCopyAccelerationStructureToMemoryInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkCopyAccelerationStructureToMemoryInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkCopyAccelerationStructureToMemoryInfoKHR ELEMENT_FACTORY = VkCopyAccelerationStructureToMemoryInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkCopyAccelerationStructureToMemoryInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -300,18 +297,13 @@ public class VkCopyAccelerationStructureToMemoryInfoKHR extends Struct<VkCopyAcc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCopyAccelerationStructureToMemoryInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCopyAccelerationStructureToMemoryInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -186,9 +186,6 @@ public class VkPhysicalDeviceTimelineSemaphorePropertiesKHR extends VkPhysicalDe
 
     /** An array of {@link VkPhysicalDeviceTimelineSemaphorePropertiesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceTimelineSemaphoreProperties.Buffer {
-
-        private static final VkPhysicalDeviceTimelineSemaphorePropertiesKHR ELEMENT_FACTORY = VkPhysicalDeviceTimelineSemaphorePropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceTimelineSemaphorePropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -211,18 +208,13 @@ public class VkPhysicalDeviceTimelineSemaphorePropertiesKHR extends VkPhysicalDe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceTimelineSemaphorePropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceTimelineSemaphorePropertiesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

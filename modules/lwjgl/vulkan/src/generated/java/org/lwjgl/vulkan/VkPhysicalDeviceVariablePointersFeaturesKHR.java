@@ -197,9 +197,6 @@ public class VkPhysicalDeviceVariablePointersFeaturesKHR extends VkPhysicalDevic
 
     /** An array of {@link VkPhysicalDeviceVariablePointersFeaturesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceVariablePointersFeatures.Buffer {
-
-        private static final VkPhysicalDeviceVariablePointersFeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceVariablePointersFeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceVariablePointersFeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -222,18 +219,13 @@ public class VkPhysicalDeviceVariablePointersFeaturesKHR extends VkPhysicalDevic
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceVariablePointersFeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceVariablePointersFeaturesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

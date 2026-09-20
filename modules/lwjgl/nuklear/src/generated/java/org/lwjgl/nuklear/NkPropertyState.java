@@ -234,9 +234,6 @@ public class NkPropertyState extends Struct<NkPropertyState> {
 
     /** An array of {@link NkPropertyState} structs. */
     public static class Buffer extends StructBuffer<NkPropertyState, Buffer> {
-
-        private static final NkPropertyState ELEMENT_FACTORY = NkPropertyState.create(-1L);
-
         /**
          * Creates a new {@code NkPropertyState.Buffer} instance backed by the specified container.
          *
@@ -259,18 +256,13 @@ public class NkPropertyState extends Struct<NkPropertyState> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkPropertyState getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkPropertyState.class;
         }
 
         /** @return the value of the {@code active} field. */

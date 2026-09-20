@@ -240,9 +240,6 @@ public class VkPartitionedAccelerationStructureUpdateInstanceDataNV extends Stru
 
     /** An array of {@link VkPartitionedAccelerationStructureUpdateInstanceDataNV} structs. */
     public static class Buffer extends StructBuffer<VkPartitionedAccelerationStructureUpdateInstanceDataNV, Buffer> implements NativeResource {
-
-        private static final VkPartitionedAccelerationStructureUpdateInstanceDataNV ELEMENT_FACTORY = VkPartitionedAccelerationStructureUpdateInstanceDataNV.create(-1L);
-
         /**
          * Creates a new {@code VkPartitionedAccelerationStructureUpdateInstanceDataNV.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class VkPartitionedAccelerationStructureUpdateInstanceDataNV extends Stru
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPartitionedAccelerationStructureUpdateInstanceDataNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPartitionedAccelerationStructureUpdateInstanceDataNV.class;
         }
 
         /** @return the value of the {@code instanceIndex} field. */

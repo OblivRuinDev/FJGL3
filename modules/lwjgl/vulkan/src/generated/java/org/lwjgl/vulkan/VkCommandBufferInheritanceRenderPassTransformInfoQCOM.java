@@ -260,9 +260,6 @@ public class VkCommandBufferInheritanceRenderPassTransformInfoQCOM extends Struc
 
     /** An array of {@link VkCommandBufferInheritanceRenderPassTransformInfoQCOM} structs. */
     public static class Buffer extends StructBuffer<VkCommandBufferInheritanceRenderPassTransformInfoQCOM, Buffer> implements NativeResource {
-
-        private static final VkCommandBufferInheritanceRenderPassTransformInfoQCOM ELEMENT_FACTORY = VkCommandBufferInheritanceRenderPassTransformInfoQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkCommandBufferInheritanceRenderPassTransformInfoQCOM.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class VkCommandBufferInheritanceRenderPassTransformInfoQCOM extends Struc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCommandBufferInheritanceRenderPassTransformInfoQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCommandBufferInheritanceRenderPassTransformInfoQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

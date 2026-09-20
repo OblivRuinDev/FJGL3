@@ -227,9 +227,6 @@ public class VkDispatchTileInfoQCOM extends Struct<VkDispatchTileInfoQCOM> imple
 
     /** An array of {@link VkDispatchTileInfoQCOM} structs. */
     public static class Buffer extends StructBuffer<VkDispatchTileInfoQCOM, Buffer> implements NativeResource {
-
-        private static final VkDispatchTileInfoQCOM ELEMENT_FACTORY = VkDispatchTileInfoQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkDispatchTileInfoQCOM.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class VkDispatchTileInfoQCOM extends Struct<VkDispatchTileInfoQCOM> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDispatchTileInfoQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDispatchTileInfoQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

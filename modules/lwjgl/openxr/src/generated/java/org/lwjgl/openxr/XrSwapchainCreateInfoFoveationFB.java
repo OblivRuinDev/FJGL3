@@ -242,9 +242,6 @@ public class XrSwapchainCreateInfoFoveationFB extends Struct<XrSwapchainCreateIn
 
     /** An array of {@link XrSwapchainCreateInfoFoveationFB} structs. */
     public static class Buffer extends StructBuffer<XrSwapchainCreateInfoFoveationFB, Buffer> implements NativeResource {
-
-        private static final XrSwapchainCreateInfoFoveationFB ELEMENT_FACTORY = XrSwapchainCreateInfoFoveationFB.create(-1L);
-
         /**
          * Creates a new {@code XrSwapchainCreateInfoFoveationFB.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrSwapchainCreateInfoFoveationFB extends Struct<XrSwapchainCreateIn
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSwapchainCreateInfoFoveationFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSwapchainCreateInfoFoveationFB.class;
         }
 
         /** @return the value of the {@code type} field. */

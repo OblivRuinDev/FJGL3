@@ -272,9 +272,6 @@ public class VkSubpassDescriptionDepthStencilResolve extends Struct<VkSubpassDes
 
     /** An array of {@link VkSubpassDescriptionDepthStencilResolve} structs. */
     public static class Buffer extends StructBuffer<VkSubpassDescriptionDepthStencilResolve, Buffer> implements NativeResource {
-
-        private static final VkSubpassDescriptionDepthStencilResolve ELEMENT_FACTORY = VkSubpassDescriptionDepthStencilResolve.create(-1L);
-
         /**
          * Creates a new {@code VkSubpassDescriptionDepthStencilResolve.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkSubpassDescriptionDepthStencilResolve extends Struct<VkSubpassDes
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSubpassDescriptionDepthStencilResolve getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSubpassDescriptionDepthStencilResolve.class;
         }
 
         /** @return the value of the {@code sType} field. */

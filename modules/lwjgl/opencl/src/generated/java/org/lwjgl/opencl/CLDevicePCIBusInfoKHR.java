@@ -211,9 +211,6 @@ public class CLDevicePCIBusInfoKHR extends Struct<CLDevicePCIBusInfoKHR> impleme
 
     /** An array of {@link CLDevicePCIBusInfoKHR} structs. */
     public static class Buffer extends StructBuffer<CLDevicePCIBusInfoKHR, Buffer> implements NativeResource {
-
-        private static final CLDevicePCIBusInfoKHR ELEMENT_FACTORY = CLDevicePCIBusInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code CLDevicePCIBusInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -236,18 +233,13 @@ public class CLDevicePCIBusInfoKHR extends Struct<CLDevicePCIBusInfoKHR> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CLDevicePCIBusInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CLDevicePCIBusInfoKHR.class;
         }
 
         /** @return the value of the {@code pci_domain} field. */

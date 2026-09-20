@@ -262,9 +262,6 @@ public class VkDescriptorGetInfoEXT extends Struct<VkDescriptorGetInfoEXT> imple
 
     /** An array of {@link VkDescriptorGetInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorGetInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkDescriptorGetInfoEXT ELEMENT_FACTORY = VkDescriptorGetInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorGetInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -287,18 +284,13 @@ public class VkDescriptorGetInfoEXT extends Struct<VkDescriptorGetInfoEXT> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorGetInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorGetInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

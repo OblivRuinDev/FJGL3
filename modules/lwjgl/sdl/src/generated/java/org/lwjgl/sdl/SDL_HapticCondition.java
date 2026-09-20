@@ -475,9 +475,6 @@ public class SDL_HapticCondition extends Struct<SDL_HapticCondition> implements 
 
     /** An array of {@link SDL_HapticCondition} structs. */
     public static class Buffer extends StructBuffer<SDL_HapticCondition, Buffer> implements NativeResource {
-
-        private static final SDL_HapticCondition ELEMENT_FACTORY = SDL_HapticCondition.create(-1L);
-
         /**
          * Creates a new {@code SDL_HapticCondition.Buffer} instance backed by the specified container.
          *
@@ -500,18 +497,13 @@ public class SDL_HapticCondition extends Struct<SDL_HapticCondition> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_HapticCondition getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_HapticCondition.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -139,9 +139,6 @@ public class GLFWVidMode extends Struct<GLFWVidMode> {
 
     /** An array of {@link GLFWVidMode} structs. */
     public static class Buffer extends StructBuffer<GLFWVidMode, Buffer> {
-
-        private static final GLFWVidMode ELEMENT_FACTORY = GLFWVidMode.create(-1L);
-
         /**
          * Creates a new {@code GLFWVidMode.Buffer} instance backed by the specified container.
          *
@@ -164,18 +161,13 @@ public class GLFWVidMode extends Struct<GLFWVidMode> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected GLFWVidMode getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return GLFWVidMode.class;
         }
 
         /** @return the value of the {@code width} field. */

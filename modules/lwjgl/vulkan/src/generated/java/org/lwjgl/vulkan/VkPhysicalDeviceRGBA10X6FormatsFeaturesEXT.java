@@ -242,9 +242,6 @@ public class VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT extends Struct<VkPhysica
 
     /** An array of {@link VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT extends Struct<VkPhysica
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

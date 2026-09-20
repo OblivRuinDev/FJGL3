@@ -263,9 +263,6 @@ public class VkPastPresentationTimingPropertiesEXT extends Struct<VkPastPresenta
 
     /** An array of {@link VkPastPresentationTimingPropertiesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPastPresentationTimingPropertiesEXT, Buffer> implements NativeResource {
-
-        private static final VkPastPresentationTimingPropertiesEXT ELEMENT_FACTORY = VkPastPresentationTimingPropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPastPresentationTimingPropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class VkPastPresentationTimingPropertiesEXT extends Struct<VkPastPresenta
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPastPresentationTimingPropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPastPresentationTimingPropertiesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

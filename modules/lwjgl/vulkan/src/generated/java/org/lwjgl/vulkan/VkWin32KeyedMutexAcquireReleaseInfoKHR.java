@@ -350,9 +350,6 @@ public class VkWin32KeyedMutexAcquireReleaseInfoKHR extends Struct<VkWin32KeyedM
 
     /** An array of {@link VkWin32KeyedMutexAcquireReleaseInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkWin32KeyedMutexAcquireReleaseInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkWin32KeyedMutexAcquireReleaseInfoKHR ELEMENT_FACTORY = VkWin32KeyedMutexAcquireReleaseInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkWin32KeyedMutexAcquireReleaseInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -375,18 +372,13 @@ public class VkWin32KeyedMutexAcquireReleaseInfoKHR extends Struct<VkWin32KeyedM
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkWin32KeyedMutexAcquireReleaseInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkWin32KeyedMutexAcquireReleaseInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

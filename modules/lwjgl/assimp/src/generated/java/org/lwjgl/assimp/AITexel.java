@@ -127,9 +127,6 @@ public class AITexel extends Struct<AITexel> {
 
     /** An array of {@link AITexel} structs. */
     public static class Buffer extends StructBuffer<AITexel, Buffer> {
-
-        private static final AITexel ELEMENT_FACTORY = AITexel.create(-1L);
-
         /**
          * Creates a new {@code AITexel.Buffer} instance backed by the specified container.
          *
@@ -152,18 +149,13 @@ public class AITexel extends Struct<AITexel> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AITexel getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AITexel.class;
         }
 
         /** @return the value of the {@code b} field. */

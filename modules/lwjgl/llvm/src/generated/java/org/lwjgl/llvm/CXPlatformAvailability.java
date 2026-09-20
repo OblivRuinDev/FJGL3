@@ -225,9 +225,6 @@ public class CXPlatformAvailability extends Struct<CXPlatformAvailability> imple
 
     /** An array of {@link CXPlatformAvailability} structs. */
     public static class Buffer extends StructBuffer<CXPlatformAvailability, Buffer> implements NativeResource {
-
-        private static final CXPlatformAvailability ELEMENT_FACTORY = CXPlatformAvailability.create(-1L);
-
         /**
          * Creates a new {@code CXPlatformAvailability.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class CXPlatformAvailability extends Struct<CXPlatformAvailability> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXPlatformAvailability getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXPlatformAvailability.class;
         }
 
         /** @return a {@link CXString} view of the {@code Platform} field. */

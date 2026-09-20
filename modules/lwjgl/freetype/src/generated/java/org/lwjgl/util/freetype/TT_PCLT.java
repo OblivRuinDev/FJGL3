@@ -247,9 +247,6 @@ public class TT_PCLT extends Struct<TT_PCLT> {
 
     /** An array of {@link TT_PCLT} structs. */
     public static class Buffer extends StructBuffer<TT_PCLT, Buffer> {
-
-        private static final TT_PCLT ELEMENT_FACTORY = TT_PCLT.create(-1L);
-
         /**
          * Creates a new {@code TT_PCLT.Buffer} instance backed by the specified container.
          *
@@ -272,18 +269,13 @@ public class TT_PCLT extends Struct<TT_PCLT> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected TT_PCLT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return TT_PCLT.class;
         }
 
         /** @return the value of the {@code Version} field. */

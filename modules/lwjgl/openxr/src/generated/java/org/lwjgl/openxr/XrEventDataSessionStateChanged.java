@@ -264,9 +264,6 @@ public class XrEventDataSessionStateChanged extends Struct<XrEventDataSessionSta
 
     /** An array of {@link XrEventDataSessionStateChanged} structs. */
     public static class Buffer extends StructBuffer<XrEventDataSessionStateChanged, Buffer> implements NativeResource {
-
-        private static final XrEventDataSessionStateChanged ELEMENT_FACTORY = XrEventDataSessionStateChanged.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataSessionStateChanged.Buffer} instance backed by the specified container.
          *
@@ -289,18 +286,13 @@ public class XrEventDataSessionStateChanged extends Struct<XrEventDataSessionSta
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataSessionStateChanged getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataSessionStateChanged.class;
         }
 
         /** @return the value of the {@code type} field. */

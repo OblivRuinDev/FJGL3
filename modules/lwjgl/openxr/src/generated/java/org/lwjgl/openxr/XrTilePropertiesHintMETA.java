@@ -263,9 +263,6 @@ public class XrTilePropertiesHintMETA extends Struct<XrTilePropertiesHintMETA> i
 
     /** An array of {@link XrTilePropertiesHintMETA} structs. */
     public static class Buffer extends StructBuffer<XrTilePropertiesHintMETA, Buffer> implements NativeResource {
-
-        private static final XrTilePropertiesHintMETA ELEMENT_FACTORY = XrTilePropertiesHintMETA.create(-1L);
-
         /**
          * Creates a new {@code XrTilePropertiesHintMETA.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrTilePropertiesHintMETA extends Struct<XrTilePropertiesHintMETA> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrTilePropertiesHintMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrTilePropertiesHintMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

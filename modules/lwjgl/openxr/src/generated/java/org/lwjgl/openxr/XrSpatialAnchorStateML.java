@@ -242,9 +242,6 @@ public class XrSpatialAnchorStateML extends Struct<XrSpatialAnchorStateML> imple
 
     /** An array of {@link XrSpatialAnchorStateML} structs. */
     public static class Buffer extends StructBuffer<XrSpatialAnchorStateML, Buffer> implements NativeResource {
-
-        private static final XrSpatialAnchorStateML ELEMENT_FACTORY = XrSpatialAnchorStateML.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialAnchorStateML.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrSpatialAnchorStateML extends Struct<XrSpatialAnchorStateML> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialAnchorStateML getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialAnchorStateML.class;
         }
 
         /** @return the value of the {@code type} field. */

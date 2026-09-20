@@ -257,9 +257,6 @@ public class XrSpatialAudioRendererCreateInfoBD extends Struct<XrSpatialAudioRen
 
     /** An array of {@link XrSpatialAudioRendererCreateInfoBD} structs. */
     public static class Buffer extends StructBuffer<XrSpatialAudioRendererCreateInfoBD, Buffer> implements NativeResource {
-
-        private static final XrSpatialAudioRendererCreateInfoBD ELEMENT_FACTORY = XrSpatialAudioRendererCreateInfoBD.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialAudioRendererCreateInfoBD.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class XrSpatialAudioRendererCreateInfoBD extends Struct<XrSpatialAudioRen
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialAudioRendererCreateInfoBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialAudioRendererCreateInfoBD.class;
         }
 
         /** @return the value of the {@code type} field. */

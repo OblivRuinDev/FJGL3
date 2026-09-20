@@ -236,9 +236,6 @@ public class XrSystemEyeGazeInteractionPropertiesEXT extends Struct<XrSystemEyeG
 
     /** An array of {@link XrSystemEyeGazeInteractionPropertiesEXT} structs. */
     public static class Buffer extends StructBuffer<XrSystemEyeGazeInteractionPropertiesEXT, Buffer> implements NativeResource {
-
-        private static final XrSystemEyeGazeInteractionPropertiesEXT ELEMENT_FACTORY = XrSystemEyeGazeInteractionPropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSystemEyeGazeInteractionPropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemEyeGazeInteractionPropertiesEXT extends Struct<XrSystemEyeG
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemEyeGazeInteractionPropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemEyeGazeInteractionPropertiesEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

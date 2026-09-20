@@ -285,9 +285,6 @@ public class MOUSEINPUT extends Struct<MOUSEINPUT> implements NativeResource {
 
     /** An array of {@link MOUSEINPUT} structs. */
     public static class Buffer extends StructBuffer<MOUSEINPUT, Buffer> implements NativeResource {
-
-        private static final MOUSEINPUT ELEMENT_FACTORY = MOUSEINPUT.create(-1L);
-
         /**
          * Creates a new {@code MOUSEINPUT.Buffer} instance backed by the specified container.
          *
@@ -310,18 +307,13 @@ public class MOUSEINPUT extends Struct<MOUSEINPUT> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected MOUSEINPUT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return MOUSEINPUT.class;
         }
 
         /** @return the value of the {@code dx} field. */

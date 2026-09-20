@@ -188,9 +188,6 @@ public class VkFormatProperties3KHR extends VkFormatProperties3 {
 
     /** An array of {@link VkFormatProperties3KHR} structs. */
     public static class Buffer extends VkFormatProperties3.Buffer {
-
-        private static final VkFormatProperties3KHR ELEMENT_FACTORY = VkFormatProperties3KHR.create(-1L);
-
         /**
          * Creates a new {@code VkFormatProperties3KHR.Buffer} instance backed by the specified container.
          *
@@ -213,18 +210,13 @@ public class VkFormatProperties3KHR extends VkFormatProperties3 {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkFormatProperties3KHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkFormatProperties3KHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

@@ -426,9 +426,6 @@ public class StdVideoEncodeH265SliceSegmentHeader extends Struct<StdVideoEncodeH
 
     /** An array of {@link StdVideoEncodeH265SliceSegmentHeader} structs. */
     public static class Buffer extends StructBuffer<StdVideoEncodeH265SliceSegmentHeader, Buffer> implements NativeResource {
-
-        private static final StdVideoEncodeH265SliceSegmentHeader ELEMENT_FACTORY = StdVideoEncodeH265SliceSegmentHeader.create(-1L);
-
         /**
          * Creates a new {@code StdVideoEncodeH265SliceSegmentHeader.Buffer} instance backed by the specified container.
          *
@@ -451,18 +448,13 @@ public class StdVideoEncodeH265SliceSegmentHeader extends Struct<StdVideoEncodeH
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoEncodeH265SliceSegmentHeader getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoEncodeH265SliceSegmentHeader.class;
         }
 
         /** @return a {@link StdVideoEncodeH265SliceSegmentHeaderFlags} view of the {@code flags} field. */

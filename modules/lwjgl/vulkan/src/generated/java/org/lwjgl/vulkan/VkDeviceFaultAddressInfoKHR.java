@@ -201,9 +201,6 @@ public class VkDeviceFaultAddressInfoKHR extends Struct<VkDeviceFaultAddressInfo
 
     /** An array of {@link VkDeviceFaultAddressInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkDeviceFaultAddressInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkDeviceFaultAddressInfoKHR ELEMENT_FACTORY = VkDeviceFaultAddressInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceFaultAddressInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -226,18 +223,13 @@ public class VkDeviceFaultAddressInfoKHR extends Struct<VkDeviceFaultAddressInfo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceFaultAddressInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceFaultAddressInfoKHR.class;
         }
 
         /** @return the value of the {@code addressType} field. */

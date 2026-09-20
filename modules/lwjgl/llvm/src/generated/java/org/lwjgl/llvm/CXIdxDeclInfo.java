@@ -292,9 +292,6 @@ public class CXIdxDeclInfo extends Struct<CXIdxDeclInfo> implements NativeResour
 
     /** An array of {@link CXIdxDeclInfo} structs. */
     public static class Buffer extends StructBuffer<CXIdxDeclInfo, Buffer> implements NativeResource {
-
-        private static final CXIdxDeclInfo ELEMENT_FACTORY = CXIdxDeclInfo.create(-1L);
-
         /**
          * Creates a new {@code CXIdxDeclInfo.Buffer} instance backed by the specified container.
          *
@@ -317,18 +314,13 @@ public class CXIdxDeclInfo extends Struct<CXIdxDeclInfo> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXIdxDeclInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXIdxDeclInfo.class;
         }
 
         /** @return a {@link CXIdxEntityInfo} view of the struct pointed to by the {@code entityInfo} field. */

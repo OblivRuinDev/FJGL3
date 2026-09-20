@@ -229,9 +229,6 @@ public class XrHandMeshVertexMSFT extends Struct<XrHandMeshVertexMSFT> implement
 
     /** An array of {@link XrHandMeshVertexMSFT} structs. */
     public static class Buffer extends StructBuffer<XrHandMeshVertexMSFT, Buffer> implements NativeResource {
-
-        private static final XrHandMeshVertexMSFT ELEMENT_FACTORY = XrHandMeshVertexMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrHandMeshVertexMSFT.Buffer} instance backed by the specified container.
          *
@@ -254,18 +251,13 @@ public class XrHandMeshVertexMSFT extends Struct<XrHandMeshVertexMSFT> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHandMeshVertexMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHandMeshVertexMSFT.class;
         }
 
         /** @return a {@link XrVector3f} view of the {@code position} field. */

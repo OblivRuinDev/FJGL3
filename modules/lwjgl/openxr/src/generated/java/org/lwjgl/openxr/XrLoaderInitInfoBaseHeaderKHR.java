@@ -237,9 +237,6 @@ public class XrLoaderInitInfoBaseHeaderKHR extends Struct<XrLoaderInitInfoBaseHe
 
     /** An array of {@link XrLoaderInitInfoBaseHeaderKHR} structs. */
     public static class Buffer extends StructBuffer<XrLoaderInitInfoBaseHeaderKHR, Buffer> implements NativeResource {
-
-        private static final XrLoaderInitInfoBaseHeaderKHR ELEMENT_FACTORY = XrLoaderInitInfoBaseHeaderKHR.create(-1L);
-
         /**
          * Creates a new {@code XrLoaderInitInfoBaseHeaderKHR.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class XrLoaderInitInfoBaseHeaderKHR extends Struct<XrLoaderInitInfoBaseHe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrLoaderInitInfoBaseHeaderKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrLoaderInitInfoBaseHeaderKHR.class;
         }
 
         /** @return the value of the {@code type} field. */

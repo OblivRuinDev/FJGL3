@@ -223,9 +223,6 @@ public class VkBindDescriptorSetsInfoKHR extends VkBindDescriptorSetsInfo {
 
     /** An array of {@link VkBindDescriptorSetsInfoKHR} structs. */
     public static class Buffer extends VkBindDescriptorSetsInfo.Buffer {
-
-        private static final VkBindDescriptorSetsInfoKHR ELEMENT_FACTORY = VkBindDescriptorSetsInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkBindDescriptorSetsInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -248,18 +245,13 @@ public class VkBindDescriptorSetsInfoKHR extends VkBindDescriptorSetsInfo {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBindDescriptorSetsInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBindDescriptorSetsInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

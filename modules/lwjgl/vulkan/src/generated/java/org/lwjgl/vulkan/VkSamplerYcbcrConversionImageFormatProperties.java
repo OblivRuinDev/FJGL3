@@ -236,9 +236,6 @@ public class VkSamplerYcbcrConversionImageFormatProperties extends Struct<VkSamp
 
     /** An array of {@link VkSamplerYcbcrConversionImageFormatProperties} structs. */
     public static class Buffer extends StructBuffer<VkSamplerYcbcrConversionImageFormatProperties, Buffer> implements NativeResource {
-
-        private static final VkSamplerYcbcrConversionImageFormatProperties ELEMENT_FACTORY = VkSamplerYcbcrConversionImageFormatProperties.create(-1L);
-
         /**
          * Creates a new {@code VkSamplerYcbcrConversionImageFormatProperties.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkSamplerYcbcrConversionImageFormatProperties extends Struct<VkSamp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSamplerYcbcrConversionImageFormatProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSamplerYcbcrConversionImageFormatProperties.class;
         }
 
         /** @return the value of the {@code sType} field. */

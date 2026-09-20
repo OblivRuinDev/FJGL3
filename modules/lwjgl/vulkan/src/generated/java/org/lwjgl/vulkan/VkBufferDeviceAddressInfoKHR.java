@@ -191,9 +191,6 @@ public class VkBufferDeviceAddressInfoKHR extends VkBufferDeviceAddressInfo {
 
     /** An array of {@link VkBufferDeviceAddressInfoKHR} structs. */
     public static class Buffer extends VkBufferDeviceAddressInfo.Buffer {
-
-        private static final VkBufferDeviceAddressInfoKHR ELEMENT_FACTORY = VkBufferDeviceAddressInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkBufferDeviceAddressInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkBufferDeviceAddressInfoKHR extends VkBufferDeviceAddressInfo {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBufferDeviceAddressInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBufferDeviceAddressInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

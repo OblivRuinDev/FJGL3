@@ -275,9 +275,6 @@ public class VkDrawIndirect2InfoKHR extends Struct<VkDrawIndirect2InfoKHR> imple
 
     /** An array of {@link VkDrawIndirect2InfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkDrawIndirect2InfoKHR, Buffer> implements NativeResource {
-
-        private static final VkDrawIndirect2InfoKHR ELEMENT_FACTORY = VkDrawIndirect2InfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDrawIndirect2InfoKHR.Buffer} instance backed by the specified container.
          *
@@ -300,18 +297,13 @@ public class VkDrawIndirect2InfoKHR extends Struct<VkDrawIndirect2InfoKHR> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDrawIndirect2InfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDrawIndirect2InfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

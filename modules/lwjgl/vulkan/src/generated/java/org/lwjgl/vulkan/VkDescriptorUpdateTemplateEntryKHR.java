@@ -206,9 +206,6 @@ public class VkDescriptorUpdateTemplateEntryKHR extends VkDescriptorUpdateTempla
 
     /** An array of {@link VkDescriptorUpdateTemplateEntryKHR} structs. */
     public static class Buffer extends VkDescriptorUpdateTemplateEntry.Buffer {
-
-        private static final VkDescriptorUpdateTemplateEntryKHR ELEMENT_FACTORY = VkDescriptorUpdateTemplateEntryKHR.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorUpdateTemplateEntryKHR.Buffer} instance backed by the specified container.
          *
@@ -231,18 +228,13 @@ public class VkDescriptorUpdateTemplateEntryKHR extends VkDescriptorUpdateTempla
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorUpdateTemplateEntryKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorUpdateTemplateEntryKHR.class;
         }
 
         /** Sets the specified value to the {@code dstBinding} field. */

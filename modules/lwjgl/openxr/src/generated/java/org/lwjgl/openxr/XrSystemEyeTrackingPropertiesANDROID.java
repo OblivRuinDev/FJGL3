@@ -236,9 +236,6 @@ public class XrSystemEyeTrackingPropertiesANDROID extends Struct<XrSystemEyeTrac
 
     /** An array of {@link XrSystemEyeTrackingPropertiesANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSystemEyeTrackingPropertiesANDROID, Buffer> implements NativeResource {
-
-        private static final XrSystemEyeTrackingPropertiesANDROID ELEMENT_FACTORY = XrSystemEyeTrackingPropertiesANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSystemEyeTrackingPropertiesANDROID.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemEyeTrackingPropertiesANDROID extends Struct<XrSystemEyeTrac
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemEyeTrackingPropertiesANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemEyeTrackingPropertiesANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

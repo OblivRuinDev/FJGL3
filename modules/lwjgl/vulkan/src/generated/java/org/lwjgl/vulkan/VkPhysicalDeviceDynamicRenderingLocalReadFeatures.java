@@ -242,9 +242,6 @@ public class VkPhysicalDeviceDynamicRenderingLocalReadFeatures extends Struct<Vk
 
     /** An array of {@link VkPhysicalDeviceDynamicRenderingLocalReadFeatures} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceDynamicRenderingLocalReadFeatures, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceDynamicRenderingLocalReadFeatures ELEMENT_FACTORY = VkPhysicalDeviceDynamicRenderingLocalReadFeatures.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDynamicRenderingLocalReadFeatures.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceDynamicRenderingLocalReadFeatures extends Struct<Vk
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDynamicRenderingLocalReadFeatures getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDynamicRenderingLocalReadFeatures.class;
         }
 
         /** @return the value of the {@code sType} field. */

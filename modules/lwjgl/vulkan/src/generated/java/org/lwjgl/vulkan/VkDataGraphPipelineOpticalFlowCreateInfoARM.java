@@ -362,9 +362,6 @@ public class VkDataGraphPipelineOpticalFlowCreateInfoARM extends Struct<VkDataGr
 
     /** An array of {@link VkDataGraphPipelineOpticalFlowCreateInfoARM} structs. */
     public static class Buffer extends StructBuffer<VkDataGraphPipelineOpticalFlowCreateInfoARM, Buffer> implements NativeResource {
-
-        private static final VkDataGraphPipelineOpticalFlowCreateInfoARM ELEMENT_FACTORY = VkDataGraphPipelineOpticalFlowCreateInfoARM.create(-1L);
-
         /**
          * Creates a new {@code VkDataGraphPipelineOpticalFlowCreateInfoARM.Buffer} instance backed by the specified container.
          *
@@ -387,18 +384,13 @@ public class VkDataGraphPipelineOpticalFlowCreateInfoARM extends Struct<VkDataGr
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDataGraphPipelineOpticalFlowCreateInfoARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDataGraphPipelineOpticalFlowCreateInfoARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

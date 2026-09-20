@@ -242,9 +242,6 @@ public class VkPerformanceStreamMarkerInfoINTEL extends Struct<VkPerformanceStre
 
     /** An array of {@link VkPerformanceStreamMarkerInfoINTEL} structs. */
     public static class Buffer extends StructBuffer<VkPerformanceStreamMarkerInfoINTEL, Buffer> implements NativeResource {
-
-        private static final VkPerformanceStreamMarkerInfoINTEL ELEMENT_FACTORY = VkPerformanceStreamMarkerInfoINTEL.create(-1L);
-
         /**
          * Creates a new {@code VkPerformanceStreamMarkerInfoINTEL.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPerformanceStreamMarkerInfoINTEL extends Struct<VkPerformanceStre
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPerformanceStreamMarkerInfoINTEL getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPerformanceStreamMarkerInfoINTEL.class;
         }
 
         /** @return the value of the {@code sType} field. */

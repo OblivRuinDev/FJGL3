@@ -110,9 +110,6 @@ public class FT_PaintTransform extends Struct<FT_PaintTransform> {
 
     /** An array of {@link FT_PaintTransform} structs. */
     public static class Buffer extends StructBuffer<FT_PaintTransform, Buffer> {
-
-        private static final FT_PaintTransform ELEMENT_FACTORY = FT_PaintTransform.create(-1L);
-
         /**
          * Creates a new {@code FT_PaintTransform.Buffer} instance backed by the specified container.
          *
@@ -135,18 +132,13 @@ public class FT_PaintTransform extends Struct<FT_PaintTransform> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_PaintTransform getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_PaintTransform.class;
         }
 
         /** @return a {@link FT_OpaquePaint} view of the {@code paint} field. */

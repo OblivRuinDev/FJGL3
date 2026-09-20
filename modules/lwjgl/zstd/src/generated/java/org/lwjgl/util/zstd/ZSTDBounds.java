@@ -200,9 +200,6 @@ public class ZSTDBounds extends Struct<ZSTDBounds> implements NativeResource {
 
     /** An array of {@link ZSTDBounds} structs. */
     public static class Buffer extends StructBuffer<ZSTDBounds, Buffer> implements NativeResource {
-
-        private static final ZSTDBounds ELEMENT_FACTORY = ZSTDBounds.create(-1L);
-
         /**
          * Creates a new {@code ZSTDBounds.Buffer} instance backed by the specified container.
          *
@@ -225,18 +222,13 @@ public class ZSTDBounds extends Struct<ZSTDBounds> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ZSTDBounds getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ZSTDBounds.class;
         }
 
         /** @return the value of the {@code error} field. */

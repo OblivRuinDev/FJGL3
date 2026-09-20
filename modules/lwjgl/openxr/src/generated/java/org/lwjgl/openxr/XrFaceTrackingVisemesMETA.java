@@ -275,9 +275,6 @@ public class XrFaceTrackingVisemesMETA extends Struct<XrFaceTrackingVisemesMETA>
 
     /** An array of {@link XrFaceTrackingVisemesMETA} structs. */
     public static class Buffer extends StructBuffer<XrFaceTrackingVisemesMETA, Buffer> implements NativeResource {
-
-        private static final XrFaceTrackingVisemesMETA ELEMENT_FACTORY = XrFaceTrackingVisemesMETA.create(-1L);
-
         /**
          * Creates a new {@code XrFaceTrackingVisemesMETA.Buffer} instance backed by the specified container.
          *
@@ -300,18 +297,13 @@ public class XrFaceTrackingVisemesMETA extends Struct<XrFaceTrackingVisemesMETA>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFaceTrackingVisemesMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFaceTrackingVisemesMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

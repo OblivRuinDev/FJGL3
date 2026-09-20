@@ -235,9 +235,6 @@ public class XrActionSuggestedBinding extends Struct<XrActionSuggestedBinding> i
 
     /** An array of {@link XrActionSuggestedBinding} structs. */
     public static class Buffer extends StructBuffer<XrActionSuggestedBinding, Buffer> implements NativeResource {
-
-        private static final XrActionSuggestedBinding ELEMENT_FACTORY = XrActionSuggestedBinding.create(-1L);
-
         /**
          * Creates a new {@code XrActionSuggestedBinding.Buffer} instance backed by the specified container.
          *
@@ -260,18 +257,13 @@ public class XrActionSuggestedBinding extends Struct<XrActionSuggestedBinding> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrActionSuggestedBinding getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrActionSuggestedBinding.class;
         }
 
         /** @return the value of the {@code action} field. */

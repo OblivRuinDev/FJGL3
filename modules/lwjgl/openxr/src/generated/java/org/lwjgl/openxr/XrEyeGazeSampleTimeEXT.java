@@ -242,9 +242,6 @@ public class XrEyeGazeSampleTimeEXT extends Struct<XrEyeGazeSampleTimeEXT> imple
 
     /** An array of {@link XrEyeGazeSampleTimeEXT} structs. */
     public static class Buffer extends StructBuffer<XrEyeGazeSampleTimeEXT, Buffer> implements NativeResource {
-
-        private static final XrEyeGazeSampleTimeEXT ELEMENT_FACTORY = XrEyeGazeSampleTimeEXT.create(-1L);
-
         /**
          * Creates a new {@code XrEyeGazeSampleTimeEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrEyeGazeSampleTimeEXT extends Struct<XrEyeGazeSampleTimeEXT> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEyeGazeSampleTimeEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEyeGazeSampleTimeEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

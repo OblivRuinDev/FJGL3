@@ -191,9 +191,6 @@ public class VkMemoryOpaqueCaptureAddressAllocateInfoKHR extends VkMemoryOpaqueC
 
     /** An array of {@link VkMemoryOpaqueCaptureAddressAllocateInfoKHR} structs. */
     public static class Buffer extends VkMemoryOpaqueCaptureAddressAllocateInfo.Buffer {
-
-        private static final VkMemoryOpaqueCaptureAddressAllocateInfoKHR ELEMENT_FACTORY = VkMemoryOpaqueCaptureAddressAllocateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkMemoryOpaqueCaptureAddressAllocateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkMemoryOpaqueCaptureAddressAllocateInfoKHR extends VkMemoryOpaqueC
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMemoryOpaqueCaptureAddressAllocateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMemoryOpaqueCaptureAddressAllocateInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

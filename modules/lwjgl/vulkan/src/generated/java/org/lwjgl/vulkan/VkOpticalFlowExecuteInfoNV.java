@@ -280,9 +280,6 @@ public class VkOpticalFlowExecuteInfoNV extends Struct<VkOpticalFlowExecuteInfoN
 
     /** An array of {@link VkOpticalFlowExecuteInfoNV} structs. */
     public static class Buffer extends StructBuffer<VkOpticalFlowExecuteInfoNV, Buffer> implements NativeResource {
-
-        private static final VkOpticalFlowExecuteInfoNV ELEMENT_FACTORY = VkOpticalFlowExecuteInfoNV.create(-1L);
-
         /**
          * Creates a new {@code VkOpticalFlowExecuteInfoNV.Buffer} instance backed by the specified container.
          *
@@ -305,18 +302,13 @@ public class VkOpticalFlowExecuteInfoNV extends Struct<VkOpticalFlowExecuteInfoN
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkOpticalFlowExecuteInfoNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkOpticalFlowExecuteInfoNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

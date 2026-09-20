@@ -716,9 +716,6 @@ public class NkStyleWindow extends Struct<NkStyleWindow> implements NativeResour
 
     /** An array of {@link NkStyleWindow} structs. */
     public static class Buffer extends StructBuffer<NkStyleWindow, Buffer> implements NativeResource {
-
-        private static final NkStyleWindow ELEMENT_FACTORY = NkStyleWindow.create(-1L);
-
         /**
          * Creates a new {@code NkStyleWindow.Buffer} instance backed by the specified container.
          *
@@ -741,18 +738,13 @@ public class NkStyleWindow extends Struct<NkStyleWindow> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkStyleWindow getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkStyleWindow.class;
         }
 
         /** @return a {@link NkStyleWindowHeader} view of the {@code header} field. */

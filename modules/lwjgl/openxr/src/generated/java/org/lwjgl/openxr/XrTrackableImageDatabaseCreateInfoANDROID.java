@@ -266,9 +266,6 @@ public class XrTrackableImageDatabaseCreateInfoANDROID extends Struct<XrTrackabl
 
     /** An array of {@link XrTrackableImageDatabaseCreateInfoANDROID} structs. */
     public static class Buffer extends StructBuffer<XrTrackableImageDatabaseCreateInfoANDROID, Buffer> implements NativeResource {
-
-        private static final XrTrackableImageDatabaseCreateInfoANDROID ELEMENT_FACTORY = XrTrackableImageDatabaseCreateInfoANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrTrackableImageDatabaseCreateInfoANDROID.Buffer} instance backed by the specified container.
          *
@@ -291,18 +288,13 @@ public class XrTrackableImageDatabaseCreateInfoANDROID extends Struct<XrTrackabl
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrTrackableImageDatabaseCreateInfoANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrTrackableImageDatabaseCreateInfoANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

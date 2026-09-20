@@ -267,9 +267,6 @@ public class VkMemoryRangeBarriersInfoKHR extends Struct<VkMemoryRangeBarriersIn
 
     /** An array of {@link VkMemoryRangeBarriersInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkMemoryRangeBarriersInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkMemoryRangeBarriersInfoKHR ELEMENT_FACTORY = VkMemoryRangeBarriersInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkMemoryRangeBarriersInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -292,18 +289,13 @@ public class VkMemoryRangeBarriersInfoKHR extends Struct<VkMemoryRangeBarriersIn
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMemoryRangeBarriersInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMemoryRangeBarriersInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

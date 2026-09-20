@@ -367,9 +367,6 @@ public class StdVideoEncodeH265LongTermRefPics extends Struct<StdVideoEncodeH265
 
     /** An array of {@link StdVideoEncodeH265LongTermRefPics} structs. */
     public static class Buffer extends StructBuffer<StdVideoEncodeH265LongTermRefPics, Buffer> implements NativeResource {
-
-        private static final StdVideoEncodeH265LongTermRefPics ELEMENT_FACTORY = StdVideoEncodeH265LongTermRefPics.create(-1L);
-
         /**
          * Creates a new {@code StdVideoEncodeH265LongTermRefPics.Buffer} instance backed by the specified container.
          *
@@ -392,18 +389,13 @@ public class StdVideoEncodeH265LongTermRefPics extends Struct<StdVideoEncodeH265
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoEncodeH265LongTermRefPics getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoEncodeH265LongTermRefPics.class;
         }
 
         /** @return the value of the {@code num_long_term_sps} field. */

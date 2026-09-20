@@ -159,9 +159,6 @@ public class GLXStereoNotifyEventEXT extends Struct<GLXStereoNotifyEventEXT> {
 
     /** An array of {@link GLXStereoNotifyEventEXT} structs. */
     public static class Buffer extends StructBuffer<GLXStereoNotifyEventEXT, Buffer> {
-
-        private static final GLXStereoNotifyEventEXT ELEMENT_FACTORY = GLXStereoNotifyEventEXT.create(-1L);
-
         /**
          * Creates a new {@code GLXStereoNotifyEventEXT.Buffer} instance backed by the specified container.
          *
@@ -184,18 +181,13 @@ public class GLXStereoNotifyEventEXT extends Struct<GLXStereoNotifyEventEXT> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected GLXStereoNotifyEventEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return GLXStereoNotifyEventEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

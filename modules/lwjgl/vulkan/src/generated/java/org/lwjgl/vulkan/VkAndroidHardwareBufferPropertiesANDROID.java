@@ -251,9 +251,6 @@ public class VkAndroidHardwareBufferPropertiesANDROID extends Struct<VkAndroidHa
 
     /** An array of {@link VkAndroidHardwareBufferPropertiesANDROID} structs. */
     public static class Buffer extends StructBuffer<VkAndroidHardwareBufferPropertiesANDROID, Buffer> implements NativeResource {
-
-        private static final VkAndroidHardwareBufferPropertiesANDROID ELEMENT_FACTORY = VkAndroidHardwareBufferPropertiesANDROID.create(-1L);
-
         /**
          * Creates a new {@code VkAndroidHardwareBufferPropertiesANDROID.Buffer} instance backed by the specified container.
          *
@@ -276,18 +273,13 @@ public class VkAndroidHardwareBufferPropertiesANDROID extends Struct<VkAndroidHa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAndroidHardwareBufferPropertiesANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAndroidHardwareBufferPropertiesANDROID.class;
         }
 
         /** @return the value of the {@code sType} field. */

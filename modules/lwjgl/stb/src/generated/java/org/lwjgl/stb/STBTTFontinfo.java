@@ -168,9 +168,6 @@ public class STBTTFontinfo extends Struct<STBTTFontinfo> implements NativeResour
 
     /** An array of {@link STBTTFontinfo} structs. */
     public static class Buffer extends StructBuffer<STBTTFontinfo, Buffer> implements NativeResource {
-
-        private static final STBTTFontinfo ELEMENT_FACTORY = STBTTFontinfo.create(-1L);
-
         /**
          * Creates a new {@code STBTTFontinfo.Buffer} instance backed by the specified container.
          *
@@ -193,18 +190,13 @@ public class STBTTFontinfo extends Struct<STBTTFontinfo> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected STBTTFontinfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return STBTTFontinfo.class;
         }
 
     }

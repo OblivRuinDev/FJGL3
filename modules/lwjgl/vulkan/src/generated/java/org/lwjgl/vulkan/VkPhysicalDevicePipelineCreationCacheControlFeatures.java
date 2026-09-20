@@ -242,9 +242,6 @@ public class VkPhysicalDevicePipelineCreationCacheControlFeatures extends Struct
 
     /** An array of {@link VkPhysicalDevicePipelineCreationCacheControlFeatures} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDevicePipelineCreationCacheControlFeatures, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDevicePipelineCreationCacheControlFeatures ELEMENT_FACTORY = VkPhysicalDevicePipelineCreationCacheControlFeatures.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDevicePipelineCreationCacheControlFeatures.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDevicePipelineCreationCacheControlFeatures extends Struct
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDevicePipelineCreationCacheControlFeatures getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDevicePipelineCreationCacheControlFeatures.class;
         }
 
         /** @return the value of the {@code sType} field. */

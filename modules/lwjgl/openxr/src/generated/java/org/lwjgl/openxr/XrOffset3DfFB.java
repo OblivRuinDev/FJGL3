@@ -237,9 +237,6 @@ public class XrOffset3DfFB extends Struct<XrOffset3DfFB> implements NativeResour
 
     /** An array of {@link XrOffset3DfFB} structs. */
     public static class Buffer extends StructBuffer<XrOffset3DfFB, Buffer> implements NativeResource {
-
-        private static final XrOffset3DfFB ELEMENT_FACTORY = XrOffset3DfFB.create(-1L);
-
         /**
          * Creates a new {@code XrOffset3DfFB.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class XrOffset3DfFB extends Struct<XrOffset3DfFB> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrOffset3DfFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrOffset3DfFB.class;
         }
 
         /** @return the value of the {@code x} field. */

@@ -328,9 +328,6 @@ public class RENDERDOC_AnnotationValue extends Struct<RENDERDOC_AnnotationValue>
 
     /** An array of {@link RENDERDOC_AnnotationValue} structs. */
     public static class Buffer extends StructBuffer<RENDERDOC_AnnotationValue, Buffer> implements NativeResource {
-
-        private static final RENDERDOC_AnnotationValue ELEMENT_FACTORY = RENDERDOC_AnnotationValue.create(-1L);
-
         /**
          * Creates a new {@code RENDERDOC_AnnotationValue.Buffer} instance backed by the specified container.
          *
@@ -353,18 +350,13 @@ public class RENDERDOC_AnnotationValue extends Struct<RENDERDOC_AnnotationValue>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected RENDERDOC_AnnotationValue getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return RENDERDOC_AnnotationValue.class;
         }
 
         /** @return the value of the {@code boolean} field. */

@@ -202,9 +202,6 @@ public class AIPropertyStore extends Struct<AIPropertyStore> implements NativeRe
 
     /** An array of {@link AIPropertyStore} structs. */
     public static class Buffer extends StructBuffer<AIPropertyStore, Buffer> implements NativeResource {
-
-        private static final AIPropertyStore ELEMENT_FACTORY = AIPropertyStore.create(-1L);
-
         /**
          * Creates a new {@code AIPropertyStore.Buffer} instance backed by the specified container.
          *
@@ -227,18 +224,13 @@ public class AIPropertyStore extends Struct<AIPropertyStore> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIPropertyStore getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIPropertyStore.class;
         }
 
         /** @return the value of the {@code sentinel} field. */

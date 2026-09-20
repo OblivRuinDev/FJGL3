@@ -363,9 +363,6 @@ public class FMOD_REVERB_PROPERTIES extends Struct<FMOD_REVERB_PROPERTIES> imple
 
     /** An array of {@link FMOD_REVERB_PROPERTIES} structs. */
     public static class Buffer extends StructBuffer<FMOD_REVERB_PROPERTIES, Buffer> implements NativeResource {
-
-        private static final FMOD_REVERB_PROPERTIES ELEMENT_FACTORY = FMOD_REVERB_PROPERTIES.create(-1L);
-
         /**
          * Creates a new {@code FMOD_REVERB_PROPERTIES.Buffer} instance backed by the specified container.
          *
@@ -388,18 +385,13 @@ public class FMOD_REVERB_PROPERTIES extends Struct<FMOD_REVERB_PROPERTIES> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FMOD_REVERB_PROPERTIES getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FMOD_REVERB_PROPERTIES.class;
         }
 
         /** @return the value of the {@code DecayTime} field. */

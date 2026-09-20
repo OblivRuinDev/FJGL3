@@ -188,9 +188,6 @@ public class VkMicromapTriangleEXT extends VkMicromapTriangleKHR {
 
     /** An array of {@link VkMicromapTriangleEXT} structs. */
     public static class Buffer extends VkMicromapTriangleKHR.Buffer {
-
-        private static final VkMicromapTriangleEXT ELEMENT_FACTORY = VkMicromapTriangleEXT.create(-1L);
-
         /**
          * Creates a new {@code VkMicromapTriangleEXT.Buffer} instance backed by the specified container.
          *
@@ -213,18 +210,13 @@ public class VkMicromapTriangleEXT extends VkMicromapTriangleKHR {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMicromapTriangleEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMicromapTriangleEXT.class;
         }
 
         /** Sets the specified value to the {@code dataOffset} field. */

@@ -224,9 +224,6 @@ public class hb_variation_t extends Struct<hb_variation_t> implements NativeReso
 
     /** An array of {@link hb_variation_t} structs. */
     public static class Buffer extends StructBuffer<hb_variation_t, Buffer> implements NativeResource {
-
-        private static final hb_variation_t ELEMENT_FACTORY = hb_variation_t.create(-1L);
-
         /**
          * Creates a new {@code hb_variation_t.Buffer} instance backed by the specified container.
          *
@@ -249,18 +246,13 @@ public class hb_variation_t extends Struct<hb_variation_t> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected hb_variation_t getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return hb_variation_t.class;
         }
 
         /** @return the value of the {@code tag} field. */

@@ -419,9 +419,6 @@ public class VkSRTDataNV extends Struct<VkSRTDataNV> implements NativeResource {
 
     /** An array of {@link VkSRTDataNV} structs. */
     public static class Buffer extends StructBuffer<VkSRTDataNV, Buffer> implements NativeResource {
-
-        private static final VkSRTDataNV ELEMENT_FACTORY = VkSRTDataNV.create(-1L);
-
         /**
          * Creates a new {@code VkSRTDataNV.Buffer} instance backed by the specified container.
          *
@@ -444,18 +441,13 @@ public class VkSRTDataNV extends Struct<VkSRTDataNV> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSRTDataNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSRTDataNV.class;
         }
 
         /** @return the value of the {@code sx} field. */

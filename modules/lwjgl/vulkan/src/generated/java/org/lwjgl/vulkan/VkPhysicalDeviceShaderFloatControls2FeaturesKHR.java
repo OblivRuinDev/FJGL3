@@ -191,9 +191,6 @@ public class VkPhysicalDeviceShaderFloatControls2FeaturesKHR extends VkPhysicalD
 
     /** An array of {@link VkPhysicalDeviceShaderFloatControls2FeaturesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceShaderFloatControls2Features.Buffer {
-
-        private static final VkPhysicalDeviceShaderFloatControls2FeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceShaderFloatControls2FeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderFloatControls2FeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceShaderFloatControls2FeaturesKHR extends VkPhysicalD
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderFloatControls2FeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderFloatControls2FeaturesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

@@ -288,9 +288,6 @@ public class XrSpatialCapabilityConfigurationPlaneTrackingEXT extends Struct<XrS
 
     /** An array of {@link XrSpatialCapabilityConfigurationPlaneTrackingEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialCapabilityConfigurationPlaneTrackingEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialCapabilityConfigurationPlaneTrackingEXT ELEMENT_FACTORY = XrSpatialCapabilityConfigurationPlaneTrackingEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialCapabilityConfigurationPlaneTrackingEXT.Buffer} instance backed by the specified container.
          *
@@ -313,18 +310,13 @@ public class XrSpatialCapabilityConfigurationPlaneTrackingEXT extends Struct<XrS
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialCapabilityConfigurationPlaneTrackingEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialCapabilityConfigurationPlaneTrackingEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

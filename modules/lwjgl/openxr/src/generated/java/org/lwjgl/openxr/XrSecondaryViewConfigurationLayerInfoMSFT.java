@@ -293,9 +293,6 @@ public class XrSecondaryViewConfigurationLayerInfoMSFT extends Struct<XrSecondar
 
     /** An array of {@link XrSecondaryViewConfigurationLayerInfoMSFT} structs. */
     public static class Buffer extends StructBuffer<XrSecondaryViewConfigurationLayerInfoMSFT, Buffer> implements NativeResource {
-
-        private static final XrSecondaryViewConfigurationLayerInfoMSFT ELEMENT_FACTORY = XrSecondaryViewConfigurationLayerInfoMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrSecondaryViewConfigurationLayerInfoMSFT.Buffer} instance backed by the specified container.
          *
@@ -318,18 +315,13 @@ public class XrSecondaryViewConfigurationLayerInfoMSFT extends Struct<XrSecondar
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSecondaryViewConfigurationLayerInfoMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSecondaryViewConfigurationLayerInfoMSFT.class;
         }
 
         /** @return the value of the {@code type} field. */

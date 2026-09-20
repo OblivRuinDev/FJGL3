@@ -257,9 +257,6 @@ public class VkSubpassShadingPipelineCreateInfoHUAWEI extends Struct<VkSubpassSh
 
     /** An array of {@link VkSubpassShadingPipelineCreateInfoHUAWEI} structs. */
     public static class Buffer extends StructBuffer<VkSubpassShadingPipelineCreateInfoHUAWEI, Buffer> implements NativeResource {
-
-        private static final VkSubpassShadingPipelineCreateInfoHUAWEI ELEMENT_FACTORY = VkSubpassShadingPipelineCreateInfoHUAWEI.create(-1L);
-
         /**
          * Creates a new {@code VkSubpassShadingPipelineCreateInfoHUAWEI.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkSubpassShadingPipelineCreateInfoHUAWEI extends Struct<VkSubpassSh
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSubpassShadingPipelineCreateInfoHUAWEI getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSubpassShadingPipelineCreateInfoHUAWEI.class;
         }
 
         /** @return the value of the {@code sType} field. */

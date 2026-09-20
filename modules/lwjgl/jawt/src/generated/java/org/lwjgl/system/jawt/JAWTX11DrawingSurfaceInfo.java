@@ -135,9 +135,6 @@ public class JAWTX11DrawingSurfaceInfo extends Struct<JAWTX11DrawingSurfaceInfo>
 
     /** An array of {@link JAWTX11DrawingSurfaceInfo} structs. */
     public static class Buffer extends StructBuffer<JAWTX11DrawingSurfaceInfo, Buffer> {
-
-        private static final JAWTX11DrawingSurfaceInfo ELEMENT_FACTORY = JAWTX11DrawingSurfaceInfo.create(-1L);
-
         /**
          * Creates a new {@code JAWTX11DrawingSurfaceInfo.Buffer} instance backed by the specified container.
          *
@@ -160,18 +157,13 @@ public class JAWTX11DrawingSurfaceInfo extends Struct<JAWTX11DrawingSurfaceInfo>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected JAWTX11DrawingSurfaceInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return JAWTX11DrawingSurfaceInfo.class;
         }
 
         /** @return the value of the {@code drawable} field. */

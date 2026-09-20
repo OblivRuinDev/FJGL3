@@ -242,9 +242,6 @@ public class VkPhysicalDeviceInheritedViewportScissorFeaturesNV extends Struct<V
 
     /** An array of {@link VkPhysicalDeviceInheritedViewportScissorFeaturesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceInheritedViewportScissorFeaturesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceInheritedViewportScissorFeaturesNV ELEMENT_FACTORY = VkPhysicalDeviceInheritedViewportScissorFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceInheritedViewportScissorFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceInheritedViewportScissorFeaturesNV extends Struct<V
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceInheritedViewportScissorFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceInheritedViewportScissorFeaturesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

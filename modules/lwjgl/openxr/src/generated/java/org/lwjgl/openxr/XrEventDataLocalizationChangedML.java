@@ -283,9 +283,6 @@ public class XrEventDataLocalizationChangedML extends Struct<XrEventDataLocaliza
 
     /** An array of {@link XrEventDataLocalizationChangedML} structs. */
     public static class Buffer extends StructBuffer<XrEventDataLocalizationChangedML, Buffer> implements NativeResource {
-
-        private static final XrEventDataLocalizationChangedML ELEMENT_FACTORY = XrEventDataLocalizationChangedML.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataLocalizationChangedML.Buffer} instance backed by the specified container.
          *
@@ -308,18 +305,13 @@ public class XrEventDataLocalizationChangedML extends Struct<XrEventDataLocaliza
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataLocalizationChangedML getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataLocalizationChangedML.class;
         }
 
         /** @return the value of the {@code type} field. */

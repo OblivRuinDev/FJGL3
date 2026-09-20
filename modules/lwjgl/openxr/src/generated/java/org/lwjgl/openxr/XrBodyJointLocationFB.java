@@ -228,9 +228,6 @@ public class XrBodyJointLocationFB extends Struct<XrBodyJointLocationFB> impleme
 
     /** An array of {@link XrBodyJointLocationFB} structs. */
     public static class Buffer extends StructBuffer<XrBodyJointLocationFB, Buffer> implements NativeResource {
-
-        private static final XrBodyJointLocationFB ELEMENT_FACTORY = XrBodyJointLocationFB.create(-1L);
-
         /**
          * Creates a new {@code XrBodyJointLocationFB.Buffer} instance backed by the specified container.
          *
@@ -253,18 +250,13 @@ public class XrBodyJointLocationFB extends Struct<XrBodyJointLocationFB> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBodyJointLocationFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBodyJointLocationFB.class;
         }
 
         /** @return the value of the {@code locationFlags} field. */

@@ -284,9 +284,6 @@ public class XrBodyJointLocationsBD extends Struct<XrBodyJointLocationsBD> imple
 
     /** An array of {@link XrBodyJointLocationsBD} structs. */
     public static class Buffer extends StructBuffer<XrBodyJointLocationsBD, Buffer> implements NativeResource {
-
-        private static final XrBodyJointLocationsBD ELEMENT_FACTORY = XrBodyJointLocationsBD.create(-1L);
-
         /**
          * Creates a new {@code XrBodyJointLocationsBD.Buffer} instance backed by the specified container.
          *
@@ -309,18 +306,13 @@ public class XrBodyJointLocationsBD extends Struct<XrBodyJointLocationsBD> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBodyJointLocationsBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBodyJointLocationsBD.class;
         }
 
         /** @return the value of the {@code type} field. */

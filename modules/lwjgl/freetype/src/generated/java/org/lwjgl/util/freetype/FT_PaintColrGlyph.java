@@ -99,9 +99,6 @@ public class FT_PaintColrGlyph extends Struct<FT_PaintColrGlyph> {
 
     /** An array of {@link FT_PaintColrGlyph} structs. */
     public static class Buffer extends StructBuffer<FT_PaintColrGlyph, Buffer> {
-
-        private static final FT_PaintColrGlyph ELEMENT_FACTORY = FT_PaintColrGlyph.create(-1L);
-
         /**
          * Creates a new {@code FT_PaintColrGlyph.Buffer} instance backed by the specified container.
          *
@@ -124,18 +121,13 @@ public class FT_PaintColrGlyph extends Struct<FT_PaintColrGlyph> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_PaintColrGlyph getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_PaintColrGlyph.class;
         }
 
         /** @return the value of the {@code glyphID} field. */

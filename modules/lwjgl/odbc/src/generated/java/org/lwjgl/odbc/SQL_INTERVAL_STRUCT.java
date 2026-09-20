@@ -263,9 +263,6 @@ public class SQL_INTERVAL_STRUCT extends Struct<SQL_INTERVAL_STRUCT> implements 
 
     /** An array of {@link SQL_INTERVAL_STRUCT} structs. */
     public static class Buffer extends StructBuffer<SQL_INTERVAL_STRUCT, Buffer> implements NativeResource {
-
-        private static final SQL_INTERVAL_STRUCT ELEMENT_FACTORY = SQL_INTERVAL_STRUCT.create(-1L);
-
         /**
          * Creates a new {@code SQL_INTERVAL_STRUCT.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class SQL_INTERVAL_STRUCT extends Struct<SQL_INTERVAL_STRUCT> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SQL_INTERVAL_STRUCT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SQL_INTERVAL_STRUCT.class;
         }
 
         /** @return the value of the {@code interval_type} field. */

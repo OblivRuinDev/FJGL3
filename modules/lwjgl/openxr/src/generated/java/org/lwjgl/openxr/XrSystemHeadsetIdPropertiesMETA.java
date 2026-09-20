@@ -237,9 +237,6 @@ public class XrSystemHeadsetIdPropertiesMETA extends Struct<XrSystemHeadsetIdPro
 
     /** An array of {@link XrSystemHeadsetIdPropertiesMETA} structs. */
     public static class Buffer extends StructBuffer<XrSystemHeadsetIdPropertiesMETA, Buffer> implements NativeResource {
-
-        private static final XrSystemHeadsetIdPropertiesMETA ELEMENT_FACTORY = XrSystemHeadsetIdPropertiesMETA.create(-1L);
-
         /**
          * Creates a new {@code XrSystemHeadsetIdPropertiesMETA.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class XrSystemHeadsetIdPropertiesMETA extends Struct<XrSystemHeadsetIdPro
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemHeadsetIdPropertiesMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemHeadsetIdPropertiesMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

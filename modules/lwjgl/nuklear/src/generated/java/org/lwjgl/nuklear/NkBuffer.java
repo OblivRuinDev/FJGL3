@@ -267,9 +267,6 @@ public class NkBuffer extends Struct<NkBuffer> implements NativeResource {
 
     /** An array of {@link NkBuffer} structs. */
     public static class Buffer extends StructBuffer<NkBuffer, Buffer> implements NativeResource {
-
-        private static final NkBuffer ELEMENT_FACTORY = NkBuffer.create(-1L);
-
         /**
          * Creates a new {@code NkBuffer.Buffer} instance backed by the specified container.
          *
@@ -292,18 +289,13 @@ public class NkBuffer extends Struct<NkBuffer> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NkBuffer getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NkBuffer.class;
         }
 
         /** @return a {@link NkBufferMarker}.Buffer view of the {@code marker} field. */

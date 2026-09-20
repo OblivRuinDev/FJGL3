@@ -191,9 +191,6 @@ public class VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR extends VkPhysica
 
     /** An array of {@link VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceSamplerYcbcrConversionFeatures.Buffer {
-
-        private static final VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR ELEMENT_FACTORY = VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR extends VkPhysica
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

@@ -272,9 +272,6 @@ public class VkMappedMemoryRange extends Struct<VkMappedMemoryRange> implements 
 
     /** An array of {@link VkMappedMemoryRange} structs. */
     public static class Buffer extends StructBuffer<VkMappedMemoryRange, Buffer> implements NativeResource {
-
-        private static final VkMappedMemoryRange ELEMENT_FACTORY = VkMappedMemoryRange.create(-1L);
-
         /**
          * Creates a new {@code VkMappedMemoryRange.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkMappedMemoryRange extends Struct<VkMappedMemoryRange> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkMappedMemoryRange getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkMappedMemoryRange.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -223,9 +223,6 @@ public class VkXYColorEXT extends Struct<VkXYColorEXT> implements NativeResource
 
     /** An array of {@link VkXYColorEXT} structs. */
     public static class Buffer extends StructBuffer<VkXYColorEXT, Buffer> implements NativeResource {
-
-        private static final VkXYColorEXT ELEMENT_FACTORY = VkXYColorEXT.create(-1L);
-
         /**
          * Creates a new {@code VkXYColorEXT.Buffer} instance backed by the specified container.
          *
@@ -248,18 +245,13 @@ public class VkXYColorEXT extends Struct<VkXYColorEXT> implements NativeResource
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkXYColorEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkXYColorEXT.class;
         }
 
         /** @return the value of the {@code x} field. */

@@ -189,9 +189,6 @@ public class VkPhysicalDeviceDepthStencilResolvePropertiesKHR extends VkPhysical
 
     /** An array of {@link VkPhysicalDeviceDepthStencilResolvePropertiesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceDepthStencilResolveProperties.Buffer {
-
-        private static final VkPhysicalDeviceDepthStencilResolvePropertiesKHR ELEMENT_FACTORY = VkPhysicalDeviceDepthStencilResolvePropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDepthStencilResolvePropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -214,18 +211,13 @@ public class VkPhysicalDeviceDepthStencilResolvePropertiesKHR extends VkPhysical
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDepthStencilResolvePropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDepthStencilResolvePropertiesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

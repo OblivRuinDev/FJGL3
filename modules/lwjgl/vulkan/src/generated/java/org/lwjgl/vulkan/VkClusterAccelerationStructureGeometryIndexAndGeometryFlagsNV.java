@@ -236,9 +236,6 @@ public class VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV exten
 
     /** An array of {@link VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV} structs. */
     public static class Buffer extends StructBuffer<VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV, Buffer> implements NativeResource {
-
-        private static final VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV ELEMENT_FACTORY = VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV.create(-1L);
-
         /**
          * Creates a new {@code VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV exten
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV.class;
         }
 
         /** @return the value of the {@code geometryIndex} field. */

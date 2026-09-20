@@ -240,9 +240,6 @@ public class VkVideoEncodeH265QpKHR extends Struct<VkVideoEncodeH265QpKHR> imple
 
     /** An array of {@link VkVideoEncodeH265QpKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoEncodeH265QpKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoEncodeH265QpKHR ELEMENT_FACTORY = VkVideoEncodeH265QpKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoEncodeH265QpKHR.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class VkVideoEncodeH265QpKHR extends Struct<VkVideoEncodeH265QpKHR> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoEncodeH265QpKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoEncodeH265QpKHR.class;
         }
 
         /** @return the value of the {@code qpI} field. */

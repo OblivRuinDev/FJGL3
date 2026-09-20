@@ -154,9 +154,6 @@ public class CXIdxEntityRefInfo extends Struct<CXIdxEntityRefInfo> {
 
     /** An array of {@link CXIdxEntityRefInfo} structs. */
     public static class Buffer extends StructBuffer<CXIdxEntityRefInfo, Buffer> {
-
-        private static final CXIdxEntityRefInfo ELEMENT_FACTORY = CXIdxEntityRefInfo.create(-1L);
-
         /**
          * Creates a new {@code CXIdxEntityRefInfo.Buffer} instance backed by the specified container.
          *
@@ -179,18 +176,13 @@ public class CXIdxEntityRefInfo extends Struct<CXIdxEntityRefInfo> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXIdxEntityRefInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXIdxEntityRefInfo.class;
         }
 
         /** @return the value of the {@code kind} field. */

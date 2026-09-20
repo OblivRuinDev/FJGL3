@@ -263,9 +263,6 @@ public class XrSpatialComponentMesh3DListEXT extends Struct<XrSpatialComponentMe
 
     /** An array of {@link XrSpatialComponentMesh3DListEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialComponentMesh3DListEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialComponentMesh3DListEXT ELEMENT_FACTORY = XrSpatialComponentMesh3DListEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialComponentMesh3DListEXT.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class XrSpatialComponentMesh3DListEXT extends Struct<XrSpatialComponentMe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialComponentMesh3DListEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialComponentMesh3DListEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

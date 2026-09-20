@@ -236,9 +236,6 @@ public class VkPhysicalDeviceShaderLongVectorPropertiesEXT extends Struct<VkPhys
 
     /** An array of {@link VkPhysicalDeviceShaderLongVectorPropertiesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceShaderLongVectorPropertiesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceShaderLongVectorPropertiesEXT ELEMENT_FACTORY = VkPhysicalDeviceShaderLongVectorPropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderLongVectorPropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkPhysicalDeviceShaderLongVectorPropertiesEXT extends Struct<VkPhys
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderLongVectorPropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderLongVectorPropertiesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

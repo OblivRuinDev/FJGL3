@@ -275,9 +275,6 @@ public class VkVideoDecodeH264InlineSessionParametersInfoKHR extends Struct<VkVi
 
     /** An array of {@link VkVideoDecodeH264InlineSessionParametersInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoDecodeH264InlineSessionParametersInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoDecodeH264InlineSessionParametersInfoKHR ELEMENT_FACTORY = VkVideoDecodeH264InlineSessionParametersInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoDecodeH264InlineSessionParametersInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -300,18 +297,13 @@ public class VkVideoDecodeH264InlineSessionParametersInfoKHR extends Struct<VkVi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoDecodeH264InlineSessionParametersInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoDecodeH264InlineSessionParametersInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -276,9 +276,6 @@ public class VkPhysicalDeviceExternalBufferInfo extends Struct<VkPhysicalDeviceE
 
     /** An array of {@link VkPhysicalDeviceExternalBufferInfo} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceExternalBufferInfo, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceExternalBufferInfo ELEMENT_FACTORY = VkPhysicalDeviceExternalBufferInfo.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceExternalBufferInfo.Buffer} instance backed by the specified container.
          *
@@ -301,18 +298,13 @@ public class VkPhysicalDeviceExternalBufferInfo extends Struct<VkPhysicalDeviceE
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceExternalBufferInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceExternalBufferInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

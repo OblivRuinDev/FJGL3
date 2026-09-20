@@ -237,9 +237,6 @@ public class VkExternalBufferProperties extends Struct<VkExternalBufferPropertie
 
     /** An array of {@link VkExternalBufferProperties} structs. */
     public static class Buffer extends StructBuffer<VkExternalBufferProperties, Buffer> implements NativeResource {
-
-        private static final VkExternalBufferProperties ELEMENT_FACTORY = VkExternalBufferProperties.create(-1L);
-
         /**
          * Creates a new {@code VkExternalBufferProperties.Buffer} instance backed by the specified container.
          *
@@ -262,18 +259,13 @@ public class VkExternalBufferProperties extends Struct<VkExternalBufferPropertie
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExternalBufferProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExternalBufferProperties.class;
         }
 
         /** @return the value of the {@code sType} field. */

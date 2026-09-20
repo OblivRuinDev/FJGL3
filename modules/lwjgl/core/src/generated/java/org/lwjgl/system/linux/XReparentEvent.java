@@ -351,9 +351,6 @@ public class XReparentEvent extends Struct<XReparentEvent> implements NativeReso
 
     /** An array of {@link XReparentEvent} structs. */
     public static class Buffer extends StructBuffer<XReparentEvent, Buffer> implements NativeResource {
-
-        private static final XReparentEvent ELEMENT_FACTORY = XReparentEvent.create(-1L);
-
         /**
          * Creates a new {@code XReparentEvent.Buffer} instance backed by the specified container.
          *
@@ -376,18 +373,13 @@ public class XReparentEvent extends Struct<XReparentEvent> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XReparentEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XReparentEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

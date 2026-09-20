@@ -201,9 +201,6 @@ public class VkFormatProperties extends Struct<VkFormatProperties> implements Na
 
     /** An array of {@link VkFormatProperties} structs. */
     public static class Buffer extends StructBuffer<VkFormatProperties, Buffer> implements NativeResource {
-
-        private static final VkFormatProperties ELEMENT_FACTORY = VkFormatProperties.create(-1L);
-
         /**
          * Creates a new {@code VkFormatProperties.Buffer} instance backed by the specified container.
          *
@@ -226,18 +223,13 @@ public class VkFormatProperties extends Struct<VkFormatProperties> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkFormatProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkFormatProperties.class;
         }
 
         /** @return the value of the {@code linearTilingFeatures} field. */

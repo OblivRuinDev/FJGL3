@@ -286,9 +286,6 @@ public class IOURingAttrPI extends Struct<IOURingAttrPI> implements NativeResour
 
     /** An array of {@link IOURingAttrPI} structs. */
     public static class Buffer extends StructBuffer<IOURingAttrPI, Buffer> implements NativeResource {
-
-        private static final IOURingAttrPI ELEMENT_FACTORY = IOURingAttrPI.create(-1L);
-
         /**
          * Creates a new {@code IOURingAttrPI.Buffer} instance backed by the specified container.
          *
@@ -311,18 +308,13 @@ public class IOURingAttrPI extends Struct<IOURingAttrPI> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingAttrPI getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingAttrPI.class;
         }
 
         /** @return the value of the {@code flags} field. */

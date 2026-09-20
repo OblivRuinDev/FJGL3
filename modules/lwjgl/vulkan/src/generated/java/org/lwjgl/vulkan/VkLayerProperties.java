@@ -222,9 +222,6 @@ public class VkLayerProperties extends Struct<VkLayerProperties> implements Nati
 
     /** An array of {@link VkLayerProperties} structs. */
     public static class Buffer extends StructBuffer<VkLayerProperties, Buffer> implements NativeResource {
-
-        private static final VkLayerProperties ELEMENT_FACTORY = VkLayerProperties.create(-1L);
-
         /**
          * Creates a new {@code VkLayerProperties.Buffer} instance backed by the specified container.
          *
@@ -247,18 +244,13 @@ public class VkLayerProperties extends Struct<VkLayerProperties> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkLayerProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkLayerProperties.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code layerName} field. */

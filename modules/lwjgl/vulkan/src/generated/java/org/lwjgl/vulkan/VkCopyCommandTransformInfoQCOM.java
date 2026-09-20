@@ -242,9 +242,6 @@ public class VkCopyCommandTransformInfoQCOM extends Struct<VkCopyCommandTransfor
 
     /** An array of {@link VkCopyCommandTransformInfoQCOM} structs. */
     public static class Buffer extends StructBuffer<VkCopyCommandTransformInfoQCOM, Buffer> implements NativeResource {
-
-        private static final VkCopyCommandTransformInfoQCOM ELEMENT_FACTORY = VkCopyCommandTransformInfoQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkCopyCommandTransformInfoQCOM.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkCopyCommandTransformInfoQCOM extends Struct<VkCopyCommandTransfor
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCopyCommandTransformInfoQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCopyCommandTransformInfoQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

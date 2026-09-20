@@ -191,9 +191,6 @@ public class VkPipelineTessellationDomainOriginStateCreateInfoKHR extends VkPipe
 
     /** An array of {@link VkPipelineTessellationDomainOriginStateCreateInfoKHR} structs. */
     public static class Buffer extends VkPipelineTessellationDomainOriginStateCreateInfo.Buffer {
-
-        private static final VkPipelineTessellationDomainOriginStateCreateInfoKHR ELEMENT_FACTORY = VkPipelineTessellationDomainOriginStateCreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineTessellationDomainOriginStateCreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPipelineTessellationDomainOriginStateCreateInfoKHR extends VkPipe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineTessellationDomainOriginStateCreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineTessellationDomainOriginStateCreateInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

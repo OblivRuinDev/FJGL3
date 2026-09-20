@@ -308,9 +308,6 @@ public class VkCopyBufferToImageInfo2 extends Struct<VkCopyBufferToImageInfo2> i
 
     /** An array of {@link VkCopyBufferToImageInfo2} structs. */
     public static class Buffer extends StructBuffer<VkCopyBufferToImageInfo2, Buffer> implements NativeResource {
-
-        private static final VkCopyBufferToImageInfo2 ELEMENT_FACTORY = VkCopyBufferToImageInfo2.create(-1L);
-
         /**
          * Creates a new {@code VkCopyBufferToImageInfo2.Buffer} instance backed by the specified container.
          *
@@ -333,18 +330,13 @@ public class VkCopyBufferToImageInfo2 extends Struct<VkCopyBufferToImageInfo2> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCopyBufferToImageInfo2 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCopyBufferToImageInfo2.class;
         }
 
         /** @return the value of the {@code sType} field. */

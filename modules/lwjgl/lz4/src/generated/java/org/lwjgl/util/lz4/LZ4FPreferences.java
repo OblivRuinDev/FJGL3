@@ -291,9 +291,6 @@ public class LZ4FPreferences extends Struct<LZ4FPreferences> implements NativeRe
 
     /** An array of {@link LZ4FPreferences} structs. */
     public static class Buffer extends StructBuffer<LZ4FPreferences, Buffer> implements NativeResource {
-
-        private static final LZ4FPreferences ELEMENT_FACTORY = LZ4FPreferences.create(-1L);
-
         /**
          * Creates a new {@code LZ4FPreferences.Buffer} instance backed by the specified container.
          *
@@ -316,18 +313,13 @@ public class LZ4FPreferences extends Struct<LZ4FPreferences> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected LZ4FPreferences getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return LZ4FPreferences.class;
         }
 
         /** @return a {@link LZ4FFrameInfo} view of the {@code frameInfo} field. */

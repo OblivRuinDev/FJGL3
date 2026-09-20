@@ -266,9 +266,6 @@ public class XrPassthroughColorMapMonoToRgbaFB extends Struct<XrPassthroughColor
 
     /** An array of {@link XrPassthroughColorMapMonoToRgbaFB} structs. */
     public static class Buffer extends StructBuffer<XrPassthroughColorMapMonoToRgbaFB, Buffer> implements NativeResource {
-
-        private static final XrPassthroughColorMapMonoToRgbaFB ELEMENT_FACTORY = XrPassthroughColorMapMonoToRgbaFB.create(-1L);
-
         /**
          * Creates a new {@code XrPassthroughColorMapMonoToRgbaFB.Buffer} instance backed by the specified container.
          *
@@ -291,18 +288,13 @@ public class XrPassthroughColorMapMonoToRgbaFB extends Struct<XrPassthroughColor
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrPassthroughColorMapMonoToRgbaFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrPassthroughColorMapMonoToRgbaFB.class;
         }
 
         /** @return the value of the {@code type} field. */

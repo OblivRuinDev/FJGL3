@@ -191,9 +191,6 @@ public class VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT extends VkPhy
 
     /** An array of {@link VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT} structs. */
     public static class Buffer extends VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR.Buffer {
-
-        private static final VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT ELEMENT_FACTORY = VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT extends VkPhy
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

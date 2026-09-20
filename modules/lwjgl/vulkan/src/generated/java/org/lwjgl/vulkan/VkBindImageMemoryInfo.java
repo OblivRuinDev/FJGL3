@@ -286,9 +286,6 @@ public class VkBindImageMemoryInfo extends Struct<VkBindImageMemoryInfo> impleme
 
     /** An array of {@link VkBindImageMemoryInfo} structs. */
     public static class Buffer extends StructBuffer<VkBindImageMemoryInfo, Buffer> implements NativeResource {
-
-        private static final VkBindImageMemoryInfo ELEMENT_FACTORY = VkBindImageMemoryInfo.create(-1L);
-
         /**
          * Creates a new {@code VkBindImageMemoryInfo.Buffer} instance backed by the specified container.
          *
@@ -311,18 +308,13 @@ public class VkBindImageMemoryInfo extends Struct<VkBindImageMemoryInfo> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBindImageMemoryInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBindImageMemoryInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

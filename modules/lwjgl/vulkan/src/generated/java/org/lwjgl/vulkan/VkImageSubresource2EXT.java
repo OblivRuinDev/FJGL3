@@ -194,9 +194,6 @@ public class VkImageSubresource2EXT extends VkImageSubresource2 {
 
     /** An array of {@link VkImageSubresource2EXT} structs. */
     public static class Buffer extends VkImageSubresource2.Buffer {
-
-        private static final VkImageSubresource2EXT ELEMENT_FACTORY = VkImageSubresource2EXT.create(-1L);
-
         /**
          * Creates a new {@code VkImageSubresource2EXT.Buffer} instance backed by the specified container.
          *
@@ -219,18 +216,13 @@ public class VkImageSubresource2EXT extends VkImageSubresource2 {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageSubresource2EXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageSubresource2EXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

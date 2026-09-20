@@ -272,9 +272,6 @@ public class XrSceneMeshVertexBufferMSFT extends Struct<XrSceneMeshVertexBufferM
 
     /** An array of {@link XrSceneMeshVertexBufferMSFT} structs. */
     public static class Buffer extends StructBuffer<XrSceneMeshVertexBufferMSFT, Buffer> implements NativeResource {
-
-        private static final XrSceneMeshVertexBufferMSFT ELEMENT_FACTORY = XrSceneMeshVertexBufferMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrSceneMeshVertexBufferMSFT.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class XrSceneMeshVertexBufferMSFT extends Struct<XrSceneMeshVertexBufferM
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSceneMeshVertexBufferMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSceneMeshVertexBufferMSFT.class;
         }
 
         /** @return the value of the {@code type} field. */

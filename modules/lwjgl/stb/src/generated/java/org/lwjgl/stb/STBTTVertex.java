@@ -238,9 +238,6 @@ public class STBTTVertex extends Struct<STBTTVertex> implements NativeResource {
 
     /** An array of {@link STBTTVertex} structs. */
     public static class Buffer extends StructBuffer<STBTTVertex, Buffer> implements NativeResource {
-
-        private static final STBTTVertex ELEMENT_FACTORY = STBTTVertex.create(-1L);
-
         /**
          * Creates a new {@code STBTTVertex.Buffer} instance backed by the specified container.
          *
@@ -263,18 +260,13 @@ public class STBTTVertex extends Struct<STBTTVertex> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected STBTTVertex getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return STBTTVertex.class;
         }
 
         /** @return the value of the {@code x} field. */

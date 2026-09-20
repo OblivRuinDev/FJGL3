@@ -285,9 +285,6 @@ public class XrVirtualKeyboardSpaceCreateInfoMETA extends Struct<XrVirtualKeyboa
 
     /** An array of {@link XrVirtualKeyboardSpaceCreateInfoMETA} structs. */
     public static class Buffer extends StructBuffer<XrVirtualKeyboardSpaceCreateInfoMETA, Buffer> implements NativeResource {
-
-        private static final XrVirtualKeyboardSpaceCreateInfoMETA ELEMENT_FACTORY = XrVirtualKeyboardSpaceCreateInfoMETA.create(-1L);
-
         /**
          * Creates a new {@code XrVirtualKeyboardSpaceCreateInfoMETA.Buffer} instance backed by the specified container.
          *
@@ -310,18 +307,13 @@ public class XrVirtualKeyboardSpaceCreateInfoMETA extends Struct<XrVirtualKeyboa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrVirtualKeyboardSpaceCreateInfoMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrVirtualKeyboardSpaceCreateInfoMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

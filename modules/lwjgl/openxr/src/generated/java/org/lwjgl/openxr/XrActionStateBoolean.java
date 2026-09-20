@@ -287,9 +287,6 @@ public class XrActionStateBoolean extends Struct<XrActionStateBoolean> implement
 
     /** An array of {@link XrActionStateBoolean} structs. */
     public static class Buffer extends StructBuffer<XrActionStateBoolean, Buffer> implements NativeResource {
-
-        private static final XrActionStateBoolean ELEMENT_FACTORY = XrActionStateBoolean.create(-1L);
-
         /**
          * Creates a new {@code XrActionStateBoolean.Buffer} instance backed by the specified container.
          *
@@ -312,18 +309,13 @@ public class XrActionStateBoolean extends Struct<XrActionStateBoolean> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrActionStateBoolean getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrActionStateBoolean.class;
         }
 
         /** @return the value of the {@code type} field. */

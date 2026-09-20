@@ -108,9 +108,6 @@ public class FT_ColorIndex extends Struct<FT_ColorIndex> {
 
     /** An array of {@link FT_ColorIndex} structs. */
     public static class Buffer extends StructBuffer<FT_ColorIndex, Buffer> {
-
-        private static final FT_ColorIndex ELEMENT_FACTORY = FT_ColorIndex.create(-1L);
-
         /**
          * Creates a new {@code FT_ColorIndex.Buffer} instance backed by the specified container.
          *
@@ -133,18 +130,13 @@ public class FT_ColorIndex extends Struct<FT_ColorIndex> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_ColorIndex getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_ColorIndex.class;
         }
 
         /** @return the value of the {@code palette_index} field. */

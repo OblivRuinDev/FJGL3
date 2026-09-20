@@ -206,9 +206,6 @@ public class StdVideoVP9ColorConfigFlags extends Struct<StdVideoVP9ColorConfigFl
 
     /** An array of {@link StdVideoVP9ColorConfigFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoVP9ColorConfigFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoVP9ColorConfigFlags ELEMENT_FACTORY = StdVideoVP9ColorConfigFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoVP9ColorConfigFlags.Buffer} instance backed by the specified container.
          *
@@ -231,18 +228,13 @@ public class StdVideoVP9ColorConfigFlags extends Struct<StdVideoVP9ColorConfigFl
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoVP9ColorConfigFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoVP9ColorConfigFlags.class;
         }
 
         /** @return the value of the {@code color_range} field. */

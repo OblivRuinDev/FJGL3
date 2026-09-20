@@ -242,9 +242,6 @@ public class VkPipelineCompilerControlCreateInfoAMD extends Struct<VkPipelineCom
 
     /** An array of {@link VkPipelineCompilerControlCreateInfoAMD} structs. */
     public static class Buffer extends StructBuffer<VkPipelineCompilerControlCreateInfoAMD, Buffer> implements NativeResource {
-
-        private static final VkPipelineCompilerControlCreateInfoAMD ELEMENT_FACTORY = VkPipelineCompilerControlCreateInfoAMD.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineCompilerControlCreateInfoAMD.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPipelineCompilerControlCreateInfoAMD extends Struct<VkPipelineCom
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineCompilerControlCreateInfoAMD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineCompilerControlCreateInfoAMD.class;
         }
 
         /** @return the value of the {@code sType} field. */

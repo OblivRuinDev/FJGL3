@@ -272,9 +272,6 @@ public class XrControllerModelStateMSFT extends Struct<XrControllerModelStateMSF
 
     /** An array of {@link XrControllerModelStateMSFT} structs. */
     public static class Buffer extends StructBuffer<XrControllerModelStateMSFT, Buffer> implements NativeResource {
-
-        private static final XrControllerModelStateMSFT ELEMENT_FACTORY = XrControllerModelStateMSFT.create(-1L);
-
         /**
          * Creates a new {@code XrControllerModelStateMSFT.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class XrControllerModelStateMSFT extends Struct<XrControllerModelStateMSF
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrControllerModelStateMSFT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrControllerModelStateMSFT.class;
         }
 
         /** @return the value of the {@code type} field. */

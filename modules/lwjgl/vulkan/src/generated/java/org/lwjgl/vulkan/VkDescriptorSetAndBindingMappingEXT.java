@@ -322,9 +322,6 @@ public class VkDescriptorSetAndBindingMappingEXT extends Struct<VkDescriptorSetA
 
     /** An array of {@link VkDescriptorSetAndBindingMappingEXT} structs. */
     public static class Buffer extends StructBuffer<VkDescriptorSetAndBindingMappingEXT, Buffer> implements NativeResource {
-
-        private static final VkDescriptorSetAndBindingMappingEXT ELEMENT_FACTORY = VkDescriptorSetAndBindingMappingEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDescriptorSetAndBindingMappingEXT.Buffer} instance backed by the specified container.
          *
@@ -347,18 +344,13 @@ public class VkDescriptorSetAndBindingMappingEXT extends Struct<VkDescriptorSetA
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDescriptorSetAndBindingMappingEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDescriptorSetAndBindingMappingEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

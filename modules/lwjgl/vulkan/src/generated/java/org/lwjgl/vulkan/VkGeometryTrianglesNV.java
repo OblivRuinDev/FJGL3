@@ -392,9 +392,6 @@ public class VkGeometryTrianglesNV extends Struct<VkGeometryTrianglesNV> impleme
 
     /** An array of {@link VkGeometryTrianglesNV} structs. */
     public static class Buffer extends StructBuffer<VkGeometryTrianglesNV, Buffer> implements NativeResource {
-
-        private static final VkGeometryTrianglesNV ELEMENT_FACTORY = VkGeometryTrianglesNV.create(-1L);
-
         /**
          * Creates a new {@code VkGeometryTrianglesNV.Buffer} instance backed by the specified container.
          *
@@ -417,18 +414,13 @@ public class VkGeometryTrianglesNV extends Struct<VkGeometryTrianglesNV> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkGeometryTrianglesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkGeometryTrianglesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -100,9 +100,6 @@ public class hwloc_topology_misc_support extends Struct<hwloc_topology_misc_supp
 
     /** An array of {@link hwloc_topology_misc_support} structs. */
     public static class Buffer extends StructBuffer<hwloc_topology_misc_support, Buffer> {
-
-        private static final hwloc_topology_misc_support ELEMENT_FACTORY = hwloc_topology_misc_support.create(-1L);
-
         /**
          * Creates a new {@code hwloc_topology_misc_support.Buffer} instance backed by the specified container.
          *
@@ -125,18 +122,13 @@ public class hwloc_topology_misc_support extends Struct<hwloc_topology_misc_supp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected hwloc_topology_misc_support getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return hwloc_topology_misc_support.class;
         }
 
         /** @return the value of the {@code imported_support} field. */

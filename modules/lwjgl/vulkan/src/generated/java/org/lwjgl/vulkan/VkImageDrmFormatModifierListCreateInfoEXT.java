@@ -263,9 +263,6 @@ public class VkImageDrmFormatModifierListCreateInfoEXT extends Struct<VkImageDrm
 
     /** An array of {@link VkImageDrmFormatModifierListCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkImageDrmFormatModifierListCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkImageDrmFormatModifierListCreateInfoEXT ELEMENT_FACTORY = VkImageDrmFormatModifierListCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkImageDrmFormatModifierListCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class VkImageDrmFormatModifierListCreateInfoEXT extends Struct<VkImageDrm
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageDrmFormatModifierListCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageDrmFormatModifierListCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

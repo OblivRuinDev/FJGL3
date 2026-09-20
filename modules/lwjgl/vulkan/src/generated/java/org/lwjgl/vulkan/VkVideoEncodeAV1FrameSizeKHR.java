@@ -240,9 +240,6 @@ public class VkVideoEncodeAV1FrameSizeKHR extends Struct<VkVideoEncodeAV1FrameSi
 
     /** An array of {@link VkVideoEncodeAV1FrameSizeKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoEncodeAV1FrameSizeKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoEncodeAV1FrameSizeKHR ELEMENT_FACTORY = VkVideoEncodeAV1FrameSizeKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoEncodeAV1FrameSizeKHR.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class VkVideoEncodeAV1FrameSizeKHR extends Struct<VkVideoEncodeAV1FrameSi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoEncodeAV1FrameSizeKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoEncodeAV1FrameSizeKHR.class;
         }
 
         /** @return the value of the {@code intraFrameSize} field. */

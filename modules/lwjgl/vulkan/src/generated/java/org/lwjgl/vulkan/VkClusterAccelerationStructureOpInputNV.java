@@ -228,9 +228,6 @@ public class VkClusterAccelerationStructureOpInputNV extends Struct<VkClusterAcc
 
     /** An array of {@link VkClusterAccelerationStructureOpInputNV} structs. */
     public static class Buffer extends StructBuffer<VkClusterAccelerationStructureOpInputNV, Buffer> implements NativeResource {
-
-        private static final VkClusterAccelerationStructureOpInputNV ELEMENT_FACTORY = VkClusterAccelerationStructureOpInputNV.create(-1L);
-
         /**
          * Creates a new {@code VkClusterAccelerationStructureOpInputNV.Buffer} instance backed by the specified container.
          *
@@ -253,18 +250,13 @@ public class VkClusterAccelerationStructureOpInputNV extends Struct<VkClusterAcc
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkClusterAccelerationStructureOpInputNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkClusterAccelerationStructureOpInputNV.class;
         }
 
         /** @return a {@link VkClusterAccelerationStructureClustersBottomLevelInputNV} view of the struct pointed to by the {@code pClustersBottomLevel} field. */

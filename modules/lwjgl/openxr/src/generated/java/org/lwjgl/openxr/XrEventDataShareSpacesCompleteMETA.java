@@ -255,9 +255,6 @@ public class XrEventDataShareSpacesCompleteMETA extends Struct<XrEventDataShareS
 
     /** An array of {@link XrEventDataShareSpacesCompleteMETA} structs. */
     public static class Buffer extends StructBuffer<XrEventDataShareSpacesCompleteMETA, Buffer> implements NativeResource {
-
-        private static final XrEventDataShareSpacesCompleteMETA ELEMENT_FACTORY = XrEventDataShareSpacesCompleteMETA.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataShareSpacesCompleteMETA.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class XrEventDataShareSpacesCompleteMETA extends Struct<XrEventDataShareS
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataShareSpacesCompleteMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataShareSpacesCompleteMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

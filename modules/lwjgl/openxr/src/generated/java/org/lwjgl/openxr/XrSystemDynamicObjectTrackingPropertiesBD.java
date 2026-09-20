@@ -236,9 +236,6 @@ public class XrSystemDynamicObjectTrackingPropertiesBD extends Struct<XrSystemDy
 
     /** An array of {@link XrSystemDynamicObjectTrackingPropertiesBD} structs. */
     public static class Buffer extends StructBuffer<XrSystemDynamicObjectTrackingPropertiesBD, Buffer> implements NativeResource {
-
-        private static final XrSystemDynamicObjectTrackingPropertiesBD ELEMENT_FACTORY = XrSystemDynamicObjectTrackingPropertiesBD.create(-1L);
-
         /**
          * Creates a new {@code XrSystemDynamicObjectTrackingPropertiesBD.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrSystemDynamicObjectTrackingPropertiesBD extends Struct<XrSystemDy
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemDynamicObjectTrackingPropertiesBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemDynamicObjectTrackingPropertiesBD.class;
         }
 
         /** @return the value of the {@code type} field. */

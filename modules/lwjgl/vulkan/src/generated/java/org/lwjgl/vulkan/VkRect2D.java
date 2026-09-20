@@ -230,9 +230,6 @@ public class VkRect2D extends Struct<VkRect2D> implements NativeResource {
 
     /** An array of {@link VkRect2D} structs. */
     public static class Buffer extends StructBuffer<VkRect2D, Buffer> implements NativeResource {
-
-        private static final VkRect2D ELEMENT_FACTORY = VkRect2D.create(-1L);
-
         /**
          * Creates a new {@code VkRect2D.Buffer} instance backed by the specified container.
          *
@@ -255,18 +252,13 @@ public class VkRect2D extends Struct<VkRect2D> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRect2D getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRect2D.class;
         }
 
         /** @return a {@link VkOffset2D} view of the {@code offset} field. */

@@ -240,9 +240,6 @@ public class SQL_TIME_STRUCT extends Struct<SQL_TIME_STRUCT> implements NativeRe
 
     /** An array of {@link SQL_TIME_STRUCT} structs. */
     public static class Buffer extends StructBuffer<SQL_TIME_STRUCT, Buffer> implements NativeResource {
-
-        private static final SQL_TIME_STRUCT ELEMENT_FACTORY = SQL_TIME_STRUCT.create(-1L);
-
         /**
          * Creates a new {@code SQL_TIME_STRUCT.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class SQL_TIME_STRUCT extends Struct<SQL_TIME_STRUCT> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SQL_TIME_STRUCT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SQL_TIME_STRUCT.class;
         }
 
         /** @return the value of the {@code hour} field. */

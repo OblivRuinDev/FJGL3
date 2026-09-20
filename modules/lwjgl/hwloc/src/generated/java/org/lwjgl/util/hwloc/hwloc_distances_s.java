@@ -211,9 +211,6 @@ public class hwloc_distances_s extends Struct<hwloc_distances_s> implements Nati
 
     /** An array of {@link hwloc_distances_s} structs. */
     public static class Buffer extends StructBuffer<hwloc_distances_s, Buffer> implements NativeResource {
-
-        private static final hwloc_distances_s ELEMENT_FACTORY = hwloc_distances_s.create(-1L);
-
         /**
          * Creates a new {@code hwloc_distances_s.Buffer} instance backed by the specified container.
          *
@@ -236,18 +233,13 @@ public class hwloc_distances_s extends Struct<hwloc_distances_s> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected hwloc_distances_s getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return hwloc_distances_s.class;
         }
 
         /** @return the value of the {@code nbobjs} field. */

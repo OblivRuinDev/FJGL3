@@ -257,9 +257,6 @@ public class VkAmigoProfilingSubmitInfoSEC extends Struct<VkAmigoProfilingSubmit
 
     /** An array of {@link VkAmigoProfilingSubmitInfoSEC} structs. */
     public static class Buffer extends StructBuffer<VkAmigoProfilingSubmitInfoSEC, Buffer> implements NativeResource {
-
-        private static final VkAmigoProfilingSubmitInfoSEC ELEMENT_FACTORY = VkAmigoProfilingSubmitInfoSEC.create(-1L);
-
         /**
          * Creates a new {@code VkAmigoProfilingSubmitInfoSEC.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkAmigoProfilingSubmitInfoSEC extends Struct<VkAmigoProfilingSubmit
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAmigoProfilingSubmitInfoSEC getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAmigoProfilingSubmitInfoSEC.class;
         }
 
         /** @return the value of the {@code sType} field. */

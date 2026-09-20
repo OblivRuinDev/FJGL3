@@ -225,9 +225,6 @@ public class XrExtent2Di extends Struct<XrExtent2Di> implements NativeResource {
 
     /** An array of {@link XrExtent2Di} structs. */
     public static class Buffer extends StructBuffer<XrExtent2Di, Buffer> implements NativeResource {
-
-        private static final XrExtent2Di ELEMENT_FACTORY = XrExtent2Di.create(-1L);
-
         /**
          * Creates a new {@code XrExtent2Di.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class XrExtent2Di extends Struct<XrExtent2Di> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrExtent2Di getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrExtent2Di.class;
         }
 
         /** @return the value of the {@code width} field. */

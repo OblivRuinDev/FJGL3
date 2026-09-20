@@ -242,9 +242,6 @@ public class XrPerformanceMetricsStateANDROID extends Struct<XrPerformanceMetric
 
     /** An array of {@link XrPerformanceMetricsStateANDROID} structs. */
     public static class Buffer extends StructBuffer<XrPerformanceMetricsStateANDROID, Buffer> implements NativeResource {
-
-        private static final XrPerformanceMetricsStateANDROID ELEMENT_FACTORY = XrPerformanceMetricsStateANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrPerformanceMetricsStateANDROID.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrPerformanceMetricsStateANDROID extends Struct<XrPerformanceMetric
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrPerformanceMetricsStateANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrPerformanceMetricsStateANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

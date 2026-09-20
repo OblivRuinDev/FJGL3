@@ -242,9 +242,6 @@ public class VkPhysicalDeviceOpticalFlowFeaturesNV extends Struct<VkPhysicalDevi
 
     /** An array of {@link VkPhysicalDeviceOpticalFlowFeaturesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceOpticalFlowFeaturesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceOpticalFlowFeaturesNV ELEMENT_FACTORY = VkPhysicalDeviceOpticalFlowFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceOpticalFlowFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceOpticalFlowFeaturesNV extends Struct<VkPhysicalDevi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceOpticalFlowFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceOpticalFlowFeaturesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

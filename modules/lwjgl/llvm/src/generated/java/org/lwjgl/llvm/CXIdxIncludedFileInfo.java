@@ -150,9 +150,6 @@ public class CXIdxIncludedFileInfo extends Struct<CXIdxIncludedFileInfo> {
 
     /** An array of {@link CXIdxIncludedFileInfo} structs. */
     public static class Buffer extends StructBuffer<CXIdxIncludedFileInfo, Buffer> {
-
-        private static final CXIdxIncludedFileInfo ELEMENT_FACTORY = CXIdxIncludedFileInfo.create(-1L);
-
         /**
          * Creates a new {@code CXIdxIncludedFileInfo.Buffer} instance backed by the specified container.
          *
@@ -175,18 +172,13 @@ public class CXIdxIncludedFileInfo extends Struct<CXIdxIncludedFileInfo> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXIdxIncludedFileInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXIdxIncludedFileInfo.class;
         }
 
         /** @return a {@link CXIdxLoc} view of the {@code hashLoc} field. */

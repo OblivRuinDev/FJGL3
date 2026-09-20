@@ -232,9 +232,6 @@ public class IOURingRSRCUpdate extends Struct<IOURingRSRCUpdate> implements Nati
 
     /** An array of {@link IOURingRSRCUpdate} structs. */
     public static class Buffer extends StructBuffer<IOURingRSRCUpdate, Buffer> implements NativeResource {
-
-        private static final IOURingRSRCUpdate ELEMENT_FACTORY = IOURingRSRCUpdate.create(-1L);
-
         /**
          * Creates a new {@code IOURingRSRCUpdate.Buffer} instance backed by the specified container.
          *
@@ -257,18 +254,13 @@ public class IOURingRSRCUpdate extends Struct<IOURingRSRCUpdate> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingRSRCUpdate getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingRSRCUpdate.class;
         }
 
         /** @return the value of the {@code offset} field. */

@@ -184,9 +184,6 @@ public class CXIdxContainerInfo extends Struct<CXIdxContainerInfo> implements Na
 
     /** An array of {@link CXIdxContainerInfo} structs. */
     public static class Buffer extends StructBuffer<CXIdxContainerInfo, Buffer> implements NativeResource {
-
-        private static final CXIdxContainerInfo ELEMENT_FACTORY = CXIdxContainerInfo.create(-1L);
-
         /**
          * Creates a new {@code CXIdxContainerInfo.Buffer} instance backed by the specified container.
          *
@@ -209,18 +206,13 @@ public class CXIdxContainerInfo extends Struct<CXIdxContainerInfo> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXIdxContainerInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXIdxContainerInfo.class;
         }
 
         /** @return a {@link CXCursor} view of the {@code cursor} field. */

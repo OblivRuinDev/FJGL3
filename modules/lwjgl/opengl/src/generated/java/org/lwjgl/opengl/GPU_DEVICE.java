@@ -232,9 +232,6 @@ public class GPU_DEVICE extends Struct<GPU_DEVICE> implements NativeResource {
 
     /** An array of {@link GPU_DEVICE} structs. */
     public static class Buffer extends StructBuffer<GPU_DEVICE, Buffer> implements NativeResource {
-
-        private static final GPU_DEVICE ELEMENT_FACTORY = GPU_DEVICE.create(-1L);
-
         /**
          * Creates a new {@code GPU_DEVICE.Buffer} instance backed by the specified container.
          *
@@ -257,18 +254,13 @@ public class GPU_DEVICE extends Struct<GPU_DEVICE> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected GPU_DEVICE getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return GPU_DEVICE.class;
         }
 
         /** @return the value of the {@code cb} field. */

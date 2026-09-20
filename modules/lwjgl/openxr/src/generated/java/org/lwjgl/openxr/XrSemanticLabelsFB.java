@@ -274,9 +274,6 @@ public class XrSemanticLabelsFB extends Struct<XrSemanticLabelsFB> implements Na
 
     /** An array of {@link XrSemanticLabelsFB} structs. */
     public static class Buffer extends StructBuffer<XrSemanticLabelsFB, Buffer> implements NativeResource {
-
-        private static final XrSemanticLabelsFB ELEMENT_FACTORY = XrSemanticLabelsFB.create(-1L);
-
         /**
          * Creates a new {@code XrSemanticLabelsFB.Buffer} instance backed by the specified container.
          *
@@ -299,18 +296,13 @@ public class XrSemanticLabelsFB extends Struct<XrSemanticLabelsFB> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSemanticLabelsFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSemanticLabelsFB.class;
         }
 
         /** @return the value of the {@code type} field. */

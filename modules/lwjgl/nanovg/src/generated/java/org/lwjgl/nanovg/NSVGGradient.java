@@ -158,9 +158,6 @@ public class NSVGGradient extends Struct<NSVGGradient> {
 
     /** An array of {@link NSVGGradient} structs. */
     public static class Buffer extends StructBuffer<NSVGGradient, Buffer> {
-
-        private static final NSVGGradient ELEMENT_FACTORY = NSVGGradient.create(-1L);
-
         /**
          * Creates a new {@code NSVGGradient.Buffer} instance backed by the specified container.
          *
@@ -183,18 +180,13 @@ public class NSVGGradient extends Struct<NSVGGradient> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NSVGGradient getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NSVGGradient.class;
         }
 
         /** @return a {@link FloatBuffer} view of the {@code xform} field. */

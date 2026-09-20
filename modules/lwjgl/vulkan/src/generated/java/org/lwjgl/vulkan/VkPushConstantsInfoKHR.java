@@ -211,9 +211,6 @@ public class VkPushConstantsInfoKHR extends VkPushConstantsInfo {
 
     /** An array of {@link VkPushConstantsInfoKHR} structs. */
     public static class Buffer extends VkPushConstantsInfo.Buffer {
-
-        private static final VkPushConstantsInfoKHR ELEMENT_FACTORY = VkPushConstantsInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPushConstantsInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -236,18 +233,13 @@ public class VkPushConstantsInfoKHR extends VkPushConstantsInfo {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPushConstantsInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPushConstantsInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

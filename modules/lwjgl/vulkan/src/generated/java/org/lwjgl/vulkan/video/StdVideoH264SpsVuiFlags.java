@@ -344,9 +344,6 @@ public class StdVideoH264SpsVuiFlags extends Struct<StdVideoH264SpsVuiFlags> imp
 
     /** An array of {@link StdVideoH264SpsVuiFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoH264SpsVuiFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoH264SpsVuiFlags ELEMENT_FACTORY = StdVideoH264SpsVuiFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoH264SpsVuiFlags.Buffer} instance backed by the specified container.
          *
@@ -369,18 +366,13 @@ public class StdVideoH264SpsVuiFlags extends Struct<StdVideoH264SpsVuiFlags> imp
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoH264SpsVuiFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoH264SpsVuiFlags.class;
         }
 
         /** @return the value of the {@code aspect_ratio_info_present_flag} field. */

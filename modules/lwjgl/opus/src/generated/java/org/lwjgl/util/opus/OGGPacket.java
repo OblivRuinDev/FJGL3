@@ -142,9 +142,6 @@ public class OGGPacket extends Struct<OGGPacket> {
 
     /** An array of {@link OGGPacket} structs. */
     public static class Buffer extends StructBuffer<OGGPacket, Buffer> {
-
-        private static final OGGPacket ELEMENT_FACTORY = OGGPacket.create(-1L);
-
         /**
          * Creates a new {@code OGGPacket.Buffer} instance backed by the specified container.
          *
@@ -167,18 +164,13 @@ public class OGGPacket extends Struct<OGGPacket> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected OGGPacket getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return OGGPacket.class;
         }
 
         /** @return a {@link ByteBuffer} view of the data pointed to by the {@code packet} field. */

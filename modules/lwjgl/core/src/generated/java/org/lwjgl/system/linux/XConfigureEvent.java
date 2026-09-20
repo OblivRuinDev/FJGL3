@@ -379,9 +379,6 @@ public class XConfigureEvent extends Struct<XConfigureEvent> implements NativeRe
 
     /** An array of {@link XConfigureEvent} structs. */
     public static class Buffer extends StructBuffer<XConfigureEvent, Buffer> implements NativeResource {
-
-        private static final XConfigureEvent ELEMENT_FACTORY = XConfigureEvent.create(-1L);
-
         /**
          * Creates a new {@code XConfigureEvent.Buffer} instance backed by the specified container.
          *
@@ -404,18 +401,13 @@ public class XConfigureEvent extends Struct<XConfigureEvent> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XConfigureEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XConfigureEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

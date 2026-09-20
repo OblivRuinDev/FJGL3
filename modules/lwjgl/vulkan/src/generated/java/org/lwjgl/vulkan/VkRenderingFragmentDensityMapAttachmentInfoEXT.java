@@ -257,9 +257,6 @@ public class VkRenderingFragmentDensityMapAttachmentInfoEXT extends Struct<VkRen
 
     /** An array of {@link VkRenderingFragmentDensityMapAttachmentInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkRenderingFragmentDensityMapAttachmentInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkRenderingFragmentDensityMapAttachmentInfoEXT ELEMENT_FACTORY = VkRenderingFragmentDensityMapAttachmentInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkRenderingFragmentDensityMapAttachmentInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -282,18 +279,13 @@ public class VkRenderingFragmentDensityMapAttachmentInfoEXT extends Struct<VkRen
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderingFragmentDensityMapAttachmentInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderingFragmentDensityMapAttachmentInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -274,9 +274,6 @@ public class SQL_NUMERIC_STRUCT extends Struct<SQL_NUMERIC_STRUCT> implements Na
 
     /** An array of {@link SQL_NUMERIC_STRUCT} structs. */
     public static class Buffer extends StructBuffer<SQL_NUMERIC_STRUCT, Buffer> implements NativeResource {
-
-        private static final SQL_NUMERIC_STRUCT ELEMENT_FACTORY = SQL_NUMERIC_STRUCT.create(-1L);
-
         /**
          * Creates a new {@code SQL_NUMERIC_STRUCT.Buffer} instance backed by the specified container.
          *
@@ -299,18 +296,13 @@ public class SQL_NUMERIC_STRUCT extends Struct<SQL_NUMERIC_STRUCT> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SQL_NUMERIC_STRUCT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SQL_NUMERIC_STRUCT.class;
         }
 
         /** @return the value of the {@code precision} field. */

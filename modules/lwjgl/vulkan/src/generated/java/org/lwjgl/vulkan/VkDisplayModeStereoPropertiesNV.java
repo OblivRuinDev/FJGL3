@@ -236,9 +236,6 @@ public class VkDisplayModeStereoPropertiesNV extends Struct<VkDisplayModeStereoP
 
     /** An array of {@link VkDisplayModeStereoPropertiesNV} structs. */
     public static class Buffer extends StructBuffer<VkDisplayModeStereoPropertiesNV, Buffer> implements NativeResource {
-
-        private static final VkDisplayModeStereoPropertiesNV ELEMENT_FACTORY = VkDisplayModeStereoPropertiesNV.create(-1L);
-
         /**
          * Creates a new {@code VkDisplayModeStereoPropertiesNV.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class VkDisplayModeStereoPropertiesNV extends Struct<VkDisplayModeStereoP
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDisplayModeStereoPropertiesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDisplayModeStereoPropertiesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

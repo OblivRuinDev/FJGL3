@@ -273,9 +273,6 @@ public class XrEventDataGeospatialTrackerStateChangedANDROID extends Struct<XrEv
 
     /** An array of {@link XrEventDataGeospatialTrackerStateChangedANDROID} structs. */
     public static class Buffer extends StructBuffer<XrEventDataGeospatialTrackerStateChangedANDROID, Buffer> implements NativeResource {
-
-        private static final XrEventDataGeospatialTrackerStateChangedANDROID ELEMENT_FACTORY = XrEventDataGeospatialTrackerStateChangedANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrEventDataGeospatialTrackerStateChangedANDROID.Buffer} instance backed by the specified container.
          *
@@ -298,18 +295,13 @@ public class XrEventDataGeospatialTrackerStateChangedANDROID extends Struct<XrEv
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrEventDataGeospatialTrackerStateChangedANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrEventDataGeospatialTrackerStateChangedANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

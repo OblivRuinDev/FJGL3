@@ -1077,9 +1077,6 @@ public class VkPhysicalDeviceLimits extends Struct<VkPhysicalDeviceLimits> {
 
     /** An array of {@link VkPhysicalDeviceLimits} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceLimits, Buffer> {
-
-        private static final VkPhysicalDeviceLimits ELEMENT_FACTORY = VkPhysicalDeviceLimits.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceLimits.Buffer} instance backed by the specified container.
          *
@@ -1102,18 +1099,13 @@ public class VkPhysicalDeviceLimits extends Struct<VkPhysicalDeviceLimits> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceLimits getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceLimits.class;
         }
 
         /** @return the value of the {@code maxImageDimension1D} field. */

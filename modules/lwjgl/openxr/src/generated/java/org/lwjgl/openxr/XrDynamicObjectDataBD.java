@@ -242,9 +242,6 @@ public class XrDynamicObjectDataBD extends Struct<XrDynamicObjectDataBD> impleme
 
     /** An array of {@link XrDynamicObjectDataBD} structs. */
     public static class Buffer extends StructBuffer<XrDynamicObjectDataBD, Buffer> implements NativeResource {
-
-        private static final XrDynamicObjectDataBD ELEMENT_FACTORY = XrDynamicObjectDataBD.create(-1L);
-
         /**
          * Creates a new {@code XrDynamicObjectDataBD.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrDynamicObjectDataBD extends Struct<XrDynamicObjectDataBD> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrDynamicObjectDataBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrDynamicObjectDataBD.class;
         }
 
         /** @return the value of the {@code type} field. */

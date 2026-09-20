@@ -197,9 +197,6 @@ public class PS_FontInfo extends Struct<PS_FontInfo> {
 
     /** An array of {@link PS_FontInfo} structs. */
     public static class Buffer extends StructBuffer<PS_FontInfo, Buffer> {
-
-        private static final PS_FontInfo ELEMENT_FACTORY = PS_FontInfo.create(-1L);
-
         /**
          * Creates a new {@code PS_FontInfo.Buffer} instance backed by the specified container.
          *
@@ -222,18 +219,13 @@ public class PS_FontInfo extends Struct<PS_FontInfo> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected PS_FontInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return PS_FontInfo.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code version} field. */

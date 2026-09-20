@@ -191,9 +191,6 @@ public class VkBufferUsageFlags2CreateInfoKHR extends VkBufferUsageFlags2CreateI
 
     /** An array of {@link VkBufferUsageFlags2CreateInfoKHR} structs. */
     public static class Buffer extends VkBufferUsageFlags2CreateInfo.Buffer {
-
-        private static final VkBufferUsageFlags2CreateInfoKHR ELEMENT_FACTORY = VkBufferUsageFlags2CreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkBufferUsageFlags2CreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkBufferUsageFlags2CreateInfoKHR extends VkBufferUsageFlags2CreateI
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBufferUsageFlags2CreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBufferUsageFlags2CreateInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

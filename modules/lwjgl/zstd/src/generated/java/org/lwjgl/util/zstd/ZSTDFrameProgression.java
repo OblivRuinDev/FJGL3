@@ -229,9 +229,6 @@ public class ZSTDFrameProgression extends Struct<ZSTDFrameProgression> implement
 
     /** An array of {@link ZSTDFrameProgression} structs. */
     public static class Buffer extends StructBuffer<ZSTDFrameProgression, Buffer> implements NativeResource {
-
-        private static final ZSTDFrameProgression ELEMENT_FACTORY = ZSTDFrameProgression.create(-1L);
-
         /**
          * Creates a new {@code ZSTDFrameProgression.Buffer} instance backed by the specified container.
          *
@@ -254,18 +251,13 @@ public class ZSTDFrameProgression extends Struct<ZSTDFrameProgression> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected ZSTDFrameProgression getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return ZSTDFrameProgression.class;
         }
 
         /** @return the value of the {@code ingested} field. */

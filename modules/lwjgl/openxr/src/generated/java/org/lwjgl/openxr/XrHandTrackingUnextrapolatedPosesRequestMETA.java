@@ -227,9 +227,6 @@ public class XrHandTrackingUnextrapolatedPosesRequestMETA extends Struct<XrHandT
 
     /** An array of {@link XrHandTrackingUnextrapolatedPosesRequestMETA} structs. */
     public static class Buffer extends StructBuffer<XrHandTrackingUnextrapolatedPosesRequestMETA, Buffer> implements NativeResource {
-
-        private static final XrHandTrackingUnextrapolatedPosesRequestMETA ELEMENT_FACTORY = XrHandTrackingUnextrapolatedPosesRequestMETA.create(-1L);
-
         /**
          * Creates a new {@code XrHandTrackingUnextrapolatedPosesRequestMETA.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrHandTrackingUnextrapolatedPosesRequestMETA extends Struct<XrHandT
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrHandTrackingUnextrapolatedPosesRequestMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrHandTrackingUnextrapolatedPosesRequestMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

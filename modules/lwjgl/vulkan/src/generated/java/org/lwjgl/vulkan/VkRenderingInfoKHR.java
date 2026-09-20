@@ -232,9 +232,6 @@ public class VkRenderingInfoKHR extends VkRenderingInfo {
 
     /** An array of {@link VkRenderingInfoKHR} structs. */
     public static class Buffer extends VkRenderingInfo.Buffer {
-
-        private static final VkRenderingInfoKHR ELEMENT_FACTORY = VkRenderingInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkRenderingInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -257,18 +254,13 @@ public class VkRenderingInfoKHR extends VkRenderingInfo {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderingInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderingInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

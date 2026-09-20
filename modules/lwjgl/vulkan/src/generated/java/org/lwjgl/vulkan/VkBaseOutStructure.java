@@ -225,9 +225,6 @@ public class VkBaseOutStructure extends Struct<VkBaseOutStructure> implements Na
 
     /** An array of {@link VkBaseOutStructure} structs. */
     public static class Buffer extends StructBuffer<VkBaseOutStructure, Buffer> implements NativeResource {
-
-        private static final VkBaseOutStructure ELEMENT_FACTORY = VkBaseOutStructure.create(-1L);
-
         /**
          * Creates a new {@code VkBaseOutStructure.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class VkBaseOutStructure extends Struct<VkBaseOutStructure> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBaseOutStructure getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBaseOutStructure.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -242,9 +242,6 @@ public class VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM extends Struct<VkPhys
 
     /** An array of {@link VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM ELEMENT_FACTORY = VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM extends Struct<VkPhys
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM.class;
         }
 
         /** @return the value of the {@code sType} field. */

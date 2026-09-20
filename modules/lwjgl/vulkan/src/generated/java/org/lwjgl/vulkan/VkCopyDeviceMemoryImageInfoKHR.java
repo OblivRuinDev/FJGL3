@@ -278,9 +278,6 @@ public class VkCopyDeviceMemoryImageInfoKHR extends Struct<VkCopyDeviceMemoryIma
 
     /** An array of {@link VkCopyDeviceMemoryImageInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkCopyDeviceMemoryImageInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkCopyDeviceMemoryImageInfoKHR ELEMENT_FACTORY = VkCopyDeviceMemoryImageInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkCopyDeviceMemoryImageInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -303,18 +300,13 @@ public class VkCopyDeviceMemoryImageInfoKHR extends Struct<VkCopyDeviceMemoryIma
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCopyDeviceMemoryImageInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCopyDeviceMemoryImageInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

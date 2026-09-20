@@ -276,9 +276,6 @@ public class XrDirectionalLightANDROID extends Struct<XrDirectionalLightANDROID>
 
     /** An array of {@link XrDirectionalLightANDROID} structs. */
     public static class Buffer extends StructBuffer<XrDirectionalLightANDROID, Buffer> implements NativeResource {
-
-        private static final XrDirectionalLightANDROID ELEMENT_FACTORY = XrDirectionalLightANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrDirectionalLightANDROID.Buffer} instance backed by the specified container.
          *
@@ -301,18 +298,13 @@ public class XrDirectionalLightANDROID extends Struct<XrDirectionalLightANDROID>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrDirectionalLightANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrDirectionalLightANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

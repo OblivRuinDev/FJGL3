@@ -236,9 +236,6 @@ public class XrBodyTrackingCalibrationStatusMETA extends Struct<XrBodyTrackingCa
 
     /** An array of {@link XrBodyTrackingCalibrationStatusMETA} structs. */
     public static class Buffer extends StructBuffer<XrBodyTrackingCalibrationStatusMETA, Buffer> implements NativeResource {
-
-        private static final XrBodyTrackingCalibrationStatusMETA ELEMENT_FACTORY = XrBodyTrackingCalibrationStatusMETA.create(-1L);
-
         /**
          * Creates a new {@code XrBodyTrackingCalibrationStatusMETA.Buffer} instance backed by the specified container.
          *
@@ -261,18 +258,13 @@ public class XrBodyTrackingCalibrationStatusMETA extends Struct<XrBodyTrackingCa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrBodyTrackingCalibrationStatusMETA getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrBodyTrackingCalibrationStatusMETA.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -350,9 +350,6 @@ public class VkAccelerationStructureTrianglesOpacityMicromapEXT extends Struct<V
 
     /** An array of {@link VkAccelerationStructureTrianglesOpacityMicromapEXT} structs. */
     public static class Buffer extends StructBuffer<VkAccelerationStructureTrianglesOpacityMicromapEXT, Buffer> implements NativeResource {
-
-        private static final VkAccelerationStructureTrianglesOpacityMicromapEXT ELEMENT_FACTORY = VkAccelerationStructureTrianglesOpacityMicromapEXT.create(-1L);
-
         /**
          * Creates a new {@code VkAccelerationStructureTrianglesOpacityMicromapEXT.Buffer} instance backed by the specified container.
          *
@@ -375,18 +372,13 @@ public class VkAccelerationStructureTrianglesOpacityMicromapEXT extends Struct<V
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAccelerationStructureTrianglesOpacityMicromapEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAccelerationStructureTrianglesOpacityMicromapEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

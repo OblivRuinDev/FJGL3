@@ -292,9 +292,6 @@ public class XrSpatialCapabilityConfigurationQrCodeEXT extends Struct<XrSpatialC
 
     /** An array of {@link XrSpatialCapabilityConfigurationQrCodeEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialCapabilityConfigurationQrCodeEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialCapabilityConfigurationQrCodeEXT ELEMENT_FACTORY = XrSpatialCapabilityConfigurationQrCodeEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialCapabilityConfigurationQrCodeEXT.Buffer} instance backed by the specified container.
          *
@@ -317,18 +314,13 @@ public class XrSpatialCapabilityConfigurationQrCodeEXT extends Struct<XrSpatialC
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialCapabilityConfigurationQrCodeEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialCapabilityConfigurationQrCodeEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

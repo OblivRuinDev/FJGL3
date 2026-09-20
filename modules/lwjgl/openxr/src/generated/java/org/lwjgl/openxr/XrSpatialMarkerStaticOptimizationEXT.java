@@ -242,9 +242,6 @@ public class XrSpatialMarkerStaticOptimizationEXT extends Struct<XrSpatialMarker
 
     /** An array of {@link XrSpatialMarkerStaticOptimizationEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialMarkerStaticOptimizationEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialMarkerStaticOptimizationEXT ELEMENT_FACTORY = XrSpatialMarkerStaticOptimizationEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialMarkerStaticOptimizationEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrSpatialMarkerStaticOptimizationEXT extends Struct<XrSpatialMarker
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialMarkerStaticOptimizationEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialMarkerStaticOptimizationEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

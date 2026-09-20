@@ -242,9 +242,6 @@ public class VkPipelineViewportDepthClipControlCreateInfoEXT extends Struct<VkPi
 
     /** An array of {@link VkPipelineViewportDepthClipControlCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkPipelineViewportDepthClipControlCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkPipelineViewportDepthClipControlCreateInfoEXT ELEMENT_FACTORY = VkPipelineViewportDepthClipControlCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineViewportDepthClipControlCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPipelineViewportDepthClipControlCreateInfoEXT extends Struct<VkPi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineViewportDepthClipControlCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineViewportDepthClipControlCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

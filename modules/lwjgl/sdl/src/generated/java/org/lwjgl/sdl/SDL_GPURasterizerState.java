@@ -324,9 +324,6 @@ public class SDL_GPURasterizerState extends Struct<SDL_GPURasterizerState> imple
 
     /** An array of {@link SDL_GPURasterizerState} structs. */
     public static class Buffer extends StructBuffer<SDL_GPURasterizerState, Buffer> implements NativeResource {
-
-        private static final SDL_GPURasterizerState ELEMENT_FACTORY = SDL_GPURasterizerState.create(-1L);
-
         /**
          * Creates a new {@code SDL_GPURasterizerState.Buffer} instance backed by the specified container.
          *
@@ -349,18 +346,13 @@ public class SDL_GPURasterizerState extends Struct<SDL_GPURasterizerState> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GPURasterizerState getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GPURasterizerState.class;
         }
 
         /** @return the value of the {@code fill_mode} field. */

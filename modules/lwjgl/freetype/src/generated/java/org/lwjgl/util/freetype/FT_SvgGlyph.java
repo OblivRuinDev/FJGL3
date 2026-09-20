@@ -183,9 +183,6 @@ public class FT_SvgGlyph extends Struct<FT_SvgGlyph> {
 
     /** An array of {@link FT_SvgGlyph} structs. */
     public static class Buffer extends StructBuffer<FT_SvgGlyph, Buffer> {
-
-        private static final FT_SvgGlyph ELEMENT_FACTORY = FT_SvgGlyph.create(-1L);
-
         /**
          * Creates a new {@code FT_SvgGlyph.Buffer} instance backed by the specified container.
          *
@@ -208,18 +205,13 @@ public class FT_SvgGlyph extends Struct<FT_SvgGlyph> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_SvgGlyph getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_SvgGlyph.class;
         }
 
         /** @return a {@link FT_Glyph} view of the {@code root} field. */

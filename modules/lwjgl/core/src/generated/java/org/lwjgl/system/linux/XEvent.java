@@ -482,9 +482,6 @@ public class XEvent extends Struct<XEvent> implements NativeResource {
 
     /** An array of {@link XEvent} structs. */
     public static class Buffer extends StructBuffer<XEvent, Buffer> implements NativeResource {
-
-        private static final XEvent ELEMENT_FACTORY = XEvent.create(-1L);
-
         /**
          * Creates a new {@code XEvent.Buffer} instance backed by the specified container.
          *
@@ -507,18 +504,13 @@ public class XEvent extends Struct<XEvent> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

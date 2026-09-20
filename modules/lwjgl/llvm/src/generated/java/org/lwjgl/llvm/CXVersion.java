@@ -114,9 +114,6 @@ public class CXVersion extends Struct<CXVersion> {
 
     /** An array of {@link CXVersion} structs. */
     public static class Buffer extends StructBuffer<CXVersion, Buffer> {
-
-        private static final CXVersion ELEMENT_FACTORY = CXVersion.create(-1L);
-
         /**
          * Creates a new {@code CXVersion.Buffer} instance backed by the specified container.
          *
@@ -139,18 +136,13 @@ public class CXVersion extends Struct<CXVersion> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXVersion getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXVersion.class;
         }
 
         /** @return the value of the {@code Major} field. */

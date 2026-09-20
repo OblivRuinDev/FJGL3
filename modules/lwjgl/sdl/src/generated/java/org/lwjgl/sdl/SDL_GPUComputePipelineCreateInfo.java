@@ -420,9 +420,6 @@ public class SDL_GPUComputePipelineCreateInfo extends Struct<SDL_GPUComputePipel
 
     /** An array of {@link SDL_GPUComputePipelineCreateInfo} structs. */
     public static class Buffer extends StructBuffer<SDL_GPUComputePipelineCreateInfo, Buffer> implements NativeResource {
-
-        private static final SDL_GPUComputePipelineCreateInfo ELEMENT_FACTORY = SDL_GPUComputePipelineCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code SDL_GPUComputePipelineCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -445,18 +442,13 @@ public class SDL_GPUComputePipelineCreateInfo extends Struct<SDL_GPUComputePipel
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GPUComputePipelineCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GPUComputePipelineCreateInfo.class;
         }
 
         /** @return the value of the {@code code_size} field. */

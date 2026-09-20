@@ -245,9 +245,6 @@ public class VkRectLayerKHR extends Struct<VkRectLayerKHR> implements NativeReso
 
     /** An array of {@link VkRectLayerKHR} structs. */
     public static class Buffer extends StructBuffer<VkRectLayerKHR, Buffer> implements NativeResource {
-
-        private static final VkRectLayerKHR ELEMENT_FACTORY = VkRectLayerKHR.create(-1L);
-
         /**
          * Creates a new {@code VkRectLayerKHR.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkRectLayerKHR extends Struct<VkRectLayerKHR> implements NativeReso
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRectLayerKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRectLayerKHR.class;
         }
 
         /** @return a {@link VkOffset2D} view of the {@code offset} field. */

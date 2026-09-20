@@ -251,9 +251,6 @@ public class AIMeshAnim extends Struct<AIMeshAnim> implements NativeResource {
 
     /** An array of {@link AIMeshAnim} structs. */
     public static class Buffer extends StructBuffer<AIMeshAnim, Buffer> implements NativeResource {
-
-        private static final AIMeshAnim ELEMENT_FACTORY = AIMeshAnim.create(-1L);
-
         /**
          * Creates a new {@code AIMeshAnim.Buffer} instance backed by the specified container.
          *
@@ -276,18 +273,13 @@ public class AIMeshAnim extends Struct<AIMeshAnim> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected AIMeshAnim getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return AIMeshAnim.class;
         }
 
         /** @return a {@link AIString} view of the {@code mName} field. */

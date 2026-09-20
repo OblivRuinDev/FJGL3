@@ -248,9 +248,6 @@ public class IOURingNAPI extends Struct<IOURingNAPI> implements NativeResource {
 
     /** An array of {@link IOURingNAPI} structs. */
     public static class Buffer extends StructBuffer<IOURingNAPI, Buffer> implements NativeResource {
-
-        private static final IOURingNAPI ELEMENT_FACTORY = IOURingNAPI.create(-1L);
-
         /**
          * Creates a new {@code IOURingNAPI.Buffer} instance backed by the specified container.
          *
@@ -273,18 +270,13 @@ public class IOURingNAPI extends Struct<IOURingNAPI> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected IOURingNAPI getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return IOURingNAPI.class;
         }
 
         /** @return the value of the {@code busy_poll_to} field. */

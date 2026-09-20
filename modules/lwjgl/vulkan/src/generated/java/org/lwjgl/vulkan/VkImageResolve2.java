@@ -311,9 +311,6 @@ public class VkImageResolve2 extends Struct<VkImageResolve2> implements NativeRe
 
     /** An array of {@link VkImageResolve2} structs. */
     public static class Buffer extends StructBuffer<VkImageResolve2, Buffer> implements NativeResource {
-
-        private static final VkImageResolve2 ELEMENT_FACTORY = VkImageResolve2.create(-1L);
-
         /**
          * Creates a new {@code VkImageResolve2.Buffer} instance backed by the specified container.
          *
@@ -336,18 +333,13 @@ public class VkImageResolve2 extends Struct<VkImageResolve2> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageResolve2 getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageResolve2.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -245,9 +245,6 @@ public class VkPhysicalDeviceOpacityMicromapPropertiesEXT extends Struct<VkPhysi
 
     /** An array of {@link VkPhysicalDeviceOpacityMicromapPropertiesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceOpacityMicromapPropertiesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceOpacityMicromapPropertiesEXT ELEMENT_FACTORY = VkPhysicalDeviceOpacityMicromapPropertiesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceOpacityMicromapPropertiesEXT.Buffer} instance backed by the specified container.
          *
@@ -270,18 +267,13 @@ public class VkPhysicalDeviceOpacityMicromapPropertiesEXT extends Struct<VkPhysi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceOpacityMicromapPropertiesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceOpacityMicromapPropertiesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

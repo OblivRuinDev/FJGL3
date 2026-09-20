@@ -235,9 +235,6 @@ public class XrActiveActionSet extends Struct<XrActiveActionSet> implements Nati
 
     /** An array of {@link XrActiveActionSet} structs. */
     public static class Buffer extends StructBuffer<XrActiveActionSet, Buffer> implements NativeResource {
-
-        private static final XrActiveActionSet ELEMENT_FACTORY = XrActiveActionSet.create(-1L);
-
         /**
          * Creates a new {@code XrActiveActionSet.Buffer} instance backed by the specified container.
          *
@@ -260,18 +257,13 @@ public class XrActiveActionSet extends Struct<XrActiveActionSet> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrActiveActionSet getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrActiveActionSet.class;
         }
 
         /** @return the value of the {@code actionSet} field. */

@@ -242,9 +242,6 @@ public class XrSystemNotificationsSetInfoML extends Struct<XrSystemNotifications
 
     /** An array of {@link XrSystemNotificationsSetInfoML} structs. */
     public static class Buffer extends StructBuffer<XrSystemNotificationsSetInfoML, Buffer> implements NativeResource {
-
-        private static final XrSystemNotificationsSetInfoML ELEMENT_FACTORY = XrSystemNotificationsSetInfoML.create(-1L);
-
         /**
          * Creates a new {@code XrSystemNotificationsSetInfoML.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class XrSystemNotificationsSetInfoML extends Struct<XrSystemNotifications
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSystemNotificationsSetInfoML getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSystemNotificationsSetInfoML.class;
         }
 
         /** @return the value of the {@code type} field. */

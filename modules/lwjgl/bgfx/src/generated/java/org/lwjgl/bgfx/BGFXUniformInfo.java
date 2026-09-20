@@ -253,9 +253,6 @@ public class BGFXUniformInfo extends Struct<BGFXUniformInfo> implements NativeRe
 
     /** An array of {@link BGFXUniformInfo} structs. */
     public static class Buffer extends StructBuffer<BGFXUniformInfo, Buffer> implements NativeResource {
-
-        private static final BGFXUniformInfo ELEMENT_FACTORY = BGFXUniformInfo.create(-1L);
-
         /**
          * Creates a new {@code BGFXUniformInfo.Buffer} instance backed by the specified container.
          *
@@ -278,18 +275,13 @@ public class BGFXUniformInfo extends Struct<BGFXUniformInfo> implements NativeRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected BGFXUniformInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return BGFXUniformInfo.class;
         }
 
         /** @return a {@link ByteBuffer} view of the {@code name} field. */

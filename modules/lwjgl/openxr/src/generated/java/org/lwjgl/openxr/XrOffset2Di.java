@@ -225,9 +225,6 @@ public class XrOffset2Di extends Struct<XrOffset2Di> implements NativeResource {
 
     /** An array of {@link XrOffset2Di} structs. */
     public static class Buffer extends StructBuffer<XrOffset2Di, Buffer> implements NativeResource {
-
-        private static final XrOffset2Di ELEMENT_FACTORY = XrOffset2Di.create(-1L);
-
         /**
          * Creates a new {@code XrOffset2Di.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class XrOffset2Di extends Struct<XrOffset2Di> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrOffset2Di getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrOffset2Di.class;
         }
 
         /** @return the value of the {@code x} field. */

@@ -129,9 +129,6 @@ public class FT_BitmapGlyph extends Struct<FT_BitmapGlyph> {
 
     /** An array of {@link FT_BitmapGlyph} structs. */
     public static class Buffer extends StructBuffer<FT_BitmapGlyph, Buffer> {
-
-        private static final FT_BitmapGlyph ELEMENT_FACTORY = FT_BitmapGlyph.create(-1L);
-
         /**
          * Creates a new {@code FT_BitmapGlyph.Buffer} instance backed by the specified container.
          *
@@ -154,18 +151,13 @@ public class FT_BitmapGlyph extends Struct<FT_BitmapGlyph> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_BitmapGlyph getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_BitmapGlyph.class;
         }
 
         /** @return a {@link FT_Glyph} view of the {@code root} field. */

@@ -260,9 +260,6 @@ public class VkBindTransformFeedbackBuffer2InfoEXT extends Struct<VkBindTransfor
 
     /** An array of {@link VkBindTransformFeedbackBuffer2InfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkBindTransformFeedbackBuffer2InfoEXT, Buffer> implements NativeResource {
-
-        private static final VkBindTransformFeedbackBuffer2InfoEXT ELEMENT_FACTORY = VkBindTransformFeedbackBuffer2InfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkBindTransformFeedbackBuffer2InfoEXT.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class VkBindTransformFeedbackBuffer2InfoEXT extends Struct<VkBindTransfor
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBindTransformFeedbackBuffer2InfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBindTransformFeedbackBuffer2InfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

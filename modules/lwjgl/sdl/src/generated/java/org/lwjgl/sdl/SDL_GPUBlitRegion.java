@@ -310,9 +310,6 @@ public class SDL_GPUBlitRegion extends Struct<SDL_GPUBlitRegion> implements Nati
 
     /** An array of {@link SDL_GPUBlitRegion} structs. */
     public static class Buffer extends StructBuffer<SDL_GPUBlitRegion, Buffer> implements NativeResource {
-
-        private static final SDL_GPUBlitRegion ELEMENT_FACTORY = SDL_GPUBlitRegion.create(-1L);
-
         /**
          * Creates a new {@code SDL_GPUBlitRegion.Buffer} instance backed by the specified container.
          *
@@ -335,18 +332,13 @@ public class SDL_GPUBlitRegion extends Struct<SDL_GPUBlitRegion> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GPUBlitRegion getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GPUBlitRegion.class;
         }
 
         /** @return the value of the {@code texture} field. */

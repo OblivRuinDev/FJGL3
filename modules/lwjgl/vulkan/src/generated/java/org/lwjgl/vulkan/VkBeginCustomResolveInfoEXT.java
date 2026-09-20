@@ -227,9 +227,6 @@ public class VkBeginCustomResolveInfoEXT extends Struct<VkBeginCustomResolveInfo
 
     /** An array of {@link VkBeginCustomResolveInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkBeginCustomResolveInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkBeginCustomResolveInfoEXT ELEMENT_FACTORY = VkBeginCustomResolveInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkBeginCustomResolveInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class VkBeginCustomResolveInfoEXT extends Struct<VkBeginCustomResolveInfo
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBeginCustomResolveInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBeginCustomResolveInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

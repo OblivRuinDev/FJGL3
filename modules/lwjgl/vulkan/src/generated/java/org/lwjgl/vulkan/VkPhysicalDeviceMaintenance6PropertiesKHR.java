@@ -188,9 +188,6 @@ public class VkPhysicalDeviceMaintenance6PropertiesKHR extends VkPhysicalDeviceM
 
     /** An array of {@link VkPhysicalDeviceMaintenance6PropertiesKHR} structs. */
     public static class Buffer extends VkPhysicalDeviceMaintenance6Properties.Buffer {
-
-        private static final VkPhysicalDeviceMaintenance6PropertiesKHR ELEMENT_FACTORY = VkPhysicalDeviceMaintenance6PropertiesKHR.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceMaintenance6PropertiesKHR.Buffer} instance backed by the specified container.
          *
@@ -213,18 +210,13 @@ public class VkPhysicalDeviceMaintenance6PropertiesKHR extends VkPhysicalDeviceM
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceMaintenance6PropertiesKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceMaintenance6PropertiesKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

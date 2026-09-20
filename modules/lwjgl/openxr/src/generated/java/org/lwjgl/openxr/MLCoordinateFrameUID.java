@@ -107,9 +107,6 @@ public class MLCoordinateFrameUID extends Struct<MLCoordinateFrameUID> {
 
     /** An array of {@link MLCoordinateFrameUID} structs. */
     public static class Buffer extends StructBuffer<MLCoordinateFrameUID, Buffer> {
-
-        private static final MLCoordinateFrameUID ELEMENT_FACTORY = MLCoordinateFrameUID.create(-1L);
-
         /**
          * Creates a new {@code MLCoordinateFrameUID.Buffer} instance backed by the specified container.
          *
@@ -132,18 +129,13 @@ public class MLCoordinateFrameUID extends Struct<MLCoordinateFrameUID> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected MLCoordinateFrameUID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return MLCoordinateFrameUID.class;
         }
 
         /** @return a {@link LongBuffer} view of the {@code data} field. */

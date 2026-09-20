@@ -263,9 +263,6 @@ public class VkPhysicalDeviceCooperativeVectorPropertiesNV extends Struct<VkPhys
 
     /** An array of {@link VkPhysicalDeviceCooperativeVectorPropertiesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceCooperativeVectorPropertiesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceCooperativeVectorPropertiesNV ELEMENT_FACTORY = VkPhysicalDeviceCooperativeVectorPropertiesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceCooperativeVectorPropertiesNV.Buffer} instance backed by the specified container.
          *
@@ -288,18 +285,13 @@ public class VkPhysicalDeviceCooperativeVectorPropertiesNV extends Struct<VkPhys
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceCooperativeVectorPropertiesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceCooperativeVectorPropertiesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

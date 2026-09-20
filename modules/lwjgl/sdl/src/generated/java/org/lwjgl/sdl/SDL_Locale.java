@@ -251,9 +251,6 @@ public class SDL_Locale extends Struct<SDL_Locale> implements NativeResource {
 
     /** An array of {@link SDL_Locale} structs. */
     public static class Buffer extends StructBuffer<SDL_Locale, Buffer> implements NativeResource {
-
-        private static final SDL_Locale ELEMENT_FACTORY = SDL_Locale.create(-1L);
-
         /**
          * Creates a new {@code SDL_Locale.Buffer} instance backed by the specified container.
          *
@@ -276,18 +273,13 @@ public class SDL_Locale extends Struct<SDL_Locale> implements NativeResource {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_Locale getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_Locale.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code language} field. */

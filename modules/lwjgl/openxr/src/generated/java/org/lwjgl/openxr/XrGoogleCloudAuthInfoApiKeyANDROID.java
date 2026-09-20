@@ -270,9 +270,6 @@ public class XrGoogleCloudAuthInfoApiKeyANDROID extends Struct<XrGoogleCloudAuth
 
     /** An array of {@link XrGoogleCloudAuthInfoApiKeyANDROID} structs. */
     public static class Buffer extends StructBuffer<XrGoogleCloudAuthInfoApiKeyANDROID, Buffer> implements NativeResource {
-
-        private static final XrGoogleCloudAuthInfoApiKeyANDROID ELEMENT_FACTORY = XrGoogleCloudAuthInfoApiKeyANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrGoogleCloudAuthInfoApiKeyANDROID.Buffer} instance backed by the specified container.
          *
@@ -295,18 +292,13 @@ public class XrGoogleCloudAuthInfoApiKeyANDROID extends Struct<XrGoogleCloudAuth
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrGoogleCloudAuthInfoApiKeyANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrGoogleCloudAuthInfoApiKeyANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

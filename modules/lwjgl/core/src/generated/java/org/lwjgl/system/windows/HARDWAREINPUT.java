@@ -240,9 +240,6 @@ public class HARDWAREINPUT extends Struct<HARDWAREINPUT> implements NativeResour
 
     /** An array of {@link HARDWAREINPUT} structs. */
     public static class Buffer extends StructBuffer<HARDWAREINPUT, Buffer> implements NativeResource {
-
-        private static final HARDWAREINPUT ELEMENT_FACTORY = HARDWAREINPUT.create(-1L);
-
         /**
          * Creates a new {@code HARDWAREINPUT.Buffer} instance backed by the specified container.
          *
@@ -265,18 +262,13 @@ public class HARDWAREINPUT extends Struct<HARDWAREINPUT> implements NativeResour
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected HARDWAREINPUT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return HARDWAREINPUT.class;
         }
 
         /** @return the value of the {@code uMsg} field. */

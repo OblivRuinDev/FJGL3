@@ -127,9 +127,6 @@ public class CXIdxIBOutletCollectionAttrInfo extends Struct<CXIdxIBOutletCollect
 
     /** An array of {@link CXIdxIBOutletCollectionAttrInfo} structs. */
     public static class Buffer extends StructBuffer<CXIdxIBOutletCollectionAttrInfo, Buffer> {
-
-        private static final CXIdxIBOutletCollectionAttrInfo ELEMENT_FACTORY = CXIdxIBOutletCollectionAttrInfo.create(-1L);
-
         /**
          * Creates a new {@code CXIdxIBOutletCollectionAttrInfo.Buffer} instance backed by the specified container.
          *
@@ -152,18 +149,13 @@ public class CXIdxIBOutletCollectionAttrInfo extends Struct<CXIdxIBOutletCollect
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected CXIdxIBOutletCollectionAttrInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return CXIdxIBOutletCollectionAttrInfo.class;
         }
 
         /** @return a {@link CXIdxAttrInfo} view of the struct pointed to by the {@code attrInfo} field. */

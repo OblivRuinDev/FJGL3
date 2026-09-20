@@ -242,9 +242,6 @@ public class VkPhysicalDeviceShaderInstrumentationFeaturesARM extends Struct<VkP
 
     /** An array of {@link VkPhysicalDeviceShaderInstrumentationFeaturesARM} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceShaderInstrumentationFeaturesARM, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceShaderInstrumentationFeaturesARM ELEMENT_FACTORY = VkPhysicalDeviceShaderInstrumentationFeaturesARM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceShaderInstrumentationFeaturesARM.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceShaderInstrumentationFeaturesARM extends Struct<VkP
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceShaderInstrumentationFeaturesARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceShaderInstrumentationFeaturesARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

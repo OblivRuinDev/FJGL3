@@ -254,9 +254,6 @@ public class VkVideoEncodeH264DpbSlotInfoKHR extends Struct<VkVideoEncodeH264Dpb
 
     /** An array of {@link VkVideoEncodeH264DpbSlotInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoEncodeH264DpbSlotInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoEncodeH264DpbSlotInfoKHR ELEMENT_FACTORY = VkVideoEncodeH264DpbSlotInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoEncodeH264DpbSlotInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -279,18 +276,13 @@ public class VkVideoEncodeH264DpbSlotInfoKHR extends Struct<VkVideoEncodeH264Dpb
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoEncodeH264DpbSlotInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoEncodeH264DpbSlotInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

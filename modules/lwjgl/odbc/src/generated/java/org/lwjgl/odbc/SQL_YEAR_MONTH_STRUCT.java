@@ -225,9 +225,6 @@ public class SQL_YEAR_MONTH_STRUCT extends Struct<SQL_YEAR_MONTH_STRUCT> impleme
 
     /** An array of {@link SQL_YEAR_MONTH_STRUCT} structs. */
     public static class Buffer extends StructBuffer<SQL_YEAR_MONTH_STRUCT, Buffer> implements NativeResource {
-
-        private static final SQL_YEAR_MONTH_STRUCT ELEMENT_FACTORY = SQL_YEAR_MONTH_STRUCT.create(-1L);
-
         /**
          * Creates a new {@code SQL_YEAR_MONTH_STRUCT.Buffer} instance backed by the specified container.
          *
@@ -250,18 +247,13 @@ public class SQL_YEAR_MONTH_STRUCT extends Struct<SQL_YEAR_MONTH_STRUCT> impleme
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SQL_YEAR_MONTH_STRUCT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SQL_YEAR_MONTH_STRUCT.class;
         }
 
         /** @return the value of the {@code year} field. */

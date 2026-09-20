@@ -149,9 +149,6 @@ public class FT_Var_Axis extends Struct<FT_Var_Axis> {
 
     /** An array of {@link FT_Var_Axis} structs. */
     public static class Buffer extends StructBuffer<FT_Var_Axis, Buffer> {
-
-        private static final FT_Var_Axis ELEMENT_FACTORY = FT_Var_Axis.create(-1L);
-
         /**
          * Creates a new {@code FT_Var_Axis.Buffer} instance backed by the specified container.
          *
@@ -174,18 +171,13 @@ public class FT_Var_Axis extends Struct<FT_Var_Axis> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_Var_Axis getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_Var_Axis.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code name} field. */

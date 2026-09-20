@@ -255,9 +255,6 @@ public class StdVideoEncodeH265WeightTableFlags extends Struct<StdVideoEncodeH26
 
     /** An array of {@link StdVideoEncodeH265WeightTableFlags} structs. */
     public static class Buffer extends StructBuffer<StdVideoEncodeH265WeightTableFlags, Buffer> implements NativeResource {
-
-        private static final StdVideoEncodeH265WeightTableFlags ELEMENT_FACTORY = StdVideoEncodeH265WeightTableFlags.create(-1L);
-
         /**
          * Creates a new {@code StdVideoEncodeH265WeightTableFlags.Buffer} instance backed by the specified container.
          *
@@ -280,18 +277,13 @@ public class StdVideoEncodeH265WeightTableFlags extends Struct<StdVideoEncodeH26
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoEncodeH265WeightTableFlags getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoEncodeH265WeightTableFlags.class;
         }
 
         /** @return the value of the {@code luma_weight_l0_flag} field. */

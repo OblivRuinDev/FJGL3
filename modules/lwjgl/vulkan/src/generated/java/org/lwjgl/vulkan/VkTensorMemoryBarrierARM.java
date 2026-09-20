@@ -332,9 +332,6 @@ public class VkTensorMemoryBarrierARM extends Struct<VkTensorMemoryBarrierARM> i
 
     /** An array of {@link VkTensorMemoryBarrierARM} structs. */
     public static class Buffer extends StructBuffer<VkTensorMemoryBarrierARM, Buffer> implements NativeResource {
-
-        private static final VkTensorMemoryBarrierARM ELEMENT_FACTORY = VkTensorMemoryBarrierARM.create(-1L);
-
         /**
          * Creates a new {@code VkTensorMemoryBarrierARM.Buffer} instance backed by the specified container.
          *
@@ -357,18 +354,13 @@ public class VkTensorMemoryBarrierARM extends Struct<VkTensorMemoryBarrierARM> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkTensorMemoryBarrierARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkTensorMemoryBarrierARM.class;
         }
 
         /** @return the value of the {@code sType} field. */

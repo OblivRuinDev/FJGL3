@@ -227,9 +227,6 @@ public class XrStationaryReferenceSpaceGenerationIdGetInfoEXT extends Struct<XrS
 
     /** An array of {@link XrStationaryReferenceSpaceGenerationIdGetInfoEXT} structs. */
     public static class Buffer extends StructBuffer<XrStationaryReferenceSpaceGenerationIdGetInfoEXT, Buffer> implements NativeResource {
-
-        private static final XrStationaryReferenceSpaceGenerationIdGetInfoEXT ELEMENT_FACTORY = XrStationaryReferenceSpaceGenerationIdGetInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code XrStationaryReferenceSpaceGenerationIdGetInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -252,18 +249,13 @@ public class XrStationaryReferenceSpaceGenerationIdGetInfoEXT extends Struct<XrS
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrStationaryReferenceSpaceGenerationIdGetInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrStationaryReferenceSpaceGenerationIdGetInfoEXT.class;
         }
 
         /** @return the value of the {@code type} field. */

@@ -182,9 +182,6 @@ public class VkDeviceAddressRangeEXT extends VkDeviceAddressRangeKHR {
 
     /** An array of {@link VkDeviceAddressRangeEXT} structs. */
     public static class Buffer extends VkDeviceAddressRangeKHR.Buffer {
-
-        private static final VkDeviceAddressRangeEXT ELEMENT_FACTORY = VkDeviceAddressRangeEXT.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceAddressRangeEXT.Buffer} instance backed by the specified container.
          *
@@ -207,18 +204,13 @@ public class VkDeviceAddressRangeEXT extends VkDeviceAddressRangeKHR {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceAddressRangeEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceAddressRangeEXT.class;
         }
 
         /** Sets the specified value to the {@code address} field. */

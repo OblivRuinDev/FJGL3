@@ -332,9 +332,6 @@ public class VkCopyDescriptorSet extends Struct<VkCopyDescriptorSet> implements 
 
     /** An array of {@link VkCopyDescriptorSet} structs. */
     public static class Buffer extends StructBuffer<VkCopyDescriptorSet, Buffer> implements NativeResource {
-
-        private static final VkCopyDescriptorSet ELEMENT_FACTORY = VkCopyDescriptorSet.create(-1L);
-
         /**
          * Creates a new {@code VkCopyDescriptorSet.Buffer} instance backed by the specified container.
          *
@@ -357,18 +354,13 @@ public class VkCopyDescriptorSet extends Struct<VkCopyDescriptorSet> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCopyDescriptorSet getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCopyDescriptorSet.class;
         }
 
         /** @return the value of the {@code sType} field. */

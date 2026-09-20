@@ -193,9 +193,6 @@ public class VkSwapchainPresentModeInfoEXT extends VkSwapchainPresentModeInfoKHR
 
     /** An array of {@link VkSwapchainPresentModeInfoEXT} structs. */
     public static class Buffer extends VkSwapchainPresentModeInfoKHR.Buffer {
-
-        private static final VkSwapchainPresentModeInfoEXT ELEMENT_FACTORY = VkSwapchainPresentModeInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkSwapchainPresentModeInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -218,18 +215,13 @@ public class VkSwapchainPresentModeInfoEXT extends VkSwapchainPresentModeInfoKHR
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSwapchainPresentModeInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSwapchainPresentModeInfoEXT.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

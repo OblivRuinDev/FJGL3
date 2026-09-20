@@ -242,9 +242,6 @@ public class VkImageStencilUsage2CreateInfoKHR extends Struct<VkImageStencilUsag
 
     /** An array of {@link VkImageStencilUsage2CreateInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkImageStencilUsage2CreateInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkImageStencilUsage2CreateInfoKHR ELEMENT_FACTORY = VkImageStencilUsage2CreateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkImageStencilUsage2CreateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkImageStencilUsage2CreateInfoKHR extends Struct<VkImageStencilUsag
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageStencilUsage2CreateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageStencilUsage2CreateInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

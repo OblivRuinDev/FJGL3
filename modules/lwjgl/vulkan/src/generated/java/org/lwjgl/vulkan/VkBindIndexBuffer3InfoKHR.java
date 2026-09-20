@@ -275,9 +275,6 @@ public class VkBindIndexBuffer3InfoKHR extends Struct<VkBindIndexBuffer3InfoKHR>
 
     /** An array of {@link VkBindIndexBuffer3InfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkBindIndexBuffer3InfoKHR, Buffer> implements NativeResource {
-
-        private static final VkBindIndexBuffer3InfoKHR ELEMENT_FACTORY = VkBindIndexBuffer3InfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkBindIndexBuffer3InfoKHR.Buffer} instance backed by the specified container.
          *
@@ -300,18 +297,13 @@ public class VkBindIndexBuffer3InfoKHR extends Struct<VkBindIndexBuffer3InfoKHR>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkBindIndexBuffer3InfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkBindIndexBuffer3InfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

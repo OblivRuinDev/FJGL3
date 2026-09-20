@@ -201,9 +201,6 @@ public class FT_LayerIterator extends Struct<FT_LayerIterator> implements Native
 
     /** An array of {@link FT_LayerIterator} structs. */
     public static class Buffer extends StructBuffer<FT_LayerIterator, Buffer> implements NativeResource {
-
-        private static final FT_LayerIterator ELEMENT_FACTORY = FT_LayerIterator.create(-1L);
-
         /**
          * Creates a new {@code FT_LayerIterator.Buffer} instance backed by the specified container.
          *
@@ -226,18 +223,13 @@ public class FT_LayerIterator extends Struct<FT_LayerIterator> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected FT_LayerIterator getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return FT_LayerIterator.class;
         }
 
         /** @return the value of the {@code num_layers} field. */

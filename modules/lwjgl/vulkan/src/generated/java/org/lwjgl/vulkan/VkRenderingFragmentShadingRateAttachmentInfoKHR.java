@@ -275,9 +275,6 @@ public class VkRenderingFragmentShadingRateAttachmentInfoKHR extends Struct<VkRe
 
     /** An array of {@link VkRenderingFragmentShadingRateAttachmentInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkRenderingFragmentShadingRateAttachmentInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkRenderingFragmentShadingRateAttachmentInfoKHR ELEMENT_FACTORY = VkRenderingFragmentShadingRateAttachmentInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkRenderingFragmentShadingRateAttachmentInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -300,18 +297,13 @@ public class VkRenderingFragmentShadingRateAttachmentInfoKHR extends Struct<VkRe
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderingFragmentShadingRateAttachmentInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderingFragmentShadingRateAttachmentInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

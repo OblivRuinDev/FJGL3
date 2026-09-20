@@ -252,9 +252,6 @@ public class SDL_DialogFileFilter extends Struct<SDL_DialogFileFilter> implement
 
     /** An array of {@link SDL_DialogFileFilter} structs. */
     public static class Buffer extends StructBuffer<SDL_DialogFileFilter, Buffer> implements NativeResource {
-
-        private static final SDL_DialogFileFilter ELEMENT_FACTORY = SDL_DialogFileFilter.create(-1L);
-
         /**
          * Creates a new {@code SDL_DialogFileFilter.Buffer} instance backed by the specified container.
          *
@@ -277,18 +274,13 @@ public class SDL_DialogFileFilter extends Struct<SDL_DialogFileFilter> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_DialogFileFilter getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_DialogFileFilter.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code name} field. */

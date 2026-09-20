@@ -272,9 +272,6 @@ public class VkVideoEncodeUsageInfoKHR extends Struct<VkVideoEncodeUsageInfoKHR>
 
     /** An array of {@link VkVideoEncodeUsageInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoEncodeUsageInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoEncodeUsageInfoKHR ELEMENT_FACTORY = VkVideoEncodeUsageInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoEncodeUsageInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -297,18 +294,13 @@ public class VkVideoEncodeUsageInfoKHR extends Struct<VkVideoEncodeUsageInfoKHR>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoEncodeUsageInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoEncodeUsageInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

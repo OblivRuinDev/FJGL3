@@ -197,9 +197,6 @@ public class VkAttachmentDescriptionStencilLayoutKHR extends VkAttachmentDescrip
 
     /** An array of {@link VkAttachmentDescriptionStencilLayoutKHR} structs. */
     public static class Buffer extends VkAttachmentDescriptionStencilLayout.Buffer {
-
-        private static final VkAttachmentDescriptionStencilLayoutKHR ELEMENT_FACTORY = VkAttachmentDescriptionStencilLayoutKHR.create(-1L);
-
         /**
          * Creates a new {@code VkAttachmentDescriptionStencilLayoutKHR.Buffer} instance backed by the specified container.
          *
@@ -222,18 +219,13 @@ public class VkAttachmentDescriptionStencilLayoutKHR extends VkAttachmentDescrip
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkAttachmentDescriptionStencilLayoutKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkAttachmentDescriptionStencilLayoutKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

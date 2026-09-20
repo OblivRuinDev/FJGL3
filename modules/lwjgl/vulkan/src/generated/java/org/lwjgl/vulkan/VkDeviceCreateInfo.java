@@ -1049,9 +1049,6 @@ public class VkDeviceCreateInfo extends Struct<VkDeviceCreateInfo> implements Na
 
     /** An array of {@link VkDeviceCreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkDeviceCreateInfo, Buffer> implements NativeResource {
-
-        private static final VkDeviceCreateInfo ELEMENT_FACTORY = VkDeviceCreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkDeviceCreateInfo.Buffer} instance backed by the specified container.
          *
@@ -1074,18 +1071,13 @@ public class VkDeviceCreateInfo extends Struct<VkDeviceCreateInfo> implements Na
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkDeviceCreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkDeviceCreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

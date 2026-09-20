@@ -279,9 +279,6 @@ public class SDL_AudioDeviceEvent extends Struct<SDL_AudioDeviceEvent> implement
 
     /** An array of {@link SDL_AudioDeviceEvent} structs. */
     public static class Buffer extends StructBuffer<SDL_AudioDeviceEvent, Buffer> implements NativeResource {
-
-        private static final SDL_AudioDeviceEvent ELEMENT_FACTORY = SDL_AudioDeviceEvent.create(-1L);
-
         /**
          * Creates a new {@code SDL_AudioDeviceEvent.Buffer} instance backed by the specified container.
          *
@@ -304,18 +301,13 @@ public class SDL_AudioDeviceEvent extends Struct<SDL_AudioDeviceEvent> implement
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_AudioDeviceEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_AudioDeviceEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

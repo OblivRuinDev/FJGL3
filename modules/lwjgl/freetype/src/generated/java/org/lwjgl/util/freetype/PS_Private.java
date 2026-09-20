@@ -380,9 +380,6 @@ public class PS_Private extends Struct<PS_Private> {
 
     /** An array of {@link PS_Private} structs. */
     public static class Buffer extends StructBuffer<PS_Private, Buffer> {
-
-        private static final PS_Private ELEMENT_FACTORY = PS_Private.create(-1L);
-
         /**
          * Creates a new {@code PS_Private.Buffer} instance backed by the specified container.
          *
@@ -405,18 +402,13 @@ public class PS_Private extends Struct<PS_Private> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected PS_Private getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return PS_Private.class;
         }
 
         /** @return the value of the {@code unique_id} field. */

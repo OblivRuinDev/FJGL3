@@ -117,9 +117,6 @@ public class VkExternalMemoryProperties extends Struct<VkExternalMemoryPropertie
 
     /** An array of {@link VkExternalMemoryProperties} structs. */
     public static class Buffer extends StructBuffer<VkExternalMemoryProperties, Buffer> {
-
-        private static final VkExternalMemoryProperties ELEMENT_FACTORY = VkExternalMemoryProperties.create(-1L);
-
         /**
          * Creates a new {@code VkExternalMemoryProperties.Buffer} instance backed by the specified container.
          *
@@ -142,18 +139,13 @@ public class VkExternalMemoryProperties extends Struct<VkExternalMemoryPropertie
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkExternalMemoryProperties getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkExternalMemoryProperties.class;
         }
 
         /** @return the value of the {@code externalMemoryFeatures} field. */

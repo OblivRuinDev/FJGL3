@@ -365,9 +365,6 @@ public class XrSceneSubmeshDataANDROID extends Struct<XrSceneSubmeshDataANDROID>
 
     /** An array of {@link XrSceneSubmeshDataANDROID} structs. */
     public static class Buffer extends StructBuffer<XrSceneSubmeshDataANDROID, Buffer> implements NativeResource {
-
-        private static final XrSceneSubmeshDataANDROID ELEMENT_FACTORY = XrSceneSubmeshDataANDROID.create(-1L);
-
         /**
          * Creates a new {@code XrSceneSubmeshDataANDROID.Buffer} instance backed by the specified container.
          *
@@ -390,18 +387,13 @@ public class XrSceneSubmeshDataANDROID extends Struct<XrSceneSubmeshDataANDROID>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSceneSubmeshDataANDROID getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSceneSubmeshDataANDROID.class;
         }
 
         /** @return the value of the {@code type} field. */

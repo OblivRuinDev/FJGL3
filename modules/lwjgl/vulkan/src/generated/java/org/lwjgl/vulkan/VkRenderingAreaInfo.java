@@ -302,9 +302,6 @@ public class VkRenderingAreaInfo extends Struct<VkRenderingAreaInfo> implements 
 
     /** An array of {@link VkRenderingAreaInfo} structs. */
     public static class Buffer extends StructBuffer<VkRenderingAreaInfo, Buffer> implements NativeResource {
-
-        private static final VkRenderingAreaInfo ELEMENT_FACTORY = VkRenderingAreaInfo.create(-1L);
-
         /**
          * Creates a new {@code VkRenderingAreaInfo.Buffer} instance backed by the specified container.
          *
@@ -327,18 +324,13 @@ public class VkRenderingAreaInfo extends Struct<VkRenderingAreaInfo> implements 
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkRenderingAreaInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkRenderingAreaInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

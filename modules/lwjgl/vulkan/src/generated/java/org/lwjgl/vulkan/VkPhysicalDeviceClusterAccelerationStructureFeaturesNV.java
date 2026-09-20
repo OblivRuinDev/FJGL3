@@ -242,9 +242,6 @@ public class VkPhysicalDeviceClusterAccelerationStructureFeaturesNV extends Stru
 
     /** An array of {@link VkPhysicalDeviceClusterAccelerationStructureFeaturesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceClusterAccelerationStructureFeaturesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceClusterAccelerationStructureFeaturesNV ELEMENT_FACTORY = VkPhysicalDeviceClusterAccelerationStructureFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceClusterAccelerationStructureFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPhysicalDeviceClusterAccelerationStructureFeaturesNV extends Stru
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceClusterAccelerationStructureFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceClusterAccelerationStructureFeaturesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

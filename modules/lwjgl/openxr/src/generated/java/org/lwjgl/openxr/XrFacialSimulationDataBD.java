@@ -310,9 +310,6 @@ public class XrFacialSimulationDataBD extends Struct<XrFacialSimulationDataBD> i
 
     /** An array of {@link XrFacialSimulationDataBD} structs. */
     public static class Buffer extends StructBuffer<XrFacialSimulationDataBD, Buffer> implements NativeResource {
-
-        private static final XrFacialSimulationDataBD ELEMENT_FACTORY = XrFacialSimulationDataBD.create(-1L);
-
         /**
          * Creates a new {@code XrFacialSimulationDataBD.Buffer} instance backed by the specified container.
          *
@@ -335,18 +332,13 @@ public class XrFacialSimulationDataBD extends Struct<XrFacialSimulationDataBD> i
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrFacialSimulationDataBD getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrFacialSimulationDataBD.class;
         }
 
         /** @return the value of the {@code type} field. */

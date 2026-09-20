@@ -391,9 +391,6 @@ public class XrSwapchainStateSamplerOpenGLESFB extends Struct<XrSwapchainStateSa
 
     /** An array of {@link XrSwapchainStateSamplerOpenGLESFB} structs. */
     public static class Buffer extends StructBuffer<XrSwapchainStateSamplerOpenGLESFB, Buffer> implements NativeResource {
-
-        private static final XrSwapchainStateSamplerOpenGLESFB ELEMENT_FACTORY = XrSwapchainStateSamplerOpenGLESFB.create(-1L);
-
         /**
          * Creates a new {@code XrSwapchainStateSamplerOpenGLESFB.Buffer} instance backed by the specified container.
          *
@@ -416,18 +413,13 @@ public class XrSwapchainStateSamplerOpenGLESFB extends Struct<XrSwapchainStateSa
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSwapchainStateSamplerOpenGLESFB getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSwapchainStateSamplerOpenGLESFB.class;
         }
 
         /** @return the value of the {@code type} field. */

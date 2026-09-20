@@ -242,9 +242,6 @@ public class VkPipelineCreateFlags2CreateInfo extends Struct<VkPipelineCreateFla
 
     /** An array of {@link VkPipelineCreateFlags2CreateInfo} structs. */
     public static class Buffer extends StructBuffer<VkPipelineCreateFlags2CreateInfo, Buffer> implements NativeResource {
-
-        private static final VkPipelineCreateFlags2CreateInfo ELEMENT_FACTORY = VkPipelineCreateFlags2CreateInfo.create(-1L);
-
         /**
          * Creates a new {@code VkPipelineCreateFlags2CreateInfo.Buffer} instance backed by the specified container.
          *
@@ -267,18 +264,13 @@ public class VkPipelineCreateFlags2CreateInfo extends Struct<VkPipelineCreateFla
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPipelineCreateFlags2CreateInfo getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPipelineCreateFlags2CreateInfo.class;
         }
 
         /** @return the value of the {@code sType} field. */

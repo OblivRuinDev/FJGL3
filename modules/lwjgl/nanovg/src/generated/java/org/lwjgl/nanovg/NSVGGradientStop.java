@@ -108,9 +108,6 @@ public class NSVGGradientStop extends Struct<NSVGGradientStop> {
 
     /** An array of {@link NSVGGradientStop} structs. */
     public static class Buffer extends StructBuffer<NSVGGradientStop, Buffer> {
-
-        private static final NSVGGradientStop ELEMENT_FACTORY = NSVGGradientStop.create(-1L);
-
         /**
          * Creates a new {@code NSVGGradientStop.Buffer} instance backed by the specified container.
          *
@@ -133,18 +130,13 @@ public class NSVGGradientStop extends Struct<NSVGGradientStop> {
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected NSVGGradientStop getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return NSVGGradientStop.class;
         }
 
         /** @return the value of the {@code color} field. */

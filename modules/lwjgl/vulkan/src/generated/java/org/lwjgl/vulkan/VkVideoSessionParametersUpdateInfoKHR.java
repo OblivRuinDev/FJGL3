@@ -250,9 +250,6 @@ public class VkVideoSessionParametersUpdateInfoKHR extends Struct<VkVideoSession
 
     /** An array of {@link VkVideoSessionParametersUpdateInfoKHR} structs. */
     public static class Buffer extends StructBuffer<VkVideoSessionParametersUpdateInfoKHR, Buffer> implements NativeResource {
-
-        private static final VkVideoSessionParametersUpdateInfoKHR ELEMENT_FACTORY = VkVideoSessionParametersUpdateInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkVideoSessionParametersUpdateInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -275,18 +272,13 @@ public class VkVideoSessionParametersUpdateInfoKHR extends Struct<VkVideoSession
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVideoSessionParametersUpdateInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVideoSessionParametersUpdateInfoKHR.class;
         }
 
         /** @return the value of the {@code sType} field. */

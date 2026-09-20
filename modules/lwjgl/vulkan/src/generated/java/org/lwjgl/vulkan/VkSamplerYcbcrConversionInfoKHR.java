@@ -191,9 +191,6 @@ public class VkSamplerYcbcrConversionInfoKHR extends VkSamplerYcbcrConversionInf
 
     /** An array of {@link VkSamplerYcbcrConversionInfoKHR} structs. */
     public static class Buffer extends VkSamplerYcbcrConversionInfo.Buffer {
-
-        private static final VkSamplerYcbcrConversionInfoKHR ELEMENT_FACTORY = VkSamplerYcbcrConversionInfoKHR.create(-1L);
-
         /**
          * Creates a new {@code VkSamplerYcbcrConversionInfoKHR.Buffer} instance backed by the specified container.
          *
@@ -216,18 +213,13 @@ public class VkSamplerYcbcrConversionInfoKHR extends VkSamplerYcbcrConversionInf
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkSamplerYcbcrConversionInfoKHR getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkSamplerYcbcrConversionInfoKHR.class;
         }
 
         /** Sets the specified value to the {@code sType} field. */

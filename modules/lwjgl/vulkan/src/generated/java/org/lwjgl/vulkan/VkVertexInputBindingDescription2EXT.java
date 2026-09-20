@@ -287,9 +287,6 @@ public class VkVertexInputBindingDescription2EXT extends Struct<VkVertexInputBin
 
     /** An array of {@link VkVertexInputBindingDescription2EXT} structs. */
     public static class Buffer extends StructBuffer<VkVertexInputBindingDescription2EXT, Buffer> implements NativeResource {
-
-        private static final VkVertexInputBindingDescription2EXT ELEMENT_FACTORY = VkVertexInputBindingDescription2EXT.create(-1L);
-
         /**
          * Creates a new {@code VkVertexInputBindingDescription2EXT.Buffer} instance backed by the specified container.
          *
@@ -312,18 +309,13 @@ public class VkVertexInputBindingDescription2EXT extends Struct<VkVertexInputBin
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkVertexInputBindingDescription2EXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkVertexInputBindingDescription2EXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

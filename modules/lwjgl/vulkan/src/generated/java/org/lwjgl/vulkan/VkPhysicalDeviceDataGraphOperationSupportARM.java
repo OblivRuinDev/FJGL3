@@ -254,9 +254,6 @@ public class VkPhysicalDeviceDataGraphOperationSupportARM extends Struct<VkPhysi
 
     /** An array of {@link VkPhysicalDeviceDataGraphOperationSupportARM} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceDataGraphOperationSupportARM, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceDataGraphOperationSupportARM ELEMENT_FACTORY = VkPhysicalDeviceDataGraphOperationSupportARM.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceDataGraphOperationSupportARM.Buffer} instance backed by the specified container.
          *
@@ -279,18 +276,13 @@ public class VkPhysicalDeviceDataGraphOperationSupportARM extends Struct<VkPhysi
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceDataGraphOperationSupportARM getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceDataGraphOperationSupportARM.class;
         }
 
         /** @return the value of the {@code operationType} field. */

@@ -230,9 +230,6 @@ public class XrSpatialPolygon2DDataEXT extends Struct<XrSpatialPolygon2DDataEXT>
 
     /** An array of {@link XrSpatialPolygon2DDataEXT} structs. */
     public static class Buffer extends StructBuffer<XrSpatialPolygon2DDataEXT, Buffer> implements NativeResource {
-
-        private static final XrSpatialPolygon2DDataEXT ELEMENT_FACTORY = XrSpatialPolygon2DDataEXT.create(-1L);
-
         /**
          * Creates a new {@code XrSpatialPolygon2DDataEXT.Buffer} instance backed by the specified container.
          *
@@ -255,18 +252,13 @@ public class XrSpatialPolygon2DDataEXT extends Struct<XrSpatialPolygon2DDataEXT>
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrSpatialPolygon2DDataEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrSpatialPolygon2DDataEXT.class;
         }
 
         /** @return a {@link XrPosef} view of the {@code origin} field. */

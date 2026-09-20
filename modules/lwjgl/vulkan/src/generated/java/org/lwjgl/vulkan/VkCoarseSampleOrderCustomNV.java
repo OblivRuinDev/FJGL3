@@ -261,9 +261,6 @@ public class VkCoarseSampleOrderCustomNV extends Struct<VkCoarseSampleOrderCusto
 
     /** An array of {@link VkCoarseSampleOrderCustomNV} structs. */
     public static class Buffer extends StructBuffer<VkCoarseSampleOrderCustomNV, Buffer> implements NativeResource {
-
-        private static final VkCoarseSampleOrderCustomNV ELEMENT_FACTORY = VkCoarseSampleOrderCustomNV.create(-1L);
-
         /**
          * Creates a new {@code VkCoarseSampleOrderCustomNV.Buffer} instance backed by the specified container.
          *
@@ -286,18 +283,13 @@ public class VkCoarseSampleOrderCustomNV extends Struct<VkCoarseSampleOrderCusto
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCoarseSampleOrderCustomNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCoarseSampleOrderCustomNV.class;
         }
 
         /** @return the value of the {@code shadingRate} field. */

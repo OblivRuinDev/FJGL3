@@ -260,9 +260,6 @@ public class StdVideoAV1LoopRestoration extends Struct<StdVideoAV1LoopRestoratio
 
     /** An array of {@link StdVideoAV1LoopRestoration} structs. */
     public static class Buffer extends StructBuffer<StdVideoAV1LoopRestoration, Buffer> implements NativeResource {
-
-        private static final StdVideoAV1LoopRestoration ELEMENT_FACTORY = StdVideoAV1LoopRestoration.create(-1L);
-
         /**
          * Creates a new {@code StdVideoAV1LoopRestoration.Buffer} instance backed by the specified container.
          *
@@ -285,18 +282,13 @@ public class StdVideoAV1LoopRestoration extends Struct<StdVideoAV1LoopRestoratio
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected StdVideoAV1LoopRestoration getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return StdVideoAV1LoopRestoration.class;
         }
 
         /** @return a {@link IntBuffer} view of the {@code FrameRestorationType} field. */

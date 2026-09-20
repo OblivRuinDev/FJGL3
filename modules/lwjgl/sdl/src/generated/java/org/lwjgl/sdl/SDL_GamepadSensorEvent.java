@@ -307,9 +307,6 @@ public class SDL_GamepadSensorEvent extends Struct<SDL_GamepadSensorEvent> imple
 
     /** An array of {@link SDL_GamepadSensorEvent} structs. */
     public static class Buffer extends StructBuffer<SDL_GamepadSensorEvent, Buffer> implements NativeResource {
-
-        private static final SDL_GamepadSensorEvent ELEMENT_FACTORY = SDL_GamepadSensorEvent.create(-1L);
-
         /**
          * Creates a new {@code SDL_GamepadSensorEvent.Buffer} instance backed by the specified container.
          *
@@ -332,18 +329,13 @@ public class SDL_GamepadSensorEvent extends Struct<SDL_GamepadSensorEvent> imple
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected SDL_GamepadSensorEvent getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return SDL_GamepadSensorEvent.class;
         }
 
         /** @return the value of the {@code type} field. */

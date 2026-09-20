@@ -206,9 +206,6 @@ public class STBVorbisComment extends Struct<STBVorbisComment> implements Native
 
     /** An array of {@link STBVorbisComment} structs. */
     public static class Buffer extends StructBuffer<STBVorbisComment, Buffer> implements NativeResource {
-
-        private static final STBVorbisComment ELEMENT_FACTORY = STBVorbisComment.create(-1L);
-
         /**
          * Creates a new {@code STBVorbisComment.Buffer} instance backed by the specified container.
          *
@@ -231,18 +228,13 @@ public class STBVorbisComment extends Struct<STBVorbisComment> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected STBVorbisComment getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return STBVorbisComment.class;
         }
 
         /** @return a {@link ByteBuffer} view of the null-terminated string pointed to by the {@code vendor} field. */
