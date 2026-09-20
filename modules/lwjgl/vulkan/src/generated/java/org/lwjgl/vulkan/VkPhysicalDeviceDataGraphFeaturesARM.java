@@ -68,13 +68,8 @@ public class VkPhysicalDeviceDataGraphFeaturesARM extends Struct<VkPhysicalDevic
         DATAGRAPHSHADERMODULE = layout.offsetof(6);
     }
 
-    protected VkPhysicalDeviceDataGraphFeaturesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDataGraphFeaturesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDataGraphFeaturesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDataGraphFeaturesARM(address, container);
     }
 
     /**

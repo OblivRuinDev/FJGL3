@@ -52,13 +52,8 @@ public class VkPhysicalDeviceVideoFormatInfoKHR extends Struct<VkPhysicalDeviceV
         IMAGEUSAGE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceVideoFormatInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVideoFormatInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVideoFormatInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVideoFormatInfoKHR(address, container);
     }
 
     /**

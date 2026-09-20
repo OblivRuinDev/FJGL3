@@ -48,13 +48,8 @@ public class XrSpaceFilterBaseHeaderMETA extends Struct<XrSpaceFilterBaseHeaderM
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSpaceFilterBaseHeaderMETA(long address, @Nullable ByteBuffer container) {
+    public XrSpaceFilterBaseHeaderMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceFilterBaseHeaderMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceFilterBaseHeaderMETA(address, container);
     }
 
     /**

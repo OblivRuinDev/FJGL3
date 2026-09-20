@@ -64,13 +64,8 @@ public class VkPhysicalDeviceCooperativeVectorPropertiesNV extends Struct<VkPhys
         MAXCOOPERATIVEVECTORCOMPONENTS = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceCooperativeVectorPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCooperativeVectorPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCooperativeVectorPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCooperativeVectorPropertiesNV(address, container);
     }
 
     /**

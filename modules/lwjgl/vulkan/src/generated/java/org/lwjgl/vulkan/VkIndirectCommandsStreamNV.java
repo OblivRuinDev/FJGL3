@@ -48,13 +48,8 @@ public class VkIndirectCommandsStreamNV extends Struct<VkIndirectCommandsStreamN
         OFFSET = layout.offsetof(1);
     }
 
-    protected VkIndirectCommandsStreamNV(long address, @Nullable ByteBuffer container) {
+    public VkIndirectCommandsStreamNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectCommandsStreamNV create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectCommandsStreamNV(address, container);
     }
 
     /**

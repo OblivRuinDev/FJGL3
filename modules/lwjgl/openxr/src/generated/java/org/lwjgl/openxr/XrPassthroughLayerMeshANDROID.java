@@ -69,13 +69,8 @@ public class XrPassthroughLayerMeshANDROID extends Struct<XrPassthroughLayerMesh
         INDICES = layout.offsetof(6);
     }
 
-    protected XrPassthroughLayerMeshANDROID(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughLayerMeshANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughLayerMeshANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughLayerMeshANDROID(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class VkImageFormatListCreateInfo extends Struct<VkImageFormatListCreateI
         PVIEWFORMATS = layout.offsetof(3);
     }
 
-    protected VkImageFormatListCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkImageFormatListCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageFormatListCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkImageFormatListCreateInfo(address, container);
     }
 
     /**

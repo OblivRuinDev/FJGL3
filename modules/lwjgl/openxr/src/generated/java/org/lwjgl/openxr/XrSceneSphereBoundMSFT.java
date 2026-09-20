@@ -50,13 +50,8 @@ public class XrSceneSphereBoundMSFT extends Struct<XrSceneSphereBoundMSFT> imple
         RADIUS = layout.offsetof(1);
     }
 
-    protected XrSceneSphereBoundMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneSphereBoundMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneSphereBoundMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneSphereBoundMSFT(address, container);
     }
 
     /**

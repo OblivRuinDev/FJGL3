@@ -52,13 +52,8 @@ public class XrWorldMeshBufferSizeML extends Struct<XrWorldMeshBufferSizeML> imp
         SIZE = layout.offsetof(2);
     }
 
-    protected XrWorldMeshBufferSizeML(long address, @Nullable ByteBuffer container) {
+    public XrWorldMeshBufferSizeML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrWorldMeshBufferSizeML create(long address, @Nullable ByteBuffer container) {
-        return new XrWorldMeshBufferSizeML(address, container);
     }
 
     /**

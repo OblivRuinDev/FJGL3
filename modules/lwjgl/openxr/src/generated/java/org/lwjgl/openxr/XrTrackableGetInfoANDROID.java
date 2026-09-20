@@ -61,13 +61,8 @@ public class XrTrackableGetInfoANDROID extends Struct<XrTrackableGetInfoANDROID>
         TIME = layout.offsetof(4);
     }
 
-    protected XrTrackableGetInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrTrackableGetInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrTrackableGetInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrTrackableGetInfoANDROID(address, container);
     }
 
     /**

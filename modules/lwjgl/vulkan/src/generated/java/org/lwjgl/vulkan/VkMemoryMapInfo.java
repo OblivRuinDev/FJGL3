@@ -64,13 +64,8 @@ public class VkMemoryMapInfo extends Struct<VkMemoryMapInfo> implements NativeRe
         SIZE = layout.offsetof(5);
     }
 
-    protected VkMemoryMapInfo(long address, @Nullable ByteBuffer container) {
+    public VkMemoryMapInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryMapInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryMapInfo(address, container);
     }
 
     /**

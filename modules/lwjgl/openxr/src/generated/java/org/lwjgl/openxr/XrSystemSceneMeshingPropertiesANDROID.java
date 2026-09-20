@@ -52,13 +52,8 @@ public class XrSystemSceneMeshingPropertiesANDROID extends Struct<XrSystemSceneM
         SUPPORTSSCENEMESHING = layout.offsetof(2);
     }
 
-    protected XrSystemSceneMeshingPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemSceneMeshingPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemSceneMeshingPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemSceneMeshingPropertiesANDROID(address, container);
     }
 
     /**

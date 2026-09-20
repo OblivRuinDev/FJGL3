@@ -60,13 +60,8 @@ public class SDL_PathInfo extends Struct<SDL_PathInfo> implements NativeResource
         ACCESS_TIME = layout.offsetof(4);
     }
 
-    protected SDL_PathInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_PathInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_PathInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_PathInfo(address, container);
     }
 
     /**

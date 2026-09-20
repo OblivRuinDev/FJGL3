@@ -54,13 +54,8 @@ public class VkSubresourceLayout2 extends Struct<VkSubresourceLayout2> implement
         SUBRESOURCELAYOUT = layout.offsetof(2);
     }
 
-    protected VkSubresourceLayout2(long address, @Nullable ByteBuffer container) {
+    public VkSubresourceLayout2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubresourceLayout2 create(long address, @Nullable ByteBuffer container) {
-        return new VkSubresourceLayout2(address, container);
     }
 
     /**

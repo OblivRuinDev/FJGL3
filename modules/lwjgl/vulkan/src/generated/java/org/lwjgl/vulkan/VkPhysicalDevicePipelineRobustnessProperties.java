@@ -64,13 +64,8 @@ public class VkPhysicalDevicePipelineRobustnessProperties extends Struct<VkPhysi
         DEFAULTROBUSTNESSIMAGES = layout.offsetof(5);
     }
 
-    protected VkPhysicalDevicePipelineRobustnessProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePipelineRobustnessProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePipelineRobustnessProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePipelineRobustnessProperties(address, container);
     }
 
     /**

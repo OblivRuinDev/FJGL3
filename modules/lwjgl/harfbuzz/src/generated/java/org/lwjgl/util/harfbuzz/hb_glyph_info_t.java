@@ -62,13 +62,8 @@ public class hb_glyph_info_t extends Struct<hb_glyph_info_t> implements NativeRe
         VAR2 = layout.offsetof(4);
     }
 
-    protected hb_glyph_info_t(long address, @Nullable ByteBuffer container) {
+    public hb_glyph_info_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_glyph_info_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_glyph_info_t(address, container);
     }
 
     /**

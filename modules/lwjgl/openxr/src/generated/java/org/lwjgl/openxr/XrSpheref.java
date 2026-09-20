@@ -50,13 +50,8 @@ public class XrSpheref extends Struct<XrSpheref> implements NativeResource {
         RADIUS = layout.offsetof(1);
     }
 
-    protected XrSpheref(long address, @Nullable ByteBuffer container) {
+    public XrSpheref(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpheref create(long address, @Nullable ByteBuffer container) {
-        return new XrSpheref(address, container);
     }
 
     /**

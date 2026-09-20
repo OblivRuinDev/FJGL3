@@ -75,13 +75,8 @@ class NkConfigurationStacks extends Struct<NkConfigurationStacks> {
         BUTTON_BEHAVIORS = layout.offsetof(6);
     }
 
-    protected NkConfigurationStacks(long address, @Nullable ByteBuffer container) {
+    public NkConfigurationStacks(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkConfigurationStacks create(long address, @Nullable ByteBuffer container) {
-        return new NkConfigurationStacks(address, container);
     }
 
     /**

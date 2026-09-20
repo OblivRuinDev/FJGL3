@@ -63,13 +63,8 @@ public class XrSpatialBoundsBoxfANDROID extends Struct<XrSpatialBoundsBoxfANDROI
         BOX = layout.offsetof(4);
     }
 
-    protected XrSpatialBoundsBoxfANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialBoundsBoxfANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialBoundsBoxfANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialBoundsBoxfANDROID(address, container);
     }
 
     /**

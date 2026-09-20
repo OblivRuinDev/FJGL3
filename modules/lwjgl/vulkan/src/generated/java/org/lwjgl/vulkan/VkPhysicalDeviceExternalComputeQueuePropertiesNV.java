@@ -56,13 +56,8 @@ public class VkPhysicalDeviceExternalComputeQueuePropertiesNV extends Struct<VkP
         MAXEXTERNALQUEUES = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceExternalComputeQueuePropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalComputeQueuePropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalComputeQueuePropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalComputeQueuePropertiesNV(address, container);
     }
 
     /**

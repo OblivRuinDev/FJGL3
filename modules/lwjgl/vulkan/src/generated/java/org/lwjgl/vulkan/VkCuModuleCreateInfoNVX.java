@@ -57,13 +57,8 @@ public class VkCuModuleCreateInfoNVX extends Struct<VkCuModuleCreateInfoNVX> imp
         PDATA = layout.offsetof(3);
     }
 
-    protected VkCuModuleCreateInfoNVX(long address, @Nullable ByteBuffer container) {
+    public VkCuModuleCreateInfoNVX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCuModuleCreateInfoNVX create(long address, @Nullable ByteBuffer container) {
-        return new VkCuModuleCreateInfoNVX(address, container);
     }
 
     /**

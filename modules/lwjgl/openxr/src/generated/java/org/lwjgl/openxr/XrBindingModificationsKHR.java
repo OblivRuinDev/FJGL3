@@ -56,13 +56,8 @@ public class XrBindingModificationsKHR extends Struct<XrBindingModificationsKHR>
         BINDINGMODIFICATIONS = layout.offsetof(3);
     }
 
-    protected XrBindingModificationsKHR(long address, @Nullable ByteBuffer container) {
+    public XrBindingModificationsKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBindingModificationsKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrBindingModificationsKHR(address, container);
     }
 
     /**

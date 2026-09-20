@@ -48,13 +48,8 @@ public class XrSenseDataProviderStartInfoBD extends Struct<XrSenseDataProviderSt
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSenseDataProviderStartInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrSenseDataProviderStartInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSenseDataProviderStartInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSenseDataProviderStartInfoBD(address, container);
     }
 
     /**

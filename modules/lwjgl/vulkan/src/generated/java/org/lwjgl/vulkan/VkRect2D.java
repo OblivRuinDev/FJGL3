@@ -51,13 +51,8 @@ public class VkRect2D extends Struct<VkRect2D> implements NativeResource {
         EXTENT = layout.offsetof(1);
     }
 
-    protected VkRect2D(long address, @Nullable ByteBuffer container) {
+    public VkRect2D(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRect2D create(long address, @Nullable ByteBuffer container) {
-        return new VkRect2D(address, container);
     }
 
     /**

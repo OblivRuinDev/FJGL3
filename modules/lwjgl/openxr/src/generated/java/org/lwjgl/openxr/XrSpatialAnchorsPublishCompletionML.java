@@ -61,13 +61,8 @@ public class XrSpatialAnchorsPublishCompletionML extends Struct<XrSpatialAnchors
         UUIDS = layout.offsetof(4);
     }
 
-    protected XrSpatialAnchorsPublishCompletionML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsPublishCompletionML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsPublishCompletionML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsPublishCompletionML(address, container);
     }
 
     /**

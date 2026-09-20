@@ -82,13 +82,8 @@ public class SDL_GPUGraphicsPipelineCreateInfo extends Struct<SDL_GPUGraphicsPip
         PROPS = layout.offsetof(8);
     }
 
-    protected SDL_GPUGraphicsPipelineCreateInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUGraphicsPipelineCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUGraphicsPipelineCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUGraphicsPipelineCreateInfo(address, container);
     }
 
     /**

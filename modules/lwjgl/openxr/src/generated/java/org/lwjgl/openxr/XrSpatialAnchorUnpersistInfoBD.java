@@ -57,13 +57,8 @@ public class XrSpatialAnchorUnpersistInfoBD extends Struct<XrSpatialAnchorUnpers
         ANCHOR = layout.offsetof(3);
     }
 
-    protected XrSpatialAnchorUnpersistInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorUnpersistInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorUnpersistInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorUnpersistInfoBD(address, container);
     }
 
     /**

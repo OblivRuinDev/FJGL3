@@ -52,13 +52,8 @@ public class XrInteractionProfileState extends Struct<XrInteractionProfileState>
         INTERACTIONPROFILE = layout.offsetof(2);
     }
 
-    protected XrInteractionProfileState(long address, @Nullable ByteBuffer container) {
+    public XrInteractionProfileState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrInteractionProfileState create(long address, @Nullable ByteBuffer container) {
-        return new XrInteractionProfileState(address, container);
     }
 
     /**

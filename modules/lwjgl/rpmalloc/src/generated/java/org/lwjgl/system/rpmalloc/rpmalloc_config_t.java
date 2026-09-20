@@ -73,13 +73,8 @@ public class rpmalloc_config_t extends Struct<rpmalloc_config_t> implements Nati
         DISABLE_THP = layout.offsetof(7);
     }
 
-    protected rpmalloc_config_t(long address, @Nullable ByteBuffer container) {
+    public rpmalloc_config_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected rpmalloc_config_t create(long address, @Nullable ByteBuffer container) {
-        return new rpmalloc_config_t(address, container);
     }
 
     /**

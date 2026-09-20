@@ -52,13 +52,8 @@ public class XrEventDataViveTrackerConnectedHTCX extends Struct<XrEventDataViveT
         PATHS = layout.offsetof(2);
     }
 
-    protected XrEventDataViveTrackerConnectedHTCX(long address, @Nullable ByteBuffer container) {
+    public XrEventDataViveTrackerConnectedHTCX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataViveTrackerConnectedHTCX create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataViveTrackerConnectedHTCX(address, container);
     }
 
     /**

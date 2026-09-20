@@ -52,13 +52,8 @@ public class XrSystemDynamicObjectTrackingPropertiesBD extends Struct<XrSystemDy
         SUPPORTSDYNAMICOBJECTTRACKING = layout.offsetof(2);
     }
 
-    protected XrSystemDynamicObjectTrackingPropertiesBD(long address, @Nullable ByteBuffer container) {
+    public XrSystemDynamicObjectTrackingPropertiesBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemDynamicObjectTrackingPropertiesBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemDynamicObjectTrackingPropertiesBD(address, container);
     }
 
     /**

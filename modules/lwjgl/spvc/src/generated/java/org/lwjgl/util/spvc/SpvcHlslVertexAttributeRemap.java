@@ -50,13 +50,8 @@ public class SpvcHlslVertexAttributeRemap extends Struct<SpvcHlslVertexAttribute
         SEMANTIC = layout.offsetof(1);
     }
 
-    protected SpvcHlslVertexAttributeRemap(long address, @Nullable ByteBuffer container) {
+    public SpvcHlslVertexAttributeRemap(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcHlslVertexAttributeRemap create(long address, @Nullable ByteBuffer container) {
-        return new SpvcHlslVertexAttributeRemap(address, container);
     }
 
     /**

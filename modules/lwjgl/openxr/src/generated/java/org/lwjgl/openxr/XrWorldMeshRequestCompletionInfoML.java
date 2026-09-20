@@ -57,13 +57,8 @@ public class XrWorldMeshRequestCompletionInfoML extends Struct<XrWorldMeshReques
         MESHSPACELOCATETIME = layout.offsetof(3);
     }
 
-    protected XrWorldMeshRequestCompletionInfoML(long address, @Nullable ByteBuffer container) {
+    public XrWorldMeshRequestCompletionInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrWorldMeshRequestCompletionInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrWorldMeshRequestCompletionInfoML(address, container);
     }
 
     /**

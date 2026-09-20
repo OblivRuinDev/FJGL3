@@ -73,13 +73,8 @@ public class VkResolveImageInfo2 extends Struct<VkResolveImageInfo2> implements 
         PREGIONS = layout.offsetof(7);
     }
 
-    protected VkResolveImageInfo2(long address, @Nullable ByteBuffer container) {
+    public VkResolveImageInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkResolveImageInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VkResolveImageInfo2(address, container);
     }
 
     /**

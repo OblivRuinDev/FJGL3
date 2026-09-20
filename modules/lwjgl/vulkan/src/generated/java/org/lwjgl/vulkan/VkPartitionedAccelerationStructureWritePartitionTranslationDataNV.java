@@ -49,13 +49,8 @@ public class VkPartitionedAccelerationStructureWritePartitionTranslationDataNV e
         PARTITIONTRANSLATION = layout.offsetof(1);
     }
 
-    protected VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(long address, @Nullable ByteBuffer container) {
+    public VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPartitionedAccelerationStructureWritePartitionTranslationDataNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(address, container);
     }
 
     /**

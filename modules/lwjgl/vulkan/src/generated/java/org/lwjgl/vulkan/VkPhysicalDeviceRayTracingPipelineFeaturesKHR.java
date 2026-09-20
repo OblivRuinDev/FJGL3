@@ -68,13 +68,8 @@ public class VkPhysicalDeviceRayTracingPipelineFeaturesKHR extends Struct<VkPhys
         RAYTRAVERSALPRIMITIVECULLING = layout.offsetof(6);
     }
 
-    protected VkPhysicalDeviceRayTracingPipelineFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRayTracingPipelineFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRayTracingPipelineFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRayTracingPipelineFeaturesKHR(address, container);
     }
 
     /**

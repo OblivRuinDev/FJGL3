@@ -54,13 +54,8 @@ public class VkPipelineExecutableStatisticValueKHR extends Struct<VkPipelineExec
         F64 = layout.offsetof(3);
     }
 
-    protected VkPipelineExecutableStatisticValueKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineExecutableStatisticValueKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineExecutableStatisticValueKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineExecutableStatisticValueKHR(address, container);
     }
 
     /**

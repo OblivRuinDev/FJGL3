@@ -61,13 +61,8 @@ public class IOURingRSRCRegister extends Struct<IOURingRSRCRegister> implements 
         TAGS = layout.offsetof(4);
     }
 
-    protected IOURingRSRCRegister(long address, @Nullable ByteBuffer container) {
+    public IOURingRSRCRegister(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingRSRCRegister create(long address, @Nullable ByteBuffer container) {
-        return new IOURingRSRCRegister(address, container);
     }
 
     /**

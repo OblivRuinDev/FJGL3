@@ -68,13 +68,8 @@ public class VkPresentTimingInfoEXT extends Struct<VkPresentTimingInfoEXT> imple
         TARGETTIMEDOMAINPRESENTSTAGE = layout.offsetof(6);
     }
 
-    protected VkPresentTimingInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPresentTimingInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPresentTimingInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPresentTimingInfoEXT(address, container);
     }
 
     /**

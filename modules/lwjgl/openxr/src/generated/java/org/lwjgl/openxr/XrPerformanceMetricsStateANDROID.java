@@ -52,13 +52,8 @@ public class XrPerformanceMetricsStateANDROID extends Struct<XrPerformanceMetric
         ENABLED = layout.offsetof(2);
     }
 
-    protected XrPerformanceMetricsStateANDROID(long address, @Nullable ByteBuffer container) {
+    public XrPerformanceMetricsStateANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPerformanceMetricsStateANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrPerformanceMetricsStateANDROID(address, container);
     }
 
     /**

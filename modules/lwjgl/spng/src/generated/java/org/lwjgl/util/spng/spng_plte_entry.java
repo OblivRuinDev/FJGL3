@@ -57,13 +57,8 @@ public class spng_plte_entry extends Struct<spng_plte_entry> implements NativeRe
         ALPHA = layout.offsetof(3);
     }
 
-    protected spng_plte_entry(long address, @Nullable ByteBuffer container) {
+    public spng_plte_entry(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_plte_entry create(long address, @Nullable ByteBuffer container) {
-        return new spng_plte_entry(address, container);
     }
 
     /**

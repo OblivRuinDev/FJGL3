@@ -50,13 +50,8 @@ public class ObjCPropertyAttribute extends Struct<ObjCPropertyAttribute> impleme
         VALUE = layout.offsetof(1);
     }
 
-    protected ObjCPropertyAttribute(long address, @Nullable ByteBuffer container) {
+    public ObjCPropertyAttribute(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ObjCPropertyAttribute create(long address, @Nullable ByteBuffer container) {
-        return new ObjCPropertyAttribute(address, container);
     }
 
     /**

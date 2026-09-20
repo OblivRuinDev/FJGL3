@@ -49,13 +49,8 @@ class NkConfigStackVec2Element extends Struct<NkConfigStackVec2Element> {
         OLD_VALUE = layout.offsetof(1);
     }
 
-    protected NkConfigStackVec2Element(long address, @Nullable ByteBuffer container) {
+    public NkConfigStackVec2Element(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkConfigStackVec2Element create(long address, @Nullable ByteBuffer container) {
-        return new NkConfigStackVec2Element(address, container);
     }
 
     /**

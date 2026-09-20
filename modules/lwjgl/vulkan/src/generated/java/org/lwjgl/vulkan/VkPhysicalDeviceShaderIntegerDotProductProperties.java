@@ -168,13 +168,8 @@ public class VkPhysicalDeviceShaderIntegerDotProductProperties extends Struct<Vk
         INTEGERDOTPRODUCTACCUMULATINGSATURATING64BITMIXEDSIGNEDNESSACCELERATED = layout.offsetof(31);
     }
 
-    protected VkPhysicalDeviceShaderIntegerDotProductProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderIntegerDotProductProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderIntegerDotProductProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderIntegerDotProductProperties(address, container);
     }
 
     /**

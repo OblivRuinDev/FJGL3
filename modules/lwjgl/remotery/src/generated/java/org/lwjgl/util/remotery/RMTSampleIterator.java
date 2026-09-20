@@ -49,13 +49,8 @@ public class RMTSampleIterator extends Struct<RMTSampleIterator> implements Nati
         INITIAL = layout.offsetof(1);
     }
 
-    protected RMTSampleIterator(long address, @Nullable ByteBuffer container) {
+    public RMTSampleIterator(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected RMTSampleIterator create(long address, @Nullable ByteBuffer container) {
-        return new RMTSampleIterator(address, container);
     }
 
     /**

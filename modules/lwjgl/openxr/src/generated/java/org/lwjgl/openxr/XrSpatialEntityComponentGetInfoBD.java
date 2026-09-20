@@ -56,13 +56,8 @@ public class XrSpatialEntityComponentGetInfoBD extends Struct<XrSpatialEntityCom
         COMPONENTTYPE = layout.offsetof(3);
     }
 
-    protected XrSpatialEntityComponentGetInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityComponentGetInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityComponentGetInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityComponentGetInfoBD(address, container);
     }
 
     /**

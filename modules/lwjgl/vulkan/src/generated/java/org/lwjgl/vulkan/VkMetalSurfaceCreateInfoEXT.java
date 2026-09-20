@@ -56,13 +56,8 @@ public class VkMetalSurfaceCreateInfoEXT extends Struct<VkMetalSurfaceCreateInfo
         PLAYER = layout.offsetof(3);
     }
 
-    protected VkMetalSurfaceCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkMetalSurfaceCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMetalSurfaceCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMetalSurfaceCreateInfoEXT(address, container);
     }
 
     /**

@@ -80,13 +80,8 @@ public class STBRPContext extends Struct<STBRPContext> implements NativeResource
         EXTRA = layout.offsetof(8);
     }
 
-    protected STBRPContext(long address, @Nullable ByteBuffer container) {
+    public STBRPContext(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBRPContext create(long address, @Nullable ByteBuffer container) {
-        return new STBRPContext(address, container);
     }
 
     /**

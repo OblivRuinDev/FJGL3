@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR extends VkPhysicalDeviceVertexAttributeDivisorFeatures {
 
-    protected VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR(address, container);
     }
 
     /**

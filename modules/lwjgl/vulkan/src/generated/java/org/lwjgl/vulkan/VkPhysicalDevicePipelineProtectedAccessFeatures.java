@@ -52,13 +52,8 @@ public class VkPhysicalDevicePipelineProtectedAccessFeatures extends Struct<VkPh
         PIPELINEPROTECTEDACCESS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePipelineProtectedAccessFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePipelineProtectedAccessFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePipelineProtectedAccessFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePipelineProtectedAccessFeatures(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class XrBodySkeletonFB extends Struct<XrBodySkeletonFB> implements Native
         JOINTS = layout.offsetof(3);
     }
 
-    protected XrBodySkeletonFB(long address, @Nullable ByteBuffer container) {
+    public XrBodySkeletonFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodySkeletonFB create(long address, @Nullable ByteBuffer container) {
-        return new XrBodySkeletonFB(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrSpatialEntityComponentDataPlaneOrientationBD extends Struct<XrSpa
         ORIENTATION = layout.offsetof(2);
     }
 
-    protected XrSpatialEntityComponentDataPlaneOrientationBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityComponentDataPlaneOrientationBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityComponentDataPlaneOrientationBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityComponentDataPlaneOrientationBD(address, container);
     }
 
     /**

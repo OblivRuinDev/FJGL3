@@ -47,13 +47,8 @@ public class XrSpatialAnchorNameHTC extends Struct<XrSpatialAnchorNameHTC> imple
         NAME = layout.offsetof(0);
     }
 
-    protected XrSpatialAnchorNameHTC(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorNameHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorNameHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorNameHTC(address, container);
     }
 
     /**

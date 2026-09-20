@@ -48,13 +48,8 @@ public class VkMultiDrawInfoEXT extends Struct<VkMultiDrawInfoEXT> implements Na
         VERTEXCOUNT = layout.offsetof(1);
     }
 
-    protected VkMultiDrawInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkMultiDrawInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMultiDrawInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMultiDrawInfoEXT(address, container);
     }
 
     /**

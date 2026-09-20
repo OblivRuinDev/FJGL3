@@ -66,13 +66,8 @@ public class LZ4StreamInternal extends Struct<LZ4StreamInternal> {
         DICTSIZE = layout.offsetof(5);
     }
 
-    protected LZ4StreamInternal(long address, @Nullable ByteBuffer container) {
+    public LZ4StreamInternal(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LZ4StreamInternal create(long address, @Nullable ByteBuffer container) {
-        return new LZ4StreamInternal(address, container);
     }
 
     /**

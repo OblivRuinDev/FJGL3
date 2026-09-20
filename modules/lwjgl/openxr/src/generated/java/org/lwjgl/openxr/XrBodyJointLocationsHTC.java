@@ -69,13 +69,8 @@ public class XrBodyJointLocationsHTC extends Struct<XrBodyJointLocationsHTC> imp
         SKELETONGENERATIONID = layout.offsetof(6);
     }
 
-    protected XrBodyJointLocationsHTC(long address, @Nullable ByteBuffer container) {
+    public XrBodyJointLocationsHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyJointLocationsHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyJointLocationsHTC(address, container);
     }
 
     /**

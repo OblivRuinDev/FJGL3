@@ -52,13 +52,8 @@ public class VkDedicatedAllocationBufferCreateInfoNV extends Struct<VkDedicatedA
         DEDICATEDALLOCATION = layout.offsetof(2);
     }
 
-    protected VkDedicatedAllocationBufferCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkDedicatedAllocationBufferCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDedicatedAllocationBufferCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkDedicatedAllocationBufferCreateInfoNV(address, container);
     }
 
     /**

@@ -102,13 +102,8 @@ public class VkImageCreateInfo extends Struct<VkImageCreateInfo> implements Nati
         INITIALLAYOUT = layout.offsetof(14);
     }
 
-    protected VkImageCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkImageCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkImageCreateInfo(address, container);
     }
 
     /**

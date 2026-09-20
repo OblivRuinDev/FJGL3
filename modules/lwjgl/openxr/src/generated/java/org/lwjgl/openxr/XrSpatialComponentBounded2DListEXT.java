@@ -57,13 +57,8 @@ public class XrSpatialComponentBounded2DListEXT extends Struct<XrSpatialComponen
         BOUNDS = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentBounded2DListEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentBounded2DListEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentBounded2DListEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentBounded2DListEXT(address, container);
     }
 
     /**

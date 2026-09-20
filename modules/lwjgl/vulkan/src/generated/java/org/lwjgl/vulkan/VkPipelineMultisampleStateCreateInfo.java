@@ -76,13 +76,8 @@ public class VkPipelineMultisampleStateCreateInfo extends Struct<VkPipelineMulti
         ALPHATOONEENABLE = layout.offsetof(8);
     }
 
-    protected VkPipelineMultisampleStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineMultisampleStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineMultisampleStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineMultisampleStateCreateInfo(address, container);
     }
 
     /**

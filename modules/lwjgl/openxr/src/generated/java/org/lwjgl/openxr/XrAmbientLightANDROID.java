@@ -62,13 +62,8 @@ public class XrAmbientLightANDROID extends Struct<XrAmbientLightANDROID> impleme
         COLORCORRECTION = layout.offsetof(4);
     }
 
-    protected XrAmbientLightANDROID(long address, @Nullable ByteBuffer container) {
+    public XrAmbientLightANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrAmbientLightANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrAmbientLightANDROID(address, container);
     }
 
     /**

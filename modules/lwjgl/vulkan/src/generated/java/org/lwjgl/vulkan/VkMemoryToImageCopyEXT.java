@@ -31,13 +31,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkMemoryToImageCopyEXT extends VkMemoryToImageCopy {
 
-    protected VkMemoryToImageCopyEXT(long address, @Nullable ByteBuffer container) {
+    public VkMemoryToImageCopyEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryToImageCopyEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryToImageCopyEXT(address, container);
     }
 
     /**

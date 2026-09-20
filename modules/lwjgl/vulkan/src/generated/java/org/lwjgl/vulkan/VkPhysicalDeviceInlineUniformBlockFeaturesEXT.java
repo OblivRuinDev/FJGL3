@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceInlineUniformBlockFeaturesEXT extends VkPhysicalDeviceInlineUniformBlockFeatures {
 
-    protected VkPhysicalDeviceInlineUniformBlockFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceInlineUniformBlockFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceInlineUniformBlockFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceInlineUniformBlockFeaturesEXT(address, container);
     }
 
     /**

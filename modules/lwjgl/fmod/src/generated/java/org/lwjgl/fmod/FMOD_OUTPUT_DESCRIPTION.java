@@ -138,13 +138,8 @@ public class FMOD_OUTPUT_DESCRIPTION extends Struct<FMOD_OUTPUT_DESCRIPTION> imp
         DEVICELISTCHANGED = layout.offsetof(19);
     }
 
-    protected FMOD_OUTPUT_DESCRIPTION(long address, @Nullable ByteBuffer container) {
+    public FMOD_OUTPUT_DESCRIPTION(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_OUTPUT_DESCRIPTION create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_OUTPUT_DESCRIPTION(address, container);
     }
 
     /**

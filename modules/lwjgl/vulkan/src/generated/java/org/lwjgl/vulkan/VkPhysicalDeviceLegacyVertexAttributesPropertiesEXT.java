@@ -52,13 +52,8 @@ public class VkPhysicalDeviceLegacyVertexAttributesPropertiesEXT extends Struct<
         NATIVEUNALIGNEDPERFORMANCE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceLegacyVertexAttributesPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceLegacyVertexAttributesPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceLegacyVertexAttributesPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceLegacyVertexAttributesPropertiesEXT(address, container);
     }
 
     /**

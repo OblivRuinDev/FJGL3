@@ -66,13 +66,8 @@ public class XXH32State extends Struct<XXH32State> implements NativeResource {
         RESERVED = layout.offsetof(5);
     }
 
-    protected XXH32State(long address, @Nullable ByteBuffer container) {
+    public XXH32State(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XXH32State create(long address, @Nullable ByteBuffer container) {
-        return new XXH32State(address, container);
     }
 
     /**

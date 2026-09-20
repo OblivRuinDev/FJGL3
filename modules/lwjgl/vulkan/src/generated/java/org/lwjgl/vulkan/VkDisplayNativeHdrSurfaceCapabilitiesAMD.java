@@ -52,13 +52,8 @@ public class VkDisplayNativeHdrSurfaceCapabilitiesAMD extends Struct<VkDisplayNa
         LOCALDIMMINGSUPPORT = layout.offsetof(2);
     }
 
-    protected VkDisplayNativeHdrSurfaceCapabilitiesAMD(long address, @Nullable ByteBuffer container) {
+    public VkDisplayNativeHdrSurfaceCapabilitiesAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplayNativeHdrSurfaceCapabilitiesAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplayNativeHdrSurfaceCapabilitiesAMD(address, container);
     }
 
     /**

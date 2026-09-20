@@ -56,13 +56,8 @@ public class NkKeyboard extends Struct<NkKeyboard> {
         TEXT_LEN = layout.offsetof(2);
     }
 
-    protected NkKeyboard(long address, @Nullable ByteBuffer container) {
+    public NkKeyboard(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkKeyboard create(long address, @Nullable ByteBuffer container) {
-        return new NkKeyboard(address, container);
     }
 
     /**

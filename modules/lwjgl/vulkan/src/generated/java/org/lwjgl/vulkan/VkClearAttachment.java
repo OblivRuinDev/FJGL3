@@ -54,13 +54,8 @@ public class VkClearAttachment extends Struct<VkClearAttachment> implements Nati
         CLEARVALUE = layout.offsetof(2);
     }
 
-    protected VkClearAttachment(long address, @Nullable ByteBuffer container) {
+    public VkClearAttachment(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClearAttachment create(long address, @Nullable ByteBuffer container) {
-        return new VkClearAttachment(address, container);
     }
 
     /**

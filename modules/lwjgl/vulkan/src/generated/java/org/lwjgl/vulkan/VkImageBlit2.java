@@ -68,13 +68,8 @@ public class VkImageBlit2 extends Struct<VkImageBlit2> implements NativeResource
         DSTOFFSETS = layout.offsetof(5);
     }
 
-    protected VkImageBlit2(long address, @Nullable ByteBuffer container) {
+    public VkImageBlit2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageBlit2 create(long address, @Nullable ByteBuffer container) {
-        return new VkImageBlit2(address, container);
     }
 
     /**

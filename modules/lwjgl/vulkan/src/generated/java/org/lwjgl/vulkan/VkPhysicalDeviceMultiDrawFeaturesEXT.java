@@ -52,13 +52,8 @@ public class VkPhysicalDeviceMultiDrawFeaturesEXT extends Struct<VkPhysicalDevic
         MULTIDRAW = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceMultiDrawFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMultiDrawFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMultiDrawFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMultiDrawFeaturesEXT(address, container);
     }
 
     /**

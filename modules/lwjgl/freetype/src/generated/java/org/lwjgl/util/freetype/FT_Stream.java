@@ -85,13 +85,8 @@ public class FT_Stream extends Struct<FT_Stream> implements NativeResource {
         LIMIT = layout.offsetof(9);
     }
 
-    protected FT_Stream(long address, @Nullable ByteBuffer container) {
+    public FT_Stream(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Stream create(long address, @Nullable ByteBuffer container) {
-        return new FT_Stream(address, container);
     }
 
     /**

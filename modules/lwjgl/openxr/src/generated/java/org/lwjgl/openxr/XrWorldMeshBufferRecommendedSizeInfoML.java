@@ -52,13 +52,8 @@ public class XrWorldMeshBufferRecommendedSizeInfoML extends Struct<XrWorldMeshBu
         MAXBLOCKCOUNT = layout.offsetof(2);
     }
 
-    protected XrWorldMeshBufferRecommendedSizeInfoML(long address, @Nullable ByteBuffer container) {
+    public XrWorldMeshBufferRecommendedSizeInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrWorldMeshBufferRecommendedSizeInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrWorldMeshBufferRecommendedSizeInfoML(address, container);
     }
 
     /**

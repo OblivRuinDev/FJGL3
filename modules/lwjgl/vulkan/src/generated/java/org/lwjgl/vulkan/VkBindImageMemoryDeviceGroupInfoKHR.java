@@ -29,13 +29,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkBindImageMemoryDeviceGroupInfoKHR extends VkBindImageMemoryDeviceGroupInfo {
 
-    protected VkBindImageMemoryDeviceGroupInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkBindImageMemoryDeviceGroupInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindImageMemoryDeviceGroupInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkBindImageMemoryDeviceGroupInfoKHR(address, container);
     }
 
     /**

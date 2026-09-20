@@ -55,13 +55,8 @@ public class XrSwapchainSubImage extends Struct<XrSwapchainSubImage> implements 
         IMAGEARRAYINDEX = layout.offsetof(2);
     }
 
-    protected XrSwapchainSubImage(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainSubImage(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainSubImage create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainSubImage(address, container);
     }
 
     /**

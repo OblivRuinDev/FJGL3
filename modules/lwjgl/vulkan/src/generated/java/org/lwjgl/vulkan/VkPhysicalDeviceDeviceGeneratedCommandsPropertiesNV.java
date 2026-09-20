@@ -84,13 +84,8 @@ public class VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV extends Struct<
         MININDIRECTCOMMANDSBUFFEROFFSETALIGNMENT = layout.offsetof(10);
     }
 
-    protected VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(address, container);
     }
 
     /**

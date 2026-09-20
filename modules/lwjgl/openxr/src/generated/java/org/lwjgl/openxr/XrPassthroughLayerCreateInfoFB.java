@@ -61,13 +61,8 @@ public class XrPassthroughLayerCreateInfoFB extends Struct<XrPassthroughLayerCre
         PURPOSE = layout.offsetof(4);
     }
 
-    protected XrPassthroughLayerCreateInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughLayerCreateInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughLayerCreateInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughLayerCreateInfoFB(address, container);
     }
 
     /**

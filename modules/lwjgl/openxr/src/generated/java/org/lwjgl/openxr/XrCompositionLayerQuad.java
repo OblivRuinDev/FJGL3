@@ -77,13 +77,8 @@ public class XrCompositionLayerQuad extends Struct<XrCompositionLayerQuad> imple
         SIZE = layout.offsetof(7);
     }
 
-    protected XrCompositionLayerQuad(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerQuad(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerQuad create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerQuad(address, container);
     }
 
     /**

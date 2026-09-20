@@ -48,13 +48,8 @@ public class VkSampleLocationEXT extends Struct<VkSampleLocationEXT> implements 
         Y = layout.offsetof(1);
     }
 
-    protected VkSampleLocationEXT(long address, @Nullable ByteBuffer container) {
+    public VkSampleLocationEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSampleLocationEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSampleLocationEXT(address, container);
     }
 
     /**

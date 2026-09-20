@@ -101,13 +101,8 @@ public class SpvcMslConstexprSampler extends Struct<SpvcMslConstexprSampler> imp
         ANISOTROPY_ENABLE = layout.offsetof(14);
     }
 
-    protected SpvcMslConstexprSampler(long address, @Nullable ByteBuffer container) {
+    public SpvcMslConstexprSampler(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcMslConstexprSampler create(long address, @Nullable ByteBuffer container) {
-        return new SpvcMslConstexprSampler(address, container);
     }
 
     /**

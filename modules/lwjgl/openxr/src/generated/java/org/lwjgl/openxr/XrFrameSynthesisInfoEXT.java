@@ -92,13 +92,8 @@ public class XrFrameSynthesisInfoEXT extends Struct<XrFrameSynthesisInfoEXT> imp
         FARZ = layout.offsetof(11);
     }
 
-    protected XrFrameSynthesisInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrFrameSynthesisInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFrameSynthesisInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrFrameSynthesisInfoEXT(address, container);
     }
 
     /**

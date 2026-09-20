@@ -77,13 +77,8 @@ public class FMOD_DSP_PARAMETER_DESC extends Struct<FMOD_DSP_PARAMETER_DESC> imp
         DATADESC = layout.offsetof(8);
     }
 
-    protected FMOD_DSP_PARAMETER_DESC(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_PARAMETER_DESC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_PARAMETER_DESC create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_PARAMETER_DESC(address, container);
     }
 
     /**

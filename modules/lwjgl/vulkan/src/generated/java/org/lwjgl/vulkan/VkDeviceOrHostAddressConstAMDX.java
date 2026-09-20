@@ -48,13 +48,8 @@ public class VkDeviceOrHostAddressConstAMDX extends Struct<VkDeviceOrHostAddress
         HOSTADDRESS = layout.offsetof(1);
     }
 
-    protected VkDeviceOrHostAddressConstAMDX(long address, @Nullable ByteBuffer container) {
+    public VkDeviceOrHostAddressConstAMDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceOrHostAddressConstAMDX create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceOrHostAddressConstAMDX(address, container);
     }
 
     /**

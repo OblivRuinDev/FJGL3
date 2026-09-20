@@ -57,13 +57,8 @@ public class VkCommandBufferSubmitInfo extends Struct<VkCommandBufferSubmitInfo>
         DEVICEMASK = layout.offsetof(3);
     }
 
-    protected VkCommandBufferSubmitInfo(long address, @Nullable ByteBuffer container) {
+    public VkCommandBufferSubmitInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCommandBufferSubmitInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkCommandBufferSubmitInfo(address, container);
     }
 
     /**

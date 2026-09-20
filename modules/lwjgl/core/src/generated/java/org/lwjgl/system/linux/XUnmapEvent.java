@@ -69,13 +69,8 @@ public class XUnmapEvent extends Struct<XUnmapEvent> implements NativeResource {
         FROM_CONFIGURE = layout.offsetof(6);
     }
 
-    protected XUnmapEvent(long address, @Nullable ByteBuffer container) {
+    public XUnmapEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XUnmapEvent create(long address, @Nullable ByteBuffer container) {
-        return new XUnmapEvent(address, container);
     }
 
     /**

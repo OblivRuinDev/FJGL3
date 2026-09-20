@@ -52,13 +52,8 @@ public class XrSpatialFilterTrackingStateEXT extends Struct<XrSpatialFilterTrack
         TRACKINGSTATE = layout.offsetof(2);
     }
 
-    protected XrSpatialFilterTrackingStateEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialFilterTrackingStateEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialFilterTrackingStateEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialFilterTrackingStateEXT(address, container);
     }
 
     /**

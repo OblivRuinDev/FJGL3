@@ -56,13 +56,8 @@ public class XrSceneObjectsMSFT extends Struct<XrSceneObjectsMSFT> implements Na
         SCENEOBJECTS = layout.offsetof(3);
     }
 
-    protected XrSceneObjectsMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneObjectsMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneObjectsMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneObjectsMSFT(address, container);
     }
 
     /**

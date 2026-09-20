@@ -116,13 +116,8 @@ public class VkGraphicsPipelineCreateInfo extends Struct<VkGraphicsPipelineCreat
         BASEPIPELINEINDEX = layout.offsetof(18);
     }
 
-    protected VkGraphicsPipelineCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkGraphicsPipelineCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGraphicsPipelineCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkGraphicsPipelineCreateInfo(address, container);
     }
 
     /**

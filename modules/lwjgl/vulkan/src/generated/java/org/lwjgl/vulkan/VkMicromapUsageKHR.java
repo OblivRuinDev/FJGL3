@@ -52,13 +52,8 @@ public class VkMicromapUsageKHR extends Struct<VkMicromapUsageKHR> implements Na
         FORMAT = layout.offsetof(2);
     }
 
-    protected VkMicromapUsageKHR(long address, @Nullable ByteBuffer container) {
+    public VkMicromapUsageKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMicromapUsageKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkMicromapUsageKHR(address, container);
     }
 
     /**

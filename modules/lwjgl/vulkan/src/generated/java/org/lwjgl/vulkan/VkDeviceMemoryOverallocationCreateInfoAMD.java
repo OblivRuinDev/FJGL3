@@ -52,13 +52,8 @@ public class VkDeviceMemoryOverallocationCreateInfoAMD extends Struct<VkDeviceMe
         OVERALLOCATIONBEHAVIOR = layout.offsetof(2);
     }
 
-    protected VkDeviceMemoryOverallocationCreateInfoAMD(long address, @Nullable ByteBuffer container) {
+    public VkDeviceMemoryOverallocationCreateInfoAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceMemoryOverallocationCreateInfoAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceMemoryOverallocationCreateInfoAMD(address, container);
     }
 
     /**

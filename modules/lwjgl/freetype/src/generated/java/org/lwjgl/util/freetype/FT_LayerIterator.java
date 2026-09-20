@@ -52,13 +52,8 @@ public class FT_LayerIterator extends Struct<FT_LayerIterator> implements Native
         P = layout.offsetof(2);
     }
 
-    protected FT_LayerIterator(long address, @Nullable ByteBuffer container) {
+    public FT_LayerIterator(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_LayerIterator create(long address, @Nullable ByteBuffer container) {
-        return new FT_LayerIterator(address, container);
     }
 
     /**

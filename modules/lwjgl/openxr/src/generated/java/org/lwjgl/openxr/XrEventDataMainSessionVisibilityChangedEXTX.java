@@ -56,13 +56,8 @@ public class XrEventDataMainSessionVisibilityChangedEXTX extends Struct<XrEventD
         FLAGS = layout.offsetof(3);
     }
 
-    protected XrEventDataMainSessionVisibilityChangedEXTX(long address, @Nullable ByteBuffer container) {
+    public XrEventDataMainSessionVisibilityChangedEXTX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataMainSessionVisibilityChangedEXTX create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataMainSessionVisibilityChangedEXTX(address, container);
     }
 
     /**

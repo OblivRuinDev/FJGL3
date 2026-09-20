@@ -65,13 +65,8 @@ public class VkGraphicsPipelineShaderGroupsCreateInfoNV extends Struct<VkGraphic
         PPIPELINES = layout.offsetof(5);
     }
 
-    protected VkGraphicsPipelineShaderGroupsCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkGraphicsPipelineShaderGroupsCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGraphicsPipelineShaderGroupsCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkGraphicsPipelineShaderGroupsCreateInfoNV(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkPhysicalDeviceShaderInstrumentationPropertiesARM extends Struct<V
         PERBASICBLOCKGRANULARITY = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceShaderInstrumentationPropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderInstrumentationPropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderInstrumentationPropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderInstrumentationPropertiesARM(address, container);
     }
 
     /**

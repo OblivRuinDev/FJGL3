@@ -56,13 +56,8 @@ public class VkDecompressMemoryRegionEXT extends Struct<VkDecompressMemoryRegion
         DECOMPRESSEDSIZE = layout.offsetof(3);
     }
 
-    protected VkDecompressMemoryRegionEXT(long address, @Nullable ByteBuffer container) {
+    public VkDecompressMemoryRegionEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDecompressMemoryRegionEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDecompressMemoryRegionEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrHandJointsMotionRangeInfoEXT extends Struct<XrHandJointsMotionRan
         HANDJOINTSMOTIONRANGE = layout.offsetof(2);
     }
 
-    protected XrHandJointsMotionRangeInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrHandJointsMotionRangeInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandJointsMotionRangeInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandJointsMotionRangeInfoEXT(address, container);
     }
 
     /**

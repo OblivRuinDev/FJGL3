@@ -56,13 +56,8 @@ public class AISkeleton extends Struct<AISkeleton> implements NativeResource {
         MBONES = layout.offsetof(2);
     }
 
-    protected AISkeleton(long address, @Nullable ByteBuffer container) {
+    public AISkeleton(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AISkeleton create(long address, @Nullable ByteBuffer container) {
-        return new AISkeleton(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class VkAccelerationStructureBuildSizesInfoKHR extends Struct<VkAccelerat
         BUILDSCRATCHSIZE = layout.offsetof(4);
     }
 
-    protected VkAccelerationStructureBuildSizesInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureBuildSizesInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureBuildSizesInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureBuildSizesInfoKHR(address, container);
     }
 
     /**

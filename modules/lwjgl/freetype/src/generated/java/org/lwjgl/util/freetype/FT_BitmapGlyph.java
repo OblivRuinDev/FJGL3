@@ -58,13 +58,8 @@ public class FT_BitmapGlyph extends Struct<FT_BitmapGlyph> {
         BITMAP = layout.offsetof(3);
     }
 
-    protected FT_BitmapGlyph(long address, @Nullable ByteBuffer container) {
+    public FT_BitmapGlyph(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_BitmapGlyph create(long address, @Nullable ByteBuffer container) {
-        return new FT_BitmapGlyph(address, container);
     }
 
     /**

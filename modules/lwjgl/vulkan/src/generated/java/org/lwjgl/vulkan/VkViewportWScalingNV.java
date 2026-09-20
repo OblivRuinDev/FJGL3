@@ -48,13 +48,8 @@ public class VkViewportWScalingNV extends Struct<VkViewportWScalingNV> implement
         YCOEFF = layout.offsetof(1);
     }
 
-    protected VkViewportWScalingNV(long address, @Nullable ByteBuffer container) {
+    public VkViewportWScalingNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkViewportWScalingNV create(long address, @Nullable ByteBuffer container) {
-        return new VkViewportWScalingNV(address, container);
     }
 
     /**

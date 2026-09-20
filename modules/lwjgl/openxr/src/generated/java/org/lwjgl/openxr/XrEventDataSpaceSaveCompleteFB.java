@@ -70,13 +70,8 @@ public class XrEventDataSpaceSaveCompleteFB extends Struct<XrEventDataSpaceSaveC
         LOCATION = layout.offsetof(6);
     }
 
-    protected XrEventDataSpaceSaveCompleteFB(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSpaceSaveCompleteFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSpaceSaveCompleteFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSpaceSaveCompleteFB(address, container);
     }
 
     /**

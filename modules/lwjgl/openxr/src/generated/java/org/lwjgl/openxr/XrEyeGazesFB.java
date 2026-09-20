@@ -61,13 +61,8 @@ public class XrEyeGazesFB extends Struct<XrEyeGazesFB> implements NativeResource
         TIME = layout.offsetof(3);
     }
 
-    protected XrEyeGazesFB(long address, @Nullable ByteBuffer container) {
+    public XrEyeGazesFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEyeGazesFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEyeGazesFB(address, container);
     }
 
     /**

@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR extends VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures {
 
-    protected VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR(address, container);
     }
 
     /**

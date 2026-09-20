@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDepthClampZeroOneFeaturesKHR extends Struct<VkPhysi
         DEPTHCLAMPZEROONE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDepthClampZeroOneFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDepthClampZeroOneFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDepthClampZeroOneFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDepthClampZeroOneFeaturesKHR(address, container);
     }
 
     /**

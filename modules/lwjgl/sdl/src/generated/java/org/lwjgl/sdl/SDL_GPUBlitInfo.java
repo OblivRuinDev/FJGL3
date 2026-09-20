@@ -83,13 +83,8 @@ public class SDL_GPUBlitInfo extends Struct<SDL_GPUBlitInfo> implements NativeRe
         PADDING3 = layout.offsetof(9);
     }
 
-    protected SDL_GPUBlitInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUBlitInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUBlitInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUBlitInfo(address, container);
     }
 
     /**

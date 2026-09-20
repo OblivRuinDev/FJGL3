@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDevicePipelineRobustnessPropertiesEXT extends VkPhysicalDevicePipelineRobustnessProperties {
 
-    protected VkPhysicalDevicePipelineRobustnessPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePipelineRobustnessPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePipelineRobustnessPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePipelineRobustnessPropertiesEXT(address, container);
     }
 
     /**

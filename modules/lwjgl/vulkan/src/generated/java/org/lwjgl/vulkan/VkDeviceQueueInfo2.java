@@ -60,13 +60,8 @@ public class VkDeviceQueueInfo2 extends Struct<VkDeviceQueueInfo2> implements Na
         QUEUEINDEX = layout.offsetof(4);
     }
 
-    protected VkDeviceQueueInfo2(long address, @Nullable ByteBuffer container) {
+    public VkDeviceQueueInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceQueueInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceQueueInfo2(address, container);
     }
 
     /**

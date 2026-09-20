@@ -45,13 +45,8 @@ public class XrUuidMSFT extends Struct<XrUuidMSFT> implements NativeResource {
         BYTES = layout.offsetof(0);
     }
 
-    protected XrUuidMSFT(long address, @Nullable ByteBuffer container) {
+    public XrUuidMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrUuidMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrUuidMSFT(address, container);
     }
 
     /**

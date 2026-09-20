@@ -59,13 +59,8 @@ public class XrFrustumf extends Struct<XrFrustumf> implements NativeResource {
         FARZ = layout.offsetof(3);
     }
 
-    protected XrFrustumf(long address, @Nullable ByteBuffer container) {
+    public XrFrustumf(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFrustumf create(long address, @Nullable ByteBuffer container) {
-        return new XrFrustumf(address, container);
     }
 
     /**

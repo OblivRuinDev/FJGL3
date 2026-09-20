@@ -54,13 +54,8 @@ public class VkVideoEncodeQuantizationMapCapabilitiesKHR extends Struct<VkVideoE
         MAXQUANTIZATIONMAPEXTENT = layout.offsetof(2);
     }
 
-    protected VkVideoEncodeQuantizationMapCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeQuantizationMapCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeQuantizationMapCapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeQuantizationMapCapabilitiesKHR(address, container);
     }
 
     /**

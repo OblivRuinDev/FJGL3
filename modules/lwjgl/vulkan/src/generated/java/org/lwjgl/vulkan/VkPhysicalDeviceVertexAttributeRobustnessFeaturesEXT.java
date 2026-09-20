@@ -52,13 +52,8 @@ public class VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT extends Struct
         VERTEXATTRIBUTEROBUSTNESS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT(address, container);
     }
 
     /**

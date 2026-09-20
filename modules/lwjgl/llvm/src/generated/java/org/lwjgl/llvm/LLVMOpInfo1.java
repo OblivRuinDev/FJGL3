@@ -59,13 +59,8 @@ public class LLVMOpInfo1 extends Struct<LLVMOpInfo1> implements NativeResource {
         VARIANTKIND = layout.offsetof(3);
     }
 
-    protected LLVMOpInfo1(long address, @Nullable ByteBuffer container) {
+    public LLVMOpInfo1(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMOpInfo1 create(long address, @Nullable ByteBuffer container) {
-        return new LLVMOpInfo1(address, container);
     }
 
     /**

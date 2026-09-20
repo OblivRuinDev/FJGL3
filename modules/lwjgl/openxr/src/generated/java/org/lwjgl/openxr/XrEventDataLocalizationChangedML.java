@@ -70,13 +70,8 @@ public class XrEventDataLocalizationChangedML extends Struct<XrEventDataLocaliza
         ERRORFLAGS = layout.offsetof(6);
     }
 
-    protected XrEventDataLocalizationChangedML(long address, @Nullable ByteBuffer container) {
+    public XrEventDataLocalizationChangedML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataLocalizationChangedML create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataLocalizationChangedML(address, container);
     }
 
     /**

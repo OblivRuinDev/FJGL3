@@ -56,13 +56,8 @@ public class XrHandTrackerCreateInfoEXT extends Struct<XrHandTrackerCreateInfoEX
         HANDJOINTSET = layout.offsetof(3);
     }
 
-    protected XrHandTrackerCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrHandTrackerCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandTrackerCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandTrackerCreateInfoEXT(address, container);
     }
 
     /**

@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceDepthClampZeroOneFeaturesEXT extends VkPhysicalDeviceDepthClampZeroOneFeaturesKHR {
 
-    protected VkPhysicalDeviceDepthClampZeroOneFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDepthClampZeroOneFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDepthClampZeroOneFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDepthClampZeroOneFeaturesEXT(address, container);
     }
 
     /**

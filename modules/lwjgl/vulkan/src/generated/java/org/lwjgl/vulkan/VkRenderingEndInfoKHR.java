@@ -48,13 +48,8 @@ public class VkRenderingEndInfoKHR extends Struct<VkRenderingEndInfoKHR> impleme
         PNEXT = layout.offsetof(1);
     }
 
-    protected VkRenderingEndInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkRenderingEndInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderingEndInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderingEndInfoKHR(address, container);
     }
 
     /**

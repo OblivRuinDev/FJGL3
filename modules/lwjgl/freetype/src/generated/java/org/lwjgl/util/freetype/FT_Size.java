@@ -61,13 +61,8 @@ public class FT_Size extends Struct<FT_Size> implements NativeResource {
         INTERNAL = layout.offsetof(3);
     }
 
-    protected FT_Size(long address, @Nullable ByteBuffer container) {
+    public FT_Size(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Size create(long address, @Nullable ByteBuffer container) {
-        return new FT_Size(address, container);
     }
 
     /**

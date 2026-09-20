@@ -60,13 +60,8 @@ public class VkPhysicalDeviceNestedCommandBufferFeaturesEXT extends Struct<VkPhy
         NESTEDCOMMANDBUFFERSIMULTANEOUSUSE = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceNestedCommandBufferFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceNestedCommandBufferFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceNestedCommandBufferFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceNestedCommandBufferFeaturesEXT(address, container);
     }
 
     /**

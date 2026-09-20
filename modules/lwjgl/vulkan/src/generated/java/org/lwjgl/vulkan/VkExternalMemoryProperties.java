@@ -50,13 +50,8 @@ public class VkExternalMemoryProperties extends Struct<VkExternalMemoryPropertie
         COMPATIBLEHANDLETYPES = layout.offsetof(2);
     }
 
-    protected VkExternalMemoryProperties(long address, @Nullable ByteBuffer container) {
+    public VkExternalMemoryProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalMemoryProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalMemoryProperties(address, container);
     }
 
     /**

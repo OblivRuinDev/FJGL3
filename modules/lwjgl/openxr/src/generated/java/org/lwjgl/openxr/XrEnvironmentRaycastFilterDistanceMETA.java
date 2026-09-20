@@ -52,13 +52,8 @@ public class XrEnvironmentRaycastFilterDistanceMETA extends Struct<XrEnvironment
         MAXDISTANCE = layout.offsetof(2);
     }
 
-    protected XrEnvironmentRaycastFilterDistanceMETA(long address, @Nullable ByteBuffer container) {
+    public XrEnvironmentRaycastFilterDistanceMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEnvironmentRaycastFilterDistanceMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEnvironmentRaycastFilterDistanceMETA(address, container);
     }
 
     /**

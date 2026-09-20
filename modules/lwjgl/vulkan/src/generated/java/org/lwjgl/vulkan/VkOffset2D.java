@@ -48,13 +48,8 @@ public class VkOffset2D extends Struct<VkOffset2D> implements NativeResource {
         Y = layout.offsetof(1);
     }
 
-    protected VkOffset2D(long address, @Nullable ByteBuffer container) {
+    public VkOffset2D(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkOffset2D create(long address, @Nullable ByteBuffer container) {
-        return new VkOffset2D(address, container);
     }
 
     /**

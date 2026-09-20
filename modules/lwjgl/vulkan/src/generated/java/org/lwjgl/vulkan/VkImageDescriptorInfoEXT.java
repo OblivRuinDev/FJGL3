@@ -57,13 +57,8 @@ public class VkImageDescriptorInfoEXT extends Struct<VkImageDescriptorInfoEXT> i
         LAYOUT = layout.offsetof(3);
     }
 
-    protected VkImageDescriptorInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkImageDescriptorInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageDescriptorInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImageDescriptorInfoEXT(address, container);
     }
 
     /**

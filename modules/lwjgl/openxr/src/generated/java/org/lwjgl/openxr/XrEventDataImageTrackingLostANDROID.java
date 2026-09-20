@@ -52,13 +52,8 @@ public class XrEventDataImageTrackingLostANDROID extends Struct<XrEventDataImage
         TIME = layout.offsetof(2);
     }
 
-    protected XrEventDataImageTrackingLostANDROID(long address, @Nullable ByteBuffer container) {
+    public XrEventDataImageTrackingLostANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataImageTrackingLostANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataImageTrackingLostANDROID(address, container);
     }
 
     /**

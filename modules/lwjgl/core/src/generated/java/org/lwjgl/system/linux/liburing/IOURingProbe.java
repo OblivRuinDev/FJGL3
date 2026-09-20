@@ -64,13 +64,8 @@ public class IOURingProbe extends Struct<IOURingProbe> implements NativeResource
         OPS = layout.offsetof(4);
     }
 
-    protected IOURingProbe(long address, @Nullable ByteBuffer container) {
+    public IOURingProbe(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingProbe create(long address, @Nullable ByteBuffer container) {
-        return new IOURingProbe(address, container);
     }
 
     /**

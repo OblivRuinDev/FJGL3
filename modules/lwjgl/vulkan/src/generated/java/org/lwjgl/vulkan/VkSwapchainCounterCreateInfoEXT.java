@@ -52,13 +52,8 @@ public class VkSwapchainCounterCreateInfoEXT extends Struct<VkSwapchainCounterCr
         SURFACECOUNTERS = layout.offsetof(2);
     }
 
-    protected VkSwapchainCounterCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainCounterCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainCounterCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainCounterCreateInfoEXT(address, container);
     }
 
     /**

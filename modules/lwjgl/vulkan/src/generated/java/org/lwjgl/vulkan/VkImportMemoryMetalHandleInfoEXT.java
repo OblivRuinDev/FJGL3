@@ -56,13 +56,8 @@ public class VkImportMemoryMetalHandleInfoEXT extends Struct<VkImportMemoryMetal
         HANDLE = layout.offsetof(3);
     }
 
-    protected VkImportMemoryMetalHandleInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkImportMemoryMetalHandleInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImportMemoryMetalHandleInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImportMemoryMetalHandleInfoEXT(address, container);
     }
 
     /**

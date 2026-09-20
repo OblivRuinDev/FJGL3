@@ -57,13 +57,8 @@ public class IOURingProbeOp extends Struct<IOURingProbeOp> implements NativeReso
         RESV2 = layout.offsetof(3);
     }
 
-    protected IOURingProbeOp(long address, @Nullable ByteBuffer container) {
+    public IOURingProbeOp(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingProbeOp create(long address, @Nullable ByteBuffer container) {
-        return new IOURingProbeOp(address, container);
     }
 
     /**

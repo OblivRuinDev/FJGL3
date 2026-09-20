@@ -52,13 +52,8 @@ public class VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT extends Struct
         PAGEABLEDEVICELOCALMEMORY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT(address, container);
     }
 
     /**

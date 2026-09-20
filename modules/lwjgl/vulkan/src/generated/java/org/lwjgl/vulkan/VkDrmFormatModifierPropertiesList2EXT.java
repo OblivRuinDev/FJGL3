@@ -56,13 +56,8 @@ public class VkDrmFormatModifierPropertiesList2EXT extends Struct<VkDrmFormatMod
         PDRMFORMATMODIFIERPROPERTIES = layout.offsetof(3);
     }
 
-    protected VkDrmFormatModifierPropertiesList2EXT(long address, @Nullable ByteBuffer container) {
+    public VkDrmFormatModifierPropertiesList2EXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDrmFormatModifierPropertiesList2EXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDrmFormatModifierPropertiesList2EXT(address, container);
     }
 
     /**

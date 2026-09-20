@@ -53,13 +53,8 @@ public class CXCursor extends Struct<CXCursor> implements NativeResource {
         DATA = layout.offsetof(2);
     }
 
-    protected CXCursor(long address, @Nullable ByteBuffer container) {
+    public CXCursor(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXCursor create(long address, @Nullable ByteBuffer container) {
-        return new CXCursor(address, container);
     }
 
     /**

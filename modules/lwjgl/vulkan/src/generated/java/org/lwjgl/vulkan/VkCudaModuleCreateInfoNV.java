@@ -57,13 +57,8 @@ public class VkCudaModuleCreateInfoNV extends Struct<VkCudaModuleCreateInfoNV> i
         PDATA = layout.offsetof(3);
     }
 
-    protected VkCudaModuleCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkCudaModuleCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCudaModuleCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkCudaModuleCreateInfoNV(address, container);
     }
 
     /**

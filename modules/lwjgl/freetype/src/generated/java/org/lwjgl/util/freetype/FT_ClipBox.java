@@ -58,13 +58,8 @@ public class FT_ClipBox extends Struct<FT_ClipBox> implements NativeResource {
         BOTTOM_RIGHT = layout.offsetof(3);
     }
 
-    protected FT_ClipBox(long address, @Nullable ByteBuffer container) {
+    public FT_ClipBox(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_ClipBox create(long address, @Nullable ByteBuffer container) {
-        return new FT_ClipBox(address, container);
     }
 
     /**

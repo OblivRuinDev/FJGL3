@@ -62,13 +62,8 @@ public class SQL_INTERVAL_STRUCT extends Struct<SQL_INTERVAL_STRUCT> implements 
             INTVAL_DAY_SECOND = layout.offsetof(4);
     }
 
-    protected SQL_INTERVAL_STRUCT(long address, @Nullable ByteBuffer container) {
+    public SQL_INTERVAL_STRUCT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SQL_INTERVAL_STRUCT create(long address, @Nullable ByteBuffer container) {
-        return new SQL_INTERVAL_STRUCT(address, container);
     }
 
     /**

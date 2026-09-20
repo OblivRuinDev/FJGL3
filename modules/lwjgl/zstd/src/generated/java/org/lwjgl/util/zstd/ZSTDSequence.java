@@ -57,13 +57,8 @@ public class ZSTDSequence extends Struct<ZSTDSequence> implements NativeResource
         REP = layout.offsetof(3);
     }
 
-    protected ZSTDSequence(long address, @Nullable ByteBuffer container) {
+    public ZSTDSequence(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZSTDSequence create(long address, @Nullable ByteBuffer container) {
-        return new ZSTDSequence(address, container);
     }
 
     /**

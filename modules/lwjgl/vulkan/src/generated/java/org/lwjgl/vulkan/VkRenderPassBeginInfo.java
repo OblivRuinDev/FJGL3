@@ -70,13 +70,8 @@ public class VkRenderPassBeginInfo extends Struct<VkRenderPassBeginInfo> impleme
         PCLEARVALUES = layout.offsetof(6);
     }
 
-    protected VkRenderPassBeginInfo(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassBeginInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassBeginInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassBeginInfo(address, container);
     }
 
     /**

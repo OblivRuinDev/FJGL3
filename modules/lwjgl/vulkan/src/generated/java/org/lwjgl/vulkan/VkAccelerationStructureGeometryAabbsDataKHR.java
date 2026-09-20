@@ -58,13 +58,8 @@ public class VkAccelerationStructureGeometryAabbsDataKHR extends Struct<VkAccele
         STRIDE = layout.offsetof(3);
     }
 
-    protected VkAccelerationStructureGeometryAabbsDataKHR(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureGeometryAabbsDataKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureGeometryAabbsDataKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureGeometryAabbsDataKHR(address, container);
     }
 
     /**

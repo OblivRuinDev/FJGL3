@@ -52,13 +52,8 @@ public class XrSystemSimultaneousHandsAndControllersPropertiesMETA extends Struc
         SUPPORTSSIMULTANEOUSHANDSANDCONTROLLERS = layout.offsetof(2);
     }
 
-    protected XrSystemSimultaneousHandsAndControllersPropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemSimultaneousHandsAndControllersPropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemSimultaneousHandsAndControllersPropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemSimultaneousHandsAndControllersPropertiesMETA(address, container);
     }
 
     /**

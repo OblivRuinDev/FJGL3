@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSparseImageMemoryRequirements2KHR extends VkSparseImageMemoryRequirements2 {
 
-    protected VkSparseImageMemoryRequirements2KHR(long address, @Nullable ByteBuffer container) {
+    public VkSparseImageMemoryRequirements2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSparseImageMemoryRequirements2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSparseImageMemoryRequirements2KHR(address, container);
     }
 
     /**

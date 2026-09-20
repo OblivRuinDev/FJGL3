@@ -68,13 +68,8 @@ public class SQL_TIMESTAMP_STRUCT extends Struct<SQL_TIMESTAMP_STRUCT> implement
         FRACTION = layout.offsetof(6);
     }
 
-    protected SQL_TIMESTAMP_STRUCT(long address, @Nullable ByteBuffer container) {
+    public SQL_TIMESTAMP_STRUCT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SQL_TIMESTAMP_STRUCT create(long address, @Nullable ByteBuffer container) {
-        return new SQL_TIMESTAMP_STRUCT(address, container);
     }
 
     /**

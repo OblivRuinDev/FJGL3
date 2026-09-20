@@ -72,13 +72,8 @@ public class SDL_AudioDeviceEvent extends Struct<SDL_AudioDeviceEvent> implement
         PADDING3 = layout.offsetof(7);
     }
 
-    protected SDL_AudioDeviceEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_AudioDeviceEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_AudioDeviceEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_AudioDeviceEvent(address, container);
     }
 
     /**

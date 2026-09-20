@@ -52,13 +52,8 @@ public class VkPhysicalDeviceVideoEncodeRgbConversionFeaturesVALVE extends Struc
         VIDEOENCODERGBCONVERSION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceVideoEncodeRgbConversionFeaturesVALVE(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVideoEncodeRgbConversionFeaturesVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVideoEncodeRgbConversionFeaturesVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVideoEncodeRgbConversionFeaturesVALVE(address, container);
     }
 
     /**

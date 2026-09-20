@@ -53,13 +53,8 @@ public class VkBindMemoryStatus extends Struct<VkBindMemoryStatus> implements Na
         PRESULT = layout.offsetof(2);
     }
 
-    protected VkBindMemoryStatus(long address, @Nullable ByteBuffer container) {
+    public VkBindMemoryStatus(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindMemoryStatus create(long address, @Nullable ByteBuffer container) {
-        return new VkBindMemoryStatus(address, container);
     }
 
     /**

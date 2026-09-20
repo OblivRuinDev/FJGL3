@@ -48,13 +48,8 @@ class NkConfigStackUserFontElement extends Struct<NkConfigStackUserFontElement> 
         OLD_VALUE = layout.offsetof(1);
     }
 
-    protected NkConfigStackUserFontElement(long address, @Nullable ByteBuffer container) {
+    public NkConfigStackUserFontElement(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkConfigStackUserFontElement create(long address, @Nullable ByteBuffer container) {
-        return new NkConfigStackUserFontElement(address, container);
     }
 
     /**

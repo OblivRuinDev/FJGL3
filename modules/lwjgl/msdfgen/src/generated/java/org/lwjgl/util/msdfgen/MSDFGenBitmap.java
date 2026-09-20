@@ -58,13 +58,8 @@ public class MSDFGenBitmap extends Struct<MSDFGenBitmap> implements NativeResour
         HANDLE = layout.offsetof(3);
     }
 
-    protected MSDFGenBitmap(long address, @Nullable ByteBuffer container) {
+    public MSDFGenBitmap(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MSDFGenBitmap create(long address, @Nullable ByteBuffer container) {
-        return new MSDFGenBitmap(address, container);
     }
 
     /**

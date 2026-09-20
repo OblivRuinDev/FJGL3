@@ -77,13 +77,8 @@ public class VkCopyImageToImageInfo extends Struct<VkCopyImageToImageInfo> imple
         PREGIONS = layout.offsetof(8);
     }
 
-    protected VkCopyImageToImageInfo(long address, @Nullable ByteBuffer container) {
+    public VkCopyImageToImageInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyImageToImageInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyImageToImageInfo(address, container);
     }
 
     /**

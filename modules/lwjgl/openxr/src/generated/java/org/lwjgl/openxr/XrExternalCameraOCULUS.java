@@ -65,13 +65,8 @@ public class XrExternalCameraOCULUS extends Struct<XrExternalCameraOCULUS> imple
         EXTRINSICS = layout.offsetof(4);
     }
 
-    protected XrExternalCameraOCULUS(long address, @Nullable ByteBuffer container) {
+    public XrExternalCameraOCULUS(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrExternalCameraOCULUS create(long address, @Nullable ByteBuffer container) {
-        return new XrExternalCameraOCULUS(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class XrSpatialEntityComponentDataPolygonBD extends Struct<XrSpatialEntit
         VERTICES = layout.offsetof(4);
     }
 
-    protected XrSpatialEntityComponentDataPolygonBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityComponentDataPolygonBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityComponentDataPolygonBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityComponentDataPolygonBD(address, container);
     }
 
     /**

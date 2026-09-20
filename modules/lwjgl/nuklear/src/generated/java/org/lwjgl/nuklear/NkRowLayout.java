@@ -94,13 +94,8 @@ public class NkRowLayout extends Struct<NkRowLayout> {
         TEMPLATES = layout.offsetof(12);
     }
 
-    protected NkRowLayout(long address, @Nullable ByteBuffer container) {
+    public NkRowLayout(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkRowLayout create(long address, @Nullable ByteBuffer container) {
-        return new NkRowLayout(address, container);
     }
 
     /**

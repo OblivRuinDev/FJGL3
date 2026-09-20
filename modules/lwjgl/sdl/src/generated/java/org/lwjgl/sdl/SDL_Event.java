@@ -240,13 +240,8 @@ public class SDL_Event extends Struct<SDL_Event> implements NativeResource {
         PADDING = layout.offsetof(39);
     }
 
-    protected SDL_Event(long address, @Nullable ByteBuffer container) {
+    public SDL_Event(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_Event create(long address, @Nullable ByteBuffer container) {
-        return new SDL_Event(address, container);
     }
 
     /**

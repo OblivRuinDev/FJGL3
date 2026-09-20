@@ -69,13 +69,8 @@ public class VkCopyImageToBufferInfo2 extends Struct<VkCopyImageToBufferInfo2> i
         PREGIONS = layout.offsetof(6);
     }
 
-    protected VkCopyImageToBufferInfo2(long address, @Nullable ByteBuffer container) {
+    public VkCopyImageToBufferInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyImageToBufferInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyImageToBufferInfo2(address, container);
     }
 
     /**

@@ -53,13 +53,8 @@ public class VkQueryLowLatencySupportNV extends Struct<VkQueryLowLatencySupportN
         PQUERIEDLOWLATENCYDATA = layout.offsetof(2);
     }
 
-    protected VkQueryLowLatencySupportNV(long address, @Nullable ByteBuffer container) {
+    public VkQueryLowLatencySupportNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueryLowLatencySupportNV create(long address, @Nullable ByteBuffer container) {
-        return new VkQueryLowLatencySupportNV(address, container);
     }
 
     /**

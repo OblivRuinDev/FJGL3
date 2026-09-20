@@ -52,13 +52,8 @@ public class VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM extends Struct<VkPhys
         ELAPSEDTIMERQUERY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM(address, container);
     }
 
     /**

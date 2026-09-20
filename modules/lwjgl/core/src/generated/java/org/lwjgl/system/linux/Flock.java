@@ -61,13 +61,8 @@ public class Flock extends Struct<Flock> implements NativeResource {
         L_PID = layout.offsetof(4);
     }
 
-    protected Flock(long address, @Nullable ByteBuffer container) {
+    public Flock(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected Flock create(long address, @Nullable ByteBuffer container) {
-        return new Flock(address, container);
     }
 
     /**

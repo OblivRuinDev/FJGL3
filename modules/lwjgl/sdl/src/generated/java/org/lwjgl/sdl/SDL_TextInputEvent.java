@@ -61,13 +61,8 @@ public class SDL_TextInputEvent extends Struct<SDL_TextInputEvent> implements Na
         TEXT = layout.offsetof(4);
     }
 
-    protected SDL_TextInputEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_TextInputEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_TextInputEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_TextInputEvent(address, container);
     }
 
     /**

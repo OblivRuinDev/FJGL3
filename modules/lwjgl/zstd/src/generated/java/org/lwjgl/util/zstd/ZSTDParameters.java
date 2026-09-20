@@ -52,13 +52,8 @@ public class ZSTDParameters extends Struct<ZSTDParameters> implements NativeReso
         FPARAMS = layout.offsetof(1);
     }
 
-    protected ZSTDParameters(long address, @Nullable ByteBuffer container) {
+    public ZSTDParameters(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZSTDParameters create(long address, @Nullable ByteBuffer container) {
-        return new ZSTDParameters(address, container);
     }
 
     /**

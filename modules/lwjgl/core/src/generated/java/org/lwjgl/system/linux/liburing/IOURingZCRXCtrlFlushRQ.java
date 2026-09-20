@@ -44,13 +44,8 @@ public class IOURingZCRXCtrlFlushRQ extends Struct<IOURingZCRXCtrlFlushRQ> {
         __RESV = layout.offsetof(0);
     }
 
-    protected IOURingZCRXCtrlFlushRQ(long address, @Nullable ByteBuffer container) {
+    public IOURingZCRXCtrlFlushRQ(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingZCRXCtrlFlushRQ create(long address, @Nullable ByteBuffer container) {
-        return new IOURingZCRXCtrlFlushRQ(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class VkVideoSessionParametersCreateInfoKHR extends Struct<VkVideoSession
         VIDEOSESSION = layout.offsetof(4);
     }
 
-    protected VkVideoSessionParametersCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoSessionParametersCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoSessionParametersCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoSessionParametersCreateInfoKHR(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrRenderModelPathInfoFB extends Struct<XrRenderModelPathInfoFB> imp
         PATH = layout.offsetof(2);
     }
 
-    protected XrRenderModelPathInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelPathInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelPathInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelPathInfoFB(address, container);
     }
 
     /**

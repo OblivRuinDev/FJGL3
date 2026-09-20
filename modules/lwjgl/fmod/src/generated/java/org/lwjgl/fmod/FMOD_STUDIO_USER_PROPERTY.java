@@ -69,13 +69,8 @@ public class FMOD_STUDIO_USER_PROPERTY extends Struct<FMOD_STUDIO_USER_PROPERTY>
         STRINGVALUE = layout.offsetof(6);
     }
 
-    protected FMOD_STUDIO_USER_PROPERTY(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_USER_PROPERTY(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_USER_PROPERTY create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_USER_PROPERTY(address, container);
     }
 
     /**

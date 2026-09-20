@@ -60,13 +60,8 @@ public class VkPhysicalDeviceExternalBufferInfo extends Struct<VkPhysicalDeviceE
         HANDLETYPE = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceExternalBufferInfo(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalBufferInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalBufferInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalBufferInfo(address, container);
     }
 
     /**

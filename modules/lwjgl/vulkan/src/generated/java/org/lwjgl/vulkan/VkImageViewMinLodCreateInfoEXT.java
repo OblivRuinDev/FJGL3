@@ -52,13 +52,8 @@ public class VkImageViewMinLodCreateInfoEXT extends Struct<VkImageViewMinLodCrea
         MINLOD = layout.offsetof(2);
     }
 
-    protected VkImageViewMinLodCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkImageViewMinLodCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageViewMinLodCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImageViewMinLodCreateInfoEXT(address, container);
     }
 
     /**

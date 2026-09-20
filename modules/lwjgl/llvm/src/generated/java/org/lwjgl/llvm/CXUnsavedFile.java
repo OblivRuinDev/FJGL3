@@ -54,13 +54,8 @@ public class CXUnsavedFile extends Struct<CXUnsavedFile> implements NativeResour
         LENGTH = layout.offsetof(2);
     }
 
-    protected CXUnsavedFile(long address, @Nullable ByteBuffer container) {
+    public CXUnsavedFile(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXUnsavedFile create(long address, @Nullable ByteBuffer container) {
-        return new CXUnsavedFile(address, container);
     }
 
     /**

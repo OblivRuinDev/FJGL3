@@ -52,13 +52,8 @@ public class VkPhysicalDeviceRayTracingValidationFeaturesNV extends Struct<VkPhy
         RAYTRACINGVALIDATION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceRayTracingValidationFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRayTracingValidationFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRayTracingValidationFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRayTracingValidationFeaturesNV(address, container);
     }
 
     /**

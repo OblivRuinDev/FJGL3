@@ -81,13 +81,8 @@ public class VkDescriptorDataEXT extends Struct<VkDescriptorDataEXT> implements 
         ACCELERATIONSTRUCTURE = layout.offsetof(9);
     }
 
-    protected VkDescriptorDataEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorDataEXT(address, container);
     }
 
     /**

@@ -53,13 +53,8 @@ public class VkDeviceBufferMemoryRequirements extends Struct<VkDeviceBufferMemor
         PCREATEINFO = layout.offsetof(2);
     }
 
-    protected VkDeviceBufferMemoryRequirements(long address, @Nullable ByteBuffer container) {
+    public VkDeviceBufferMemoryRequirements(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceBufferMemoryRequirements create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceBufferMemoryRequirements(address, container);
     }
 
     /**

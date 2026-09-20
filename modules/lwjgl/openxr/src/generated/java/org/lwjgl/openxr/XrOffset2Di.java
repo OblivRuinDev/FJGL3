@@ -48,13 +48,8 @@ public class XrOffset2Di extends Struct<XrOffset2Di> implements NativeResource {
         Y = layout.offsetof(1);
     }
 
-    protected XrOffset2Di(long address, @Nullable ByteBuffer container) {
+    public XrOffset2Di(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrOffset2Di create(long address, @Nullable ByteBuffer container) {
-        return new XrOffset2Di(address, container);
     }
 
     /**

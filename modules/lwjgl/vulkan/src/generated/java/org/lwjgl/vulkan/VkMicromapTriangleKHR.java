@@ -52,13 +52,8 @@ public class VkMicromapTriangleKHR extends Struct<VkMicromapTriangleKHR> impleme
         FORMAT = layout.offsetof(2);
     }
 
-    protected VkMicromapTriangleKHR(long address, @Nullable ByteBuffer container) {
+    public VkMicromapTriangleKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMicromapTriangleKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkMicromapTriangleKHR(address, container);
     }
 
     /**

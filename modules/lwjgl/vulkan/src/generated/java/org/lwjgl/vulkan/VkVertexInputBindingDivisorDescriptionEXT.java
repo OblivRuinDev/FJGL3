@@ -24,13 +24,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkVertexInputBindingDivisorDescriptionEXT extends VkVertexInputBindingDivisorDescription {
 
-    protected VkVertexInputBindingDivisorDescriptionEXT(long address, @Nullable ByteBuffer container) {
+    public VkVertexInputBindingDivisorDescriptionEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVertexInputBindingDivisorDescriptionEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkVertexInputBindingDivisorDescriptionEXT(address, container);
     }
 
     /**

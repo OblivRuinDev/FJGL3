@@ -53,13 +53,8 @@ public class VkExternalComputeQueueCreateInfoNV extends Struct<VkExternalCompute
         PREFERREDQUEUE = layout.offsetof(2);
     }
 
-    protected VkExternalComputeQueueCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkExternalComputeQueueCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalComputeQueueCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalComputeQueueCreateInfoNV(address, container);
     }
 
     /**

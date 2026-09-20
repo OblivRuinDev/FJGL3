@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class XrFrustumfKHR extends XrFrustumf {
 
-    protected XrFrustumfKHR(long address, @Nullable ByteBuffer container) {
+    public XrFrustumfKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFrustumfKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrFrustumfKHR(address, container);
     }
 
     /**

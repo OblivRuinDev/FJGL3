@@ -60,13 +60,8 @@ public class VkImageSubresourceRange extends Struct<VkImageSubresourceRange> imp
         LAYERCOUNT = layout.offsetof(4);
     }
 
-    protected VkImageSubresourceRange(long address, @Nullable ByteBuffer container) {
+    public VkImageSubresourceRange(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageSubresourceRange create(long address, @Nullable ByteBuffer container) {
-        return new VkImageSubresourceRange(address, container);
     }
 
     /**

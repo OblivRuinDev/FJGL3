@@ -103,13 +103,8 @@ public class BGFXCallbackVtbl extends Struct<BGFXCallbackVtbl> implements Native
         CAPTURE_FRAME = layout.offsetof(11);
     }
 
-    protected BGFXCallbackVtbl(long address, @Nullable ByteBuffer container) {
+    public BGFXCallbackVtbl(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXCallbackVtbl create(long address, @Nullable ByteBuffer container) {
-        return new BGFXCallbackVtbl(address, container);
     }
 
     /**

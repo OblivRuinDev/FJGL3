@@ -1003,13 +1003,8 @@ $indentation}"""
         printCustomMethods(customMethods, static = true)
 
         print("""
-    protected $className(long address, @Nullable ByteBuffer container) {
+    public $className(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected $className create(long address, @Nullable ByteBuffer container) {
-        return new $className(address, container);
     }
 
     /**

@@ -70,13 +70,8 @@ public class IOURingBufRing extends Struct<IOURingBufRing> implements NativeReso
         BUFS = layout.offsetof(6);
     }
 
-    protected IOURingBufRing(long address, @Nullable ByteBuffer container) {
+    public IOURingBufRing(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingBufRing create(long address, @Nullable ByteBuffer container) {
-        return new IOURingBufRing(address, container);
     }
 
     /**

@@ -61,13 +61,8 @@ public class XrHandJointLocationsEXT extends Struct<XrHandJointLocationsEXT> imp
         JOINTLOCATIONS = layout.offsetof(4);
     }
 
-    protected XrHandJointLocationsEXT(long address, @Nullable ByteBuffer container) {
+    public XrHandJointLocationsEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandJointLocationsEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandJointLocationsEXT(address, container);
     }
 
     /**

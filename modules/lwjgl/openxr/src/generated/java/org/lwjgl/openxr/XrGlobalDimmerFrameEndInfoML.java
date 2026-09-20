@@ -56,13 +56,8 @@ public class XrGlobalDimmerFrameEndInfoML extends Struct<XrGlobalDimmerFrameEndI
         FLAGS = layout.offsetof(3);
     }
 
-    protected XrGlobalDimmerFrameEndInfoML(long address, @Nullable ByteBuffer container) {
+    public XrGlobalDimmerFrameEndInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGlobalDimmerFrameEndInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrGlobalDimmerFrameEndInfoML(address, container);
     }
 
     /**

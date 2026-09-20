@@ -52,13 +52,8 @@ public class VkDevicePrivateDataCreateInfo extends Struct<VkDevicePrivateDataCre
         PRIVATEDATASLOTREQUESTCOUNT = layout.offsetof(2);
     }
 
-    protected VkDevicePrivateDataCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkDevicePrivateDataCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDevicePrivateDataCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDevicePrivateDataCreateInfo(address, container);
     }
 
     /**

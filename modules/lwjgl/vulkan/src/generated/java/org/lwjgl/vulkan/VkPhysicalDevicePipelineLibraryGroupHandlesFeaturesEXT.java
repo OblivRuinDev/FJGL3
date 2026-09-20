@@ -52,13 +52,8 @@ public class VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT extends Stru
         PIPELINELIBRARYGROUPHANDLES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT(address, container);
     }
 
     /**

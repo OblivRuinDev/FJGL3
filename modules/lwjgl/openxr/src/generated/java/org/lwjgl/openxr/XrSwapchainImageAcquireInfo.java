@@ -48,13 +48,8 @@ public class XrSwapchainImageAcquireInfo extends Struct<XrSwapchainImageAcquireI
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSwapchainImageAcquireInfo(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainImageAcquireInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainImageAcquireInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainImageAcquireInfo(address, container);
     }
 
     /**

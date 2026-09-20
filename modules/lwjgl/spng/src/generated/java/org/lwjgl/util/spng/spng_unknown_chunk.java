@@ -58,13 +58,8 @@ public class spng_unknown_chunk extends Struct<spng_unknown_chunk> implements Na
         LOCATION = layout.offsetof(3);
     }
 
-    protected spng_unknown_chunk(long address, @Nullable ByteBuffer container) {
+    public spng_unknown_chunk(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_unknown_chunk create(long address, @Nullable ByteBuffer container) {
-        return new spng_unknown_chunk(address, container);
     }
 
     /**

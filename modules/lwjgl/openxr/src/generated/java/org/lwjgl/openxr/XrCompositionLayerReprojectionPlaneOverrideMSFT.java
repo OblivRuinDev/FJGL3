@@ -62,13 +62,8 @@ public class XrCompositionLayerReprojectionPlaneOverrideMSFT extends Struct<XrCo
         VELOCITY = layout.offsetof(4);
     }
 
-    protected XrCompositionLayerReprojectionPlaneOverrideMSFT(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerReprojectionPlaneOverrideMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerReprojectionPlaneOverrideMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerReprojectionPlaneOverrideMSFT(address, container);
     }
 
     /**

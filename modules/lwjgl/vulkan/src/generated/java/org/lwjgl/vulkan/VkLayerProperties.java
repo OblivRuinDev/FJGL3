@@ -58,13 +58,8 @@ public class VkLayerProperties extends Struct<VkLayerProperties> implements Nati
         DESCRIPTION = layout.offsetof(3);
     }
 
-    protected VkLayerProperties(long address, @Nullable ByteBuffer container) {
+    public VkLayerProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkLayerProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkLayerProperties(address, container);
     }
 
     /**

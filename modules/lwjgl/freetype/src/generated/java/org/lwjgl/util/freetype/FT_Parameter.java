@@ -48,13 +48,8 @@ public class FT_Parameter extends Struct<FT_Parameter> implements NativeResource
         DATA = layout.offsetof(1);
     }
 
-    protected FT_Parameter(long address, @Nullable ByteBuffer container) {
+    public FT_Parameter(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Parameter create(long address, @Nullable ByteBuffer container) {
-        return new FT_Parameter(address, container);
     }
 
     /**

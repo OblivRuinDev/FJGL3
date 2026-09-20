@@ -52,13 +52,8 @@ public class XrSystemMarkerTrackingPropertiesVARJO extends Struct<XrSystemMarker
         SUPPORTSMARKERTRACKING = layout.offsetof(2);
     }
 
-    protected XrSystemMarkerTrackingPropertiesVARJO(long address, @Nullable ByteBuffer container) {
+    public XrSystemMarkerTrackingPropertiesVARJO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemMarkerTrackingPropertiesVARJO create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemMarkerTrackingPropertiesVARJO(address, container);
     }
 
     /**

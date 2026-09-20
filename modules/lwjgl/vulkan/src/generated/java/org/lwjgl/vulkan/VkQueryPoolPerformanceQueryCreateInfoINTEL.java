@@ -52,13 +52,8 @@ public class VkQueryPoolPerformanceQueryCreateInfoINTEL extends Struct<VkQueryPo
         PERFORMANCECOUNTERSSAMPLING = layout.offsetof(2);
     }
 
-    protected VkQueryPoolPerformanceQueryCreateInfoINTEL(long address, @Nullable ByteBuffer container) {
+    public VkQueryPoolPerformanceQueryCreateInfoINTEL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueryPoolPerformanceQueryCreateInfoINTEL create(long address, @Nullable ByteBuffer container) {
-        return new VkQueryPoolPerformanceQueryCreateInfoINTEL(address, container);
     }
 
     /**

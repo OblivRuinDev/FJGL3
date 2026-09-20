@@ -62,13 +62,8 @@ public class XrSpaceVelocity extends Struct<XrSpaceVelocity> implements NativeRe
         ANGULARVELOCITY = layout.offsetof(4);
     }
 
-    protected XrSpaceVelocity(long address, @Nullable ByteBuffer container) {
+    public XrSpaceVelocity(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceVelocity create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceVelocity(address, container);
     }
 
     /**

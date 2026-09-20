@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCopyMemoryIndirectPropertiesKHR extends Struct<VkPh
         SUPPORTEDQUEUES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCopyMemoryIndirectPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCopyMemoryIndirectPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCopyMemoryIndirectPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCopyMemoryIndirectPropertiesKHR(address, container);
     }
 
     /**

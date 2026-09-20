@@ -64,13 +64,8 @@ public class XrFacialExpressionBlendShapePropertiesML extends Struct<XrFacialExp
         TIME = layout.offsetof(5);
     }
 
-    protected XrFacialExpressionBlendShapePropertiesML(long address, @Nullable ByteBuffer container) {
+    public XrFacialExpressionBlendShapePropertiesML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFacialExpressionBlendShapePropertiesML create(long address, @Nullable ByteBuffer container) {
-        return new XrFacialExpressionBlendShapePropertiesML(address, container);
     }
 
     /**

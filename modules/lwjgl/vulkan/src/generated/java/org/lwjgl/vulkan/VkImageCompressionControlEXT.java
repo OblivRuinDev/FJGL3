@@ -60,13 +60,8 @@ public class VkImageCompressionControlEXT extends Struct<VkImageCompressionContr
         PFIXEDRATEFLAGS = layout.offsetof(4);
     }
 
-    protected VkImageCompressionControlEXT(long address, @Nullable ByteBuffer container) {
+    public VkImageCompressionControlEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageCompressionControlEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImageCompressionControlEXT(address, container);
     }
 
     /**

@@ -50,13 +50,8 @@ public class AIString extends Struct<AIString> implements NativeResource {
         DATA = layout.offsetof(1);
     }
 
-    protected AIString(long address, @Nullable ByteBuffer container) {
+    public AIString(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIString create(long address, @Nullable ByteBuffer container) {
-        return new AIString(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkDeviceGroupBindSparseInfo extends Struct<VkDeviceGroupBindSparseI
         MEMORYDEVICEINDEX = layout.offsetof(3);
     }
 
-    protected VkDeviceGroupBindSparseInfo(long address, @Nullable ByteBuffer container) {
+    public VkDeviceGroupBindSparseInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceGroupBindSparseInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceGroupBindSparseInfo(address, container);
     }
 
     /**

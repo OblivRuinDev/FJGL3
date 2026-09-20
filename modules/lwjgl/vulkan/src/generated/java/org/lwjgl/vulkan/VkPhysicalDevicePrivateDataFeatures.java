@@ -52,13 +52,8 @@ public class VkPhysicalDevicePrivateDataFeatures extends Struct<VkPhysicalDevice
         PRIVATEDATA = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePrivateDataFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePrivateDataFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePrivateDataFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePrivateDataFeatures(address, container);
     }
 
     /**

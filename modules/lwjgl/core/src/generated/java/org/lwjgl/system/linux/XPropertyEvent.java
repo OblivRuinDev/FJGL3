@@ -73,13 +73,8 @@ public class XPropertyEvent extends Struct<XPropertyEvent> implements NativeReso
         STATE = layout.offsetof(7);
     }
 
-    protected XPropertyEvent(long address, @Nullable ByteBuffer container) {
+    public XPropertyEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XPropertyEvent create(long address, @Nullable ByteBuffer container) {
-        return new XPropertyEvent(address, container);
     }
 
     /**

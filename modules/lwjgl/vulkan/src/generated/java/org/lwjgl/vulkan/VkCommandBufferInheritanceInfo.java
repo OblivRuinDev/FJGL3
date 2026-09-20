@@ -72,13 +72,8 @@ public class VkCommandBufferInheritanceInfo extends Struct<VkCommandBufferInheri
         PIPELINESTATISTICS = layout.offsetof(7);
     }
 
-    protected VkCommandBufferInheritanceInfo(long address, @Nullable ByteBuffer container) {
+    public VkCommandBufferInheritanceInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCommandBufferInheritanceInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkCommandBufferInheritanceInfo(address, container);
     }
 
     /**

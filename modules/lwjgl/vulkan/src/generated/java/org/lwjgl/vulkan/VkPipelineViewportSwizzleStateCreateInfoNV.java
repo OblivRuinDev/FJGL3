@@ -61,13 +61,8 @@ public class VkPipelineViewportSwizzleStateCreateInfoNV extends Struct<VkPipelin
         PVIEWPORTSWIZZLES = layout.offsetof(4);
     }
 
-    protected VkPipelineViewportSwizzleStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkPipelineViewportSwizzleStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineViewportSwizzleStateCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineViewportSwizzleStateCreateInfoNV(address, container);
     }
 
     /**

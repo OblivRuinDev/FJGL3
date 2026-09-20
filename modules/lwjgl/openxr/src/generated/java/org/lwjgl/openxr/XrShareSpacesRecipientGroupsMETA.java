@@ -57,13 +57,8 @@ public class XrShareSpacesRecipientGroupsMETA extends Struct<XrShareSpacesRecipi
         GROUPS = layout.offsetof(3);
     }
 
-    protected XrShareSpacesRecipientGroupsMETA(long address, @Nullable ByteBuffer container) {
+    public XrShareSpacesRecipientGroupsMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrShareSpacesRecipientGroupsMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrShareSpacesRecipientGroupsMETA(address, container);
     }
 
     /**

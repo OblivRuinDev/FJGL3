@@ -76,13 +76,8 @@ public class StdVideoDecodeAV1PictureInfoFlags extends Struct<StdVideoDecodeAV1P
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoDecodeAV1PictureInfoFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoDecodeAV1PictureInfoFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoDecodeAV1PictureInfoFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoDecodeAV1PictureInfoFlags(address, container);
     }
 
     /**

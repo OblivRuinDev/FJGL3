@@ -52,13 +52,8 @@ public class FT_PaintComposite extends Struct<FT_PaintComposite> {
         BACKDROP_PAINT = layout.offsetof(2);
     }
 
-    protected FT_PaintComposite(long address, @Nullable ByteBuffer container) {
+    public FT_PaintComposite(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintComposite create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintComposite(address, container);
     }
 
     /**

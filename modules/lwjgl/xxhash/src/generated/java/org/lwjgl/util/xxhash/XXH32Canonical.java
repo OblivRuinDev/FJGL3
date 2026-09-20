@@ -46,13 +46,8 @@ public class XXH32Canonical extends Struct<XXH32Canonical> implements NativeReso
         DIGEST = layout.offsetof(0);
     }
 
-    protected XXH32Canonical(long address, @Nullable ByteBuffer container) {
+    public XXH32Canonical(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XXH32Canonical create(long address, @Nullable ByteBuffer container) {
-        return new XXH32Canonical(address, container);
     }
 
     /**

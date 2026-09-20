@@ -63,13 +63,8 @@ public class VkVideoDecodeH264PictureInfoKHR extends Struct<VkVideoDecodeH264Pic
         PSLICEOFFSETS = layout.offsetof(4);
     }
 
-    protected VkVideoDecodeH264PictureInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeH264PictureInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeH264PictureInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeH264PictureInfoKHR(address, container);
     }
 
     /**

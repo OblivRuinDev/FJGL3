@@ -52,13 +52,8 @@ public class VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR extends Str
         INTERNALLYSYNCHRONIZEDQUEUES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class XrSystemMarkerTrackingPropertiesANDROID extends Struct<XrSystemMark
         MAXMARKERCOUNT = layout.offsetof(4);
     }
 
-    protected XrSystemMarkerTrackingPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemMarkerTrackingPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemMarkerTrackingPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemMarkerTrackingPropertiesANDROID(address, container);
     }
 
     /**

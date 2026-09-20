@@ -32,13 +32,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDependencyInfoKHR extends VkDependencyInfo {
 
-    protected VkDependencyInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDependencyInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDependencyInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDependencyInfoKHR(address, container);
     }
 
     /**

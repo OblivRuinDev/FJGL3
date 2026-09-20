@@ -80,13 +80,8 @@ public class SDL_PenAxisEvent extends Struct<SDL_PenAxisEvent> implements Native
         VALUE = layout.offsetof(9);
     }
 
-    protected SDL_PenAxisEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_PenAxisEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_PenAxisEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_PenAxisEvent(address, container);
     }
 
     /**

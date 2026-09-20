@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSparseImageFormatProperties2KHR extends VkSparseImageFormatProperties2 {
 
-    protected VkSparseImageFormatProperties2KHR(long address, @Nullable ByteBuffer container) {
+    public VkSparseImageFormatProperties2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSparseImageFormatProperties2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSparseImageFormatProperties2KHR(address, container);
     }
 
     /**

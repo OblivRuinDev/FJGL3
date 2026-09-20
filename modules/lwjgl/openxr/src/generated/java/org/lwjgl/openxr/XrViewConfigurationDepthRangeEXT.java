@@ -64,13 +64,8 @@ public class XrViewConfigurationDepthRangeEXT extends Struct<XrViewConfiguration
         MAXFARZ = layout.offsetof(5);
     }
 
-    protected XrViewConfigurationDepthRangeEXT(long address, @Nullable ByteBuffer container) {
+    public XrViewConfigurationDepthRangeEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrViewConfigurationDepthRangeEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrViewConfigurationDepthRangeEXT(address, container);
     }
 
     /**

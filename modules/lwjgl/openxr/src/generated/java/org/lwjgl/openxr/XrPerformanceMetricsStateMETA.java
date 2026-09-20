@@ -52,13 +52,8 @@ public class XrPerformanceMetricsStateMETA extends Struct<XrPerformanceMetricsSt
         ENABLED = layout.offsetof(2);
     }
 
-    protected XrPerformanceMetricsStateMETA(long address, @Nullable ByteBuffer container) {
+    public XrPerformanceMetricsStateMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPerformanceMetricsStateMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrPerformanceMetricsStateMETA(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrSystemHapticParametricPropertiesEXT extends Struct<XrSystemHaptic
         SUPPORTSPARAMETRICHAPTICS = layout.offsetof(2);
     }
 
-    protected XrSystemHapticParametricPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public XrSystemHapticParametricPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemHapticParametricPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemHapticParametricPropertiesEXT(address, container);
     }
 
     /**

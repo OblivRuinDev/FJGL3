@@ -60,13 +60,8 @@ public class XrSpatialEntityComponentDataSemanticBD extends Struct<XrSpatialEnti
         LABELS = layout.offsetof(4);
     }
 
-    protected XrSpatialEntityComponentDataSemanticBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityComponentDataSemanticBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityComponentDataSemanticBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityComponentDataSemanticBD(address, container);
     }
 
     /**

@@ -61,13 +61,8 @@ public class XrFoveationEyeTrackedStateMETA extends Struct<XrFoveationEyeTracked
         FLAGS = layout.offsetof(3);
     }
 
-    protected XrFoveationEyeTrackedStateMETA(long address, @Nullable ByteBuffer container) {
+    public XrFoveationEyeTrackedStateMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFoveationEyeTrackedStateMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrFoveationEyeTrackedStateMETA(address, container);
     }
 
     /**

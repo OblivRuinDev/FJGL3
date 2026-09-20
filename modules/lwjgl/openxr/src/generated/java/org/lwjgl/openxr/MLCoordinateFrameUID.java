@@ -43,13 +43,8 @@ public class MLCoordinateFrameUID extends Struct<MLCoordinateFrameUID> {
         DATA = layout.offsetof(0);
     }
 
-    protected MLCoordinateFrameUID(long address, @Nullable ByteBuffer container) {
+    public MLCoordinateFrameUID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MLCoordinateFrameUID create(long address, @Nullable ByteBuffer container) {
-        return new MLCoordinateFrameUID(address, container);
     }
 
     /**

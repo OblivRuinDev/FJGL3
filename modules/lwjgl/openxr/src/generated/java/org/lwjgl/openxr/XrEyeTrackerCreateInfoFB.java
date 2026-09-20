@@ -48,13 +48,8 @@ public class XrEyeTrackerCreateInfoFB extends Struct<XrEyeTrackerCreateInfoFB> i
         NEXT = layout.offsetof(1);
     }
 
-    protected XrEyeTrackerCreateInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrEyeTrackerCreateInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEyeTrackerCreateInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEyeTrackerCreateInfoFB(address, container);
     }
 
     /**

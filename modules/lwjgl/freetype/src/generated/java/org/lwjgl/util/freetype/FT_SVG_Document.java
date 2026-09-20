@@ -75,13 +75,8 @@ public class FT_SVG_Document extends Struct<FT_SVG_Document> {
         DELTA = layout.offsetof(7);
     }
 
-    protected FT_SVG_Document(long address, @Nullable ByteBuffer container) {
+    public FT_SVG_Document(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_SVG_Document create(long address, @Nullable ByteBuffer container) {
-        return new FT_SVG_Document(address, container);
     }
 
     /**

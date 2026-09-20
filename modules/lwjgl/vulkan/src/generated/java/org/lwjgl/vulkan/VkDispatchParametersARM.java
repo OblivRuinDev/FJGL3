@@ -60,13 +60,8 @@ public class VkDispatchParametersARM extends Struct<VkDispatchParametersARM> imp
         MAXWARPSPERSHADERCORE = layout.offsetof(4);
     }
 
-    protected VkDispatchParametersARM(long address, @Nullable ByteBuffer container) {
+    public VkDispatchParametersARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDispatchParametersARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDispatchParametersARM(address, container);
     }
 
     /**

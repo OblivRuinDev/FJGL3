@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPrivateDataSlotCreateInfoEXT extends VkPrivateDataSlotCreateInfo {
 
-    protected VkPrivateDataSlotCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPrivateDataSlotCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPrivateDataSlotCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPrivateDataSlotCreateInfoEXT(address, container);
     }
 
     /**

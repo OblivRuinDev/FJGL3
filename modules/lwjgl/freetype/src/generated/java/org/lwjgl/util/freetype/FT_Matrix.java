@@ -56,13 +56,8 @@ public class FT_Matrix extends Struct<FT_Matrix> implements NativeResource {
         YY = layout.offsetof(3);
     }
 
-    protected FT_Matrix(long address, @Nullable ByteBuffer container) {
+    public FT_Matrix(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Matrix create(long address, @Nullable ByteBuffer container) {
-        return new FT_Matrix(address, container);
     }
 
     /**

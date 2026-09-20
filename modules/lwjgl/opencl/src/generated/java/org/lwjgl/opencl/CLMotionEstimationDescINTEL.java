@@ -57,13 +57,8 @@ public class CLMotionEstimationDescINTEL extends Struct<CLMotionEstimationDescIN
         SEARCH_PATH_TYPE = layout.offsetof(3);
     }
 
-    protected CLMotionEstimationDescINTEL(long address, @Nullable ByteBuffer container) {
+    public CLMotionEstimationDescINTEL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLMotionEstimationDescINTEL create(long address, @Nullable ByteBuffer container) {
-        return new CLMotionEstimationDescINTEL(address, container);
     }
 
     /**

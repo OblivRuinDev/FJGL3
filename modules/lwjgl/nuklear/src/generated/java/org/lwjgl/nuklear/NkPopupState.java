@@ -84,13 +84,8 @@ public class NkPopupState extends Struct<NkPopupState> {
         HEADER = layout.offsetof(9);
     }
 
-    protected NkPopupState(long address, @Nullable ByteBuffer container) {
+    public NkPopupState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkPopupState create(long address, @Nullable ByteBuffer container) {
-        return new NkPopupState(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkSubpassResolvePerformanceQueryEXT extends Struct<VkSubpassResolve
         OPTIMAL = layout.offsetof(2);
     }
 
-    protected VkSubpassResolvePerformanceQueryEXT(long address, @Nullable ByteBuffer container) {
+    public VkSubpassResolvePerformanceQueryEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassResolvePerformanceQueryEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassResolvePerformanceQueryEXT(address, container);
     }
 
     /**

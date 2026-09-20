@@ -56,13 +56,8 @@ public class VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM extends
         ENGINETYPE = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM(address, container);
     }
 
     /**

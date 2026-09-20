@@ -68,13 +68,8 @@ public class XrSpaceQueryInfoFB extends Struct<XrSpaceQueryInfoFB> implements Na
         EXCLUDEFILTER = layout.offsetof(6);
     }
 
-    protected XrSpaceQueryInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceQueryInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceQueryInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceQueryInfoFB(address, container);
     }
 
     /**

@@ -61,13 +61,8 @@ public class VkCopyDeviceMemoryImageInfoKHR extends Struct<VkCopyDeviceMemoryIma
         PREGIONS = layout.offsetof(4);
     }
 
-    protected VkCopyDeviceMemoryImageInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkCopyDeviceMemoryImageInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyDeviceMemoryImageInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyDeviceMemoryImageInfoKHR(address, container);
     }
 
     /**

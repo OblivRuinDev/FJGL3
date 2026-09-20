@@ -48,13 +48,8 @@ public class XrSwapchainImageBaseHeader extends Struct<XrSwapchainImageBaseHeade
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSwapchainImageBaseHeader(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainImageBaseHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainImageBaseHeader create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainImageBaseHeader(address, container);
     }
 
     /**

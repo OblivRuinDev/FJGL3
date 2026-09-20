@@ -48,13 +48,8 @@ public class LTOObjectBuffer extends Struct<LTOObjectBuffer> implements NativeRe
         SIZE = layout.offsetof(1);
     }
 
-    protected LTOObjectBuffer(long address, @Nullable ByteBuffer container) {
+    public LTOObjectBuffer(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LTOObjectBuffer create(long address, @Nullable ByteBuffer container) {
-        return new LTOObjectBuffer(address, container);
     }
 
     /**

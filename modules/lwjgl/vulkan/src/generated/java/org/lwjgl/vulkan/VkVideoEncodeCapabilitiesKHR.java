@@ -78,13 +78,8 @@ public class VkVideoEncodeCapabilitiesKHR extends Struct<VkVideoEncodeCapabiliti
         SUPPORTEDENCODEFEEDBACKFLAGS = layout.offsetof(8);
     }
 
-    protected VkVideoEncodeCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeCapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeCapabilitiesKHR(address, container);
     }
 
     /**

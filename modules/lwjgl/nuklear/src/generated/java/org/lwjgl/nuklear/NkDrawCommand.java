@@ -58,13 +58,8 @@ public class NkDrawCommand extends Struct<NkDrawCommand> {
         USERDATA = layout.offsetof(3);
     }
 
-    protected NkDrawCommand(long address, @Nullable ByteBuffer container) {
+    public NkDrawCommand(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkDrawCommand create(long address, @Nullable ByteBuffer container) {
-        return new NkDrawCommand(address, container);
     }
 
     /**

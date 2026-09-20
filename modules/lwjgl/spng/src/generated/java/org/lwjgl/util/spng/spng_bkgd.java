@@ -61,13 +61,8 @@ public class spng_bkgd extends Struct<spng_bkgd> implements NativeResource {
         PLTE_INDEX = layout.offsetof(4);
     }
 
-    protected spng_bkgd(long address, @Nullable ByteBuffer container) {
+    public spng_bkgd(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_bkgd create(long address, @Nullable ByteBuffer container) {
-        return new spng_bkgd(address, container);
     }
 
     /**

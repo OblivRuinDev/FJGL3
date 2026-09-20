@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceComputeShaderDerivativesFeaturesNV extends VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR {
 
-    protected VkPhysicalDeviceComputeShaderDerivativesFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceComputeShaderDerivativesFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceComputeShaderDerivativesFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceComputeShaderDerivativesFeaturesNV(address, container);
     }
 
     /**

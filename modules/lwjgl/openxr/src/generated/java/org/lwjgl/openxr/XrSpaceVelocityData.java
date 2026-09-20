@@ -52,13 +52,8 @@ public class XrSpaceVelocityData extends Struct<XrSpaceVelocityData> {
         ANGULARVELOCITY = layout.offsetof(2);
     }
 
-    protected XrSpaceVelocityData(long address, @Nullable ByteBuffer container) {
+    public XrSpaceVelocityData(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceVelocityData create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceVelocityData(address, container);
     }
 
     /**

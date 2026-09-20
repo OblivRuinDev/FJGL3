@@ -56,13 +56,8 @@ public class VkMemoryGetRemoteAddressInfoNV extends Struct<VkMemoryGetRemoteAddr
         HANDLETYPE = layout.offsetof(3);
     }
 
-    protected VkMemoryGetRemoteAddressInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkMemoryGetRemoteAddressInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryGetRemoteAddressInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryGetRemoteAddressInfoNV(address, container);
     }
 
     /**

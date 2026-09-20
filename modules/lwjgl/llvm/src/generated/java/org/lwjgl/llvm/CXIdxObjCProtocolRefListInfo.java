@@ -47,13 +47,8 @@ public class CXIdxObjCProtocolRefListInfo extends Struct<CXIdxObjCProtocolRefLis
         NUMPROTOCOLS = layout.offsetof(1);
     }
 
-    protected CXIdxObjCProtocolRefListInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxObjCProtocolRefListInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxObjCProtocolRefListInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxObjCProtocolRefListInfo(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class VkMutableDescriptorTypeCreateInfoEXT extends Struct<VkMutableDescri
         PMUTABLEDESCRIPTORTYPELISTS = layout.offsetof(3);
     }
 
-    protected VkMutableDescriptorTypeCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkMutableDescriptorTypeCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMutableDescriptorTypeCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMutableDescriptorTypeCreateInfoEXT(address, container);
     }
 
     /**

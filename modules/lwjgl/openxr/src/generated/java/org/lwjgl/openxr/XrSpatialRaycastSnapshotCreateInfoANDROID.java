@@ -61,13 +61,8 @@ public class XrSpatialRaycastSnapshotCreateInfoANDROID extends Struct<XrSpatialR
         RAYCASTINFO = layout.offsetof(4);
     }
 
-    protected XrSpatialRaycastSnapshotCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialRaycastSnapshotCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialRaycastSnapshotCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialRaycastSnapshotCreateInfoANDROID(address, container);
     }
 
     /**

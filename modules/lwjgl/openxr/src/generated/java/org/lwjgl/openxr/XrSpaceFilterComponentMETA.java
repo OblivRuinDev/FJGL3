@@ -52,13 +52,8 @@ public class XrSpaceFilterComponentMETA extends Struct<XrSpaceFilterComponentMET
         COMPONENTTYPE = layout.offsetof(2);
     }
 
-    protected XrSpaceFilterComponentMETA(long address, @Nullable ByteBuffer container) {
+    public XrSpaceFilterComponentMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceFilterComponentMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceFilterComponentMETA(address, container);
     }
 
     /**

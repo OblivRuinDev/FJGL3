@@ -50,13 +50,8 @@ public class XrEyeANDROID extends Struct<XrEyeANDROID> implements NativeResource
         EYEPOSE = layout.offsetof(1);
     }
 
-    protected XrEyeANDROID(long address, @Nullable ByteBuffer container) {
+    public XrEyeANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEyeANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrEyeANDROID(address, container);
     }
 
     /**

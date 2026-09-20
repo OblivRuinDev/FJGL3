@@ -80,13 +80,8 @@ public class VkPhysicalDeviceAccelerationStructurePropertiesKHR extends Struct<V
         MINACCELERATIONSTRUCTURESCRATCHOFFSETALIGNMENT = layout.offsetof(9);
     }
 
-    protected VkPhysicalDeviceAccelerationStructurePropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceAccelerationStructurePropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceAccelerationStructurePropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceAccelerationStructurePropertiesKHR(address, container);
     }
 
     /**

@@ -80,13 +80,8 @@ public class VkPhysicalDeviceRayTracingPropertiesNV extends Struct<VkPhysicalDev
         MAXDESCRIPTORSETACCELERATIONSTRUCTURES = layout.offsetof(9);
     }
 
-    protected VkPhysicalDeviceRayTracingPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRayTracingPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRayTracingPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRayTracingPropertiesNV(address, container);
     }
 
     /**

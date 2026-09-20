@@ -74,13 +74,8 @@ public class TT_Postscript extends Struct<TT_Postscript> {
         MAXMEMTYPE1 = layout.offsetof(8);
     }
 
-    protected TT_Postscript(long address, @Nullable ByteBuffer container) {
+    public TT_Postscript(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected TT_Postscript create(long address, @Nullable ByteBuffer container) {
-        return new TT_Postscript(address, container);
     }
 
     /**

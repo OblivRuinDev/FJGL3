@@ -57,13 +57,8 @@ public class XrSessionActionSetsAttachInfo extends Struct<XrSessionActionSetsAtt
         ACTIONSETS = layout.offsetof(3);
     }
 
-    protected XrSessionActionSetsAttachInfo(long address, @Nullable ByteBuffer container) {
+    public XrSessionActionSetsAttachInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSessionActionSetsAttachInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrSessionActionSetsAttachInfo(address, container);
     }
 
     /**

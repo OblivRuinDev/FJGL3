@@ -72,13 +72,8 @@ public class XrSpatialEntityComponentDataTriangleMeshBD extends Struct<XrSpatial
         INDICES = layout.offsetof(7);
     }
 
-    protected XrSpatialEntityComponentDataTriangleMeshBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityComponentDataTriangleMeshBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityComponentDataTriangleMeshBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityComponentDataTriangleMeshBD(address, container);
     }
 
     /**

@@ -66,13 +66,8 @@ public class StdVideoAV1SequenceHeaderFlags extends Struct<StdVideoAV1SequenceHe
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoAV1SequenceHeaderFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1SequenceHeaderFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1SequenceHeaderFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1SequenceHeaderFlags(address, container);
     }
 
     /**

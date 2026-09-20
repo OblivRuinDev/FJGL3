@@ -30,13 +30,8 @@ import static org.lwjgl.vulkan.VK12.*;
  */
 public class VkPhysicalDeviceDriverPropertiesKHR extends VkPhysicalDeviceDriverProperties {
 
-    protected VkPhysicalDeviceDriverPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDriverPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDriverPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDriverPropertiesKHR(address, container);
     }
 
     /**

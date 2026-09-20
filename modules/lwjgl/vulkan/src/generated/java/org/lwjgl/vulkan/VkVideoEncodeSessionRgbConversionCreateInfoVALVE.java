@@ -64,13 +64,8 @@ public class VkVideoEncodeSessionRgbConversionCreateInfoVALVE extends Struct<VkV
         YCHROMAOFFSET = layout.offsetof(5);
     }
 
-    protected VkVideoEncodeSessionRgbConversionCreateInfoVALVE(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeSessionRgbConversionCreateInfoVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeSessionRgbConversionCreateInfoVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeSessionRgbConversionCreateInfoVALVE(address, container);
     }
 
     /**

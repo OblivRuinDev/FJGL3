@@ -52,13 +52,8 @@ public class VkBufferMemoryRequirementsInfo2 extends Struct<VkBufferMemoryRequir
         BUFFER = layout.offsetof(2);
     }
 
-    protected VkBufferMemoryRequirementsInfo2(long address, @Nullable ByteBuffer container) {
+    public VkBufferMemoryRequirementsInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferMemoryRequirementsInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferMemoryRequirementsInfo2(address, container);
     }
 
     /**

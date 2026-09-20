@@ -56,13 +56,8 @@ public class VkAttachmentDescriptionStencilLayout extends Struct<VkAttachmentDes
         STENCILFINALLAYOUT = layout.offsetof(3);
     }
 
-    protected VkAttachmentDescriptionStencilLayout(long address, @Nullable ByteBuffer container) {
+    public VkAttachmentDescriptionStencilLayout(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAttachmentDescriptionStencilLayout create(long address, @Nullable ByteBuffer container) {
-        return new VkAttachmentDescriptionStencilLayout(address, container);
     }
 
     /**

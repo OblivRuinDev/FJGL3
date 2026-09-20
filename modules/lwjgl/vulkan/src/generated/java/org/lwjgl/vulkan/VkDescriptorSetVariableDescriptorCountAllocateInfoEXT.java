@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDescriptorSetVariableDescriptorCountAllocateInfoEXT extends VkDescriptorSetVariableDescriptorCountAllocateInfo {
 
-    protected VkDescriptorSetVariableDescriptorCountAllocateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetVariableDescriptorCountAllocateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetVariableDescriptorCountAllocateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetVariableDescriptorCountAllocateInfoEXT(address, container);
     }
 
     /**

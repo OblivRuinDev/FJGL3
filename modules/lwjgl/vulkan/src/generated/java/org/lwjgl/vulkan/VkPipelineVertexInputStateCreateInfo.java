@@ -69,13 +69,8 @@ public class VkPipelineVertexInputStateCreateInfo extends Struct<VkPipelineVerte
         PVERTEXATTRIBUTEDESCRIPTIONS = layout.offsetof(6);
     }
 
-    protected VkPipelineVertexInputStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineVertexInputStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineVertexInputStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineVertexInputStateCreateInfo(address, container);
     }
 
     /**

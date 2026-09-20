@@ -51,13 +51,8 @@ public class AIColor3D extends Struct<AIColor3D> {
         B = layout.offsetof(2);
     }
 
-    protected AIColor3D(long address, @Nullable ByteBuffer container) {
+    public AIColor3D(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIColor3D create(long address, @Nullable ByteBuffer container) {
-        return new AIColor3D(address, container);
     }
 
     /**

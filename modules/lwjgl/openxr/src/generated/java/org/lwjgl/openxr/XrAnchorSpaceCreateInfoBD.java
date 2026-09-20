@@ -59,13 +59,8 @@ public class XrAnchorSpaceCreateInfoBD extends Struct<XrAnchorSpaceCreateInfoBD>
         POSEINANCHORSPACE = layout.offsetof(3);
     }
 
-    protected XrAnchorSpaceCreateInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrAnchorSpaceCreateInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrAnchorSpaceCreateInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrAnchorSpaceCreateInfoBD(address, container);
     }
 
     /**

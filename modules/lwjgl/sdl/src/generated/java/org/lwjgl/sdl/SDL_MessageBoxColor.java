@@ -52,13 +52,8 @@ public class SDL_MessageBoxColor extends Struct<SDL_MessageBoxColor> implements 
         B = layout.offsetof(2);
     }
 
-    protected SDL_MessageBoxColor(long address, @Nullable ByteBuffer container) {
+    public SDL_MessageBoxColor(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_MessageBoxColor create(long address, @Nullable ByteBuffer container) {
-        return new SDL_MessageBoxColor(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkAntiLagPresentationInfoAMD extends Struct<VkAntiLagPresentationIn
         FRAMEINDEX = layout.offsetof(3);
     }
 
-    protected VkAntiLagPresentationInfoAMD(long address, @Nullable ByteBuffer container) {
+    public VkAntiLagPresentationInfoAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAntiLagPresentationInfoAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkAntiLagPresentationInfoAMD(address, container);
     }
 
     /**

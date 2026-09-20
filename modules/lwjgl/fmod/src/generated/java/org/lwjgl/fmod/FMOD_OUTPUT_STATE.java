@@ -77,13 +77,8 @@ public class FMOD_OUTPUT_STATE extends Struct<FMOD_OUTPUT_STATE> implements Nati
         REQUESTRESET = layout.offsetof(6);
     }
 
-    protected FMOD_OUTPUT_STATE(long address, @Nullable ByteBuffer container) {
+    public FMOD_OUTPUT_STATE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_OUTPUT_STATE create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_OUTPUT_STATE(address, container);
     }
 
     /**

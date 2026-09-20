@@ -101,13 +101,8 @@ public class VkIndirectCommandsLayoutTokenNV extends Struct<VkIndirectCommandsLa
         PINDEXTYPEVALUES = layout.offsetof(14);
     }
 
-    protected VkIndirectCommandsLayoutTokenNV(long address, @Nullable ByteBuffer container) {
+    public VkIndirectCommandsLayoutTokenNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectCommandsLayoutTokenNV create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectCommandsLayoutTokenNV(address, container);
     }
 
     /**

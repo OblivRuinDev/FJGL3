@@ -82,13 +82,8 @@ public class VkAccelerationStructureTrianglesOpacityMicromapEXT extends Struct<V
         MICROMAP = layout.offsetof(9);
     }
 
-    protected VkAccelerationStructureTrianglesOpacityMicromapEXT(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureTrianglesOpacityMicromapEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureTrianglesOpacityMicromapEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureTrianglesOpacityMicromapEXT(address, container);
     }
 
     /**

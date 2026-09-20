@@ -52,13 +52,8 @@ public class XrHandGestureQCOM extends Struct<XrHandGestureQCOM> implements Nati
         FLIPRATIO = layout.offsetof(2);
     }
 
-    protected XrHandGestureQCOM(long address, @Nullable ByteBuffer container) {
+    public XrHandGestureQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandGestureQCOM create(long address, @Nullable ByteBuffer container) {
-        return new XrHandGestureQCOM(address, container);
     }
 
     /**

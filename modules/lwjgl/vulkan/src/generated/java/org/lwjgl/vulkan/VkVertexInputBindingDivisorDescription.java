@@ -48,13 +48,8 @@ public class VkVertexInputBindingDivisorDescription extends Struct<VkVertexInput
         DIVISOR = layout.offsetof(1);
     }
 
-    protected VkVertexInputBindingDivisorDescription(long address, @Nullable ByteBuffer container) {
+    public VkVertexInputBindingDivisorDescription(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVertexInputBindingDivisorDescription create(long address, @Nullable ByteBuffer container) {
-        return new VkVertexInputBindingDivisorDescription(address, container);
     }
 
     /**

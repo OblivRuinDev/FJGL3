@@ -56,13 +56,8 @@ public class XrSpaceDiscoveryInfoMETA extends Struct<XrSpaceDiscoveryInfoMETA> i
         FILTERS = layout.offsetof(3);
     }
 
-    protected XrSpaceDiscoveryInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrSpaceDiscoveryInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceDiscoveryInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceDiscoveryInfoMETA(address, container);
     }
 
     /**

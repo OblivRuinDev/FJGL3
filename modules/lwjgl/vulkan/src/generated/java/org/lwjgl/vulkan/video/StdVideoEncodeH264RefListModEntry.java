@@ -52,13 +52,8 @@ public class StdVideoEncodeH264RefListModEntry extends Struct<StdVideoEncodeH264
         LONG_TERM_PIC_NUM = layout.offsetof(2);
     }
 
-    protected StdVideoEncodeH264RefListModEntry(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH264RefListModEntry(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH264RefListModEntry create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH264RefListModEntry(address, container);
     }
 
     /**

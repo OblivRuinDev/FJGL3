@@ -84,13 +84,8 @@ public class SDL_TextEditingCandidatesEvent extends Struct<SDL_TextEditingCandid
         PADDING3 = layout.offsetof(10);
     }
 
-    protected SDL_TextEditingCandidatesEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_TextEditingCandidatesEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_TextEditingCandidatesEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_TextEditingCandidatesEvent(address, container);
     }
 
     /**

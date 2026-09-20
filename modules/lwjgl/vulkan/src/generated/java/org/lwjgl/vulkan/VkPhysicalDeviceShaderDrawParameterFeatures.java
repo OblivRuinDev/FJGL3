@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceShaderDrawParameterFeatures extends VkPhysicalDeviceShaderDrawParametersFeatures {
 
-    protected VkPhysicalDeviceShaderDrawParameterFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderDrawParameterFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderDrawParameterFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderDrawParameterFeatures(address, container);
     }
 
     /**

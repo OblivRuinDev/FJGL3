@@ -52,13 +52,8 @@ public class VkPipelineInfoKHR extends Struct<VkPipelineInfoKHR> implements Nati
         PIPELINE = layout.offsetof(2);
     }
 
-    protected VkPipelineInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineInfoKHR(address, container);
     }
 
     /**

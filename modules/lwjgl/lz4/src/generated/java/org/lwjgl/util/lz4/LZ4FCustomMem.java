@@ -62,13 +62,8 @@ public class LZ4FCustomMem extends Struct<LZ4FCustomMem> implements NativeResour
         OPAQUESTATE = layout.offsetof(3);
     }
 
-    protected LZ4FCustomMem(long address, @Nullable ByteBuffer container) {
+    public LZ4FCustomMem(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LZ4FCustomMem create(long address, @Nullable ByteBuffer container) {
-        return new LZ4FCustomMem(address, container);
     }
 
     /**

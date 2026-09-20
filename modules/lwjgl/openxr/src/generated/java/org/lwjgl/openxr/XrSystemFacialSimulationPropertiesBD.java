@@ -52,13 +52,8 @@ public class XrSystemFacialSimulationPropertiesBD extends Struct<XrSystemFacialS
         SUPPORTSFACETRACKING = layout.offsetof(2);
     }
 
-    protected XrSystemFacialSimulationPropertiesBD(long address, @Nullable ByteBuffer container) {
+    public XrSystemFacialSimulationPropertiesBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemFacialSimulationPropertiesBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemFacialSimulationPropertiesBD(address, container);
     }
 
     /**

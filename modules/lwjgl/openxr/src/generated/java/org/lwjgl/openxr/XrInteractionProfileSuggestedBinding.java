@@ -61,13 +61,8 @@ public class XrInteractionProfileSuggestedBinding extends Struct<XrInteractionPr
         SUGGESTEDBINDINGS = layout.offsetof(4);
     }
 
-    protected XrInteractionProfileSuggestedBinding(long address, @Nullable ByteBuffer container) {
+    public XrInteractionProfileSuggestedBinding(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrInteractionProfileSuggestedBinding create(long address, @Nullable ByteBuffer container) {
-        return new XrInteractionProfileSuggestedBinding(address, container);
     }
 
     /**

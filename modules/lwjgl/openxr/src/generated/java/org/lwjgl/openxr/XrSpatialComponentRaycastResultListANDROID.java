@@ -57,13 +57,8 @@ public class XrSpatialComponentRaycastResultListANDROID extends Struct<XrSpatial
         RAYCASTRESULTS = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentRaycastResultListANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentRaycastResultListANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentRaycastResultListANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentRaycastResultListANDROID(address, container);
     }
 
     /**

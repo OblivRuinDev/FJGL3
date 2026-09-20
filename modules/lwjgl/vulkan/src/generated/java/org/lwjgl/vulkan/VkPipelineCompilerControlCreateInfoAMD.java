@@ -52,13 +52,8 @@ public class VkPipelineCompilerControlCreateInfoAMD extends Struct<VkPipelineCom
         COMPILERCONTROLFLAGS = layout.offsetof(2);
     }
 
-    protected VkPipelineCompilerControlCreateInfoAMD(long address, @Nullable ByteBuffer container) {
+    public VkPipelineCompilerControlCreateInfoAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineCompilerControlCreateInfoAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineCompilerControlCreateInfoAMD(address, container);
     }
 
     /**

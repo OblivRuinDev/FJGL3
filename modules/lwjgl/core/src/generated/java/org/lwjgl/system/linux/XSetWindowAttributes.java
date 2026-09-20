@@ -100,13 +100,8 @@ public class XSetWindowAttributes extends Struct<XSetWindowAttributes> implement
         CURSOR = layout.offsetof(14);
     }
 
-    protected XSetWindowAttributes(long address, @Nullable ByteBuffer container) {
+    public XSetWindowAttributes(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XSetWindowAttributes create(long address, @Nullable ByteBuffer container) {
-        return new XSetWindowAttributes(address, container);
     }
 
     /**

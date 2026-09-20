@@ -54,13 +54,8 @@ public class AIMetaData extends Struct<AIMetaData> implements NativeResource {
         MVALUES = layout.offsetof(2);
     }
 
-    protected AIMetaData(long address, @Nullable ByteBuffer container) {
+    public AIMetaData(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIMetaData create(long address, @Nullable ByteBuffer container) {
-        return new AIMetaData(address, container);
     }
 
     /**

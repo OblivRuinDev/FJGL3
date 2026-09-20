@@ -48,13 +48,8 @@ public class VkPresentRegionKHR extends Struct<VkPresentRegionKHR> implements Na
         PRECTANGLES = layout.offsetof(1);
     }
 
-    protected VkPresentRegionKHR(long address, @Nullable ByteBuffer container) {
+    public VkPresentRegionKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPresentRegionKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPresentRegionKHR(address, container);
     }
 
     /**

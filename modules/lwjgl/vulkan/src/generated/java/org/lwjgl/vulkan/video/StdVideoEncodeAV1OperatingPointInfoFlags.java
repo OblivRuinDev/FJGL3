@@ -50,13 +50,8 @@ public class StdVideoEncodeAV1OperatingPointInfoFlags extends Struct<StdVideoEnc
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoEncodeAV1OperatingPointInfoFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeAV1OperatingPointInfoFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeAV1OperatingPointInfoFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeAV1OperatingPointInfoFlags(address, container);
     }
 
     /**

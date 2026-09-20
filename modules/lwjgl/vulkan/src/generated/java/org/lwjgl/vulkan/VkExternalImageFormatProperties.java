@@ -54,13 +54,8 @@ public class VkExternalImageFormatProperties extends Struct<VkExternalImageForma
         EXTERNALMEMORYPROPERTIES = layout.offsetof(2);
     }
 
-    protected VkExternalImageFormatProperties(long address, @Nullable ByteBuffer container) {
+    public VkExternalImageFormatProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalImageFormatProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalImageFormatProperties(address, container);
     }
 
     /**

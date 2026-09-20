@@ -52,13 +52,8 @@ public class VkPhysicalDeviceProtectedMemoryProperties extends Struct<VkPhysical
         PROTECTEDNOFAULT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceProtectedMemoryProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceProtectedMemoryProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceProtectedMemoryProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceProtectedMemoryProperties(address, container);
     }
 
     /**

@@ -69,13 +69,8 @@ public class VkRenderPassPerformanceCountersByRegionBeginInfoARM extends Struct<
         PCOUNTERINDICES = layout.offsetof(6);
     }
 
-    protected VkRenderPassPerformanceCountersByRegionBeginInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassPerformanceCountersByRegionBeginInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassPerformanceCountersByRegionBeginInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassPerformanceCountersByRegionBeginInfoARM(address, container);
     }
 
     /**

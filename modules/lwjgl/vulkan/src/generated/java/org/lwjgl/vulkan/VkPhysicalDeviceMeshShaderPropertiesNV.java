@@ -101,13 +101,8 @@ public class VkPhysicalDeviceMeshShaderPropertiesNV extends Struct<VkPhysicalDev
         MESHOUTPUTPERPRIMITIVEGRANULARITY = layout.offsetof(14);
     }
 
-    protected VkPhysicalDeviceMeshShaderPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMeshShaderPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMeshShaderPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMeshShaderPropertiesNV(address, container);
     }
 
     /**

@@ -77,13 +77,8 @@ public class XSelectionEvent extends Struct<XSelectionEvent> implements NativeRe
         TIME = layout.offsetof(8);
     }
 
-    protected XSelectionEvent(long address, @Nullable ByteBuffer container) {
+    public XSelectionEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XSelectionEvent create(long address, @Nullable ByteBuffer container) {
-        return new XSelectionEvent(address, container);
     }
 
     /**

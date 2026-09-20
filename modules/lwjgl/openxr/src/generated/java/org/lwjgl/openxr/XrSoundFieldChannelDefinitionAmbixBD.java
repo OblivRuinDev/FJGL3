@@ -52,13 +52,8 @@ public class XrSoundFieldChannelDefinitionAmbixBD extends Struct<XrSoundFieldCha
         CHANNELMASK = layout.offsetof(2);
     }
 
-    protected XrSoundFieldChannelDefinitionAmbixBD(long address, @Nullable ByteBuffer container) {
+    public XrSoundFieldChannelDefinitionAmbixBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSoundFieldChannelDefinitionAmbixBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSoundFieldChannelDefinitionAmbixBD(address, container);
     }
 
     /**

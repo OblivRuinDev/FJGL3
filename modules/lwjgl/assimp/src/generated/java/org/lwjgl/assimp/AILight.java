@@ -100,13 +100,8 @@ public class AILight extends Struct<AILight> {
         MSIZE = layout.offsetof(13);
     }
 
-    protected AILight(long address, @Nullable ByteBuffer container) {
+    public AILight(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AILight create(long address, @Nullable ByteBuffer container) {
-        return new AILight(address, container);
     }
 
     /**

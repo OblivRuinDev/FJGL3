@@ -51,13 +51,8 @@ public class XrSpatialPolygon2DDataEXT extends Struct<XrSpatialPolygon2DDataEXT>
         VERTEXBUFFER = layout.offsetof(1);
     }
 
-    protected XrSpatialPolygon2DDataEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialPolygon2DDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialPolygon2DDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialPolygon2DDataEXT(address, container);
     }
 
     /**

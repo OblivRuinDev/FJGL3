@@ -73,13 +73,8 @@ public class XrSceneBoundsMSFT extends Struct<XrSceneBoundsMSFT> implements Nati
         FRUSTUMS = layout.offsetof(7);
     }
 
-    protected XrSceneBoundsMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneBoundsMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneBoundsMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneBoundsMSFT(address, container);
     }
 
     /**

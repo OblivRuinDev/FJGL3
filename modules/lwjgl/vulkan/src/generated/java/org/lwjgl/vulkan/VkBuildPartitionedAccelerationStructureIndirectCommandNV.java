@@ -54,13 +54,8 @@ public class VkBuildPartitionedAccelerationStructureIndirectCommandNV extends St
         ARGDATA = layout.offsetof(2);
     }
 
-    protected VkBuildPartitionedAccelerationStructureIndirectCommandNV(long address, @Nullable ByteBuffer container) {
+    public VkBuildPartitionedAccelerationStructureIndirectCommandNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBuildPartitionedAccelerationStructureIndirectCommandNV create(long address, @Nullable ByteBuffer container) {
-        return new VkBuildPartitionedAccelerationStructureIndirectCommandNV(address, container);
     }
 
     /**

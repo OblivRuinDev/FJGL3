@@ -56,13 +56,8 @@ public class XrEventDataUserPresenceChangedEXT extends Struct<XrEventDataUserPre
         ISUSERPRESENT = layout.offsetof(3);
     }
 
-    protected XrEventDataUserPresenceChangedEXT(long address, @Nullable ByteBuffer container) {
+    public XrEventDataUserPresenceChangedEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataUserPresenceChangedEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataUserPresenceChangedEXT(address, container);
     }
 
     /**

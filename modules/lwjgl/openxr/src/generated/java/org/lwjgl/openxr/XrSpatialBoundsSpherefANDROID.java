@@ -63,13 +63,8 @@ public class XrSpatialBoundsSpherefANDROID extends Struct<XrSpatialBoundsSpheref
         SPHERE = layout.offsetof(4);
     }
 
-    protected XrSpatialBoundsSpherefANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialBoundsSpherefANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialBoundsSpherefANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialBoundsSpherefANDROID(address, container);
     }
 
     /**

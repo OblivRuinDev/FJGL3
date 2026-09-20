@@ -54,13 +54,8 @@ public class XrBodyJointAccelerationBD extends Struct<XrBodyJointAccelerationBD>
         ANGULARACCELERATION = layout.offsetof(2);
     }
 
-    protected XrBodyJointAccelerationBD(long address, @Nullable ByteBuffer container) {
+    public XrBodyJointAccelerationBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyJointAccelerationBD create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyJointAccelerationBD(address, container);
     }
 
     /**

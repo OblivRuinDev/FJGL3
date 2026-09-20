@@ -60,13 +60,8 @@ public class VkPhysicalDeviceShaderBfloat16FeaturesKHR extends Struct<VkPhysical
         SHADERBFLOAT16COOPERATIVEMATRIX = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceShaderBfloat16FeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderBfloat16FeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderBfloat16FeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderBfloat16FeaturesKHR(address, container);
     }
 
     /**

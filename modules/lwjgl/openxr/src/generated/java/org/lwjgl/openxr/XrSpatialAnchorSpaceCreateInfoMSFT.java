@@ -59,13 +59,8 @@ public class XrSpatialAnchorSpaceCreateInfoMSFT extends Struct<XrSpatialAnchorSp
         POSEINANCHORSPACE = layout.offsetof(3);
     }
 
-    protected XrSpatialAnchorSpaceCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorSpaceCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorSpaceCreateInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorSpaceCreateInfoMSFT(address, container);
     }
 
     /**

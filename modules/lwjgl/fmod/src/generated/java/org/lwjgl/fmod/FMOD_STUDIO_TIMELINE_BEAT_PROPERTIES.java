@@ -64,13 +64,8 @@ public class FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES extends Struct<FMOD_STUDIO_TIM
         TIMESIGNATURELOWER = layout.offsetof(5);
     }
 
-    protected FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES(address, container);
     }
 
     /**

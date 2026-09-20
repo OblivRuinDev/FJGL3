@@ -65,13 +65,8 @@ public class VkPushDescriptorSetWithTemplateInfo extends Struct<VkPushDescriptor
         PDATA = layout.offsetof(5);
     }
 
-    protected VkPushDescriptorSetWithTemplateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPushDescriptorSetWithTemplateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPushDescriptorSetWithTemplateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPushDescriptorSetWithTemplateInfo(address, container);
     }
 
     /**

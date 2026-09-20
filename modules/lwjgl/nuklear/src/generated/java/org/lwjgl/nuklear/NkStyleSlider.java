@@ -157,13 +157,8 @@ public class NkStyleSlider extends Struct<NkStyleSlider> implements NativeResour
         DRAW_END = layout.offsetof(26);
     }
 
-    protected NkStyleSlider(long address, @Nullable ByteBuffer container) {
+    public NkStyleSlider(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleSlider create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleSlider(address, container);
     }
 
     /**

@@ -33,13 +33,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDescriptorUpdateTemplateCreateInfoKHR extends VkDescriptorUpdateTemplateCreateInfo {
 
-    protected VkDescriptorUpdateTemplateCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorUpdateTemplateCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorUpdateTemplateCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorUpdateTemplateCreateInfoKHR(address, container);
     }
 
     /**

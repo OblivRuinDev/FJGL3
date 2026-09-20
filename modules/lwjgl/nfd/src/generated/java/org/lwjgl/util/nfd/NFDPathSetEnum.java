@@ -36,13 +36,8 @@ public class NFDPathSetEnum extends Struct<NFDPathSetEnum> implements NativeReso
 
     private static native int offsets(long buffer);
 
-    protected NFDPathSetEnum(long address, @Nullable ByteBuffer container) {
+    public NFDPathSetEnum(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NFDPathSetEnum create(long address, @Nullable ByteBuffer container) {
-        return new NFDPathSetEnum(address, container);
     }
 
     /**

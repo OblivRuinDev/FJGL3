@@ -78,13 +78,8 @@ public class SpvcMslSamplerYcbcrConversion extends Struct<SpvcMslSamplerYcbcrCon
         BPC = layout.offsetof(8);
     }
 
-    protected SpvcMslSamplerYcbcrConversion(long address, @Nullable ByteBuffer container) {
+    public SpvcMslSamplerYcbcrConversion(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcMslSamplerYcbcrConversion create(long address, @Nullable ByteBuffer container) {
-        return new SpvcMslSamplerYcbcrConversion(address, container);
     }
 
     /**

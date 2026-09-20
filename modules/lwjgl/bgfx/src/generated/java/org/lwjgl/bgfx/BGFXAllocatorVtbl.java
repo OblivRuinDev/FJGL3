@@ -48,13 +48,8 @@ public class BGFXAllocatorVtbl extends Struct<BGFXAllocatorVtbl> implements Nati
         REALLOC = layout.offsetof(0);
     }
 
-    protected BGFXAllocatorVtbl(long address, @Nullable ByteBuffer container) {
+    public BGFXAllocatorVtbl(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXAllocatorVtbl create(long address, @Nullable ByteBuffer container) {
-        return new BGFXAllocatorVtbl(address, container);
     }
 
     /**

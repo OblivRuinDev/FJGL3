@@ -64,13 +64,8 @@ public class VkGeneratedCommandsMemoryRequirementsInfoNV extends Struct<VkGenera
         MAXSEQUENCESCOUNT = layout.offsetof(5);
     }
 
-    protected VkGeneratedCommandsMemoryRequirementsInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkGeneratedCommandsMemoryRequirementsInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGeneratedCommandsMemoryRequirementsInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkGeneratedCommandsMemoryRequirementsInfoNV(address, container);
     }
 
     /**

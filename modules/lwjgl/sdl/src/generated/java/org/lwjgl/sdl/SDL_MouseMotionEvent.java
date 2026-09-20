@@ -80,13 +80,8 @@ public class SDL_MouseMotionEvent extends Struct<SDL_MouseMotionEvent> implement
         YREL = layout.offsetof(9);
     }
 
-    protected SDL_MouseMotionEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_MouseMotionEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_MouseMotionEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_MouseMotionEvent(address, container);
     }
 
     /**

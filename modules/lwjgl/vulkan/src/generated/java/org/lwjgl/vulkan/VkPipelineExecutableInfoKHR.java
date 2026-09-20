@@ -56,13 +56,8 @@ public class VkPipelineExecutableInfoKHR extends Struct<VkPipelineExecutableInfo
         EXECUTABLEINDEX = layout.offsetof(3);
     }
 
-    protected VkPipelineExecutableInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineExecutableInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineExecutableInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineExecutableInfoKHR(address, container);
     }
 
     /**

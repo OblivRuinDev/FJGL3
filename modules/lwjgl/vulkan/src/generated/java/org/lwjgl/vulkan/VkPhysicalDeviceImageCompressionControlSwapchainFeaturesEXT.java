@@ -52,13 +52,8 @@ public class VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT extends
         IMAGECOMPRESSIONCONTROLSWAPCHAIN = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT(address, container);
     }
 
     /**

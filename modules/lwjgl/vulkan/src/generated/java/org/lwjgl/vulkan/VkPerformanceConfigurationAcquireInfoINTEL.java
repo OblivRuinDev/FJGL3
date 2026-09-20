@@ -52,13 +52,8 @@ public class VkPerformanceConfigurationAcquireInfoINTEL extends Struct<VkPerform
         TYPE = layout.offsetof(2);
     }
 
-    protected VkPerformanceConfigurationAcquireInfoINTEL(long address, @Nullable ByteBuffer container) {
+    public VkPerformanceConfigurationAcquireInfoINTEL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerformanceConfigurationAcquireInfoINTEL create(long address, @Nullable ByteBuffer container) {
-        return new VkPerformanceConfigurationAcquireInfoINTEL(address, container);
     }
 
     /**

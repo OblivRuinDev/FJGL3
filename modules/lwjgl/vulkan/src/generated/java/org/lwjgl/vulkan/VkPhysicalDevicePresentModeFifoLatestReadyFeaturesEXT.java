@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT extends VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR {
 
-    protected VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePresentModeFifoLatestReadyFeaturesEXT(address, container);
     }
 
     /**

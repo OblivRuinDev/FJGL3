@@ -55,13 +55,8 @@ public class VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT extends Struct<
         SHADERMODULEIDENTIFIERALGORITHMUUID = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT(address, container);
     }
 
     /**

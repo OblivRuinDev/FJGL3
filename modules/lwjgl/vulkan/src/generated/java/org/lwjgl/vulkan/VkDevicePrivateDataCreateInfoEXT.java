@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDevicePrivateDataCreateInfoEXT extends VkDevicePrivateDataCreateInfo {
 
-    protected VkDevicePrivateDataCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDevicePrivateDataCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDevicePrivateDataCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDevicePrivateDataCreateInfoEXT(address, container);
     }
 
     /**

@@ -63,13 +63,8 @@ public class OGGPacket extends Struct<OGGPacket> {
         PACKETNO = layout.offsetof(5);
     }
 
-    protected OGGPacket(long address, @Nullable ByteBuffer container) {
+    public OGGPacket(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected OGGPacket create(long address, @Nullable ByteBuffer container) {
-        return new OGGPacket(address, container);
     }
 
     /**

@@ -70,13 +70,8 @@ public class FT_Glyph_Metrics extends Struct<FT_Glyph_Metrics> {
         VERTADVANCE = layout.offsetof(7);
     }
 
-    protected FT_Glyph_Metrics(long address, @Nullable ByteBuffer container) {
+    public FT_Glyph_Metrics(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Glyph_Metrics create(long address, @Nullable ByteBuffer container) {
-        return new FT_Glyph_Metrics(address, container);
     }
 
     /**

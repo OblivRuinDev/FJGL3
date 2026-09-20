@@ -32,13 +32,8 @@ import org.lwjgl.vulkan.*;
  */
 public class XrGraphicsBindingVulkan2KHR extends XrGraphicsBindingVulkanKHR {
 
-    protected XrGraphicsBindingVulkan2KHR(long address, @Nullable ByteBuffer container) {
+    public XrGraphicsBindingVulkan2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGraphicsBindingVulkan2KHR create(long address, @Nullable ByteBuffer container) {
-        return new XrGraphicsBindingVulkan2KHR(address, container);
     }
 
     /**

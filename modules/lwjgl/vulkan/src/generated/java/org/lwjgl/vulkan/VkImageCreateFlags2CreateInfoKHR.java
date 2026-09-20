@@ -52,13 +52,8 @@ public class VkImageCreateFlags2CreateInfoKHR extends Struct<VkImageCreateFlags2
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkImageCreateFlags2CreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkImageCreateFlags2CreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageCreateFlags2CreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkImageCreateFlags2CreateInfoKHR(address, container);
     }
 
     /**

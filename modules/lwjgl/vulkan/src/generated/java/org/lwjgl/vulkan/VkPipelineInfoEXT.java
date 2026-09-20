@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPipelineInfoEXT extends VkPipelineInfoKHR {
 
-    protected VkPipelineInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineInfoEXT(address, container);
     }
 
     /**

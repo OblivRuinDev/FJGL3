@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSemaphoreTypeCreateInfoKHR extends VkSemaphoreTypeCreateInfo {
 
-    protected VkSemaphoreTypeCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkSemaphoreTypeCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSemaphoreTypeCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSemaphoreTypeCreateInfoKHR(address, container);
     }
 
     /**

@@ -95,13 +95,8 @@ public class XXH3State extends Struct<XXH3State> implements NativeResource {
         EXTSECRET = layout.offsetof(12);
     }
 
-    protected XXH3State(long address, @Nullable ByteBuffer container) {
+    public XXH3State(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XXH3State create(long address, @Nullable ByteBuffer container) {
-        return new XXH3State(address, container);
     }
 
     /**

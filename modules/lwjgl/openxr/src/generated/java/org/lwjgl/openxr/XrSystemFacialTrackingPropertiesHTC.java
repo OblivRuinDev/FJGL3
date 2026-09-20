@@ -56,13 +56,8 @@ public class XrSystemFacialTrackingPropertiesHTC extends Struct<XrSystemFacialTr
         SUPPORTLIPFACIALTRACKING = layout.offsetof(3);
     }
 
-    protected XrSystemFacialTrackingPropertiesHTC(long address, @Nullable ByteBuffer container) {
+    public XrSystemFacialTrackingPropertiesHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemFacialTrackingPropertiesHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemFacialTrackingPropertiesHTC(address, container);
     }
 
     /**

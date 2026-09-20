@@ -64,13 +64,8 @@ public class MOUSEINPUT extends Struct<MOUSEINPUT> implements NativeResource {
         DWEXTRAINFO = layout.offsetof(5);
     }
 
-    protected MOUSEINPUT(long address, @Nullable ByteBuffer container) {
+    public MOUSEINPUT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MOUSEINPUT create(long address, @Nullable ByteBuffer container) {
-        return new MOUSEINPUT(address, container);
     }
 
     /**

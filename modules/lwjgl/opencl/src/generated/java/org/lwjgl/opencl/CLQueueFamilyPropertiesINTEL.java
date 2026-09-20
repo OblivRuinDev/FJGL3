@@ -57,13 +57,8 @@ public class CLQueueFamilyPropertiesINTEL extends Struct<CLQueueFamilyProperties
         NAME = layout.offsetof(3);
     }
 
-    protected CLQueueFamilyPropertiesINTEL(long address, @Nullable ByteBuffer container) {
+    public CLQueueFamilyPropertiesINTEL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLQueueFamilyPropertiesINTEL create(long address, @Nullable ByteBuffer container) {
-        return new CLQueueFamilyPropertiesINTEL(address, container);
     }
 
     /**

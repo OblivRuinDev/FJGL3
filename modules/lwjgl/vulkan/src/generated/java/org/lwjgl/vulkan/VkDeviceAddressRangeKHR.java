@@ -48,13 +48,8 @@ public class VkDeviceAddressRangeKHR extends Struct<VkDeviceAddressRangeKHR> imp
         SIZE = layout.offsetof(1);
     }
 
-    protected VkDeviceAddressRangeKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceAddressRangeKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceAddressRangeKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceAddressRangeKHR(address, container);
     }
 
     /**

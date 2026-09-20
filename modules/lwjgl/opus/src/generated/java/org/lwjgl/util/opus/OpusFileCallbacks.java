@@ -62,13 +62,8 @@ public class OpusFileCallbacks extends Struct<OpusFileCallbacks> implements Nati
         CLOSE = layout.offsetof(3);
     }
 
-    protected OpusFileCallbacks(long address, @Nullable ByteBuffer container) {
+    public OpusFileCallbacks(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected OpusFileCallbacks create(long address, @Nullable ByteBuffer container) {
-        return new OpusFileCallbacks(address, container);
     }
 
     /**

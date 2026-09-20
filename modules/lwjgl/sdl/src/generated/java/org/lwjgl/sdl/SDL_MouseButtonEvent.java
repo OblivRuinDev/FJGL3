@@ -84,13 +84,8 @@ public class SDL_MouseButtonEvent extends Struct<SDL_MouseButtonEvent> implement
         Y = layout.offsetof(10);
     }
 
-    protected SDL_MouseButtonEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_MouseButtonEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_MouseButtonEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_MouseButtonEvent(address, container);
     }
 
     /**

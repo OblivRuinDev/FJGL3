@@ -70,13 +70,8 @@ public class IOURingBPFFilter extends Struct<IOURingBPFFilter> implements Native
         RESV2 = layout.offsetof(6);
     }
 
-    protected IOURingBPFFilter(long address, @Nullable ByteBuffer container) {
+    public IOURingBPFFilter(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingBPFFilter create(long address, @Nullable ByteBuffer container) {
-        return new IOURingBPFFilter(address, container);
     }
 
     /**

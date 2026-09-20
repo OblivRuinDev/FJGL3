@@ -48,13 +48,8 @@ public class XrMarkerDetectorSnapshotInfoML extends Struct<XrMarkerDetectorSnaps
         NEXT = layout.offsetof(1);
     }
 
-    protected XrMarkerDetectorSnapshotInfoML(long address, @Nullable ByteBuffer container) {
+    public XrMarkerDetectorSnapshotInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrMarkerDetectorSnapshotInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrMarkerDetectorSnapshotInfoML(address, container);
     }
 
     /**

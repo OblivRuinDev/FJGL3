@@ -61,13 +61,8 @@ public class FT_Memory extends Struct<FT_Memory> implements NativeResource {
         REALLOC = layout.offsetof(3);
     }
 
-    protected FT_Memory(long address, @Nullable ByteBuffer container) {
+    public FT_Memory(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Memory create(long address, @Nullable ByteBuffer container) {
-        return new FT_Memory(address, container);
     }
 
     /**

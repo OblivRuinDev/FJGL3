@@ -104,13 +104,8 @@ public class GLSLangInput extends Struct<GLSLangInput> implements NativeResource
         CALLBACKS_CTX = layout.offsetof(14);
     }
 
-    protected GLSLangInput(long address, @Nullable ByteBuffer container) {
+    public GLSLangInput(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLSLangInput create(long address, @Nullable ByteBuffer container) {
-        return new GLSLangInput(address, container);
     }
 
     /**

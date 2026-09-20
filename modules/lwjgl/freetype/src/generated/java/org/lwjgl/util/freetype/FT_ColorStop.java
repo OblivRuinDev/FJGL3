@@ -50,13 +50,8 @@ public class FT_ColorStop extends Struct<FT_ColorStop> implements NativeResource
         COLOR = layout.offsetof(1);
     }
 
-    protected FT_ColorStop(long address, @Nullable ByteBuffer container) {
+    public FT_ColorStop(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_ColorStop create(long address, @Nullable ByteBuffer container) {
-        return new FT_ColorStop(address, container);
     }
 
     /**

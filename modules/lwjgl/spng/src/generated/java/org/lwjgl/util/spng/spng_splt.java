@@ -58,13 +58,8 @@ public class spng_splt extends Struct<spng_splt> implements NativeResource {
         ENTRIES = layout.offsetof(3);
     }
 
-    protected spng_splt(long address, @Nullable ByteBuffer container) {
+    public spng_splt(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_splt create(long address, @Nullable ByteBuffer container) {
-        return new spng_splt(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class XrHapticActionInfo extends Struct<XrHapticActionInfo> implements Na
         SUBACTIONPATH = layout.offsetof(3);
     }
 
-    protected XrHapticActionInfo(long address, @Nullable ByteBuffer container) {
+    public XrHapticActionInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHapticActionInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrHapticActionInfo(address, container);
     }
 
     /**

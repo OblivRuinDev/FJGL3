@@ -56,13 +56,8 @@ public class XrEventDataHeadsetFitChangedML extends Struct<XrEventDataHeadsetFit
         TIME = layout.offsetof(3);
     }
 
-    protected XrEventDataHeadsetFitChangedML(long address, @Nullable ByteBuffer container) {
+    public XrEventDataHeadsetFitChangedML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataHeadsetFitChangedML create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataHeadsetFitChangedML(address, container);
     }
 
     /**

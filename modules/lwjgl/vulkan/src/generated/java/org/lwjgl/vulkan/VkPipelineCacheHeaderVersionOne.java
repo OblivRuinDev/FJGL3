@@ -63,13 +63,8 @@ public class VkPipelineCacheHeaderVersionOne extends Struct<VkPipelineCacheHeade
         PIPELINECACHEUUID = layout.offsetof(4);
     }
 
-    protected VkPipelineCacheHeaderVersionOne(long address, @Nullable ByteBuffer container) {
+    public VkPipelineCacheHeaderVersionOne(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineCacheHeaderVersionOne create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineCacheHeaderVersionOne(address, container);
     }
 
     /**

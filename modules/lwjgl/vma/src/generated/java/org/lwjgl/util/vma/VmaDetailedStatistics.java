@@ -66,13 +66,8 @@ public class VmaDetailedStatistics extends Struct<VmaDetailedStatistics> impleme
         UNUSEDRANGESIZEMAX = layout.offsetof(5);
     }
 
-    protected VmaDetailedStatistics(long address, @Nullable ByteBuffer container) {
+    public VmaDetailedStatistics(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaDetailedStatistics create(long address, @Nullable ByteBuffer container) {
-        return new VmaDetailedStatistics(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrSystemPassthroughCameraStatePropertiesANDROID extends Struct<XrSy
         SUPPORTSPASSTHROUGHCAMERASTATE = layout.offsetof(2);
     }
 
-    protected XrSystemPassthroughCameraStatePropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemPassthroughCameraStatePropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemPassthroughCameraStatePropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemPassthroughCameraStatePropertiesANDROID(address, container);
     }
 
     /**

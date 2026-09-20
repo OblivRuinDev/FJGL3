@@ -52,13 +52,8 @@ public class XrSystemAnchorPropertiesHTC extends Struct<XrSystemAnchorProperties
         SUPPORTSANCHOR = layout.offsetof(2);
     }
 
-    protected XrSystemAnchorPropertiesHTC(long address, @Nullable ByteBuffer container) {
+    public XrSystemAnchorPropertiesHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemAnchorPropertiesHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemAnchorPropertiesHTC(address, container);
     }
 
     /**

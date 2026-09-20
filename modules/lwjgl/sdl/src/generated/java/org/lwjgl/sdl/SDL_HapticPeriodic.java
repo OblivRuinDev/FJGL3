@@ -98,13 +98,8 @@ public class SDL_HapticPeriodic extends Struct<SDL_HapticPeriodic> implements Na
         FADE_LEVEL = layout.offsetof(13);
     }
 
-    protected SDL_HapticPeriodic(long address, @Nullable ByteBuffer container) {
+    public SDL_HapticPeriodic(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_HapticPeriodic create(long address, @Nullable ByteBuffer container) {
-        return new SDL_HapticPeriodic(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class CXIdxIBOutletCollectionAttrInfo extends Struct<CXIdxIBOutletCollect
         CLASSLOC = layout.offsetof(3);
     }
 
-    protected CXIdxIBOutletCollectionAttrInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxIBOutletCollectionAttrInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxIBOutletCollectionAttrInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxIBOutletCollectionAttrInfo(address, container);
     }
 
     /**

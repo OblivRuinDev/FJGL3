@@ -61,13 +61,8 @@ public class FT_Size_Request extends Struct<FT_Size_Request> implements NativeRe
         VERTRESOLUTION = layout.offsetof(4);
     }
 
-    protected FT_Size_Request(long address, @Nullable ByteBuffer container) {
+    public FT_Size_Request(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Size_Request create(long address, @Nullable ByteBuffer container) {
-        return new FT_Size_Request(address, container);
     }
 
     /**

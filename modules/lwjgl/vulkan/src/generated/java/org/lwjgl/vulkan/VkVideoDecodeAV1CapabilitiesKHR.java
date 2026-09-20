@@ -54,13 +54,8 @@ public class VkVideoDecodeAV1CapabilitiesKHR extends Struct<VkVideoDecodeAV1Capa
         MAXLEVEL = layout.offsetof(2);
     }
 
-    protected VkVideoDecodeAV1CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeAV1CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeAV1CapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeAV1CapabilitiesKHR(address, container);
     }
 
     /**

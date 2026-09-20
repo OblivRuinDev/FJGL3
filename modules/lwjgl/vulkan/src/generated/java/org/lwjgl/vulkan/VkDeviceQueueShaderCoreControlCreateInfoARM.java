@@ -52,13 +52,8 @@ public class VkDeviceQueueShaderCoreControlCreateInfoARM extends Struct<VkDevice
         SHADERCORECOUNT = layout.offsetof(2);
     }
 
-    protected VkDeviceQueueShaderCoreControlCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDeviceQueueShaderCoreControlCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceQueueShaderCoreControlCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceQueueShaderCoreControlCreateInfoARM(address, container);
     }
 
     /**

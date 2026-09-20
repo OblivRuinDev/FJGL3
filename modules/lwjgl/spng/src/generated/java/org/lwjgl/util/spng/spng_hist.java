@@ -46,13 +46,8 @@ public class spng_hist extends Struct<spng_hist> implements NativeResource {
         FREQUENCY = layout.offsetof(0);
     }
 
-    protected spng_hist(long address, @Nullable ByteBuffer container) {
+    public spng_hist(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_hist create(long address, @Nullable ByteBuffer container) {
-        return new spng_hist(address, container);
     }
 
     /**

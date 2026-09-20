@@ -50,13 +50,8 @@ public class CXIdxObjCPropertyDeclInfo extends Struct<CXIdxObjCPropertyDeclInfo>
         SETTER = layout.offsetof(2);
     }
 
-    protected CXIdxObjCPropertyDeclInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxObjCPropertyDeclInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxObjCPropertyDeclInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxObjCPropertyDeclInfo(address, container);
     }
 
     /**

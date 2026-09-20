@@ -76,13 +76,8 @@ public class VkExecutionGraphPipelineCreateInfoAMDX extends Struct<VkExecutionGr
         BASEPIPELINEINDEX = layout.offsetof(8);
     }
 
-    protected VkExecutionGraphPipelineCreateInfoAMDX(long address, @Nullable ByteBuffer container) {
+    public VkExecutionGraphPipelineCreateInfoAMDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExecutionGraphPipelineCreateInfoAMDX create(long address, @Nullable ByteBuffer container) {
-        return new VkExecutionGraphPipelineCreateInfoAMDX(address, container);
     }
 
     /**

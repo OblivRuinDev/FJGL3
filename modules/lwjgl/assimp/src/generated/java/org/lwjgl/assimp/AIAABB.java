@@ -51,13 +51,8 @@ public class AIAABB extends Struct<AIAABB> implements NativeResource {
         MMAX = layout.offsetof(1);
     }
 
-    protected AIAABB(long address, @Nullable ByteBuffer container) {
+    public AIAABB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIAABB create(long address, @Nullable ByteBuffer container) {
-        return new AIAABB(address, container);
     }
 
     /**

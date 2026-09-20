@@ -74,13 +74,8 @@ public class IOURingRegWait extends Struct<IOURingRegWait> implements NativeReso
         PAD2 = layout.offsetof(6);
     }
 
-    protected IOURingRegWait(long address, @Nullable ByteBuffer container) {
+    public IOURingRegWait(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingRegWait create(long address, @Nullable ByteBuffer container) {
-        return new IOURingRegWait(address, container);
     }
 
     /**

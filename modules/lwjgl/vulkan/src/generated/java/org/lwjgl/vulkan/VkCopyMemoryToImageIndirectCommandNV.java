@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkCopyMemoryToImageIndirectCommandNV extends VkCopyMemoryToImageIndirectCommandKHR {
 
-    protected VkCopyMemoryToImageIndirectCommandNV(long address, @Nullable ByteBuffer container) {
+    public VkCopyMemoryToImageIndirectCommandNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyMemoryToImageIndirectCommandNV create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyMemoryToImageIndirectCommandNV(address, container);
     }
 
     /**

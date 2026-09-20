@@ -52,13 +52,8 @@ public class VkMemoryHostPointerPropertiesEXT extends Struct<VkMemoryHostPointer
         MEMORYTYPEBITS = layout.offsetof(2);
     }
 
-    protected VkMemoryHostPointerPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkMemoryHostPointerPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryHostPointerPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryHostPointerPropertiesEXT(address, container);
     }
 
     /**

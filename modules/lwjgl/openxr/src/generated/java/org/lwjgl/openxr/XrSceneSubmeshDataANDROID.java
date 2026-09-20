@@ -86,13 +86,8 @@ public class XrSceneSubmeshDataANDROID extends Struct<XrSceneSubmeshDataANDROID>
         INDICES = layout.offsetof(10);
     }
 
-    protected XrSceneSubmeshDataANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSceneSubmeshDataANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneSubmeshDataANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneSubmeshDataANDROID(address, container);
     }
 
     /**

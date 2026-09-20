@@ -56,13 +56,8 @@ public class VkWriteIndirectExecutionSetShaderEXT extends Struct<VkWriteIndirect
         SHADER = layout.offsetof(3);
     }
 
-    protected VkWriteIndirectExecutionSetShaderEXT(long address, @Nullable ByteBuffer container) {
+    public VkWriteIndirectExecutionSetShaderEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkWriteIndirectExecutionSetShaderEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkWriteIndirectExecutionSetShaderEXT(address, container);
     }
 
     /**

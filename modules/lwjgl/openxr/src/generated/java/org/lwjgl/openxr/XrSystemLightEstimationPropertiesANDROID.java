@@ -52,13 +52,8 @@ public class XrSystemLightEstimationPropertiesANDROID extends Struct<XrSystemLig
         SUPPORTSLIGHTESTIMATION = layout.offsetof(2);
     }
 
-    protected XrSystemLightEstimationPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemLightEstimationPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemLightEstimationPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemLightEstimationPropertiesANDROID(address, container);
     }
 
     /**

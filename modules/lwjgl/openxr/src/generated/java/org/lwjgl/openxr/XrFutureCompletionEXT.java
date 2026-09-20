@@ -52,13 +52,8 @@ public class XrFutureCompletionEXT extends Struct<XrFutureCompletionEXT> impleme
         FUTURERESULT = layout.offsetof(2);
     }
 
-    protected XrFutureCompletionEXT(long address, @Nullable ByteBuffer container) {
+    public XrFutureCompletionEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFutureCompletionEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrFutureCompletionEXT(address, container);
     }
 
     /**

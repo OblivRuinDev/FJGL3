@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM ext
         DATAGRAPHNEURALACCELERATORSTATISTICS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceExternalMemoryRDMAFeaturesNV extends Struct<VkPhysi
         EXTERNALMEMORYRDMA = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceExternalMemoryRDMAFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalMemoryRDMAFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalMemoryRDMAFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalMemoryRDMAFeaturesNV(address, container);
     }
 
     /**

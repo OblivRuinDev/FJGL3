@@ -65,13 +65,8 @@ public class FMOD_TAG extends Struct<FMOD_TAG> implements NativeResource {
         UPDATED = layout.offsetof(5);
     }
 
-    protected FMOD_TAG(long address, @Nullable ByteBuffer container) {
+    public FMOD_TAG(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_TAG create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_TAG(address, container);
     }
 
     /**

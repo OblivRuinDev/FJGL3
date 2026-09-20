@@ -95,13 +95,8 @@ public class VkMicromapBuildInfoEXT extends Struct<VkMicromapBuildInfoEXT> imple
         TRIANGLEARRAYSTRIDE = layout.offsetof(12);
     }
 
-    protected VkMicromapBuildInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkMicromapBuildInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMicromapBuildInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMicromapBuildInfoEXT(address, container);
     }
 
     /**

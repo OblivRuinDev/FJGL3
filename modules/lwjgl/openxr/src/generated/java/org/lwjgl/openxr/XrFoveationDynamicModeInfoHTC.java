@@ -52,13 +52,8 @@ public class XrFoveationDynamicModeInfoHTC extends Struct<XrFoveationDynamicMode
         DYNAMICFLAGS = layout.offsetof(2);
     }
 
-    protected XrFoveationDynamicModeInfoHTC(long address, @Nullable ByteBuffer container) {
+    public XrFoveationDynamicModeInfoHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFoveationDynamicModeInfoHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrFoveationDynamicModeInfoHTC(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrSpaceComponentFilterInfoFB extends Struct<XrSpaceComponentFilterI
         COMPONENTTYPE = layout.offsetof(2);
     }
 
-    protected XrSpaceComponentFilterInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceComponentFilterInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceComponentFilterInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceComponentFilterInfoFB(address, container);
     }
 
     /**

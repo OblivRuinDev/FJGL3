@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSemaphoreSubmitInfoKHR extends VkSemaphoreSubmitInfo {
 
-    protected VkSemaphoreSubmitInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkSemaphoreSubmitInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSemaphoreSubmitInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSemaphoreSubmitInfoKHR(address, container);
     }
 
     /**

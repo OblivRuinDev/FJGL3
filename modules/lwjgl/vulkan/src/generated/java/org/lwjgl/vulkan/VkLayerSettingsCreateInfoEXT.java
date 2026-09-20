@@ -57,13 +57,8 @@ public class VkLayerSettingsCreateInfoEXT extends Struct<VkLayerSettingsCreateIn
         PSETTINGS = layout.offsetof(3);
     }
 
-    protected VkLayerSettingsCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkLayerSettingsCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkLayerSettingsCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkLayerSettingsCreateInfoEXT(address, container);
     }
 
     /**

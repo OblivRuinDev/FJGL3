@@ -52,13 +52,8 @@ public class VkPhysicalDeviceClusterAccelerationStructureFeaturesNV extends Stru
         CLUSTERACCELERATIONSTRUCTURE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceClusterAccelerationStructureFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceClusterAccelerationStructureFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceClusterAccelerationStructureFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceClusterAccelerationStructureFeaturesNV(address, container);
     }
 
     /**

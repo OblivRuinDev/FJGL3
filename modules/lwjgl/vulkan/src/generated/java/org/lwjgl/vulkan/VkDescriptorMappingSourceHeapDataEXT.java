@@ -48,13 +48,8 @@ public class VkDescriptorMappingSourceHeapDataEXT extends Struct<VkDescriptorMap
         PUSHOFFSET = layout.offsetof(1);
     }
 
-    protected VkDescriptorMappingSourceHeapDataEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorMappingSourceHeapDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorMappingSourceHeapDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorMappingSourceHeapDataEXT(address, container);
     }
 
     /**

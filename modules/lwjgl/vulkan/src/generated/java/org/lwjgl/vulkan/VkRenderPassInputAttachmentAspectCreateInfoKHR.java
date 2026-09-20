@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkRenderPassInputAttachmentAspectCreateInfoKHR extends VkRenderPassInputAttachmentAspectCreateInfo {
 
-    protected VkRenderPassInputAttachmentAspectCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassInputAttachmentAspectCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassInputAttachmentAspectCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassInputAttachmentAspectCreateInfoKHR(address, container);
     }
 
     /**

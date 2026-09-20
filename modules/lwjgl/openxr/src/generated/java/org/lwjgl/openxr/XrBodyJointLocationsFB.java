@@ -72,13 +72,8 @@ public class XrBodyJointLocationsFB extends Struct<XrBodyJointLocationsFB> imple
         TIME = layout.offsetof(7);
     }
 
-    protected XrBodyJointLocationsFB(long address, @Nullable ByteBuffer container) {
+    public XrBodyJointLocationsFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyJointLocationsFB create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyJointLocationsFB(address, container);
     }
 
     /**

@@ -100,13 +100,8 @@ public class FMOD_DSP_STATE_FUNCTIONS extends Struct<FMOD_DSP_STATE_FUNCTIONS> i
         GETUSERDATA = layout.offsetof(11);
     }
 
-    protected FMOD_DSP_STATE_FUNCTIONS(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_STATE_FUNCTIONS(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_STATE_FUNCTIONS create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_STATE_FUNCTIONS(address, container);
     }
 
     /**

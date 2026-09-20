@@ -57,13 +57,8 @@ public class RMTVulkanBind extends Struct<RMTVulkanBind> implements NativeResour
         QUEUE = layout.offsetof(3);
     }
 
-    protected RMTVulkanBind(long address, @Nullable ByteBuffer container) {
+    public RMTVulkanBind(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected RMTVulkanBind create(long address, @Nullable ByteBuffer container) {
-        return new RMTVulkanBind(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkDeviceDiagnosticsConfigCreateInfoNV extends Struct<VkDeviceDiagno
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkDeviceDiagnosticsConfigCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkDeviceDiagnosticsConfigCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceDiagnosticsConfigCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceDiagnosticsConfigCreateInfoNV(address, container);
     }
 
     /**

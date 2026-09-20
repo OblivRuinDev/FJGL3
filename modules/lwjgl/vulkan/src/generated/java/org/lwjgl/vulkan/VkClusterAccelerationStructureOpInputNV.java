@@ -53,13 +53,8 @@ public class VkClusterAccelerationStructureOpInputNV extends Struct<VkClusterAcc
         PMOVEOBJECTS = layout.offsetof(2);
     }
 
-    protected VkClusterAccelerationStructureOpInputNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureOpInputNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureOpInputNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureOpInputNV(address, container);
     }
 
     /**

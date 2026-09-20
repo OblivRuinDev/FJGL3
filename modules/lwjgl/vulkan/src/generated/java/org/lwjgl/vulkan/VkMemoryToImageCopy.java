@@ -77,13 +77,8 @@ public class VkMemoryToImageCopy extends Struct<VkMemoryToImageCopy> implements 
         IMAGEEXTENT = layout.offsetof(7);
     }
 
-    protected VkMemoryToImageCopy(long address, @Nullable ByteBuffer container) {
+    public VkMemoryToImageCopy(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryToImageCopy create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryToImageCopy(address, container);
     }
 
     /**

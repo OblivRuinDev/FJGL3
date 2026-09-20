@@ -52,13 +52,8 @@ public class VkVideoEncodeH264QpKHR extends Struct<VkVideoEncodeH264QpKHR> imple
         QPB = layout.offsetof(2);
     }
 
-    protected VkVideoEncodeH264QpKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH264QpKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH264QpKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH264QpKHR(address, container);
     }
 
     /**

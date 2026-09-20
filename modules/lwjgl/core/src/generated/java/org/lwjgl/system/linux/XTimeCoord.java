@@ -50,13 +50,8 @@ public class XTimeCoord extends Struct<XTimeCoord> {
         Y = layout.offsetof(2);
     }
 
-    protected XTimeCoord(long address, @Nullable ByteBuffer container) {
+    public XTimeCoord(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XTimeCoord create(long address, @Nullable ByteBuffer container) {
-        return new XTimeCoord(address, container);
     }
 
     /**

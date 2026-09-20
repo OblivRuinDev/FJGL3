@@ -52,13 +52,8 @@ public class XrPassthroughColorHTC extends Struct<XrPassthroughColorHTC> impleme
         ALPHA = layout.offsetof(2);
     }
 
-    protected XrPassthroughColorHTC(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughColorHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughColorHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughColorHTC(address, container);
     }
 
     /**

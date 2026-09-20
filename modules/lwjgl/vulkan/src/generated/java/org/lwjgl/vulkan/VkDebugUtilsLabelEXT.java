@@ -57,13 +57,8 @@ public class VkDebugUtilsLabelEXT extends Struct<VkDebugUtilsLabelEXT> implement
         COLOR = layout.offsetof(3);
     }
 
-    protected VkDebugUtilsLabelEXT(long address, @Nullable ByteBuffer container) {
+    public VkDebugUtilsLabelEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDebugUtilsLabelEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDebugUtilsLabelEXT(address, container);
     }
 
     /**

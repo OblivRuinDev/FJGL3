@@ -55,13 +55,8 @@ public class VmaDeviceMemoryCallbacks extends Struct<VmaDeviceMemoryCallbacks> i
         PUSERDATA = layout.offsetof(2);
     }
 
-    protected VmaDeviceMemoryCallbacks(long address, @Nullable ByteBuffer container) {
+    public VmaDeviceMemoryCallbacks(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaDeviceMemoryCallbacks create(long address, @Nullable ByteBuffer container) {
-        return new VmaDeviceMemoryCallbacks(address, container);
     }
 
     /**

@@ -48,13 +48,8 @@ public class VkShaderInstrumentationCreateInfoARM extends Struct<VkShaderInstrum
         PNEXT = layout.offsetof(1);
     }
 
-    protected VkShaderInstrumentationCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkShaderInstrumentationCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkShaderInstrumentationCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkShaderInstrumentationCreateInfoARM(address, container);
     }
 
     /**

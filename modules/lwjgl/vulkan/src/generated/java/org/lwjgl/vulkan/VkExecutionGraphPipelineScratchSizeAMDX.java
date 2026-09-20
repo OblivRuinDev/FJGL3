@@ -60,13 +60,8 @@ public class VkExecutionGraphPipelineScratchSizeAMDX extends Struct<VkExecutionG
         SIZEGRANULARITY = layout.offsetof(4);
     }
 
-    protected VkExecutionGraphPipelineScratchSizeAMDX(long address, @Nullable ByteBuffer container) {
+    public VkExecutionGraphPipelineScratchSizeAMDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExecutionGraphPipelineScratchSizeAMDX create(long address, @Nullable ByteBuffer container) {
-        return new VkExecutionGraphPipelineScratchSizeAMDX(address, container);
     }
 
     /**

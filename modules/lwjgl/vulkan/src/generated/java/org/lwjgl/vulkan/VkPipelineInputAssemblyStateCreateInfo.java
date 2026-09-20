@@ -60,13 +60,8 @@ public class VkPipelineInputAssemblyStateCreateInfo extends Struct<VkPipelineInp
         PRIMITIVERESTARTENABLE = layout.offsetof(4);
     }
 
-    protected VkPipelineInputAssemblyStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineInputAssemblyStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineInputAssemblyStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineInputAssemblyStateCreateInfo(address, container);
     }
 
     /**

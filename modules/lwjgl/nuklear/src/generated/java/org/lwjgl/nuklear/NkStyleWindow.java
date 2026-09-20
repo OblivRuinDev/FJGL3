@@ -174,13 +174,8 @@ public class NkStyleWindow extends Struct<NkStyleWindow> implements NativeResour
         TOOLTIP_OFFSET = layout.offsetof(31);
     }
 
-    protected NkStyleWindow(long address, @Nullable ByteBuffer container) {
+    public NkStyleWindow(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleWindow create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleWindow(address, container);
     }
 
     /**

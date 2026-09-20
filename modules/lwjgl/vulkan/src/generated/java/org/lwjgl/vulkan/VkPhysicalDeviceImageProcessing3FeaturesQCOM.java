@@ -60,13 +60,8 @@ public class VkPhysicalDeviceImageProcessing3FeaturesQCOM extends Struct<VkPhysi
         BLOCKMATCHEXTENDEDCLAMPTOEDGE = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceImageProcessing3FeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageProcessing3FeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageProcessing3FeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageProcessing3FeaturesQCOM(address, container);
     }
 
     /**

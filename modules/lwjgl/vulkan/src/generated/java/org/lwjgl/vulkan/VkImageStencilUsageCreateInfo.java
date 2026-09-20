@@ -52,13 +52,8 @@ public class VkImageStencilUsageCreateInfo extends Struct<VkImageStencilUsageCre
         STENCILUSAGE = layout.offsetof(2);
     }
 
-    protected VkImageStencilUsageCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkImageStencilUsageCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageStencilUsageCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkImageStencilUsageCreateInfo(address, container);
     }
 
     /**

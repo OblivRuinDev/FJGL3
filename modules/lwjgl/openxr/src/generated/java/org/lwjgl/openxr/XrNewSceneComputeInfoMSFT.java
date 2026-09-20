@@ -67,13 +67,8 @@ public class XrNewSceneComputeInfoMSFT extends Struct<XrNewSceneComputeInfoMSFT>
         BOUNDS = layout.offsetof(5);
     }
 
-    protected XrNewSceneComputeInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrNewSceneComputeInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrNewSceneComputeInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrNewSceneComputeInfoMSFT(address, container);
     }
 
     /**

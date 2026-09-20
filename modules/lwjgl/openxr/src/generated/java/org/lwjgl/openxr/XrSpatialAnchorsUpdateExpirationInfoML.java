@@ -61,13 +61,8 @@ public class XrSpatialAnchorsUpdateExpirationInfoML extends Struct<XrSpatialAnch
         EXPIRATION = layout.offsetof(4);
     }
 
-    protected XrSpatialAnchorsUpdateExpirationInfoML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsUpdateExpirationInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsUpdateExpirationInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsUpdateExpirationInfoML(address, container);
     }
 
     /**

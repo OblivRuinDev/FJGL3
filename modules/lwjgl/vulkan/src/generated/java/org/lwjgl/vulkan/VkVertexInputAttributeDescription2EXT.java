@@ -64,13 +64,8 @@ public class VkVertexInputAttributeDescription2EXT extends Struct<VkVertexInputA
         OFFSET = layout.offsetof(5);
     }
 
-    protected VkVertexInputAttributeDescription2EXT(long address, @Nullable ByteBuffer container) {
+    public VkVertexInputAttributeDescription2EXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVertexInputAttributeDescription2EXT create(long address, @Nullable ByteBuffer container) {
-        return new VkVertexInputAttributeDescription2EXT(address, container);
     }
 
     /**

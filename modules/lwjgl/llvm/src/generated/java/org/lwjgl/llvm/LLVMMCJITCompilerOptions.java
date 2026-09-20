@@ -62,13 +62,8 @@ public class LLVMMCJITCompilerOptions extends Struct<LLVMMCJITCompilerOptions> i
         MCJMM = layout.offsetof(4);
     }
 
-    protected LLVMMCJITCompilerOptions(long address, @Nullable ByteBuffer container) {
+    public LLVMMCJITCompilerOptions(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMMCJITCompilerOptions create(long address, @Nullable ByteBuffer container) {
-        return new LLVMMCJITCompilerOptions(address, container);
     }
 
     /**

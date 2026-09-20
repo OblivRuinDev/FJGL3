@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderExpectAssumeFeatures extends Struct<VkPhysica
         SHADEREXPECTASSUME = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderExpectAssumeFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderExpectAssumeFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderExpectAssumeFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderExpectAssumeFeatures(address, container);
     }
 
     /**

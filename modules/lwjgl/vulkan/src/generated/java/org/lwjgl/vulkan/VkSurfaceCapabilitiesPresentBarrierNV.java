@@ -52,13 +52,8 @@ public class VkSurfaceCapabilitiesPresentBarrierNV extends Struct<VkSurfaceCapab
         PRESENTBARRIERSUPPORTED = layout.offsetof(2);
     }
 
-    protected VkSurfaceCapabilitiesPresentBarrierNV(long address, @Nullable ByteBuffer container) {
+    public VkSurfaceCapabilitiesPresentBarrierNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfaceCapabilitiesPresentBarrierNV create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfaceCapabilitiesPresentBarrierNV(address, container);
     }
 
     /**

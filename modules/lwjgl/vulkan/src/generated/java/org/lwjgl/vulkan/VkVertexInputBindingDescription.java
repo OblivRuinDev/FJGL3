@@ -52,13 +52,8 @@ public class VkVertexInputBindingDescription extends Struct<VkVertexInputBinding
         INPUTRATE = layout.offsetof(2);
     }
 
-    protected VkVertexInputBindingDescription(long address, @Nullable ByteBuffer container) {
+    public VkVertexInputBindingDescription(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVertexInputBindingDescription create(long address, @Nullable ByteBuffer container) {
-        return new VkVertexInputBindingDescription(address, container);
     }
 
     /**

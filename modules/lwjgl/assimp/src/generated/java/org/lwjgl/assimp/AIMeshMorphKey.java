@@ -58,13 +58,8 @@ public class AIMeshMorphKey extends Struct<AIMeshMorphKey> implements NativeReso
         MNUMVALUESANDWEIGHTS = layout.offsetof(3);
     }
 
-    protected AIMeshMorphKey(long address, @Nullable ByteBuffer container) {
+    public AIMeshMorphKey(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIMeshMorphKey create(long address, @Nullable ByteBuffer container) {
-        return new AIMeshMorphKey(address, container);
     }
 
     /**

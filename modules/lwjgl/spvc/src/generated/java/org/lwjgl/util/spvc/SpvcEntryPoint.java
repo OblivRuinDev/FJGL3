@@ -50,13 +50,8 @@ public class SpvcEntryPoint extends Struct<SpvcEntryPoint> implements NativeReso
         NAME = layout.offsetof(1);
     }
 
-    protected SpvcEntryPoint(long address, @Nullable ByteBuffer container) {
+    public SpvcEntryPoint(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcEntryPoint create(long address, @Nullable ByteBuffer container) {
-        return new SpvcEntryPoint(address, container);
     }
 
     /**

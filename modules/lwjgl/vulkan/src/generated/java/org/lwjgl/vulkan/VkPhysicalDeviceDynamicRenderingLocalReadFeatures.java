@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDynamicRenderingLocalReadFeatures extends Struct<Vk
         DYNAMICRENDERINGLOCALREAD = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDynamicRenderingLocalReadFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDynamicRenderingLocalReadFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDynamicRenderingLocalReadFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDynamicRenderingLocalReadFeatures(address, container);
     }
 
     /**

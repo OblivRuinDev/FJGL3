@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDeviceQueueGlobalPriorityCreateInfoKHR extends VkDeviceQueueGlobalPriorityCreateInfo {
 
-    protected VkDeviceQueueGlobalPriorityCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceQueueGlobalPriorityCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceQueueGlobalPriorityCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceQueueGlobalPriorityCreateInfoKHR(address, container);
     }
 
     /**

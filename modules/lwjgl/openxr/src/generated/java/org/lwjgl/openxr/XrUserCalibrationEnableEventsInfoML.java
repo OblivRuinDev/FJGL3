@@ -52,13 +52,8 @@ public class XrUserCalibrationEnableEventsInfoML extends Struct<XrUserCalibratio
         ENABLED = layout.offsetof(2);
     }
 
-    protected XrUserCalibrationEnableEventsInfoML(long address, @Nullable ByteBuffer container) {
+    public XrUserCalibrationEnableEventsInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrUserCalibrationEnableEventsInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrUserCalibrationEnableEventsInfoML(address, container);
     }
 
     /**

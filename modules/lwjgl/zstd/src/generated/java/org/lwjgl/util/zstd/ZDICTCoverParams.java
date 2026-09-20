@@ -67,13 +67,8 @@ public class ZDICTCoverParams extends Struct<ZDICTCoverParams> implements Native
         ZPARAMS = layout.offsetof(5);
     }
 
-    protected ZDICTCoverParams(long address, @Nullable ByteBuffer container) {
+    public ZDICTCoverParams(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZDICTCoverParams create(long address, @Nullable ByteBuffer container) {
-        return new ZDICTCoverParams(address, container);
     }
 
     /**

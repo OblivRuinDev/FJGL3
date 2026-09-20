@@ -57,13 +57,8 @@ public class CLDevicePCIBusInfoKHR extends Struct<CLDevicePCIBusInfoKHR> impleme
         PCI_FUNCTION = layout.offsetof(3);
     }
 
-    protected CLDevicePCIBusInfoKHR(long address, @Nullable ByteBuffer container) {
+    public CLDevicePCIBusInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLDevicePCIBusInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new CLDevicePCIBusInfoKHR(address, container);
     }
 
     /**

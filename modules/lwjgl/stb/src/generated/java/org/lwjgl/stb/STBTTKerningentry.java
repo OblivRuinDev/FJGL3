@@ -53,13 +53,8 @@ public class STBTTKerningentry extends Struct<STBTTKerningentry> implements Nati
         ADVANCE = layout.offsetof(2);
     }
 
-    protected STBTTKerningentry(long address, @Nullable ByteBuffer container) {
+    public STBTTKerningentry(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBTTKerningentry create(long address, @Nullable ByteBuffer container) {
-        return new STBTTKerningentry(address, container);
     }
 
     /**

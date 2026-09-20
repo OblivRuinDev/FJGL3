@@ -71,13 +71,8 @@ public class SpvcHLSLResourceBinding extends Struct<SpvcHLSLResourceBinding> imp
         SAMPLER = layout.offsetof(6);
     }
 
-    protected SpvcHLSLResourceBinding(long address, @Nullable ByteBuffer container) {
+    public SpvcHLSLResourceBinding(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcHLSLResourceBinding create(long address, @Nullable ByteBuffer container) {
-        return new SpvcHLSLResourceBinding(address, container);
     }
 
     /**

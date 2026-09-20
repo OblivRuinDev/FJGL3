@@ -163,13 +163,8 @@ public class ktxVulkanFunctions extends Struct<ktxVulkanFunctions> implements Na
         VKWAITFORFENCES = layout.offsetof(29);
     }
 
-    protected ktxVulkanFunctions(long address, @Nullable ByteBuffer container) {
+    public ktxVulkanFunctions(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ktxVulkanFunctions create(long address, @Nullable ByteBuffer container) {
-        return new ktxVulkanFunctions(address, container);
     }
 
     /**

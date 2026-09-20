@@ -61,13 +61,8 @@ public class NkMenuState extends Struct<NkMenuState> {
         OFFSET = layout.offsetof(4);
     }
 
-    protected NkMenuState(long address, @Nullable ByteBuffer container) {
+    public NkMenuState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkMenuState create(long address, @Nullable ByteBuffer container) {
-        return new NkMenuState(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class XrPassthroughStyleFB extends Struct<XrPassthroughStyleFB> implement
         EDGECOLOR = layout.offsetof(3);
     }
 
-    protected XrPassthroughStyleFB(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughStyleFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughStyleFB create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughStyleFB(address, container);
     }
 
     /**

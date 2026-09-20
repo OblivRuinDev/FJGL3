@@ -71,13 +71,8 @@ public class XrSoundFieldConfigBD extends Struct<XrSoundFieldConfigBD> implement
         LFEGAIN = layout.offsetof(6);
     }
 
-    protected XrSoundFieldConfigBD(long address, @Nullable ByteBuffer container) {
+    public XrSoundFieldConfigBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSoundFieldConfigBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSoundFieldConfigBD(address, container);
     }
 
     /**

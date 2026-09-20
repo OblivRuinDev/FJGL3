@@ -52,13 +52,8 @@ public class SDL_CommonEvent extends Struct<SDL_CommonEvent> implements NativeRe
         TIMESTAMP = layout.offsetof(2);
     }
 
-    protected SDL_CommonEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_CommonEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_CommonEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_CommonEvent(address, container);
     }
 
     /**

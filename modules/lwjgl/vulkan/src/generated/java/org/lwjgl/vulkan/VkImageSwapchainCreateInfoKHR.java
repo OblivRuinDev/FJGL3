@@ -52,13 +52,8 @@ public class VkImageSwapchainCreateInfoKHR extends Struct<VkImageSwapchainCreate
         SWAPCHAIN = layout.offsetof(2);
     }
 
-    protected VkImageSwapchainCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkImageSwapchainCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageSwapchainCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkImageSwapchainCreateInfoKHR(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class FT_PaintLinearGradient extends Struct<FT_PaintLinearGradient> {
         P2 = layout.offsetof(3);
     }
 
-    protected FT_PaintLinearGradient(long address, @Nullable ByteBuffer container) {
+    public FT_PaintLinearGradient(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintLinearGradient create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintLinearGradient(address, container);
     }
 
     /**

@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSwapchainPresentScalingCreateInfoEXT extends VkSwapchainPresentScalingCreateInfoKHR {
 
-    protected VkSwapchainPresentScalingCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainPresentScalingCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainPresentScalingCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainPresentScalingCreateInfoEXT(address, container);
     }
 
     /**

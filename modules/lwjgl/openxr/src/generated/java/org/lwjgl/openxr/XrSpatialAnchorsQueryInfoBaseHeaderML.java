@@ -48,13 +48,8 @@ public class XrSpatialAnchorsQueryInfoBaseHeaderML extends Struct<XrSpatialAncho
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSpatialAnchorsQueryInfoBaseHeaderML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsQueryInfoBaseHeaderML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsQueryInfoBaseHeaderML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsQueryInfoBaseHeaderML(address, container);
     }
 
     /**

@@ -67,13 +67,8 @@ public class ParSLMesh extends Struct<ParSLMesh> {
         RANDOM_OFFSETS = layout.offsetof(6);
     }
 
-    protected ParSLMesh(long address, @Nullable ByteBuffer container) {
+    public ParSLMesh(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ParSLMesh create(long address, @Nullable ByteBuffer container) {
-        return new ParSLMesh(address, container);
     }
 
     /**

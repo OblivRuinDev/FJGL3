@@ -56,13 +56,8 @@ public class VkImageSubresourceLayers extends Struct<VkImageSubresourceLayers> i
         LAYERCOUNT = layout.offsetof(3);
     }
 
-    protected VkImageSubresourceLayers(long address, @Nullable ByteBuffer container) {
+    public VkImageSubresourceLayers(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageSubresourceLayers create(long address, @Nullable ByteBuffer container) {
-        return new VkImageSubresourceLayers(address, container);
     }
 
     /**

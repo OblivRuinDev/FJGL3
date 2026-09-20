@@ -72,13 +72,8 @@ public class SDL_GamepadButtonEvent extends Struct<SDL_GamepadButtonEvent> imple
         PADDING2 = layout.offsetof(7);
     }
 
-    protected SDL_GamepadButtonEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_GamepadButtonEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GamepadButtonEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GamepadButtonEvent(address, container);
     }
 
     /**

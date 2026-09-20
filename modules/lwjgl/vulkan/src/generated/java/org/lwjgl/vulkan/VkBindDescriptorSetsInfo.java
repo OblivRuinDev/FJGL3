@@ -77,13 +77,8 @@ public class VkBindDescriptorSetsInfo extends Struct<VkBindDescriptorSetsInfo> i
         PDYNAMICOFFSETS = layout.offsetof(8);
     }
 
-    protected VkBindDescriptorSetsInfo(long address, @Nullable ByteBuffer container) {
+    public VkBindDescriptorSetsInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindDescriptorSetsInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkBindDescriptorSetsInfo(address, container);
     }
 
     /**

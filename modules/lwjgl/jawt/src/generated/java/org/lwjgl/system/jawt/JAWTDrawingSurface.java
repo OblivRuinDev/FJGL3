@@ -63,13 +63,8 @@ public class JAWTDrawingSurface extends Struct<JAWTDrawingSurface> {
         UNLOCK = layout.offsetof(5);
     }
 
-    protected JAWTDrawingSurface(long address, @Nullable ByteBuffer container) {
+    public JAWTDrawingSurface(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected JAWTDrawingSurface create(long address, @Nullable ByteBuffer container) {
-        return new JAWTDrawingSurface(address, container);
     }
 
     /**

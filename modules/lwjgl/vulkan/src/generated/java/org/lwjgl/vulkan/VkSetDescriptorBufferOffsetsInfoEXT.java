@@ -73,13 +73,8 @@ public class VkSetDescriptorBufferOffsetsInfoEXT extends Struct<VkSetDescriptorB
         POFFSETS = layout.offsetof(7);
     }
 
-    protected VkSetDescriptorBufferOffsetsInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkSetDescriptorBufferOffsetsInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSetDescriptorBufferOffsetsInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSetDescriptorBufferOffsetsInfoEXT(address, container);
     }
 
     /**

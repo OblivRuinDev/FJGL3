@@ -84,13 +84,8 @@ public class FT_SvgGlyph extends Struct<FT_SvgGlyph> {
         DELTA = layout.offsetof(9);
     }
 
-    protected FT_SvgGlyph(long address, @Nullable ByteBuffer container) {
+    public FT_SvgGlyph(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_SvgGlyph create(long address, @Nullable ByteBuffer container) {
-        return new FT_SvgGlyph(address, container);
     }
 
     /**

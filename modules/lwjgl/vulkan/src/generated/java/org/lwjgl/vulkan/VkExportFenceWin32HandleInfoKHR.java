@@ -63,13 +63,8 @@ public class VkExportFenceWin32HandleInfoKHR extends Struct<VkExportFenceWin32Ha
         NAME = layout.offsetof(4);
     }
 
-    protected VkExportFenceWin32HandleInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkExportFenceWin32HandleInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportFenceWin32HandleInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkExportFenceWin32HandleInfoKHR(address, container);
     }
 
     /**

@@ -51,13 +51,8 @@ public class StdVideoAV1LoopRestoration extends Struct<StdVideoAV1LoopRestoratio
         LOOPRESTORATIONSIZE = layout.offsetof(1);
     }
 
-    protected StdVideoAV1LoopRestoration(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1LoopRestoration(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1LoopRestoration create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1LoopRestoration(address, container);
     }
 
     /**

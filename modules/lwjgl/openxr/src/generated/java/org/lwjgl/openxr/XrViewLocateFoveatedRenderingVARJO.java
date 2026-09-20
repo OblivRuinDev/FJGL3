@@ -52,13 +52,8 @@ public class XrViewLocateFoveatedRenderingVARJO extends Struct<XrViewLocateFovea
         FOVEATEDRENDERINGACTIVE = layout.offsetof(2);
     }
 
-    protected XrViewLocateFoveatedRenderingVARJO(long address, @Nullable ByteBuffer container) {
+    public XrViewLocateFoveatedRenderingVARJO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrViewLocateFoveatedRenderingVARJO create(long address, @Nullable ByteBuffer container) {
-        return new XrViewLocateFoveatedRenderingVARJO(address, container);
     }
 
     /**

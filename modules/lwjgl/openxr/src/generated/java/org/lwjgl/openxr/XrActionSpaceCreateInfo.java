@@ -63,13 +63,8 @@ public class XrActionSpaceCreateInfo extends Struct<XrActionSpaceCreateInfo> imp
         POSEINACTIONSPACE = layout.offsetof(4);
     }
 
-    protected XrActionSpaceCreateInfo(long address, @Nullable ByteBuffer container) {
+    public XrActionSpaceCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrActionSpaceCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrActionSpaceCreateInfo(address, container);
     }
 
     /**

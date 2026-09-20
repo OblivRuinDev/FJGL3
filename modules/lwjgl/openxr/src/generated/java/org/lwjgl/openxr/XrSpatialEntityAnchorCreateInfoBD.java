@@ -57,13 +57,8 @@ public class XrSpatialEntityAnchorCreateInfoBD extends Struct<XrSpatialEntityAnc
         ENTITYID = layout.offsetof(3);
     }
 
-    protected XrSpatialEntityAnchorCreateInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityAnchorCreateInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityAnchorCreateInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityAnchorCreateInfoBD(address, container);
     }
 
     /**

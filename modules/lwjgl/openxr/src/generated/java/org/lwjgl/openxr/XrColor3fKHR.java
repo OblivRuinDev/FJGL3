@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class XrColor3fKHR extends XrColor3f {
 
-    protected XrColor3fKHR(long address, @Nullable ByteBuffer container) {
+    public XrColor3fKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrColor3fKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrColor3fKHR(address, container);
     }
 
     /**

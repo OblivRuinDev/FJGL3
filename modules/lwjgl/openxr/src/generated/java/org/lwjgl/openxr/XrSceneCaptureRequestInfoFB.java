@@ -56,13 +56,8 @@ public class XrSceneCaptureRequestInfoFB extends Struct<XrSceneCaptureRequestInf
         REQUEST = layout.offsetof(3);
     }
 
-    protected XrSceneCaptureRequestInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSceneCaptureRequestInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneCaptureRequestInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneCaptureRequestInfoFB(address, container);
     }
 
     /**

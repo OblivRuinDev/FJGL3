@@ -57,13 +57,8 @@ public class VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM extends Struct
         PPERVIEWRENDERAREAS = layout.offsetof(3);
     }
 
-    protected VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(address, container);
     }
 
     /**

@@ -53,13 +53,8 @@ public class NkCommand extends Struct<NkCommand> {
         USERDATA = layout.offsetof(2);
     }
 
-    protected NkCommand(long address, @Nullable ByteBuffer container) {
+    public NkCommand(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkCommand create(long address, @Nullable ByteBuffer container) {
-        return new NkCommand(address, container);
     }
 
     /**

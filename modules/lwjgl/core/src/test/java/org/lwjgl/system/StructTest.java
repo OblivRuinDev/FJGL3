@@ -163,10 +163,6 @@ public class StructTest {
             @Override public int sizeof() {
                 return 0;
             }
-
-            @Override protected Struct create(long address, @Nullable ByteBuffer container) {
-                throw new UnsupportedOperationException();
-            }
         };
     }
 

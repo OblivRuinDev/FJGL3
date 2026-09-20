@@ -52,13 +52,8 @@ public class XrEnvironmentDepthHandRemovalSetInfoMETA extends Struct<XrEnvironme
         ENABLED = layout.offsetof(2);
     }
 
-    protected XrEnvironmentDepthHandRemovalSetInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrEnvironmentDepthHandRemovalSetInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEnvironmentDepthHandRemovalSetInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEnvironmentDepthHandRemovalSetInfoMETA(address, container);
     }
 
     /**

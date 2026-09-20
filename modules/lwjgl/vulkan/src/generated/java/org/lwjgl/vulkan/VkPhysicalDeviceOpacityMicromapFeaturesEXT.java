@@ -60,13 +60,8 @@ public class VkPhysicalDeviceOpacityMicromapFeaturesEXT extends Struct<VkPhysica
         MICROMAPHOSTCOMMANDS = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceOpacityMicromapFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceOpacityMicromapFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceOpacityMicromapFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceOpacityMicromapFeaturesEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkBufferUsageFlags2CreateInfo extends Struct<VkBufferUsageFlags2Cre
         USAGE = layout.offsetof(2);
     }
 
-    protected VkBufferUsageFlags2CreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkBufferUsageFlags2CreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferUsageFlags2CreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferUsageFlags2CreateInfo(address, container);
     }
 
     /**

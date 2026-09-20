@@ -58,13 +58,8 @@ public class VkPushDataInfoEXT extends Struct<VkPushDataInfoEXT> implements Nati
         DATA = layout.offsetof(3);
     }
 
-    protected VkPushDataInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPushDataInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPushDataInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPushDataInfoEXT(address, container);
     }
 
     /**

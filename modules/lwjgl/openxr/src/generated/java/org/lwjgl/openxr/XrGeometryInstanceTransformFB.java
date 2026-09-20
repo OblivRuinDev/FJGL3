@@ -68,13 +68,8 @@ public class XrGeometryInstanceTransformFB extends Struct<XrGeometryInstanceTran
         SCALE = layout.offsetof(5);
     }
 
-    protected XrGeometryInstanceTransformFB(long address, @Nullable ByteBuffer container) {
+    public XrGeometryInstanceTransformFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGeometryInstanceTransformFB create(long address, @Nullable ByteBuffer container) {
-        return new XrGeometryInstanceTransformFB(address, container);
     }
 
     /**

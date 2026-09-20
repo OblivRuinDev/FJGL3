@@ -51,13 +51,8 @@ public class FT_Var_Named_Style extends Struct<FT_Var_Named_Style> {
         PSID = layout.offsetof(2);
     }
 
-    protected FT_Var_Named_Style(long address, @Nullable ByteBuffer container) {
+    public FT_Var_Named_Style(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Var_Named_Style create(long address, @Nullable ByteBuffer container) {
-        return new FT_Var_Named_Style(address, container);
     }
 
     /**

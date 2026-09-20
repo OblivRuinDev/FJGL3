@@ -57,13 +57,8 @@ public class FFIType extends Struct<FFIType> implements NativeResource {
         ELEMENTS = layout.offsetof(3);
     }
 
-    protected FFIType(long address, @Nullable ByteBuffer container) {
+    public FFIType(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FFIType create(long address, @Nullable ByteBuffer container) {
-        return new FFIType(address, container);
     }
 
     /**

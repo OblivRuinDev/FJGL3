@@ -60,13 +60,8 @@ public class VkAttachmentSampleCountInfoAMD extends Struct<VkAttachmentSampleCou
         DEPTHSTENCILATTACHMENTSAMPLES = layout.offsetof(4);
     }
 
-    protected VkAttachmentSampleCountInfoAMD(long address, @Nullable ByteBuffer container) {
+    public VkAttachmentSampleCountInfoAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAttachmentSampleCountInfoAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkAttachmentSampleCountInfoAMD(address, container);
     }
 
     /**

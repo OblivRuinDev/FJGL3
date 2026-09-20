@@ -52,13 +52,8 @@ public class VkVideoDecodeCapabilitiesKHR extends Struct<VkVideoDecodeCapabiliti
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkVideoDecodeCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeCapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeCapabilitiesKHR(address, container);
     }
 
     /**

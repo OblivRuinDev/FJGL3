@@ -48,13 +48,8 @@ public class VkExtent2D extends Struct<VkExtent2D> implements NativeResource {
         HEIGHT = layout.offsetof(1);
     }
 
-    protected VkExtent2D(long address, @Nullable ByteBuffer container) {
+    public VkExtent2D(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExtent2D create(long address, @Nullable ByteBuffer container) {
-        return new VkExtent2D(address, container);
     }
 
     /**

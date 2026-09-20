@@ -60,13 +60,8 @@ public class XrSceneMeshVertexBufferMSFT extends Struct<XrSceneMeshVertexBufferM
         VERTICES = layout.offsetof(4);
     }
 
-    protected XrSceneMeshVertexBufferMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneMeshVertexBufferMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMeshVertexBufferMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMeshVertexBufferMSFT(address, container);
     }
 
     /**

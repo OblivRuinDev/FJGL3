@@ -52,13 +52,8 @@ public class VkPartitionedAccelerationStructureUpdateInstanceDataNV extends Stru
         ACCELERATIONSTRUCTURE = layout.offsetof(2);
     }
 
-    protected VkPartitionedAccelerationStructureUpdateInstanceDataNV(long address, @Nullable ByteBuffer container) {
+    public VkPartitionedAccelerationStructureUpdateInstanceDataNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPartitionedAccelerationStructureUpdateInstanceDataNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPartitionedAccelerationStructureUpdateInstanceDataNV(address, container);
     }
 
     /**

@@ -54,13 +54,8 @@ public class VmaBudget extends Struct<VmaBudget> implements NativeResource {
         BUDGET = layout.offsetof(2);
     }
 
-    protected VmaBudget(long address, @Nullable ByteBuffer container) {
+    public VmaBudget(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaBudget create(long address, @Nullable ByteBuffer container) {
-        return new VmaBudget(address, container);
     }
 
     /**

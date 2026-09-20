@@ -48,13 +48,8 @@ public class XrSceneObserverCreateInfoMSFT extends Struct<XrSceneObserverCreateI
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSceneObserverCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneObserverCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneObserverCreateInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneObserverCreateInfoMSFT(address, container);
     }
 
     /**

@@ -43,13 +43,8 @@ public class hwloc_topology_misc_support extends Struct<hwloc_topology_misc_supp
         IMPORTED_SUPPORT = layout.offsetof(0);
     }
 
-    protected hwloc_topology_misc_support(long address, @Nullable ByteBuffer container) {
+    public hwloc_topology_misc_support(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_topology_misc_support create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_topology_misc_support(address, container);
     }
 
     /**

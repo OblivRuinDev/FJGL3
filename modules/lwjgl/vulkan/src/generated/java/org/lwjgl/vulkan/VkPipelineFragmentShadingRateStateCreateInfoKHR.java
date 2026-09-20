@@ -59,13 +59,8 @@ public class VkPipelineFragmentShadingRateStateCreateInfoKHR extends Struct<VkPi
         COMBINEROPS = layout.offsetof(3);
     }
 
-    protected VkPipelineFragmentShadingRateStateCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineFragmentShadingRateStateCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineFragmentShadingRateStateCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineFragmentShadingRateStateCreateInfoKHR(address, container);
     }
 
     /**

@@ -54,13 +54,8 @@ public class AIExportFormatDesc extends Struct<AIExportFormatDesc> implements Na
         FILEEXTENSION = layout.offsetof(2);
     }
 
-    protected AIExportFormatDesc(long address, @Nullable ByteBuffer container) {
+    public AIExportFormatDesc(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIExportFormatDesc create(long address, @Nullable ByteBuffer container) {
-        return new AIExportFormatDesc(address, container);
     }
 
     /**

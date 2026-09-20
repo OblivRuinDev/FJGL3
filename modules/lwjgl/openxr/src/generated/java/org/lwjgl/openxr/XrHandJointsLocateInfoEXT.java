@@ -57,13 +57,8 @@ public class XrHandJointsLocateInfoEXT extends Struct<XrHandJointsLocateInfoEXT>
         TIME = layout.offsetof(3);
     }
 
-    protected XrHandJointsLocateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrHandJointsLocateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandJointsLocateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandJointsLocateInfoEXT(address, container);
     }
 
     /**

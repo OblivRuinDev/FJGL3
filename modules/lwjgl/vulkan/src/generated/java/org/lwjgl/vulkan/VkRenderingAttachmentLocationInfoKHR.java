@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkRenderingAttachmentLocationInfoKHR extends VkRenderingAttachmentLocationInfo {
 
-    protected VkRenderingAttachmentLocationInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkRenderingAttachmentLocationInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderingAttachmentLocationInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderingAttachmentLocationInfoKHR(address, container);
     }
 
     /**

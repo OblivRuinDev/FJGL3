@@ -91,13 +91,8 @@ public class SDL_HapticCondition extends Struct<SDL_HapticCondition> implements 
         CENTER = layout.offsetof(11);
     }
 
-    protected SDL_HapticCondition(long address, @Nullable ByteBuffer container) {
+    public SDL_HapticCondition(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_HapticCondition create(long address, @Nullable ByteBuffer container) {
-        return new SDL_HapticCondition(address, container);
     }
 
     /**

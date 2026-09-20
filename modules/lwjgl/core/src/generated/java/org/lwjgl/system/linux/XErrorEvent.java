@@ -69,13 +69,8 @@ public class XErrorEvent extends Struct<XErrorEvent> implements NativeResource {
         MINOR_CODE = layout.offsetof(6);
     }
 
-    protected XErrorEvent(long address, @Nullable ByteBuffer container) {
+    public XErrorEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XErrorEvent create(long address, @Nullable ByteBuffer container) {
-        return new XErrorEvent(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class AIMeshAnim extends Struct<AIMeshAnim> implements NativeResource {
         MKEYS = layout.offsetof(2);
     }
 
-    protected AIMeshAnim(long address, @Nullable ByteBuffer container) {
+    public AIMeshAnim(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIMeshAnim create(long address, @Nullable ByteBuffer container) {
-        return new AIMeshAnim(address, container);
     }
 
     /**

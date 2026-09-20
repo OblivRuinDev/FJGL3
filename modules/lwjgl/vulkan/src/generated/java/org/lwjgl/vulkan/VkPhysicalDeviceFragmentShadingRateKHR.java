@@ -58,13 +58,8 @@ public class VkPhysicalDeviceFragmentShadingRateKHR extends Struct<VkPhysicalDev
         FRAGMENTSIZE = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceFragmentShadingRateKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentShadingRateKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentShadingRateKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentShadingRateKHR(address, container);
     }
 
     /**

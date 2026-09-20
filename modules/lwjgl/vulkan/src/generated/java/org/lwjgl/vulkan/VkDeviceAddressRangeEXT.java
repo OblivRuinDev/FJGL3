@@ -24,13 +24,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDeviceAddressRangeEXT extends VkDeviceAddressRangeKHR {
 
-    protected VkDeviceAddressRangeEXT(long address, @Nullable ByteBuffer container) {
+    public VkDeviceAddressRangeEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceAddressRangeEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceAddressRangeEXT(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM e
         SCHEDULINGCONTROLSMAXWORKGROUPBATCHSIZE = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM(address, container);
     }
 
     /**

@@ -65,13 +65,8 @@ public class VkSemaphoreWaitInfo extends Struct<VkSemaphoreWaitInfo> implements 
         PVALUES = layout.offsetof(5);
     }
 
-    protected VkSemaphoreWaitInfo(long address, @Nullable ByteBuffer container) {
+    public VkSemaphoreWaitInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSemaphoreWaitInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkSemaphoreWaitInfo(address, container);
     }
 
     /**

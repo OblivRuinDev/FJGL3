@@ -52,13 +52,8 @@ public class VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM extends Struc
         MULTIVIEWPERVIEWVIEWPORTS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrLocalizationEnableEventsInfoML extends Struct<XrLocalizationEnabl
         ENABLED = layout.offsetof(2);
     }
 
-    protected XrLocalizationEnableEventsInfoML(long address, @Nullable ByteBuffer container) {
+    public XrLocalizationEnableEventsInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrLocalizationEnableEventsInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrLocalizationEnableEventsInfoML(address, container);
     }
 
     /**

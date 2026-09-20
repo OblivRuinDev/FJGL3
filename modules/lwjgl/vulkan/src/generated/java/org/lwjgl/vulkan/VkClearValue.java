@@ -51,13 +51,8 @@ public class VkClearValue extends Struct<VkClearValue> implements NativeResource
         DEPTHSTENCIL = layout.offsetof(1);
     }
 
-    protected VkClearValue(long address, @Nullable ByteBuffer container) {
+    public VkClearValue(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClearValue create(long address, @Nullable ByteBuffer container) {
-        return new VkClearValue(address, container);
     }
 
     /**

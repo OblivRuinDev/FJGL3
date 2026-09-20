@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPipelineTessellationDomainOriginStateCreateInfoKHR extends VkPipelineTessellationDomainOriginStateCreateInfo {
 
-    protected VkPipelineTessellationDomainOriginStateCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineTessellationDomainOriginStateCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineTessellationDomainOriginStateCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineTessellationDomainOriginStateCreateInfoKHR(address, container);
     }
 
     /**

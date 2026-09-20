@@ -76,13 +76,8 @@ public class SDL_DisplayMode extends Struct<SDL_DisplayMode> implements NativeRe
         INTERNAL = layout.offsetof(8);
     }
 
-    protected SDL_DisplayMode(long address, @Nullable ByteBuffer container) {
+    public SDL_DisplayMode(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_DisplayMode create(long address, @Nullable ByteBuffer container) {
-        return new SDL_DisplayMode(address, container);
     }
 
     /**

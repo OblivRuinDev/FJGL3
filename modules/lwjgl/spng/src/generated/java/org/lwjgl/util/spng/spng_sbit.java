@@ -61,13 +61,8 @@ public class spng_sbit extends Struct<spng_sbit> implements NativeResource {
         ALPHA_BITS = layout.offsetof(4);
     }
 
-    protected spng_sbit(long address, @Nullable ByteBuffer container) {
+    public spng_sbit(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_sbit create(long address, @Nullable ByteBuffer container) {
-        return new spng_sbit(address, container);
     }
 
     /**

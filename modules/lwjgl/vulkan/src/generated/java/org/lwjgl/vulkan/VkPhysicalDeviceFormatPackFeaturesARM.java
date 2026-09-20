@@ -52,13 +52,8 @@ public class VkPhysicalDeviceFormatPackFeaturesARM extends Struct<VkPhysicalDevi
         FORMATPACK = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceFormatPackFeaturesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFormatPackFeaturesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFormatPackFeaturesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFormatPackFeaturesARM(address, container);
     }
 
     /**

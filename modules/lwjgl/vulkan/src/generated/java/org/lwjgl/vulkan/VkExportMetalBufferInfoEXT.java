@@ -57,13 +57,8 @@ public class VkExportMetalBufferInfoEXT extends Struct<VkExportMetalBufferInfoEX
         MTLBUFFER = layout.offsetof(3);
     }
 
-    protected VkExportMetalBufferInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkExportMetalBufferInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportMetalBufferInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkExportMetalBufferInfoEXT(address, container);
     }
 
     /**

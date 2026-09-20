@@ -57,13 +57,8 @@ public class FT_PaintSweepGradient extends Struct<FT_PaintSweepGradient> {
         END_ANGLE = layout.offsetof(3);
     }
 
-    protected FT_PaintSweepGradient(long address, @Nullable ByteBuffer container) {
+    public FT_PaintSweepGradient(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintSweepGradient create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintSweepGradient(address, container);
     }
 
     /**

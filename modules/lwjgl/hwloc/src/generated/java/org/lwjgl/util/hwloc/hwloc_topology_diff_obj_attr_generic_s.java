@@ -42,13 +42,8 @@ public class hwloc_topology_diff_obj_attr_generic_s extends Struct<hwloc_topolog
         TYPE = layout.offsetof(0);
     }
 
-    protected hwloc_topology_diff_obj_attr_generic_s(long address, @Nullable ByteBuffer container) {
+    public hwloc_topology_diff_obj_attr_generic_s(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_topology_diff_obj_attr_generic_s create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_topology_diff_obj_attr_generic_s(address, container);
     }
 
     /**

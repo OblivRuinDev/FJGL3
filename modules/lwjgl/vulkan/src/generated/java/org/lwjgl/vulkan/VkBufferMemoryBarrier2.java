@@ -84,13 +84,8 @@ public class VkBufferMemoryBarrier2 extends Struct<VkBufferMemoryBarrier2> imple
         SIZE = layout.offsetof(10);
     }
 
-    protected VkBufferMemoryBarrier2(long address, @Nullable ByteBuffer container) {
+    public VkBufferMemoryBarrier2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferMemoryBarrier2 create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferMemoryBarrier2(address, container);
     }
 
     /**

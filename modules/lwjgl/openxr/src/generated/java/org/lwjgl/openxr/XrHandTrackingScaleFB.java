@@ -64,13 +64,8 @@ public class XrHandTrackingScaleFB extends Struct<XrHandTrackingScaleFB> impleme
         OVERRIDEVALUEINPUT = layout.offsetof(5);
     }
 
-    protected XrHandTrackingScaleFB(long address, @Nullable ByteBuffer container) {
+    public XrHandTrackingScaleFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandTrackingScaleFB create(long address, @Nullable ByteBuffer container) {
-        return new XrHandTrackingScaleFB(address, container);
     }
 
     /**

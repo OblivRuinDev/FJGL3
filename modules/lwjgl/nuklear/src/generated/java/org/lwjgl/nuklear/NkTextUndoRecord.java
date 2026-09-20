@@ -55,13 +55,8 @@ public class NkTextUndoRecord extends Struct<NkTextUndoRecord> {
         CHAR_STORAGE = layout.offsetof(3);
     }
 
-    protected NkTextUndoRecord(long address, @Nullable ByteBuffer container) {
+    public NkTextUndoRecord(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkTextUndoRecord create(long address, @Nullable ByteBuffer container) {
-        return new NkTextUndoRecord(address, container);
     }
 
     /**

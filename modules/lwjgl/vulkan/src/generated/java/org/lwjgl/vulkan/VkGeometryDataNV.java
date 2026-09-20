@@ -51,13 +51,8 @@ public class VkGeometryDataNV extends Struct<VkGeometryDataNV> implements Native
         AABBS = layout.offsetof(1);
     }
 
-    protected VkGeometryDataNV(long address, @Nullable ByteBuffer container) {
+    public VkGeometryDataNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGeometryDataNV create(long address, @Nullable ByteBuffer container) {
-        return new VkGeometryDataNV(address, container);
     }
 
     /**

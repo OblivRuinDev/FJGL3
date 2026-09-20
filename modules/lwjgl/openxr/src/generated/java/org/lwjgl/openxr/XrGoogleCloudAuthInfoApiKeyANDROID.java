@@ -53,13 +53,8 @@ public class XrGoogleCloudAuthInfoApiKeyANDROID extends Struct<XrGoogleCloudAuth
         APIKEY = layout.offsetof(2);
     }
 
-    protected XrGoogleCloudAuthInfoApiKeyANDROID(long address, @Nullable ByteBuffer container) {
+    public XrGoogleCloudAuthInfoApiKeyANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGoogleCloudAuthInfoApiKeyANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrGoogleCloudAuthInfoApiKeyANDROID(address, container);
     }
 
     /**

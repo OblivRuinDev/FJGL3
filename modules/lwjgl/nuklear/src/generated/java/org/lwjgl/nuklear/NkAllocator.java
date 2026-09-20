@@ -57,13 +57,8 @@ public class NkAllocator extends Struct<NkAllocator> implements NativeResource {
         MFREE = layout.offsetof(2);
     }
 
-    protected NkAllocator(long address, @Nullable ByteBuffer container) {
+    public NkAllocator(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkAllocator create(long address, @Nullable ByteBuffer container) {
-        return new NkAllocator(address, container);
     }
 
     /**

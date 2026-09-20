@@ -74,13 +74,8 @@ public class VkBuildPartitionedAccelerationStructureInfoNV extends Struct<VkBuil
         SRCINFOSCOUNT = layout.offsetof(7);
     }
 
-    protected VkBuildPartitionedAccelerationStructureInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkBuildPartitionedAccelerationStructureInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBuildPartitionedAccelerationStructureInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkBuildPartitionedAccelerationStructureInfoNV(address, container);
     }
 
     /**

@@ -53,13 +53,8 @@ public class VkExportMetalDeviceInfoEXT extends Struct<VkExportMetalDeviceInfoEX
         MTLDEVICE = layout.offsetof(2);
     }
 
-    protected VkExportMetalDeviceInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkExportMetalDeviceInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportMetalDeviceInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkExportMetalDeviceInfoEXT(address, container);
     }
 
     /**

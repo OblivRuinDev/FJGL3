@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDeviceAddressCommandsFeaturesKHR extends Struct<VkP
         DEVICEADDRESSCOMMANDS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDeviceAddressCommandsFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDeviceAddressCommandsFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDeviceAddressCommandsFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDeviceAddressCommandsFeaturesKHR(address, container);
     }
 
     /**

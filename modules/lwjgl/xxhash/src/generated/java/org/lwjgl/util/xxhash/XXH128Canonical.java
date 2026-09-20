@@ -46,13 +46,8 @@ public class XXH128Canonical extends Struct<XXH128Canonical> implements NativeRe
         DIGEST = layout.offsetof(0);
     }
 
-    protected XXH128Canonical(long address, @Nullable ByteBuffer container) {
+    public XXH128Canonical(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XXH128Canonical create(long address, @Nullable ByteBuffer container) {
-        return new XXH128Canonical(address, container);
     }
 
     /**

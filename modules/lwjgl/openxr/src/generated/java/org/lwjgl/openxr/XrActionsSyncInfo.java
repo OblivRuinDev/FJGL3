@@ -56,13 +56,8 @@ public class XrActionsSyncInfo extends Struct<XrActionsSyncInfo> implements Nati
         ACTIVEACTIONSETS = layout.offsetof(3);
     }
 
-    protected XrActionsSyncInfo(long address, @Nullable ByteBuffer container) {
+    public XrActionsSyncInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrActionsSyncInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrActionsSyncInfo(address, container);
     }
 
     /**

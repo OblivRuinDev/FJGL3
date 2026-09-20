@@ -63,13 +63,8 @@ public class XrVirtualKeyboardSpaceCreateInfoMETA extends Struct<XrVirtualKeyboa
         POSEINSPACE = layout.offsetof(4);
     }
 
-    protected XrVirtualKeyboardSpaceCreateInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrVirtualKeyboardSpaceCreateInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVirtualKeyboardSpaceCreateInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrVirtualKeyboardSpaceCreateInfoMETA(address, container);
     }
 
     /**

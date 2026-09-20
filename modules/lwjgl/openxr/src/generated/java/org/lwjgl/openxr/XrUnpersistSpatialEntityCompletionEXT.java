@@ -56,13 +56,8 @@ public class XrUnpersistSpatialEntityCompletionEXT extends Struct<XrUnpersistSpa
         UNPERSISTRESULT = layout.offsetof(3);
     }
 
-    protected XrUnpersistSpatialEntityCompletionEXT(long address, @Nullable ByteBuffer container) {
+    public XrUnpersistSpatialEntityCompletionEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrUnpersistSpatialEntityCompletionEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrUnpersistSpatialEntityCompletionEXT(address, container);
     }
 
     /**

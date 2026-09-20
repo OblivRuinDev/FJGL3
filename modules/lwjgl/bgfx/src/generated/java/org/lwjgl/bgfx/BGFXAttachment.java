@@ -65,13 +65,8 @@ public class BGFXAttachment extends Struct<BGFXAttachment> implements NativeReso
         RESOLVE = layout.offsetof(5);
     }
 
-    protected BGFXAttachment(long address, @Nullable ByteBuffer container) {
+    public BGFXAttachment(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXAttachment create(long address, @Nullable ByteBuffer container) {
-        return new BGFXAttachment(address, container);
     }
 
     /**

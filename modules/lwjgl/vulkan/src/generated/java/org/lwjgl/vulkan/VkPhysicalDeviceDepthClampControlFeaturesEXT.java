@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDepthClampControlFeaturesEXT extends Struct<VkPhysi
         DEPTHCLAMPCONTROL = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDepthClampControlFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDepthClampControlFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDepthClampControlFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDepthClampControlFeaturesEXT(address, container);
     }
 
     /**

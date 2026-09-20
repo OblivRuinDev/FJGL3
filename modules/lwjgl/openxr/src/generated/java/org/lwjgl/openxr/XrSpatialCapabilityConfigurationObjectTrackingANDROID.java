@@ -69,13 +69,8 @@ public class XrSpatialCapabilityConfigurationObjectTrackingANDROID extends Struc
         ACTIVESEMANTICLABELS = layout.offsetof(6);
     }
 
-    protected XrSpatialCapabilityConfigurationObjectTrackingANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialCapabilityConfigurationObjectTrackingANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialCapabilityConfigurationObjectTrackingANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialCapabilityConfigurationObjectTrackingANDROID(address, container);
     }
 
     /**

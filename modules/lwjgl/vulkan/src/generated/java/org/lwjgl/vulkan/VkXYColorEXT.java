@@ -48,13 +48,8 @@ public class VkXYColorEXT extends Struct<VkXYColorEXT> implements NativeResource
         Y = layout.offsetof(1);
     }
 
-    protected VkXYColorEXT(long address, @Nullable ByteBuffer container) {
+    public VkXYColorEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkXYColorEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkXYColorEXT(address, container);
     }
 
     /**

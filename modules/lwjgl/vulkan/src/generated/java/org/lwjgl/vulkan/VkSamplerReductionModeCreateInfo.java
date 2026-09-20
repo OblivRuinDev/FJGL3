@@ -52,13 +52,8 @@ public class VkSamplerReductionModeCreateInfo extends Struct<VkSamplerReductionM
         REDUCTIONMODE = layout.offsetof(2);
     }
 
-    protected VkSamplerReductionModeCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkSamplerReductionModeCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerReductionModeCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerReductionModeCreateInfo(address, container);
     }
 
     /**

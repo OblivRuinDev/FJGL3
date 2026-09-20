@@ -127,13 +127,8 @@ public class AIMesh extends Struct<AIMesh> implements NativeResource {
         MTEXTURECOORDSNAMES = layout.offsetof(19);
     }
 
-    protected AIMesh(long address, @Nullable ByteBuffer container) {
+    public AIMesh(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIMesh create(long address, @Nullable ByteBuffer container) {
-        return new AIMesh(address, container);
     }
 
     /**

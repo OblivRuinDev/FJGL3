@@ -189,13 +189,8 @@ public class StdVideoH265PictureParameterSet extends Struct<StdVideoH265PictureP
         PPREDICTORPALETTEENTRIES = layout.offsetof(35);
     }
 
-    protected StdVideoH265PictureParameterSet(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265PictureParameterSet(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265PictureParameterSet create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265PictureParameterSet(address, container);
     }
 
     /**

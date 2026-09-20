@@ -52,13 +52,8 @@ public class NFDPickFolderArgs extends Struct<NFDPickFolderArgs> implements Nati
         PARENTWINDOW = layout.offsetof(1);
     }
 
-    protected NFDPickFolderArgs(long address, @Nullable ByteBuffer container) {
+    public NFDPickFolderArgs(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NFDPickFolderArgs create(long address, @Nullable ByteBuffer container) {
-        return new NFDPickFolderArgs(address, container);
     }
 
     /**

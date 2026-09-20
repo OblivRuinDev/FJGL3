@@ -58,13 +58,8 @@ public class FMOD_3D_ATTRIBUTES extends Struct<FMOD_3D_ATTRIBUTES> implements Na
         UP = layout.offsetof(3);
     }
 
-    protected FMOD_3D_ATTRIBUTES(long address, @Nullable ByteBuffer container) {
+    public FMOD_3D_ATTRIBUTES(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_3D_ATTRIBUTES create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_3D_ATTRIBUTES(address, container);
     }
 
     /**

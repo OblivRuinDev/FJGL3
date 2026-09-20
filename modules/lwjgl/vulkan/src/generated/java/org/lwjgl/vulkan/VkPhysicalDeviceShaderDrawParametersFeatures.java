@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderDrawParametersFeatures extends Struct<VkPhysi
         SHADERDRAWPARAMETERS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderDrawParametersFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderDrawParametersFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderDrawParametersFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderDrawParametersFeatures(address, container);
     }
 
     /**

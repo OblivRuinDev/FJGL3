@@ -61,13 +61,8 @@ public class SDL_GPUStorageBufferReadWriteBinding extends Struct<SDL_GPUStorageB
         PADDING3 = layout.offsetof(4);
     }
 
-    protected SDL_GPUStorageBufferReadWriteBinding(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUStorageBufferReadWriteBinding(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUStorageBufferReadWriteBinding create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUStorageBufferReadWriteBinding(address, container);
     }
 
     /**

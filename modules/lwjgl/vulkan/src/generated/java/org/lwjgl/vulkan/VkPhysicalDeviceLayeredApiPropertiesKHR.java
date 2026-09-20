@@ -66,13 +66,8 @@ public class VkPhysicalDeviceLayeredApiPropertiesKHR extends Struct<VkPhysicalDe
         DEVICENAME = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceLayeredApiPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceLayeredApiPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceLayeredApiPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceLayeredApiPropertiesKHR(address, container);
     }
 
     /**

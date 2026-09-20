@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderTerminateInvocationFeatures extends Struct<Vk
         SHADERTERMINATEINVOCATION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderTerminateInvocationFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderTerminateInvocationFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderTerminateInvocationFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderTerminateInvocationFeatures(address, container);
     }
 
     /**

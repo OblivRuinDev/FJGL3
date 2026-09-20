@@ -56,13 +56,8 @@ public class SDL_CameraDeviceEvent extends Struct<SDL_CameraDeviceEvent> impleme
         WHICH = layout.offsetof(3);
     }
 
-    protected SDL_CameraDeviceEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_CameraDeviceEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_CameraDeviceEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_CameraDeviceEvent(address, container);
     }
 
     /**

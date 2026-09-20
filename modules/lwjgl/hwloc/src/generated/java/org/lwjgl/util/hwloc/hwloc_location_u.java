@@ -46,13 +46,8 @@ public class hwloc_location_u extends Struct<hwloc_location_u> {
         OBJECT = layout.offsetof(1);
     }
 
-    protected hwloc_location_u(long address, @Nullable ByteBuffer container) {
+    public hwloc_location_u(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_location_u create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_location_u(address, container);
     }
 
     /**

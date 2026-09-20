@@ -52,13 +52,8 @@ public class XrBodyTrackingCalibrationInfoMETA extends Struct<XrBodyTrackingCali
         BODYHEIGHT = layout.offsetof(2);
     }
 
-    protected XrBodyTrackingCalibrationInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrBodyTrackingCalibrationInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyTrackingCalibrationInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyTrackingCalibrationInfoMETA(address, container);
     }
 
     /**

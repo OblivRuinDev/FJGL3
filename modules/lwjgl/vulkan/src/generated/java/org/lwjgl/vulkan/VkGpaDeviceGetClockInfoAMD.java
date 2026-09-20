@@ -64,13 +64,8 @@ public class VkGpaDeviceGetClockInfoAMD extends Struct<VkGpaDeviceGetClockInfoAM
         ENGINECLOCKFREQUENCY = layout.offsetof(5);
     }
 
-    protected VkGpaDeviceGetClockInfoAMD(long address, @Nullable ByteBuffer container) {
+    public VkGpaDeviceGetClockInfoAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGpaDeviceGetClockInfoAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkGpaDeviceGetClockInfoAMD(address, container);
     }
 
     /**

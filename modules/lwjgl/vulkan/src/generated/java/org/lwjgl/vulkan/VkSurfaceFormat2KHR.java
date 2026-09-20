@@ -54,13 +54,8 @@ public class VkSurfaceFormat2KHR extends Struct<VkSurfaceFormat2KHR> implements 
         SURFACEFORMAT = layout.offsetof(2);
     }
 
-    protected VkSurfaceFormat2KHR(long address, @Nullable ByteBuffer container) {
+    public VkSurfaceFormat2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfaceFormat2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfaceFormat2KHR(address, container);
     }
 
     /**

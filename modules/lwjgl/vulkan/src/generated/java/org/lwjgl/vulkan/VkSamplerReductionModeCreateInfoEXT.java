@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSamplerReductionModeCreateInfoEXT extends VkSamplerReductionModeCreateInfo {
 
-    protected VkSamplerReductionModeCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkSamplerReductionModeCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerReductionModeCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerReductionModeCreateInfoEXT(address, container);
     }
 
     /**

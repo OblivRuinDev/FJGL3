@@ -58,13 +58,8 @@ public class VkVideoEncodeQuantizationMapInfoKHR extends Struct<VkVideoEncodeQua
         QUANTIZATIONMAPEXTENT = layout.offsetof(3);
     }
 
-    protected VkVideoEncodeQuantizationMapInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeQuantizationMapInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeQuantizationMapInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeQuantizationMapInfoKHR(address, container);
     }
 
     /**

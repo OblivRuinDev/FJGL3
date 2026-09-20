@@ -52,13 +52,8 @@ public class VkVideoEncodeSessionIntraRefreshCreateInfoKHR extends Struct<VkVide
         INTRAREFRESHMODE = layout.offsetof(2);
     }
 
-    protected VkVideoEncodeSessionIntraRefreshCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeSessionIntraRefreshCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeSessionIntraRefreshCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeSessionIntraRefreshCreateInfoKHR(address, container);
     }
 
     /**

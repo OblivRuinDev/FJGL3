@@ -56,13 +56,8 @@ public class VkVideoReferenceSlotInfoKHR extends Struct<VkVideoReferenceSlotInfo
         PPICTURERESOURCE = layout.offsetof(3);
     }
 
-    protected VkVideoReferenceSlotInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoReferenceSlotInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoReferenceSlotInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoReferenceSlotInfoKHR(address, container);
     }
 
     /**

@@ -71,13 +71,8 @@ public class StdVideoEncodeH265LongTermRefPics extends Struct<StdVideoEncodeH265
         DELTA_POC_MSB_CYCLE_LT = layout.offsetof(6);
     }
 
-    protected StdVideoEncodeH265LongTermRefPics(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH265LongTermRefPics(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH265LongTermRefPics create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH265LongTermRefPics(address, container);
     }
 
     /**

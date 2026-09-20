@@ -60,13 +60,8 @@ public class XrSceneComponentsMSFT extends Struct<XrSceneComponentsMSFT> impleme
         COMPONENTS = layout.offsetof(4);
     }
 
-    protected XrSceneComponentsMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneComponentsMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneComponentsMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneComponentsMSFT(address, container);
     }
 
     /**

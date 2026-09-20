@@ -53,13 +53,8 @@ public class StatxTimestamp extends Struct<StatxTimestamp> implements NativeReso
         __RESERVED = layout.offsetof(2);
     }
 
-    protected StatxTimestamp(long address, @Nullable ByteBuffer container) {
+    public StatxTimestamp(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StatxTimestamp create(long address, @Nullable ByteBuffer container) {
-        return new StatxTimestamp(address, container);
     }
 
     /**

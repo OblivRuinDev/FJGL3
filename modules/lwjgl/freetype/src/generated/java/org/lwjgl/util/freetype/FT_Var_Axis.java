@@ -62,13 +62,8 @@ public class FT_Var_Axis extends Struct<FT_Var_Axis> {
         STRID = layout.offsetof(5);
     }
 
-    protected FT_Var_Axis(long address, @Nullable ByteBuffer container) {
+    public FT_Var_Axis(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Var_Axis create(long address, @Nullable ByteBuffer container) {
-        return new FT_Var_Axis(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkImageMemoryRequirementsInfo2 extends Struct<VkImageMemoryRequirem
         IMAGE = layout.offsetof(2);
     }
 
-    protected VkImageMemoryRequirementsInfo2(long address, @Nullable ByteBuffer container) {
+    public VkImageMemoryRequirementsInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageMemoryRequirementsInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VkImageMemoryRequirementsInfo2(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkBindVertexBufferIndirectCommandEXT extends Struct<VkBindVertexBuf
         STRIDE = layout.offsetof(2);
     }
 
-    protected VkBindVertexBufferIndirectCommandEXT(long address, @Nullable ByteBuffer container) {
+    public VkBindVertexBufferIndirectCommandEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindVertexBufferIndirectCommandEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkBindVertexBufferIndirectCommandEXT(address, container);
     }
 
     /**

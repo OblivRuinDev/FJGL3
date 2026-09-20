@@ -48,13 +48,8 @@ public class SQL_YEAR_MONTH_STRUCT extends Struct<SQL_YEAR_MONTH_STRUCT> impleme
         MONTH = layout.offsetof(1);
     }
 
-    protected SQL_YEAR_MONTH_STRUCT(long address, @Nullable ByteBuffer container) {
+    public SQL_YEAR_MONTH_STRUCT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SQL_YEAR_MONTH_STRUCT create(long address, @Nullable ByteBuffer container) {
-        return new SQL_YEAR_MONTH_STRUCT(address, container);
     }
 
     /**

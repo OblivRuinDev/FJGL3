@@ -52,13 +52,8 @@ public class VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE extends Stru
         FRAGMENTDENSITYMAPLAYERED = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentDensityMapLayeredFeaturesVALVE(address, container);
     }
 
     /**

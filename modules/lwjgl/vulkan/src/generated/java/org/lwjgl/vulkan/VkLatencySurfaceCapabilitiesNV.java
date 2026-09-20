@@ -56,13 +56,8 @@ public class VkLatencySurfaceCapabilitiesNV extends Struct<VkLatencySurfaceCapab
         PPRESENTMODES = layout.offsetof(3);
     }
 
-    protected VkLatencySurfaceCapabilitiesNV(long address, @Nullable ByteBuffer container) {
+    public VkLatencySurfaceCapabilitiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkLatencySurfaceCapabilitiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkLatencySurfaceCapabilitiesNV(address, container);
     }
 
     /**

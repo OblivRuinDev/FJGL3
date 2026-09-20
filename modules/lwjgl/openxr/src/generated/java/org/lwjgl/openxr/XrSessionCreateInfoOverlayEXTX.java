@@ -56,13 +56,8 @@ public class XrSessionCreateInfoOverlayEXTX extends Struct<XrSessionCreateInfoOv
         SESSIONLAYERSPLACEMENT = layout.offsetof(3);
     }
 
-    protected XrSessionCreateInfoOverlayEXTX(long address, @Nullable ByteBuffer container) {
+    public XrSessionCreateInfoOverlayEXTX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSessionCreateInfoOverlayEXTX create(long address, @Nullable ByteBuffer container) {
-        return new XrSessionCreateInfoOverlayEXTX(address, container);
     }
 
     /**

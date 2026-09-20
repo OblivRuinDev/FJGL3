@@ -57,13 +57,8 @@ public class VkPipelineColorWriteCreateInfoEXT extends Struct<VkPipelineColorWri
         PCOLORWRITEENABLES = layout.offsetof(3);
     }
 
-    protected VkPipelineColorWriteCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineColorWriteCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineColorWriteCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineColorWriteCreateInfoEXT(address, container);
     }
 
     /**

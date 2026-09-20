@@ -53,13 +53,8 @@ public class ZDICTParams extends Struct<ZDICTParams> implements NativeResource {
         DICTID = layout.offsetof(2);
     }
 
-    protected ZDICTParams(long address, @Nullable ByteBuffer container) {
+    public ZDICTParams(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZDICTParams create(long address, @Nullable ByteBuffer container) {
-        return new ZDICTParams(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class XrInstanceProperties extends Struct<XrInstanceProperties> implement
         RUNTIMENAME = layout.offsetof(3);
     }
 
-    protected XrInstanceProperties(long address, @Nullable ByteBuffer container) {
+    public XrInstanceProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrInstanceProperties create(long address, @Nullable ByteBuffer container) {
-        return new XrInstanceProperties(address, container);
     }
 
     /**

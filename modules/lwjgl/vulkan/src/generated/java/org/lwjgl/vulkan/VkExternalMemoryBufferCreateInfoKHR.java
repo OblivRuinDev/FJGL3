@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkExternalMemoryBufferCreateInfoKHR extends VkExternalMemoryBufferCreateInfo {
 
-    protected VkExternalMemoryBufferCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkExternalMemoryBufferCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalMemoryBufferCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalMemoryBufferCreateInfoKHR(address, container);
     }
 
     /**

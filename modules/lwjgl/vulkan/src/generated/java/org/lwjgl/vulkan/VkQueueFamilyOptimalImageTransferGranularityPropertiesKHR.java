@@ -54,13 +54,8 @@ public class VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR extends S
         OPTIMALIMAGETRANSFERGRANULARITY = layout.offsetof(2);
     }
 
-    protected VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR(address, container);
     }
 
     /**

@@ -112,13 +112,8 @@ public class NkFontConfig extends Struct<NkFontConfig> implements NativeResource
         P = layout.offsetof(16);
     }
 
-    protected NkFontConfig(long address, @Nullable ByteBuffer container) {
+    public NkFontConfig(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkFontConfig create(long address, @Nullable ByteBuffer container) {
-        return new NkFontConfig(address, container);
     }
 
     /**

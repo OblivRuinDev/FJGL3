@@ -52,13 +52,8 @@ public class XrRenderModelLoadInfoFB extends Struct<XrRenderModelLoadInfoFB> imp
         MODELKEY = layout.offsetof(2);
     }
 
-    protected XrRenderModelLoadInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelLoadInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelLoadInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelLoadInfoFB(address, container);
     }
 
     /**

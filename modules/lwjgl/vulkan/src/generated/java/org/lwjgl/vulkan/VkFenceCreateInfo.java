@@ -52,13 +52,8 @@ public class VkFenceCreateInfo extends Struct<VkFenceCreateInfo> implements Nati
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkFenceCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkFenceCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFenceCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkFenceCreateInfo(address, container);
     }
 
     /**

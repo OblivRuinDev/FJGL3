@@ -72,13 +72,8 @@ public class XrRoomMeshMETA extends Struct<XrRoomMeshMETA> implements NativeReso
         FACES = layout.offsetof(7);
     }
 
-    protected XrRoomMeshMETA(long address, @Nullable ByteBuffer container) {
+    public XrRoomMeshMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRoomMeshMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrRoomMeshMETA(address, container);
     }
 
     /**

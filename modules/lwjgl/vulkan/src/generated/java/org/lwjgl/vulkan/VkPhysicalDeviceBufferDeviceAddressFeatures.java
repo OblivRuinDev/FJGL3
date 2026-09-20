@@ -60,13 +60,8 @@ public class VkPhysicalDeviceBufferDeviceAddressFeatures extends Struct<VkPhysic
         BUFFERDEVICEADDRESSMULTIDEVICE = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceBufferDeviceAddressFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceBufferDeviceAddressFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceBufferDeviceAddressFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceBufferDeviceAddressFeatures(address, container);
     }
 
     /**

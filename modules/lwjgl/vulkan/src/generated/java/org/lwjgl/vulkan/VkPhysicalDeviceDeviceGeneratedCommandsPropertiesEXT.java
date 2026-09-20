@@ -96,13 +96,8 @@ public class VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT extends Struct
         DEVICEGENERATEDCOMMANDSMULTIDRAWINDIRECTCOUNT = layout.offsetof(13);
     }
 
-    protected VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT(address, container);
     }
 
     /**

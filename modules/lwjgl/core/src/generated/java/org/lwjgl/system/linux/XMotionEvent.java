@@ -101,13 +101,8 @@ public class XMotionEvent extends Struct<XMotionEvent> implements NativeResource
         SAME_SCREEN = layout.offsetof(14);
     }
 
-    protected XMotionEvent(long address, @Nullable ByteBuffer container) {
+    public XMotionEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XMotionEvent create(long address, @Nullable ByteBuffer container) {
-        return new XMotionEvent(address, container);
     }
 
     /**

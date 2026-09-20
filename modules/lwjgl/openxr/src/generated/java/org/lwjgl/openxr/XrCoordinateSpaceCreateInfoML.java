@@ -59,13 +59,8 @@ public class XrCoordinateSpaceCreateInfoML extends Struct<XrCoordinateSpaceCreat
         POSEINCOORDINATESPACE = layout.offsetof(3);
     }
 
-    protected XrCoordinateSpaceCreateInfoML(long address, @Nullable ByteBuffer container) {
+    public XrCoordinateSpaceCreateInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCoordinateSpaceCreateInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrCoordinateSpaceCreateInfoML(address, container);
     }
 
     /**

@@ -61,13 +61,8 @@ public class VkLayerSettingEXT extends Struct<VkLayerSettingEXT> implements Nati
         PVALUES = layout.offsetof(4);
     }
 
-    protected VkLayerSettingEXT(long address, @Nullable ByteBuffer container) {
+    public VkLayerSettingEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkLayerSettingEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkLayerSettingEXT(address, container);
     }
 
     /**

@@ -50,13 +50,8 @@ public class XrRenderModelNodeStateEXT extends Struct<XrRenderModelNodeStateEXT>
         ISVISIBLE = layout.offsetof(1);
     }
 
-    protected XrRenderModelNodeStateEXT(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelNodeStateEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelNodeStateEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelNodeStateEXT(address, container);
     }
 
     /**

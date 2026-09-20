@@ -61,13 +61,8 @@ public class XrSpatialGraphNodeBindingPropertiesMSFT extends Struct<XrSpatialGra
         POSEINNODESPACE = layout.offsetof(3);
     }
 
-    protected XrSpatialGraphNodeBindingPropertiesMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialGraphNodeBindingPropertiesMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialGraphNodeBindingPropertiesMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialGraphNodeBindingPropertiesMSFT(address, container);
     }
 
     /**

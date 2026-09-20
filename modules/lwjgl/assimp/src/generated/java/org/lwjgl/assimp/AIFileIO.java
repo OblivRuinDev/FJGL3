@@ -57,13 +57,8 @@ public class AIFileIO extends Struct<AIFileIO> implements NativeResource {
         USERDATA = layout.offsetof(2);
     }
 
-    protected AIFileIO(long address, @Nullable ByteBuffer container) {
+    public AIFileIO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIFileIO create(long address, @Nullable ByteBuffer container) {
-        return new AIFileIO(address, container);
     }
 
     /**

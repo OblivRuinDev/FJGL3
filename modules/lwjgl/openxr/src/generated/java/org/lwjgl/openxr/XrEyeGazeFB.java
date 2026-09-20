@@ -54,13 +54,8 @@ public class XrEyeGazeFB extends Struct<XrEyeGazeFB> implements NativeResource {
         GAZECONFIDENCE = layout.offsetof(2);
     }
 
-    protected XrEyeGazeFB(long address, @Nullable ByteBuffer container) {
+    public XrEyeGazeFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEyeGazeFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEyeGazeFB(address, container);
     }
 
     /**

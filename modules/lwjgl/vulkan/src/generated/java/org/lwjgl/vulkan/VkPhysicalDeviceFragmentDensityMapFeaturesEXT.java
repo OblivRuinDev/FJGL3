@@ -60,13 +60,8 @@ public class VkPhysicalDeviceFragmentDensityMapFeaturesEXT extends Struct<VkPhys
         FRAGMENTDENSITYMAPNONSUBSAMPLEDIMAGES = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceFragmentDensityMapFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentDensityMapFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentDensityMapFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentDensityMapFeaturesEXT(address, container);
     }
 
     /**

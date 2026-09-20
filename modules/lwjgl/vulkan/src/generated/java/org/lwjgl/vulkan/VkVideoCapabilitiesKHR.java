@@ -87,13 +87,8 @@ public class VkVideoCapabilitiesKHR extends Struct<VkVideoCapabilitiesKHR> imple
         STDHEADERVERSION = layout.offsetof(10);
     }
 
-    protected VkVideoCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoCapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoCapabilitiesKHR(address, container);
     }
 
     /**

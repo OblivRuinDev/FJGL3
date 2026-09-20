@@ -48,13 +48,8 @@ public class XrEventDataBaseHeader extends Struct<XrEventDataBaseHeader> impleme
         NEXT = layout.offsetof(1);
     }
 
-    protected XrEventDataBaseHeader(long address, @Nullable ByteBuffer container) {
+    public XrEventDataBaseHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataBaseHeader create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataBaseHeader(address, container);
     }
 
     /**

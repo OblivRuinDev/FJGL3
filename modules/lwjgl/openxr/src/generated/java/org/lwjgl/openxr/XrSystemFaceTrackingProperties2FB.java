@@ -56,13 +56,8 @@ public class XrSystemFaceTrackingProperties2FB extends Struct<XrSystemFaceTracki
         SUPPORTSAUDIOFACETRACKING = layout.offsetof(3);
     }
 
-    protected XrSystemFaceTrackingProperties2FB(long address, @Nullable ByteBuffer container) {
+    public XrSystemFaceTrackingProperties2FB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemFaceTrackingProperties2FB create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemFaceTrackingProperties2FB(address, container);
     }
 
     /**

@@ -64,13 +64,8 @@ public class VkPhysicalDeviceGpaFeaturesAMD extends Struct<VkPhysicalDeviceGpaFe
         CLOCKMODES = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceGpaFeaturesAMD(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceGpaFeaturesAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceGpaFeaturesAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceGpaFeaturesAMD(address, container);
     }
 
     /**

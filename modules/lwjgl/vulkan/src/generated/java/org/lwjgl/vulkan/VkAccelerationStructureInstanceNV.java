@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkAccelerationStructureInstanceNV extends VkAccelerationStructureInstanceKHR {
 
-    protected VkAccelerationStructureInstanceNV(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureInstanceNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureInstanceNV create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureInstanceNV(address, container);
     }
 
     /**

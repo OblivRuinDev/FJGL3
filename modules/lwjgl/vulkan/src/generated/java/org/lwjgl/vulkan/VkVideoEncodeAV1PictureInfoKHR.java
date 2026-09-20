@@ -81,13 +81,8 @@ public class VkVideoEncodeAV1PictureInfoKHR extends Struct<VkVideoEncodeAV1Pictu
         GENERATEOBUEXTENSIONHEADER = layout.offsetof(8);
     }
 
-    protected VkVideoEncodeAV1PictureInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeAV1PictureInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeAV1PictureInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeAV1PictureInfoKHR(address, container);
     }
 
     /**

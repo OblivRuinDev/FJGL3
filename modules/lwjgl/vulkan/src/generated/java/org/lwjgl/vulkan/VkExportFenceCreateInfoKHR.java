@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkExportFenceCreateInfoKHR extends VkExportFenceCreateInfo {
 
-    protected VkExportFenceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkExportFenceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportFenceCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkExportFenceCreateInfoKHR(address, container);
     }
 
     /**

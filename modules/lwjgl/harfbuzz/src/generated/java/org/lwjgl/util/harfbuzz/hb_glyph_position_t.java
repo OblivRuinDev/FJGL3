@@ -62,13 +62,8 @@ public class hb_glyph_position_t extends Struct<hb_glyph_position_t> implements 
         VAR = layout.offsetof(4);
     }
 
-    protected hb_glyph_position_t(long address, @Nullable ByteBuffer container) {
+    public hb_glyph_position_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_glyph_position_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_glyph_position_t(address, container);
     }
 
     /**

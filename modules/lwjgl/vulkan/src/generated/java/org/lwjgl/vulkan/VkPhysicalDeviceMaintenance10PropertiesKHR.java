@@ -60,13 +60,8 @@ public class VkPhysicalDeviceMaintenance10PropertiesKHR extends Struct<VkPhysica
         RESOLVESRGBFORMATSUPPORTSTRANSFERFUNCTIONCONTROL = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceMaintenance10PropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMaintenance10PropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMaintenance10PropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMaintenance10PropertiesKHR(address, container);
     }
 
     /**

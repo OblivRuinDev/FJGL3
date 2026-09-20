@@ -56,13 +56,8 @@ public class VkMemoryDedicatedAllocateInfo extends Struct<VkMemoryDedicatedAlloc
         BUFFER = layout.offsetof(3);
     }
 
-    protected VkMemoryDedicatedAllocateInfo(long address, @Nullable ByteBuffer container) {
+    public VkMemoryDedicatedAllocateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryDedicatedAllocateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryDedicatedAllocateInfo(address, container);
     }
 
     /**

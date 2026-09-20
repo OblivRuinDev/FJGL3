@@ -52,13 +52,8 @@ public class VkMemoryOpaqueCaptureAddressAllocateInfo extends Struct<VkMemoryOpa
         OPAQUECAPTUREADDRESS = layout.offsetof(2);
     }
 
-    protected VkMemoryOpaqueCaptureAddressAllocateInfo(long address, @Nullable ByteBuffer container) {
+    public VkMemoryOpaqueCaptureAddressAllocateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryOpaqueCaptureAddressAllocateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryOpaqueCaptureAddressAllocateInfo(address, container);
     }
 
     /**

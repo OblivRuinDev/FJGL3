@@ -52,13 +52,8 @@ public class VkQueryPoolVideoEncodeFeedbackCreateInfoKHR extends Struct<VkQueryP
         ENCODEFEEDBACKFLAGS = layout.offsetof(2);
     }
 
-    protected VkQueryPoolVideoEncodeFeedbackCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkQueryPoolVideoEncodeFeedbackCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueryPoolVideoEncodeFeedbackCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkQueryPoolVideoEncodeFeedbackCreateInfoKHR(address, container);
     }
 
     /**

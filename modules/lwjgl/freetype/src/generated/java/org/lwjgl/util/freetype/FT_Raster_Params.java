@@ -79,13 +79,8 @@ public class FT_Raster_Params extends Struct<FT_Raster_Params> implements Native
         CLIP_BOX = layout.offsetof(8);
     }
 
-    protected FT_Raster_Params(long address, @Nullable ByteBuffer container) {
+    public FT_Raster_Params(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Raster_Params create(long address, @Nullable ByteBuffer container) {
-        return new FT_Raster_Params(address, container);
     }
 
     /**

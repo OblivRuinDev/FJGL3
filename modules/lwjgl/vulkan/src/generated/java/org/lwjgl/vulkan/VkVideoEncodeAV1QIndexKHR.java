@@ -52,13 +52,8 @@ public class VkVideoEncodeAV1QIndexKHR extends Struct<VkVideoEncodeAV1QIndexKHR>
         BIPREDICTIVEQINDEX = layout.offsetof(2);
     }
 
-    protected VkVideoEncodeAV1QIndexKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeAV1QIndexKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeAV1QIndexKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeAV1QIndexKHR(address, container);
     }
 
     /**

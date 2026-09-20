@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkMemoryDedicatedRequirementsKHR extends VkMemoryDedicatedRequirements {
 
-    protected VkMemoryDedicatedRequirementsKHR(long address, @Nullable ByteBuffer container) {
+    public VkMemoryDedicatedRequirementsKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryDedicatedRequirementsKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryDedicatedRequirementsKHR(address, container);
     }
 
     /**

@@ -68,13 +68,8 @@ public class VkAcquireNextImageInfoKHR extends Struct<VkAcquireNextImageInfoKHR>
         DEVICEMASK = layout.offsetof(6);
     }
 
-    protected VkAcquireNextImageInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkAcquireNextImageInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAcquireNextImageInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAcquireNextImageInfoKHR(address, container);
     }
 
     /**

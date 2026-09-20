@@ -122,13 +122,8 @@ public class ktxStream extends Struct<ktxStream> implements NativeResource {
         CLOSEONDESTRUCT = layout.offsetof(16);
     }
 
-    protected ktxStream(long address, @Nullable ByteBuffer container) {
+    public ktxStream(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ktxStream create(long address, @Nullable ByteBuffer container) {
-        return new ktxStream(address, container);
     }
 
     /**

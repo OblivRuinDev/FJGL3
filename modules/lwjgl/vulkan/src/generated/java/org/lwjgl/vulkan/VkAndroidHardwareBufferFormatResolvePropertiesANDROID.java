@@ -52,13 +52,8 @@ public class VkAndroidHardwareBufferFormatResolvePropertiesANDROID extends Struc
         COLORATTACHMENTFORMAT = layout.offsetof(2);
     }
 
-    protected VkAndroidHardwareBufferFormatResolvePropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public VkAndroidHardwareBufferFormatResolvePropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAndroidHardwareBufferFormatResolvePropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new VkAndroidHardwareBufferFormatResolvePropertiesANDROID(address, container);
     }
 
     /**

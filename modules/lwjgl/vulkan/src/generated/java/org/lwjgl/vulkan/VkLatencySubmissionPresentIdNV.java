@@ -52,13 +52,8 @@ public class VkLatencySubmissionPresentIdNV extends Struct<VkLatencySubmissionPr
         PRESENTID = layout.offsetof(2);
     }
 
-    protected VkLatencySubmissionPresentIdNV(long address, @Nullable ByteBuffer container) {
+    public VkLatencySubmissionPresentIdNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkLatencySubmissionPresentIdNV create(long address, @Nullable ByteBuffer container) {
-        return new VkLatencySubmissionPresentIdNV(address, container);
     }
 
     /**

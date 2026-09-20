@@ -54,13 +54,8 @@ public class XrSpaceGroupUuidFilterInfoMETA extends Struct<XrSpaceGroupUuidFilte
         GROUPUUID = layout.offsetof(2);
     }
 
-    protected XrSpaceGroupUuidFilterInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrSpaceGroupUuidFilterInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceGroupUuidFilterInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceGroupUuidFilterInfoMETA(address, container);
     }
 
     /**

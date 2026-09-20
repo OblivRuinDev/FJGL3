@@ -64,13 +64,8 @@ public class SDL_ClipboardEvent extends Struct<SDL_ClipboardEvent> implements Na
         MIME_TYPES = layout.offsetof(5);
     }
 
-    protected SDL_ClipboardEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_ClipboardEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_ClipboardEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_ClipboardEvent(address, container);
     }
 
     /**

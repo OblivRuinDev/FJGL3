@@ -81,13 +81,8 @@ public class XVisualInfo extends Struct<XVisualInfo> implements NativeResource {
         BITS_PER_RGB = layout.offsetof(9);
     }
 
-    protected XVisualInfo(long address, @Nullable ByteBuffer container) {
+    public XVisualInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XVisualInfo create(long address, @Nullable ByteBuffer container) {
-        return new XVisualInfo(address, container);
     }
 
     /**

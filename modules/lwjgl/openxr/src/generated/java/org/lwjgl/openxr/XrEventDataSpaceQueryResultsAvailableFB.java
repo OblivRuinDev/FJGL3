@@ -52,13 +52,8 @@ public class XrEventDataSpaceQueryResultsAvailableFB extends Struct<XrEventDataS
         REQUESTID = layout.offsetof(2);
     }
 
-    protected XrEventDataSpaceQueryResultsAvailableFB(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSpaceQueryResultsAvailableFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSpaceQueryResultsAvailableFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSpaceQueryResultsAvailableFB(address, container);
     }
 
     /**

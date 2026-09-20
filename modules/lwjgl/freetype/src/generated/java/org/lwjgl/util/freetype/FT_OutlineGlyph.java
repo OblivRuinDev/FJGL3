@@ -50,13 +50,8 @@ public class FT_OutlineGlyph extends Struct<FT_OutlineGlyph> {
         OUTLINE = layout.offsetof(1);
     }
 
-    protected FT_OutlineGlyph(long address, @Nullable ByteBuffer container) {
+    public FT_OutlineGlyph(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_OutlineGlyph create(long address, @Nullable ByteBuffer container) {
-        return new FT_OutlineGlyph(address, container);
     }
 
     /**

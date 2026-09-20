@@ -64,13 +64,8 @@ public class XrActionStateBoolean extends Struct<XrActionStateBoolean> implement
         ISACTIVE = layout.offsetof(5);
     }
 
-    protected XrActionStateBoolean(long address, @Nullable ByteBuffer container) {
+    public XrActionStateBoolean(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrActionStateBoolean create(long address, @Nullable ByteBuffer container) {
-        return new XrActionStateBoolean(address, container);
     }
 
     /**

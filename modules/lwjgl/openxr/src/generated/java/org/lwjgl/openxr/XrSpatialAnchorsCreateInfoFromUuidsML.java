@@ -61,13 +61,8 @@ public class XrSpatialAnchorsCreateInfoFromUuidsML extends Struct<XrSpatialAncho
         UUIDS = layout.offsetof(4);
     }
 
-    protected XrSpatialAnchorsCreateInfoFromUuidsML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsCreateInfoFromUuidsML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsCreateInfoFromUuidsML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsCreateInfoFromUuidsML(address, container);
     }
 
     /**

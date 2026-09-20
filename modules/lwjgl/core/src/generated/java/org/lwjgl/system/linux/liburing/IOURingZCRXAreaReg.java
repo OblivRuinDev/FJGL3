@@ -66,13 +66,8 @@ public class IOURingZCRXAreaReg extends Struct<IOURingZCRXAreaReg> implements Na
         __RESV2 = layout.offsetof(5);
     }
 
-    protected IOURingZCRXAreaReg(long address, @Nullable ByteBuffer container) {
+    public IOURingZCRXAreaReg(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingZCRXAreaReg create(long address, @Nullable ByteBuffer container) {
-        return new IOURingZCRXAreaReg(address, container);
     }
 
     /**

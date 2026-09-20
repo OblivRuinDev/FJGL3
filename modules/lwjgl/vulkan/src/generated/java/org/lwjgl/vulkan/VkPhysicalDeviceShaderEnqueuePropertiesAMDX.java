@@ -77,13 +77,8 @@ public class VkPhysicalDeviceShaderEnqueuePropertiesAMDX extends Struct<VkPhysic
         MAXEXECUTIONGRAPHWORKGROUPS = layout.offsetof(8);
     }
 
-    protected VkPhysicalDeviceShaderEnqueuePropertiesAMDX(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderEnqueuePropertiesAMDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderEnqueuePropertiesAMDX create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderEnqueuePropertiesAMDX(address, container);
     }
 
     /**

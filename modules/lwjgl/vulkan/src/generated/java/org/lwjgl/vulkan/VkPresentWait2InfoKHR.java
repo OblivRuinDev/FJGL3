@@ -56,13 +56,8 @@ public class VkPresentWait2InfoKHR extends Struct<VkPresentWait2InfoKHR> impleme
         TIMEOUT = layout.offsetof(3);
     }
 
-    protected VkPresentWait2InfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPresentWait2InfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPresentWait2InfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPresentWait2InfoKHR(address, container);
     }
 
     /**

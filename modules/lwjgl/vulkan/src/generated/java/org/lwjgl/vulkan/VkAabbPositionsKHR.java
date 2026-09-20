@@ -64,13 +64,8 @@ public class VkAabbPositionsKHR extends Struct<VkAabbPositionsKHR> implements Na
         MAXZ = layout.offsetof(5);
     }
 
-    protected VkAabbPositionsKHR(long address, @Nullable ByteBuffer container) {
+    public VkAabbPositionsKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAabbPositionsKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAabbPositionsKHR(address, container);
     }
 
     /**

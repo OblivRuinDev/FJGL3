@@ -52,13 +52,8 @@ public class VkPhysicalDeviceMemoryPriorityFeaturesEXT extends Struct<VkPhysical
         MEMORYPRIORITY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceMemoryPriorityFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMemoryPriorityFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMemoryPriorityFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMemoryPriorityFeaturesEXT(address, container);
     }
 
     /**

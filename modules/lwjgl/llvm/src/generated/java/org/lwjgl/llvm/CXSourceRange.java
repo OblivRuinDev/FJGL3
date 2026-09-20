@@ -53,13 +53,8 @@ public class CXSourceRange extends Struct<CXSourceRange> implements NativeResour
         END_INT_DATA = layout.offsetof(2);
     }
 
-    protected CXSourceRange(long address, @Nullable ByteBuffer container) {
+    public CXSourceRange(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXSourceRange create(long address, @Nullable ByteBuffer container) {
-        return new CXSourceRange(address, container);
     }
 
     /**

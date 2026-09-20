@@ -70,13 +70,8 @@ public class IOURingRestriction extends Struct<IOURingRestriction> implements Na
         RESV2 = layout.offsetof(6);
     }
 
-    protected IOURingRestriction(long address, @Nullable ByteBuffer container) {
+    public IOURingRestriction(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingRestriction create(long address, @Nullable ByteBuffer container) {
-        return new IOURingRestriction(address, container);
     }
 
     /**

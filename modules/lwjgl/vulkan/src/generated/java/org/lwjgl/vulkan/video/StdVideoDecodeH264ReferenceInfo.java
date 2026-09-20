@@ -61,13 +61,8 @@ public class StdVideoDecodeH264ReferenceInfo extends Struct<StdVideoDecodeH264Re
         PICORDERCNT = layout.offsetof(3);
     }
 
-    protected StdVideoDecodeH264ReferenceInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoDecodeH264ReferenceInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoDecodeH264ReferenceInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoDecodeH264ReferenceInfo(address, container);
     }
 
     /**

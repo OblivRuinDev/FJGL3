@@ -66,13 +66,8 @@ public class BGFXInstanceDataBuffer extends Struct<BGFXInstanceDataBuffer> imple
         HANDLE = layout.offsetof(5);
     }
 
-    protected BGFXInstanceDataBuffer(long address, @Nullable ByteBuffer container) {
+    public BGFXInstanceDataBuffer(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXInstanceDataBuffer create(long address, @Nullable ByteBuffer container) {
-        return new BGFXInstanceDataBuffer(address, container);
     }
 
     /**

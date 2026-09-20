@@ -50,13 +50,8 @@ class NkConfigStackFloat extends Struct<NkConfigStackFloat> {
         ELEMENTS = layout.offsetof(1);
     }
 
-    protected NkConfigStackFloat(long address, @Nullable ByteBuffer container) {
+    public NkConfigStackFloat(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkConfigStackFloat create(long address, @Nullable ByteBuffer container) {
-        return new NkConfigStackFloat(address, container);
     }
 
     /**

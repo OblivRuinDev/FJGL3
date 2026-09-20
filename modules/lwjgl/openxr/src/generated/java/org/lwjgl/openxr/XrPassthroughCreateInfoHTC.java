@@ -52,13 +52,8 @@ public class XrPassthroughCreateInfoHTC extends Struct<XrPassthroughCreateInfoHT
         FORM = layout.offsetof(2);
     }
 
-    protected XrPassthroughCreateInfoHTC(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughCreateInfoHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughCreateInfoHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughCreateInfoHTC(address, container);
     }
 
     /**

@@ -80,13 +80,8 @@ public class CGEventTapInformation extends Struct<CGEventTapInformation> impleme
         MAXUSECLATENCY = layout.offsetof(9);
     }
 
-    protected CGEventTapInformation(long address, @Nullable ByteBuffer container) {
+    public CGEventTapInformation(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CGEventTapInformation create(long address, @Nullable ByteBuffer container) {
-        return new CGEventTapInformation(address, container);
     }
 
     /**

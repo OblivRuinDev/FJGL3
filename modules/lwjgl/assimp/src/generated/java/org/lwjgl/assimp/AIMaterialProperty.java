@@ -65,13 +65,8 @@ public class AIMaterialProperty extends Struct<AIMaterialProperty> {
         MDATA = layout.offsetof(5);
     }
 
-    protected AIMaterialProperty(long address, @Nullable ByteBuffer container) {
+    public AIMaterialProperty(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIMaterialProperty create(long address, @Nullable ByteBuffer container) {
-        return new AIMaterialProperty(address, container);
     }
 
     /**

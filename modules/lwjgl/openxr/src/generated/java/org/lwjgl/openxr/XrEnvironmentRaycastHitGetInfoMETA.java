@@ -75,13 +75,8 @@ public class XrEnvironmentRaycastHitGetInfoMETA extends Struct<XrEnvironmentRayc
         FILTERS = layout.offsetof(7);
     }
 
-    protected XrEnvironmentRaycastHitGetInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrEnvironmentRaycastHitGetInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEnvironmentRaycastHitGetInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEnvironmentRaycastHitGetInfoMETA(address, container);
     }
 
     /**

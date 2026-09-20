@@ -60,13 +60,8 @@ public class SDL_GPUIndexedIndirectDrawCommand extends Struct<SDL_GPUIndexedIndi
         FIRST_INSTANCE = layout.offsetof(4);
     }
 
-    protected SDL_GPUIndexedIndirectDrawCommand(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUIndexedIndirectDrawCommand(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUIndexedIndirectDrawCommand create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUIndexedIndirectDrawCommand(address, container);
     }
 
     /**

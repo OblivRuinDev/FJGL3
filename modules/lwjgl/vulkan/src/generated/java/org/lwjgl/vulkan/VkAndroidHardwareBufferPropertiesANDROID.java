@@ -56,13 +56,8 @@ public class VkAndroidHardwareBufferPropertiesANDROID extends Struct<VkAndroidHa
         MEMORYTYPEBITS = layout.offsetof(3);
     }
 
-    protected VkAndroidHardwareBufferPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public VkAndroidHardwareBufferPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAndroidHardwareBufferPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new VkAndroidHardwareBufferPropertiesANDROID(address, container);
     }
 
     /**

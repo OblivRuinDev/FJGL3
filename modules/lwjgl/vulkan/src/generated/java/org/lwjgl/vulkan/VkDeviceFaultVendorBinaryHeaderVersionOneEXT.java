@@ -36,13 +36,8 @@ import static org.lwjgl.vulkan.VK10.*;
  */
 public class VkDeviceFaultVendorBinaryHeaderVersionOneEXT extends VkDeviceFaultVendorBinaryHeaderVersionOneKHR {
 
-    protected VkDeviceFaultVendorBinaryHeaderVersionOneEXT(long address, @Nullable ByteBuffer container) {
+    public VkDeviceFaultVendorBinaryHeaderVersionOneEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceFaultVendorBinaryHeaderVersionOneEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceFaultVendorBinaryHeaderVersionOneEXT(address, container);
     }
 
     /**

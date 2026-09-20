@@ -69,13 +69,8 @@ public class VkDataGraphPipelineShaderModuleCreateInfoARM extends Struct<VkDataG
         PCONSTANTS = layout.offsetof(6);
     }
 
-    protected VkDataGraphPipelineShaderModuleCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineShaderModuleCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineShaderModuleCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineShaderModuleCreateInfoARM(address, container);
     }
 
     /**

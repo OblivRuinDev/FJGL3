@@ -42,13 +42,8 @@ public class hwloc_core_attr_s extends Struct<hwloc_core_attr_s> {
         CPUKIND = layout.offsetof(0);
     }
 
-    protected hwloc_core_attr_s(long address, @Nullable ByteBuffer container) {
+    public hwloc_core_attr_s(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_core_attr_s create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_core_attr_s(address, container);
     }
 
     /**

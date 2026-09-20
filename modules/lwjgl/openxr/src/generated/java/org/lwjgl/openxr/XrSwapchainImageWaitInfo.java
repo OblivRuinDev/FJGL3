@@ -52,13 +52,8 @@ public class XrSwapchainImageWaitInfo extends Struct<XrSwapchainImageWaitInfo> i
         TIMEOUT = layout.offsetof(2);
     }
 
-    protected XrSwapchainImageWaitInfo(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainImageWaitInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainImageWaitInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainImageWaitInfo(address, container);
     }
 
     /**

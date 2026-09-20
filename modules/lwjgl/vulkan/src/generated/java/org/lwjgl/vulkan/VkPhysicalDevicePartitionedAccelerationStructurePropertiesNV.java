@@ -52,13 +52,8 @@ public class VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV extend
         MAXPARTITIONCOUNT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV(address, container);
     }
 
     /**

@@ -81,13 +81,8 @@ public class SDL_GPUDepthStencilTargetInfo extends Struct<SDL_GPUDepthStencilTar
         LAYER = layout.offsetof(9);
     }
 
-    protected SDL_GPUDepthStencilTargetInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUDepthStencilTargetInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUDepthStencilTargetInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUDepthStencilTargetInfo(address, container);
     }
 
     /**

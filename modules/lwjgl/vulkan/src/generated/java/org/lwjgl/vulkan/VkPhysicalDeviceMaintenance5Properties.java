@@ -72,13 +72,8 @@ public class VkPhysicalDeviceMaintenance5Properties extends Struct<VkPhysicalDev
         NONSTRICTWIDELINESUSEPARALLELOGRAM = layout.offsetof(7);
     }
 
-    protected VkPhysicalDeviceMaintenance5Properties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMaintenance5Properties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMaintenance5Properties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMaintenance5Properties(address, container);
     }
 
     /**

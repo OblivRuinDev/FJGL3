@@ -49,13 +49,8 @@ public class StdVideoVP9LoopFilterFlags extends Struct<StdVideoVP9LoopFilterFlag
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoVP9LoopFilterFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoVP9LoopFilterFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoVP9LoopFilterFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoVP9LoopFilterFlags(address, container);
     }
 
     /**

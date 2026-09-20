@@ -60,13 +60,8 @@ public class NkStyleText extends Struct<NkStyleText> implements NativeResource {
         DISABLED_FACTOR = layout.offsetof(3);
     }
 
-    protected NkStyleText(long address, @Nullable ByteBuffer container) {
+    public NkStyleText(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleText create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleText(address, container);
     }
 
     /**

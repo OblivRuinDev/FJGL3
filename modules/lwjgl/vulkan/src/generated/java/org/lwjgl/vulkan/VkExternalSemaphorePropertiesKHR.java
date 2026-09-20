@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkExternalSemaphorePropertiesKHR extends VkExternalSemaphoreProperties {
 
-    protected VkExternalSemaphorePropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkExternalSemaphorePropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalSemaphorePropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalSemaphorePropertiesKHR(address, container);
     }
 
     /**

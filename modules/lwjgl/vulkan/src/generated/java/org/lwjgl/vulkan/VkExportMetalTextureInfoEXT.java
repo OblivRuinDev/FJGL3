@@ -69,13 +69,8 @@ public class VkExportMetalTextureInfoEXT extends Struct<VkExportMetalTextureInfo
         MTLTEXTURE = layout.offsetof(6);
     }
 
-    protected VkExportMetalTextureInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkExportMetalTextureInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportMetalTextureInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkExportMetalTextureInfoEXT(address, container);
     }
 
     /**

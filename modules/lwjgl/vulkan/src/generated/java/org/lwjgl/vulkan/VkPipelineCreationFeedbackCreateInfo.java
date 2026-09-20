@@ -61,13 +61,8 @@ public class VkPipelineCreationFeedbackCreateInfo extends Struct<VkPipelineCreat
         PPIPELINESTAGECREATIONFEEDBACKS = layout.offsetof(4);
     }
 
-    protected VkPipelineCreationFeedbackCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineCreationFeedbackCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineCreationFeedbackCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineCreationFeedbackCreateInfo(address, container);
     }
 
     /**

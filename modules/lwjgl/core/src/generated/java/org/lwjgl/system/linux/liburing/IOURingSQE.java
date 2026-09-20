@@ -298,13 +298,8 @@ public class IOURingSQE extends Struct<IOURingSQE> implements NativeResource {
         CMD = layout.offsetof(63);
     }
 
-    protected IOURingSQE(long address, @Nullable ByteBuffer container) {
+    public IOURingSQE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingSQE create(long address, @Nullable ByteBuffer container) {
-        return new IOURingSQE(address, container);
     }
 
     /**

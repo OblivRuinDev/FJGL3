@@ -56,13 +56,8 @@ public class SDL_GPUVertexBufferDescription extends Struct<SDL_GPUVertexBufferDe
         INSTANCE_STEP_RATE = layout.offsetof(3);
     }
 
-    protected SDL_GPUVertexBufferDescription(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUVertexBufferDescription(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUVertexBufferDescription create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUVertexBufferDescription(address, container);
     }
 
     /**

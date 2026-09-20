@@ -65,13 +65,8 @@ public class XrSpacesLocateInfo extends Struct<XrSpacesLocateInfo> implements Na
         SPACES = layout.offsetof(5);
     }
 
-    protected XrSpacesLocateInfo(long address, @Nullable ByteBuffer container) {
+    public XrSpacesLocateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpacesLocateInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrSpacesLocateInfo(address, container);
     }
 
     /**

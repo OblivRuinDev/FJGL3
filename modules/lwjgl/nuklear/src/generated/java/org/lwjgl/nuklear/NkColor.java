@@ -57,13 +57,8 @@ public class NkColor extends Struct<NkColor> implements NativeResource {
         A = layout.offsetof(3);
     }
 
-    protected NkColor(long address, @Nullable ByteBuffer container) {
+    public NkColor(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkColor create(long address, @Nullable ByteBuffer container) {
-        return new NkColor(address, container);
     }
 
     /**

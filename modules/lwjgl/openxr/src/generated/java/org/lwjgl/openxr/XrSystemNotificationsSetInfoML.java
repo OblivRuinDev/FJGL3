@@ -52,13 +52,8 @@ public class XrSystemNotificationsSetInfoML extends Struct<XrSystemNotifications
         SUPPRESSNOTIFICATIONS = layout.offsetof(2);
     }
 
-    protected XrSystemNotificationsSetInfoML(long address, @Nullable ByteBuffer container) {
+    public XrSystemNotificationsSetInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemNotificationsSetInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemNotificationsSetInfoML(address, container);
     }
 
     /**

@@ -63,13 +63,8 @@ public class XrApplicationInfo extends Struct<XrApplicationInfo> implements Nati
         APIVERSION = layout.offsetof(4);
     }
 
-    protected XrApplicationInfo(long address, @Nullable ByteBuffer container) {
+    public XrApplicationInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrApplicationInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrApplicationInfo(address, container);
     }
 
     /**

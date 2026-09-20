@@ -53,13 +53,8 @@ public class NkDrawVertexLayoutElement extends Struct<NkDrawVertexLayoutElement>
         OFFSET = layout.offsetof(2);
     }
 
-    protected NkDrawVertexLayoutElement(long address, @Nullable ByteBuffer container) {
+    public NkDrawVertexLayoutElement(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkDrawVertexLayoutElement create(long address, @Nullable ByteBuffer container) {
-        return new NkDrawVertexLayoutElement(address, container);
     }
 
     /**

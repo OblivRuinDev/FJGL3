@@ -52,13 +52,8 @@ public class VkPhysicalDeviceQueuePerfHintFeaturesQCOM extends Struct<VkPhysical
         QUEUEPERFHINT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceQueuePerfHintFeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceQueuePerfHintFeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceQueuePerfHintFeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceQueuePerfHintFeaturesQCOM(address, container);
     }
 
     /**

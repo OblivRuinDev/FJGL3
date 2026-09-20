@@ -60,13 +60,8 @@ public class VkMicromapBuildSizesInfoEXT extends Struct<VkMicromapBuildSizesInfo
         DISCARDABLE = layout.offsetof(4);
     }
 
-    protected VkMicromapBuildSizesInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkMicromapBuildSizesInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMicromapBuildSizesInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMicromapBuildSizesInfoEXT(address, container);
     }
 
     /**

@@ -77,13 +77,8 @@ public class GLSLangLimits extends Struct<GLSLangLimits> implements NativeResour
         GENERAL_CONSTANT_MATRIX_VECTOR_INDEXING = layout.offsetof(8);
     }
 
-    protected GLSLangLimits(long address, @Nullable ByteBuffer container) {
+    public GLSLangLimits(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLSLangLimits create(long address, @Nullable ByteBuffer container) {
-        return new GLSLangLimits(address, container);
     }
 
     /**

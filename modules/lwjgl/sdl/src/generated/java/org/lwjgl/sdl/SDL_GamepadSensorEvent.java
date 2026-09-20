@@ -69,13 +69,8 @@ public class SDL_GamepadSensorEvent extends Struct<SDL_GamepadSensorEvent> imple
         SENSOR_TIMESTAMP = layout.offsetof(6);
     }
 
-    protected SDL_GamepadSensorEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_GamepadSensorEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GamepadSensorEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GamepadSensorEvent(address, container);
     }
 
     /**

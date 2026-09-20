@@ -55,13 +55,8 @@ public class AITexel extends Struct<AITexel> {
         A = layout.offsetof(3);
     }
 
-    protected AITexel(long address, @Nullable ByteBuffer container) {
+    public AITexel(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AITexel create(long address, @Nullable ByteBuffer container) {
-        return new AITexel(address, container);
     }
 
     /**

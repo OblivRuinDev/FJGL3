@@ -72,13 +72,8 @@ public class VkBufferCreateInfo extends Struct<VkBufferCreateInfo> implements Na
         PQUEUEFAMILYINDICES = layout.offsetof(7);
     }
 
-    protected VkBufferCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkBufferCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferCreateInfo(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class XrSystemHandTrackingMeshPropertiesMSFT extends Struct<XrSystemHandT
         MAXHANDMESHVERTEXCOUNT = layout.offsetof(4);
     }
 
-    protected XrSystemHandTrackingMeshPropertiesMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSystemHandTrackingMeshPropertiesMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemHandTrackingMeshPropertiesMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemHandTrackingMeshPropertiesMSFT(address, container);
     }
 
     /**

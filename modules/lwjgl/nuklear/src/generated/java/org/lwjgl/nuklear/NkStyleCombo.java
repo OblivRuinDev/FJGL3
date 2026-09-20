@@ -130,13 +130,8 @@ public class NkStyleCombo extends Struct<NkStyleCombo> implements NativeResource
         DISABLED_FACTOR = layout.offsetof(20);
     }
 
-    protected NkStyleCombo(long address, @Nullable ByteBuffer container) {
+    public NkStyleCombo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleCombo create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleCombo(address, container);
     }
 
     /**

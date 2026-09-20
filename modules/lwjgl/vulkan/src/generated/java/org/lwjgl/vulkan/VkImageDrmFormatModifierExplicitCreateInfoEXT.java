@@ -61,13 +61,8 @@ public class VkImageDrmFormatModifierExplicitCreateInfoEXT extends Struct<VkImag
         PPLANELAYOUTS = layout.offsetof(4);
     }
 
-    protected VkImageDrmFormatModifierExplicitCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkImageDrmFormatModifierExplicitCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageDrmFormatModifierExplicitCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImageDrmFormatModifierExplicitCreateInfoEXT(address, container);
     }
 
     /**

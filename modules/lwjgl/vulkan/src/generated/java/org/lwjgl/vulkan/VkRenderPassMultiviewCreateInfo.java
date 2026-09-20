@@ -73,13 +73,8 @@ public class VkRenderPassMultiviewCreateInfo extends Struct<VkRenderPassMultivie
         PCORRELATIONMASKS = layout.offsetof(7);
     }
 
-    protected VkRenderPassMultiviewCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassMultiviewCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassMultiviewCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassMultiviewCreateInfo(address, container);
     }
 
     /**

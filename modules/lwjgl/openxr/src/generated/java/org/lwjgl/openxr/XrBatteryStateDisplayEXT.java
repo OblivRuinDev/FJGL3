@@ -56,13 +56,8 @@ public class XrBatteryStateDisplayEXT extends Struct<XrBatteryStateDisplayEXT> i
         BATTERYLEVEL = layout.offsetof(3);
     }
 
-    protected XrBatteryStateDisplayEXT(long address, @Nullable ByteBuffer container) {
+    public XrBatteryStateDisplayEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBatteryStateDisplayEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrBatteryStateDisplayEXT(address, container);
     }
 
     /**

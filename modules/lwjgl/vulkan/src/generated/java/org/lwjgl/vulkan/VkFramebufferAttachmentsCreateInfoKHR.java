@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkFramebufferAttachmentsCreateInfoKHR extends VkFramebufferAttachmentsCreateInfo {
 
-    protected VkFramebufferAttachmentsCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkFramebufferAttachmentsCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFramebufferAttachmentsCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkFramebufferAttachmentsCreateInfoKHR(address, container);
     }
 
     /**

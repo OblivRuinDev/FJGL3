@@ -60,13 +60,8 @@ public class VkPhysicalDevicePresentTimingFeaturesEXT extends Struct<VkPhysicalD
         PRESENTATRELATIVETIME = layout.offsetof(4);
     }
 
-    protected VkPhysicalDevicePresentTimingFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePresentTimingFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePresentTimingFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePresentTimingFeaturesEXT(address, container);
     }
 
     /**

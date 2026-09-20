@@ -140,13 +140,8 @@ public class NkStyleSelectable extends Struct<NkStyleSelectable> implements Nati
         DRAW_END = layout.offsetof(22);
     }
 
-    protected NkStyleSelectable(long address, @Nullable ByteBuffer container) {
+    public NkStyleSelectable(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleSelectable create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleSelectable(address, container);
     }
 
     /**

@@ -95,13 +95,8 @@ public class SDL_GPUColorTargetInfo extends Struct<SDL_GPUColorTargetInfo> imple
         PADDING2 = layout.offsetof(12);
     }
 
-    protected SDL_GPUColorTargetInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUColorTargetInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUColorTargetInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUColorTargetInfo(address, container);
     }
 
     /**

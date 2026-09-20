@@ -52,13 +52,8 @@ public class VkPushConstantRange extends Struct<VkPushConstantRange> implements 
         SIZE = layout.offsetof(2);
     }
 
-    protected VkPushConstantRange(long address, @Nullable ByteBuffer container) {
+    public VkPushConstantRange(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPushConstantRange create(long address, @Nullable ByteBuffer container) {
-        return new VkPushConstantRange(address, container);
     }
 
     /**

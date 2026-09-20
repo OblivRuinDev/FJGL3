@@ -48,13 +48,8 @@ public class XrColocationDiscoveryStopInfoMETA extends Struct<XrColocationDiscov
         NEXT = layout.offsetof(1);
     }
 
-    protected XrColocationDiscoveryStopInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrColocationDiscoveryStopInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrColocationDiscoveryStopInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrColocationDiscoveryStopInfoMETA(address, container);
     }
 
     /**

@@ -41,13 +41,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceFloatControlsPropertiesKHR extends VkPhysicalDeviceFloatControlsProperties {
 
-    protected VkPhysicalDeviceFloatControlsPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFloatControlsPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFloatControlsPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFloatControlsPropertiesKHR(address, container);
     }
 
     /**

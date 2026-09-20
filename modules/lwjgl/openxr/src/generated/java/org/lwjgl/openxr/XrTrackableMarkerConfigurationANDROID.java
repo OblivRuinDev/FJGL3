@@ -61,13 +61,8 @@ public class XrTrackableMarkerConfigurationANDROID extends Struct<XrTrackableMar
         DATABASES = layout.offsetof(4);
     }
 
-    protected XrTrackableMarkerConfigurationANDROID(long address, @Nullable ByteBuffer container) {
+    public XrTrackableMarkerConfigurationANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrTrackableMarkerConfigurationANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrTrackableMarkerConfigurationANDROID(address, container);
     }
 
     /**

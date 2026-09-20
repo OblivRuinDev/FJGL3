@@ -52,13 +52,8 @@ public class VkMemoryPriorityAllocateInfoEXT extends Struct<VkMemoryPriorityAllo
         PRIORITY = layout.offsetof(2);
     }
 
-    protected VkMemoryPriorityAllocateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkMemoryPriorityAllocateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryPriorityAllocateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryPriorityAllocateInfoEXT(address, container);
     }
 
     /**

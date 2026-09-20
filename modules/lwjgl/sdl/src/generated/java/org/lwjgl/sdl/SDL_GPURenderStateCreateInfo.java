@@ -73,13 +73,8 @@ public class SDL_GPURenderStateCreateInfo extends Struct<SDL_GPURenderStateCreat
         PROPS = layout.offsetof(7);
     }
 
-    protected SDL_GPURenderStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPURenderStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPURenderStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPURenderStateCreateInfo(address, container);
     }
 
     /**

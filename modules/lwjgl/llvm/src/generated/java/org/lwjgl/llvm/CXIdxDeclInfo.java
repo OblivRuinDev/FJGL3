@@ -95,13 +95,8 @@ public class CXIdxDeclInfo extends Struct<CXIdxDeclInfo> implements NativeResour
         FLAGS = layout.offsetof(12);
     }
 
-    protected CXIdxDeclInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxDeclInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxDeclInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxDeclInfo(address, container);
     }
 
     /**

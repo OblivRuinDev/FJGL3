@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderLongVectorPropertiesEXT extends Struct<VkPhys
         MAXVECTORCOMPONENTS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderLongVectorPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderLongVectorPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderLongVectorPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderLongVectorPropertiesEXT(address, container);
     }
 
     /**

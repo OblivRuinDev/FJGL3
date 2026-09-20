@@ -56,13 +56,8 @@ public class VkBindImageMemorySwapchainInfoKHR extends Struct<VkBindImageMemoryS
         IMAGEINDEX = layout.offsetof(3);
     }
 
-    protected VkBindImageMemorySwapchainInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkBindImageMemorySwapchainInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindImageMemorySwapchainInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkBindImageMemorySwapchainInfoKHR(address, container);
     }
 
     /**

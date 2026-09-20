@@ -57,13 +57,8 @@ public class GLSLIncludeCallbacks extends Struct<GLSLIncludeCallbacks> implement
         FREE_INCLUDE_RESULT = layout.offsetof(2);
     }
 
-    protected GLSLIncludeCallbacks(long address, @Nullable ByteBuffer container) {
+    public GLSLIncludeCallbacks(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLSLIncludeCallbacks create(long address, @Nullable ByteBuffer container) {
-        return new GLSLIncludeCallbacks(address, container);
     }
 
     /**

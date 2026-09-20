@@ -52,13 +52,8 @@ public class XrFaceTrackerCreateInfoFB extends Struct<XrFaceTrackerCreateInfoFB>
         FACEEXPRESSIONSET = layout.offsetof(2);
     }
 
-    protected XrFaceTrackerCreateInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrFaceTrackerCreateInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFaceTrackerCreateInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrFaceTrackerCreateInfoFB(address, container);
     }
 
     /**

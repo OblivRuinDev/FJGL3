@@ -132,13 +132,8 @@ public class VkPhysicalDeviceVulkan14Features extends Struct<VkPhysicalDeviceVul
         PUSHDESCRIPTOR = layout.offsetof(22);
     }
 
-    protected VkPhysicalDeviceVulkan14Features(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVulkan14Features(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVulkan14Features create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVulkan14Features(address, container);
     }
 
     /**

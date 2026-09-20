@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkAttachmentReferenceStencilLayoutKHR extends VkAttachmentReferenceStencilLayout {
 
-    protected VkAttachmentReferenceStencilLayoutKHR(long address, @Nullable ByteBuffer container) {
+    public VkAttachmentReferenceStencilLayoutKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAttachmentReferenceStencilLayoutKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAttachmentReferenceStencilLayoutKHR(address, container);
     }
 
     /**

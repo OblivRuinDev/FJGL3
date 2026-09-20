@@ -52,13 +52,8 @@ public class VkMemoryGetAndroidHardwareBufferInfoANDROID extends Struct<VkMemory
         MEMORY = layout.offsetof(2);
     }
 
-    protected VkMemoryGetAndroidHardwareBufferInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public VkMemoryGetAndroidHardwareBufferInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryGetAndroidHardwareBufferInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryGetAndroidHardwareBufferInfoANDROID(address, container);
     }
 
     /**

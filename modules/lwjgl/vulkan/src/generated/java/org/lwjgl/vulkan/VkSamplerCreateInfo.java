@@ -112,13 +112,8 @@ public class VkSamplerCreateInfo extends Struct<VkSamplerCreateInfo> implements 
         UNNORMALIZEDCOORDINATES = layout.offsetof(17);
     }
 
-    protected VkSamplerCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkSamplerCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerCreateInfo(address, container);
     }
 
     /**

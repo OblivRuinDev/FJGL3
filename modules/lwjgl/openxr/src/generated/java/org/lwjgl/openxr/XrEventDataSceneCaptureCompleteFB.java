@@ -56,13 +56,8 @@ public class XrEventDataSceneCaptureCompleteFB extends Struct<XrEventDataSceneCa
         RESULT = layout.offsetof(3);
     }
 
-    protected XrEventDataSceneCaptureCompleteFB(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSceneCaptureCompleteFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSceneCaptureCompleteFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSceneCaptureCompleteFB(address, container);
     }
 
     /**

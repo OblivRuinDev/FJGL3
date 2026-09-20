@@ -27,13 +27,8 @@ import static org.lwjgl.vulkan.VK10.*;
  */
 public class VkDeviceFaultVendorInfoEXT extends VkDeviceFaultVendorInfoKHR {
 
-    protected VkDeviceFaultVendorInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDeviceFaultVendorInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceFaultVendorInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceFaultVendorInfoEXT(address, container);
     }
 
     /**

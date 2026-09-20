@@ -72,13 +72,8 @@ public class XrVisibilityMaskKHR extends Struct<XrVisibilityMaskKHR> implements 
         INDICES = layout.offsetof(7);
     }
 
-    protected XrVisibilityMaskKHR(long address, @Nullable ByteBuffer container) {
+    public XrVisibilityMaskKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVisibilityMaskKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrVisibilityMaskKHR(address, container);
     }
 
     /**

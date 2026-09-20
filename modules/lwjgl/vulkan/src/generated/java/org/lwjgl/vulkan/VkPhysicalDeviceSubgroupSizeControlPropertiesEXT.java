@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceSubgroupSizeControlPropertiesEXT extends VkPhysicalDeviceSubgroupSizeControlProperties {
 
-    protected VkPhysicalDeviceSubgroupSizeControlPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSubgroupSizeControlPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSubgroupSizeControlPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSubgroupSizeControlPropertiesEXT(address, container);
     }
 
     /**

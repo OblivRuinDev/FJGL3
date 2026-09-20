@@ -128,13 +128,8 @@ public class NkStyleButton extends Struct<NkStyleButton> implements NativeResour
         DRAW_END = layout.offsetof(19);
     }
 
-    protected NkStyleButton(long address, @Nullable ByteBuffer container) {
+    public NkStyleButton(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleButton create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleButton(address, container);
     }
 
     /**

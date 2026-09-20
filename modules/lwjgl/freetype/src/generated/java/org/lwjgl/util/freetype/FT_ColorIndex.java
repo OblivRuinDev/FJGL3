@@ -46,13 +46,8 @@ public class FT_ColorIndex extends Struct<FT_ColorIndex> {
         ALPHA = layout.offsetof(1);
     }
 
-    protected FT_ColorIndex(long address, @Nullable ByteBuffer container) {
+    public FT_ColorIndex(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_ColorIndex create(long address, @Nullable ByteBuffer container) {
-        return new FT_ColorIndex(address, container);
     }
 
     /**

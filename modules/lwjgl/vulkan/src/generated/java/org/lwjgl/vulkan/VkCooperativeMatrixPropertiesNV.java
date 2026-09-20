@@ -80,13 +80,8 @@ public class VkCooperativeMatrixPropertiesNV extends Struct<VkCooperativeMatrixP
         SCOPE = layout.offsetof(9);
     }
 
-    protected VkCooperativeMatrixPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkCooperativeMatrixPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCooperativeMatrixPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkCooperativeMatrixPropertiesNV(address, container);
     }
 
     /**

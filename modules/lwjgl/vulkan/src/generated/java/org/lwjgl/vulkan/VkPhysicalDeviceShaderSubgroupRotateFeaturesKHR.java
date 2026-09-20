@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceShaderSubgroupRotateFeaturesKHR extends VkPhysicalDeviceShaderSubgroupRotateFeatures {
 
-    protected VkPhysicalDeviceShaderSubgroupRotateFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderSubgroupRotateFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderSubgroupRotateFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderSubgroupRotateFeaturesKHR(address, container);
     }
 
     /**

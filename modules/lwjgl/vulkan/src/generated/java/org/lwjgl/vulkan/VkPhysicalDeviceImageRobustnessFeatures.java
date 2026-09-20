@@ -52,13 +52,8 @@ public class VkPhysicalDeviceImageRobustnessFeatures extends Struct<VkPhysicalDe
         ROBUSTIMAGEACCESS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceImageRobustnessFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageRobustnessFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageRobustnessFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageRobustnessFeatures(address, container);
     }
 
     /**

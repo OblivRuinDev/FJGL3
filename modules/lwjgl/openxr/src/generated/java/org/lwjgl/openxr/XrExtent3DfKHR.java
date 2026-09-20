@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class XrExtent3DfKHR extends XrExtent3Df {
 
-    protected XrExtent3DfKHR(long address, @Nullable ByteBuffer container) {
+    public XrExtent3DfKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrExtent3DfKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrExtent3DfKHR(address, container);
     }
 
     /**

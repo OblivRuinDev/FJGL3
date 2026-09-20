@@ -56,13 +56,8 @@ public class VkClusterAccelerationStructureClustersBottomLevelInputNV extends St
         MAXCLUSTERCOUNTPERACCELERATIONSTRUCTURE = layout.offsetof(3);
     }
 
-    protected VkClusterAccelerationStructureClustersBottomLevelInputNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureClustersBottomLevelInputNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureClustersBottomLevelInputNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureClustersBottomLevelInputNV(address, container);
     }
 
     /**

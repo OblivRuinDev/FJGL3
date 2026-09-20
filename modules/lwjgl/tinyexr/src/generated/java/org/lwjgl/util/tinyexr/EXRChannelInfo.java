@@ -63,13 +63,8 @@ public class EXRChannelInfo extends Struct<EXRChannelInfo> implements NativeReso
         P_LINEAR = layout.offsetof(4);
     }
 
-    protected EXRChannelInfo(long address, @Nullable ByteBuffer container) {
+    public EXRChannelInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected EXRChannelInfo create(long address, @Nullable ByteBuffer container) {
-        return new EXRChannelInfo(address, container);
     }
 
     /**

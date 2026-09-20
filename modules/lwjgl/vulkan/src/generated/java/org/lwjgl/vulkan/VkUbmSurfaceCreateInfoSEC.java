@@ -60,13 +60,8 @@ public class VkUbmSurfaceCreateInfoSEC extends Struct<VkUbmSurfaceCreateInfoSEC>
         SURFACE = layout.offsetof(4);
     }
 
-    protected VkUbmSurfaceCreateInfoSEC(long address, @Nullable ByteBuffer container) {
+    public VkUbmSurfaceCreateInfoSEC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkUbmSurfaceCreateInfoSEC create(long address, @Nullable ByteBuffer container) {
-        return new VkUbmSurfaceCreateInfoSEC(address, container);
     }
 
     /**

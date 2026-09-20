@@ -79,13 +79,8 @@ public class VkDisplayPlaneCapabilitiesKHR extends Struct<VkDisplayPlaneCapabili
         MAXDSTEXTENT = layout.offsetof(8);
     }
 
-    protected VkDisplayPlaneCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkDisplayPlaneCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplayPlaneCapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplayPlaneCapabilitiesKHR(address, container);
     }
 
     /**

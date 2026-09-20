@@ -64,13 +64,8 @@ public class XrSpacesEraseInfoMETA extends Struct<XrSpacesEraseInfoMETA> impleme
         UUIDS = layout.offsetof(5);
     }
 
-    protected XrSpacesEraseInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrSpacesEraseInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpacesEraseInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSpacesEraseInfoMETA(address, container);
     }
 
     /**

@@ -62,13 +62,8 @@ public class VkAccelerationStructureGeometryKHR extends Struct<VkAccelerationStr
         FLAGS = layout.offsetof(4);
     }
 
-    protected VkAccelerationStructureGeometryKHR(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureGeometryKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureGeometryKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureGeometryKHR(address, container);
     }
 
     /**

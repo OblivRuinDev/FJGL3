@@ -52,13 +52,8 @@ public class XrSystemDynamicObjectMousePropertiesBD extends Struct<XrSystemDynam
         SUPPORTSDYNAMICOBJECTMOUSE = layout.offsetof(2);
     }
 
-    protected XrSystemDynamicObjectMousePropertiesBD(long address, @Nullable ByteBuffer container) {
+    public XrSystemDynamicObjectMousePropertiesBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemDynamicObjectMousePropertiesBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemDynamicObjectMousePropertiesBD(address, container);
     }
 
     /**

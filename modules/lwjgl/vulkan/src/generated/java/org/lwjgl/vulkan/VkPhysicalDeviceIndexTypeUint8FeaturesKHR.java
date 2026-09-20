@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceIndexTypeUint8FeaturesKHR extends VkPhysicalDeviceIndexTypeUint8Features {
 
-    protected VkPhysicalDeviceIndexTypeUint8FeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceIndexTypeUint8FeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceIndexTypeUint8FeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceIndexTypeUint8FeaturesKHR(address, container);
     }
 
     /**

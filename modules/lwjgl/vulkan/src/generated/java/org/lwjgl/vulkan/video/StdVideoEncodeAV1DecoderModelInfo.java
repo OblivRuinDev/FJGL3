@@ -60,13 +60,8 @@ public class StdVideoEncodeAV1DecoderModelInfo extends Struct<StdVideoEncodeAV1D
         NUM_UNITS_IN_DECODING_TICK = layout.offsetof(4);
     }
 
-    protected StdVideoEncodeAV1DecoderModelInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeAV1DecoderModelInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeAV1DecoderModelInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeAV1DecoderModelInfo(address, container);
     }
 
     /**

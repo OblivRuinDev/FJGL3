@@ -84,13 +84,8 @@ public class VkAttachmentDescription2 extends Struct<VkAttachmentDescription2> i
         FINALLAYOUT = layout.offsetof(10);
     }
 
-    protected VkAttachmentDescription2(long address, @Nullable ByteBuffer container) {
+    public VkAttachmentDescription2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAttachmentDescription2 create(long address, @Nullable ByteBuffer container) {
-        return new VkAttachmentDescription2(address, container);
     }
 
     /**

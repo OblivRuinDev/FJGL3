@@ -82,13 +82,8 @@ public class VkAndroidHardwareBufferFormatPropertiesANDROID extends Struct<VkAnd
         SUGGESTEDYCHROMAOFFSET = layout.offsetof(9);
     }
 
-    protected VkAndroidHardwareBufferFormatPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public VkAndroidHardwareBufferFormatPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAndroidHardwareBufferFormatPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new VkAndroidHardwareBufferFormatPropertiesANDROID(address, container);
     }
 
     /**

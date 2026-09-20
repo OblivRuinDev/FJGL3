@@ -49,13 +49,8 @@ public class VkPipelineBinaryDataKHR extends Struct<VkPipelineBinaryDataKHR> imp
         PDATA = layout.offsetof(1);
     }
 
-    protected VkPipelineBinaryDataKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineBinaryDataKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineBinaryDataKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineBinaryDataKHR(address, container);
     }
 
     /**

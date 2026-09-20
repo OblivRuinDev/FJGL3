@@ -48,13 +48,8 @@ public class XrInteractionRenderModelIdsEnumerateInfoEXT extends Struct<XrIntera
         NEXT = layout.offsetof(1);
     }
 
-    protected XrInteractionRenderModelIdsEnumerateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrInteractionRenderModelIdsEnumerateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrInteractionRenderModelIdsEnumerateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrInteractionRenderModelIdsEnumerateInfoEXT(address, container);
     }
 
     /**

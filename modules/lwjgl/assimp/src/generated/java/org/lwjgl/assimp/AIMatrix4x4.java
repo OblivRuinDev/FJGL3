@@ -105,13 +105,8 @@ public class AIMatrix4x4 extends Struct<AIMatrix4x4> implements NativeResource {
         D4 = layout.offsetof(15);
     }
 
-    protected AIMatrix4x4(long address, @Nullable ByteBuffer container) {
+    public AIMatrix4x4(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIMatrix4x4 create(long address, @Nullable ByteBuffer container) {
-        return new AIMatrix4x4(address, container);
     }
 
     /**

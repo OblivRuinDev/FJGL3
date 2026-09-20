@@ -56,13 +56,8 @@ public class VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT extends Struct<V
         DYNAMICGENERATEDPIPELINELAYOUT = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT(address, container);
     }
 
     /**

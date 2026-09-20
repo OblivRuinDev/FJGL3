@@ -56,13 +56,8 @@ public class XrSessionCreateInfo extends Struct<XrSessionCreateInfo> implements 
         SYSTEMID = layout.offsetof(3);
     }
 
-    protected XrSessionCreateInfo(long address, @Nullable ByteBuffer container) {
+    public XrSessionCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSessionCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrSessionCreateInfo(address, container);
     }
 
     /**

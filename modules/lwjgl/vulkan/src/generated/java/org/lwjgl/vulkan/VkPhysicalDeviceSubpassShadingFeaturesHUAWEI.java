@@ -52,13 +52,8 @@ public class VkPhysicalDeviceSubpassShadingFeaturesHUAWEI extends Struct<VkPhysi
         SUBPASSSHADING = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSubpassShadingFeaturesHUAWEI create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(address, container);
     }
 
     /**

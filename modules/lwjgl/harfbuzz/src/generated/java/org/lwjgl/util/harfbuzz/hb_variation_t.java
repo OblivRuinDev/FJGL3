@@ -48,13 +48,8 @@ public class hb_variation_t extends Struct<hb_variation_t> implements NativeReso
         VALUE = layout.offsetof(1);
     }
 
-    protected hb_variation_t(long address, @Nullable ByteBuffer container) {
+    public hb_variation_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_variation_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_variation_t(address, container);
     }
 
     /**

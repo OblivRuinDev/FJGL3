@@ -49,13 +49,8 @@ public class MDBVal extends Struct<MDBVal> implements NativeResource {
         MV_DATA = layout.offsetof(1);
     }
 
-    protected MDBVal(long address, @Nullable ByteBuffer container) {
+    public MDBVal(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MDBVal create(long address, @Nullable ByteBuffer container) {
-        return new MDBVal(address, container);
     }
 
     /**

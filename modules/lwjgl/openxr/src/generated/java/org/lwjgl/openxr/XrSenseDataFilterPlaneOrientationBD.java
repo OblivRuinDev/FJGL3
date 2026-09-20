@@ -57,13 +57,8 @@ public class XrSenseDataFilterPlaneOrientationBD extends Struct<XrSenseDataFilte
         ORIENTATIONS = layout.offsetof(3);
     }
 
-    protected XrSenseDataFilterPlaneOrientationBD(long address, @Nullable ByteBuffer container) {
+    public XrSenseDataFilterPlaneOrientationBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSenseDataFilterPlaneOrientationBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSenseDataFilterPlaneOrientationBD(address, container);
     }
 
     /**

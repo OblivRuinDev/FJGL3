@@ -140,13 +140,8 @@ public class VkPhysicalDeviceDescriptorIndexingProperties extends Struct<VkPhysi
         MAXDESCRIPTORSETUPDATEAFTERBINDINPUTATTACHMENTS = layout.offsetof(24);
     }
 
-    protected VkPhysicalDeviceDescriptorIndexingProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDescriptorIndexingProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDescriptorIndexingProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDescriptorIndexingProperties(address, container);
     }
 
     /**

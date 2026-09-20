@@ -64,13 +64,8 @@ public class VkImageResolve extends Struct<VkImageResolve> implements NativeReso
         EXTENT = layout.offsetof(4);
     }
 
-    protected VkImageResolve(long address, @Nullable ByteBuffer container) {
+    public VkImageResolve(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageResolve create(long address, @Nullable ByteBuffer container) {
-        return new VkImageResolve(address, container);
     }
 
     /**

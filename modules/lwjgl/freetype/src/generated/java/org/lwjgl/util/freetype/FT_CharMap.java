@@ -55,13 +55,8 @@ public class FT_CharMap extends Struct<FT_CharMap> {
         ENCODING_ID = layout.offsetof(3);
     }
 
-    protected FT_CharMap(long address, @Nullable ByteBuffer container) {
+    public FT_CharMap(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_CharMap create(long address, @Nullable ByteBuffer container) {
-        return new FT_CharMap(address, container);
     }
 
     /**

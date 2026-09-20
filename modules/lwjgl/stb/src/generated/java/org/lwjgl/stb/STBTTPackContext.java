@@ -85,13 +85,8 @@ public class STBTTPackContext extends Struct<STBTTPackContext> implements Native
         NODES = layout.offsetof(10);
     }
 
-    protected STBTTPackContext(long address, @Nullable ByteBuffer container) {
+    public STBTTPackContext(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBTTPackContext create(long address, @Nullable ByteBuffer container) {
-        return new STBTTPackContext(address, container);
     }
 
     /**

@@ -88,13 +88,8 @@ public class hb_font_extents_t extends Struct<hb_font_extents_t> implements Nati
         RESERVED1 = layout.offsetof(11);
     }
 
-    protected hb_font_extents_t(long address, @Nullable ByteBuffer container) {
+    public hb_font_extents_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_font_extents_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_font_extents_t(address, container);
     }
 
     /**

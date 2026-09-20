@@ -61,13 +61,8 @@ public class MSDFGenMultichannelConfig extends Struct<MSDFGenMultichannelConfig>
         MIN_IMPROVE_RATIO = layout.offsetof(4);
     }
 
-    protected MSDFGenMultichannelConfig(long address, @Nullable ByteBuffer container) {
+    public MSDFGenMultichannelConfig(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MSDFGenMultichannelConfig create(long address, @Nullable ByteBuffer container) {
-        return new MSDFGenMultichannelConfig(address, container);
     }
 
     /**

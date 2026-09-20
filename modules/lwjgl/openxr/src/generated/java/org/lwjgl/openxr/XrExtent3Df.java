@@ -52,13 +52,8 @@ public class XrExtent3Df extends Struct<XrExtent3Df> implements NativeResource {
         DEPTH = layout.offsetof(2);
     }
 
-    protected XrExtent3Df(long address, @Nullable ByteBuffer container) {
+    public XrExtent3Df(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrExtent3Df create(long address, @Nullable ByteBuffer container) {
-        return new XrExtent3Df(address, container);
     }
 
     /**

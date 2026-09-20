@@ -52,13 +52,8 @@ public class XrCompositionLayerImageLayoutFB extends Struct<XrCompositionLayerIm
         FLAGS = layout.offsetof(2);
     }
 
-    protected XrCompositionLayerImageLayoutFB(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerImageLayoutFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerImageLayoutFB create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerImageLayoutFB(address, container);
     }
 
     /**

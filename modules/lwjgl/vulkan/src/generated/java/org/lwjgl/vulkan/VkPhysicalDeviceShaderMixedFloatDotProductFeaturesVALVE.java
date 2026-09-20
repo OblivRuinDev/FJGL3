@@ -64,13 +64,8 @@ public class VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE extends Str
         SHADERMIXEDFLOATDOTPRODUCTFLOAT8ACCFLOAT32 = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(address, container);
     }
 
     /**

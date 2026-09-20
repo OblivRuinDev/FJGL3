@@ -60,13 +60,8 @@ public class VkPhysicalDeviceCooperativeMatrix2PropertiesNV extends Struct<VkPhy
         COOPERATIVEMATRIXWORKGROUPSCOPERESERVEDSHAREDMEMORY = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceCooperativeMatrix2PropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCooperativeMatrix2PropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCooperativeMatrix2PropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCooperativeMatrix2PropertiesNV(address, container);
     }
 
     /**

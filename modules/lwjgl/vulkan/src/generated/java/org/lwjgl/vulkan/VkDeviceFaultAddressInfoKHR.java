@@ -52,13 +52,8 @@ public class VkDeviceFaultAddressInfoKHR extends Struct<VkDeviceFaultAddressInfo
         ADDRESSPRECISION = layout.offsetof(2);
     }
 
-    protected VkDeviceFaultAddressInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceFaultAddressInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceFaultAddressInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceFaultAddressInfoKHR(address, container);
     }
 
     /**

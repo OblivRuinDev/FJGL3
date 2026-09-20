@@ -59,13 +59,8 @@ public class XrVulkanSwapchainFormatListCreateInfoKHR extends Struct<XrVulkanSwa
         VIEWFORMATS = layout.offsetof(3);
     }
 
-    protected XrVulkanSwapchainFormatListCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public XrVulkanSwapchainFormatListCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVulkanSwapchainFormatListCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrVulkanSwapchainFormatListCreateInfoKHR(address, container);
     }
 
     /**

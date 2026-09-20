@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCornerSampledImageFeaturesNV extends Struct<VkPhysi
         CORNERSAMPLEDIMAGE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCornerSampledImageFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCornerSampledImageFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCornerSampledImageFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCornerSampledImageFeaturesNV(address, container);
     }
 
     /**

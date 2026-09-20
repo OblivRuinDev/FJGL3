@@ -58,13 +58,8 @@ public class IOURingNAPI extends Struct<IOURingNAPI> implements NativeResource {
         RESV = layout.offsetof(3);
     }
 
-    protected IOURingNAPI(long address, @Nullable ByteBuffer container) {
+    public IOURingNAPI(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingNAPI create(long address, @Nullable ByteBuffer container) {
-        return new IOURingNAPI(address, container);
     }
 
     /**

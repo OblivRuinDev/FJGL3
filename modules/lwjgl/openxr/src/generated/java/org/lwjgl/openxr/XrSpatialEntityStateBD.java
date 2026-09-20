@@ -62,13 +62,8 @@ public class XrSpatialEntityStateBD extends Struct<XrSpatialEntityStateBD> imple
         UUID = layout.offsetof(4);
     }
 
-    protected XrSpatialEntityStateBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityStateBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityStateBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityStateBD(address, container);
     }
 
     /**

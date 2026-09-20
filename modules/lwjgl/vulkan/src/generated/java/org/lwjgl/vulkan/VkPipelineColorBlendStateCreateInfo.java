@@ -73,13 +73,8 @@ public class VkPipelineColorBlendStateCreateInfo extends Struct<VkPipelineColorB
         BLENDCONSTANTS = layout.offsetof(7);
     }
 
-    protected VkPipelineColorBlendStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineColorBlendStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineColorBlendStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineColorBlendStateCreateInfo(address, container);
     }
 
     /**

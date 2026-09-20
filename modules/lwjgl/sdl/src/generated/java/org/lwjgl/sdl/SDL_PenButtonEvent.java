@@ -80,13 +80,8 @@ public class SDL_PenButtonEvent extends Struct<SDL_PenButtonEvent> implements Na
         DOWN = layout.offsetof(9);
     }
 
-    protected SDL_PenButtonEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_PenButtonEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_PenButtonEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_PenButtonEvent(address, container);
     }
 
     /**

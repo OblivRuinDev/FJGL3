@@ -56,13 +56,8 @@ public class AIMeshMorphAnim extends Struct<AIMeshMorphAnim> implements NativeRe
         MKEYS = layout.offsetof(2);
     }
 
-    protected AIMeshMorphAnim(long address, @Nullable ByteBuffer container) {
+    public AIMeshMorphAnim(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIMeshMorphAnim create(long address, @Nullable ByteBuffer container) {
-        return new AIMeshMorphAnim(address, container);
     }
 
     /**

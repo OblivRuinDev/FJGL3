@@ -61,13 +61,8 @@ public class VkDebugUtilsObjectNameInfoEXT extends Struct<VkDebugUtilsObjectName
         POBJECTNAME = layout.offsetof(4);
     }
 
-    protected VkDebugUtilsObjectNameInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDebugUtilsObjectNameInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDebugUtilsObjectNameInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDebugUtilsObjectNameInfoEXT(address, container);
     }
 
     /**

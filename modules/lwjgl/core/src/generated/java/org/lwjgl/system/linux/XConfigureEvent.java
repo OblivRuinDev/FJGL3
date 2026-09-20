@@ -89,13 +89,8 @@ public class XConfigureEvent extends Struct<XConfigureEvent> implements NativeRe
         OVERRIDE_REDIRECT = layout.offsetof(11);
     }
 
-    protected XConfigureEvent(long address, @Nullable ByteBuffer container) {
+    public XConfigureEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XConfigureEvent create(long address, @Nullable ByteBuffer container) {
-        return new XConfigureEvent(address, container);
     }
 
     /**

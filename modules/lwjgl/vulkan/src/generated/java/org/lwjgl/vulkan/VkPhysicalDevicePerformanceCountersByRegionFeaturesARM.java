@@ -52,13 +52,8 @@ public class VkPhysicalDevicePerformanceCountersByRegionFeaturesARM extends Stru
         PERFORMANCECOUNTERSBYREGION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePerformanceCountersByRegionFeaturesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePerformanceCountersByRegionFeaturesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePerformanceCountersByRegionFeaturesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePerformanceCountersByRegionFeaturesARM(address, container);
     }
 
     /**

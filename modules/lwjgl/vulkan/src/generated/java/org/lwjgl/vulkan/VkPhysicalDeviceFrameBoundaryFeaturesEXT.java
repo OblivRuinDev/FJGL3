@@ -52,13 +52,8 @@ public class VkPhysicalDeviceFrameBoundaryFeaturesEXT extends Struct<VkPhysicalD
         FRAMEBOUNDARY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceFrameBoundaryFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFrameBoundaryFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFrameBoundaryFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFrameBoundaryFeaturesEXT(address, container);
     }
 
     /**

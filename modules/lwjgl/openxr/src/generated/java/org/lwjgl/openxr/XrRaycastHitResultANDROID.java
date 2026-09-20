@@ -54,13 +54,8 @@ public class XrRaycastHitResultANDROID extends Struct<XrRaycastHitResultANDROID>
         POSE = layout.offsetof(2);
     }
 
-    protected XrRaycastHitResultANDROID(long address, @Nullable ByteBuffer container) {
+    public XrRaycastHitResultANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRaycastHitResultANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrRaycastHitResultANDROID(address, container);
     }
 
     /**

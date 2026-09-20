@@ -53,13 +53,8 @@ public class FMOD_DSP_PARAMETER_FFT extends Struct<FMOD_DSP_PARAMETER_FFT> imple
         SPECTRUM = layout.offsetof(2);
     }
 
-    protected FMOD_DSP_PARAMETER_FFT(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_PARAMETER_FFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_PARAMETER_FFT create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_PARAMETER_FFT(address, container);
     }
 
     /**

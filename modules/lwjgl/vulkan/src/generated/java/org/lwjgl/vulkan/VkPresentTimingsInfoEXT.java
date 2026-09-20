@@ -56,13 +56,8 @@ public class VkPresentTimingsInfoEXT extends Struct<VkPresentTimingsInfoEXT> imp
         PTIMINGINFOS = layout.offsetof(3);
     }
 
-    protected VkPresentTimingsInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPresentTimingsInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPresentTimingsInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPresentTimingsInfoEXT(address, container);
     }
 
     /**

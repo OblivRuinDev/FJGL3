@@ -52,13 +52,8 @@ public class VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX extends Str
         PERVIEWPOSITIONALLCOMPONENTS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX(address, container);
     }
 
     /**

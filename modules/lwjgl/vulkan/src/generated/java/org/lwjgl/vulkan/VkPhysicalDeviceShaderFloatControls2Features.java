@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderFloatControls2Features extends Struct<VkPhysi
         SHADERFLOATCONTROLS2 = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderFloatControls2Features(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderFloatControls2Features(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderFloatControls2Features create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderFloatControls2Features(address, container);
     }
 
     /**

@@ -47,13 +47,8 @@ class NkConfigStackFloatElement extends Struct<NkConfigStackFloatElement> {
         OLD_VALUE = layout.offsetof(1);
     }
 
-    protected NkConfigStackFloatElement(long address, @Nullable ByteBuffer container) {
+    public NkConfigStackFloatElement(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkConfigStackFloatElement create(long address, @Nullable ByteBuffer container) {
-        return new NkConfigStackFloatElement(address, container);
     }
 
     /**

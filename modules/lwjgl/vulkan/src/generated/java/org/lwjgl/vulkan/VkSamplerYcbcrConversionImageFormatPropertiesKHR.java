@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSamplerYcbcrConversionImageFormatPropertiesKHR extends VkSamplerYcbcrConversionImageFormatProperties {
 
-    protected VkSamplerYcbcrConversionImageFormatPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkSamplerYcbcrConversionImageFormatPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerYcbcrConversionImageFormatPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerYcbcrConversionImageFormatPropertiesKHR(address, container);
     }
 
     /**

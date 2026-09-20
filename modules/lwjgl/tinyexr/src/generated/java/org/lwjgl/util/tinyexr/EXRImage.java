@@ -77,13 +77,8 @@ public class EXRImage extends Struct<EXRImage> implements NativeResource {
         NUM_TILES = layout.offsetof(8);
     }
 
-    protected EXRImage(long address, @Nullable ByteBuffer container) {
+    public EXRImage(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected EXRImage create(long address, @Nullable ByteBuffer container) {
-        return new EXRImage(address, container);
     }
 
     /**

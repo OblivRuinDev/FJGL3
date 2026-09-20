@@ -51,13 +51,8 @@ public class ktxOrientation extends Struct<ktxOrientation> {
         Z = layout.offsetof(2);
     }
 
-    protected ktxOrientation(long address, @Nullable ByteBuffer container) {
+    public ktxOrientation(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ktxOrientation create(long address, @Nullable ByteBuffer container) {
-        return new ktxOrientation(address, container);
     }
 
     /**

@@ -49,13 +49,8 @@ public class CLImageFormat extends Struct<CLImageFormat> implements NativeResour
         IMAGE_CHANNEL_DATA_TYPE = layout.offsetof(1);
     }
 
-    protected CLImageFormat(long address, @Nullable ByteBuffer container) {
+    public CLImageFormat(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLImageFormat create(long address, @Nullable ByteBuffer container) {
-        return new CLImageFormat(address, container);
     }
 
     /**

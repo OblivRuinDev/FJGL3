@@ -64,13 +64,8 @@ public class VkRenderingInputAttachmentIndexInfo extends Struct<VkRenderingInput
         PSTENCILINPUTATTACHMENTINDEX = layout.offsetof(5);
     }
 
-    protected VkRenderingInputAttachmentIndexInfo(long address, @Nullable ByteBuffer container) {
+    public VkRenderingInputAttachmentIndexInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderingInputAttachmentIndexInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderingInputAttachmentIndexInfo(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class VkColorBlendAdvancedEXT extends Struct<VkColorBlendAdvancedEXT> imp
         CLAMPRESULTS = layout.offsetof(4);
     }
 
-    protected VkColorBlendAdvancedEXT(long address, @Nullable ByteBuffer container) {
+    public VkColorBlendAdvancedEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkColorBlendAdvancedEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkColorBlendAdvancedEXT(address, container);
     }
 
     /**

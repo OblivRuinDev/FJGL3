@@ -52,13 +52,8 @@ public class VkDisplaySurfaceStereoCreateInfoNV extends Struct<VkDisplaySurfaceS
         STEREOTYPE = layout.offsetof(2);
     }
 
-    protected VkDisplaySurfaceStereoCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkDisplaySurfaceStereoCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplaySurfaceStereoCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplaySurfaceStereoCreateInfoNV(address, container);
     }
 
     /**

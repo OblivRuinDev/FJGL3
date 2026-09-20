@@ -57,13 +57,8 @@ public class CRYPTPROTECT_PROMPTSTRUCT extends Struct<CRYPTPROTECT_PROMPTSTRUCT>
         SZPROMPT = layout.offsetof(3);
     }
 
-    protected CRYPTPROTECT_PROMPTSTRUCT(long address, @Nullable ByteBuffer container) {
+    public CRYPTPROTECT_PROMPTSTRUCT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CRYPTPROTECT_PROMPTSTRUCT create(long address, @Nullable ByteBuffer container) {
-        return new CRYPTPROTECT_PROMPTSTRUCT(address, container);
     }
 
     /**

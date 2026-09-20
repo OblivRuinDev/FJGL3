@@ -52,13 +52,8 @@ public class XrOffset3DfFB extends Struct<XrOffset3DfFB> implements NativeResour
         Z = layout.offsetof(2);
     }
 
-    protected XrOffset3DfFB(long address, @Nullable ByteBuffer container) {
+    public XrOffset3DfFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrOffset3DfFB create(long address, @Nullable ByteBuffer container) {
-        return new XrOffset3DfFB(address, container);
     }
 
     /**

@@ -99,13 +99,8 @@ public class SDL_HapticCustom extends Struct<SDL_HapticCustom> implements Native
         FADE_LEVEL = layout.offsetof(13);
     }
 
-    protected SDL_HapticCustom(long address, @Nullable ByteBuffer container) {
+    public SDL_HapticCustom(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_HapticCustom create(long address, @Nullable ByteBuffer container) {
-        return new SDL_HapticCustom(address, container);
     }
 
     /**

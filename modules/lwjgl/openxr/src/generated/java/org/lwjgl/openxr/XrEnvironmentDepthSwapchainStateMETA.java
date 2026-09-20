@@ -56,13 +56,8 @@ public class XrEnvironmentDepthSwapchainStateMETA extends Struct<XrEnvironmentDe
         HEIGHT = layout.offsetof(3);
     }
 
-    protected XrEnvironmentDepthSwapchainStateMETA(long address, @Nullable ByteBuffer container) {
+    public XrEnvironmentDepthSwapchainStateMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEnvironmentDepthSwapchainStateMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEnvironmentDepthSwapchainStateMETA(address, container);
     }
 
     /**

@@ -88,13 +88,8 @@ public class ktxTextureCreateInfo extends Struct<ktxTextureCreateInfo> implement
         GENERATEMIPMAPS = layout.offsetof(11);
     }
 
-    protected ktxTextureCreateInfo(long address, @Nullable ByteBuffer container) {
+    public ktxTextureCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ktxTextureCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new ktxTextureCreateInfo(address, container);
     }
 
     /**

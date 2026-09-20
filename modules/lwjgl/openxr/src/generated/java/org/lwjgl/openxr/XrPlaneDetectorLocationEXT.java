@@ -79,13 +79,8 @@ public class XrPlaneDetectorLocationEXT extends Struct<XrPlaneDetectorLocationEX
         POLYGONBUFFERCOUNT = layout.offsetof(8);
     }
 
-    protected XrPlaneDetectorLocationEXT(long address, @Nullable ByteBuffer container) {
+    public XrPlaneDetectorLocationEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPlaneDetectorLocationEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrPlaneDetectorLocationEXT(address, container);
     }
 
     /**

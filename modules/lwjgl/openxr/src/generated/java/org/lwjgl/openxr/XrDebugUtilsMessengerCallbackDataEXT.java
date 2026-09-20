@@ -77,13 +77,8 @@ public class XrDebugUtilsMessengerCallbackDataEXT extends Struct<XrDebugUtilsMes
         SESSIONLABELS = layout.offsetof(8);
     }
 
-    protected XrDebugUtilsMessengerCallbackDataEXT(long address, @Nullable ByteBuffer container) {
+    public XrDebugUtilsMessengerCallbackDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrDebugUtilsMessengerCallbackDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrDebugUtilsMessengerCallbackDataEXT(address, container);
     }
 
     /**

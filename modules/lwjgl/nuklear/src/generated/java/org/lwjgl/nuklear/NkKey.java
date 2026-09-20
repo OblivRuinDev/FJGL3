@@ -47,13 +47,8 @@ public class NkKey extends Struct<NkKey> {
         CLICKED = layout.offsetof(1);
     }
 
-    protected NkKey(long address, @Nullable ByteBuffer container) {
+    public NkKey(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkKey create(long address, @Nullable ByteBuffer container) {
-        return new NkKey(address, container);
     }
 
     /**

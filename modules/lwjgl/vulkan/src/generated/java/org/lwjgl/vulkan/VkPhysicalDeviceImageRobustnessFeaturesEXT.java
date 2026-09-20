@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceImageRobustnessFeaturesEXT extends VkPhysicalDeviceImageRobustnessFeatures {
 
-    protected VkPhysicalDeviceImageRobustnessFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageRobustnessFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageRobustnessFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageRobustnessFeaturesEXT(address, container);
     }
 
     /**

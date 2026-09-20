@@ -51,13 +51,8 @@ public class XrRect3DfFB extends Struct<XrRect3DfFB> implements NativeResource {
         EXTENT = layout.offsetof(1);
     }
 
-    protected XrRect3DfFB(long address, @Nullable ByteBuffer container) {
+    public XrRect3DfFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRect3DfFB create(long address, @Nullable ByteBuffer container) {
-        return new XrRect3DfFB(address, container);
     }
 
     /**

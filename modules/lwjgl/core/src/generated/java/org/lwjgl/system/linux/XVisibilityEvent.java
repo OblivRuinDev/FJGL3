@@ -65,13 +65,8 @@ public class XVisibilityEvent extends Struct<XVisibilityEvent> implements Native
         STATE = layout.offsetof(5);
     }
 
-    protected XVisibilityEvent(long address, @Nullable ByteBuffer container) {
+    public XVisibilityEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XVisibilityEvent create(long address, @Nullable ByteBuffer container) {
-        return new XVisibilityEvent(address, container);
     }
 
     /**

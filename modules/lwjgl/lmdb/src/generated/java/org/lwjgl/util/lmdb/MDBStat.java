@@ -65,13 +65,8 @@ public class MDBStat extends Struct<MDBStat> implements NativeResource {
         MS_ENTRIES = layout.offsetof(5);
     }
 
-    protected MDBStat(long address, @Nullable ByteBuffer container) {
+    public MDBStat(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MDBStat create(long address, @Nullable ByteBuffer container) {
-        return new MDBStat(address, container);
     }
 
     /**

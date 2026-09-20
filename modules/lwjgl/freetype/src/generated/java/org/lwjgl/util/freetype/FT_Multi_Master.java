@@ -57,13 +57,8 @@ public class FT_Multi_Master extends Struct<FT_Multi_Master> implements NativeRe
         AXIS = layout.offsetof(2);
     }
 
-    protected FT_Multi_Master(long address, @Nullable ByteBuffer container) {
+    public FT_Multi_Master(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Multi_Master create(long address, @Nullable ByteBuffer container) {
-        return new FT_Multi_Master(address, container);
     }
 
     /**

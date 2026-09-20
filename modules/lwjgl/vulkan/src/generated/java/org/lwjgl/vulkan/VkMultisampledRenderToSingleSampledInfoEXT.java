@@ -56,13 +56,8 @@ public class VkMultisampledRenderToSingleSampledInfoEXT extends Struct<VkMultisa
         RASTERIZATIONSAMPLES = layout.offsetof(3);
     }
 
-    protected VkMultisampledRenderToSingleSampledInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkMultisampledRenderToSingleSampledInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMultisampledRenderToSingleSampledInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMultisampledRenderToSingleSampledInfoEXT(address, container);
     }
 
     /**

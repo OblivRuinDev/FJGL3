@@ -56,13 +56,8 @@ public class XrInputSourceLocalizedNameGetInfo extends Struct<XrInputSourceLocal
         WHICHCOMPONENTS = layout.offsetof(3);
     }
 
-    protected XrInputSourceLocalizedNameGetInfo(long address, @Nullable ByteBuffer container) {
+    public XrInputSourceLocalizedNameGetInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrInputSourceLocalizedNameGetInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrInputSourceLocalizedNameGetInfo(address, container);
     }
 
     /**

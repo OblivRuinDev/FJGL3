@@ -73,13 +73,8 @@ public class XrSpatialUpdateSnapshotCreateInfoEXT extends Struct<XrSpatialUpdate
         TIME = layout.offsetof(7);
     }
 
-    protected XrSpatialUpdateSnapshotCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialUpdateSnapshotCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialUpdateSnapshotCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialUpdateSnapshotCreateInfoEXT(address, container);
     }
 
     /**

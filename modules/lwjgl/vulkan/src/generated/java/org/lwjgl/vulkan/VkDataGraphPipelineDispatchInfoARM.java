@@ -52,13 +52,8 @@ public class VkDataGraphPipelineDispatchInfoARM extends Struct<VkDataGraphPipeli
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkDataGraphPipelineDispatchInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineDispatchInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineDispatchInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineDispatchInfoARM(address, container);
     }
 
     /**

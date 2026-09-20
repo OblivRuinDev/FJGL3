@@ -77,13 +77,8 @@ public class IOSQRingOffsets extends Struct<IOSQRingOffsets> implements NativeRe
         USER_ADDR = layout.offsetof(8);
     }
 
-    protected IOSQRingOffsets(long address, @Nullable ByteBuffer container) {
+    public IOSQRingOffsets(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOSQRingOffsets create(long address, @Nullable ByteBuffer container) {
-        return new IOSQRingOffsets(address, container);
     }
 
     /**

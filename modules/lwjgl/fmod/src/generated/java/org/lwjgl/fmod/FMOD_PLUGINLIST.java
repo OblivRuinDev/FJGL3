@@ -49,13 +49,8 @@ public class FMOD_PLUGINLIST extends Struct<FMOD_PLUGINLIST> implements NativeRe
         DESCRIPTION = layout.offsetof(1);
     }
 
-    protected FMOD_PLUGINLIST(long address, @Nullable ByteBuffer container) {
+    public FMOD_PLUGINLIST(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_PLUGINLIST create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_PLUGINLIST(address, container);
     }
 
     /**

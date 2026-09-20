@@ -60,13 +60,8 @@ public class VkPhysicalDeviceMultiviewFeatures extends Struct<VkPhysicalDeviceMu
         MULTIVIEWTESSELLATIONSHADER = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceMultiviewFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMultiviewFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMultiviewFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMultiviewFeatures(address, container);
     }
 
     /**

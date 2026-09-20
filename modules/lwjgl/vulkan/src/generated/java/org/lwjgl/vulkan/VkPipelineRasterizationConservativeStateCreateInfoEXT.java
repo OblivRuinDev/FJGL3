@@ -60,13 +60,8 @@ public class VkPipelineRasterizationConservativeStateCreateInfoEXT extends Struc
         EXTRAPRIMITIVEOVERESTIMATIONSIZE = layout.offsetof(4);
     }
 
-    protected VkPipelineRasterizationConservativeStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineRasterizationConservativeStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineRasterizationConservativeStateCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineRasterizationConservativeStateCreateInfoEXT(address, container);
     }
 
     /**

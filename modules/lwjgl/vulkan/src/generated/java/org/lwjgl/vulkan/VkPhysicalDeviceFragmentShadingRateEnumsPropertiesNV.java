@@ -52,13 +52,8 @@ public class VkPhysicalDeviceFragmentShadingRateEnumsPropertiesNV extends Struct
         MAXFRAGMENTSHADINGRATEINVOCATIONCOUNT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceFragmentShadingRateEnumsPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentShadingRateEnumsPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentShadingRateEnumsPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentShadingRateEnumsPropertiesNV(address, container);
     }
 
     /**

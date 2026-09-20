@@ -61,13 +61,8 @@ public class XrShareSpacesInfoMETA extends Struct<XrShareSpacesInfoMETA> impleme
         RECIPIENTINFO = layout.offsetof(4);
     }
 
-    protected XrShareSpacesInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrShareSpacesInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrShareSpacesInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrShareSpacesInfoMETA(address, container);
     }
 
     /**

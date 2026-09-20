@@ -48,13 +48,8 @@ public class YGSize extends Struct<YGSize> implements NativeResource {
         HEIGHT = layout.offsetof(1);
     }
 
-    protected YGSize(long address, @Nullable ByteBuffer container) {
+    public YGSize(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected YGSize create(long address, @Nullable ByteBuffer container) {
-        return new YGSize(address, container);
     }
 
     /**

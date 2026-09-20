@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkRenderPassAttachmentBeginInfoKHR extends VkRenderPassAttachmentBeginInfo {
 
-    protected VkRenderPassAttachmentBeginInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassAttachmentBeginInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassAttachmentBeginInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassAttachmentBeginInfoKHR(address, container);
     }
 
     /**

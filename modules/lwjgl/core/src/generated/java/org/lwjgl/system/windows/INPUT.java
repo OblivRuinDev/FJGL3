@@ -62,13 +62,8 @@ public class INPUT extends Struct<INPUT> implements NativeResource {
             DUMMYUNIONNAME_HI = layout.offsetof(4);
     }
 
-    protected INPUT(long address, @Nullable ByteBuffer container) {
+    public INPUT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected INPUT create(long address, @Nullable ByteBuffer container) {
-        return new INPUT(address, container);
     }
 
     /**

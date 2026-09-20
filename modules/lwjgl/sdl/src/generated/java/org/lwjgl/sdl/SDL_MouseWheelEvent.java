@@ -88,13 +88,8 @@ public class SDL_MouseWheelEvent extends Struct<SDL_MouseWheelEvent> implements 
         INTEGER_Y = layout.offsetof(11);
     }
 
-    protected SDL_MouseWheelEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_MouseWheelEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_MouseWheelEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_MouseWheelEvent(address, container);
     }
 
     /**

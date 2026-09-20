@@ -58,13 +58,8 @@ public class VkExternalImageFormatPropertiesNV extends Struct<VkExternalImageFor
         COMPATIBLEHANDLETYPES = layout.offsetof(3);
     }
 
-    protected VkExternalImageFormatPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkExternalImageFormatPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalImageFormatPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalImageFormatPropertiesNV(address, container);
     }
 
     /**

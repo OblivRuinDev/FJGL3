@@ -49,13 +49,8 @@ public class AIVertexWeight extends Struct<AIVertexWeight> implements NativeReso
         MWEIGHT = layout.offsetof(1);
     }
 
-    protected AIVertexWeight(long address, @Nullable ByteBuffer container) {
+    public AIVertexWeight(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIVertexWeight create(long address, @Nullable ByteBuffer container) {
-        return new AIVertexWeight(address, container);
     }
 
     /**

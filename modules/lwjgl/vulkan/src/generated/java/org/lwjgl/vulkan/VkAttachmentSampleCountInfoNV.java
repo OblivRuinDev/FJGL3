@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkAttachmentSampleCountInfoNV extends VkAttachmentSampleCountInfoAMD {
 
-    protected VkAttachmentSampleCountInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkAttachmentSampleCountInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAttachmentSampleCountInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkAttachmentSampleCountInfoNV(address, container);
     }
 
     /**

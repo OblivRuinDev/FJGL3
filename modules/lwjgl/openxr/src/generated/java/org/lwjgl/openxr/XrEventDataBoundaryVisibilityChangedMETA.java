@@ -52,13 +52,8 @@ public class XrEventDataBoundaryVisibilityChangedMETA extends Struct<XrEventData
         BOUNDARYVISIBILITY = layout.offsetof(2);
     }
 
-    protected XrEventDataBoundaryVisibilityChangedMETA(long address, @Nullable ByteBuffer container) {
+    public XrEventDataBoundaryVisibilityChangedMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataBoundaryVisibilityChangedMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataBoundaryVisibilityChangedMETA(address, container);
     }
 
     /**

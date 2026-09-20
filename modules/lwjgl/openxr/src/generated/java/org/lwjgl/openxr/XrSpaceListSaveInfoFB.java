@@ -61,13 +61,8 @@ public class XrSpaceListSaveInfoFB extends Struct<XrSpaceListSaveInfoFB> impleme
         LOCATION = layout.offsetof(4);
     }
 
-    protected XrSpaceListSaveInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceListSaveInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceListSaveInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceListSaveInfoFB(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class FT_Color extends Struct<FT_Color> implements NativeResource {
         ALPHA = layout.offsetof(3);
     }
 
-    protected FT_Color(long address, @Nullable ByteBuffer container) {
+    public FT_Color(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Color create(long address, @Nullable ByteBuffer container) {
-        return new FT_Color(address, container);
     }
 
     /**

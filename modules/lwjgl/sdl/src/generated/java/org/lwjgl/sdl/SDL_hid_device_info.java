@@ -101,13 +101,8 @@ public class SDL_hid_device_info extends Struct<SDL_hid_device_info> implements 
         NEXT = layout.offsetof(14);
     }
 
-    protected SDL_hid_device_info(long address, @Nullable ByteBuffer container) {
+    public SDL_hid_device_info(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_hid_device_info create(long address, @Nullable ByteBuffer container) {
-        return new SDL_hid_device_info(address, container);
     }
 
     /**

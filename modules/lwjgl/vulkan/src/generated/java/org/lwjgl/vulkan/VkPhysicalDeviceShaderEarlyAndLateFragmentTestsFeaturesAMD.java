@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD extends 
         SHADEREARLYANDLATEFRAGMENTTESTS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD(address, container);
     }
 
     /**

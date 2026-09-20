@@ -151,13 +151,8 @@ public class VkPhysicalDeviceVulkan14Properties extends Struct<VkPhysicalDeviceV
         IDENTICALMEMORYTYPEREQUIREMENTS = layout.offsetof(26);
     }
 
-    protected VkPhysicalDeviceVulkan14Properties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVulkan14Properties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVulkan14Properties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVulkan14Properties(address, container);
     }
 
     /**

@@ -47,13 +47,8 @@ public class BGFXEncoderStats extends Struct<BGFXEncoderStats> {
         CPUTIMEEND = layout.offsetof(1);
     }
 
-    protected BGFXEncoderStats(long address, @Nullable ByteBuffer container) {
+    public BGFXEncoderStats(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXEncoderStats create(long address, @Nullable ByteBuffer container) {
-        return new BGFXEncoderStats(address, container);
     }
 
     /**

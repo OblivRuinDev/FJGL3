@@ -58,13 +58,8 @@ public class SpvcReflectedResource extends Struct<SpvcReflectedResource> impleme
         NAME = layout.offsetof(3);
     }
 
-    protected SpvcReflectedResource(long address, @Nullable ByteBuffer container) {
+    public SpvcReflectedResource(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcReflectedResource create(long address, @Nullable ByteBuffer container) {
-        return new SpvcReflectedResource(address, container);
     }
 
     /**

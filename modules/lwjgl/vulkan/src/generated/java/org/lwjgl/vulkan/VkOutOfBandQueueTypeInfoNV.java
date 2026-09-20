@@ -52,13 +52,8 @@ public class VkOutOfBandQueueTypeInfoNV extends Struct<VkOutOfBandQueueTypeInfoN
         QUEUETYPE = layout.offsetof(2);
     }
 
-    protected VkOutOfBandQueueTypeInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkOutOfBandQueueTypeInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkOutOfBandQueueTypeInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkOutOfBandQueueTypeInfoNV(address, container);
     }
 
     /**

@@ -155,13 +155,8 @@ public class VmaVulkanFunctions extends Struct<VmaVulkanFunctions> implements Na
         VKGETPHYSICALDEVICEPROPERTIES2KHR = layout.offsetof(27);
     }
 
-    protected VmaVulkanFunctions(long address, @Nullable ByteBuffer container) {
+    public VmaVulkanFunctions(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaVulkanFunctions create(long address, @Nullable ByteBuffer container) {
-        return new VmaVulkanFunctions(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkIndirectExecutionSetPipelineInfoEXT extends Struct<VkIndirectExec
         MAXPIPELINECOUNT = layout.offsetof(3);
     }
 
-    protected VkIndirectExecutionSetPipelineInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkIndirectExecutionSetPipelineInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectExecutionSetPipelineInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectExecutionSetPipelineInfoEXT(address, container);
     }
 
     /**

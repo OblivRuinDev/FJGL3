@@ -50,13 +50,8 @@ public class XrBodyJointLocationHTC extends Struct<XrBodyJointLocationHTC> imple
         POSE = layout.offsetof(1);
     }
 
-    protected XrBodyJointLocationHTC(long address, @Nullable ByteBuffer container) {
+    public XrBodyJointLocationHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyJointLocationHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyJointLocationHTC(address, container);
     }
 
     /**

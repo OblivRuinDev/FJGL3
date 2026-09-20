@@ -32,13 +32,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSamplerYcbcrConversionCreateInfoKHR extends VkSamplerYcbcrConversionCreateInfo {
 
-    protected VkSamplerYcbcrConversionCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkSamplerYcbcrConversionCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerYcbcrConversionCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerYcbcrConversionCreateInfoKHR(address, container);
     }
 
     /**

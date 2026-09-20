@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPipelineRasterizationLineStateCreateInfoEXT extends VkPipelineRasterizationLineStateCreateInfo {
 
-    protected VkPipelineRasterizationLineStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineRasterizationLineStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineRasterizationLineStateCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineRasterizationLineStateCreateInfoEXT(address, container);
     }
 
     /**

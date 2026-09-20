@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDescriptorPoolInlineUniformBlockCreateInfoEXT extends VkDescriptorPoolInlineUniformBlockCreateInfo {
 
-    protected VkDescriptorPoolInlineUniformBlockCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorPoolInlineUniformBlockCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorPoolInlineUniformBlockCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorPoolInlineUniformBlockCreateInfoEXT(address, container);
     }
 
     /**

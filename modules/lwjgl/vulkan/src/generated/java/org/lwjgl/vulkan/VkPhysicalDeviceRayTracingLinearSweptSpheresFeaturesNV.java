@@ -56,13 +56,8 @@ public class VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV extends Stru
         LINEARSWEPTSPHERES = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV(address, container);
     }
 
     /**

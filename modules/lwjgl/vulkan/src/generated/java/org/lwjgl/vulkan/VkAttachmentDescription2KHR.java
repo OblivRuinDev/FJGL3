@@ -33,13 +33,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkAttachmentDescription2KHR extends VkAttachmentDescription2 {
 
-    protected VkAttachmentDescription2KHR(long address, @Nullable ByteBuffer container) {
+    public VkAttachmentDescription2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAttachmentDescription2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAttachmentDescription2KHR(address, container);
     }
 
     /**

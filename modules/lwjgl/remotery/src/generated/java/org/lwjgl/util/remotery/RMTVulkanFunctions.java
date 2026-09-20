@@ -94,13 +94,8 @@ public class RMTVulkanFunctions extends Struct<RMTVulkanFunctions> implements Na
         VKGETCALIBRATEDTIMESTAMPSEXT = layout.offsetof(12);
     }
 
-    protected RMTVulkanFunctions(long address, @Nullable ByteBuffer container) {
+    public RMTVulkanFunctions(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected RMTVulkanFunctions create(long address, @Nullable ByteBuffer container) {
-        return new RMTVulkanFunctions(address, container);
     }
 
     /**

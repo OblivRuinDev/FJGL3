@@ -56,13 +56,8 @@ public class VkPhysicalDeviceRayTracingMotionBlurFeaturesNV extends Struct<VkPhy
         RAYTRACINGMOTIONBLURPIPELINETRACERAYSINDIRECT = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceRayTracingMotionBlurFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRayTracingMotionBlurFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRayTracingMotionBlurFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRayTracingMotionBlurFeaturesNV(address, container);
     }
 
     /**

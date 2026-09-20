@@ -60,13 +60,8 @@ public class XrSceneMeshIndicesUint16MSFT extends Struct<XrSceneMeshIndicesUint1
         INDICES = layout.offsetof(4);
     }
 
-    protected XrSceneMeshIndicesUint16MSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneMeshIndicesUint16MSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMeshIndicesUint16MSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMeshIndicesUint16MSFT(address, container);
     }
 
     /**

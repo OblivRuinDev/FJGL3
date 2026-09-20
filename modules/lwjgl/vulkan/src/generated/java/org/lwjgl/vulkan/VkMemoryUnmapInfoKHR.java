@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkMemoryUnmapInfoKHR extends VkMemoryUnmapInfo {
 
-    protected VkMemoryUnmapInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkMemoryUnmapInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryUnmapInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryUnmapInfoKHR(address, container);
     }
 
     /**

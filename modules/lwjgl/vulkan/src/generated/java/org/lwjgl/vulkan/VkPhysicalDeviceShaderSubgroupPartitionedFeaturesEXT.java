@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT extends Struct
         SHADERSUBGROUPPARTITIONED = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT(address, container);
     }
 
     /**

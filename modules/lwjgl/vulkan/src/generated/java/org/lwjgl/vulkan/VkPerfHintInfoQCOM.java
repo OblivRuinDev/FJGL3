@@ -56,13 +56,8 @@ public class VkPerfHintInfoQCOM extends Struct<VkPerfHintInfoQCOM> implements Na
         SCALE = layout.offsetof(3);
     }
 
-    protected VkPerfHintInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPerfHintInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerfHintInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPerfHintInfoQCOM(address, container);
     }
 
     /**

@@ -90,13 +90,8 @@ public class IOURingCQ extends Struct<IOURingCQ> implements NativeResource {
         PAD = layout.offsetof(11);
     }
 
-    protected IOURingCQ(long address, @Nullable ByteBuffer container) {
+    public IOURingCQ(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingCQ create(long address, @Nullable ByteBuffer container) {
-        return new IOURingCQ(address, container);
     }
 
     /**

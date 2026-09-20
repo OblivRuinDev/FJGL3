@@ -66,13 +66,8 @@ public class spng_trns extends Struct<spng_trns> implements NativeResource {
         TYPE3_ALPHA = layout.offsetof(5);
     }
 
-    protected spng_trns(long address, @Nullable ByteBuffer container) {
+    public spng_trns(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_trns create(long address, @Nullable ByteBuffer container) {
-        return new spng_trns(address, container);
     }
 
     /**

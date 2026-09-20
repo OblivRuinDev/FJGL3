@@ -180,13 +180,8 @@ public class VkPhysicalDeviceDescriptorBufferPropertiesEXT extends Struct<VkPhys
         DESCRIPTORBUFFERADDRESSSPACESIZE = layout.offsetof(34);
     }
 
-    protected VkPhysicalDeviceDescriptorBufferPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDescriptorBufferPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDescriptorBufferPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDescriptorBufferPropertiesEXT(address, container);
     }
 
     /**

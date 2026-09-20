@@ -50,13 +50,8 @@ public class XrHandMeshVertexMSFT extends Struct<XrHandMeshVertexMSFT> implement
         NORMAL = layout.offsetof(1);
     }
 
-    protected XrHandMeshVertexMSFT(long address, @Nullable ByteBuffer container) {
+    public XrHandMeshVertexMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandMeshVertexMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandMeshVertexMSFT(address, container);
     }
 
     /**

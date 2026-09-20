@@ -63,13 +63,8 @@ public class GLFWVidMode extends Struct<GLFWVidMode> {
         REFRESHRATE = layout.offsetof(5);
     }
 
-    protected GLFWVidMode(long address, @Nullable ByteBuffer container) {
+    public GLFWVidMode(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLFWVidMode create(long address, @Nullable ByteBuffer container) {
-        return new GLFWVidMode(address, container);
     }
 
     /**

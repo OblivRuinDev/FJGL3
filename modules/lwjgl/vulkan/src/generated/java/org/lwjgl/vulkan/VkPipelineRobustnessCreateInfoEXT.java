@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPipelineRobustnessCreateInfoEXT extends VkPipelineRobustnessCreateInfo {
 
-    protected VkPipelineRobustnessCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineRobustnessCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineRobustnessCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineRobustnessCreateInfoEXT(address, container);
     }
 
     /**

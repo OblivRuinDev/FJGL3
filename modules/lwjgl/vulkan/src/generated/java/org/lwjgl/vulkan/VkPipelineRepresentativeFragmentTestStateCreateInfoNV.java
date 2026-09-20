@@ -52,13 +52,8 @@ public class VkPipelineRepresentativeFragmentTestStateCreateInfoNV extends Struc
         REPRESENTATIVEFRAGMENTTESTENABLE = layout.offsetof(2);
     }
 
-    protected VkPipelineRepresentativeFragmentTestStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkPipelineRepresentativeFragmentTestStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineRepresentativeFragmentTestStateCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineRepresentativeFragmentTestStateCreateInfoNV(address, container);
     }
 
     /**

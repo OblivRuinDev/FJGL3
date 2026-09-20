@@ -48,13 +48,8 @@ public class XrLocalizationMapQueryInfoBaseHeaderML extends Struct<XrLocalizatio
         NEXT = layout.offsetof(1);
     }
 
-    protected XrLocalizationMapQueryInfoBaseHeaderML(long address, @Nullable ByteBuffer container) {
+    public XrLocalizationMapQueryInfoBaseHeaderML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrLocalizationMapQueryInfoBaseHeaderML create(long address, @Nullable ByteBuffer container) {
-        return new XrLocalizationMapQueryInfoBaseHeaderML(address, container);
     }
 
     /**

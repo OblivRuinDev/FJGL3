@@ -68,13 +68,8 @@ public class VkPipelineCoverageModulationStateCreateInfoNV extends Struct<VkPipe
         PCOVERAGEMODULATIONTABLE = layout.offsetof(6);
     }
 
-    protected VkPipelineCoverageModulationStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkPipelineCoverageModulationStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineCoverageModulationStateCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineCoverageModulationStateCreateInfoNV(address, container);
     }
 
     /**

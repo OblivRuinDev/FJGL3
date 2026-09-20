@@ -31,13 +31,8 @@ import static org.lwjgl.vulkan.VK10.*;
  */
 public class VkPhysicalDeviceToolPropertiesEXT extends VkPhysicalDeviceToolProperties {
 
-    protected VkPhysicalDeviceToolPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceToolPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceToolPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceToolPropertiesEXT(address, container);
     }
 
     /**

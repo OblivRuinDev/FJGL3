@@ -52,13 +52,8 @@ public class XrPassthroughPreferencesMETA extends Struct<XrPassthroughPreference
         FLAGS = layout.offsetof(2);
     }
 
-    protected XrPassthroughPreferencesMETA(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughPreferencesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughPreferencesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughPreferencesMETA(address, container);
     }
 
     /**

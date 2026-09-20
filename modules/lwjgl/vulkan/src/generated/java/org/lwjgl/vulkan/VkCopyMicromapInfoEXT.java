@@ -60,13 +60,8 @@ public class VkCopyMicromapInfoEXT extends Struct<VkCopyMicromapInfoEXT> impleme
         MODE = layout.offsetof(4);
     }
 
-    protected VkCopyMicromapInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkCopyMicromapInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyMicromapInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyMicromapInfoEXT(address, container);
     }
 
     /**

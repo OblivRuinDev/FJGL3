@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkWriteDescriptorSetInlineUniformBlockEXT extends VkWriteDescriptorSetInlineUniformBlock {
 
-    protected VkWriteDescriptorSetInlineUniformBlockEXT(long address, @Nullable ByteBuffer container) {
+    public VkWriteDescriptorSetInlineUniformBlockEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkWriteDescriptorSetInlineUniformBlockEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkWriteDescriptorSetInlineUniformBlockEXT(address, container);
     }
 
     /**

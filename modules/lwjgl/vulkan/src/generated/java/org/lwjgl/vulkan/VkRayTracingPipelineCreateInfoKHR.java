@@ -97,13 +97,8 @@ public class VkRayTracingPipelineCreateInfoKHR extends Struct<VkRayTracingPipeli
         BASEPIPELINEINDEX = layout.offsetof(13);
     }
 
-    protected VkRayTracingPipelineCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkRayTracingPipelineCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRayTracingPipelineCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkRayTracingPipelineCreateInfoKHR(address, container);
     }
 
     /**

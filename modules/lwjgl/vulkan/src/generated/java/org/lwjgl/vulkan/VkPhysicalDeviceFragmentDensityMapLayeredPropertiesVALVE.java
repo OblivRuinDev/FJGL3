@@ -52,13 +52,8 @@ public class VkPhysicalDeviceFragmentDensityMapLayeredPropertiesVALVE extends St
         MAXFRAGMENTDENSITYMAPLAYERS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceFragmentDensityMapLayeredPropertiesVALVE(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentDensityMapLayeredPropertiesVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentDensityMapLayeredPropertiesVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentDensityMapLayeredPropertiesVALVE(address, container);
     }
 
     /**

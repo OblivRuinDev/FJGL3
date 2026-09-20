@@ -55,13 +55,8 @@ public class StdVideoH265DecPicBufMgr extends Struct<StdVideoH265DecPicBufMgr> i
         MAX_NUM_REORDER_PICS = layout.offsetof(2);
     }
 
-    protected StdVideoH265DecPicBufMgr(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265DecPicBufMgr(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265DecPicBufMgr create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265DecPicBufMgr(address, container);
     }
 
     /**

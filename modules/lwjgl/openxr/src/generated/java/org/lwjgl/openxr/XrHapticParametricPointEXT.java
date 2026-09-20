@@ -48,13 +48,8 @@ public class XrHapticParametricPointEXT extends Struct<XrHapticParametricPointEX
         VALUE = layout.offsetof(1);
     }
 
-    protected XrHapticParametricPointEXT(long address, @Nullable ByteBuffer container) {
+    public XrHapticParametricPointEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHapticParametricPointEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrHapticParametricPointEXT(address, container);
     }
 
     /**

@@ -75,13 +75,8 @@ public class PS_FontInfo extends Struct<PS_FontInfo> {
         UNDERLINE_THICKNESS = layout.offsetof(8);
     }
 
-    protected PS_FontInfo(long address, @Nullable ByteBuffer container) {
+    public PS_FontInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected PS_FontInfo create(long address, @Nullable ByteBuffer container) {
-        return new PS_FontInfo(address, container);
     }
 
     /**

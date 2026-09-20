@@ -52,13 +52,8 @@ public class VkDataGraphPipelineNeuralStatisticsCreateInfoARM extends Struct<VkD
         ALLOWNEURALSTATISTICS = layout.offsetof(2);
     }
 
-    protected VkDataGraphPipelineNeuralStatisticsCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineNeuralStatisticsCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineNeuralStatisticsCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineNeuralStatisticsCreateInfoARM(address, container);
     }
 
     /**

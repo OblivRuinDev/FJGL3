@@ -56,13 +56,8 @@ public class VkPipelineBinaryHandlesInfoKHR extends Struct<VkPipelineBinaryHandl
         PPIPELINEBINARIES = layout.offsetof(3);
     }
 
-    protected VkPipelineBinaryHandlesInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineBinaryHandlesInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineBinaryHandlesInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineBinaryHandlesInfoKHR(address, container);
     }
 
     /**

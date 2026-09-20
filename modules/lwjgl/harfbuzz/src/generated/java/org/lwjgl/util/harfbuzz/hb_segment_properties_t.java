@@ -60,13 +60,8 @@ public class hb_segment_properties_t extends Struct<hb_segment_properties_t> imp
         RESERVED2 = layout.offsetof(4);
     }
 
-    protected hb_segment_properties_t(long address, @Nullable ByteBuffer container) {
+    public hb_segment_properties_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_segment_properties_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_segment_properties_t(address, container);
     }
 
     /**

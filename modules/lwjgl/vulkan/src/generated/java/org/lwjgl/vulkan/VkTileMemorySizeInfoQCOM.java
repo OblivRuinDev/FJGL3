@@ -52,13 +52,8 @@ public class VkTileMemorySizeInfoQCOM extends Struct<VkTileMemorySizeInfoQCOM> i
         SIZE = layout.offsetof(2);
     }
 
-    protected VkTileMemorySizeInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkTileMemorySizeInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTileMemorySizeInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkTileMemorySizeInfoQCOM(address, container);
     }
 
     /**

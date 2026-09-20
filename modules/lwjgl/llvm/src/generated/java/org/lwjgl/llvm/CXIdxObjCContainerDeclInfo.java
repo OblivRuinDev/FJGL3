@@ -46,13 +46,8 @@ public class CXIdxObjCContainerDeclInfo extends Struct<CXIdxObjCContainerDeclInf
         KIND = layout.offsetof(1);
     }
 
-    protected CXIdxObjCContainerDeclInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxObjCContainerDeclInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxObjCContainerDeclInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxObjCContainerDeclInfo(address, container);
     }
 
     /**

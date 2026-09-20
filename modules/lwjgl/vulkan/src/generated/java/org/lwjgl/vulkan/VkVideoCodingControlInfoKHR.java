@@ -52,13 +52,8 @@ public class VkVideoCodingControlInfoKHR extends Struct<VkVideoCodingControlInfo
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkVideoCodingControlInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoCodingControlInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoCodingControlInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoCodingControlInfoKHR(address, container);
     }
 
     /**

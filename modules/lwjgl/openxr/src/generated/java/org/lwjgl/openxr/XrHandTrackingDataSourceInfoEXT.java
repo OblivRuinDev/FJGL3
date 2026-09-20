@@ -57,13 +57,8 @@ public class XrHandTrackingDataSourceInfoEXT extends Struct<XrHandTrackingDataSo
         REQUESTEDDATASOURCES = layout.offsetof(3);
     }
 
-    protected XrHandTrackingDataSourceInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrHandTrackingDataSourceInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandTrackingDataSourceInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandTrackingDataSourceInfoEXT(address, container);
     }
 
     /**

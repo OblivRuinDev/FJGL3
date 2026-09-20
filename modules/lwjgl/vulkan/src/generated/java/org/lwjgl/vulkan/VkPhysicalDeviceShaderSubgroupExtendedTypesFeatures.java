@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderSubgroupExtendedTypesFeatures extends Struct<
         SHADERSUBGROUPEXTENDEDTYPES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderSubgroupExtendedTypesFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderSubgroupExtendedTypesFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderSubgroupExtendedTypesFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderSubgroupExtendedTypesFeatures(address, container);
     }
 
     /**

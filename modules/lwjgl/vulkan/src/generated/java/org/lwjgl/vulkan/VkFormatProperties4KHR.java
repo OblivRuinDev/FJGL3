@@ -60,13 +60,8 @@ public class VkFormatProperties4KHR extends Struct<VkFormatProperties4KHR> imple
         BUFFERFEATURES = layout.offsetof(4);
     }
 
-    protected VkFormatProperties4KHR(long address, @Nullable ByteBuffer container) {
+    public VkFormatProperties4KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFormatProperties4KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkFormatProperties4KHR(address, container);
     }
 
     /**

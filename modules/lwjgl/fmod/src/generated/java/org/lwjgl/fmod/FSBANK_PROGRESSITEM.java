@@ -56,13 +56,8 @@ public class FSBANK_PROGRESSITEM extends Struct<FSBANK_PROGRESSITEM> implements 
         STATEDATA = layout.offsetof(3);
     }
 
-    protected FSBANK_PROGRESSITEM(long address, @Nullable ByteBuffer container) {
+    public FSBANK_PROGRESSITEM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FSBANK_PROGRESSITEM create(long address, @Nullable ByteBuffer container) {
-        return new FSBANK_PROGRESSITEM(address, container);
     }
 
     /**

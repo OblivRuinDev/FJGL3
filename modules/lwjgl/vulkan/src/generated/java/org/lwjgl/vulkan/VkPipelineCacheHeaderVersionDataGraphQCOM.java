@@ -63,13 +63,8 @@ public class VkPipelineCacheHeaderVersionDataGraphQCOM extends Struct<VkPipeline
         TOOLCHAINVERSION = layout.offsetof(4);
     }
 
-    protected VkPipelineCacheHeaderVersionDataGraphQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPipelineCacheHeaderVersionDataGraphQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineCacheHeaderVersionDataGraphQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineCacheHeaderVersionDataGraphQCOM(address, container);
     }
 
     /**

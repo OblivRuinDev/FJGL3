@@ -56,13 +56,8 @@ public class XrEventDataSpacesEraseResultMETA extends Struct<XrEventDataSpacesEr
         RESULT = layout.offsetof(3);
     }
 
-    protected XrEventDataSpacesEraseResultMETA(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSpacesEraseResultMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSpacesEraseResultMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSpacesEraseResultMETA(address, container);
     }
 
     /**

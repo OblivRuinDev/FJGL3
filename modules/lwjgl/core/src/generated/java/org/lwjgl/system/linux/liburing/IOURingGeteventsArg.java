@@ -57,13 +57,8 @@ public class IOURingGeteventsArg extends Struct<IOURingGeteventsArg> implements 
         TS = layout.offsetof(3);
     }
 
-    protected IOURingGeteventsArg(long address, @Nullable ByteBuffer container) {
+    public IOURingGeteventsArg(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingGeteventsArg create(long address, @Nullable ByteBuffer container) {
-        return new IOURingGeteventsArg(address, container);
     }
 
     /**

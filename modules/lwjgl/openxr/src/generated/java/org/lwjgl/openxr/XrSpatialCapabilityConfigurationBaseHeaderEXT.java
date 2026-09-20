@@ -61,13 +61,8 @@ public class XrSpatialCapabilityConfigurationBaseHeaderEXT extends Struct<XrSpat
         ENABLEDCOMPONENTS = layout.offsetof(4);
     }
 
-    protected XrSpatialCapabilityConfigurationBaseHeaderEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialCapabilityConfigurationBaseHeaderEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialCapabilityConfigurationBaseHeaderEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialCapabilityConfigurationBaseHeaderEXT(address, container);
     }
 
     /**

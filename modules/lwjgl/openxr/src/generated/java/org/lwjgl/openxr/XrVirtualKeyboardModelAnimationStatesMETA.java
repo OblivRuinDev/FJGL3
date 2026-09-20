@@ -60,13 +60,8 @@ public class XrVirtualKeyboardModelAnimationStatesMETA extends Struct<XrVirtualK
         STATES = layout.offsetof(4);
     }
 
-    protected XrVirtualKeyboardModelAnimationStatesMETA(long address, @Nullable ByteBuffer container) {
+    public XrVirtualKeyboardModelAnimationStatesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVirtualKeyboardModelAnimationStatesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrVirtualKeyboardModelAnimationStatesMETA(address, container);
     }
 
     /**

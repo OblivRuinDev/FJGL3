@@ -60,13 +60,8 @@ public class VkDepthBiasInfoEXT extends Struct<VkDepthBiasInfoEXT> implements Na
         DEPTHBIASSLOPEFACTOR = layout.offsetof(4);
     }
 
-    protected VkDepthBiasInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDepthBiasInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDepthBiasInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDepthBiasInfoEXT(address, container);
     }
 
     /**

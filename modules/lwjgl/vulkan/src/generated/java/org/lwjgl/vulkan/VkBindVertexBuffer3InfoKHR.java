@@ -62,13 +62,8 @@ public class VkBindVertexBuffer3InfoKHR extends Struct<VkBindVertexBuffer3InfoKH
         ADDRESSFLAGS = layout.offsetof(4);
     }
 
-    protected VkBindVertexBuffer3InfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkBindVertexBuffer3InfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindVertexBuffer3InfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkBindVertexBuffer3InfoKHR(address, container);
     }
 
     /**

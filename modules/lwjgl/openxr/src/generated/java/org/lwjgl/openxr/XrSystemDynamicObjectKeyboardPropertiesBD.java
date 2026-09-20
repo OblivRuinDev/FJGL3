@@ -52,13 +52,8 @@ public class XrSystemDynamicObjectKeyboardPropertiesBD extends Struct<XrSystemDy
         SUPPORTSDYNAMICOBJECTKEYBOARD = layout.offsetof(2);
     }
 
-    protected XrSystemDynamicObjectKeyboardPropertiesBD(long address, @Nullable ByteBuffer container) {
+    public XrSystemDynamicObjectKeyboardPropertiesBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemDynamicObjectKeyboardPropertiesBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemDynamicObjectKeyboardPropertiesBD(address, container);
     }
 
     /**

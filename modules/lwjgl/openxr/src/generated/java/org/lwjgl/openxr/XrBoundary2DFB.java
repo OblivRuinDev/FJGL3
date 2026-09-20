@@ -60,13 +60,8 @@ public class XrBoundary2DFB extends Struct<XrBoundary2DFB> implements NativeReso
         VERTICES = layout.offsetof(4);
     }
 
-    protected XrBoundary2DFB(long address, @Nullable ByteBuffer container) {
+    public XrBoundary2DFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBoundary2DFB create(long address, @Nullable ByteBuffer container) {
-        return new XrBoundary2DFB(address, container);
     }
 
     /**

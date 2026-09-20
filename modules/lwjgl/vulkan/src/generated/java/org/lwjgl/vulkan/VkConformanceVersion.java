@@ -56,13 +56,8 @@ public class VkConformanceVersion extends Struct<VkConformanceVersion> implement
         PATCH = layout.offsetof(3);
     }
 
-    protected VkConformanceVersion(long address, @Nullable ByteBuffer container) {
+    public VkConformanceVersion(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkConformanceVersion create(long address, @Nullable ByteBuffer container) {
-        return new VkConformanceVersion(address, container);
     }
 
     /**

@@ -84,13 +84,8 @@ public class XrPassthroughMeshTransformInfoHTC extends Struct<XrPassthroughMeshT
         SCALE = layout.offsetof(9);
     }
 
-    protected XrPassthroughMeshTransformInfoHTC(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughMeshTransformInfoHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughMeshTransformInfoHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughMeshTransformInfoHTC(address, container);
     }
 
     /**

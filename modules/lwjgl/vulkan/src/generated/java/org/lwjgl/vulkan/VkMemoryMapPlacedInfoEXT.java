@@ -52,13 +52,8 @@ public class VkMemoryMapPlacedInfoEXT extends Struct<VkMemoryMapPlacedInfoEXT> i
         PPLACEDADDRESS = layout.offsetof(2);
     }
 
-    protected VkMemoryMapPlacedInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkMemoryMapPlacedInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryMapPlacedInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryMapPlacedInfoEXT(address, container);
     }
 
     /**

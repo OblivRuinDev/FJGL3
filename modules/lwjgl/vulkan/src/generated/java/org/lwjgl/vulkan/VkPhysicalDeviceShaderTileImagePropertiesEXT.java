@@ -60,13 +60,8 @@ public class VkPhysicalDeviceShaderTileImagePropertiesEXT extends Struct<VkPhysi
         SHADERTILEIMAGEREADFROMHELPERINVOCATION = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceShaderTileImagePropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderTileImagePropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderTileImagePropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderTileImagePropertiesEXT(address, container);
     }
 
     /**

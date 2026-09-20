@@ -52,13 +52,8 @@ public class VkPhysicalDeviceVideoEncodeAV1FeaturesKHR extends Struct<VkPhysical
         VIDEOENCODEAV1 = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceVideoEncodeAV1FeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVideoEncodeAV1FeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVideoEncodeAV1FeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVideoEncodeAV1FeaturesKHR(address, container);
     }
 
     /**

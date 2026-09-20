@@ -52,13 +52,8 @@ public class VkPhysicalDeviceExternalMemoryHostPropertiesEXT extends Struct<VkPh
         MINIMPORTEDHOSTPOINTERALIGNMENT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceExternalMemoryHostPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalMemoryHostPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalMemoryHostPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalMemoryHostPropertiesEXT(address, container);
     }
 
     /**

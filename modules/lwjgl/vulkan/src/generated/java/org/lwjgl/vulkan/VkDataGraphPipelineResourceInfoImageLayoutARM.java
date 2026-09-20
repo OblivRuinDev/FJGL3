@@ -52,13 +52,8 @@ public class VkDataGraphPipelineResourceInfoImageLayoutARM extends Struct<VkData
         LAYOUT = layout.offsetof(2);
     }
 
-    protected VkDataGraphPipelineResourceInfoImageLayoutARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineResourceInfoImageLayoutARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineResourceInfoImageLayoutARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineResourceInfoImageLayoutARM(address, container);
     }
 
     /**

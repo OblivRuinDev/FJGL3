@@ -52,13 +52,8 @@ public class VkTextureLODGatherFormatPropertiesAMD extends Struct<VkTextureLODGa
         SUPPORTSTEXTUREGATHERLODBIASAMD = layout.offsetof(2);
     }
 
-    protected VkTextureLODGatherFormatPropertiesAMD(long address, @Nullable ByteBuffer container) {
+    public VkTextureLODGatherFormatPropertiesAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTextureLODGatherFormatPropertiesAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkTextureLODGatherFormatPropertiesAMD(address, container);
     }
 
     /**

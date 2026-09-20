@@ -50,13 +50,8 @@ public class BGFXMemory extends Struct<BGFXMemory> implements NativeResource {
         SIZE = layout.offsetof(1);
     }
 
-    protected BGFXMemory(long address, @Nullable ByteBuffer container) {
+    public BGFXMemory(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXMemory create(long address, @Nullable ByteBuffer container) {
-        return new BGFXMemory(address, container);
     }
 
     /**

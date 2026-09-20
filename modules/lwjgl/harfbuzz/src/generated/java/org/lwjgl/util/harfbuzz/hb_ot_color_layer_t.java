@@ -48,13 +48,8 @@ public class hb_ot_color_layer_t extends Struct<hb_ot_color_layer_t> implements 
         COLOR_INDEX = layout.offsetof(1);
     }
 
-    protected hb_ot_color_layer_t(long address, @Nullable ByteBuffer container) {
+    public hb_ot_color_layer_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_ot_color_layer_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_ot_color_layer_t(address, container);
     }
 
     /**

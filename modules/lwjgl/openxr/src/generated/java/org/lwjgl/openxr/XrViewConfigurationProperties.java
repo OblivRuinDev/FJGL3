@@ -56,13 +56,8 @@ public class XrViewConfigurationProperties extends Struct<XrViewConfigurationPro
         FOVMUTABLE = layout.offsetof(3);
     }
 
-    protected XrViewConfigurationProperties(long address, @Nullable ByteBuffer container) {
+    public XrViewConfigurationProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrViewConfigurationProperties create(long address, @Nullable ByteBuffer container) {
-        return new XrViewConfigurationProperties(address, container);
     }
 
     /**

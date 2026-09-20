@@ -52,13 +52,8 @@ public class VkPhysicalDeviceSamplerYcbcrConversionFeatures extends Struct<VkPhy
         SAMPLERYCBCRCONVERSION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceSamplerYcbcrConversionFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSamplerYcbcrConversionFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSamplerYcbcrConversionFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSamplerYcbcrConversionFeatures(address, container);
     }
 
     /**

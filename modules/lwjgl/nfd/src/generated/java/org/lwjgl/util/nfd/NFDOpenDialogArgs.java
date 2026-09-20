@@ -60,13 +60,8 @@ public class NFDOpenDialogArgs extends Struct<NFDOpenDialogArgs> implements Nati
         PARENTWINDOW = layout.offsetof(3);
     }
 
-    protected NFDOpenDialogArgs(long address, @Nullable ByteBuffer container) {
+    public NFDOpenDialogArgs(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NFDOpenDialogArgs create(long address, @Nullable ByteBuffer container) {
-        return new NFDOpenDialogArgs(address, container);
     }
 
     /**

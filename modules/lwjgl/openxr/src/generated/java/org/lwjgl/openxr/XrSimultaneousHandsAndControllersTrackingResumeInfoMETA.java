@@ -48,13 +48,8 @@ public class XrSimultaneousHandsAndControllersTrackingResumeInfoMETA extends Str
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSimultaneousHandsAndControllersTrackingResumeInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrSimultaneousHandsAndControllersTrackingResumeInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSimultaneousHandsAndControllersTrackingResumeInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSimultaneousHandsAndControllersTrackingResumeInfoMETA(address, container);
     }
 
     /**

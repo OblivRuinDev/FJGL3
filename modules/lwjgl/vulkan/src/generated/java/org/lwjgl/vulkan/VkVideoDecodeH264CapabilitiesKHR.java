@@ -60,13 +60,8 @@ public class VkVideoDecodeH264CapabilitiesKHR extends Struct<VkVideoDecodeH264Ca
         FIELDOFFSETGRANULARITY = layout.offsetof(3);
     }
 
-    protected VkVideoDecodeH264CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeH264CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeH264CapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeH264CapabilitiesKHR(address, container);
     }
 
     /**

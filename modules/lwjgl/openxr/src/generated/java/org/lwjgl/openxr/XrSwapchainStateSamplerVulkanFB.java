@@ -96,13 +96,8 @@ public class XrSwapchainStateSamplerVulkanFB extends Struct<XrSwapchainStateSamp
         BORDERCOLOR = layout.offsetof(12);
     }
 
-    protected XrSwapchainStateSamplerVulkanFB(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainStateSamplerVulkanFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainStateSamplerVulkanFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainStateSamplerVulkanFB(address, container);
     }
 
     /**

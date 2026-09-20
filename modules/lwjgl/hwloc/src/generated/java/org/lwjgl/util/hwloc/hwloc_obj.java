@@ -171,13 +171,8 @@ public class hwloc_obj extends Struct<hwloc_obj> implements NativeResource {
         GP_INDEX = layout.offsetof(31);
     }
 
-    protected hwloc_obj(long address, @Nullable ByteBuffer container) {
+    public hwloc_obj(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_obj create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_obj(address, container);
     }
 
     /**

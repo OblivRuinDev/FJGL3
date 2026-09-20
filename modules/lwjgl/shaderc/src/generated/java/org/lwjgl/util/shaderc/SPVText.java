@@ -49,13 +49,8 @@ public class SPVText extends Struct<SPVText> implements NativeResource {
         LENGTH = layout.offsetof(1);
     }
 
-    protected SPVText(long address, @Nullable ByteBuffer container) {
+    public SPVText(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SPVText create(long address, @Nullable ByteBuffer container) {
-        return new SPVText(address, container);
     }
 
     /**

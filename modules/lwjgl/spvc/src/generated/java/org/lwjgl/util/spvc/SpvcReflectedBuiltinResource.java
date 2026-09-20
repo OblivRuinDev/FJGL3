@@ -55,13 +55,8 @@ public class SpvcReflectedBuiltinResource extends Struct<SpvcReflectedBuiltinRes
         RESOURCE = layout.offsetof(2);
     }
 
-    protected SpvcReflectedBuiltinResource(long address, @Nullable ByteBuffer container) {
+    public SpvcReflectedBuiltinResource(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcReflectedBuiltinResource create(long address, @Nullable ByteBuffer container) {
-        return new SpvcReflectedBuiltinResource(address, container);
     }
 
     /**

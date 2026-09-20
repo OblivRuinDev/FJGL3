@@ -68,13 +68,8 @@ public class VmaDefragmentationInfo extends Struct<VmaDefragmentationInfo> imple
         PBREAKCALLBACKUSERDATA = layout.offsetof(5);
     }
 
-    protected VmaDefragmentationInfo(long address, @Nullable ByteBuffer container) {
+    public VmaDefragmentationInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaDefragmentationInfo create(long address, @Nullable ByteBuffer container) {
-        return new VmaDefragmentationInfo(address, container);
     }
 
     /**

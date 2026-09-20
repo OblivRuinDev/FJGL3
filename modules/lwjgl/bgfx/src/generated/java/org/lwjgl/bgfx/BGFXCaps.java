@@ -89,13 +89,8 @@ public class BGFXCaps extends Struct<BGFXCaps> {
         CODECS = layout.offsetof(10);
     }
 
-    protected BGFXCaps(long address, @Nullable ByteBuffer container) {
+    public BGFXCaps(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXCaps create(long address, @Nullable ByteBuffer container) {
-        return new BGFXCaps(address, container);
     }
 
     /**

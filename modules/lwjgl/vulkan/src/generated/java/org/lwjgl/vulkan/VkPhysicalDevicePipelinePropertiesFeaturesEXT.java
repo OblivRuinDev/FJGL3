@@ -52,13 +52,8 @@ public class VkPhysicalDevicePipelinePropertiesFeaturesEXT extends Struct<VkPhys
         PIPELINEPROPERTIESIDENTIFIER = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePipelinePropertiesFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePipelinePropertiesFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePipelinePropertiesFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePipelinePropertiesFeaturesEXT(address, container);
     }
 
     /**

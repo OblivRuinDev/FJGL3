@@ -57,13 +57,8 @@ public class XrSpaceUuidFilterInfoFB extends Struct<XrSpaceUuidFilterInfoFB> imp
         UUIDS = layout.offsetof(3);
     }
 
-    protected XrSpaceUuidFilterInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceUuidFilterInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceUuidFilterInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceUuidFilterInfoFB(address, container);
     }
 
     /**

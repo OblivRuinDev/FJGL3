@@ -58,13 +58,8 @@ public class XrRenderModelPropertiesEXT extends Struct<XrRenderModelPropertiesEX
         ANIMATABLENODECOUNT = layout.offsetof(3);
     }
 
-    protected XrRenderModelPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelPropertiesEXT(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class XrRecommendedLayerResolutionMETA extends Struct<XrRecommendedLayerR
         ISVALID = layout.offsetof(3);
     }
 
-    protected XrRecommendedLayerResolutionMETA(long address, @Nullable ByteBuffer container) {
+    public XrRecommendedLayerResolutionMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRecommendedLayerResolutionMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrRecommendedLayerResolutionMETA(address, container);
     }
 
     /**

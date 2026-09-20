@@ -59,13 +59,8 @@ public class VkPhysicalDeviceMemoryBudgetPropertiesEXT extends Struct<VkPhysical
         HEAPUSAGE = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceMemoryBudgetPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMemoryBudgetPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMemoryBudgetPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMemoryBudgetPropertiesEXT(address, container);
     }
 
     /**

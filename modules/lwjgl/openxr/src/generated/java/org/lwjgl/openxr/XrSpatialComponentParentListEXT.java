@@ -57,13 +57,8 @@ public class XrSpatialComponentParentListEXT extends Struct<XrSpatialComponentPa
         PARENTS = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentParentListEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentParentListEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentParentListEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentParentListEXT(address, container);
     }
 
     /**

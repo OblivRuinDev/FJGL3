@@ -54,13 +54,8 @@ public class XrRoomMeshFaceMETA extends Struct<XrRoomMeshFaceMETA> implements Na
         SEMANTICLABEL = layout.offsetof(2);
     }
 
-    protected XrRoomMeshFaceMETA(long address, @Nullable ByteBuffer container) {
+    public XrRoomMeshFaceMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRoomMeshFaceMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrRoomMeshFaceMETA(address, container);
     }
 
     /**

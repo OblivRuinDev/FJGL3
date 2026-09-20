@@ -49,13 +49,8 @@ public class XrBaseInStructure extends Struct<XrBaseInStructure> implements Nati
         NEXT = layout.offsetof(1);
     }
 
-    protected XrBaseInStructure(long address, @Nullable ByteBuffer container) {
+    public XrBaseInStructure(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBaseInStructure create(long address, @Nullable ByteBuffer container) {
-        return new XrBaseInStructure(address, container);
     }
 
     /**

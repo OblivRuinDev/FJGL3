@@ -72,13 +72,8 @@ public class VkPhysicalDeviceDrmPropertiesEXT extends Struct<VkPhysicalDeviceDrm
         RENDERMINOR = layout.offsetof(7);
     }
 
-    protected VkPhysicalDeviceDrmPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDrmPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDrmPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDrmPropertiesEXT(address, container);
     }
 
     /**

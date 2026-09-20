@@ -48,13 +48,8 @@ public class VkDescriptorMappingSourceIndirectAddressEXT extends Struct<VkDescri
         ADDRESSOFFSET = layout.offsetof(1);
     }
 
-    protected VkDescriptorMappingSourceIndirectAddressEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorMappingSourceIndirectAddressEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorMappingSourceIndirectAddressEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorMappingSourceIndirectAddressEXT(address, container);
     }
 
     /**

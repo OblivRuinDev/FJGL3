@@ -168,13 +168,8 @@ public class FT_Face extends Struct<FT_Face> {
         INTERNAL = layout.offsetof(30);
     }
 
-    protected FT_Face(long address, @Nullable ByteBuffer container) {
+    public FT_Face(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Face create(long address, @Nullable ByteBuffer container) {
-        return new FT_Face(address, container);
     }
 
     /**

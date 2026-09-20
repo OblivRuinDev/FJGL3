@@ -64,13 +64,8 @@ public class XrEventDataPerfSettingsEXT extends Struct<XrEventDataPerfSettingsEX
         TOLEVEL = layout.offsetof(5);
     }
 
-    protected XrEventDataPerfSettingsEXT(long address, @Nullable ByteBuffer container) {
+    public XrEventDataPerfSettingsEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataPerfSettingsEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataPerfSettingsEXT(address, container);
     }
 
     /**

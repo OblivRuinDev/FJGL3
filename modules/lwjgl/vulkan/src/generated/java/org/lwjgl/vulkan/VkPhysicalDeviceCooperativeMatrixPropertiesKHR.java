@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCooperativeMatrixPropertiesKHR extends Struct<VkPhy
         COOPERATIVEMATRIXSUPPORTEDSTAGES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCooperativeMatrixPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCooperativeMatrixPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCooperativeMatrixPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCooperativeMatrixPropertiesKHR(address, container);
     }
 
     /**

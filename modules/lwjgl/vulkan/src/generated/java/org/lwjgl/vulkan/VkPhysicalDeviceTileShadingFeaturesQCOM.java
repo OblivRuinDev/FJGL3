@@ -104,13 +104,8 @@ public class VkPhysicalDeviceTileShadingFeaturesQCOM extends Struct<VkPhysicalDe
         TILESHADINGIMAGEPROCESSING = layout.offsetof(15);
     }
 
-    protected VkPhysicalDeviceTileShadingFeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTileShadingFeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTileShadingFeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTileShadingFeaturesQCOM(address, container);
     }
 
     /**

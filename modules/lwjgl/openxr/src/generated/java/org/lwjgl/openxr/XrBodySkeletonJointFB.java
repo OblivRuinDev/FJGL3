@@ -54,13 +54,8 @@ public class XrBodySkeletonJointFB extends Struct<XrBodySkeletonJointFB> impleme
         POSE = layout.offsetof(2);
     }
 
-    protected XrBodySkeletonJointFB(long address, @Nullable ByteBuffer container) {
+    public XrBodySkeletonJointFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodySkeletonJointFB create(long address, @Nullable ByteBuffer container) {
-        return new XrBodySkeletonJointFB(address, container);
     }
 
     /**

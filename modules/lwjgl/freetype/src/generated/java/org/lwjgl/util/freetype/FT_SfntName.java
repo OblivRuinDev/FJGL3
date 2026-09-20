@@ -64,13 +64,8 @@ public class FT_SfntName extends Struct<FT_SfntName> implements NativeResource {
         STRING_LEN = layout.offsetof(5);
     }
 
-    protected FT_SfntName(long address, @Nullable ByteBuffer container) {
+    public FT_SfntName(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_SfntName create(long address, @Nullable ByteBuffer container) {
-        return new FT_SfntName(address, container);
     }
 
     /**

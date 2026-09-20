@@ -54,13 +54,8 @@ public class spng_iccp extends Struct<spng_iccp> implements NativeResource {
         PROFILE = layout.offsetof(2);
     }
 
-    protected spng_iccp(long address, @Nullable ByteBuffer container) {
+    public spng_iccp(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_iccp create(long address, @Nullable ByteBuffer container) {
-        return new spng_iccp(address, container);
     }
 
     /**

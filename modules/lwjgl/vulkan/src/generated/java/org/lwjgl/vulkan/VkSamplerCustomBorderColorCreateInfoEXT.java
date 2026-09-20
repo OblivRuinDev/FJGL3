@@ -58,13 +58,8 @@ public class VkSamplerCustomBorderColorCreateInfoEXT extends Struct<VkSamplerCus
         FORMAT = layout.offsetof(3);
     }
 
-    protected VkSamplerCustomBorderColorCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkSamplerCustomBorderColorCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerCustomBorderColorCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerCustomBorderColorCreateInfoEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkSamplerCaptureDescriptorDataInfoEXT extends Struct<VkSamplerCaptu
         SAMPLER = layout.offsetof(2);
     }
 
-    protected VkSamplerCaptureDescriptorDataInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkSamplerCaptureDescriptorDataInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerCaptureDescriptorDataInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerCaptureDescriptorDataInfoEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV extends Struct
         EXTENDEDSPARSEADDRESSSPACE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV(address, container);
     }
 
     /**

@@ -236,13 +236,8 @@ public class VkPhysicalDeviceVulkan12Features extends Struct<VkPhysicalDeviceVul
         SUBGROUPBROADCASTDYNAMICID = layout.offsetof(48);
     }
 
-    protected VkPhysicalDeviceVulkan12Features(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVulkan12Features(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVulkan12Features create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVulkan12Features(address, container);
     }
 
     /**

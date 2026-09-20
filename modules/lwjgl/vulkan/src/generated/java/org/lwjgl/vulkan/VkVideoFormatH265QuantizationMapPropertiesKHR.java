@@ -52,13 +52,8 @@ public class VkVideoFormatH265QuantizationMapPropertiesKHR extends Struct<VkVide
         COMPATIBLECTBSIZES = layout.offsetof(2);
     }
 
-    protected VkVideoFormatH265QuantizationMapPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoFormatH265QuantizationMapPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoFormatH265QuantizationMapPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoFormatH265QuantizationMapPropertiesKHR(address, container);
     }
 
     /**

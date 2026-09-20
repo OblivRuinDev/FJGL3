@@ -54,13 +54,8 @@ public class VkMultisamplePropertiesEXT extends Struct<VkMultisamplePropertiesEX
         MAXSAMPLELOCATIONGRIDSIZE = layout.offsetof(2);
     }
 
-    protected VkMultisamplePropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkMultisamplePropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMultisamplePropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMultisamplePropertiesEXT(address, container);
     }
 
     /**

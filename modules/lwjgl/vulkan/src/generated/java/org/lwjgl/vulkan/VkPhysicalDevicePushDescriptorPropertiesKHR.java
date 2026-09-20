@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDevicePushDescriptorPropertiesKHR extends VkPhysicalDevicePushDescriptorProperties {
 
-    protected VkPhysicalDevicePushDescriptorPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePushDescriptorPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePushDescriptorPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePushDescriptorPropertiesKHR(address, container);
     }
 
     /**

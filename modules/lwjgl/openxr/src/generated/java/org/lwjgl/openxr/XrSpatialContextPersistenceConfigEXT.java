@@ -57,13 +57,8 @@ public class XrSpatialContextPersistenceConfigEXT extends Struct<XrSpatialContex
         PERSISTENCECONTEXTS = layout.offsetof(3);
     }
 
-    protected XrSpatialContextPersistenceConfigEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialContextPersistenceConfigEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialContextPersistenceConfigEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialContextPersistenceConfigEXT(address, container);
     }
 
     /**

@@ -61,13 +61,8 @@ public class XrSpatialCapabilityConfigurationAnchorEXT extends Struct<XrSpatialC
         ENABLEDCOMPONENTS = layout.offsetof(4);
     }
 
-    protected XrSpatialCapabilityConfigurationAnchorEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialCapabilityConfigurationAnchorEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialCapabilityConfigurationAnchorEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialCapabilityConfigurationAnchorEXT(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class VkDirectFBSurfaceCreateInfoEXT extends Struct<VkDirectFBSurfaceCrea
         SURFACE = layout.offsetof(4);
     }
 
-    protected VkDirectFBSurfaceCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDirectFBSurfaceCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDirectFBSurfaceCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDirectFBSurfaceCreateInfoEXT(address, container);
     }
 
     /**

@@ -101,13 +101,8 @@ public class XKeyEvent extends Struct<XKeyEvent> implements NativeResource {
         SAME_SCREEN = layout.offsetof(14);
     }
 
-    protected XKeyEvent(long address, @Nullable ByteBuffer container) {
+    public XKeyEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XKeyEvent create(long address, @Nullable ByteBuffer container) {
-        return new XKeyEvent(address, container);
     }
 
     /**

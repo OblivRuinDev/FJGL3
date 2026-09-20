@@ -52,13 +52,8 @@ public class VkAttachmentFeedbackLoopInfoEXT extends Struct<VkAttachmentFeedback
         FEEDBACKLOOPENABLE = layout.offsetof(2);
     }
 
-    protected VkAttachmentFeedbackLoopInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkAttachmentFeedbackLoopInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAttachmentFeedbackLoopInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkAttachmentFeedbackLoopInfoEXT(address, container);
     }
 
     /**

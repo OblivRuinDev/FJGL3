@@ -56,13 +56,8 @@ public class XrSceneMarkerTypeFilterMSFT extends Struct<XrSceneMarkerTypeFilterM
         MARKERTYPES = layout.offsetof(3);
     }
 
-    protected XrSceneMarkerTypeFilterMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneMarkerTypeFilterMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMarkerTypeFilterMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMarkerTypeFilterMSFT(address, container);
     }
 
     /**

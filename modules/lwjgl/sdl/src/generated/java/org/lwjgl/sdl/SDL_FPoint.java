@@ -48,13 +48,8 @@ public class SDL_FPoint extends Struct<SDL_FPoint> implements NativeResource {
         Y = layout.offsetof(1);
     }
 
-    protected SDL_FPoint(long address, @Nullable ByteBuffer container) {
+    public SDL_FPoint(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_FPoint create(long address, @Nullable ByteBuffer container) {
-        return new SDL_FPoint(address, container);
     }
 
     /**

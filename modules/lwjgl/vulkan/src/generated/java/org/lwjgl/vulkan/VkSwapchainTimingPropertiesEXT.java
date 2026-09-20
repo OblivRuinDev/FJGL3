@@ -56,13 +56,8 @@ public class VkSwapchainTimingPropertiesEXT extends Struct<VkSwapchainTimingProp
         REFRESHINTERVAL = layout.offsetof(3);
     }
 
-    protected VkSwapchainTimingPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainTimingPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainTimingPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainTimingPropertiesEXT(address, container);
     }
 
     /**

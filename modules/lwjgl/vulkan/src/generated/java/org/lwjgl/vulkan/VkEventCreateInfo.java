@@ -52,13 +52,8 @@ public class VkEventCreateInfo extends Struct<VkEventCreateInfo> implements Nati
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkEventCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkEventCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkEventCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkEventCreateInfo(address, container);
     }
 
     /**

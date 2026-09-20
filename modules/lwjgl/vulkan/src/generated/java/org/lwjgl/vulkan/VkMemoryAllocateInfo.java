@@ -56,13 +56,8 @@ public class VkMemoryAllocateInfo extends Struct<VkMemoryAllocateInfo> implement
         MEMORYTYPEINDEX = layout.offsetof(3);
     }
 
-    protected VkMemoryAllocateInfo(long address, @Nullable ByteBuffer container) {
+    public VkMemoryAllocateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryAllocateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryAllocateInfo(address, container);
     }
 
     /**

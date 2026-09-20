@@ -66,13 +66,8 @@ public class VkPhysicalDeviceTileShadingPropertiesQCOM extends Struct<VkPhysical
         MAXTILESHADINGRATE = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceTileShadingPropertiesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTileShadingPropertiesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTileShadingPropertiesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTileShadingPropertiesQCOM(address, container);
     }
 
     /**

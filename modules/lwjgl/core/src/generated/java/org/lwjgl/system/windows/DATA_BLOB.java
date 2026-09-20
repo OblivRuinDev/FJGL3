@@ -49,13 +49,8 @@ public class DATA_BLOB extends Struct<DATA_BLOB> implements NativeResource {
         PBDATA = layout.offsetof(1);
     }
 
-    protected DATA_BLOB(long address, @Nullable ByteBuffer container) {
+    public DATA_BLOB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected DATA_BLOB create(long address, @Nullable ByteBuffer container) {
-        return new DATA_BLOB(address, container);
     }
 
     /**

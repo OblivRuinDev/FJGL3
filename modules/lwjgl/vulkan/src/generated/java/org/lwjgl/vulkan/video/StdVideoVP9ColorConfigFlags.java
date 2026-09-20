@@ -45,13 +45,8 @@ public class StdVideoVP9ColorConfigFlags extends Struct<StdVideoVP9ColorConfigFl
         BITFIELD0 = layout.offsetof(0);
     }
 
-    protected StdVideoVP9ColorConfigFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoVP9ColorConfigFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoVP9ColorConfigFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoVP9ColorConfigFlags(address, container);
     }
 
     /**

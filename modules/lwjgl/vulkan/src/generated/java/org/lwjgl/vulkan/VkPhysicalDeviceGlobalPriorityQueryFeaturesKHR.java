@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceGlobalPriorityQueryFeaturesKHR extends VkPhysicalDeviceGlobalPriorityQueryFeatures {
 
-    protected VkPhysicalDeviceGlobalPriorityQueryFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceGlobalPriorityQueryFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceGlobalPriorityQueryFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceGlobalPriorityQueryFeaturesKHR(address, container);
     }
 
     /**

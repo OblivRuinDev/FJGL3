@@ -52,13 +52,8 @@ public class VkMultiDrawIndexedInfoEXT extends Struct<VkMultiDrawIndexedInfoEXT>
         VERTEXOFFSET = layout.offsetof(2);
     }
 
-    protected VkMultiDrawIndexedInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkMultiDrawIndexedInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMultiDrawIndexedInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMultiDrawIndexedInfoEXT(address, container);
     }
 
     /**

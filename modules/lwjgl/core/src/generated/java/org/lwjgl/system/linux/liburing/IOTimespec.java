@@ -49,13 +49,8 @@ public class IOTimespec extends Struct<IOTimespec> implements NativeResource {
         TV_NSEC = layout.offsetof(1);
     }
 
-    protected IOTimespec(long address, @Nullable ByteBuffer container) {
+    public IOTimespec(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOTimespec create(long address, @Nullable ByteBuffer container) {
-        return new IOTimespec(address, container);
     }
 
     /**

@@ -50,13 +50,8 @@ public class XrSpatialPersistenceDataEXT extends Struct<XrSpatialPersistenceData
         PERSISTSTATE = layout.offsetof(1);
     }
 
-    protected XrSpatialPersistenceDataEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialPersistenceDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialPersistenceDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialPersistenceDataEXT(address, container);
     }
 
     /**

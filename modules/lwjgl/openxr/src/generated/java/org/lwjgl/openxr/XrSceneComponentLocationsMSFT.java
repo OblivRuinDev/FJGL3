@@ -56,13 +56,8 @@ public class XrSceneComponentLocationsMSFT extends Struct<XrSceneComponentLocati
         LOCATIONS = layout.offsetof(3);
     }
 
-    protected XrSceneComponentLocationsMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneComponentLocationsMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneComponentLocationsMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneComponentLocationsMSFT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV extend
         CLUSTERREFERENCES = layout.offsetof(2);
     }
 
-    protected VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV(address, container);
     }
 
     /**

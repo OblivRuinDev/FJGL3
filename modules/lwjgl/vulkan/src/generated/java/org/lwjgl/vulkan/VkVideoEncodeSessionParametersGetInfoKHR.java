@@ -52,13 +52,8 @@ public class VkVideoEncodeSessionParametersGetInfoKHR extends Struct<VkVideoEnco
         VIDEOSESSIONPARAMETERS = layout.offsetof(2);
     }
 
-    protected VkVideoEncodeSessionParametersGetInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeSessionParametersGetInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeSessionParametersGetInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeSessionParametersGetInfoKHR(address, container);
     }
 
     /**

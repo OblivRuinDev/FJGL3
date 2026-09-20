@@ -56,13 +56,8 @@ public class XrSceneObjectTypesFilterInfoMSFT extends Struct<XrSceneObjectTypesF
         OBJECTTYPES = layout.offsetof(3);
     }
 
-    protected XrSceneObjectTypesFilterInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneObjectTypesFilterInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneObjectTypesFilterInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneObjectTypesFilterInfoMSFT(address, container);
     }
 
     /**

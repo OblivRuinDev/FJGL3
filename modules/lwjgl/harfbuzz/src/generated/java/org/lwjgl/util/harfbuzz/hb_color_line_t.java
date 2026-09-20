@@ -100,13 +100,8 @@ public class hb_color_line_t extends Struct<hb_color_line_t> implements NativeRe
         RESERVED8 = layout.offsetof(13);
     }
 
-    protected hb_color_line_t(long address, @Nullable ByteBuffer container) {
+    public hb_color_line_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_color_line_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_color_line_t(address, container);
     }
 
     /**

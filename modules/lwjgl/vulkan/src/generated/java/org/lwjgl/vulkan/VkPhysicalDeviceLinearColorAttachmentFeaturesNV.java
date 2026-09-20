@@ -52,13 +52,8 @@ public class VkPhysicalDeviceLinearColorAttachmentFeaturesNV extends Struct<VkPh
         LINEARCOLORATTACHMENT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceLinearColorAttachmentFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceLinearColorAttachmentFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceLinearColorAttachmentFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceLinearColorAttachmentFeaturesNV(address, container);
     }
 
     /**

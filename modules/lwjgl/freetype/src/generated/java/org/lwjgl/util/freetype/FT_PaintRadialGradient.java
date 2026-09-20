@@ -61,13 +61,8 @@ public class FT_PaintRadialGradient extends Struct<FT_PaintRadialGradient> {
         R1 = layout.offsetof(4);
     }
 
-    protected FT_PaintRadialGradient(long address, @Nullable ByteBuffer container) {
+    public FT_PaintRadialGradient(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintRadialGradient create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintRadialGradient(address, container);
     }
 
     /**

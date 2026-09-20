@@ -51,13 +51,8 @@ public class NSVGImage extends Struct<NSVGImage> {
         SHAPES = layout.offsetof(2);
     }
 
-    protected NSVGImage(long address, @Nullable ByteBuffer container) {
+    public NSVGImage(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NSVGImage create(long address, @Nullable ByteBuffer container) {
-        return new NSVGImage(address, container);
     }
 
     /**

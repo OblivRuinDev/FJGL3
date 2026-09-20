@@ -103,13 +103,8 @@ public class TT_VertHeader extends Struct<TT_VertHeader> {
         SHORT_METRICS = layout.offsetof(15);
     }
 
-    protected TT_VertHeader(long address, @Nullable ByteBuffer container) {
+    public TT_VertHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected TT_VertHeader create(long address, @Nullable ByteBuffer container) {
-        return new TT_VertHeader(address, container);
     }
 
     /**

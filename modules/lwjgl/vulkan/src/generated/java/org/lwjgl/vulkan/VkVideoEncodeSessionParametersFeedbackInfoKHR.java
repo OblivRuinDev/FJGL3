@@ -52,13 +52,8 @@ public class VkVideoEncodeSessionParametersFeedbackInfoKHR extends Struct<VkVide
         HASOVERRIDES = layout.offsetof(2);
     }
 
-    protected VkVideoEncodeSessionParametersFeedbackInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeSessionParametersFeedbackInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeSessionParametersFeedbackInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeSessionParametersFeedbackInfoKHR(address, container);
     }
 
     /**

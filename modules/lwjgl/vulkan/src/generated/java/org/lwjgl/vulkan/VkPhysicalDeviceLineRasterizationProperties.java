@@ -52,13 +52,8 @@ public class VkPhysicalDeviceLineRasterizationProperties extends Struct<VkPhysic
         LINESUBPIXELPRECISIONBITS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceLineRasterizationProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceLineRasterizationProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceLineRasterizationProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceLineRasterizationProperties(address, container);
     }
 
     /**

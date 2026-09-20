@@ -53,13 +53,8 @@ public class XrGraphicsBindingOpenGLWaylandKHR extends Struct<XrGraphicsBindingO
         DISPLAY = layout.offsetof(2);
     }
 
-    protected XrGraphicsBindingOpenGLWaylandKHR(long address, @Nullable ByteBuffer container) {
+    public XrGraphicsBindingOpenGLWaylandKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGraphicsBindingOpenGLWaylandKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrGraphicsBindingOpenGLWaylandKHR(address, container);
     }
 
     /**

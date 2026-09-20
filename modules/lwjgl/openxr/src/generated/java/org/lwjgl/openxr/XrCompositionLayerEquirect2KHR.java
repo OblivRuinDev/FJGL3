@@ -88,13 +88,8 @@ public class XrCompositionLayerEquirect2KHR extends Struct<XrCompositionLayerEqu
         LOWERVERTICALANGLE = layout.offsetof(10);
     }
 
-    protected XrCompositionLayerEquirect2KHR(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerEquirect2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerEquirect2KHR create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerEquirect2KHR(address, container);
     }
 
     /**

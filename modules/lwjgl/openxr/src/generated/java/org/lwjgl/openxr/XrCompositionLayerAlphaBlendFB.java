@@ -64,13 +64,8 @@ public class XrCompositionLayerAlphaBlendFB extends Struct<XrCompositionLayerAlp
         DSTFACTORALPHA = layout.offsetof(5);
     }
 
-    protected XrCompositionLayerAlphaBlendFB(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerAlphaBlendFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerAlphaBlendFB create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerAlphaBlendFB(address, container);
     }
 
     /**

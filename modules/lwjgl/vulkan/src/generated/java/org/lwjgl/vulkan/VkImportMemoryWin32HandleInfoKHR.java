@@ -63,13 +63,8 @@ public class VkImportMemoryWin32HandleInfoKHR extends Struct<VkImportMemoryWin32
         NAME = layout.offsetof(4);
     }
 
-    protected VkImportMemoryWin32HandleInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkImportMemoryWin32HandleInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImportMemoryWin32HandleInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkImportMemoryWin32HandleInfoKHR(address, container);
     }
 
     /**

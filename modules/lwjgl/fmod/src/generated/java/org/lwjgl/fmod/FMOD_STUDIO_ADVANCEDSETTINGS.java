@@ -69,13 +69,8 @@ public class FMOD_STUDIO_ADVANCEDSETTINGS extends Struct<FMOD_STUDIO_ADVANCEDSET
         ENCRYPTIONKEY = layout.offsetof(6);
     }
 
-    protected FMOD_STUDIO_ADVANCEDSETTINGS(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_ADVANCEDSETTINGS(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_ADVANCEDSETTINGS create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_ADVANCEDSETTINGS(address, container);
     }
 
     /**

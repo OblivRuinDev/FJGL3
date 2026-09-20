@@ -50,13 +50,8 @@ public class Sockaddr extends Struct<Sockaddr> implements NativeResource {
         SA_DATA = layout.offsetof(1);
     }
 
-    protected Sockaddr(long address, @Nullable ByteBuffer container) {
+    public Sockaddr(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected Sockaddr create(long address, @Nullable ByteBuffer container) {
-        return new Sockaddr(address, container);
     }
 
     /**

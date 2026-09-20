@@ -52,13 +52,8 @@ public class XrSwapchainCreateInfoFoveationFB extends Struct<XrSwapchainCreateIn
         FLAGS = layout.offsetof(2);
     }
 
-    protected XrSwapchainCreateInfoFoveationFB(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainCreateInfoFoveationFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainCreateInfoFoveationFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainCreateInfoFoveationFB(address, container);
     }
 
     /**

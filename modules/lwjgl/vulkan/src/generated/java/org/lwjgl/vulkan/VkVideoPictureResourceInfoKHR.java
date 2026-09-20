@@ -67,13 +67,8 @@ public class VkVideoPictureResourceInfoKHR extends Struct<VkVideoPictureResource
         IMAGEVIEWBINDING = layout.offsetof(5);
     }
 
-    protected VkVideoPictureResourceInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoPictureResourceInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoPictureResourceInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoPictureResourceInfoKHR(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrHandTrackingUnextrapolatedPosesMETA extends Struct<XrHandTracking
         CAPTURETIME = layout.offsetof(2);
     }
 
-    protected XrHandTrackingUnextrapolatedPosesMETA(long address, @Nullable ByteBuffer container) {
+    public XrHandTrackingUnextrapolatedPosesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandTrackingUnextrapolatedPosesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrHandTrackingUnextrapolatedPosesMETA(address, container);
     }
 
     /**

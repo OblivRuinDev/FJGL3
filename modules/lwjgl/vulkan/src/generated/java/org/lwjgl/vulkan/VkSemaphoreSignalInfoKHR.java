@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSemaphoreSignalInfoKHR extends VkSemaphoreSignalInfo {
 
-    protected VkSemaphoreSignalInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkSemaphoreSignalInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSemaphoreSignalInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSemaphoreSignalInfoKHR(address, container);
     }
 
     /**

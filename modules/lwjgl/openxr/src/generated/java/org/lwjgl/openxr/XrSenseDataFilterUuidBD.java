@@ -57,13 +57,8 @@ public class XrSenseDataFilterUuidBD extends Struct<XrSenseDataFilterUuidBD> imp
         UUIDS = layout.offsetof(3);
     }
 
-    protected XrSenseDataFilterUuidBD(long address, @Nullable ByteBuffer container) {
+    public XrSenseDataFilterUuidBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSenseDataFilterUuidBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSenseDataFilterUuidBD(address, container);
     }
 
     /**

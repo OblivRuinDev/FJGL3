@@ -62,13 +62,8 @@ public class VkCopyMemoryToMicromapInfoEXT extends Struct<VkCopyMemoryToMicromap
         MODE = layout.offsetof(4);
     }
 
-    protected VkCopyMemoryToMicromapInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkCopyMemoryToMicromapInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyMemoryToMicromapInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyMemoryToMicromapInfoEXT(address, container);
     }
 
     /**

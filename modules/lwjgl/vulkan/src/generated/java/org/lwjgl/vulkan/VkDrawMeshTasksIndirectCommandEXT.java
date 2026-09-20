@@ -52,13 +52,8 @@ public class VkDrawMeshTasksIndirectCommandEXT extends Struct<VkDrawMeshTasksInd
         GROUPCOUNTZ = layout.offsetof(2);
     }
 
-    protected VkDrawMeshTasksIndirectCommandEXT(long address, @Nullable ByteBuffer container) {
+    public VkDrawMeshTasksIndirectCommandEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDrawMeshTasksIndirectCommandEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDrawMeshTasksIndirectCommandEXT(address, container);
     }
 
     /**

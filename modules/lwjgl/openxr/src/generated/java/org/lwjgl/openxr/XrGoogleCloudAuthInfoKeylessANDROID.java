@@ -48,13 +48,8 @@ public class XrGoogleCloudAuthInfoKeylessANDROID extends Struct<XrGoogleCloudAut
         NEXT = layout.offsetof(1);
     }
 
-    protected XrGoogleCloudAuthInfoKeylessANDROID(long address, @Nullable ByteBuffer container) {
+    public XrGoogleCloudAuthInfoKeylessANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGoogleCloudAuthInfoKeylessANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrGoogleCloudAuthInfoKeylessANDROID(address, container);
     }
 
     /**

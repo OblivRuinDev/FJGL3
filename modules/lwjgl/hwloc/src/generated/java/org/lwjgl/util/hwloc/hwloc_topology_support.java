@@ -55,13 +55,8 @@ public class hwloc_topology_support extends Struct<hwloc_topology_support> {
         MISC = layout.offsetof(3);
     }
 
-    protected hwloc_topology_support(long address, @Nullable ByteBuffer container) {
+    public hwloc_topology_support(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_topology_support create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_topology_support(address, container);
     }
 
     /**

@@ -66,13 +66,8 @@ public class IOURingCloneBuffers extends Struct<IOURingCloneBuffers> implements 
         PAD = layout.offsetof(5);
     }
 
-    protected IOURingCloneBuffers(long address, @Nullable ByteBuffer container) {
+    public IOURingCloneBuffers(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingCloneBuffers create(long address, @Nullable ByteBuffer container) {
-        return new IOURingCloneBuffers(address, container);
     }
 
     /**

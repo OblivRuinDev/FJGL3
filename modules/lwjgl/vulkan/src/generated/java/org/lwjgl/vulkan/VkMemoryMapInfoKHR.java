@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkMemoryMapInfoKHR extends VkMemoryMapInfo {
 
-    protected VkMemoryMapInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkMemoryMapInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryMapInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryMapInfoKHR(address, container);
     }
 
     /**

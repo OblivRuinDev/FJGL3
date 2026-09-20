@@ -47,13 +47,8 @@ public class CXToken extends Struct<CXToken> {
         PTR_DATA = layout.offsetof(1);
     }
 
-    protected CXToken(long address, @Nullable ByteBuffer container) {
+    public CXToken(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXToken create(long address, @Nullable ByteBuffer container) {
-        return new CXToken(address, container);
     }
 
     /**

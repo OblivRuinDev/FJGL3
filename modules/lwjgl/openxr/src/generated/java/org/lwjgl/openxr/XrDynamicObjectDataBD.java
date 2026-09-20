@@ -52,13 +52,8 @@ public class XrDynamicObjectDataBD extends Struct<XrDynamicObjectDataBD> impleme
         OBJECTTYPE = layout.offsetof(2);
     }
 
-    protected XrDynamicObjectDataBD(long address, @Nullable ByteBuffer container) {
+    public XrDynamicObjectDataBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrDynamicObjectDataBD create(long address, @Nullable ByteBuffer container) {
-        return new XrDynamicObjectDataBD(address, container);
     }
 
     /**

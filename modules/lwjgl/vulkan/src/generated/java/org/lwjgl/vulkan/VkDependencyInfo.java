@@ -77,13 +77,8 @@ public class VkDependencyInfo extends Struct<VkDependencyInfo> implements Native
         PIMAGEMEMORYBARRIERS = layout.offsetof(8);
     }
 
-    protected VkDependencyInfo(long address, @Nullable ByteBuffer container) {
+    public VkDependencyInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDependencyInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDependencyInfo(address, container);
     }
 
     /**

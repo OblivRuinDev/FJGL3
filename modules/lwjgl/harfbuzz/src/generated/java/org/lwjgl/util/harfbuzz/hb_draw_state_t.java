@@ -90,13 +90,8 @@ public class hb_draw_state_t extends Struct<hb_draw_state_t> implements NativeRe
         RESERVED7 = layout.offsetof(11);
     }
 
-    protected hb_draw_state_t(long address, @Nullable ByteBuffer container) {
+    public hb_draw_state_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_draw_state_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_draw_state_t(address, container);
     }
 
     /**

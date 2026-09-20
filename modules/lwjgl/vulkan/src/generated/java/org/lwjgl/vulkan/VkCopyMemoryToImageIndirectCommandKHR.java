@@ -68,13 +68,8 @@ public class VkCopyMemoryToImageIndirectCommandKHR extends Struct<VkCopyMemoryTo
         IMAGEEXTENT = layout.offsetof(5);
     }
 
-    protected VkCopyMemoryToImageIndirectCommandKHR(long address, @Nullable ByteBuffer container) {
+    public VkCopyMemoryToImageIndirectCommandKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyMemoryToImageIndirectCommandKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyMemoryToImageIndirectCommandKHR(address, container);
     }
 
     /**

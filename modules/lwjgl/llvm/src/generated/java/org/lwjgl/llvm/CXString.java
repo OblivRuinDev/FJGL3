@@ -48,13 +48,8 @@ public class CXString extends Struct<CXString> implements NativeResource {
         PRIVATE_FLAGS = layout.offsetof(1);
     }
 
-    protected CXString(long address, @Nullable ByteBuffer container) {
+    public CXString(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXString create(long address, @Nullable ByteBuffer container) {
-        return new CXString(address, container);
     }
 
     /**

@@ -50,13 +50,8 @@ public class GLFWGamepadState extends Struct<GLFWGamepadState> implements Native
         AXES = layout.offsetof(1);
     }
 
-    protected GLFWGamepadState(long address, @Nullable ByteBuffer container) {
+    public GLFWGamepadState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLFWGamepadState create(long address, @Nullable ByteBuffer container) {
-        return new GLFWGamepadState(address, container);
     }
 
     /**

@@ -49,13 +49,8 @@ public class LLVMOrcCJITDylibSearchOrderElement extends Struct<LLVMOrcCJITDylibS
         JDLOOKUPFLAGS = layout.offsetof(1);
     }
 
-    protected LLVMOrcCJITDylibSearchOrderElement(long address, @Nullable ByteBuffer container) {
+    public LLVMOrcCJITDylibSearchOrderElement(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMOrcCJITDylibSearchOrderElement create(long address, @Nullable ByteBuffer container) {
-        return new LLVMOrcCJITDylibSearchOrderElement(address, container);
     }
 
     /**

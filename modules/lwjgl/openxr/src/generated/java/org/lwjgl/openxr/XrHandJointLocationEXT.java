@@ -54,13 +54,8 @@ public class XrHandJointLocationEXT extends Struct<XrHandJointLocationEXT> imple
         RADIUS = layout.offsetof(2);
     }
 
-    protected XrHandJointLocationEXT(long address, @Nullable ByteBuffer container) {
+    public XrHandJointLocationEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandJointLocationEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandJointLocationEXT(address, container);
     }
 
     /**

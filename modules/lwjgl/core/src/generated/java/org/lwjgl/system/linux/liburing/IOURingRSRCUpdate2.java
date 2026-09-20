@@ -65,13 +65,8 @@ public class IOURingRSRCUpdate2 extends Struct<IOURingRSRCUpdate2> implements Na
         RESV2 = layout.offsetof(5);
     }
 
-    protected IOURingRSRCUpdate2(long address, @Nullable ByteBuffer container) {
+    public IOURingRSRCUpdate2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingRSRCUpdate2 create(long address, @Nullable ByteBuffer container) {
-        return new IOURingRSRCUpdate2(address, container);
     }
 
     /**

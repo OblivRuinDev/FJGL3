@@ -32,13 +32,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSubpassDependency2KHR extends VkSubpassDependency2 {
 
-    protected VkSubpassDependency2KHR(long address, @Nullable ByteBuffer container) {
+    public VkSubpassDependency2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassDependency2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassDependency2KHR(address, container);
     }
 
     /**

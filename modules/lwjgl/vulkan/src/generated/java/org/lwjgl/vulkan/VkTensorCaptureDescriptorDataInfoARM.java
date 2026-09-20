@@ -52,13 +52,8 @@ public class VkTensorCaptureDescriptorDataInfoARM extends Struct<VkTensorCapture
         TENSOR = layout.offsetof(2);
     }
 
-    protected VkTensorCaptureDescriptorDataInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkTensorCaptureDescriptorDataInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTensorCaptureDescriptorDataInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkTensorCaptureDescriptorDataInfoARM(address, container);
     }
 
     /**

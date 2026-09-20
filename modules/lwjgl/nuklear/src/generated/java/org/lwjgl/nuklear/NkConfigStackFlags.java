@@ -50,13 +50,8 @@ class NkConfigStackFlags extends Struct<NkConfigStackFlags> {
         ELEMENTS = layout.offsetof(1);
     }
 
-    protected NkConfigStackFlags(long address, @Nullable ByteBuffer container) {
+    public NkConfigStackFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkConfigStackFlags create(long address, @Nullable ByteBuffer container) {
-        return new NkConfigStackFlags(address, container);
     }
 
     /**

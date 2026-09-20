@@ -60,13 +60,8 @@ public class XrFrameState extends Struct<XrFrameState> implements NativeResource
         SHOULDRENDER = layout.offsetof(4);
     }
 
-    protected XrFrameState(long address, @Nullable ByteBuffer container) {
+    public XrFrameState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFrameState create(long address, @Nullable ByteBuffer container) {
-        return new XrFrameState(address, container);
     }
 
     /**

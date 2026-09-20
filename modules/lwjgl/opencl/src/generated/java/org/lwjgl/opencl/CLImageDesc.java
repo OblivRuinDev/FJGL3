@@ -89,13 +89,8 @@ public class CLImageDesc extends Struct<CLImageDesc> implements NativeResource {
         MEM_OBJECT = layout.offsetof(11);
     }
 
-    protected CLImageDesc(long address, @Nullable ByteBuffer container) {
+    public CLImageDesc(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLImageDesc create(long address, @Nullable ByteBuffer container) {
-        return new CLImageDesc(address, container);
     }
 
     /**

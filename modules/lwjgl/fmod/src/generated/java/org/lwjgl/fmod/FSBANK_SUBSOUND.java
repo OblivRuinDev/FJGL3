@@ -73,13 +73,8 @@ public class FSBANK_SUBSOUND extends Struct<FSBANK_SUBSOUND> implements NativeRe
         PERCENTOPTIMIZEDRATE = layout.offsetof(7);
     }
 
-    protected FSBANK_SUBSOUND(long address, @Nullable ByteBuffer container) {
+    public FSBANK_SUBSOUND(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FSBANK_SUBSOUND create(long address, @Nullable ByteBuffer container) {
-        return new FSBANK_SUBSOUND(address, container);
     }
 
     /**

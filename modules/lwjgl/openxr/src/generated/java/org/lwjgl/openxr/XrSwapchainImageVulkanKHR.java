@@ -54,13 +54,8 @@ public class XrSwapchainImageVulkanKHR extends Struct<XrSwapchainImageVulkanKHR>
         IMAGE = layout.offsetof(2);
     }
 
-    protected XrSwapchainImageVulkanKHR(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainImageVulkanKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainImageVulkanKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainImageVulkanKHR(address, container);
     }
 
     /**

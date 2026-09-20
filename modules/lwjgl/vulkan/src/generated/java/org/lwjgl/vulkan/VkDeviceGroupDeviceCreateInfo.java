@@ -57,13 +57,8 @@ public class VkDeviceGroupDeviceCreateInfo extends Struct<VkDeviceGroupDeviceCre
         PPHYSICALDEVICES = layout.offsetof(3);
     }
 
-    protected VkDeviceGroupDeviceCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkDeviceGroupDeviceCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceGroupDeviceCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceGroupDeviceCreateInfo(address, container);
     }
 
     /**

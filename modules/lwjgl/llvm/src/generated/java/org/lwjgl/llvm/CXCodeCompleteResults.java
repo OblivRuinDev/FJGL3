@@ -48,13 +48,8 @@ public class CXCodeCompleteResults extends Struct<CXCodeCompleteResults> impleme
         NUMRESULTS = layout.offsetof(1);
     }
 
-    protected CXCodeCompleteResults(long address, @Nullable ByteBuffer container) {
+    public CXCodeCompleteResults(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXCodeCompleteResults create(long address, @Nullable ByteBuffer container) {
-        return new CXCodeCompleteResults(address, container);
     }
 
     /**

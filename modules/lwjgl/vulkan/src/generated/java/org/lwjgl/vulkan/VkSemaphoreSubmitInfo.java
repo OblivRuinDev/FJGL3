@@ -64,13 +64,8 @@ public class VkSemaphoreSubmitInfo extends Struct<VkSemaphoreSubmitInfo> impleme
         DEVICEINDEX = layout.offsetof(5);
     }
 
-    protected VkSemaphoreSubmitInfo(long address, @Nullable ByteBuffer container) {
+    public VkSemaphoreSubmitInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSemaphoreSubmitInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkSemaphoreSubmitInfo(address, container);
     }
 
     /**

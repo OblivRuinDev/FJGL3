@@ -52,13 +52,8 @@ public class VkImageViewUsageCreateInfo extends Struct<VkImageViewUsageCreateInf
         USAGE = layout.offsetof(2);
     }
 
-    protected VkImageViewUsageCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkImageViewUsageCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageViewUsageCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkImageViewUsageCreateInfo(address, container);
     }
 
     /**

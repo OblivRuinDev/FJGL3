@@ -48,13 +48,8 @@ public class VkDrawMeshTasksIndirectCommandNV extends Struct<VkDrawMeshTasksIndi
         FIRSTTASK = layout.offsetof(1);
     }
 
-    protected VkDrawMeshTasksIndirectCommandNV(long address, @Nullable ByteBuffer container) {
+    public VkDrawMeshTasksIndirectCommandNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDrawMeshTasksIndirectCommandNV create(long address, @Nullable ByteBuffer container) {
-        return new VkDrawMeshTasksIndirectCommandNV(address, container);
     }
 
     /**

@@ -61,13 +61,8 @@ public class XrBodyJointLocationsBD extends Struct<XrBodyJointLocationsBD> imple
         JOINTLOCATIONS = layout.offsetof(4);
     }
 
-    protected XrBodyJointLocationsBD(long address, @Nullable ByteBuffer container) {
+    public XrBodyJointLocationsBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyJointLocationsBD create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyJointLocationsBD(address, container);
     }
 
     /**

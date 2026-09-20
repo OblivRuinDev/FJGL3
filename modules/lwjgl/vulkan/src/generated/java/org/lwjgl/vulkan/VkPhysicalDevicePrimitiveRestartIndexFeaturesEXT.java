@@ -52,13 +52,8 @@ public class VkPhysicalDevicePrimitiveRestartIndexFeaturesEXT extends Struct<VkP
         PRIMITIVERESTARTINDEX = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePrimitiveRestartIndexFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePrimitiveRestartIndexFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePrimitiveRestartIndexFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePrimitiveRestartIndexFeaturesEXT(address, container);
     }
 
     /**

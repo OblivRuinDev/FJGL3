@@ -56,13 +56,8 @@ public class VkPhysicalDeviceCudaKernelLaunchPropertiesNV extends Struct<VkPhysi
         COMPUTECAPABILITYMAJOR = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceCudaKernelLaunchPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCudaKernelLaunchPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCudaKernelLaunchPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCudaKernelLaunchPropertiesNV(address, container);
     }
 
     /**

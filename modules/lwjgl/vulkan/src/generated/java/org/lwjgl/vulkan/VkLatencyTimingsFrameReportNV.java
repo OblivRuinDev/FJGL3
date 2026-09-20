@@ -104,13 +104,8 @@ public class VkLatencyTimingsFrameReportNV extends Struct<VkLatencyTimingsFrameR
         GPURENDERENDTIMEUS = layout.offsetof(15);
     }
 
-    protected VkLatencyTimingsFrameReportNV(long address, @Nullable ByteBuffer container) {
+    public VkLatencyTimingsFrameReportNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkLatencyTimingsFrameReportNV create(long address, @Nullable ByteBuffer container) {
-        return new VkLatencyTimingsFrameReportNV(address, container);
     }
 
     /**

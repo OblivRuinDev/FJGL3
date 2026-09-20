@@ -61,13 +61,8 @@ public class XAnyEvent extends Struct<XAnyEvent> implements NativeResource {
         WINDOW = layout.offsetof(4);
     }
 
-    protected XAnyEvent(long address, @Nullable ByteBuffer container) {
+    public XAnyEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XAnyEvent create(long address, @Nullable ByteBuffer container) {
-        return new XAnyEvent(address, container);
     }
 
     /**

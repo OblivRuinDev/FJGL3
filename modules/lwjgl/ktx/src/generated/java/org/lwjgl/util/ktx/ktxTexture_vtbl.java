@@ -107,13 +107,8 @@ public class ktxTexture_vtbl extends Struct<ktxTexture_vtbl> {
         WRITETOSTREAM = layout.offsetof(16);
     }
 
-    protected ktxTexture_vtbl(long address, @Nullable ByteBuffer container) {
+    public ktxTexture_vtbl(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ktxTexture_vtbl create(long address, @Nullable ByteBuffer container) {
-        return new ktxTexture_vtbl(address, container);
     }
 
     /**

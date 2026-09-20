@@ -60,13 +60,8 @@ public class VkSparseMemoryBind extends Struct<VkSparseMemoryBind> implements Na
         FLAGS = layout.offsetof(4);
     }
 
-    protected VkSparseMemoryBind(long address, @Nullable ByteBuffer container) {
+    public VkSparseMemoryBind(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSparseMemoryBind create(long address, @Nullable ByteBuffer container) {
-        return new VkSparseMemoryBind(address, container);
     }
 
     /**

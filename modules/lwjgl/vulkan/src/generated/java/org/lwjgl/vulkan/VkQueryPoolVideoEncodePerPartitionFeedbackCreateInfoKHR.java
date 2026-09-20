@@ -56,13 +56,8 @@ public class VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR extends Str
         PERPARTITIONENCODEFEEDBACKFLAGS = layout.offsetof(3);
     }
 
-    protected VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR(address, container);
     }
 
     /**

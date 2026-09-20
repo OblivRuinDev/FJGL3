@@ -60,13 +60,8 @@ public class VkPhysicalDeviceMaintenance6Properties extends Struct<VkPhysicalDev
         FRAGMENTSHADINGRATECLAMPCOMBINERINPUTS = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceMaintenance6Properties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMaintenance6Properties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMaintenance6Properties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMaintenance6Properties(address, container);
     }
 
     /**

@@ -50,13 +50,8 @@ public class XrSpaceDiscoveryResultMETA extends Struct<XrSpaceDiscoveryResultMET
         UUID = layout.offsetof(1);
     }
 
-    protected XrSpaceDiscoveryResultMETA(long address, @Nullable ByteBuffer container) {
+    public XrSpaceDiscoveryResultMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceDiscoveryResultMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceDiscoveryResultMETA(address, container);
     }
 
     /**

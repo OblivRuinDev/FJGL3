@@ -57,13 +57,8 @@ public class XrSpatialAnchorsDeleteCompletionDetailsML extends Struct<XrSpatialA
         RESULTS = layout.offsetof(3);
     }
 
-    protected XrSpatialAnchorsDeleteCompletionDetailsML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsDeleteCompletionDetailsML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsDeleteCompletionDetailsML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsDeleteCompletionDetailsML(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT extends Struct<VkPhy
         IMAGESLICEDVIEWOF3D = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT(address, container);
     }
 
     /**

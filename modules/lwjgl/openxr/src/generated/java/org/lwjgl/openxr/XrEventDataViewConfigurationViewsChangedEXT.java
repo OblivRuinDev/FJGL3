@@ -56,13 +56,8 @@ public class XrEventDataViewConfigurationViewsChangedEXT extends Struct<XrEventD
         VIEWCONFIGURATIONTYPE = layout.offsetof(3);
     }
 
-    protected XrEventDataViewConfigurationViewsChangedEXT(long address, @Nullable ByteBuffer container) {
+    public XrEventDataViewConfigurationViewsChangedEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataViewConfigurationViewsChangedEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataViewConfigurationViewsChangedEXT(address, container);
     }
 
     /**

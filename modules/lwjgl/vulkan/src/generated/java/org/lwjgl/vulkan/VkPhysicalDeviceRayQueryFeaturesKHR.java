@@ -52,13 +52,8 @@ public class VkPhysicalDeviceRayQueryFeaturesKHR extends Struct<VkPhysicalDevice
         RAYQUERY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceRayQueryFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRayQueryFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRayQueryFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRayQueryFeaturesKHR(address, container);
     }
 
     /**

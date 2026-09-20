@@ -49,13 +49,8 @@ public class BGFXTransform extends Struct<BGFXTransform> implements NativeResour
         NUM = layout.offsetof(1);
     }
 
-    protected BGFXTransform(long address, @Nullable ByteBuffer container) {
+    public BGFXTransform(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXTransform create(long address, @Nullable ByteBuffer container) {
-        return new BGFXTransform(address, container);
     }
 
     /**

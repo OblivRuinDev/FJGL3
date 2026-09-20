@@ -68,13 +68,8 @@ public class VkPhysicalDeviceDriverProperties extends Struct<VkPhysicalDeviceDri
         CONFORMANCEVERSION = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceDriverProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDriverProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDriverProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDriverProperties(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class MSDFGenTransform extends Struct<MSDFGenTransform> implements Native
         DISTANCE_MAPPING = layout.offsetof(2);
     }
 
-    protected MSDFGenTransform(long address, @Nullable ByteBuffer container) {
+    public MSDFGenTransform(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MSDFGenTransform create(long address, @Nullable ByteBuffer container) {
-        return new MSDFGenTransform(address, container);
     }
 
     /**

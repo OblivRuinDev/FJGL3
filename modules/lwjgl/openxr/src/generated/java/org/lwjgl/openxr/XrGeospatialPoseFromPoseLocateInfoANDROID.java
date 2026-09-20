@@ -63,13 +63,8 @@ public class XrGeospatialPoseFromPoseLocateInfoANDROID extends Struct<XrGeospati
         POSE = layout.offsetof(4);
     }
 
-    protected XrGeospatialPoseFromPoseLocateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrGeospatialPoseFromPoseLocateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGeospatialPoseFromPoseLocateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrGeospatialPoseFromPoseLocateInfoANDROID(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR extends Struct<
         COMPUTEDERIVATIVEGROUPLINEAR = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(address, container);
     }
 
     /**

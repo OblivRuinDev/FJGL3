@@ -60,13 +60,8 @@ public class VkPipelineCoverageToColorStateCreateInfoNV extends Struct<VkPipelin
         COVERAGETOCOLORLOCATION = layout.offsetof(4);
     }
 
-    protected VkPipelineCoverageToColorStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkPipelineCoverageToColorStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineCoverageToColorStateCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineCoverageToColorStateCreateInfoNV(address, container);
     }
 
     /**

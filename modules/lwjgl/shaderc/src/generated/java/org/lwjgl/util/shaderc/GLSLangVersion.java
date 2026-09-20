@@ -57,13 +57,8 @@ public class GLSLangVersion extends Struct<GLSLangVersion> implements NativeReso
         FLAVOR = layout.offsetof(3);
     }
 
-    protected GLSLangVersion(long address, @Nullable ByteBuffer container) {
+    public GLSLangVersion(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLSLangVersion create(long address, @Nullable ByteBuffer container) {
-        return new GLSLangVersion(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class hb_raster_extents_t extends Struct<hb_raster_extents_t> implements 
         STRIDE = layout.offsetof(4);
     }
 
-    protected hb_raster_extents_t(long address, @Nullable ByteBuffer container) {
+    public hb_raster_extents_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_raster_extents_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_raster_extents_t(address, container);
     }
 
     /**

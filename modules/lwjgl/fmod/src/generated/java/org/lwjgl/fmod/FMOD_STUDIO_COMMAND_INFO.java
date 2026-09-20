@@ -73,13 +73,8 @@ public class FMOD_STUDIO_COMMAND_INFO extends Struct<FMOD_STUDIO_COMMAND_INFO> i
         OUTPUTHANDLE = layout.offsetof(7);
     }
 
-    protected FMOD_STUDIO_COMMAND_INFO(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_COMMAND_INFO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_COMMAND_INFO create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_COMMAND_INFO(address, container);
     }
 
     /**

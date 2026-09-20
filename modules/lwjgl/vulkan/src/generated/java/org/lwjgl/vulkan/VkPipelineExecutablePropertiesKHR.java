@@ -66,13 +66,8 @@ public class VkPipelineExecutablePropertiesKHR extends Struct<VkPipelineExecutab
         SUBGROUPSIZE = layout.offsetof(5);
     }
 
-    protected VkPipelineExecutablePropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineExecutablePropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineExecutablePropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineExecutablePropertiesKHR(address, container);
     }
 
     /**

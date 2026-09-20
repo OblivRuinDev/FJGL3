@@ -52,13 +52,8 @@ public class VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR extends Struct
         FRAGMENTSHADERBARYCENTRIC = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR(address, container);
     }
 
     /**

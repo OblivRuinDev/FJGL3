@@ -49,13 +49,8 @@ public class NkHandle extends Struct<NkHandle> implements NativeResource {
         ID = layout.offsetof(1);
     }
 
-    protected NkHandle(long address, @Nullable ByteBuffer container) {
+    public NkHandle(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkHandle create(long address, @Nullable ByteBuffer container) {
-        return new NkHandle(address, container);
     }
 
     /**

@@ -92,13 +92,8 @@ public class XrPlaneDetectorBeginInfoEXT extends Struct<XrPlaneDetectorBeginInfo
         BOUNDINGBOXEXTENT = layout.offsetof(11);
     }
 
-    protected XrPlaneDetectorBeginInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrPlaneDetectorBeginInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPlaneDetectorBeginInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrPlaneDetectorBeginInfoEXT(address, container);
     }
 
     /**

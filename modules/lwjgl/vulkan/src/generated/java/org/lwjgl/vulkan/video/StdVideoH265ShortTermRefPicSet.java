@@ -101,13 +101,8 @@ public class StdVideoH265ShortTermRefPicSet extends Struct<StdVideoH265ShortTerm
         DELTA_POC_S1_MINUS1 = layout.offsetof(13);
     }
 
-    protected StdVideoH265ShortTermRefPicSet(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265ShortTermRefPicSet(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265ShortTermRefPicSet create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265ShortTermRefPicSet(address, container);
     }
 
     /**

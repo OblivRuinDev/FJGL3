@@ -60,13 +60,8 @@ public class VkResolveImageModeInfoKHR extends Struct<VkResolveImageModeInfoKHR>
         STENCILRESOLVEMODE = layout.offsetof(4);
     }
 
-    protected VkResolveImageModeInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkResolveImageModeInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkResolveImageModeInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkResolveImageModeInfoKHR(address, container);
     }
 
     /**

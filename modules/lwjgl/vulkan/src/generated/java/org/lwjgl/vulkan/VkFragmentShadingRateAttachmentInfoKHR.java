@@ -58,13 +58,8 @@ public class VkFragmentShadingRateAttachmentInfoKHR extends Struct<VkFragmentSha
         SHADINGRATEATTACHMENTTEXELSIZE = layout.offsetof(3);
     }
 
-    protected VkFragmentShadingRateAttachmentInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkFragmentShadingRateAttachmentInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFragmentShadingRateAttachmentInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkFragmentShadingRateAttachmentInfoKHR(address, container);
     }
 
     /**

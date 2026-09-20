@@ -52,13 +52,8 @@ public class VkSwapchainFlagsSurfaceCapabilitiesEXT extends Struct<VkSwapchainFl
         SWAPCHAINSUPPORTEDFLAGS = layout.offsetof(2);
     }
 
-    protected VkSwapchainFlagsSurfaceCapabilitiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainFlagsSurfaceCapabilitiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainFlagsSurfaceCapabilitiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainFlagsSurfaceCapabilitiesEXT(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class VkExportMemoryWin32HandleInfoNV extends Struct<VkExportMemoryWin32H
         DWACCESS = layout.offsetof(3);
     }
 
-    protected VkExportMemoryWin32HandleInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkExportMemoryWin32HandleInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportMemoryWin32HandleInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkExportMemoryWin32HandleInfoNV(address, container);
     }
 
     /**

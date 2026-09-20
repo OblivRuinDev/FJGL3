@@ -56,13 +56,8 @@ public class VkMemoryUnmapInfo extends Struct<VkMemoryUnmapInfo> implements Nati
         MEMORY = layout.offsetof(3);
     }
 
-    protected VkMemoryUnmapInfo(long address, @Nullable ByteBuffer container) {
+    public VkMemoryUnmapInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryUnmapInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryUnmapInfo(address, container);
     }
 
     /**

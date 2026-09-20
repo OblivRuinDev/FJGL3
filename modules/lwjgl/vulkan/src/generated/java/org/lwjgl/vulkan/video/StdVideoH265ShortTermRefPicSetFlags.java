@@ -45,13 +45,8 @@ public class StdVideoH265ShortTermRefPicSetFlags extends Struct<StdVideoH265Shor
         BITFIELD0 = layout.offsetof(0);
     }
 
-    protected StdVideoH265ShortTermRefPicSetFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265ShortTermRefPicSetFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265ShortTermRefPicSetFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265ShortTermRefPicSetFlags(address, container);
     }
 
     /**

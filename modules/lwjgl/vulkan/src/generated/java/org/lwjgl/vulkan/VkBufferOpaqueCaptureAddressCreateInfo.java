@@ -52,13 +52,8 @@ public class VkBufferOpaqueCaptureAddressCreateInfo extends Struct<VkBufferOpaqu
         OPAQUECAPTUREADDRESS = layout.offsetof(2);
     }
 
-    protected VkBufferOpaqueCaptureAddressCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkBufferOpaqueCaptureAddressCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferOpaqueCaptureAddressCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferOpaqueCaptureAddressCreateInfo(address, container);
     }
 
     /**

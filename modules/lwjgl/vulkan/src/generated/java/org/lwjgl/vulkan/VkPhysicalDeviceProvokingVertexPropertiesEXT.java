@@ -56,13 +56,8 @@ public class VkPhysicalDeviceProvokingVertexPropertiesEXT extends Struct<VkPhysi
         TRANSFORMFEEDBACKPRESERVESTRIANGLEFANPROVOKINGVERTEX = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceProvokingVertexPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceProvokingVertexPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceProvokingVertexPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceProvokingVertexPropertiesEXT(address, container);
     }
 
     /**

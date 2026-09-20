@@ -52,13 +52,8 @@ public class VkSubsampledImageFormatPropertiesEXT extends Struct<VkSubsampledIma
         SUBSAMPLEDIMAGEDESCRIPTORCOUNT = layout.offsetof(2);
     }
 
-    protected VkSubsampledImageFormatPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkSubsampledImageFormatPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubsampledImageFormatPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSubsampledImageFormatPropertiesEXT(address, container);
     }
 
     /**

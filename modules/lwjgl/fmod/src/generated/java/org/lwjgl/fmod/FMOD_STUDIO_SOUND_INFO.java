@@ -59,13 +59,8 @@ public class FMOD_STUDIO_SOUND_INFO extends Struct<FMOD_STUDIO_SOUND_INFO> imple
         SUBSOUNDINDEX = layout.offsetof(3);
     }
 
-    protected FMOD_STUDIO_SOUND_INFO(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_SOUND_INFO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_SOUND_INFO create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_SOUND_INFO(address, container);
     }
 
     /**

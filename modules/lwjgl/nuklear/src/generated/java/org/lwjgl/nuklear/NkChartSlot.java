@@ -82,13 +82,8 @@ public class NkChartSlot extends Struct<NkChartSlot> {
         SHOW_MARKERS = layout.offsetof(9);
     }
 
-    protected NkChartSlot(long address, @Nullable ByteBuffer container) {
+    public NkChartSlot(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkChartSlot create(long address, @Nullable ByteBuffer container) {
-        return new NkChartSlot(address, container);
     }
 
     /**

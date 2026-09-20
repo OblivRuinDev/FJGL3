@@ -76,13 +76,8 @@ public class VkDeviceMemoryReportCallbackDataEXT extends Struct<VkDeviceMemoryRe
         HEAPINDEX = layout.offsetof(8);
     }
 
-    protected VkDeviceMemoryReportCallbackDataEXT(long address, @Nullable ByteBuffer container) {
+    public VkDeviceMemoryReportCallbackDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceMemoryReportCallbackDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceMemoryReportCallbackDataEXT(address, container);
     }
 
     /**

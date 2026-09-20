@@ -69,13 +69,8 @@ public class XResizeRequestEvent extends Struct<XResizeRequestEvent> implements 
         HEIGHT = layout.offsetof(6);
     }
 
-    protected XResizeRequestEvent(long address, @Nullable ByteBuffer container) {
+    public XResizeRequestEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XResizeRequestEvent create(long address, @Nullable ByteBuffer container) {
-        return new XResizeRequestEvent(address, container);
     }
 
     /**

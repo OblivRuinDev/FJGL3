@@ -128,13 +128,8 @@ public class NkStyleToggle extends Struct<NkStyleToggle> implements NativeResour
         DRAW_END = layout.offsetof(19);
     }
 
-    protected NkStyleToggle(long address, @Nullable ByteBuffer container) {
+    public NkStyleToggle(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleToggle create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleToggle(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkDisplayModeStereoPropertiesNV extends Struct<VkDisplayModeStereoP
         HDMI3DSUPPORTED = layout.offsetof(2);
     }
 
-    protected VkDisplayModeStereoPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkDisplayModeStereoPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplayModeStereoPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplayModeStereoPropertiesNV(address, container);
     }
 
     /**

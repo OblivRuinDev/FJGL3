@@ -172,13 +172,8 @@ public class VkPhysicalDeviceExtendedDynamicState3FeaturesEXT extends Struct<VkP
         EXTENDEDDYNAMICSTATE3SHADINGRATEIMAGEENABLE = layout.offsetof(32);
     }
 
-    protected VkPhysicalDeviceExtendedDynamicState3FeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExtendedDynamicState3FeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExtendedDynamicState3FeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExtendedDynamicState3FeaturesEXT(address, container);
     }
 
     /**

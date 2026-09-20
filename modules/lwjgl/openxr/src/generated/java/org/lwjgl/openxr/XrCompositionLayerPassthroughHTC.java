@@ -67,13 +67,8 @@ public class XrCompositionLayerPassthroughHTC extends Struct<XrCompositionLayerP
         COLOR = layout.offsetof(5);
     }
 
-    protected XrCompositionLayerPassthroughHTC(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerPassthroughHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerPassthroughHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerPassthroughHTC(address, container);
     }
 
     /**

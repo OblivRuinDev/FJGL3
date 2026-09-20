@@ -73,13 +73,8 @@ public class VkPresentInfoKHR extends Struct<VkPresentInfoKHR> implements Native
         PRESULTS = layout.offsetof(7);
     }
 
-    protected VkPresentInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPresentInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPresentInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPresentInfoKHR(address, container);
     }
 
     /**

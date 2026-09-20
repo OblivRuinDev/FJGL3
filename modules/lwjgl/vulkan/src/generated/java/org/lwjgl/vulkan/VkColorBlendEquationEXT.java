@@ -64,13 +64,8 @@ public class VkColorBlendEquationEXT extends Struct<VkColorBlendEquationEXT> imp
         ALPHABLENDOP = layout.offsetof(5);
     }
 
-    protected VkColorBlendEquationEXT(long address, @Nullable ByteBuffer container) {
+    public VkColorBlendEquationEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkColorBlendEquationEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkColorBlendEquationEXT(address, container);
     }
 
     /**

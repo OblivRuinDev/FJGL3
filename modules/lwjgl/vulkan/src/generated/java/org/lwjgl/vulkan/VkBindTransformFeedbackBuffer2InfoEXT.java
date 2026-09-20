@@ -58,13 +58,8 @@ public class VkBindTransformFeedbackBuffer2InfoEXT extends Struct<VkBindTransfor
         ADDRESSFLAGS = layout.offsetof(3);
     }
 
-    protected VkBindTransformFeedbackBuffer2InfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkBindTransformFeedbackBuffer2InfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindTransformFeedbackBuffer2InfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkBindTransformFeedbackBuffer2InfoEXT(address, container);
     }
 
     /**

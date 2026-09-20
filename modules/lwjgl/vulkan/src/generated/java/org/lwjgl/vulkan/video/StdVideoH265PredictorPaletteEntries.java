@@ -47,13 +47,8 @@ public class StdVideoH265PredictorPaletteEntries extends Struct<StdVideoH265Pred
         PREDICTORPALETTEENTRIES = layout.offsetof(0);
     }
 
-    protected StdVideoH265PredictorPaletteEntries(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265PredictorPaletteEntries(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265PredictorPaletteEntries create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265PredictorPaletteEntries(address, container);
     }
 
     /**

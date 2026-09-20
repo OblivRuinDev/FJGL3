@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkConformanceVersionKHR extends VkConformanceVersion {
 
-    protected VkConformanceVersionKHR(long address, @Nullable ByteBuffer container) {
+    public VkConformanceVersionKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkConformanceVersionKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkConformanceVersionKHR(address, container);
     }
 
     /**

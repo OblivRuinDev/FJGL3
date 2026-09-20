@@ -80,13 +80,8 @@ public class CLDeviceTopologyAMD extends Struct<CLDeviceTopologyAMD> implements 
             PCIE_FUNCTION = layout.offsetof(8);
     }
 
-    protected CLDeviceTopologyAMD(long address, @Nullable ByteBuffer container) {
+    public CLDeviceTopologyAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLDeviceTopologyAMD create(long address, @Nullable ByteBuffer container) {
-        return new CLDeviceTopologyAMD(address, container);
     }
 
     /**

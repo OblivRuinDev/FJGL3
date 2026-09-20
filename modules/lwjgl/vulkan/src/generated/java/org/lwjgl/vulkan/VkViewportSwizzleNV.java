@@ -56,13 +56,8 @@ public class VkViewportSwizzleNV extends Struct<VkViewportSwizzleNV> implements 
         W = layout.offsetof(3);
     }
 
-    protected VkViewportSwizzleNV(long address, @Nullable ByteBuffer container) {
+    public VkViewportSwizzleNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkViewportSwizzleNV create(long address, @Nullable ByteBuffer container) {
-        return new VkViewportSwizzleNV(address, container);
     }
 
     /**

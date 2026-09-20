@@ -48,13 +48,8 @@ public class DBMONEY extends Struct<DBMONEY> implements NativeResource {
         MNYLOW = layout.offsetof(1);
     }
 
-    protected DBMONEY(long address, @Nullable ByteBuffer container) {
+    public DBMONEY(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected DBMONEY create(long address, @Nullable ByteBuffer container) {
-        return new DBMONEY(address, container);
     }
 
     /**

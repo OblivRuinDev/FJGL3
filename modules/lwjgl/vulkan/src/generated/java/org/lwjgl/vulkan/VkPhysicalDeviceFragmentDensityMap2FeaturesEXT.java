@@ -52,13 +52,8 @@ public class VkPhysicalDeviceFragmentDensityMap2FeaturesEXT extends Struct<VkPhy
         FRAGMENTDENSITYMAPDEFERRED = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceFragmentDensityMap2FeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentDensityMap2FeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentDensityMap2FeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentDensityMap2FeaturesEXT(address, container);
     }
 
     /**

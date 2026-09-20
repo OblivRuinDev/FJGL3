@@ -66,13 +66,8 @@ public class VkDeviceMemoryCopyKHR extends Struct<VkDeviceMemoryCopyKHR> impleme
         DSTFLAGS = layout.offsetof(5);
     }
 
-    protected VkDeviceMemoryCopyKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceMemoryCopyKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceMemoryCopyKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceMemoryCopyKHR(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrGeospatialTrackerAnchorTrackingInfoANDROID extends Struct<XrGeosp
         SHOULDTRACKPLANES = layout.offsetof(2);
     }
 
-    protected XrGeospatialTrackerAnchorTrackingInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrGeospatialTrackerAnchorTrackingInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGeospatialTrackerAnchorTrackingInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrGeospatialTrackerAnchorTrackingInfoANDROID(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkQueueFamilyVideoPropertiesKHR extends Struct<VkQueueFamilyVideoPr
         VIDEOCODECOPERATIONS = layout.offsetof(2);
     }
 
-    protected VkQueueFamilyVideoPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyVideoPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyVideoPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyVideoPropertiesKHR(address, container);
     }
 
     /**

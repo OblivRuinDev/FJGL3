@@ -48,13 +48,8 @@ public class XrSwapchainStateBaseHeaderFB extends Struct<XrSwapchainStateBaseHea
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSwapchainStateBaseHeaderFB(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainStateBaseHeaderFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainStateBaseHeaderFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainStateBaseHeaderFB(address, container);
     }
 
     /**

@@ -48,13 +48,8 @@ public class XrForceFeedbackCurlApplyLocationMNDX extends Struct<XrForceFeedback
         VALUE = layout.offsetof(1);
     }
 
-    protected XrForceFeedbackCurlApplyLocationMNDX(long address, @Nullable ByteBuffer container) {
+    public XrForceFeedbackCurlApplyLocationMNDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrForceFeedbackCurlApplyLocationMNDX create(long address, @Nullable ByteBuffer container) {
-        return new XrForceFeedbackCurlApplyLocationMNDX(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkPhysicalDeviceProvokingVertexFeaturesEXT extends Struct<VkPhysica
         TRANSFORMFEEDBACKPRESERVESPROVOKINGVERTEX = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceProvokingVertexFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceProvokingVertexFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceProvokingVertexFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceProvokingVertexFeaturesEXT(address, container);
     }
 
     /**

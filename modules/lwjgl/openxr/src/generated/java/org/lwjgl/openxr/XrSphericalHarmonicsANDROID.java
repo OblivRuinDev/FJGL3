@@ -61,13 +61,8 @@ public class XrSphericalHarmonicsANDROID extends Struct<XrSphericalHarmonicsANDR
         COEFFICIENTS = layout.offsetof(4);
     }
 
-    protected XrSphericalHarmonicsANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSphericalHarmonicsANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSphericalHarmonicsANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSphericalHarmonicsANDROID(address, container);
     }
 
     /**

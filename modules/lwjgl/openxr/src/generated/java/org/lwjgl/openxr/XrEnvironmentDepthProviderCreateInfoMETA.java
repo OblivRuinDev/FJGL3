@@ -52,13 +52,8 @@ public class XrEnvironmentDepthProviderCreateInfoMETA extends Struct<XrEnvironme
         CREATEFLAGS = layout.offsetof(2);
     }
 
-    protected XrEnvironmentDepthProviderCreateInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrEnvironmentDepthProviderCreateInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEnvironmentDepthProviderCreateInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEnvironmentDepthProviderCreateInfoMETA(address, container);
     }
 
     /**

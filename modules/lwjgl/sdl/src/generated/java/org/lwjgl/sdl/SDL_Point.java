@@ -48,13 +48,8 @@ public class SDL_Point extends Struct<SDL_Point> implements NativeResource {
         Y = layout.offsetof(1);
     }
 
-    protected SDL_Point(long address, @Nullable ByteBuffer container) {
+    public SDL_Point(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_Point create(long address, @Nullable ByteBuffer container) {
-        return new SDL_Point(address, container);
     }
 
     /**

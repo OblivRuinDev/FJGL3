@@ -48,13 +48,8 @@ public class XrPassthroughCameraStateGetInfoANDROID extends Struct<XrPassthrough
         NEXT = layout.offsetof(1);
     }
 
-    protected XrPassthroughCameraStateGetInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughCameraStateGetInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughCameraStateGetInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughCameraStateGetInfoANDROID(address, container);
     }
 
     /**

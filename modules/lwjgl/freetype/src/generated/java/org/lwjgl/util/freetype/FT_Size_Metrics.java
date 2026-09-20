@@ -70,13 +70,8 @@ public class FT_Size_Metrics extends Struct<FT_Size_Metrics> {
         MAX_ADVANCE = layout.offsetof(7);
     }
 
-    protected FT_Size_Metrics(long address, @Nullable ByteBuffer container) {
+    public FT_Size_Metrics(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Size_Metrics create(long address, @Nullable ByteBuffer container) {
-        return new FT_Size_Metrics(address, container);
     }
 
     /**

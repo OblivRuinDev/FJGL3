@@ -73,13 +73,8 @@ public class VkTensorDescriptionARM extends Struct<VkTensorDescriptionARM> imple
         USAGE = layout.offsetof(7);
     }
 
-    protected VkTensorDescriptionARM(long address, @Nullable ByteBuffer container) {
+    public VkTensorDescriptionARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTensorDescriptionARM create(long address, @Nullable ByteBuffer container) {
-        return new VkTensorDescriptionARM(address, container);
     }
 
     /**

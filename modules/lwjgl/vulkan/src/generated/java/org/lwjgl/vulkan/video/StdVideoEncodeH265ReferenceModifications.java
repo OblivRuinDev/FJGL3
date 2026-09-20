@@ -77,13 +77,8 @@ public class StdVideoEncodeH265ReferenceModifications extends Struct<StdVideoEnc
         LIST_ENTRY_L1 = layout.offsetof(7);
     }
 
-    protected StdVideoEncodeH265ReferenceModifications(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH265ReferenceModifications(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH265ReferenceModifications create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH265ReferenceModifications(address, container);
     }
 
     /**

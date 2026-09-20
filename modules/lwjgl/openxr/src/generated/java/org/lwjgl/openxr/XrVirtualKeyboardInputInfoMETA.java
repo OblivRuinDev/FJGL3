@@ -66,13 +66,8 @@ public class XrVirtualKeyboardInputInfoMETA extends Struct<XrVirtualKeyboardInpu
         INPUTSTATE = layout.offsetof(5);
     }
 
-    protected XrVirtualKeyboardInputInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrVirtualKeyboardInputInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVirtualKeyboardInputInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrVirtualKeyboardInputInfoMETA(address, container);
     }
 
     /**

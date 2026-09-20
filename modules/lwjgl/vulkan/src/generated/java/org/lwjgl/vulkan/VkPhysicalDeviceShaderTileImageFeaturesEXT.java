@@ -60,13 +60,8 @@ public class VkPhysicalDeviceShaderTileImageFeaturesEXT extends Struct<VkPhysica
         SHADERTILEIMAGESTENCILREADACCESS = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceShaderTileImageFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderTileImageFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderTileImageFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderTileImageFeaturesEXT(address, container);
     }
 
     /**

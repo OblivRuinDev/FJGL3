@@ -121,13 +121,8 @@ public class RMTSettings extends Struct<RMTSettings> implements NativeResource {
         LOGPATH = layout.offsetof(17);
     }
 
-    protected RMTSettings(long address, @Nullable ByteBuffer container) {
+    public RMTSettings(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected RMTSettings create(long address, @Nullable ByteBuffer container) {
-        return new RMTSettings(address, container);
     }
 
     /**

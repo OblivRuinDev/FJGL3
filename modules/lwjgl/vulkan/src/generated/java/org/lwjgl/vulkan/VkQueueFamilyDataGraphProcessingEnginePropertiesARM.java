@@ -56,13 +56,8 @@ public class VkQueueFamilyDataGraphProcessingEnginePropertiesARM extends Struct<
         FOREIGNMEMORYHANDLETYPES = layout.offsetof(3);
     }
 
-    protected VkQueueFamilyDataGraphProcessingEnginePropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyDataGraphProcessingEnginePropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyDataGraphProcessingEnginePropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyDataGraphProcessingEnginePropertiesARM(address, container);
     }
 
     /**

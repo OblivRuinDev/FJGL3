@@ -53,13 +53,8 @@ public class STBRPNode extends Struct<STBRPNode> implements NativeResource {
         NEXT = layout.offsetof(2);
     }
 
-    protected STBRPNode(long address, @Nullable ByteBuffer container) {
+    public STBRPNode(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBRPNode create(long address, @Nullable ByteBuffer container) {
-        return new STBRPNode(address, container);
     }
 
     /**

@@ -84,13 +84,8 @@ public class VkFrameBoundaryEXT extends Struct<VkFrameBoundaryEXT> implements Na
         PTAG = layout.offsetof(10);
     }
 
-    protected VkFrameBoundaryEXT(long address, @Nullable ByteBuffer container) {
+    public VkFrameBoundaryEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFrameBoundaryEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkFrameBoundaryEXT(address, container);
     }
 
     /**

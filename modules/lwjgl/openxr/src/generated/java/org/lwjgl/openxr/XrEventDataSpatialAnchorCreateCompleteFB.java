@@ -66,13 +66,8 @@ public class XrEventDataSpatialAnchorCreateCompleteFB extends Struct<XrEventData
         UUID = layout.offsetof(5);
     }
 
-    protected XrEventDataSpatialAnchorCreateCompleteFB(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSpatialAnchorCreateCompleteFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSpatialAnchorCreateCompleteFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSpatialAnchorCreateCompleteFB(address, container);
     }
 
     /**

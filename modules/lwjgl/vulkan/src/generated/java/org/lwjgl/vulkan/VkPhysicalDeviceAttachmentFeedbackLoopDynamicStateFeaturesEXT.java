@@ -52,13 +52,8 @@ public class VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT exten
         ATTACHMENTFEEDBACKLOOPDYNAMICSTATE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT(address, container);
     }
 
     /**

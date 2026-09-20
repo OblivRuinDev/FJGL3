@@ -56,13 +56,8 @@ public class XrLightEstimateANDROID extends Struct<XrLightEstimateANDROID> imple
         LASTUPDATEDTIME = layout.offsetof(3);
     }
 
-    protected XrLightEstimateANDROID(long address, @Nullable ByteBuffer container) {
+    public XrLightEstimateANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrLightEstimateANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrLightEstimateANDROID(address, container);
     }
 
     /**

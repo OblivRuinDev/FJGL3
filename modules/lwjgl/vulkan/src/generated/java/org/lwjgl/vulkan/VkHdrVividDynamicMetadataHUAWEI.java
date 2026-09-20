@@ -57,13 +57,8 @@ public class VkHdrVividDynamicMetadataHUAWEI extends Struct<VkHdrVividDynamicMet
         PDYNAMICMETADATA = layout.offsetof(3);
     }
 
-    protected VkHdrVividDynamicMetadataHUAWEI(long address, @Nullable ByteBuffer container) {
+    public VkHdrVividDynamicMetadataHUAWEI(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkHdrVividDynamicMetadataHUAWEI create(long address, @Nullable ByteBuffer container) {
-        return new VkHdrVividDynamicMetadataHUAWEI(address, container);
     }
 
     /**

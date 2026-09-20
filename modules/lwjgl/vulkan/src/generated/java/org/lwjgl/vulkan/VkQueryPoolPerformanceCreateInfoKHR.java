@@ -61,13 +61,8 @@ public class VkQueryPoolPerformanceCreateInfoKHR extends Struct<VkQueryPoolPerfo
         PCOUNTERINDICES = layout.offsetof(4);
     }
 
-    protected VkQueryPoolPerformanceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkQueryPoolPerformanceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueryPoolPerformanceCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkQueryPoolPerformanceCreateInfoKHR(address, container);
     }
 
     /**

@@ -73,13 +73,8 @@ public class XMappingEvent extends Struct<XMappingEvent> implements NativeResour
         COUNT = layout.offsetof(7);
     }
 
-    protected XMappingEvent(long address, @Nullable ByteBuffer container) {
+    public XMappingEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XMappingEvent create(long address, @Nullable ByteBuffer container) {
-        return new XMappingEvent(address, container);
     }
 
     /**

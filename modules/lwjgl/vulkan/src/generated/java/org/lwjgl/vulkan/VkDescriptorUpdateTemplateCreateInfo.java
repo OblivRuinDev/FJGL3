@@ -81,13 +81,8 @@ public class VkDescriptorUpdateTemplateCreateInfo extends Struct<VkDescriptorUpd
         SET = layout.offsetof(9);
     }
 
-    protected VkDescriptorUpdateTemplateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorUpdateTemplateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorUpdateTemplateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorUpdateTemplateCreateInfo(address, container);
     }
 
     /**

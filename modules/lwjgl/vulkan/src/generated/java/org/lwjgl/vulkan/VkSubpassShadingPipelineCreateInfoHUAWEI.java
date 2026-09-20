@@ -56,13 +56,8 @@ public class VkSubpassShadingPipelineCreateInfoHUAWEI extends Struct<VkSubpassSh
         SUBPASS = layout.offsetof(3);
     }
 
-    protected VkSubpassShadingPipelineCreateInfoHUAWEI(long address, @Nullable ByteBuffer container) {
+    public VkSubpassShadingPipelineCreateInfoHUAWEI(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassShadingPipelineCreateInfoHUAWEI create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassShadingPipelineCreateInfoHUAWEI(address, container);
     }
 
     /**

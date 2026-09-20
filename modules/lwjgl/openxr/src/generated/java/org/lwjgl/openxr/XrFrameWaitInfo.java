@@ -48,13 +48,8 @@ public class XrFrameWaitInfo extends Struct<XrFrameWaitInfo> implements NativeRe
         NEXT = layout.offsetof(1);
     }
 
-    protected XrFrameWaitInfo(long address, @Nullable ByteBuffer container) {
+    public XrFrameWaitInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFrameWaitInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrFrameWaitInfo(address, container);
     }
 
     /**

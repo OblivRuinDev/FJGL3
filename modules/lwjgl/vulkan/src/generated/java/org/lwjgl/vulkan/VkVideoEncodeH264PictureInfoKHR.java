@@ -67,13 +67,8 @@ public class VkVideoEncodeH264PictureInfoKHR extends Struct<VkVideoEncodeH264Pic
         GENERATEPREFIXNALU = layout.offsetof(5);
     }
 
-    protected VkVideoEncodeH264PictureInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH264PictureInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH264PictureInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH264PictureInfoKHR(address, container);
     }
 
     /**

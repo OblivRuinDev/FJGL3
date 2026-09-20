@@ -61,13 +61,8 @@ public class JAWTDrawingSurfaceInfo extends Struct<JAWTDrawingSurfaceInfo> {
         CLIP = layout.offsetof(4);
     }
 
-    protected JAWTDrawingSurfaceInfo(long address, @Nullable ByteBuffer container) {
+    public JAWTDrawingSurfaceInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected JAWTDrawingSurfaceInfo create(long address, @Nullable ByteBuffer container) {
-        return new JAWTDrawingSurfaceInfo(address, container);
     }
 
     /**

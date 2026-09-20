@@ -52,13 +52,8 @@ public class VkFormatProperties extends Struct<VkFormatProperties> implements Na
         BUFFERFEATURES = layout.offsetof(2);
     }
 
-    protected VkFormatProperties(long address, @Nullable ByteBuffer container) {
+    public VkFormatProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFormatProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkFormatProperties(address, container);
     }
 
     /**

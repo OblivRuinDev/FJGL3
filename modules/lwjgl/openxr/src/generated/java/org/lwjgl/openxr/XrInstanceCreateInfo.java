@@ -75,13 +75,8 @@ public class XrInstanceCreateInfo extends Struct<XrInstanceCreateInfo> implement
         ENABLEDEXTENSIONNAMES = layout.offsetof(7);
     }
 
-    protected XrInstanceCreateInfo(long address, @Nullable ByteBuffer container) {
+    public XrInstanceCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrInstanceCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrInstanceCreateInfo(address, container);
     }
 
     /**

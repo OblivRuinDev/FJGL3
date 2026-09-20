@@ -52,13 +52,8 @@ public class VkOpticalFlowImageFormatPropertiesNV extends Struct<VkOpticalFlowIm
         FORMAT = layout.offsetof(2);
     }
 
-    protected VkOpticalFlowImageFormatPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkOpticalFlowImageFormatPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkOpticalFlowImageFormatPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkOpticalFlowImageFormatPropertiesNV(address, container);
     }
 
     /**

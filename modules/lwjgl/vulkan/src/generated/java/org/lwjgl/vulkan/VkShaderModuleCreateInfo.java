@@ -61,13 +61,8 @@ public class VkShaderModuleCreateInfo extends Struct<VkShaderModuleCreateInfo> i
         PCODE = layout.offsetof(4);
     }
 
-    protected VkShaderModuleCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkShaderModuleCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkShaderModuleCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkShaderModuleCreateInfo(address, container);
     }
 
     /**

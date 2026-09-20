@@ -83,13 +83,8 @@ public class RENDERDOC_AnnotationValue extends Struct<RENDERDOC_AnnotationValue>
         APIOBJECT = layout.offsetof(9);
     }
 
-    protected RENDERDOC_AnnotationValue(long address, @Nullable ByteBuffer container) {
+    public RENDERDOC_AnnotationValue(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected RENDERDOC_AnnotationValue create(long address, @Nullable ByteBuffer container) {
-        return new RENDERDOC_AnnotationValue(address, container);
     }
 
     /**

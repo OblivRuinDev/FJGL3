@@ -86,13 +86,8 @@ public class VkVideoEncodeH264QualityLevelPropertiesKHR extends Struct<VkVideoEn
         PREFERREDSTDENTROPYCODINGMODEFLAG = layout.offsetof(10);
     }
 
-    protected VkVideoEncodeH264QualityLevelPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH264QualityLevelPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH264QualityLevelPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH264QualityLevelPropertiesKHR(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class XrSurfaceAnchorCreateCompletionANDROID extends Struct<XrSurfaceAnch
         ANCHORENTITYID = layout.offsetof(3);
     }
 
-    protected XrSurfaceAnchorCreateCompletionANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSurfaceAnchorCreateCompletionANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSurfaceAnchorCreateCompletionANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSurfaceAnchorCreateCompletionANDROID(address, container);
     }
 
     /**

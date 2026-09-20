@@ -56,13 +56,8 @@ public class VkMemoryBarrierAccessFlags3KHR extends Struct<VkMemoryBarrierAccess
         DSTACCESSMASK3 = layout.offsetof(3);
     }
 
-    protected VkMemoryBarrierAccessFlags3KHR(long address, @Nullable ByteBuffer container) {
+    public VkMemoryBarrierAccessFlags3KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryBarrierAccessFlags3KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryBarrierAccessFlags3KHR(address, container);
     }
 
     /**

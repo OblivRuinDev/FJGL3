@@ -57,13 +57,8 @@ public class XrWorldMeshBufferML extends Struct<XrWorldMeshBufferML> implements 
         BUFFER = layout.offsetof(3);
     }
 
-    protected XrWorldMeshBufferML(long address, @Nullable ByteBuffer container) {
+    public XrWorldMeshBufferML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrWorldMeshBufferML create(long address, @Nullable ByteBuffer container) {
-        return new XrWorldMeshBufferML(address, container);
     }
 
     /**

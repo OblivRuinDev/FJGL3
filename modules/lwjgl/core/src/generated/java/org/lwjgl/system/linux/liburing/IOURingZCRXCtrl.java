@@ -66,13 +66,8 @@ public class IOURingZCRXCtrl extends Struct<IOURingZCRXCtrl> implements NativeRe
         ZC_FLUSH = layout.offsetof(5);
     }
 
-    protected IOURingZCRXCtrl(long address, @Nullable ByteBuffer container) {
+    public IOURingZCRXCtrl(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingZCRXCtrl create(long address, @Nullable ByteBuffer container) {
-        return new IOURingZCRXCtrl(address, container);
     }
 
     /**

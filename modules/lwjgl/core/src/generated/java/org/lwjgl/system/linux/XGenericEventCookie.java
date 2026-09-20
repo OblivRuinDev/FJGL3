@@ -73,13 +73,8 @@ public class XGenericEventCookie extends Struct<XGenericEventCookie> implements 
         DATA = layout.offsetof(7);
     }
 
-    protected XGenericEventCookie(long address, @Nullable ByteBuffer container) {
+    public XGenericEventCookie(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XGenericEventCookie create(long address, @Nullable ByteBuffer container) {
-        return new XGenericEventCookie(address, container);
     }
 
     /**

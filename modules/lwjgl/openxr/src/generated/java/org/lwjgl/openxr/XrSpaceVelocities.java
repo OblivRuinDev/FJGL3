@@ -57,13 +57,8 @@ public class XrSpaceVelocities extends Struct<XrSpaceVelocities> implements Nati
         VELOCITIES = layout.offsetof(3);
     }
 
-    protected XrSpaceVelocities(long address, @Nullable ByteBuffer container) {
+    public XrSpaceVelocities(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceVelocities create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceVelocities(address, container);
     }
 
     /**

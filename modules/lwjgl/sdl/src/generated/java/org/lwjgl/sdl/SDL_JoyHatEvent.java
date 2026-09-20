@@ -72,13 +72,8 @@ public class SDL_JoyHatEvent extends Struct<SDL_JoyHatEvent> implements NativeRe
         PADDING2 = layout.offsetof(7);
     }
 
-    protected SDL_JoyHatEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_JoyHatEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_JoyHatEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_JoyHatEvent(address, container);
     }
 
     /**

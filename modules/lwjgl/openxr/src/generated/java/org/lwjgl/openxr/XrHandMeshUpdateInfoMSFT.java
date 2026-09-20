@@ -56,13 +56,8 @@ public class XrHandMeshUpdateInfoMSFT extends Struct<XrHandMeshUpdateInfoMSFT> i
         HANDPOSETYPE = layout.offsetof(3);
     }
 
-    protected XrHandMeshUpdateInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrHandMeshUpdateInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandMeshUpdateInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandMeshUpdateInfoMSFT(address, container);
     }
 
     /**

@@ -69,13 +69,8 @@ public class VkPipelineShaderStageCreateInfo extends Struct<VkPipelineShaderStag
         PSPECIALIZATIONINFO = layout.offsetof(6);
     }
 
-    protected VkPipelineShaderStageCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineShaderStageCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineShaderStageCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineShaderStageCreateInfo(address, container);
     }
 
     /**

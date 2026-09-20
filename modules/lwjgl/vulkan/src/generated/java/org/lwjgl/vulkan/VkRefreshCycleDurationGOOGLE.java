@@ -44,13 +44,8 @@ public class VkRefreshCycleDurationGOOGLE extends Struct<VkRefreshCycleDurationG
         REFRESHDURATION = layout.offsetof(0);
     }
 
-    protected VkRefreshCycleDurationGOOGLE(long address, @Nullable ByteBuffer container) {
+    public VkRefreshCycleDurationGOOGLE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRefreshCycleDurationGOOGLE create(long address, @Nullable ByteBuffer container) {
-        return new VkRefreshCycleDurationGOOGLE(address, container);
     }
 
     /**

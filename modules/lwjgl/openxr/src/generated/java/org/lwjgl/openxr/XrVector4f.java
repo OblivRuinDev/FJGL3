@@ -56,13 +56,8 @@ public class XrVector4f extends Struct<XrVector4f> implements NativeResource {
         W = layout.offsetof(3);
     }
 
-    protected XrVector4f(long address, @Nullable ByteBuffer container) {
+    public XrVector4f(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVector4f create(long address, @Nullable ByteBuffer container) {
-        return new XrVector4f(address, container);
     }
 
     /**

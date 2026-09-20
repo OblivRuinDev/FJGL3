@@ -53,13 +53,8 @@ public class XrSpatialAnchorShareInfoBD extends Struct<XrSpatialAnchorShareInfoB
         ANCHOR = layout.offsetof(2);
     }
 
-    protected XrSpatialAnchorShareInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorShareInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorShareInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorShareInfoBD(address, container);
     }
 
     /**

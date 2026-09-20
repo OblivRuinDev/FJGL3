@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDescriptorSetLayoutSupportKHR extends VkDescriptorSetLayoutSupport {
 
-    protected VkDescriptorSetLayoutSupportKHR(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetLayoutSupportKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetLayoutSupportKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetLayoutSupportKHR(address, container);
     }
 
     /**

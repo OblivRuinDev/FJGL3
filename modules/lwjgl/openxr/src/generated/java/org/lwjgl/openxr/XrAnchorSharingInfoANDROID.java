@@ -53,13 +53,8 @@ public class XrAnchorSharingInfoANDROID extends Struct<XrAnchorSharingInfoANDROI
         ANCHOR = layout.offsetof(2);
     }
 
-    protected XrAnchorSharingInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrAnchorSharingInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrAnchorSharingInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrAnchorSharingInfoANDROID(address, container);
     }
 
     /**

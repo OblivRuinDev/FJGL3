@@ -44,13 +44,8 @@ public class FMOD_STUDIO_CPU_USAGE extends Struct<FMOD_STUDIO_CPU_USAGE> impleme
         UPDATE = layout.offsetof(0);
     }
 
-    protected FMOD_STUDIO_CPU_USAGE(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_CPU_USAGE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_CPU_USAGE create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_CPU_USAGE(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class XrSystemTrackablesPropertiesANDROID extends Struct<XrSystemTrackabl
         MAXANCHORS = layout.offsetof(3);
     }
 
-    protected XrSystemTrackablesPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemTrackablesPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemTrackablesPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemTrackablesPropertiesANDROID(address, container);
     }
 
     /**

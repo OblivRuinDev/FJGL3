@@ -52,13 +52,8 @@ public class VkPartitionedAccelerationStructureFlagsNV extends Struct<VkPartitio
         ENABLEPARTITIONTRANSLATION = layout.offsetof(2);
     }
 
-    protected VkPartitionedAccelerationStructureFlagsNV(long address, @Nullable ByteBuffer container) {
+    public VkPartitionedAccelerationStructureFlagsNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPartitionedAccelerationStructureFlagsNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPartitionedAccelerationStructureFlagsNV(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class VkShaderResourceUsageAMD extends Struct<VkShaderResourceUsageAMD> {
         SCRATCHMEMUSAGEINBYTES = layout.offsetof(4);
     }
 
-    protected VkShaderResourceUsageAMD(long address, @Nullable ByteBuffer container) {
+    public VkShaderResourceUsageAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkShaderResourceUsageAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkShaderResourceUsageAMD(address, container);
     }
 
     /**

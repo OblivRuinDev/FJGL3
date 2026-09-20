@@ -60,13 +60,8 @@ public class VkDescriptorMappingSourceConstantOffsetEXT extends Struct<VkDescrip
         SAMPLERHEAPARRAYSTRIDE = layout.offsetof(4);
     }
 
-    protected VkDescriptorMappingSourceConstantOffsetEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorMappingSourceConstantOffsetEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorMappingSourceConstantOffsetEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorMappingSourceConstantOffsetEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceVertexInputDynamicStateFeaturesEXT extends Struct<V
         VERTEXINPUTDYNAMICSTATE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceVertexInputDynamicStateFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVertexInputDynamicStateFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVertexInputDynamicStateFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVertexInputDynamicStateFeaturesEXT(address, container);
     }
 
     /**

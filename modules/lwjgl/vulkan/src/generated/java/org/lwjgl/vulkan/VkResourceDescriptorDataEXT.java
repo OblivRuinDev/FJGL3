@@ -56,13 +56,8 @@ public class VkResourceDescriptorDataEXT extends Struct<VkResourceDescriptorData
         PTENSORARM = layout.offsetof(3);
     }
 
-    protected VkResourceDescriptorDataEXT(long address, @Nullable ByteBuffer container) {
+    public VkResourceDescriptorDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkResourceDescriptorDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkResourceDescriptorDataEXT(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT exten
         RASTERIZATIONORDERSTENCILATTACHMENTACCESS = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(address, container);
     }
 
     /**

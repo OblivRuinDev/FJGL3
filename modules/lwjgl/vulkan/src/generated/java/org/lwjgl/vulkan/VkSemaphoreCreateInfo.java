@@ -52,13 +52,8 @@ public class VkSemaphoreCreateInfo extends Struct<VkSemaphoreCreateInfo> impleme
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkSemaphoreCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkSemaphoreCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSemaphoreCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkSemaphoreCreateInfo(address, container);
     }
 
     /**

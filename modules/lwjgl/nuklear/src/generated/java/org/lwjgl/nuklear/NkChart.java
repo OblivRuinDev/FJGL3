@@ -68,13 +68,8 @@ public class NkChart extends Struct<NkChart> {
         SLOTS = layout.offsetof(5);
     }
 
-    protected NkChart(long address, @Nullable ByteBuffer container) {
+    public NkChart(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkChart create(long address, @Nullable ByteBuffer container) {
-        return new NkChart(address, container);
     }
 
     /**

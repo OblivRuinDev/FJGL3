@@ -24,13 +24,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkRenderingEndInfoEXT extends VkRenderingEndInfoKHR {
 
-    protected VkRenderingEndInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkRenderingEndInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderingEndInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderingEndInfoEXT(address, container);
     }
 
     /**

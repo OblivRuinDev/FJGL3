@@ -71,13 +71,8 @@ public class XrRenderModelPropertiesFB extends Struct<XrRenderModelPropertiesFB>
         FLAGS = layout.offsetof(6);
     }
 
-    protected XrRenderModelPropertiesFB(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelPropertiesFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelPropertiesFB create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelPropertiesFB(address, container);
     }
 
     /**

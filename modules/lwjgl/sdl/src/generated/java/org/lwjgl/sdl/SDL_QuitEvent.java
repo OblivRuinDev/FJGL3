@@ -52,13 +52,8 @@ public class SDL_QuitEvent extends Struct<SDL_QuitEvent> implements NativeResour
         TIMESTAMP = layout.offsetof(2);
     }
 
-    protected SDL_QuitEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_QuitEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_QuitEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_QuitEvent(address, container);
     }
 
     /**

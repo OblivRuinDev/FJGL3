@@ -56,13 +56,8 @@ public class VmaStatistics extends Struct<VmaStatistics> implements NativeResour
         ALLOCATIONBYTES = layout.offsetof(3);
     }
 
-    protected VmaStatistics(long address, @Nullable ByteBuffer container) {
+    public VmaStatistics(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaStatistics create(long address, @Nullable ByteBuffer container) {
-        return new VmaStatistics(address, container);
     }
 
     /**

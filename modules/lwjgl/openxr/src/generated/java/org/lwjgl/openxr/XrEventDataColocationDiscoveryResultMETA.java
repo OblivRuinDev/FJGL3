@@ -69,13 +69,8 @@ public class XrEventDataColocationDiscoveryResultMETA extends Struct<XrEventData
         BUFFER = layout.offsetof(5);
     }
 
-    protected XrEventDataColocationDiscoveryResultMETA(long address, @Nullable ByteBuffer container) {
+    public XrEventDataColocationDiscoveryResultMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataColocationDiscoveryResultMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataColocationDiscoveryResultMETA(address, container);
     }
 
     /**

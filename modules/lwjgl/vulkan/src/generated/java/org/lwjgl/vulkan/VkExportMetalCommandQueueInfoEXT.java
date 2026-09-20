@@ -57,13 +57,8 @@ public class VkExportMetalCommandQueueInfoEXT extends Struct<VkExportMetalComman
         MTLCOMMANDQUEUE = layout.offsetof(3);
     }
 
-    protected VkExportMetalCommandQueueInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkExportMetalCommandQueueInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportMetalCommandQueueInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkExportMetalCommandQueueInfoEXT(address, container);
     }
 
     /**

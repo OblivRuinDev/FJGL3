@@ -48,13 +48,8 @@ public class LLVMJITSymbolFlags extends Struct<LLVMJITSymbolFlags> implements Na
         TARGETFLAGS = layout.offsetof(1);
     }
 
-    protected LLVMJITSymbolFlags(long address, @Nullable ByteBuffer container) {
+    public LLVMJITSymbolFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMJITSymbolFlags create(long address, @Nullable ByteBuffer container) {
-        return new LLVMJITSymbolFlags(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class XrEnvironmentDepthImageAcquireInfoMETA extends Struct<XrEnvironment
         DISPLAYTIME = layout.offsetof(3);
     }
 
-    protected XrEnvironmentDepthImageAcquireInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrEnvironmentDepthImageAcquireInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEnvironmentDepthImageAcquireInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEnvironmentDepthImageAcquireInfoMETA(address, container);
     }
 
     /**

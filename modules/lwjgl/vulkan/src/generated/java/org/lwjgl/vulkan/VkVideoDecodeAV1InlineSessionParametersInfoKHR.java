@@ -54,13 +54,8 @@ public class VkVideoDecodeAV1InlineSessionParametersInfoKHR extends Struct<VkVid
         PSTDSEQUENCEHEADER = layout.offsetof(2);
     }
 
-    protected VkVideoDecodeAV1InlineSessionParametersInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeAV1InlineSessionParametersInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeAV1InlineSessionParametersInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeAV1InlineSessionParametersInfoKHR(address, container);
     }
 
     /**

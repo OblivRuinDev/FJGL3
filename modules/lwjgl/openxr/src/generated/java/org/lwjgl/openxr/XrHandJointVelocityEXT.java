@@ -52,13 +52,8 @@ public class XrHandJointVelocityEXT extends Struct<XrHandJointVelocityEXT> {
         ANGULARVELOCITY = layout.offsetof(2);
     }
 
-    protected XrHandJointVelocityEXT(long address, @Nullable ByteBuffer container) {
+    public XrHandJointVelocityEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandJointVelocityEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandJointVelocityEXT(address, container);
     }
 
     /**

@@ -67,13 +67,8 @@ public class BGFXViewStats extends Struct<BGFXViewStats> {
         GPUFRAMENUM = layout.offsetof(6);
     }
 
-    protected BGFXViewStats(long address, @Nullable ByteBuffer container) {
+    public BGFXViewStats(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXViewStats create(long address, @Nullable ByteBuffer container) {
-        return new BGFXViewStats(address, container);
     }
 
     /**

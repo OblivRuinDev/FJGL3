@@ -67,13 +67,8 @@ public class XrAnchorSpaceCreateInfoANDROID extends Struct<XrAnchorSpaceCreateIn
         TRACKABLE = layout.offsetof(5);
     }
 
-    protected XrAnchorSpaceCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrAnchorSpaceCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrAnchorSpaceCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrAnchorSpaceCreateInfoANDROID(address, container);
     }
 
     /**

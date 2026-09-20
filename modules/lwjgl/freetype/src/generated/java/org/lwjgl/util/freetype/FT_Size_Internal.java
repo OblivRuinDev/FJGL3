@@ -52,13 +52,8 @@ public class FT_Size_Internal extends Struct<FT_Size_Internal> {
         AUTOHINT_METRICS = layout.offsetof(2);
     }
 
-    protected FT_Size_Internal(long address, @Nullable ByteBuffer container) {
+    public FT_Size_Internal(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Size_Internal create(long address, @Nullable ByteBuffer container) {
-        return new FT_Size_Internal(address, container);
     }
 
     /**

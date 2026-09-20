@@ -50,13 +50,8 @@ class NkConfigStackStyleItem extends Struct<NkConfigStackStyleItem> {
         ELEMENTS = layout.offsetof(1);
     }
 
-    protected NkConfigStackStyleItem(long address, @Nullable ByteBuffer container) {
+    public NkConfigStackStyleItem(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkConfigStackStyleItem create(long address, @Nullable ByteBuffer container) {
-        return new NkConfigStackStyleItem(address, container);
     }
 
     /**

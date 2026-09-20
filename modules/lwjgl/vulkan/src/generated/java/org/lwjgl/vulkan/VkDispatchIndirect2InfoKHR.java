@@ -58,13 +58,8 @@ public class VkDispatchIndirect2InfoKHR extends Struct<VkDispatchIndirect2InfoKH
         ADDRESSFLAGS = layout.offsetof(3);
     }
 
-    protected VkDispatchIndirect2InfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDispatchIndirect2InfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDispatchIndirect2InfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDispatchIndirect2InfoKHR(address, container);
     }
 
     /**

@@ -116,13 +116,8 @@ public class NkPanel extends Struct<NkPanel> {
         PARENT = layout.offsetof(17);
     }
 
-    protected NkPanel(long address, @Nullable ByteBuffer container) {
+    public NkPanel(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkPanel create(long address, @Nullable ByteBuffer container) {
-        return new NkPanel(address, container);
     }
 
     /**

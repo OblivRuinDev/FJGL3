@@ -74,13 +74,8 @@ public class SPVParsedInstruction extends Struct<SPVParsedInstruction> implement
         NUM_OPERANDS = layout.offsetof(7);
     }
 
-    protected SPVParsedInstruction(long address, @Nullable ByteBuffer container) {
+    public SPVParsedInstruction(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SPVParsedInstruction create(long address, @Nullable ByteBuffer container) {
-        return new SPVParsedInstruction(address, container);
     }
 
     /**

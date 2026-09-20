@@ -64,13 +64,8 @@ public class SDL_GPUViewport extends Struct<SDL_GPUViewport> implements NativeRe
         MAX_DEPTH = layout.offsetof(5);
     }
 
-    protected SDL_GPUViewport(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUViewport(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUViewport create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUViewport(address, container);
     }
 
     /**

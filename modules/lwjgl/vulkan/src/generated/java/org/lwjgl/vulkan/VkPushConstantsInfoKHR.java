@@ -30,13 +30,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPushConstantsInfoKHR extends VkPushConstantsInfo {
 
-    protected VkPushConstantsInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPushConstantsInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPushConstantsInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPushConstantsInfoKHR(address, container);
     }
 
     /**

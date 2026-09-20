@@ -48,13 +48,8 @@ public class XrFaceTrackerCreateInfoANDROID extends Struct<XrFaceTrackerCreateIn
         NEXT = layout.offsetof(1);
     }
 
-    protected XrFaceTrackerCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrFaceTrackerCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFaceTrackerCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrFaceTrackerCreateInfoANDROID(address, container);
     }
 
     /**

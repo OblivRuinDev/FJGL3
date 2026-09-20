@@ -52,13 +52,8 @@ public class LZ4StreamHC extends Struct<LZ4StreamHC> {
         INTERNAL_DONOTUSE = layout.offsetof(1);
     }
 
-    protected LZ4StreamHC(long address, @Nullable ByteBuffer container) {
+    public LZ4StreamHC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LZ4StreamHC create(long address, @Nullable ByteBuffer container) {
-        return new LZ4StreamHC(address, container);
     }
 
     /**

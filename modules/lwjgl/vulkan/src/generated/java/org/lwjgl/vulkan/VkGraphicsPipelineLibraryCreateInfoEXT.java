@@ -52,13 +52,8 @@ public class VkGraphicsPipelineLibraryCreateInfoEXT extends Struct<VkGraphicsPip
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkGraphicsPipelineLibraryCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkGraphicsPipelineLibraryCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGraphicsPipelineLibraryCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkGraphicsPipelineLibraryCreateInfoEXT(address, container);
     }
 
     /**

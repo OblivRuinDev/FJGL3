@@ -58,13 +58,8 @@ public class VkSamplerBlockMatchWindowCreateInfoQCOM extends Struct<VkSamplerBlo
         WINDOWCOMPAREMODE = layout.offsetof(3);
     }
 
-    protected VkSamplerBlockMatchWindowCreateInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkSamplerBlockMatchWindowCreateInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerBlockMatchWindowCreateInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerBlockMatchWindowCreateInfoQCOM(address, container);
     }
 
     /**

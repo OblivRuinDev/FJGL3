@@ -81,13 +81,8 @@ public class IOURing extends Struct<IOURing> implements NativeResource {
         PAD2 = layout.offsetof(8);
     }
 
-    protected IOURing(long address, @Nullable ByteBuffer container) {
+    public IOURing(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURing create(long address, @Nullable ByteBuffer container) {
-        return new IOURing(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkCommandBufferInheritanceConditionalRenderingInfoEXT extends Struc
         CONDITIONALRENDERINGENABLE = layout.offsetof(2);
     }
 
-    protected VkCommandBufferInheritanceConditionalRenderingInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkCommandBufferInheritanceConditionalRenderingInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCommandBufferInheritanceConditionalRenderingInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkCommandBufferInheritanceConditionalRenderingInfoEXT(address, container);
     }
 
     /**

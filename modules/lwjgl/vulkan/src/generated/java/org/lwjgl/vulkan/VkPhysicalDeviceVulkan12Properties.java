@@ -260,13 +260,8 @@ public class VkPhysicalDeviceVulkan12Properties extends Struct<VkPhysicalDeviceV
         FRAMEBUFFERINTEGERCOLORSAMPLECOUNTS = layout.offsetof(53);
     }
 
-    protected VkPhysicalDeviceVulkan12Properties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVulkan12Properties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVulkan12Properties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVulkan12Properties(address, container);
     }
 
     /**

@@ -49,13 +49,8 @@ public class AIVector2D extends Struct<AIVector2D> implements NativeResource {
         Y = layout.offsetof(1);
     }
 
-    protected AIVector2D(long address, @Nullable ByteBuffer container) {
+    public AIVector2D(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIVector2D create(long address, @Nullable ByteBuffer container) {
-        return new AIVector2D(address, container);
     }
 
     /**

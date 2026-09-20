@@ -49,13 +49,8 @@ public class CLBusAddressAMD extends Struct<CLBusAddressAMD> implements NativeRe
         SIGNALBUSADDRESS = layout.offsetof(1);
     }
 
-    protected CLBusAddressAMD(long address, @Nullable ByteBuffer container) {
+    public CLBusAddressAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLBusAddressAMD create(long address, @Nullable ByteBuffer container) {
-        return new CLBusAddressAMD(address, container);
     }
 
     /**

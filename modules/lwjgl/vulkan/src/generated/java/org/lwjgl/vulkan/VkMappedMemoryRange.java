@@ -60,13 +60,8 @@ public class VkMappedMemoryRange extends Struct<VkMappedMemoryRange> implements 
         SIZE = layout.offsetof(4);
     }
 
-    protected VkMappedMemoryRange(long address, @Nullable ByteBuffer container) {
+    public VkMappedMemoryRange(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMappedMemoryRange create(long address, @Nullable ByteBuffer container) {
-        return new VkMappedMemoryRange(address, container);
     }
 
     /**

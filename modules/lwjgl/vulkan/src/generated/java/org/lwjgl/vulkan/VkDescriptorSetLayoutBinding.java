@@ -60,13 +60,8 @@ public class VkDescriptorSetLayoutBinding extends Struct<VkDescriptorSetLayoutBi
         PIMMUTABLESAMPLERS = layout.offsetof(4);
     }
 
-    protected VkDescriptorSetLayoutBinding(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetLayoutBinding(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetLayoutBinding create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetLayoutBinding(address, container);
     }
 
     /**

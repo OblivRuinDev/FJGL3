@@ -63,13 +63,8 @@ public class VkDebugReportCallbackCreateInfoEXT extends Struct<VkDebugReportCall
         PUSERDATA = layout.offsetof(4);
     }
 
-    protected VkDebugReportCallbackCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDebugReportCallbackCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDebugReportCallbackCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDebugReportCallbackCreateInfoEXT(address, container);
     }
 
     /**

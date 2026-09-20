@@ -52,13 +52,8 @@ public class NkDrawNullTexture extends Struct<NkDrawNullTexture> implements Nati
         UV = layout.offsetof(1);
     }
 
-    protected NkDrawNullTexture(long address, @Nullable ByteBuffer container) {
+    public NkDrawNullTexture(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkDrawNullTexture create(long address, @Nullable ByteBuffer container) {
-        return new NkDrawNullTexture(address, container);
     }
 
     /**

@@ -66,13 +66,8 @@ public class VkPhysicalDeviceImageProcessingPropertiesQCOM extends Struct<VkPhys
         MAXBOXFILTERBLOCKSIZE = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceImageProcessingPropertiesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageProcessingPropertiesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageProcessingPropertiesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageProcessingPropertiesQCOM(address, container);
     }
 
     /**

@@ -54,13 +54,8 @@ public class VkVideoDecodeVP9ProfileInfoKHR extends Struct<VkVideoDecodeVP9Profi
         STDPROFILE = layout.offsetof(2);
     }
 
-    protected VkVideoDecodeVP9ProfileInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeVP9ProfileInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeVP9ProfileInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeVP9ProfileInfoKHR(address, container);
     }
 
     /**

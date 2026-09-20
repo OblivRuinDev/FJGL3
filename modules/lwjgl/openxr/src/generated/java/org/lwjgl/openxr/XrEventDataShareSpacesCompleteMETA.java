@@ -56,13 +56,8 @@ public class XrEventDataShareSpacesCompleteMETA extends Struct<XrEventDataShareS
         RESULT = layout.offsetof(3);
     }
 
-    protected XrEventDataShareSpacesCompleteMETA(long address, @Nullable ByteBuffer container) {
+    public XrEventDataShareSpacesCompleteMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataShareSpacesCompleteMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataShareSpacesCompleteMETA(address, container);
     }
 
     /**

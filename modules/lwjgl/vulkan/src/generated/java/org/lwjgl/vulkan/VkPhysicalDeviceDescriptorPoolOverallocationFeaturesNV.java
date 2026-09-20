@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV extends Stru
         DESCRIPTORPOOLOVERALLOCATION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrEventDataVirtualKeyboardShownMETA extends Struct<XrEventDataVirtu
         KEYBOARD = layout.offsetof(2);
     }
 
-    protected XrEventDataVirtualKeyboardShownMETA(long address, @Nullable ByteBuffer container) {
+    public XrEventDataVirtualKeyboardShownMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataVirtualKeyboardShownMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataVirtualKeyboardShownMETA(address, container);
     }
 
     /**

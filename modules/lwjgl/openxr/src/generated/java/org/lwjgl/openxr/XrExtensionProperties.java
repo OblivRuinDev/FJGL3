@@ -58,13 +58,8 @@ public class XrExtensionProperties extends Struct<XrExtensionProperties> impleme
         EXTENSIONVERSION = layout.offsetof(3);
     }
 
-    protected XrExtensionProperties(long address, @Nullable ByteBuffer container) {
+    public XrExtensionProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrExtensionProperties create(long address, @Nullable ByteBuffer container) {
-        return new XrExtensionProperties(address, container);
     }
 
     /**

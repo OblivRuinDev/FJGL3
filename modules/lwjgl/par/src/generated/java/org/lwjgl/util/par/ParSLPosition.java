@@ -49,13 +49,8 @@ public class ParSLPosition extends Struct<ParSLPosition> implements NativeResour
         Y = layout.offsetof(1);
     }
 
-    protected ParSLPosition(long address, @Nullable ByteBuffer container) {
+    public ParSLPosition(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ParSLPosition create(long address, @Nullable ByteBuffer container) {
-        return new ParSLPosition(address, container);
     }
 
     /**

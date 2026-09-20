@@ -52,13 +52,8 @@ public class VkExternalFormatANDROID extends Struct<VkExternalFormatANDROID> imp
         EXTERNALFORMAT = layout.offsetof(2);
     }
 
-    protected VkExternalFormatANDROID(long address, @Nullable ByteBuffer container) {
+    public VkExternalFormatANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalFormatANDROID create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalFormatANDROID(address, container);
     }
 
     /**

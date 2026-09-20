@@ -52,13 +52,8 @@ public class VkPipelineViewportDepthClipControlCreateInfoEXT extends Struct<VkPi
         NEGATIVEONETOONE = layout.offsetof(2);
     }
 
-    protected VkPipelineViewportDepthClipControlCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineViewportDepthClipControlCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineViewportDepthClipControlCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineViewportDepthClipControlCreateInfoEXT(address, container);
     }
 
     /**

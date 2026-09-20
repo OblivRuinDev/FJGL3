@@ -57,13 +57,8 @@ public class XrRecommendedLayerResolutionGetInfoMETA extends Struct<XrRecommende
         PREDICTEDDISPLAYTIME = layout.offsetof(3);
     }
 
-    protected XrRecommendedLayerResolutionGetInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrRecommendedLayerResolutionGetInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRecommendedLayerResolutionGetInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrRecommendedLayerResolutionGetInfoMETA(address, container);
     }
 
     /**

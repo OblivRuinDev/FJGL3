@@ -66,13 +66,8 @@ public class XrApiLayerProperties extends Struct<XrApiLayerProperties> implement
         DESCRIPTION = layout.offsetof(5);
     }
 
-    protected XrApiLayerProperties(long address, @Nullable ByteBuffer container) {
+    public XrApiLayerProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrApiLayerProperties create(long address, @Nullable ByteBuffer container) {
-        return new XrApiLayerProperties(address, container);
     }
 
     /**

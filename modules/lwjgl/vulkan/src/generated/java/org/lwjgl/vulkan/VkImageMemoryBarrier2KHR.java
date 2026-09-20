@@ -34,13 +34,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkImageMemoryBarrier2KHR extends VkImageMemoryBarrier2 {
 
-    protected VkImageMemoryBarrier2KHR(long address, @Nullable ByteBuffer container) {
+    public VkImageMemoryBarrier2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageMemoryBarrier2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkImageMemoryBarrier2KHR(address, container);
     }
 
     /**

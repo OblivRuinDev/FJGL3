@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCooperativeMatrixConversionFeaturesQCOM extends Str
         COOPERATIVEMATRIXCONVERSION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCooperativeMatrixConversionFeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCooperativeMatrixConversionFeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCooperativeMatrixConversionFeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCooperativeMatrixConversionFeaturesQCOM(address, container);
     }
 
     /**

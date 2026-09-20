@@ -56,13 +56,8 @@ public class VkMacOSSurfaceCreateInfoMVK extends Struct<VkMacOSSurfaceCreateInfo
         PVIEW = layout.offsetof(3);
     }
 
-    protected VkMacOSSurfaceCreateInfoMVK(long address, @Nullable ByteBuffer container) {
+    public VkMacOSSurfaceCreateInfoMVK(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMacOSSurfaceCreateInfoMVK create(long address, @Nullable ByteBuffer container) {
-        return new VkMacOSSurfaceCreateInfoMVK(address, container);
     }
 
     /**

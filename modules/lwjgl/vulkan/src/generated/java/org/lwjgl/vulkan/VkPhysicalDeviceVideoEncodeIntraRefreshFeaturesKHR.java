@@ -52,13 +52,8 @@ public class VkPhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR extends Struct<V
         VIDEOENCODEINTRAREFRESH = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR(address, container);
     }
 
     /**

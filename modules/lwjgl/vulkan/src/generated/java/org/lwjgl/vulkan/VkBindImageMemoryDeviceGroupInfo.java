@@ -65,13 +65,8 @@ public class VkBindImageMemoryDeviceGroupInfo extends Struct<VkBindImageMemoryDe
         PSPLITINSTANCEBINDREGIONS = layout.offsetof(5);
     }
 
-    protected VkBindImageMemoryDeviceGroupInfo(long address, @Nullable ByteBuffer container) {
+    public VkBindImageMemoryDeviceGroupInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindImageMemoryDeviceGroupInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkBindImageMemoryDeviceGroupInfo(address, container);
     }
 
     /**

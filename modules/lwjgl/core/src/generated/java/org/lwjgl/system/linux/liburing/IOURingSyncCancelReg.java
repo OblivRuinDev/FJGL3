@@ -74,13 +74,8 @@ public class IOURingSyncCancelReg extends Struct<IOURingSyncCancelReg> implement
         PAD2 = layout.offsetof(6);
     }
 
-    protected IOURingSyncCancelReg(long address, @Nullable ByteBuffer container) {
+    public IOURingSyncCancelReg(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingSyncCancelReg create(long address, @Nullable ByteBuffer container) {
-        return new IOURingSyncCancelReg(address, container);
     }
 
     /**

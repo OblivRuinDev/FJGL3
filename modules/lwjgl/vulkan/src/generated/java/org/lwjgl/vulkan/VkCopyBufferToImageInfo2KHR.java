@@ -30,13 +30,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkCopyBufferToImageInfo2KHR extends VkCopyBufferToImageInfo2 {
 
-    protected VkCopyBufferToImageInfo2KHR(long address, @Nullable ByteBuffer container) {
+    public VkCopyBufferToImageInfo2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyBufferToImageInfo2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyBufferToImageInfo2KHR(address, container);
     }
 
     /**

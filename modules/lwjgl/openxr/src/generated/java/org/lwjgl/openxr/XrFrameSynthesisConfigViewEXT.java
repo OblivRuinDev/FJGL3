@@ -56,13 +56,8 @@ public class XrFrameSynthesisConfigViewEXT extends Struct<XrFrameSynthesisConfig
         RECOMMENDEDMOTIONVECTORIMAGERECTHEIGHT = layout.offsetof(3);
     }
 
-    protected XrFrameSynthesisConfigViewEXT(long address, @Nullable ByteBuffer container) {
+    public XrFrameSynthesisConfigViewEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFrameSynthesisConfigViewEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrFrameSynthesisConfigViewEXT(address, container);
     }
 
     /**

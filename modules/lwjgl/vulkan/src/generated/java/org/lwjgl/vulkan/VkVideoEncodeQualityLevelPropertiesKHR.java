@@ -56,13 +56,8 @@ public class VkVideoEncodeQualityLevelPropertiesKHR extends Struct<VkVideoEncode
         PREFERREDRATECONTROLLAYERCOUNT = layout.offsetof(3);
     }
 
-    protected VkVideoEncodeQualityLevelPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeQualityLevelPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeQualityLevelPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeQualityLevelPropertiesKHR(address, container);
     }
 
     /**

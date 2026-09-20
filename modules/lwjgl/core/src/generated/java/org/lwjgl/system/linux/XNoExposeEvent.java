@@ -69,13 +69,8 @@ public class XNoExposeEvent extends Struct<XNoExposeEvent> implements NativeReso
         MINOR_CODE = layout.offsetof(6);
     }
 
-    protected XNoExposeEvent(long address, @Nullable ByteBuffer container) {
+    public XNoExposeEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XNoExposeEvent create(long address, @Nullable ByteBuffer container) {
-        return new XNoExposeEvent(address, container);
     }
 
     /**

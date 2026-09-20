@@ -50,13 +50,8 @@ public class XrSpaceQueryResultFB extends Struct<XrSpaceQueryResultFB> implement
         UUID = layout.offsetof(1);
     }
 
-    protected XrSpaceQueryResultFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceQueryResultFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceQueryResultFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceQueryResultFB(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkFenceGetFdInfoKHR extends Struct<VkFenceGetFdInfoKHR> implements 
         HANDLETYPE = layout.offsetof(3);
     }
 
-    protected VkFenceGetFdInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkFenceGetFdInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFenceGetFdInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkFenceGetFdInfoKHR(address, container);
     }
 
     /**

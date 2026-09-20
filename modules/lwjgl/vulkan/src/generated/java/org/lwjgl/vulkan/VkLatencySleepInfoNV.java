@@ -56,13 +56,8 @@ public class VkLatencySleepInfoNV extends Struct<VkLatencySleepInfoNV> implement
         VALUE = layout.offsetof(3);
     }
 
-    protected VkLatencySleepInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkLatencySleepInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkLatencySleepInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkLatencySleepInfoNV(address, container);
     }
 
     /**

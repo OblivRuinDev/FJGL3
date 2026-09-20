@@ -56,13 +56,8 @@ public class XrGraphicsRequirementsOpenGLKHR extends Struct<XrGraphicsRequiremen
         MAXAPIVERSIONSUPPORTED = layout.offsetof(3);
     }
 
-    protected XrGraphicsRequirementsOpenGLKHR(long address, @Nullable ByteBuffer container) {
+    public XrGraphicsRequirementsOpenGLKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGraphicsRequirementsOpenGLKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrGraphicsRequirementsOpenGLKHR(address, container);
     }
 
     /**

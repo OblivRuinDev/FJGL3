@@ -53,13 +53,8 @@ public class spng_phys extends Struct<spng_phys> implements NativeResource {
         UNIT_SPECIFIER = layout.offsetof(2);
     }
 
-    protected spng_phys(long address, @Nullable ByteBuffer container) {
+    public spng_phys(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_phys create(long address, @Nullable ByteBuffer container) {
-        return new spng_phys(address, container);
     }
 
     /**

@@ -65,13 +65,8 @@ public class IOURingAttrPI extends Struct<IOURingAttrPI> implements NativeResour
         RSVD = layout.offsetof(5);
     }
 
-    protected IOURingAttrPI(long address, @Nullable ByteBuffer container) {
+    public IOURingAttrPI(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingAttrPI create(long address, @Nullable ByteBuffer container) {
-        return new IOURingAttrPI(address, container);
     }
 
     /**

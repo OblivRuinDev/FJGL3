@@ -53,13 +53,8 @@ public class SDL_GPUBufferRegion extends Struct<SDL_GPUBufferRegion> implements 
         SIZE = layout.offsetof(2);
     }
 
-    protected SDL_GPUBufferRegion(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUBufferRegion(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUBufferRegion create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUBufferRegion(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class XrSpatialComponentDataQueryConditionEXT extends Struct<XrSpatialCom
         COMPONENTTYPES = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentDataQueryConditionEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentDataQueryConditionEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentDataQueryConditionEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentDataQueryConditionEXT(address, container);
     }
 
     /**

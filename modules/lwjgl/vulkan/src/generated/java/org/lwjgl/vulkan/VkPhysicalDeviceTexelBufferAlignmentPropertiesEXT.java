@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT extends VkPhysicalDeviceTexelBufferAlignmentProperties {
 
-    protected VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT(address, container);
     }
 
     /**

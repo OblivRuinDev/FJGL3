@@ -52,13 +52,8 @@ public class VkVideoFormatAV1QuantizationMapPropertiesKHR extends Struct<VkVideo
         COMPATIBLESUPERBLOCKSIZES = layout.offsetof(2);
     }
 
-    protected VkVideoFormatAV1QuantizationMapPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoFormatAV1QuantizationMapPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoFormatAV1QuantizationMapPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoFormatAV1QuantizationMapPropertiesKHR(address, container);
     }
 
     /**

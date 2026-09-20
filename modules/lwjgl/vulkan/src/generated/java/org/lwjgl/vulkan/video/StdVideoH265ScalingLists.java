@@ -67,13 +67,8 @@ public class StdVideoH265ScalingLists extends Struct<StdVideoH265ScalingLists> i
         SCALINGLISTDCCOEF32X32 = layout.offsetof(5);
     }
 
-    protected StdVideoH265ScalingLists(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265ScalingLists(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265ScalingLists create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265ScalingLists(address, container);
     }
 
     /**

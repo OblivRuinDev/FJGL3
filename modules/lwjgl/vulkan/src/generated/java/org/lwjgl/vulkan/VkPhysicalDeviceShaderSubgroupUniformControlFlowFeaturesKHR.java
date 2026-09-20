@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR extends
         SHADERSUBGROUPUNIFORMCONTROLFLOW = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR(address, container);
     }
 
     /**

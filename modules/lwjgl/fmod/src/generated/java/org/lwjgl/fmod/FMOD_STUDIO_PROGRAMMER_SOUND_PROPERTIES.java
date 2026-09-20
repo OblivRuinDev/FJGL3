@@ -53,13 +53,8 @@ public class FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES extends Struct<FMOD_STUDIO_
         SUBSOUNDINDEX = layout.offsetof(2);
     }
 
-    protected FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES(address, container);
     }
 
     /**

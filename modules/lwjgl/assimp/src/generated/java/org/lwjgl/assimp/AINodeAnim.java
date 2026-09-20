@@ -80,13 +80,8 @@ public class AINodeAnim extends Struct<AINodeAnim> implements NativeResource {
         MPOSTSTATE = layout.offsetof(8);
     }
 
-    protected AINodeAnim(long address, @Nullable ByteBuffer container) {
+    public AINodeAnim(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AINodeAnim create(long address, @Nullable ByteBuffer container) {
-        return new AINodeAnim(address, container);
     }
 
     /**

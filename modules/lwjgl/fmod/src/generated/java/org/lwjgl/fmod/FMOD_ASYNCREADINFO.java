@@ -76,13 +76,8 @@ public class FMOD_ASYNCREADINFO extends Struct<FMOD_ASYNCREADINFO> implements Na
         DONE = layout.offsetof(7);
     }
 
-    protected FMOD_ASYNCREADINFO(long address, @Nullable ByteBuffer container) {
+    public FMOD_ASYNCREADINFO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_ASYNCREADINFO create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_ASYNCREADINFO(address, container);
     }
 
     /**

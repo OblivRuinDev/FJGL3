@@ -65,13 +65,8 @@ public class VkCopyTensorInfoARM extends Struct<VkCopyTensorInfoARM> implements 
         PREGIONS = layout.offsetof(5);
     }
 
-    protected VkCopyTensorInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkCopyTensorInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyTensorInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyTensorInfoARM(address, container);
     }
 
     /**

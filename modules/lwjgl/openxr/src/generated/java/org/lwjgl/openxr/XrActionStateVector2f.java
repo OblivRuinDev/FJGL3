@@ -66,13 +66,8 @@ public class XrActionStateVector2f extends Struct<XrActionStateVector2f> impleme
         ISACTIVE = layout.offsetof(5);
     }
 
-    protected XrActionStateVector2f(long address, @Nullable ByteBuffer container) {
+    public XrActionStateVector2f(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrActionStateVector2f create(long address, @Nullable ByteBuffer container) {
-        return new XrActionStateVector2f(address, container);
     }
 
     /**

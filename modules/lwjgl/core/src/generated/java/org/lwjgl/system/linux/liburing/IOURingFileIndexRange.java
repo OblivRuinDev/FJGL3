@@ -53,13 +53,8 @@ public class IOURingFileIndexRange extends Struct<IOURingFileIndexRange> impleme
         RESV = layout.offsetof(2);
     }
 
-    protected IOURingFileIndexRange(long address, @Nullable ByteBuffer container) {
+    public IOURingFileIndexRange(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingFileIndexRange create(long address, @Nullable ByteBuffer container) {
-        return new IOURingFileIndexRange(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrCompositionLayerSecureContentFB extends Struct<XrCompositionLayer
         FLAGS = layout.offsetof(2);
     }
 
-    protected XrCompositionLayerSecureContentFB(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerSecureContentFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerSecureContentFB create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerSecureContentFB(address, container);
     }
 
     /**

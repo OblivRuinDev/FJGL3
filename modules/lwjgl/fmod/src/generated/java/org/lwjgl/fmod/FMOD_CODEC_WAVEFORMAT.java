@@ -94,13 +94,8 @@ public class FMOD_CODEC_WAVEFORMAT extends Struct<FMOD_CODEC_WAVEFORMAT> impleme
         PEAKVOLUME = layout.offsetof(12);
     }
 
-    protected FMOD_CODEC_WAVEFORMAT(long address, @Nullable ByteBuffer container) {
+    public FMOD_CODEC_WAVEFORMAT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_CODEC_WAVEFORMAT create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_CODEC_WAVEFORMAT(address, container);
     }
 
     /**

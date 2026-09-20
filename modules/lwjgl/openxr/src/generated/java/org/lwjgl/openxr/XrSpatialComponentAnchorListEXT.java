@@ -57,13 +57,8 @@ public class XrSpatialComponentAnchorListEXT extends Struct<XrSpatialComponentAn
         LOCATIONS = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentAnchorListEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentAnchorListEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentAnchorListEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentAnchorListEXT(address, container);
     }
 
     /**

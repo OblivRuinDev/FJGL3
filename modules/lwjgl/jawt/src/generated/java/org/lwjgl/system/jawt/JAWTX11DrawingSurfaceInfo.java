@@ -59,13 +59,8 @@ public class JAWTX11DrawingSurfaceInfo extends Struct<JAWTX11DrawingSurfaceInfo>
         DEPTH = layout.offsetof(4);
     }
 
-    protected JAWTX11DrawingSurfaceInfo(long address, @Nullable ByteBuffer container) {
+    public JAWTX11DrawingSurfaceInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected JAWTX11DrawingSurfaceInfo create(long address, @Nullable ByteBuffer container) {
-        return new JAWTX11DrawingSurfaceInfo(address, container);
     }
 
     /**

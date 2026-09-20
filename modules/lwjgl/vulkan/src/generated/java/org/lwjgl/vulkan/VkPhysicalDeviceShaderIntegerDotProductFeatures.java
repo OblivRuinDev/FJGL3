@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderIntegerDotProductFeatures extends Struct<VkPh
         SHADERINTEGERDOTPRODUCT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderIntegerDotProductFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderIntegerDotProductFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderIntegerDotProductFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderIntegerDotProductFeatures(address, container);
     }
 
     /**

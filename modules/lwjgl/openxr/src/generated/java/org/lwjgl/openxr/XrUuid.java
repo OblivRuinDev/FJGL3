@@ -47,13 +47,8 @@ public class XrUuid extends Struct<XrUuid> implements NativeResource {
         DATA = layout.offsetof(0);
     }
 
-    protected XrUuid(long address, @Nullable ByteBuffer container) {
+    public XrUuid(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrUuid create(long address, @Nullable ByteBuffer container) {
-        return new XrUuid(address, container);
     }
 
     /**

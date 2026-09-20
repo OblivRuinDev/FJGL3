@@ -52,13 +52,8 @@ public class VkDisplayPowerInfoEXT extends Struct<VkDisplayPowerInfoEXT> impleme
         POWERSTATE = layout.offsetof(2);
     }
 
-    protected VkDisplayPowerInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDisplayPowerInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplayPowerInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplayPowerInfoEXT(address, container);
     }
 
     /**

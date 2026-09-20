@@ -60,13 +60,8 @@ public class VkPhysicalDeviceMapMemoryPlacedFeaturesEXT extends Struct<VkPhysica
         MEMORYUNMAPRESERVE = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceMapMemoryPlacedFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMapMemoryPlacedFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMapMemoryPlacedFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMapMemoryPlacedFeaturesEXT(address, container);
     }
 
     /**

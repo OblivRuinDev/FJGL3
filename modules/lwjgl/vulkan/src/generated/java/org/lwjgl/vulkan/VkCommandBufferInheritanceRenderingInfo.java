@@ -77,13 +77,8 @@ public class VkCommandBufferInheritanceRenderingInfo extends Struct<VkCommandBuf
         RASTERIZATIONSAMPLES = layout.offsetof(8);
     }
 
-    protected VkCommandBufferInheritanceRenderingInfo(long address, @Nullable ByteBuffer container) {
+    public VkCommandBufferInheritanceRenderingInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCommandBufferInheritanceRenderingInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkCommandBufferInheritanceRenderingInfo(address, container);
     }
 
     /**

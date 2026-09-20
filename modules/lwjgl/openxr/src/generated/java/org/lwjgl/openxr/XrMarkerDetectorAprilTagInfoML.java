@@ -52,13 +52,8 @@ public class XrMarkerDetectorAprilTagInfoML extends Struct<XrMarkerDetectorApril
         APRILTAGDICT = layout.offsetof(2);
     }
 
-    protected XrMarkerDetectorAprilTagInfoML(long address, @Nullable ByteBuffer container) {
+    public XrMarkerDetectorAprilTagInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrMarkerDetectorAprilTagInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrMarkerDetectorAprilTagInfoML(address, container);
     }
 
     /**

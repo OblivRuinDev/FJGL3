@@ -55,13 +55,8 @@ public class VmaTotalStatistics extends Struct<VmaTotalStatistics> implements Na
         TOTAL = layout.offsetof(2);
     }
 
-    protected VmaTotalStatistics(long address, @Nullable ByteBuffer container) {
+    public VmaTotalStatistics(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaTotalStatistics create(long address, @Nullable ByteBuffer container) {
-        return new VmaTotalStatistics(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkComputeOccupancyPriorityParametersNV extends Struct<VkComputeOccu
         OCCUPANCYTHROTTLING = layout.offsetof(3);
     }
 
-    protected VkComputeOccupancyPriorityParametersNV(long address, @Nullable ByteBuffer container) {
+    public VkComputeOccupancyPriorityParametersNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkComputeOccupancyPriorityParametersNV create(long address, @Nullable ByteBuffer container) {
-        return new VkComputeOccupancyPriorityParametersNV(address, container);
     }
 
     /**

@@ -73,13 +73,8 @@ public class StdVideoVP9LoopFilter extends Struct<StdVideoVP9LoopFilter> impleme
         LOOP_FILTER_MODE_DELTAS = layout.offsetof(6);
     }
 
-    protected StdVideoVP9LoopFilter(long address, @Nullable ByteBuffer container) {
+    public StdVideoVP9LoopFilter(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoVP9LoopFilter create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoVP9LoopFilter(address, container);
     }
 
     /**

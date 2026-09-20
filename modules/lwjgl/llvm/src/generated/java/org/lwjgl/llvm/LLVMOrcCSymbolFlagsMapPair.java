@@ -51,13 +51,8 @@ public class LLVMOrcCSymbolFlagsMapPair extends Struct<LLVMOrcCSymbolFlagsMapPai
         FLAGS = layout.offsetof(1);
     }
 
-    protected LLVMOrcCSymbolFlagsMapPair(long address, @Nullable ByteBuffer container) {
+    public LLVMOrcCSymbolFlagsMapPair(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMOrcCSymbolFlagsMapPair create(long address, @Nullable ByteBuffer container) {
-        return new LLVMOrcCSymbolFlagsMapPair(address, container);
     }
 
     /**

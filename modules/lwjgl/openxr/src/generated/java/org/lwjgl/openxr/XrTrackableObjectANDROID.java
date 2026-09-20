@@ -71,13 +71,8 @@ public class XrTrackableObjectANDROID extends Struct<XrTrackableObjectANDROID> i
         LASTUPDATEDTIME = layout.offsetof(6);
     }
 
-    protected XrTrackableObjectANDROID(long address, @Nullable ByteBuffer container) {
+    public XrTrackableObjectANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrTrackableObjectANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrTrackableObjectANDROID(address, container);
     }
 
     /**

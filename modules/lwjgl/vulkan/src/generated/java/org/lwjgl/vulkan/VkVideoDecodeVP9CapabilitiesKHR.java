@@ -54,13 +54,8 @@ public class VkVideoDecodeVP9CapabilitiesKHR extends Struct<VkVideoDecodeVP9Capa
         MAXLEVEL = layout.offsetof(2);
     }
 
-    protected VkVideoDecodeVP9CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeVP9CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeVP9CapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeVP9CapabilitiesKHR(address, container);
     }
 
     /**

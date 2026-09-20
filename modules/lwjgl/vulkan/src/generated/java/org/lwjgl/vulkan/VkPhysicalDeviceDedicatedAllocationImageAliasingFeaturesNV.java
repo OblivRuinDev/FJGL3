@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV extends 
         DEDICATEDALLOCATIONIMAGEALIASING = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV(address, container);
     }
 
     /**

@@ -54,13 +54,8 @@ public class AIMaterial extends Struct<AIMaterial> implements NativeResource {
         MNUMALLOCATED = layout.offsetof(2);
     }
 
-    protected AIMaterial(long address, @Nullable ByteBuffer container) {
+    public AIMaterial(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIMaterial create(long address, @Nullable ByteBuffer container) {
-        return new AIMaterial(address, container);
     }
 
     /**

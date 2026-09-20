@@ -60,13 +60,8 @@ public class XrEventDataVisibilityMaskChangedKHR extends Struct<XrEventDataVisib
         VIEWINDEX = layout.offsetof(4);
     }
 
-    protected XrEventDataVisibilityMaskChangedKHR(long address, @Nullable ByteBuffer container) {
+    public XrEventDataVisibilityMaskChangedKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataVisibilityMaskChangedKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataVisibilityMaskChangedKHR(address, container);
     }
 
     /**

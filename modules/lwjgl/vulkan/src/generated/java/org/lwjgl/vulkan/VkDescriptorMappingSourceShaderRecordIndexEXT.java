@@ -80,13 +80,8 @@ public class VkDescriptorMappingSourceShaderRecordIndexEXT extends Struct<VkDesc
         SAMPLERHEAPARRAYSTRIDE = layout.offsetof(9);
     }
 
-    protected VkDescriptorMappingSourceShaderRecordIndexEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorMappingSourceShaderRecordIndexEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorMappingSourceShaderRecordIndexEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorMappingSourceShaderRecordIndexEXT(address, container);
     }
 
     /**

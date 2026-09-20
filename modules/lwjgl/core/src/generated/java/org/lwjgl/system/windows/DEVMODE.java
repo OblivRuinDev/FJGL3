@@ -208,13 +208,8 @@ public class DEVMODE extends Struct<DEVMODE> implements NativeResource {
         DMPANNINGHEIGHT = layout.offsetof(41);
     }
 
-    protected DEVMODE(long address, @Nullable ByteBuffer container) {
+    public DEVMODE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected DEVMODE create(long address, @Nullable ByteBuffer container) {
-        return new DEVMODE(address, container);
     }
 
     /**

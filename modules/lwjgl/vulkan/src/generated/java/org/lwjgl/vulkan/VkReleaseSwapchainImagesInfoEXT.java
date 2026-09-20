@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkReleaseSwapchainImagesInfoEXT extends VkReleaseSwapchainImagesInfoKHR {
 
-    protected VkReleaseSwapchainImagesInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkReleaseSwapchainImagesInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkReleaseSwapchainImagesInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkReleaseSwapchainImagesInfoEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkSubresourceHostMemcpySize extends Struct<VkSubresourceHostMemcpyS
         SIZE = layout.offsetof(2);
     }
 
-    protected VkSubresourceHostMemcpySize(long address, @Nullable ByteBuffer container) {
+    public VkSubresourceHostMemcpySize(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubresourceHostMemcpySize create(long address, @Nullable ByteBuffer container) {
-        return new VkSubresourceHostMemcpySize(address, container);
     }
 
     /**

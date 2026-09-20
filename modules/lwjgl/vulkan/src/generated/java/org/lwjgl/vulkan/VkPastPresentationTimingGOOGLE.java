@@ -60,13 +60,8 @@ public class VkPastPresentationTimingGOOGLE extends Struct<VkPastPresentationTim
         PRESENTMARGIN = layout.offsetof(4);
     }
 
-    protected VkPastPresentationTimingGOOGLE(long address, @Nullable ByteBuffer container) {
+    public VkPastPresentationTimingGOOGLE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPastPresentationTimingGOOGLE create(long address, @Nullable ByteBuffer container) {
-        return new VkPastPresentationTimingGOOGLE(address, container);
     }
 
     /**

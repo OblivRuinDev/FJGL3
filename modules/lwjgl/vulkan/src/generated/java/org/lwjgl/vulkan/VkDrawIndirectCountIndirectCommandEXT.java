@@ -52,13 +52,8 @@ public class VkDrawIndirectCountIndirectCommandEXT extends Struct<VkDrawIndirect
         COMMANDCOUNT = layout.offsetof(2);
     }
 
-    protected VkDrawIndirectCountIndirectCommandEXT(long address, @Nullable ByteBuffer container) {
+    public VkDrawIndirectCountIndirectCommandEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDrawIndirectCountIndirectCommandEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDrawIndirectCountIndirectCommandEXT(address, container);
     }
 
     /**

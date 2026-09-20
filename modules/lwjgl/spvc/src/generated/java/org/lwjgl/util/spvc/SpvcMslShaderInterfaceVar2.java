@@ -61,13 +61,8 @@ public class SpvcMslShaderInterfaceVar2 extends Struct<SpvcMslShaderInterfaceVar
         RATE = layout.offsetof(4);
     }
 
-    protected SpvcMslShaderInterfaceVar2(long address, @Nullable ByteBuffer container) {
+    public SpvcMslShaderInterfaceVar2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcMslShaderInterfaceVar2 create(long address, @Nullable ByteBuffer container) {
-        return new SpvcMslShaderInterfaceVar2(address, container);
     }
 
     /**

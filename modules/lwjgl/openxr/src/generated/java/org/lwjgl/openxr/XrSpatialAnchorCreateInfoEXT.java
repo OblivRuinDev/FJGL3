@@ -63,13 +63,8 @@ public class XrSpatialAnchorCreateInfoEXT extends Struct<XrSpatialAnchorCreateIn
         POSE = layout.offsetof(4);
     }
 
-    protected XrSpatialAnchorCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorCreateInfoEXT(address, container);
     }
 
     /**

@@ -59,13 +59,8 @@ public class EXRAttribute extends Struct<EXRAttribute> implements NativeResource
         SIZE = layout.offsetof(3);
     }
 
-    protected EXRAttribute(long address, @Nullable ByteBuffer container) {
+    public EXRAttribute(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected EXRAttribute create(long address, @Nullable ByteBuffer container) {
-        return new EXRAttribute(address, container);
     }
 
     /**

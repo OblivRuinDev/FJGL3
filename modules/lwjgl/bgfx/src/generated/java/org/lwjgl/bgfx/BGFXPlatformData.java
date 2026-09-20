@@ -69,13 +69,8 @@ public class BGFXPlatformData extends Struct<BGFXPlatformData> implements Native
         TYPE = layout.offsetof(6);
     }
 
-    protected BGFXPlatformData(long address, @Nullable ByteBuffer container) {
+    public BGFXPlatformData(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXPlatformData create(long address, @Nullable ByteBuffer container) {
-        return new BGFXPlatformData(address, container);
     }
 
     /**

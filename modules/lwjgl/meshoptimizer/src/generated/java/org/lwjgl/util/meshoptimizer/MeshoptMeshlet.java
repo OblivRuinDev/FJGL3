@@ -57,13 +57,8 @@ public class MeshoptMeshlet extends Struct<MeshoptMeshlet> implements NativeReso
         TRIANGLE_COUNT = layout.offsetof(3);
     }
 
-    protected MeshoptMeshlet(long address, @Nullable ByteBuffer container) {
+    public MeshoptMeshlet(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MeshoptMeshlet create(long address, @Nullable ByteBuffer container) {
-        return new MeshoptMeshlet(address, container);
     }
 
     /**

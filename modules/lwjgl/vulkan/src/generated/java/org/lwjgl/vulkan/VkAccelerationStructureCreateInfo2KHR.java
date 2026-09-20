@@ -66,13 +66,8 @@ public class VkAccelerationStructureCreateInfo2KHR extends Struct<VkAcceleration
         TYPE = layout.offsetof(5);
     }
 
-    protected VkAccelerationStructureCreateInfo2KHR(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureCreateInfo2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureCreateInfo2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureCreateInfo2KHR(address, container);
     }
 
     /**

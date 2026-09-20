@@ -49,13 +49,8 @@ public class FT_OpaquePaint extends Struct<FT_OpaquePaint> implements NativeReso
         INSERT_ROOT_TRANSFORM = layout.offsetof(1);
     }
 
-    protected FT_OpaquePaint(long address, @Nullable ByteBuffer container) {
+    public FT_OpaquePaint(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_OpaquePaint create(long address, @Nullable ByteBuffer container) {
-        return new FT_OpaquePaint(address, container);
     }
 
     /**

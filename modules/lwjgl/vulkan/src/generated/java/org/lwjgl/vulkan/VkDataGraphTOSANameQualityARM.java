@@ -48,13 +48,8 @@ public class VkDataGraphTOSANameQualityARM extends Struct<VkDataGraphTOSANameQua
         QUALITYFLAGS = layout.offsetof(1);
     }
 
-    protected VkDataGraphTOSANameQualityARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphTOSANameQualityARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphTOSANameQualityARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphTOSANameQualityARM(address, container);
     }
 
     /**

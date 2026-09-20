@@ -96,13 +96,8 @@ public class VkTraceRaysIndirectCommand2KHR extends Struct<VkTraceRaysIndirectCo
         DEPTH = layout.offsetof(13);
     }
 
-    protected VkTraceRaysIndirectCommand2KHR(long address, @Nullable ByteBuffer container) {
+    public VkTraceRaysIndirectCommand2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTraceRaysIndirectCommand2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkTraceRaysIndirectCommand2KHR(address, container);
     }
 
     /**

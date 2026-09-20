@@ -101,13 +101,8 @@ public class XButtonEvent extends Struct<XButtonEvent> implements NativeResource
         SAME_SCREEN = layout.offsetof(14);
     }
 
-    protected XButtonEvent(long address, @Nullable ByteBuffer container) {
+    public XButtonEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XButtonEvent create(long address, @Nullable ByteBuffer container) {
-        return new XButtonEvent(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class FT_Incremental_Funcs extends Struct<FT_Incremental_Funcs> implement
         GET_GLYPH_METRICS = layout.offsetof(2);
     }
 
-    protected FT_Incremental_Funcs(long address, @Nullable ByteBuffer container) {
+    public FT_Incremental_Funcs(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Incremental_Funcs create(long address, @Nullable ByteBuffer container) {
-        return new FT_Incremental_Funcs(address, container);
     }
 
     /**

@@ -54,13 +54,8 @@ public class VkRenderPassFragmentDensityMapCreateInfoEXT extends Struct<VkRender
         FRAGMENTDENSITYMAPATTACHMENT = layout.offsetof(2);
     }
 
-    protected VkRenderPassFragmentDensityMapCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassFragmentDensityMapCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassFragmentDensityMapCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassFragmentDensityMapCreateInfoEXT(address, container);
     }
 
     /**

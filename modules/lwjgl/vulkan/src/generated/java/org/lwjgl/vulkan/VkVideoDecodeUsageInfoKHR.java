@@ -52,13 +52,8 @@ public class VkVideoDecodeUsageInfoKHR extends Struct<VkVideoDecodeUsageInfoKHR>
         VIDEOUSAGEHINTS = layout.offsetof(2);
     }
 
-    protected VkVideoDecodeUsageInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeUsageInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeUsageInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeUsageInfoKHR(address, container);
     }
 
     /**

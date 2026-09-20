@@ -50,13 +50,8 @@ public class CXVersion extends Struct<CXVersion> {
         SUBMINOR = layout.offsetof(2);
     }
 
-    protected CXVersion(long address, @Nullable ByteBuffer container) {
+    public CXVersion(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXVersion create(long address, @Nullable ByteBuffer container) {
-        return new CXVersion(address, container);
     }
 
     /**

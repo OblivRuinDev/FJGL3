@@ -56,13 +56,8 @@ public class VkPipelineTessellationStateCreateInfo extends Struct<VkPipelineTess
         PATCHCONTROLPOINTS = layout.offsetof(3);
     }
 
-    protected VkPipelineTessellationStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineTessellationStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineTessellationStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineTessellationStateCreateInfo(address, container);
     }
 
     /**

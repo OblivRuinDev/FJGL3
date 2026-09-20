@@ -65,13 +65,8 @@ public class XKeymapEvent extends Struct<XKeymapEvent> implements NativeResource
         KEY_VECTOR = layout.offsetof(5);
     }
 
-    protected XKeymapEvent(long address, @Nullable ByteBuffer container) {
+    public XKeymapEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XKeymapEvent create(long address, @Nullable ByteBuffer container) {
-        return new XKeymapEvent(address, container);
     }
 
     /**

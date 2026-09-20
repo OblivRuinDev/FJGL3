@@ -53,13 +53,8 @@ public class SDL_MessageBoxButtonData extends Struct<SDL_MessageBoxButtonData> i
         TEXT = layout.offsetof(2);
     }
 
-    protected SDL_MessageBoxButtonData(long address, @Nullable ByteBuffer container) {
+    public SDL_MessageBoxButtonData(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_MessageBoxButtonData create(long address, @Nullable ByteBuffer container) {
-        return new SDL_MessageBoxButtonData(address, container);
     }
 
     /**

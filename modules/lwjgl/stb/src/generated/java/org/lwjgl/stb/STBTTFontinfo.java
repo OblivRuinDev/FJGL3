@@ -36,13 +36,8 @@ public class STBTTFontinfo extends Struct<STBTTFontinfo> implements NativeResour
 
     private static native int offsets(long buffer);
 
-    protected STBTTFontinfo(long address, @Nullable ByteBuffer container) {
+    public STBTTFontinfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBTTFontinfo create(long address, @Nullable ByteBuffer container) {
-        return new STBTTFontinfo(address, container);
     }
 
     /**

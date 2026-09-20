@@ -52,13 +52,8 @@ public class VkPhysicalDeviceImageViewMinLodFeaturesEXT extends Struct<VkPhysica
         MINLOD = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceImageViewMinLodFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageViewMinLodFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageViewMinLodFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageViewMinLodFeaturesEXT(address, container);
     }
 
     /**

@@ -65,13 +65,8 @@ public class VkCopyBufferInfo2 extends Struct<VkCopyBufferInfo2> implements Nati
         PREGIONS = layout.offsetof(5);
     }
 
-    protected VkCopyBufferInfo2(long address, @Nullable ByteBuffer container) {
+    public VkCopyBufferInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyBufferInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyBufferInfo2(address, container);
     }
 
     /**

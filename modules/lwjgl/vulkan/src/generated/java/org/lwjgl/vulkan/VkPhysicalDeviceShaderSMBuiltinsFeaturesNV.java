@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderSMBuiltinsFeaturesNV extends Struct<VkPhysica
         SHADERSMBUILTINS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderSMBuiltinsFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderSMBuiltinsFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderSMBuiltinsFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderSMBuiltinsFeaturesNV(address, container);
     }
 
     /**

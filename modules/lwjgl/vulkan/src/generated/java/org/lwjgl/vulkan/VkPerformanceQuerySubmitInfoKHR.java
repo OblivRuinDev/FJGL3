@@ -52,13 +52,8 @@ public class VkPerformanceQuerySubmitInfoKHR extends Struct<VkPerformanceQuerySu
         COUNTERPASSINDEX = layout.offsetof(2);
     }
 
-    protected VkPerformanceQuerySubmitInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPerformanceQuerySubmitInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerformanceQuerySubmitInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPerformanceQuerySubmitInfoKHR(address, container);
     }
 
     /**

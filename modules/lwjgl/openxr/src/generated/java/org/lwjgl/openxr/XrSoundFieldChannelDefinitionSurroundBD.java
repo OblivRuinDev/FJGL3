@@ -52,13 +52,8 @@ public class XrSoundFieldChannelDefinitionSurroundBD extends Struct<XrSoundField
         CHANNELMASK = layout.offsetof(2);
     }
 
-    protected XrSoundFieldChannelDefinitionSurroundBD(long address, @Nullable ByteBuffer container) {
+    public XrSoundFieldChannelDefinitionSurroundBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSoundFieldChannelDefinitionSurroundBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSoundFieldChannelDefinitionSurroundBD(address, container);
     }
 
     /**

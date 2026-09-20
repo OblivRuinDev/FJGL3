@@ -66,13 +66,8 @@ public class IOURingQueryHdr extends Struct<IOURingQueryHdr> implements NativeRe
         __RESV = layout.offsetof(5);
     }
 
-    protected IOURingQueryHdr(long address, @Nullable ByteBuffer container) {
+    public IOURingQueryHdr(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingQueryHdr create(long address, @Nullable ByteBuffer container) {
-        return new IOURingQueryHdr(address, container);
     }
 
     /**

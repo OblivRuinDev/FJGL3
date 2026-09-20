@@ -56,13 +56,8 @@ public class VkPipelineRasterizationStateStreamCreateInfoEXT extends Struct<VkPi
         RASTERIZATIONSTREAM = layout.offsetof(3);
     }
 
-    protected VkPipelineRasterizationStateStreamCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineRasterizationStateStreamCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineRasterizationStateStreamCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineRasterizationStateStreamCreateInfoEXT(address, container);
     }
 
     /**

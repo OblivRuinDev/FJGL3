@@ -52,13 +52,8 @@ public class VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV extends Struct
         REPRESENTATIVEFRAGMENTTEST = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV(address, container);
     }
 
     /**

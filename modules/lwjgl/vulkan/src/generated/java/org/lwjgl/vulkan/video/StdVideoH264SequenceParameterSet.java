@@ -143,13 +143,8 @@ public class StdVideoH264SequenceParameterSet extends Struct<StdVideoH264Sequenc
         PSEQUENCEPARAMETERSETVUI = layout.offsetof(24);
     }
 
-    protected StdVideoH264SequenceParameterSet(long address, @Nullable ByteBuffer container) {
+    public StdVideoH264SequenceParameterSet(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH264SequenceParameterSet create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH264SequenceParameterSet(address, container);
     }
 
     /**

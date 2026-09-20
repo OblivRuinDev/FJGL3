@@ -65,13 +65,8 @@ public class VkDeviceQueueCreateInfo extends Struct<VkDeviceQueueCreateInfo> imp
         PQUEUEPRIORITIES = layout.offsetof(5);
     }
 
-    protected VkDeviceQueueCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkDeviceQueueCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceQueueCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceQueueCreateInfo(address, container);
     }
 
     /**

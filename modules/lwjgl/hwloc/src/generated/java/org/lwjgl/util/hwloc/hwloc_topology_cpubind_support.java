@@ -83,13 +83,8 @@ public class hwloc_topology_cpubind_support extends Struct<hwloc_topology_cpubin
         GET_THISTHREAD_LAST_CPU_LOCATION = layout.offsetof(10);
     }
 
-    protected hwloc_topology_cpubind_support(long address, @Nullable ByteBuffer container) {
+    public hwloc_topology_cpubind_support(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_topology_cpubind_support create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_topology_cpubind_support(address, container);
     }
 
     /**

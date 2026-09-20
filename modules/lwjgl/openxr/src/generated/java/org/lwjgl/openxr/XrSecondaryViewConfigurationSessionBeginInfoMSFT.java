@@ -57,13 +57,8 @@ public class XrSecondaryViewConfigurationSessionBeginInfoMSFT extends Struct<XrS
         ENABLEDVIEWCONFIGURATIONTYPES = layout.offsetof(3);
     }
 
-    protected XrSecondaryViewConfigurationSessionBeginInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSecondaryViewConfigurationSessionBeginInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSecondaryViewConfigurationSessionBeginInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSecondaryViewConfigurationSessionBeginInfoMSFT(address, container);
     }
 
     /**

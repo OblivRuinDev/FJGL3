@@ -66,13 +66,8 @@ public class ParOctasphereMesh extends Struct<ParOctasphereMesh> implements Nati
         NUM_VERTICES = layout.offsetof(5);
     }
 
-    protected ParOctasphereMesh(long address, @Nullable ByteBuffer container) {
+    public ParOctasphereMesh(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ParOctasphereMesh create(long address, @Nullable ByteBuffer container) {
-        return new ParOctasphereMesh(address, container);
     }
 
     /**

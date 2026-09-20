@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceShaderTerminateInvocationFeaturesKHR extends VkPhysicalDeviceShaderTerminateInvocationFeatures {
 
-    protected VkPhysicalDeviceShaderTerminateInvocationFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderTerminateInvocationFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderTerminateInvocationFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderTerminateInvocationFeaturesKHR(address, container);
     }
 
     /**

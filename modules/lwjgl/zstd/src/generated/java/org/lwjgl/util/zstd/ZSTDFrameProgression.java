@@ -65,13 +65,8 @@ public class ZSTDFrameProgression extends Struct<ZSTDFrameProgression> implement
         NBACTIVEWORKERS = layout.offsetof(5);
     }
 
-    protected ZSTDFrameProgression(long address, @Nullable ByteBuffer container) {
+    public ZSTDFrameProgression(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZSTDFrameProgression create(long address, @Nullable ByteBuffer container) {
-        return new ZSTDFrameProgression(address, container);
     }
 
     /**

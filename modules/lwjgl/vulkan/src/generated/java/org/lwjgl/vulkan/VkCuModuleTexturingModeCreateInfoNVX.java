@@ -52,13 +52,8 @@ public class VkCuModuleTexturingModeCreateInfoNVX extends Struct<VkCuModuleTextu
         USE64BITTEXTURING = layout.offsetof(2);
     }
 
-    protected VkCuModuleTexturingModeCreateInfoNVX(long address, @Nullable ByteBuffer container) {
+    public VkCuModuleTexturingModeCreateInfoNVX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCuModuleTexturingModeCreateInfoNVX create(long address, @Nullable ByteBuffer container) {
-        return new VkCuModuleTexturingModeCreateInfoNVX(address, container);
     }
 
     /**

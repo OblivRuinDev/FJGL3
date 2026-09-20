@@ -70,13 +70,8 @@ public class XrEventDataReferenceSpaceChangePending extends Struct<XrEventDataRe
         POSEINPREVIOUSSPACE = layout.offsetof(6);
     }
 
-    protected XrEventDataReferenceSpaceChangePending(long address, @Nullable ByteBuffer container) {
+    public XrEventDataReferenceSpaceChangePending(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataReferenceSpaceChangePending create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataReferenceSpaceChangePending(address, container);
     }
 
     /**

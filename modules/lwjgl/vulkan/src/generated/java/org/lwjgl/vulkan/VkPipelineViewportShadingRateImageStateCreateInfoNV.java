@@ -60,13 +60,8 @@ public class VkPipelineViewportShadingRateImageStateCreateInfoNV extends Struct<
         PSHADINGRATEPALETTES = layout.offsetof(4);
     }
 
-    protected VkPipelineViewportShadingRateImageStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkPipelineViewportShadingRateImageStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineViewportShadingRateImageStateCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineViewportShadingRateImageStateCreateInfoNV(address, container);
     }
 
     /**

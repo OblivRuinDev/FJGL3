@@ -52,13 +52,8 @@ public class XrMarkerDetectorSizeInfoML extends Struct<XrMarkerDetectorSizeInfoM
         MARKERLENGTH = layout.offsetof(2);
     }
 
-    protected XrMarkerDetectorSizeInfoML(long address, @Nullable ByteBuffer container) {
+    public XrMarkerDetectorSizeInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrMarkerDetectorSizeInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrMarkerDetectorSizeInfoML(address, container);
     }
 
     /**

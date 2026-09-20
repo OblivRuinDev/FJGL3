@@ -52,13 +52,8 @@ public class XrDigitalLensControlALMALENCE extends Struct<XrDigitalLensControlAL
         FLAGS = layout.offsetof(2);
     }
 
-    protected XrDigitalLensControlALMALENCE(long address, @Nullable ByteBuffer container) {
+    public XrDigitalLensControlALMALENCE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrDigitalLensControlALMALENCE create(long address, @Nullable ByteBuffer container) {
-        return new XrDigitalLensControlALMALENCE(address, container);
     }
 
     /**

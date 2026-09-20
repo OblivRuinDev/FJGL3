@@ -57,13 +57,8 @@ public class SpvcHlslRootConstants extends Struct<SpvcHlslRootConstants> impleme
         SPACE = layout.offsetof(3);
     }
 
-    protected SpvcHlslRootConstants(long address, @Nullable ByteBuffer container) {
+    public SpvcHlslRootConstants(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcHlslRootConstants create(long address, @Nullable ByteBuffer container) {
-        return new SpvcHlslRootConstants(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR extends Struct<VkPhy
         UNIFIEDIMAGELAYOUTSVIDEO = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(address, container);
     }
 
     /**

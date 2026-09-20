@@ -58,13 +58,8 @@ public class FT_MM_Var extends Struct<FT_MM_Var> {
         NAMEDSTYLE = layout.offsetof(4);
     }
 
-    protected FT_MM_Var(long address, @Nullable ByteBuffer container) {
+    public FT_MM_Var(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_MM_Var create(long address, @Nullable ByteBuffer container) {
-        return new FT_MM_Var(address, container);
     }
 
     /**

@@ -48,13 +48,8 @@ public class FMOD_STUDIO_PARAMETER_ID extends Struct<FMOD_STUDIO_PARAMETER_ID> i
         DATA2 = layout.offsetof(1);
     }
 
-    protected FMOD_STUDIO_PARAMETER_ID(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_PARAMETER_ID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_PARAMETER_ID create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_PARAMETER_ID(address, container);
     }
 
     /**

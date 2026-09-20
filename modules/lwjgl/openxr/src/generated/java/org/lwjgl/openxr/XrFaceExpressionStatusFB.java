@@ -48,13 +48,8 @@ public class XrFaceExpressionStatusFB extends Struct<XrFaceExpressionStatusFB> i
         ISEYEFOLLOWINGBLENDSHAPESVALID = layout.offsetof(1);
     }
 
-    protected XrFaceExpressionStatusFB(long address, @Nullable ByteBuffer container) {
+    public XrFaceExpressionStatusFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFaceExpressionStatusFB create(long address, @Nullable ByteBuffer container) {
-        return new XrFaceExpressionStatusFB(address, container);
     }
 
     /**

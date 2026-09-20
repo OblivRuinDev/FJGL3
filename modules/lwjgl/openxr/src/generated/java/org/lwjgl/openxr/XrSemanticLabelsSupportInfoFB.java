@@ -57,13 +57,8 @@ public class XrSemanticLabelsSupportInfoFB extends Struct<XrSemanticLabelsSuppor
         RECOGNIZEDLABELS = layout.offsetof(3);
     }
 
-    protected XrSemanticLabelsSupportInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSemanticLabelsSupportInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSemanticLabelsSupportInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSemanticLabelsSupportInfoFB(address, container);
     }
 
     /**

@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSubresourceHostMemcpySizeEXT extends VkSubresourceHostMemcpySize {
 
-    protected VkSubresourceHostMemcpySizeEXT(long address, @Nullable ByteBuffer container) {
+    public VkSubresourceHostMemcpySizeEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubresourceHostMemcpySizeEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSubresourceHostMemcpySizeEXT(address, container);
     }
 
     /**

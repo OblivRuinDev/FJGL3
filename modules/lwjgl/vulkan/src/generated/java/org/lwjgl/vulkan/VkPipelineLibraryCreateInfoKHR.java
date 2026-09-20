@@ -57,13 +57,8 @@ public class VkPipelineLibraryCreateInfoKHR extends Struct<VkPipelineLibraryCrea
         PLIBRARIES = layout.offsetof(3);
     }
 
-    protected VkPipelineLibraryCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineLibraryCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineLibraryCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineLibraryCreateInfoKHR(address, container);
     }
 
     /**

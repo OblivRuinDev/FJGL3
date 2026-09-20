@@ -57,13 +57,8 @@ public class VkTensorDependencyInfoARM extends Struct<VkTensorDependencyInfoARM>
         PTENSORMEMORYBARRIERS = layout.offsetof(3);
     }
 
-    protected VkTensorDependencyInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkTensorDependencyInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTensorDependencyInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkTensorDependencyInfoARM(address, container);
     }
 
     /**

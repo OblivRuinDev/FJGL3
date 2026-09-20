@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShader64BitIndexingFeaturesEXT extends Struct<VkPhy
         SHADER64BITINDEXING = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShader64BitIndexingFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShader64BitIndexingFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShader64BitIndexingFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShader64BitIndexingFeaturesEXT(address, container);
     }
 
     /**

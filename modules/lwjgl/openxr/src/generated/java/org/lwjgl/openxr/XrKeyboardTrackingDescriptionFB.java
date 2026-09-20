@@ -60,13 +60,8 @@ public class XrKeyboardTrackingDescriptionFB extends Struct<XrKeyboardTrackingDe
         NAME = layout.offsetof(3);
     }
 
-    protected XrKeyboardTrackingDescriptionFB(long address, @Nullable ByteBuffer container) {
+    public XrKeyboardTrackingDescriptionFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrKeyboardTrackingDescriptionFB create(long address, @Nullable ByteBuffer container) {
-        return new XrKeyboardTrackingDescriptionFB(address, container);
     }
 
     /**

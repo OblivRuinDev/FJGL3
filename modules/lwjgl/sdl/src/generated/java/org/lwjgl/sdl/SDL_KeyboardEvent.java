@@ -84,13 +84,8 @@ public class SDL_KeyboardEvent extends Struct<SDL_KeyboardEvent> implements Nati
         REPEAT = layout.offsetof(10);
     }
 
-    protected SDL_KeyboardEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_KeyboardEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_KeyboardEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_KeyboardEvent(address, container);
     }
 
     /**

@@ -87,13 +87,8 @@ public class VmaAllocatorCreateInfo extends Struct<VmaAllocatorCreateInfo> imple
         PTYPEEXTERNALMEMORYHANDLETYPES = layout.offsetof(10);
     }
 
-    protected VmaAllocatorCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VmaAllocatorCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaAllocatorCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VmaAllocatorCreateInfo(address, container);
     }
 
     /**

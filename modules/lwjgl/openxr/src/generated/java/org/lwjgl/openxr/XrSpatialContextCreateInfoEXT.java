@@ -57,13 +57,8 @@ public class XrSpatialContextCreateInfoEXT extends Struct<XrSpatialContextCreate
         CAPABILITYCONFIGS = layout.offsetof(3);
     }
 
-    protected XrSpatialContextCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialContextCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialContextCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialContextCreateInfoEXT(address, container);
     }
 
     /**

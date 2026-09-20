@@ -48,13 +48,8 @@ public class XrSpatialAnchorsCreateInfoBaseHeaderML extends Struct<XrSpatialAnch
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSpatialAnchorsCreateInfoBaseHeaderML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsCreateInfoBaseHeaderML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsCreateInfoBaseHeaderML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsCreateInfoBaseHeaderML(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures extends Struct<
         SEPARATEDEPTHSTENCILLAYOUTS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures(address, container);
     }
 
     /**

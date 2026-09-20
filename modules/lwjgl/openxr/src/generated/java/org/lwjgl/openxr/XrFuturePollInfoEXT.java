@@ -52,13 +52,8 @@ public class XrFuturePollInfoEXT extends Struct<XrFuturePollInfoEXT> implements 
         FUTURE = layout.offsetof(2);
     }
 
-    protected XrFuturePollInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrFuturePollInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFuturePollInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrFuturePollInfoEXT(address, container);
     }
 
     /**

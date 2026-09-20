@@ -57,13 +57,8 @@ public class XrBodyTrackingPostureDataBD extends Struct<XrBodyTrackingPostureDat
         POSTUREDATA = layout.offsetof(3);
     }
 
-    protected XrBodyTrackingPostureDataBD(long address, @Nullable ByteBuffer container) {
+    public XrBodyTrackingPostureDataBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyTrackingPostureDataBD create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyTrackingPostureDataBD(address, container);
     }
 
     /**

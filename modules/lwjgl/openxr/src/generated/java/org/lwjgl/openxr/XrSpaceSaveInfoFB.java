@@ -61,13 +61,8 @@ public class XrSpaceSaveInfoFB extends Struct<XrSpaceSaveInfoFB> implements Nati
         PERSISTENCEMODE = layout.offsetof(4);
     }
 
-    protected XrSpaceSaveInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceSaveInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceSaveInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceSaveInfoFB(address, container);
     }
 
     /**

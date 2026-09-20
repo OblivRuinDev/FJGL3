@@ -26,13 +26,8 @@ import static org.lwjgl.openxr.XR11.*;
  */
 public class XrUuidEXT extends XrUuid {
 
-    protected XrUuidEXT(long address, @Nullable ByteBuffer container) {
+    public XrUuidEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrUuidEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrUuidEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrSystemFoveatedRenderingPropertiesVARJO extends Struct<XrSystemFov
         SUPPORTSFOVEATEDRENDERING = layout.offsetof(2);
     }
 
-    protected XrSystemFoveatedRenderingPropertiesVARJO(long address, @Nullable ByteBuffer container) {
+    public XrSystemFoveatedRenderingPropertiesVARJO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemFoveatedRenderingPropertiesVARJO create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemFoveatedRenderingPropertiesVARJO(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkCoarseSampleLocationNV extends Struct<VkCoarseSampleLocationNV> i
         SAMPLE = layout.offsetof(2);
     }
 
-    protected VkCoarseSampleLocationNV(long address, @Nullable ByteBuffer container) {
+    public VkCoarseSampleLocationNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCoarseSampleLocationNV create(long address, @Nullable ByteBuffer container) {
-        return new VkCoarseSampleLocationNV(address, container);
     }
 
     /**

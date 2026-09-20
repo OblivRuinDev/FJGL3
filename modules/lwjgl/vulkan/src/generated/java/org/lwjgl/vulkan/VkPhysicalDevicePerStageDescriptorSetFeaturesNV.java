@@ -56,13 +56,8 @@ public class VkPhysicalDevicePerStageDescriptorSetFeaturesNV extends Struct<VkPh
         DYNAMICPIPELINELAYOUT = layout.offsetof(3);
     }
 
-    protected VkPhysicalDevicePerStageDescriptorSetFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePerStageDescriptorSetFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePerStageDescriptorSetFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePerStageDescriptorSetFeaturesNV(address, container);
     }
 
     /**

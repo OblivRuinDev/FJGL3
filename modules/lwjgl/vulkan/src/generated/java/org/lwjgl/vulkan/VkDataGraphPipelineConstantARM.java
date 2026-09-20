@@ -57,13 +57,8 @@ public class VkDataGraphPipelineConstantARM extends Struct<VkDataGraphPipelineCo
         PCONSTANTDATA = layout.offsetof(3);
     }
 
-    protected VkDataGraphPipelineConstantARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineConstantARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineConstantARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineConstantARM(address, container);
     }
 
     /**

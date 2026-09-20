@@ -52,13 +52,8 @@ public class VkPushConstantBankInfoNV extends Struct<VkPushConstantBankInfoNV> i
         BANK = layout.offsetof(2);
     }
 
-    protected VkPushConstantBankInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkPushConstantBankInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPushConstantBankInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPushConstantBankInfoNV(address, container);
     }
 
     /**

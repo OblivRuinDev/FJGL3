@@ -53,13 +53,8 @@ public class SECURITY_ATTRIBUTES extends Struct<SECURITY_ATTRIBUTES> implements 
         BINHERITHANDLE = layout.offsetof(2);
     }
 
-    protected SECURITY_ATTRIBUTES(long address, @Nullable ByteBuffer container) {
+    public SECURITY_ATTRIBUTES(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SECURITY_ATTRIBUTES create(long address, @Nullable ByteBuffer container) {
-        return new SECURITY_ATTRIBUTES(address, container);
     }
 
     /**

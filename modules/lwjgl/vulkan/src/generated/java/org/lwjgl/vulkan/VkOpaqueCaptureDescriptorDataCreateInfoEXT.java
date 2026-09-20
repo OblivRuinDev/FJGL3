@@ -53,13 +53,8 @@ public class VkOpaqueCaptureDescriptorDataCreateInfoEXT extends Struct<VkOpaqueC
         OPAQUECAPTUREDESCRIPTORDATA = layout.offsetof(2);
     }
 
-    protected VkOpaqueCaptureDescriptorDataCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkOpaqueCaptureDescriptorDataCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkOpaqueCaptureDescriptorDataCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkOpaqueCaptureDescriptorDataCreateInfoEXT(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class FT_Palette_Data extends Struct<FT_Palette_Data> implements NativeRe
         PALETTE_ENTRY_NAME_IDS = layout.offsetof(4);
     }
 
-    protected FT_Palette_Data(long address, @Nullable ByteBuffer container) {
+    public FT_Palette_Data(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Palette_Data create(long address, @Nullable ByteBuffer container) {
-        return new FT_Palette_Data(address, container);
     }
 
     /**

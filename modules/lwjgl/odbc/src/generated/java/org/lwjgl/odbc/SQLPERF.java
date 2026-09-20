@@ -172,13 +172,8 @@ public class SQLPERF extends Struct<SQLPERF> implements NativeResource {
         MSNETWORKSERVERTIME = layout.offsetof(32);
     }
 
-    protected SQLPERF(long address, @Nullable ByteBuffer container) {
+    public SQLPERF(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SQLPERF create(long address, @Nullable ByteBuffer container) {
-        return new SQLPERF(address, container);
     }
 
     /**

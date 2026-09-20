@@ -32,13 +32,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkRenderingAttachmentInfoKHR extends VkRenderingAttachmentInfo {
 
-    protected VkRenderingAttachmentInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkRenderingAttachmentInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderingAttachmentInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderingAttachmentInfoKHR(address, container);
     }
 
     /**

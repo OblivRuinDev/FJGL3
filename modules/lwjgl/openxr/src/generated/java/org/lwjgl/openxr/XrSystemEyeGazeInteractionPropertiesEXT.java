@@ -52,13 +52,8 @@ public class XrSystemEyeGazeInteractionPropertiesEXT extends Struct<XrSystemEyeG
         SUPPORTSEYEGAZEINTERACTION = layout.offsetof(2);
     }
 
-    protected XrSystemEyeGazeInteractionPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public XrSystemEyeGazeInteractionPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemEyeGazeInteractionPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemEyeGazeInteractionPropertiesEXT(address, container);
     }
 
     /**

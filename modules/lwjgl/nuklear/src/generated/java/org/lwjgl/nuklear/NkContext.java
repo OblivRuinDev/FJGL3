@@ -140,13 +140,8 @@ public class NkContext extends Struct<NkContext> implements NativeResource {
         SEQ = layout.offsetof(21);
     }
 
-    protected NkContext(long address, @Nullable ByteBuffer container) {
+    public NkContext(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkContext create(long address, @Nullable ByteBuffer container) {
-        return new NkContext(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceLegacyVertexAttributesFeaturesEXT extends Struct<Vk
         LEGACYVERTEXATTRIBUTES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceLegacyVertexAttributesFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceLegacyVertexAttributesFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceLegacyVertexAttributesFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceLegacyVertexAttributesFeaturesEXT(address, container);
     }
 
     /**

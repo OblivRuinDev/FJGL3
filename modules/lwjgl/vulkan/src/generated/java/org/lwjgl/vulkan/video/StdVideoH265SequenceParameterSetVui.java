@@ -147,13 +147,8 @@ public class StdVideoH265SequenceParameterSetVui extends Struct<StdVideoH265Sequ
         PHRDPARAMETERS = layout.offsetof(25);
     }
 
-    protected StdVideoH265SequenceParameterSetVui(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265SequenceParameterSetVui(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265SequenceParameterSetVui create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265SequenceParameterSetVui(address, container);
     }
 
     /**

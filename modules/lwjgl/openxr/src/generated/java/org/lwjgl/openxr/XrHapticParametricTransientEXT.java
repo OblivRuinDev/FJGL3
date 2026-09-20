@@ -52,13 +52,8 @@ public class XrHapticParametricTransientEXT extends Struct<XrHapticParametricTra
         FREQUENCY = layout.offsetof(2);
     }
 
-    protected XrHapticParametricTransientEXT(long address, @Nullable ByteBuffer container) {
+    public XrHapticParametricTransientEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHapticParametricTransientEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrHapticParametricTransientEXT(address, container);
     }
 
     /**

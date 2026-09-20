@@ -77,13 +77,8 @@ public class VkVideoDecodeAV1PictureInfoKHR extends Struct<VkVideoDecodeAV1Pictu
         PTILESIZES = layout.offsetof(7);
     }
 
-    protected VkVideoDecodeAV1PictureInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeAV1PictureInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeAV1PictureInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeAV1PictureInfoKHR(address, container);
     }
 
     /**

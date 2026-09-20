@@ -48,13 +48,8 @@ public class VkDisplayPlanePropertiesKHR extends Struct<VkDisplayPlaneProperties
         CURRENTSTACKINDEX = layout.offsetof(1);
     }
 
-    protected VkDisplayPlanePropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkDisplayPlanePropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplayPlanePropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplayPlanePropertiesKHR(address, container);
     }
 
     /**

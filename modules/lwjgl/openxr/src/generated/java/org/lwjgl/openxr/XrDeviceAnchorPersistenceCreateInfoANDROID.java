@@ -48,13 +48,8 @@ public class XrDeviceAnchorPersistenceCreateInfoANDROID extends Struct<XrDeviceA
         NEXT = layout.offsetof(1);
     }
 
-    protected XrDeviceAnchorPersistenceCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrDeviceAnchorPersistenceCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrDeviceAnchorPersistenceCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrDeviceAnchorPersistenceCreateInfoANDROID(address, container);
     }
 
     /**

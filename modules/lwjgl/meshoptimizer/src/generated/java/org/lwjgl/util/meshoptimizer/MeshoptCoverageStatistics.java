@@ -50,13 +50,8 @@ public class MeshoptCoverageStatistics extends Struct<MeshoptCoverageStatistics>
         EXTENT = layout.offsetof(1);
     }
 
-    protected MeshoptCoverageStatistics(long address, @Nullable ByteBuffer container) {
+    public MeshoptCoverageStatistics(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MeshoptCoverageStatistics create(long address, @Nullable ByteBuffer container) {
-        return new MeshoptCoverageStatistics(address, container);
     }
 
     /**

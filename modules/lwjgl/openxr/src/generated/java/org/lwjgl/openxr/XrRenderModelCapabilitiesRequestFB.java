@@ -52,13 +52,8 @@ public class XrRenderModelCapabilitiesRequestFB extends Struct<XrRenderModelCapa
         FLAGS = layout.offsetof(2);
     }
 
-    protected XrRenderModelCapabilitiesRequestFB(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelCapabilitiesRequestFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelCapabilitiesRequestFB create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelCapabilitiesRequestFB(address, container);
     }
 
     /**

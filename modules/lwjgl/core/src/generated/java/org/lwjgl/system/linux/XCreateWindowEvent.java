@@ -89,13 +89,8 @@ public class XCreateWindowEvent extends Struct<XCreateWindowEvent> implements Na
         OVERRIDE_REDIRECT = layout.offsetof(11);
     }
 
-    protected XCreateWindowEvent(long address, @Nullable ByteBuffer container) {
+    public XCreateWindowEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XCreateWindowEvent create(long address, @Nullable ByteBuffer container) {
-        return new XCreateWindowEvent(address, container);
     }
 
     /**

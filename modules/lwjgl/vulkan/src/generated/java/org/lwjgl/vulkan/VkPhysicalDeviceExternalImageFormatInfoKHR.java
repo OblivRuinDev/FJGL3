@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceExternalImageFormatInfoKHR extends VkPhysicalDeviceExternalImageFormatInfo {
 
-    protected VkPhysicalDeviceExternalImageFormatInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalImageFormatInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalImageFormatInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalImageFormatInfoKHR(address, container);
     }
 
     /**

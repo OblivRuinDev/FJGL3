@@ -49,13 +49,8 @@ public class VkShadingRatePaletteNV extends Struct<VkShadingRatePaletteNV> imple
         PSHADINGRATEPALETTEENTRIES = layout.offsetof(1);
     }
 
-    protected VkShadingRatePaletteNV(long address, @Nullable ByteBuffer container) {
+    public VkShadingRatePaletteNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkShadingRatePaletteNV create(long address, @Nullable ByteBuffer container) {
-        return new VkShadingRatePaletteNV(address, container);
     }
 
     /**

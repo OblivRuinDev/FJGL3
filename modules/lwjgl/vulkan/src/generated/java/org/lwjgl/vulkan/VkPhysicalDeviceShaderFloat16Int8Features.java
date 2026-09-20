@@ -56,13 +56,8 @@ public class VkPhysicalDeviceShaderFloat16Int8Features extends Struct<VkPhysical
         SHADERINT8 = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceShaderFloat16Int8Features(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderFloat16Int8Features(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderFloat16Int8Features create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderFloat16Int8Features(address, container);
     }
 
     /**

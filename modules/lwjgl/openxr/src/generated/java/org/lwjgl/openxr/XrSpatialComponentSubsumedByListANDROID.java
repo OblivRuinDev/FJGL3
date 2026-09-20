@@ -57,13 +57,8 @@ public class XrSpatialComponentSubsumedByListANDROID extends Struct<XrSpatialCom
         SUBSUMEDUNIQUEIDS = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentSubsumedByListANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentSubsumedByListANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentSubsumedByListANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentSubsumedByListANDROID(address, container);
     }
 
     /**

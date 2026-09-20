@@ -64,13 +64,8 @@ public class XrSpatialAnchorCreateInfoHTC extends Struct<XrSpatialAnchorCreateIn
         NAME = layout.offsetof(4);
     }
 
-    protected XrSpatialAnchorCreateInfoHTC(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorCreateInfoHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorCreateInfoHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorCreateInfoHTC(address, container);
     }
 
     /**

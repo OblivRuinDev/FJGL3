@@ -54,13 +54,8 @@ public class VkExternalTensorPropertiesARM extends Struct<VkExternalTensorProper
         EXTERNALMEMORYPROPERTIES = layout.offsetof(2);
     }
 
-    protected VkExternalTensorPropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkExternalTensorPropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalTensorPropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalTensorPropertiesARM(address, container);
     }
 
     /**

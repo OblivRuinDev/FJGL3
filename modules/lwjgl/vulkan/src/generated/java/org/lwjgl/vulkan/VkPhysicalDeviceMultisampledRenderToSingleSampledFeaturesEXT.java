@@ -52,13 +52,8 @@ public class VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT extend
         MULTISAMPLEDRENDERTOSINGLESAMPLED = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT(address, container);
     }
 
     /**

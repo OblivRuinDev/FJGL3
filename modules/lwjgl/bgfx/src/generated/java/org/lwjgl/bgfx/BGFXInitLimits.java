@@ -69,13 +69,8 @@ public class BGFXInitLimits extends Struct<BGFXInitLimits> implements NativeReso
         MINUNIFORMBUFFERSIZE = layout.offsetof(6);
     }
 
-    protected BGFXInitLimits(long address, @Nullable ByteBuffer container) {
+    public BGFXInitLimits(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXInitLimits create(long address, @Nullable ByteBuffer container) {
-        return new BGFXInitLimits(address, container);
     }
 
     /**

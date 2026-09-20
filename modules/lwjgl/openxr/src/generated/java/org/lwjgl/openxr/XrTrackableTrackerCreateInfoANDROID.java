@@ -52,13 +52,8 @@ public class XrTrackableTrackerCreateInfoANDROID extends Struct<XrTrackableTrack
         TRACKABLETYPE = layout.offsetof(2);
     }
 
-    protected XrTrackableTrackerCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrTrackableTrackerCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrTrackableTrackerCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrTrackableTrackerCreateInfoANDROID(address, container);
     }
 
     /**

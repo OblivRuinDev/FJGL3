@@ -105,13 +105,8 @@ public class StdVideoH265HrdParameters extends Struct<StdVideoH265HrdParameters>
         PSUBLAYERHRDPARAMETERSVCL = layout.offsetof(14);
     }
 
-    protected StdVideoH265HrdParameters(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265HrdParameters(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265HrdParameters create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265HrdParameters(address, container);
     }
 
     /**

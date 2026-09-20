@@ -52,13 +52,8 @@ public class XrActionStatePose extends Struct<XrActionStatePose> implements Nati
         ISACTIVE = layout.offsetof(2);
     }
 
-    protected XrActionStatePose(long address, @Nullable ByteBuffer container) {
+    public XrActionStatePose(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrActionStatePose create(long address, @Nullable ByteBuffer container) {
-        return new XrActionStatePose(address, container);
     }
 
     /**

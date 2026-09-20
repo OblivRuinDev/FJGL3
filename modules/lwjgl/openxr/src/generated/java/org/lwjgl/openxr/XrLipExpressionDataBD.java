@@ -57,13 +57,8 @@ public class XrLipExpressionDataBD extends Struct<XrLipExpressionDataBD> impleme
         LIPSYNCEXPRESSIONWEIGHTS = layout.offsetof(3);
     }
 
-    protected XrLipExpressionDataBD(long address, @Nullable ByteBuffer container) {
+    public XrLipExpressionDataBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrLipExpressionDataBD create(long address, @Nullable ByteBuffer container) {
-        return new XrLipExpressionDataBD(address, container);
     }
 
     /**

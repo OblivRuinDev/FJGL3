@@ -52,13 +52,8 @@ public class VkBindIndexBufferIndirectCommandEXT extends Struct<VkBindIndexBuffe
         INDEXTYPE = layout.offsetof(2);
     }
 
-    protected VkBindIndexBufferIndirectCommandEXT(long address, @Nullable ByteBuffer container) {
+    public VkBindIndexBufferIndirectCommandEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindIndexBufferIndirectCommandEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkBindIndexBufferIndirectCommandEXT(address, container);
     }
 
     /**

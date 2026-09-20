@@ -76,13 +76,8 @@ public class SQL_SS_TIMESTAMPOFFSET_STRUCT extends Struct<SQL_SS_TIMESTAMPOFFSET
         TIMEZONE_MINUTE = layout.offsetof(8);
     }
 
-    protected SQL_SS_TIMESTAMPOFFSET_STRUCT(long address, @Nullable ByteBuffer container) {
+    public SQL_SS_TIMESTAMPOFFSET_STRUCT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SQL_SS_TIMESTAMPOFFSET_STRUCT create(long address, @Nullable ByteBuffer container) {
-        return new SQL_SS_TIMESTAMPOFFSET_STRUCT(address, container);
     }
 
     /**

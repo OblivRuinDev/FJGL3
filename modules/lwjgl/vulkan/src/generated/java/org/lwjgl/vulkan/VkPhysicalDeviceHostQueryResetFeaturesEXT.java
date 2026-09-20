@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceHostQueryResetFeaturesEXT extends VkPhysicalDeviceHostQueryResetFeatures {
 
-    protected VkPhysicalDeviceHostQueryResetFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceHostQueryResetFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceHostQueryResetFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceHostQueryResetFeaturesEXT(address, container);
     }
 
     /**

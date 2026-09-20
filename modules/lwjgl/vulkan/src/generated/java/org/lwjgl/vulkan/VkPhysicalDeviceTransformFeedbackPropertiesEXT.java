@@ -88,13 +88,8 @@ public class VkPhysicalDeviceTransformFeedbackPropertiesEXT extends Struct<VkPhy
         TRANSFORMFEEDBACKDRAW = layout.offsetof(11);
     }
 
-    protected VkPhysicalDeviceTransformFeedbackPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTransformFeedbackPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTransformFeedbackPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTransformFeedbackPropertiesEXT(address, container);
     }
 
     /**

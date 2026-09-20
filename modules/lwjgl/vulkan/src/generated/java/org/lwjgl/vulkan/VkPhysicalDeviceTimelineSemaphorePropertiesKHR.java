@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceTimelineSemaphorePropertiesKHR extends VkPhysicalDeviceTimelineSemaphoreProperties {
 
-    protected VkPhysicalDeviceTimelineSemaphorePropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTimelineSemaphorePropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTimelineSemaphorePropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTimelineSemaphorePropertiesKHR(address, container);
     }
 
     /**

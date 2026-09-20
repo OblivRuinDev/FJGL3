@@ -81,13 +81,8 @@ public class VkSubpassDescription extends Struct<VkSubpassDescription> implement
         PPRESERVEATTACHMENTS = layout.offsetof(9);
     }
 
-    protected VkSubpassDescription(long address, @Nullable ByteBuffer container) {
+    public VkSubpassDescription(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassDescription create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassDescription(address, container);
     }
 
     /**

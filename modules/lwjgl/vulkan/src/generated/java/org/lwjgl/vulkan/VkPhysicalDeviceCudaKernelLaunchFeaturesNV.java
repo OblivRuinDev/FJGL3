@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCudaKernelLaunchFeaturesNV extends Struct<VkPhysica
         CUDAKERNELLAUNCHFEATURES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCudaKernelLaunchFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCudaKernelLaunchFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCudaKernelLaunchFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCudaKernelLaunchFeaturesNV(address, container);
     }
 
     /**

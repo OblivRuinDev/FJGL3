@@ -99,13 +99,8 @@ public class StdVideoAV1SequenceHeader extends Struct<StdVideoAV1SequenceHeader>
         PTIMINGINFO = layout.offsetof(13);
     }
 
-    protected StdVideoAV1SequenceHeader(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1SequenceHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1SequenceHeader create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1SequenceHeader(address, container);
     }
 
     /**

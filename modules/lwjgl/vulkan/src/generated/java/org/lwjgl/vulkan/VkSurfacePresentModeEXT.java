@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSurfacePresentModeEXT extends VkSurfacePresentModeKHR {
 
-    protected VkSurfacePresentModeEXT(long address, @Nullable ByteBuffer container) {
+    public VkSurfacePresentModeEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfacePresentModeEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfacePresentModeEXT(address, container);
     }
 
     /**

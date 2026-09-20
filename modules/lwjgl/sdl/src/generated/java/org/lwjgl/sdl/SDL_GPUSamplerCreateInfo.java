@@ -104,13 +104,8 @@ public class SDL_GPUSamplerCreateInfo extends Struct<SDL_GPUSamplerCreateInfo> i
         PROPS = layout.offsetof(15);
     }
 
-    protected SDL_GPUSamplerCreateInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUSamplerCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUSamplerCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUSamplerCreateInfo(address, container);
     }
 
     /**

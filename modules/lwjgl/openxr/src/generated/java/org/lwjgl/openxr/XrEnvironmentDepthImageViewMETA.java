@@ -59,13 +59,8 @@ public class XrEnvironmentDepthImageViewMETA extends Struct<XrEnvironmentDepthIm
         POSE = layout.offsetof(3);
     }
 
-    protected XrEnvironmentDepthImageViewMETA(long address, @Nullable ByteBuffer container) {
+    public XrEnvironmentDepthImageViewMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEnvironmentDepthImageViewMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEnvironmentDepthImageViewMETA(address, container);
     }
 
     /**

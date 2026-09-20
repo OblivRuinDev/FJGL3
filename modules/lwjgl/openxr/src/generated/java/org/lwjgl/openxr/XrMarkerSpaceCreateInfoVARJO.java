@@ -58,13 +58,8 @@ public class XrMarkerSpaceCreateInfoVARJO extends Struct<XrMarkerSpaceCreateInfo
         POSEINMARKERSPACE = layout.offsetof(3);
     }
 
-    protected XrMarkerSpaceCreateInfoVARJO(long address, @Nullable ByteBuffer container) {
+    public XrMarkerSpaceCreateInfoVARJO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrMarkerSpaceCreateInfoVARJO create(long address, @Nullable ByteBuffer container) {
-        return new XrMarkerSpaceCreateInfoVARJO(address, container);
     }
 
     /**

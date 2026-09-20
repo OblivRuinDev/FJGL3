@@ -56,13 +56,8 @@ public class VkTensorFormatPropertiesARM extends Struct<VkTensorFormatProperties
         LINEARTILINGTENSORFEATURES = layout.offsetof(3);
     }
 
-    protected VkTensorFormatPropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkTensorFormatPropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTensorFormatPropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkTensorFormatPropertiesARM(address, container);
     }
 
     /**

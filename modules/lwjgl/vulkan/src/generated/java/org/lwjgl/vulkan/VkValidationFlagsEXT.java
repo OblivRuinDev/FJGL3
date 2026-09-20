@@ -57,13 +57,8 @@ public class VkValidationFlagsEXT extends Struct<VkValidationFlagsEXT> implement
         PDISABLEDVALIDATIONCHECKS = layout.offsetof(3);
     }
 
-    protected VkValidationFlagsEXT(long address, @Nullable ByteBuffer container) {
+    public VkValidationFlagsEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkValidationFlagsEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkValidationFlagsEXT(address, container);
     }
 
     /**

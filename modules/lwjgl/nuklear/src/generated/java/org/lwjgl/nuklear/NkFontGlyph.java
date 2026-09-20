@@ -89,13 +89,8 @@ public class NkFontGlyph extends Struct<NkFontGlyph> implements NativeResource {
         V1 = layout.offsetof(11);
     }
 
-    protected NkFontGlyph(long address, @Nullable ByteBuffer container) {
+    public NkFontGlyph(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkFontGlyph create(long address, @Nullable ByteBuffer container) {
-        return new NkFontGlyph(address, container);
     }
 
     /**

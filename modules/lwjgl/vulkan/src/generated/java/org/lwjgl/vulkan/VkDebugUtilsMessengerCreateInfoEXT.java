@@ -71,13 +71,8 @@ public class VkDebugUtilsMessengerCreateInfoEXT extends Struct<VkDebugUtilsMesse
         PUSERDATA = layout.offsetof(6);
     }
 
-    protected VkDebugUtilsMessengerCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDebugUtilsMessengerCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDebugUtilsMessengerCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDebugUtilsMessengerCreateInfoEXT(address, container);
     }
 
     /**

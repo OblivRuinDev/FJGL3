@@ -69,13 +69,8 @@ public class VkVideoBeginCodingInfoKHR extends Struct<VkVideoBeginCodingInfoKHR>
         PREFERENCESLOTS = layout.offsetof(6);
     }
 
-    protected VkVideoBeginCodingInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoBeginCodingInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoBeginCodingInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoBeginCodingInfoKHR(address, container);
     }
 
     /**

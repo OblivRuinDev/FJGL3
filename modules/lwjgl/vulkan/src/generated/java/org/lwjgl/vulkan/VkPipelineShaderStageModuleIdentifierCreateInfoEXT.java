@@ -57,13 +57,8 @@ public class VkPipelineShaderStageModuleIdentifierCreateInfoEXT extends Struct<V
         PIDENTIFIER = layout.offsetof(3);
     }
 
-    protected VkPipelineShaderStageModuleIdentifierCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineShaderStageModuleIdentifierCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineShaderStageModuleIdentifierCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineShaderStageModuleIdentifierCreateInfoEXT(address, container);
     }
 
     /**

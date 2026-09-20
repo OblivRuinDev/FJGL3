@@ -52,13 +52,8 @@ public class XrEventDataEyeCalibrationChangedML extends Struct<XrEventDataEyeCal
         STATUS = layout.offsetof(2);
     }
 
-    protected XrEventDataEyeCalibrationChangedML(long address, @Nullable ByteBuffer container) {
+    public XrEventDataEyeCalibrationChangedML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataEyeCalibrationChangedML create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataEyeCalibrationChangedML(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrSystemRenderModelPropertiesFB extends Struct<XrSystemRenderModelP
         SUPPORTSRENDERMODELLOADING = layout.offsetof(2);
     }
 
-    protected XrSystemRenderModelPropertiesFB(long address, @Nullable ByteBuffer container) {
+    public XrSystemRenderModelPropertiesFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemRenderModelPropertiesFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemRenderModelPropertiesFB(address, container);
     }
 
     /**

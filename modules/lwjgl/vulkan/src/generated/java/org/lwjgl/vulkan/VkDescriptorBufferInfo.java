@@ -52,13 +52,8 @@ public class VkDescriptorBufferInfo extends Struct<VkDescriptorBufferInfo> imple
         RANGE = layout.offsetof(2);
     }
 
-    protected VkDescriptorBufferInfo(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorBufferInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorBufferInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorBufferInfo(address, container);
     }
 
     /**

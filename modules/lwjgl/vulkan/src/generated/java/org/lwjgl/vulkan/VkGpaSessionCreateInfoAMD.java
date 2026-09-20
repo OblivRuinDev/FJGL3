@@ -52,13 +52,8 @@ public class VkGpaSessionCreateInfoAMD extends Struct<VkGpaSessionCreateInfoAMD>
         SECONDARYCOPYSOURCE = layout.offsetof(2);
     }
 
-    protected VkGpaSessionCreateInfoAMD(long address, @Nullable ByteBuffer container) {
+    public VkGpaSessionCreateInfoAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGpaSessionCreateInfoAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkGpaSessionCreateInfoAMD(address, container);
     }
 
     /**

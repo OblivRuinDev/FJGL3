@@ -110,13 +110,8 @@ public class NkStyleTab extends Struct<NkStyleTab> implements NativeResource {
         DISABLED_FACTOR = layout.offsetof(15);
     }
 
-    protected NkStyleTab(long address, @Nullable ByteBuffer container) {
+    public NkStyleTab(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleTab create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleTab(address, container);
     }
 
     /**

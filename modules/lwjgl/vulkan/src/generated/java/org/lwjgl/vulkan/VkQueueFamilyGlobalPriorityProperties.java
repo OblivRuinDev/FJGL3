@@ -59,13 +59,8 @@ public class VkQueueFamilyGlobalPriorityProperties extends Struct<VkQueueFamilyG
         PRIORITIES = layout.offsetof(3);
     }
 
-    protected VkQueueFamilyGlobalPriorityProperties(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyGlobalPriorityProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyGlobalPriorityProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyGlobalPriorityProperties(address, container);
     }
 
     /**

@@ -51,13 +51,8 @@ public class StdVideoAV1FilmGrainFlags extends Struct<StdVideoAV1FilmGrainFlags>
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoAV1FilmGrainFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1FilmGrainFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1FilmGrainFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1FilmGrainFlags(address, container);
     }
 
     /**

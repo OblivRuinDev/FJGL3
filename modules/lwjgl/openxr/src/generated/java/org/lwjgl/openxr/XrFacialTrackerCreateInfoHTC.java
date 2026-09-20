@@ -52,13 +52,8 @@ public class XrFacialTrackerCreateInfoHTC extends Struct<XrFacialTrackerCreateIn
         FACIALTRACKINGTYPE = layout.offsetof(2);
     }
 
-    protected XrFacialTrackerCreateInfoHTC(long address, @Nullable ByteBuffer container) {
+    public XrFacialTrackerCreateInfoHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFacialTrackerCreateInfoHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrFacialTrackerCreateInfoHTC(address, container);
     }
 
     /**

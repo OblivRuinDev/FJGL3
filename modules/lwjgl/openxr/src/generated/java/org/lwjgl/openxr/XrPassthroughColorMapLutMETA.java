@@ -57,13 +57,8 @@ public class XrPassthroughColorMapLutMETA extends Struct<XrPassthroughColorMapLu
         WEIGHT = layout.offsetof(3);
     }
 
-    protected XrPassthroughColorMapLutMETA(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughColorMapLutMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughColorMapLutMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughColorMapLutMETA(address, container);
     }
 
     /**

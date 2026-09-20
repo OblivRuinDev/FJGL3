@@ -54,13 +54,8 @@ public class VkExternalBufferProperties extends Struct<VkExternalBufferPropertie
         EXTERNALMEMORYPROPERTIES = layout.offsetof(2);
     }
 
-    protected VkExternalBufferProperties(long address, @Nullable ByteBuffer container) {
+    public VkExternalBufferProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalBufferProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalBufferProperties(address, container);
     }
 
     /**

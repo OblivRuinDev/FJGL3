@@ -57,13 +57,8 @@ public class FT_Glyph extends Struct<FT_Glyph> {
         ADVANCE = layout.offsetof(3);
     }
 
-    protected FT_Glyph(long address, @Nullable ByteBuffer container) {
+    public FT_Glyph(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Glyph create(long address, @Nullable ByteBuffer container) {
-        return new FT_Glyph(address, container);
     }
 
     /**

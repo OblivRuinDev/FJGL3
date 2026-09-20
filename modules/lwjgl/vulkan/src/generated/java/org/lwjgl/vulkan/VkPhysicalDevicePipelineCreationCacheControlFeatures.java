@@ -52,13 +52,8 @@ public class VkPhysicalDevicePipelineCreationCacheControlFeatures extends Struct
         PIPELINECREATIONCACHECONTROL = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePipelineCreationCacheControlFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePipelineCreationCacheControlFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePipelineCreationCacheControlFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePipelineCreationCacheControlFeatures(address, container);
     }
 
     /**

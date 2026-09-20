@@ -56,13 +56,8 @@ public class XrSpatialAudioRendererCreateInfoBD extends Struct<XrSpatialAudioRen
         SAMPLERATE = layout.offsetof(3);
     }
 
-    protected XrSpatialAudioRendererCreateInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAudioRendererCreateInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAudioRendererCreateInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAudioRendererCreateInfoBD(address, container);
     }
 
     /**

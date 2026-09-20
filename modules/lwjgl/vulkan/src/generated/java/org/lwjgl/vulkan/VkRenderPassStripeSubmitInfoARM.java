@@ -57,13 +57,8 @@ public class VkRenderPassStripeSubmitInfoARM extends Struct<VkRenderPassStripeSu
         PSTRIPESEMAPHOREINFOS = layout.offsetof(3);
     }
 
-    protected VkRenderPassStripeSubmitInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassStripeSubmitInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassStripeSubmitInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassStripeSubmitInfoARM(address, container);
     }
 
     /**

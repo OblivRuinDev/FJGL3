@@ -60,13 +60,8 @@ public class XrHapticVibration extends Struct<XrHapticVibration> implements Nati
         AMPLITUDE = layout.offsetof(4);
     }
 
-    protected XrHapticVibration(long address, @Nullable ByteBuffer container) {
+    public XrHapticVibration(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHapticVibration create(long address, @Nullable ByteBuffer container) {
-        return new XrHapticVibration(address, container);
     }
 
     /**

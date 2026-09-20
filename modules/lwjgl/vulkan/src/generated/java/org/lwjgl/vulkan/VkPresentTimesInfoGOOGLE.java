@@ -56,13 +56,8 @@ public class VkPresentTimesInfoGOOGLE extends Struct<VkPresentTimesInfoGOOGLE> i
         PTIMES = layout.offsetof(3);
     }
 
-    protected VkPresentTimesInfoGOOGLE(long address, @Nullable ByteBuffer container) {
+    public VkPresentTimesInfoGOOGLE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPresentTimesInfoGOOGLE create(long address, @Nullable ByteBuffer container) {
-        return new VkPresentTimesInfoGOOGLE(address, container);
     }
 
     /**

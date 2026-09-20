@@ -62,13 +62,8 @@ public class VkBindHeapInfoEXT extends Struct<VkBindHeapInfoEXT> implements Nati
         RESERVEDRANGESIZE = layout.offsetof(4);
     }
 
-    protected VkBindHeapInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkBindHeapInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindHeapInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkBindHeapInfoEXT(address, container);
     }
 
     /**

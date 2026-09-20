@@ -57,13 +57,8 @@ public class XrActiveActionSetPrioritiesEXT extends Struct<XrActiveActionSetPrio
         ACTIONSETPRIORITIES = layout.offsetof(3);
     }
 
-    protected XrActiveActionSetPrioritiesEXT(long address, @Nullable ByteBuffer container) {
+    public XrActiveActionSetPrioritiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrActiveActionSetPrioritiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrActiveActionSetPrioritiesEXT(address, container);
     }
 
     /**

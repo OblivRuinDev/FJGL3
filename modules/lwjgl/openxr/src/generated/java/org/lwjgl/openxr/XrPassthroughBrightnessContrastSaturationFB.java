@@ -60,13 +60,8 @@ public class XrPassthroughBrightnessContrastSaturationFB extends Struct<XrPassth
         SATURATION = layout.offsetof(4);
     }
 
-    protected XrPassthroughBrightnessContrastSaturationFB(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughBrightnessContrastSaturationFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughBrightnessContrastSaturationFB create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughBrightnessContrastSaturationFB(address, container);
     }
 
     /**

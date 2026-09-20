@@ -52,13 +52,8 @@ public class VkExportMemoryAllocateInfo extends Struct<VkExportMemoryAllocateInf
         HANDLETYPES = layout.offsetof(2);
     }
 
-    protected VkExportMemoryAllocateInfo(long address, @Nullable ByteBuffer container) {
+    public VkExportMemoryAllocateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportMemoryAllocateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkExportMemoryAllocateInfo(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class XrFaceTrackerCreateInfo2FB extends Struct<XrFaceTrackerCreateInfo2F
         REQUESTEDDATASOURCES = layout.offsetof(4);
     }
 
-    protected XrFaceTrackerCreateInfo2FB(long address, @Nullable ByteBuffer container) {
+    public XrFaceTrackerCreateInfo2FB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFaceTrackerCreateInfo2FB create(long address, @Nullable ByteBuffer container) {
-        return new XrFaceTrackerCreateInfo2FB(address, container);
     }
 
     /**

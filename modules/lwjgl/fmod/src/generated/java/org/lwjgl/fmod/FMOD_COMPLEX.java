@@ -49,13 +49,8 @@ public class FMOD_COMPLEX extends Struct<FMOD_COMPLEX> implements NativeResource
         IMAG = layout.offsetof(1);
     }
 
-    protected FMOD_COMPLEX(long address, @Nullable ByteBuffer container) {
+    public FMOD_COMPLEX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_COMPLEX create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_COMPLEX(address, container);
     }
 
     /**

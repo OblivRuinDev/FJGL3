@@ -64,13 +64,8 @@ public class VkVideoEncodeH264SessionParametersGetInfoKHR extends Struct<VkVideo
         STDPPSID = layout.offsetof(5);
     }
 
-    protected VkVideoEncodeH264SessionParametersGetInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH264SessionParametersGetInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH264SessionParametersGetInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH264SessionParametersGetInfoKHR(address, container);
     }
 
     /**

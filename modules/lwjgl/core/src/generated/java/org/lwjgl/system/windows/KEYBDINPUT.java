@@ -60,13 +60,8 @@ public class KEYBDINPUT extends Struct<KEYBDINPUT> implements NativeResource {
         DWEXTRAINFO = layout.offsetof(4);
     }
 
-    protected KEYBDINPUT(long address, @Nullable ByteBuffer container) {
+    public KEYBDINPUT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected KEYBDINPUT create(long address, @Nullable ByteBuffer container) {
-        return new KEYBDINPUT(address, container);
     }
 
     /**

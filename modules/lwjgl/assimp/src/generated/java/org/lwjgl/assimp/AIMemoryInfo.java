@@ -73,13 +73,8 @@ public class AIMemoryInfo extends Struct<AIMemoryInfo> implements NativeResource
         TOTAL = layout.offsetof(7);
     }
 
-    protected AIMemoryInfo(long address, @Nullable ByteBuffer container) {
+    public AIMemoryInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIMemoryInfo create(long address, @Nullable ByteBuffer container) {
-        return new AIMemoryInfo(address, container);
     }
 
     /**

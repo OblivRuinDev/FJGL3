@@ -60,13 +60,8 @@ public class VkPerformanceOverrideInfoINTEL extends Struct<VkPerformanceOverride
         PARAMETER = layout.offsetof(4);
     }
 
-    protected VkPerformanceOverrideInfoINTEL(long address, @Nullable ByteBuffer container) {
+    public VkPerformanceOverrideInfoINTEL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerformanceOverrideInfoINTEL create(long address, @Nullable ByteBuffer container) {
-        return new VkPerformanceOverrideInfoINTEL(address, container);
     }
 
     /**

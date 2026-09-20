@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDisplacementMicromapPropertiesNV extends Struct<VkP
         MAXDISPLACEMENTMICROMAPSUBDIVISIONLEVEL = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDisplacementMicromapPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDisplacementMicromapPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDisplacementMicromapPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDisplacementMicromapPropertiesNV(address, container);
     }
 
     /**

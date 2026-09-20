@@ -87,13 +87,8 @@ public class StdVideoH264PictureParameterSet extends Struct<StdVideoH264PictureP
         PSCALINGLISTS = layout.offsetof(10);
     }
 
-    protected StdVideoH264PictureParameterSet(long address, @Nullable ByteBuffer container) {
+    public StdVideoH264PictureParameterSet(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH264PictureParameterSet create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH264PictureParameterSet(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class VkTexelBufferDescriptorInfoEXT extends Struct<VkTexelBufferDescript
         ADDRESSRANGE = layout.offsetof(3);
     }
 
-    protected VkTexelBufferDescriptorInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkTexelBufferDescriptorInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTexelBufferDescriptorInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkTexelBufferDescriptorInfoEXT(address, container);
     }
 
     /**

@@ -73,13 +73,8 @@ public class STBTTAlignedQuad extends Struct<STBTTAlignedQuad> implements Native
         T1 = layout.offsetof(7);
     }
 
-    protected STBTTAlignedQuad(long address, @Nullable ByteBuffer container) {
+    public STBTTAlignedQuad(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBTTAlignedQuad create(long address, @Nullable ByteBuffer container) {
-        return new STBTTAlignedQuad(address, container);
     }
 
     /**

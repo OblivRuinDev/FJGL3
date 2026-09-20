@@ -69,13 +69,8 @@ public class STBTTVertex extends Struct<STBTTVertex> implements NativeResource {
         TYPE = layout.offsetof(6);
     }
 
-    protected STBTTVertex(long address, @Nullable ByteBuffer container) {
+    public STBTTVertex(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBTTVertex create(long address, @Nullable ByteBuffer container) {
-        return new STBTTVertex(address, container);
     }
 
     /**

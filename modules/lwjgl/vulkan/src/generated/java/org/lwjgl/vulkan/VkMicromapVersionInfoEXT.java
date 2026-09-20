@@ -53,13 +53,8 @@ public class VkMicromapVersionInfoEXT extends Struct<VkMicromapVersionInfoEXT> i
         PVERSIONDATA = layout.offsetof(2);
     }
 
-    protected VkMicromapVersionInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkMicromapVersionInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMicromapVersionInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMicromapVersionInfoEXT(address, container);
     }
 
     /**

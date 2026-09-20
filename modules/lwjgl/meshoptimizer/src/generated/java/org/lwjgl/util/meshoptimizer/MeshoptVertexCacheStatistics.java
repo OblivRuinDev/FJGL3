@@ -57,13 +57,8 @@ public class MeshoptVertexCacheStatistics extends Struct<MeshoptVertexCacheStati
         ATVR = layout.offsetof(3);
     }
 
-    protected MeshoptVertexCacheStatistics(long address, @Nullable ByteBuffer container) {
+    public MeshoptVertexCacheStatistics(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MeshoptVertexCacheStatistics create(long address, @Nullable ByteBuffer container) {
-        return new MeshoptVertexCacheStatistics(address, container);
     }
 
     /**

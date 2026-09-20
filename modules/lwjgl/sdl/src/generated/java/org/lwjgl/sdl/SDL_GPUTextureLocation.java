@@ -65,13 +65,8 @@ public class SDL_GPUTextureLocation extends Struct<SDL_GPUTextureLocation> imple
         Z = layout.offsetof(5);
     }
 
-    protected SDL_GPUTextureLocation(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUTextureLocation(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUTextureLocation create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUTextureLocation(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class XrControllerModelPropertiesMSFT extends Struct<XrControllerModelPro
         NODEPROPERTIES = layout.offsetof(4);
     }
 
-    protected XrControllerModelPropertiesMSFT(long address, @Nullable ByteBuffer container) {
+    public XrControllerModelPropertiesMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrControllerModelPropertiesMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrControllerModelPropertiesMSFT(address, container);
     }
 
     /**

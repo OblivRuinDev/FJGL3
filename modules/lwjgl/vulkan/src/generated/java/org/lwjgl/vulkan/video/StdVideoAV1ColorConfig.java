@@ -78,13 +78,8 @@ public class StdVideoAV1ColorConfig extends Struct<StdVideoAV1ColorConfig> imple
         CHROMA_SAMPLE_POSITION = layout.offsetof(8);
     }
 
-    protected StdVideoAV1ColorConfig(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1ColorConfig(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1ColorConfig create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1ColorConfig(address, container);
     }
 
     /**

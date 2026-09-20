@@ -65,13 +65,8 @@ public class JAWTWin32DrawingSurfaceInfo extends Struct<JAWTWin32DrawingSurfaceI
         HPALETTE = layout.offsetof(5);
     }
 
-    protected JAWTWin32DrawingSurfaceInfo(long address, @Nullable ByteBuffer container) {
+    public JAWTWin32DrawingSurfaceInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected JAWTWin32DrawingSurfaceInfo create(long address, @Nullable ByteBuffer container) {
-        return new JAWTWin32DrawingSurfaceInfo(address, container);
     }
 
     /**

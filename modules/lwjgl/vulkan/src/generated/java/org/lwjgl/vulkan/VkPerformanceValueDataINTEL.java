@@ -61,13 +61,8 @@ public class VkPerformanceValueDataINTEL extends Struct<VkPerformanceValueDataIN
         VALUESTRING = layout.offsetof(4);
     }
 
-    protected VkPerformanceValueDataINTEL(long address, @Nullable ByteBuffer container) {
+    public VkPerformanceValueDataINTEL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerformanceValueDataINTEL create(long address, @Nullable ByteBuffer container) {
-        return new VkPerformanceValueDataINTEL(address, container);
     }
 
     /**

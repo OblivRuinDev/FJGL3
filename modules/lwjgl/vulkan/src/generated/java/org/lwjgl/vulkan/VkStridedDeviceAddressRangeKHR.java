@@ -52,13 +52,8 @@ public class VkStridedDeviceAddressRangeKHR extends Struct<VkStridedDeviceAddres
         STRIDE = layout.offsetof(2);
     }
 
-    protected VkStridedDeviceAddressRangeKHR(long address, @Nullable ByteBuffer container) {
+    public VkStridedDeviceAddressRangeKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkStridedDeviceAddressRangeKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkStridedDeviceAddressRangeKHR(address, container);
     }
 
     /**

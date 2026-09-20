@@ -77,13 +77,8 @@ public class OpusHead extends Struct<OpusHead> implements NativeResource {
         MAPPING = layout.offsetof(8);
     }
 
-    protected OpusHead(long address, @Nullable ByteBuffer container) {
+    public OpusHead(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected OpusHead create(long address, @Nullable ByteBuffer container) {
-        return new OpusHead(address, container);
     }
 
     /**

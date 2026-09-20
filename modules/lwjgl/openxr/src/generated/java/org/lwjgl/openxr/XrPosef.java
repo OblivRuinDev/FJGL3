@@ -51,13 +51,8 @@ public class XrPosef extends Struct<XrPosef> implements NativeResource {
         POSITION = layout.offsetof(1);
     }
 
-    protected XrPosef(long address, @Nullable ByteBuffer container) {
+    public XrPosef(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPosef create(long address, @Nullable ByteBuffer container) {
-        return new XrPosef(address, container);
     }
 
     /**

@@ -67,13 +67,8 @@ public class VkPerformanceCounterKHR extends Struct<VkPerformanceCounterKHR> imp
         UUID = layout.offsetof(5);
     }
 
-    protected VkPerformanceCounterKHR(long address, @Nullable ByteBuffer container) {
+    public VkPerformanceCounterKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerformanceCounterKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPerformanceCounterKHR(address, container);
     }
 
     /**

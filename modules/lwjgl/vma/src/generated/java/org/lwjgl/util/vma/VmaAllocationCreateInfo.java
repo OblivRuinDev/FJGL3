@@ -76,13 +76,8 @@ public class VmaAllocationCreateInfo extends Struct<VmaAllocationCreateInfo> imp
         MINALIGNMENT = layout.offsetof(8);
     }
 
-    protected VmaAllocationCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VmaAllocationCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaAllocationCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VmaAllocationCreateInfo(address, container);
     }
 
     /**

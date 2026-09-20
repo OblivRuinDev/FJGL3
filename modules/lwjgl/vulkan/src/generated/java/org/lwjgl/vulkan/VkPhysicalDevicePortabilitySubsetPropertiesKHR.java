@@ -52,13 +52,8 @@ public class VkPhysicalDevicePortabilitySubsetPropertiesKHR extends Struct<VkPhy
         MINVERTEXINPUTBINDINGSTRIDEALIGNMENT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePortabilitySubsetPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePortabilitySubsetPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePortabilitySubsetPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePortabilitySubsetPropertiesKHR(address, container);
     }
 
     /**

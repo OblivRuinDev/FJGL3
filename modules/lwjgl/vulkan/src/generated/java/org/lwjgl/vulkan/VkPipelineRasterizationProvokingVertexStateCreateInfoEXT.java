@@ -52,13 +52,8 @@ public class VkPipelineRasterizationProvokingVertexStateCreateInfoEXT extends St
         PROVOKINGVERTEXMODE = layout.offsetof(2);
     }
 
-    protected VkPipelineRasterizationProvokingVertexStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineRasterizationProvokingVertexStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineRasterizationProvokingVertexStateCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineRasterizationProvokingVertexStateCreateInfoEXT(address, container);
     }
 
     /**

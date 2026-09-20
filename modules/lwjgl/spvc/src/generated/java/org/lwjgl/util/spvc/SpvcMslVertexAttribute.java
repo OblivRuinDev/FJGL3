@@ -69,13 +69,8 @@ public class SpvcMslVertexAttribute extends Struct<SpvcMslVertexAttribute> imple
         BUILTIN = layout.offsetof(6);
     }
 
-    protected SpvcMslVertexAttribute(long address, @Nullable ByteBuffer container) {
+    public SpvcMslVertexAttribute(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcMslVertexAttribute create(long address, @Nullable ByteBuffer container) {
-        return new SpvcMslVertexAttribute(address, container);
     }
 
     /**

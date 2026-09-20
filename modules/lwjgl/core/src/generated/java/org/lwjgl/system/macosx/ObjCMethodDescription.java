@@ -49,13 +49,8 @@ public class ObjCMethodDescription extends Struct<ObjCMethodDescription> impleme
         TYPES = layout.offsetof(1);
     }
 
-    protected ObjCMethodDescription(long address, @Nullable ByteBuffer container) {
+    public ObjCMethodDescription(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ObjCMethodDescription create(long address, @Nullable ByteBuffer container) {
-        return new ObjCMethodDescription(address, container);
     }
 
     /**

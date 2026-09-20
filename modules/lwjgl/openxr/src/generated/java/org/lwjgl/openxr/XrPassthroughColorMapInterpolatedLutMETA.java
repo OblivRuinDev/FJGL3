@@ -61,13 +61,8 @@ public class XrPassthroughColorMapInterpolatedLutMETA extends Struct<XrPassthrou
         WEIGHT = layout.offsetof(4);
     }
 
-    protected XrPassthroughColorMapInterpolatedLutMETA(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughColorMapInterpolatedLutMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughColorMapInterpolatedLutMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughColorMapInterpolatedLutMETA(address, container);
     }
 
     /**

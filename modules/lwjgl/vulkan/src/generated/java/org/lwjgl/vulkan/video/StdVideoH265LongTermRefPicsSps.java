@@ -51,13 +51,8 @@ public class StdVideoH265LongTermRefPicsSps extends Struct<StdVideoH265LongTermR
         LT_REF_PIC_POC_LSB_SPS = layout.offsetof(1);
     }
 
-    protected StdVideoH265LongTermRefPicsSps(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265LongTermRefPicsSps(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265LongTermRefPicsSps create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265LongTermRefPicsSps(address, container);
     }
 
     /**

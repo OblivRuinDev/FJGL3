@@ -73,13 +73,8 @@ public class VkCopyImageInfo2 extends Struct<VkCopyImageInfo2> implements Native
         PREGIONS = layout.offsetof(7);
     }
 
-    protected VkCopyImageInfo2(long address, @Nullable ByteBuffer container) {
+    public VkCopyImageInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyImageInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyImageInfo2(address, container);
     }
 
     /**

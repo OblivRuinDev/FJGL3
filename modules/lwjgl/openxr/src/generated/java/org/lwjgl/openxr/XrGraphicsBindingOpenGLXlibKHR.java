@@ -72,13 +72,8 @@ public class XrGraphicsBindingOpenGLXlibKHR extends Struct<XrGraphicsBindingOpen
         GLXCONTEXT = layout.offsetof(6);
     }
 
-    protected XrGraphicsBindingOpenGLXlibKHR(long address, @Nullable ByteBuffer container) {
+    public XrGraphicsBindingOpenGLXlibKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGraphicsBindingOpenGLXlibKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrGraphicsBindingOpenGLXlibKHR(address, container);
     }
 
     /**

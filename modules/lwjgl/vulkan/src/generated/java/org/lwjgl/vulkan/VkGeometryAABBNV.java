@@ -64,13 +64,8 @@ public class VkGeometryAABBNV extends Struct<VkGeometryAABBNV> implements Native
         OFFSET = layout.offsetof(5);
     }
 
-    protected VkGeometryAABBNV(long address, @Nullable ByteBuffer container) {
+    public VkGeometryAABBNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGeometryAABBNV create(long address, @Nullable ByteBuffer container) {
-        return new VkGeometryAABBNV(address, container);
     }
 
     /**

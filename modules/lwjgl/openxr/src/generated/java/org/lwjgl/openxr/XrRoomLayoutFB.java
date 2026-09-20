@@ -70,13 +70,8 @@ public class XrRoomLayoutFB extends Struct<XrRoomLayoutFB> implements NativeReso
         WALLUUIDS = layout.offsetof(6);
     }
 
-    protected XrRoomLayoutFB(long address, @Nullable ByteBuffer container) {
+    public XrRoomLayoutFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRoomLayoutFB create(long address, @Nullable ByteBuffer container) {
-        return new XrRoomLayoutFB(address, container);
     }
 
     /**

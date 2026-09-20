@@ -52,13 +52,8 @@ public class VkPerformanceMarkerInfoINTEL extends Struct<VkPerformanceMarkerInfo
         MARKER = layout.offsetof(2);
     }
 
-    protected VkPerformanceMarkerInfoINTEL(long address, @Nullable ByteBuffer container) {
+    public VkPerformanceMarkerInfoINTEL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerformanceMarkerInfoINTEL create(long address, @Nullable ByteBuffer container) {
-        return new VkPerformanceMarkerInfoINTEL(address, container);
     }
 
     /**

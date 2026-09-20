@@ -66,13 +66,8 @@ public class IOURingBufReg extends Struct<IOURingBufReg> implements NativeResour
         RESV = layout.offsetof(5);
     }
 
-    protected IOURingBufReg(long address, @Nullable ByteBuffer container) {
+    public IOURingBufReg(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingBufReg create(long address, @Nullable ByteBuffer container) {
-        return new IOURingBufReg(address, container);
     }
 
     /**

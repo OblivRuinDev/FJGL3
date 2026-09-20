@@ -31,13 +31,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDeviceGroupSubmitInfoKHR extends VkDeviceGroupSubmitInfo {
 
-    protected VkDeviceGroupSubmitInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceGroupSubmitInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceGroupSubmitInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceGroupSubmitInfoKHR(address, container);
     }
 
     /**

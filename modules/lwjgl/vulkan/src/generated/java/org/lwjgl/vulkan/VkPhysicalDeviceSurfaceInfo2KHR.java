@@ -52,13 +52,8 @@ public class VkPhysicalDeviceSurfaceInfo2KHR extends Struct<VkPhysicalDeviceSurf
         SURFACE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceSurfaceInfo2KHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSurfaceInfo2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSurfaceInfo2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSurfaceInfo2KHR(address, container);
     }
 
     /**

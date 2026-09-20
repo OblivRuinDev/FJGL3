@@ -76,13 +76,8 @@ public class VkPastPresentationTimingEXT extends Struct<VkPastPresentationTiming
         REPORTCOMPLETE = layout.offsetof(8);
     }
 
-    protected VkPastPresentationTimingEXT(long address, @Nullable ByteBuffer container) {
+    public VkPastPresentationTimingEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPastPresentationTimingEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPastPresentationTimingEXT(address, container);
     }
 
     /**

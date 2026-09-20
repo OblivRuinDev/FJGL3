@@ -68,13 +68,8 @@ public class VkTensorExplicitTilingFormatPropertiesARM extends Struct<VkTensorEx
         BLOCKU64KTILINGTENSORFEATURES = layout.offsetof(6);
     }
 
-    protected VkTensorExplicitTilingFormatPropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkTensorExplicitTilingFormatPropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTensorExplicitTilingFormatPropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkTensorExplicitTilingFormatPropertiesARM(address, container);
     }
 
     /**

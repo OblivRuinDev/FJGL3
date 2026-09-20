@@ -65,13 +65,8 @@ public class XrCompositionLayerProjection extends Struct<XrCompositionLayerProje
         VIEWS = layout.offsetof(5);
     }
 
-    protected XrCompositionLayerProjection(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerProjection(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerProjection create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerProjection(address, container);
     }
 
     /**

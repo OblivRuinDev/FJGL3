@@ -44,13 +44,8 @@ public class mi_subproc_id_t extends Struct<mi_subproc_id_t> implements NativeRe
         _MI_SUBPROC_ID = layout.offsetof(0);
     }
 
-    protected mi_subproc_id_t(long address, @Nullable ByteBuffer container) {
+    public mi_subproc_id_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected mi_subproc_id_t create(long address, @Nullable ByteBuffer container) {
-        return new mi_subproc_id_t(address, container);
     }
 
     /**

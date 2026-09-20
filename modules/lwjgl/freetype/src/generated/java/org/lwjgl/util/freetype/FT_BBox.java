@@ -56,13 +56,8 @@ public class FT_BBox extends Struct<FT_BBox> implements NativeResource {
         YMAX = layout.offsetof(3);
     }
 
-    protected FT_BBox(long address, @Nullable ByteBuffer container) {
+    public FT_BBox(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_BBox create(long address, @Nullable ByteBuffer container) {
-        return new FT_BBox(address, container);
     }
 
     /**

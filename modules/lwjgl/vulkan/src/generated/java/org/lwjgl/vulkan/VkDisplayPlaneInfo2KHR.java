@@ -56,13 +56,8 @@ public class VkDisplayPlaneInfo2KHR extends Struct<VkDisplayPlaneInfo2KHR> imple
         PLANEINDEX = layout.offsetof(3);
     }
 
-    protected VkDisplayPlaneInfo2KHR(long address, @Nullable ByteBuffer container) {
+    public VkDisplayPlaneInfo2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplayPlaneInfo2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplayPlaneInfo2KHR(address, container);
     }
 
     /**

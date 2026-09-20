@@ -57,13 +57,8 @@ public class VkDirectDriverLoadingInfoLUNARG extends Struct<VkDirectDriverLoadin
         PFNGETINSTANCEPROCADDR = layout.offsetof(3);
     }
 
-    protected VkDirectDriverLoadingInfoLUNARG(long address, @Nullable ByteBuffer container) {
+    public VkDirectDriverLoadingInfoLUNARG(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDirectDriverLoadingInfoLUNARG create(long address, @Nullable ByteBuffer container) {
-        return new VkDirectDriverLoadingInfoLUNARG(address, container);
     }
 
     /**

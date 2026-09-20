@@ -57,13 +57,8 @@ public class VkRenderPassInputAttachmentAspectCreateInfo extends Struct<VkRender
         PASPECTREFERENCES = layout.offsetof(3);
     }
 
-    protected VkRenderPassInputAttachmentAspectCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassInputAttachmentAspectCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassInputAttachmentAspectCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassInputAttachmentAspectCreateInfo(address, container);
     }
 
     /**

@@ -44,13 +44,8 @@ public class FMOD_DSP_PARAMETER_FINITE_LENGTH extends Struct<FMOD_DSP_PARAMETER_
         FINITE = layout.offsetof(0);
     }
 
-    protected FMOD_DSP_PARAMETER_FINITE_LENGTH(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_PARAMETER_FINITE_LENGTH(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_PARAMETER_FINITE_LENGTH create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_PARAMETER_FINITE_LENGTH(address, container);
     }
 
     /**

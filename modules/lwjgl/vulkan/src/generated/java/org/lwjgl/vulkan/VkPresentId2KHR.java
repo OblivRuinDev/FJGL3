@@ -56,13 +56,8 @@ public class VkPresentId2KHR extends Struct<VkPresentId2KHR> implements NativeRe
         PPRESENTIDS = layout.offsetof(3);
     }
 
-    protected VkPresentId2KHR(long address, @Nullable ByteBuffer container) {
+    public VkPresentId2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPresentId2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPresentId2KHR(address, container);
     }
 
     /**

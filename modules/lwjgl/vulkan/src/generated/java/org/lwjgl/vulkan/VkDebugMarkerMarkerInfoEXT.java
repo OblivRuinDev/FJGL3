@@ -57,13 +57,8 @@ public class VkDebugMarkerMarkerInfoEXT extends Struct<VkDebugMarkerMarkerInfoEX
         COLOR = layout.offsetof(3);
     }
 
-    protected VkDebugMarkerMarkerInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDebugMarkerMarkerInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDebugMarkerMarkerInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDebugMarkerMarkerInfoEXT(address, container);
     }
 
     /**

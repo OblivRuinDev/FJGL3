@@ -48,13 +48,8 @@ public class XrSpatialDiscoveryUniqueEntitiesFilterANDROID extends Struct<XrSpat
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSpatialDiscoveryUniqueEntitiesFilterANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialDiscoveryUniqueEntitiesFilterANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialDiscoveryUniqueEntitiesFilterANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialDiscoveryUniqueEntitiesFilterANDROID(address, container);
     }
 
     /**

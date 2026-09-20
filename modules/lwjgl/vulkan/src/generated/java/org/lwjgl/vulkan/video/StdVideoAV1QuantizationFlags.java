@@ -49,13 +49,8 @@ public class StdVideoAV1QuantizationFlags extends Struct<StdVideoAV1Quantization
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoAV1QuantizationFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1QuantizationFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1QuantizationFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1QuantizationFlags(address, container);
     }
 
     /**

@@ -91,13 +91,8 @@ public class CID_FaceDict extends Struct<CID_FaceDict> {
         SD_BYTES = layout.offsetof(11);
     }
 
-    protected CID_FaceDict(long address, @Nullable ByteBuffer container) {
+    public CID_FaceDict(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CID_FaceDict create(long address, @Nullable ByteBuffer container) {
-        return new CID_FaceDict(address, container);
     }
 
     /**

@@ -260,13 +260,8 @@ public class VkPhysicalDeviceFeatures extends Struct<VkPhysicalDeviceFeatures> i
         INHERITEDQUERIES = layout.offsetof(54);
     }
 
-    protected VkPhysicalDeviceFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFeatures(address, container);
     }
 
     /**

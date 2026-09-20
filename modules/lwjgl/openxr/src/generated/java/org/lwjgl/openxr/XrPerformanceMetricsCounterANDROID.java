@@ -64,13 +64,8 @@ public class XrPerformanceMetricsCounterANDROID extends Struct<XrPerformanceMetr
         FLOATVALUE = layout.offsetof(5);
     }
 
-    protected XrPerformanceMetricsCounterANDROID(long address, @Nullable ByteBuffer container) {
+    public XrPerformanceMetricsCounterANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPerformanceMetricsCounterANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrPerformanceMetricsCounterANDROID(address, container);
     }
 
     /**

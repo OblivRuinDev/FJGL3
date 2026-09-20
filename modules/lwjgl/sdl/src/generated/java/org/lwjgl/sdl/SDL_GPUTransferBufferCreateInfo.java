@@ -52,13 +52,8 @@ public class SDL_GPUTransferBufferCreateInfo extends Struct<SDL_GPUTransferBuffe
         PROPS = layout.offsetof(2);
     }
 
-    protected SDL_GPUTransferBufferCreateInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUTransferBufferCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUTransferBufferCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUTransferBufferCreateInfo(address, container);
     }
 
     /**

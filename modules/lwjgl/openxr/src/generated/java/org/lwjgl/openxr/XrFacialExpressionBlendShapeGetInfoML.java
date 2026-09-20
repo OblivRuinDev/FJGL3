@@ -48,13 +48,8 @@ public class XrFacialExpressionBlendShapeGetInfoML extends Struct<XrFacialExpres
         NEXT = layout.offsetof(1);
     }
 
-    protected XrFacialExpressionBlendShapeGetInfoML(long address, @Nullable ByteBuffer container) {
+    public XrFacialExpressionBlendShapeGetInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFacialExpressionBlendShapeGetInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrFacialExpressionBlendShapeGetInfoML(address, container);
     }
 
     /**

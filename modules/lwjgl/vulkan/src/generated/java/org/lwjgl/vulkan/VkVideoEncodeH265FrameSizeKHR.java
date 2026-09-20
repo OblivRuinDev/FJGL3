@@ -52,13 +52,8 @@ public class VkVideoEncodeH265FrameSizeKHR extends Struct<VkVideoEncodeH265Frame
         FRAMEBSIZE = layout.offsetof(2);
     }
 
-    protected VkVideoEncodeH265FrameSizeKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH265FrameSizeKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH265FrameSizeKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH265FrameSizeKHR(address, container);
     }
 
     /**

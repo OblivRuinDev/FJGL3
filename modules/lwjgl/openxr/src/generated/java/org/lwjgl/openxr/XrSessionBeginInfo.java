@@ -52,13 +52,8 @@ public class XrSessionBeginInfo extends Struct<XrSessionBeginInfo> implements Na
         PRIMARYVIEWCONFIGURATIONTYPE = layout.offsetof(2);
     }
 
-    protected XrSessionBeginInfo(long address, @Nullable ByteBuffer container) {
+    public XrSessionBeginInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSessionBeginInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrSessionBeginInfo(address, container);
     }
 
     /**

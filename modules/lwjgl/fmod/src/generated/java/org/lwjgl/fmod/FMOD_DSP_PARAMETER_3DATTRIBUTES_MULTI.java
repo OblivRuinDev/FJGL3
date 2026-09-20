@@ -59,13 +59,8 @@ public class FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI extends Struct<FMOD_DSP_PARAM
         ABSOLUTE = layout.offsetof(3);
     }
 
-    protected FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI(address, container);
     }
 
     /**

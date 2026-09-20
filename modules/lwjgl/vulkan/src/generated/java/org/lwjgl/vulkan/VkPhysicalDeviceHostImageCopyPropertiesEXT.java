@@ -33,13 +33,8 @@ import static org.lwjgl.vulkan.VK10.*;
  */
 public class VkPhysicalDeviceHostImageCopyPropertiesEXT extends VkPhysicalDeviceHostImageCopyProperties {
 
-    protected VkPhysicalDeviceHostImageCopyPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceHostImageCopyPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceHostImageCopyPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceHostImageCopyPropertiesEXT(address, container);
     }
 
     /**

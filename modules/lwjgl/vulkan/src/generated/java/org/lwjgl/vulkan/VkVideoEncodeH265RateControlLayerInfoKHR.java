@@ -75,13 +75,8 @@ public class VkVideoEncodeH265RateControlLayerInfoKHR extends Struct<VkVideoEnco
         MAXFRAMESIZE = layout.offsetof(7);
     }
 
-    protected VkVideoEncodeH265RateControlLayerInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH265RateControlLayerInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH265RateControlLayerInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH265RateControlLayerInfoKHR(address, container);
     }
 
     /**

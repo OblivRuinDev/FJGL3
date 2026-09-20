@@ -86,13 +86,8 @@ public class hwloc_pcidev_attr_s extends Struct<hwloc_pcidev_attr_s> {
         LINKSPEED = layout.offsetof(11);
     }
 
-    protected hwloc_pcidev_attr_s(long address, @Nullable ByteBuffer container) {
+    public hwloc_pcidev_attr_s(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_pcidev_attr_s create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_pcidev_attr_s(address, container);
     }
 
     /**

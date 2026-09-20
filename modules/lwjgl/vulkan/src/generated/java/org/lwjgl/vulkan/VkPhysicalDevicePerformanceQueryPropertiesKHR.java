@@ -52,13 +52,8 @@ public class VkPhysicalDevicePerformanceQueryPropertiesKHR extends Struct<VkPhys
         ALLOWCOMMANDBUFFERQUERYCOPIES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePerformanceQueryPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePerformanceQueryPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePerformanceQueryPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePerformanceQueryPropertiesKHR(address, container);
     }
 
     /**

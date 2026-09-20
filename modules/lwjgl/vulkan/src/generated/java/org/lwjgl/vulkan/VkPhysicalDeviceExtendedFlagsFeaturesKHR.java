@@ -52,13 +52,8 @@ public class VkPhysicalDeviceExtendedFlagsFeaturesKHR extends Struct<VkPhysicalD
         EXTENDEDFLAGS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceExtendedFlagsFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExtendedFlagsFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExtendedFlagsFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExtendedFlagsFeaturesKHR(address, container);
     }
 
     /**

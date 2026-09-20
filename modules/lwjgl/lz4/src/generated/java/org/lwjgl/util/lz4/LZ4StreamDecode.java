@@ -52,13 +52,8 @@ public class LZ4StreamDecode extends Struct<LZ4StreamDecode> {
         INTERNAL_DONOTUSE = layout.offsetof(1);
     }
 
-    protected LZ4StreamDecode(long address, @Nullable ByteBuffer container) {
+    public LZ4StreamDecode(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LZ4StreamDecode create(long address, @Nullable ByteBuffer container) {
-        return new LZ4StreamDecode(address, container);
     }
 
     /**

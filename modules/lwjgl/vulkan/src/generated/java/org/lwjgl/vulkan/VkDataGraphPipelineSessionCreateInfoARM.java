@@ -56,13 +56,8 @@ public class VkDataGraphPipelineSessionCreateInfoARM extends Struct<VkDataGraphP
         DATAGRAPHPIPELINE = layout.offsetof(3);
     }
 
-    protected VkDataGraphPipelineSessionCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineSessionCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineSessionCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineSessionCreateInfoARM(address, container);
     }
 
     /**

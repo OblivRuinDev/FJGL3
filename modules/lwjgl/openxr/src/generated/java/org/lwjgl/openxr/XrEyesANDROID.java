@@ -61,13 +61,8 @@ public class XrEyesANDROID extends Struct<XrEyesANDROID> implements NativeResour
         MODE = layout.offsetof(3);
     }
 
-    protected XrEyesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrEyesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEyesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrEyesANDROID(address, container);
     }
 
     /**

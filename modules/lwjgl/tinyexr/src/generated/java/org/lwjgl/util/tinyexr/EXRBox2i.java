@@ -56,13 +56,8 @@ public class EXRBox2i extends Struct<EXRBox2i> implements NativeResource {
         MAX_Y = layout.offsetof(3);
     }
 
-    protected EXRBox2i(long address, @Nullable ByteBuffer container) {
+    public EXRBox2i(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected EXRBox2i create(long address, @Nullable ByteBuffer container) {
-        return new EXRBox2i(address, container);
     }
 
     /**

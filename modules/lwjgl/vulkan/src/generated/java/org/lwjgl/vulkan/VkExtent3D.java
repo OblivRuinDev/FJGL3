@@ -52,13 +52,8 @@ public class VkExtent3D extends Struct<VkExtent3D> implements NativeResource {
         DEPTH = layout.offsetof(2);
     }
 
-    protected VkExtent3D(long address, @Nullable ByteBuffer container) {
+    public VkExtent3D(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExtent3D create(long address, @Nullable ByteBuffer container) {
-        return new VkExtent3D(address, container);
     }
 
     /**

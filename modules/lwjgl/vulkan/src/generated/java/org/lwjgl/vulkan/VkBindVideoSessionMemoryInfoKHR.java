@@ -64,13 +64,8 @@ public class VkBindVideoSessionMemoryInfoKHR extends Struct<VkBindVideoSessionMe
         MEMORYSIZE = layout.offsetof(5);
     }
 
-    protected VkBindVideoSessionMemoryInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkBindVideoSessionMemoryInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindVideoSessionMemoryInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkBindVideoSessionMemoryInfoKHR(address, container);
     }
 
     /**

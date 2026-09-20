@@ -64,13 +64,8 @@ public class XrSpatialAnchorsQueryCompletionML extends Struct<XrSpatialAnchorsQu
         UUIDS = layout.offsetof(5);
     }
 
-    protected XrSpatialAnchorsQueryCompletionML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsQueryCompletionML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsQueryCompletionML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsQueryCompletionML(address, container);
     }
 
     /**

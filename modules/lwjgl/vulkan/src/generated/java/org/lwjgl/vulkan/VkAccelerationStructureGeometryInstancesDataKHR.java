@@ -58,13 +58,8 @@ public class VkAccelerationStructureGeometryInstancesDataKHR extends Struct<VkAc
         DATA = layout.offsetof(3);
     }
 
-    protected VkAccelerationStructureGeometryInstancesDataKHR(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureGeometryInstancesDataKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureGeometryInstancesDataKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureGeometryInstancesDataKHR(address, container);
     }
 
     /**

@@ -51,13 +51,8 @@ public class NkStyleItem extends Struct<NkStyleItem> implements NativeResource {
         DATA = layout.offsetof(1);
     }
 
-    protected NkStyleItem(long address, @Nullable ByteBuffer container) {
+    public NkStyleItem(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleItem create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleItem(address, container);
     }
 
     /**

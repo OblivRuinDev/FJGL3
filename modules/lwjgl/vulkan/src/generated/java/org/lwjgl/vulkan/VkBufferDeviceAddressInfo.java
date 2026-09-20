@@ -52,13 +52,8 @@ public class VkBufferDeviceAddressInfo extends Struct<VkBufferDeviceAddressInfo>
         BUFFER = layout.offsetof(2);
     }
 
-    protected VkBufferDeviceAddressInfo(long address, @Nullable ByteBuffer container) {
+    public VkBufferDeviceAddressInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferDeviceAddressInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferDeviceAddressInfo(address, container);
     }
 
     /**

@@ -68,13 +68,8 @@ public class XrVirtualKeyboardTextureDataMETA extends Struct<XrVirtualKeyboardTe
         BUFFER = layout.offsetof(6);
     }
 
-    protected XrVirtualKeyboardTextureDataMETA(long address, @Nullable ByteBuffer container) {
+    public XrVirtualKeyboardTextureDataMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVirtualKeyboardTextureDataMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrVirtualKeyboardTextureDataMETA(address, container);
     }
 
     /**

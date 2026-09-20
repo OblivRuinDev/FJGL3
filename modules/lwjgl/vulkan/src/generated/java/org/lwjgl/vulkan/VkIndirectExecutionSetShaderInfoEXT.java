@@ -73,13 +73,8 @@ public class VkIndirectExecutionSetShaderInfoEXT extends Struct<VkIndirectExecut
         PPUSHCONSTANTRANGES = layout.offsetof(7);
     }
 
-    protected VkIndirectExecutionSetShaderInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkIndirectExecutionSetShaderInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectExecutionSetShaderInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectExecutionSetShaderInfoEXT(address, container);
     }
 
     /**

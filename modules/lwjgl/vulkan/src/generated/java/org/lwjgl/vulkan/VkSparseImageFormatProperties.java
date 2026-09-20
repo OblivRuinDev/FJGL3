@@ -54,13 +54,8 @@ public class VkSparseImageFormatProperties extends Struct<VkSparseImageFormatPro
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkSparseImageFormatProperties(long address, @Nullable ByteBuffer container) {
+    public VkSparseImageFormatProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSparseImageFormatProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkSparseImageFormatProperties(address, container);
     }
 
     /**

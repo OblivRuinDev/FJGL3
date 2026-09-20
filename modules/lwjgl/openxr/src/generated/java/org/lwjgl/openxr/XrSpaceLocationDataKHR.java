@@ -24,13 +24,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class XrSpaceLocationDataKHR extends XrSpaceLocationData {
 
-    protected XrSpaceLocationDataKHR(long address, @Nullable ByteBuffer container) {
+    public XrSpaceLocationDataKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceLocationDataKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceLocationDataKHR(address, container);
     }
 
     /**

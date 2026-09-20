@@ -92,13 +92,8 @@ public class VkGeometryTrianglesNV extends Struct<VkGeometryTrianglesNV> impleme
         TRANSFORMOFFSET = layout.offsetof(12);
     }
 
-    protected VkGeometryTrianglesNV(long address, @Nullable ByteBuffer container) {
+    public VkGeometryTrianglesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGeometryTrianglesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkGeometryTrianglesNV(address, container);
     }
 
     /**

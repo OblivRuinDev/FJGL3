@@ -68,13 +68,8 @@ public class VkBindDataGraphPipelineSessionMemoryInfoARM extends Struct<VkBindDa
         MEMORYOFFSET = layout.offsetof(6);
     }
 
-    protected VkBindDataGraphPipelineSessionMemoryInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkBindDataGraphPipelineSessionMemoryInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindDataGraphPipelineSessionMemoryInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkBindDataGraphPipelineSessionMemoryInfoARM(address, container);
     }
 
     /**

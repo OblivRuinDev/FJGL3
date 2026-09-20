@@ -66,13 +66,8 @@ public class NkTextUndoState extends Struct<NkTextUndoState> {
         REDO_CHAR_POINT = layout.offsetof(5);
     }
 
-    protected NkTextUndoState(long address, @Nullable ByteBuffer container) {
+    public NkTextUndoState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkTextUndoState create(long address, @Nullable ByteBuffer container) {
-        return new NkTextUndoState(address, container);
     }
 
     /**

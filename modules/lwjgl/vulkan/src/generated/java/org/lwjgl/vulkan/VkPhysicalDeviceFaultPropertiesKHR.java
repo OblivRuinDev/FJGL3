@@ -52,13 +52,8 @@ public class VkPhysicalDeviceFaultPropertiesKHR extends Struct<VkPhysicalDeviceF
         MAXDEVICEFAULTCOUNT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceFaultPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFaultPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFaultPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFaultPropertiesKHR(address, container);
     }
 
     /**

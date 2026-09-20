@@ -56,13 +56,8 @@ public class VkAccelerationStructureMotionInfoNV extends Struct<VkAccelerationSt
         FLAGS = layout.offsetof(3);
     }
 
-    protected VkAccelerationStructureMotionInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureMotionInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureMotionInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureMotionInfoNV(address, container);
     }
 
     /**

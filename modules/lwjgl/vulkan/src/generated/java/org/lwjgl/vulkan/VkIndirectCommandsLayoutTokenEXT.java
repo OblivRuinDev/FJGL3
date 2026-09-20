@@ -62,13 +62,8 @@ public class VkIndirectCommandsLayoutTokenEXT extends Struct<VkIndirectCommandsL
         OFFSET = layout.offsetof(4);
     }
 
-    protected VkIndirectCommandsLayoutTokenEXT(long address, @Nullable ByteBuffer container) {
+    public VkIndirectCommandsLayoutTokenEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectCommandsLayoutTokenEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectCommandsLayoutTokenEXT(address, container);
     }
 
     /**

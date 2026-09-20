@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceExternalSemaphoreInfoKHR extends VkPhysicalDeviceExternalSemaphoreInfo {
 
-    protected VkPhysicalDeviceExternalSemaphoreInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalSemaphoreInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalSemaphoreInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalSemaphoreInfoKHR(address, container);
     }
 
     /**

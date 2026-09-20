@@ -53,13 +53,8 @@ public class hwloc_infos_s extends Struct<hwloc_infos_s> implements NativeResour
         ALLOCATED = layout.offsetof(2);
     }
 
-    protected hwloc_infos_s(long address, @Nullable ByteBuffer container) {
+    public hwloc_infos_s(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_infos_s create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_infos_s(address, container);
     }
 
     /**

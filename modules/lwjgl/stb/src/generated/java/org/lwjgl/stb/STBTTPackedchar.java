@@ -77,13 +77,8 @@ public class STBTTPackedchar extends Struct<STBTTPackedchar> implements NativeRe
         YOFF2 = layout.offsetof(8);
     }
 
-    protected STBTTPackedchar(long address, @Nullable ByteBuffer container) {
+    public STBTTPackedchar(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBTTPackedchar create(long address, @Nullable ByteBuffer container) {
-        return new STBTTPackedchar(address, container);
     }
 
     /**

@@ -99,13 +99,8 @@ public class XrWorldMeshBlockML extends Struct<XrWorldMeshBlockML> implements Na
         CONFIDENCEBUFFER = layout.offsetof(13);
     }
 
-    protected XrWorldMeshBlockML(long address, @Nullable ByteBuffer container) {
+    public XrWorldMeshBlockML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrWorldMeshBlockML create(long address, @Nullable ByteBuffer container) {
-        return new XrWorldMeshBlockML(address, container);
     }
 
     /**

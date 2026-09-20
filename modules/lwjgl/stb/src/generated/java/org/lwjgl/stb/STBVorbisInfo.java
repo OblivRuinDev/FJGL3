@@ -65,13 +65,8 @@ public class STBVorbisInfo extends Struct<STBVorbisInfo> implements NativeResour
         MAX_FRAME_SIZE = layout.offsetof(5);
     }
 
-    protected STBVorbisInfo(long address, @Nullable ByteBuffer container) {
+    public STBVorbisInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBVorbisInfo create(long address, @Nullable ByteBuffer container) {
-        return new STBVorbisInfo(address, container);
     }
 
     /**

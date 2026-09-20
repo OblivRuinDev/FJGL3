@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR extends
         SHADERRELAXEDEXTENDEDINSTRUCTION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR(address, container);
     }
 
     /**

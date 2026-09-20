@@ -71,13 +71,8 @@ public class XrSoundObstacleConfigBD extends Struct<XrSoundObstacleConfigBD> imp
         MATERIALS = layout.offsetof(6);
     }
 
-    protected XrSoundObstacleConfigBD(long address, @Nullable ByteBuffer container) {
+    public XrSoundObstacleConfigBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSoundObstacleConfigBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSoundObstacleConfigBD(address, container);
     }
 
     /**

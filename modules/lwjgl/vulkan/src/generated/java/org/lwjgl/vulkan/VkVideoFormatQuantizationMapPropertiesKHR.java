@@ -54,13 +54,8 @@ public class VkVideoFormatQuantizationMapPropertiesKHR extends Struct<VkVideoFor
         QUANTIZATIONMAPTEXELSIZE = layout.offsetof(2);
     }
 
-    protected VkVideoFormatQuantizationMapPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoFormatQuantizationMapPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoFormatQuantizationMapPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoFormatQuantizationMapPropertiesKHR(address, container);
     }
 
     /**

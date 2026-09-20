@@ -56,13 +56,8 @@ public class VkPhysicalDeviceVertexAttributeDivisorFeatures extends Struct<VkPhy
         VERTEXATTRIBUTEINSTANCERATEZERODIVISOR = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceVertexAttributeDivisorFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVertexAttributeDivisorFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVertexAttributeDivisorFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVertexAttributeDivisorFeatures(address, container);
     }
 
     /**

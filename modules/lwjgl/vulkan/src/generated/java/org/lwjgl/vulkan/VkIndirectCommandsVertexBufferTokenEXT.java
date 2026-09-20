@@ -44,13 +44,8 @@ public class VkIndirectCommandsVertexBufferTokenEXT extends Struct<VkIndirectCom
         VERTEXBINDINGUNIT = layout.offsetof(0);
     }
 
-    protected VkIndirectCommandsVertexBufferTokenEXT(long address, @Nullable ByteBuffer container) {
+    public VkIndirectCommandsVertexBufferTokenEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectCommandsVertexBufferTokenEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectCommandsVertexBufferTokenEXT(address, container);
     }
 
     /**

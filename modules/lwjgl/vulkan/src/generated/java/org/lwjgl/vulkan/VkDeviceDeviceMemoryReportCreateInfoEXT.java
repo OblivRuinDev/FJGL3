@@ -63,13 +63,8 @@ public class VkDeviceDeviceMemoryReportCreateInfoEXT extends Struct<VkDeviceDevi
         PUSERDATA = layout.offsetof(4);
     }
 
-    protected VkDeviceDeviceMemoryReportCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDeviceDeviceMemoryReportCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceDeviceMemoryReportCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceDeviceMemoryReportCreateInfoEXT(address, container);
     }
 
     /**

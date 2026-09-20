@@ -52,13 +52,8 @@ public class VkPipelineTessellationDomainOriginStateCreateInfo extends Struct<Vk
         DOMAINORIGIN = layout.offsetof(2);
     }
 
-    protected VkPipelineTessellationDomainOriginStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineTessellationDomainOriginStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineTessellationDomainOriginStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineTessellationDomainOriginStateCreateInfo(address, container);
     }
 
     /**

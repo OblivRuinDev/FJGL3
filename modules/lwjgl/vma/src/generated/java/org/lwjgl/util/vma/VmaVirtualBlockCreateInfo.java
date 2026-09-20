@@ -54,13 +54,8 @@ public class VmaVirtualBlockCreateInfo extends Struct<VmaVirtualBlockCreateInfo>
         PALLOCATIONCALLBACKS = layout.offsetof(2);
     }
 
-    protected VmaVirtualBlockCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VmaVirtualBlockCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaVirtualBlockCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VmaVirtualBlockCreateInfo(address, container);
     }
 
     /**

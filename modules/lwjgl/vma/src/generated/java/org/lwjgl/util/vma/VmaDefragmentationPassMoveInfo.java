@@ -48,13 +48,8 @@ public class VmaDefragmentationPassMoveInfo extends Struct<VmaDefragmentationPas
         PMOVES = layout.offsetof(1);
     }
 
-    protected VmaDefragmentationPassMoveInfo(long address, @Nullable ByteBuffer container) {
+    public VmaDefragmentationPassMoveInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaDefragmentationPassMoveInfo create(long address, @Nullable ByteBuffer container) {
-        return new VmaDefragmentationPassMoveInfo(address, container);
     }
 
     /**

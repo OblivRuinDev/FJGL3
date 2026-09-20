@@ -62,13 +62,8 @@ public class VkImageFormatProperties extends Struct<VkImageFormatProperties> imp
         MAXRESOURCESIZE = layout.offsetof(4);
     }
 
-    protected VkImageFormatProperties(long address, @Nullable ByteBuffer container) {
+    public VkImageFormatProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageFormatProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkImageFormatProperties(address, container);
     }
 
     /**

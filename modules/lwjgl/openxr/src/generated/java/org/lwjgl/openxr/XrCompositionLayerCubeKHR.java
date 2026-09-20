@@ -75,13 +75,8 @@ public class XrCompositionLayerCubeKHR extends Struct<XrCompositionLayerCubeKHR>
         ORIENTATION = layout.offsetof(7);
     }
 
-    protected XrCompositionLayerCubeKHR(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerCubeKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerCubeKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerCubeKHR(address, container);
     }
 
     /**

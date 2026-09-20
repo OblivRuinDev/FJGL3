@@ -56,13 +56,8 @@ public class VkDescriptorBufferBindingInfoEXT extends Struct<VkDescriptorBufferB
         USAGE = layout.offsetof(3);
     }
 
-    protected VkDescriptorBufferBindingInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorBufferBindingInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorBufferBindingInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorBufferBindingInfoEXT(address, container);
     }
 
     /**

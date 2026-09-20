@@ -80,13 +80,8 @@ public class VkPhysicalDeviceClusterAccelerationStructurePropertiesNV extends St
         MAXCLUSTERGEOMETRYINDEX = layout.offsetof(9);
     }
 
-    protected VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceClusterAccelerationStructurePropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(address, container);
     }
 
     /**

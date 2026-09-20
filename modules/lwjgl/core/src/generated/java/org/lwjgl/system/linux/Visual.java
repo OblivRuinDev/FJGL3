@@ -72,13 +72,8 @@ public class Visual extends Struct<Visual> implements NativeResource {
         MAP_ENTRIES = layout.offsetof(7);
     }
 
-    protected Visual(long address, @Nullable ByteBuffer container) {
+    public Visual(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected Visual create(long address, @Nullable ByteBuffer container) {
-        return new Visual(address, container);
     }
 
     /**

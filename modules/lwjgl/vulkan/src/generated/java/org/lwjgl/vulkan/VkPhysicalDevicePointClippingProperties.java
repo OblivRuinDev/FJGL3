@@ -52,13 +52,8 @@ public class VkPhysicalDevicePointClippingProperties extends Struct<VkPhysicalDe
         POINTCLIPPINGBEHAVIOR = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePointClippingProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePointClippingProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePointClippingProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePointClippingProperties(address, container);
     }
 
     /**

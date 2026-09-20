@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDeviceQueueGlobalPriorityCreateInfoEXT extends VkDeviceQueueGlobalPriorityCreateInfo {
 
-    protected VkDeviceQueueGlobalPriorityCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDeviceQueueGlobalPriorityCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceQueueGlobalPriorityCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceQueueGlobalPriorityCreateInfoEXT(address, container);
     }
 
     /**

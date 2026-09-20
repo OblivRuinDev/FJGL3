@@ -60,13 +60,8 @@ public class VkExternalFenceProperties extends Struct<VkExternalFenceProperties>
         EXTERNALFENCEFEATURES = layout.offsetof(4);
     }
 
-    protected VkExternalFenceProperties(long address, @Nullable ByteBuffer container) {
+    public VkExternalFenceProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalFenceProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalFenceProperties(address, container);
     }
 
     /**

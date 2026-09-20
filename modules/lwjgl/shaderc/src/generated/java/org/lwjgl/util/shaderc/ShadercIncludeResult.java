@@ -62,13 +62,8 @@ public class ShadercIncludeResult extends Struct<ShadercIncludeResult> implement
         USER_DATA = layout.offsetof(4);
     }
 
-    protected ShadercIncludeResult(long address, @Nullable ByteBuffer container) {
+    public ShadercIncludeResult(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ShadercIncludeResult create(long address, @Nullable ByteBuffer container) {
-        return new ShadercIncludeResult(address, container);
     }
 
     /**

@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkMemoryOpaqueCaptureAddressAllocateInfoKHR extends VkMemoryOpaqueCaptureAddressAllocateInfo {
 
-    protected VkMemoryOpaqueCaptureAddressAllocateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkMemoryOpaqueCaptureAddressAllocateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryOpaqueCaptureAddressAllocateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryOpaqueCaptureAddressAllocateInfoKHR(address, container);
     }
 
     /**

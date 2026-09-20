@@ -58,13 +58,8 @@ public class XrCompositionLayerColorScaleBiasKHR extends Struct<XrCompositionLay
         COLORBIAS = layout.offsetof(3);
     }
 
-    protected XrCompositionLayerColorScaleBiasKHR(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerColorScaleBiasKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerColorScaleBiasKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerColorScaleBiasKHR(address, container);
     }
 
     /**

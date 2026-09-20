@@ -64,13 +64,8 @@ public class VkTimelineSemaphoreSubmitInfo extends Struct<VkTimelineSemaphoreSub
         PSIGNALSEMAPHOREVALUES = layout.offsetof(5);
     }
 
-    protected VkTimelineSemaphoreSubmitInfo(long address, @Nullable ByteBuffer container) {
+    public VkTimelineSemaphoreSubmitInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTimelineSemaphoreSubmitInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkTimelineSemaphoreSubmitInfo(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT extends Struct<VkP
         YCBCR2PLANE444FORMATS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT(address, container);
     }
 
     /**

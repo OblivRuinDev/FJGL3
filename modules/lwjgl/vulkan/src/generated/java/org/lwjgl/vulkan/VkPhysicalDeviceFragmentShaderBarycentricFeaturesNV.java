@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV extends VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR {
 
-    protected VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV(address, container);
     }
 
     /**

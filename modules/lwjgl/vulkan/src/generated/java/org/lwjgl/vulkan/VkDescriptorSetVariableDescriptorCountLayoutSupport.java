@@ -52,13 +52,8 @@ public class VkDescriptorSetVariableDescriptorCountLayoutSupport extends Struct<
         MAXVARIABLEDESCRIPTORCOUNT = layout.offsetof(2);
     }
 
-    protected VkDescriptorSetVariableDescriptorCountLayoutSupport(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetVariableDescriptorCountLayoutSupport(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetVariableDescriptorCountLayoutSupport create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetVariableDescriptorCountLayoutSupport(address, container);
     }
 
     /**

@@ -69,13 +69,8 @@ public class XrHapticPcmVibrationFB extends Struct<XrHapticPcmVibrationFB> imple
         SAMPLESCONSUMED = layout.offsetof(6);
     }
 
-    protected XrHapticPcmVibrationFB(long address, @Nullable ByteBuffer container) {
+    public XrHapticPcmVibrationFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHapticPcmVibrationFB create(long address, @Nullable ByteBuffer container) {
-        return new XrHapticPcmVibrationFB(address, container);
     }
 
     /**

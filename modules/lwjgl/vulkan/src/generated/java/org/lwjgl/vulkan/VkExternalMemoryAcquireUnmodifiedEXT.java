@@ -52,13 +52,8 @@ public class VkExternalMemoryAcquireUnmodifiedEXT extends Struct<VkExternalMemor
         ACQUIREUNMODIFIEDMEMORY = layout.offsetof(2);
     }
 
-    protected VkExternalMemoryAcquireUnmodifiedEXT(long address, @Nullable ByteBuffer container) {
+    public VkExternalMemoryAcquireUnmodifiedEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalMemoryAcquireUnmodifiedEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalMemoryAcquireUnmodifiedEXT(address, container);
     }
 
     /**

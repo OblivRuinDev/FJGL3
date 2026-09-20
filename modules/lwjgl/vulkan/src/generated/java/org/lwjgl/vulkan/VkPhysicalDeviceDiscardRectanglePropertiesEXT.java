@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDiscardRectanglePropertiesEXT extends Struct<VkPhys
         MAXDISCARDRECTANGLES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDiscardRectanglePropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDiscardRectanglePropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDiscardRectanglePropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDiscardRectanglePropertiesEXT(address, container);
     }
 
     /**

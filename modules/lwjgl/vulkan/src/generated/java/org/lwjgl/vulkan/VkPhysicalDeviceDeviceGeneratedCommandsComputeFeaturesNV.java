@@ -60,13 +60,8 @@ public class VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV extends St
         DEVICEGENERATEDCOMPUTECAPTUREREPLAY = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV(address, container);
     }
 
     /**

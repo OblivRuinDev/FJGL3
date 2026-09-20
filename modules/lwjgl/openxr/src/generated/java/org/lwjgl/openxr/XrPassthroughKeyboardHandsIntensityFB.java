@@ -56,13 +56,8 @@ public class XrPassthroughKeyboardHandsIntensityFB extends Struct<XrPassthroughK
         RIGHTHANDINTENSITY = layout.offsetof(3);
     }
 
-    protected XrPassthroughKeyboardHandsIntensityFB(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughKeyboardHandsIntensityFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughKeyboardHandsIntensityFB create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughKeyboardHandsIntensityFB(address, container);
     }
 
     /**

@@ -65,13 +65,8 @@ public class VkGraphicsShaderGroupCreateInfoNV extends Struct<VkGraphicsShaderGr
         PTESSELLATIONSTATE = layout.offsetof(5);
     }
 
-    protected VkGraphicsShaderGroupCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkGraphicsShaderGroupCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGraphicsShaderGroupCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkGraphicsShaderGroupCreateInfoNV(address, container);
     }
 
     /**

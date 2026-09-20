@@ -49,13 +49,8 @@ public class FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES extends Struct<FMOD_STUDIO_T
         POSITION = layout.offsetof(1);
     }
 
-    protected FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES(address, container);
     }
 
     /**

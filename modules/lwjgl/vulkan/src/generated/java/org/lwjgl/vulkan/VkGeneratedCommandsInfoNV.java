@@ -101,13 +101,8 @@ public class VkGeneratedCommandsInfoNV extends Struct<VkGeneratedCommandsInfoNV>
         SEQUENCESINDEXOFFSET = layout.offsetof(14);
     }
 
-    protected VkGeneratedCommandsInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkGeneratedCommandsInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGeneratedCommandsInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkGeneratedCommandsInfoNV(address, container);
     }
 
     /**

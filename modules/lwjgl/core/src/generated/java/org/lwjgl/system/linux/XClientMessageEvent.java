@@ -87,13 +87,8 @@ public class XClientMessageEvent extends Struct<XClientMessageEvent> implements 
             DATA_L = layout.offsetof(10);
     }
 
-    protected XClientMessageEvent(long address, @Nullable ByteBuffer container) {
+    public XClientMessageEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XClientMessageEvent create(long address, @Nullable ByteBuffer container) {
-        return new XClientMessageEvent(address, container);
     }
 
     /**

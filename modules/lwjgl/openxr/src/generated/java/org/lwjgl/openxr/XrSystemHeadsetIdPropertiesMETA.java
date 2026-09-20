@@ -54,13 +54,8 @@ public class XrSystemHeadsetIdPropertiesMETA extends Struct<XrSystemHeadsetIdPro
         ID = layout.offsetof(2);
     }
 
-    protected XrSystemHeadsetIdPropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemHeadsetIdPropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemHeadsetIdPropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemHeadsetIdPropertiesMETA(address, container);
     }
 
     /**

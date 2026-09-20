@@ -67,13 +67,8 @@ public class VkVideoEncodeAV1SessionParametersCreateInfoKHR extends Struct<VkVid
         PSTDOPERATINGPOINTS = layout.offsetof(5);
     }
 
-    protected VkVideoEncodeAV1SessionParametersCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeAV1SessionParametersCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeAV1SessionParametersCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeAV1SessionParametersCreateInfoKHR(address, container);
     }
 
     /**

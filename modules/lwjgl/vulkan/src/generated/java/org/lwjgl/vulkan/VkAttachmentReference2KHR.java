@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkAttachmentReference2KHR extends VkAttachmentReference2 {
 
-    protected VkAttachmentReference2KHR(long address, @Nullable ByteBuffer container) {
+    public VkAttachmentReference2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAttachmentReference2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAttachmentReference2KHR(address, container);
     }
 
     /**

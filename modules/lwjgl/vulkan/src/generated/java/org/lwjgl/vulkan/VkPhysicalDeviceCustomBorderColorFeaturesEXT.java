@@ -56,13 +56,8 @@ public class VkPhysicalDeviceCustomBorderColorFeaturesEXT extends Struct<VkPhysi
         CUSTOMBORDERCOLORWITHOUTFORMAT = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceCustomBorderColorFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCustomBorderColorFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCustomBorderColorFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCustomBorderColorFeaturesEXT(address, container);
     }
 
     /**

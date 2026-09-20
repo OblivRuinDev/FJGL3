@@ -73,13 +73,8 @@ public class XGravityEvent extends Struct<XGravityEvent> implements NativeResour
         Y = layout.offsetof(7);
     }
 
-    protected XGravityEvent(long address, @Nullable ByteBuffer container) {
+    public XGravityEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XGravityEvent create(long address, @Nullable ByteBuffer container) {
-        return new XGravityEvent(address, container);
     }
 
     /**

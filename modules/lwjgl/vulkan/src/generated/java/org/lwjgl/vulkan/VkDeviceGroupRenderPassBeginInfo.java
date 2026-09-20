@@ -61,13 +61,8 @@ public class VkDeviceGroupRenderPassBeginInfo extends Struct<VkDeviceGroupRender
         PDEVICERENDERAREAS = layout.offsetof(4);
     }
 
-    protected VkDeviceGroupRenderPassBeginInfo(long address, @Nullable ByteBuffer container) {
+    public VkDeviceGroupRenderPassBeginInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceGroupRenderPassBeginInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceGroupRenderPassBeginInfo(address, container);
     }
 
     /**

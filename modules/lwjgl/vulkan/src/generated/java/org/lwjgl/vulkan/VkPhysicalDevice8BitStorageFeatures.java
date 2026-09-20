@@ -60,13 +60,8 @@ public class VkPhysicalDevice8BitStorageFeatures extends Struct<VkPhysicalDevice
         STORAGEPUSHCONSTANT8 = layout.offsetof(4);
     }
 
-    protected VkPhysicalDevice8BitStorageFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevice8BitStorageFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevice8BitStorageFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevice8BitStorageFeatures(address, container);
     }
 
     /**

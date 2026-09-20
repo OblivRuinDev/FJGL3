@@ -92,13 +92,8 @@ public class ktxVulkanTexture extends Struct<ktxVulkanTexture> implements Native
         ALLOCATIONID = layout.offsetof(12);
     }
 
-    protected ktxVulkanTexture(long address, @Nullable ByteBuffer container) {
+    public ktxVulkanTexture(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ktxVulkanTexture create(long address, @Nullable ByteBuffer container) {
-        return new ktxVulkanTexture(address, container);
     }
 
     /**

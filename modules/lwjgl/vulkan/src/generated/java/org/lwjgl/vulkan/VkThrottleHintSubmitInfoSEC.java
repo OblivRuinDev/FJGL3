@@ -52,13 +52,8 @@ public class VkThrottleHintSubmitInfoSEC extends Struct<VkThrottleHintSubmitInfo
         THROTTLEHINT = layout.offsetof(2);
     }
 
-    protected VkThrottleHintSubmitInfoSEC(long address, @Nullable ByteBuffer container) {
+    public VkThrottleHintSubmitInfoSEC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkThrottleHintSubmitInfoSEC create(long address, @Nullable ByteBuffer container) {
-        return new VkThrottleHintSubmitInfoSEC(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkMicromapUsageEXT extends Struct<VkMicromapUsageEXT> implements Na
         FORMAT = layout.offsetof(2);
     }
 
-    protected VkMicromapUsageEXT(long address, @Nullable ByteBuffer container) {
+    public VkMicromapUsageEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMicromapUsageEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMicromapUsageEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceExternalFormatResolveFeaturesANDROID extends Struct
         EXTERNALFORMATRESOLVE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceExternalFormatResolveFeaturesANDROID(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalFormatResolveFeaturesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalFormatResolveFeaturesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalFormatResolveFeaturesANDROID(address, container);
     }
 
     /**

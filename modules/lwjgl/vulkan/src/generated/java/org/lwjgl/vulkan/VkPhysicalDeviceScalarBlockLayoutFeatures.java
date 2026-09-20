@@ -52,13 +52,8 @@ public class VkPhysicalDeviceScalarBlockLayoutFeatures extends Struct<VkPhysical
         SCALARBLOCKLAYOUT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceScalarBlockLayoutFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceScalarBlockLayoutFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceScalarBlockLayoutFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceScalarBlockLayoutFeatures(address, container);
     }
 
     /**

@@ -68,13 +68,8 @@ public class VkSubpassDependency extends Struct<VkSubpassDependency> implements 
         DEPENDENCYFLAGS = layout.offsetof(6);
     }
 
-    protected VkSubpassDependency(long address, @Nullable ByteBuffer container) {
+    public VkSubpassDependency(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassDependency create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassDependency(address, container);
     }
 
     /**

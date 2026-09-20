@@ -48,13 +48,8 @@ public class VkClearDepthStencilValue extends Struct<VkClearDepthStencilValue> i
         STENCIL = layout.offsetof(1);
     }
 
-    protected VkClearDepthStencilValue(long address, @Nullable ByteBuffer container) {
+    public VkClearDepthStencilValue(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClearDepthStencilValue create(long address, @Nullable ByteBuffer container) {
-        return new VkClearDepthStencilValue(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class FMOD_VECTOR extends Struct<FMOD_VECTOR> implements NativeResource {
         Z = layout.offsetof(2);
     }
 
-    protected FMOD_VECTOR(long address, @Nullable ByteBuffer container) {
+    public FMOD_VECTOR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_VECTOR create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_VECTOR(address, container);
     }
 
     /**

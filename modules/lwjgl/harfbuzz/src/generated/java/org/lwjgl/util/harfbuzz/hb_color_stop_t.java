@@ -52,13 +52,8 @@ public class hb_color_stop_t extends Struct<hb_color_stop_t> implements NativeRe
         COLOR = layout.offsetof(2);
     }
 
-    protected hb_color_stop_t(long address, @Nullable ByteBuffer container) {
+    public hb_color_stop_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_color_stop_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_color_stop_t(address, container);
     }
 
     /**

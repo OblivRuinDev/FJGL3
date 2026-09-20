@@ -64,13 +64,8 @@ public class XrActionStateFloat extends Struct<XrActionStateFloat> implements Na
         ISACTIVE = layout.offsetof(5);
     }
 
-    protected XrActionStateFloat(long address, @Nullable ByteBuffer container) {
+    public XrActionStateFloat(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrActionStateFloat create(long address, @Nullable ByteBuffer container) {
-        return new XrActionStateFloat(address, container);
     }
 
     /**

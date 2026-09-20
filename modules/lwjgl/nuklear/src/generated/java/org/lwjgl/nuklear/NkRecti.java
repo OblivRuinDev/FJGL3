@@ -57,13 +57,8 @@ public class NkRecti extends Struct<NkRecti> implements NativeResource {
         H = layout.offsetof(3);
     }
 
-    protected NkRecti(long address, @Nullable ByteBuffer container) {
+    public NkRecti(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkRecti create(long address, @Nullable ByteBuffer container) {
-        return new NkRecti(address, container);
     }
 
     /**

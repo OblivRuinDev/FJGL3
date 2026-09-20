@@ -55,13 +55,8 @@ public class AIVectorKey extends Struct<AIVectorKey> implements NativeResource {
         MINTERPOLATION = layout.offsetof(2);
     }
 
-    protected AIVectorKey(long address, @Nullable ByteBuffer container) {
+    public AIVectorKey(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIVectorKey create(long address, @Nullable ByteBuffer container) {
-        return new AIVectorKey(address, container);
     }
 
     /**

@@ -49,13 +49,8 @@ public class XXH128Hash extends Struct<XXH128Hash> implements NativeResource {
         HIGH64 = layout.offsetof(1);
     }
 
-    protected XXH128Hash(long address, @Nullable ByteBuffer container) {
+    public XXH128Hash(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XXH128Hash create(long address, @Nullable ByteBuffer container) {
-        return new XXH128Hash(address, container);
     }
 
     /**

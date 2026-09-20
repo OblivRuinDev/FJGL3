@@ -52,13 +52,8 @@ public class VkRenderingAttachmentFlagsInfoKHR extends Struct<VkRenderingAttachm
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkRenderingAttachmentFlagsInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkRenderingAttachmentFlagsInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderingAttachmentFlagsInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderingAttachmentFlagsInfoKHR(address, container);
     }
 
     /**

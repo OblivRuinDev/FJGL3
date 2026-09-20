@@ -49,13 +49,8 @@ public class SpvcSpecializationConstant extends Struct<SpvcSpecializationConstan
         CONSTANT_ID = layout.offsetof(1);
     }
 
-    protected SpvcSpecializationConstant(long address, @Nullable ByteBuffer container) {
+    public SpvcSpecializationConstant(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcSpecializationConstant create(long address, @Nullable ByteBuffer container) {
-        return new SpvcSpecializationConstant(address, container);
     }
 
     /**

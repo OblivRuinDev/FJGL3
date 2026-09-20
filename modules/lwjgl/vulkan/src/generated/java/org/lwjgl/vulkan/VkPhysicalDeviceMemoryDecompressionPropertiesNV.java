@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceMemoryDecompressionPropertiesNV extends VkPhysicalDeviceMemoryDecompressionPropertiesEXT {
 
-    protected VkPhysicalDeviceMemoryDecompressionPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMemoryDecompressionPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMemoryDecompressionPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMemoryDecompressionPropertiesNV(address, container);
     }
 
     /**

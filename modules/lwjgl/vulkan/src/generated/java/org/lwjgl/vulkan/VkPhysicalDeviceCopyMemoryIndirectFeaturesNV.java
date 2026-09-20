@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCopyMemoryIndirectFeaturesNV extends Struct<VkPhysi
         INDIRECTCOPY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCopyMemoryIndirectFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCopyMemoryIndirectFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCopyMemoryIndirectFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCopyMemoryIndirectFeaturesNV(address, container);
     }
 
     /**

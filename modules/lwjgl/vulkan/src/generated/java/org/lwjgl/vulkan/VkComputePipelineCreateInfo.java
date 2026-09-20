@@ -70,13 +70,8 @@ public class VkComputePipelineCreateInfo extends Struct<VkComputePipelineCreateI
         BASEPIPELINEINDEX = layout.offsetof(6);
     }
 
-    protected VkComputePipelineCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkComputePipelineCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkComputePipelineCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkComputePipelineCreateInfo(address, container);
     }
 
     /**

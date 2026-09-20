@@ -53,13 +53,8 @@ public class VkClearColorValue extends Struct<VkClearColorValue> implements Nati
         UINT32 = layout.offsetof(2);
     }
 
-    protected VkClearColorValue(long address, @Nullable ByteBuffer container) {
+    public VkClearColorValue(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClearColorValue create(long address, @Nullable ByteBuffer container) {
-        return new VkClearColorValue(address, container);
     }
 
     /**

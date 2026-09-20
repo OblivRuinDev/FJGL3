@@ -29,13 +29,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceSparseImageFormatInfo2KHR extends VkPhysicalDeviceSparseImageFormatInfo2 {
 
-    protected VkPhysicalDeviceSparseImageFormatInfo2KHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSparseImageFormatInfo2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSparseImageFormatInfo2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSparseImageFormatInfo2KHR(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceAddressBindingReportFeaturesEXT extends Struct<VkPh
         REPORTADDRESSBINDING = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceAddressBindingReportFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceAddressBindingReportFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceAddressBindingReportFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceAddressBindingReportFeaturesEXT(address, container);
     }
 
     /**

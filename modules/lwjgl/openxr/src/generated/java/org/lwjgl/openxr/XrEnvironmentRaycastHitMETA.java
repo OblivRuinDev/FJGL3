@@ -58,13 +58,8 @@ public class XrEnvironmentRaycastHitMETA extends Struct<XrEnvironmentRaycastHitM
         POSE = layout.offsetof(3);
     }
 
-    protected XrEnvironmentRaycastHitMETA(long address, @Nullable ByteBuffer container) {
+    public XrEnvironmentRaycastHitMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEnvironmentRaycastHitMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEnvironmentRaycastHitMETA(address, container);
     }
 
     /**

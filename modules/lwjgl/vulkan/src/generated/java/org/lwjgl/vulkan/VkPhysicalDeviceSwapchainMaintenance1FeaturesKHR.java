@@ -52,13 +52,8 @@ public class VkPhysicalDeviceSwapchainMaintenance1FeaturesKHR extends Struct<VkP
         SWAPCHAINMAINTENANCE1 = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceSwapchainMaintenance1FeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSwapchainMaintenance1FeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSwapchainMaintenance1FeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSwapchainMaintenance1FeaturesKHR(address, container);
     }
 
     /**

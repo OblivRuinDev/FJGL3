@@ -52,13 +52,8 @@ public class VkPhysicalDeviceExternalFenceInfo extends Struct<VkPhysicalDeviceEx
         HANDLETYPE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceExternalFenceInfo(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalFenceInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalFenceInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalFenceInfo(address, container);
     }
 
     /**

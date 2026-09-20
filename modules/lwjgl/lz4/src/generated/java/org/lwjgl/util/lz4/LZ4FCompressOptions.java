@@ -50,13 +50,8 @@ public class LZ4FCompressOptions extends Struct<LZ4FCompressOptions> implements 
         RESERVED = layout.offsetof(1);
     }
 
-    protected LZ4FCompressOptions(long address, @Nullable ByteBuffer container) {
+    public LZ4FCompressOptions(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LZ4FCompressOptions create(long address, @Nullable ByteBuffer container) {
-        return new LZ4FCompressOptions(address, container);
     }
 
     /**

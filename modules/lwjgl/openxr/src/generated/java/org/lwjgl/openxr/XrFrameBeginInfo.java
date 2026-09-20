@@ -48,13 +48,8 @@ public class XrFrameBeginInfo extends Struct<XrFrameBeginInfo> implements Native
         NEXT = layout.offsetof(1);
     }
 
-    protected XrFrameBeginInfo(long address, @Nullable ByteBuffer container) {
+    public XrFrameBeginInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFrameBeginInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrFrameBeginInfo(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceYcbcrImageArraysFeaturesEXT extends Struct<VkPhysic
         YCBCRIMAGEARRAYS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceYcbcrImageArraysFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceYcbcrImageArraysFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceYcbcrImageArraysFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceYcbcrImageArraysFeaturesEXT(address, container);
     }
 
     /**

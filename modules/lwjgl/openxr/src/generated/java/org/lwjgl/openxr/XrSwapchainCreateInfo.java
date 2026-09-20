@@ -84,13 +84,8 @@ public class XrSwapchainCreateInfo extends Struct<XrSwapchainCreateInfo> impleme
         MIPCOUNT = layout.offsetof(10);
     }
 
-    protected XrSwapchainCreateInfo(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainCreateInfo(address, container);
     }
 
     /**

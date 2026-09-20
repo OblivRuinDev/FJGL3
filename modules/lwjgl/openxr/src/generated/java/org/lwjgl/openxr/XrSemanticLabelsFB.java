@@ -60,13 +60,8 @@ public class XrSemanticLabelsFB extends Struct<XrSemanticLabelsFB> implements Na
         BUFFER = layout.offsetof(4);
     }
 
-    protected XrSemanticLabelsFB(long address, @Nullable ByteBuffer container) {
+    public XrSemanticLabelsFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSemanticLabelsFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSemanticLabelsFB(address, container);
     }
 
     /**

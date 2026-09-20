@@ -30,13 +30,8 @@ import static org.lwjgl.vulkan.VK11.*;
  */
 public class VkPhysicalDeviceGroupPropertiesKHR extends VkPhysicalDeviceGroupProperties {
 
-    protected VkPhysicalDeviceGroupPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceGroupPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceGroupPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceGroupPropertiesKHR(address, container);
     }
 
     /**

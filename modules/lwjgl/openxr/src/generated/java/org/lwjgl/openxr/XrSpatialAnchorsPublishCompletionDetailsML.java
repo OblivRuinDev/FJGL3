@@ -57,13 +57,8 @@ public class XrSpatialAnchorsPublishCompletionDetailsML extends Struct<XrSpatial
         RESULTS = layout.offsetof(3);
     }
 
-    protected XrSpatialAnchorsPublishCompletionDetailsML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsPublishCompletionDetailsML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsPublishCompletionDetailsML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsPublishCompletionDetailsML(address, container);
     }
 
     /**

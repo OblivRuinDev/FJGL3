@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderSplitBarrierFeaturesEXT extends Struct<VkPhys
         SHADERSPLITBARRIER = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderSplitBarrierFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderSplitBarrierFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderSplitBarrierFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderSplitBarrierFeaturesEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceImageProcessing2FeaturesQCOM extends Struct<VkPhysi
         TEXTUREBLOCKMATCH2 = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceImageProcessing2FeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageProcessing2FeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageProcessing2FeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageProcessing2FeaturesQCOM(address, container);
     }
 
     /**

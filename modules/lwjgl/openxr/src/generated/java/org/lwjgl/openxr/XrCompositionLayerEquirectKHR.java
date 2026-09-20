@@ -85,13 +85,8 @@ public class XrCompositionLayerEquirectKHR extends Struct<XrCompositionLayerEqui
         BIAS = layout.offsetof(9);
     }
 
-    protected XrCompositionLayerEquirectKHR(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerEquirectKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerEquirectKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerEquirectKHR(address, container);
     }
 
     /**

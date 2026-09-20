@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT extends VkPhysicalDeviceTextureCompressionASTCHDRFeatures {
 
-    protected VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT(address, container);
     }
 
     /**

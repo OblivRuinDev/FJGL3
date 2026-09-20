@@ -58,13 +58,8 @@ public class VkVideoDecodeAV1ProfileInfoKHR extends Struct<VkVideoDecodeAV1Profi
         FILMGRAINSUPPORT = layout.offsetof(3);
     }
 
-    protected VkVideoDecodeAV1ProfileInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeAV1ProfileInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeAV1ProfileInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeAV1ProfileInfoKHR(address, container);
     }
 
     /**

@@ -65,13 +65,8 @@ public class XrSoundTriangleMeshBD extends Struct<XrSoundTriangleMeshBD> impleme
         INDICES = layout.offsetof(5);
     }
 
-    protected XrSoundTriangleMeshBD(long address, @Nullable ByteBuffer container) {
+    public XrSoundTriangleMeshBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSoundTriangleMeshBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSoundTriangleMeshBD(address, container);
     }
 
     /**

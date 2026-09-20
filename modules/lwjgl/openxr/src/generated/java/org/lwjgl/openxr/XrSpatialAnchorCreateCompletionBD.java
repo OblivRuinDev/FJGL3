@@ -63,13 +63,8 @@ public class XrSpatialAnchorCreateCompletionBD extends Struct<XrSpatialAnchorCre
         ANCHOR = layout.offsetof(4);
     }
 
-    protected XrSpatialAnchorCreateCompletionBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorCreateCompletionBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorCreateCompletionBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorCreateCompletionBD(address, container);
     }
 
     /**

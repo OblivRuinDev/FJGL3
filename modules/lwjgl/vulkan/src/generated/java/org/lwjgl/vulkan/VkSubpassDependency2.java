@@ -80,13 +80,8 @@ public class VkSubpassDependency2 extends Struct<VkSubpassDependency2> implement
         VIEWOFFSET = layout.offsetof(9);
     }
 
-    protected VkSubpassDependency2(long address, @Nullable ByteBuffer container) {
+    public VkSubpassDependency2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassDependency2 create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassDependency2(address, container);
     }
 
     /**

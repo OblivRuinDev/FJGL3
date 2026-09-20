@@ -56,13 +56,8 @@ public class VkPresentRegionsKHR extends Struct<VkPresentRegionsKHR> implements 
         PREGIONS = layout.offsetof(3);
     }
 
-    protected VkPresentRegionsKHR(long address, @Nullable ByteBuffer container) {
+    public VkPresentRegionsKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPresentRegionsKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPresentRegionsKHR(address, container);
     }
 
     /**

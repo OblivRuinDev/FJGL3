@@ -53,13 +53,8 @@ public class VkDeviceTensorMemoryRequirementsARM extends Struct<VkDeviceTensorMe
         PCREATEINFO = layout.offsetof(2);
     }
 
-    protected VkDeviceTensorMemoryRequirementsARM(long address, @Nullable ByteBuffer container) {
+    public VkDeviceTensorMemoryRequirementsARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceTensorMemoryRequirementsARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceTensorMemoryRequirementsARM(address, container);
     }
 
     /**

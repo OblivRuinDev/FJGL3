@@ -79,13 +79,8 @@ public class XrRaycastInfoANDROID extends Struct<XrRaycastInfoANDROID> implement
         TIME = layout.offsetof(8);
     }
 
-    protected XrRaycastInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrRaycastInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRaycastInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrRaycastInfoANDROID(address, container);
     }
 
     /**

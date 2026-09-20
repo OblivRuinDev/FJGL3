@@ -53,13 +53,8 @@ public class SPVPosition extends Struct<SPVPosition> implements NativeResource {
         INDEX = layout.offsetof(2);
     }
 
-    protected SPVPosition(long address, @Nullable ByteBuffer container) {
+    public SPVPosition(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SPVPosition create(long address, @Nullable ByteBuffer container) {
-        return new SPVPosition(address, container);
     }
 
     /**

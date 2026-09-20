@@ -73,13 +73,8 @@ public class VkInstanceCreateInfo extends Struct<VkInstanceCreateInfo> implement
         PPENABLEDEXTENSIONNAMES = layout.offsetof(7);
     }
 
-    protected VkInstanceCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkInstanceCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkInstanceCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkInstanceCreateInfo(address, container);
     }
 
     /**

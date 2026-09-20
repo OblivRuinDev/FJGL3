@@ -81,13 +81,8 @@ public class XReparentEvent extends Struct<XReparentEvent> implements NativeReso
         OVERRIDE_REDIRECT = layout.offsetof(9);
     }
 
-    protected XReparentEvent(long address, @Nullable ByteBuffer container) {
+    public XReparentEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XReparentEvent create(long address, @Nullable ByteBuffer container) {
-        return new XReparentEvent(address, container);
     }
 
     /**

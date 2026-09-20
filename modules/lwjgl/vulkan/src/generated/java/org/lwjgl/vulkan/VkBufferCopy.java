@@ -52,13 +52,8 @@ public class VkBufferCopy extends Struct<VkBufferCopy> implements NativeResource
         SIZE = layout.offsetof(2);
     }
 
-    protected VkBufferCopy(long address, @Nullable ByteBuffer container) {
+    public VkBufferCopy(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferCopy create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferCopy(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrSystemPlaneDetectionPropertiesEXT extends Struct<XrSystemPlaneDet
         SUPPORTEDFEATURES = layout.offsetof(2);
     }
 
-    protected XrSystemPlaneDetectionPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public XrSystemPlaneDetectionPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemPlaneDetectionPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemPlaneDetectionPropertiesEXT(address, container);
     }
 
     /**

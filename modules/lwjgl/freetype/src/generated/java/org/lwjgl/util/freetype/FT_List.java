@@ -47,13 +47,8 @@ public class FT_List extends Struct<FT_List> {
         TAIL = layout.offsetof(1);
     }
 
-    protected FT_List(long address, @Nullable ByteBuffer container) {
+    public FT_List(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_List create(long address, @Nullable ByteBuffer container) {
-        return new FT_List(address, container);
     }
 
     /**

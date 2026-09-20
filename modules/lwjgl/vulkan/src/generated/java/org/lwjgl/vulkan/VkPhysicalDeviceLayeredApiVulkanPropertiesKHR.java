@@ -54,13 +54,8 @@ public class VkPhysicalDeviceLayeredApiVulkanPropertiesKHR extends Struct<VkPhys
         PROPERTIES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceLayeredApiVulkanPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceLayeredApiVulkanPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceLayeredApiVulkanPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceLayeredApiVulkanPropertiesKHR(address, container);
     }
 
     /**

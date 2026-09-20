@@ -52,13 +52,8 @@ public class XrFacialSimulationDataGetInfoBD extends Struct<XrFacialSimulationDa
         TIME = layout.offsetof(2);
     }
 
-    protected XrFacialSimulationDataGetInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrFacialSimulationDataGetInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFacialSimulationDataGetInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrFacialSimulationDataGetInfoBD(address, container);
     }
 
     /**

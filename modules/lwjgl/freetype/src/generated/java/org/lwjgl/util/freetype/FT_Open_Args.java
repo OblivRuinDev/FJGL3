@@ -73,13 +73,8 @@ public class FT_Open_Args extends Struct<FT_Open_Args> implements NativeResource
         PARAMS = layout.offsetof(7);
     }
 
-    protected FT_Open_Args(long address, @Nullable ByteBuffer container) {
+    public FT_Open_Args(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Open_Args create(long address, @Nullable ByteBuffer container) {
-        return new FT_Open_Args(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkPhysicalDeviceShaderClockFeaturesKHR extends Struct<VkPhysicalDev
         SHADERDEVICECLOCK = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceShaderClockFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderClockFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderClockFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderClockFeaturesKHR(address, container);
     }
 
     /**

@@ -50,13 +50,8 @@ class NkConfigStackUserFont extends Struct<NkConfigStackUserFont> {
         ELEMENTS = layout.offsetof(1);
     }
 
-    protected NkConfigStackUserFont(long address, @Nullable ByteBuffer container) {
+    public NkConfigStackUserFont(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkConfigStackUserFont create(long address, @Nullable ByteBuffer container) {
-        return new NkConfigStackUserFont(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class XrSpaceEraseInfoFB extends Struct<XrSpaceEraseInfoFB> implements Na
         LOCATION = layout.offsetof(3);
     }
 
-    protected XrSpaceEraseInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceEraseInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceEraseInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceEraseInfoFB(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class FT_Bitmap_Size extends Struct<FT_Bitmap_Size> {
         Y_PPEM = layout.offsetof(4);
     }
 
-    protected FT_Bitmap_Size(long address, @Nullable ByteBuffer container) {
+    public FT_Bitmap_Size(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Bitmap_Size create(long address, @Nullable ByteBuffer container) {
-        return new FT_Bitmap_Size(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceLayeredDriverPropertiesMSFT extends Struct<VkPhysic
         UNDERLYINGAPI = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceLayeredDriverPropertiesMSFT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceLayeredDriverPropertiesMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceLayeredDriverPropertiesMSFT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceLayeredDriverPropertiesMSFT(address, container);
     }
 
     /**

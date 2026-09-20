@@ -57,13 +57,8 @@ public class XrSenseDataProviderCreateInfoDynamicObjectBD extends Struct<XrSense
         TRACKINGTYPES = layout.offsetof(3);
     }
 
-    protected XrSenseDataProviderCreateInfoDynamicObjectBD(long address, @Nullable ByteBuffer container) {
+    public XrSenseDataProviderCreateInfoDynamicObjectBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSenseDataProviderCreateInfoDynamicObjectBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSenseDataProviderCreateInfoDynamicObjectBD(address, container);
     }
 
     /**

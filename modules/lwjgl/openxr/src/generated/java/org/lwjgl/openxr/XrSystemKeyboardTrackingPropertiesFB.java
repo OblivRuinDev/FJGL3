@@ -52,13 +52,8 @@ public class XrSystemKeyboardTrackingPropertiesFB extends Struct<XrSystemKeyboar
         SUPPORTSKEYBOARDTRACKING = layout.offsetof(2);
     }
 
-    protected XrSystemKeyboardTrackingPropertiesFB(long address, @Nullable ByteBuffer container) {
+    public XrSystemKeyboardTrackingPropertiesFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemKeyboardTrackingPropertiesFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemKeyboardTrackingPropertiesFB(address, container);
     }
 
     /**

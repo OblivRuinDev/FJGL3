@@ -64,13 +64,8 @@ public class VkVideoEncodeH265SessionParametersCreateInfoKHR extends Struct<VkVi
         PPARAMETERSADDINFO = layout.offsetof(5);
     }
 
-    protected VkVideoEncodeH265SessionParametersCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH265SessionParametersCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH265SessionParametersCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH265SessionParametersCreateInfoKHR(address, container);
     }
 
     /**

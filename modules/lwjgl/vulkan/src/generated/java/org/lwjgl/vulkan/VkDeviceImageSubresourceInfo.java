@@ -57,13 +57,8 @@ public class VkDeviceImageSubresourceInfo extends Struct<VkDeviceImageSubresourc
         PSUBRESOURCE = layout.offsetof(3);
     }
 
-    protected VkDeviceImageSubresourceInfo(long address, @Nullable ByteBuffer container) {
+    public VkDeviceImageSubresourceInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceImageSubresourceInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceImageSubresourceInfo(address, container);
     }
 
     /**

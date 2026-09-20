@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCubicWeightsFeaturesQCOM extends Struct<VkPhysicalD
         SELECTABLECUBICWEIGHTS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCubicWeightsFeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCubicWeightsFeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCubicWeightsFeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCubicWeightsFeaturesQCOM(address, container);
     }
 
     /**

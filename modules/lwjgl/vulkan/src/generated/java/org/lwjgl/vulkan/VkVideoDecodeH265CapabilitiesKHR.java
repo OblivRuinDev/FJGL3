@@ -54,13 +54,8 @@ public class VkVideoDecodeH265CapabilitiesKHR extends Struct<VkVideoDecodeH265Ca
         MAXLEVELIDC = layout.offsetof(2);
     }
 
-    protected VkVideoDecodeH265CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeH265CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeH265CapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeH265CapabilitiesKHR(address, container);
     }
 
     /**

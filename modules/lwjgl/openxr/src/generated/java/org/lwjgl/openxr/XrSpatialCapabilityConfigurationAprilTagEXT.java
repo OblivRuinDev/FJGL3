@@ -65,13 +65,8 @@ public class XrSpatialCapabilityConfigurationAprilTagEXT extends Struct<XrSpatia
         APRILDICT = layout.offsetof(5);
     }
 
-    protected XrSpatialCapabilityConfigurationAprilTagEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialCapabilityConfigurationAprilTagEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialCapabilityConfigurationAprilTagEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialCapabilityConfigurationAprilTagEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrCompositionLayerSettingsFB extends Struct<XrCompositionLayerSetti
         LAYERFLAGS = layout.offsetof(2);
     }
 
-    protected XrCompositionLayerSettingsFB(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerSettingsFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerSettingsFB create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerSettingsFB(address, container);
     }
 
     /**

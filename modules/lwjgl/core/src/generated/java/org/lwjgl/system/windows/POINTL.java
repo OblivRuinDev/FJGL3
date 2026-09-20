@@ -48,13 +48,8 @@ public class POINTL extends Struct<POINTL> implements NativeResource {
         Y = layout.offsetof(1);
     }
 
-    protected POINTL(long address, @Nullable ByteBuffer container) {
+    public POINTL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected POINTL create(long address, @Nullable ByteBuffer container) {
-        return new POINTL(address, container);
     }
 
     /**

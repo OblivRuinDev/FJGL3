@@ -58,13 +58,8 @@ public class VkVideoEncodeAV1SessionCreateInfoKHR extends Struct<VkVideoEncodeAV
         MAXLEVEL = layout.offsetof(3);
     }
 
-    protected VkVideoEncodeAV1SessionCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeAV1SessionCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeAV1SessionCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeAV1SessionCreateInfoKHR(address, container);
     }
 
     /**

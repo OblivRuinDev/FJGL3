@@ -29,13 +29,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSurfacePresentScalingCapabilitiesEXT extends VkSurfacePresentScalingCapabilitiesKHR {
 
-    protected VkSurfacePresentScalingCapabilitiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkSurfacePresentScalingCapabilitiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfacePresentScalingCapabilitiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfacePresentScalingCapabilitiesEXT(address, container);
     }
 
     /**

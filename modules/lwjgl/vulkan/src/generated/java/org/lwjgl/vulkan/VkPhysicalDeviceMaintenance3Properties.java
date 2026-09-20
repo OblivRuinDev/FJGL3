@@ -56,13 +56,8 @@ public class VkPhysicalDeviceMaintenance3Properties extends Struct<VkPhysicalDev
         MAXMEMORYALLOCATIONSIZE = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceMaintenance3Properties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMaintenance3Properties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMaintenance3Properties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMaintenance3Properties(address, container);
     }
 
     /**

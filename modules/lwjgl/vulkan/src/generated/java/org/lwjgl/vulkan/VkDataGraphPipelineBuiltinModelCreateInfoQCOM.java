@@ -53,13 +53,8 @@ public class VkDataGraphPipelineBuiltinModelCreateInfoQCOM extends Struct<VkData
         POPERATION = layout.offsetof(2);
     }
 
-    protected VkDataGraphPipelineBuiltinModelCreateInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineBuiltinModelCreateInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineBuiltinModelCreateInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineBuiltinModelCreateInfoQCOM(address, container);
     }
 
     /**

@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDevicePipelineProtectedAccessFeaturesEXT extends VkPhysicalDevicePipelineProtectedAccessFeatures {
 
-    protected VkPhysicalDevicePipelineProtectedAccessFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePipelineProtectedAccessFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePipelineProtectedAccessFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePipelineProtectedAccessFeaturesEXT(address, container);
     }
 
     /**

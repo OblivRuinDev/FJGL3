@@ -46,13 +46,8 @@ public class VkMemoryType extends Struct<VkMemoryType> {
         HEAPINDEX = layout.offsetof(1);
     }
 
-    protected VkMemoryType(long address, @Nullable ByteBuffer container) {
+    public VkMemoryType(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryType create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryType(address, container);
     }
 
     /**

@@ -48,13 +48,8 @@ public class XrAttenuationCurvePointBD extends Struct<XrAttenuationCurvePointBD>
         GAIN = layout.offsetof(1);
     }
 
-    protected XrAttenuationCurvePointBD(long address, @Nullable ByteBuffer container) {
+    public XrAttenuationCurvePointBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrAttenuationCurvePointBD create(long address, @Nullable ByteBuffer container) {
-        return new XrAttenuationCurvePointBD(address, container);
     }
 
     /**

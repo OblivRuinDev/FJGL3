@@ -52,13 +52,8 @@ public class VkExternalComputeQueueDeviceCreateInfoNV extends Struct<VkExternalC
         RESERVEDEXTERNALQUEUES = layout.offsetof(2);
     }
 
-    protected VkExternalComputeQueueDeviceCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkExternalComputeQueueDeviceCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalComputeQueueDeviceCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalComputeQueueDeviceCreateInfoNV(address, container);
     }
 
     /**

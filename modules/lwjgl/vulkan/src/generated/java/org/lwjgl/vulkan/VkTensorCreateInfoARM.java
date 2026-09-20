@@ -69,13 +69,8 @@ public class VkTensorCreateInfoARM extends Struct<VkTensorCreateInfoARM> impleme
         PQUEUEFAMILYINDICES = layout.offsetof(6);
     }
 
-    protected VkTensorCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkTensorCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTensorCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkTensorCreateInfoARM(address, container);
     }
 
     /**

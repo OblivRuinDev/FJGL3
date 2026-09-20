@@ -64,13 +64,8 @@ public class XrTilePropertiesMETA extends Struct<XrTilePropertiesMETA> implement
         ORIGIN = layout.offsetof(4);
     }
 
-    protected XrTilePropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrTilePropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrTilePropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrTilePropertiesMETA(address, container);
     }
 
     /**

@@ -49,13 +49,8 @@ public class FT_PaintTransform extends Struct<FT_PaintTransform> {
         AFFINE = layout.offsetof(1);
     }
 
-    protected FT_PaintTransform(long address, @Nullable ByteBuffer container) {
+    public FT_PaintTransform(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintTransform create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintTransform(address, container);
     }
 
     /**

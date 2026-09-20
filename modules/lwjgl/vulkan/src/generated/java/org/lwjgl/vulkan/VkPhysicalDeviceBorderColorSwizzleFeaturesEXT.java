@@ -56,13 +56,8 @@ public class VkPhysicalDeviceBorderColorSwizzleFeaturesEXT extends Struct<VkPhys
         BORDERCOLORSWIZZLEFROMIMAGE = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceBorderColorSwizzleFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceBorderColorSwizzleFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceBorderColorSwizzleFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceBorderColorSwizzleFeaturesEXT(address, container);
     }
 
     /**

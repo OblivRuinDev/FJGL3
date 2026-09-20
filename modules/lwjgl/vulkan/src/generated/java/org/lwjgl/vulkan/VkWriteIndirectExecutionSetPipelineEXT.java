@@ -56,13 +56,8 @@ public class VkWriteIndirectExecutionSetPipelineEXT extends Struct<VkWriteIndire
         PIPELINE = layout.offsetof(3);
     }
 
-    protected VkWriteIndirectExecutionSetPipelineEXT(long address, @Nullable ByteBuffer container) {
+    public VkWriteIndirectExecutionSetPipelineEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkWriteIndirectExecutionSetPipelineEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkWriteIndirectExecutionSetPipelineEXT(address, container);
     }
 
     /**

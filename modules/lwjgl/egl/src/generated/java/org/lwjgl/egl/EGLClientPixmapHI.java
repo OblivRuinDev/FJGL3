@@ -58,13 +58,8 @@ public class EGLClientPixmapHI extends Struct<EGLClientPixmapHI> implements Nati
         ISTRIDE = layout.offsetof(3);
     }
 
-    protected EGLClientPixmapHI(long address, @Nullable ByteBuffer container) {
+    public EGLClientPixmapHI(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected EGLClientPixmapHI create(long address, @Nullable ByteBuffer container) {
-        return new EGLClientPixmapHI(address, container);
     }
 
     /**

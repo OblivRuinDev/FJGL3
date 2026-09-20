@@ -56,13 +56,8 @@ public class VkAccelerationStructureMemoryRequirementsInfoNV extends Struct<VkAc
         ACCELERATIONSTRUCTURE = layout.offsetof(3);
     }
 
-    protected VkAccelerationStructureMemoryRequirementsInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureMemoryRequirementsInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureMemoryRequirementsInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureMemoryRequirementsInfoNV(address, container);
     }
 
     /**

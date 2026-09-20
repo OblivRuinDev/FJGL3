@@ -48,13 +48,8 @@ public class VkPresentStageTimeEXT extends Struct<VkPresentStageTimeEXT> impleme
         TIME = layout.offsetof(1);
     }
 
-    protected VkPresentStageTimeEXT(long address, @Nullable ByteBuffer container) {
+    public VkPresentStageTimeEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPresentStageTimeEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPresentStageTimeEXT(address, container);
     }
 
     /**

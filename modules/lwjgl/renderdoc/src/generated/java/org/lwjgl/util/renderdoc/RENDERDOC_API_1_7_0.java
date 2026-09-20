@@ -156,13 +156,8 @@ public class RENDERDOC_API_1_7_0 extends Struct<RENDERDOC_API_1_7_0> implements 
         SETCOMMANDANNOTATION = layout.offsetof(28);
     }
 
-    protected RENDERDOC_API_1_7_0(long address, @Nullable ByteBuffer container) {
+    public RENDERDOC_API_1_7_0(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected RENDERDOC_API_1_7_0 create(long address, @Nullable ByteBuffer container) {
-        return new RENDERDOC_API_1_7_0(address, container);
     }
 
     /**

@@ -70,13 +70,8 @@ public class VkAllocationCallbacks extends Struct<VkAllocationCallbacks> impleme
         PFNINTERNALFREE = layout.offsetof(5);
     }
 
-    protected VkAllocationCallbacks(long address, @Nullable ByteBuffer container) {
+    public VkAllocationCallbacks(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAllocationCallbacks create(long address, @Nullable ByteBuffer container) {
-        return new VkAllocationCallbacks(address, container);
     }
 
     /**

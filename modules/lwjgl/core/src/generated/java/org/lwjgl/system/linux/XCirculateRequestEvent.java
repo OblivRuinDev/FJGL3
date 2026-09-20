@@ -69,13 +69,8 @@ public class XCirculateRequestEvent extends Struct<XCirculateRequestEvent> imple
         PLACE = layout.offsetof(6);
     }
 
-    protected XCirculateRequestEvent(long address, @Nullable ByteBuffer container) {
+    public XCirculateRequestEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XCirculateRequestEvent create(long address, @Nullable ByteBuffer container) {
-        return new XCirculateRequestEvent(address, container);
     }
 
     /**

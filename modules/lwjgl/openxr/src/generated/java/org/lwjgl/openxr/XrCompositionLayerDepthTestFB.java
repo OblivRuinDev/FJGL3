@@ -56,13 +56,8 @@ public class XrCompositionLayerDepthTestFB extends Struct<XrCompositionLayerDept
         COMPAREOP = layout.offsetof(3);
     }
 
-    protected XrCompositionLayerDepthTestFB(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerDepthTestFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerDepthTestFB create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerDepthTestFB(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR extends Struc
         MESHANDTASKSHADERDERIVATIVES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR(address, container);
     }
 
     /**

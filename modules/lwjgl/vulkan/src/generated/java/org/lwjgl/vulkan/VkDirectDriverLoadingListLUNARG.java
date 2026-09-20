@@ -61,13 +61,8 @@ public class VkDirectDriverLoadingListLUNARG extends Struct<VkDirectDriverLoadin
         PDRIVERS = layout.offsetof(4);
     }
 
-    protected VkDirectDriverLoadingListLUNARG(long address, @Nullable ByteBuffer container) {
+    public VkDirectDriverLoadingListLUNARG(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDirectDriverLoadingListLUNARG create(long address, @Nullable ByteBuffer container) {
-        return new VkDirectDriverLoadingListLUNARG(address, container);
     }
 
     /**

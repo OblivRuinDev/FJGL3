@@ -53,13 +53,8 @@ public class XrSpatialEntityLocationGetInfoBD extends Struct<XrSpatialEntityLoca
         BASESPACE = layout.offsetof(2);
     }
 
-    protected XrSpatialEntityLocationGetInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityLocationGetInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityLocationGetInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityLocationGetInfoBD(address, container);
     }
 
     /**

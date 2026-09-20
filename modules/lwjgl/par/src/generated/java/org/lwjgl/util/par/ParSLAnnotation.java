@@ -55,13 +55,8 @@ public class ParSLAnnotation extends Struct<ParSLAnnotation> {
         SPINE_TO_EDGE_Y = layout.offsetof(3);
     }
 
-    protected ParSLAnnotation(long address, @Nullable ByteBuffer container) {
+    public ParSLAnnotation(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ParSLAnnotation create(long address, @Nullable ByteBuffer container) {
-        return new ParSLAnnotation(address, container);
     }
 
     /**

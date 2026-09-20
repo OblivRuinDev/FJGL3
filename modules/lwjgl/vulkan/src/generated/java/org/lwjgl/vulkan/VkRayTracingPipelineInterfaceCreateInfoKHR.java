@@ -56,13 +56,8 @@ public class VkRayTracingPipelineInterfaceCreateInfoKHR extends Struct<VkRayTrac
         MAXPIPELINERAYHITATTRIBUTESIZE = layout.offsetof(3);
     }
 
-    protected VkRayTracingPipelineInterfaceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkRayTracingPipelineInterfaceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRayTracingPipelineInterfaceCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkRayTracingPipelineInterfaceCreateInfoKHR(address, container);
     }
 
     /**

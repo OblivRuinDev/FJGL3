@@ -87,13 +87,8 @@ public class VkVideoSessionCreateInfoKHR extends Struct<VkVideoSessionCreateInfo
         PSTDHEADERVERSION = layout.offsetof(10);
     }
 
-    protected VkVideoSessionCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoSessionCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoSessionCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoSessionCreateInfoKHR(address, container);
     }
 
     /**

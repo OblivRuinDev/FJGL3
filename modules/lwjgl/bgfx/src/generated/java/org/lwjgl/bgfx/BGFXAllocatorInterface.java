@@ -46,13 +46,8 @@ public class BGFXAllocatorInterface extends Struct<BGFXAllocatorInterface> imple
         VTBL = layout.offsetof(0);
     }
 
-    protected BGFXAllocatorInterface(long address, @Nullable ByteBuffer container) {
+    public BGFXAllocatorInterface(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXAllocatorInterface create(long address, @Nullable ByteBuffer container) {
-        return new BGFXAllocatorInterface(address, container);
     }
 
     /**

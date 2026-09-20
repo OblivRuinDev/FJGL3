@@ -56,13 +56,8 @@ public class XrSenseDataProviderCreateInfoSpatialMeshBD extends Struct<XrSenseDa
         LOD = layout.offsetof(3);
     }
 
-    protected XrSenseDataProviderCreateInfoSpatialMeshBD(long address, @Nullable ByteBuffer container) {
+    public XrSenseDataProviderCreateInfoSpatialMeshBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSenseDataProviderCreateInfoSpatialMeshBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSenseDataProviderCreateInfoSpatialMeshBD(address, container);
     }
 
     /**

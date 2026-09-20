@@ -49,13 +49,8 @@ public class CLBufferRegion extends Struct<CLBufferRegion> implements NativeReso
         SIZE = layout.offsetof(1);
     }
 
-    protected CLBufferRegion(long address, @Nullable ByteBuffer container) {
+    public CLBufferRegion(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLBufferRegion create(long address, @Nullable ByteBuffer container) {
-        return new CLBufferRegion(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class VkAttachmentReference2 extends Struct<VkAttachmentReference2> imple
         ASPECTMASK = layout.offsetof(4);
     }
 
-    protected VkAttachmentReference2(long address, @Nullable ByteBuffer container) {
+    public VkAttachmentReference2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAttachmentReference2 create(long address, @Nullable ByteBuffer container) {
-        return new VkAttachmentReference2(address, container);
     }
 
     /**

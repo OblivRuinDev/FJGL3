@@ -56,13 +56,8 @@ public class XrFrameEndInfoML extends Struct<XrFrameEndInfoML> implements Native
         FLAGS = layout.offsetof(3);
     }
 
-    protected XrFrameEndInfoML(long address, @Nullable ByteBuffer container) {
+    public XrFrameEndInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFrameEndInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrFrameEndInfoML(address, container);
     }
 
     /**

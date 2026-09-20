@@ -66,13 +66,8 @@ public class IOUringRegionDesc extends Struct<IOUringRegionDesc> implements Nati
         __RESV = layout.offsetof(5);
     }
 
-    protected IOUringRegionDesc(long address, @Nullable ByteBuffer container) {
+    public IOUringRegionDesc(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOUringRegionDesc create(long address, @Nullable ByteBuffer container) {
-        return new IOUringRegionDesc(address, container);
     }
 
     /**

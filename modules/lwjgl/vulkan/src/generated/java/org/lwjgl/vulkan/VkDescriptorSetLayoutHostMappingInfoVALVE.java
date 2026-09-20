@@ -56,13 +56,8 @@ public class VkDescriptorSetLayoutHostMappingInfoVALVE extends Struct<VkDescript
         DESCRIPTORSIZE = layout.offsetof(3);
     }
 
-    protected VkDescriptorSetLayoutHostMappingInfoVALVE(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetLayoutHostMappingInfoVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetLayoutHostMappingInfoVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetLayoutHostMappingInfoVALVE(address, container);
     }
 
     /**

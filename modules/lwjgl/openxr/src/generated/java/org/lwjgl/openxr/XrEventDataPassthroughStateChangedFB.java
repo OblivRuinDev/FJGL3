@@ -52,13 +52,8 @@ public class XrEventDataPassthroughStateChangedFB extends Struct<XrEventDataPass
         FLAGS = layout.offsetof(2);
     }
 
-    protected XrEventDataPassthroughStateChangedFB(long address, @Nullable ByteBuffer container) {
+    public XrEventDataPassthroughStateChangedFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataPassthroughStateChangedFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataPassthroughStateChangedFB(address, container);
     }
 
     /**

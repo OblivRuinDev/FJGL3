@@ -68,13 +68,8 @@ public class VkPhysicalDeviceInlineUniformBlockProperties extends Struct<VkPhysi
         MAXDESCRIPTORSETUPDATEAFTERBINDINLINEUNIFORMBLOCKS = layout.offsetof(6);
     }
 
-    protected VkPhysicalDeviceInlineUniformBlockProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceInlineUniformBlockProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceInlineUniformBlockProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceInlineUniformBlockProperties(address, container);
     }
 
     /**

@@ -49,13 +49,8 @@ public class NkVec2 extends Struct<NkVec2> implements NativeResource {
         Y = layout.offsetof(1);
     }
 
-    protected NkVec2(long address, @Nullable ByteBuffer container) {
+    public NkVec2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkVec2 create(long address, @Nullable ByteBuffer container) {
-        return new NkVec2(address, container);
     }
 
     /**

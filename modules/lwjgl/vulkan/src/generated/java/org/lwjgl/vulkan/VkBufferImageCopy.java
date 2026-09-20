@@ -68,13 +68,8 @@ public class VkBufferImageCopy extends Struct<VkBufferImageCopy> implements Nati
         IMAGEEXTENT = layout.offsetof(5);
     }
 
-    protected VkBufferImageCopy(long address, @Nullable ByteBuffer container) {
+    public VkBufferImageCopy(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferImageCopy create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferImageCopy(address, container);
     }
 
     /**

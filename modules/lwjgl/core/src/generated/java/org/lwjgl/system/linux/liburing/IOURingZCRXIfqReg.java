@@ -84,13 +84,8 @@ public class IOURingZCRXIfqReg extends Struct<IOURingZCRXIfqReg> implements Nati
         __RESV = layout.offsetof(9);
     }
 
-    protected IOURingZCRXIfqReg(long address, @Nullable ByteBuffer container) {
+    public IOURingZCRXIfqReg(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingZCRXIfqReg create(long address, @Nullable ByteBuffer container) {
-        return new IOURingZCRXIfqReg(address, container);
     }
 
     /**

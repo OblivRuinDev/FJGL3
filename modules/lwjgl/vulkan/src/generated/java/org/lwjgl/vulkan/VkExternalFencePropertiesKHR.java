@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkExternalFencePropertiesKHR extends VkExternalFenceProperties {
 
-    protected VkExternalFencePropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkExternalFencePropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalFencePropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalFencePropertiesKHR(address, container);
     }
 
     /**

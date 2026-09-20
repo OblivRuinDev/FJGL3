@@ -56,13 +56,8 @@ public class VkVideoEncodeIntraRefreshInfoKHR extends Struct<VkVideoEncodeIntraR
         INTRAREFRESHINDEX = layout.offsetof(3);
     }
 
-    protected VkVideoEncodeIntraRefreshInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeIntraRefreshInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeIntraRefreshInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeIntraRefreshInfoKHR(address, container);
     }
 
     /**

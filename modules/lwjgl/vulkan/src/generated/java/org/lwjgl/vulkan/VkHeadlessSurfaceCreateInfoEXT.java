@@ -52,13 +52,8 @@ public class VkHeadlessSurfaceCreateInfoEXT extends Struct<VkHeadlessSurfaceCrea
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkHeadlessSurfaceCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkHeadlessSurfaceCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkHeadlessSurfaceCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkHeadlessSurfaceCreateInfoEXT(address, container);
     }
 
     /**

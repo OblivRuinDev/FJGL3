@@ -52,13 +52,8 @@ public class XrSpatialAnchorsDeleteCompletionML extends Struct<XrSpatialAnchorsD
         FUTURERESULT = layout.offsetof(2);
     }
 
-    protected XrSpatialAnchorsDeleteCompletionML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsDeleteCompletionML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsDeleteCompletionML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsDeleteCompletionML(address, container);
     }
 
     /**

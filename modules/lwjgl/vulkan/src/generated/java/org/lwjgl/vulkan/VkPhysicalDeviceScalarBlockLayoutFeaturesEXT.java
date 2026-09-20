@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceScalarBlockLayoutFeaturesEXT extends VkPhysicalDeviceScalarBlockLayoutFeatures {
 
-    protected VkPhysicalDeviceScalarBlockLayoutFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceScalarBlockLayoutFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceScalarBlockLayoutFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceScalarBlockLayoutFeaturesEXT(address, container);
     }
 
     /**

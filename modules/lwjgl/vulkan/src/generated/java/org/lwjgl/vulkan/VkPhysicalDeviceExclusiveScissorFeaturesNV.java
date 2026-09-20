@@ -52,13 +52,8 @@ public class VkPhysicalDeviceExclusiveScissorFeaturesNV extends Struct<VkPhysica
         EXCLUSIVESCISSOR = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceExclusiveScissorFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExclusiveScissorFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExclusiveScissorFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExclusiveScissorFeaturesNV(address, container);
     }
 
     /**

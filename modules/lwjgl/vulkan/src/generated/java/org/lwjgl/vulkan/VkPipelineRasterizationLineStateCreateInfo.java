@@ -64,13 +64,8 @@ public class VkPipelineRasterizationLineStateCreateInfo extends Struct<VkPipelin
         LINESTIPPLEPATTERN = layout.offsetof(5);
     }
 
-    protected VkPipelineRasterizationLineStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineRasterizationLineStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineRasterizationLineStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineRasterizationLineStateCreateInfo(address, container);
     }
 
     /**

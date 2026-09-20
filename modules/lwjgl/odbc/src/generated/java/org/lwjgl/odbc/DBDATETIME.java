@@ -48,13 +48,8 @@ public class DBDATETIME extends Struct<DBDATETIME> implements NativeResource {
         DTTIME = layout.offsetof(1);
     }
 
-    protected DBDATETIME(long address, @Nullable ByteBuffer container) {
+    public DBDATETIME(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected DBDATETIME create(long address, @Nullable ByteBuffer container) {
-        return new DBDATETIME(address, container);
     }
 
     /**

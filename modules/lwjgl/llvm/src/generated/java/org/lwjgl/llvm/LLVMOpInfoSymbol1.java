@@ -54,13 +54,8 @@ public class LLVMOpInfoSymbol1 extends Struct<LLVMOpInfoSymbol1> implements Nati
         VALUE = layout.offsetof(2);
     }
 
-    protected LLVMOpInfoSymbol1(long address, @Nullable ByteBuffer container) {
+    public LLVMOpInfoSymbol1(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMOpInfoSymbol1 create(long address, @Nullable ByteBuffer container) {
-        return new LLVMOpInfoSymbol1(address, container);
     }
 
     /**

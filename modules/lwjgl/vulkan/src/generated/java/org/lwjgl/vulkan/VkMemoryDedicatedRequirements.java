@@ -56,13 +56,8 @@ public class VkMemoryDedicatedRequirements extends Struct<VkMemoryDedicatedRequi
         REQUIRESDEDICATEDALLOCATION = layout.offsetof(3);
     }
 
-    protected VkMemoryDedicatedRequirements(long address, @Nullable ByteBuffer container) {
+    public VkMemoryDedicatedRequirements(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryDedicatedRequirements create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryDedicatedRequirements(address, container);
     }
 
     /**

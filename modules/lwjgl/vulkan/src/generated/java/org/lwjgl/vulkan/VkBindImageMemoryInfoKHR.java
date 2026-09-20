@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkBindImageMemoryInfoKHR extends VkBindImageMemoryInfo {
 
-    protected VkBindImageMemoryInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkBindImageMemoryInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindImageMemoryInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkBindImageMemoryInfoKHR(address, container);
     }
 
     /**

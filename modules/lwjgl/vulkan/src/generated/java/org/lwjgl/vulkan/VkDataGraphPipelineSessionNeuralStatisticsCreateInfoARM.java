@@ -52,13 +52,8 @@ public class VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM extends Str
         MODE = layout.offsetof(2);
     }
 
-    protected VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM(address, container);
     }
 
     /**

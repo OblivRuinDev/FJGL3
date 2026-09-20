@@ -22,7 +22,6 @@ import java.util.*;
 
 import static java.lang.Character.*;
 import static java.lang.Math.*;
-import static java.lang.foreign.ValueLayout.*;
 import static org.lwjgl.system.APIUtil.*;
 import static org.lwjgl.system.Checks.*;
 import static org.lwjgl.system.MathUtil.*;
@@ -89,6 +88,8 @@ public final class MemoryUtil {
     private static final long SEGMENT;
     private static final Class<?> BUFFER_BYTE, BUFFER_SHORT, BUFFER_CHAR, BUFFER_INT, BUFFER_LONG, BUFFER_FLOAT, BUFFER_DOUBLE;
     private static final long BYTE_ATT, SHORT_ATT, CHAR_ATT, INT_ATT, LONG_ATT, FLOAT_ATT, DOUBLE_ATT;
+    static final long POINTER_DEF_ADDRESS;
+    static final long STRUCT_CONTAINER;
 
     static {
         Library.initialize();
@@ -109,6 +110,9 @@ public final class MemoryUtil {
             CAPACITY =   UNSAFE.objectFieldOffset(Buffer.class, "capacity");
             POSITION =   UNSAFE.objectFieldOffset(Buffer.class, "position");
             SEGMENT =    UNSAFE.objectFieldOffset(Buffer.class, "segment");
+
+            POINTER_DEF_ADDRESS = UNSAFE.objectFieldOffset(Pointer.Default.class, "address");
+            STRUCT_CONTAINER = UNSAFE.objectFieldOffset(Struct.class, "container");
         } catch (InternalError e) {
             throw (NoSuchFieldError) new NoSuchFieldError().initCause(e);
         } catch (ClassNotFoundException e) {

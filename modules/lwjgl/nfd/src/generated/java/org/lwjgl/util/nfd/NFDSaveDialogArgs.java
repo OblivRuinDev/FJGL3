@@ -64,13 +64,8 @@ public class NFDSaveDialogArgs extends Struct<NFDSaveDialogArgs> implements Nati
         PARENTWINDOW = layout.offsetof(4);
     }
 
-    protected NFDSaveDialogArgs(long address, @Nullable ByteBuffer container) {
+    public NFDSaveDialogArgs(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NFDSaveDialogArgs create(long address, @Nullable ByteBuffer container) {
-        return new NFDSaveDialogArgs(address, container);
     }
 
     /**

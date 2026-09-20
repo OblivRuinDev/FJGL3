@@ -60,13 +60,8 @@ public class VkPipelineViewportWScalingStateCreateInfoNV extends Struct<VkPipeli
         PVIEWPORTWSCALINGS = layout.offsetof(4);
     }
 
-    protected VkPipelineViewportWScalingStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkPipelineViewportWScalingStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineViewportWScalingStateCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineViewportWScalingStateCreateInfoNV(address, container);
     }
 
     /**

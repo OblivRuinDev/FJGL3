@@ -72,13 +72,8 @@ public class SDL_JoyButtonEvent extends Struct<SDL_JoyButtonEvent> implements Na
         PADDING2 = layout.offsetof(7);
     }
 
-    protected SDL_JoyButtonEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_JoyButtonEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_JoyButtonEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_JoyButtonEvent(address, container);
     }
 
     /**

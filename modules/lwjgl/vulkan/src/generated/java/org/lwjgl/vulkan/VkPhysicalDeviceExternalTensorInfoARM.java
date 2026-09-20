@@ -61,13 +61,8 @@ public class VkPhysicalDeviceExternalTensorInfoARM extends Struct<VkPhysicalDevi
         HANDLETYPE = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceExternalTensorInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalTensorInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalTensorInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalTensorInfoARM(address, container);
     }
 
     /**

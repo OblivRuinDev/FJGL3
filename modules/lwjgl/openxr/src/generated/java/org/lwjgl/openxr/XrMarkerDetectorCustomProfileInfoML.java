@@ -72,13 +72,8 @@ public class XrMarkerDetectorCustomProfileInfoML extends Struct<XrMarkerDetector
         FULLANALYSISINTERVALHINT = layout.offsetof(7);
     }
 
-    protected XrMarkerDetectorCustomProfileInfoML(long address, @Nullable ByteBuffer container) {
+    public XrMarkerDetectorCustomProfileInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrMarkerDetectorCustomProfileInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrMarkerDetectorCustomProfileInfoML(address, container);
     }
 
     /**

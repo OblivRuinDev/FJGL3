@@ -57,13 +57,8 @@ public class JAWTRectangle extends Struct<JAWTRectangle> implements NativeResour
         HEIGHT = layout.offsetof(3);
     }
 
-    protected JAWTRectangle(long address, @Nullable ByteBuffer container) {
+    public JAWTRectangle(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected JAWTRectangle create(long address, @Nullable ByteBuffer container) {
-        return new JAWTRectangle(address, container);
     }
 
     /**

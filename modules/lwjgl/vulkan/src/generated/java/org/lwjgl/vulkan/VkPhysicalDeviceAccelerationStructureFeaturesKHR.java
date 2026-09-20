@@ -68,13 +68,8 @@ public class VkPhysicalDeviceAccelerationStructureFeaturesKHR extends Struct<VkP
         DESCRIPTORBINDINGACCELERATIONSTRUCTUREUPDATEAFTERBIND = layout.offsetof(6);
     }
 
-    protected VkPhysicalDeviceAccelerationStructureFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceAccelerationStructureFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceAccelerationStructureFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceAccelerationStructureFeaturesKHR(address, container);
     }
 
     /**

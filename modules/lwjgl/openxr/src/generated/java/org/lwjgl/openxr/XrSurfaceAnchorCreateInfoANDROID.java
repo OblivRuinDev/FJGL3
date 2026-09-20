@@ -75,13 +75,8 @@ public class XrSurfaceAnchorCreateInfoANDROID extends Struct<XrSurfaceAnchorCrea
         ALTITUDERELATIVETOSURFACE = layout.offsetof(7);
     }
 
-    protected XrSurfaceAnchorCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSurfaceAnchorCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSurfaceAnchorCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSurfaceAnchorCreateInfoANDROID(address, container);
     }
 
     /**

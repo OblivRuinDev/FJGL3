@@ -52,13 +52,8 @@ public class VkPhysicalDeviceThrottleHintFeaturesSEC extends Struct<VkPhysicalDe
         THROTTLEHINT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceThrottleHintFeaturesSEC(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceThrottleHintFeaturesSEC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceThrottleHintFeaturesSEC create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceThrottleHintFeaturesSEC(address, container);
     }
 
     /**

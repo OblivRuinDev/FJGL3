@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSubresourceLayout2EXT extends VkSubresourceLayout2 {
 
-    protected VkSubresourceLayout2EXT(long address, @Nullable ByteBuffer container) {
+    public VkSubresourceLayout2EXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubresourceLayout2EXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSubresourceLayout2EXT(address, container);
     }
 
     /**

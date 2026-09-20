@@ -52,13 +52,8 @@ public class VkPhysicalDeviceImageCompressionControlFeaturesEXT extends Struct<V
         IMAGECOMPRESSIONCONTROL = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceImageCompressionControlFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageCompressionControlFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageCompressionControlFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageCompressionControlFeaturesEXT(address, container);
     }
 
     /**

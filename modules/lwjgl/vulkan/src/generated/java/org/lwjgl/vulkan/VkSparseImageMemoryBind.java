@@ -68,13 +68,8 @@ public class VkSparseImageMemoryBind extends Struct<VkSparseImageMemoryBind> imp
         FLAGS = layout.offsetof(5);
     }
 
-    protected VkSparseImageMemoryBind(long address, @Nullable ByteBuffer container) {
+    public VkSparseImageMemoryBind(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSparseImageMemoryBind create(long address, @Nullable ByteBuffer container) {
-        return new VkSparseImageMemoryBind(address, container);
     }
 
     /**

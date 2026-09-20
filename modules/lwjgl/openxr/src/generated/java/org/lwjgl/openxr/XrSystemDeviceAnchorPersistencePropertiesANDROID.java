@@ -52,13 +52,8 @@ public class XrSystemDeviceAnchorPersistencePropertiesANDROID extends Struct<XrS
         SUPPORTSANCHORPERSISTENCE = layout.offsetof(2);
     }
 
-    protected XrSystemDeviceAnchorPersistencePropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemDeviceAnchorPersistencePropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemDeviceAnchorPersistencePropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemDeviceAnchorPersistencePropertiesANDROID(address, container);
     }
 
     /**

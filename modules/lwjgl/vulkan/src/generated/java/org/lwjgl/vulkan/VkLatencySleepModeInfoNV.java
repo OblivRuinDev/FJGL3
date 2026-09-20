@@ -60,13 +60,8 @@ public class VkLatencySleepModeInfoNV extends Struct<VkLatencySleepModeInfoNV> i
         MINIMUMINTERVALUS = layout.offsetof(4);
     }
 
-    protected VkLatencySleepModeInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkLatencySleepModeInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkLatencySleepModeInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkLatencySleepModeInfoNV(address, container);
     }
 
     /**

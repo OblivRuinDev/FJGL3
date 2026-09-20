@@ -52,13 +52,8 @@ public class XrEventDataInstanceLossPending extends Struct<XrEventDataInstanceLo
         LOSSTIME = layout.offsetof(2);
     }
 
-    protected XrEventDataInstanceLossPending(long address, @Nullable ByteBuffer container) {
+    public XrEventDataInstanceLossPending(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataInstanceLossPending create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataInstanceLossPending(address, container);
     }
 
     /**

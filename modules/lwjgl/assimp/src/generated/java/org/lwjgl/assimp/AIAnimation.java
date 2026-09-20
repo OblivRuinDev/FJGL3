@@ -80,13 +80,8 @@ public class AIAnimation extends Struct<AIAnimation> implements NativeResource {
         MMORPHMESHCHANNELS = layout.offsetof(8);
     }
 
-    protected AIAnimation(long address, @Nullable ByteBuffer container) {
+    public AIAnimation(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIAnimation create(long address, @Nullable ByteBuffer container) {
-        return new AIAnimation(address, container);
     }
 
     /**

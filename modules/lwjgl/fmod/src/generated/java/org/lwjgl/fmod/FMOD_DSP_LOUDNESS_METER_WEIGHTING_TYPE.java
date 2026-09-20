@@ -45,13 +45,8 @@ public class FMOD_DSP_LOUDNESS_METER_WEIGHTING_TYPE extends Struct<FMOD_DSP_LOUD
         CHANNELWEIGHT = layout.offsetof(0);
     }
 
-    protected FMOD_DSP_LOUDNESS_METER_WEIGHTING_TYPE(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_LOUDNESS_METER_WEIGHTING_TYPE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_LOUDNESS_METER_WEIGHTING_TYPE create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_LOUDNESS_METER_WEIGHTING_TYPE(address, container);
     }
 
     /**

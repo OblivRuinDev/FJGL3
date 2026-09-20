@@ -82,13 +82,8 @@ public class VkHdrMetadataEXT extends Struct<VkHdrMetadataEXT> implements Native
         MAXFRAMEAVERAGELIGHTLEVEL = layout.offsetof(9);
     }
 
-    protected VkHdrMetadataEXT(long address, @Nullable ByteBuffer container) {
+    public VkHdrMetadataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkHdrMetadataEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkHdrMetadataEXT(address, container);
     }
 
     /**

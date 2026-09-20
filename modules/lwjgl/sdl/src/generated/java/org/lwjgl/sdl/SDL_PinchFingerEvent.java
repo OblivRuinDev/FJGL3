@@ -60,13 +60,8 @@ public class SDL_PinchFingerEvent extends Struct<SDL_PinchFingerEvent> implement
         WINDOWID = layout.offsetof(4);
     }
 
-    protected SDL_PinchFingerEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_PinchFingerEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_PinchFingerEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_PinchFingerEvent(address, container);
     }
 
     /**

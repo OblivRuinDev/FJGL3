@@ -52,13 +52,8 @@ public class VkSurfaceCapabilitiesPresentWait2KHR extends Struct<VkSurfaceCapabi
         PRESENTWAIT2SUPPORTED = layout.offsetof(2);
     }
 
-    protected VkSurfaceCapabilitiesPresentWait2KHR(long address, @Nullable ByteBuffer container) {
+    public VkSurfaceCapabilitiesPresentWait2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfaceCapabilitiesPresentWait2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfaceCapabilitiesPresentWait2KHR(address, container);
     }
 
     /**

@@ -53,13 +53,8 @@ public class NkMouseButton extends Struct<NkMouseButton> {
         CLICKED_POS = layout.offsetof(2);
     }
 
-    protected NkMouseButton(long address, @Nullable ByteBuffer container) {
+    public NkMouseButton(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkMouseButton create(long address, @Nullable ByteBuffer container) {
-        return new NkMouseButton(address, container);
     }
 
     /**

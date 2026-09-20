@@ -97,13 +97,8 @@ public class BGFXInit extends Struct<BGFXInit> implements NativeResource {
         ALLOCATOR = layout.offsetof(12);
     }
 
-    protected BGFXInit(long address, @Nullable ByteBuffer container) {
+    public BGFXInit(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXInit create(long address, @Nullable ByteBuffer container) {
-        return new BGFXInit(address, container);
     }
 
     /**

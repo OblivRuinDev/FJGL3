@@ -109,13 +109,8 @@ public class XCrossingEvent extends Struct<XCrossingEvent> implements NativeReso
         STATE = layout.offsetof(16);
     }
 
-    protected XCrossingEvent(long address, @Nullable ByteBuffer container) {
+    public XCrossingEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XCrossingEvent create(long address, @Nullable ByteBuffer container) {
-        return new XCrossingEvent(address, container);
     }
 
     /**

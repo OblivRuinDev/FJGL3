@@ -51,13 +51,8 @@ public class StdVideoAV1GlobalMotion extends Struct<StdVideoAV1GlobalMotion> imp
         GM_PARAMS = layout.offsetof(1);
     }
 
-    protected StdVideoAV1GlobalMotion(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1GlobalMotion(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1GlobalMotion create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1GlobalMotion(address, container);
     }
 
     /**

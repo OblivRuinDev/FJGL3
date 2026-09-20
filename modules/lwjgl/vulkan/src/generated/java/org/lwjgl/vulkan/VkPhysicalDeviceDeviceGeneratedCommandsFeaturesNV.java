@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV extends Struct<Vk
         DEVICEGENERATEDCOMMANDS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV(address, container);
     }
 
     /**

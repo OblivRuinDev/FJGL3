@@ -74,13 +74,8 @@ public class FMOD_DSP_STATE extends Struct<FMOD_DSP_STATE> implements NativeReso
         SYSTEMOBJECT = layout.offsetof(7);
     }
 
-    protected FMOD_DSP_STATE(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_STATE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_STATE create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_STATE(address, container);
     }
 
     /**

@@ -63,13 +63,8 @@ public class FTC_Scaler extends Struct<FTC_Scaler> {
         Y_RES = layout.offsetof(5);
     }
 
-    protected FTC_Scaler(long address, @Nullable ByteBuffer container) {
+    public FTC_Scaler(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FTC_Scaler create(long address, @Nullable ByteBuffer container) {
-        return new FTC_Scaler(address, container);
     }
 
     /**

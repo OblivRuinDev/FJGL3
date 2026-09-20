@@ -70,13 +70,8 @@ public class VkDisplayPropertiesKHR extends Struct<VkDisplayPropertiesKHR> imple
         PERSISTENTCONTENT = layout.offsetof(6);
     }
 
-    protected VkDisplayPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkDisplayPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplayPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplayPropertiesKHR(address, container);
     }
 
     /**

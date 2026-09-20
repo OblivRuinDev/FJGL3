@@ -52,13 +52,8 @@ public class VkPhysicalDeviceNestedCommandBufferPropertiesEXT extends Struct<VkP
         MAXCOMMANDBUFFERNESTINGLEVEL = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceNestedCommandBufferPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceNestedCommandBufferPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceNestedCommandBufferPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceNestedCommandBufferPropertiesEXT(address, container);
     }
 
     /**

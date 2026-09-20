@@ -55,13 +55,8 @@ public class VkSurfaceFullScreenExclusiveWin32InfoEXT extends Struct<VkSurfaceFu
         HMONITOR = layout.offsetof(2);
     }
 
-    protected VkSurfaceFullScreenExclusiveWin32InfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkSurfaceFullScreenExclusiveWin32InfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfaceFullScreenExclusiveWin32InfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfaceFullScreenExclusiveWin32InfoEXT(address, container);
     }
 
     /**

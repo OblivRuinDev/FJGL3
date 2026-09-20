@@ -45,13 +45,8 @@ public class CXFileUniqueID extends Struct<CXFileUniqueID> implements NativeReso
         DATA = layout.offsetof(0);
     }
 
-    protected CXFileUniqueID(long address, @Nullable ByteBuffer container) {
+    public CXFileUniqueID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXFileUniqueID create(long address, @Nullable ByteBuffer container) {
-        return new CXFileUniqueID(address, container);
     }
 
     /**

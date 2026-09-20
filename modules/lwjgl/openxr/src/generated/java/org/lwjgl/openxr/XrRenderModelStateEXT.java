@@ -56,13 +56,8 @@ public class XrRenderModelStateEXT extends Struct<XrRenderModelStateEXT> impleme
         NODESTATES = layout.offsetof(3);
     }
 
-    protected XrRenderModelStateEXT(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelStateEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelStateEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelStateEXT(address, container);
     }
 
     /**

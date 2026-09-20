@@ -56,13 +56,8 @@ public class VkShaderInstrumentationMetricDataHeaderARM extends Struct<VkShaderI
         BASICBLOCKINDEX = layout.offsetof(3);
     }
 
-    protected VkShaderInstrumentationMetricDataHeaderARM(long address, @Nullable ByteBuffer container) {
+    public VkShaderInstrumentationMetricDataHeaderARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkShaderInstrumentationMetricDataHeaderARM create(long address, @Nullable ByteBuffer container) {
-        return new VkShaderInstrumentationMetricDataHeaderARM(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class EXRVersion extends Struct<EXRVersion> implements NativeResource {
         MULTIPART = layout.offsetof(4);
     }
 
-    protected EXRVersion(long address, @Nullable ByteBuffer container) {
+    public EXRVersion(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected EXRVersion create(long address, @Nullable ByteBuffer container) {
-        return new EXRVersion(address, container);
     }
 
     /**

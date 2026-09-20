@@ -64,13 +64,8 @@ public class VkDescriptorUpdateTemplateEntry extends Struct<VkDescriptorUpdateTe
         STRIDE = layout.offsetof(5);
     }
 
-    protected VkDescriptorUpdateTemplateEntry(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorUpdateTemplateEntry(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorUpdateTemplateEntry create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorUpdateTemplateEntry(address, container);
     }
 
     /**

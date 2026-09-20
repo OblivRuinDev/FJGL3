@@ -57,13 +57,8 @@ public class VkPipelineShaderStageNodeCreateInfoAMDX extends Struct<VkPipelineSh
         INDEX = layout.offsetof(3);
     }
 
-    protected VkPipelineShaderStageNodeCreateInfoAMDX(long address, @Nullable ByteBuffer container) {
+    public VkPipelineShaderStageNodeCreateInfoAMDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineShaderStageNodeCreateInfoAMDX create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineShaderStageNodeCreateInfoAMDX(address, container);
     }
 
     /**

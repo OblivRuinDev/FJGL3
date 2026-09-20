@@ -77,13 +77,8 @@ public class SDL_GPUTextureRegion extends Struct<SDL_GPUTextureRegion> implement
         D = layout.offsetof(8);
     }
 
-    protected SDL_GPUTextureRegion(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUTextureRegion(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUTextureRegion create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUTextureRegion(address, container);
     }
 
     /**

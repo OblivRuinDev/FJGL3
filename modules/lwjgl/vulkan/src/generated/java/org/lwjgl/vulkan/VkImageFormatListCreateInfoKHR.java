@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkImageFormatListCreateInfoKHR extends VkImageFormatListCreateInfo {
 
-    protected VkImageFormatListCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkImageFormatListCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageFormatListCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkImageFormatListCreateInfoKHR(address, container);
     }
 
     /**

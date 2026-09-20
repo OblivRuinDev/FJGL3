@@ -61,13 +61,8 @@ public class FMOD_ERRORCALLBACK_INFO extends Struct<FMOD_ERRORCALLBACK_INFO> imp
         FUNCTIONPARAMS = layout.offsetof(4);
     }
 
-    protected FMOD_ERRORCALLBACK_INFO(long address, @Nullable ByteBuffer container) {
+    public FMOD_ERRORCALLBACK_INFO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_ERRORCALLBACK_INFO create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_ERRORCALLBACK_INFO(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrEventDataSpaceDiscoveryResultsAvailableMETA extends Struct<XrEven
         REQUESTID = layout.offsetof(2);
     }
 
-    protected XrEventDataSpaceDiscoveryResultsAvailableMETA(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSpaceDiscoveryResultsAvailableMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSpaceDiscoveryResultsAvailableMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSpaceDiscoveryResultsAvailableMETA(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkVideoEncodeAV1FrameSizeKHR extends Struct<VkVideoEncodeAV1FrameSi
         BIPREDICTIVEFRAMESIZE = layout.offsetof(2);
     }
 
-    protected VkVideoEncodeAV1FrameSizeKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeAV1FrameSizeKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeAV1FrameSizeKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeAV1FrameSizeKHR(address, container);
     }
 
     /**

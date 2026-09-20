@@ -66,13 +66,8 @@ public class XXH64State extends Struct<XXH64State> implements NativeResource {
         RESERVED64 = layout.offsetof(5);
     }
 
-    protected XXH64State(long address, @Nullable ByteBuffer container) {
+    public XXH64State(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XXH64State create(long address, @Nullable ByteBuffer container) {
-        return new XXH64State(address, container);
     }
 
     /**

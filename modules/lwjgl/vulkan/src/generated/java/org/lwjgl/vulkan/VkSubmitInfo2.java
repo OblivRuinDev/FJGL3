@@ -77,13 +77,8 @@ public class VkSubmitInfo2 extends Struct<VkSubmitInfo2> implements NativeResour
         PSIGNALSEMAPHOREINFOS = layout.offsetof(8);
     }
 
-    protected VkSubmitInfo2(long address, @Nullable ByteBuffer container) {
+    public VkSubmitInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubmitInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VkSubmitInfo2(address, container);
     }
 
     /**

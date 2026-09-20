@@ -62,13 +62,8 @@ public class XrPersistSpatialEntityCompletionEXT extends Struct<XrPersistSpatial
         PERSISTUUID = layout.offsetof(4);
     }
 
-    protected XrPersistSpatialEntityCompletionEXT(long address, @Nullable ByteBuffer container) {
+    public XrPersistSpatialEntityCompletionEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPersistSpatialEntityCompletionEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrPersistSpatialEntityCompletionEXT(address, container);
     }
 
     /**

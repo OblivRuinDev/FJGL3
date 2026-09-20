@@ -52,13 +52,8 @@ public class XrSystemFoveationEyeTrackedPropertiesMETA extends Struct<XrSystemFo
         SUPPORTSFOVEATIONEYETRACKED = layout.offsetof(2);
     }
 
-    protected XrSystemFoveationEyeTrackedPropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemFoveationEyeTrackedPropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemFoveationEyeTrackedPropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemFoveationEyeTrackedPropertiesMETA(address, container);
     }
 
     /**

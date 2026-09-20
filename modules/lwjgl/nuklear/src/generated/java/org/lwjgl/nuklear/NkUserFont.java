@@ -65,13 +65,8 @@ public class NkUserFont extends Struct<NkUserFont> implements NativeResource {
         TEXTURE = layout.offsetof(4);
     }
 
-    protected NkUserFont(long address, @Nullable ByteBuffer container) {
+    public NkUserFont(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkUserFont create(long address, @Nullable ByteBuffer container) {
-        return new NkUserFont(address, container);
     }
 
     /**

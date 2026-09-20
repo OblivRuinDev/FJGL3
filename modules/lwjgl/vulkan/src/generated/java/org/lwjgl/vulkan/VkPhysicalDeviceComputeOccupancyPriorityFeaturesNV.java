@@ -52,13 +52,8 @@ public class VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV extends Struct<V
         COMPUTEOCCUPANCYPRIORITY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceComputeOccupancyPriorityFeaturesNV(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkPipelineViewportDepthClampControlCreateInfoEXT extends Struct<VkP
         PDEPTHCLAMPRANGE = layout.offsetof(3);
     }
 
-    protected VkPipelineViewportDepthClampControlCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineViewportDepthClampControlCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineViewportDepthClampControlCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineViewportDepthClampControlCreateInfoEXT(address, container);
     }
 
     /**

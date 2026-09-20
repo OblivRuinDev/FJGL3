@@ -49,13 +49,8 @@ public class SDL_GPUBufferLocation extends Struct<SDL_GPUBufferLocation> impleme
         OFFSET = layout.offsetof(1);
     }
 
-    protected SDL_GPUBufferLocation(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUBufferLocation(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUBufferLocation create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUBufferLocation(address, container);
     }
 
     /**

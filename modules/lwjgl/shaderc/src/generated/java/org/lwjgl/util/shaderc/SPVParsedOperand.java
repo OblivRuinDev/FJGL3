@@ -65,13 +65,8 @@ public class SPVParsedOperand extends Struct<SPVParsedOperand> implements Native
         FP_ENCODING = layout.offsetof(5);
     }
 
-    protected SPVParsedOperand(long address, @Nullable ByteBuffer container) {
+    public SPVParsedOperand(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SPVParsedOperand create(long address, @Nullable ByteBuffer container) {
-        return new SPVParsedOperand(address, container);
     }
 
     /**

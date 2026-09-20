@@ -52,13 +52,8 @@ public class XrSystemBodyTrackingPropertiesBD extends Struct<XrSystemBodyTrackin
         SUPPORTSBODYTRACKING = layout.offsetof(2);
     }
 
-    protected XrSystemBodyTrackingPropertiesBD(long address, @Nullable ByteBuffer container) {
+    public XrSystemBodyTrackingPropertiesBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemBodyTrackingPropertiesBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemBodyTrackingPropertiesBD(address, container);
     }
 
     /**

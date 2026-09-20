@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkExportMemoryAllocateInfoKHR extends VkExportMemoryAllocateInfo {
 
-    protected VkExportMemoryAllocateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkExportMemoryAllocateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportMemoryAllocateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkExportMemoryAllocateInfoKHR(address, container);
     }
 
     /**

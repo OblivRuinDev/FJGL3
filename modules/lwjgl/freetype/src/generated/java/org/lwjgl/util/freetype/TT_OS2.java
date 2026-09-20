@@ -195,13 +195,8 @@ public class TT_OS2 extends Struct<TT_OS2> {
         USUPPEROPTICALPOINTSIZE = layout.offsetof(38);
     }
 
-    protected TT_OS2(long address, @Nullable ByteBuffer container) {
+    public TT_OS2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected TT_OS2 create(long address, @Nullable ByteBuffer container) {
-        return new TT_OS2(address, container);
     }
 
     /**

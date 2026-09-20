@@ -54,13 +54,8 @@ public class XrSharedSpatialAnchorDownloadInfoBD extends Struct<XrSharedSpatialA
         UUID = layout.offsetof(2);
     }
 
-    protected XrSharedSpatialAnchorDownloadInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrSharedSpatialAnchorDownloadInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSharedSpatialAnchorDownloadInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSharedSpatialAnchorDownloadInfoBD(address, container);
     }
 
     /**

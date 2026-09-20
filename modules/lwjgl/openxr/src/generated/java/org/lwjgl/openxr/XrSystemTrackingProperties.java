@@ -48,13 +48,8 @@ public class XrSystemTrackingProperties extends Struct<XrSystemTrackingPropertie
         POSITIONTRACKING = layout.offsetof(1);
     }
 
-    protected XrSystemTrackingProperties(long address, @Nullable ByteBuffer container) {
+    public XrSystemTrackingProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemTrackingProperties create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemTrackingProperties(address, container);
     }
 
     /**

@@ -84,13 +84,8 @@ public class VkOpticalFlowSessionCreateInfoNV extends Struct<VkOpticalFlowSessio
         FLAGS = layout.offsetof(10);
     }
 
-    protected VkOpticalFlowSessionCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkOpticalFlowSessionCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkOpticalFlowSessionCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkOpticalFlowSessionCreateInfoNV(address, container);
     }
 
     /**

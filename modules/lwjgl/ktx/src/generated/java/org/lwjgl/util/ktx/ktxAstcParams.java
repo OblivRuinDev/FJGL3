@@ -77,13 +77,8 @@ public class ktxAstcParams extends Struct<ktxAstcParams> implements NativeResour
         INPUTSWIZZLE = layout.offsetof(8);
     }
 
-    protected ktxAstcParams(long address, @Nullable ByteBuffer container) {
+    public ktxAstcParams(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ktxAstcParams create(long address, @Nullable ByteBuffer container) {
-        return new ktxAstcParams(address, container);
     }
 
     /**

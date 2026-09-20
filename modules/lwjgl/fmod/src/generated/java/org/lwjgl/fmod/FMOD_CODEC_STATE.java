@@ -58,13 +58,8 @@ public class FMOD_CODEC_STATE extends Struct<FMOD_CODEC_STATE> implements Native
         NUMSUBSOUNDS = layout.offsetof(3);
     }
 
-    protected FMOD_CODEC_STATE(long address, @Nullable ByteBuffer container) {
+    public FMOD_CODEC_STATE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_CODEC_STATE create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_CODEC_STATE(address, container);
     }
 
     /**

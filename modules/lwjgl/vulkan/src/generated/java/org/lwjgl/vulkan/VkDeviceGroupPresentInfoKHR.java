@@ -61,13 +61,8 @@ public class VkDeviceGroupPresentInfoKHR extends Struct<VkDeviceGroupPresentInfo
         MODE = layout.offsetof(4);
     }
 
-    protected VkDeviceGroupPresentInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceGroupPresentInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceGroupPresentInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceGroupPresentInfoKHR(address, container);
     }
 
     /**

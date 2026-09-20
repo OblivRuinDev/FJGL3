@@ -64,13 +64,8 @@ public class XrFrameEndInfo extends Struct<XrFrameEndInfo> implements NativeReso
         LAYERS = layout.offsetof(5);
     }
 
-    protected XrFrameEndInfo(long address, @Nullable ByteBuffer container) {
+    public XrFrameEndInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFrameEndInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrFrameEndInfo(address, container);
     }
 
     /**

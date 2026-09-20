@@ -104,13 +104,8 @@ public class VkPhysicalDeviceShaderCorePropertiesAMD extends Struct<VkPhysicalDe
         VGPRALLOCATIONGRANULARITY = layout.offsetof(15);
     }
 
-    protected VkPhysicalDeviceShaderCorePropertiesAMD(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderCorePropertiesAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderCorePropertiesAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderCorePropertiesAMD(address, container);
     }
 
     /**

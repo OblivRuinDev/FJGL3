@@ -97,13 +97,8 @@ public class SDL_GPUComputePipelineCreateInfo extends Struct<SDL_GPUComputePipel
         PROPS = layout.offsetof(13);
     }
 
-    protected SDL_GPUComputePipelineCreateInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUComputePipelineCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUComputePipelineCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUComputePipelineCreateInfo(address, container);
     }
 
     /**

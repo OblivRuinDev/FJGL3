@@ -63,13 +63,8 @@ public class ParShapesMesh extends Struct<ParShapesMesh> {
         TCOORDS = layout.offsetof(5);
     }
 
-    protected ParShapesMesh(long address, @Nullable ByteBuffer container) {
+    public ParShapesMesh(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ParShapesMesh create(long address, @Nullable ByteBuffer container) {
-        return new ParShapesMesh(address, container);
     }
 
     /**

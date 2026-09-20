@@ -57,13 +57,8 @@ public class XrFoveationCustomModeInfoHTC extends Struct<XrFoveationCustomModeIn
         CONFIGS = layout.offsetof(3);
     }
 
-    protected XrFoveationCustomModeInfoHTC(long address, @Nullable ByteBuffer container) {
+    public XrFoveationCustomModeInfoHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFoveationCustomModeInfoHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrFoveationCustomModeInfoHTC(address, container);
     }
 
     /**

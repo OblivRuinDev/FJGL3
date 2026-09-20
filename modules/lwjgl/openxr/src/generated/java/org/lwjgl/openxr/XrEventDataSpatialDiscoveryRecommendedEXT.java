@@ -52,13 +52,8 @@ public class XrEventDataSpatialDiscoveryRecommendedEXT extends Struct<XrEventDat
         SPATIALCONTEXT = layout.offsetof(2);
     }
 
-    protected XrEventDataSpatialDiscoveryRecommendedEXT(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSpatialDiscoveryRecommendedEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSpatialDiscoveryRecommendedEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSpatialDiscoveryRecommendedEXT(address, container);
     }
 
     /**

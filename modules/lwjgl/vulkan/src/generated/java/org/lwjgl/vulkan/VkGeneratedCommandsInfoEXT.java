@@ -88,13 +88,8 @@ public class VkGeneratedCommandsInfoEXT extends Struct<VkGeneratedCommandsInfoEX
         MAXDRAWCOUNT = layout.offsetof(11);
     }
 
-    protected VkGeneratedCommandsInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkGeneratedCommandsInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGeneratedCommandsInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkGeneratedCommandsInfoEXT(address, container);
     }
 
     /**

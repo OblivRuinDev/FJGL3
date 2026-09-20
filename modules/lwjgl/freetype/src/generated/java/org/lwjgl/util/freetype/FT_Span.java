@@ -50,13 +50,8 @@ public class FT_Span extends Struct<FT_Span> {
         COVERAGE = layout.offsetof(2);
     }
 
-    protected FT_Span(long address, @Nullable ByteBuffer container) {
+    public FT_Span(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Span create(long address, @Nullable ByteBuffer container) {
-        return new FT_Span(address, container);
     }
 
     /**

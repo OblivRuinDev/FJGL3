@@ -60,13 +60,8 @@ public class VkDataGraphPipelineSessionMemoryRequirementsInfoARM extends Struct<
         OBJECTINDEX = layout.offsetof(4);
     }
 
-    protected VkDataGraphPipelineSessionMemoryRequirementsInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineSessionMemoryRequirementsInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineSessionMemoryRequirementsInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineSessionMemoryRequirementsInfoARM(address, container);
     }
 
     /**

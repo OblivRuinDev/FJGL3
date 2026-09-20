@@ -56,13 +56,8 @@ public class VkImageCompressionPropertiesEXT extends Struct<VkImageCompressionPr
         IMAGECOMPRESSIONFIXEDRATEFLAGS = layout.offsetof(3);
     }
 
-    protected VkImageCompressionPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkImageCompressionPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageCompressionPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImageCompressionPropertiesEXT(address, container);
     }
 
     /**

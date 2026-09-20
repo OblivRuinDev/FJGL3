@@ -70,13 +70,8 @@ public class NVGColor extends Struct<NVGColor> implements NativeResource {
         A = layout.offsetof(6);
     }
 
-    protected NVGColor(long address, @Nullable ByteBuffer container) {
+    public NVGColor(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NVGColor create(long address, @Nullable ByteBuffer container) {
-        return new NVGColor(address, container);
     }
 
     /**

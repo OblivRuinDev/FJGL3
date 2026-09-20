@@ -54,13 +54,8 @@ public class VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT extends Struc
         FRAGMENTDENSITYOFFSETGRANULARITY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(address, container);
     }
 
     /**

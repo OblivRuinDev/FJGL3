@@ -61,13 +61,8 @@ public class VkPipelineDynamicStateCreateInfo extends Struct<VkPipelineDynamicSt
         PDYNAMICSTATES = layout.offsetof(4);
     }
 
-    protected VkPipelineDynamicStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineDynamicStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineDynamicStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineDynamicStateCreateInfo(address, container);
     }
 
     /**

@@ -59,13 +59,8 @@ public class XrFaceTrackingVisemesMETA extends Struct<XrFaceTrackingVisemesMETA>
         VISEMES = layout.offsetof(3);
     }
 
-    protected XrFaceTrackingVisemesMETA(long address, @Nullable ByteBuffer container) {
+    public XrFaceTrackingVisemesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFaceTrackingVisemesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrFaceTrackingVisemesMETA(address, container);
     }
 
     /**

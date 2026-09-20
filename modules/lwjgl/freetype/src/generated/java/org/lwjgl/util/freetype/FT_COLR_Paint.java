@@ -102,13 +102,8 @@ public class FT_COLR_Paint extends Struct<FT_COLR_Paint> implements NativeResour
             U_COLR_GLYPH = layout.offsetof(14);
     }
 
-    protected FT_COLR_Paint(long address, @Nullable ByteBuffer container) {
+    public FT_COLR_Paint(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_COLR_Paint create(long address, @Nullable ByteBuffer container) {
-        return new FT_COLR_Paint(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class XrSceneComponentMSFT extends Struct<XrSceneComponentMSFT> implement
         UPDATETIME = layout.offsetof(3);
     }
 
-    protected XrSceneComponentMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneComponentMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneComponentMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneComponentMSFT(address, container);
     }
 
     /**

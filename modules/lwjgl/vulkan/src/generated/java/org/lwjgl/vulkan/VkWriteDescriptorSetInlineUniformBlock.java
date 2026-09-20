@@ -57,13 +57,8 @@ public class VkWriteDescriptorSetInlineUniformBlock extends Struct<VkWriteDescri
         PDATA = layout.offsetof(3);
     }
 
-    protected VkWriteDescriptorSetInlineUniformBlock(long address, @Nullable ByteBuffer container) {
+    public VkWriteDescriptorSetInlineUniformBlock(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkWriteDescriptorSetInlineUniformBlock create(long address, @Nullable ByteBuffer container) {
-        return new VkWriteDescriptorSetInlineUniformBlock(address, container);
     }
 
     /**

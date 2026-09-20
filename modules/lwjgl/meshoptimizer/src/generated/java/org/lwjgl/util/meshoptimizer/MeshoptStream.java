@@ -54,13 +54,8 @@ public class MeshoptStream extends Struct<MeshoptStream> implements NativeResour
         STRIDE = layout.offsetof(2);
     }
 
-    protected MeshoptStream(long address, @Nullable ByteBuffer container) {
+    public MeshoptStream(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MeshoptStream create(long address, @Nullable ByteBuffer container) {
-        return new MeshoptStream(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class SDL_GPUIndirectDispatchCommand extends Struct<SDL_GPUIndirectDispat
         GROUPCOUNT_Z = layout.offsetof(2);
     }
 
-    protected SDL_GPUIndirectDispatchCommand(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUIndirectDispatchCommand(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUIndirectDispatchCommand create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUIndirectDispatchCommand(address, container);
     }
 
     /**

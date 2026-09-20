@@ -52,13 +52,8 @@ public class VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT extends Struct<VkP
         MUTABLEDESCRIPTORTYPE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT(address, container);
     }
 
     /**

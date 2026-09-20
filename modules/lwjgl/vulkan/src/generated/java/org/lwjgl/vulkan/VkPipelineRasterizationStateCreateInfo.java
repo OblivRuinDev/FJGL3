@@ -92,13 +92,8 @@ public class VkPipelineRasterizationStateCreateInfo extends Struct<VkPipelineRas
         LINEWIDTH = layout.offsetof(12);
     }
 
-    protected VkPipelineRasterizationStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineRasterizationStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineRasterizationStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineRasterizationStateCreateInfo(address, container);
     }
 
     /**

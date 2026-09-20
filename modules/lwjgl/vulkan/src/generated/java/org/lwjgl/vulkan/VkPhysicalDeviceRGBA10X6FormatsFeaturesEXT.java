@@ -52,13 +52,8 @@ public class VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT extends Struct<VkPhysica
         FORMATRGBA10X6WITHOUTYCBCRSAMPLER = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT(address, container);
     }
 
     /**

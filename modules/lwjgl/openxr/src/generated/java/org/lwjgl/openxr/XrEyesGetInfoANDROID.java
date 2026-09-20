@@ -57,13 +57,8 @@ public class XrEyesGetInfoANDROID extends Struct<XrEyesGetInfoANDROID> implement
         BASESPACE = layout.offsetof(3);
     }
 
-    protected XrEyesGetInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrEyesGetInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEyesGetInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrEyesGetInfoANDROID(address, container);
     }
 
     /**

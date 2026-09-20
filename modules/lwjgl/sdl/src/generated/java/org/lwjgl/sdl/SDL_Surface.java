@@ -72,13 +72,8 @@ public class SDL_Surface extends Struct<SDL_Surface> implements NativeResource {
         RESERVED = layout.offsetof(7);
     }
 
-    protected SDL_Surface(long address, @Nullable ByteBuffer container) {
+    public SDL_Surface(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_Surface create(long address, @Nullable ByteBuffer container) {
-        return new SDL_Surface(address, container);
     }
 
     /**

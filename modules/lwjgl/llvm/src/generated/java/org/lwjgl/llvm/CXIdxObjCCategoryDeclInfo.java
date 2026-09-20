@@ -61,13 +61,8 @@ public class CXIdxObjCCategoryDeclInfo extends Struct<CXIdxObjCCategoryDeclInfo>
         PROTOCOLS = layout.offsetof(4);
     }
 
-    protected CXIdxObjCCategoryDeclInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxObjCCategoryDeclInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxObjCCategoryDeclInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxObjCCategoryDeclInfo(address, container);
     }
 
     /**

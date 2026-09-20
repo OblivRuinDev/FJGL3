@@ -57,13 +57,8 @@ public class XrCreateTrackableImageDatabaseCompletionANDROID extends Struct<XrCr
         DATABASE = layout.offsetof(3);
     }
 
-    protected XrCreateTrackableImageDatabaseCompletionANDROID(long address, @Nullable ByteBuffer container) {
+    public XrCreateTrackableImageDatabaseCompletionANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCreateTrackableImageDatabaseCompletionANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrCreateTrackableImageDatabaseCompletionANDROID(address, container);
     }
 
     /**

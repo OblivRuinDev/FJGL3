@@ -52,13 +52,8 @@ public class HARDWAREINPUT extends Struct<HARDWAREINPUT> implements NativeResour
         WPARAMH = layout.offsetof(2);
     }
 
-    protected HARDWAREINPUT(long address, @Nullable ByteBuffer container) {
+    public HARDWAREINPUT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected HARDWAREINPUT create(long address, @Nullable ByteBuffer container) {
-        return new HARDWAREINPUT(address, container);
     }
 
     /**

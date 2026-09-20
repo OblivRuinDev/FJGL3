@@ -52,13 +52,8 @@ public class VkPhysicalDeviceImagelessFramebufferFeatures extends Struct<VkPhysi
         IMAGELESSFRAMEBUFFER = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceImagelessFramebufferFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImagelessFramebufferFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImagelessFramebufferFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImagelessFramebufferFeatures(address, container);
     }
 
     /**

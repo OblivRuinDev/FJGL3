@@ -49,13 +49,8 @@ public class CXSourceLocation extends Struct<CXSourceLocation> implements Native
         INT_DATA = layout.offsetof(1);
     }
 
-    protected CXSourceLocation(long address, @Nullable ByteBuffer container) {
+    public CXSourceLocation(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXSourceLocation create(long address, @Nullable ByteBuffer container) {
-        return new CXSourceLocation(address, container);
     }
 
     /**

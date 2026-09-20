@@ -60,13 +60,8 @@ public class VkExternalSemaphoreProperties extends Struct<VkExternalSemaphorePro
         EXTERNALSEMAPHOREFEATURES = layout.offsetof(4);
     }
 
-    protected VkExternalSemaphoreProperties(long address, @Nullable ByteBuffer container) {
+    public VkExternalSemaphoreProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalSemaphoreProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalSemaphoreProperties(address, container);
     }
 
     /**

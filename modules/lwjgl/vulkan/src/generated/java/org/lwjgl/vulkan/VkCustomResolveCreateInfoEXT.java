@@ -68,13 +68,8 @@ public class VkCustomResolveCreateInfoEXT extends Struct<VkCustomResolveCreateIn
         STENCILATTACHMENTFORMAT = layout.offsetof(6);
     }
 
-    protected VkCustomResolveCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkCustomResolveCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCustomResolveCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkCustomResolveCreateInfoEXT(address, container);
     }
 
     /**

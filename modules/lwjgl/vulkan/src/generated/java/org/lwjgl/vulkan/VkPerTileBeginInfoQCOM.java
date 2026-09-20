@@ -48,13 +48,8 @@ public class VkPerTileBeginInfoQCOM extends Struct<VkPerTileBeginInfoQCOM> imple
         PNEXT = layout.offsetof(1);
     }
 
-    protected VkPerTileBeginInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPerTileBeginInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerTileBeginInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPerTileBeginInfoQCOM(address, container);
     }
 
     /**

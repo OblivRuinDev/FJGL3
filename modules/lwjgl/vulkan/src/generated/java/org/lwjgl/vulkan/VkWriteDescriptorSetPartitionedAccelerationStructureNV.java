@@ -56,13 +56,8 @@ public class VkWriteDescriptorSetPartitionedAccelerationStructureNV extends Stru
         PACCELERATIONSTRUCTURES = layout.offsetof(3);
     }
 
-    protected VkWriteDescriptorSetPartitionedAccelerationStructureNV(long address, @Nullable ByteBuffer container) {
+    public VkWriteDescriptorSetPartitionedAccelerationStructureNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkWriteDescriptorSetPartitionedAccelerationStructureNV create(long address, @Nullable ByteBuffer container) {
-        return new VkWriteDescriptorSetPartitionedAccelerationStructureNV(address, container);
     }
 
     /**

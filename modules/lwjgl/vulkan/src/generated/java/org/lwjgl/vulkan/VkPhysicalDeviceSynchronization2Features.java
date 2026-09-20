@@ -52,13 +52,8 @@ public class VkPhysicalDeviceSynchronization2Features extends Struct<VkPhysicalD
         SYNCHRONIZATION2 = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceSynchronization2Features(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSynchronization2Features(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSynchronization2Features create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSynchronization2Features(address, container);
     }
 
     /**

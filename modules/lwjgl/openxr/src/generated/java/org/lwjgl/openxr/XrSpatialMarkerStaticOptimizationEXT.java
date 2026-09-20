@@ -52,13 +52,8 @@ public class XrSpatialMarkerStaticOptimizationEXT extends Struct<XrSpatialMarker
         OPTIMIZEFORSTATICMARKER = layout.offsetof(2);
     }
 
-    protected XrSpatialMarkerStaticOptimizationEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialMarkerStaticOptimizationEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialMarkerStaticOptimizationEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialMarkerStaticOptimizationEXT(address, container);
     }
 
     /**

@@ -72,13 +72,8 @@ public class VkPhysicalDeviceIDProperties extends Struct<VkPhysicalDeviceIDPrope
         DEVICELUIDVALID = layout.offsetof(6);
     }
 
-    protected VkPhysicalDeviceIDProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceIDProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceIDProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceIDProperties(address, container);
     }
 
     /**

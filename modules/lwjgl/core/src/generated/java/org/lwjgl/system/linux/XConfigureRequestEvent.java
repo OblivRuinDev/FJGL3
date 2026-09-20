@@ -97,13 +97,8 @@ public class XConfigureRequestEvent extends Struct<XConfigureRequestEvent> imple
         VALUE_MASK = layout.offsetof(13);
     }
 
-    protected XConfigureRequestEvent(long address, @Nullable ByteBuffer container) {
+    public XConfigureRequestEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XConfigureRequestEvent create(long address, @Nullable ByteBuffer container) {
-        return new XConfigureRequestEvent(address, container);
     }
 
     /**

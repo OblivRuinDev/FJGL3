@@ -60,13 +60,8 @@ public class VkSwapchainCalibratedTimestampInfoEXT extends Struct<VkSwapchainCal
         TIMEDOMAINID = layout.offsetof(4);
     }
 
-    protected VkSwapchainCalibratedTimestampInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainCalibratedTimestampInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainCalibratedTimestampInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainCalibratedTimestampInfoEXT(address, container);
     }
 
     /**

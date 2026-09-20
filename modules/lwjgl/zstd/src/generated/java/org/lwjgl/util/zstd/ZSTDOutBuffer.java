@@ -54,13 +54,8 @@ public class ZSTDOutBuffer extends Struct<ZSTDOutBuffer> implements NativeResour
         POS = layout.offsetof(2);
     }
 
-    protected ZSTDOutBuffer(long address, @Nullable ByteBuffer container) {
+    public ZSTDOutBuffer(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZSTDOutBuffer create(long address, @Nullable ByteBuffer container) {
-        return new ZSTDOutBuffer(address, container);
     }
 
     /**

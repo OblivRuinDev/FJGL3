@@ -52,13 +52,8 @@ public class OpusEncCallbacks extends Struct<OpusEncCallbacks> implements Native
         CLOSE = layout.offsetof(1);
     }
 
-    protected OpusEncCallbacks(long address, @Nullable ByteBuffer container) {
+    public OpusEncCallbacks(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected OpusEncCallbacks create(long address, @Nullable ByteBuffer container) {
-        return new OpusEncCallbacks(address, container);
     }
 
     /**

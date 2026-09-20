@@ -48,13 +48,8 @@ public class XrLightEstimatorCreateInfoANDROID extends Struct<XrLightEstimatorCr
         NEXT = layout.offsetof(1);
     }
 
-    protected XrLightEstimatorCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrLightEstimatorCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrLightEstimatorCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrLightEstimatorCreateInfoANDROID(address, container);
     }
 
     /**

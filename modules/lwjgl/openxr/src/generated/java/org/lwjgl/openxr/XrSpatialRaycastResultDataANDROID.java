@@ -50,13 +50,8 @@ public class XrSpatialRaycastResultDataANDROID extends Struct<XrSpatialRaycastRe
         DISTANCESQUARED = layout.offsetof(1);
     }
 
-    protected XrSpatialRaycastResultDataANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialRaycastResultDataANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialRaycastResultDataANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialRaycastResultDataANDROID(address, container);
     }
 
     /**

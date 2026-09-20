@@ -57,13 +57,8 @@ public class VkSpecializationInfo extends Struct<VkSpecializationInfo> implement
         PDATA = layout.offsetof(3);
     }
 
-    protected VkSpecializationInfo(long address, @Nullable ByteBuffer container) {
+    public VkSpecializationInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSpecializationInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkSpecializationInfo(address, container);
     }
 
     /**

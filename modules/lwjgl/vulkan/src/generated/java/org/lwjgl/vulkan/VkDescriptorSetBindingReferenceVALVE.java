@@ -56,13 +56,8 @@ public class VkDescriptorSetBindingReferenceVALVE extends Struct<VkDescriptorSet
         BINDING = layout.offsetof(3);
     }
 
-    protected VkDescriptorSetBindingReferenceVALVE(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetBindingReferenceVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetBindingReferenceVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetBindingReferenceVALVE(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrSpatialAnchorStateML extends Struct<XrSpatialAnchorStateML> imple
         CONFIDENCE = layout.offsetof(2);
     }
 
-    protected XrSpatialAnchorStateML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorStateML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorStateML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorStateML(address, container);
     }
 
     /**

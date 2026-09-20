@@ -52,13 +52,8 @@ public class VkPhysicalDeviceExtendedDynamicState3PropertiesEXT extends Struct<V
         DYNAMICPRIMITIVETOPOLOGYUNRESTRICTED = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExtendedDynamicState3PropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(address, container);
     }
 
     /**

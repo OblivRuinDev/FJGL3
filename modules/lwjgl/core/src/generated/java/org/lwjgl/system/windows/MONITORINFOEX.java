@@ -62,13 +62,8 @@ public class MONITORINFOEX extends Struct<MONITORINFOEX> implements NativeResour
         SZDEVICE = layout.offsetof(4);
     }
 
-    protected MONITORINFOEX(long address, @Nullable ByteBuffer container) {
+    public MONITORINFOEX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MONITORINFOEX create(long address, @Nullable ByteBuffer container) {
-        return new MONITORINFOEX(address, container);
     }
 
     /**

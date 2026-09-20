@@ -56,13 +56,8 @@ public class XrEventDataSenseDataProviderStateChangedBD extends Struct<XrEventDa
         NEWSTATE = layout.offsetof(3);
     }
 
-    protected XrEventDataSenseDataProviderStateChangedBD(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSenseDataProviderStateChangedBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSenseDataProviderStateChangedBD create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSenseDataProviderStateChangedBD(address, container);
     }
 
     /**

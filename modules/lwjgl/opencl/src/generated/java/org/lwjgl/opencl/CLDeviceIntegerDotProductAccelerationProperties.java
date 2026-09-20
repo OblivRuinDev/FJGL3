@@ -65,13 +65,8 @@ public class CLDeviceIntegerDotProductAccelerationProperties extends Struct<CLDe
         ACCUMULATING_SATURATING_MIXED_SIGNEDNESS_ACCELERATED = layout.offsetof(5);
     }
 
-    protected CLDeviceIntegerDotProductAccelerationProperties(long address, @Nullable ByteBuffer container) {
+    public CLDeviceIntegerDotProductAccelerationProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLDeviceIntegerDotProductAccelerationProperties create(long address, @Nullable ByteBuffer container) {
-        return new CLDeviceIntegerDotProductAccelerationProperties(address, container);
     }
 
     /**

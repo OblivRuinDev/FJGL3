@@ -48,13 +48,8 @@ public class XrLoaderInitInfoBaseHeaderKHR extends Struct<XrLoaderInitInfoBaseHe
         NEXT = layout.offsetof(1);
     }
 
-    protected XrLoaderInitInfoBaseHeaderKHR(long address, @Nullable ByteBuffer container) {
+    public XrLoaderInitInfoBaseHeaderKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrLoaderInitInfoBaseHeaderKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrLoaderInitInfoBaseHeaderKHR(address, container);
     }
 
     /**

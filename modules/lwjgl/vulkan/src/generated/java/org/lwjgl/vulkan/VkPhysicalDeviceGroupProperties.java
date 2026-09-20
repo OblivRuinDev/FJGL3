@@ -63,13 +63,8 @@ public class VkPhysicalDeviceGroupProperties extends Struct<VkPhysicalDeviceGrou
         SUBSETALLOCATION = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceGroupProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceGroupProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceGroupProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceGroupProperties(address, container);
     }
 
     /**

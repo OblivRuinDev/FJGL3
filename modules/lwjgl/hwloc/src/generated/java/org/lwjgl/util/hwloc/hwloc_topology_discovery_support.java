@@ -63,13 +63,8 @@ public class hwloc_topology_discovery_support extends Struct<hwloc_topology_disc
         CPUKIND_EFFICIENCY = layout.offsetof(5);
     }
 
-    protected hwloc_topology_discovery_support(long address, @Nullable ByteBuffer container) {
+    public hwloc_topology_discovery_support(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_topology_discovery_support create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_topology_discovery_support(address, container);
     }
 
     /**

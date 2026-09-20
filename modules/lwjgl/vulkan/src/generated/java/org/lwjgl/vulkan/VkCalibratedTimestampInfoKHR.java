@@ -52,13 +52,8 @@ public class VkCalibratedTimestampInfoKHR extends Struct<VkCalibratedTimestampIn
         TIMEDOMAIN = layout.offsetof(2);
     }
 
-    protected VkCalibratedTimestampInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkCalibratedTimestampInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCalibratedTimestampInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkCalibratedTimestampInfoKHR(address, container);
     }
 
     /**

@@ -55,13 +55,8 @@ public class NSVGPaint extends Struct<NSVGPaint> {
         GRADIENT = layout.offsetof(3);
     }
 
-    protected NSVGPaint(long address, @Nullable ByteBuffer container) {
+    public NSVGPaint(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NSVGPaint create(long address, @Nullable ByteBuffer container) {
-        return new NSVGPaint(address, container);
     }
 
     /**

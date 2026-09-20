@@ -56,13 +56,8 @@ public class XrVPSAvailabilityCheckCompletionANDROID extends Struct<XrVPSAvailab
         AVAILABILITY = layout.offsetof(3);
     }
 
-    protected XrVPSAvailabilityCheckCompletionANDROID(long address, @Nullable ByteBuffer container) {
+    public XrVPSAvailabilityCheckCompletionANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVPSAvailabilityCheckCompletionANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrVPSAvailabilityCheckCompletionANDROID(address, container);
     }
 
     /**

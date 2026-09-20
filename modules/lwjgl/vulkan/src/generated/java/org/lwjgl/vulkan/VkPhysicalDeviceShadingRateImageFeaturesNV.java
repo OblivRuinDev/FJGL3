@@ -56,13 +56,8 @@ public class VkPhysicalDeviceShadingRateImageFeaturesNV extends Struct<VkPhysica
         SHADINGRATECOARSESAMPLEORDER = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceShadingRateImageFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShadingRateImageFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShadingRateImageFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShadingRateImageFeaturesNV(address, container);
     }
 
     /**

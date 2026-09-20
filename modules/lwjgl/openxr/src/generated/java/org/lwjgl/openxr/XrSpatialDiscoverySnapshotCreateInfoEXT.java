@@ -56,13 +56,8 @@ public class XrSpatialDiscoverySnapshotCreateInfoEXT extends Struct<XrSpatialDis
         COMPONENTTYPES = layout.offsetof(3);
     }
 
-    protected XrSpatialDiscoverySnapshotCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialDiscoverySnapshotCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialDiscoverySnapshotCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialDiscoverySnapshotCreateInfoEXT(address, container);
     }
 
     /**

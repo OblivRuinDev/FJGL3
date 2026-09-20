@@ -52,13 +52,8 @@ public class VkSwapchainLatencyCreateInfoNV extends Struct<VkSwapchainLatencyCre
         LATENCYMODEENABLE = layout.offsetof(2);
     }
 
-    protected VkSwapchainLatencyCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainLatencyCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainLatencyCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainLatencyCreateInfoNV(address, container);
     }
 
     /**

@@ -69,13 +69,8 @@ public class XCirculateEvent extends Struct<XCirculateEvent> implements NativeRe
         PLACE = layout.offsetof(6);
     }
 
-    protected XCirculateEvent(long address, @Nullable ByteBuffer container) {
+    public XCirculateEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XCirculateEvent create(long address, @Nullable ByteBuffer container) {
-        return new XCirculateEvent(address, container);
     }
 
     /**

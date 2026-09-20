@@ -52,13 +52,8 @@ public class XrSpaceUserCreateInfoFB extends Struct<XrSpaceUserCreateInfoFB> imp
         USERID = layout.offsetof(2);
     }
 
-    protected XrSpaceUserCreateInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceUserCreateInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceUserCreateInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceUserCreateInfoFB(address, container);
     }
 
     /**

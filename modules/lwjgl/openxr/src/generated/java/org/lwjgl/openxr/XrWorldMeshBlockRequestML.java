@@ -58,13 +58,8 @@ public class XrWorldMeshBlockRequestML extends Struct<XrWorldMeshBlockRequestML>
         LOD = layout.offsetof(3);
     }
 
-    protected XrWorldMeshBlockRequestML(long address, @Nullable ByteBuffer container) {
+    public XrWorldMeshBlockRequestML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrWorldMeshBlockRequestML create(long address, @Nullable ByteBuffer container) {
-        return new XrWorldMeshBlockRequestML(address, container);
     }
 
     /**

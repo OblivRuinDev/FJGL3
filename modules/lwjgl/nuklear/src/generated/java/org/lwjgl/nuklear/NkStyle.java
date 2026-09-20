@@ -151,13 +151,8 @@ public class NkStyle extends Struct<NkStyle> implements NativeResource {
         WINDOW = layout.offsetof(22);
     }
 
-    protected NkStyle(long address, @Nullable ByteBuffer container) {
+    public NkStyle(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyle create(long address, @Nullable ByteBuffer container) {
-        return new NkStyle(address, container);
     }
 
     /**

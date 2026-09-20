@@ -52,13 +52,8 @@ public class VkPhysicalDeviceInheritedViewportScissorFeaturesNV extends Struct<V
         INHERITEDVIEWPORTSCISSOR2D = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceInheritedViewportScissorFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceInheritedViewportScissorFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceInheritedViewportScissorFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceInheritedViewportScissorFeaturesNV(address, container);
     }
 
     /**

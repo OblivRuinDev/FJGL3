@@ -53,13 +53,8 @@ public class ZSTDFrameParameters extends Struct<ZSTDFrameParameters> implements 
         NODICTIDFLAG = layout.offsetof(2);
     }
 
-    protected ZSTDFrameParameters(long address, @Nullable ByteBuffer container) {
+    public ZSTDFrameParameters(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZSTDFrameParameters create(long address, @Nullable ByteBuffer container) {
-        return new ZSTDFrameParameters(address, container);
     }
 
     /**

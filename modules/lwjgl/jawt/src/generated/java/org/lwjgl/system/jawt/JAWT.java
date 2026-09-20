@@ -76,13 +76,8 @@ public class JAWT extends Struct<JAWT> implements NativeResource {
         SYNTHESIZEWINDOWACTIVATION = layout.offsetof(8);
     }
 
-    protected JAWT(long address, @Nullable ByteBuffer container) {
+    public JAWT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected JAWT create(long address, @Nullable ByteBuffer container) {
-        return new JAWT(address, container);
     }
 
     /**

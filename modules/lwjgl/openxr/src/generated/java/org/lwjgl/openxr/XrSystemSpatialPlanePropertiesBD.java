@@ -52,13 +52,8 @@ public class XrSystemSpatialPlanePropertiesBD extends Struct<XrSystemSpatialPlan
         SUPPORTSSPATIALPLANE = layout.offsetof(2);
     }
 
-    protected XrSystemSpatialPlanePropertiesBD(long address, @Nullable ByteBuffer container) {
+    public XrSystemSpatialPlanePropertiesBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemSpatialPlanePropertiesBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemSpatialPlanePropertiesBD(address, container);
     }
 
     /**

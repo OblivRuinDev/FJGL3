@@ -64,13 +64,8 @@ public class GPU_DEVICE extends Struct<GPU_DEVICE> implements NativeResource {
         RCVIRTUALSCREEN = layout.offsetof(4);
     }
 
-    protected GPU_DEVICE(long address, @Nullable ByteBuffer container) {
+    public GPU_DEVICE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GPU_DEVICE create(long address, @Nullable ByteBuffer container) {
-        return new GPU_DEVICE(address, container);
     }
 
     /**

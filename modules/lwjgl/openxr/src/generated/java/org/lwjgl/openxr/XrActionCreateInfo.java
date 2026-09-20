@@ -71,13 +71,8 @@ public class XrActionCreateInfo extends Struct<XrActionCreateInfo> implements Na
         LOCALIZEDACTIONNAME = layout.offsetof(6);
     }
 
-    protected XrActionCreateInfo(long address, @Nullable ByteBuffer container) {
+    public XrActionCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrActionCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrActionCreateInfo(address, container);
     }
 
     /**

@@ -59,13 +59,8 @@ public class StdVideoEncodeH265SliceSegmentHeaderFlags extends Struct<StdVideoEn
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoEncodeH265SliceSegmentHeaderFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH265SliceSegmentHeaderFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH265SliceSegmentHeaderFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH265SliceSegmentHeaderFlags(address, container);
     }
 
     /**

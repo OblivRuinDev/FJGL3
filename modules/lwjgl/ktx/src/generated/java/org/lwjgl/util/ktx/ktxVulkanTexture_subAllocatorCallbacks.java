@@ -72,13 +72,8 @@ public class ktxVulkanTexture_subAllocatorCallbacks extends Struct<ktxVulkanText
         FREEMEMFUNCPTR = layout.offsetof(5);
     }
 
-    protected ktxVulkanTexture_subAllocatorCallbacks(long address, @Nullable ByteBuffer container) {
+    public ktxVulkanTexture_subAllocatorCallbacks(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ktxVulkanTexture_subAllocatorCallbacks create(long address, @Nullable ByteBuffer container) {
-        return new ktxVulkanTexture_subAllocatorCallbacks(address, container);
     }
 
     /**

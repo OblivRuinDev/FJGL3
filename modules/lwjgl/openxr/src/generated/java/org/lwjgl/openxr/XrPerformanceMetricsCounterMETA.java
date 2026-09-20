@@ -64,13 +64,8 @@ public class XrPerformanceMetricsCounterMETA extends Struct<XrPerformanceMetrics
         FLOATVALUE = layout.offsetof(5);
     }
 
-    protected XrPerformanceMetricsCounterMETA(long address, @Nullable ByteBuffer container) {
+    public XrPerformanceMetricsCounterMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPerformanceMetricsCounterMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrPerformanceMetricsCounterMETA(address, container);
     }
 
     /**

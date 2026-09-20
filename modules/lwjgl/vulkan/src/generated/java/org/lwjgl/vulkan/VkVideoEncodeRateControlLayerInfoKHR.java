@@ -64,13 +64,8 @@ public class VkVideoEncodeRateControlLayerInfoKHR extends Struct<VkVideoEncodeRa
         FRAMERATEDENOMINATOR = layout.offsetof(5);
     }
 
-    protected VkVideoEncodeRateControlLayerInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeRateControlLayerInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeRateControlLayerInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeRateControlLayerInfoKHR(address, container);
     }
 
     /**

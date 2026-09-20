@@ -85,13 +85,8 @@ public class NkEditState extends Struct<NkEditState> {
         SINGLE_LINE = layout.offsetof(10);
     }
 
-    protected NkEditState(long address, @Nullable ByteBuffer container) {
+    public NkEditState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkEditState create(long address, @Nullable ByteBuffer container) {
-        return new NkEditState(address, container);
     }
 
     /**

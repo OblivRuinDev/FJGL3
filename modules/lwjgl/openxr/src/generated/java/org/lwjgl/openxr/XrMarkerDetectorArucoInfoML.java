@@ -52,13 +52,8 @@ public class XrMarkerDetectorArucoInfoML extends Struct<XrMarkerDetectorArucoInf
         ARUCODICT = layout.offsetof(2);
     }
 
-    protected XrMarkerDetectorArucoInfoML(long address, @Nullable ByteBuffer container) {
+    public XrMarkerDetectorArucoInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrMarkerDetectorArucoInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrMarkerDetectorArucoInfoML(address, container);
     }
 
     /**

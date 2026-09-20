@@ -50,13 +50,8 @@ public class XrBodyJointLocationFB extends Struct<XrBodyJointLocationFB> impleme
         POSE = layout.offsetof(1);
     }
 
-    protected XrBodyJointLocationFB(long address, @Nullable ByteBuffer container) {
+    public XrBodyJointLocationFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyJointLocationFB create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyJointLocationFB(address, container);
     }
 
     /**

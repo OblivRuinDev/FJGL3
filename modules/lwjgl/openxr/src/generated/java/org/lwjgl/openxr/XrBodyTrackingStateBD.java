@@ -56,13 +56,8 @@ public class XrBodyTrackingStateBD extends Struct<XrBodyTrackingStateBD> impleme
         MESSAGE = layout.offsetof(3);
     }
 
-    protected XrBodyTrackingStateBD(long address, @Nullable ByteBuffer container) {
+    public XrBodyTrackingStateBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyTrackingStateBD create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyTrackingStateBD(address, container);
     }
 
     /**

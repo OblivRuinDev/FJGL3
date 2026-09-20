@@ -56,13 +56,8 @@ public class VkAccelerationStructureBuildRangeInfoKHR extends Struct<VkAccelerat
         TRANSFORMOFFSET = layout.offsetof(3);
     }
 
-    protected VkAccelerationStructureBuildRangeInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureBuildRangeInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureBuildRangeInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureBuildRangeInfoKHR(address, container);
     }
 
     /**

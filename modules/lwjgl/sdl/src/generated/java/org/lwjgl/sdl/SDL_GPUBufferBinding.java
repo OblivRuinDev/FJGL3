@@ -49,13 +49,8 @@ public class SDL_GPUBufferBinding extends Struct<SDL_GPUBufferBinding> implement
         OFFSET = layout.offsetof(1);
     }
 
-    protected SDL_GPUBufferBinding(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUBufferBinding(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUBufferBinding create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUBufferBinding(address, container);
     }
 
     /**

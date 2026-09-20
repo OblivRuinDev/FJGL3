@@ -68,13 +68,8 @@ public class VkGpaPerfBlockPropertiesAMD extends Struct<VkGpaPerfBlockProperties
         MAXSTREAMINGCOUNTERS = layout.offsetof(6);
     }
 
-    protected VkGpaPerfBlockPropertiesAMD(long address, @Nullable ByteBuffer container) {
+    public VkGpaPerfBlockPropertiesAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGpaPerfBlockPropertiesAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkGpaPerfBlockPropertiesAMD(address, container);
     }
 
     /**

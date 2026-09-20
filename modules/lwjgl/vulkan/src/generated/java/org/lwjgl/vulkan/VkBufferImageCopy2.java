@@ -76,13 +76,8 @@ public class VkBufferImageCopy2 extends Struct<VkBufferImageCopy2> implements Na
         IMAGEEXTENT = layout.offsetof(7);
     }
 
-    protected VkBufferImageCopy2(long address, @Nullable ByteBuffer container) {
+    public VkBufferImageCopy2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferImageCopy2 create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferImageCopy2(address, container);
     }
 
     /**

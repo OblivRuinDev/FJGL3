@@ -85,13 +85,8 @@ public class XrInteractionProfileDpadBindingEXT extends Struct<XrInteractionProf
         OFFHAPTIC = layout.offsetof(10);
     }
 
-    protected XrInteractionProfileDpadBindingEXT(long address, @Nullable ByteBuffer container) {
+    public XrInteractionProfileDpadBindingEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrInteractionProfileDpadBindingEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrInteractionProfileDpadBindingEXT(address, container);
     }
 
     /**

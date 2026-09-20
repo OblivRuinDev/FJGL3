@@ -56,13 +56,8 @@ public class VkPresentIdKHR extends Struct<VkPresentIdKHR> implements NativeReso
         PPRESENTIDS = layout.offsetof(3);
     }
 
-    protected VkPresentIdKHR(long address, @Nullable ByteBuffer container) {
+    public VkPresentIdKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPresentIdKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPresentIdKHR(address, container);
     }
 
     /**

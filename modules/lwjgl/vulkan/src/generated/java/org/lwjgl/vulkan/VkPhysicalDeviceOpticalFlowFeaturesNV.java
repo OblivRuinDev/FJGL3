@@ -52,13 +52,8 @@ public class VkPhysicalDeviceOpticalFlowFeaturesNV extends Struct<VkPhysicalDevi
         OPTICALFLOW = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceOpticalFlowFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceOpticalFlowFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceOpticalFlowFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceOpticalFlowFeaturesNV(address, container);
     }
 
     /**

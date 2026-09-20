@@ -73,13 +73,8 @@ public class BGFXResolution extends Struct<BGFXResolution> implements NativeReso
         DEBUGTEXTSCALE = layout.offsetof(7);
     }
 
-    protected BGFXResolution(long address, @Nullable ByteBuffer container) {
+    public BGFXResolution(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXResolution create(long address, @Nullable ByteBuffer container) {
-        return new BGFXResolution(address, container);
     }
 
     /**

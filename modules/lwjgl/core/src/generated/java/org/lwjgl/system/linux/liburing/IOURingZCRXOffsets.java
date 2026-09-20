@@ -62,13 +62,8 @@ public class IOURingZCRXOffsets extends Struct<IOURingZCRXOffsets> implements Na
         __RESV = layout.offsetof(4);
     }
 
-    protected IOURingZCRXOffsets(long address, @Nullable ByteBuffer container) {
+    public IOURingZCRXOffsets(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingZCRXOffsets create(long address, @Nullable ByteBuffer container) {
-        return new IOURingZCRXOffsets(address, container);
     }
 
     /**

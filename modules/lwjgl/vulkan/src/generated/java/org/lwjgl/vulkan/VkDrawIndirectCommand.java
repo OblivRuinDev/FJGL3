@@ -56,13 +56,8 @@ public class VkDrawIndirectCommand extends Struct<VkDrawIndirectCommand> impleme
         FIRSTINSTANCE = layout.offsetof(3);
     }
 
-    protected VkDrawIndirectCommand(long address, @Nullable ByteBuffer container) {
+    public VkDrawIndirectCommand(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDrawIndirectCommand create(long address, @Nullable ByteBuffer container) {
-        return new VkDrawIndirectCommand(address, container);
     }
 
     /**

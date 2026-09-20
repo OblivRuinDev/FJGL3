@@ -144,13 +144,8 @@ public class PIXELFORMATDESCRIPTOR extends Struct<PIXELFORMATDESCRIPTOR> impleme
         DWDAMAGEMASK = layout.offsetof(25);
     }
 
-    protected PIXELFORMATDESCRIPTOR(long address, @Nullable ByteBuffer container) {
+    public PIXELFORMATDESCRIPTOR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected PIXELFORMATDESCRIPTOR create(long address, @Nullable ByteBuffer container) {
-        return new PIXELFORMATDESCRIPTOR(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderInstrumentationFeaturesARM extends Struct<VkP
         SHADERINSTRUMENTATION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderInstrumentationFeaturesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderInstrumentationFeaturesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderInstrumentationFeaturesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderInstrumentationFeaturesARM(address, container);
     }
 
     /**

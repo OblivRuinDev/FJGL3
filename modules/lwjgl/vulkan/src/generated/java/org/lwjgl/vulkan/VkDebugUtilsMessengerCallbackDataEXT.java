@@ -89,13 +89,8 @@ public class VkDebugUtilsMessengerCallbackDataEXT extends Struct<VkDebugUtilsMes
         POBJECTS = layout.offsetof(11);
     }
 
-    protected VkDebugUtilsMessengerCallbackDataEXT(long address, @Nullable ByteBuffer container) {
+    public VkDebugUtilsMessengerCallbackDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDebugUtilsMessengerCallbackDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDebugUtilsMessengerCallbackDataEXT(address, container);
     }
 
     /**

@@ -49,13 +49,8 @@ public class FT_Data extends Struct<FT_Data> implements NativeResource {
         LENGTH = layout.offsetof(1);
     }
 
-    protected FT_Data(long address, @Nullable ByteBuffer container) {
+    public FT_Data(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Data create(long address, @Nullable ByteBuffer container) {
-        return new FT_Data(address, container);
     }
 
     /**

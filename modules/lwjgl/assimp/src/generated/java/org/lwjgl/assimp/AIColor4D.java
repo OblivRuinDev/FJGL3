@@ -57,13 +57,8 @@ public class AIColor4D extends Struct<AIColor4D> implements NativeResource {
         A = layout.offsetof(3);
     }
 
-    protected AIColor4D(long address, @Nullable ByteBuffer container) {
+    public AIColor4D(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIColor4D create(long address, @Nullable ByteBuffer container) {
-        return new AIColor4D(address, container);
     }
 
     /**

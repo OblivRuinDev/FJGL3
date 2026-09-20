@@ -50,13 +50,8 @@ public class VkAttachmentSampleLocationsEXT extends Struct<VkAttachmentSampleLoc
         SAMPLELOCATIONSINFO = layout.offsetof(1);
     }
 
-    protected VkAttachmentSampleLocationsEXT(long address, @Nullable ByteBuffer container) {
+    public VkAttachmentSampleLocationsEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAttachmentSampleLocationsEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkAttachmentSampleLocationsEXT(address, container);
     }
 
     /**

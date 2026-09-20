@@ -52,13 +52,8 @@ public class XrBodyTrackingFidelityStatusMETA extends Struct<XrBodyTrackingFidel
         FIDELITY = layout.offsetof(2);
     }
 
-    protected XrBodyTrackingFidelityStatusMETA(long address, @Nullable ByteBuffer container) {
+    public XrBodyTrackingFidelityStatusMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyTrackingFidelityStatusMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyTrackingFidelityStatusMETA(address, container);
     }
 
     /**

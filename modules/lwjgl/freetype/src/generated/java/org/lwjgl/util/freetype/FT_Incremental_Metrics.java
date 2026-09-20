@@ -55,13 +55,8 @@ public class FT_Incremental_Metrics extends Struct<FT_Incremental_Metrics> {
         ADVANCE_V = layout.offsetof(3);
     }
 
-    protected FT_Incremental_Metrics(long address, @Nullable ByteBuffer container) {
+    public FT_Incremental_Metrics(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Incremental_Metrics create(long address, @Nullable ByteBuffer container) {
-        return new FT_Incremental_Metrics(address, container);
     }
 
     /**

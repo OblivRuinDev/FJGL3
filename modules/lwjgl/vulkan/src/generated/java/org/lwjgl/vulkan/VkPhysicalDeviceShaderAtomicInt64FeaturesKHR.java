@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceShaderAtomicInt64FeaturesKHR extends VkPhysicalDeviceShaderAtomicInt64Features {
 
-    protected VkPhysicalDeviceShaderAtomicInt64FeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderAtomicInt64FeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderAtomicInt64FeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderAtomicInt64FeaturesKHR(address, container);
     }
 
     /**

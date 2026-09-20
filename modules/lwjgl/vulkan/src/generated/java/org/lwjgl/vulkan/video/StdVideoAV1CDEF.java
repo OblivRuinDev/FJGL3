@@ -67,13 +67,8 @@ public class StdVideoAV1CDEF extends Struct<StdVideoAV1CDEF> implements NativeRe
         CDEF_UV_SEC_STRENGTH = layout.offsetof(5);
     }
 
-    protected StdVideoAV1CDEF(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1CDEF(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1CDEF create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1CDEF(address, container);
     }
 
     /**

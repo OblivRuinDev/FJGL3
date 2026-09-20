@@ -68,13 +68,8 @@ public class SDL_UserEvent extends Struct<SDL_UserEvent> implements NativeResour
         DATA2 = layout.offsetof(6);
     }
 
-    protected SDL_UserEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_UserEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_UserEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_UserEvent(address, container);
     }
 
     /**

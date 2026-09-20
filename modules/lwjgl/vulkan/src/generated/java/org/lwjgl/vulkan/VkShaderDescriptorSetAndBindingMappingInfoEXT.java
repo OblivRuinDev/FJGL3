@@ -57,13 +57,8 @@ public class VkShaderDescriptorSetAndBindingMappingInfoEXT extends Struct<VkShad
         PMAPPINGS = layout.offsetof(3);
     }
 
-    protected VkShaderDescriptorSetAndBindingMappingInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkShaderDescriptorSetAndBindingMappingInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkShaderDescriptorSetAndBindingMappingInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkShaderDescriptorSetAndBindingMappingInfoEXT(address, container);
     }
 
     /**

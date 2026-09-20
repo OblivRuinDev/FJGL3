@@ -49,13 +49,8 @@ public class MeshoptVertexFetchStatistics extends Struct<MeshoptVertexFetchStati
         OVERFETCH = layout.offsetof(1);
     }
 
-    protected MeshoptVertexFetchStatistics(long address, @Nullable ByteBuffer container) {
+    public MeshoptVertexFetchStatistics(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MeshoptVertexFetchStatistics create(long address, @Nullable ByteBuffer container) {
-        return new MeshoptVertexFetchStatistics(address, container);
     }
 
     /**

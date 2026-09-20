@@ -71,13 +71,8 @@ public class XrHandMeshMSFT extends Struct<XrHandMeshMSFT> implements NativeReso
         VERTEXBUFFER = layout.offsetof(6);
     }
 
-    protected XrHandMeshMSFT(long address, @Nullable ByteBuffer container) {
+    public XrHandMeshMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandMeshMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandMeshMSFT(address, container);
     }
 
     /**

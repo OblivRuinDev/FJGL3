@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceShaderFloatControls2FeaturesKHR extends VkPhysicalDeviceShaderFloatControls2Features {
 
-    protected VkPhysicalDeviceShaderFloatControls2FeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderFloatControls2FeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderFloatControls2FeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderFloatControls2FeaturesKHR(address, container);
     }
 
     /**

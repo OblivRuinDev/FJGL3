@@ -96,13 +96,8 @@ public class VkPhysicalDeviceVulkan11Features extends Struct<VkPhysicalDeviceVul
         SHADERDRAWPARAMETERS = layout.offsetof(13);
     }
 
-    protected VkPhysicalDeviceVulkan11Features(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVulkan11Features(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVulkan11Features create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVulkan11Features(address, container);
     }
 
     /**

@@ -64,13 +64,8 @@ public class LZ4FPreferences extends Struct<LZ4FPreferences> implements NativeRe
         RESERVED = layout.offsetof(4);
     }
 
-    protected LZ4FPreferences(long address, @Nullable ByteBuffer container) {
+    public LZ4FPreferences(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LZ4FPreferences create(long address, @Nullable ByteBuffer container) {
-        return new LZ4FPreferences(address, container);
     }
 
     /**

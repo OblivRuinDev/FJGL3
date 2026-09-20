@@ -64,13 +64,8 @@ public class VkTilePropertiesQCOM extends Struct<VkTilePropertiesQCOM> implement
         ORIGIN = layout.offsetof(4);
     }
 
-    protected VkTilePropertiesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkTilePropertiesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTilePropertiesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkTilePropertiesQCOM(address, container);
     }
 
     /**

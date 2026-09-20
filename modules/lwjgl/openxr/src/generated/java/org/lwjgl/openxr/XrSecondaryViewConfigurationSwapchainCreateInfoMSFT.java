@@ -52,13 +52,8 @@ public class XrSecondaryViewConfigurationSwapchainCreateInfoMSFT extends Struct<
         VIEWCONFIGURATIONTYPE = layout.offsetof(2);
     }
 
-    protected XrSecondaryViewConfigurationSwapchainCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSecondaryViewConfigurationSwapchainCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSecondaryViewConfigurationSwapchainCreateInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSecondaryViewConfigurationSwapchainCreateInfoMSFT(address, container);
     }
 
     /**

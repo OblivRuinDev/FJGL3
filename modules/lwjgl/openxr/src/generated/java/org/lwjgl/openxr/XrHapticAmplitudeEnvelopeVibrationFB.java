@@ -61,13 +61,8 @@ public class XrHapticAmplitudeEnvelopeVibrationFB extends Struct<XrHapticAmplitu
         AMPLITUDES = layout.offsetof(4);
     }
 
-    protected XrHapticAmplitudeEnvelopeVibrationFB(long address, @Nullable ByteBuffer container) {
+    public XrHapticAmplitudeEnvelopeVibrationFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHapticAmplitudeEnvelopeVibrationFB create(long address, @Nullable ByteBuffer container) {
-        return new XrHapticAmplitudeEnvelopeVibrationFB(address, container);
     }
 
     /**

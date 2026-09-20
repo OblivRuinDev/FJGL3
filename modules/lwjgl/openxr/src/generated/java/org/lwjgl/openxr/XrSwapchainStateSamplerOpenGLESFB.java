@@ -92,13 +92,8 @@ public class XrSwapchainStateSamplerOpenGLESFB extends Struct<XrSwapchainStateSa
         BORDERCOLOR = layout.offsetof(11);
     }
 
-    protected XrSwapchainStateSamplerOpenGLESFB(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainStateSamplerOpenGLESFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainStateSamplerOpenGLESFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainStateSamplerOpenGLESFB(address, container);
     }
 
     /**

@@ -71,13 +71,8 @@ public class ParSLConfig extends Struct<ParSLConfig> implements NativeResource {
         MITER_LIMIT = layout.offsetof(6);
     }
 
-    protected ParSLConfig(long address, @Nullable ByteBuffer container) {
+    public ParSLConfig(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ParSLConfig create(long address, @Nullable ByteBuffer container) {
-        return new ParSLConfig(address, container);
     }
 
     /**

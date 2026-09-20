@@ -57,13 +57,8 @@ public class XrSpatialDiscoveryPersistenceUuidFilterEXT extends Struct<XrSpatial
         PERSISTEDUUIDS = layout.offsetof(3);
     }
 
-    protected XrSpatialDiscoveryPersistenceUuidFilterEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialDiscoveryPersistenceUuidFilterEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialDiscoveryPersistenceUuidFilterEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialDiscoveryPersistenceUuidFilterEXT(address, container);
     }
 
     /**

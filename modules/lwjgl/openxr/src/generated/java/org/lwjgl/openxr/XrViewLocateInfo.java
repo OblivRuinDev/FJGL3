@@ -61,13 +61,8 @@ public class XrViewLocateInfo extends Struct<XrViewLocateInfo> implements Native
         SPACE = layout.offsetof(4);
     }
 
-    protected XrViewLocateInfo(long address, @Nullable ByteBuffer container) {
+    public XrViewLocateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrViewLocateInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrViewLocateInfo(address, container);
     }
 
     /**

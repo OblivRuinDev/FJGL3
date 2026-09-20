@@ -68,13 +68,8 @@ public class VkPhysicalDeviceSparseImageFormatInfo2 extends Struct<VkPhysicalDev
         TILING = layout.offsetof(6);
     }
 
-    protected VkPhysicalDeviceSparseImageFormatInfo2(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSparseImageFormatInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSparseImageFormatInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSparseImageFormatInfo2(address, container);
     }
 
     /**

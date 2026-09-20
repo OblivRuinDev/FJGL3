@@ -69,13 +69,8 @@ public class hb_var_num_t extends Struct<hb_var_num_t> implements NativeResource
         I8 = layout.offsetof(6);
     }
 
-    protected hb_var_num_t(long address, @Nullable ByteBuffer container) {
+    public hb_var_num_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_var_num_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_var_num_t(address, container);
     }
 
     /**

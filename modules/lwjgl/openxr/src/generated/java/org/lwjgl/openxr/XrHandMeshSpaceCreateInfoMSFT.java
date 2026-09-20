@@ -58,13 +58,8 @@ public class XrHandMeshSpaceCreateInfoMSFT extends Struct<XrHandMeshSpaceCreateI
         POSEINHANDMESHSPACE = layout.offsetof(3);
     }
 
-    protected XrHandMeshSpaceCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrHandMeshSpaceCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandMeshSpaceCreateInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandMeshSpaceCreateInfoMSFT(address, container);
     }
 
     /**

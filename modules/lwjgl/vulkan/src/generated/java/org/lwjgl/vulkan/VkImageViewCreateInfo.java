@@ -75,13 +75,8 @@ public class VkImageViewCreateInfo extends Struct<VkImageViewCreateInfo> impleme
         SUBRESOURCERANGE = layout.offsetof(7);
     }
 
-    protected VkImageViewCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkImageViewCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageViewCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkImageViewCreateInfo(address, container);
     }
 
     /**

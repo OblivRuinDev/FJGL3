@@ -52,13 +52,8 @@ public class VkPhysicalDevicePushConstantBankFeaturesNV extends Struct<VkPhysica
         PUSHCONSTANTBANK = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePushConstantBankFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePushConstantBankFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePushConstantBankFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePushConstantBankFeaturesNV(address, container);
     }
 
     /**

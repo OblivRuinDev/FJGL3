@@ -59,13 +59,8 @@ public class StdVideoH264ScalingLists extends Struct<StdVideoH264ScalingLists> i
         SCALINGLIST8X8 = layout.offsetof(3);
     }
 
-    protected StdVideoH264ScalingLists(long address, @Nullable ByteBuffer container) {
+    public StdVideoH264ScalingLists(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH264ScalingLists create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH264ScalingLists(address, container);
     }
 
     /**

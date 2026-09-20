@@ -52,13 +52,8 @@ public class XrFuturePollResultEXT extends Struct<XrFuturePollResultEXT> impleme
         STATE = layout.offsetof(2);
     }
 
-    protected XrFuturePollResultEXT(long address, @Nullable ByteBuffer container) {
+    public XrFuturePollResultEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFuturePollResultEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrFuturePollResultEXT(address, container);
     }
 
     /**

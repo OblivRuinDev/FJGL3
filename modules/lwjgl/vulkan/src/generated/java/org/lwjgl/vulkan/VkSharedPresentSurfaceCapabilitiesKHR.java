@@ -52,13 +52,8 @@ public class VkSharedPresentSurfaceCapabilitiesKHR extends Struct<VkSharedPresen
         SHAREDPRESENTSUPPORTEDUSAGEFLAGS = layout.offsetof(2);
     }
 
-    protected VkSharedPresentSurfaceCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkSharedPresentSurfaceCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSharedPresentSurfaceCapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSharedPresentSurfaceCapabilitiesKHR(address, container);
     }
 
     /**

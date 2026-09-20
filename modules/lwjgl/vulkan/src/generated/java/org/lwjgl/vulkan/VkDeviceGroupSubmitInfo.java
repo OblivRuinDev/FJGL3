@@ -73,13 +73,8 @@ public class VkDeviceGroupSubmitInfo extends Struct<VkDeviceGroupSubmitInfo> imp
         PSIGNALSEMAPHOREDEVICEINDICES = layout.offsetof(7);
     }
 
-    protected VkDeviceGroupSubmitInfo(long address, @Nullable ByteBuffer container) {
+    public VkDeviceGroupSubmitInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceGroupSubmitInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceGroupSubmitInfo(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkImagePlaneMemoryRequirementsInfo extends Struct<VkImagePlaneMemor
         PLANEASPECT = layout.offsetof(2);
     }
 
-    protected VkImagePlaneMemoryRequirementsInfo(long address, @Nullable ByteBuffer container) {
+    public VkImagePlaneMemoryRequirementsInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImagePlaneMemoryRequirementsInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkImagePlaneMemoryRequirementsInfo(address, container);
     }
 
     /**

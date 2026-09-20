@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderConstantDataFeaturesKHR extends Struct<VkPhys
         SHADERCONSTANTDATA = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderConstantDataFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderConstantDataFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderConstantDataFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderConstantDataFeaturesKHR(address, container);
     }
 
     /**

@@ -81,13 +81,8 @@ public class FT_Module_Class extends Struct<FT_Module_Class> implements NativeRe
         GET_INTERFACE = layout.offsetof(8);
     }
 
-    protected FT_Module_Class(long address, @Nullable ByteBuffer container) {
+    public FT_Module_Class(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Module_Class create(long address, @Nullable ByteBuffer container) {
-        return new FT_Module_Class(address, container);
     }
 
     /**

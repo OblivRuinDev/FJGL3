@@ -58,13 +58,8 @@ public class STBTTBitmap extends Struct<STBTTBitmap> implements NativeResource {
         PIXELS = layout.offsetof(3);
     }
 
-    protected STBTTBitmap(long address, @Nullable ByteBuffer container) {
+    public STBTTBitmap(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBTTBitmap create(long address, @Nullable ByteBuffer container) {
-        return new STBTTBitmap(address, container);
     }
 
     /**

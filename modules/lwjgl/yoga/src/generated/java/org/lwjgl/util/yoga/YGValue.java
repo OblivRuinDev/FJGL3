@@ -48,13 +48,8 @@ public class YGValue extends Struct<YGValue> implements NativeResource {
         UNIT = layout.offsetof(1);
     }
 
-    protected YGValue(long address, @Nullable ByteBuffer container) {
+    public YGValue(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected YGValue create(long address, @Nullable ByteBuffer container) {
-        return new YGValue(address, container);
     }
 
     /**

@@ -50,13 +50,8 @@ public class FT_Incremental_Interface extends Struct<FT_Incremental_Interface> i
         OBJECT = layout.offsetof(1);
     }
 
-    protected FT_Incremental_Interface(long address, @Nullable ByteBuffer container) {
+    public FT_Incremental_Interface(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Incremental_Interface create(long address, @Nullable ByteBuffer container) {
-        return new FT_Incremental_Interface(address, container);
     }
 
     /**

@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXT extends VkPipelineShaderStageRequiredSubgroupSizeCreateInfo {
 
-    protected VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXT(address, container);
     }
 
     /**

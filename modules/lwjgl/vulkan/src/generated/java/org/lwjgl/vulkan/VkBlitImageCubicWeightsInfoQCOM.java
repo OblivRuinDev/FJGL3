@@ -52,13 +52,8 @@ public class VkBlitImageCubicWeightsInfoQCOM extends Struct<VkBlitImageCubicWeig
         CUBICWEIGHTS = layout.offsetof(2);
     }
 
-    protected VkBlitImageCubicWeightsInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkBlitImageCubicWeightsInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBlitImageCubicWeightsInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkBlitImageCubicWeightsInfoQCOM(address, container);
     }
 
     /**

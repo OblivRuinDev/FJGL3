@@ -62,13 +62,8 @@ public class XrEventDataStartColocationAdvertisementCompleteMETA extends Struct<
         ADVERTISEMENTUUID = layout.offsetof(4);
     }
 
-    protected XrEventDataStartColocationAdvertisementCompleteMETA(long address, @Nullable ByteBuffer container) {
+    public XrEventDataStartColocationAdvertisementCompleteMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataStartColocationAdvertisementCompleteMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataStartColocationAdvertisementCompleteMETA(address, container);
     }
 
     /**

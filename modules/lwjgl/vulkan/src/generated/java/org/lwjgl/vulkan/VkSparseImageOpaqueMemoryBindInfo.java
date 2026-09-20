@@ -53,13 +53,8 @@ public class VkSparseImageOpaqueMemoryBindInfo extends Struct<VkSparseImageOpaqu
         PBINDS = layout.offsetof(2);
     }
 
-    protected VkSparseImageOpaqueMemoryBindInfo(long address, @Nullable ByteBuffer container) {
+    public VkSparseImageOpaqueMemoryBindInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSparseImageOpaqueMemoryBindInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkSparseImageOpaqueMemoryBindInfo(address, container);
     }
 
     /**

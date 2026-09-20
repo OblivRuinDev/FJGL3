@@ -72,13 +72,8 @@ public class XrSpatialComponentDataQueryResultEXT extends Struct<XrSpatialCompon
         ENTITYSTATES = layout.offsetof(7);
     }
 
-    protected XrSpatialComponentDataQueryResultEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentDataQueryResultEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentDataQueryResultEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentDataQueryResultEXT(address, container);
     }
 
     /**

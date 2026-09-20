@@ -49,13 +49,8 @@ public class BGFXVideoDecoderAU extends Struct<BGFXVideoDecoderAU> implements Na
         PTSUS = layout.offsetof(1);
     }
 
-    protected BGFXVideoDecoderAU(long address, @Nullable ByteBuffer container) {
+    public BGFXVideoDecoderAU(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXVideoDecoderAU create(long address, @Nullable ByteBuffer container) {
-        return new BGFXVideoDecoderAU(address, container);
     }
 
     /**

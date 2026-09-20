@@ -49,13 +49,8 @@ public class XrActionSuggestedBinding extends Struct<XrActionSuggestedBinding> i
         BINDING = layout.offsetof(1);
     }
 
-    protected XrActionSuggestedBinding(long address, @Nullable ByteBuffer container) {
+    public XrActionSuggestedBinding(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrActionSuggestedBinding create(long address, @Nullable ByteBuffer container) {
-        return new XrActionSuggestedBinding(address, container);
     }
 
     /**

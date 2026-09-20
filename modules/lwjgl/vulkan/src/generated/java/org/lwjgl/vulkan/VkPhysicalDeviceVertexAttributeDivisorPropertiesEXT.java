@@ -52,13 +52,8 @@ public class VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT extends Struct<
         MAXVERTEXATTRIBDIVISOR = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT(address, container);
     }
 
     /**

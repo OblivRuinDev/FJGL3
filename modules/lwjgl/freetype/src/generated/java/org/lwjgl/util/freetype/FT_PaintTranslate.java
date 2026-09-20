@@ -52,13 +52,8 @@ public class FT_PaintTranslate extends Struct<FT_PaintTranslate> {
         DY = layout.offsetof(2);
     }
 
-    protected FT_PaintTranslate(long address, @Nullable ByteBuffer container) {
+    public FT_PaintTranslate(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintTranslate create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintTranslate(address, container);
     }
 
     /**

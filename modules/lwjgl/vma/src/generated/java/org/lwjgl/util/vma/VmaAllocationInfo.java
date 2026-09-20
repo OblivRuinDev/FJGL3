@@ -68,13 +68,8 @@ public class VmaAllocationInfo extends Struct<VmaAllocationInfo> implements Nati
         PNAME = layout.offsetof(6);
     }
 
-    protected VmaAllocationInfo(long address, @Nullable ByteBuffer container) {
+    public VmaAllocationInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaAllocationInfo create(long address, @Nullable ByteBuffer container) {
-        return new VmaAllocationInfo(address, container);
     }
 
     /**

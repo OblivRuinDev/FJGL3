@@ -57,13 +57,8 @@ public class VkCoarseSampleOrderCustomNV extends Struct<VkCoarseSampleOrderCusto
         PSAMPLELOCATIONS = layout.offsetof(3);
     }
 
-    protected VkCoarseSampleOrderCustomNV(long address, @Nullable ByteBuffer container) {
+    public VkCoarseSampleOrderCustomNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCoarseSampleOrderCustomNV create(long address, @Nullable ByteBuffer container) {
-        return new VkCoarseSampleOrderCustomNV(address, container);
     }
 
     /**

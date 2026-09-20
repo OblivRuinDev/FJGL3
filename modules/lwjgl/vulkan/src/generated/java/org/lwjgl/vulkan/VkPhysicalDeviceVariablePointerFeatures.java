@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceVariablePointerFeatures extends VkPhysicalDeviceVariablePointersFeatures {
 
-    protected VkPhysicalDeviceVariablePointerFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVariablePointerFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVariablePointerFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVariablePointerFeatures(address, container);
     }
 
     /**

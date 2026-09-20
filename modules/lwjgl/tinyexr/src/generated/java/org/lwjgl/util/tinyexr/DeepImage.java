@@ -67,13 +67,8 @@ public class DeepImage extends Struct<DeepImage> implements NativeResource {
         HEIGHT = layout.offsetof(5);
     }
 
-    protected DeepImage(long address, @Nullable ByteBuffer container) {
+    public DeepImage(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected DeepImage create(long address, @Nullable ByteBuffer container) {
-        return new DeepImage(address, container);
     }
 
     /**

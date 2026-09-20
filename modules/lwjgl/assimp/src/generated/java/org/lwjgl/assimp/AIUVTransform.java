@@ -55,13 +55,8 @@ public class AIUVTransform extends Struct<AIUVTransform> implements NativeResour
         MROTATION = layout.offsetof(2);
     }
 
-    protected AIUVTransform(long address, @Nullable ByteBuffer container) {
+    public AIUVTransform(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIUVTransform create(long address, @Nullable ByteBuffer container) {
-        return new AIUVTransform(address, container);
     }
 
     /**

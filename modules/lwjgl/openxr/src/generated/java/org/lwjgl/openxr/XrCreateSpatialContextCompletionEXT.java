@@ -56,13 +56,8 @@ public class XrCreateSpatialContextCompletionEXT extends Struct<XrCreateSpatialC
         SPATIALCONTEXT = layout.offsetof(3);
     }
 
-    protected XrCreateSpatialContextCompletionEXT(long address, @Nullable ByteBuffer container) {
+    public XrCreateSpatialContextCompletionEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCreateSpatialContextCompletionEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrCreateSpatialContextCompletionEXT(address, container);
     }
 
     /**

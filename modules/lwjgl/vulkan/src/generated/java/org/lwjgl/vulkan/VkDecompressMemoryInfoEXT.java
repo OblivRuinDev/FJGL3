@@ -61,13 +61,8 @@ public class VkDecompressMemoryInfoEXT extends Struct<VkDecompressMemoryInfoEXT>
         PREGIONS = layout.offsetof(4);
     }
 
-    protected VkDecompressMemoryInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDecompressMemoryInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDecompressMemoryInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDecompressMemoryInfoEXT(address, container);
     }
 
     /**

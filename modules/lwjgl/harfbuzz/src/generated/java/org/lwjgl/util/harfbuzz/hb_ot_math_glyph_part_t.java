@@ -60,13 +60,8 @@ public class hb_ot_math_glyph_part_t extends Struct<hb_ot_math_glyph_part_t> imp
         FLAGS = layout.offsetof(4);
     }
 
-    protected hb_ot_math_glyph_part_t(long address, @Nullable ByteBuffer container) {
+    public hb_ot_math_glyph_part_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_ot_math_glyph_part_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_ot_math_glyph_part_t(address, container);
     }
 
     /**

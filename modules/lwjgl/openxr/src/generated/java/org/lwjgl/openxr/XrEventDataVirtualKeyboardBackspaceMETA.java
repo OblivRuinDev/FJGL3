@@ -52,13 +52,8 @@ public class XrEventDataVirtualKeyboardBackspaceMETA extends Struct<XrEventDataV
         KEYBOARD = layout.offsetof(2);
     }
 
-    protected XrEventDataVirtualKeyboardBackspaceMETA(long address, @Nullable ByteBuffer container) {
+    public XrEventDataVirtualKeyboardBackspaceMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataVirtualKeyboardBackspaceMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataVirtualKeyboardBackspaceMETA(address, container);
     }
 
     /**

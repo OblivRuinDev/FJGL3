@@ -56,13 +56,8 @@ public class XrSpaceComponentStatusFB extends Struct<XrSpaceComponentStatusFB> i
         CHANGEPENDING = layout.offsetof(3);
     }
 
-    protected XrSpaceComponentStatusFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceComponentStatusFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceComponentStatusFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceComponentStatusFB(address, container);
     }
 
     /**

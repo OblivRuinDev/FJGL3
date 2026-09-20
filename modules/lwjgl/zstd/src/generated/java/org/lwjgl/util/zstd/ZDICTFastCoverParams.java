@@ -75,13 +75,8 @@ public class ZDICTFastCoverParams extends Struct<ZDICTFastCoverParams> implement
         ZPARAMS = layout.offsetof(7);
     }
 
-    protected ZDICTFastCoverParams(long address, @Nullable ByteBuffer container) {
+    public ZDICTFastCoverParams(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZDICTFastCoverParams create(long address, @Nullable ByteBuffer container) {
-        return new ZDICTFastCoverParams(address, container);
     }
 
     /**

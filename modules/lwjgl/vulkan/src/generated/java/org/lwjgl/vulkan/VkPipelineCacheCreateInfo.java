@@ -61,13 +61,8 @@ public class VkPipelineCacheCreateInfo extends Struct<VkPipelineCacheCreateInfo>
         PINITIALDATA = layout.offsetof(4);
     }
 
-    protected VkPipelineCacheCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineCacheCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineCacheCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineCacheCreateInfo(address, container);
     }
 
     /**

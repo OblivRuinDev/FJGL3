@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDeviceFaultAddressInfoEXT extends VkDeviceFaultAddressInfoKHR {
 
-    protected VkDeviceFaultAddressInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDeviceFaultAddressInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceFaultAddressInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceFaultAddressInfoEXT(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkCheckpointData2NV extends Struct<VkCheckpointData2NV> implements 
         PCHECKPOINTMARKER = layout.offsetof(3);
     }
 
-    protected VkCheckpointData2NV(long address, @Nullable ByteBuffer container) {
+    public VkCheckpointData2NV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCheckpointData2NV create(long address, @Nullable ByteBuffer container) {
-        return new VkCheckpointData2NV(address, container);
     }
 
     /**

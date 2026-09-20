@@ -64,13 +64,8 @@ public class VkPhysicalDeviceFaultFeaturesKHR extends Struct<VkPhysicalDeviceFau
         DEVICEFAULTDEVICELOSTONMASKED = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceFaultFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFaultFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFaultFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFaultFeaturesKHR(address, container);
     }
 
     /**

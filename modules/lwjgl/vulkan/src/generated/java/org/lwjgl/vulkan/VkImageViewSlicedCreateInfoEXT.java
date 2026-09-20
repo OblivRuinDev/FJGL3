@@ -56,13 +56,8 @@ public class VkImageViewSlicedCreateInfoEXT extends Struct<VkImageViewSlicedCrea
         SLICECOUNT = layout.offsetof(3);
     }
 
-    protected VkImageViewSlicedCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkImageViewSlicedCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageViewSlicedCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImageViewSlicedCreateInfoEXT(address, container);
     }
 
     /**

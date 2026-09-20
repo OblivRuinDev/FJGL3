@@ -71,13 +71,8 @@ public class VkDrawIndirectCount2InfoKHR extends Struct<VkDrawIndirectCount2Info
         MAXDRAWCOUNT = layout.offsetof(6);
     }
 
-    protected VkDrawIndirectCount2InfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDrawIndirectCount2InfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDrawIndirectCount2InfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDrawIndirectCount2InfoKHR(address, container);
     }
 
     /**

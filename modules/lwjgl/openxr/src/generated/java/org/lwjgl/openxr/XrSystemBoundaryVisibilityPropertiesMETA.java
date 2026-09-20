@@ -52,13 +52,8 @@ public class XrSystemBoundaryVisibilityPropertiesMETA extends Struct<XrSystemBou
         SUPPORTSBOUNDARYVISIBILITY = layout.offsetof(2);
     }
 
-    protected XrSystemBoundaryVisibilityPropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemBoundaryVisibilityPropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemBoundaryVisibilityPropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemBoundaryVisibilityPropertiesMETA(address, container);
     }
 
     /**

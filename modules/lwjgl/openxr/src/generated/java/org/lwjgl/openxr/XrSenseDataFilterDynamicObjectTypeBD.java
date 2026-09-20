@@ -57,13 +57,8 @@ public class XrSenseDataFilterDynamicObjectTypeBD extends Struct<XrSenseDataFilt
         TYPES = layout.offsetof(3);
     }
 
-    protected XrSenseDataFilterDynamicObjectTypeBD(long address, @Nullable ByteBuffer container) {
+    public XrSenseDataFilterDynamicObjectTypeBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSenseDataFilterDynamicObjectTypeBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSenseDataFilterDynamicObjectTypeBD(address, container);
     }
 
     /**

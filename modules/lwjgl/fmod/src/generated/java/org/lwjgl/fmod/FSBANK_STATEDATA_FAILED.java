@@ -49,13 +49,8 @@ public class FSBANK_STATEDATA_FAILED extends Struct<FSBANK_STATEDATA_FAILED> imp
         ERRORSTRING = layout.offsetof(1);
     }
 
-    protected FSBANK_STATEDATA_FAILED(long address, @Nullable ByteBuffer container) {
+    public FSBANK_STATEDATA_FAILED(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FSBANK_STATEDATA_FAILED create(long address, @Nullable ByteBuffer container) {
-        return new FSBANK_STATEDATA_FAILED(address, container);
     }
 
     /**

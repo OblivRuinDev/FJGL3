@@ -74,13 +74,8 @@ public class VkVideoFormatPropertiesKHR extends Struct<VkVideoFormatPropertiesKH
         IMAGEUSAGEFLAGS = layout.offsetof(7);
     }
 
-    protected VkVideoFormatPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoFormatPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoFormatPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoFormatPropertiesKHR(address, container);
     }
 
     /**

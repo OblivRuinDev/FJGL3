@@ -52,13 +52,8 @@ public class XrKeyboardTrackingQueryFB extends Struct<XrKeyboardTrackingQueryFB>
         FLAGS = layout.offsetof(2);
     }
 
-    protected XrKeyboardTrackingQueryFB(long address, @Nullable ByteBuffer container) {
+    public XrKeyboardTrackingQueryFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrKeyboardTrackingQueryFB create(long address, @Nullable ByteBuffer container) {
-        return new XrKeyboardTrackingQueryFB(address, container);
     }
 
     /**

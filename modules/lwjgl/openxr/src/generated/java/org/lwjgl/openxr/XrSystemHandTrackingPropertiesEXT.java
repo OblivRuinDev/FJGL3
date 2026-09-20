@@ -52,13 +52,8 @@ public class XrSystemHandTrackingPropertiesEXT extends Struct<XrSystemHandTracki
         SUPPORTSHANDTRACKING = layout.offsetof(2);
     }
 
-    protected XrSystemHandTrackingPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public XrSystemHandTrackingPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemHandTrackingPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemHandTrackingPropertiesEXT(address, container);
     }
 
     /**

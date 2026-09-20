@@ -75,13 +75,8 @@ public class VkVideoDecodeH265SessionParametersAddInfoKHR extends Struct<VkVideo
         PSTDPPSS = layout.offsetof(7);
     }
 
-    protected VkVideoDecodeH265SessionParametersAddInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeH265SessionParametersAddInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeH265SessionParametersAddInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeH265SessionParametersAddInfoKHR(address, container);
     }
 
     /**

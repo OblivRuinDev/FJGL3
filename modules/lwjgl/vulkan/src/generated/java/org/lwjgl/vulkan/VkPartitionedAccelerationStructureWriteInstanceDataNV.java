@@ -79,13 +79,8 @@ public class VkPartitionedAccelerationStructureWriteInstanceDataNV extends Struc
         ACCELERATIONSTRUCTURE = layout.offsetof(8);
     }
 
-    protected VkPartitionedAccelerationStructureWriteInstanceDataNV(long address, @Nullable ByteBuffer container) {
+    public VkPartitionedAccelerationStructureWriteInstanceDataNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPartitionedAccelerationStructureWriteInstanceDataNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPartitionedAccelerationStructureWriteInstanceDataNV(address, container);
     }
 
     /**

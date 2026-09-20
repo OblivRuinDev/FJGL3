@@ -108,13 +108,8 @@ public class RMTProperty extends Struct<RMTProperty> implements NativeResource {
         UNIQUEID = layout.offsetof(15);
     }
 
-    protected RMTProperty(long address, @Nullable ByteBuffer container) {
+    public RMTProperty(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected RMTProperty create(long address, @Nullable ByteBuffer container) {
-        return new RMTProperty(address, container);
     }
 
     /**

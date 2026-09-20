@@ -86,13 +86,8 @@ public class VkAccelerationStructureBuildGeometryInfoKHR extends Struct<VkAccele
         SCRATCHDATA = layout.offsetof(10);
     }
 
-    protected VkAccelerationStructureBuildGeometryInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureBuildGeometryInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureBuildGeometryInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureBuildGeometryInfoKHR(address, container);
     }
 
     /**

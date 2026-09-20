@@ -83,13 +83,8 @@ public class XrCompositionLayerSpaceWarpInfoFB extends Struct<XrCompositionLayer
         FARZ = layout.offsetof(9);
     }
 
-    protected XrCompositionLayerSpaceWarpInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerSpaceWarpInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerSpaceWarpInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerSpaceWarpInfoFB(address, container);
     }
 
     /**

@@ -94,13 +94,8 @@ public class VkSurfaceCapabilities2EXT extends Struct<VkSurfaceCapabilities2EXT>
         SUPPORTEDSURFACECOUNTERS = layout.offsetof(12);
     }
 
-    protected VkSurfaceCapabilities2EXT(long address, @Nullable ByteBuffer container) {
+    public VkSurfaceCapabilities2EXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfaceCapabilities2EXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfaceCapabilities2EXT(address, container);
     }
 
     /**

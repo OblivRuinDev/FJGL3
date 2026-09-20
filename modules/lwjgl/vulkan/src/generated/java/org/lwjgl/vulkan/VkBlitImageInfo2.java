@@ -77,13 +77,8 @@ public class VkBlitImageInfo2 extends Struct<VkBlitImageInfo2> implements Native
         FILTER = layout.offsetof(8);
     }
 
-    protected VkBlitImageInfo2(long address, @Nullable ByteBuffer container) {
+    public VkBlitImageInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBlitImageInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VkBlitImageInfo2(address, container);
     }
 
     /**

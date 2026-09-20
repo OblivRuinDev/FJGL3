@@ -83,13 +83,8 @@ public class StdVideoEncodeH264SliceHeader extends Struct<StdVideoEncodeH264Slic
         PWEIGHTTABLE = layout.offsetof(9);
     }
 
-    protected StdVideoEncodeH264SliceHeader(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH264SliceHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH264SliceHeader create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH264SliceHeader(address, container);
     }
 
     /**

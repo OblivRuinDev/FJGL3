@@ -56,13 +56,8 @@ public class VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT extends St
         MAXSHADERBINDINGTABLERECORDINDEX = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class SDL_GPUBufferCreateInfo extends Struct<SDL_GPUBufferCreateInfo> imp
         PROPS = layout.offsetof(2);
     }
 
-    protected SDL_GPUBufferCreateInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUBufferCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUBufferCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUBufferCreateInfo(address, container);
     }
 
     /**

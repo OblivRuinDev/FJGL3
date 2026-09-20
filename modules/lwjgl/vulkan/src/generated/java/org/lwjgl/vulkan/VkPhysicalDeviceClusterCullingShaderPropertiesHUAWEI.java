@@ -65,13 +65,8 @@ public class VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI extends Struct
         INDIRECTBUFFEROFFSETALIGNMENT = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(address, container);
     }
 
     /**

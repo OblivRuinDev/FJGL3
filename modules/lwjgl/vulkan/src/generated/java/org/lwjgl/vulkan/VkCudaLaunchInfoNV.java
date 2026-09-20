@@ -96,13 +96,8 @@ public class VkCudaLaunchInfoNV extends Struct<VkCudaLaunchInfoNV> implements Na
         PEXTRAS = layout.offsetof(13);
     }
 
-    protected VkCudaLaunchInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkCudaLaunchInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCudaLaunchInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkCudaLaunchInfoNV(address, container);
     }
 
     /**

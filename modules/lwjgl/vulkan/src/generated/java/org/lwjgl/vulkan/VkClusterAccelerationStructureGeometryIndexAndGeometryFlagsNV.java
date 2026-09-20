@@ -46,13 +46,8 @@ public class VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV exten
         BITFIELD0 = layout.offsetof(0);
     }
 
-    protected VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV(address, container);
     }
 
     /**

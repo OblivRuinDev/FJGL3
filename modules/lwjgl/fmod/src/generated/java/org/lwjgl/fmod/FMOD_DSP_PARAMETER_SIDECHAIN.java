@@ -44,13 +44,8 @@ public class FMOD_DSP_PARAMETER_SIDECHAIN extends Struct<FMOD_DSP_PARAMETER_SIDE
         SIDECHAINENABLE = layout.offsetof(0);
     }
 
-    protected FMOD_DSP_PARAMETER_SIDECHAIN(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_PARAMETER_SIDECHAIN(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_PARAMETER_SIDECHAIN create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_PARAMETER_SIDECHAIN(address, container);
     }
 
     /**

@@ -88,13 +88,8 @@ public class VkCooperativeMatrixFlexibleDimensionsPropertiesNV extends Struct<Vk
         WORKGROUPINVOCATIONS = layout.offsetof(11);
     }
 
-    protected VkCooperativeMatrixFlexibleDimensionsPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkCooperativeMatrixFlexibleDimensionsPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCooperativeMatrixFlexibleDimensionsPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkCooperativeMatrixFlexibleDimensionsPropertiesNV(address, container);
     }
 
     /**

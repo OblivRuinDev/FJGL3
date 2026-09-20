@@ -57,13 +57,8 @@ public class VkVideoProfileListInfoKHR extends Struct<VkVideoProfileListInfoKHR>
         PPROFILES = layout.offsetof(3);
     }
 
-    protected VkVideoProfileListInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoProfileListInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoProfileListInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoProfileListInfoKHR(address, container);
     }
 
     /**

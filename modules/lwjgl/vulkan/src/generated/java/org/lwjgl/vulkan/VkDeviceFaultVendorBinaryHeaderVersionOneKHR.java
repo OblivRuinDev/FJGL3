@@ -87,13 +87,8 @@ public class VkDeviceFaultVendorBinaryHeaderVersionOneKHR extends Struct<VkDevic
         APIVERSION = layout.offsetof(10);
     }
 
-    protected VkDeviceFaultVendorBinaryHeaderVersionOneKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceFaultVendorBinaryHeaderVersionOneKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceFaultVendorBinaryHeaderVersionOneKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceFaultVendorBinaryHeaderVersionOneKHR(address, container);
     }
 
     /**

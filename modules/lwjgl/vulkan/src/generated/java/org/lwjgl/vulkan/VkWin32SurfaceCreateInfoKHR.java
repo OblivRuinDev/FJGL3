@@ -63,13 +63,8 @@ public class VkWin32SurfaceCreateInfoKHR extends Struct<VkWin32SurfaceCreateInfo
         HWND = layout.offsetof(4);
     }
 
-    protected VkWin32SurfaceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkWin32SurfaceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkWin32SurfaceCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkWin32SurfaceCreateInfoKHR(address, container);
     }
 
     /**

@@ -54,13 +54,8 @@ public class VkImageSubresource2 extends Struct<VkImageSubresource2> implements 
         IMAGESUBRESOURCE = layout.offsetof(2);
     }
 
-    protected VkImageSubresource2(long address, @Nullable ByteBuffer container) {
+    public VkImageSubresource2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageSubresource2 create(long address, @Nullable ByteBuffer container) {
-        return new VkImageSubresource2(address, container);
     }
 
     /**

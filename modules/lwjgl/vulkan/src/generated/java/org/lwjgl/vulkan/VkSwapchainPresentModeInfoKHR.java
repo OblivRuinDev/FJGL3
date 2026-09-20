@@ -57,13 +57,8 @@ public class VkSwapchainPresentModeInfoKHR extends Struct<VkSwapchainPresentMode
         PPRESENTMODES = layout.offsetof(3);
     }
 
-    protected VkSwapchainPresentModeInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainPresentModeInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainPresentModeInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainPresentModeInfoKHR(address, container);
     }
 
     /**

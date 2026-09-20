@@ -52,13 +52,8 @@ public class XrFutureCancelInfoEXT extends Struct<XrFutureCancelInfoEXT> impleme
         FUTURE = layout.offsetof(2);
     }
 
-    protected XrFutureCancelInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrFutureCancelInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFutureCancelInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrFutureCancelInfoEXT(address, container);
     }
 
     /**

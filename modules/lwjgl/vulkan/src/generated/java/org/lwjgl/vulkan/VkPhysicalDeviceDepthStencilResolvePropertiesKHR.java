@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceDepthStencilResolvePropertiesKHR extends VkPhysicalDeviceDepthStencilResolveProperties {
 
-    protected VkPhysicalDeviceDepthStencilResolvePropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDepthStencilResolvePropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDepthStencilResolvePropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDepthStencilResolvePropertiesKHR(address, container);
     }
 
     /**

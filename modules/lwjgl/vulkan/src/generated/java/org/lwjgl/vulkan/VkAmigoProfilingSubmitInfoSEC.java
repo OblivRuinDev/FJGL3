@@ -56,13 +56,8 @@ public class VkAmigoProfilingSubmitInfoSEC extends Struct<VkAmigoProfilingSubmit
         SWAPBUFFERTIMESTAMP = layout.offsetof(3);
     }
 
-    protected VkAmigoProfilingSubmitInfoSEC(long address, @Nullable ByteBuffer container) {
+    public VkAmigoProfilingSubmitInfoSEC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAmigoProfilingSubmitInfoSEC create(long address, @Nullable ByteBuffer container) {
-        return new VkAmigoProfilingSubmitInfoSEC(address, container);
     }
 
     /**

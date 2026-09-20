@@ -58,13 +58,8 @@ public class VkQueueFamilyProperties extends Struct<VkQueueFamilyProperties> imp
         MINIMAGETRANSFERGRANULARITY = layout.offsetof(3);
     }
 
-    protected VkQueueFamilyProperties(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyProperties(address, container);
     }
 
     /**

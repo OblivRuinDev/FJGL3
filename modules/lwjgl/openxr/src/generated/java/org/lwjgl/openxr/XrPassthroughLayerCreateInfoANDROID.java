@@ -56,13 +56,8 @@ public class XrPassthroughLayerCreateInfoANDROID extends Struct<XrPassthroughLay
         INDEXCAPACITY = layout.offsetof(3);
     }
 
-    protected XrPassthroughLayerCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughLayerCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughLayerCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughLayerCreateInfoANDROID(address, container);
     }
 
     /**

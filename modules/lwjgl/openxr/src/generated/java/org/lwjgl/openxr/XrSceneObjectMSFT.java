@@ -44,13 +44,8 @@ public class XrSceneObjectMSFT extends Struct<XrSceneObjectMSFT> implements Nati
         OBJECTTYPE = layout.offsetof(0);
     }
 
-    protected XrSceneObjectMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneObjectMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneObjectMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneObjectMSFT(address, container);
     }
 
     /**

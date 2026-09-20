@@ -59,13 +59,8 @@ public class XrView extends Struct<XrView> implements NativeResource {
         FOV = layout.offsetof(3);
     }
 
-    protected XrView(long address, @Nullable ByteBuffer container) {
+    public XrView(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrView create(long address, @Nullable ByteBuffer container) {
-        return new XrView(address, container);
     }
 
     /**

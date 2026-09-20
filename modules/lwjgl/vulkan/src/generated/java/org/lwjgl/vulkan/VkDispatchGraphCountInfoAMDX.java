@@ -54,13 +54,8 @@ public class VkDispatchGraphCountInfoAMDX extends Struct<VkDispatchGraphCountInf
         STRIDE = layout.offsetof(2);
     }
 
-    protected VkDispatchGraphCountInfoAMDX(long address, @Nullable ByteBuffer container) {
+    public VkDispatchGraphCountInfoAMDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDispatchGraphCountInfoAMDX create(long address, @Nullable ByteBuffer container) {
-        return new VkDispatchGraphCountInfoAMDX(address, container);
     }
 
     /**

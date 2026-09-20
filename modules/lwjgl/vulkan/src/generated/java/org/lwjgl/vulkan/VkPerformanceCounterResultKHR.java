@@ -64,13 +64,8 @@ public class VkPerformanceCounterResultKHR extends Struct<VkPerformanceCounterRe
         FLOAT64 = layout.offsetof(5);
     }
 
-    protected VkPerformanceCounterResultKHR(long address, @Nullable ByteBuffer container) {
+    public VkPerformanceCounterResultKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerformanceCounterResultKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPerformanceCounterResultKHR(address, container);
     }
 
     /**

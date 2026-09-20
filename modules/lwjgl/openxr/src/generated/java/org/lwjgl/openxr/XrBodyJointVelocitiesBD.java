@@ -57,13 +57,8 @@ public class XrBodyJointVelocitiesBD extends Struct<XrBodyJointVelocitiesBD> imp
         VELOCITIES = layout.offsetof(3);
     }
 
-    protected XrBodyJointVelocitiesBD(long address, @Nullable ByteBuffer container) {
+    public XrBodyJointVelocitiesBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyJointVelocitiesBD create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyJointVelocitiesBD(address, container);
     }
 
     /**

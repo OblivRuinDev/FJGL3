@@ -52,13 +52,8 @@ public class XrSystemPassthroughPropertiesFB extends Struct<XrSystemPassthroughP
         SUPPORTSPASSTHROUGH = layout.offsetof(2);
     }
 
-    protected XrSystemPassthroughPropertiesFB(long address, @Nullable ByteBuffer container) {
+    public XrSystemPassthroughPropertiesFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemPassthroughPropertiesFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemPassthroughPropertiesFB(address, container);
     }
 
     /**

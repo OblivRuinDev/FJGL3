@@ -57,13 +57,8 @@ public class NkClipboard extends Struct<NkClipboard> implements NativeResource {
         COPY = layout.offsetof(2);
     }
 
-    protected NkClipboard(long address, @Nullable ByteBuffer container) {
+    public NkClipboard(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkClipboard create(long address, @Nullable ByteBuffer container) {
-        return new NkClipboard(address, container);
     }
 
     /**

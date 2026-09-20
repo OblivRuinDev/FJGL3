@@ -52,13 +52,8 @@ public class XrSystemUserPresencePropertiesEXT extends Struct<XrSystemUserPresen
         SUPPORTSUSERPRESENCE = layout.offsetof(2);
     }
 
-    protected XrSystemUserPresencePropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public XrSystemUserPresencePropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemUserPresencePropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemUserPresencePropertiesEXT(address, container);
     }
 
     /**

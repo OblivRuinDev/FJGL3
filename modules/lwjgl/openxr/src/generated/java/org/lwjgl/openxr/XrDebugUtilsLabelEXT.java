@@ -53,13 +53,8 @@ public class XrDebugUtilsLabelEXT extends Struct<XrDebugUtilsLabelEXT> implement
         LABELNAME = layout.offsetof(2);
     }
 
-    protected XrDebugUtilsLabelEXT(long address, @Nullable ByteBuffer container) {
+    public XrDebugUtilsLabelEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrDebugUtilsLabelEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrDebugUtilsLabelEXT(address, container);
     }
 
     /**

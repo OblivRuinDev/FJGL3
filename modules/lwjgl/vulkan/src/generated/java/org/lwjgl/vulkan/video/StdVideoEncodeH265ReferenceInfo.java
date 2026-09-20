@@ -58,13 +58,8 @@ public class StdVideoEncodeH265ReferenceInfo extends Struct<StdVideoEncodeH265Re
         TEMPORALID = layout.offsetof(3);
     }
 
-    protected StdVideoEncodeH265ReferenceInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH265ReferenceInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH265ReferenceInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH265ReferenceInfo(address, container);
     }
 
     /**

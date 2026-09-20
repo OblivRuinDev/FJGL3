@@ -49,13 +49,8 @@ public class SpvcHLSLResourceBindingMapping extends Struct<SpvcHLSLResourceBindi
         REGISTER_BINDING = layout.offsetof(1);
     }
 
-    protected SpvcHLSLResourceBindingMapping(long address, @Nullable ByteBuffer container) {
+    public SpvcHLSLResourceBindingMapping(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcHLSLResourceBindingMapping create(long address, @Nullable ByteBuffer container) {
-        return new SpvcHLSLResourceBindingMapping(address, container);
     }
 
     /**

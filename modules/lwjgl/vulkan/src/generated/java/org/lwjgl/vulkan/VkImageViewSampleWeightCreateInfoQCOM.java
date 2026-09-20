@@ -63,13 +63,8 @@ public class VkImageViewSampleWeightCreateInfoQCOM extends Struct<VkImageViewSam
         NUMPHASES = layout.offsetof(4);
     }
 
-    protected VkImageViewSampleWeightCreateInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkImageViewSampleWeightCreateInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageViewSampleWeightCreateInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkImageViewSampleWeightCreateInfoQCOM(address, container);
     }
 
     /**

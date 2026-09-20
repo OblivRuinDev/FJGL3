@@ -54,13 +54,8 @@ public class XrSpatialEntityComponentDataDynamicObjectBD extends Struct<XrSpatia
         DATA = layout.offsetof(2);
     }
 
-    protected XrSpatialEntityComponentDataDynamicObjectBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityComponentDataDynamicObjectBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityComponentDataDynamicObjectBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityComponentDataDynamicObjectBD(address, container);
     }
 
     /**

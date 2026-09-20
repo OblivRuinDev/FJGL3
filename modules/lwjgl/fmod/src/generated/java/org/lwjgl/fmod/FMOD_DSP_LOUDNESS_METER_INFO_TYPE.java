@@ -73,13 +73,8 @@ public class FMOD_DSP_LOUDNESS_METER_INFO_TYPE extends Struct<FMOD_DSP_LOUDNESS_
         MAXMOMENTARYLOUDNESS = layout.offsetof(7);
     }
 
-    protected FMOD_DSP_LOUDNESS_METER_INFO_TYPE(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_LOUDNESS_METER_INFO_TYPE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_LOUDNESS_METER_INFO_TYPE create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_LOUDNESS_METER_INFO_TYPE(address, container);
     }
 
     /**

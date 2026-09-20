@@ -53,13 +53,8 @@ public class XrVirtualKeyboardTextContextChangeInfoMETA extends Struct<XrVirtual
         TEXTCONTEXT = layout.offsetof(2);
     }
 
-    protected XrVirtualKeyboardTextContextChangeInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrVirtualKeyboardTextContextChangeInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVirtualKeyboardTextContextChangeInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrVirtualKeyboardTextContextChangeInfoMETA(address, container);
     }
 
     /**

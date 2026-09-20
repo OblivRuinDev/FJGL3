@@ -52,13 +52,8 @@ public class VkPrivateDataSlotCreateInfo extends Struct<VkPrivateDataSlotCreateI
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkPrivateDataSlotCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPrivateDataSlotCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPrivateDataSlotCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPrivateDataSlotCreateInfo(address, container);
     }
 
     /**

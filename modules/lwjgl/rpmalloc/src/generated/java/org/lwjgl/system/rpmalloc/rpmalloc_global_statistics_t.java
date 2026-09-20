@@ -76,13 +76,8 @@ public class rpmalloc_global_statistics_t extends Struct<rpmalloc_global_statist
         HEAP_COUNT = layout.offsetof(8);
     }
 
-    protected rpmalloc_global_statistics_t(long address, @Nullable ByteBuffer container) {
+    public rpmalloc_global_statistics_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected rpmalloc_global_statistics_t create(long address, @Nullable ByteBuffer container) {
-        return new rpmalloc_global_statistics_t(address, container);
     }
 
     /**

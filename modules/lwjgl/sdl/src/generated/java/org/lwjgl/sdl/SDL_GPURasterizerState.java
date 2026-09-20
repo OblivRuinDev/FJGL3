@@ -80,13 +80,8 @@ public class SDL_GPURasterizerState extends Struct<SDL_GPURasterizerState> imple
         PADDING2 = layout.offsetof(9);
     }
 
-    protected SDL_GPURasterizerState(long address, @Nullable ByteBuffer container) {
+    public SDL_GPURasterizerState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPURasterizerState create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPURasterizerState(address, container);
     }
 
     /**

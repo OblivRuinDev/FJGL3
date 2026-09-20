@@ -60,13 +60,8 @@ public class VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM exte
         GROUPSIZE = layout.offsetof(4);
     }
 
-    protected VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM(address, container);
     }
 
     /**

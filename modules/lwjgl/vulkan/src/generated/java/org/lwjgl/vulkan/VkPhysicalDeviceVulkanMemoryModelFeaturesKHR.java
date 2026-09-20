@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceVulkanMemoryModelFeaturesKHR extends VkPhysicalDeviceVulkanMemoryModelFeatures {
 
-    protected VkPhysicalDeviceVulkanMemoryModelFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVulkanMemoryModelFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVulkanMemoryModelFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVulkanMemoryModelFeaturesKHR(address, container);
     }
 
     /**

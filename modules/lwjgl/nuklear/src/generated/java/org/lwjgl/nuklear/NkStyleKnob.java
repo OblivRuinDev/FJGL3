@@ -132,13 +132,8 @@ public class NkStyleKnob extends Struct<NkStyleKnob> implements NativeResource {
         DRAW_END = layout.offsetof(20);
     }
 
-    protected NkStyleKnob(long address, @Nullable ByteBuffer container) {
+    public NkStyleKnob(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleKnob create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleKnob(address, container);
     }
 
     /**

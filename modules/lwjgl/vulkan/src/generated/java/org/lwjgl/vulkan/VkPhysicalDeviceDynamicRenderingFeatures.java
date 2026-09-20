@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDynamicRenderingFeatures extends Struct<VkPhysicalD
         DYNAMICRENDERING = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDynamicRenderingFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDynamicRenderingFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDynamicRenderingFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDynamicRenderingFeatures(address, container);
     }
 
     /**

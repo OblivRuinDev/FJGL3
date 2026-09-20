@@ -46,13 +46,8 @@ public class hwloc_numanode_attr_s extends Struct<hwloc_numanode_attr_s> {
         MEMORY_TIER = layout.offsetof(1);
     }
 
-    protected hwloc_numanode_attr_s(long address, @Nullable ByteBuffer container) {
+    public hwloc_numanode_attr_s(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_numanode_attr_s create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_numanode_attr_s(address, container);
     }
 
     /**

@@ -70,13 +70,8 @@ public class VkPhysicalDevicePerformanceCountersByRegionPropertiesARM extends St
         IDENTITYTRANSFORMORDER = layout.offsetof(6);
     }
 
-    protected VkPhysicalDevicePerformanceCountersByRegionPropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePerformanceCountersByRegionPropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePerformanceCountersByRegionPropertiesARM(address, container);
     }
 
     /**

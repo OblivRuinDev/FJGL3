@@ -57,13 +57,8 @@ public class ZSTDCustomMem extends Struct<ZSTDCustomMem> implements NativeResour
         OPAQUE = layout.offsetof(2);
     }
 
-    protected ZSTDCustomMem(long address, @Nullable ByteBuffer container) {
+    public ZSTDCustomMem(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZSTDCustomMem create(long address, @Nullable ByteBuffer container) {
-        return new ZSTDCustomMem(address, container);
     }
 
     /**

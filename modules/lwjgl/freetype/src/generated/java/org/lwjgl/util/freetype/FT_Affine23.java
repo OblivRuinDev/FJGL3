@@ -62,13 +62,8 @@ public class FT_Affine23 extends Struct<FT_Affine23> {
         DY = layout.offsetof(5);
     }
 
-    protected FT_Affine23(long address, @Nullable ByteBuffer container) {
+    public FT_Affine23(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Affine23 create(long address, @Nullable ByteBuffer container) {
-        return new FT_Affine23(address, container);
     }
 
     /**

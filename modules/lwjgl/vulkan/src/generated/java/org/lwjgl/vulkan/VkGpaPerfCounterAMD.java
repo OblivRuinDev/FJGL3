@@ -52,13 +52,8 @@ public class VkGpaPerfCounterAMD extends Struct<VkGpaPerfCounterAMD> implements 
         EVENTID = layout.offsetof(2);
     }
 
-    protected VkGpaPerfCounterAMD(long address, @Nullable ByteBuffer container) {
+    public VkGpaPerfCounterAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGpaPerfCounterAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkGpaPerfCounterAMD(address, container);
     }
 
     /**

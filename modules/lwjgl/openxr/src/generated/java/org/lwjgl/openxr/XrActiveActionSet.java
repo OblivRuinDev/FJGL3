@@ -49,13 +49,8 @@ public class XrActiveActionSet extends Struct<XrActiveActionSet> implements Nati
         SUBACTIONPATH = layout.offsetof(1);
     }
 
-    protected XrActiveActionSet(long address, @Nullable ByteBuffer container) {
+    public XrActiveActionSet(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrActiveActionSet create(long address, @Nullable ByteBuffer container) {
-        return new XrActiveActionSet(address, container);
     }
 
     /**

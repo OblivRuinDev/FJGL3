@@ -52,13 +52,8 @@ public class VkDescriptorSetLayoutSupport extends Struct<VkDescriptorSetLayoutSu
         SUPPORTED = layout.offsetof(2);
     }
 
-    protected VkDescriptorSetLayoutSupport(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetLayoutSupport(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetLayoutSupport create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetLayoutSupport(address, container);
     }
 
     /**

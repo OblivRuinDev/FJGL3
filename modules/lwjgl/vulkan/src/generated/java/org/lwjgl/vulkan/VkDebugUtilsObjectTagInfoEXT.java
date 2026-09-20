@@ -69,13 +69,8 @@ public class VkDebugUtilsObjectTagInfoEXT extends Struct<VkDebugUtilsObjectTagIn
         PTAG = layout.offsetof(6);
     }
 
-    protected VkDebugUtilsObjectTagInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDebugUtilsObjectTagInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDebugUtilsObjectTagInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDebugUtilsObjectTagInfoEXT(address, container);
     }
 
     /**

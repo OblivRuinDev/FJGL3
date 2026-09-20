@@ -44,13 +44,8 @@ public class hb_user_data_key_t extends Struct<hb_user_data_key_t> implements Na
         UNUSED = layout.offsetof(0);
     }
 
-    protected hb_user_data_key_t(long address, @Nullable ByteBuffer container) {
+    public hb_user_data_key_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_user_data_key_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_user_data_key_t(address, container);
     }
 
     /**

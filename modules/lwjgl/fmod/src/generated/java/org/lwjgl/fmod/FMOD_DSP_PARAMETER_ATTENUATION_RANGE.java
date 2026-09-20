@@ -48,13 +48,8 @@ public class FMOD_DSP_PARAMETER_ATTENUATION_RANGE extends Struct<FMOD_DSP_PARAME
         MAX = layout.offsetof(1);
     }
 
-    protected FMOD_DSP_PARAMETER_ATTENUATION_RANGE(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_PARAMETER_ATTENUATION_RANGE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_PARAMETER_ATTENUATION_RANGE create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_PARAMETER_ATTENUATION_RANGE(address, container);
     }
 
     /**

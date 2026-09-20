@@ -57,13 +57,8 @@ public class XrSpatialComponentObjectSemanticLabelListANDROID extends Struct<XrS
         SEMANTICLABELS = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentObjectSemanticLabelListANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentObjectSemanticLabelListANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentObjectSemanticLabelListANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentObjectSemanticLabelListANDROID(address, container);
     }
 
     /**

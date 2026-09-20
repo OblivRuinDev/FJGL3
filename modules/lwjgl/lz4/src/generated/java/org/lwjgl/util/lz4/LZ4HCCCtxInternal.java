@@ -90,13 +90,8 @@ public class LZ4HCCCtxInternal extends Struct<LZ4HCCCtxInternal> {
         DICTCTX = layout.offsetof(11);
     }
 
-    protected LZ4HCCCtxInternal(long address, @Nullable ByteBuffer container) {
+    public LZ4HCCCtxInternal(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LZ4HCCCtxInternal create(long address, @Nullable ByteBuffer container) {
-        return new LZ4HCCCtxInternal(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class SDL_KeyboardDeviceEvent extends Struct<SDL_KeyboardDeviceEvent> imp
         WHICH = layout.offsetof(3);
     }
 
-    protected SDL_KeyboardDeviceEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_KeyboardDeviceEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_KeyboardDeviceEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_KeyboardDeviceEvent(address, container);
     }
 
     /**

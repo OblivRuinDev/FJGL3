@@ -65,13 +65,8 @@ public class StdVideoDecodeAV1ReferenceInfo extends Struct<StdVideoDecodeAV1Refe
         SAVEDORDERHINTS = layout.offsetof(4);
     }
 
-    protected StdVideoDecodeAV1ReferenceInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoDecodeAV1ReferenceInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoDecodeAV1ReferenceInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoDecodeAV1ReferenceInfo(address, container);
     }
 
     /**

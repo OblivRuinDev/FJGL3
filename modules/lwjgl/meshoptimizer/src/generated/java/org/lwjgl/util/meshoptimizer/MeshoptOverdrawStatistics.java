@@ -53,13 +53,8 @@ public class MeshoptOverdrawStatistics extends Struct<MeshoptOverdrawStatistics>
         OVERDRAW = layout.offsetof(2);
     }
 
-    protected MeshoptOverdrawStatistics(long address, @Nullable ByteBuffer container) {
+    public MeshoptOverdrawStatistics(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MeshoptOverdrawStatistics create(long address, @Nullable ByteBuffer container) {
-        return new MeshoptOverdrawStatistics(address, container);
     }
 
     /**

@@ -67,13 +67,8 @@ public class XrDebugUtilsMessengerCreateInfoEXT extends Struct<XrDebugUtilsMesse
         USERDATA = layout.offsetof(5);
     }
 
-    protected XrDebugUtilsMessengerCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrDebugUtilsMessengerCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrDebugUtilsMessengerCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrDebugUtilsMessengerCreateInfoEXT(address, container);
     }
 
     /**

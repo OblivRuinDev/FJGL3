@@ -212,13 +212,8 @@ public class XEvent extends Struct<XEvent> implements NativeResource {
         XCOOKIE = layout.offsetof(33);
     }
 
-    protected XEvent(long address, @Nullable ByteBuffer container) {
+    public XEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XEvent create(long address, @Nullable ByteBuffer container) {
-        return new XEvent(address, container);
     }
 
     /**

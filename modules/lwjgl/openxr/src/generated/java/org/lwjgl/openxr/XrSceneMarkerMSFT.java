@@ -57,13 +57,8 @@ public class XrSceneMarkerMSFT extends Struct<XrSceneMarkerMSFT> {
         SIZE = layout.offsetof(3);
     }
 
-    protected XrSceneMarkerMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneMarkerMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMarkerMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMarkerMSFT(address, container);
     }
 
     /**

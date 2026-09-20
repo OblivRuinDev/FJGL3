@@ -65,13 +65,8 @@ public class XrAudioBufferBD extends Struct<XrAudioBufferBD> implements NativeRe
         BUFFER = layout.offsetof(5);
     }
 
-    protected XrAudioBufferBD(long address, @Nullable ByteBuffer container) {
+    public XrAudioBufferBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrAudioBufferBD create(long address, @Nullable ByteBuffer container) {
-        return new XrAudioBufferBD(address, container);
     }
 
     /**

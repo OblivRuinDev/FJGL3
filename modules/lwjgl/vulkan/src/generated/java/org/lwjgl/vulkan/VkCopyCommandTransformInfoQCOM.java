@@ -52,13 +52,8 @@ public class VkCopyCommandTransformInfoQCOM extends Struct<VkCopyCommandTransfor
         TRANSFORM = layout.offsetof(2);
     }
 
-    protected VkCopyCommandTransformInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkCopyCommandTransformInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyCommandTransformInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyCommandTransformInfoQCOM(address, container);
     }
 
     /**

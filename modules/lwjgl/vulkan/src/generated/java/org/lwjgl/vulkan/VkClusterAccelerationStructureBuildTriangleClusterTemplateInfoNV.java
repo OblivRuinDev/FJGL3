@@ -102,13 +102,8 @@ public class VkClusterAccelerationStructureBuildTriangleClusterTemplateInfoNV ex
         INSTANTIATIONBOUNDINGBOXLIMIT = layout.offsetof(13);
     }
 
-    protected VkClusterAccelerationStructureBuildTriangleClusterTemplateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureBuildTriangleClusterTemplateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureBuildTriangleClusterTemplateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureBuildTriangleClusterTemplateInfoNV(address, container);
     }
 
     /**

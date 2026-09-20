@@ -52,13 +52,8 @@ public class NkInput extends Struct<NkInput> implements NativeResource {
         MOUSE = layout.offsetof(1);
     }
 
-    protected NkInput(long address, @Nullable ByteBuffer container) {
+    public NkInput(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkInput create(long address, @Nullable ByteBuffer container) {
-        return new NkInput(address, container);
     }
 
     /**

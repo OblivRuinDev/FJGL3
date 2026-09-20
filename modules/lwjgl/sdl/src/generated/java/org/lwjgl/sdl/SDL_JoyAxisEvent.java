@@ -80,13 +80,8 @@ public class SDL_JoyAxisEvent extends Struct<SDL_JoyAxisEvent> implements Native
         PADDING4 = layout.offsetof(9);
     }
 
-    protected SDL_JoyAxisEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_JoyAxisEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_JoyAxisEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_JoyAxisEvent(address, container);
     }
 
     /**

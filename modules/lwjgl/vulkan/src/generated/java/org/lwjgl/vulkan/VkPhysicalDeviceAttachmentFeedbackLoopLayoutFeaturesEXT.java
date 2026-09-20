@@ -52,13 +52,8 @@ public class VkPhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT extends Str
         ATTACHMENTFEEDBACKLOOPLAYOUT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT(address, container);
     }
 
     /**

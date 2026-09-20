@@ -55,13 +55,8 @@ public class VkPipelinePropertiesIdentifierEXT extends Struct<VkPipelineProperti
         PIPELINEIDENTIFIER = layout.offsetof(2);
     }
 
-    protected VkPipelinePropertiesIdentifierEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelinePropertiesIdentifierEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelinePropertiesIdentifierEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelinePropertiesIdentifierEXT(address, container);
     }
 
     /**

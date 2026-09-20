@@ -79,13 +79,8 @@ public class FTC_SBit extends Struct<FTC_SBit> {
         BUFFER = layout.offsetof(9);
     }
 
-    protected FTC_SBit(long address, @Nullable ByteBuffer container) {
+    public FTC_SBit(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FTC_SBit create(long address, @Nullable ByteBuffer container) {
-        return new FTC_SBit(address, container);
     }
 
     /**

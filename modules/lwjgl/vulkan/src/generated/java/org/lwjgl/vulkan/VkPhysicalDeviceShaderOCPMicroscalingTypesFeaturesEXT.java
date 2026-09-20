@@ -64,13 +64,8 @@ public class VkPhysicalDeviceShaderOCPMicroscalingTypesFeaturesEXT extends Struc
         SHADERMXINT8 = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceShaderOCPMicroscalingTypesFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderOCPMicroscalingTypesFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderOCPMicroscalingTypesFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderOCPMicroscalingTypesFeaturesEXT(address, container);
     }
 
     /**

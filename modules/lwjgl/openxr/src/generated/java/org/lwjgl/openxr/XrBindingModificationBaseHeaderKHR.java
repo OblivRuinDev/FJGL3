@@ -48,13 +48,8 @@ public class XrBindingModificationBaseHeaderKHR extends Struct<XrBindingModifica
         NEXT = layout.offsetof(1);
     }
 
-    protected XrBindingModificationBaseHeaderKHR(long address, @Nullable ByteBuffer container) {
+    public XrBindingModificationBaseHeaderKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBindingModificationBaseHeaderKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrBindingModificationBaseHeaderKHR(address, container);
     }
 
     /**

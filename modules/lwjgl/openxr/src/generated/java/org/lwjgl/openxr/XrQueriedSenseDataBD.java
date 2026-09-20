@@ -60,13 +60,8 @@ public class XrQueriedSenseDataBD extends Struct<XrQueriedSenseDataBD> implement
         STATES = layout.offsetof(4);
     }
 
-    protected XrQueriedSenseDataBD(long address, @Nullable ByteBuffer container) {
+    public XrQueriedSenseDataBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrQueriedSenseDataBD create(long address, @Nullable ByteBuffer container) {
-        return new XrQueriedSenseDataBD(address, container);
     }
 
     /**

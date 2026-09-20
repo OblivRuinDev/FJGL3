@@ -52,13 +52,8 @@ public class XrSystemGetInfo extends Struct<XrSystemGetInfo> implements NativeRe
         FORMFACTOR = layout.offsetof(2);
     }
 
-    protected XrSystemGetInfo(long address, @Nullable ByteBuffer container) {
+    public XrSystemGetInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemGetInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemGetInfo(address, container);
     }
 
     /**

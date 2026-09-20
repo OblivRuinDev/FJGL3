@@ -62,13 +62,8 @@ public class FFICIF extends Struct<FFICIF> implements NativeResource {
 
     private static native int offsets(long buffer);
 
-    protected FFICIF(long address, @Nullable ByteBuffer container) {
+    public FFICIF(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FFICIF create(long address, @Nullable ByteBuffer container) {
-        return new FFICIF(address, container);
     }
 
     /**

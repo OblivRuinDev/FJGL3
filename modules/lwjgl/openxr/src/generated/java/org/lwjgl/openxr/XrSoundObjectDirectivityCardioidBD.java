@@ -56,13 +56,8 @@ public class XrSoundObjectDirectivityCardioidBD extends Struct<XrSoundObjectDire
         ORDER = layout.offsetof(3);
     }
 
-    protected XrSoundObjectDirectivityCardioidBD(long address, @Nullable ByteBuffer container) {
+    public XrSoundObjectDirectivityCardioidBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSoundObjectDirectivityCardioidBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSoundObjectDirectivityCardioidBD(address, container);
     }
 
     /**

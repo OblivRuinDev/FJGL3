@@ -52,13 +52,8 @@ public class VkDescriptorBufferBindingPushDescriptorBufferHandleEXT extends Stru
         BUFFER = layout.offsetof(2);
     }
 
-    protected VkDescriptorBufferBindingPushDescriptorBufferHandleEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorBufferBindingPushDescriptorBufferHandleEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorBufferBindingPushDescriptorBufferHandleEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorBufferBindingPushDescriptorBufferHandleEXT(address, container);
     }
 
     /**

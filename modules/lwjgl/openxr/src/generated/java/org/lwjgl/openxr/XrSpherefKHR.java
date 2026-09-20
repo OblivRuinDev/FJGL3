@@ -24,13 +24,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class XrSpherefKHR extends XrSpheref {
 
-    protected XrSpherefKHR(long address, @Nullable ByteBuffer container) {
+    public XrSpherefKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpherefKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrSpherefKHR(address, container);
     }
 
     /**

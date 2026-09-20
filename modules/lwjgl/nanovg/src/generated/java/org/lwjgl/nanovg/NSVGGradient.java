@@ -66,13 +66,8 @@ public class NSVGGradient extends Struct<NSVGGradient> {
         PSTOPS = layout.offsetof(5);
     }
 
-    protected NSVGGradient(long address, @Nullable ByteBuffer container) {
+    public NSVGGradient(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NSVGGradient create(long address, @Nullable ByteBuffer container) {
-        return new NSVGGradient(address, container);
     }
 
     /**

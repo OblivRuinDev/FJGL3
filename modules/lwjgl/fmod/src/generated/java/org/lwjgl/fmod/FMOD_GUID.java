@@ -57,13 +57,8 @@ public class FMOD_GUID extends Struct<FMOD_GUID> implements NativeResource {
         DATA4 = layout.offsetof(3);
     }
 
-    protected FMOD_GUID(long address, @Nullable ByteBuffer container) {
+    public FMOD_GUID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_GUID create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_GUID(address, container);
     }
 
     /**

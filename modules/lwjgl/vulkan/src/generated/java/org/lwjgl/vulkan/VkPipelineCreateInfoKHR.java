@@ -48,13 +48,8 @@ public class VkPipelineCreateInfoKHR extends Struct<VkPipelineCreateInfoKHR> imp
         PNEXT = layout.offsetof(1);
     }
 
-    protected VkPipelineCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineCreateInfoKHR(address, container);
     }
 
     /**

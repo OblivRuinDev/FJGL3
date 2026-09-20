@@ -60,13 +60,8 @@ public class SQL_DAY_SECOND_STRUCT extends Struct<SQL_DAY_SECOND_STRUCT> impleme
         FRACTION = layout.offsetof(4);
     }
 
-    protected SQL_DAY_SECOND_STRUCT(long address, @Nullable ByteBuffer container) {
+    public SQL_DAY_SECOND_STRUCT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SQL_DAY_SECOND_STRUCT create(long address, @Nullable ByteBuffer container) {
-        return new SQL_DAY_SECOND_STRUCT(address, container);
     }
 
     /**

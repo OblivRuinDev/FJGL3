@@ -52,13 +52,8 @@ public class VkInitializePerformanceApiInfoINTEL extends Struct<VkInitializePerf
         PUSERDATA = layout.offsetof(2);
     }
 
-    protected VkInitializePerformanceApiInfoINTEL(long address, @Nullable ByteBuffer container) {
+    public VkInitializePerformanceApiInfoINTEL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkInitializePerformanceApiInfoINTEL create(long address, @Nullable ByteBuffer container) {
-        return new VkInitializePerformanceApiInfoINTEL(address, container);
     }
 
     /**

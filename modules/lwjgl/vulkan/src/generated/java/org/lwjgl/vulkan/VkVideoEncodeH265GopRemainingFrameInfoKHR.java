@@ -64,13 +64,8 @@ public class VkVideoEncodeH265GopRemainingFrameInfoKHR extends Struct<VkVideoEnc
         GOPREMAININGB = layout.offsetof(5);
     }
 
-    protected VkVideoEncodeH265GopRemainingFrameInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH265GopRemainingFrameInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH265GopRemainingFrameInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH265GopRemainingFrameInfoKHR(address, container);
     }
 
     /**

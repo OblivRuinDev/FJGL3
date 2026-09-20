@@ -72,13 +72,8 @@ public class XrViewConfigurationView extends Struct<XrViewConfigurationView> imp
         MAXSWAPCHAINSAMPLECOUNT = layout.offsetof(7);
     }
 
-    protected XrViewConfigurationView(long address, @Nullable ByteBuffer container) {
+    public XrViewConfigurationView(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrViewConfigurationView create(long address, @Nullable ByteBuffer container) {
-        return new XrViewConfigurationView(address, container);
     }
 
     /**

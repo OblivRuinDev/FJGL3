@@ -56,13 +56,8 @@ public class XrQuaternionf extends Struct<XrQuaternionf> implements NativeResour
         W = layout.offsetof(3);
     }
 
-    protected XrQuaternionf(long address, @Nullable ByteBuffer container) {
+    public XrQuaternionf(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrQuaternionf create(long address, @Nullable ByteBuffer container) {
-        return new XrQuaternionf(address, container);
     }
 
     /**

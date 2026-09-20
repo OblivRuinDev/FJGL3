@@ -47,13 +47,8 @@ public class BGFXCapsGPU extends Struct<BGFXCapsGPU> {
         DEVICEID = layout.offsetof(1);
     }
 
-    protected BGFXCapsGPU(long address, @Nullable ByteBuffer container) {
+    public BGFXCapsGPU(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXCapsGPU create(long address, @Nullable ByteBuffer container) {
-        return new BGFXCapsGPU(address, container);
     }
 
     /**

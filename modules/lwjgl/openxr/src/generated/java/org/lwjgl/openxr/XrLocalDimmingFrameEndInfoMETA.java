@@ -52,13 +52,8 @@ public class XrLocalDimmingFrameEndInfoMETA extends Struct<XrLocalDimmingFrameEn
         LOCALDIMMINGMODE = layout.offsetof(2);
     }
 
-    protected XrLocalDimmingFrameEndInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrLocalDimmingFrameEndInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrLocalDimmingFrameEndInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrLocalDimmingFrameEndInfoMETA(address, container);
     }
 
     /**

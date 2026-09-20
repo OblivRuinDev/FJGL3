@@ -60,13 +60,8 @@ public class VkVideoEncodeUsageInfoKHR extends Struct<VkVideoEncodeUsageInfoKHR>
         TUNINGMODE = layout.offsetof(4);
     }
 
-    protected VkVideoEncodeUsageInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeUsageInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeUsageInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeUsageInfoKHR(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class FMOD_STUDIO_MEMORY_USAGE extends Struct<FMOD_STUDIO_MEMORY_USAGE> i
         SAMPLEDATA = layout.offsetof(2);
     }
 
-    protected FMOD_STUDIO_MEMORY_USAGE(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_MEMORY_USAGE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_MEMORY_USAGE create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_MEMORY_USAGE(address, container);
     }
 
     /**

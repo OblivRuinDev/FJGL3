@@ -57,13 +57,8 @@ public class XrBodyJointsLocateInfoFB extends Struct<XrBodyJointsLocateInfoFB> i
         TIME = layout.offsetof(3);
     }
 
-    protected XrBodyJointsLocateInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrBodyJointsLocateInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyJointsLocateInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyJointsLocateInfoFB(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrSystemMarkerUnderstandingPropertiesML extends Struct<XrSystemMark
         SUPPORTSMARKERUNDERSTANDING = layout.offsetof(2);
     }
 
-    protected XrSystemMarkerUnderstandingPropertiesML(long address, @Nullable ByteBuffer container) {
+    public XrSystemMarkerUnderstandingPropertiesML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemMarkerUnderstandingPropertiesML create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemMarkerUnderstandingPropertiesML(address, container);
     }
 
     /**

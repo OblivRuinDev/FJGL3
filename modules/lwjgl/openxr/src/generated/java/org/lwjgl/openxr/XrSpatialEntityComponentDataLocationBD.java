@@ -54,13 +54,8 @@ public class XrSpatialEntityComponentDataLocationBD extends Struct<XrSpatialEnti
         LOCATION = layout.offsetof(2);
     }
 
-    protected XrSpatialEntityComponentDataLocationBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityComponentDataLocationBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityComponentDataLocationBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityComponentDataLocationBD(address, container);
     }
 
     /**

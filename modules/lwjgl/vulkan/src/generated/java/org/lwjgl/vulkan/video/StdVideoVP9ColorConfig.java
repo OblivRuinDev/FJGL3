@@ -66,13 +66,8 @@ public class StdVideoVP9ColorConfig extends Struct<StdVideoVP9ColorConfig> imple
         COLOR_SPACE = layout.offsetof(5);
     }
 
-    protected StdVideoVP9ColorConfig(long address, @Nullable ByteBuffer container) {
+    public StdVideoVP9ColorConfig(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoVP9ColorConfig create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoVP9ColorConfig(address, container);
     }
 
     /**

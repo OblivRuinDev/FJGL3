@@ -56,13 +56,8 @@ public class VkGetLatencyMarkerInfoNV extends Struct<VkGetLatencyMarkerInfoNV> i
         PTIMINGS = layout.offsetof(3);
     }
 
-    protected VkGetLatencyMarkerInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkGetLatencyMarkerInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGetLatencyMarkerInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkGetLatencyMarkerInfoNV(address, container);
     }
 
     /**

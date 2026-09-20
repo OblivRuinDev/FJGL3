@@ -52,13 +52,8 @@ public class VkAttachmentReferenceStencilLayout extends Struct<VkAttachmentRefer
         STENCILLAYOUT = layout.offsetof(2);
     }
 
-    protected VkAttachmentReferenceStencilLayout(long address, @Nullable ByteBuffer container) {
+    public VkAttachmentReferenceStencilLayout(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAttachmentReferenceStencilLayout create(long address, @Nullable ByteBuffer container) {
-        return new VkAttachmentReferenceStencilLayout(address, container);
     }
 
     /**

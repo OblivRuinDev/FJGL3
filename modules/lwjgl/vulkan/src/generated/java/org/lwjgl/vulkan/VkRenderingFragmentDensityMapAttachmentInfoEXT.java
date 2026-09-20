@@ -56,13 +56,8 @@ public class VkRenderingFragmentDensityMapAttachmentInfoEXT extends Struct<VkRen
         IMAGELAYOUT = layout.offsetof(3);
     }
 
-    protected VkRenderingFragmentDensityMapAttachmentInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkRenderingFragmentDensityMapAttachmentInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderingFragmentDensityMapAttachmentInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderingFragmentDensityMapAttachmentInfoEXT(address, container);
     }
 
     /**

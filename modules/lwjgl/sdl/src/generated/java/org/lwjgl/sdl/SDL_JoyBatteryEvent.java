@@ -64,13 +64,8 @@ public class SDL_JoyBatteryEvent extends Struct<SDL_JoyBatteryEvent> implements 
         PERCENT = layout.offsetof(5);
     }
 
-    protected SDL_JoyBatteryEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_JoyBatteryEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_JoyBatteryEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_JoyBatteryEvent(address, container);
     }
 
     /**

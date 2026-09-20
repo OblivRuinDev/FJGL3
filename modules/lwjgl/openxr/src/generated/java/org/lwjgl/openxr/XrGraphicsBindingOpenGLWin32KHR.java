@@ -59,13 +59,8 @@ public class XrGraphicsBindingOpenGLWin32KHR extends Struct<XrGraphicsBindingOpe
         HGLRC = layout.offsetof(3);
     }
 
-    protected XrGraphicsBindingOpenGLWin32KHR(long address, @Nullable ByteBuffer container) {
+    public XrGraphicsBindingOpenGLWin32KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGraphicsBindingOpenGLWin32KHR create(long address, @Nullable ByteBuffer container) {
-        return new XrGraphicsBindingOpenGLWin32KHR(address, container);
     }
 
     /**

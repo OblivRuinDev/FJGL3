@@ -76,13 +76,8 @@ public class AISkeletonBone extends Struct<AISkeletonBone> implements NativeReso
         MLOCALMATRIX = layout.offsetof(7);
     }
 
-    protected AISkeletonBone(long address, @Nullable ByteBuffer container) {
+    public AISkeletonBone(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AISkeletonBone create(long address, @Nullable ByteBuffer container) {
-        return new AISkeletonBone(address, container);
     }
 
     /**

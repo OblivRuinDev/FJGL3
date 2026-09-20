@@ -52,13 +52,8 @@ public class XrSystemSpatialEntityPropertiesFB extends Struct<XrSystemSpatialEnt
         SUPPORTSSPATIALENTITY = layout.offsetof(2);
     }
 
-    protected XrSystemSpatialEntityPropertiesFB(long address, @Nullable ByteBuffer container) {
+    public XrSystemSpatialEntityPropertiesFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemSpatialEntityPropertiesFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemSpatialEntityPropertiesFB(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkDispatchIndirectCommand extends Struct<VkDispatchIndirectCommand>
         Z = layout.offsetof(2);
     }
 
-    protected VkDispatchIndirectCommand(long address, @Nullable ByteBuffer container) {
+    public VkDispatchIndirectCommand(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDispatchIndirectCommand create(long address, @Nullable ByteBuffer container) {
-        return new VkDispatchIndirectCommand(address, container);
     }
 
     /**

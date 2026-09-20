@@ -52,13 +52,8 @@ public class VkDeviceMemoryOpaqueCaptureAddressInfo extends Struct<VkDeviceMemor
         MEMORY = layout.offsetof(2);
     }
 
-    protected VkDeviceMemoryOpaqueCaptureAddressInfo(long address, @Nullable ByteBuffer container) {
+    public VkDeviceMemoryOpaqueCaptureAddressInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceMemoryOpaqueCaptureAddressInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceMemoryOpaqueCaptureAddressInfo(address, container);
     }
 
     /**

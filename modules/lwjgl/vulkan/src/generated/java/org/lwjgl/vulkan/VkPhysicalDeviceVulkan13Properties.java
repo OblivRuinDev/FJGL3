@@ -228,13 +228,8 @@ public class VkPhysicalDeviceVulkan13Properties extends Struct<VkPhysicalDeviceV
         MAXBUFFERSIZE = layout.offsetof(46);
     }
 
-    protected VkPhysicalDeviceVulkan13Properties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVulkan13Properties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVulkan13Properties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVulkan13Properties(address, container);
     }
 
     /**

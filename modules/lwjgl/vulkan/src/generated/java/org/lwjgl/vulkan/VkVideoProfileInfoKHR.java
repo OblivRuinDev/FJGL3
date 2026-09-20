@@ -64,13 +64,8 @@ public class VkVideoProfileInfoKHR extends Struct<VkVideoProfileInfoKHR> impleme
         CHROMABITDEPTH = layout.offsetof(5);
     }
 
-    protected VkVideoProfileInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoProfileInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoProfileInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoProfileInfoKHR(address, container);
     }
 
     /**

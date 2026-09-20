@@ -56,13 +56,8 @@ public class VkCommandBufferInheritanceDescriptorHeapInfoEXT extends Struct<VkCo
         PRESOURCEHEAPBINDINFO = layout.offsetof(3);
     }
 
-    protected VkCommandBufferInheritanceDescriptorHeapInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkCommandBufferInheritanceDescriptorHeapInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCommandBufferInheritanceDescriptorHeapInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkCommandBufferInheritanceDescriptorHeapInfoEXT(address, container);
     }
 
     /**

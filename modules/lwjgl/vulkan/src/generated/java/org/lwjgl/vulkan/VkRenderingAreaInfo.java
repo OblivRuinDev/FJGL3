@@ -68,13 +68,8 @@ public class VkRenderingAreaInfo extends Struct<VkRenderingAreaInfo> implements 
         STENCILATTACHMENTFORMAT = layout.offsetof(6);
     }
 
-    protected VkRenderingAreaInfo(long address, @Nullable ByteBuffer container) {
+    public VkRenderingAreaInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderingAreaInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderingAreaInfo(address, container);
     }
 
     /**

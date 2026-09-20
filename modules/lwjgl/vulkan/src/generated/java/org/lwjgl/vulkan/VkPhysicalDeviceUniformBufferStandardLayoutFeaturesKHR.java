@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHR extends VkPhysicalDeviceUniformBufferStandardLayoutFeatures {
 
-    protected VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHR(address, container);
     }
 
     /**

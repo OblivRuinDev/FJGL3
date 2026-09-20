@@ -116,13 +116,8 @@ public class CID_FaceInfo extends Struct<CID_FaceInfo> {
         DATA_OFFSET = layout.offsetof(17);
     }
 
-    protected CID_FaceInfo(long address, @Nullable ByteBuffer container) {
+    public CID_FaceInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CID_FaceInfo create(long address, @Nullable ByteBuffer container) {
-        return new CID_FaceInfo(address, container);
     }
 
     /**

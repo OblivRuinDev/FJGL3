@@ -62,13 +62,8 @@ public class VkWaylandSurfaceCreateInfoKHR extends Struct<VkWaylandSurfaceCreate
         SURFACE = layout.offsetof(4);
     }
 
-    protected VkWaylandSurfaceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkWaylandSurfaceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkWaylandSurfaceCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkWaylandSurfaceCreateInfoKHR(address, container);
     }
 
     /**

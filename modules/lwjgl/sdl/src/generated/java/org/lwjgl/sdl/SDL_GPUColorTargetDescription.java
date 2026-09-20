@@ -50,13 +50,8 @@ public class SDL_GPUColorTargetDescription extends Struct<SDL_GPUColorTargetDesc
         BLEND_STATE = layout.offsetof(1);
     }
 
-    protected SDL_GPUColorTargetDescription(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUColorTargetDescription(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUColorTargetDescription create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUColorTargetDescription(address, container);
     }
 
     /**

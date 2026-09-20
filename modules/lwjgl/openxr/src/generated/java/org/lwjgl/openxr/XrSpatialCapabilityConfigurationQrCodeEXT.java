@@ -61,13 +61,8 @@ public class XrSpatialCapabilityConfigurationQrCodeEXT extends Struct<XrSpatialC
         ENABLEDCOMPONENTS = layout.offsetof(4);
     }
 
-    protected XrSpatialCapabilityConfigurationQrCodeEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialCapabilityConfigurationQrCodeEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialCapabilityConfigurationQrCodeEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialCapabilityConfigurationQrCodeEXT(address, container);
     }
 
     /**

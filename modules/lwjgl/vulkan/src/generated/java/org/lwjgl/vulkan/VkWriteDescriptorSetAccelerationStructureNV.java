@@ -56,13 +56,8 @@ public class VkWriteDescriptorSetAccelerationStructureNV extends Struct<VkWriteD
         PACCELERATIONSTRUCTURES = layout.offsetof(3);
     }
 
-    protected VkWriteDescriptorSetAccelerationStructureNV(long address, @Nullable ByteBuffer container) {
+    public VkWriteDescriptorSetAccelerationStructureNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkWriteDescriptorSetAccelerationStructureNV create(long address, @Nullable ByteBuffer container) {
-        return new VkWriteDescriptorSetAccelerationStructureNV(address, container);
     }
 
     /**

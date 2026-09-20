@@ -58,13 +58,8 @@ public class XrVulkanSwapchainCreateInfoMETA extends Struct<XrVulkanSwapchainCre
         ADDITIONALUSAGEFLAGS = layout.offsetof(3);
     }
 
-    protected XrVulkanSwapchainCreateInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrVulkanSwapchainCreateInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVulkanSwapchainCreateInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrVulkanSwapchainCreateInfoMETA(address, container);
     }
 
     /**

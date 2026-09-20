@@ -58,13 +58,8 @@ public class CMsghdr extends Struct<CMsghdr> implements NativeResource {
         CMSG_DATA = layout.offsetof(3);
     }
 
-    protected CMsghdr(long address, @Nullable ByteBuffer container) {
+    public CMsghdr(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CMsghdr create(long address, @Nullable ByteBuffer container) {
-        return new CMsghdr(address, container);
     }
 
     /**

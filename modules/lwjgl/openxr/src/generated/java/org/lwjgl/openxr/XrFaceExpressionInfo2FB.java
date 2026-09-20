@@ -52,13 +52,8 @@ public class XrFaceExpressionInfo2FB extends Struct<XrFaceExpressionInfo2FB> imp
         TIME = layout.offsetof(2);
     }
 
-    protected XrFaceExpressionInfo2FB(long address, @Nullable ByteBuffer container) {
+    public XrFaceExpressionInfo2FB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFaceExpressionInfo2FB create(long address, @Nullable ByteBuffer container) {
-        return new XrFaceExpressionInfo2FB(address, container);
     }
 
     /**

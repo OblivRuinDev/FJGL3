@@ -54,13 +54,8 @@ public class XrStationaryReferenceSpaceGenerationIdResultEXT extends Struct<XrSt
         GENERATIONID = layout.offsetof(2);
     }
 
-    protected XrStationaryReferenceSpaceGenerationIdResultEXT(long address, @Nullable ByteBuffer container) {
+    public XrStationaryReferenceSpaceGenerationIdResultEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrStationaryReferenceSpaceGenerationIdResultEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrStationaryReferenceSpaceGenerationIdResultEXT(address, container);
     }
 
     /**

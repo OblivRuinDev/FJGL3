@@ -66,13 +66,8 @@ public class VkHostImageLayoutTransitionInfo extends Struct<VkHostImageLayoutTra
         SUBRESOURCERANGE = layout.offsetof(5);
     }
 
-    protected VkHostImageLayoutTransitionInfo(long address, @Nullable ByteBuffer container) {
+    public VkHostImageLayoutTransitionInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkHostImageLayoutTransitionInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkHostImageLayoutTransitionInfo(address, container);
     }
 
     /**

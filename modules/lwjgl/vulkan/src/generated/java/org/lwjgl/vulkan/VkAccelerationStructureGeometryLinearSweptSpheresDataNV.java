@@ -94,13 +94,8 @@ public class VkAccelerationStructureGeometryLinearSweptSpheresDataNV extends Str
         ENDCAPSMODE = layout.offsetof(12);
     }
 
-    protected VkAccelerationStructureGeometryLinearSweptSpheresDataNV(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureGeometryLinearSweptSpheresDataNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureGeometryLinearSweptSpheresDataNV create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureGeometryLinearSweptSpheresDataNV(address, container);
     }
 
     /**

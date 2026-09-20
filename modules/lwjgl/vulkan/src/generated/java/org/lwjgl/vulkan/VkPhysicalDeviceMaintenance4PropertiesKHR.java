@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceMaintenance4PropertiesKHR extends VkPhysicalDeviceMaintenance4Properties {
 
-    protected VkPhysicalDeviceMaintenance4PropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMaintenance4PropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMaintenance4PropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMaintenance4PropertiesKHR(address, container);
     }
 
     /**

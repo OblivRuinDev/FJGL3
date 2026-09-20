@@ -72,13 +72,8 @@ public class VkAccelerationStructureGeometryMicromapDataKHR extends Struct<VkAcc
         TRIANGLEARRAYSTRIDE = layout.offsetof(7);
     }
 
-    protected VkAccelerationStructureGeometryMicromapDataKHR(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureGeometryMicromapDataKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureGeometryMicromapDataKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureGeometryMicromapDataKHR(address, container);
     }
 
     /**

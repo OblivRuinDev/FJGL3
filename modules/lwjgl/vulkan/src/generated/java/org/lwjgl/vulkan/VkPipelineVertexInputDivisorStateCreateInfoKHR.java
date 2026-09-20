@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPipelineVertexInputDivisorStateCreateInfoKHR extends VkPipelineVertexInputDivisorStateCreateInfo {
 
-    protected VkPipelineVertexInputDivisorStateCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineVertexInputDivisorStateCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineVertexInputDivisorStateCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineVertexInputDivisorStateCreateInfoKHR(address, container);
     }
 
     /**

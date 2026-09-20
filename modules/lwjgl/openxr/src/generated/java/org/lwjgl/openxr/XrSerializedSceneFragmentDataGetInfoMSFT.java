@@ -54,13 +54,8 @@ public class XrSerializedSceneFragmentDataGetInfoMSFT extends Struct<XrSerialize
         SCENEFRAGMENTID = layout.offsetof(2);
     }
 
-    protected XrSerializedSceneFragmentDataGetInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSerializedSceneFragmentDataGetInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSerializedSceneFragmentDataGetInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSerializedSceneFragmentDataGetInfoMSFT(address, container);
     }
 
     /**

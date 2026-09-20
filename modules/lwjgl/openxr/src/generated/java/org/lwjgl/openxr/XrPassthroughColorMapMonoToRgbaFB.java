@@ -57,13 +57,8 @@ public class XrPassthroughColorMapMonoToRgbaFB extends Struct<XrPassthroughColor
         TEXTURECOLORMAP = layout.offsetof(2);
     }
 
-    protected XrPassthroughColorMapMonoToRgbaFB(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughColorMapMonoToRgbaFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughColorMapMonoToRgbaFB create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughColorMapMonoToRgbaFB(address, container);
     }
 
     /**

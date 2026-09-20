@@ -74,13 +74,8 @@ public class CXIdxEntityInfo extends Struct<CXIdxEntityInfo> implements NativeRe
         NUMATTRIBUTES = layout.offsetof(7);
     }
 
-    protected CXIdxEntityInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxEntityInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxEntityInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxEntityInfo(address, container);
     }
 
     /**

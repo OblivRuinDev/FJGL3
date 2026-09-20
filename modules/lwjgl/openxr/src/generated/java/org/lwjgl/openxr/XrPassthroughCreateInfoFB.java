@@ -52,13 +52,8 @@ public class XrPassthroughCreateInfoFB extends Struct<XrPassthroughCreateInfoFB>
         FLAGS = layout.offsetof(2);
     }
 
-    protected XrPassthroughCreateInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughCreateInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughCreateInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughCreateInfoFB(address, container);
     }
 
     /**

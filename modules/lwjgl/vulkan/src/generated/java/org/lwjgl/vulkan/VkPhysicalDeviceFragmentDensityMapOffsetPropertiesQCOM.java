@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM extends VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT {
 
-    protected VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkPhysicalDeviceCooperativeVectorFeaturesNV extends Struct<VkPhysic
         COOPERATIVEVECTORTRAINING = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceCooperativeVectorFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCooperativeVectorFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCooperativeVectorFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCooperativeVectorFeaturesNV(address, container);
     }
 
     /**

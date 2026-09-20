@@ -63,13 +63,8 @@ public class XrSpatialAnchorsCreateInfoFromPoseML extends Struct<XrSpatialAnchor
         TIME = layout.offsetof(4);
     }
 
-    protected XrSpatialAnchorsCreateInfoFromPoseML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsCreateInfoFromPoseML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsCreateInfoFromPoseML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsCreateInfoFromPoseML(address, container);
     }
 
     /**

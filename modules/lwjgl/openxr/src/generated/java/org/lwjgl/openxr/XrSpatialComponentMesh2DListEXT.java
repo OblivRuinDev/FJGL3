@@ -57,13 +57,8 @@ public class XrSpatialComponentMesh2DListEXT extends Struct<XrSpatialComponentMe
         MESHES = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentMesh2DListEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentMesh2DListEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentMesh2DListEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentMesh2DListEXT(address, container);
     }
 
     /**

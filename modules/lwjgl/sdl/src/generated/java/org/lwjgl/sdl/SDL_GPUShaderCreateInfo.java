@@ -81,13 +81,8 @@ public class SDL_GPUShaderCreateInfo extends Struct<SDL_GPUShaderCreateInfo> imp
         PROPS = layout.offsetof(9);
     }
 
-    protected SDL_GPUShaderCreateInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUShaderCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUShaderCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUShaderCreateInfo(address, container);
     }
 
     /**

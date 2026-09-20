@@ -52,13 +52,8 @@ public class VkExternalComputeQueueDataParamsNV extends Struct<VkExternalCompute
         DEVICEINDEX = layout.offsetof(2);
     }
 
-    protected VkExternalComputeQueueDataParamsNV(long address, @Nullable ByteBuffer container) {
+    public VkExternalComputeQueueDataParamsNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalComputeQueueDataParamsNV create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalComputeQueueDataParamsNV(address, container);
     }
 
     /**

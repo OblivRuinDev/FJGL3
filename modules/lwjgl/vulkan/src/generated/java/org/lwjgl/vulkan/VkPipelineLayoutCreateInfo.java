@@ -69,13 +69,8 @@ public class VkPipelineLayoutCreateInfo extends Struct<VkPipelineLayoutCreateInf
         PPUSHCONSTANTRANGES = layout.offsetof(6);
     }
 
-    protected VkPipelineLayoutCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineLayoutCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineLayoutCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineLayoutCreateInfo(address, container);
     }
 
     /**

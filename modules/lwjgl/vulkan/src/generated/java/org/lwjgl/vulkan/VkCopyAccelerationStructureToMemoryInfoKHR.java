@@ -62,13 +62,8 @@ public class VkCopyAccelerationStructureToMemoryInfoKHR extends Struct<VkCopyAcc
         MODE = layout.offsetof(4);
     }
 
-    protected VkCopyAccelerationStructureToMemoryInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkCopyAccelerationStructureToMemoryInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyAccelerationStructureToMemoryInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyAccelerationStructureToMemoryInfoKHR(address, container);
     }
 
     /**

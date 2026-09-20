@@ -47,13 +47,8 @@ public class BGFXInternalData extends Struct<BGFXInternalData> {
         CONTEXT = layout.offsetof(1);
     }
 
-    protected BGFXInternalData(long address, @Nullable ByteBuffer container) {
+    public BGFXInternalData(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXInternalData create(long address, @Nullable ByteBuffer container) {
-        return new BGFXInternalData(address, container);
     }
 
     /**

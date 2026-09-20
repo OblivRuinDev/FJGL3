@@ -63,13 +63,8 @@ public class XrSpatialBoundsFrustumfANDROID extends Struct<XrSpatialBoundsFrustu
         FRUSTUM = layout.offsetof(4);
     }
 
-    protected XrSpatialBoundsFrustumfANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialBoundsFrustumfANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialBoundsFrustumfANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialBoundsFrustumfANDROID(address, container);
     }
 
     /**

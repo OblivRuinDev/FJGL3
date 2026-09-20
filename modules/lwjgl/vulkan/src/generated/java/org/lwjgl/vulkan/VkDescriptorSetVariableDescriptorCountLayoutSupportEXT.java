@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDescriptorSetVariableDescriptorCountLayoutSupportEXT extends VkDescriptorSetVariableDescriptorCountLayoutSupport {
 
-    protected VkDescriptorSetVariableDescriptorCountLayoutSupportEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetVariableDescriptorCountLayoutSupportEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetVariableDescriptorCountLayoutSupportEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetVariableDescriptorCountLayoutSupportEXT(address, container);
     }
 
     /**

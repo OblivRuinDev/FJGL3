@@ -48,13 +48,8 @@ public class XrDeserializeSceneFragmentMSFT extends Struct<XrDeserializeSceneFra
         BUFFER = layout.offsetof(1);
     }
 
-    protected XrDeserializeSceneFragmentMSFT(long address, @Nullable ByteBuffer container) {
+    public XrDeserializeSceneFragmentMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrDeserializeSceneFragmentMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrDeserializeSceneFragmentMSFT(address, container);
     }
 
     /**

@@ -48,13 +48,8 @@ public class VkSubpassEndInfo extends Struct<VkSubpassEndInfo> implements Native
         PNEXT = layout.offsetof(1);
     }
 
-    protected VkSubpassEndInfo(long address, @Nullable ByteBuffer container) {
+    public VkSubpassEndInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassEndInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassEndInfo(address, container);
     }
 
     /**

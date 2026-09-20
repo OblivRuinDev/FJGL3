@@ -74,13 +74,8 @@ public class VmaPoolCreateInfo extends Struct<VmaPoolCreateInfo> implements Nati
         PMEMORYALLOCATENEXT = layout.offsetof(7);
     }
 
-    protected VmaPoolCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VmaPoolCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaPoolCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VmaPoolCreateInfo(address, container);
     }
 
     /**

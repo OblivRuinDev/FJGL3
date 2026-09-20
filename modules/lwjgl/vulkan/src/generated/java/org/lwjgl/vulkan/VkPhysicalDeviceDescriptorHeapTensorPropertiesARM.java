@@ -60,13 +60,8 @@ public class VkPhysicalDeviceDescriptorHeapTensorPropertiesARM extends Struct<Vk
         TENSORCAPTUREREPLAYOPAQUEDATASIZE = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceDescriptorHeapTensorPropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDescriptorHeapTensorPropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDescriptorHeapTensorPropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDescriptorHeapTensorPropertiesARM(address, container);
     }
 
     /**

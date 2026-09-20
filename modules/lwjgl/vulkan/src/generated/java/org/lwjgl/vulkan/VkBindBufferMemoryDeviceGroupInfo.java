@@ -57,13 +57,8 @@ public class VkBindBufferMemoryDeviceGroupInfo extends Struct<VkBindBufferMemory
         PDEVICEINDICES = layout.offsetof(3);
     }
 
-    protected VkBindBufferMemoryDeviceGroupInfo(long address, @Nullable ByteBuffer container) {
+    public VkBindBufferMemoryDeviceGroupInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindBufferMemoryDeviceGroupInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkBindBufferMemoryDeviceGroupInfo(address, container);
     }
 
     /**

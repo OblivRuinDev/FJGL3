@@ -60,13 +60,8 @@ public class NkImage extends Struct<NkImage> implements NativeResource {
         REGION = layout.offsetof(3);
     }
 
-    protected NkImage(long address, @Nullable ByteBuffer container) {
+    public NkImage(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkImage create(long address, @Nullable ByteBuffer container) {
-        return new NkImage(address, container);
     }
 
     /**

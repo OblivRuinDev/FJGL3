@@ -72,13 +72,8 @@ public class VkRayTracingShaderGroupCreateInfoKHR extends Struct<VkRayTracingSha
         PSHADERGROUPCAPTUREREPLAYHANDLE = layout.offsetof(7);
     }
 
-    protected VkRayTracingShaderGroupCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkRayTracingShaderGroupCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRayTracingShaderGroupCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkRayTracingShaderGroupCreateInfoKHR(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrSystemVirtualKeyboardPropertiesMETA extends Struct<XrSystemVirtua
         SUPPORTSVIRTUALKEYBOARD = layout.offsetof(2);
     }
 
-    protected XrSystemVirtualKeyboardPropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemVirtualKeyboardPropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemVirtualKeyboardPropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemVirtualKeyboardPropertiesMETA(address, container);
     }
 
     /**

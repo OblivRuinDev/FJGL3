@@ -73,13 +73,8 @@ public class SDL_DropEvent extends Struct<SDL_DropEvent> implements NativeResour
         DATA = layout.offsetof(7);
     }
 
-    protected SDL_DropEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_DropEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_DropEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_DropEvent(address, container);
     }
 
     /**

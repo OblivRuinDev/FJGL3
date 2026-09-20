@@ -72,13 +72,8 @@ public class XrTriangleMeshCreateInfoFB extends Struct<XrTriangleMeshCreateInfoF
         INDEXBUFFER = layout.offsetof(7);
     }
 
-    protected XrTriangleMeshCreateInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrTriangleMeshCreateInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrTriangleMeshCreateInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrTriangleMeshCreateInfoFB(address, container);
     }
 
     /**

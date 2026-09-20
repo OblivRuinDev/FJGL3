@@ -52,13 +52,8 @@ public class VkGeneratedCommandsPipelineInfoEXT extends Struct<VkGeneratedComman
         PIPELINE = layout.offsetof(2);
     }
 
-    protected VkGeneratedCommandsPipelineInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkGeneratedCommandsPipelineInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGeneratedCommandsPipelineInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkGeneratedCommandsPipelineInfoEXT(address, container);
     }
 
     /**

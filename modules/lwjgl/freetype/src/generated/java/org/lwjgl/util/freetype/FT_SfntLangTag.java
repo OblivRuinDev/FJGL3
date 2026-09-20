@@ -48,13 +48,8 @@ public class FT_SfntLangTag extends Struct<FT_SfntLangTag> implements NativeReso
         STRING_LEN = layout.offsetof(1);
     }
 
-    protected FT_SfntLangTag(long address, @Nullable ByteBuffer container) {
+    public FT_SfntLangTag(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_SfntLangTag create(long address, @Nullable ByteBuffer container) {
-        return new FT_SfntLangTag(address, container);
     }
 
     /**

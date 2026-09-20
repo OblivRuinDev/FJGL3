@@ -52,13 +52,8 @@ public class VmaVirtualAllocationInfo extends Struct<VmaVirtualAllocationInfo> i
         PUSERDATA = layout.offsetof(2);
     }
 
-    protected VmaVirtualAllocationInfo(long address, @Nullable ByteBuffer container) {
+    public VmaVirtualAllocationInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaVirtualAllocationInfo create(long address, @Nullable ByteBuffer container) {
-        return new VmaVirtualAllocationInfo(address, container);
     }
 
     /**

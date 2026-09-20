@@ -130,13 +130,8 @@ public class NkStyleProperty extends Struct<NkStyleProperty> implements NativeRe
         DRAW_END = layout.offsetof(19);
     }
 
-    protected NkStyleProperty(long address, @Nullable ByteBuffer container) {
+    public NkStyleProperty(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleProperty create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleProperty(address, container);
     }
 
     /**

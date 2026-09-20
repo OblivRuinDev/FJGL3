@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures extends Stru
         SHADERDEMOTETOHELPERINVOCATION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures(address, container);
     }
 
     /**

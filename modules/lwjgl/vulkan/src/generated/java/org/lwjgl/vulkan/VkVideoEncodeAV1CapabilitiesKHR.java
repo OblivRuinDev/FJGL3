@@ -148,13 +148,8 @@ public class VkVideoEncodeAV1CapabilitiesKHR extends Struct<VkVideoEncodeAV1Capa
         STDSYNTAXFLAGS = layout.offsetof(25);
     }
 
-    protected VkVideoEncodeAV1CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeAV1CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeAV1CapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeAV1CapabilitiesKHR(address, container);
     }
 
     /**

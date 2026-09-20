@@ -57,13 +57,8 @@ public class XrSpatialAnchorsDeleteInfoML extends Struct<XrSpatialAnchorsDeleteI
         UUIDS = layout.offsetof(3);
     }
 
-    protected XrSpatialAnchorsDeleteInfoML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsDeleteInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsDeleteInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsDeleteInfoML(address, container);
     }
 
     /**

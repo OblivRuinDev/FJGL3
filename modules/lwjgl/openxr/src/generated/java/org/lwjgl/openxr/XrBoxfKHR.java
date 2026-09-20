@@ -24,13 +24,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class XrBoxfKHR extends XrBoxf {
 
-    protected XrBoxfKHR(long address, @Nullable ByteBuffer container) {
+    public XrBoxfKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBoxfKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrBoxfKHR(address, container);
     }
 
     /**

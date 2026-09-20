@@ -52,13 +52,8 @@ public class VkPhysicalDeviceHdrVividFeaturesHUAWEI extends Struct<VkPhysicalDev
         HDRVIVID = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceHdrVividFeaturesHUAWEI(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceHdrVividFeaturesHUAWEI(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceHdrVividFeaturesHUAWEI create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceHdrVividFeaturesHUAWEI(address, container);
     }
 
     /**

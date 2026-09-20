@@ -52,13 +52,8 @@ public class VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV extends 
         PARTITIONEDACCELERATIONSTRUCTURE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV(address, container);
     }
 
     /**

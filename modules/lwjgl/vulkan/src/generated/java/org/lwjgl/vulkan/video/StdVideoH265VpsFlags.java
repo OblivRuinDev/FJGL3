@@ -47,13 +47,8 @@ public class StdVideoH265VpsFlags extends Struct<StdVideoH265VpsFlags> implement
         BITFIELD0 = layout.offsetof(0);
     }
 
-    protected StdVideoH265VpsFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265VpsFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265VpsFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265VpsFlags(address, container);
     }
 
     /**

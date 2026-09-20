@@ -48,13 +48,8 @@ public class XrShareSpacesRecipientBaseHeaderMETA extends Struct<XrShareSpacesRe
         NEXT = layout.offsetof(1);
     }
 
-    protected XrShareSpacesRecipientBaseHeaderMETA(long address, @Nullable ByteBuffer container) {
+    public XrShareSpacesRecipientBaseHeaderMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrShareSpacesRecipientBaseHeaderMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrShareSpacesRecipientBaseHeaderMETA(address, container);
     }
 
     /**

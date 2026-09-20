@@ -52,13 +52,8 @@ public class VkPhysicalDeviceYcbcrDegammaFeaturesQCOM extends Struct<VkPhysicalD
         YCBCRDEGAMMA = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceYcbcrDegammaFeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceYcbcrDegammaFeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceYcbcrDegammaFeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceYcbcrDegammaFeaturesQCOM(address, container);
     }
 
     /**

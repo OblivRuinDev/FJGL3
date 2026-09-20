@@ -51,13 +51,8 @@ public class LLVMOrcCDependenceMapPair extends Struct<LLVMOrcCDependenceMapPair>
         NAMES = layout.offsetof(1);
     }
 
-    protected LLVMOrcCDependenceMapPair(long address, @Nullable ByteBuffer container) {
+    public LLVMOrcCDependenceMapPair(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMOrcCDependenceMapPair create(long address, @Nullable ByteBuffer container) {
-        return new LLVMOrcCDependenceMapPair(address, container);
     }
 
     /**

@@ -51,13 +51,8 @@ public class XrSceneOrientedBoxBoundMSFT extends Struct<XrSceneOrientedBoxBoundM
         EXTENTS = layout.offsetof(1);
     }
 
-    protected XrSceneOrientedBoxBoundMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneOrientedBoxBoundMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneOrientedBoxBoundMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneOrientedBoxBoundMSFT(address, container);
     }
 
     /**

@@ -62,13 +62,8 @@ public class GLFWAllocator extends Struct<GLFWAllocator> implements NativeResour
         USER = layout.offsetof(3);
     }
 
-    protected GLFWAllocator(long address, @Nullable ByteBuffer container) {
+    public GLFWAllocator(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLFWAllocator create(long address, @Nullable ByteBuffer container) {
-        return new GLFWAllocator(address, container);
     }
 
     /**

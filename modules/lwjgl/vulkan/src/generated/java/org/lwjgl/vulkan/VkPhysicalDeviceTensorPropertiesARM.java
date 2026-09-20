@@ -100,13 +100,8 @@ public class VkPhysicalDeviceTensorPropertiesARM extends Struct<VkPhysicalDevice
         SHADERTENSORSUPPORTEDSTAGES = layout.offsetof(14);
     }
 
-    protected VkPhysicalDeviceTensorPropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTensorPropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTensorPropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTensorPropertiesARM(address, container);
     }
 
     /**

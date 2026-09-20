@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE extends Struc
         DESCRIPTORSETHOSTMAPPING = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE(address, container);
     }
 
     /**

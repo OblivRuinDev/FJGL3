@@ -48,13 +48,8 @@ public class CGPoint extends Struct<CGPoint> implements NativeResource {
         Y = layout.offsetof(1);
     }
 
-    protected CGPoint(long address, @Nullable ByteBuffer container) {
+    public CGPoint(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CGPoint create(long address, @Nullable ByteBuffer container) {
-        return new CGPoint(address, container);
     }
 
     /**

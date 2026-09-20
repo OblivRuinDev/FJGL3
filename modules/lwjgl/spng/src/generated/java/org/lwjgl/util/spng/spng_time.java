@@ -65,13 +65,8 @@ public class spng_time extends Struct<spng_time> implements NativeResource {
         SECOND = layout.offsetof(5);
     }
 
-    protected spng_time(long address, @Nullable ByteBuffer container) {
+    public spng_time(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_time create(long address, @Nullable ByteBuffer container) {
-        return new spng_time(address, container);
     }
 
     /**

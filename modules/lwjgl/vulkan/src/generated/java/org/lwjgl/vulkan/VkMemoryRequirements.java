@@ -52,13 +52,8 @@ public class VkMemoryRequirements extends Struct<VkMemoryRequirements> implement
         MEMORYTYPEBITS = layout.offsetof(2);
     }
 
-    protected VkMemoryRequirements(long address, @Nullable ByteBuffer container) {
+    public VkMemoryRequirements(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryRequirements create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryRequirements(address, container);
     }
 
     /**

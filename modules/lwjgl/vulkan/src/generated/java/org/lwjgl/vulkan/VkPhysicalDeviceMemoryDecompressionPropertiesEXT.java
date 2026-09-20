@@ -56,13 +56,8 @@ public class VkPhysicalDeviceMemoryDecompressionPropertiesEXT extends Struct<VkP
         MAXDECOMPRESSIONINDIRECTCOUNT = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceMemoryDecompressionPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMemoryDecompressionPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMemoryDecompressionPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMemoryDecompressionPropertiesEXT(address, container);
     }
 
     /**

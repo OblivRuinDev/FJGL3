@@ -164,13 +164,8 @@ public class FMOD_DSP_DESCRIPTION extends Struct<FMOD_DSP_DESCRIPTION> implement
         SYS_MIX = layout.offsetof(25);
     }
 
-    protected FMOD_DSP_DESCRIPTION(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_DESCRIPTION(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_DESCRIPTION create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_DESCRIPTION(address, container);
     }
 
     /**

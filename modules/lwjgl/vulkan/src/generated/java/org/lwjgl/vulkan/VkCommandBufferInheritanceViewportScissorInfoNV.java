@@ -60,13 +60,8 @@ public class VkCommandBufferInheritanceViewportScissorInfoNV extends Struct<VkCo
         PVIEWPORTDEPTHS = layout.offsetof(4);
     }
 
-    protected VkCommandBufferInheritanceViewportScissorInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkCommandBufferInheritanceViewportScissorInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCommandBufferInheritanceViewportScissorInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkCommandBufferInheritanceViewportScissorInfoNV(address, container);
     }
 
     /**

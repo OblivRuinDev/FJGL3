@@ -84,13 +84,8 @@ public class hwloc_bridge_attr_s extends Struct<hwloc_bridge_attr_s> {
         DEPTH = layout.offsetof(9);
     }
 
-    protected hwloc_bridge_attr_s(long address, @Nullable ByteBuffer container) {
+    public hwloc_bridge_attr_s(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_bridge_attr_s create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_bridge_attr_s(address, container);
     }
 
     /**

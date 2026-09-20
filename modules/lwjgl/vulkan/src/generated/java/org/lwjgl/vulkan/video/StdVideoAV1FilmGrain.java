@@ -145,13 +145,8 @@ public class StdVideoAV1FilmGrain extends Struct<StdVideoAV1FilmGrain> implement
         CR_OFFSET = layout.offsetof(24);
     }
 
-    protected StdVideoAV1FilmGrain(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1FilmGrain(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1FilmGrain create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1FilmGrain(address, container);
     }
 
     /**

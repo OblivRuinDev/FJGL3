@@ -52,13 +52,8 @@ public class VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM extends Str
         MULTIVIEWPERVIEWRENDERAREAS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(address, container);
     }
 
     /**

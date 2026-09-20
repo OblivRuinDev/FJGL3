@@ -51,13 +51,8 @@ public class EpollEvent extends Struct<EpollEvent> implements NativeResource {
         DATA = layout.offsetof(1);
     }
 
-    protected EpollEvent(long address, @Nullable ByteBuffer container) {
+    public EpollEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected EpollEvent create(long address, @Nullable ByteBuffer container) {
-        return new EpollEvent(address, container);
     }
 
     /**

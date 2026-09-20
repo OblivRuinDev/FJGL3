@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceSwapchainMaintenance1FeaturesEXT extends VkPhysicalDeviceSwapchainMaintenance1FeaturesKHR {
 
-    protected VkPhysicalDeviceSwapchainMaintenance1FeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSwapchainMaintenance1FeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSwapchainMaintenance1FeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSwapchainMaintenance1FeaturesEXT(address, container);
     }
 
     /**

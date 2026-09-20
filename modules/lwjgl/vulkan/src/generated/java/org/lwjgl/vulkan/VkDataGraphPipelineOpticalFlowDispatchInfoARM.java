@@ -56,13 +56,8 @@ public class VkDataGraphPipelineOpticalFlowDispatchInfoARM extends Struct<VkData
         MEANFLOWL1NORMHINT = layout.offsetof(3);
     }
 
-    protected VkDataGraphPipelineOpticalFlowDispatchInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineOpticalFlowDispatchInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineOpticalFlowDispatchInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineOpticalFlowDispatchInfoARM(address, container);
     }
 
     /**

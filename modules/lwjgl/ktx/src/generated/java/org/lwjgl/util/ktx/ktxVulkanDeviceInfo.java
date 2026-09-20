@@ -82,13 +82,8 @@ public class ktxVulkanDeviceInfo extends Struct<ktxVulkanDeviceInfo> implements 
         VKFUNCS = layout.offsetof(8);
     }
 
-    protected ktxVulkanDeviceInfo(long address, @Nullable ByteBuffer container) {
+    public ktxVulkanDeviceInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ktxVulkanDeviceInfo create(long address, @Nullable ByteBuffer container) {
-        return new ktxVulkanDeviceInfo(address, container);
     }
 
     /**

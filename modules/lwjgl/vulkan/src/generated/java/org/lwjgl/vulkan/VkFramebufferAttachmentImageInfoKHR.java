@@ -32,13 +32,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkFramebufferAttachmentImageInfoKHR extends VkFramebufferAttachmentImageInfo {
 
-    protected VkFramebufferAttachmentImageInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkFramebufferAttachmentImageInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFramebufferAttachmentImageInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkFramebufferAttachmentImageInfoKHR(address, container);
     }
 
     /**

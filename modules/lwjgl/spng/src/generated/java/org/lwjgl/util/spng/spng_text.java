@@ -74,13 +74,8 @@ public class spng_text extends Struct<spng_text> implements NativeResource {
         TRANSLATED_KEYWORD = layout.offsetof(7);
     }
 
-    protected spng_text(long address, @Nullable ByteBuffer container) {
+    public spng_text(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_text create(long address, @Nullable ByteBuffer container) {
-        return new spng_text(address, container);
     }
 
     /**

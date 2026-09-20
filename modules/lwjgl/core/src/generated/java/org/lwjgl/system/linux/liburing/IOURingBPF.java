@@ -61,13 +61,8 @@ public class IOURingBPF extends Struct<IOURingBPF> implements NativeResource {
         FILTER = layout.offsetof(4);
     }
 
-    protected IOURingBPF(long address, @Nullable ByteBuffer container) {
+    public IOURingBPF(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingBPF create(long address, @Nullable ByteBuffer container) {
-        return new IOURingBPF(address, container);
     }
 
     /**

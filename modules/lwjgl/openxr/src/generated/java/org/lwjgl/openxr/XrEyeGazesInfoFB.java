@@ -57,13 +57,8 @@ public class XrEyeGazesInfoFB extends Struct<XrEyeGazesInfoFB> implements Native
         TIME = layout.offsetof(3);
     }
 
-    protected XrEyeGazesInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrEyeGazesInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEyeGazesInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEyeGazesInfoFB(address, container);
     }
 
     /**

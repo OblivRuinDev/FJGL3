@@ -77,13 +77,8 @@ public class AINode extends Struct<AINode> implements NativeResource {
         MMETADATA = layout.offsetof(7);
     }
 
-    protected AINode(long address, @Nullable ByteBuffer container) {
+    public AINode(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AINode create(long address, @Nullable ByteBuffer container) {
-        return new AINode(address, container);
     }
 
     /**

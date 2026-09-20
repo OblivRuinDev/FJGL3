@@ -61,13 +61,8 @@ public class XrSpatialCapabilityConfigurationDepthRaycastANDROID extends Struct<
         ENABLEDCOMPONENTS = layout.offsetof(4);
     }
 
-    protected XrSpatialCapabilityConfigurationDepthRaycastANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialCapabilityConfigurationDepthRaycastANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialCapabilityConfigurationDepthRaycastANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialCapabilityConfigurationDepthRaycastANDROID(address, container);
     }
 
     /**

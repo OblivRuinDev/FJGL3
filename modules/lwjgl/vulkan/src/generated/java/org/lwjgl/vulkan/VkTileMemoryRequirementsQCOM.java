@@ -56,13 +56,8 @@ public class VkTileMemoryRequirementsQCOM extends Struct<VkTileMemoryRequirement
         ALIGNMENT = layout.offsetof(3);
     }
 
-    protected VkTileMemoryRequirementsQCOM(long address, @Nullable ByteBuffer container) {
+    public VkTileMemoryRequirementsQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTileMemoryRequirementsQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkTileMemoryRequirementsQCOM(address, container);
     }
 
     /**

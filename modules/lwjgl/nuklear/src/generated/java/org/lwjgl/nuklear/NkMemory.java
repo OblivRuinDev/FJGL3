@@ -47,13 +47,8 @@ public class NkMemory extends Struct<NkMemory> {
         SIZE = layout.offsetof(1);
     }
 
-    protected NkMemory(long address, @Nullable ByteBuffer container) {
+    public NkMemory(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkMemory create(long address, @Nullable ByteBuffer container) {
-        return new NkMemory(address, container);
     }
 
     /**

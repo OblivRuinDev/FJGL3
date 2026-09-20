@@ -56,13 +56,8 @@ public class VkComponentMapping extends Struct<VkComponentMapping> implements Na
         A = layout.offsetof(3);
     }
 
-    protected VkComponentMapping(long address, @Nullable ByteBuffer container) {
+    public VkComponentMapping(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkComponentMapping create(long address, @Nullable ByteBuffer container) {
-        return new VkComponentMapping(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT extends Struc
         ZEROINITIALIZEDEVICEMEMORY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT(address, container);
     }
 
     /**

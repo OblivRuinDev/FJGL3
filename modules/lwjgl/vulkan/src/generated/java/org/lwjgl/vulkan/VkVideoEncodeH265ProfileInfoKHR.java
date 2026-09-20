@@ -54,13 +54,8 @@ public class VkVideoEncodeH265ProfileInfoKHR extends Struct<VkVideoEncodeH265Pro
         STDPROFILEIDC = layout.offsetof(2);
     }
 
-    protected VkVideoEncodeH265ProfileInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH265ProfileInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH265ProfileInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH265ProfileInfoKHR(address, container);
     }
 
     /**

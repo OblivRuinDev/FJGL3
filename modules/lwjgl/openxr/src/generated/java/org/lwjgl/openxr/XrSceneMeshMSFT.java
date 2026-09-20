@@ -48,13 +48,8 @@ public class XrSceneMeshMSFT extends Struct<XrSceneMeshMSFT> implements NativeRe
         SUPPORTSINDICESUINT16 = layout.offsetof(1);
     }
 
-    protected XrSceneMeshMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneMeshMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMeshMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMeshMSFT(address, container);
     }
 
     /**

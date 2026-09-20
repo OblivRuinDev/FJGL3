@@ -62,13 +62,8 @@ public class VkConditionalRenderingBeginInfo2EXT extends Struct<VkConditionalRen
         FLAGS = layout.offsetof(4);
     }
 
-    protected VkConditionalRenderingBeginInfo2EXT(long address, @Nullable ByteBuffer container) {
+    public VkConditionalRenderingBeginInfo2EXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkConditionalRenderingBeginInfo2EXT create(long address, @Nullable ByteBuffer container) {
-        return new VkConditionalRenderingBeginInfo2EXT(address, container);
     }
 
     /**

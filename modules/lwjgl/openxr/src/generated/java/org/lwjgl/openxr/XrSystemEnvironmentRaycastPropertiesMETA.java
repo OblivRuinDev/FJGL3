@@ -52,13 +52,8 @@ public class XrSystemEnvironmentRaycastPropertiesMETA extends Struct<XrSystemEnv
         SUPPORTSENVIRONMENTRAYCAST = layout.offsetof(2);
     }
 
-    protected XrSystemEnvironmentRaycastPropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemEnvironmentRaycastPropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemEnvironmentRaycastPropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemEnvironmentRaycastPropertiesMETA(address, container);
     }
 
     /**

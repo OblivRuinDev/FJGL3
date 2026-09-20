@@ -65,13 +65,8 @@ public class XrFacialExpressionsHTC extends Struct<XrFacialExpressionsHTC> imple
         EXPRESSIONWEIGHTINGS = layout.offsetof(5);
     }
 
-    protected XrFacialExpressionsHTC(long address, @Nullable ByteBuffer container) {
+    public XrFacialExpressionsHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFacialExpressionsHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrFacialExpressionsHTC(address, container);
     }
 
     /**

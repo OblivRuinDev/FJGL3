@@ -58,13 +58,8 @@ public class IOURingCQE extends Struct<IOURingCQE> implements NativeResource {
         BIG_CQE = layout.offsetof(3);
     }
 
-    protected IOURingCQE(long address, @Nullable ByteBuffer container) {
+    public IOURingCQE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingCQE create(long address, @Nullable ByteBuffer container) {
-        return new IOURingCQE(address, container);
     }
 
     /**

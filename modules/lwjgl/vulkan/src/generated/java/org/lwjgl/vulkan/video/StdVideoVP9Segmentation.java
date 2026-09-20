@@ -65,13 +65,8 @@ public class StdVideoVP9Segmentation extends Struct<StdVideoVP9Segmentation> imp
         FEATUREDATA = layout.offsetof(4);
     }
 
-    protected StdVideoVP9Segmentation(long address, @Nullable ByteBuffer container) {
+    public StdVideoVP9Segmentation(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoVP9Segmentation create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoVP9Segmentation(address, container);
     }
 
     /**

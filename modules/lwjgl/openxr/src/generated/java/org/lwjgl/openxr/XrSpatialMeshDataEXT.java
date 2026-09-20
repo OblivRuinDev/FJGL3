@@ -55,13 +55,8 @@ public class XrSpatialMeshDataEXT extends Struct<XrSpatialMeshDataEXT> implement
         INDEXBUFFER = layout.offsetof(2);
     }
 
-    protected XrSpatialMeshDataEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialMeshDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialMeshDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialMeshDataEXT(address, container);
     }
 
     /**

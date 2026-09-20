@@ -56,13 +56,8 @@ public class VkAndroidSurfaceCreateInfoKHR extends Struct<VkAndroidSurfaceCreate
         WINDOW = layout.offsetof(3);
     }
 
-    protected VkAndroidSurfaceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkAndroidSurfaceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAndroidSurfaceCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAndroidSurfaceCreateInfoKHR(address, container);
     }
 
     /**

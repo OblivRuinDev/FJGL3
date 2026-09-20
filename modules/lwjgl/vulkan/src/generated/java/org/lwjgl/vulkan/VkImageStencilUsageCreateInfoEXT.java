@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkImageStencilUsageCreateInfoEXT extends VkImageStencilUsageCreateInfo {
 
-    protected VkImageStencilUsageCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkImageStencilUsageCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageStencilUsageCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImageStencilUsageCreateInfoEXT(address, container);
     }
 
     /**

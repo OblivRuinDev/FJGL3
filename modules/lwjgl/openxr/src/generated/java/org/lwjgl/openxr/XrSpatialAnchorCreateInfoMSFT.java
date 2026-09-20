@@ -63,13 +63,8 @@ public class XrSpatialAnchorCreateInfoMSFT extends Struct<XrSpatialAnchorCreateI
         TIME = layout.offsetof(4);
     }
 
-    protected XrSpatialAnchorCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorCreateInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorCreateInfoMSFT(address, container);
     }
 
     /**

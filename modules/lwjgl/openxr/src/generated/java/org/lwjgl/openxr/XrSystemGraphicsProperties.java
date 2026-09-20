@@ -52,13 +52,8 @@ public class XrSystemGraphicsProperties extends Struct<XrSystemGraphicsPropertie
         MAXLAYERCOUNT = layout.offsetof(2);
     }
 
-    protected XrSystemGraphicsProperties(long address, @Nullable ByteBuffer container) {
+    public XrSystemGraphicsProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemGraphicsProperties create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemGraphicsProperties(address, container);
     }
 
     /**

@@ -62,13 +62,8 @@ public class ParSLSpineList extends Struct<ParSLSpineList> implements NativeReso
         CLOSED = layout.offsetof(4);
     }
 
-    protected ParSLSpineList(long address, @Nullable ByteBuffer container) {
+    public ParSLSpineList(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ParSLSpineList create(long address, @Nullable ByteBuffer container) {
-        return new ParSLSpineList(address, container);
     }
 
     /**

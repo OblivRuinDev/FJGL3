@@ -60,13 +60,8 @@ public class VkDataGraphPipelineSessionBindPointRequirementARM extends Struct<Vk
         NUMOBJECTS = layout.offsetof(4);
     }
 
-    protected VkDataGraphPipelineSessionBindPointRequirementARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineSessionBindPointRequirementARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineSessionBindPointRequirementARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineSessionBindPointRequirementARM(address, container);
     }
 
     /**

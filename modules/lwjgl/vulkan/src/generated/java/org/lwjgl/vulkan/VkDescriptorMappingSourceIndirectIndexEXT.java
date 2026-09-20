@@ -88,13 +88,8 @@ public class VkDescriptorMappingSourceIndirectIndexEXT extends Struct<VkDescript
         SAMPLERHEAPARRAYSTRIDE = layout.offsetof(11);
     }
 
-    protected VkDescriptorMappingSourceIndirectIndexEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorMappingSourceIndirectIndexEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorMappingSourceIndirectIndexEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorMappingSourceIndirectIndexEXT(address, container);
     }
 
     /**

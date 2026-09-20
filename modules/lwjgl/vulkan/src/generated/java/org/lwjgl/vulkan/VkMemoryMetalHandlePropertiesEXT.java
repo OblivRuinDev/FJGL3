@@ -52,13 +52,8 @@ public class VkMemoryMetalHandlePropertiesEXT extends Struct<VkMemoryMetalHandle
         MEMORYTYPEBITS = layout.offsetof(2);
     }
 
-    protected VkMemoryMetalHandlePropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkMemoryMetalHandlePropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryMetalHandlePropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryMetalHandlePropertiesEXT(address, container);
     }
 
     /**

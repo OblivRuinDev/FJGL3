@@ -56,13 +56,8 @@ public class XrScenePlanesMSFT extends Struct<XrScenePlanesMSFT> implements Nati
         SCENEPLANES = layout.offsetof(3);
     }
 
-    protected XrScenePlanesMSFT(long address, @Nullable ByteBuffer container) {
+    public XrScenePlanesMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrScenePlanesMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrScenePlanesMSFT(address, container);
     }
 
     /**

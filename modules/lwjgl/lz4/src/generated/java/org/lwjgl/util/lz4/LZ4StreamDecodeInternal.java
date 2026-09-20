@@ -55,13 +55,8 @@ public class LZ4StreamDecodeInternal extends Struct<LZ4StreamDecodeInternal> {
         PREFIXSIZE = layout.offsetof(3);
     }
 
-    protected LZ4StreamDecodeInternal(long address, @Nullable ByteBuffer container) {
+    public LZ4StreamDecodeInternal(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LZ4StreamDecodeInternal create(long address, @Nullable ByteBuffer container) {
-        return new LZ4StreamDecodeInternal(address, container);
     }
 
     /**

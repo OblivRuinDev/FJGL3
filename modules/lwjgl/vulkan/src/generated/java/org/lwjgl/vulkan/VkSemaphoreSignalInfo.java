@@ -56,13 +56,8 @@ public class VkSemaphoreSignalInfo extends Struct<VkSemaphoreSignalInfo> impleme
         VALUE = layout.offsetof(3);
     }
 
-    protected VkSemaphoreSignalInfo(long address, @Nullable ByteBuffer container) {
+    public VkSemaphoreSignalInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSemaphoreSignalInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkSemaphoreSignalInfo(address, container);
     }
 
     /**

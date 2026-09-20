@@ -48,13 +48,8 @@ public class VkDeviceOrHostAddressKHR extends Struct<VkDeviceOrHostAddressKHR> i
         HOSTADDRESS = layout.offsetof(1);
     }
 
-    protected VkDeviceOrHostAddressKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceOrHostAddressKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceOrHostAddressKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceOrHostAddressKHR(address, container);
     }
 
     /**

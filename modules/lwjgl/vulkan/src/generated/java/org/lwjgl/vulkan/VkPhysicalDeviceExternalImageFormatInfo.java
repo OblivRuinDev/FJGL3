@@ -52,13 +52,8 @@ public class VkPhysicalDeviceExternalImageFormatInfo extends Struct<VkPhysicalDe
         HANDLETYPE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceExternalImageFormatInfo(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalImageFormatInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalImageFormatInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalImageFormatInfo(address, container);
     }
 
     /**

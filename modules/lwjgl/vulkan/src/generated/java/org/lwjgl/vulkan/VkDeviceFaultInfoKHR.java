@@ -77,13 +77,8 @@ public class VkDeviceFaultInfoKHR extends Struct<VkDeviceFaultInfoKHR> implement
         VENDORINFO = layout.offsetof(7);
     }
 
-    protected VkDeviceFaultInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceFaultInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceFaultInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceFaultInfoKHR(address, container);
     }
 
     /**

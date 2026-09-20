@@ -58,13 +58,8 @@ public class VkRenderPassTileShadingCreateInfoQCOM extends Struct<VkRenderPassTi
         TILEAPRONSIZE = layout.offsetof(3);
     }
 
-    protected VkRenderPassTileShadingCreateInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassTileShadingCreateInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassTileShadingCreateInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassTileShadingCreateInfoQCOM(address, container);
     }
 
     /**

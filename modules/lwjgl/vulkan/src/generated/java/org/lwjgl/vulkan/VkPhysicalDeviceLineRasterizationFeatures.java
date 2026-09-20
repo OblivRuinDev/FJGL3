@@ -72,13 +72,8 @@ public class VkPhysicalDeviceLineRasterizationFeatures extends Struct<VkPhysical
         STIPPLEDSMOOTHLINES = layout.offsetof(7);
     }
 
-    protected VkPhysicalDeviceLineRasterizationFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceLineRasterizationFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceLineRasterizationFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceLineRasterizationFeatures(address, container);
     }
 
     /**

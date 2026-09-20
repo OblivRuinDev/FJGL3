@@ -62,13 +62,8 @@ public class VkDrawIndirect2InfoKHR extends Struct<VkDrawIndirect2InfoKHR> imple
         DRAWCOUNT = layout.offsetof(4);
     }
 
-    protected VkDrawIndirect2InfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDrawIndirect2InfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDrawIndirect2InfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDrawIndirect2InfoKHR(address, container);
     }
 
     /**

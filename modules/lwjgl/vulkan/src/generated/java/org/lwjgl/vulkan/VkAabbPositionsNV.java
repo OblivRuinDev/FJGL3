@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkAabbPositionsNV extends VkAabbPositionsKHR {
 
-    protected VkAabbPositionsNV(long address, @Nullable ByteBuffer container) {
+    public VkAabbPositionsNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAabbPositionsNV create(long address, @Nullable ByteBuffer container) {
-        return new VkAabbPositionsNV(address, container);
     }
 
     /**

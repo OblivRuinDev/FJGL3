@@ -50,13 +50,8 @@ public class FMOD_STUDIO_BUFFER_USAGE extends Struct<FMOD_STUDIO_BUFFER_USAGE> i
         STUDIOHANDLE = layout.offsetof(1);
     }
 
-    protected FMOD_STUDIO_BUFFER_USAGE(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_BUFFER_USAGE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_BUFFER_USAGE create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_BUFFER_USAGE(address, container);
     }
 
     /**

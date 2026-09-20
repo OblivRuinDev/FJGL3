@@ -83,13 +83,8 @@ public class VkClusterAccelerationStructureCommandsInfoNV extends Struct<VkClust
         ADDRESSRESOLUTIONFLAGS = layout.offsetof(9);
     }
 
-    protected VkClusterAccelerationStructureCommandsInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureCommandsInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureCommandsInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureCommandsInfoNV(address, container);
     }
 
     /**

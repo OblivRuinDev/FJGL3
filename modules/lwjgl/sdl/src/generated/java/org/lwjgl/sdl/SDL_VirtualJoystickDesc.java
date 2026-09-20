@@ -154,13 +154,8 @@ public class SDL_VirtualJoystickDesc extends Struct<SDL_VirtualJoystickDesc> imp
         CLEANUP = layout.offsetof(25);
     }
 
-    protected SDL_VirtualJoystickDesc(long address, @Nullable ByteBuffer container) {
+    public SDL_VirtualJoystickDesc(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_VirtualJoystickDesc create(long address, @Nullable ByteBuffer container) {
-        return new SDL_VirtualJoystickDesc(address, container);
     }
 
     /**

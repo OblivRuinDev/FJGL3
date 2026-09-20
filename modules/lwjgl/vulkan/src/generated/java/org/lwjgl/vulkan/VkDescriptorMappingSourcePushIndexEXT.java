@@ -80,13 +80,8 @@ public class VkDescriptorMappingSourcePushIndexEXT extends Struct<VkDescriptorMa
         SAMPLERHEAPARRAYSTRIDE = layout.offsetof(9);
     }
 
-    protected VkDescriptorMappingSourcePushIndexEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorMappingSourcePushIndexEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorMappingSourcePushIndexEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorMappingSourcePushIndexEXT(address, container);
     }
 
     /**

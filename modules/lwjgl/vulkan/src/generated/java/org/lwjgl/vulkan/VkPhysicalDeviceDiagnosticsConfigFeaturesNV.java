@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDiagnosticsConfigFeaturesNV extends Struct<VkPhysic
         DIAGNOSTICSCONFIG = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDiagnosticsConfigFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDiagnosticsConfigFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDiagnosticsConfigFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDiagnosticsConfigFeaturesNV(address, container);
     }
 
     /**

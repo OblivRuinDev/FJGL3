@@ -52,13 +52,8 @@ public class XrHandPoseTypeInfoMSFT extends Struct<XrHandPoseTypeInfoMSFT> imple
         HANDPOSETYPE = layout.offsetof(2);
     }
 
-    protected XrHandPoseTypeInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrHandPoseTypeInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandPoseTypeInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandPoseTypeInfoMSFT(address, container);
     }
 
     /**

@@ -82,13 +82,8 @@ public class VkRenderingAttachmentInfo extends Struct<VkRenderingAttachmentInfo>
         CLEARVALUE = layout.offsetof(9);
     }
 
-    protected VkRenderingAttachmentInfo(long address, @Nullable ByteBuffer container) {
+    public VkRenderingAttachmentInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderingAttachmentInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderingAttachmentInfo(address, container);
     }
 
     /**

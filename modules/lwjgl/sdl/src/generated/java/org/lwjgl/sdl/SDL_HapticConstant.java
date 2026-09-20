@@ -86,13 +86,8 @@ public class SDL_HapticConstant extends Struct<SDL_HapticConstant> implements Na
         FADE_LEVEL = layout.offsetof(10);
     }
 
-    protected SDL_HapticConstant(long address, @Nullable ByteBuffer container) {
+    public SDL_HapticConstant(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_HapticConstant create(long address, @Nullable ByteBuffer container) {
-        return new SDL_HapticConstant(address, container);
     }
 
     /**

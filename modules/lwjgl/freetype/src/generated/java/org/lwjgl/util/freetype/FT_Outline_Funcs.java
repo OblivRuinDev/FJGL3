@@ -69,13 +69,8 @@ public class FT_Outline_Funcs extends Struct<FT_Outline_Funcs> implements Native
         DELTA = layout.offsetof(5);
     }
 
-    protected FT_Outline_Funcs(long address, @Nullable ByteBuffer container) {
+    public FT_Outline_Funcs(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Outline_Funcs create(long address, @Nullable ByteBuffer container) {
-        return new FT_Outline_Funcs(address, container);
     }
 
     /**

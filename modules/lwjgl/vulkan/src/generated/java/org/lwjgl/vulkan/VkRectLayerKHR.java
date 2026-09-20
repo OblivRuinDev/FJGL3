@@ -55,13 +55,8 @@ public class VkRectLayerKHR extends Struct<VkRectLayerKHR> implements NativeReso
         LAYER = layout.offsetof(2);
     }
 
-    protected VkRectLayerKHR(long address, @Nullable ByteBuffer container) {
+    public VkRectLayerKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRectLayerKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkRectLayerKHR(address, container);
     }
 
     /**

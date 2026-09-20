@@ -54,13 +54,8 @@ public class XrPersistedAnchorSpaceCreateInfoANDROID extends Struct<XrPersistedA
         ANCHORID = layout.offsetof(2);
     }
 
-    protected XrPersistedAnchorSpaceCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrPersistedAnchorSpaceCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPersistedAnchorSpaceCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrPersistedAnchorSpaceCreateInfoANDROID(address, container);
     }
 
     /**

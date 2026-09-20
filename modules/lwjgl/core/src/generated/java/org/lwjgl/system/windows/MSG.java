@@ -66,13 +66,8 @@ public class MSG extends Struct<MSG> implements NativeResource {
         PT = layout.offsetof(5);
     }
 
-    protected MSG(long address, @Nullable ByteBuffer container) {
+    public MSG(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MSG create(long address, @Nullable ByteBuffer container) {
-        return new MSG(address, container);
     }
 
     /**

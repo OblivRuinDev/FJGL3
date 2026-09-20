@@ -99,13 +99,8 @@ public class VkConvertCooperativeVectorMatrixInfoNV extends Struct<VkConvertCoop
         DSTSTRIDE = layout.offsetof(13);
     }
 
-    protected VkConvertCooperativeVectorMatrixInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkConvertCooperativeVectorMatrixInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkConvertCooperativeVectorMatrixInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkConvertCooperativeVectorMatrixInfoNV(address, container);
     }
 
     /**

@@ -85,13 +85,8 @@ public class VkRayTracingPipelineCreateInfoNV extends Struct<VkRayTracingPipelin
         BASEPIPELINEINDEX = layout.offsetof(10);
     }
 
-    protected VkRayTracingPipelineCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkRayTracingPipelineCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRayTracingPipelineCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkRayTracingPipelineCreateInfoNV(address, container);
     }
 
     /**

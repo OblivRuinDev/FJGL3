@@ -64,13 +64,8 @@ public class XrEventDataGeospatialTrackerStateChangedANDROID extends Struct<XrEv
         TIME = layout.offsetof(5);
     }
 
-    protected XrEventDataGeospatialTrackerStateChangedANDROID(long address, @Nullable ByteBuffer container) {
+    public XrEventDataGeospatialTrackerStateChangedANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataGeospatialTrackerStateChangedANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataGeospatialTrackerStateChangedANDROID(address, container);
     }
 
     /**

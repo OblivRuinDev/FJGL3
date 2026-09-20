@@ -46,13 +46,8 @@ public class VkIndirectCommandsPushConstantTokenEXT extends Struct<VkIndirectCom
         UPDATERANGE = layout.offsetof(0);
     }
 
-    protected VkIndirectCommandsPushConstantTokenEXT(long address, @Nullable ByteBuffer container) {
+    public VkIndirectCommandsPushConstantTokenEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectCommandsPushConstantTokenEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectCommandsPushConstantTokenEXT(address, container);
     }
 
     /**

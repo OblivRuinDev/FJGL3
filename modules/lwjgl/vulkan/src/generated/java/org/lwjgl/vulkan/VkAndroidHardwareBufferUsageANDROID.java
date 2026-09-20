@@ -52,13 +52,8 @@ public class VkAndroidHardwareBufferUsageANDROID extends Struct<VkAndroidHardwar
         ANDROIDHARDWAREBUFFERUSAGE = layout.offsetof(2);
     }
 
-    protected VkAndroidHardwareBufferUsageANDROID(long address, @Nullable ByteBuffer container) {
+    public VkAndroidHardwareBufferUsageANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAndroidHardwareBufferUsageANDROID create(long address, @Nullable ByteBuffer container) {
-        return new VkAndroidHardwareBufferUsageANDROID(address, container);
     }
 
     /**

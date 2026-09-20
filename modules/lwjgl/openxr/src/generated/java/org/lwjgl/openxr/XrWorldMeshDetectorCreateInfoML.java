@@ -48,13 +48,8 @@ public class XrWorldMeshDetectorCreateInfoML extends Struct<XrWorldMeshDetectorC
         NEXT = layout.offsetof(1);
     }
 
-    protected XrWorldMeshDetectorCreateInfoML(long address, @Nullable ByteBuffer container) {
+    public XrWorldMeshDetectorCreateInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrWorldMeshDetectorCreateInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrWorldMeshDetectorCreateInfoML(address, container);
     }
 
     /**

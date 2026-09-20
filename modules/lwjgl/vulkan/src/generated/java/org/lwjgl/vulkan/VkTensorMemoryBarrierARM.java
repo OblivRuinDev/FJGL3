@@ -76,13 +76,8 @@ public class VkTensorMemoryBarrierARM extends Struct<VkTensorMemoryBarrierARM> i
         TENSOR = layout.offsetof(8);
     }
 
-    protected VkTensorMemoryBarrierARM(long address, @Nullable ByteBuffer container) {
+    public VkTensorMemoryBarrierARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTensorMemoryBarrierARM create(long address, @Nullable ByteBuffer container) {
-        return new VkTensorMemoryBarrierARM(address, container);
     }
 
     /**

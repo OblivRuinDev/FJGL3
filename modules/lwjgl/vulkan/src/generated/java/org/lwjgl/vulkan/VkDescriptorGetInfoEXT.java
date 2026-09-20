@@ -58,13 +58,8 @@ public class VkDescriptorGetInfoEXT extends Struct<VkDescriptorGetInfoEXT> imple
         DATA = layout.offsetof(3);
     }
 
-    protected VkDescriptorGetInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorGetInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorGetInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorGetInfoEXT(address, container);
     }
 
     /**

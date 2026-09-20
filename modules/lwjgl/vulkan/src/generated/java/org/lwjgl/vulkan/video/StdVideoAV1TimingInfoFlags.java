@@ -48,13 +48,8 @@ public class StdVideoAV1TimingInfoFlags extends Struct<StdVideoAV1TimingInfoFlag
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoAV1TimingInfoFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1TimingInfoFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1TimingInfoFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1TimingInfoFlags(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class VkAccelerationStructureInstanceKHR extends Struct<VkAccelerationStr
         ACCELERATIONSTRUCTUREREFERENCE = layout.offsetof(3);
     }
 
-    protected VkAccelerationStructureInstanceKHR(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureInstanceKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureInstanceKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureInstanceKHR(address, container);
     }
 
     /**

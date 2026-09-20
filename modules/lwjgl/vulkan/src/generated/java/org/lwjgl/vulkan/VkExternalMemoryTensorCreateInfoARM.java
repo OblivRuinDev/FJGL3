@@ -52,13 +52,8 @@ public class VkExternalMemoryTensorCreateInfoARM extends Struct<VkExternalMemory
         HANDLETYPES = layout.offsetof(2);
     }
 
-    protected VkExternalMemoryTensorCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkExternalMemoryTensorCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalMemoryTensorCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalMemoryTensorCreateInfoARM(address, container);
     }
 
     /**

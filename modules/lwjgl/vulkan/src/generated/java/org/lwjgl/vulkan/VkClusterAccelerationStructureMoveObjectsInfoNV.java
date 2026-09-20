@@ -44,13 +44,8 @@ public class VkClusterAccelerationStructureMoveObjectsInfoNV extends Struct<VkCl
         SRCACCELERATIONSTRUCTURE = layout.offsetof(0);
     }
 
-    protected VkClusterAccelerationStructureMoveObjectsInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureMoveObjectsInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureMoveObjectsInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureMoveObjectsInfoNV(address, container);
     }
 
     /**

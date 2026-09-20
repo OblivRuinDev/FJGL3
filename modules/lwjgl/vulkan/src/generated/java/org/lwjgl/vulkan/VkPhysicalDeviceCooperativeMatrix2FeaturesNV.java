@@ -76,13 +76,8 @@ public class VkPhysicalDeviceCooperativeMatrix2FeaturesNV extends Struct<VkPhysi
         COOPERATIVEMATRIXBLOCKLOADS = layout.offsetof(8);
     }
 
-    protected VkPhysicalDeviceCooperativeMatrix2FeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCooperativeMatrix2FeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCooperativeMatrix2FeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCooperativeMatrix2FeaturesNV(address, container);
     }
 
     /**

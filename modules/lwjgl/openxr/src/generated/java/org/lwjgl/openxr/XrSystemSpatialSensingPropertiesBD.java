@@ -52,13 +52,8 @@ public class XrSystemSpatialSensingPropertiesBD extends Struct<XrSystemSpatialSe
         SUPPORTSSPATIALSENSING = layout.offsetof(2);
     }
 
-    protected XrSystemSpatialSensingPropertiesBD(long address, @Nullable ByteBuffer container) {
+    public XrSystemSpatialSensingPropertiesBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemSpatialSensingPropertiesBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemSpatialSensingPropertiesBD(address, container);
     }
 
     /**

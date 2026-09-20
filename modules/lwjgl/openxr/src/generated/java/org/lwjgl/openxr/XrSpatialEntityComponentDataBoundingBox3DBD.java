@@ -54,13 +54,8 @@ public class XrSpatialEntityComponentDataBoundingBox3DBD extends Struct<XrSpatia
         BOUNDINGBOX3D = layout.offsetof(2);
     }
 
-    protected XrSpatialEntityComponentDataBoundingBox3DBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityComponentDataBoundingBox3DBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityComponentDataBoundingBox3DBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityComponentDataBoundingBox3DBD(address, container);
     }
 
     /**

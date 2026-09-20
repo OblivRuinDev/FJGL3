@@ -52,13 +52,8 @@ public class VkSpecializationMapEntry extends Struct<VkSpecializationMapEntry> i
         SIZE = layout.offsetof(2);
     }
 
-    protected VkSpecializationMapEntry(long address, @Nullable ByteBuffer container) {
+    public VkSpecializationMapEntry(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSpecializationMapEntry create(long address, @Nullable ByteBuffer container) {
-        return new VkSpecializationMapEntry(address, container);
     }
 
     /**

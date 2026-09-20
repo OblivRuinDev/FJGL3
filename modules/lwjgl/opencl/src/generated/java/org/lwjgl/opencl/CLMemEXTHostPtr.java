@@ -49,13 +49,8 @@ public class CLMemEXTHostPtr extends Struct<CLMemEXTHostPtr> implements NativeRe
         HOST_CACHE_POLICY = layout.offsetof(1);
     }
 
-    protected CLMemEXTHostPtr(long address, @Nullable ByteBuffer container) {
+    public CLMemEXTHostPtr(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLMemEXTHostPtr create(long address, @Nullable ByteBuffer container) {
-        return new CLMemEXTHostPtr(address, container);
     }
 
     /**

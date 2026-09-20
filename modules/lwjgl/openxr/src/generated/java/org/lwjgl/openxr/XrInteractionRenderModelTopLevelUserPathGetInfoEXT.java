@@ -57,13 +57,8 @@ public class XrInteractionRenderModelTopLevelUserPathGetInfoEXT extends Struct<X
         TOPLEVELUSERPATHS = layout.offsetof(3);
     }
 
-    protected XrInteractionRenderModelTopLevelUserPathGetInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrInteractionRenderModelTopLevelUserPathGetInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrInteractionRenderModelTopLevelUserPathGetInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrInteractionRenderModelTopLevelUserPathGetInfoEXT(address, container);
     }
 
     /**

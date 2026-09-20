@@ -52,13 +52,8 @@ public class XrMarkerDetectorStateML extends Struct<XrMarkerDetectorStateML> imp
         STATE = layout.offsetof(2);
     }
 
-    protected XrMarkerDetectorStateML(long address, @Nullable ByteBuffer container) {
+    public XrMarkerDetectorStateML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrMarkerDetectorStateML create(long address, @Nullable ByteBuffer container) {
-        return new XrMarkerDetectorStateML(address, container);
     }
 
     /**

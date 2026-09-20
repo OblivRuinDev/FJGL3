@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT extends VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures {
 
-    protected VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT(address, container);
     }
 
     /**

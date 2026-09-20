@@ -48,13 +48,8 @@ public class VkDepthClampRangeEXT extends Struct<VkDepthClampRangeEXT> implement
         MAXDEPTHCLAMP = layout.offsetof(1);
     }
 
-    protected VkDepthClampRangeEXT(long address, @Nullable ByteBuffer container) {
+    public VkDepthClampRangeEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDepthClampRangeEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDepthClampRangeEXT(address, container);
     }
 
     /**

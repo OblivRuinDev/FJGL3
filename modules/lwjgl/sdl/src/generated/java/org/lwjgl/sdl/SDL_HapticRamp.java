@@ -90,13 +90,8 @@ public class SDL_HapticRamp extends Struct<SDL_HapticRamp> implements NativeReso
         FADE_LEVEL = layout.offsetof(11);
     }
 
-    protected SDL_HapticRamp(long address, @Nullable ByteBuffer container) {
+    public SDL_HapticRamp(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_HapticRamp create(long address, @Nullable ByteBuffer container) {
-        return new SDL_HapticRamp(address, container);
     }
 
     /**

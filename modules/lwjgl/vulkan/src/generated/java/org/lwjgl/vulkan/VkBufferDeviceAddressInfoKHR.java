@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkBufferDeviceAddressInfoKHR extends VkBufferDeviceAddressInfo {
 
-    protected VkBufferDeviceAddressInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkBufferDeviceAddressInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferDeviceAddressInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferDeviceAddressInfoKHR(address, container);
     }
 
     /**

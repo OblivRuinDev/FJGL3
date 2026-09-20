@@ -34,13 +34,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkRenderPassCreateInfo2KHR extends VkRenderPassCreateInfo2 {
 
-    protected VkRenderPassCreateInfo2KHR(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassCreateInfo2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassCreateInfo2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassCreateInfo2KHR(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkSemaphoreGetWin32HandleInfoKHR extends Struct<VkSemaphoreGetWin32
         HANDLETYPE = layout.offsetof(3);
     }
 
-    protected VkSemaphoreGetWin32HandleInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkSemaphoreGetWin32HandleInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSemaphoreGetWin32HandleInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSemaphoreGetWin32HandleInfoKHR(address, container);
     }
 
     /**

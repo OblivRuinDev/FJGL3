@@ -44,13 +44,8 @@ public class FMOD_DSP_PARAMETER_DESC_DATA extends Struct<FMOD_DSP_PARAMETER_DESC
         DATATYPE = layout.offsetof(0);
     }
 
-    protected FMOD_DSP_PARAMETER_DESC_DATA(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_PARAMETER_DESC_DATA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_PARAMETER_DESC_DATA create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_PARAMETER_DESC_DATA(address, container);
     }
 
     /**

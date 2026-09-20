@@ -65,13 +65,8 @@ public class XDestroyWindowEvent extends Struct<XDestroyWindowEvent> implements 
         WINDOW = layout.offsetof(5);
     }
 
-    protected XDestroyWindowEvent(long address, @Nullable ByteBuffer container) {
+    public XDestroyWindowEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XDestroyWindowEvent create(long address, @Nullable ByteBuffer container) {
-        return new XDestroyWindowEvent(address, container);
     }
 
     /**

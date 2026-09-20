@@ -57,13 +57,8 @@ public class VkDescriptorSetVariableDescriptorCountAllocateInfo extends Struct<V
         PDESCRIPTORCOUNTS = layout.offsetof(3);
     }
 
-    protected VkDescriptorSetVariableDescriptorCountAllocateInfo(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetVariableDescriptorCountAllocateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetVariableDescriptorCountAllocateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetVariableDescriptorCountAllocateInfo(address, container);
     }
 
     /**

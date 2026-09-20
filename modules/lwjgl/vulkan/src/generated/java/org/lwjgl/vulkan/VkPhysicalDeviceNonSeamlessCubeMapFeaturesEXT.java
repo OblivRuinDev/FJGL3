@@ -52,13 +52,8 @@ public class VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT extends Struct<VkPhys
         NONSEAMLESSCUBEMAP = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT(address, container);
     }
 
     /**

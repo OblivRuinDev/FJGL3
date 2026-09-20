@@ -50,13 +50,8 @@ public class STBVorbisAlloc extends Struct<STBVorbisAlloc> implements NativeReso
         ALLOC_BUFFER_LENGTH_IN_BYTES = layout.offsetof(1);
     }
 
-    protected STBVorbisAlloc(long address, @Nullable ByteBuffer container) {
+    public STBVorbisAlloc(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBVorbisAlloc create(long address, @Nullable ByteBuffer container) {
-        return new STBVorbisAlloc(address, container);
     }
 
     /**

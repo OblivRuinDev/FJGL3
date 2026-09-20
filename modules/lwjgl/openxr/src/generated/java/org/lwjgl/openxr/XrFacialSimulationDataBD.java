@@ -69,13 +69,8 @@ public class XrFacialSimulationDataBD extends Struct<XrFacialSimulationDataBD> i
         TIME = layout.offsetof(6);
     }
 
-    protected XrFacialSimulationDataBD(long address, @Nullable ByteBuffer container) {
+    public XrFacialSimulationDataBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFacialSimulationDataBD create(long address, @Nullable ByteBuffer container) {
-        return new XrFacialSimulationDataBD(address, container);
     }
 
     /**

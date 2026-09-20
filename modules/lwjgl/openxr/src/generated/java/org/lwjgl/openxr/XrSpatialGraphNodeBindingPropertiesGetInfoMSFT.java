@@ -48,13 +48,8 @@ public class XrSpatialGraphNodeBindingPropertiesGetInfoMSFT extends Struct<XrSpa
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSpatialGraphNodeBindingPropertiesGetInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialGraphNodeBindingPropertiesGetInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialGraphNodeBindingPropertiesGetInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialGraphNodeBindingPropertiesGetInfoMSFT(address, container);
     }
 
     /**

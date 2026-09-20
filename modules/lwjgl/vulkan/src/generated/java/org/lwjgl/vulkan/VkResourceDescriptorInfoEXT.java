@@ -58,13 +58,8 @@ public class VkResourceDescriptorInfoEXT extends Struct<VkResourceDescriptorInfo
         DATA = layout.offsetof(3);
     }
 
-    protected VkResourceDescriptorInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkResourceDescriptorInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkResourceDescriptorInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkResourceDescriptorInfoEXT(address, container);
     }
 
     /**

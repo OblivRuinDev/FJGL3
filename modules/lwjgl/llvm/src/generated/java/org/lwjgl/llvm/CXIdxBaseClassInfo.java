@@ -53,13 +53,8 @@ public class CXIdxBaseClassInfo extends Struct<CXIdxBaseClassInfo> {
         LOC = layout.offsetof(2);
     }
 
-    protected CXIdxBaseClassInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxBaseClassInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxBaseClassInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxBaseClassInfo(address, container);
     }
 
     /**

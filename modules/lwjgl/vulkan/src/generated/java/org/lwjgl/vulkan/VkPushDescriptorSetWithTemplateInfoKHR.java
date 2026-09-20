@@ -29,13 +29,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPushDescriptorSetWithTemplateInfoKHR extends VkPushDescriptorSetWithTemplateInfo {
 
-    protected VkPushDescriptorSetWithTemplateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPushDescriptorSetWithTemplateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPushDescriptorSetWithTemplateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPushDescriptorSetWithTemplateInfoKHR(address, container);
     }
 
     /**

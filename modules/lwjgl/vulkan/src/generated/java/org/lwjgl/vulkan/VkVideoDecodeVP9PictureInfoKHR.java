@@ -73,13 +73,8 @@ public class VkVideoDecodeVP9PictureInfoKHR extends Struct<VkVideoDecodeVP9Pictu
         TILESOFFSET = layout.offsetof(6);
     }
 
-    protected VkVideoDecodeVP9PictureInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeVP9PictureInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeVP9PictureInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeVP9PictureInfoKHR(address, container);
     }
 
     /**

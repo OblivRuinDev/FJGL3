@@ -52,13 +52,8 @@ public class VkDeviceGroupCommandBufferBeginInfo extends Struct<VkDeviceGroupCom
         DEVICEMASK = layout.offsetof(2);
     }
 
-    protected VkDeviceGroupCommandBufferBeginInfo(long address, @Nullable ByteBuffer container) {
+    public VkDeviceGroupCommandBufferBeginInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceGroupCommandBufferBeginInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceGroupCommandBufferBeginInfo(address, container);
     }
 
     /**

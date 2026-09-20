@@ -56,13 +56,8 @@ public class VkPhysicalDevicePerformanceQueryFeaturesKHR extends Struct<VkPhysic
         PERFORMANCECOUNTERMULTIPLEQUERYPOOLS = layout.offsetof(3);
     }
 
-    protected VkPhysicalDevicePerformanceQueryFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePerformanceQueryFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePerformanceQueryFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePerformanceQueryFeaturesKHR(address, container);
     }
 
     /**

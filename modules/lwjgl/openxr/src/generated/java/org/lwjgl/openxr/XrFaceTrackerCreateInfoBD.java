@@ -52,13 +52,8 @@ public class XrFaceTrackerCreateInfoBD extends Struct<XrFaceTrackerCreateInfoBD>
         MODE = layout.offsetof(2);
     }
 
-    protected XrFaceTrackerCreateInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrFaceTrackerCreateInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFaceTrackerCreateInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrFaceTrackerCreateInfoBD(address, container);
     }
 
     /**

@@ -49,13 +49,8 @@ public class XrLoaderInitPropertyValueEXT extends Struct<XrLoaderInitPropertyVal
         VALUE = layout.offsetof(1);
     }
 
-    protected XrLoaderInitPropertyValueEXT(long address, @Nullable ByteBuffer container) {
+    public XrLoaderInitPropertyValueEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrLoaderInitPropertyValueEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrLoaderInitPropertyValueEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDevicePresentMeteringFeaturesNV extends Struct<VkPhysical
         PRESENTMETERING = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePresentMeteringFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePresentMeteringFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePresentMeteringFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePresentMeteringFeaturesNV(address, container);
     }
 
     /**

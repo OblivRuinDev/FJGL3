@@ -48,13 +48,8 @@ public class CXTUResourceUsageEntry extends Struct<CXTUResourceUsageEntry> imple
         AMOUNT = layout.offsetof(1);
     }
 
-    protected CXTUResourceUsageEntry(long address, @Nullable ByteBuffer container) {
+    public CXTUResourceUsageEntry(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXTUResourceUsageEntry create(long address, @Nullable ByteBuffer container) {
-        return new CXTUResourceUsageEntry(address, container);
     }
 
     /**

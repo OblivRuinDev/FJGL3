@@ -56,13 +56,8 @@ public class XrSceneMeshesMSFT extends Struct<XrSceneMeshesMSFT> implements Nati
         SCENEMESHES = layout.offsetof(3);
     }
 
-    protected XrSceneMeshesMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneMeshesMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMeshesMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMeshesMSFT(address, container);
     }
 
     /**

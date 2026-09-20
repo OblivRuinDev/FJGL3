@@ -50,13 +50,8 @@ public class AIMetaDataEntry extends Struct<AIMetaDataEntry> implements NativeRe
         MDATA = layout.offsetof(1);
     }
 
-    protected AIMetaDataEntry(long address, @Nullable ByteBuffer container) {
+    public AIMetaDataEntry(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIMetaDataEntry create(long address, @Nullable ByteBuffer container) {
-        return new AIMetaDataEntry(address, container);
     }
 
     /**

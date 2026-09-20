@@ -56,13 +56,8 @@ public class XrSceneMarkerQRCodesMSFT extends Struct<XrSceneMarkerQRCodesMSFT> i
         QRCODES = layout.offsetof(3);
     }
 
-    protected XrSceneMarkerQRCodesMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneMarkerQRCodesMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMarkerQRCodesMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMarkerQRCodesMSFT(address, container);
     }
 
     /**

@@ -62,13 +62,8 @@ public class BGFXTransientIndexBuffer extends Struct<BGFXTransientIndexBuffer> i
         ISINDEX16 = layout.offsetof(4);
     }
 
-    protected BGFXTransientIndexBuffer(long address, @Nullable ByteBuffer container) {
+    public BGFXTransientIndexBuffer(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXTransientIndexBuffer create(long address, @Nullable ByteBuffer container) {
-        return new BGFXTransientIndexBuffer(address, container);
     }
 
     /**

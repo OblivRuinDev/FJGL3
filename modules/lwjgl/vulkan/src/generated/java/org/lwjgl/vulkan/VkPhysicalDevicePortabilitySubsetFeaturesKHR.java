@@ -108,13 +108,8 @@ public class VkPhysicalDevicePortabilitySubsetFeaturesKHR extends Struct<VkPhysi
         VERTEXATTRIBUTEACCESSBEYONDSTRIDE = layout.offsetof(16);
     }
 
-    protected VkPhysicalDevicePortabilitySubsetFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePortabilitySubsetFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePortabilitySubsetFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePortabilitySubsetFeaturesKHR(address, container);
     }
 
     /**

@@ -108,13 +108,8 @@ public class VkPhysicalDeviceVulkan13Features extends Struct<VkPhysicalDeviceVul
         MAINTENANCE4 = layout.offsetof(16);
     }
 
-    protected VkPhysicalDeviceVulkan13Features(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVulkan13Features(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVulkan13Features create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVulkan13Features(address, container);
     }
 
     /**

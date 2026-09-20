@@ -48,13 +48,8 @@ public class FMOD_DSP_PARAMETER_OVERALLGAIN extends Struct<FMOD_DSP_PARAMETER_OV
         LINEAR_GAIN_ADDITIVE = layout.offsetof(1);
     }
 
-    protected FMOD_DSP_PARAMETER_OVERALLGAIN(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_PARAMETER_OVERALLGAIN(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_PARAMETER_OVERALLGAIN create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_PARAMETER_OVERALLGAIN(address, container);
     }
 
     /**

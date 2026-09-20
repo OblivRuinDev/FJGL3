@@ -54,13 +54,8 @@ public class XrControllerModelNodeStateMSFT extends Struct<XrControllerModelNode
         NODEPOSE = layout.offsetof(2);
     }
 
-    protected XrControllerModelNodeStateMSFT(long address, @Nullable ByteBuffer container) {
+    public XrControllerModelNodeStateMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrControllerModelNodeStateMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrControllerModelNodeStateMSFT(address, container);
     }
 
     /**

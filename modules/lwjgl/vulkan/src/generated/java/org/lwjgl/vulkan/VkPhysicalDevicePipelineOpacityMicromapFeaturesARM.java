@@ -52,13 +52,8 @@ public class VkPhysicalDevicePipelineOpacityMicromapFeaturesARM extends Struct<V
         PIPELINEOPACITYMICROMAP = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePipelineOpacityMicromapFeaturesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePipelineOpacityMicromapFeaturesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePipelineOpacityMicromapFeaturesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePipelineOpacityMicromapFeaturesARM(address, container);
     }
 
     /**

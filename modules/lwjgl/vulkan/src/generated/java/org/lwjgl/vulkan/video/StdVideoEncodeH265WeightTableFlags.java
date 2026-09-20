@@ -56,13 +56,8 @@ public class StdVideoEncodeH265WeightTableFlags extends Struct<StdVideoEncodeH26
         CHROMA_WEIGHT_L1_FLAG = layout.offsetof(3);
     }
 
-    protected StdVideoEncodeH265WeightTableFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH265WeightTableFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH265WeightTableFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH265WeightTableFlags(address, container);
     }
 
     /**

@@ -55,13 +55,8 @@ public class VkVideoEncodeH264DpbSlotInfoKHR extends Struct<VkVideoEncodeH264Dpb
         PSTDREFERENCEINFO = layout.offsetof(2);
     }
 
-    protected VkVideoEncodeH264DpbSlotInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH264DpbSlotInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH264DpbSlotInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH264DpbSlotInfoKHR(address, container);
     }
 
     /**

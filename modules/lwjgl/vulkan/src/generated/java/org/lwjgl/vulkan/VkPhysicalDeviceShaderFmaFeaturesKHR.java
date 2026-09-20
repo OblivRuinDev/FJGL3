@@ -60,13 +60,8 @@ public class VkPhysicalDeviceShaderFmaFeaturesKHR extends Struct<VkPhysicalDevic
         SHADERFMAFLOAT64 = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceShaderFmaFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderFmaFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderFmaFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderFmaFeaturesKHR(address, container);
     }
 
     /**

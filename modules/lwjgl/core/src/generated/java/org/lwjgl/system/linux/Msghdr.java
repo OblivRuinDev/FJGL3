@@ -70,13 +70,8 @@ public class Msghdr extends Struct<Msghdr> implements NativeResource {
         MSG_FLAGS = layout.offsetof(6);
     }
 
-    protected Msghdr(long address, @Nullable ByteBuffer container) {
+    public Msghdr(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected Msghdr create(long address, @Nullable ByteBuffer container) {
-        return new Msghdr(address, container);
     }
 
     /**

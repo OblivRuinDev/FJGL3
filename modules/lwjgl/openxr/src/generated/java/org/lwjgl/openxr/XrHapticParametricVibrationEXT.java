@@ -85,13 +85,8 @@ public class XrHapticParametricVibrationEXT extends Struct<XrHapticParametricVib
         STREAMFRAMETYPE = layout.offsetof(10);
     }
 
-    protected XrHapticParametricVibrationEXT(long address, @Nullable ByteBuffer container) {
+    public XrHapticParametricVibrationEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHapticParametricVibrationEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrHapticParametricVibrationEXT(address, container);
     }
 
     /**

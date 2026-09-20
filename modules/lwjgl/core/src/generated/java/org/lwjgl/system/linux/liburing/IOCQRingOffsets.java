@@ -77,13 +77,8 @@ public class IOCQRingOffsets extends Struct<IOCQRingOffsets> implements NativeRe
         USER_ADDR = layout.offsetof(8);
     }
 
-    protected IOCQRingOffsets(long address, @Nullable ByteBuffer container) {
+    public IOCQRingOffsets(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOCQRingOffsets create(long address, @Nullable ByteBuffer container) {
-        return new IOCQRingOffsets(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrSystemForceFeedbackCurlPropertiesMNDX extends Struct<XrSystemForc
         SUPPORTSFORCEFEEDBACKCURL = layout.offsetof(2);
     }
 
-    protected XrSystemForceFeedbackCurlPropertiesMNDX(long address, @Nullable ByteBuffer container) {
+    public XrSystemForceFeedbackCurlPropertiesMNDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemForceFeedbackCurlPropertiesMNDX create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemForceFeedbackCurlPropertiesMNDX(address, container);
     }
 
     /**

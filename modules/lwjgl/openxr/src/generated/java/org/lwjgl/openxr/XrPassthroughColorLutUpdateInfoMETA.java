@@ -54,13 +54,8 @@ public class XrPassthroughColorLutUpdateInfoMETA extends Struct<XrPassthroughCol
         DATA = layout.offsetof(2);
     }
 
-    protected XrPassthroughColorLutUpdateInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrPassthroughColorLutUpdateInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPassthroughColorLutUpdateInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrPassthroughColorLutUpdateInfoMETA(address, container);
     }
 
     /**

@@ -63,13 +63,8 @@ public class VkVideoDecodeH265PictureInfoKHR extends Struct<VkVideoDecodeH265Pic
         PSLICESEGMENTOFFSETS = layout.offsetof(4);
     }
 
-    protected VkVideoDecodeH265PictureInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeH265PictureInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeH265PictureInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeH265PictureInfoKHR(address, container);
     }
 
     /**

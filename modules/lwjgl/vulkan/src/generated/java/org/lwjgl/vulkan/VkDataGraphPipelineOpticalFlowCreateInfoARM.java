@@ -84,13 +84,8 @@ public class VkDataGraphPipelineOpticalFlowCreateInfoARM extends Struct<VkDataGr
         FLAGS = layout.offsetof(10);
     }
 
-    protected VkDataGraphPipelineOpticalFlowCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineOpticalFlowCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineOpticalFlowCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineOpticalFlowCreateInfoARM(address, container);
     }
 
     /**

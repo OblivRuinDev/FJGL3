@@ -68,13 +68,8 @@ public class SDL_GPUVulkanOptions extends Struct<SDL_GPUVulkanOptions> implement
         INSTANCE_EXTENSION_NAMES = layout.offsetof(6);
     }
 
-    protected SDL_GPUVulkanOptions(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUVulkanOptions(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUVulkanOptions create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUVulkanOptions(address, container);
     }
 
     /**

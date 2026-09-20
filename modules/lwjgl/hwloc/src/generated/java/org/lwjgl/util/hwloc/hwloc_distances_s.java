@@ -57,13 +57,8 @@ public class hwloc_distances_s extends Struct<hwloc_distances_s> implements Nati
         VALUES = layout.offsetof(3);
     }
 
-    protected hwloc_distances_s(long address, @Nullable ByteBuffer container) {
+    public hwloc_distances_s(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_distances_s create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_distances_s(address, container);
     }
 
     /**

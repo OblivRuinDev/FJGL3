@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class XrGraphicsRequirementsVulkan2KHR extends XrGraphicsRequirementsVulkanKHR {
 
-    protected XrGraphicsRequirementsVulkan2KHR(long address, @Nullable ByteBuffer container) {
+    public XrGraphicsRequirementsVulkan2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGraphicsRequirementsVulkan2KHR create(long address, @Nullable ByteBuffer container) {
-        return new XrGraphicsRequirementsVulkan2KHR(address, container);
     }
 
     /**

@@ -49,13 +49,8 @@ public class VkMutableDescriptorTypeListEXT extends Struct<VkMutableDescriptorTy
         PDESCRIPTORTYPES = layout.offsetof(1);
     }
 
-    protected VkMutableDescriptorTypeListEXT(long address, @Nullable ByteBuffer container) {
+    public VkMutableDescriptorTypeListEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMutableDescriptorTypeListEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMutableDescriptorTypeListEXT(address, container);
     }
 
     /**

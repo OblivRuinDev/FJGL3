@@ -49,13 +49,8 @@ public class FOwnerEx extends Struct<FOwnerEx> implements NativeResource {
         PID = layout.offsetof(1);
     }
 
-    protected FOwnerEx(long address, @Nullable ByteBuffer container) {
+    public FOwnerEx(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FOwnerEx create(long address, @Nullable ByteBuffer container) {
-        return new FOwnerEx(address, container);
     }
 
     /**

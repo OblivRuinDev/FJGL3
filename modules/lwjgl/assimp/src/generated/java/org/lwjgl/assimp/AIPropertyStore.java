@@ -45,13 +45,8 @@ public class AIPropertyStore extends Struct<AIPropertyStore> implements NativeRe
         SENTINEL = layout.offsetof(0);
     }
 
-    protected AIPropertyStore(long address, @Nullable ByteBuffer container) {
+    public AIPropertyStore(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIPropertyStore create(long address, @Nullable ByteBuffer container) {
-        return new AIPropertyStore(address, container);
     }
 
     /**

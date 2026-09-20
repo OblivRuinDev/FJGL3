@@ -51,13 +51,8 @@ public class hwloc_location extends Struct<hwloc_location> implements NativeReso
         LOCATION = layout.offsetof(1);
     }
 
-    protected hwloc_location(long address, @Nullable ByteBuffer container) {
+    public hwloc_location(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_location create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_location(address, container);
     }
 
     /**

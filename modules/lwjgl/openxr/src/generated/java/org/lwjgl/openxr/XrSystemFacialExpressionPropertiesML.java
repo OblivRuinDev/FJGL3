@@ -52,13 +52,8 @@ public class XrSystemFacialExpressionPropertiesML extends Struct<XrSystemFacialE
         SUPPORTSFACIALEXPRESSION = layout.offsetof(2);
     }
 
-    protected XrSystemFacialExpressionPropertiesML(long address, @Nullable ByteBuffer container) {
+    public XrSystemFacialExpressionPropertiesML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemFacialExpressionPropertiesML create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemFacialExpressionPropertiesML(address, container);
     }
 
     /**

@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceMutableDescriptorTypeFeaturesVALVE extends VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT {
 
-    protected VkPhysicalDeviceMutableDescriptorTypeFeaturesVALVE(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMutableDescriptorTypeFeaturesVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMutableDescriptorTypeFeaturesVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMutableDescriptorTypeFeaturesVALVE(address, container);
     }
 
     /**

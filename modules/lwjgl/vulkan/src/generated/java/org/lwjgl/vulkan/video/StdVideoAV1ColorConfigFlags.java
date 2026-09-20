@@ -51,13 +51,8 @@ public class StdVideoAV1ColorConfigFlags extends Struct<StdVideoAV1ColorConfigFl
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoAV1ColorConfigFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1ColorConfigFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1ColorConfigFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1ColorConfigFlags(address, container);
     }
 
     /**

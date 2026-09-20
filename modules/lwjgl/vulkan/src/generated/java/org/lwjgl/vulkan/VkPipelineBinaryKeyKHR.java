@@ -59,13 +59,8 @@ public class VkPipelineBinaryKeyKHR extends Struct<VkPipelineBinaryKeyKHR> imple
         KEY = layout.offsetof(3);
     }
 
-    protected VkPipelineBinaryKeyKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineBinaryKeyKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineBinaryKeyKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineBinaryKeyKHR(address, container);
     }
 
     /**

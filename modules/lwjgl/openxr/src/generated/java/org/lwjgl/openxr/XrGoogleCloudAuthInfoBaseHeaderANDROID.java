@@ -48,13 +48,8 @@ public class XrGoogleCloudAuthInfoBaseHeaderANDROID extends Struct<XrGoogleCloud
         NEXT = layout.offsetof(1);
     }
 
-    protected XrGoogleCloudAuthInfoBaseHeaderANDROID(long address, @Nullable ByteBuffer container) {
+    public XrGoogleCloudAuthInfoBaseHeaderANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGoogleCloudAuthInfoBaseHeaderANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrGoogleCloudAuthInfoBaseHeaderANDROID(address, container);
     }
 
     /**

@@ -53,13 +53,8 @@ public class XrEventDataBuffer extends Struct<XrEventDataBuffer> implements Nati
         VARYING = layout.offsetof(2);
     }
 
-    protected XrEventDataBuffer(long address, @Nullable ByteBuffer container) {
+    public XrEventDataBuffer(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataBuffer create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataBuffer(address, container);
     }
 
     /**

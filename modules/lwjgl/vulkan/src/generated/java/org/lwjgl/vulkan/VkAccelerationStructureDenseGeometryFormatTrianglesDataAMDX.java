@@ -78,13 +78,8 @@ public class VkAccelerationStructureDenseGeometryFormatTrianglesDataAMDX extends
         FORMAT = layout.offsetof(8);
     }
 
-    protected VkAccelerationStructureDenseGeometryFormatTrianglesDataAMDX(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureDenseGeometryFormatTrianglesDataAMDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureDenseGeometryFormatTrianglesDataAMDX create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureDenseGeometryFormatTrianglesDataAMDX(address, container);
     }
 
     /**

@@ -69,13 +69,8 @@ public class mi_heap_area_t extends Struct<mi_heap_area_t> implements NativeReso
         RESERVED1 = layout.offsetof(6);
     }
 
-    protected mi_heap_area_t(long address, @Nullable ByteBuffer container) {
+    public mi_heap_area_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected mi_heap_area_t create(long address, @Nullable ByteBuffer container) {
-        return new mi_heap_area_t(address, container);
     }
 
     /**

@@ -29,13 +29,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSemaphoreWaitInfoKHR extends VkSemaphoreWaitInfo {
 
-    protected VkSemaphoreWaitInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkSemaphoreWaitInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSemaphoreWaitInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSemaphoreWaitInfoKHR(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class SQL_SS_TIME2_STRUCT extends Struct<SQL_SS_TIME2_STRUCT> implements 
         FRACTION = layout.offsetof(3);
     }
 
-    protected SQL_SS_TIME2_STRUCT(long address, @Nullable ByteBuffer container) {
+    public SQL_SS_TIME2_STRUCT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SQL_SS_TIME2_STRUCT create(long address, @Nullable ByteBuffer container) {
-        return new SQL_SS_TIME2_STRUCT(address, container);
     }
 
     /**

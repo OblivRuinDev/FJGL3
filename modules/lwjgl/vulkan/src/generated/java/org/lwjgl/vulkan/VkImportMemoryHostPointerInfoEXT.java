@@ -57,13 +57,8 @@ public class VkImportMemoryHostPointerInfoEXT extends Struct<VkImportMemoryHostP
         PHOSTPOINTER = layout.offsetof(3);
     }
 
-    protected VkImportMemoryHostPointerInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkImportMemoryHostPointerInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImportMemoryHostPointerInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImportMemoryHostPointerInfoEXT(address, container);
     }
 
     /**

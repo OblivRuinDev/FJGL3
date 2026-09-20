@@ -53,13 +53,8 @@ public class SpvcCombinedImageSampler extends Struct<SpvcCombinedImageSampler> i
         SAMPLER_ID = layout.offsetof(2);
     }
 
-    protected SpvcCombinedImageSampler(long address, @Nullable ByteBuffer container) {
+    public SpvcCombinedImageSampler(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcCombinedImageSampler create(long address, @Nullable ByteBuffer container) {
-        return new SpvcCombinedImageSampler(address, container);
     }
 
     /**

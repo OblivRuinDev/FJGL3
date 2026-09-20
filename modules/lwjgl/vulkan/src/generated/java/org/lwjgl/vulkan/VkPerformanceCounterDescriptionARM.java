@@ -58,13 +58,8 @@ public class VkPerformanceCounterDescriptionARM extends Struct<VkPerformanceCoun
         NAME = layout.offsetof(3);
     }
 
-    protected VkPerformanceCounterDescriptionARM(long address, @Nullable ByteBuffer container) {
+    public VkPerformanceCounterDescriptionARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerformanceCounterDescriptionARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPerformanceCounterDescriptionARM(address, container);
     }
 
     /**

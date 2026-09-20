@@ -57,13 +57,8 @@ public class XrCompositionLayerBaseHeader extends Struct<XrCompositionLayerBaseH
         SPACE = layout.offsetof(3);
     }
 
-    protected XrCompositionLayerBaseHeader(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerBaseHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerBaseHeader create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerBaseHeader(address, container);
     }
 
     /**

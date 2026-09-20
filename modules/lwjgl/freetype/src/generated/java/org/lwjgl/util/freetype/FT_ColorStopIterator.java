@@ -56,13 +56,8 @@ public class FT_ColorStopIterator extends Struct<FT_ColorStopIterator> implement
         READ_VARIABLE = layout.offsetof(3);
     }
 
-    protected FT_ColorStopIterator(long address, @Nullable ByteBuffer container) {
+    public FT_ColorStopIterator(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_ColorStopIterator create(long address, @Nullable ByteBuffer container) {
-        return new FT_ColorStopIterator(address, container);
     }
 
     /**

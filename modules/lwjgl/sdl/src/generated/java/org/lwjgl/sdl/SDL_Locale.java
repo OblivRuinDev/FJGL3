@@ -49,13 +49,8 @@ public class SDL_Locale extends Struct<SDL_Locale> implements NativeResource {
         COUNTRY = layout.offsetof(1);
     }
 
-    protected SDL_Locale(long address, @Nullable ByteBuffer container) {
+    public SDL_Locale(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_Locale create(long address, @Nullable ByteBuffer container) {
-        return new SDL_Locale(address, container);
     }
 
     /**

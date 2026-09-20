@@ -46,13 +46,8 @@ public class CXSourceRangeList extends Struct<CXSourceRangeList> {
         RANGES = layout.offsetof(1);
     }
 
-    protected CXSourceRangeList(long address, @Nullable ByteBuffer container) {
+    public CXSourceRangeList(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXSourceRangeList create(long address, @Nullable ByteBuffer container) {
-        return new CXSourceRangeList(address, container);
     }
 
     /**

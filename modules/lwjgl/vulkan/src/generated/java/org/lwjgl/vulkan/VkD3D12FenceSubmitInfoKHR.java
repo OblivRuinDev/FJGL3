@@ -64,13 +64,8 @@ public class VkD3D12FenceSubmitInfoKHR extends Struct<VkD3D12FenceSubmitInfoKHR>
         PSIGNALSEMAPHOREVALUES = layout.offsetof(5);
     }
 
-    protected VkD3D12FenceSubmitInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkD3D12FenceSubmitInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkD3D12FenceSubmitInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkD3D12FenceSubmitInfoKHR(address, container);
     }
 
     /**

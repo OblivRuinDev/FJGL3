@@ -46,13 +46,8 @@ public class VkMemoryHeap extends Struct<VkMemoryHeap> {
         FLAGS = layout.offsetof(1);
     }
 
-    protected VkMemoryHeap(long address, @Nullable ByteBuffer container) {
+    public VkMemoryHeap(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryHeap create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryHeap(address, container);
     }
 
     /**

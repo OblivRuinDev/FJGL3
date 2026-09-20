@@ -50,13 +50,8 @@ public class IOURingZCRXCtrlExport extends Struct<IOURingZCRXCtrlExport> impleme
         __RESV1 = layout.offsetof(1);
     }
 
-    protected IOURingZCRXCtrlExport(long address, @Nullable ByteBuffer container) {
+    public IOURingZCRXCtrlExport(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingZCRXCtrlExport create(long address, @Nullable ByteBuffer container) {
-        return new IOURingZCRXCtrlExport(address, container);
     }
 
     /**

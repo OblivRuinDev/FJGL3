@@ -56,13 +56,8 @@ public class VkPipelineRasterizationDepthClipStateCreateInfoEXT extends Struct<V
         DEPTHCLIPENABLE = layout.offsetof(3);
     }
 
-    protected VkPipelineRasterizationDepthClipStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineRasterizationDepthClipStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineRasterizationDepthClipStateCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineRasterizationDepthClipStateCreateInfoEXT(address, container);
     }
 
     /**

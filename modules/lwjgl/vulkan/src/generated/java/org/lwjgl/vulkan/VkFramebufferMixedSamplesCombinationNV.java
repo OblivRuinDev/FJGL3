@@ -64,13 +64,8 @@ public class VkFramebufferMixedSamplesCombinationNV extends Struct<VkFramebuffer
         COLORSAMPLES = layout.offsetof(5);
     }
 
-    protected VkFramebufferMixedSamplesCombinationNV(long address, @Nullable ByteBuffer container) {
+    public VkFramebufferMixedSamplesCombinationNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFramebufferMixedSamplesCombinationNV create(long address, @Nullable ByteBuffer container) {
-        return new VkFramebufferMixedSamplesCombinationNV(address, container);
     }
 
     /**

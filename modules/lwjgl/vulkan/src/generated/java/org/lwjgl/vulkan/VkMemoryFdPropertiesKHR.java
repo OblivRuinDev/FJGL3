@@ -52,13 +52,8 @@ public class VkMemoryFdPropertiesKHR extends Struct<VkMemoryFdPropertiesKHR> imp
         MEMORYTYPEBITS = layout.offsetof(2);
     }
 
-    protected VkMemoryFdPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkMemoryFdPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryFdPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryFdPropertiesKHR(address, container);
     }
 
     /**

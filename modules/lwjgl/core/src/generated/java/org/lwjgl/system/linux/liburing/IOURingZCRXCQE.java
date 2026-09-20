@@ -49,13 +49,8 @@ public class IOURingZCRXCQE extends Struct<IOURingZCRXCQE> implements NativeReso
         __PAD = layout.offsetof(1);
     }
 
-    protected IOURingZCRXCQE(long address, @Nullable ByteBuffer container) {
+    public IOURingZCRXCQE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingZCRXCQE create(long address, @Nullable ByteBuffer container) {
-        return new IOURingZCRXCQE(address, container);
     }
 
     /**

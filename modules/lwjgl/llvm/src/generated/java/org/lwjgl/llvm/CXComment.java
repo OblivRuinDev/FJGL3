@@ -48,13 +48,8 @@ public class CXComment extends Struct<CXComment> implements NativeResource {
         TRANSLATIONUNIT = layout.offsetof(1);
     }
 
-    protected CXComment(long address, @Nullable ByteBuffer container) {
+    public CXComment(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXComment create(long address, @Nullable ByteBuffer container) {
-        return new CXComment(address, container);
     }
 
     /**

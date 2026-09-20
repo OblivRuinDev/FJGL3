@@ -42,13 +42,8 @@ public class FT_PaintColrGlyph extends Struct<FT_PaintColrGlyph> {
         GLYPHID = layout.offsetof(0);
     }
 
-    protected FT_PaintColrGlyph(long address, @Nullable ByteBuffer container) {
+    public FT_PaintColrGlyph(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintColrGlyph create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintColrGlyph(address, container);
     }
 
     /**

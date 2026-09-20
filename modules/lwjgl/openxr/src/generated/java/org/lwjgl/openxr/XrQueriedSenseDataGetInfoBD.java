@@ -48,13 +48,8 @@ public class XrQueriedSenseDataGetInfoBD extends Struct<XrQueriedSenseDataGetInf
         NEXT = layout.offsetof(1);
     }
 
-    protected XrQueriedSenseDataGetInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrQueriedSenseDataGetInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrQueriedSenseDataGetInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrQueriedSenseDataGetInfoBD(address, container);
     }
 
     /**

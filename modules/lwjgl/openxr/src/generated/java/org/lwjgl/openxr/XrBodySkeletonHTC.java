@@ -57,13 +57,8 @@ public class XrBodySkeletonHTC extends Struct<XrBodySkeletonHTC> implements Nati
         JOINTS = layout.offsetof(3);
     }
 
-    protected XrBodySkeletonHTC(long address, @Nullable ByteBuffer container) {
+    public XrBodySkeletonHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodySkeletonHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrBodySkeletonHTC(address, container);
     }
 
     /**

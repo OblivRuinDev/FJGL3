@@ -49,13 +49,8 @@ public class FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES extends Struct<FMOD_STUDIO_P
         DSP = layout.offsetof(1);
     }
 
-    protected FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES(address, container);
     }
 
     /**

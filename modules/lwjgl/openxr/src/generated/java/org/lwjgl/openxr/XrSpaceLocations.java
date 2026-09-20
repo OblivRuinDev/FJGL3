@@ -57,13 +57,8 @@ public class XrSpaceLocations extends Struct<XrSpaceLocations> implements Native
         LOCATIONS = layout.offsetof(3);
     }
 
-    protected XrSpaceLocations(long address, @Nullable ByteBuffer container) {
+    public XrSpaceLocations(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceLocations create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceLocations(address, container);
     }
 
     /**

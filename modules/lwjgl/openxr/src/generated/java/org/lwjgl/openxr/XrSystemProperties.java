@@ -73,13 +73,8 @@ public class XrSystemProperties extends Struct<XrSystemProperties> implements Na
         TRACKINGPROPERTIES = layout.offsetof(6);
     }
 
-    protected XrSystemProperties(long address, @Nullable ByteBuffer container) {
+    public XrSystemProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemProperties create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemProperties(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class SDL_GPUTextureTransferInfo extends Struct<SDL_GPUTextureTransferInf
         ROWS_PER_LAYER = layout.offsetof(3);
     }
 
-    protected SDL_GPUTextureTransferInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUTextureTransferInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUTextureTransferInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUTextureTransferInfo(address, container);
     }
 
     /**

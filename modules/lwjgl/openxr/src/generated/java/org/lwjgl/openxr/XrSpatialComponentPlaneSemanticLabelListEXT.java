@@ -57,13 +57,8 @@ public class XrSpatialComponentPlaneSemanticLabelListEXT extends Struct<XrSpatia
         SEMANTICLABELS = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentPlaneSemanticLabelListEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentPlaneSemanticLabelListEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentPlaneSemanticLabelListEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentPlaneSemanticLabelListEXT(address, container);
     }
 
     /**

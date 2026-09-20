@@ -185,13 +185,8 @@ public class STBIR_RESIZE extends Struct<STBIR_RESIZE> implements NativeResource
         SAMPLERS = layout.offsetof(35);
     }
 
-    protected STBIR_RESIZE(long address, @Nullable ByteBuffer container) {
+    public STBIR_RESIZE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBIR_RESIZE create(long address, @Nullable ByteBuffer container) {
-        return new STBIR_RESIZE(address, container);
     }
 
     /**

@@ -53,13 +53,8 @@ public class StdVideoH265HrdFlags extends Struct<StdVideoH265HrdFlags> implement
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoH265HrdFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265HrdFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265HrdFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265HrdFlags(address, container);
     }
 
     /**

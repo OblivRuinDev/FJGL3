@@ -54,13 +54,8 @@ public class XrFoveationConfigurationHTC extends Struct<XrFoveationConfiguration
         FOCALCENTEROFFSET = layout.offsetof(2);
     }
 
-    protected XrFoveationConfigurationHTC(long address, @Nullable ByteBuffer container) {
+    public XrFoveationConfigurationHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFoveationConfigurationHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrFoveationConfigurationHTC(address, container);
     }
 
     /**

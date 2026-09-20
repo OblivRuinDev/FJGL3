@@ -60,13 +60,8 @@ public class XrFoveationLevelProfileCreateInfoFB extends Struct<XrFoveationLevel
         DYNAMIC = layout.offsetof(4);
     }
 
-    protected XrFoveationLevelProfileCreateInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrFoveationLevelProfileCreateInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFoveationLevelProfileCreateInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrFoveationLevelProfileCreateInfoFB(address, container);
     }
 
     /**

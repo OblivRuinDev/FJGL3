@@ -84,13 +84,8 @@ public class XrFaceStateANDROID extends Struct<XrFaceStateANDROID> implements Na
         REGIONCONFIDENCES = layout.offsetof(10);
     }
 
-    protected XrFaceStateANDROID(long address, @Nullable ByteBuffer container) {
+    public XrFaceStateANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFaceStateANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrFaceStateANDROID(address, container);
     }
 
     /**

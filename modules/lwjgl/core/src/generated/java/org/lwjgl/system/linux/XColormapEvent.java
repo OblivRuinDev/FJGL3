@@ -73,13 +73,8 @@ public class XColormapEvent extends Struct<XColormapEvent> implements NativeReso
         STATE = layout.offsetof(7);
     }
 
-    protected XColormapEvent(long address, @Nullable ByteBuffer container) {
+    public XColormapEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XColormapEvent create(long address, @Nullable ByteBuffer container) {
-        return new XColormapEvent(address, container);
     }
 
     /**

@@ -62,13 +62,8 @@ public class XrSwapchainImageFoveationVulkanFB extends Struct<XrSwapchainImageFo
         HEIGHT = layout.offsetof(4);
     }
 
-    protected XrSwapchainImageFoveationVulkanFB(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainImageFoveationVulkanFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainImageFoveationVulkanFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainImageFoveationVulkanFB(address, container);
     }
 
     /**

@@ -64,13 +64,8 @@ public class VkDeviceAddressBindingCallbackDataEXT extends Struct<VkDeviceAddres
         BINDINGTYPE = layout.offsetof(5);
     }
 
-    protected VkDeviceAddressBindingCallbackDataEXT(long address, @Nullable ByteBuffer container) {
+    public VkDeviceAddressBindingCallbackDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceAddressBindingCallbackDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceAddressBindingCallbackDataEXT(address, container);
     }
 
     /**

@@ -67,13 +67,8 @@ public class StdVideoEncodeAV1ReferenceInfo extends Struct<StdVideoEncodeAV1Refe
         PEXTENSIONHEADER = layout.offsetof(5);
     }
 
-    protected StdVideoEncodeAV1ReferenceInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeAV1ReferenceInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeAV1ReferenceInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeAV1ReferenceInfo(address, container);
     }
 
     /**

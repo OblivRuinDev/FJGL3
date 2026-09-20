@@ -51,13 +51,8 @@ public class FMOD_STUDIO_TIMELINE_NESTED_BEAT_PROPERTIES extends Struct<FMOD_STU
         PROPERTIES = layout.offsetof(1);
     }
 
-    protected FMOD_STUDIO_TIMELINE_NESTED_BEAT_PROPERTIES(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_TIMELINE_NESTED_BEAT_PROPERTIES(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_TIMELINE_NESTED_BEAT_PROPERTIES create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_TIMELINE_NESTED_BEAT_PROPERTIES(address, container);
     }
 
     /**

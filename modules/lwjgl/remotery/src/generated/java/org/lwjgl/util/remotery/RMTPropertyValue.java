@@ -69,13 +69,8 @@ public class RMTPropertyValue extends Struct<RMTPropertyValue> implements Native
         F64 = layout.offsetof(6);
     }
 
-    protected RMTPropertyValue(long address, @Nullable ByteBuffer container) {
+    public RMTPropertyValue(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected RMTPropertyValue create(long address, @Nullable ByteBuffer container) {
-        return new RMTPropertyValue(address, container);
     }
 
     /**

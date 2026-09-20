@@ -48,13 +48,8 @@ public class VkDispatchTileInfoQCOM extends Struct<VkDispatchTileInfoQCOM> imple
         PNEXT = layout.offsetof(1);
     }
 
-    protected VkDispatchTileInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkDispatchTileInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDispatchTileInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkDispatchTileInfoQCOM(address, container);
     }
 
     /**

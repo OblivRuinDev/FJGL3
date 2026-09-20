@@ -52,13 +52,8 @@ public class VkSubpassBeginInfo extends Struct<VkSubpassBeginInfo> implements Na
         CONTENTS = layout.offsetof(2);
     }
 
-    protected VkSubpassBeginInfo(long address, @Nullable ByteBuffer container) {
+    public VkSubpassBeginInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassBeginInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassBeginInfo(address, container);
     }
 
     /**

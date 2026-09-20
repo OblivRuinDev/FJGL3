@@ -52,13 +52,8 @@ public class XrSystemFaceTrackingVisemesPropertiesMETA extends Struct<XrSystemFa
         SUPPORTSVISEMES = layout.offsetof(2);
     }
 
-    protected XrSystemFaceTrackingVisemesPropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemFaceTrackingVisemesPropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemFaceTrackingVisemesPropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemFaceTrackingVisemesPropertiesMETA(address, container);
     }
 
     /**

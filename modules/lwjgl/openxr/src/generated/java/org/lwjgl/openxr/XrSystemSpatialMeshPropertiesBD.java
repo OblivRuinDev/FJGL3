@@ -52,13 +52,8 @@ public class XrSystemSpatialMeshPropertiesBD extends Struct<XrSystemSpatialMeshP
         SUPPORTSSPATIALMESH = layout.offsetof(2);
     }
 
-    protected XrSystemSpatialMeshPropertiesBD(long address, @Nullable ByteBuffer container) {
+    public XrSystemSpatialMeshPropertiesBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemSpatialMeshPropertiesBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemSpatialMeshPropertiesBD(address, container);
     }
 
     /**

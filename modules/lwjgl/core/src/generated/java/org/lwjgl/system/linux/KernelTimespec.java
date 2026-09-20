@@ -49,13 +49,8 @@ public class KernelTimespec extends Struct<KernelTimespec> implements NativeReso
         TV_NSEC = layout.offsetof(1);
     }
 
-    protected KernelTimespec(long address, @Nullable ByteBuffer container) {
+    public KernelTimespec(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected KernelTimespec create(long address, @Nullable ByteBuffer container) {
-        return new KernelTimespec(address, container);
     }
 
     /**

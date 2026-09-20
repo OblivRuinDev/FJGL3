@@ -59,13 +59,8 @@ public class VkVideoEncodeH265NaluSliceSegmentInfoKHR extends Struct<VkVideoEnco
         PSTDSLICESEGMENTHEADER = layout.offsetof(3);
     }
 
-    protected VkVideoEncodeH265NaluSliceSegmentInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH265NaluSliceSegmentInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH265NaluSliceSegmentInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH265NaluSliceSegmentInfoKHR(address, container);
     }
 
     /**

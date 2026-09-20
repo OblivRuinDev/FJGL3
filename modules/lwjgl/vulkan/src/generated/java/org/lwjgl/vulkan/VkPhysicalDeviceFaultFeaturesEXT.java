@@ -56,13 +56,8 @@ public class VkPhysicalDeviceFaultFeaturesEXT extends Struct<VkPhysicalDeviceFau
         DEVICEFAULTVENDORBINARY = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceFaultFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFaultFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFaultFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFaultFeaturesEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkSurfaceCapabilitiesFullScreenExclusiveEXT extends Struct<VkSurfac
         FULLSCREENEXCLUSIVESUPPORTED = layout.offsetof(2);
     }
 
-    protected VkSurfaceCapabilitiesFullScreenExclusiveEXT(long address, @Nullable ByteBuffer container) {
+    public VkSurfaceCapabilitiesFullScreenExclusiveEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfaceCapabilitiesFullScreenExclusiveEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfaceCapabilitiesFullScreenExclusiveEXT(address, container);
     }
 
     /**

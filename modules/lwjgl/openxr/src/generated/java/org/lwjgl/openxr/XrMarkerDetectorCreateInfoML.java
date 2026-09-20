@@ -56,13 +56,8 @@ public class XrMarkerDetectorCreateInfoML extends Struct<XrMarkerDetectorCreateI
         MARKERTYPE = layout.offsetof(3);
     }
 
-    protected XrMarkerDetectorCreateInfoML(long address, @Nullable ByteBuffer container) {
+    public XrMarkerDetectorCreateInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrMarkerDetectorCreateInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrMarkerDetectorCreateInfoML(address, container);
     }
 
     /**

@@ -75,13 +75,8 @@ public class XrFaceExpressionWeightsFB extends Struct<XrFaceExpressionWeightsFB>
         TIME = layout.offsetof(7);
     }
 
-    protected XrFaceExpressionWeightsFB(long address, @Nullable ByteBuffer container) {
+    public XrFaceExpressionWeightsFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFaceExpressionWeightsFB create(long address, @Nullable ByteBuffer container) {
-        return new XrFaceExpressionWeightsFB(address, container);
     }
 
     /**

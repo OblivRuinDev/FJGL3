@@ -83,13 +83,8 @@ public class StdVideoAV1TileInfo extends Struct<StdVideoAV1TileInfo> implements 
         PHEIGHTINSBSMINUS1 = layout.offsetof(9);
     }
 
-    protected StdVideoAV1TileInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1TileInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1TileInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1TileInfo(address, container);
     }
 
     /**

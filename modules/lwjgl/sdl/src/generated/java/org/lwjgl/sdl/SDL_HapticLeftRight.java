@@ -56,13 +56,8 @@ public class SDL_HapticLeftRight extends Struct<SDL_HapticLeftRight> implements 
         SMALL_MAGNITUDE = layout.offsetof(3);
     }
 
-    protected SDL_HapticLeftRight(long address, @Nullable ByteBuffer container) {
+    public SDL_HapticLeftRight(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_HapticLeftRight create(long address, @Nullable ByteBuffer container) {
-        return new SDL_HapticLeftRight(address, container);
     }
 
     /**

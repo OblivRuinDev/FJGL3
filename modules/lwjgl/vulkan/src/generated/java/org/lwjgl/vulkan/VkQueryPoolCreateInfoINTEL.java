@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkQueryPoolCreateInfoINTEL extends VkQueryPoolPerformanceQueryCreateInfoINTEL {
 
-    protected VkQueryPoolCreateInfoINTEL(long address, @Nullable ByteBuffer container) {
+    public VkQueryPoolCreateInfoINTEL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueryPoolCreateInfoINTEL create(long address, @Nullable ByteBuffer container) {
-        return new VkQueryPoolCreateInfoINTEL(address, container);
     }
 
     /**

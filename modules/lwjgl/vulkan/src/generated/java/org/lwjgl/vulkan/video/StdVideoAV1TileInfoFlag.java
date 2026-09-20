@@ -48,13 +48,8 @@ public class StdVideoAV1TileInfoFlag extends Struct<StdVideoAV1TileInfoFlag> imp
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoAV1TileInfoFlag(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1TileInfoFlag(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1TileInfoFlag create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1TileInfoFlag(address, container);
     }
 
     /**

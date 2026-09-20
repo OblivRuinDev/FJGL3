@@ -52,13 +52,8 @@ public class XrRenderModelStateGetInfoEXT extends Struct<XrRenderModelStateGetIn
         DISPLAYTIME = layout.offsetof(2);
     }
 
-    protected XrRenderModelStateGetInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelStateGetInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelStateGetInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelStateGetInfoEXT(address, container);
     }
 
     /**

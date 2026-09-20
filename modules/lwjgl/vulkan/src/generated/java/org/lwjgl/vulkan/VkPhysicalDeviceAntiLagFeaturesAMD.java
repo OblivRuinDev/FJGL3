@@ -52,13 +52,8 @@ public class VkPhysicalDeviceAntiLagFeaturesAMD extends Struct<VkPhysicalDeviceA
         ANTILAG = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceAntiLagFeaturesAMD(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceAntiLagFeaturesAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceAntiLagFeaturesAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceAntiLagFeaturesAMD(address, container);
     }
 
     /**

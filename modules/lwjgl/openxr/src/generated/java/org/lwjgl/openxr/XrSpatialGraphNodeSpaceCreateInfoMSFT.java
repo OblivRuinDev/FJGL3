@@ -65,13 +65,8 @@ public class XrSpatialGraphNodeSpaceCreateInfoMSFT extends Struct<XrSpatialGraph
         POSE = layout.offsetof(4);
     }
 
-    protected XrSpatialGraphNodeSpaceCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialGraphNodeSpaceCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialGraphNodeSpaceCreateInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialGraphNodeSpaceCreateInfoMSFT(address, container);
     }
 
     /**

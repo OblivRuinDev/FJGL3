@@ -48,13 +48,8 @@ public class XrSpaceTriangleMeshGetInfoMETA extends Struct<XrSpaceTriangleMeshGe
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSpaceTriangleMeshGetInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrSpaceTriangleMeshGetInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceTriangleMeshGetInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceTriangleMeshGetInfoMETA(address, container);
     }
 
     /**

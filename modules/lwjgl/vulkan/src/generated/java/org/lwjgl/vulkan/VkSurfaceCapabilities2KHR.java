@@ -54,13 +54,8 @@ public class VkSurfaceCapabilities2KHR extends Struct<VkSurfaceCapabilities2KHR>
         SURFACECAPABILITIES = layout.offsetof(2);
     }
 
-    protected VkSurfaceCapabilities2KHR(long address, @Nullable ByteBuffer container) {
+    public VkSurfaceCapabilities2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfaceCapabilities2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfaceCapabilities2KHR(address, container);
     }
 
     /**

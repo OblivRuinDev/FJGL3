@@ -68,13 +68,8 @@ public class CXIndexOptions extends Struct<CXIndexOptions> implements NativeReso
         INVOCATIONEMISSIONPATH = layout.offsetof(5);
     }
 
-    protected CXIndexOptions(long address, @Nullable ByteBuffer container) {
+    public CXIndexOptions(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIndexOptions create(long address, @Nullable ByteBuffer container) {
-        return new CXIndexOptions(address, container);
     }
 
     /**

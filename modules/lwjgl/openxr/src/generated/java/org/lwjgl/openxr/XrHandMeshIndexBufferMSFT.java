@@ -56,13 +56,8 @@ public class XrHandMeshIndexBufferMSFT extends Struct<XrHandMeshIndexBufferMSFT>
         INDICES = layout.offsetof(3);
     }
 
-    protected XrHandMeshIndexBufferMSFT(long address, @Nullable ByteBuffer container) {
+    public XrHandMeshIndexBufferMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandMeshIndexBufferMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandMeshIndexBufferMSFT(address, container);
     }
 
     /**

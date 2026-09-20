@@ -52,13 +52,8 @@ public class VkTileMemoryBindInfoQCOM extends Struct<VkTileMemoryBindInfoQCOM> i
         MEMORY = layout.offsetof(2);
     }
 
-    protected VkTileMemoryBindInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkTileMemoryBindInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTileMemoryBindInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkTileMemoryBindInfoQCOM(address, container);
     }
 
     /**

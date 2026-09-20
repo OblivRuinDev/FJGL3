@@ -60,13 +60,8 @@ public class VkClusterAccelerationStructureMoveObjectsInputNV extends Struct<VkC
         MAXMOVEDBYTES = layout.offsetof(4);
     }
 
-    protected VkClusterAccelerationStructureMoveObjectsInputNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureMoveObjectsInputNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureMoveObjectsInputNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureMoveObjectsInputNV(address, container);
     }
 
     /**

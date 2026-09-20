@@ -52,13 +52,8 @@ public class XrFoveationEyeTrackedProfileCreateInfoMETA extends Struct<XrFoveati
         FLAGS = layout.offsetof(2);
     }
 
-    protected XrFoveationEyeTrackedProfileCreateInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrFoveationEyeTrackedProfileCreateInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFoveationEyeTrackedProfileCreateInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrFoveationEyeTrackedProfileCreateInfoMETA(address, container);
     }
 
     /**

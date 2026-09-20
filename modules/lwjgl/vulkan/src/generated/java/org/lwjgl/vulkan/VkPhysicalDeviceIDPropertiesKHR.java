@@ -33,13 +33,8 @@ import static org.lwjgl.vulkan.VK11.*;
  */
 public class VkPhysicalDeviceIDPropertiesKHR extends VkPhysicalDeviceIDProperties {
 
-    protected VkPhysicalDeviceIDPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceIDPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceIDPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceIDPropertiesKHR(address, container);
     }
 
     /**

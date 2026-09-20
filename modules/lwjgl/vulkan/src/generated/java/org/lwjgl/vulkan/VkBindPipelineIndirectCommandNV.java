@@ -44,13 +44,8 @@ public class VkBindPipelineIndirectCommandNV extends Struct<VkBindPipelineIndire
         PIPELINEADDRESS = layout.offsetof(0);
     }
 
-    protected VkBindPipelineIndirectCommandNV(long address, @Nullable ByteBuffer container) {
+    public VkBindPipelineIndirectCommandNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindPipelineIndirectCommandNV create(long address, @Nullable ByteBuffer container) {
-        return new VkBindPipelineIndirectCommandNV(address, container);
     }
 
     /**

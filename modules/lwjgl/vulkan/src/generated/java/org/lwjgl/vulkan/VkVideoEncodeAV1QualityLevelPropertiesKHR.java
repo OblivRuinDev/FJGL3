@@ -110,13 +110,8 @@ public class VkVideoEncodeAV1QualityLevelPropertiesKHR extends Struct<VkVideoEnc
         PREFERREDBIDIRECTIONALCOMPOUNDREFERENCENAMEMASK = layout.offsetof(16);
     }
 
-    protected VkVideoEncodeAV1QualityLevelPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeAV1QualityLevelPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeAV1QualityLevelPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeAV1QualityLevelPropertiesKHR(address, container);
     }
 
     /**

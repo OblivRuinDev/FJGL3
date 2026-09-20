@@ -52,13 +52,8 @@ public class XrSpatialPersistenceContextCreateInfoEXT extends Struct<XrSpatialPe
         SCOPE = layout.offsetof(2);
     }
 
-    protected XrSpatialPersistenceContextCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialPersistenceContextCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialPersistenceContextCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialPersistenceContextCreateInfoEXT(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class XrTilePropertiesHintMETA extends Struct<XrTilePropertiesHintMETA> i
         PROPERTIES = layout.offsetof(3);
     }
 
-    protected XrTilePropertiesHintMETA(long address, @Nullable ByteBuffer container) {
+    public XrTilePropertiesHintMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrTilePropertiesHintMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrTilePropertiesHintMETA(address, container);
     }
 
     /**

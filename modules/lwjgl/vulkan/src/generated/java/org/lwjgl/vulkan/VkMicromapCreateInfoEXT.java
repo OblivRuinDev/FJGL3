@@ -72,13 +72,8 @@ public class VkMicromapCreateInfoEXT extends Struct<VkMicromapCreateInfoEXT> imp
         DEVICEADDRESS = layout.offsetof(7);
     }
 
-    protected VkMicromapCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkMicromapCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMicromapCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMicromapCreateInfoEXT(address, container);
     }
 
     /**

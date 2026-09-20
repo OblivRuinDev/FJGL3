@@ -52,13 +52,8 @@ public class VkMemoryDedicatedAllocateInfoTensorARM extends Struct<VkMemoryDedic
         TENSOR = layout.offsetof(2);
     }
 
-    protected VkMemoryDedicatedAllocateInfoTensorARM(long address, @Nullable ByteBuffer container) {
+    public VkMemoryDedicatedAllocateInfoTensorARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryDedicatedAllocateInfoTensorARM create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryDedicatedAllocateInfoTensorARM(address, container);
     }
 
     /**

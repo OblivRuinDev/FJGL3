@@ -52,13 +52,8 @@ public class XrSystemSpaceDiscoveryPropertiesMETA extends Struct<XrSystemSpaceDi
         SUPPORTSSPACEDISCOVERY = layout.offsetof(2);
     }
 
-    protected XrSystemSpaceDiscoveryPropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemSpaceDiscoveryPropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemSpaceDiscoveryPropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemSpaceDiscoveryPropertiesMETA(address, container);
     }
 
     /**

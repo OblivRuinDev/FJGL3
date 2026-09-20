@@ -52,13 +52,8 @@ public class VkPhysicalDeviceTilePropertiesFeaturesQCOM extends Struct<VkPhysica
         TILEPROPERTIES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceTilePropertiesFeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTilePropertiesFeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTilePropertiesFeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTilePropertiesFeaturesQCOM(address, container);
     }
 
     /**

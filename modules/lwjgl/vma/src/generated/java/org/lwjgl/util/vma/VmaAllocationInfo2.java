@@ -54,13 +54,8 @@ public class VmaAllocationInfo2 extends Struct<VmaAllocationInfo2> implements Na
         DEDICATEDMEMORY = layout.offsetof(2);
     }
 
-    protected VmaAllocationInfo2(long address, @Nullable ByteBuffer container) {
+    public VmaAllocationInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaAllocationInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VmaAllocationInfo2(address, container);
     }
 
     /**

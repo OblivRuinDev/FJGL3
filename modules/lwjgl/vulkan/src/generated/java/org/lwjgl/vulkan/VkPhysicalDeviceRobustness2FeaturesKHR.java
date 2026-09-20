@@ -60,13 +60,8 @@ public class VkPhysicalDeviceRobustness2FeaturesKHR extends Struct<VkPhysicalDev
         NULLDESCRIPTOR = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceRobustness2FeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRobustness2FeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRobustness2FeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRobustness2FeaturesKHR(address, container);
     }
 
     /**

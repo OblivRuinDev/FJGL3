@@ -142,13 +142,8 @@ public class NkStyleEdit extends Struct<NkStyleEdit> implements NativeResource {
         DISABLED_FACTOR = layout.offsetof(23);
     }
 
-    protected NkStyleEdit(long address, @Nullable ByteBuffer container) {
+    public NkStyleEdit(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleEdit create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleEdit(address, container);
     }
 
     /**

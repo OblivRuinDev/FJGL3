@@ -61,13 +61,8 @@ public class AITexture extends Struct<AITexture> {
         MFILENAME = layout.offsetof(4);
     }
 
-    protected AITexture(long address, @Nullable ByteBuffer container) {
+    public AITexture(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AITexture create(long address, @Nullable ByteBuffer container) {
-        return new AITexture(address, container);
     }
 
     /**

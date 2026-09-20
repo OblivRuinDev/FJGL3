@@ -71,13 +71,8 @@ public class VkPhysicalDeviceSampleLocationsPropertiesEXT extends Struct<VkPhysi
         VARIABLESAMPLELOCATIONS = layout.offsetof(6);
     }
 
-    protected VkPhysicalDeviceSampleLocationsPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSampleLocationsPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSampleLocationsPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSampleLocationsPropertiesEXT(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkPhysicalDeviceConditionalRenderingFeaturesEXT extends Struct<VkPh
         INHERITEDCONDITIONALRENDERING = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceConditionalRenderingFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceConditionalRenderingFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceConditionalRenderingFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceConditionalRenderingFeaturesEXT(address, container);
     }
 
     /**

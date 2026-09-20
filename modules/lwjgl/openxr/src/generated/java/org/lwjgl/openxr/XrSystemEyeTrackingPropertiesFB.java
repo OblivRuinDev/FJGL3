@@ -52,13 +52,8 @@ public class XrSystemEyeTrackingPropertiesFB extends Struct<XrSystemEyeTrackingP
         SUPPORTSEYETRACKING = layout.offsetof(2);
     }
 
-    protected XrSystemEyeTrackingPropertiesFB(long address, @Nullable ByteBuffer container) {
+    public XrSystemEyeTrackingPropertiesFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemEyeTrackingPropertiesFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemEyeTrackingPropertiesFB(address, container);
     }
 
     /**

@@ -77,13 +77,8 @@ public class VkRenderPassCreateInfo extends Struct<VkRenderPassCreateInfo> imple
         PDEPENDENCIES = layout.offsetof(8);
     }
 
-    protected VkRenderPassCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassCreateInfo(address, container);
     }
 
     /**

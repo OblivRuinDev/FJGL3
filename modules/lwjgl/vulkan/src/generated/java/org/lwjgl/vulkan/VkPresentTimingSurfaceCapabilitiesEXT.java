@@ -64,13 +64,8 @@ public class VkPresentTimingSurfaceCapabilitiesEXT extends Struct<VkPresentTimin
         PRESENTSTAGEQUERIES = layout.offsetof(5);
     }
 
-    protected VkPresentTimingSurfaceCapabilitiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPresentTimingSurfaceCapabilitiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPresentTimingSurfaceCapabilitiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPresentTimingSurfaceCapabilitiesEXT(address, container);
     }
 
     /**

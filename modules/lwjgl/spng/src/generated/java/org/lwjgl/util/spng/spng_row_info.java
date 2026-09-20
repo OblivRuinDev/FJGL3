@@ -57,13 +57,8 @@ public class spng_row_info extends Struct<spng_row_info> implements NativeResour
         FILTER = layout.offsetof(3);
     }
 
-    protected spng_row_info(long address, @Nullable ByteBuffer container) {
+    public spng_row_info(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_row_info create(long address, @Nullable ByteBuffer container) {
-        return new spng_row_info(address, container);
     }
 
     /**

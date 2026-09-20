@@ -108,13 +108,8 @@ public class XrHandTrackingMeshFB extends Struct<XrHandTrackingMeshFB> implement
         INDICES = layout.offsetof(16);
     }
 
-    protected XrHandTrackingMeshFB(long address, @Nullable ByteBuffer container) {
+    public XrHandTrackingMeshFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandTrackingMeshFB create(long address, @Nullable ByteBuffer container) {
-        return new XrHandTrackingMeshFB(address, container);
     }
 
     /**

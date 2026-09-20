@@ -24,13 +24,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPipelineCreationFeedbackEXT extends VkPipelineCreationFeedback {
 
-    protected VkPipelineCreationFeedbackEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineCreationFeedbackEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineCreationFeedbackEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineCreationFeedbackEXT(address, container);
     }
 
     /**

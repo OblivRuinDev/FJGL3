@@ -51,13 +51,8 @@ public class StdVideoVP9SegmentationFlags extends Struct<StdVideoVP9Segmentation
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoVP9SegmentationFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoVP9SegmentationFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoVP9SegmentationFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoVP9SegmentationFlags(address, container);
     }
 
     /**

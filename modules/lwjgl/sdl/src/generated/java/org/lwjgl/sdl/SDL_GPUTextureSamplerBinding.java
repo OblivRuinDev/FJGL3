@@ -49,13 +49,8 @@ public class SDL_GPUTextureSamplerBinding extends Struct<SDL_GPUTextureSamplerBi
         SAMPLER = layout.offsetof(1);
     }
 
-    protected SDL_GPUTextureSamplerBinding(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUTextureSamplerBinding(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUTextureSamplerBinding create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUTextureSamplerBinding(address, container);
     }
 
     /**

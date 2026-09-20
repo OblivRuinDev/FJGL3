@@ -48,13 +48,8 @@ public class VkSurfaceFormatKHR extends Struct<VkSurfaceFormatKHR> implements Na
         COLORSPACE = layout.offsetof(1);
     }
 
-    protected VkSurfaceFormatKHR(long address, @Nullable ByteBuffer container) {
+    public VkSurfaceFormatKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfaceFormatKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfaceFormatKHR(address, container);
     }
 
     /**

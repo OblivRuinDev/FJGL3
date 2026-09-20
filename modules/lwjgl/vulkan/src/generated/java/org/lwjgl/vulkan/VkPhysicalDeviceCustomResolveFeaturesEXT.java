@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCustomResolveFeaturesEXT extends Struct<VkPhysicalD
         CUSTOMRESOLVE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCustomResolveFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCustomResolveFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCustomResolveFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCustomResolveFeaturesEXT(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class VkPhysicalDeviceShaderCorePropertiesARM extends Struct<VkPhysicalDe
         FMARATE = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceShaderCorePropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderCorePropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderCorePropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderCorePropertiesARM(address, container);
     }
 
     /**

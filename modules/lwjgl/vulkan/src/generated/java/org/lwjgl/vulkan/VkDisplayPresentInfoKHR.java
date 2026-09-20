@@ -62,13 +62,8 @@ public class VkDisplayPresentInfoKHR extends Struct<VkDisplayPresentInfoKHR> imp
         PERSISTENT = layout.offsetof(4);
     }
 
-    protected VkDisplayPresentInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDisplayPresentInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplayPresentInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplayPresentInfoKHR(address, container);
     }
 
     /**

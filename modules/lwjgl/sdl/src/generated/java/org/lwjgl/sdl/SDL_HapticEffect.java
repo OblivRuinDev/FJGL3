@@ -75,13 +75,8 @@ public class SDL_HapticEffect extends Struct<SDL_HapticEffect> implements Native
         CUSTOM = layout.offsetof(6);
     }
 
-    protected SDL_HapticEffect(long address, @Nullable ByteBuffer container) {
+    public SDL_HapticEffect(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_HapticEffect create(long address, @Nullable ByteBuffer container) {
-        return new SDL_HapticEffect(address, container);
     }
 
     /**

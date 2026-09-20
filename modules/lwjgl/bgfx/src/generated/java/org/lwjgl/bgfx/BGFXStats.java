@@ -206,13 +206,8 @@ public class BGFXStats extends Struct<BGFXStats> {
         ENCODERSTATS = layout.offsetof(40);
     }
 
-    protected BGFXStats(long address, @Nullable ByteBuffer container) {
+    public BGFXStats(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXStats create(long address, @Nullable ByteBuffer container) {
-        return new BGFXStats(address, container);
     }
 
     /**

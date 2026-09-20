@@ -84,13 +84,8 @@ public class NkConvertConfig extends Struct<NkConvertConfig> implements NativeRe
         VERTEX_ALIGNMENT = layout.offsetof(9);
     }
 
-    protected NkConvertConfig(long address, @Nullable ByteBuffer container) {
+    public NkConvertConfig(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkConvertConfig create(long address, @Nullable ByteBuffer container) {
-        return new NkConvertConfig(address, container);
     }
 
     /**

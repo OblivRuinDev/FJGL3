@@ -67,13 +67,8 @@ public class XrGraphicsBindingEGLMNDX extends Struct<XrGraphicsBindingEGLMNDX> i
         CONTEXT = layout.offsetof(5);
     }
 
-    protected XrGraphicsBindingEGLMNDX(long address, @Nullable ByteBuffer container) {
+    public XrGraphicsBindingEGLMNDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGraphicsBindingEGLMNDX create(long address, @Nullable ByteBuffer container) {
-        return new XrGraphicsBindingEGLMNDX(address, container);
     }
 
     /**

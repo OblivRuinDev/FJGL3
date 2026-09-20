@@ -57,13 +57,8 @@ public class MSDFGenBounds extends Struct<MSDFGenBounds> implements NativeResour
         T = layout.offsetof(3);
     }
 
-    protected MSDFGenBounds(long address, @Nullable ByteBuffer container) {
+    public MSDFGenBounds(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MSDFGenBounds create(long address, @Nullable ByteBuffer container) {
-        return new MSDFGenBounds(address, container);
     }
 
     /**

@@ -105,13 +105,8 @@ public class StdVideoEncodeH265SliceSegmentHeader extends Struct<StdVideoEncodeH
         PWEIGHTTABLE = layout.offsetof(14);
     }
 
-    protected StdVideoEncodeH265SliceSegmentHeader(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH265SliceSegmentHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH265SliceSegmentHeader create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH265SliceSegmentHeader(address, container);
     }
 
     /**

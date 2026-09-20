@@ -75,13 +75,8 @@ public class XrVulkanDeviceCreateInfoKHR extends Struct<XrVulkanDeviceCreateInfo
         VULKANALLOCATOR = layout.offsetof(7);
     }
 
-    protected XrVulkanDeviceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public XrVulkanDeviceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVulkanDeviceCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrVulkanDeviceCreateInfoKHR(address, container);
     }
 
     /**

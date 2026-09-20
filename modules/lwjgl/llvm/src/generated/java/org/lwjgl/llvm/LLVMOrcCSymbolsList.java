@@ -49,13 +49,8 @@ public class LLVMOrcCSymbolsList extends Struct<LLVMOrcCSymbolsList> implements 
         LENGTH = layout.offsetof(1);
     }
 
-    protected LLVMOrcCSymbolsList(long address, @Nullable ByteBuffer container) {
+    public LLVMOrcCSymbolsList(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMOrcCSymbolsList create(long address, @Nullable ByteBuffer container) {
-        return new LLVMOrcCSymbolsList(address, container);
     }
 
     /**

@@ -85,13 +85,8 @@ public class NkStyleChart extends Struct<NkStyleChart> implements NativeResource
         SHOW_MARKERS = layout.offsetof(9);
     }
 
-    protected NkStyleChart(long address, @Nullable ByteBuffer container) {
+    public NkStyleChart(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleChart create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleChart(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class XrSpaceFilterUuidMETA extends Struct<XrSpaceFilterUuidMETA> impleme
         UUIDS = layout.offsetof(3);
     }
 
-    protected XrSpaceFilterUuidMETA(long address, @Nullable ByteBuffer container) {
+    public XrSpaceFilterUuidMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceFilterUuidMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceFilterUuidMETA(address, container);
     }
 
     /**

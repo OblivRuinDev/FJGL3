@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM extends Struct<VkPh
         DATAGRAPHOPTICALFLOW = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM(address, container);
     }
 
     /**

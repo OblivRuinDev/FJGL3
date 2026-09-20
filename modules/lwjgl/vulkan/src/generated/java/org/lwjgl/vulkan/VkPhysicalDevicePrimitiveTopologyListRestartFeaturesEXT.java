@@ -56,13 +56,8 @@ public class VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT extends Str
         PRIMITIVETOPOLOGYPATCHLISTRESTART = layout.offsetof(3);
     }
 
-    protected VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT(address, container);
     }
 
     /**

@@ -62,13 +62,8 @@ public class XrDirectionalLightANDROID extends Struct<XrDirectionalLightANDROID>
         DIRECTION = layout.offsetof(4);
     }
 
-    protected XrDirectionalLightANDROID(long address, @Nullable ByteBuffer container) {
+    public XrDirectionalLightANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrDirectionalLightANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrDirectionalLightANDROID(address, container);
     }
 
     /**

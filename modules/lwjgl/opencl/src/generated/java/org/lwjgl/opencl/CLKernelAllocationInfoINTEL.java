@@ -58,13 +58,8 @@ public class CLKernelAllocationInfoINTEL extends Struct<CLKernelAllocationInfoIN
         ARG_INDEX = layout.offsetof(3);
     }
 
-    protected CLKernelAllocationInfoINTEL(long address, @Nullable ByteBuffer container) {
+    public CLKernelAllocationInfoINTEL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLKernelAllocationInfoINTEL create(long address, @Nullable ByteBuffer container) {
-        return new CLKernelAllocationInfoINTEL(address, container);
     }
 
     /**

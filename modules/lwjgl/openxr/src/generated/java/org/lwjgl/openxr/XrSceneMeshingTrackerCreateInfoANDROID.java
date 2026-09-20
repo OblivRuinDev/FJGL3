@@ -56,13 +56,8 @@ public class XrSceneMeshingTrackerCreateInfoANDROID extends Struct<XrSceneMeshin
         ENABLENORMALS = layout.offsetof(3);
     }
 
-    protected XrSceneMeshingTrackerCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSceneMeshingTrackerCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMeshingTrackerCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMeshingTrackerCreateInfoANDROID(address, container);
     }
 
     /**

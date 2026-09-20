@@ -87,13 +87,8 @@ public class ExtentHooks extends Struct<ExtentHooks> implements NativeResource {
         MERGE = layout.offsetof(8);
     }
 
-    protected ExtentHooks(long address, @Nullable ByteBuffer container) {
+    public ExtentHooks(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ExtentHooks create(long address, @Nullable ByteBuffer container) {
-        return new ExtentHooks(address, container);
     }
 
     /**

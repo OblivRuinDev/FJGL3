@@ -57,13 +57,8 @@ public class VkIndirectCommandsTokenDataEXT extends Struct<VkIndirectCommandsTok
         PEXECUTIONSET = layout.offsetof(3);
     }
 
-    protected VkIndirectCommandsTokenDataEXT(long address, @Nullable ByteBuffer container) {
+    public VkIndirectCommandsTokenDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectCommandsTokenDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectCommandsTokenDataEXT(address, container);
     }
 
     /**

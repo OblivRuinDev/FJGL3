@@ -60,13 +60,8 @@ public class XrSpaceContainerFB extends Struct<XrSpaceContainerFB> implements Na
         UUIDS = layout.offsetof(4);
     }
 
-    protected XrSpaceContainerFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceContainerFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceContainerFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceContainerFB(address, container);
     }
 
     /**

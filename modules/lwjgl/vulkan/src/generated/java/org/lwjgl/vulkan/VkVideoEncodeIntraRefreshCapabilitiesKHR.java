@@ -68,13 +68,8 @@ public class VkVideoEncodeIntraRefreshCapabilitiesKHR extends Struct<VkVideoEnco
         NONRECTANGULARINTRAREFRESHREGIONS = layout.offsetof(6);
     }
 
-    protected VkVideoEncodeIntraRefreshCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeIntraRefreshCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeIntraRefreshCapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeIntraRefreshCapabilitiesKHR(address, container);
     }
 
     /**

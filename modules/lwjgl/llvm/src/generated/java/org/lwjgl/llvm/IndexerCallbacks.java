@@ -81,13 +81,8 @@ public class IndexerCallbacks extends Struct<IndexerCallbacks> implements Native
         INDEXENTITYREFERENCE = layout.offsetof(7);
     }
 
-    protected IndexerCallbacks(long address, @Nullable ByteBuffer container) {
+    public IndexerCallbacks(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IndexerCallbacks create(long address, @Nullable ByteBuffer container) {
-        return new IndexerCallbacks(address, container);
     }
 
     /**

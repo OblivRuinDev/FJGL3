@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT extends VkPhysicalDevicePipelineCreationCacheControlFeatures {
 
-    protected VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT(address, container);
     }
 
     /**

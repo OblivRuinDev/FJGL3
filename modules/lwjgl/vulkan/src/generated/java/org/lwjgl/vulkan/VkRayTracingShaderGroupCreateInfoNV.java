@@ -68,13 +68,8 @@ public class VkRayTracingShaderGroupCreateInfoNV extends Struct<VkRayTracingShad
         INTERSECTIONSHADER = layout.offsetof(6);
     }
 
-    protected VkRayTracingShaderGroupCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkRayTracingShaderGroupCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRayTracingShaderGroupCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkRayTracingShaderGroupCreateInfoNV(address, container);
     }
 
     /**

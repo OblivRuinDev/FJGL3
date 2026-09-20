@@ -60,13 +60,8 @@ public class VkImageViewHandleInfoNVX extends Struct<VkImageViewHandleInfoNVX> i
         SAMPLER = layout.offsetof(4);
     }
 
-    protected VkImageViewHandleInfoNVX(long address, @Nullable ByteBuffer container) {
+    public VkImageViewHandleInfoNVX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageViewHandleInfoNVX create(long address, @Nullable ByteBuffer container) {
-        return new VkImageViewHandleInfoNVX(address, container);
     }
 
     /**

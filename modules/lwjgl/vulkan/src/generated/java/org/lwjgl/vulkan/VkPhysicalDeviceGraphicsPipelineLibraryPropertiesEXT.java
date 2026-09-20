@@ -56,13 +56,8 @@ public class VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT extends Struct
         GRAPHICSPIPELINELIBRARYINDEPENDENTINTERPOLATIONDECORATION = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(address, container);
     }
 
     /**

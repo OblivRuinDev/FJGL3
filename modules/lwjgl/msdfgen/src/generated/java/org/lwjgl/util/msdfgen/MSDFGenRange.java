@@ -49,13 +49,8 @@ public class MSDFGenRange extends Struct<MSDFGenRange> implements NativeResource
         UPPER = layout.offsetof(1);
     }
 
-    protected MSDFGenRange(long address, @Nullable ByteBuffer container) {
+    public MSDFGenRange(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MSDFGenRange create(long address, @Nullable ByteBuffer container) {
-        return new MSDFGenRange(address, container);
     }
 
     /**

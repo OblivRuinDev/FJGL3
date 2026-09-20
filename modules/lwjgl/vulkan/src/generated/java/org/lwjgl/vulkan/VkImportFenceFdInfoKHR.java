@@ -64,13 +64,8 @@ public class VkImportFenceFdInfoKHR extends Struct<VkImportFenceFdInfoKHR> imple
         FD = layout.offsetof(5);
     }
 
-    protected VkImportFenceFdInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkImportFenceFdInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImportFenceFdInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkImportFenceFdInfoKHR(address, container);
     }
 
     /**

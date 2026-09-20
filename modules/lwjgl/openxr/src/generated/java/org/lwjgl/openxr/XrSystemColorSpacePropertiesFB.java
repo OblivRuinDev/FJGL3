@@ -52,13 +52,8 @@ public class XrSystemColorSpacePropertiesFB extends Struct<XrSystemColorSpacePro
         COLORSPACE = layout.offsetof(2);
     }
 
-    protected XrSystemColorSpacePropertiesFB(long address, @Nullable ByteBuffer container) {
+    public XrSystemColorSpacePropertiesFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemColorSpacePropertiesFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemColorSpacePropertiesFB(address, container);
     }
 
     /**

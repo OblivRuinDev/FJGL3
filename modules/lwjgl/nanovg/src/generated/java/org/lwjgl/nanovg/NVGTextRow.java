@@ -65,13 +65,8 @@ public class NVGTextRow extends Struct<NVGTextRow> implements NativeResource {
         MAXX = layout.offsetof(5);
     }
 
-    protected NVGTextRow(long address, @Nullable ByteBuffer container) {
+    public NVGTextRow(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NVGTextRow create(long address, @Nullable ByteBuffer container) {
-        return new NVGTextRow(address, container);
     }
 
     /**

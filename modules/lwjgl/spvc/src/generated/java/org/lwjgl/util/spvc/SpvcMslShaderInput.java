@@ -57,13 +57,8 @@ public class SpvcMslShaderInput extends Struct<SpvcMslShaderInput> implements Na
         VECSIZE = layout.offsetof(3);
     }
 
-    protected SpvcMslShaderInput(long address, @Nullable ByteBuffer container) {
+    public SpvcMslShaderInput(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcMslShaderInput create(long address, @Nullable ByteBuffer container) {
-        return new SpvcMslShaderInput(address, container);
     }
 
     /**

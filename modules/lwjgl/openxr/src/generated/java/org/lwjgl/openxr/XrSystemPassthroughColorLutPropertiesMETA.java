@@ -52,13 +52,8 @@ public class XrSystemPassthroughColorLutPropertiesMETA extends Struct<XrSystemPa
         MAXCOLORLUTRESOLUTION = layout.offsetof(2);
     }
 
-    protected XrSystemPassthroughColorLutPropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemPassthroughColorLutPropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemPassthroughColorLutPropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemPassthroughColorLutPropertiesMETA(address, container);
     }
 
     /**

@@ -63,13 +63,8 @@ public class XrSpatialGraphStaticNodeBindingCreateInfoMSFT extends Struct<XrSpat
         TIME = layout.offsetof(4);
     }
 
-    protected XrSpatialGraphStaticNodeBindingCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialGraphStaticNodeBindingCreateInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialGraphStaticNodeBindingCreateInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialGraphStaticNodeBindingCreateInfoMSFT(address, container);
     }
 
     /**

@@ -65,13 +65,8 @@ public class XrLocalizationMapML extends Struct<XrLocalizationMapML> implements 
         MAPTYPE = layout.offsetof(4);
     }
 
-    protected XrLocalizationMapML(long address, @Nullable ByteBuffer container) {
+    public XrLocalizationMapML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrLocalizationMapML create(long address, @Nullable ByteBuffer container) {
-        return new XrLocalizationMapML(address, container);
     }
 
     /**

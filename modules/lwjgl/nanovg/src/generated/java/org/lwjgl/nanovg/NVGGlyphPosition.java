@@ -57,13 +57,8 @@ public class NVGGlyphPosition extends Struct<NVGGlyphPosition> implements Native
         MAXX = layout.offsetof(3);
     }
 
-    protected NVGGlyphPosition(long address, @Nullable ByteBuffer container) {
+    public NVGGlyphPosition(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NVGGlyphPosition create(long address, @Nullable ByteBuffer container) {
-        return new NVGGlyphPosition(address, container);
     }
 
     /**

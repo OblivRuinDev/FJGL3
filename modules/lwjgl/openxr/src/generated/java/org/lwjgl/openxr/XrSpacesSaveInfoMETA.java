@@ -57,13 +57,8 @@ public class XrSpacesSaveInfoMETA extends Struct<XrSpacesSaveInfoMETA> implement
         SPACES = layout.offsetof(3);
     }
 
-    protected XrSpacesSaveInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrSpacesSaveInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpacesSaveInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSpacesSaveInfoMETA(address, container);
     }
 
     /**

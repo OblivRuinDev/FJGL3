@@ -58,13 +58,8 @@ public class FMOD_DSP_PARAMETER_DESC_FLOAT extends Struct<FMOD_DSP_PARAMETER_DES
         MAPPING = layout.offsetof(3);
     }
 
-    protected FMOD_DSP_PARAMETER_DESC_FLOAT(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_PARAMETER_DESC_FLOAT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_PARAMETER_DESC_FLOAT create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_PARAMETER_DESC_FLOAT(address, container);
     }
 
     /**

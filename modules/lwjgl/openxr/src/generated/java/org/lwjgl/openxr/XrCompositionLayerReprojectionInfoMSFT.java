@@ -52,13 +52,8 @@ public class XrCompositionLayerReprojectionInfoMSFT extends Struct<XrComposition
         REPROJECTIONMODE = layout.offsetof(2);
     }
 
-    protected XrCompositionLayerReprojectionInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerReprojectionInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerReprojectionInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerReprojectionInfoMSFT(address, container);
     }
 
     /**

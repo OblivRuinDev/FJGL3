@@ -57,13 +57,8 @@ public class XrSecondaryViewConfigurationFrameStateMSFT extends Struct<XrSeconda
         VIEWCONFIGURATIONSTATES = layout.offsetof(3);
     }
 
-    protected XrSecondaryViewConfigurationFrameStateMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSecondaryViewConfigurationFrameStateMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSecondaryViewConfigurationFrameStateMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSecondaryViewConfigurationFrameStateMSFT(address, container);
     }
 
     /**

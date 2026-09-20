@@ -54,13 +54,8 @@ public class ZSTDInBuffer extends Struct<ZSTDInBuffer> implements NativeResource
         POS = layout.offsetof(2);
     }
 
-    protected ZSTDInBuffer(long address, @Nullable ByteBuffer container) {
+    public ZSTDInBuffer(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZSTDInBuffer create(long address, @Nullable ByteBuffer container) {
-        return new ZSTDInBuffer(address, container);
     }
 
     /**

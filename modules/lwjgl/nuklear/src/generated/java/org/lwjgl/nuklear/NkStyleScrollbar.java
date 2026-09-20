@@ -141,13 +141,8 @@ public class NkStyleScrollbar extends Struct<NkStyleScrollbar> implements Native
         DRAW_END = layout.offsetof(22);
     }
 
-    protected NkStyleScrollbar(long address, @Nullable ByteBuffer container) {
+    public NkStyleScrollbar(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleScrollbar create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleScrollbar(address, container);
     }
 
     /**

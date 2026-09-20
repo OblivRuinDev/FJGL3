@@ -52,13 +52,8 @@ public class XrVirtualKeyboardModelVisibilitySetInfoMETA extends Struct<XrVirtua
         VISIBLE = layout.offsetof(2);
     }
 
-    protected XrVirtualKeyboardModelVisibilitySetInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrVirtualKeyboardModelVisibilitySetInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVirtualKeyboardModelVisibilitySetInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrVirtualKeyboardModelVisibilitySetInfoMETA(address, container);
     }
 
     /**

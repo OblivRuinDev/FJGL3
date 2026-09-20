@@ -60,13 +60,8 @@ public class IOURingTaskRestriction extends Struct<IOURingTaskRestriction> imple
         RESTRICTIONS = layout.offsetof(3);
     }
 
-    protected IOURingTaskRestriction(long address, @Nullable ByteBuffer container) {
+    public IOURingTaskRestriction(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingTaskRestriction create(long address, @Nullable ByteBuffer container) {
-        return new IOURingTaskRestriction(address, container);
     }
 
     /**

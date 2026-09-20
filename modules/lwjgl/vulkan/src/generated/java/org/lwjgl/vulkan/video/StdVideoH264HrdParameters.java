@@ -87,13 +87,8 @@ public class StdVideoH264HrdParameters extends Struct<StdVideoH264HrdParameters>
         TIME_OFFSET_LENGTH = layout.offsetof(10);
     }
 
-    protected StdVideoH264HrdParameters(long address, @Nullable ByteBuffer container) {
+    public StdVideoH264HrdParameters(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH264HrdParameters create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH264HrdParameters(address, container);
     }
 
     /**

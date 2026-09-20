@@ -80,13 +80,8 @@ public class VkClusterAccelerationStructureTriangleClusterInputNV extends Struct
         MINPOSITIONTRUNCATEBITCOUNT = layout.offsetof(9);
     }
 
-    protected VkClusterAccelerationStructureTriangleClusterInputNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureTriangleClusterInputNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureTriangleClusterInputNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureTriangleClusterInputNV(address, container);
     }
 
     /**

@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceSynchronization2FeaturesKHR extends VkPhysicalDeviceSynchronization2Features {
 
-    protected VkPhysicalDeviceSynchronization2FeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSynchronization2FeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSynchronization2FeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSynchronization2FeaturesKHR(address, container);
     }
 
     /**

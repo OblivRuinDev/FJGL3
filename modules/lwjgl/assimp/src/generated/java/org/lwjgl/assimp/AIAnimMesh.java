@@ -80,13 +80,8 @@ public class AIAnimMesh extends Struct<AIAnimMesh> implements NativeResource {
         MWEIGHT = layout.offsetof(8);
     }
 
-    protected AIAnimMesh(long address, @Nullable ByteBuffer container) {
+    public AIAnimMesh(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIAnimMesh create(long address, @Nullable ByteBuffer container) {
-        return new AIAnimMesh(address, container);
     }
 
     /**

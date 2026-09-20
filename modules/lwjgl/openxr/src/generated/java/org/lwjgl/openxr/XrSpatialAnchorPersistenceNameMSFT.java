@@ -47,13 +47,8 @@ public class XrSpatialAnchorPersistenceNameMSFT extends Struct<XrSpatialAnchorPe
         NAME = layout.offsetof(0);
     }
 
-    protected XrSpatialAnchorPersistenceNameMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorPersistenceNameMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorPersistenceNameMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorPersistenceNameMSFT(address, container);
     }
 
     /**

@@ -74,13 +74,8 @@ public class VkDescriptorSetAndBindingMappingEXT extends Struct<VkDescriptorSetA
         SOURCEDATA = layout.offsetof(7);
     }
 
-    protected VkDescriptorSetAndBindingMappingEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetAndBindingMappingEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetAndBindingMappingEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetAndBindingMappingEXT(address, container);
     }
 
     /**

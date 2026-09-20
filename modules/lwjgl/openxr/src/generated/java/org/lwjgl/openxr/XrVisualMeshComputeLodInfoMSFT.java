@@ -52,13 +52,8 @@ public class XrVisualMeshComputeLodInfoMSFT extends Struct<XrVisualMeshComputeLo
         LOD = layout.offsetof(2);
     }
 
-    protected XrVisualMeshComputeLodInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrVisualMeshComputeLodInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVisualMeshComputeLodInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrVisualMeshComputeLodInfoMSFT(address, container);
     }
 
     /**

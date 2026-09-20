@@ -69,13 +69,8 @@ public class STBTTBakedChar extends Struct<STBTTBakedChar> implements NativeReso
         XADVANCE = layout.offsetof(6);
     }
 
-    protected STBTTBakedChar(long address, @Nullable ByteBuffer container) {
+    public STBTTBakedChar(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBTTBakedChar create(long address, @Nullable ByteBuffer container) {
-        return new STBTTBakedChar(address, container);
     }
 
     /**

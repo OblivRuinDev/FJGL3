@@ -52,13 +52,8 @@ public class VmaAllocatorInfo extends Struct<VmaAllocatorInfo> implements Native
         DEVICE = layout.offsetof(2);
     }
 
-    protected VmaAllocatorInfo(long address, @Nullable ByteBuffer container) {
+    public VmaAllocatorInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaAllocatorInfo create(long address, @Nullable ByteBuffer container) {
-        return new VmaAllocatorInfo(address, container);
     }
 
     /**

@@ -59,13 +59,8 @@ public class SQL_NUMERIC_STRUCT extends Struct<SQL_NUMERIC_STRUCT> implements Na
         VAL = layout.offsetof(3);
     }
 
-    protected SQL_NUMERIC_STRUCT(long address, @Nullable ByteBuffer container) {
+    public SQL_NUMERIC_STRUCT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SQL_NUMERIC_STRUCT create(long address, @Nullable ByteBuffer container) {
-        return new SQL_NUMERIC_STRUCT(address, container);
     }
 
     /**

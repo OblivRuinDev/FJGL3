@@ -57,13 +57,8 @@ public class VkDeviceImageMemoryRequirements extends Struct<VkDeviceImageMemoryR
         PLANEASPECT = layout.offsetof(3);
     }
 
-    protected VkDeviceImageMemoryRequirements(long address, @Nullable ByteBuffer container) {
+    public VkDeviceImageMemoryRequirements(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceImageMemoryRequirements create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceImageMemoryRequirements(address, container);
     }
 
     /**

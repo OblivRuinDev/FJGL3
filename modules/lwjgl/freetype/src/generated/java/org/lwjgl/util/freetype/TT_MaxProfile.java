@@ -98,13 +98,8 @@ public class TT_MaxProfile extends Struct<TT_MaxProfile> {
         MAXCOMPONENTDEPTH = layout.offsetof(14);
     }
 
-    protected TT_MaxProfile(long address, @Nullable ByteBuffer container) {
+    public TT_MaxProfile(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected TT_MaxProfile create(long address, @Nullable ByteBuffer container) {
-        return new TT_MaxProfile(address, container);
     }
 
     /**

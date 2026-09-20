@@ -48,13 +48,8 @@ public class XrSpatialAnchorsCreateStorageInfoML extends Struct<XrSpatialAnchors
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSpatialAnchorsCreateStorageInfoML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsCreateStorageInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsCreateStorageInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsCreateStorageInfoML(address, container);
     }
 
     /**

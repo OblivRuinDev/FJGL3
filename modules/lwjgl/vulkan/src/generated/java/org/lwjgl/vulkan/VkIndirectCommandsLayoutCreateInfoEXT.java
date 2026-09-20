@@ -73,13 +73,8 @@ public class VkIndirectCommandsLayoutCreateInfoEXT extends Struct<VkIndirectComm
         PTOKENS = layout.offsetof(7);
     }
 
-    protected VkIndirectCommandsLayoutCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkIndirectCommandsLayoutCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectCommandsLayoutCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectCommandsLayoutCreateInfoEXT(address, container);
     }
 
     /**

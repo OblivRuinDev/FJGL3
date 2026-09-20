@@ -57,13 +57,8 @@ public class XrHolographicWindowAttachmentMSFT extends Struct<XrHolographicWindo
         COREWINDOW = layout.offsetof(3);
     }
 
-    protected XrHolographicWindowAttachmentMSFT(long address, @Nullable ByteBuffer container) {
+    public XrHolographicWindowAttachmentMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHolographicWindowAttachmentMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrHolographicWindowAttachmentMSFT(address, container);
     }
 
     /**

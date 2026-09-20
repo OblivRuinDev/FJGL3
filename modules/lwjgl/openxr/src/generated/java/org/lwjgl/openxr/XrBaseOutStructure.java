@@ -49,13 +49,8 @@ public class XrBaseOutStructure extends Struct<XrBaseOutStructure> implements Na
         NEXT = layout.offsetof(1);
     }
 
-    protected XrBaseOutStructure(long address, @Nullable ByteBuffer container) {
+    public XrBaseOutStructure(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBaseOutStructure create(long address, @Nullable ByteBuffer container) {
-        return new XrBaseOutStructure(address, container);
     }
 
     /**

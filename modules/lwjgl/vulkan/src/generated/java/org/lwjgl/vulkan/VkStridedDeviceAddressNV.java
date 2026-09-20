@@ -48,13 +48,8 @@ public class VkStridedDeviceAddressNV extends Struct<VkStridedDeviceAddressNV> i
         STRIDEINBYTES = layout.offsetof(1);
     }
 
-    protected VkStridedDeviceAddressNV(long address, @Nullable ByteBuffer container) {
+    public VkStridedDeviceAddressNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkStridedDeviceAddressNV create(long address, @Nullable ByteBuffer container) {
-        return new VkStridedDeviceAddressNV(address, container);
     }
 
     /**

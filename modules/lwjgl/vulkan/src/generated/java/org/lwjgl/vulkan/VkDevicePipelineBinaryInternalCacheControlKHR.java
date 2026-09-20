@@ -52,13 +52,8 @@ public class VkDevicePipelineBinaryInternalCacheControlKHR extends Struct<VkDevi
         DISABLEINTERNALCACHE = layout.offsetof(2);
     }
 
-    protected VkDevicePipelineBinaryInternalCacheControlKHR(long address, @Nullable ByteBuffer container) {
+    public VkDevicePipelineBinaryInternalCacheControlKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDevicePipelineBinaryInternalCacheControlKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDevicePipelineBinaryInternalCacheControlKHR(address, container);
     }
 
     /**

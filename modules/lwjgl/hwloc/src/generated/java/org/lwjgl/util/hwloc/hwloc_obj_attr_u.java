@@ -77,13 +77,8 @@ public class hwloc_obj_attr_u extends Struct<hwloc_obj_attr_u> implements Native
         OSDEV = layout.offsetof(6);
     }
 
-    protected hwloc_obj_attr_u(long address, @Nullable ByteBuffer container) {
+    public hwloc_obj_attr_u(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_obj_attr_u create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_obj_attr_u(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkPhysicalDeviceImage2DViewOf3DFeaturesEXT extends Struct<VkPhysica
         SAMPLER2DVIEWOF3D = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceImage2DViewOf3DFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImage2DViewOf3DFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImage2DViewOf3DFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImage2DViewOf3DFeaturesEXT(address, container);
     }
 
     /**

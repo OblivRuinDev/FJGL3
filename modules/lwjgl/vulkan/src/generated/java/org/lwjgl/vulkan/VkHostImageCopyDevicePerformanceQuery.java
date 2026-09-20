@@ -56,13 +56,8 @@ public class VkHostImageCopyDevicePerformanceQuery extends Struct<VkHostImageCop
         IDENTICALMEMORYLAYOUT = layout.offsetof(3);
     }
 
-    protected VkHostImageCopyDevicePerformanceQuery(long address, @Nullable ByteBuffer container) {
+    public VkHostImageCopyDevicePerformanceQuery(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkHostImageCopyDevicePerformanceQuery create(long address, @Nullable ByteBuffer container) {
-        return new VkHostImageCopyDevicePerformanceQuery(address, container);
     }
 
     /**

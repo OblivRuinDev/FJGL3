@@ -53,13 +53,8 @@ public class VkAccelerationStructureVersionInfoKHR extends Struct<VkAcceleration
         PVERSIONDATA = layout.offsetof(2);
     }
 
-    protected VkAccelerationStructureVersionInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureVersionInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureVersionInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureVersionInfoKHR(address, container);
     }
 
     /**

@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSubpassDescriptionDepthStencilResolveKHR extends VkSubpassDescriptionDepthStencilResolve {
 
-    protected VkSubpassDescriptionDepthStencilResolveKHR(long address, @Nullable ByteBuffer container) {
+    public VkSubpassDescriptionDepthStencilResolveKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassDescriptionDepthStencilResolveKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassDescriptionDepthStencilResolveKHR(address, container);
     }
 
     /**

@@ -61,13 +61,8 @@ public class XrCreateSpatialDiscoverySnapshotCompletionInfoEXT extends Struct<Xr
         FUTURE = layout.offsetof(4);
     }
 
-    protected XrCreateSpatialDiscoverySnapshotCompletionInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrCreateSpatialDiscoverySnapshotCompletionInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCreateSpatialDiscoverySnapshotCompletionInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrCreateSpatialDiscoverySnapshotCompletionInfoEXT(address, container);
     }
 
     /**

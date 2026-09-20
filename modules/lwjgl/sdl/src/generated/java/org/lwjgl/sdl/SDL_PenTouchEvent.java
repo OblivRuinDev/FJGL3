@@ -80,13 +80,8 @@ public class SDL_PenTouchEvent extends Struct<SDL_PenTouchEvent> implements Nati
         DOWN = layout.offsetof(9);
     }
 
-    protected SDL_PenTouchEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_PenTouchEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_PenTouchEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_PenTouchEvent(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM extends Struct
         SHADERMULTIPLEWAITQUEUES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(address, container);
     }
 
     /**

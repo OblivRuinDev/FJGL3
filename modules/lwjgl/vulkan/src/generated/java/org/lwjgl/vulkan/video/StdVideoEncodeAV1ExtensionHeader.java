@@ -48,13 +48,8 @@ public class StdVideoEncodeAV1ExtensionHeader extends Struct<StdVideoEncodeAV1Ex
         SPATIAL_ID = layout.offsetof(1);
     }
 
-    protected StdVideoEncodeAV1ExtensionHeader(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeAV1ExtensionHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeAV1ExtensionHeader create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeAV1ExtensionHeader(address, container);
     }
 
     /**

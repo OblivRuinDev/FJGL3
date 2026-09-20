@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkMutableDescriptorTypeListVALVE extends VkMutableDescriptorTypeListEXT {
 
-    protected VkMutableDescriptorTypeListVALVE(long address, @Nullable ByteBuffer container) {
+    public VkMutableDescriptorTypeListVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMutableDescriptorTypeListVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkMutableDescriptorTypeListVALVE(address, container);
     }
 
     /**

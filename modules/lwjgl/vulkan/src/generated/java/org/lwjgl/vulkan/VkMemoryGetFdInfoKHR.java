@@ -56,13 +56,8 @@ public class VkMemoryGetFdInfoKHR extends Struct<VkMemoryGetFdInfoKHR> implement
         HANDLETYPE = layout.offsetof(3);
     }
 
-    protected VkMemoryGetFdInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkMemoryGetFdInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryGetFdInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryGetFdInfoKHR(address, container);
     }
 
     /**

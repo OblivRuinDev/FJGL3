@@ -52,13 +52,8 @@ public class XrSystemFaceTrackingPropertiesANDROID extends Struct<XrSystemFaceTr
         SUPPORTSFACETRACKING = layout.offsetof(2);
     }
 
-    protected XrSystemFaceTrackingPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemFaceTrackingPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemFaceTrackingPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemFaceTrackingPropertiesANDROID(address, container);
     }
 
     /**

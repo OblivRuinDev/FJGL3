@@ -103,13 +103,8 @@ public class SDL_PixelFormatDetails extends Struct<SDL_PixelFormatDetails> {
         ASHIFT = layout.offsetof(15);
     }
 
-    protected SDL_PixelFormatDetails(long address, @Nullable ByteBuffer container) {
+    public SDL_PixelFormatDetails(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_PixelFormatDetails create(long address, @Nullable ByteBuffer container) {
-        return new SDL_PixelFormatDetails(address, container);
     }
 
     /**

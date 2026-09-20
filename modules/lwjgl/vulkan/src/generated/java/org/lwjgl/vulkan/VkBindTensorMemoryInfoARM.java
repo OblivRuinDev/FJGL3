@@ -60,13 +60,8 @@ public class VkBindTensorMemoryInfoARM extends Struct<VkBindTensorMemoryInfoARM>
         MEMORYOFFSET = layout.offsetof(4);
     }
 
-    protected VkBindTensorMemoryInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkBindTensorMemoryInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindTensorMemoryInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkBindTensorMemoryInfoARM(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class spng_alloc extends Struct<spng_alloc> implements NativeResource {
         FREE_FN = layout.offsetof(3);
     }
 
-    protected spng_alloc(long address, @Nullable ByteBuffer container) {
+    public spng_alloc(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_alloc create(long address, @Nullable ByteBuffer container) {
-        return new spng_alloc(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT extends Stru
         RAYTRACINGINVOCATIONREORDER = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT(address, container);
     }
 
     /**

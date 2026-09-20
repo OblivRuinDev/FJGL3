@@ -52,13 +52,8 @@ public class VkDeviceGroupSwapchainCreateInfoKHR extends Struct<VkDeviceGroupSwa
         MODES = layout.offsetof(2);
     }
 
-    protected VkDeviceGroupSwapchainCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceGroupSwapchainCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceGroupSwapchainCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceGroupSwapchainCreateInfoKHR(address, container);
     }
 
     /**

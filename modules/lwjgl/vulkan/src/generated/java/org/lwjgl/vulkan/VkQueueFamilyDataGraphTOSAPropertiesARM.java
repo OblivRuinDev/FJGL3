@@ -68,13 +68,8 @@ public class VkQueueFamilyDataGraphTOSAPropertiesARM extends Struct<VkQueueFamil
         LEVEL = layout.offsetof(6);
     }
 
-    protected VkQueueFamilyDataGraphTOSAPropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyDataGraphTOSAPropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyDataGraphTOSAPropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyDataGraphTOSAPropertiesARM(address, container);
     }
 
     /**

@@ -48,13 +48,8 @@ public class XrRenderModelAssetPropertiesGetInfoEXT extends Struct<XrRenderModel
         NEXT = layout.offsetof(1);
     }
 
-    protected XrRenderModelAssetPropertiesGetInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelAssetPropertiesGetInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelAssetPropertiesGetInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelAssetPropertiesGetInfoEXT(address, container);
     }
 
     /**

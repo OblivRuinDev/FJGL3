@@ -91,13 +91,8 @@ public class WNDCLASSEX extends Struct<WNDCLASSEX> implements NativeResource {
         HICONSM = layout.offsetof(11);
     }
 
-    protected WNDCLASSEX(long address, @Nullable ByteBuffer container) {
+    public WNDCLASSEX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected WNDCLASSEX create(long address, @Nullable ByteBuffer container) {
-        return new WNDCLASSEX(address, container);
     }
 
     /**

@@ -69,13 +69,8 @@ public class CXIdxEntityRefInfo extends Struct<CXIdxEntityRefInfo> {
         ROLE = layout.offsetof(6);
     }
 
-    protected CXIdxEntityRefInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxEntityRefInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxEntityRefInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxEntityRefInfo(address, container);
     }
 
     /**

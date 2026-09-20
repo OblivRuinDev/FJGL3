@@ -69,13 +69,8 @@ public class XMapEvent extends Struct<XMapEvent> implements NativeResource {
         OVERRIDE_REDIRECT = layout.offsetof(6);
     }
 
-    protected XMapEvent(long address, @Nullable ByteBuffer container) {
+    public XMapEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XMapEvent create(long address, @Nullable ByteBuffer container) {
-        return new XMapEvent(address, container);
     }
 
     /**

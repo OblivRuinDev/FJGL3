@@ -48,13 +48,8 @@ public class FT_ColorLine extends Struct<FT_ColorLine> {
         COLOR_STOP_ITERATOR = layout.offsetof(1);
     }
 
-    protected FT_ColorLine(long address, @Nullable ByteBuffer container) {
+    public FT_ColorLine(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_ColorLine create(long address, @Nullable ByteBuffer container) {
-        return new FT_ColorLine(address, container);
     }
 
     /**

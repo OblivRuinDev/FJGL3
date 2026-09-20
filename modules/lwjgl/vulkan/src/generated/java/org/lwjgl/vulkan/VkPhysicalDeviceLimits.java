@@ -463,13 +463,8 @@ public class VkPhysicalDeviceLimits extends Struct<VkPhysicalDeviceLimits> {
         NONCOHERENTATOMSIZE = layout.offsetof(105);
     }
 
-    protected VkPhysicalDeviceLimits(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceLimits(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceLimits create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceLimits(address, container);
     }
 
     /**

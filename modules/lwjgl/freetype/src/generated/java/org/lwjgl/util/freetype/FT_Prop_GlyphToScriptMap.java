@@ -46,13 +46,8 @@ public class FT_Prop_GlyphToScriptMap extends Struct<FT_Prop_GlyphToScriptMap> {
         MAP = layout.offsetof(1);
     }
 
-    protected FT_Prop_GlyphToScriptMap(long address, @Nullable ByteBuffer container) {
+    public FT_Prop_GlyphToScriptMap(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Prop_GlyphToScriptMap create(long address, @Nullable ByteBuffer container) {
-        return new FT_Prop_GlyphToScriptMap(address, container);
     }
 
     /**

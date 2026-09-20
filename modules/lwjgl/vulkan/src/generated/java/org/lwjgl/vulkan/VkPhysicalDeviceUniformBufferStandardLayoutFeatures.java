@@ -52,13 +52,8 @@ public class VkPhysicalDeviceUniformBufferStandardLayoutFeatures extends Struct<
         UNIFORMBUFFERSTANDARDLAYOUT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceUniformBufferStandardLayoutFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceUniformBufferStandardLayoutFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceUniformBufferStandardLayoutFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceUniformBufferStandardLayoutFeatures(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class VkVideoSessionMemoryRequirementsKHR extends Struct<VkVideoSessionMe
         MEMORYREQUIREMENTS = layout.offsetof(3);
     }
 
-    protected VkVideoSessionMemoryRequirementsKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoSessionMemoryRequirementsKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoSessionMemoryRequirementsKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoSessionMemoryRequirementsKHR(address, container);
     }
 
     /**

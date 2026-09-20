@@ -56,13 +56,8 @@ public class hb_feature_t extends Struct<hb_feature_t> implements NativeResource
         END = layout.offsetof(3);
     }
 
-    protected hb_feature_t(long address, @Nullable ByteBuffer container) {
+    public hb_feature_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_feature_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_feature_t(address, container);
     }
 
     /**

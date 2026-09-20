@@ -58,13 +58,8 @@ public class VkPipelineSampleLocationsStateCreateInfoEXT extends Struct<VkPipeli
         SAMPLELOCATIONSINFO = layout.offsetof(3);
     }
 
-    protected VkPipelineSampleLocationsStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineSampleLocationsStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineSampleLocationsStateCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineSampleLocationsStateCreateInfoEXT(address, container);
     }
 
     /**

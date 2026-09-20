@@ -48,13 +48,8 @@ public class XrEventDataInteractionRenderModelsChangedEXT extends Struct<XrEvent
         NEXT = layout.offsetof(1);
     }
 
-    protected XrEventDataInteractionRenderModelsChangedEXT(long address, @Nullable ByteBuffer container) {
+    public XrEventDataInteractionRenderModelsChangedEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataInteractionRenderModelsChangedEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataInteractionRenderModelsChangedEXT(address, container);
     }
 
     /**

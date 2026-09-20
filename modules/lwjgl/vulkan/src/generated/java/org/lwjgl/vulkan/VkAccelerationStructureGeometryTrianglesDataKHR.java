@@ -78,13 +78,8 @@ public class VkAccelerationStructureGeometryTrianglesDataKHR extends Struct<VkAc
         TRANSFORMDATA = layout.offsetof(8);
     }
 
-    protected VkAccelerationStructureGeometryTrianglesDataKHR(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureGeometryTrianglesDataKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureGeometryTrianglesDataKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureGeometryTrianglesDataKHR(address, container);
     }
 
     /**

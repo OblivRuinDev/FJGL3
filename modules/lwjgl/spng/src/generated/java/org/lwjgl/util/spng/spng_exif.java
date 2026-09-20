@@ -50,13 +50,8 @@ public class spng_exif extends Struct<spng_exif> implements NativeResource {
         DATA = layout.offsetof(1);
     }
 
-    protected spng_exif(long address, @Nullable ByteBuffer container) {
+    public spng_exif(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_exif create(long address, @Nullable ByteBuffer container) {
-        return new spng_exif(address, container);
     }
 
     /**

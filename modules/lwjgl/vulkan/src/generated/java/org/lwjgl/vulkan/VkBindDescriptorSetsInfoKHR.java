@@ -32,13 +32,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkBindDescriptorSetsInfoKHR extends VkBindDescriptorSetsInfo {
 
-    protected VkBindDescriptorSetsInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkBindDescriptorSetsInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindDescriptorSetsInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkBindDescriptorSetsInfoKHR(address, container);
     }
 
     /**

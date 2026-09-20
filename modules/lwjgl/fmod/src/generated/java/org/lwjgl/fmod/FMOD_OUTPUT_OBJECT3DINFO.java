@@ -68,13 +68,8 @@ public class FMOD_OUTPUT_OBJECT3DINFO extends Struct<FMOD_OUTPUT_OBJECT3DINFO> i
         PRIORITY = layout.offsetof(5);
     }
 
-    protected FMOD_OUTPUT_OBJECT3DINFO(long address, @Nullable ByteBuffer container) {
+    public FMOD_OUTPUT_OBJECT3DINFO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_OUTPUT_OBJECT3DINFO create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_OUTPUT_OBJECT3DINFO(address, container);
     }
 
     /**

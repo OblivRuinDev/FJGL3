@@ -57,13 +57,8 @@ public class NkStyleItemData extends Struct<NkStyleItemData> implements NativeRe
         SLICE = layout.offsetof(2);
     }
 
-    protected NkStyleItemData(long address, @Nullable ByteBuffer container) {
+    public NkStyleItemData(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleItemData create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleItemData(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class VkPipelineVertexInputDivisorStateCreateInfo extends Struct<VkPipeli
         PVERTEXBINDINGDIVISORS = layout.offsetof(3);
     }
 
-    protected VkPipelineVertexInputDivisorStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineVertexInputDivisorStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineVertexInputDivisorStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineVertexInputDivisorStateCreateInfo(address, container);
     }
 
     /**

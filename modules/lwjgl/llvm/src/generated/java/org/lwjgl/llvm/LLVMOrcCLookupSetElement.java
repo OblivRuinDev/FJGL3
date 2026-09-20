@@ -49,13 +49,8 @@ public class LLVMOrcCLookupSetElement extends Struct<LLVMOrcCLookupSetElement> i
         LOOKUPFLAGS = layout.offsetof(1);
     }
 
-    protected LLVMOrcCLookupSetElement(long address, @Nullable ByteBuffer container) {
+    public LLVMOrcCLookupSetElement(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMOrcCLookupSetElement create(long address, @Nullable ByteBuffer container) {
-        return new LLVMOrcCLookupSetElement(address, container);
     }
 
     /**

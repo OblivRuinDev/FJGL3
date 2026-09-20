@@ -76,13 +76,8 @@ public class FMOD_STUDIO_PARAMETER_DESCRIPTION extends Struct<FMOD_STUDIO_PARAME
         GUID = layout.offsetof(7);
     }
 
-    protected FMOD_STUDIO_PARAMETER_DESCRIPTION(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_PARAMETER_DESCRIPTION(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_PARAMETER_DESCRIPTION create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_PARAMETER_DESCRIPTION(address, container);
     }
 
     /**

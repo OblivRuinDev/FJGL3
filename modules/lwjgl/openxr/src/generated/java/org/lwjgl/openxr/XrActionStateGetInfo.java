@@ -57,13 +57,8 @@ public class XrActionStateGetInfo extends Struct<XrActionStateGetInfo> implement
         SUBACTIONPATH = layout.offsetof(3);
     }
 
-    protected XrActionStateGetInfo(long address, @Nullable ByteBuffer container) {
+    public XrActionStateGetInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrActionStateGetInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrActionStateGetInfo(address, container);
     }
 
     /**

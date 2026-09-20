@@ -52,13 +52,8 @@ public class XrSpatialAnchorSpaceFromIdCreateInfoANDROID extends Struct<XrSpatia
         ANCHORENTITYID = layout.offsetof(2);
     }
 
-    protected XrSpatialAnchorSpaceFromIdCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorSpaceFromIdCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorSpaceFromIdCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorSpaceFromIdCreateInfoANDROID(address, container);
     }
 
     /**

@@ -53,13 +53,8 @@ public class AIVector3D extends Struct<AIVector3D> implements NativeResource {
         Z = layout.offsetof(2);
     }
 
-    protected AIVector3D(long address, @Nullable ByteBuffer container) {
+    public AIVector3D(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIVector3D create(long address, @Nullable ByteBuffer container) {
-        return new AIVector3D(address, container);
     }
 
     /**

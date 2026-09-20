@@ -52,13 +52,8 @@ public class XrSoundObjectShapeSphereBD extends Struct<XrSoundObjectShapeSphereB
         RADIUS = layout.offsetof(2);
     }
 
-    protected XrSoundObjectShapeSphereBD(long address, @Nullable ByteBuffer container) {
+    public XrSoundObjectShapeSphereBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSoundObjectShapeSphereBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSoundObjectShapeSphereBD(address, container);
     }
 
     /**

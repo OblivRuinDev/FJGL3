@@ -67,13 +67,8 @@ public class CXPlatformAvailability extends Struct<CXPlatformAvailability> imple
         MESSAGE = layout.offsetof(5);
     }
 
-    protected CXPlatformAvailability(long address, @Nullable ByteBuffer container) {
+    public CXPlatformAvailability(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXPlatformAvailability create(long address, @Nullable ByteBuffer container) {
-        return new CXPlatformAvailability(address, container);
     }
 
     /**

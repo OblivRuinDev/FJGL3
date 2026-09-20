@@ -52,13 +52,8 @@ public class XrSystemSpacePersistencePropertiesMETA extends Struct<XrSystemSpace
         SUPPORTSSPACEPERSISTENCE = layout.offsetof(2);
     }
 
-    protected XrSystemSpacePersistencePropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemSpacePersistencePropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemSpacePersistencePropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemSpacePersistencePropertiesMETA(address, container);
     }
 
     /**

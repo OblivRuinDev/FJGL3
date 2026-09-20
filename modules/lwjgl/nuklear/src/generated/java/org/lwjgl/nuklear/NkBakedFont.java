@@ -65,13 +65,8 @@ public class NkBakedFont extends Struct<NkBakedFont> implements NativeResource {
         RANGES = layout.offsetof(5);
     }
 
-    protected NkBakedFont(long address, @Nullable ByteBuffer container) {
+    public NkBakedFont(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkBakedFont create(long address, @Nullable ByteBuffer container) {
-        return new NkBakedFont(address, container);
     }
 
     /**

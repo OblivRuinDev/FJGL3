@@ -55,13 +55,8 @@ public class FTC_ImageType extends Struct<FTC_ImageType> {
         FLAGS = layout.offsetof(3);
     }
 
-    protected FTC_ImageType(long address, @Nullable ByteBuffer container) {
+    public FTC_ImageType(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FTC_ImageType create(long address, @Nullable ByteBuffer container) {
-        return new FTC_ImageType(address, container);
     }
 
     /**

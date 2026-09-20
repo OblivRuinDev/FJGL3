@@ -69,13 +69,8 @@ public class XrWorldMeshGetInfoML extends Struct<XrWorldMeshGetInfoML> implement
         BLOCKS = layout.offsetof(6);
     }
 
-    protected XrWorldMeshGetInfoML(long address, @Nullable ByteBuffer container) {
+    public XrWorldMeshGetInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrWorldMeshGetInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrWorldMeshGetInfoML(address, container);
     }
 
     /**

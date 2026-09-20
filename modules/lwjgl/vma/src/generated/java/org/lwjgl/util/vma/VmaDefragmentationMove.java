@@ -53,13 +53,8 @@ public class VmaDefragmentationMove extends Struct<VmaDefragmentationMove> imple
         DSTTMPALLOCATION = layout.offsetof(2);
     }
 
-    protected VmaDefragmentationMove(long address, @Nullable ByteBuffer container) {
+    public VmaDefragmentationMove(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaDefragmentationMove create(long address, @Nullable ByteBuffer container) {
-        return new VmaDefragmentationMove(address, container);
     }
 
     /**

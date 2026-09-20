@@ -52,13 +52,8 @@ public class VkAccelerationStructureDeviceAddressInfoKHR extends Struct<VkAccele
         ACCELERATIONSTRUCTURE = layout.offsetof(2);
     }
 
-    protected VkAccelerationStructureDeviceAddressInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureDeviceAddressInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureDeviceAddressInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureDeviceAddressInfoKHR(address, container);
     }
 
     /**

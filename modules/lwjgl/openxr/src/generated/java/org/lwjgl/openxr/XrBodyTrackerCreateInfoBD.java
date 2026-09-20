@@ -52,13 +52,8 @@ public class XrBodyTrackerCreateInfoBD extends Struct<XrBodyTrackerCreateInfoBD>
         JOINTSET = layout.offsetof(2);
     }
 
-    protected XrBodyTrackerCreateInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrBodyTrackerCreateInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyTrackerCreateInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyTrackerCreateInfoBD(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkVideoSessionParametersUpdateInfoKHR extends Struct<VkVideoSession
         UPDATESEQUENCECOUNT = layout.offsetof(2);
     }
 
-    protected VkVideoSessionParametersUpdateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoSessionParametersUpdateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoSessionParametersUpdateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoSessionParametersUpdateInfoKHR(address, container);
     }
 
     /**

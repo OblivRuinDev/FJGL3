@@ -56,13 +56,8 @@ public class XrCompositionLayerDepthTestVARJO extends Struct<XrCompositionLayerD
         DEPTHTESTRANGEFARZ = layout.offsetof(3);
     }
 
-    protected XrCompositionLayerDepthTestVARJO(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerDepthTestVARJO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerDepthTestVARJO create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerDepthTestVARJO(address, container);
     }
 
     /**

@@ -68,13 +68,8 @@ public class VkPhysicalDeviceImageFormatInfo2 extends Struct<VkPhysicalDeviceIma
         FLAGS = layout.offsetof(6);
     }
 
-    protected VkPhysicalDeviceImageFormatInfo2(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageFormatInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageFormatInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageFormatInfo2(address, container);
     }
 
     /**

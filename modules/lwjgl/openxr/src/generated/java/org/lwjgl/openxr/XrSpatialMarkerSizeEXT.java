@@ -52,13 +52,8 @@ public class XrSpatialMarkerSizeEXT extends Struct<XrSpatialMarkerSizeEXT> imple
         MARKERSIDELENGTH = layout.offsetof(2);
     }
 
-    protected XrSpatialMarkerSizeEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialMarkerSizeEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialMarkerSizeEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialMarkerSizeEXT(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class XrEventDataSpaceDiscoveryCompleteMETA extends Struct<XrEventDataSpa
         RESULT = layout.offsetof(3);
     }
 
-    protected XrEventDataSpaceDiscoveryCompleteMETA(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSpaceDiscoveryCompleteMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSpaceDiscoveryCompleteMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSpaceDiscoveryCompleteMETA(address, container);
     }
 
     /**

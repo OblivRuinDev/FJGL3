@@ -52,13 +52,8 @@ public class VkDataGraphPipelineSessionBindPointRequirementsInfoARM extends Stru
         SESSION = layout.offsetof(2);
     }
 
-    protected VkDataGraphPipelineSessionBindPointRequirementsInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineSessionBindPointRequirementsInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineSessionBindPointRequirementsInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineSessionBindPointRequirementsInfoARM(address, container);
     }
 
     /**

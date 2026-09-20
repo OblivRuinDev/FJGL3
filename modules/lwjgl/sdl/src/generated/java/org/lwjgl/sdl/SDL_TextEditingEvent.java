@@ -69,13 +69,8 @@ public class SDL_TextEditingEvent extends Struct<SDL_TextEditingEvent> implement
         LENGTH = layout.offsetof(6);
     }
 
-    protected SDL_TextEditingEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_TextEditingEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_TextEditingEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_TextEditingEvent(address, container);
     }
 
     /**

@@ -51,13 +51,8 @@ public class CXIdxCXXClassDeclInfo extends Struct<CXIdxCXXClassDeclInfo> {
         NUMBASES = layout.offsetof(2);
     }
 
-    protected CXIdxCXXClassDeclInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxCXXClassDeclInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxCXXClassDeclInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxCXXClassDeclInfo(address, container);
     }
 
     /**

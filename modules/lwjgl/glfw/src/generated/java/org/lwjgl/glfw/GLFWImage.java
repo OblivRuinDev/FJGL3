@@ -54,13 +54,8 @@ public class GLFWImage extends Struct<GLFWImage> implements NativeResource {
         PIXELS = layout.offsetof(2);
     }
 
-    protected GLFWImage(long address, @Nullable ByteBuffer container) {
+    public GLFWImage(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLFWImage create(long address, @Nullable ByteBuffer container) {
-        return new GLFWImage(address, container);
     }
 
     /**

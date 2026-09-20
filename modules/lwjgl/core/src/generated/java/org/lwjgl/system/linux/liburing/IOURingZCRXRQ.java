@@ -66,13 +66,8 @@ public class IOURingZCRXRQ extends Struct<IOURingZCRXRQ> implements NativeResour
         RING_PTR = layout.offsetof(5);
     }
 
-    protected IOURingZCRXRQ(long address, @Nullable ByteBuffer container) {
+    public IOURingZCRXRQ(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingZCRXRQ create(long address, @Nullable ByteBuffer container) {
-        return new IOURingZCRXRQ(address, container);
     }
 
     /**

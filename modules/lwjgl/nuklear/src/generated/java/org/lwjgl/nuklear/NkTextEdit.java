@@ -109,13 +109,8 @@ public class NkTextEdit extends Struct<NkTextEdit> implements NativeResource {
         UNDO = layout.offsetof(15);
     }
 
-    protected NkTextEdit(long address, @Nullable ByteBuffer container) {
+    public NkTextEdit(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkTextEdit create(long address, @Nullable ByteBuffer container) {
-        return new NkTextEdit(address, container);
     }
 
     /**

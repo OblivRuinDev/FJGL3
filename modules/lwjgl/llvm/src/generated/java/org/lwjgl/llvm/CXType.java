@@ -49,13 +49,8 @@ public class CXType extends Struct<CXType> implements NativeResource {
         DATA = layout.offsetof(1);
     }
 
-    protected CXType(long address, @Nullable ByteBuffer container) {
+    public CXType(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXType create(long address, @Nullable ByteBuffer container) {
-        return new CXType(address, container);
     }
 
     /**

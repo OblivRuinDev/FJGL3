@@ -52,13 +52,8 @@ public class AILogStream extends Struct<AILogStream> implements NativeResource {
         USER = layout.offsetof(1);
     }
 
-    protected AILogStream(long address, @Nullable ByteBuffer container) {
+    public AILogStream(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AILogStream create(long address, @Nullable ByteBuffer container) {
-        return new AILogStream(address, container);
     }
 
     /**

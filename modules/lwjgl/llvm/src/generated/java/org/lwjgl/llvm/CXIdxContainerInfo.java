@@ -46,13 +46,8 @@ public class CXIdxContainerInfo extends Struct<CXIdxContainerInfo> implements Na
         CURSOR = layout.offsetof(0);
     }
 
-    protected CXIdxContainerInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxContainerInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxContainerInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxContainerInfo(address, container);
     }
 
     /**

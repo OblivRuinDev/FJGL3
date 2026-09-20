@@ -56,13 +56,8 @@ public class VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR extends Struct<Vk
         RAYTRACINGPIPELINETRACERAYSINDIRECT2 = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR(address, container);
     }
 
     /**

@@ -70,13 +70,8 @@ public class VkPhysicalDeviceToolProperties extends Struct<VkPhysicalDeviceToolP
         LAYER = layout.offsetof(6);
     }
 
-    protected VkPhysicalDeviceToolProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceToolProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceToolProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceToolProperties(address, container);
     }
 
     /**

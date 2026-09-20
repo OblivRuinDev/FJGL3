@@ -49,13 +49,8 @@ public class CLNameVersionKHR extends Struct<CLNameVersionKHR> implements Native
         NAME = layout.offsetof(1);
     }
 
-    protected CLNameVersionKHR(long address, @Nullable ByteBuffer container) {
+    public CLNameVersionKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLNameVersionKHR create(long address, @Nullable ByteBuffer container) {
-        return new CLNameVersionKHR(address, container);
     }
 
     /**

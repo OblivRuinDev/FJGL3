@@ -53,13 +53,8 @@ public class CLMutableDispatchExecInfoKHR extends Struct<CLMutableDispatchExecIn
         PARAM_VALUE = layout.offsetof(2);
     }
 
-    protected CLMutableDispatchExecInfoKHR(long address, @Nullable ByteBuffer container) {
+    public CLMutableDispatchExecInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLMutableDispatchExecInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new CLMutableDispatchExecInfoKHR(address, container);
     }
 
     /**

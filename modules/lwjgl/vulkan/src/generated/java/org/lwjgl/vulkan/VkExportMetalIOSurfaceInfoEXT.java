@@ -57,13 +57,8 @@ public class VkExportMetalIOSurfaceInfoEXT extends Struct<VkExportMetalIOSurface
         IOSURFACE = layout.offsetof(3);
     }
 
-    protected VkExportMetalIOSurfaceInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkExportMetalIOSurfaceInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportMetalIOSurfaceInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkExportMetalIOSurfaceInfoEXT(address, container);
     }
 
     /**

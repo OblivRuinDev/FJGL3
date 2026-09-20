@@ -98,13 +98,8 @@ public class NkFontAtlas extends Struct<NkFontAtlas> implements NativeResource {
         FONT_NUM = layout.offsetof(12);
     }
 
-    protected NkFontAtlas(long address, @Nullable ByteBuffer container) {
+    public NkFontAtlas(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkFontAtlas create(long address, @Nullable ByteBuffer container) {
-        return new NkFontAtlas(address, container);
     }
 
     /**

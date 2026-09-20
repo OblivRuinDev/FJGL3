@@ -61,13 +61,8 @@ public class VkOpticalFlowExecuteInfoNV extends Struct<VkOpticalFlowExecuteInfoN
         PREGIONS = layout.offsetof(4);
     }
 
-    protected VkOpticalFlowExecuteInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkOpticalFlowExecuteInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkOpticalFlowExecuteInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkOpticalFlowExecuteInfoNV(address, container);
     }
 
     /**

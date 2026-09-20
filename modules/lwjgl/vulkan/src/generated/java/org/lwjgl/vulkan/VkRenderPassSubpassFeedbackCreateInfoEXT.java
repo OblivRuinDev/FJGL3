@@ -53,13 +53,8 @@ public class VkRenderPassSubpassFeedbackCreateInfoEXT extends Struct<VkRenderPas
         PSUBPASSFEEDBACK = layout.offsetof(2);
     }
 
-    protected VkRenderPassSubpassFeedbackCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassSubpassFeedbackCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassSubpassFeedbackCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassSubpassFeedbackCreateInfoEXT(address, container);
     }
 
     /**

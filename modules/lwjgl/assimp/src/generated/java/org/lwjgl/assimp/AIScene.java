@@ -120,13 +120,8 @@ public class AIScene extends Struct<AIScene> implements NativeResource {
         MPRIVATE = layout.offsetof(18);
     }
 
-    protected AIScene(long address, @Nullable ByteBuffer container) {
+    public AIScene(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIScene create(long address, @Nullable ByteBuffer container) {
-        return new AIScene(address, container);
     }
 
     /**

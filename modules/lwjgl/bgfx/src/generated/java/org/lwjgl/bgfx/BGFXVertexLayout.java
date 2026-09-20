@@ -60,13 +60,8 @@ public class BGFXVertexLayout extends Struct<BGFXVertexLayout> implements Native
         ATTRIBUTES = layout.offsetof(3);
     }
 
-    protected BGFXVertexLayout(long address, @Nullable ByteBuffer container) {
+    public BGFXVertexLayout(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXVertexLayout create(long address, @Nullable ByteBuffer container) {
-        return new BGFXVertexLayout(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceMemoryDecompressionFeaturesEXT extends Struct<VkPhy
         MEMORYDECOMPRESSION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceMemoryDecompressionFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMemoryDecompressionFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMemoryDecompressionFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMemoryDecompressionFeaturesEXT(address, container);
     }
 
     /**

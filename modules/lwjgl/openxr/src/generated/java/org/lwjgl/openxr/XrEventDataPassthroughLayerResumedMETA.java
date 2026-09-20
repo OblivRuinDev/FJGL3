@@ -52,13 +52,8 @@ public class XrEventDataPassthroughLayerResumedMETA extends Struct<XrEventDataPa
         LAYER = layout.offsetof(2);
     }
 
-    protected XrEventDataPassthroughLayerResumedMETA(long address, @Nullable ByteBuffer container) {
+    public XrEventDataPassthroughLayerResumedMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataPassthroughLayerResumedMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataPassthroughLayerResumedMETA(address, container);
     }
 
     /**

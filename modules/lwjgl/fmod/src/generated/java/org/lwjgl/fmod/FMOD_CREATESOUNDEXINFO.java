@@ -195,13 +195,8 @@ public class FMOD_CREATESOUNDEXINFO extends Struct<FMOD_CREATESOUNDEXINFO> imple
         FSBGUID = layout.offsetof(35);
     }
 
-    protected FMOD_CREATESOUNDEXINFO(long address, @Nullable ByteBuffer container) {
+    public FMOD_CREATESOUNDEXINFO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_CREATESOUNDEXINFO create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_CREATESOUNDEXINFO(address, container);
     }
 
     /**

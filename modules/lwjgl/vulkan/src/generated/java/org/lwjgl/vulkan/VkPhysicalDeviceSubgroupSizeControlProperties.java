@@ -64,13 +64,8 @@ public class VkPhysicalDeviceSubgroupSizeControlProperties extends Struct<VkPhys
         REQUIREDSUBGROUPSIZESTAGES = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceSubgroupSizeControlProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSubgroupSizeControlProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSubgroupSizeControlProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSubgroupSizeControlProperties(address, container);
     }
 
     /**

@@ -139,13 +139,8 @@ public class BGFXCapsLimits extends Struct<BGFXCapsLimits> {
         MINUNIFORMBUFFERSIZE = layout.offsetof(24);
     }
 
-    protected BGFXCapsLimits(long address, @Nullable ByteBuffer container) {
+    public BGFXCapsLimits(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXCapsLimits create(long address, @Nullable ByteBuffer container) {
-        return new BGFXCapsLimits(address, container);
     }
 
     /**

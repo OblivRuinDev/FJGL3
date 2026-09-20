@@ -32,13 +32,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkBlitImageInfo2KHR extends VkBlitImageInfo2 {
 
-    protected VkBlitImageInfo2KHR(long address, @Nullable ByteBuffer container) {
+    public VkBlitImageInfo2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBlitImageInfo2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkBlitImageInfo2KHR(address, container);
     }
 
     /**

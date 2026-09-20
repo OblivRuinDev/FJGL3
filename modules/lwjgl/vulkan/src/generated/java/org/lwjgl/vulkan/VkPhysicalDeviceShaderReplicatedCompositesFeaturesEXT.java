@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderReplicatedCompositesFeaturesEXT extends Struc
         SHADERREPLICATEDCOMPOSITES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderReplicatedCompositesFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderReplicatedCompositesFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderReplicatedCompositesFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderReplicatedCompositesFeaturesEXT(address, container);
     }
 
     /**

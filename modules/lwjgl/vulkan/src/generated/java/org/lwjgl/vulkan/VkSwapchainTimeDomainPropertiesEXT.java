@@ -60,13 +60,8 @@ public class VkSwapchainTimeDomainPropertiesEXT extends Struct<VkSwapchainTimeDo
         PTIMEDOMAINIDS = layout.offsetof(4);
     }
 
-    protected VkSwapchainTimeDomainPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainTimeDomainPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainTimeDomainPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainTimeDomainPropertiesEXT(address, container);
     }
 
     /**

@@ -68,13 +68,8 @@ public class VkVideoEncodeAV1RateControlInfoKHR extends Struct<VkVideoEncodeAV1R
         TEMPORALLAYERCOUNT = layout.offsetof(6);
     }
 
-    protected VkVideoEncodeAV1RateControlInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeAV1RateControlInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeAV1RateControlInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeAV1RateControlInfoKHR(address, container);
     }
 
     /**

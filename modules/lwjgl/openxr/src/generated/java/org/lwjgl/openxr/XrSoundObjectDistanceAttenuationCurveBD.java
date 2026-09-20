@@ -57,13 +57,8 @@ public class XrSoundObjectDistanceAttenuationCurveBD extends Struct<XrSoundObjec
         CURVEPOINTS = layout.offsetof(3);
     }
 
-    protected XrSoundObjectDistanceAttenuationCurveBD(long address, @Nullable ByteBuffer container) {
+    public XrSoundObjectDistanceAttenuationCurveBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSoundObjectDistanceAttenuationCurveBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSoundObjectDistanceAttenuationCurveBD(address, container);
     }
 
     /**

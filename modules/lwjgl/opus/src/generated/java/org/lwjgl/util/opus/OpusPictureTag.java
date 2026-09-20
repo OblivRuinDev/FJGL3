@@ -80,13 +80,8 @@ public class OpusPictureTag extends Struct<OpusPictureTag> implements NativeReso
         FORMAT = layout.offsetof(9);
     }
 
-    protected OpusPictureTag(long address, @Nullable ByteBuffer container) {
+    public OpusPictureTag(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected OpusPictureTag create(long address, @Nullable ByteBuffer container) {
-        return new OpusPictureTag(address, container);
     }
 
     /**

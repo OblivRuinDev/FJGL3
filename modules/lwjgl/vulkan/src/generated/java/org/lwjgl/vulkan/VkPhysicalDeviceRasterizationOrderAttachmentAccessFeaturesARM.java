@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesARM extends VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT {
 
-    protected VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesARM(address, container);
     }
 
     /**

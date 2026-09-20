@@ -53,13 +53,8 @@ public class XrGoogleCloudAuthInfoTokenANDROID extends Struct<XrGoogleCloudAuthI
         AUTHTOKEN = layout.offsetof(2);
     }
 
-    protected XrGoogleCloudAuthInfoTokenANDROID(long address, @Nullable ByteBuffer container) {
+    public XrGoogleCloudAuthInfoTokenANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGoogleCloudAuthInfoTokenANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrGoogleCloudAuthInfoTokenANDROID(address, container);
     }
 
     /**

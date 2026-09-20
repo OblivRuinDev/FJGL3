@@ -56,13 +56,8 @@ public class hb_aat_layout_feature_selector_info_t extends Struct<hb_aat_layout_
         RESERVED = layout.offsetof(3);
     }
 
-    protected hb_aat_layout_feature_selector_info_t(long address, @Nullable ByteBuffer container) {
+    public hb_aat_layout_feature_selector_info_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_aat_layout_feature_selector_info_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_aat_layout_feature_selector_info_t(address, container);
     }
 
     /**

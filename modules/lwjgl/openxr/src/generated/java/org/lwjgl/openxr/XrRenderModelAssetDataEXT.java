@@ -60,13 +60,8 @@ public class XrRenderModelAssetDataEXT extends Struct<XrRenderModelAssetDataEXT>
         BUFFER = layout.offsetof(4);
     }
 
-    protected XrRenderModelAssetDataEXT(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelAssetDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelAssetDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelAssetDataEXT(address, container);
     }
 
     /**

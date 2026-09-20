@@ -76,13 +76,8 @@ public class SDL_GPUTextureCreateInfo extends Struct<SDL_GPUTextureCreateInfo> i
         PROPS = layout.offsetof(8);
     }
 
-    protected SDL_GPUTextureCreateInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUTextureCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUTextureCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUTextureCreateInfo(address, container);
     }
 
     /**

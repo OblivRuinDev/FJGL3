@@ -64,13 +64,8 @@ public class VkAccelerationStructureSRTMotionInstanceNV extends Struct<VkAcceler
         ACCELERATIONSTRUCTUREREFERENCE = layout.offsetof(4);
     }
 
-    protected VkAccelerationStructureSRTMotionInstanceNV(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureSRTMotionInstanceNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureSRTMotionInstanceNV create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureSRTMotionInstanceNV(address, container);
     }
 
     /**

@@ -54,13 +54,8 @@ public class XrRenderModelAssetCreateInfoEXT extends Struct<XrRenderModelAssetCr
         CACHEID = layout.offsetof(2);
     }
 
-    protected XrRenderModelAssetCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelAssetCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelAssetCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelAssetCreateInfoEXT(address, container);
     }
 
     /**

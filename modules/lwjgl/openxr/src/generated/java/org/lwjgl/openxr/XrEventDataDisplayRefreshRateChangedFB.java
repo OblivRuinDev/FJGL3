@@ -56,13 +56,8 @@ public class XrEventDataDisplayRefreshRateChangedFB extends Struct<XrEventDataDi
         TODISPLAYREFRESHRATE = layout.offsetof(3);
     }
 
-    protected XrEventDataDisplayRefreshRateChangedFB(long address, @Nullable ByteBuffer container) {
+    public XrEventDataDisplayRefreshRateChangedFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataDisplayRefreshRateChangedFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataDisplayRefreshRateChangedFB(address, container);
     }
 
     /**

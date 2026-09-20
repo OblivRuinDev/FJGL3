@@ -42,13 +42,8 @@ public class VkRenderPassCreationFeedbackInfoEXT extends Struct<VkRenderPassCrea
         POSTMERGESUBPASSCOUNT = layout.offsetof(0);
     }
 
-    protected VkRenderPassCreationFeedbackInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassCreationFeedbackInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassCreationFeedbackInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassCreationFeedbackInfoEXT(address, container);
     }
 
     /**

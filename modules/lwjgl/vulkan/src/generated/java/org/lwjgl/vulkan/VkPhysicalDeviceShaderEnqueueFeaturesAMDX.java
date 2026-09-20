@@ -56,13 +56,8 @@ public class VkPhysicalDeviceShaderEnqueueFeaturesAMDX extends Struct<VkPhysical
         SHADERMESHENQUEUE = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceShaderEnqueueFeaturesAMDX(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderEnqueueFeaturesAMDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderEnqueueFeaturesAMDX create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderEnqueueFeaturesAMDX(address, container);
     }
 
     /**

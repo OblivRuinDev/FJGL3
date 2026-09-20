@@ -57,13 +57,8 @@ public class XrSpatialComponentPolygon2DListEXT extends Struct<XrSpatialComponen
         POLYGONS = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentPolygon2DListEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentPolygon2DListEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentPolygon2DListEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentPolygon2DListEXT(address, container);
     }
 
     /**

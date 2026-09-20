@@ -62,13 +62,8 @@ public class VkBindIndexBuffer3InfoKHR extends Struct<VkBindIndexBuffer3InfoKHR>
         INDEXTYPE = layout.offsetof(4);
     }
 
-    protected VkBindIndexBuffer3InfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkBindIndexBuffer3InfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindIndexBuffer3InfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkBindIndexBuffer3InfoKHR(address, container);
     }
 
     /**

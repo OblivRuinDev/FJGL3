@@ -53,13 +53,8 @@ public class STBVorbisComment extends Struct<STBVorbisComment> implements Native
         COMMENT_LIST = layout.offsetof(2);
     }
 
-    protected STBVorbisComment(long address, @Nullable ByteBuffer container) {
+    public STBVorbisComment(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBVorbisComment create(long address, @Nullable ByteBuffer container) {
-        return new STBVorbisComment(address, container);
     }
 
     /**

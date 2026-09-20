@@ -56,13 +56,8 @@ public class VkVideoEncodeH264SessionParametersFeedbackInfoKHR extends Struct<Vk
         HASSTDPPSOVERRIDES = layout.offsetof(3);
     }
 
-    protected VkVideoEncodeH264SessionParametersFeedbackInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH264SessionParametersFeedbackInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH264SessionParametersFeedbackInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH264SessionParametersFeedbackInfoKHR(address, container);
     }
 
     /**

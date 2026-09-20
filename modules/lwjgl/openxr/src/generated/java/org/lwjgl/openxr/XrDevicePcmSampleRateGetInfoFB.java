@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class XrDevicePcmSampleRateGetInfoFB extends XrDevicePcmSampleRateStateFB {
 
-    protected XrDevicePcmSampleRateGetInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrDevicePcmSampleRateGetInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrDevicePcmSampleRateGetInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrDevicePcmSampleRateGetInfoFB(address, container);
     }
 
     /**

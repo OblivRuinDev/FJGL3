@@ -51,13 +51,8 @@ public class NkStr extends Struct<NkStr> implements NativeResource {
         LEN = layout.offsetof(1);
     }
 
-    protected NkStr(long address, @Nullable ByteBuffer container) {
+    public NkStr(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStr create(long address, @Nullable ByteBuffer container) {
-        return new NkStr(address, container);
     }
 
     /**

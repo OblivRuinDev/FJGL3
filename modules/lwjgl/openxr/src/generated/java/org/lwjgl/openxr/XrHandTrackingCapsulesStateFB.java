@@ -57,13 +57,8 @@ public class XrHandTrackingCapsulesStateFB extends Struct<XrHandTrackingCapsules
         CAPSULES = layout.offsetof(2);
     }
 
-    protected XrHandTrackingCapsulesStateFB(long address, @Nullable ByteBuffer container) {
+    public XrHandTrackingCapsulesStateFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandTrackingCapsulesStateFB create(long address, @Nullable ByteBuffer container) {
-        return new XrHandTrackingCapsulesStateFB(address, container);
     }
 
     /**

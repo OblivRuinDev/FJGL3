@@ -58,13 +58,8 @@ public class XrSpaceLocation extends Struct<XrSpaceLocation> implements NativeRe
         POSE = layout.offsetof(3);
     }
 
-    protected XrSpaceLocation(long address, @Nullable ByteBuffer container) {
+    public XrSpaceLocation(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceLocation create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceLocation(address, container);
     }
 
     /**

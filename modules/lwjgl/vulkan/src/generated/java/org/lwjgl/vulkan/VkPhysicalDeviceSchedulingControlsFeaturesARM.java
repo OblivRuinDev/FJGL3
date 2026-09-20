@@ -52,13 +52,8 @@ public class VkPhysicalDeviceSchedulingControlsFeaturesARM extends Struct<VkPhys
         SCHEDULINGCONTROLS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceSchedulingControlsFeaturesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSchedulingControlsFeaturesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSchedulingControlsFeaturesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSchedulingControlsFeaturesARM(address, container);
     }
 
     /**

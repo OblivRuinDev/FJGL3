@@ -52,13 +52,8 @@ public class VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR extends Str
         PIPELINEEXECUTABLEINFO = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR(address, container);
     }
 
     /**

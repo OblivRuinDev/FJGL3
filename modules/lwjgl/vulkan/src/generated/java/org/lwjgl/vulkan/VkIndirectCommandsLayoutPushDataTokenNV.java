@@ -56,13 +56,8 @@ public class VkIndirectCommandsLayoutPushDataTokenNV extends Struct<VkIndirectCo
         PUSHDATASIZE = layout.offsetof(3);
     }
 
-    protected VkIndirectCommandsLayoutPushDataTokenNV(long address, @Nullable ByteBuffer container) {
+    public VkIndirectCommandsLayoutPushDataTokenNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectCommandsLayoutPushDataTokenNV create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectCommandsLayoutPushDataTokenNV(address, container);
     }
 
     /**

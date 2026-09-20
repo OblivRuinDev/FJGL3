@@ -24,13 +24,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkTransformMatrixNV extends VkTransformMatrixKHR {
 
-    protected VkTransformMatrixNV(long address, @Nullable ByteBuffer container) {
+    public VkTransformMatrixNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTransformMatrixNV create(long address, @Nullable ByteBuffer container) {
-        return new VkTransformMatrixNV(address, container);
     }
 
     /**

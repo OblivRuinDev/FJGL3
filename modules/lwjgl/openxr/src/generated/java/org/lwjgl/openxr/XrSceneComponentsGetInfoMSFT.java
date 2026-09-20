@@ -52,13 +52,8 @@ public class XrSceneComponentsGetInfoMSFT extends Struct<XrSceneComponentsGetInf
         COMPONENTTYPE = layout.offsetof(2);
     }
 
-    protected XrSceneComponentsGetInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneComponentsGetInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneComponentsGetInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneComponentsGetInfoMSFT(address, container);
     }
 
     /**

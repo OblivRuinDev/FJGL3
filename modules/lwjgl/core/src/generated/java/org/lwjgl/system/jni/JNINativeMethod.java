@@ -53,13 +53,8 @@ public class JNINativeMethod extends Struct<JNINativeMethod> implements NativeRe
         FNPTR = layout.offsetof(2);
     }
 
-    protected JNINativeMethod(long address, @Nullable ByteBuffer container) {
+    public JNINativeMethod(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected JNINativeMethod create(long address, @Nullable ByteBuffer container) {
-        return new JNINativeMethod(address, container);
     }
 
     /**

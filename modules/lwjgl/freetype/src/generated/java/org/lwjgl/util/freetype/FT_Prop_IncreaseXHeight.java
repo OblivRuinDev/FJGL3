@@ -46,13 +46,8 @@ public class FT_Prop_IncreaseXHeight extends Struct<FT_Prop_IncreaseXHeight> {
         LIMIT = layout.offsetof(1);
     }
 
-    protected FT_Prop_IncreaseXHeight(long address, @Nullable ByteBuffer container) {
+    public FT_Prop_IncreaseXHeight(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Prop_IncreaseXHeight create(long address, @Nullable ByteBuffer container) {
-        return new FT_Prop_IncreaseXHeight(address, container);
     }
 
     /**

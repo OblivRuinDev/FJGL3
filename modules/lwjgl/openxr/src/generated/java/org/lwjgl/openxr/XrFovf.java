@@ -56,13 +56,8 @@ public class XrFovf extends Struct<XrFovf> implements NativeResource {
         ANGLEDOWN = layout.offsetof(3);
     }
 
-    protected XrFovf(long address, @Nullable ByteBuffer container) {
+    public XrFovf(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFovf create(long address, @Nullable ByteBuffer container) {
-        return new XrFovf(address, container);
     }
 
     /**

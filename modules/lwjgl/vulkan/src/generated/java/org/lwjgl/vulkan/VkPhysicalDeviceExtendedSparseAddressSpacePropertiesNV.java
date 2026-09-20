@@ -60,13 +60,8 @@ public class VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV extends Stru
         EXTENDEDSPARSEBUFFERUSAGEFLAGS = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(address, container);
     }
 
     /**

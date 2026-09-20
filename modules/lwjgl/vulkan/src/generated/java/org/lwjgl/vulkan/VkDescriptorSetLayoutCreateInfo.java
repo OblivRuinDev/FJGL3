@@ -61,13 +61,8 @@ public class VkDescriptorSetLayoutCreateInfo extends Struct<VkDescriptorSetLayou
         PBINDINGS = layout.offsetof(4);
     }
 
-    protected VkDescriptorSetLayoutCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetLayoutCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetLayoutCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetLayoutCreateInfo(address, container);
     }
 
     /**

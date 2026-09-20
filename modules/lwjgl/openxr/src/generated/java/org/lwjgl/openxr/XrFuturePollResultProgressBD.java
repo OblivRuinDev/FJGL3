@@ -56,13 +56,8 @@ public class XrFuturePollResultProgressBD extends Struct<XrFuturePollResultProgr
         PROGRESSPERCENTAGE = layout.offsetof(3);
     }
 
-    protected XrFuturePollResultProgressBD(long address, @Nullable ByteBuffer container) {
+    public XrFuturePollResultProgressBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFuturePollResultProgressBD create(long address, @Nullable ByteBuffer container) {
-        return new XrFuturePollResultProgressBD(address, container);
     }
 
     /**

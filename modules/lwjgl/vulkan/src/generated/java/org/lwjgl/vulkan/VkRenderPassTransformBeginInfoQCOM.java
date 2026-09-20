@@ -52,13 +52,8 @@ public class VkRenderPassTransformBeginInfoQCOM extends Struct<VkRenderPassTrans
         TRANSFORM = layout.offsetof(2);
     }
 
-    protected VkRenderPassTransformBeginInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassTransformBeginInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassTransformBeginInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassTransformBeginInfoQCOM(address, container);
     }
 
     /**

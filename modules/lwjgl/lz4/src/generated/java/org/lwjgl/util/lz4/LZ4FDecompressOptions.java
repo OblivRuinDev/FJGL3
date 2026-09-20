@@ -57,13 +57,8 @@ public class LZ4FDecompressOptions extends Struct<LZ4FDecompressOptions> impleme
         RESERVED0 = layout.offsetof(3);
     }
 
-    protected LZ4FDecompressOptions(long address, @Nullable ByteBuffer container) {
+    public LZ4FDecompressOptions(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LZ4FDecompressOptions create(long address, @Nullable ByteBuffer container) {
-        return new LZ4FDecompressOptions(address, container);
     }
 
     /**

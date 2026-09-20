@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT extends VkPhysicalDeviceSamplerFilterMinmaxProperties {
 
-    protected VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT(address, container);
     }
 
     /**

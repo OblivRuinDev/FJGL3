@@ -53,13 +53,8 @@ public class FFIClosure extends Struct<FFIClosure> implements NativeResource {
 
     private static native int offsets(long buffer);
 
-    protected FFIClosure(long address, @Nullable ByteBuffer container) {
+    public FFIClosure(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FFIClosure create(long address, @Nullable ByteBuffer container) {
-        return new FFIClosure(address, container);
     }
 
     /**

@@ -64,13 +64,8 @@ public class SDL_DisplayEvent extends Struct<SDL_DisplayEvent> implements Native
         DATA2 = layout.offsetof(5);
     }
 
-    protected SDL_DisplayEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_DisplayEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_DisplayEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_DisplayEvent(address, container);
     }
 
     /**

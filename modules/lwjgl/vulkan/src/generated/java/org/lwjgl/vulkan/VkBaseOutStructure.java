@@ -48,13 +48,8 @@ public class VkBaseOutStructure extends Struct<VkBaseOutStructure> implements Na
         PNEXT = layout.offsetof(1);
     }
 
-    protected VkBaseOutStructure(long address, @Nullable ByteBuffer container) {
+    public VkBaseOutStructure(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBaseOutStructure create(long address, @Nullable ByteBuffer container) {
-        return new VkBaseOutStructure(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class RECT extends Struct<RECT> implements NativeResource {
         BOTTOM = layout.offsetof(3);
     }
 
-    protected RECT(long address, @Nullable ByteBuffer container) {
+    public RECT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected RECT create(long address, @Nullable ByteBuffer container) {
-        return new RECT(address, container);
     }
 
     /**

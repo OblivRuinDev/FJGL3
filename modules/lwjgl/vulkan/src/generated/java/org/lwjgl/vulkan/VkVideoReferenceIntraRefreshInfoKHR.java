@@ -52,13 +52,8 @@ public class VkVideoReferenceIntraRefreshInfoKHR extends Struct<VkVideoReference
         DIRTYINTRAREFRESHREGIONS = layout.offsetof(2);
     }
 
-    protected VkVideoReferenceIntraRefreshInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoReferenceIntraRefreshInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoReferenceIntraRefreshInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoReferenceIntraRefreshInfoKHR(address, container);
     }
 
     /**

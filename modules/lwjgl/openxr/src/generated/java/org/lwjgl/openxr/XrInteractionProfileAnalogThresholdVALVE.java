@@ -73,13 +73,8 @@ public class XrInteractionProfileAnalogThresholdVALVE extends Struct<XrInteracti
         OFFHAPTIC = layout.offsetof(7);
     }
 
-    protected XrInteractionProfileAnalogThresholdVALVE(long address, @Nullable ByteBuffer container) {
+    public XrInteractionProfileAnalogThresholdVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrInteractionProfileAnalogThresholdVALVE create(long address, @Nullable ByteBuffer container) {
-        return new XrInteractionProfileAnalogThresholdVALVE(address, container);
     }
 
     /**

@@ -61,13 +61,8 @@ public class XrFoveationApplyInfoHTC extends Struct<XrFoveationApplyInfoHTC> imp
         SUBIMAGES = layout.offsetof(4);
     }
 
-    protected XrFoveationApplyInfoHTC(long address, @Nullable ByteBuffer container) {
+    public XrFoveationApplyInfoHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFoveationApplyInfoHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrFoveationApplyInfoHTC(address, container);
     }
 
     /**

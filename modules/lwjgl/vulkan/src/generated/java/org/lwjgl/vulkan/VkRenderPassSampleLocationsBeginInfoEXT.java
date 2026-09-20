@@ -65,13 +65,8 @@ public class VkRenderPassSampleLocationsBeginInfoEXT extends Struct<VkRenderPass
         PPOSTSUBPASSSAMPLELOCATIONS = layout.offsetof(5);
     }
 
-    protected VkRenderPassSampleLocationsBeginInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassSampleLocationsBeginInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassSampleLocationsBeginInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassSampleLocationsBeginInfoEXT(address, container);
     }
 
     /**

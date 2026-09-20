@@ -51,13 +51,8 @@ public class FT_ListNode extends Struct<FT_ListNode> {
         DATA = layout.offsetof(2);
     }
 
-    protected FT_ListNode(long address, @Nullable ByteBuffer container) {
+    public FT_ListNode(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_ListNode create(long address, @Nullable ByteBuffer container) {
-        return new FT_ListNode(address, container);
     }
 
     /**

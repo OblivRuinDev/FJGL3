@@ -52,13 +52,8 @@ public class VkSwapchainPresentBarrierCreateInfoNV extends Struct<VkSwapchainPre
         PRESENTBARRIERENABLE = layout.offsetof(2);
     }
 
-    protected VkSwapchainPresentBarrierCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainPresentBarrierCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainPresentBarrierCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainPresentBarrierCreateInfoNV(address, container);
     }
 
     /**

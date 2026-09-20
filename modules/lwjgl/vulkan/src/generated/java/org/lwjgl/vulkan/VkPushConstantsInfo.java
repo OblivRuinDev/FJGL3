@@ -69,13 +69,8 @@ public class VkPushConstantsInfo extends Struct<VkPushConstantsInfo> implements 
         PVALUES = layout.offsetof(6);
     }
 
-    protected VkPushConstantsInfo(long address, @Nullable ByteBuffer container) {
+    public VkPushConstantsInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPushConstantsInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPushConstantsInfo(address, container);
     }
 
     /**

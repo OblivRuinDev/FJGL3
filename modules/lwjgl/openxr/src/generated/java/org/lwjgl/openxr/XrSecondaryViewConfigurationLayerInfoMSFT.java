@@ -65,13 +65,8 @@ public class XrSecondaryViewConfigurationLayerInfoMSFT extends Struct<XrSecondar
         LAYERS = layout.offsetof(5);
     }
 
-    protected XrSecondaryViewConfigurationLayerInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSecondaryViewConfigurationLayerInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSecondaryViewConfigurationLayerInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSecondaryViewConfigurationLayerInfoMSFT(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class XrSceneMeshSnapshotCreationResultANDROID extends Struct<XrSceneMesh
         TRACKINGSTATE = layout.offsetof(3);
     }
 
-    protected XrSceneMeshSnapshotCreationResultANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSceneMeshSnapshotCreationResultANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMeshSnapshotCreationResultANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMeshSnapshotCreationResultANDROID(address, container);
     }
 
     /**

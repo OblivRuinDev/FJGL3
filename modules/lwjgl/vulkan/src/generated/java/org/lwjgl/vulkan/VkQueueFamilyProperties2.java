@@ -54,13 +54,8 @@ public class VkQueueFamilyProperties2 extends Struct<VkQueueFamilyProperties2> i
         QUEUEFAMILYPROPERTIES = layout.offsetof(2);
     }
 
-    protected VkQueueFamilyProperties2(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyProperties2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyProperties2 create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyProperties2(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkPhysicalDeviceRobustness2PropertiesKHR extends Struct<VkPhysicalD
         ROBUSTUNIFORMBUFFERACCESSSIZEALIGNMENT = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceRobustness2PropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRobustness2PropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRobustness2PropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRobustness2PropertiesKHR(address, container);
     }
 
     /**

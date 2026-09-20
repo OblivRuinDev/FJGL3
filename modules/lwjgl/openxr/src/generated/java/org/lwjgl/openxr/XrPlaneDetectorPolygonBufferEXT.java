@@ -60,13 +60,8 @@ public class XrPlaneDetectorPolygonBufferEXT extends Struct<XrPlaneDetectorPolyg
         VERTICES = layout.offsetof(4);
     }
 
-    protected XrPlaneDetectorPolygonBufferEXT(long address, @Nullable ByteBuffer container) {
+    public XrPlaneDetectorPolygonBufferEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPlaneDetectorPolygonBufferEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrPlaneDetectorPolygonBufferEXT(address, container);
     }
 
     /**

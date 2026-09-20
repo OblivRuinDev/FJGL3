@@ -54,13 +54,8 @@ public class XrSpatialEntityUnpersistInfoEXT extends Struct<XrSpatialEntityUnper
         PERSISTUUID = layout.offsetof(2);
     }
 
-    protected XrSpatialEntityUnpersistInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityUnpersistInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityUnpersistInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityUnpersistInfoEXT(address, container);
     }
 
     /**

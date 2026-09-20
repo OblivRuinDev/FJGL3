@@ -52,13 +52,8 @@ public class VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT extends Struct<
         TEXTURECOMPRESSIONASTC_3D = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT(address, container);
     }
 
     /**

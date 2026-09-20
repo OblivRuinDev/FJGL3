@@ -52,13 +52,8 @@ public class VkPipelineFragmentDensityMapLayeredCreateInfoVALVE extends Struct<V
         MAXFRAGMENTDENSITYMAPLAYERS = layout.offsetof(2);
     }
 
-    protected VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(long address, @Nullable ByteBuffer container) {
+    public VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineFragmentDensityMapLayeredCreateInfoVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(address, container);
     }
 
     /**

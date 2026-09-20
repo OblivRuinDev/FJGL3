@@ -73,13 +73,8 @@ public class spng_chrm extends Struct<spng_chrm> implements NativeResource {
         BLUE_Y = layout.offsetof(7);
     }
 
-    protected spng_chrm(long address, @Nullable ByteBuffer container) {
+    public spng_chrm(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_chrm create(long address, @Nullable ByteBuffer container) {
-        return new spng_chrm(address, container);
     }
 
     /**

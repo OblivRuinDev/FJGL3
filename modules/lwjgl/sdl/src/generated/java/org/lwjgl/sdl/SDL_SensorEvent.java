@@ -65,13 +65,8 @@ public class SDL_SensorEvent extends Struct<SDL_SensorEvent> implements NativeRe
         SENSOR_TIMESTAMP = layout.offsetof(5);
     }
 
-    protected SDL_SensorEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_SensorEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_SensorEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_SensorEvent(address, container);
     }
 
     /**

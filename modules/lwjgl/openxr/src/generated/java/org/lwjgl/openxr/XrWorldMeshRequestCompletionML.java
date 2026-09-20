@@ -61,13 +61,8 @@ public class XrWorldMeshRequestCompletionML extends Struct<XrWorldMeshRequestCom
         BLOCKS = layout.offsetof(4);
     }
 
-    protected XrWorldMeshRequestCompletionML(long address, @Nullable ByteBuffer container) {
+    public XrWorldMeshRequestCompletionML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrWorldMeshRequestCompletionML create(long address, @Nullable ByteBuffer container) {
-        return new XrWorldMeshRequestCompletionML(address, container);
     }
 
     /**

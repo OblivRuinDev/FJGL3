@@ -56,13 +56,8 @@ public class VkPhysicalDeviceShaderAtomicInt64Features extends Struct<VkPhysical
         SHADERSHAREDINT64ATOMICS = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceShaderAtomicInt64Features(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderAtomicInt64Features(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderAtomicInt64Features create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderAtomicInt64Features(address, container);
     }
 
     /**

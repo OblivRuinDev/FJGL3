@@ -61,13 +61,8 @@ public class VkPipelineFragmentShadingRateEnumStateCreateInfoNV extends Struct<V
         COMBINEROPS = layout.offsetof(4);
     }
 
-    protected VkPipelineFragmentShadingRateEnumStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkPipelineFragmentShadingRateEnumStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineFragmentShadingRateEnumStateCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineFragmentShadingRateEnumStateCreateInfoNV(address, container);
     }
 
     /**

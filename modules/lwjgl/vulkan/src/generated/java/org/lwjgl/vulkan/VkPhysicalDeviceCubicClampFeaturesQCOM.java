@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCubicClampFeaturesQCOM extends Struct<VkPhysicalDev
         CUBICRANGECLAMP = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCubicClampFeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCubicClampFeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCubicClampFeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCubicClampFeaturesQCOM(address, container);
     }
 
     /**

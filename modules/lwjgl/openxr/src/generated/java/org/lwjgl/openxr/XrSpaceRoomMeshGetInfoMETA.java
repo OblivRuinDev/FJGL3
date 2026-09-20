@@ -56,13 +56,8 @@ public class XrSpaceRoomMeshGetInfoMETA extends Struct<XrSpaceRoomMeshGetInfoMET
         RECOGNIZEDSEMANTICLABELS = layout.offsetof(3);
     }
 
-    protected XrSpaceRoomMeshGetInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrSpaceRoomMeshGetInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceRoomMeshGetInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceRoomMeshGetInfoMETA(address, container);
     }
 
     /**

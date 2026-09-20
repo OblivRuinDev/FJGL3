@@ -63,13 +63,8 @@ public class StdVideoH265SubLayerHrdParameters extends Struct<StdVideoH265SubLay
         CBR_FLAG = layout.offsetof(4);
     }
 
-    protected StdVideoH265SubLayerHrdParameters(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265SubLayerHrdParameters(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265SubLayerHrdParameters create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265SubLayerHrdParameters(address, container);
     }
 
     /**

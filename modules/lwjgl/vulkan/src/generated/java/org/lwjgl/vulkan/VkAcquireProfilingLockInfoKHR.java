@@ -56,13 +56,8 @@ public class VkAcquireProfilingLockInfoKHR extends Struct<VkAcquireProfilingLock
         TIMEOUT = layout.offsetof(3);
     }
 
-    protected VkAcquireProfilingLockInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkAcquireProfilingLockInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAcquireProfilingLockInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkAcquireProfilingLockInfoKHR(address, container);
     }
 
     /**

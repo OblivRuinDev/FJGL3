@@ -53,13 +53,8 @@ public class SpvcBufferRange extends Struct<SpvcBufferRange> implements NativeRe
         RANGE = layout.offsetof(2);
     }
 
-    protected SpvcBufferRange(long address, @Nullable ByteBuffer container) {
+    public SpvcBufferRange(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcBufferRange create(long address, @Nullable ByteBuffer container) {
-        return new SpvcBufferRange(address, container);
     }
 
     /**

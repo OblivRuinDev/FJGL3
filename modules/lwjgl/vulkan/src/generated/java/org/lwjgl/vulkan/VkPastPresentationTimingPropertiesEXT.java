@@ -64,13 +64,8 @@ public class VkPastPresentationTimingPropertiesEXT extends Struct<VkPastPresenta
         PPRESENTATIONTIMINGS = layout.offsetof(5);
     }
 
-    protected VkPastPresentationTimingPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPastPresentationTimingPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPastPresentationTimingPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPastPresentationTimingPropertiesEXT(address, container);
     }
 
     /**

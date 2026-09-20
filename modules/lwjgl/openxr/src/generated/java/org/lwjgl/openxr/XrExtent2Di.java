@@ -48,13 +48,8 @@ public class XrExtent2Di extends Struct<XrExtent2Di> implements NativeResource {
         HEIGHT = layout.offsetof(1);
     }
 
-    protected XrExtent2Di(long address, @Nullable ByteBuffer container) {
+    public XrExtent2Di(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrExtent2Di create(long address, @Nullable ByteBuffer container) {
-        return new XrExtent2Di(address, container);
     }
 
     /**

@@ -59,13 +59,8 @@ public class VkShaderModuleIdentifierEXT extends Struct<VkShaderModuleIdentifier
         IDENTIFIER = layout.offsetof(3);
     }
 
-    protected VkShaderModuleIdentifierEXT(long address, @Nullable ByteBuffer container) {
+    public VkShaderModuleIdentifierEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkShaderModuleIdentifierEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkShaderModuleIdentifierEXT(address, container);
     }
 
     /**

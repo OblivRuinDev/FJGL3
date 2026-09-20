@@ -60,13 +60,8 @@ public class NSVGPath extends Struct<NSVGPath> {
         NEXT = layout.offsetof(4);
     }
 
-    protected NSVGPath(long address, @Nullable ByteBuffer container) {
+    public NSVGPath(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NSVGPath create(long address, @Nullable ByteBuffer container) {
-        return new NSVGPath(address, container);
     }
 
     /**

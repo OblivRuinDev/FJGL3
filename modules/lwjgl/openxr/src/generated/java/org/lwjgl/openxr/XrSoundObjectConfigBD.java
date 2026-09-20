@@ -83,13 +83,8 @@ public class XrSoundObjectConfigBD extends Struct<XrSoundObjectConfigBD> impleme
         INDIRECTSOUNDATTENUATION = layout.offsetof(9);
     }
 
-    protected XrSoundObjectConfigBD(long address, @Nullable ByteBuffer container) {
+    public XrSoundObjectConfigBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSoundObjectConfigBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSoundObjectConfigBD(address, container);
     }
 
     /**

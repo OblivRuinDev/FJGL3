@@ -76,13 +76,8 @@ public class XrCompositionLayerPassthroughANDROID extends Struct<XrCompositionLa
         LAYER = layout.offsetof(7);
     }
 
-    protected XrCompositionLayerPassthroughANDROID(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerPassthroughANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerPassthroughANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerPassthroughANDROID(address, container);
     }
 
     /**

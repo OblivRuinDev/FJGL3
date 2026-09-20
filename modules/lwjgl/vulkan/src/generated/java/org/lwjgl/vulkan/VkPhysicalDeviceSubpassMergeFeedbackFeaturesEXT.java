@@ -52,13 +52,8 @@ public class VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT extends Struct<VkPh
         SUBPASSMERGEFEEDBACK = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT(address, container);
     }
 
     /**

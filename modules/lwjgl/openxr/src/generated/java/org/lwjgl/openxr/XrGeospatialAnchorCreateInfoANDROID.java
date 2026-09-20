@@ -59,13 +59,8 @@ public class XrGeospatialAnchorCreateInfoANDROID extends Struct<XrGeospatialAnch
         GEOSPATIALPOSE = layout.offsetof(3);
     }
 
-    protected XrGeospatialAnchorCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrGeospatialAnchorCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGeospatialAnchorCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrGeospatialAnchorCreateInfoANDROID(address, container);
     }
 
     /**

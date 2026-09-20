@@ -52,13 +52,8 @@ public class VkRenderPassCreationControlEXT extends Struct<VkRenderPassCreationC
         DISALLOWMERGING = layout.offsetof(2);
     }
 
-    protected VkRenderPassCreationControlEXT(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassCreationControlEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassCreationControlEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassCreationControlEXT(address, container);
     }
 
     /**

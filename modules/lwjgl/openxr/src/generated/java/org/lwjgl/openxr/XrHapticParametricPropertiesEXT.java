@@ -64,13 +64,8 @@ public class XrHapticParametricPropertiesEXT extends Struct<XrHapticParametricPr
         MAXFREQUENCYHZ = layout.offsetof(5);
     }
 
-    protected XrHapticParametricPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public XrHapticParametricPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHapticParametricPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrHapticParametricPropertiesEXT(address, container);
     }
 
     /**

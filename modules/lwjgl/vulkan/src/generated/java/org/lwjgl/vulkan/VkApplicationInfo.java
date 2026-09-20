@@ -69,13 +69,8 @@ public class VkApplicationInfo extends Struct<VkApplicationInfo> implements Nati
         APIVERSION = layout.offsetof(6);
     }
 
-    protected VkApplicationInfo(long address, @Nullable ByteBuffer container) {
+    public VkApplicationInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkApplicationInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkApplicationInfo(address, container);
     }
 
     /**

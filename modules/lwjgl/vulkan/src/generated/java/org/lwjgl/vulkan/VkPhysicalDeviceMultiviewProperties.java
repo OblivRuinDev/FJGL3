@@ -56,13 +56,8 @@ public class VkPhysicalDeviceMultiviewProperties extends Struct<VkPhysicalDevice
         MAXMULTIVIEWINSTANCEINDEX = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceMultiviewProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMultiviewProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMultiviewProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMultiviewProperties(address, container);
     }
 
     /**

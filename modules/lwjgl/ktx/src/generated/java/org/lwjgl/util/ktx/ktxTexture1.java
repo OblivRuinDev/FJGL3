@@ -146,13 +146,8 @@ public class ktxTexture1 extends Struct<ktxTexture1> implements NativeResource {
         _PRIVATE = layout.offsetof(25);
     }
 
-    protected ktxTexture1(long address, @Nullable ByteBuffer container) {
+    public ktxTexture1(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ktxTexture1 create(long address, @Nullable ByteBuffer container) {
-        return new ktxTexture1(address, container);
     }
 
     /**

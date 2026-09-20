@@ -52,13 +52,8 @@ public class XrSystemGeospatialAnchorPropertiesANDROID extends Struct<XrSystemGe
         MAXSURFACEANCHORCOUNT = layout.offsetof(2);
     }
 
-    protected XrSystemGeospatialAnchorPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemGeospatialAnchorPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemGeospatialAnchorPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemGeospatialAnchorPropertiesANDROID(address, container);
     }
 
     /**

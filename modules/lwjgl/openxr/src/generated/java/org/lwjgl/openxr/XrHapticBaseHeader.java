@@ -48,13 +48,8 @@ public class XrHapticBaseHeader extends Struct<XrHapticBaseHeader> implements Na
         NEXT = layout.offsetof(1);
     }
 
-    protected XrHapticBaseHeader(long address, @Nullable ByteBuffer container) {
+    public XrHapticBaseHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHapticBaseHeader create(long address, @Nullable ByteBuffer container) {
-        return new XrHapticBaseHeader(address, container);
     }
 
     /**

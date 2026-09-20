@@ -52,13 +52,8 @@ public class XrSystemSpatialAnchorSharingPropertiesBD extends Struct<XrSystemSpa
         SUPPORTSSPATIALANCHORSHARING = layout.offsetof(2);
     }
 
-    protected XrSystemSpatialAnchorSharingPropertiesBD(long address, @Nullable ByteBuffer container) {
+    public XrSystemSpatialAnchorSharingPropertiesBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemSpatialAnchorSharingPropertiesBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemSpatialAnchorSharingPropertiesBD(address, container);
     }
 
     /**

@@ -69,13 +69,8 @@ public class VkAccelerationStructureInfoNV extends Struct<VkAccelerationStructur
         PGEOMETRIES = layout.offsetof(6);
     }
 
-    protected VkAccelerationStructureInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureInfoNV(address, container);
     }
 
     /**

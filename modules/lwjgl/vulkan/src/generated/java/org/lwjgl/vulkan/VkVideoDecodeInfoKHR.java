@@ -83,13 +83,8 @@ public class VkVideoDecodeInfoKHR extends Struct<VkVideoDecodeInfoKHR> implement
         PREFERENCESLOTS = layout.offsetof(9);
     }
 
-    protected VkVideoDecodeInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoDecodeInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoDecodeInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoDecodeInfoKHR(address, container);
     }
 
     /**

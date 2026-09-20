@@ -56,13 +56,8 @@ public class VkPastPresentationTimingInfoEXT extends Struct<VkPastPresentationTi
         SWAPCHAIN = layout.offsetof(3);
     }
 
-    protected VkPastPresentationTimingInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPastPresentationTimingInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPastPresentationTimingInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPastPresentationTimingInfoEXT(address, container);
     }
 
     /**

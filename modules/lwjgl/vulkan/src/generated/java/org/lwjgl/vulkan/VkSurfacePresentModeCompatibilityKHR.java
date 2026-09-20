@@ -56,13 +56,8 @@ public class VkSurfacePresentModeCompatibilityKHR extends Struct<VkSurfacePresen
         PPRESENTMODES = layout.offsetof(3);
     }
 
-    protected VkSurfacePresentModeCompatibilityKHR(long address, @Nullable ByteBuffer container) {
+    public VkSurfacePresentModeCompatibilityKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfacePresentModeCompatibilityKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfacePresentModeCompatibilityKHR(address, container);
     }
 
     /**

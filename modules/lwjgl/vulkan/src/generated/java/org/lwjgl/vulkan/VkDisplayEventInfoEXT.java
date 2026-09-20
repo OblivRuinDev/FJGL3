@@ -52,13 +52,8 @@ public class VkDisplayEventInfoEXT extends Struct<VkDisplayEventInfoEXT> impleme
         DISPLAYEVENT = layout.offsetof(2);
     }
 
-    protected VkDisplayEventInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDisplayEventInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplayEventInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplayEventInfoEXT(address, container);
     }
 
     /**

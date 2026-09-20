@@ -54,13 +54,8 @@ public class IOURingBufStatus extends Struct<IOURingBufStatus> implements Native
         RESV = layout.offsetof(2);
     }
 
-    protected IOURingBufStatus(long address, @Nullable ByteBuffer container) {
+    public IOURingBufStatus(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingBufStatus create(long address, @Nullable ByteBuffer container) {
-        return new IOURingBufStatus(address, container);
     }
 
     /**

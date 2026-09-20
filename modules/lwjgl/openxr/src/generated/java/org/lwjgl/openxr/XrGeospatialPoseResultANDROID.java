@@ -70,13 +70,8 @@ public class XrGeospatialPoseResultANDROID extends Struct<XrGeospatialPoseResult
         ORIENTATIONYAWACCURACY = layout.offsetof(6);
     }
 
-    protected XrGeospatialPoseResultANDROID(long address, @Nullable ByteBuffer container) {
+    public XrGeospatialPoseResultANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGeospatialPoseResultANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrGeospatialPoseResultANDROID(address, container);
     }
 
     /**

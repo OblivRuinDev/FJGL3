@@ -56,13 +56,8 @@ public class VkSemaphoreGetFdInfoKHR extends Struct<VkSemaphoreGetFdInfoKHR> imp
         HANDLETYPE = layout.offsetof(3);
     }
 
-    protected VkSemaphoreGetFdInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkSemaphoreGetFdInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSemaphoreGetFdInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSemaphoreGetFdInfoKHR(address, container);
     }
 
     /**

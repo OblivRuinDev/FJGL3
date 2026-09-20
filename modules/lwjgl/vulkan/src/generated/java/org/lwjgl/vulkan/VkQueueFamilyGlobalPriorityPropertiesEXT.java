@@ -29,13 +29,8 @@ import static org.lwjgl.vulkan.VK14.*;
  */
 public class VkQueueFamilyGlobalPriorityPropertiesEXT extends VkQueueFamilyGlobalPriorityProperties {
 
-    protected VkQueueFamilyGlobalPriorityPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyGlobalPriorityPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyGlobalPriorityPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyGlobalPriorityPropertiesEXT(address, container);
     }
 
     /**

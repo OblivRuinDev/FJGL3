@@ -57,13 +57,8 @@ public class IOURingRecvmsgOut extends Struct<IOURingRecvmsgOut> implements Nati
         FLAGS = layout.offsetof(3);
     }
 
-    protected IOURingRecvmsgOut(long address, @Nullable ByteBuffer container) {
+    public IOURingRecvmsgOut(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingRecvmsgOut create(long address, @Nullable ByteBuffer container) {
-        return new IOURingRecvmsgOut(address, container);
     }
 
     /**

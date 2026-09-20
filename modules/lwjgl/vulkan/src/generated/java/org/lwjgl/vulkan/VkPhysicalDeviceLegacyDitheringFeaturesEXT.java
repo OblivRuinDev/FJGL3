@@ -52,13 +52,8 @@ public class VkPhysicalDeviceLegacyDitheringFeaturesEXT extends Struct<VkPhysica
         LEGACYDITHERING = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceLegacyDitheringFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceLegacyDitheringFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceLegacyDitheringFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceLegacyDitheringFeaturesEXT(address, container);
     }
 
     /**

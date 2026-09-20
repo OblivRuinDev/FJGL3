@@ -64,13 +64,8 @@ public class VkPhysicalDeviceSubgroupProperties extends Struct<VkPhysicalDeviceS
         QUADOPERATIONSINALLSTAGES = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceSubgroupProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSubgroupProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSubgroupProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSubgroupProperties(address, container);
     }
 
     /**

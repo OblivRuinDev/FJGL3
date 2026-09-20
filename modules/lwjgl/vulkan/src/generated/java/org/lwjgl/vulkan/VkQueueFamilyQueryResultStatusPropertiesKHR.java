@@ -52,13 +52,8 @@ public class VkQueueFamilyQueryResultStatusPropertiesKHR extends Struct<VkQueueF
         QUERYRESULTSTATUSSUPPORT = layout.offsetof(2);
     }
 
-    protected VkQueueFamilyQueryResultStatusPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyQueryResultStatusPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyQueryResultStatusPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyQueryResultStatusPropertiesKHR(address, container);
     }
 
     /**

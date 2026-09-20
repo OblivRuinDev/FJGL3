@@ -82,13 +82,8 @@ public class AIImporterDesc extends Struct<AIImporterDesc> implements NativeReso
         MFILEEXTENSIONS = layout.offsetof(9);
     }
 
-    protected AIImporterDesc(long address, @Nullable ByteBuffer container) {
+    public AIImporterDesc(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIImporterDesc create(long address, @Nullable ByteBuffer container) {
-        return new AIImporterDesc(address, container);
     }
 
     /**

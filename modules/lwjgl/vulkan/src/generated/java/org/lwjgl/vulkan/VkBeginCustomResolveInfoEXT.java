@@ -48,13 +48,8 @@ public class VkBeginCustomResolveInfoEXT extends Struct<VkBeginCustomResolveInfo
         PNEXT = layout.offsetof(1);
     }
 
-    protected VkBeginCustomResolveInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkBeginCustomResolveInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBeginCustomResolveInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkBeginCustomResolveInfoEXT(address, container);
     }
 
     /**

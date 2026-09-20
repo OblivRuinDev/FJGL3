@@ -55,13 +55,8 @@ public class VkPhysicalDeviceDataGraphOperationSupportARM extends Struct<VkPhysi
         VERSION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDataGraphOperationSupportARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDataGraphOperationSupportARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDataGraphOperationSupportARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDataGraphOperationSupportARM(address, container);
     }
 
     /**

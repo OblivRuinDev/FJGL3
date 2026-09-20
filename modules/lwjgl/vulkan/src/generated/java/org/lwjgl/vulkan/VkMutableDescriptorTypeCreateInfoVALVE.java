@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkMutableDescriptorTypeCreateInfoVALVE extends VkMutableDescriptorTypeCreateInfoEXT {
 
-    protected VkMutableDescriptorTypeCreateInfoVALVE(long address, @Nullable ByteBuffer container) {
+    public VkMutableDescriptorTypeCreateInfoVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMutableDescriptorTypeCreateInfoVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkMutableDescriptorTypeCreateInfoVALVE(address, container);
     }
 
     /**

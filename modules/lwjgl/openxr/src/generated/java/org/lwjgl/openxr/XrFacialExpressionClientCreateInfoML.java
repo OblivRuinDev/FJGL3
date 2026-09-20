@@ -56,13 +56,8 @@ public class XrFacialExpressionClientCreateInfoML extends Struct<XrFacialExpress
         REQUESTEDFACIALBLENDSHAPES = layout.offsetof(3);
     }
 
-    protected XrFacialExpressionClientCreateInfoML(long address, @Nullable ByteBuffer container) {
+    public XrFacialExpressionClientCreateInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFacialExpressionClientCreateInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrFacialExpressionClientCreateInfoML(address, container);
     }
 
     /**

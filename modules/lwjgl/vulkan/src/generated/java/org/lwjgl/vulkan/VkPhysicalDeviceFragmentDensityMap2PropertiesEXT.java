@@ -64,13 +64,8 @@ public class VkPhysicalDeviceFragmentDensityMap2PropertiesEXT extends Struct<VkP
         MAXDESCRIPTORSETSUBSAMPLEDSAMPLERS = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentDensityMap2PropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(address, container);
     }
 
     /**

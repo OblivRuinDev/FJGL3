@@ -50,13 +50,8 @@ public class FT_MM_Axis extends Struct<FT_MM_Axis> {
         MAXIMUM = layout.offsetof(2);
     }
 
-    protected FT_MM_Axis(long address, @Nullable ByteBuffer container) {
+    public FT_MM_Axis(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_MM_Axis create(long address, @Nullable ByteBuffer container) {
-        return new FT_MM_Axis(address, container);
     }
 
     /**

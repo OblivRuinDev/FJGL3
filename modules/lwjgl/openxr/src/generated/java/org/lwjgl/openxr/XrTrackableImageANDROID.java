@@ -76,13 +76,8 @@ public class XrTrackableImageANDROID extends Struct<XrTrackableImageANDROID> imp
         EXTENTS = layout.offsetof(7);
     }
 
-    protected XrTrackableImageANDROID(long address, @Nullable ByteBuffer container) {
+    public XrTrackableImageANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrTrackableImageANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrTrackableImageANDROID(address, container);
     }
 
     /**

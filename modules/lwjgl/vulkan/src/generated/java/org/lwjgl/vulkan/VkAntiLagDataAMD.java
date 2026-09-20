@@ -60,13 +60,8 @@ public class VkAntiLagDataAMD extends Struct<VkAntiLagDataAMD> implements Native
         PPRESENTATIONINFO = layout.offsetof(4);
     }
 
-    protected VkAntiLagDataAMD(long address, @Nullable ByteBuffer container) {
+    public VkAntiLagDataAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAntiLagDataAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkAntiLagDataAMD(address, container);
     }
 
     /**

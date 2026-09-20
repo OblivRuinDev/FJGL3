@@ -55,13 +55,8 @@ public class NVGLUFramebufferBGFX extends Struct<NVGLUFramebufferBGFX> {
         VIEWID = layout.offsetof(3);
     }
 
-    protected NVGLUFramebufferBGFX(long address, @Nullable ByteBuffer container) {
+    public NVGLUFramebufferBGFX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NVGLUFramebufferBGFX create(long address, @Nullable ByteBuffer container) {
-        return new NVGLUFramebufferBGFX(address, container);
     }
 
     /**

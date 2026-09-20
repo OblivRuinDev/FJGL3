@@ -57,13 +57,8 @@ public class XrLightEstimateGetInfoANDROID extends Struct<XrLightEstimateGetInfo
         TIME = layout.offsetof(3);
     }
 
-    protected XrLightEstimateGetInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrLightEstimateGetInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrLightEstimateGetInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrLightEstimateGetInfoANDROID(address, container);
     }
 
     /**

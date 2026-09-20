@@ -56,13 +56,8 @@ public class VkFilterCubicImageViewImageFormatPropertiesEXT extends Struct<VkFil
         FILTERCUBICMINMAX = layout.offsetof(3);
     }
 
-    protected VkFilterCubicImageViewImageFormatPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkFilterCubicImageViewImageFormatPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFilterCubicImageViewImageFormatPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkFilterCubicImageViewImageFormatPropertiesEXT(address, container);
     }
 
     /**

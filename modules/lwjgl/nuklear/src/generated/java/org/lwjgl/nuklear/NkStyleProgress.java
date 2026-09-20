@@ -120,13 +120,8 @@ public class NkStyleProgress extends Struct<NkStyleProgress> implements NativeRe
         DRAW_END = layout.offsetof(17);
     }
 
-    protected NkStyleProgress(long address, @Nullable ByteBuffer container) {
+    public NkStyleProgress(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleProgress create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleProgress(address, container);
     }
 
     /**

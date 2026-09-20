@@ -54,13 +54,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceShaderIntegerDotProductPropertiesKHR extends VkPhysicalDeviceShaderIntegerDotProductProperties {
 
-    protected VkPhysicalDeviceShaderIntegerDotProductPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderIntegerDotProductPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderIntegerDotProductPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderIntegerDotProductPropertiesKHR(address, container);
     }
 
     /**

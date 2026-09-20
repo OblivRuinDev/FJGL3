@@ -44,13 +44,8 @@ public class FT_PaintSolid extends Struct<FT_PaintSolid> {
         COLOR = layout.offsetof(0);
     }
 
-    protected FT_PaintSolid(long address, @Nullable ByteBuffer container) {
+    public FT_PaintSolid(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintSolid create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintSolid(address, container);
     }
 
     /**

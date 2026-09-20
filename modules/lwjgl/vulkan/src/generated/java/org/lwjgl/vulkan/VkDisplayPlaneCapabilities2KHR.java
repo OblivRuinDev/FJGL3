@@ -54,13 +54,8 @@ public class VkDisplayPlaneCapabilities2KHR extends Struct<VkDisplayPlaneCapabil
         CAPABILITIES = layout.offsetof(2);
     }
 
-    protected VkDisplayPlaneCapabilities2KHR(long address, @Nullable ByteBuffer container) {
+    public VkDisplayPlaneCapabilities2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplayPlaneCapabilities2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplayPlaneCapabilities2KHR(address, container);
     }
 
     /**

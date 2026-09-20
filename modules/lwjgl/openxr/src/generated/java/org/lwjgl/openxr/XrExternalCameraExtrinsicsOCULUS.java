@@ -58,13 +58,8 @@ public class XrExternalCameraExtrinsicsOCULUS extends Struct<XrExternalCameraExt
         RELATIVEPOSE = layout.offsetof(3);
     }
 
-    protected XrExternalCameraExtrinsicsOCULUS(long address, @Nullable ByteBuffer container) {
+    public XrExternalCameraExtrinsicsOCULUS(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrExternalCameraExtrinsicsOCULUS create(long address, @Nullable ByteBuffer container) {
-        return new XrExternalCameraExtrinsicsOCULUS(address, container);
     }
 
     /**

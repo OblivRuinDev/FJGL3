@@ -60,13 +60,8 @@ public class VkComputePipelineIndirectBufferInfoNV extends Struct<VkComputePipel
         PIPELINEDEVICEADDRESSCAPTUREREPLAY = layout.offsetof(4);
     }
 
-    protected VkComputePipelineIndirectBufferInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkComputePipelineIndirectBufferInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkComputePipelineIndirectBufferInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkComputePipelineIndirectBufferInfoNV(address, container);
     }
 
     /**

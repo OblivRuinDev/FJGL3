@@ -52,13 +52,8 @@ public class VkTensorMemoryRequirementsInfoARM extends Struct<VkTensorMemoryRequ
         TENSOR = layout.offsetof(2);
     }
 
-    protected VkTensorMemoryRequirementsInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkTensorMemoryRequirementsInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTensorMemoryRequirementsInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkTensorMemoryRequirementsInfoARM(address, container);
     }
 
     /**

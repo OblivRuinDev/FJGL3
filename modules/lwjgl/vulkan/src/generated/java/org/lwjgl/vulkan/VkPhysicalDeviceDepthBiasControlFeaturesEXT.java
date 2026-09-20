@@ -64,13 +64,8 @@ public class VkPhysicalDeviceDepthBiasControlFeaturesEXT extends Struct<VkPhysic
         DEPTHBIASEXACT = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceDepthBiasControlFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDepthBiasControlFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDepthBiasControlFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDepthBiasControlFeaturesEXT(address, container);
     }
 
     /**

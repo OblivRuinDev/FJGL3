@@ -56,13 +56,8 @@ public class SDL_JoyDeviceEvent extends Struct<SDL_JoyDeviceEvent> implements Na
         WHICH = layout.offsetof(3);
     }
 
-    protected SDL_JoyDeviceEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_JoyDeviceEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_JoyDeviceEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_JoyDeviceEvent(address, container);
     }
 
     /**

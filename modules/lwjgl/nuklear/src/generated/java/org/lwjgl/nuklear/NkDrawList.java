@@ -107,13 +107,8 @@ public class NkDrawList extends Struct<NkDrawList> implements NativeResource {
         USERDATA = layout.offsetof(14);
     }
 
-    protected NkDrawList(long address, @Nullable ByteBuffer container) {
+    public NkDrawList(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkDrawList create(long address, @Nullable ByteBuffer container) {
-        return new NkDrawList(address, container);
     }
 
     /**

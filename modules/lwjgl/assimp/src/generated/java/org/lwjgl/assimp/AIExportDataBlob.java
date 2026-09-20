@@ -60,13 +60,8 @@ public class AIExportDataBlob extends Struct<AIExportDataBlob> implements Native
         NEXT = layout.offsetof(3);
     }
 
-    protected AIExportDataBlob(long address, @Nullable ByteBuffer container) {
+    public AIExportDataBlob(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIExportDataBlob create(long address, @Nullable ByteBuffer container) {
-        return new AIExportDataBlob(address, container);
     }
 
     /**

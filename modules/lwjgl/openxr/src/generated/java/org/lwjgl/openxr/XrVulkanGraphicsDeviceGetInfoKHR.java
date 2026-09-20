@@ -59,13 +59,8 @@ public class XrVulkanGraphicsDeviceGetInfoKHR extends Struct<XrVulkanGraphicsDev
         VULKANINSTANCE = layout.offsetof(3);
     }
 
-    protected XrVulkanGraphicsDeviceGetInfoKHR(long address, @Nullable ByteBuffer container) {
+    public XrVulkanGraphicsDeviceGetInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVulkanGraphicsDeviceGetInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrVulkanGraphicsDeviceGetInfoKHR(address, container);
     }
 
     /**

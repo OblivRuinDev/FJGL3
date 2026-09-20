@@ -55,13 +55,8 @@ public class XrSceneFrustumBoundMSFT extends Struct<XrSceneFrustumBoundMSFT> imp
         FARDISTANCE = layout.offsetof(2);
     }
 
-    protected XrSceneFrustumBoundMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneFrustumBoundMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneFrustumBoundMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneFrustumBoundMSFT(address, container);
     }
 
     /**

@@ -77,13 +77,8 @@ public class AIMatrix3x3 extends Struct<AIMatrix3x3> implements NativeResource {
         C3 = layout.offsetof(8);
     }
 
-    protected AIMatrix3x3(long address, @Nullable ByteBuffer container) {
+    public AIMatrix3x3(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIMatrix3x3 create(long address, @Nullable ByteBuffer container) {
-        return new AIMatrix3x3(address, container);
     }
 
     /**

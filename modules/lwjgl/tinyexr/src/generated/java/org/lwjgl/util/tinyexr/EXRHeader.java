@@ -141,13 +141,8 @@ public class EXRHeader extends Struct<EXRHeader> implements NativeResource {
         NAME = layout.offsetof(23);
     }
 
-    protected EXRHeader(long address, @Nullable ByteBuffer container) {
+    public EXRHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected EXRHeader create(long address, @Nullable ByteBuffer container) {
-        return new EXRHeader(address, container);
     }
 
     /**

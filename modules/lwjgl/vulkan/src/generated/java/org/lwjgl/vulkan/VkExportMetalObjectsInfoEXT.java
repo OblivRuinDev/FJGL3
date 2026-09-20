@@ -48,13 +48,8 @@ public class VkExportMetalObjectsInfoEXT extends Struct<VkExportMetalObjectsInfo
         PNEXT = layout.offsetof(1);
     }
 
-    protected VkExportMetalObjectsInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkExportMetalObjectsInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportMetalObjectsInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkExportMetalObjectsInfoEXT(address, container);
     }
 
     /**

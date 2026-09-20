@@ -52,13 +52,8 @@ public class VkSamplerCubicWeightsCreateInfoQCOM extends Struct<VkSamplerCubicWe
         CUBICWEIGHTS = layout.offsetof(2);
     }
 
-    protected VkSamplerCubicWeightsCreateInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkSamplerCubicWeightsCreateInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerCubicWeightsCreateInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerCubicWeightsCreateInfoQCOM(address, container);
     }
 
     /**

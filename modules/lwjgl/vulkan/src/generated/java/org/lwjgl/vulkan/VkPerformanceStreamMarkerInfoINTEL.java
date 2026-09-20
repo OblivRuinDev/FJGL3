@@ -52,13 +52,8 @@ public class VkPerformanceStreamMarkerInfoINTEL extends Struct<VkPerformanceStre
         MARKER = layout.offsetof(2);
     }
 
-    protected VkPerformanceStreamMarkerInfoINTEL(long address, @Nullable ByteBuffer container) {
+    public VkPerformanceStreamMarkerInfoINTEL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerformanceStreamMarkerInfoINTEL create(long address, @Nullable ByteBuffer container) {
-        return new VkPerformanceStreamMarkerInfoINTEL(address, container);
     }
 
     /**

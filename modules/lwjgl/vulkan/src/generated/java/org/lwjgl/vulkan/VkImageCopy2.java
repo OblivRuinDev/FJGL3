@@ -72,13 +72,8 @@ public class VkImageCopy2 extends Struct<VkImageCopy2> implements NativeResource
         EXTENT = layout.offsetof(6);
     }
 
-    protected VkImageCopy2(long address, @Nullable ByteBuffer container) {
+    public VkImageCopy2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageCopy2 create(long address, @Nullable ByteBuffer container) {
-        return new VkImageCopy2(address, container);
     }
 
     /**

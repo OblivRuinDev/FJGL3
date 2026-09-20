@@ -57,13 +57,8 @@ public class XrSecondaryViewConfigurationFrameEndInfoMSFT extends Struct<XrSecon
         VIEWCONFIGURATIONLAYERSINFO = layout.offsetof(3);
     }
 
-    protected XrSecondaryViewConfigurationFrameEndInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSecondaryViewConfigurationFrameEndInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSecondaryViewConfigurationFrameEndInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSecondaryViewConfigurationFrameEndInfoMSFT(address, container);
     }
 
     /**

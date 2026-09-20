@@ -60,13 +60,8 @@ public class XrSystemPassthroughLayerPropertiesANDROID extends Struct<XrSystemPa
         MAXMESHVERTEXCOUNT = layout.offsetof(4);
     }
 
-    protected XrSystemPassthroughLayerPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemPassthroughLayerPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemPassthroughLayerPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemPassthroughLayerPropertiesANDROID(address, container);
     }
 
     /**

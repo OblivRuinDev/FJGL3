@@ -56,13 +56,8 @@ public class VkFenceGetWin32HandleInfoKHR extends Struct<VkFenceGetWin32HandleIn
         HANDLETYPE = layout.offsetof(3);
     }
 
-    protected VkFenceGetWin32HandleInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkFenceGetWin32HandleInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFenceGetWin32HandleInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkFenceGetWin32HandleInfoKHR(address, container);
     }
 
     /**

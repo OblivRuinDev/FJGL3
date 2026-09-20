@@ -68,13 +68,8 @@ public class XrSceneSubmeshStateANDROID extends Struct<XrSceneSubmeshStateANDROI
         BOUNDS = layout.offsetof(5);
     }
 
-    protected XrSceneSubmeshStateANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSceneSubmeshStateANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneSubmeshStateANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneSubmeshStateANDROID(address, container);
     }
 
     /**

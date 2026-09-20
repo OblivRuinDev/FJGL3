@@ -49,13 +49,8 @@ public class SPVBinary extends Struct<SPVBinary> implements NativeResource {
         WORDCOUNT = layout.offsetof(1);
     }
 
-    protected SPVBinary(long address, @Nullable ByteBuffer container) {
+    public SPVBinary(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SPVBinary create(long address, @Nullable ByteBuffer container) {
-        return new SPVBinary(address, container);
     }
 
     /**

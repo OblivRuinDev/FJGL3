@@ -49,13 +49,8 @@ class NkConfigStackStyleItemElement extends Struct<NkConfigStackStyleItemElement
         OLD_VALUE = layout.offsetof(1);
     }
 
-    protected NkConfigStackStyleItemElement(long address, @Nullable ByteBuffer container) {
+    public NkConfigStackStyleItemElement(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkConfigStackStyleItemElement create(long address, @Nullable ByteBuffer container) {
-        return new NkConfigStackStyleItemElement(address, container);
     }
 
     /**

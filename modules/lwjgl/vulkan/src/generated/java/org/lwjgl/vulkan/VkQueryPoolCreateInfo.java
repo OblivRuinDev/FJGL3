@@ -64,13 +64,8 @@ public class VkQueryPoolCreateInfo extends Struct<VkQueryPoolCreateInfo> impleme
         PIPELINESTATISTICS = layout.offsetof(5);
     }
 
-    protected VkQueryPoolCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkQueryPoolCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueryPoolCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkQueryPoolCreateInfo(address, container);
     }
 
     /**

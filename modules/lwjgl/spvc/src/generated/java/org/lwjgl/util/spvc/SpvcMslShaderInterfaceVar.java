@@ -57,13 +57,8 @@ public class SpvcMslShaderInterfaceVar extends Struct<SpvcMslShaderInterfaceVar>
         VECSIZE = layout.offsetof(3);
     }
 
-    protected SpvcMslShaderInterfaceVar(long address, @Nullable ByteBuffer container) {
+    public SpvcMslShaderInterfaceVar(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcMslShaderInterfaceVar create(long address, @Nullable ByteBuffer container) {
-        return new SpvcMslShaderInterfaceVar(address, container);
     }
 
     /**

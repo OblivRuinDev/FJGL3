@@ -66,13 +66,8 @@ public class VkPerformanceCounterDescriptionKHR extends Struct<VkPerformanceCoun
         DESCRIPTION = layout.offsetof(5);
     }
 
-    protected VkPerformanceCounterDescriptionKHR(long address, @Nullable ByteBuffer container) {
+    public VkPerformanceCounterDescriptionKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerformanceCounterDescriptionKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPerformanceCounterDescriptionKHR(address, container);
     }
 
     /**

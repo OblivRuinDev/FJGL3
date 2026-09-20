@@ -58,13 +58,8 @@ public class LARGE_INTEGER extends Struct<LARGE_INTEGER> implements NativeResour
         QUADPART = layout.offsetof(3);
     }
 
-    protected LARGE_INTEGER(long address, @Nullable ByteBuffer container) {
+    public LARGE_INTEGER(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LARGE_INTEGER create(long address, @Nullable ByteBuffer container) {
-        return new LARGE_INTEGER(address, container);
     }
 
     /**

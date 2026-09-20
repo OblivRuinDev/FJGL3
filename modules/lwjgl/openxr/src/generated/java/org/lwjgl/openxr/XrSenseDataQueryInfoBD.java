@@ -48,13 +48,8 @@ public class XrSenseDataQueryInfoBD extends Struct<XrSenseDataQueryInfoBD> imple
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSenseDataQueryInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrSenseDataQueryInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSenseDataQueryInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSenseDataQueryInfoBD(address, container);
     }
 
     /**

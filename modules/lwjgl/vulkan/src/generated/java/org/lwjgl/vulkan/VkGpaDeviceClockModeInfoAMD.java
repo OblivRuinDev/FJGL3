@@ -60,13 +60,8 @@ public class VkGpaDeviceClockModeInfoAMD extends Struct<VkGpaDeviceClockModeInfo
         ENGINECLOCKRATIOTOPEAK = layout.offsetof(4);
     }
 
-    protected VkGpaDeviceClockModeInfoAMD(long address, @Nullable ByteBuffer container) {
+    public VkGpaDeviceClockModeInfoAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGpaDeviceClockModeInfoAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkGpaDeviceClockModeInfoAMD(address, container);
     }
 
     /**

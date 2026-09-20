@@ -64,13 +64,8 @@ public class VkPipelineRobustnessCreateInfo extends Struct<VkPipelineRobustnessC
         IMAGES = layout.offsetof(5);
     }
 
-    protected VkPipelineRobustnessCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineRobustnessCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineRobustnessCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineRobustnessCreateInfo(address, container);
     }
 
     /**

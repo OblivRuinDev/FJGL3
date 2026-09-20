@@ -58,13 +58,8 @@ public class VkDispatchGraphInfoAMDX extends Struct<VkDispatchGraphInfoAMDX> imp
         PAYLOADSTRIDE = layout.offsetof(3);
     }
 
-    protected VkDispatchGraphInfoAMDX(long address, @Nullable ByteBuffer container) {
+    public VkDispatchGraphInfoAMDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDispatchGraphInfoAMDX create(long address, @Nullable ByteBuffer container) {
-        return new VkDispatchGraphInfoAMDX(address, container);
     }
 
     /**

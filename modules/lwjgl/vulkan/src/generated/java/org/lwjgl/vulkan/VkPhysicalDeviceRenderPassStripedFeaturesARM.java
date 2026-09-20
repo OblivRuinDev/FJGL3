@@ -52,13 +52,8 @@ public class VkPhysicalDeviceRenderPassStripedFeaturesARM extends Struct<VkPhysi
         RENDERPASSSTRIPED = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceRenderPassStripedFeaturesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRenderPassStripedFeaturesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRenderPassStripedFeaturesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRenderPassStripedFeaturesARM(address, container);
     }
 
     /**

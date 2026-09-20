@@ -49,13 +49,8 @@ public class FSBANK_STATEDATA_WARNING extends Struct<FSBANK_STATEDATA_WARNING> i
         WARNINGSTRING = layout.offsetof(1);
     }
 
-    protected FSBANK_STATEDATA_WARNING(long address, @Nullable ByteBuffer container) {
+    public FSBANK_STATEDATA_WARNING(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FSBANK_STATEDATA_WARNING create(long address, @Nullable ByteBuffer container) {
-        return new FSBANK_STATEDATA_WARNING(address, container);
     }
 
     /**

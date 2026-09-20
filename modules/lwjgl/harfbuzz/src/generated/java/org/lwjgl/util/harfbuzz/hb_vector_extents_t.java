@@ -56,13 +56,8 @@ public class hb_vector_extents_t extends Struct<hb_vector_extents_t> implements 
         HEIGHT = layout.offsetof(3);
     }
 
-    protected hb_vector_extents_t(long address, @Nullable ByteBuffer container) {
+    public hb_vector_extents_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_vector_extents_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_vector_extents_t(address, container);
     }
 
     /**

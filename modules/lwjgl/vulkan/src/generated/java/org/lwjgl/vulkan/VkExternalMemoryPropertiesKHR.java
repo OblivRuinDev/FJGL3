@@ -23,13 +23,8 @@ import static org.lwjgl.system.MemoryUtil.*;
  */
 public class VkExternalMemoryPropertiesKHR extends VkExternalMemoryProperties {
 
-    protected VkExternalMemoryPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkExternalMemoryPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalMemoryPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalMemoryPropertiesKHR(address, container);
     }
 
     /**

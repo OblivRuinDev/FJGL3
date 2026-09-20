@@ -61,13 +61,8 @@ public class XrSpatialCapabilityConfigurationPlaneTrackingEXT extends Struct<XrS
         ENABLEDCOMPONENTS = layout.offsetof(4);
     }
 
-    protected XrSpatialCapabilityConfigurationPlaneTrackingEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialCapabilityConfigurationPlaneTrackingEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialCapabilityConfigurationPlaneTrackingEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialCapabilityConfigurationPlaneTrackingEXT(address, container);
     }
 
     /**

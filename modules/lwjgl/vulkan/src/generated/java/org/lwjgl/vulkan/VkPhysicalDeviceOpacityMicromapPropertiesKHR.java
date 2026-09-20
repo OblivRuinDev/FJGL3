@@ -64,13 +64,8 @@ public class VkPhysicalDeviceOpacityMicromapPropertiesKHR extends Struct<VkPhysi
         MAXMICROMAPTRIANGLES = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceOpacityMicromapPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceOpacityMicromapPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceOpacityMicromapPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceOpacityMicromapPropertiesKHR(address, container);
     }
 
     /**

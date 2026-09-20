@@ -55,13 +55,8 @@ public class AIQuatKey extends Struct<AIQuatKey> implements NativeResource {
         MINTERPOLATION = layout.offsetof(2);
     }
 
-    protected AIQuatKey(long address, @Nullable ByteBuffer container) {
+    public AIQuatKey(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIQuatKey create(long address, @Nullable ByteBuffer container) {
-        return new AIQuatKey(address, container);
     }
 
     /**

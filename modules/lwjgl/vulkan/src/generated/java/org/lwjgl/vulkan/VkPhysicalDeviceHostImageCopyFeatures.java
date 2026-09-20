@@ -52,13 +52,8 @@ public class VkPhysicalDeviceHostImageCopyFeatures extends Struct<VkPhysicalDevi
         HOSTIMAGECOPY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceHostImageCopyFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceHostImageCopyFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceHostImageCopyFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceHostImageCopyFeatures(address, container);
     }
 
     /**

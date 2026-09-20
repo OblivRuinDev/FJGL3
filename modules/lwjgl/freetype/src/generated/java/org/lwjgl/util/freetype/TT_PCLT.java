@@ -99,13 +99,8 @@ public class TT_PCLT extends Struct<TT_PCLT> {
         RESERVED = layout.offsetof(14);
     }
 
-    protected TT_PCLT(long address, @Nullable ByteBuffer container) {
+    public TT_PCLT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected TT_PCLT create(long address, @Nullable ByteBuffer container) {
-        return new TT_PCLT(address, container);
     }
 
     /**

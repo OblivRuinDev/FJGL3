@@ -91,13 +91,8 @@ public class XrTrackablePlaneANDROID extends Struct<XrTrackablePlaneANDROID> imp
         VERTICES = layout.offsetof(11);
     }
 
-    protected XrTrackablePlaneANDROID(long address, @Nullable ByteBuffer container) {
+    public XrTrackablePlaneANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrTrackablePlaneANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrTrackablePlaneANDROID(address, container);
     }
 
     /**

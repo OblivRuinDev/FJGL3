@@ -58,13 +58,8 @@ public class StdVideoAV1TimingInfo extends Struct<StdVideoAV1TimingInfo> impleme
         NUM_TICKS_PER_PICTURE_MINUS_1 = layout.offsetof(3);
     }
 
-    protected StdVideoAV1TimingInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1TimingInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1TimingInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1TimingInfo(address, container);
     }
 
     /**

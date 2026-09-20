@@ -56,13 +56,8 @@ public class XrViveTrackerPathsHTCX extends Struct<XrViveTrackerPathsHTCX> imple
         ROLEPATH = layout.offsetof(3);
     }
 
-    protected XrViveTrackerPathsHTCX(long address, @Nullable ByteBuffer container) {
+    public XrViveTrackerPathsHTCX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrViveTrackerPathsHTCX create(long address, @Nullable ByteBuffer container) {
-        return new XrViveTrackerPathsHTCX(address, container);
     }
 
     /**

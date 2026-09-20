@@ -52,13 +52,8 @@ public class XrFoveatedViewConfigurationViewVARJO extends Struct<XrFoveatedViewC
         FOVEATEDRENDERINGACTIVE = layout.offsetof(2);
     }
 
-    protected XrFoveatedViewConfigurationViewVARJO(long address, @Nullable ByteBuffer container) {
+    public XrFoveatedViewConfigurationViewVARJO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFoveatedViewConfigurationViewVARJO create(long address, @Nullable ByteBuffer container) {
-        return new XrFoveatedViewConfigurationViewVARJO(address, container);
     }
 
     /**

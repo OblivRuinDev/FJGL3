@@ -52,13 +52,8 @@ public class VkPhysicalDeviceIndexTypeUint8Features extends Struct<VkPhysicalDev
         INDEXTYPEUINT8 = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceIndexTypeUint8Features(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceIndexTypeUint8Features(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceIndexTypeUint8Features create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceIndexTypeUint8Features(address, container);
     }
 
     /**

@@ -70,13 +70,8 @@ public class XrEventDataSpaceEraseCompleteFB extends Struct<XrEventDataSpaceEras
         LOCATION = layout.offsetof(6);
     }
 
-    protected XrEventDataSpaceEraseCompleteFB(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSpaceEraseCompleteFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSpaceEraseCompleteFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSpaceEraseCompleteFB(address, container);
     }
 
     /**

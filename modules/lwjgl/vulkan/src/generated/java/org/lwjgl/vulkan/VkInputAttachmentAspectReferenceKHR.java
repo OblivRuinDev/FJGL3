@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkInputAttachmentAspectReferenceKHR extends VkInputAttachmentAspectReference {
 
-    protected VkInputAttachmentAspectReferenceKHR(long address, @Nullable ByteBuffer container) {
+    public VkInputAttachmentAspectReferenceKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkInputAttachmentAspectReferenceKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkInputAttachmentAspectReferenceKHR(address, container);
     }
 
     /**

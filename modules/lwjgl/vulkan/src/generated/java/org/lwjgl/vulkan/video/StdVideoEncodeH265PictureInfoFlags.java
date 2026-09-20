@@ -56,13 +56,8 @@ public class StdVideoEncodeH265PictureInfoFlags extends Struct<StdVideoEncodeH26
         BITFIELD1 = layout.offsetof(1);
     }
 
-    protected StdVideoEncodeH265PictureInfoFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH265PictureInfoFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH265PictureInfoFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH265PictureInfoFlags(address, container);
     }
 
     /**

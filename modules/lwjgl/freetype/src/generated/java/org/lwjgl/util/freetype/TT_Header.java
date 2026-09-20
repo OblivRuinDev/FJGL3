@@ -108,13 +108,8 @@ public class TT_Header extends Struct<TT_Header> {
         GLYPH_DATA_FORMAT = layout.offsetof(16);
     }
 
-    protected TT_Header(long address, @Nullable ByteBuffer container) {
+    public TT_Header(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected TT_Header create(long address, @Nullable ByteBuffer container) {
-        return new TT_Header(address, container);
     }
 
     /**

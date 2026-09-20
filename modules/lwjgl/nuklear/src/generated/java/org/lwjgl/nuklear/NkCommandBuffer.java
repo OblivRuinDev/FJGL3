@@ -70,13 +70,8 @@ public class NkCommandBuffer extends Struct<NkCommandBuffer> {
         LAST = layout.offsetof(6);
     }
 
-    protected NkCommandBuffer(long address, @Nullable ByteBuffer container) {
+    public NkCommandBuffer(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkCommandBuffer create(long address, @Nullable ByteBuffer container) {
-        return new NkCommandBuffer(address, container);
     }
 
     /**

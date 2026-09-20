@@ -68,13 +68,8 @@ public class XrWorldMeshStateRequestInfoML extends Struct<XrWorldMeshStateReques
         BOUNDINGBOXEXTENTS = layout.offsetof(5);
     }
 
-    protected XrWorldMeshStateRequestInfoML(long address, @Nullable ByteBuffer container) {
+    public XrWorldMeshStateRequestInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrWorldMeshStateRequestInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrWorldMeshStateRequestInfoML(address, container);
     }
 
     /**

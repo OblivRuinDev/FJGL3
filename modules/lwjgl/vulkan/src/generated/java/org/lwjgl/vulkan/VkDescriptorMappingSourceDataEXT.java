@@ -92,13 +92,8 @@ public class VkDescriptorMappingSourceDataEXT extends Struct<VkDescriptorMapping
         SHADERRECORDADDRESSOFFSET = layout.offsetof(10);
     }
 
-    protected VkDescriptorMappingSourceDataEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorMappingSourceDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorMappingSourceDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorMappingSourceDataEXT(address, container);
     }
 
     /**

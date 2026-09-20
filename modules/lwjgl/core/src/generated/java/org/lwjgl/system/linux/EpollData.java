@@ -58,13 +58,8 @@ public class EpollData extends Struct<EpollData> implements NativeResource {
         U64 = layout.offsetof(3);
     }
 
-    protected EpollData(long address, @Nullable ByteBuffer container) {
+    public EpollData(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected EpollData create(long address, @Nullable ByteBuffer container) {
-        return new EpollData(address, container);
     }
 
     /**

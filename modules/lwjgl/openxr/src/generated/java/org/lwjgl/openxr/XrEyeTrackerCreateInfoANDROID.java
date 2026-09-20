@@ -48,13 +48,8 @@ public class XrEyeTrackerCreateInfoANDROID extends Struct<XrEyeTrackerCreateInfo
         NEXT = layout.offsetof(1);
     }
 
-    protected XrEyeTrackerCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrEyeTrackerCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEyeTrackerCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrEyeTrackerCreateInfoANDROID(address, container);
     }
 
     /**

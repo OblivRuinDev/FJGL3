@@ -70,13 +70,8 @@ public class VkClusterAccelerationStructureInputInfoNV extends Struct<VkClusterA
         OPINPUT = layout.offsetof(6);
     }
 
-    protected VkClusterAccelerationStructureInputInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureInputInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureInputInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureInputInfoNV(address, container);
     }
 
     /**

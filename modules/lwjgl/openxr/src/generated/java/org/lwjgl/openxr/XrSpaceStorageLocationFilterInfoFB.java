@@ -52,13 +52,8 @@ public class XrSpaceStorageLocationFilterInfoFB extends Struct<XrSpaceStorageLoc
         LOCATION = layout.offsetof(2);
     }
 
-    protected XrSpaceStorageLocationFilterInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceStorageLocationFilterInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceStorageLocationFilterInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceStorageLocationFilterInfoFB(address, container);
     }
 
     /**

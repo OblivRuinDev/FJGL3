@@ -56,13 +56,8 @@ public class VkWriteDescriptorSetTensorARM extends Struct<VkWriteDescriptorSetTe
         PTENSORVIEWS = layout.offsetof(3);
     }
 
-    protected VkWriteDescriptorSetTensorARM(long address, @Nullable ByteBuffer container) {
+    public VkWriteDescriptorSetTensorARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkWriteDescriptorSetTensorARM create(long address, @Nullable ByteBuffer container) {
-        return new VkWriteDescriptorSetTensorARM(address, container);
     }
 
     /**

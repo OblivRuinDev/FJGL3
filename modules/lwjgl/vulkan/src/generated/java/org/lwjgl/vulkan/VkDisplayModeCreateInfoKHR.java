@@ -58,13 +58,8 @@ public class VkDisplayModeCreateInfoKHR extends Struct<VkDisplayModeCreateInfoKH
         PARAMETERS = layout.offsetof(3);
     }
 
-    protected VkDisplayModeCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDisplayModeCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplayModeCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplayModeCreateInfoKHR(address, container);
     }
 
     /**

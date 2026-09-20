@@ -64,13 +64,8 @@ public class VkVideoEncodeAV1GopRemainingFrameInfoKHR extends Struct<VkVideoEnco
         GOPREMAININGBIPREDICTIVE = layout.offsetof(5);
     }
 
-    protected VkVideoEncodeAV1GopRemainingFrameInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeAV1GopRemainingFrameInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeAV1GopRemainingFrameInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeAV1GopRemainingFrameInfoKHR(address, container);
     }
 
     /**

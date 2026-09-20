@@ -60,13 +60,8 @@ public class VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT extends Struct<V
         FRAGMENTSHADERSHADINGRATEINTERLOCK = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT(address, container);
     }
 
     /**

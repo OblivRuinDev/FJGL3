@@ -48,13 +48,8 @@ public class hb_ot_math_kern_entry_t extends Struct<hb_ot_math_kern_entry_t> imp
         KERN_VALUE = layout.offsetof(1);
     }
 
-    protected hb_ot_math_kern_entry_t(long address, @Nullable ByteBuffer container) {
+    public hb_ot_math_kern_entry_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_ot_math_kern_entry_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_ot_math_kern_entry_t(address, container);
     }
 
     /**

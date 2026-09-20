@@ -56,13 +56,8 @@ public class VkAccelerationStructureCaptureDescriptorDataInfoEXT extends Struct<
         ACCELERATIONSTRUCTURENV = layout.offsetof(3);
     }
 
-    protected VkAccelerationStructureCaptureDescriptorDataInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureCaptureDescriptorDataInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureCaptureDescriptorDataInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureCaptureDescriptorDataInfoEXT(address, container);
     }
 
     /**

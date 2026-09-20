@@ -52,13 +52,8 @@ public class VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures extends Struc
         SHADERZEROINITIALIZEWORKGROUPMEMORY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures(address, container);
     }
 
     /**

@@ -84,13 +84,8 @@ public class VkPhysicalDeviceConservativeRasterizationPropertiesEXT extends Stru
         CONSERVATIVERASTERIZATIONPOSTDEPTHCOVERAGE = layout.offsetof(10);
     }
 
-    protected VkPhysicalDeviceConservativeRasterizationPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceConservativeRasterizationPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceConservativeRasterizationPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceConservativeRasterizationPropertiesEXT(address, container);
     }
 
     /**

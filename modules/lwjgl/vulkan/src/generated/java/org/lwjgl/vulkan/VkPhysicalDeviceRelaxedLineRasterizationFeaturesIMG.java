@@ -52,13 +52,8 @@ public class VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG extends Struct<
         RELAXEDLINERASTERIZATION = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG(address, container);
     }
 
     /**

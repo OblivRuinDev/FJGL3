@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceDynamicRenderingLocalReadFeaturesKHR extends VkPhysicalDeviceDynamicRenderingLocalReadFeatures {
 
-    protected VkPhysicalDeviceDynamicRenderingLocalReadFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDynamicRenderingLocalReadFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDynamicRenderingLocalReadFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDynamicRenderingLocalReadFeaturesKHR(address, container);
     }
 
     /**

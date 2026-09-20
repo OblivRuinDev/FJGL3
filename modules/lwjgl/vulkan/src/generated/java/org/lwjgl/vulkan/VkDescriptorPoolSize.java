@@ -48,13 +48,8 @@ public class VkDescriptorPoolSize extends Struct<VkDescriptorPoolSize> implement
         DESCRIPTORCOUNT = layout.offsetof(1);
     }
 
-    protected VkDescriptorPoolSize(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorPoolSize(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorPoolSize create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorPoolSize(address, container);
     }
 
     /**

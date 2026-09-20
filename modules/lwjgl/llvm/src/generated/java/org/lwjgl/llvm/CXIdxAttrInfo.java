@@ -55,13 +55,8 @@ public class CXIdxAttrInfo extends Struct<CXIdxAttrInfo> implements NativeResour
         LOC = layout.offsetof(2);
     }
 
-    protected CXIdxAttrInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxAttrInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxAttrInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxAttrInfo(address, container);
     }
 
     /**

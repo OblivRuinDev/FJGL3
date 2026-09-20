@@ -45,13 +45,8 @@ public class MSDFGenConfig extends Struct<MSDFGenConfig> implements NativeResour
         OVERLAP_SUPPORT = layout.offsetof(0);
     }
 
-    protected MSDFGenConfig(long address, @Nullable ByteBuffer container) {
+    public MSDFGenConfig(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MSDFGenConfig create(long address, @Nullable ByteBuffer container) {
-        return new MSDFGenConfig(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class XrSpatialComponentMarkerListEXT extends Struct<XrSpatialComponentMa
         MARKERS = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentMarkerListEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentMarkerListEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentMarkerListEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentMarkerListEXT(address, container);
     }
 
     /**

@@ -48,13 +48,8 @@ public class FT_StreamDesc extends Struct<FT_StreamDesc> implements NativeResour
         POINTER = layout.offsetof(1);
     }
 
-    protected FT_StreamDesc(long address, @Nullable ByteBuffer container) {
+    public FT_StreamDesc(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_StreamDesc create(long address, @Nullable ByteBuffer container) {
-        return new FT_StreamDesc(address, container);
     }
 
     /**

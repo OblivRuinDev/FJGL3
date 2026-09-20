@@ -65,13 +65,8 @@ public class XMapRequestEvent extends Struct<XMapRequestEvent> implements Native
         WINDOW = layout.offsetof(5);
     }
 
-    protected XMapRequestEvent(long address, @Nullable ByteBuffer container) {
+    public XMapRequestEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XMapRequestEvent create(long address, @Nullable ByteBuffer container) {
-        return new XMapRequestEvent(address, container);
     }
 
     /**

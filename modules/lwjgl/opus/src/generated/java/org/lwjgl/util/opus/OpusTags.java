@@ -56,13 +56,8 @@ public class OpusTags extends Struct<OpusTags> implements NativeResource {
         VENDOR = layout.offsetof(3);
     }
 
-    protected OpusTags(long address, @Nullable ByteBuffer container) {
+    public OpusTags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected OpusTags create(long address, @Nullable ByteBuffer container) {
-        return new OpusTags(address, container);
     }
 
     /**

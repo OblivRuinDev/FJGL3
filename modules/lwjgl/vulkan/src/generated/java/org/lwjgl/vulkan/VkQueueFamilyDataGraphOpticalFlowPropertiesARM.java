@@ -80,13 +80,8 @@ public class VkQueueFamilyDataGraphOpticalFlowPropertiesARM extends Struct<VkQue
         MAXHEIGHT = layout.offsetof(9);
     }
 
-    protected VkQueueFamilyDataGraphOpticalFlowPropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyDataGraphOpticalFlowPropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyDataGraphOpticalFlowPropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyDataGraphOpticalFlowPropertiesARM(address, container);
     }
 
     /**

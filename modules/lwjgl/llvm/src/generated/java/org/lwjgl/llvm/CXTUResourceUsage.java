@@ -52,13 +52,8 @@ public class CXTUResourceUsage extends Struct<CXTUResourceUsage> implements Nati
         ENTRIES = layout.offsetof(2);
     }
 
-    protected CXTUResourceUsage(long address, @Nullable ByteBuffer container) {
+    public CXTUResourceUsage(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXTUResourceUsage create(long address, @Nullable ByteBuffer container) {
-        return new CXTUResourceUsage(address, container);
     }
 
     /**

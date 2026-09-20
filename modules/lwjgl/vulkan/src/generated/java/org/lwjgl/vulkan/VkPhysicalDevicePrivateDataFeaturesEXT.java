@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDevicePrivateDataFeaturesEXT extends VkPhysicalDevicePrivateDataFeatures {
 
-    protected VkPhysicalDevicePrivateDataFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePrivateDataFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePrivateDataFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePrivateDataFeaturesEXT(address, container);
     }
 
     /**

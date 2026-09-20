@@ -58,13 +58,8 @@ public class VkIndirectExecutionSetCreateInfoEXT extends Struct<VkIndirectExecut
         INFO = layout.offsetof(3);
     }
 
-    protected VkIndirectExecutionSetCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkIndirectExecutionSetCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectExecutionSetCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectExecutionSetCreateInfoEXT(address, container);
     }
 
     /**

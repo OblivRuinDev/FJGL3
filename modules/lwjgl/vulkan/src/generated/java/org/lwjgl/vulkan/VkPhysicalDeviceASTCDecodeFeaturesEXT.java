@@ -52,13 +52,8 @@ public class VkPhysicalDeviceASTCDecodeFeaturesEXT extends Struct<VkPhysicalDevi
         DECODEMODESHAREDEXPONENT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceASTCDecodeFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceASTCDecodeFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceASTCDecodeFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceASTCDecodeFeaturesEXT(address, container);
     }
 
     /**

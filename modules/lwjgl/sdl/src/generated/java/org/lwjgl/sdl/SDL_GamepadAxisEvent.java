@@ -80,13 +80,8 @@ public class SDL_GamepadAxisEvent extends Struct<SDL_GamepadAxisEvent> implement
         PADDING4 = layout.offsetof(9);
     }
 
-    protected SDL_GamepadAxisEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_GamepadAxisEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GamepadAxisEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GamepadAxisEvent(address, container);
     }
 
     /**

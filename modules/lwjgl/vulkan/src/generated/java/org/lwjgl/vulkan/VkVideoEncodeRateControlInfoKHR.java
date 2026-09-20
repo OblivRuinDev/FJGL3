@@ -73,13 +73,8 @@ public class VkVideoEncodeRateControlInfoKHR extends Struct<VkVideoEncodeRateCon
         INITIALVIRTUALBUFFERSIZEINMS = layout.offsetof(7);
     }
 
-    protected VkVideoEncodeRateControlInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeRateControlInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeRateControlInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeRateControlInfoKHR(address, container);
     }
 
     /**

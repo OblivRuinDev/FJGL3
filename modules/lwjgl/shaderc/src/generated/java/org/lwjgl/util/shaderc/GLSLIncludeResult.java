@@ -54,13 +54,8 @@ public class GLSLIncludeResult extends Struct<GLSLIncludeResult> implements Nati
         HEADER_LENGTH = layout.offsetof(2);
     }
 
-    protected GLSLIncludeResult(long address, @Nullable ByteBuffer container) {
+    public GLSLIncludeResult(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLSLIncludeResult create(long address, @Nullable ByteBuffer container) {
-        return new GLSLIncludeResult(address, container);
     }
 
     /**

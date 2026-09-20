@@ -58,13 +58,8 @@ public class spng_chunk extends Struct<spng_chunk> implements NativeResource {
         CRC = layout.offsetof(3);
     }
 
-    protected spng_chunk(long address, @Nullable ByteBuffer container) {
+    public spng_chunk(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_chunk create(long address, @Nullable ByteBuffer container) {
-        return new spng_chunk(address, container);
     }
 
     /**

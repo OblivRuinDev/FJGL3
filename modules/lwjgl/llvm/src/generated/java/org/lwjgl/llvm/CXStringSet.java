@@ -46,13 +46,8 @@ public class CXStringSet extends Struct<CXStringSet> {
         COUNT = layout.offsetof(1);
     }
 
-    protected CXStringSet(long address, @Nullable ByteBuffer container) {
+    public CXStringSet(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXStringSet create(long address, @Nullable ByteBuffer container) {
-        return new CXStringSet(address, container);
     }
 
     /**

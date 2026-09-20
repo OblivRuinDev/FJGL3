@@ -73,13 +73,8 @@ public class XrSoundObstacleMaterialConfigBD extends Struct<XrSoundObstacleMater
         BANDTRANSMISSIONS = layout.offsetof(7);
     }
 
-    protected XrSoundObstacleMaterialConfigBD(long address, @Nullable ByteBuffer container) {
+    public XrSoundObstacleMaterialConfigBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSoundObstacleMaterialConfigBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSoundObstacleMaterialConfigBD(address, container);
     }
 
     /**

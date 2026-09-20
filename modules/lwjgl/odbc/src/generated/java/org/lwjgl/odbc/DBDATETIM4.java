@@ -48,13 +48,8 @@ public class DBDATETIM4 extends Struct<DBDATETIM4> implements NativeResource {
         NUMMINS = layout.offsetof(1);
     }
 
-    protected DBDATETIM4(long address, @Nullable ByteBuffer container) {
+    public DBDATETIM4(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected DBDATETIM4 create(long address, @Nullable ByteBuffer container) {
-        return new DBDATETIM4(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkDescriptorPoolInlineUniformBlockCreateInfo extends Struct<VkDescr
         MAXINLINEUNIFORMBLOCKBINDINGS = layout.offsetof(2);
     }
 
-    protected VkDescriptorPoolInlineUniformBlockCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorPoolInlineUniformBlockCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorPoolInlineUniformBlockCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorPoolInlineUniformBlockCreateInfo(address, container);
     }
 
     /**

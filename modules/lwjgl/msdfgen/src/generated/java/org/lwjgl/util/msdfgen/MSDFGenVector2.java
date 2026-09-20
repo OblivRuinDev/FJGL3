@@ -49,13 +49,8 @@ public class MSDFGenVector2 extends Struct<MSDFGenVector2> implements NativeReso
         Y = layout.offsetof(1);
     }
 
-    protected MSDFGenVector2(long address, @Nullable ByteBuffer container) {
+    public MSDFGenVector2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MSDFGenVector2 create(long address, @Nullable ByteBuffer container) {
-        return new MSDFGenVector2(address, container);
     }
 
     /**

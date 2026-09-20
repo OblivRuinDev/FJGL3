@@ -57,13 +57,8 @@ public class FMOD_DSP_METERING_INFO extends Struct<FMOD_DSP_METERING_INFO> imple
         NUMCHANNELS = layout.offsetof(3);
     }
 
-    protected FMOD_DSP_METERING_INFO(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_METERING_INFO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_METERING_INFO create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_METERING_INFO(address, container);
     }
 
     /**

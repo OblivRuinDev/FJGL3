@@ -105,13 +105,8 @@ public class VkGpaSampleBeginInfoAMD extends Struct<VkGpaSampleBeginInfoAMD> imp
         TIMINGPOSTSAMPLE = layout.offsetof(15);
     }
 
-    protected VkGpaSampleBeginInfoAMD(long address, @Nullable ByteBuffer container) {
+    public VkGpaSampleBeginInfoAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGpaSampleBeginInfoAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkGpaSampleBeginInfoAMD(address, container);
     }
 
     /**

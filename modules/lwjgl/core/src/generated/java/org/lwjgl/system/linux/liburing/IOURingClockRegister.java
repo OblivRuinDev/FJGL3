@@ -50,13 +50,8 @@ public class IOURingClockRegister extends Struct<IOURingClockRegister> implement
         __RESV = layout.offsetof(1);
     }
 
-    protected IOURingClockRegister(long address, @Nullable ByteBuffer container) {
+    public IOURingClockRegister(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingClockRegister create(long address, @Nullable ByteBuffer container) {
-        return new IOURingClockRegister(address, container);
     }
 
     /**

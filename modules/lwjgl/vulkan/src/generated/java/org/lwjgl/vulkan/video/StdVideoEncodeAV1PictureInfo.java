@@ -153,13 +153,8 @@ public class StdVideoEncodeAV1PictureInfo extends Struct<StdVideoEncodeAV1Pictur
         PBUFFERREMOVALTIMES = layout.offsetof(26);
     }
 
-    protected StdVideoEncodeAV1PictureInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeAV1PictureInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeAV1PictureInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeAV1PictureInfo(address, container);
     }
 
     /**

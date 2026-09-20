@@ -80,13 +80,8 @@ public class VkPhysicalDeviceRayTracingPipelinePropertiesKHR extends Struct<VkPh
         MAXRAYHITATTRIBUTESIZE = layout.offsetof(9);
     }
 
-    protected VkPhysicalDeviceRayTracingPipelinePropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRayTracingPipelinePropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRayTracingPipelinePropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRayTracingPipelinePropertiesKHR(address, container);
     }
 
     /**

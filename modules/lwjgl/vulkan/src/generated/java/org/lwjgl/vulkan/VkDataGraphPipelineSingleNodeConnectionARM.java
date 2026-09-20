@@ -60,13 +60,8 @@ public class VkDataGraphPipelineSingleNodeConnectionARM extends Struct<VkDataGra
         CONNECTION = layout.offsetof(4);
     }
 
-    protected VkDataGraphPipelineSingleNodeConnectionARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineSingleNodeConnectionARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineSingleNodeConnectionARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineSingleNodeConnectionARM(address, container);
     }
 
     /**

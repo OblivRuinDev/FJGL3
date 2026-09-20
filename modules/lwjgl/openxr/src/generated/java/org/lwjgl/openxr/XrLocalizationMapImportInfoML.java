@@ -57,13 +57,8 @@ public class XrLocalizationMapImportInfoML extends Struct<XrLocalizationMapImpor
         DATA = layout.offsetof(3);
     }
 
-    protected XrLocalizationMapImportInfoML(long address, @Nullable ByteBuffer container) {
+    public XrLocalizationMapImportInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrLocalizationMapImportInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrLocalizationMapImportInfoML(address, container);
     }
 
     /**

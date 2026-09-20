@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT extends Str
         COMBINEDIMAGESAMPLERDENSITYMAPDESCRIPTORSIZE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class XrGraphicsRequirementsVulkanKHR extends Struct<XrGraphicsRequiremen
         MAXAPIVERSIONSUPPORTED = layout.offsetof(3);
     }
 
-    protected XrGraphicsRequirementsVulkanKHR(long address, @Nullable ByteBuffer container) {
+    public XrGraphicsRequirementsVulkanKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGraphicsRequirementsVulkanKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrGraphicsRequirementsVulkanKHR(address, container);
     }
 
     /**

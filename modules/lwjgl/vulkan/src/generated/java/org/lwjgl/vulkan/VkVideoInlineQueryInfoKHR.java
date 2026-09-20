@@ -60,13 +60,8 @@ public class VkVideoInlineQueryInfoKHR extends Struct<VkVideoInlineQueryInfoKHR>
         QUERYCOUNT = layout.offsetof(4);
     }
 
-    protected VkVideoInlineQueryInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoInlineQueryInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoInlineQueryInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoInlineQueryInfoKHR(address, container);
     }
 
     /**

@@ -53,13 +53,8 @@ public class ZSTDBounds extends Struct<ZSTDBounds> implements NativeResource {
         UPPERBOUND = layout.offsetof(2);
     }
 
-    protected ZSTDBounds(long address, @Nullable ByteBuffer container) {
+    public ZSTDBounds(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZSTDBounds create(long address, @Nullable ByteBuffer container) {
-        return new ZSTDBounds(address, container);
     }
 
     /**

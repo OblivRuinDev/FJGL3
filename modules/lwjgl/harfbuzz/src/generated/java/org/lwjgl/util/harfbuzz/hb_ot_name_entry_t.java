@@ -55,13 +55,8 @@ public class hb_ot_name_entry_t extends Struct<hb_ot_name_entry_t> implements Na
         LANGUAGE = layout.offsetof(2);
     }
 
-    protected hb_ot_name_entry_t(long address, @Nullable ByteBuffer container) {
+    public hb_ot_name_entry_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_ot_name_entry_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_ot_name_entry_t(address, container);
     }
 
     /**

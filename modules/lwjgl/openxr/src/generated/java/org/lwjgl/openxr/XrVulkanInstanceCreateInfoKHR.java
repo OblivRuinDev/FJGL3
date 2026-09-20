@@ -71,13 +71,8 @@ public class XrVulkanInstanceCreateInfoKHR extends Struct<XrVulkanInstanceCreate
         VULKANALLOCATOR = layout.offsetof(6);
     }
 
-    protected XrVulkanInstanceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public XrVulkanInstanceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVulkanInstanceCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrVulkanInstanceCreateInfoKHR(address, container);
     }
 
     /**

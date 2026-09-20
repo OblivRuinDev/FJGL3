@@ -58,13 +58,8 @@ public class VkSamplerBorderColorComponentMappingCreateInfoEXT extends Struct<Vk
         SRGB = layout.offsetof(3);
     }
 
-    protected VkSamplerBorderColorComponentMappingCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkSamplerBorderColorComponentMappingCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerBorderColorComponentMappingCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerBorderColorComponentMappingCreateInfoEXT(address, container);
     }
 
     /**

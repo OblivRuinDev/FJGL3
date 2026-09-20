@@ -133,13 +133,8 @@ public class FT_GlyphSlot extends Struct<FT_GlyphSlot> {
         INTERNAL = layout.offsetof(21);
     }
 
-    protected FT_GlyphSlot(long address, @Nullable ByteBuffer container) {
+    public FT_GlyphSlot(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_GlyphSlot create(long address, @Nullable ByteBuffer container) {
-        return new FT_GlyphSlot(address, container);
     }
 
     /**

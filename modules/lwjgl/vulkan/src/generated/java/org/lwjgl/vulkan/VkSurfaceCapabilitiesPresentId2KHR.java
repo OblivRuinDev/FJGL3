@@ -52,13 +52,8 @@ public class VkSurfaceCapabilitiesPresentId2KHR extends Struct<VkSurfaceCapabili
         PRESENTID2SUPPORTED = layout.offsetof(2);
     }
 
-    protected VkSurfaceCapabilitiesPresentId2KHR(long address, @Nullable ByteBuffer container) {
+    public VkSurfaceCapabilitiesPresentId2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfaceCapabilitiesPresentId2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfaceCapabilitiesPresentId2KHR(address, container);
     }
 
     /**

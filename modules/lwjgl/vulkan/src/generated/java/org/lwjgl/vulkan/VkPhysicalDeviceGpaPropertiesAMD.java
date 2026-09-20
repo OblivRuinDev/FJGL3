@@ -68,13 +68,8 @@ public class VkPhysicalDeviceGpaPropertiesAMD extends Struct<VkPhysicalDeviceGpa
         PPERFBLOCKS = layout.offsetof(6);
     }
 
-    protected VkPhysicalDeviceGpaPropertiesAMD(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceGpaPropertiesAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceGpaPropertiesAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceGpaPropertiesAMD(address, container);
     }
 
     /**

@@ -54,13 +54,8 @@ public class StdVideoH265ProfileTierLevel extends Struct<StdVideoH265ProfileTier
         GENERAL_LEVEL_IDC = layout.offsetof(2);
     }
 
-    protected StdVideoH265ProfileTierLevel(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265ProfileTierLevel(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265ProfileTierLevel create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265ProfileTierLevel(address, container);
     }
 
     /**

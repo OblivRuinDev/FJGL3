@@ -69,13 +69,8 @@ public class VkBindAccelerationStructureMemoryInfoNV extends Struct<VkBindAccele
         PDEVICEINDICES = layout.offsetof(6);
     }
 
-    protected VkBindAccelerationStructureMemoryInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkBindAccelerationStructureMemoryInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindAccelerationStructureMemoryInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkBindAccelerationStructureMemoryInfoNV(address, container);
     }
 
     /**

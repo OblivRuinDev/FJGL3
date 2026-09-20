@@ -52,13 +52,8 @@ public class VkPerformanceCounterARM extends Struct<VkPerformanceCounterARM> imp
         COUNTERID = layout.offsetof(2);
     }
 
-    protected VkPerformanceCounterARM(long address, @Nullable ByteBuffer container) {
+    public VkPerformanceCounterARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPerformanceCounterARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPerformanceCounterARM(address, container);
     }
 
     /**

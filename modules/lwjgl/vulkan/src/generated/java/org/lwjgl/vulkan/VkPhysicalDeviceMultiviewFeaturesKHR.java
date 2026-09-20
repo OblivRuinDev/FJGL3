@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceMultiviewFeaturesKHR extends VkPhysicalDeviceMultiviewFeatures {
 
-    protected VkPhysicalDeviceMultiviewFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMultiviewFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMultiviewFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMultiviewFeaturesKHR(address, container);
     }
 
     /**

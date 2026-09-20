@@ -56,13 +56,8 @@ public class VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM extends Struct<V
         ENABLECBCRDEGAMMA = layout.offsetof(3);
     }
 
-    protected VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM(address, container);
     }
 
     /**

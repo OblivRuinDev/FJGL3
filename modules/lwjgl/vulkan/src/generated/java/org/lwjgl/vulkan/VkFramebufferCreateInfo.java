@@ -76,13 +76,8 @@ public class VkFramebufferCreateInfo extends Struct<VkFramebufferCreateInfo> imp
         LAYERS = layout.offsetof(8);
     }
 
-    protected VkFramebufferCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkFramebufferCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFramebufferCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkFramebufferCreateInfo(address, container);
     }
 
     /**

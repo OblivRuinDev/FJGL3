@@ -97,13 +97,8 @@ public class VkShaderCreateInfoEXT extends Struct<VkShaderCreateInfoEXT> impleme
         PSPECIALIZATIONINFO = layout.offsetof(13);
     }
 
-    protected VkShaderCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkShaderCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkShaderCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkShaderCreateInfoEXT(address, container);
     }
 
     /**

@@ -54,13 +54,8 @@ public class VkPhysicalDeviceImageProcessing2PropertiesQCOM extends Struct<VkPhy
         MAXBLOCKMATCHWINDOW = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceImageProcessing2PropertiesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageProcessing2PropertiesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageProcessing2PropertiesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageProcessing2PropertiesQCOM(address, container);
     }
 
     /**

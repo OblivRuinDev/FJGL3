@@ -46,13 +46,8 @@ public class VkPipelineCreationFeedback extends Struct<VkPipelineCreationFeedbac
         DURATION = layout.offsetof(1);
     }
 
-    protected VkPipelineCreationFeedback(long address, @Nullable ByteBuffer container) {
+    public VkPipelineCreationFeedback(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineCreationFeedback create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineCreationFeedback(address, container);
     }
 
     /**

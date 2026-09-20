@@ -61,13 +61,8 @@ public class VkPipelineViewportCoarseSampleOrderStateCreateInfoNV extends Struct
         PCUSTOMSAMPLEORDERS = layout.offsetof(4);
     }
 
-    protected VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineViewportCoarseSampleOrderStateCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(address, container);
     }
 
     /**

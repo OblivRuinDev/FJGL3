@@ -56,13 +56,8 @@ public class VkMultiviewPerViewAttributesInfoNVX extends Struct<VkMultiviewPerVi
         PERVIEWATTRIBUTESPOSITIONXONLY = layout.offsetof(3);
     }
 
-    protected VkMultiviewPerViewAttributesInfoNVX(long address, @Nullable ByteBuffer container) {
+    public VkMultiviewPerViewAttributesInfoNVX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMultiviewPerViewAttributesInfoNVX create(long address, @Nullable ByteBuffer container) {
-        return new VkMultiviewPerViewAttributesInfoNVX(address, container);
     }
 
     /**

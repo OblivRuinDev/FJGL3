@@ -52,13 +52,8 @@ public class XrEventDataSenseDataUpdatedBD extends Struct<XrEventDataSenseDataUp
         PROVIDER = layout.offsetof(2);
     }
 
-    protected XrEventDataSenseDataUpdatedBD(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSenseDataUpdatedBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSenseDataUpdatedBD create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSenseDataUpdatedBD(address, container);
     }
 
     /**

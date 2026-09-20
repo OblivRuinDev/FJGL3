@@ -50,13 +50,8 @@ public class XrSpaceLocationData extends Struct<XrSpaceLocationData> implements 
         POSE = layout.offsetof(1);
     }
 
-    protected XrSpaceLocationData(long address, @Nullable ByteBuffer container) {
+    public XrSpaceLocationData(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceLocationData create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceLocationData(address, container);
     }
 
     /**

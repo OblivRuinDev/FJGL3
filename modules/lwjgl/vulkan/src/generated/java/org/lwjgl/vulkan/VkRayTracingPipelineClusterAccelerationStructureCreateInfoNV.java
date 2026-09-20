@@ -52,13 +52,8 @@ public class VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV extend
         ALLOWCLUSTERACCELERATIONSTRUCTURE = layout.offsetof(2);
     }
 
-    protected VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV(address, container);
     }
 
     /**

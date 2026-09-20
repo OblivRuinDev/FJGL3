@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCommandBufferInheritanceFeaturesNV extends Struct<V
         COMMANDBUFFERINHERITANCE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCommandBufferInheritanceFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCommandBufferInheritanceFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCommandBufferInheritanceFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCommandBufferInheritanceFeaturesNV(address, container);
     }
 
     /**

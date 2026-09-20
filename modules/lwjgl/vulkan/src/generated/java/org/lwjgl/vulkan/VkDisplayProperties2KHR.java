@@ -54,13 +54,8 @@ public class VkDisplayProperties2KHR extends Struct<VkDisplayProperties2KHR> imp
         DISPLAYPROPERTIES = layout.offsetof(2);
     }
 
-    protected VkDisplayProperties2KHR(long address, @Nullable ByteBuffer container) {
+    public VkDisplayProperties2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplayProperties2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplayProperties2KHR(address, container);
     }
 
     /**

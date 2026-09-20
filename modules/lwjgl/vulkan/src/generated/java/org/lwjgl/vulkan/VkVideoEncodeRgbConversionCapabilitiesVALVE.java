@@ -64,13 +64,8 @@ public class VkVideoEncodeRgbConversionCapabilitiesVALVE extends Struct<VkVideoE
         YCHROMAOFFSETS = layout.offsetof(5);
     }
 
-    protected VkVideoEncodeRgbConversionCapabilitiesVALVE(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeRgbConversionCapabilitiesVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeRgbConversionCapabilitiesVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeRgbConversionCapabilitiesVALVE(address, container);
     }
 
     /**

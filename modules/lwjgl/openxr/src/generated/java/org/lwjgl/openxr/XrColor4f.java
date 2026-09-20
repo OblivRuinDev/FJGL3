@@ -56,13 +56,8 @@ public class XrColor4f extends Struct<XrColor4f> implements NativeResource {
         A = layout.offsetof(3);
     }
 
-    protected XrColor4f(long address, @Nullable ByteBuffer container) {
+    public XrColor4f(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrColor4f create(long address, @Nullable ByteBuffer container) {
-        return new XrColor4f(address, container);
     }
 
     /**

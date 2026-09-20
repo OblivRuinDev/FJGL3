@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR extends Struc
         SHADERMAXIMALRECONVERGENCE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR(address, container);
     }
 
     /**

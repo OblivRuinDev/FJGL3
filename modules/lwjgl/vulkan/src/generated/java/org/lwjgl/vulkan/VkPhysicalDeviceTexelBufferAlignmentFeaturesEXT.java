@@ -52,13 +52,8 @@ public class VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT extends Struct<VkPh
         TEXELBUFFERALIGNMENT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT(address, container);
     }
 
     /**

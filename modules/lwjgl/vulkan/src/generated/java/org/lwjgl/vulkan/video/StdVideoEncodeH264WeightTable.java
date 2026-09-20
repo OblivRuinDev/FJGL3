@@ -89,13 +89,8 @@ public class StdVideoEncodeH264WeightTable extends Struct<StdVideoEncodeH264Weig
         CHROMA_OFFSET_L1 = layout.offsetof(10);
     }
 
-    protected StdVideoEncodeH264WeightTable(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH264WeightTable(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH264WeightTable create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH264WeightTable(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class XrColocationAdvertisementStartInfoMETA extends Struct<XrColocationA
         BUFFER = layout.offsetof(3);
     }
 
-    protected XrColocationAdvertisementStartInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrColocationAdvertisementStartInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrColocationAdvertisementStartInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrColocationAdvertisementStartInfoMETA(address, container);
     }
 
     /**

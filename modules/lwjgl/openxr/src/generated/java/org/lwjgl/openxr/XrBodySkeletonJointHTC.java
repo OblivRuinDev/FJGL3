@@ -46,13 +46,8 @@ public class XrBodySkeletonJointHTC extends Struct<XrBodySkeletonJointHTC> imple
         POSE = layout.offsetof(0);
     }
 
-    protected XrBodySkeletonJointHTC(long address, @Nullable ByteBuffer container) {
+    public XrBodySkeletonJointHTC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodySkeletonJointHTC create(long address, @Nullable ByteBuffer container) {
-        return new XrBodySkeletonJointHTC(address, container);
     }
 
     /**

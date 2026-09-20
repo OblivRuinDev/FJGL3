@@ -56,13 +56,8 @@ public class VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI extends Struct<V
         MULTIVIEWCLUSTERCULLINGSHADER = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI(address, container);
     }
 
     /**

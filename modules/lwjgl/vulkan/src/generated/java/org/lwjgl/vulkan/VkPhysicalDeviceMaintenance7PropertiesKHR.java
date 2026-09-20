@@ -80,13 +80,8 @@ public class VkPhysicalDeviceMaintenance7PropertiesKHR extends Struct<VkPhysical
         MAXDESCRIPTORSETUPDATEAFTERBINDTOTALBUFFERSDYNAMIC = layout.offsetof(9);
     }
 
-    protected VkPhysicalDeviceMaintenance7PropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMaintenance7PropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMaintenance7PropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMaintenance7PropertiesKHR(address, container);
     }
 
     /**

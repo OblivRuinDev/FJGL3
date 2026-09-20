@@ -33,13 +33,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkBufferMemoryBarrier2KHR extends VkBufferMemoryBarrier2 {
 
-    protected VkBufferMemoryBarrier2KHR(long address, @Nullable ByteBuffer container) {
+    public VkBufferMemoryBarrier2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferMemoryBarrier2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferMemoryBarrier2KHR(address, container);
     }
 
     /**

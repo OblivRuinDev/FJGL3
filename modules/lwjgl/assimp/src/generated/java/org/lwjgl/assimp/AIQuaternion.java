@@ -57,13 +57,8 @@ public class AIQuaternion extends Struct<AIQuaternion> implements NativeResource
         Z = layout.offsetof(3);
     }
 
-    protected AIQuaternion(long address, @Nullable ByteBuffer container) {
+    public AIQuaternion(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIQuaternion create(long address, @Nullable ByteBuffer container) {
-        return new AIQuaternion(address, container);
     }
 
     /**

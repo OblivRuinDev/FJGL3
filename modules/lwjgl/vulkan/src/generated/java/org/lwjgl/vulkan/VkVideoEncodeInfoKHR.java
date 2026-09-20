@@ -87,13 +87,8 @@ public class VkVideoEncodeInfoKHR extends Struct<VkVideoEncodeInfoKHR> implement
         PRECEDINGEXTERNALLYENCODEDBYTES = layout.offsetof(10);
     }
 
-    protected VkVideoEncodeInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeInfoKHR(address, container);
     }
 
     /**

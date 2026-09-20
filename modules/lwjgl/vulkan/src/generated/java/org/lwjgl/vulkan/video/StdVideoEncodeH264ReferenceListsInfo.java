@@ -93,13 +93,8 @@ public class StdVideoEncodeH264ReferenceListsInfo extends Struct<StdVideoEncodeH
         PREFPICMARKINGOPERATIONS = layout.offsetof(11);
     }
 
-    protected StdVideoEncodeH264ReferenceListsInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH264ReferenceListsInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH264ReferenceListsInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH264ReferenceListsInfo(address, container);
     }
 
     /**

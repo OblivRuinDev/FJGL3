@@ -52,13 +52,8 @@ public class VkPhysicalDeviceGlobalPriorityQueryFeatures extends Struct<VkPhysic
         GLOBALPRIORITYQUERY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceGlobalPriorityQueryFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceGlobalPriorityQueryFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceGlobalPriorityQueryFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceGlobalPriorityQueryFeatures(address, container);
     }
 
     /**

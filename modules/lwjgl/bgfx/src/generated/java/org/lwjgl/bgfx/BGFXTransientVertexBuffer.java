@@ -66,13 +66,8 @@ public class BGFXTransientVertexBuffer extends Struct<BGFXTransientVertexBuffer>
         LAYOUTHANDLE = layout.offsetof(5);
     }
 
-    protected BGFXTransientVertexBuffer(long address, @Nullable ByteBuffer container) {
+    public BGFXTransientVertexBuffer(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXTransientVertexBuffer create(long address, @Nullable ByteBuffer container) {
-        return new BGFXTransientVertexBuffer(address, container);
     }
 
     /**

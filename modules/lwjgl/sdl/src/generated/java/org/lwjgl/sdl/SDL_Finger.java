@@ -56,13 +56,8 @@ public class SDL_Finger extends Struct<SDL_Finger> implements NativeResource {
         PRESSURE = layout.offsetof(3);
     }
 
-    protected SDL_Finger(long address, @Nullable ByteBuffer container) {
+    public SDL_Finger(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_Finger create(long address, @Nullable ByteBuffer container) {
-        return new SDL_Finger(address, container);
     }
 
     /**

@@ -54,13 +54,8 @@ public class VkImageFormatProperties2 extends Struct<VkImageFormatProperties2> i
         IMAGEFORMATPROPERTIES = layout.offsetof(2);
     }
 
-    protected VkImageFormatProperties2(long address, @Nullable ByteBuffer container) {
+    public VkImageFormatProperties2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageFormatProperties2 create(long address, @Nullable ByteBuffer container) {
-        return new VkImageFormatProperties2(address, container);
     }
 
     /**

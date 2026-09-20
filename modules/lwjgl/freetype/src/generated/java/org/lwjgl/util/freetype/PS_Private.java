@@ -140,13 +140,8 @@ public class PS_Private extends Struct<PS_Private> {
         MIN_FEATURE = layout.offsetof(24);
     }
 
-    protected PS_Private(long address, @Nullable ByteBuffer container) {
+    public PS_Private(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected PS_Private create(long address, @Nullable ByteBuffer container) {
-        return new PS_Private(address, container);
     }
 
     /**

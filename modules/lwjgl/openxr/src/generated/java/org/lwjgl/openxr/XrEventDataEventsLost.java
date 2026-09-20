@@ -52,13 +52,8 @@ public class XrEventDataEventsLost extends Struct<XrEventDataEventsLost> impleme
         LOSTEVENTCOUNT = layout.offsetof(2);
     }
 
-    protected XrEventDataEventsLost(long address, @Nullable ByteBuffer container) {
+    public XrEventDataEventsLost(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataEventsLost create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataEventsLost(address, container);
     }
 
     /**

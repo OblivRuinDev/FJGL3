@@ -52,13 +52,8 @@ public class VkPhysicalDeviceAmigoProfilingFeaturesSEC extends Struct<VkPhysical
         AMIGOPROFILING = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceAmigoProfilingFeaturesSEC(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceAmigoProfilingFeaturesSEC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceAmigoProfilingFeaturesSEC create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceAmigoProfilingFeaturesSEC(address, container);
     }
 
     /**

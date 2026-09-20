@@ -73,13 +73,8 @@ class NkPool extends Struct<NkPool> {
         CAP = layout.offsetof(7);
     }
 
-    protected NkPool(long address, @Nullable ByteBuffer container) {
+    public NkPool(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkPool create(long address, @Nullable ByteBuffer container) {
-        return new NkPool(address, container);
     }
 
     /**

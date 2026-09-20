@@ -76,13 +76,8 @@ public class SDL_GamepadTouchpadEvent extends Struct<SDL_GamepadTouchpadEvent> i
         PRESSURE = layout.offsetof(8);
     }
 
-    protected SDL_GamepadTouchpadEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_GamepadTouchpadEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GamepadTouchpadEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GamepadTouchpadEvent(address, container);
     }
 
     /**

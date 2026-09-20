@@ -48,13 +48,8 @@ public class XrVirtualKeyboardCreateInfoMETA extends Struct<XrVirtualKeyboardCre
         NEXT = layout.offsetof(1);
     }
 
-    protected XrVirtualKeyboardCreateInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrVirtualKeyboardCreateInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVirtualKeyboardCreateInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrVirtualKeyboardCreateInfoMETA(address, container);
     }
 
     /**

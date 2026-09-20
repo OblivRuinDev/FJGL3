@@ -72,13 +72,8 @@ public class XrGeometryInstanceCreateInfoFB extends Struct<XrGeometryInstanceCre
         SCALE = layout.offsetof(6);
     }
 
-    protected XrGeometryInstanceCreateInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrGeometryInstanceCreateInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGeometryInstanceCreateInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrGeometryInstanceCreateInfoFB(address, container);
     }
 
     /**

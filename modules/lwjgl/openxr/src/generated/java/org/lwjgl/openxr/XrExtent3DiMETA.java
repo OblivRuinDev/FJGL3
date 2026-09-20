@@ -52,13 +52,8 @@ public class XrExtent3DiMETA extends Struct<XrExtent3DiMETA> implements NativeRe
         DEPTH = layout.offsetof(2);
     }
 
-    protected XrExtent3DiMETA(long address, @Nullable ByteBuffer container) {
+    public XrExtent3DiMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrExtent3DiMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrExtent3DiMETA(address, container);
     }
 
     /**

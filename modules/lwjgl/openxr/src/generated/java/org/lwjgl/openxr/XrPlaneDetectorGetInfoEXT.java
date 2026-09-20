@@ -57,13 +57,8 @@ public class XrPlaneDetectorGetInfoEXT extends Struct<XrPlaneDetectorGetInfoEXT>
         TIME = layout.offsetof(3);
     }
 
-    protected XrPlaneDetectorGetInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrPlaneDetectorGetInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPlaneDetectorGetInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrPlaneDetectorGetInfoEXT(address, container);
     }
 
     /**

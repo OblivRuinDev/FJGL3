@@ -31,13 +31,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkResolveImageInfo2KHR extends VkResolveImageInfo2 {
 
-    protected VkResolveImageInfo2KHR(long address, @Nullable ByteBuffer container) {
+    public VkResolveImageInfo2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkResolveImageInfo2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkResolveImageInfo2KHR(address, container);
     }
 
     /**

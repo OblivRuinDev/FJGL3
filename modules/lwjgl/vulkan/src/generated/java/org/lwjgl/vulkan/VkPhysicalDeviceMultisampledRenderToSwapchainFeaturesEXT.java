@@ -52,13 +52,8 @@ public class VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT extends St
         MULTISAMPLEDRENDERTOSWAPCHAIN = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(address, container);
     }
 
     /**

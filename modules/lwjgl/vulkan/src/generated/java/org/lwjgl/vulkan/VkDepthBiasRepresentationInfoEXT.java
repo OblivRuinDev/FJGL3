@@ -56,13 +56,8 @@ public class VkDepthBiasRepresentationInfoEXT extends Struct<VkDepthBiasRepresen
         DEPTHBIASEXACT = layout.offsetof(3);
     }
 
-    protected VkDepthBiasRepresentationInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDepthBiasRepresentationInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDepthBiasRepresentationInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDepthBiasRepresentationInfoEXT(address, container);
     }
 
     /**

@@ -29,13 +29,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkRenderingAreaInfoKHR extends VkRenderingAreaInfo {
 
-    protected VkRenderingAreaInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkRenderingAreaInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderingAreaInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderingAreaInfoKHR(address, container);
     }
 
     /**

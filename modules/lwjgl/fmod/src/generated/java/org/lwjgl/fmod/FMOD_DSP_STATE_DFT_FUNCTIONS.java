@@ -52,13 +52,8 @@ public class FMOD_DSP_STATE_DFT_FUNCTIONS extends Struct<FMOD_DSP_STATE_DFT_FUNC
         INVERSEFFTREAL = layout.offsetof(1);
     }
 
-    protected FMOD_DSP_STATE_DFT_FUNCTIONS(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_STATE_DFT_FUNCTIONS(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_STATE_DFT_FUNCTIONS create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_STATE_DFT_FUNCTIONS(address, container);
     }
 
     /**

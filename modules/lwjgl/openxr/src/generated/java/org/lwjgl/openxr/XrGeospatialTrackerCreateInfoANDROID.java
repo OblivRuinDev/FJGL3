@@ -48,13 +48,8 @@ public class XrGeospatialTrackerCreateInfoANDROID extends Struct<XrGeospatialTra
         NEXT = layout.offsetof(1);
     }
 
-    protected XrGeospatialTrackerCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrGeospatialTrackerCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGeospatialTrackerCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrGeospatialTrackerCreateInfoANDROID(address, container);
     }
 
     /**

@@ -67,13 +67,8 @@ public class WINDOWPLACEMENT extends Struct<WINDOWPLACEMENT> implements NativeRe
         RCNORMALPOSITION = layout.offsetof(5);
     }
 
-    protected WINDOWPLACEMENT(long address, @Nullable ByteBuffer container) {
+    public WINDOWPLACEMENT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected WINDOWPLACEMENT create(long address, @Nullable ByteBuffer container) {
-        return new WINDOWPLACEMENT(address, container);
     }
 
     /**

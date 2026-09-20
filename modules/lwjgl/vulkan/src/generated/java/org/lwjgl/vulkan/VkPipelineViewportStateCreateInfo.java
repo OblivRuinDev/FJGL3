@@ -68,13 +68,8 @@ public class VkPipelineViewportStateCreateInfo extends Struct<VkPipelineViewport
         PSCISSORS = layout.offsetof(6);
     }
 
-    protected VkPipelineViewportStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineViewportStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineViewportStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineViewportStateCreateInfo(address, container);
     }
 
     /**

@@ -71,13 +71,8 @@ public class XrGraphicsBindingVulkanKHR extends Struct<XrGraphicsBindingVulkanKH
         QUEUEINDEX = layout.offsetof(6);
     }
 
-    protected XrGraphicsBindingVulkanKHR(long address, @Nullable ByteBuffer container) {
+    public XrGraphicsBindingVulkanKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGraphicsBindingVulkanKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrGraphicsBindingVulkanKHR(address, container);
     }
 
     /**

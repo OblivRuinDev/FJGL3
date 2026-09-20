@@ -65,13 +65,8 @@ public class XrSpatialCapabilityConfigurationArucoMarkerEXT extends Struct<XrSpa
         ARUCODICT = layout.offsetof(5);
     }
 
-    protected XrSpatialCapabilityConfigurationArucoMarkerEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialCapabilityConfigurationArucoMarkerEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialCapabilityConfigurationArucoMarkerEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialCapabilityConfigurationArucoMarkerEXT(address, container);
     }
 
     /**

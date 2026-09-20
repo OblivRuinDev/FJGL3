@@ -49,13 +49,8 @@ public class NkScroll extends Struct<NkScroll> implements NativeResource {
         Y = layout.offsetof(1);
     }
 
-    protected NkScroll(long address, @Nullable ByteBuffer container) {
+    public NkScroll(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkScroll create(long address, @Nullable ByteBuffer container) {
-        return new NkScroll(address, container);
     }
 
     /**

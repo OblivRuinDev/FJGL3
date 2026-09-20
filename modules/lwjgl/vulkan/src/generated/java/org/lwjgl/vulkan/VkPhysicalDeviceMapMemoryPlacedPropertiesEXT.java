@@ -52,13 +52,8 @@ public class VkPhysicalDeviceMapMemoryPlacedPropertiesEXT extends Struct<VkPhysi
         MINPLACEDMEMORYMAPALIGNMENT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceMapMemoryPlacedPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMapMemoryPlacedPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMapMemoryPlacedPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMapMemoryPlacedPropertiesEXT(address, container);
     }
 
     /**

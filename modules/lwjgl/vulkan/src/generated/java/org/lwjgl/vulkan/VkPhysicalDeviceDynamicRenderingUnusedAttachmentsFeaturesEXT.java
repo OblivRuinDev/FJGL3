@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT extend
         DYNAMICRENDERINGUNUSEDATTACHMENTS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(address, container);
     }
 
     /**

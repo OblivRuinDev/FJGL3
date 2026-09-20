@@ -54,13 +54,8 @@ public class VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR extends 
         QUANTIZATIONMAPTEXELSIZE = layout.offsetof(2);
     }
 
-    protected VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR(address, container);
     }
 
     /**

@@ -53,13 +53,8 @@ public class OpenHow extends Struct<OpenHow> implements NativeResource {
         RESOLVE = layout.offsetof(2);
     }
 
-    protected OpenHow(long address, @Nullable ByteBuffer container) {
+    public OpenHow(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected OpenHow create(long address, @Nullable ByteBuffer container) {
-        return new OpenHow(address, container);
     }
 
     /**

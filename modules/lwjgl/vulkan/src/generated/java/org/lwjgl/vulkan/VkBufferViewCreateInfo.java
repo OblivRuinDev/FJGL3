@@ -68,13 +68,8 @@ public class VkBufferViewCreateInfo extends Struct<VkBufferViewCreateInfo> imple
         RANGE = layout.offsetof(6);
     }
 
-    protected VkBufferViewCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkBufferViewCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferViewCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferViewCreateInfo(address, container);
     }
 
     /**

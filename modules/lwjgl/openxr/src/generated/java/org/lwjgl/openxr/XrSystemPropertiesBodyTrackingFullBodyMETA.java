@@ -52,13 +52,8 @@ public class XrSystemPropertiesBodyTrackingFullBodyMETA extends Struct<XrSystemP
         SUPPORTSFULLBODYTRACKING = layout.offsetof(2);
     }
 
-    protected XrSystemPropertiesBodyTrackingFullBodyMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemPropertiesBodyTrackingFullBodyMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemPropertiesBodyTrackingFullBodyMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemPropertiesBodyTrackingFullBodyMETA(address, container);
     }
 
     /**

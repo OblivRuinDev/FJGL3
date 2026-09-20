@@ -85,13 +85,8 @@ public class VkRenderPassCreateInfo2 extends Struct<VkRenderPassCreateInfo2> imp
         PCORRELATEDVIEWMASKS = layout.offsetof(10);
     }
 
-    protected VkRenderPassCreateInfo2(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassCreateInfo2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassCreateInfo2 create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassCreateInfo2(address, container);
     }
 
     /**

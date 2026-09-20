@@ -52,13 +52,8 @@ public class SDL_AudioSpec extends Struct<SDL_AudioSpec> implements NativeResour
         FREQ = layout.offsetof(2);
     }
 
-    protected SDL_AudioSpec(long address, @Nullable ByteBuffer container) {
+    public SDL_AudioSpec(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_AudioSpec create(long address, @Nullable ByteBuffer container) {
-        return new SDL_AudioSpec(address, container);
     }
 
     /**

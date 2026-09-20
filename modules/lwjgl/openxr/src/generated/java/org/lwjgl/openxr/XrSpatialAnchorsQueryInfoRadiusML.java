@@ -67,13 +67,8 @@ public class XrSpatialAnchorsQueryInfoRadiusML extends Struct<XrSpatialAnchorsQu
         RADIUS = layout.offsetof(5);
     }
 
-    protected XrSpatialAnchorsQueryInfoRadiusML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsQueryInfoRadiusML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsQueryInfoRadiusML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsQueryInfoRadiusML(address, container);
     }
 
     /**

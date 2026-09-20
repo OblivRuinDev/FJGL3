@@ -91,13 +91,8 @@ public class StdVideoH265VideoParameterSet extends Struct<StdVideoH265VideoParam
         PPROFILETIERLEVEL = layout.offsetof(11);
     }
 
-    protected StdVideoH265VideoParameterSet(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265VideoParameterSet(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265VideoParameterSet create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265VideoParameterSet(address, container);
     }
 
     /**

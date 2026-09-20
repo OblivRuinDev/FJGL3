@@ -64,13 +64,8 @@ public class VkPhysicalDeviceImageDrmFormatModifierInfoEXT extends Struct<VkPhys
         PQUEUEFAMILYINDICES = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceImageDrmFormatModifierInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageDrmFormatModifierInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageDrmFormatModifierInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageDrmFormatModifierInfoEXT(address, container);
     }
 
     /**

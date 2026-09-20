@@ -52,13 +52,8 @@ public class XrEyeGazeSampleTimeEXT extends Struct<XrEyeGazeSampleTimeEXT> imple
         TIME = layout.offsetof(2);
     }
 
-    protected XrEyeGazeSampleTimeEXT(long address, @Nullable ByteBuffer container) {
+    public XrEyeGazeSampleTimeEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEyeGazeSampleTimeEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrEyeGazeSampleTimeEXT(address, container);
     }
 
     /**

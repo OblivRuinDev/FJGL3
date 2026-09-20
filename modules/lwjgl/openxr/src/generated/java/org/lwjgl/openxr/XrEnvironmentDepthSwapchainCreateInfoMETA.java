@@ -52,13 +52,8 @@ public class XrEnvironmentDepthSwapchainCreateInfoMETA extends Struct<XrEnvironm
         CREATEFLAGS = layout.offsetof(2);
     }
 
-    protected XrEnvironmentDepthSwapchainCreateInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrEnvironmentDepthSwapchainCreateInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEnvironmentDepthSwapchainCreateInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEnvironmentDepthSwapchainCreateInfoMETA(address, container);
     }
 
     /**

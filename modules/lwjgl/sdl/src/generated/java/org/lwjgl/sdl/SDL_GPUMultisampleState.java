@@ -64,13 +64,8 @@ public class SDL_GPUMultisampleState extends Struct<SDL_GPUMultisampleState> imp
         PADDING3 = layout.offsetof(5);
     }
 
-    protected SDL_GPUMultisampleState(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUMultisampleState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUMultisampleState create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUMultisampleState(address, container);
     }
 
     /**

@@ -118,13 +118,8 @@ public class SDL_GamepadBinding extends Struct<SDL_GamepadBinding> implements Na
                 OUTPUT_AXIS_AXIS_MAX = layout.offsetof(16);
     }
 
-    protected SDL_GamepadBinding(long address, @Nullable ByteBuffer container) {
+    public SDL_GamepadBinding(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GamepadBinding create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GamepadBinding(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkDescriptorSetLayoutBindingFlagsCreateInfo extends Struct<VkDescri
         PBINDINGFLAGS = layout.offsetof(3);
     }
 
-    protected VkDescriptorSetLayoutBindingFlagsCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetLayoutBindingFlagsCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetLayoutBindingFlagsCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetLayoutBindingFlagsCreateInfo(address, container);
     }
 
     /**

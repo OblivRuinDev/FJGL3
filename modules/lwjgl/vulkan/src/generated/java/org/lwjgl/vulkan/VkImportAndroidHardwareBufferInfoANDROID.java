@@ -53,13 +53,8 @@ public class VkImportAndroidHardwareBufferInfoANDROID extends Struct<VkImportAnd
         BUFFER = layout.offsetof(2);
     }
 
-    protected VkImportAndroidHardwareBufferInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public VkImportAndroidHardwareBufferInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImportAndroidHardwareBufferInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new VkImportAndroidHardwareBufferInfoANDROID(address, container);
     }
 
     /**

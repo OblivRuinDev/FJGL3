@@ -52,13 +52,8 @@ public class XrSystemAnchorSharingExportPropertiesANDROID extends Struct<XrSyste
         SUPPORTSANCHORSHARINGEXPORT = layout.offsetof(2);
     }
 
-    protected XrSystemAnchorSharingExportPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemAnchorSharingExportPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemAnchorSharingExportPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemAnchorSharingExportPropertiesANDROID(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceInvocationMaskFeaturesHUAWEI extends Struct<VkPhysi
         INVOCATIONMASK = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceInvocationMaskFeaturesHUAWEI(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceInvocationMaskFeaturesHUAWEI(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceInvocationMaskFeaturesHUAWEI create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceInvocationMaskFeaturesHUAWEI(address, container);
     }
 
     /**

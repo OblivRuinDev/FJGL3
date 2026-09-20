@@ -52,13 +52,8 @@ public class VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI extends Struc
         CLUSTERSHADINGRATE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI(address, container);
     }
 
     /**

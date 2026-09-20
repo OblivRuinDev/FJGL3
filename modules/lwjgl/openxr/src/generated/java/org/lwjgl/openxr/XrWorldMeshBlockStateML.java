@@ -72,13 +72,8 @@ public class XrWorldMeshBlockStateML extends Struct<XrWorldMeshBlockStateML> imp
         STATUS = layout.offsetof(6);
     }
 
-    protected XrWorldMeshBlockStateML(long address, @Nullable ByteBuffer container) {
+    public XrWorldMeshBlockStateML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrWorldMeshBlockStateML create(long address, @Nullable ByteBuffer container) {
-        return new XrWorldMeshBlockStateML(address, container);
     }
 
     /**

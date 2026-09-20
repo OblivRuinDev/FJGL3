@@ -53,13 +53,8 @@ public class VkImportMetalSharedEventInfoEXT extends Struct<VkImportMetalSharedE
         MTLSHAREDEVENT = layout.offsetof(2);
     }
 
-    protected VkImportMetalSharedEventInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkImportMetalSharedEventInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImportMetalSharedEventInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImportMetalSharedEventInfoEXT(address, container);
     }
 
     /**

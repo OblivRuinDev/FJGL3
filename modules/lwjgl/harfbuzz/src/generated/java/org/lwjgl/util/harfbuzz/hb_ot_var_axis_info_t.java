@@ -72,13 +72,8 @@ public class hb_ot_var_axis_info_t extends Struct<hb_ot_var_axis_info_t> impleme
         RESERVED = layout.offsetof(7);
     }
 
-    protected hb_ot_var_axis_info_t(long address, @Nullable ByteBuffer container) {
+    public hb_ot_var_axis_info_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_ot_var_axis_info_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_ot_var_axis_info_t(address, container);
     }
 
     /**

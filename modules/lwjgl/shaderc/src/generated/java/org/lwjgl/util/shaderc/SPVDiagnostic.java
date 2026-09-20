@@ -55,13 +55,8 @@ public class SPVDiagnostic extends Struct<SPVDiagnostic> implements NativeResour
         ISTEXTSOURCE = layout.offsetof(2);
     }
 
-    protected SPVDiagnostic(long address, @Nullable ByteBuffer container) {
+    public SPVDiagnostic(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SPVDiagnostic create(long address, @Nullable ByteBuffer container) {
-        return new SPVDiagnostic(address, container);
     }
 
     /**

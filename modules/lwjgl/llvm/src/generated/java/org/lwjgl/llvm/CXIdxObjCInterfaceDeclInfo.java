@@ -50,13 +50,8 @@ public class CXIdxObjCInterfaceDeclInfo extends Struct<CXIdxObjCInterfaceDeclInf
         PROTOCOLS = layout.offsetof(2);
     }
 
-    protected CXIdxObjCInterfaceDeclInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxObjCInterfaceDeclInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxObjCInterfaceDeclInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxObjCInterfaceDeclInfo(address, container);
     }
 
     /**

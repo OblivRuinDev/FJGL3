@@ -60,13 +60,8 @@ public class VkPhysicalDeviceExternalFormatResolvePropertiesANDROID extends Stru
         EXTERNALFORMATRESOLVECHROMAOFFSETY = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceExternalFormatResolvePropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalFormatResolvePropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalFormatResolvePropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalFormatResolvePropertiesANDROID(address, container);
     }
 
     /**

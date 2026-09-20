@@ -56,13 +56,8 @@ public class VkSwapchainPresentFenceInfoKHR extends Struct<VkSwapchainPresentFen
         PFENCES = layout.offsetof(3);
     }
 
-    protected VkSwapchainPresentFenceInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainPresentFenceInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainPresentFenceInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainPresentFenceInfoKHR(address, container);
     }
 
     /**

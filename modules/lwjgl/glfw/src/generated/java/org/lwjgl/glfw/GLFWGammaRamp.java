@@ -58,13 +58,8 @@ public class GLFWGammaRamp extends Struct<GLFWGammaRamp> implements NativeResour
         SIZE = layout.offsetof(3);
     }
 
-    protected GLFWGammaRamp(long address, @Nullable ByteBuffer container) {
+    public GLFWGammaRamp(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLFWGammaRamp create(long address, @Nullable ByteBuffer container) {
-        return new GLFWGammaRamp(address, container);
     }
 
     /**

@@ -51,13 +51,8 @@ public class CXCursorAndRangeVisitor extends Struct<CXCursorAndRangeVisitor> imp
         VISIT = layout.offsetof(1);
     }
 
-    protected CXCursorAndRangeVisitor(long address, @Nullable ByteBuffer container) {
+    public CXCursorAndRangeVisitor(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXCursorAndRangeVisitor create(long address, @Nullable ByteBuffer container) {
-        return new CXCursorAndRangeVisitor(address, container);
     }
 
     /**

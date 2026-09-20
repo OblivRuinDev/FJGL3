@@ -51,13 +51,8 @@ public class XrBoxf extends Struct<XrBoxf> implements NativeResource {
         EXTENTS = layout.offsetof(1);
     }
 
-    protected XrBoxf(long address, @Nullable ByteBuffer container) {
+    public XrBoxf(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBoxf create(long address, @Nullable ByteBuffer container) {
-        return new XrBoxf(address, container);
     }
 
     /**

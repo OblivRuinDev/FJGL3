@@ -52,13 +52,8 @@ public class XrKeyboardSpaceCreateInfoFB extends Struct<XrKeyboardSpaceCreateInf
         TRACKEDKEYBOARDID = layout.offsetof(2);
     }
 
-    protected XrKeyboardSpaceCreateInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrKeyboardSpaceCreateInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrKeyboardSpaceCreateInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrKeyboardSpaceCreateInfoFB(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV extends Str
         COOPERATIVEMATRIXDECODEVECTOR = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV(address, container);
     }
 
     /**

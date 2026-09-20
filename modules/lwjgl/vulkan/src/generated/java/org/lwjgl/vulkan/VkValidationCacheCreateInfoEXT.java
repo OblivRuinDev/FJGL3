@@ -61,13 +61,8 @@ public class VkValidationCacheCreateInfoEXT extends Struct<VkValidationCacheCrea
         PINITIALDATA = layout.offsetof(4);
     }
 
-    protected VkValidationCacheCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkValidationCacheCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkValidationCacheCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkValidationCacheCreateInfoEXT(address, container);
     }
 
     /**

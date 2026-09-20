@@ -65,13 +65,8 @@ public class MDBEnvInfo extends Struct<MDBEnvInfo> implements NativeResource {
         ME_NUMREADERS = layout.offsetof(5);
     }
 
-    protected MDBEnvInfo(long address, @Nullable ByteBuffer container) {
+    public MDBEnvInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MDBEnvInfo create(long address, @Nullable ByteBuffer container) {
-        return new MDBEnvInfo(address, container);
     }
 
     /**

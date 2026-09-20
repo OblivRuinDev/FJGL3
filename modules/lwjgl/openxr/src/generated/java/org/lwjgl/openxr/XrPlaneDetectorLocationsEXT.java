@@ -60,13 +60,8 @@ public class XrPlaneDetectorLocationsEXT extends Struct<XrPlaneDetectorLocations
         PLANELOCATIONS = layout.offsetof(4);
     }
 
-    protected XrPlaneDetectorLocationsEXT(long address, @Nullable ByteBuffer container) {
+    public XrPlaneDetectorLocationsEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPlaneDetectorLocationsEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrPlaneDetectorLocationsEXT(address, container);
     }
 
     /**

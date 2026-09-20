@@ -102,13 +102,8 @@ public class VkVideoEncodeH264CapabilitiesKHR extends Struct<VkVideoEncodeH264Ca
         STDSYNTAXFLAGS = layout.offsetof(14);
     }
 
-    protected VkVideoEncodeH264CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH264CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH264CapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH264CapabilitiesKHR(address, container);
     }
 
     /**

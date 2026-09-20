@@ -73,13 +73,8 @@ public class VkIndirectCommandsLayoutCreateInfoNV extends Struct<VkIndirectComma
         PSTREAMSTRIDES = layout.offsetof(7);
     }
 
-    protected VkIndirectCommandsLayoutCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkIndirectCommandsLayoutCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectCommandsLayoutCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectCommandsLayoutCreateInfoNV(address, container);
     }
 
     /**

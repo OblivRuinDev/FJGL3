@@ -52,13 +52,8 @@ public class VkPhysicalDeviceRawAccessChainsFeaturesNV extends Struct<VkPhysical
         SHADERRAWACCESSCHAINS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceRawAccessChainsFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRawAccessChainsFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRawAccessChainsFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRawAccessChainsFeaturesNV(address, container);
     }
 
     /**

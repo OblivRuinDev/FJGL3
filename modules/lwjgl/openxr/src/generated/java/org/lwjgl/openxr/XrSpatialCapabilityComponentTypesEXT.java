@@ -60,13 +60,8 @@ public class XrSpatialCapabilityComponentTypesEXT extends Struct<XrSpatialCapabi
         COMPONENTTYPES = layout.offsetof(4);
     }
 
-    protected XrSpatialCapabilityComponentTypesEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialCapabilityComponentTypesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialCapabilityComponentTypesEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialCapabilityComponentTypesEXT(address, container);
     }
 
     /**

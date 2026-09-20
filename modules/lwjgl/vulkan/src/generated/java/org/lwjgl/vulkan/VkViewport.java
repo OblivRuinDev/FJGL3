@@ -64,13 +64,8 @@ public class VkViewport extends Struct<VkViewport> implements NativeResource {
         MAXDEPTH = layout.offsetof(5);
     }
 
-    protected VkViewport(long address, @Nullable ByteBuffer container) {
+    public VkViewport(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkViewport create(long address, @Nullable ByteBuffer container) {
-        return new VkViewport(address, container);
     }
 
     /**

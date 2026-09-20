@@ -49,13 +49,8 @@ public class IOVec extends Struct<IOVec> implements NativeResource {
         IOV_LEN = layout.offsetof(1);
     }
 
-    protected IOVec(long address, @Nullable ByteBuffer container) {
+    public IOVec(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOVec create(long address, @Nullable ByteBuffer container) {
-        return new IOVec(address, container);
     }
 
     /**

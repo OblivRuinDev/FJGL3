@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderQuadControlFeaturesKHR extends Struct<VkPhysi
         SHADERQUADCONTROL = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderQuadControlFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderQuadControlFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderQuadControlFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderQuadControlFeaturesKHR(address, container);
     }
 
     /**

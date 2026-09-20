@@ -82,13 +82,8 @@ public class VkDisplaySurfaceCreateInfoKHR extends Struct<VkDisplaySurfaceCreate
         IMAGEEXTENT = layout.offsetof(9);
     }
 
-    protected VkDisplaySurfaceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDisplaySurfaceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDisplaySurfaceCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDisplaySurfaceCreateInfoKHR(address, container);
     }
 
     /**

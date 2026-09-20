@@ -84,13 +84,8 @@ public class SDL_TouchFingerEvent extends Struct<SDL_TouchFingerEvent> implement
         WINDOWID = layout.offsetof(10);
     }
 
-    protected SDL_TouchFingerEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_TouchFingerEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_TouchFingerEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_TouchFingerEvent(address, container);
     }
 
     /**

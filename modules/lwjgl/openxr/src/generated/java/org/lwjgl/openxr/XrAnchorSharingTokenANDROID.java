@@ -52,13 +52,8 @@ public class XrAnchorSharingTokenANDROID extends Struct<XrAnchorSharingTokenANDR
         TOKEN = layout.offsetof(2);
     }
 
-    protected XrAnchorSharingTokenANDROID(long address, @Nullable ByteBuffer container) {
+    public XrAnchorSharingTokenANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrAnchorSharingTokenANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrAnchorSharingTokenANDROID(address, container);
     }
 
     /**

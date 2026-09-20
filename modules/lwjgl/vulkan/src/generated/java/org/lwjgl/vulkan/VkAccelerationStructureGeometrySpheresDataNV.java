@@ -86,13 +86,8 @@ public class VkAccelerationStructureGeometrySpheresDataNV extends Struct<VkAccel
         INDEXSTRIDE = layout.offsetof(10);
     }
 
-    protected VkAccelerationStructureGeometrySpheresDataNV(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureGeometrySpheresDataNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureGeometrySpheresDataNV create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureGeometrySpheresDataNV(address, container);
     }
 
     /**

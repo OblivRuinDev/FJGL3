@@ -52,13 +52,8 @@ public class VkPhysicalDeviceImageViewImageFormatInfoEXT extends Struct<VkPhysic
         IMAGEVIEWTYPE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceImageViewImageFormatInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageViewImageFormatInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageViewImageFormatInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageViewImageFormatInfoEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM extends Stru
         MAXSHADERWAITQUEUES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM(address, container);
     }
 
     /**

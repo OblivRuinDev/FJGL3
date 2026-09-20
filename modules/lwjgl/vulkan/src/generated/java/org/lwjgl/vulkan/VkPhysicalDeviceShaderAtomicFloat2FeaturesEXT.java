@@ -96,13 +96,8 @@ public class VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT extends Struct<VkPhys
         SPARSEIMAGEFLOAT32ATOMICMINMAX = layout.offsetof(13);
     }
 
-    protected VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(address, container);
     }
 
     /**

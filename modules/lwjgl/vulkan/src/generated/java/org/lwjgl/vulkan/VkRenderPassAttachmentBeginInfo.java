@@ -57,13 +57,8 @@ public class VkRenderPassAttachmentBeginInfo extends Struct<VkRenderPassAttachme
         PATTACHMENTS = layout.offsetof(3);
     }
 
-    protected VkRenderPassAttachmentBeginInfo(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassAttachmentBeginInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassAttachmentBeginInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassAttachmentBeginInfo(address, container);
     }
 
     /**

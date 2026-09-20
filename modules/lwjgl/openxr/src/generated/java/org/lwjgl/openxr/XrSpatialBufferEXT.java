@@ -48,13 +48,8 @@ public class XrSpatialBufferEXT extends Struct<XrSpatialBufferEXT> implements Na
         BUFFERTYPE = layout.offsetof(1);
     }
 
-    protected XrSpatialBufferEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialBufferEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialBufferEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialBufferEXT(address, container);
     }
 
     /**

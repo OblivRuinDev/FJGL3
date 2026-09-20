@@ -49,13 +49,8 @@ public class SDL_DialogFileFilter extends Struct<SDL_DialogFileFilter> implement
         PATTERN = layout.offsetof(1);
     }
 
-    protected SDL_DialogFileFilter(long address, @Nullable ByteBuffer container) {
+    public SDL_DialogFileFilter(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_DialogFileFilter create(long address, @Nullable ByteBuffer container) {
-        return new SDL_DialogFileFilter(address, container);
     }
 
     /**

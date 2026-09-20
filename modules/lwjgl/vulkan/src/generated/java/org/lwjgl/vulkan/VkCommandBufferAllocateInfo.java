@@ -60,13 +60,8 @@ public class VkCommandBufferAllocateInfo extends Struct<VkCommandBufferAllocateI
         COMMANDBUFFERCOUNT = layout.offsetof(4);
     }
 
-    protected VkCommandBufferAllocateInfo(long address, @Nullable ByteBuffer container) {
+    public VkCommandBufferAllocateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCommandBufferAllocateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkCommandBufferAllocateInfo(address, container);
     }
 
     /**

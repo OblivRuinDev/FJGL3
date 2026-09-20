@@ -56,13 +56,8 @@ public class VkPhysicalDeviceShaderCoreProperties2AMD extends Struct<VkPhysicalD
         ACTIVECOMPUTEUNITCOUNT = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceShaderCoreProperties2AMD(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderCoreProperties2AMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderCoreProperties2AMD create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderCoreProperties2AMD(address, container);
     }
 
     /**

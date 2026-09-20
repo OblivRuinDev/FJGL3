@@ -56,13 +56,8 @@ public class NkCursor extends Struct<NkCursor> implements NativeResource {
         OFFSET = layout.offsetof(2);
     }
 
-    protected NkCursor(long address, @Nullable ByteBuffer container) {
+    public NkCursor(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkCursor create(long address, @Nullable ByteBuffer container) {
-        return new NkCursor(address, container);
     }
 
     /**

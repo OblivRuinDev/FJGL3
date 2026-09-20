@@ -56,13 +56,8 @@ public class VkPhysicalDeviceOpacityMicromapPropertiesEXT extends Struct<VkPhysi
         MAXOPACITY4STATESUBDIVISIONLEVEL = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceOpacityMicromapPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceOpacityMicromapPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceOpacityMicromapPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceOpacityMicromapPropertiesEXT(address, container);
     }
 
     /**

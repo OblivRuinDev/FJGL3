@@ -52,13 +52,8 @@ public class VkImageViewCaptureDescriptorDataInfoEXT extends Struct<VkImageViewC
         IMAGEVIEW = layout.offsetof(2);
     }
 
-    protected VkImageViewCaptureDescriptorDataInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkImageViewCaptureDescriptorDataInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageViewCaptureDescriptorDataInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImageViewCaptureDescriptorDataInfoEXT(address, container);
     }
 
     /**

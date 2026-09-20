@@ -60,13 +60,8 @@ public class FT_PaintSkew extends Struct<FT_PaintSkew> {
         CENTER_Y = layout.offsetof(4);
     }
 
-    protected FT_PaintSkew(long address, @Nullable ByteBuffer container) {
+    public FT_PaintSkew(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintSkew create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintSkew(address, container);
     }
 
     /**

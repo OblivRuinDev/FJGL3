@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV extends Struct<
         SHADERFLOAT16VECTORATOMICS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(address, container);
     }
 
     /**

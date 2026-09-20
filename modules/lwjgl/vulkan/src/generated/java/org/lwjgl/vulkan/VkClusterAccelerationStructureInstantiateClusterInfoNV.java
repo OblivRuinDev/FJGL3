@@ -59,13 +59,8 @@ public class VkClusterAccelerationStructureInstantiateClusterInfoNV extends Stru
         VERTEXBUFFER = layout.offsetof(3);
     }
 
-    protected VkClusterAccelerationStructureInstantiateClusterInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureInstantiateClusterInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureInstantiateClusterInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureInstantiateClusterInfoNV(address, container);
     }
 
     /**

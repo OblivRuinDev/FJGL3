@@ -52,13 +52,8 @@ public class XrEventDataInteractionProfileChanged extends Struct<XrEventDataInte
         SESSION = layout.offsetof(2);
     }
 
-    protected XrEventDataInteractionProfileChanged(long address, @Nullable ByteBuffer container) {
+    public XrEventDataInteractionProfileChanged(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataInteractionProfileChanged create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataInteractionProfileChanged(address, container);
     }
 
     /**

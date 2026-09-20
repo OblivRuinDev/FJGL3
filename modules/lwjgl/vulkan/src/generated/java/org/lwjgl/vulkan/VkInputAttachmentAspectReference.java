@@ -52,13 +52,8 @@ public class VkInputAttachmentAspectReference extends Struct<VkInputAttachmentAs
         ASPECTMASK = layout.offsetof(2);
     }
 
-    protected VkInputAttachmentAspectReference(long address, @Nullable ByteBuffer container) {
+    public VkInputAttachmentAspectReference(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkInputAttachmentAspectReference create(long address, @Nullable ByteBuffer container) {
-        return new VkInputAttachmentAspectReference(address, container);
     }
 
     /**

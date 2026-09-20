@@ -57,13 +57,8 @@ public class VkRenderPassStripeBeginInfoARM extends Struct<VkRenderPassStripeBeg
         PSTRIPEINFOS = layout.offsetof(3);
     }
 
-    protected VkRenderPassStripeBeginInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkRenderPassStripeBeginInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderPassStripeBeginInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderPassStripeBeginInfoARM(address, container);
     }
 
     /**

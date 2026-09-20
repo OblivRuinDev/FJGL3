@@ -52,13 +52,8 @@ public class VkPhysicalDevicePresentWait2FeaturesKHR extends Struct<VkPhysicalDe
         PRESENTWAIT2 = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePresentWait2FeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePresentWait2FeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePresentWait2FeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePresentWait2FeaturesKHR(address, container);
     }
 
     /**

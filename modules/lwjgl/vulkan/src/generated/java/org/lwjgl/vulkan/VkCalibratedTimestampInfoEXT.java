@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkCalibratedTimestampInfoEXT extends VkCalibratedTimestampInfoKHR {
 
-    protected VkCalibratedTimestampInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkCalibratedTimestampInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCalibratedTimestampInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkCalibratedTimestampInfoEXT(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceMaintenance4Properties extends Struct<VkPhysicalDev
         MAXBUFFERSIZE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceMaintenance4Properties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMaintenance4Properties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMaintenance4Properties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMaintenance4Properties(address, container);
     }
 
     /**

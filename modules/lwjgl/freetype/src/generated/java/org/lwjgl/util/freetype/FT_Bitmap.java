@@ -72,13 +72,8 @@ public class FT_Bitmap extends Struct<FT_Bitmap> implements NativeResource {
         PALETTE = layout.offsetof(7);
     }
 
-    protected FT_Bitmap(long address, @Nullable ByteBuffer container) {
+    public FT_Bitmap(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Bitmap create(long address, @Nullable ByteBuffer container) {
-        return new FT_Bitmap(address, container);
     }
 
     /**

@@ -90,13 +90,8 @@ public class VkPipelineDepthStencilStateCreateInfo extends Struct<VkPipelineDept
         MAXDEPTHBOUNDS = layout.offsetof(11);
     }
 
-    protected VkPipelineDepthStencilStateCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineDepthStencilStateCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineDepthStencilStateCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineDepthStencilStateCreateInfo(address, container);
     }
 
     /**

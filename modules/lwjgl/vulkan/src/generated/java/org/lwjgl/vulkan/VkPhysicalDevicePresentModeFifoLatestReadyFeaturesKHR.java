@@ -52,13 +52,8 @@ public class VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR extends Struc
         PRESENTMODEFIFOLATESTREADY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR(address, container);
     }
 
     /**

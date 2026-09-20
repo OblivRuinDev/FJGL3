@@ -114,13 +114,8 @@ public class VkSwapchainCreateInfoKHR extends Struct<VkSwapchainCreateInfoKHR> i
         OLDSWAPCHAIN = layout.offsetof(17);
     }
 
-    protected VkSwapchainCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainCreateInfoKHR(address, container);
     }
 
     /**

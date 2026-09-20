@@ -54,13 +54,8 @@ public class VkAccelerationStructureGeometryMotionTrianglesDataNV extends Struct
         VERTEXDATA = layout.offsetof(2);
     }
 
-    protected VkAccelerationStructureGeometryMotionTrianglesDataNV(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureGeometryMotionTrianglesDataNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureGeometryMotionTrianglesDataNV create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureGeometryMotionTrianglesDataNV(address, container);
     }
 
     /**

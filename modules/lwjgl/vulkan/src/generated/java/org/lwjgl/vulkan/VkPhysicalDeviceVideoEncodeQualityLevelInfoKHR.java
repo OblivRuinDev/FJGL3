@@ -57,13 +57,8 @@ public class VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR extends Struct<VkPhy
         QUALITYLEVEL = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR(address, container);
     }
 
     /**

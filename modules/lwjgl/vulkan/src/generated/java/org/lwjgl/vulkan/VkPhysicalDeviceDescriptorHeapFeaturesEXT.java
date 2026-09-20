@@ -56,13 +56,8 @@ public class VkPhysicalDeviceDescriptorHeapFeaturesEXT extends Struct<VkPhysical
         DESCRIPTORHEAPCAPTUREREPLAY = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceDescriptorHeapFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDescriptorHeapFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDescriptorHeapFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDescriptorHeapFeaturesEXT(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class XrScenePlaneAlignmentFilterInfoMSFT extends Struct<XrScenePlaneAlig
         ALIGNMENTS = layout.offsetof(3);
     }
 
-    protected XrScenePlaneAlignmentFilterInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrScenePlaneAlignmentFilterInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrScenePlaneAlignmentFilterInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrScenePlaneAlignmentFilterInfoMSFT(address, container);
     }
 
     /**

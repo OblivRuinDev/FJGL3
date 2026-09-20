@@ -60,13 +60,8 @@ public class SDL_PenProximityEvent extends Struct<SDL_PenProximityEvent> impleme
         WHICH = layout.offsetof(4);
     }
 
-    protected SDL_PenProximityEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_PenProximityEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_PenProximityEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_PenProximityEvent(address, container);
     }
 
     /**

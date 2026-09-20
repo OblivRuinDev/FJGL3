@@ -72,13 +72,8 @@ public class VkPipelineColorBlendAttachmentState extends Struct<VkPipelineColorB
         COLORWRITEMASK = layout.offsetof(7);
     }
 
-    protected VkPipelineColorBlendAttachmentState(long address, @Nullable ByteBuffer container) {
+    public VkPipelineColorBlendAttachmentState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineColorBlendAttachmentState create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineColorBlendAttachmentState(address, container);
     }
 
     /**

@@ -98,13 +98,8 @@ public class VkClusterAccelerationStructureBuildTriangleClusterInfoNV extends St
         OPACITYMICROMAPINDEXBUFFER = layout.offsetof(12);
     }
 
-    protected VkClusterAccelerationStructureBuildTriangleClusterInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureBuildTriangleClusterInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureBuildTriangleClusterInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureBuildTriangleClusterInfoNV(address, container);
     }
 
     /**

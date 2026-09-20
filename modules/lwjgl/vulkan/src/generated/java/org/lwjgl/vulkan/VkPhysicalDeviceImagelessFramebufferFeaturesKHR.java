@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceImagelessFramebufferFeaturesKHR extends VkPhysicalDeviceImagelessFramebufferFeatures {
 
-    protected VkPhysicalDeviceImagelessFramebufferFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImagelessFramebufferFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImagelessFramebufferFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImagelessFramebufferFeaturesKHR(address, container);
     }
 
     /**

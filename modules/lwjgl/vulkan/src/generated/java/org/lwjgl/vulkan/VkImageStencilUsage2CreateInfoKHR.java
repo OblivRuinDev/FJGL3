@@ -52,13 +52,8 @@ public class VkImageStencilUsage2CreateInfoKHR extends Struct<VkImageStencilUsag
         STENCILUSAGE = layout.offsetof(2);
     }
 
-    protected VkImageStencilUsage2CreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkImageStencilUsage2CreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageStencilUsage2CreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkImageStencilUsage2CreateInfoKHR(address, container);
     }
 
     /**

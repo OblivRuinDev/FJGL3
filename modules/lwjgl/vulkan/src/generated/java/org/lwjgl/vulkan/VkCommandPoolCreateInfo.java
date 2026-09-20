@@ -56,13 +56,8 @@ public class VkCommandPoolCreateInfo extends Struct<VkCommandPoolCreateInfo> imp
         QUEUEFAMILYINDEX = layout.offsetof(3);
     }
 
-    protected VkCommandPoolCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkCommandPoolCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCommandPoolCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkCommandPoolCreateInfo(address, container);
     }
 
     /**

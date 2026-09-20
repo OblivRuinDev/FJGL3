@@ -52,13 +52,8 @@ public class VkImageUsageFlags2CreateInfoKHR extends Struct<VkImageUsageFlags2Cr
         USAGE = layout.offsetof(2);
     }
 
-    protected VkImageUsageFlags2CreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkImageUsageFlags2CreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageUsageFlags2CreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkImageUsageFlags2CreateInfoKHR(address, container);
     }
 
     /**

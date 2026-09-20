@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDeviceGroupCommandBufferBeginInfoKHR extends VkDeviceGroupCommandBufferBeginInfo {
 
-    protected VkDeviceGroupCommandBufferBeginInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceGroupCommandBufferBeginInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceGroupCommandBufferBeginInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceGroupCommandBufferBeginInfoKHR(address, container);
     }
 
     /**

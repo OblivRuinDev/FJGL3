@@ -52,13 +52,8 @@ public class VkPhysicalDeviceMaintenance6Features extends Struct<VkPhysicalDevic
         MAINTENANCE6 = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceMaintenance6Features(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceMaintenance6Features(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceMaintenance6Features create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceMaintenance6Features(address, container);
     }
 
     /**

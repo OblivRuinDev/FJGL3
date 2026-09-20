@@ -52,13 +52,8 @@ public class VkVideoEndCodingInfoKHR extends Struct<VkVideoEndCodingInfoKHR> imp
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkVideoEndCodingInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEndCodingInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEndCodingInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEndCodingInfoKHR(address, container);
     }
 
     /**

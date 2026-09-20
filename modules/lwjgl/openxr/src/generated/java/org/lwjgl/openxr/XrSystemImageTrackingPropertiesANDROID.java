@@ -64,13 +64,8 @@ public class XrSystemImageTrackingPropertiesANDROID extends Struct<XrSystemImage
         MAXLOADEDIMAGECOUNT = layout.offsetof(5);
     }
 
-    protected XrSystemImageTrackingPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemImageTrackingPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemImageTrackingPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemImageTrackingPropertiesANDROID(address, container);
     }
 
     /**

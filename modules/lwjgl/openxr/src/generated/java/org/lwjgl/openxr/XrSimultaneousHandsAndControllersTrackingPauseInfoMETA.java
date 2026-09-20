@@ -48,13 +48,8 @@ public class XrSimultaneousHandsAndControllersTrackingPauseInfoMETA extends Stru
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSimultaneousHandsAndControllersTrackingPauseInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrSimultaneousHandsAndControllersTrackingPauseInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSimultaneousHandsAndControllersTrackingPauseInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSimultaneousHandsAndControllersTrackingPauseInfoMETA(address, container);
     }
 
     /**

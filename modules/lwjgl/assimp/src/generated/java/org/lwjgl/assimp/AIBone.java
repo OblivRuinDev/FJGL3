@@ -69,13 +69,8 @@ public class AIBone extends Struct<AIBone> implements NativeResource {
         MOFFSETMATRIX = layout.offsetof(5);
     }
 
-    protected AIBone(long address, @Nullable ByteBuffer container) {
+    public AIBone(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIBone create(long address, @Nullable ByteBuffer container) {
-        return new AIBone(address, container);
     }
 
     /**

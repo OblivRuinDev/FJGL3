@@ -52,13 +52,8 @@ public class VkDataGraphPipelineInfoARM extends Struct<VkDataGraphPipelineInfoAR
         DATAGRAPHPIPELINE = layout.offsetof(2);
     }
 
-    protected VkDataGraphPipelineInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineInfoARM(address, container);
     }
 
     /**

@@ -48,13 +48,8 @@ public class POINT extends Struct<POINT> implements NativeResource {
         Y = layout.offsetof(1);
     }
 
-    protected POINT(long address, @Nullable ByteBuffer container) {
+    public POINT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected POINT create(long address, @Nullable ByteBuffer container) {
-        return new POINT(address, container);
     }
 
     /**

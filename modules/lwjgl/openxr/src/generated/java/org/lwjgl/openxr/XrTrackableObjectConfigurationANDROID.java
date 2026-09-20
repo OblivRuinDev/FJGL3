@@ -57,13 +57,8 @@ public class XrTrackableObjectConfigurationANDROID extends Struct<XrTrackableObj
         ACTIVELABELS = layout.offsetof(3);
     }
 
-    protected XrTrackableObjectConfigurationANDROID(long address, @Nullable ByteBuffer container) {
+    public XrTrackableObjectConfigurationANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrTrackableObjectConfigurationANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrTrackableObjectConfigurationANDROID(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkMemoryAllocateFlagsInfo extends Struct<VkMemoryAllocateFlagsInfo>
         DEVICEMASK = layout.offsetof(3);
     }
 
-    protected VkMemoryAllocateFlagsInfo(long address, @Nullable ByteBuffer container) {
+    public VkMemoryAllocateFlagsInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryAllocateFlagsInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryAllocateFlagsInfo(address, container);
     }
 
     /**

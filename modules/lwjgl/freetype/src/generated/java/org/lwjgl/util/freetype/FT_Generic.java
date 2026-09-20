@@ -51,13 +51,8 @@ public class FT_Generic extends Struct<FT_Generic> implements NativeResource {
         FINALIZER = layout.offsetof(1);
     }
 
-    protected FT_Generic(long address, @Nullable ByteBuffer container) {
+    public FT_Generic(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Generic create(long address, @Nullable ByteBuffer container) {
-        return new FT_Generic(address, container);
     }
 
     /**

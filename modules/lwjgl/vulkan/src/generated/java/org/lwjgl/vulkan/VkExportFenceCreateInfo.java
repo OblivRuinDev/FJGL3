@@ -52,13 +52,8 @@ public class VkExportFenceCreateInfo extends Struct<VkExportFenceCreateInfo> imp
         HANDLETYPES = layout.offsetof(2);
     }
 
-    protected VkExportFenceCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkExportFenceCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportFenceCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkExportFenceCreateInfo(address, container);
     }
 
     /**

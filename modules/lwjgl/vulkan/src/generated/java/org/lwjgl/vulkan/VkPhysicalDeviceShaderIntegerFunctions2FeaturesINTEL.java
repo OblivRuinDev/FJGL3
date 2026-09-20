@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL extends Struct
         SHADERINTEGERFUNCTIONS2 = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL(address, container);
     }
 
     /**

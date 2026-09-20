@@ -84,13 +84,8 @@ public class XrCompositionLayerCylinderKHR extends Struct<XrCompositionLayerCyli
         ASPECTRATIO = layout.offsetof(9);
     }
 
-    protected XrCompositionLayerCylinderKHR(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerCylinderKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerCylinderKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerCylinderKHR(address, container);
     }
 
     /**

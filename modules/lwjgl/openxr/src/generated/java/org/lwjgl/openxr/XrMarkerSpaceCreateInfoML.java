@@ -63,13 +63,8 @@ public class XrMarkerSpaceCreateInfoML extends Struct<XrMarkerSpaceCreateInfoML>
         POSEINMARKERSPACE = layout.offsetof(4);
     }
 
-    protected XrMarkerSpaceCreateInfoML(long address, @Nullable ByteBuffer container) {
+    public XrMarkerSpaceCreateInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrMarkerSpaceCreateInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrMarkerSpaceCreateInfoML(address, container);
     }
 
     /**

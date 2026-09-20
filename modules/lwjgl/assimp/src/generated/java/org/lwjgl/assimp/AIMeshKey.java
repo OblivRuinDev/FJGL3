@@ -49,13 +49,8 @@ public class AIMeshKey extends Struct<AIMeshKey> implements NativeResource {
         MVALUE = layout.offsetof(1);
     }
 
-    protected AIMeshKey(long address, @Nullable ByteBuffer container) {
+    public AIMeshKey(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIMeshKey create(long address, @Nullable ByteBuffer container) {
-        return new AIMeshKey(address, container);
     }
 
     /**

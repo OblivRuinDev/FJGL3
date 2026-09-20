@@ -81,13 +81,8 @@ public class NkMouse extends Struct<NkMouse> {
         UNGRAB = layout.offsetof(8);
     }
 
-    protected NkMouse(long address, @Nullable ByteBuffer container) {
+    public NkMouse(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkMouse create(long address, @Nullable ByteBuffer container) {
-        return new NkMouse(address, container);
     }
 
     /**

@@ -54,13 +54,8 @@ public class hwloc_group_attr_s extends Struct<hwloc_group_attr_s> {
         DONT_MERGE = layout.offsetof(3);
     }
 
-    protected hwloc_group_attr_s(long address, @Nullable ByteBuffer container) {
+    public hwloc_group_attr_s(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_group_attr_s create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_group_attr_s(address, container);
     }
 
     /**

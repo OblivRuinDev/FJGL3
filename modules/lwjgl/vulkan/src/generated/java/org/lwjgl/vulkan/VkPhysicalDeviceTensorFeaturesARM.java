@@ -72,13 +72,8 @@ public class VkPhysicalDeviceTensorFeaturesARM extends Struct<VkPhysicalDeviceTe
         TENSORS = layout.offsetof(7);
     }
 
-    protected VkPhysicalDeviceTensorFeaturesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTensorFeaturesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTensorFeaturesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTensorFeaturesARM(address, container);
     }
 
     /**

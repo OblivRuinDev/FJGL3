@@ -72,13 +72,8 @@ public class XrSpaceTriangleMeshMETA extends Struct<XrSpaceTriangleMeshMETA> imp
         INDICES = layout.offsetof(7);
     }
 
-    protected XrSpaceTriangleMeshMETA(long address, @Nullable ByteBuffer container) {
+    public XrSpaceTriangleMeshMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceTriangleMeshMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceTriangleMeshMETA(address, container);
     }
 
     /**

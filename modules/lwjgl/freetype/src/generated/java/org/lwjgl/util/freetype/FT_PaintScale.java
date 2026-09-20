@@ -60,13 +60,8 @@ public class FT_PaintScale extends Struct<FT_PaintScale> {
         CENTER_Y = layout.offsetof(4);
     }
 
-    protected FT_PaintScale(long address, @Nullable ByteBuffer container) {
+    public FT_PaintScale(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintScale create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintScale(address, container);
     }
 
     /**

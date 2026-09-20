@@ -91,13 +91,8 @@ public class StdVideoEncodeH265PictureInfo extends Struct<StdVideoEncodeH265Pict
         PLONGTERMREFPICS = layout.offsetof(11);
     }
 
-    protected StdVideoEncodeH265PictureInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH265PictureInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH265PictureInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH265PictureInfo(address, container);
     }
 
     /**

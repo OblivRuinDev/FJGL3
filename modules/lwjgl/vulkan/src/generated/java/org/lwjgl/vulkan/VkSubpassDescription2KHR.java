@@ -36,13 +36,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSubpassDescription2KHR extends VkSubpassDescription2 {
 
-    protected VkSubpassDescription2KHR(long address, @Nullable ByteBuffer container) {
+    public VkSubpassDescription2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassDescription2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassDescription2KHR(address, container);
     }
 
     /**

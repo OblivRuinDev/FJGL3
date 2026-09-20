@@ -60,13 +60,8 @@ public class hwloc_topology_diff_obj_attr_s extends Struct<hwloc_topology_diff_o
         DIFF = layout.offsetof(4);
     }
 
-    protected hwloc_topology_diff_obj_attr_s(long address, @Nullable ByteBuffer container) {
+    public hwloc_topology_diff_obj_attr_s(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_topology_diff_obj_attr_s create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_topology_diff_obj_attr_s(address, container);
     }
 
     /**

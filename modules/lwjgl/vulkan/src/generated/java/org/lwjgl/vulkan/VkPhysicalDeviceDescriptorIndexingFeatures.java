@@ -128,13 +128,8 @@ public class VkPhysicalDeviceDescriptorIndexingFeatures extends Struct<VkPhysica
         RUNTIMEDESCRIPTORARRAY = layout.offsetof(21);
     }
 
-    protected VkPhysicalDeviceDescriptorIndexingFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDescriptorIndexingFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDescriptorIndexingFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDescriptorIndexingFeatures(address, container);
     }
 
     /**

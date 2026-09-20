@@ -51,13 +51,8 @@ public class LLVMOrcCSymbolAliasMapPair extends Struct<LLVMOrcCSymbolAliasMapPai
         ENTRY = layout.offsetof(1);
     }
 
-    protected LLVMOrcCSymbolAliasMapPair(long address, @Nullable ByteBuffer container) {
+    public LLVMOrcCSymbolAliasMapPair(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMOrcCSymbolAliasMapPair create(long address, @Nullable ByteBuffer container) {
-        return new LLVMOrcCSymbolAliasMapPair(address, container);
     }
 
     /**

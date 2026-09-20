@@ -24,13 +24,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSubpassEndInfoKHR extends VkSubpassEndInfo {
 
-    protected VkSubpassEndInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkSubpassEndInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassEndInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassEndInfoKHR(address, container);
     }
 
     /**

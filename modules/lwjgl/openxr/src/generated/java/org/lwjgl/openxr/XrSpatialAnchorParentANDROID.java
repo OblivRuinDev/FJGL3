@@ -52,13 +52,8 @@ public class XrSpatialAnchorParentANDROID extends Struct<XrSpatialAnchorParentAN
         PARENTID = layout.offsetof(2);
     }
 
-    protected XrSpatialAnchorParentANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorParentANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorParentANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorParentANDROID(address, container);
     }
 
     /**

@@ -62,13 +62,8 @@ public class SVG_RendererHooks extends Struct<SVG_RendererHooks> implements Nati
         PRESET_SLOT = layout.offsetof(3);
     }
 
-    protected SVG_RendererHooks(long address, @Nullable ByteBuffer container) {
+    public SVG_RendererHooks(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SVG_RendererHooks create(long address, @Nullable ByteBuffer container) {
-        return new SVG_RendererHooks(address, container);
     }
 
     /**

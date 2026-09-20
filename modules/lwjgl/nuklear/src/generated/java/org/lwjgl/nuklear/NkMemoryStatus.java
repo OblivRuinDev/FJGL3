@@ -65,13 +65,8 @@ public class NkMemoryStatus extends Struct<NkMemoryStatus> implements NativeReso
         CALLS = layout.offsetof(5);
     }
 
-    protected NkMemoryStatus(long address, @Nullable ByteBuffer container) {
+    public NkMemoryStatus(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkMemoryStatus create(long address, @Nullable ByteBuffer container) {
-        return new NkMemoryStatus(address, container);
     }
 
     /**

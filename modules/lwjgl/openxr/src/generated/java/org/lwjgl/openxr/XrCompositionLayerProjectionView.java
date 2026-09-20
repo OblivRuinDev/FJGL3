@@ -64,13 +64,8 @@ public class XrCompositionLayerProjectionView extends Struct<XrCompositionLayerP
         SUBIMAGE = layout.offsetof(4);
     }
 
-    protected XrCompositionLayerProjectionView(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerProjectionView(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerProjectionView create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerProjectionView(address, container);
     }
 
     /**

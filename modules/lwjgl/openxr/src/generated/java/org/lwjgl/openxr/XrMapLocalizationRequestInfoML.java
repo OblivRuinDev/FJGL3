@@ -54,13 +54,8 @@ public class XrMapLocalizationRequestInfoML extends Struct<XrMapLocalizationRequ
         MAPUUID = layout.offsetof(2);
     }
 
-    protected XrMapLocalizationRequestInfoML(long address, @Nullable ByteBuffer container) {
+    public XrMapLocalizationRequestInfoML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrMapLocalizationRequestInfoML create(long address, @Nullable ByteBuffer container) {
-        return new XrMapLocalizationRequestInfoML(address, container);
     }
 
     /**

@@ -82,13 +82,8 @@ public class VkVideoEncodeH265QualityLevelPropertiesKHR extends Struct<VkVideoEn
         PREFERREDMAXL1REFERENCECOUNT = layout.offsetof(9);
     }
 
-    protected VkVideoEncodeH265QualityLevelPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH265QualityLevelPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH265QualityLevelPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH265QualityLevelPropertiesKHR(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkVideoEncodeFeedback2CapabilitiesKHR extends Struct<VkVideoEncodeF
         SUPPORTEDPERPARTITIONENCODEFEEDBACKFLAGS = layout.offsetof(3);
     }
 
-    protected VkVideoEncodeFeedback2CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeFeedback2CapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeFeedback2CapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeFeedback2CapabilitiesKHR(address, container);
     }
 
     /**

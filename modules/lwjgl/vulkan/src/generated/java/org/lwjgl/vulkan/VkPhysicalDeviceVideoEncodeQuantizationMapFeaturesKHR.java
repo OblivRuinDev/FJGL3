@@ -52,13 +52,8 @@ public class VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR extends Struc
         VIDEOENCODEQUANTIZATIONMAP = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(address, container);
     }
 
     /**

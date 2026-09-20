@@ -52,13 +52,8 @@ public class VkPipelineCreateFlags2CreateInfo extends Struct<VkPipelineCreateFla
         FLAGS = layout.offsetof(2);
     }
 
-    protected VkPipelineCreateFlags2CreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineCreateFlags2CreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineCreateFlags2CreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineCreateFlags2CreateInfo(address, container);
     }
 
     /**

@@ -59,13 +59,8 @@ public class NkPopupBuffer extends Struct<NkPopupBuffer> {
         ACTIVE = layout.offsetof(4);
     }
 
-    protected NkPopupBuffer(long address, @Nullable ByteBuffer container) {
+    public NkPopupBuffer(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkPopupBuffer create(long address, @Nullable ByteBuffer container) {
-        return new NkPopupBuffer(address, container);
     }
 
     /**

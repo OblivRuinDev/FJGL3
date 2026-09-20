@@ -52,13 +52,8 @@ public class VkPhysicalDeviceImageAlignmentControlFeaturesMESA extends Struct<Vk
         IMAGEALIGNMENTCONTROL = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceImageAlignmentControlFeaturesMESA(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageAlignmentControlFeaturesMESA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageAlignmentControlFeaturesMESA create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageAlignmentControlFeaturesMESA(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class XrRenderModelBufferFB extends Struct<XrRenderModelBufferFB> impleme
         BUFFER = layout.offsetof(4);
     }
 
-    protected XrRenderModelBufferFB(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelBufferFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelBufferFB create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelBufferFB(address, container);
     }
 
     /**

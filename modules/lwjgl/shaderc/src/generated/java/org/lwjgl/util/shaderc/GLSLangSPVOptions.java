@@ -81,13 +81,8 @@ public class GLSLangSPVOptions extends Struct<GLSLangSPVOptions> implements Nati
         OPTIMIZE_ALLOW_EXPANDED_ID_BOUND = layout.offsetof(9);
     }
 
-    protected GLSLangSPVOptions(long address, @Nullable ByteBuffer container) {
+    public GLSLangSPVOptions(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLSLangSPVOptions create(long address, @Nullable ByteBuffer container) {
-        return new GLSLangSPVOptions(address, container);
     }
 
     /**

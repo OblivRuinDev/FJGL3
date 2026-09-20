@@ -59,13 +59,8 @@ public class VkQueueFamilyDataGraphPropertiesARM extends Struct<VkQueueFamilyDat
         OPERATION = layout.offsetof(3);
     }
 
-    protected VkQueueFamilyDataGraphPropertiesARM(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyDataGraphPropertiesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyDataGraphPropertiesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyDataGraphPropertiesARM(address, container);
     }
 
     /**

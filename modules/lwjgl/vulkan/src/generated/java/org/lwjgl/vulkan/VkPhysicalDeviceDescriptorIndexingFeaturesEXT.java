@@ -44,13 +44,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceDescriptorIndexingFeaturesEXT extends VkPhysicalDeviceDescriptorIndexingFeatures {
 
-    protected VkPhysicalDeviceDescriptorIndexingFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDescriptorIndexingFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDescriptorIndexingFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDescriptorIndexingFeaturesEXT(address, container);
     }
 
     /**

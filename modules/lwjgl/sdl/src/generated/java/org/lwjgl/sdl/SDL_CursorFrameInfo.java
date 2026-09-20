@@ -49,13 +49,8 @@ public class SDL_CursorFrameInfo extends Struct<SDL_CursorFrameInfo> implements 
         DURATION = layout.offsetof(1);
     }
 
-    protected SDL_CursorFrameInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_CursorFrameInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_CursorFrameInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_CursorFrameInfo(address, container);
     }
 
     /**

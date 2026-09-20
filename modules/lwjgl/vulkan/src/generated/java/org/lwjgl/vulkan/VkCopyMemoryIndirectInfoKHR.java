@@ -66,13 +66,8 @@ public class VkCopyMemoryIndirectInfoKHR extends Struct<VkCopyMemoryIndirectInfo
         COPYADDRESSRANGE = layout.offsetof(5);
     }
 
-    protected VkCopyMemoryIndirectInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkCopyMemoryIndirectInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyMemoryIndirectInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyMemoryIndirectInfoKHR(address, container);
     }
 
     /**

@@ -69,13 +69,8 @@ public class XFocusChangeEvent extends Struct<XFocusChangeEvent> implements Nati
         DETAIL = layout.offsetof(6);
     }
 
-    protected XFocusChangeEvent(long address, @Nullable ByteBuffer container) {
+    public XFocusChangeEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XFocusChangeEvent create(long address, @Nullable ByteBuffer container) {
-        return new XFocusChangeEvent(address, container);
     }
 
     /**

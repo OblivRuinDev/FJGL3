@@ -48,13 +48,8 @@ public class XrInteractionRenderModelSubactionPathInfoEXT extends Struct<XrInter
         NEXT = layout.offsetof(1);
     }
 
-    protected XrInteractionRenderModelSubactionPathInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrInteractionRenderModelSubactionPathInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrInteractionRenderModelSubactionPathInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrInteractionRenderModelSubactionPathInfoEXT(address, container);
     }
 
     /**

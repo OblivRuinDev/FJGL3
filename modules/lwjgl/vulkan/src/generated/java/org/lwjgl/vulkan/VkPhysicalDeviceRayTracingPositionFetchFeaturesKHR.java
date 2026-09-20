@@ -52,13 +52,8 @@ public class VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR extends Struct<V
         RAYTRACINGPOSITIONFETCH = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR(address, container);
     }
 
     /**

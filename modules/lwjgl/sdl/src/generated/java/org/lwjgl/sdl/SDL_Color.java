@@ -56,13 +56,8 @@ public class SDL_Color extends Struct<SDL_Color> implements NativeResource {
         A = layout.offsetof(3);
     }
 
-    protected SDL_Color(long address, @Nullable ByteBuffer container) {
+    public SDL_Color(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_Color create(long address, @Nullable ByteBuffer container) {
-        return new SDL_Color(address, container);
     }
 
     /**

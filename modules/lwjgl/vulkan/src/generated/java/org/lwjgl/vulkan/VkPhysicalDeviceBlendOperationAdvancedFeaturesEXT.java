@@ -52,13 +52,8 @@ public class VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT extends Struct<Vk
         ADVANCEDBLENDCOHERENTOPERATIONS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT(address, container);
     }
 
     /**

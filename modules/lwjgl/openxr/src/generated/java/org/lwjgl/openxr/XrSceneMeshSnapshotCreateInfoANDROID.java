@@ -63,13 +63,8 @@ public class XrSceneMeshSnapshotCreateInfoANDROID extends Struct<XrSceneMeshSnap
         BOUNDINGBOX = layout.offsetof(4);
     }
 
-    protected XrSceneMeshSnapshotCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSceneMeshSnapshotCreateInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMeshSnapshotCreateInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMeshSnapshotCreateInfoANDROID(address, container);
     }
 
     /**

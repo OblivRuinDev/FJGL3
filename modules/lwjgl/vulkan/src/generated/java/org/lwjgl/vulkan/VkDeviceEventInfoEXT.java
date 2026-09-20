@@ -52,13 +52,8 @@ public class VkDeviceEventInfoEXT extends Struct<VkDeviceEventInfoEXT> implement
         DEVICEEVENT = layout.offsetof(2);
     }
 
-    protected VkDeviceEventInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDeviceEventInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceEventInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceEventInfoEXT(address, container);
     }
 
     /**

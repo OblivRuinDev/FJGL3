@@ -79,13 +79,8 @@ public class XrTrackableQrCodeANDROID extends Struct<XrTrackableQrCodeANDROID> i
         BUFFER = layout.offsetof(8);
     }
 
-    protected XrTrackableQrCodeANDROID(long address, @Nullable ByteBuffer container) {
+    public XrTrackableQrCodeANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrTrackableQrCodeANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrTrackableQrCodeANDROID(address, container);
     }
 
     /**

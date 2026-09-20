@@ -48,13 +48,8 @@ public class XrSwapchainImageReleaseInfo extends Struct<XrSwapchainImageReleaseI
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSwapchainImageReleaseInfo(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainImageReleaseInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainImageReleaseInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainImageReleaseInfo(address, container);
     }
 
     /**

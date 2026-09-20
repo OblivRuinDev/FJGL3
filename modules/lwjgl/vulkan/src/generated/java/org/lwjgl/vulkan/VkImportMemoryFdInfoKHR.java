@@ -56,13 +56,8 @@ public class VkImportMemoryFdInfoKHR extends Struct<VkImportMemoryFdInfoKHR> imp
         FD = layout.offsetof(3);
     }
 
-    protected VkImportMemoryFdInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkImportMemoryFdInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImportMemoryFdInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkImportMemoryFdInfoKHR(address, container);
     }
 
     /**

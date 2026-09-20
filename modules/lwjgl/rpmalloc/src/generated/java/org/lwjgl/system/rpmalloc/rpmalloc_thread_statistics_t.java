@@ -73,13 +73,8 @@ public class rpmalloc_thread_statistics_t extends Struct<rpmalloc_thread_statist
         SIZE_USE = layout.offsetof(5);
     }
 
-    protected rpmalloc_thread_statistics_t(long address, @Nullable ByteBuffer container) {
+    public rpmalloc_thread_statistics_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected rpmalloc_thread_statistics_t create(long address, @Nullable ByteBuffer container) {
-        return new rpmalloc_thread_statistics_t(address, container);
     }
 
     /**
@@ -356,13 +351,8 @@ public class rpmalloc_thread_statistics_t extends Struct<rpmalloc_thread_statist
             MAP_CALLS = layout.offsetof(1);
         }
     
-        protected span_use(long address, @Nullable ByteBuffer container) {
+        public span_use(long address, @Nullable ByteBuffer container) {
             super(address, container);
-        }
-    
-        @Override
-        protected span_use create(long address, @Nullable ByteBuffer container) {
-            return new span_use(address, container);
         }
     
         /**
@@ -515,13 +505,8 @@ public class rpmalloc_thread_statistics_t extends Struct<rpmalloc_thread_statist
             FREE_TOTAL = layout.offsetof(3);
         }
     
-        protected size_use(long address, @Nullable ByteBuffer container) {
+        public size_use(long address, @Nullable ByteBuffer container) {
             super(address, container);
-        }
-    
-        @Override
-        protected size_use create(long address, @Nullable ByteBuffer container) {
-            return new size_use(address, container);
         }
     
         /**

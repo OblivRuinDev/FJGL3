@@ -52,13 +52,8 @@ public class XrFaceStateGetInfoANDROID extends Struct<XrFaceStateGetInfoANDROID>
         TIME = layout.offsetof(2);
     }
 
-    protected XrFaceStateGetInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrFaceStateGetInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFaceStateGetInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrFaceStateGetInfoANDROID(address, container);
     }
 
     /**

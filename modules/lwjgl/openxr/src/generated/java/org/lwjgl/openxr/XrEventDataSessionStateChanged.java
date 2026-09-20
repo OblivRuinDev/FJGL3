@@ -60,13 +60,8 @@ public class XrEventDataSessionStateChanged extends Struct<XrEventDataSessionSta
         TIME = layout.offsetof(4);
     }
 
-    protected XrEventDataSessionStateChanged(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSessionStateChanged(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSessionStateChanged create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSessionStateChanged(address, container);
     }
 
     /**

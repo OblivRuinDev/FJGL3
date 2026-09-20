@@ -52,13 +52,8 @@ public class VkImageViewASTCDecodeModeEXT extends Struct<VkImageViewASTCDecodeMo
         DECODEMODE = layout.offsetof(2);
     }
 
-    protected VkImageViewASTCDecodeModeEXT(long address, @Nullable ByteBuffer container) {
+    public VkImageViewASTCDecodeModeEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageViewASTCDecodeModeEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImageViewASTCDecodeModeEXT(address, container);
     }
 
     /**

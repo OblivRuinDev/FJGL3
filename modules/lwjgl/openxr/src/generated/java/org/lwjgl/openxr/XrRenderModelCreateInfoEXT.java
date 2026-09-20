@@ -60,13 +60,8 @@ public class XrRenderModelCreateInfoEXT extends Struct<XrRenderModelCreateInfoEX
         GLTFEXTENSIONS = layout.offsetof(4);
     }
 
-    protected XrRenderModelCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrRenderModelCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRenderModelCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrRenderModelCreateInfoEXT(address, container);
     }
 
     /**

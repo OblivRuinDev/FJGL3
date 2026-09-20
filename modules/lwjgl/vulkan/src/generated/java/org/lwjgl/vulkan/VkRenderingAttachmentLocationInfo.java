@@ -56,13 +56,8 @@ public class VkRenderingAttachmentLocationInfo extends Struct<VkRenderingAttachm
         PCOLORATTACHMENTLOCATIONS = layout.offsetof(3);
     }
 
-    protected VkRenderingAttachmentLocationInfo(long address, @Nullable ByteBuffer container) {
+    public VkRenderingAttachmentLocationInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderingAttachmentLocationInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderingAttachmentLocationInfo(address, container);
     }
 
     /**

@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkFormatProperties2KHR extends VkFormatProperties2 {
 
-    protected VkFormatProperties2KHR(long address, @Nullable ByteBuffer container) {
+    public VkFormatProperties2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFormatProperties2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkFormatProperties2KHR(address, container);
     }
 
     /**

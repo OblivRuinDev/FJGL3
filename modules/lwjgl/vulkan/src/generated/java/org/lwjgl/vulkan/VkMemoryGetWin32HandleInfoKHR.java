@@ -56,13 +56,8 @@ public class VkMemoryGetWin32HandleInfoKHR extends Struct<VkMemoryGetWin32Handle
         HANDLETYPE = layout.offsetof(3);
     }
 
-    protected VkMemoryGetWin32HandleInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkMemoryGetWin32HandleInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryGetWin32HandleInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryGetWin32HandleInfoKHR(address, container);
     }
 
     /**

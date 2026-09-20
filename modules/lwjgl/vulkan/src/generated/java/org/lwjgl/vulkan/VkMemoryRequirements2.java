@@ -54,13 +54,8 @@ public class VkMemoryRequirements2 extends Struct<VkMemoryRequirements2> impleme
         MEMORYREQUIREMENTS = layout.offsetof(2);
     }
 
-    protected VkMemoryRequirements2(long address, @Nullable ByteBuffer container) {
+    public VkMemoryRequirements2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryRequirements2 create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryRequirements2(address, container);
     }
 
     /**

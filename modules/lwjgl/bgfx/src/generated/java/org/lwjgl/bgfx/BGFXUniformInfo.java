@@ -54,13 +54,8 @@ public class BGFXUniformInfo extends Struct<BGFXUniformInfo> implements NativeRe
         NUM = layout.offsetof(2);
     }
 
-    protected BGFXUniformInfo(long address, @Nullable ByteBuffer container) {
+    public BGFXUniformInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXUniformInfo create(long address, @Nullable ByteBuffer container) {
-        return new BGFXUniformInfo(address, container);
     }
 
     /**

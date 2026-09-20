@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceCopyMemoryIndirectPropertiesNV extends VkPhysicalDeviceCopyMemoryIndirectPropertiesKHR {
 
-    protected VkPhysicalDeviceCopyMemoryIndirectPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCopyMemoryIndirectPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCopyMemoryIndirectPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCopyMemoryIndirectPropertiesNV(address, container);
     }
 
     /**

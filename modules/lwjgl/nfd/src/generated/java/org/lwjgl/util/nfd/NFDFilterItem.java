@@ -50,13 +50,8 @@ public class NFDFilterItem extends Struct<NFDFilterItem> implements NativeResour
         SPEC = layout.offsetof(1);
     }
 
-    protected NFDFilterItem(long address, @Nullable ByteBuffer container) {
+    public NFDFilterItem(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NFDFilterItem create(long address, @Nullable ByteBuffer container) {
-        return new NFDFilterItem(address, container);
     }
 
     /**

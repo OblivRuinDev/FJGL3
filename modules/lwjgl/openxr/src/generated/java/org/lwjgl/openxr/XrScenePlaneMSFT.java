@@ -58,13 +58,8 @@ public class XrScenePlaneMSFT extends Struct<XrScenePlaneMSFT> implements Native
         SUPPORTSINDICESUINT16 = layout.offsetof(3);
     }
 
-    protected XrScenePlaneMSFT(long address, @Nullable ByteBuffer container) {
+    public XrScenePlaneMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrScenePlaneMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrScenePlaneMSFT(address, container);
     }
 
     /**

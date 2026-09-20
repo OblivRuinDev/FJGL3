@@ -72,13 +72,8 @@ public class SDL_AsyncIOOutcome extends Struct<SDL_AsyncIOOutcome> implements Na
         USERDATA = layout.offsetof(7);
     }
 
-    protected SDL_AsyncIOOutcome(long address, @Nullable ByteBuffer container) {
+    public SDL_AsyncIOOutcome(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_AsyncIOOutcome create(long address, @Nullable ByteBuffer container) {
-        return new SDL_AsyncIOOutcome(address, container);
     }
 
     /**

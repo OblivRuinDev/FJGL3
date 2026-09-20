@@ -60,13 +60,8 @@ public class XrSystemQrCodeTrackingPropertiesANDROID extends Struct<XrSystemQrCo
         MAXQRCODECOUNT = layout.offsetof(4);
     }
 
-    protected XrSystemQrCodeTrackingPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemQrCodeTrackingPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemQrCodeTrackingPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemQrCodeTrackingPropertiesANDROID(address, container);
     }
 
     /**

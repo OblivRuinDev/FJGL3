@@ -69,13 +69,8 @@ public class EXRTile extends Struct<EXRTile> implements NativeResource {
         IMAGES = layout.offsetof(6);
     }
 
-    protected EXRTile(long address, @Nullable ByteBuffer container) {
+    public EXRTile(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected EXRTile create(long address, @Nullable ByteBuffer container) {
-        return new EXRTile(address, container);
     }
 
     /**

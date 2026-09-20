@@ -69,13 +69,8 @@ public class LZ4FFrameInfo extends Struct<LZ4FFrameInfo> implements NativeResour
         BLOCKCHECKSUMFLAG = layout.offsetof(6);
     }
 
-    protected LZ4FFrameInfo(long address, @Nullable ByteBuffer container) {
+    public LZ4FFrameInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LZ4FFrameInfo create(long address, @Nullable ByteBuffer container) {
-        return new LZ4FFrameInfo(address, container);
     }
 
     /**

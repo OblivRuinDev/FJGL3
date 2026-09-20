@@ -52,13 +52,8 @@ public class VkQueueFamilyCheckpointPropertiesNV extends Struct<VkQueueFamilyChe
         CHECKPOINTEXECUTIONSTAGEMASK = layout.offsetof(2);
     }
 
-    protected VkQueueFamilyCheckpointPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyCheckpointPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyCheckpointPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyCheckpointPropertiesNV(address, container);
     }
 
     /**

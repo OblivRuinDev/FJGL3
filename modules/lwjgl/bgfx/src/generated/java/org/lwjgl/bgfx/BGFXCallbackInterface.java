@@ -46,13 +46,8 @@ public class BGFXCallbackInterface extends Struct<BGFXCallbackInterface> impleme
         VTBL = layout.offsetof(0);
     }
 
-    protected BGFXCallbackInterface(long address, @Nullable ByteBuffer container) {
+    public BGFXCallbackInterface(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXCallbackInterface create(long address, @Nullable ByteBuffer container) {
-        return new BGFXCallbackInterface(address, container);
     }
 
     /**

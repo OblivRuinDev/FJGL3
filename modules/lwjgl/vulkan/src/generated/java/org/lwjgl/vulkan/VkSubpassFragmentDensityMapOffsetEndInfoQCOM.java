@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkSubpassFragmentDensityMapOffsetEndInfoQCOM extends VkRenderPassFragmentDensityMapOffsetEndInfoEXT {
 
-    protected VkSubpassFragmentDensityMapOffsetEndInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkSubpassFragmentDensityMapOffsetEndInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassFragmentDensityMapOffsetEndInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassFragmentDensityMapOffsetEndInfoQCOM(address, container);
     }
 
     /**

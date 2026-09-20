@@ -56,13 +56,8 @@ public class XrSceneMarkersMSFT extends Struct<XrSceneMarkersMSFT> implements Na
         SCENEMARKERS = layout.offsetof(3);
     }
 
-    protected XrSceneMarkersMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneMarkersMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMarkersMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMarkersMSFT(address, container);
     }
 
     /**

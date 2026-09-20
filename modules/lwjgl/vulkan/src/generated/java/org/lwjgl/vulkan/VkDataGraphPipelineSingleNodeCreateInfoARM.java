@@ -61,13 +61,8 @@ public class VkDataGraphPipelineSingleNodeCreateInfoARM extends Struct<VkDataGra
         PCONNECTIONS = layout.offsetof(4);
     }
 
-    protected VkDataGraphPipelineSingleNodeCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineSingleNodeCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineSingleNodeCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineSingleNodeCreateInfoARM(address, container);
     }
 
     /**

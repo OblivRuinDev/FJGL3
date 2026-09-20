@@ -70,13 +70,8 @@ public class XrCompositionLayerDepthInfoKHR extends Struct<XrCompositionLayerDep
         FARZ = layout.offsetof(6);
     }
 
-    protected XrCompositionLayerDepthInfoKHR(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerDepthInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerDepthInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerDepthInfoKHR(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class ParSLViewport extends Struct<ParSLViewport> implements NativeResour
         BOTTOM = layout.offsetof(3);
     }
 
-    protected ParSLViewport(long address, @Nullable ByteBuffer container) {
+    public ParSLViewport(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ParSLViewport create(long address, @Nullable ByteBuffer container) {
-        return new ParSLViewport(address, container);
     }
 
     /**

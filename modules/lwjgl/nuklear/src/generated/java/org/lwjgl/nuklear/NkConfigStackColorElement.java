@@ -49,13 +49,8 @@ class NkConfigStackColorElement extends Struct<NkConfigStackColorElement> {
         OLD_VALUE = layout.offsetof(1);
     }
 
-    protected NkConfigStackColorElement(long address, @Nullable ByteBuffer container) {
+    public NkConfigStackColorElement(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkConfigStackColorElement create(long address, @Nullable ByteBuffer container) {
-        return new NkConfigStackColorElement(address, container);
     }
 
     /**

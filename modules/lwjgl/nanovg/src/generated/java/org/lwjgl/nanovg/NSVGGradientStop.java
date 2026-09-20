@@ -47,13 +47,8 @@ public class NSVGGradientStop extends Struct<NSVGGradientStop> {
         OFFSET = layout.offsetof(1);
     }
 
-    protected NSVGGradientStop(long address, @Nullable ByteBuffer container) {
+    public NSVGGradientStop(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NSVGGradientStop create(long address, @Nullable ByteBuffer container) {
-        return new NSVGGradientStop(address, container);
     }
 
     /**

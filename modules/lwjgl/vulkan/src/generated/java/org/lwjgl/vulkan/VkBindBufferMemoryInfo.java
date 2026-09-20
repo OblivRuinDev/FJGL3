@@ -60,13 +60,8 @@ public class VkBindBufferMemoryInfo extends Struct<VkBindBufferMemoryInfo> imple
         MEMORYOFFSET = layout.offsetof(4);
     }
 
-    protected VkBindBufferMemoryInfo(long address, @Nullable ByteBuffer container) {
+    public VkBindBufferMemoryInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindBufferMemoryInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkBindBufferMemoryInfo(address, container);
     }
 
     /**

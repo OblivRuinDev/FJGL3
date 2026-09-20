@@ -70,13 +70,8 @@ public class VkPipelineExecutableInternalRepresentationKHR extends Struct<VkPipe
         PDATA = layout.offsetof(6);
     }
 
-    protected VkPipelineExecutableInternalRepresentationKHR(long address, @Nullable ByteBuffer container) {
+    public VkPipelineExecutableInternalRepresentationKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineExecutableInternalRepresentationKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineExecutableInternalRepresentationKHR(address, container);
     }
 
     /**

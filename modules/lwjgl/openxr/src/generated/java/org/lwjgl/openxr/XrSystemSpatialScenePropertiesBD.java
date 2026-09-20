@@ -52,13 +52,8 @@ public class XrSystemSpatialScenePropertiesBD extends Struct<XrSystemSpatialScen
         SUPPORTSSPATIALSCENE = layout.offsetof(2);
     }
 
-    protected XrSystemSpatialScenePropertiesBD(long address, @Nullable ByteBuffer container) {
+    public XrSystemSpatialScenePropertiesBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemSpatialScenePropertiesBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemSpatialScenePropertiesBD(address, container);
     }
 
     /**

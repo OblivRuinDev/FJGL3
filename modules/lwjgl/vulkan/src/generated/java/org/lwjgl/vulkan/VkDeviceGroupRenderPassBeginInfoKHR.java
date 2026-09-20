@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDeviceGroupRenderPassBeginInfoKHR extends VkDeviceGroupRenderPassBeginInfo {
 
-    protected VkDeviceGroupRenderPassBeginInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceGroupRenderPassBeginInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceGroupRenderPassBeginInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceGroupRenderPassBeginInfoKHR(address, container);
     }
 
     /**

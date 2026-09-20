@@ -89,13 +89,8 @@ public class VkBindSparseInfo extends Struct<VkBindSparseInfo> implements Native
         PSIGNALSEMAPHORES = layout.offsetof(11);
     }
 
-    protected VkBindSparseInfo(long address, @Nullable ByteBuffer container) {
+    public VkBindSparseInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindSparseInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkBindSparseInfo(address, container);
     }
 
     /**

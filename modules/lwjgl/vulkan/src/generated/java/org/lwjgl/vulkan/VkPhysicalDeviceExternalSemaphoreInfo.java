@@ -52,13 +52,8 @@ public class VkPhysicalDeviceExternalSemaphoreInfo extends Struct<VkPhysicalDevi
         HANDLETYPE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceExternalSemaphoreInfo(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalSemaphoreInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalSemaphoreInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalSemaphoreInfo(address, container);
     }
 
     /**

@@ -103,13 +103,8 @@ public class TT_HoriHeader extends Struct<TT_HoriHeader> {
         SHORT_METRICS = layout.offsetof(15);
     }
 
-    protected TT_HoriHeader(long address, @Nullable ByteBuffer container) {
+    public TT_HoriHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected TT_HoriHeader create(long address, @Nullable ByteBuffer container) {
-        return new TT_HoriHeader(address, container);
     }
 
     /**

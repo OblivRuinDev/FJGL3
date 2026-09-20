@@ -64,13 +64,8 @@ public class VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR extends St
         WORKGROUPMEMORYEXPLICITLAYOUT16BITACCESS = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(address, container);
     }
 
     /**

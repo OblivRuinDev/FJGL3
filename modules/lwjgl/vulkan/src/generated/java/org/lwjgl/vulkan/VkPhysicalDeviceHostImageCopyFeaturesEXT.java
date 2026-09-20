@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceHostImageCopyFeaturesEXT extends VkPhysicalDeviceHostImageCopyFeatures {
 
-    protected VkPhysicalDeviceHostImageCopyFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceHostImageCopyFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceHostImageCopyFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceHostImageCopyFeaturesEXT(address, container);
     }
 
     /**

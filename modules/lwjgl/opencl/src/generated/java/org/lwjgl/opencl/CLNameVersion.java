@@ -49,13 +49,8 @@ public class CLNameVersion extends Struct<CLNameVersion> implements NativeResour
         NAME = layout.offsetof(1);
     }
 
-    protected CLNameVersion(long address, @Nullable ByteBuffer container) {
+    public CLNameVersion(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLNameVersion create(long address, @Nullable ByteBuffer container) {
-        return new CLNameVersion(address, container);
     }
 
     /**

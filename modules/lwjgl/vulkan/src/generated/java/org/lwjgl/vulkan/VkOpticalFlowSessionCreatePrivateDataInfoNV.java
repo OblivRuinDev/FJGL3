@@ -61,13 +61,8 @@ public class VkOpticalFlowSessionCreatePrivateDataInfoNV extends Struct<VkOptica
         PPRIVATEDATA = layout.offsetof(4);
     }
 
-    protected VkOpticalFlowSessionCreatePrivateDataInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkOpticalFlowSessionCreatePrivateDataInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkOpticalFlowSessionCreatePrivateDataInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkOpticalFlowSessionCreatePrivateDataInfoNV(address, container);
     }
 
     /**

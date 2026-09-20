@@ -64,13 +64,8 @@ public class FMOD_CPU_USAGE extends Struct<FMOD_CPU_USAGE> implements NativeReso
         CONVOLUTION2 = layout.offsetof(5);
     }
 
-    protected FMOD_CPU_USAGE(long address, @Nullable ByteBuffer container) {
+    public FMOD_CPU_USAGE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_CPU_USAGE create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_CPU_USAGE(address, container);
     }
 
     /**

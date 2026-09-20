@@ -86,13 +86,8 @@ public class SDL_GPUDepthStencilState extends Struct<SDL_GPUDepthStencilState> i
         PADDING3 = layout.offsetof(10);
     }
 
-    protected SDL_GPUDepthStencilState(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUDepthStencilState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUDepthStencilState create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUDepthStencilState(address, container);
     }
 
     /**

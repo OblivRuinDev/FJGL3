@@ -65,13 +65,8 @@ public class XrSpaceShareInfoFB extends Struct<XrSpaceShareInfoFB> implements Na
         USERS = layout.offsetof(5);
     }
 
-    protected XrSpaceShareInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceShareInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceShareInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceShareInfoFB(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkSamplerYcbcrConversionImageFormatProperties extends Struct<VkSamp
         COMBINEDIMAGESAMPLERDESCRIPTORCOUNT = layout.offsetof(2);
     }
 
-    protected VkSamplerYcbcrConversionImageFormatProperties(long address, @Nullable ByteBuffer container) {
+    public VkSamplerYcbcrConversionImageFormatProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerYcbcrConversionImageFormatProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerYcbcrConversionImageFormatProperties(address, container);
     }
 
     /**

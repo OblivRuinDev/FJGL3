@@ -60,13 +60,8 @@ public class VkSwapchainPresentScalingCreateInfoKHR extends Struct<VkSwapchainPr
         PRESENTGRAVITYY = layout.offsetof(4);
     }
 
-    protected VkSwapchainPresentScalingCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainPresentScalingCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainPresentScalingCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainPresentScalingCreateInfoKHR(address, container);
     }
 
     /**

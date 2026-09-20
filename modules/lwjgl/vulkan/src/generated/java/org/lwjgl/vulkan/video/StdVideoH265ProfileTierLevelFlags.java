@@ -48,13 +48,8 @@ public class StdVideoH265ProfileTierLevelFlags extends Struct<StdVideoH265Profil
         BITFIELD0 = layout.offsetof(0);
     }
 
-    protected StdVideoH265ProfileTierLevelFlags(long address, @Nullable ByteBuffer container) {
+    public StdVideoH265ProfileTierLevelFlags(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoH265ProfileTierLevelFlags create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoH265ProfileTierLevelFlags(address, container);
     }
 
     /**

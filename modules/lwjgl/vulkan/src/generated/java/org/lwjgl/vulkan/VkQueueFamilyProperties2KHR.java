@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkQueueFamilyProperties2KHR extends VkQueueFamilyProperties2 {
 
-    protected VkQueueFamilyProperties2KHR(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyProperties2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyProperties2KHR create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyProperties2KHR(address, container);
     }
 
     /**

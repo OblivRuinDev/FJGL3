@@ -60,13 +60,8 @@ public class XrSpaceQueryResultsFB extends Struct<XrSpaceQueryResultsFB> impleme
         RESULTS = layout.offsetof(4);
     }
 
-    protected XrSpaceQueryResultsFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceQueryResultsFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceQueryResultsFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceQueryResultsFB(address, container);
     }
 
     /**

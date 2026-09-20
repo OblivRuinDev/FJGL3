@@ -54,13 +54,8 @@ public class VkFormatProperties2 extends Struct<VkFormatProperties2> implements 
         FORMATPROPERTIES = layout.offsetof(2);
     }
 
-    protected VkFormatProperties2(long address, @Nullable ByteBuffer container) {
+    public VkFormatProperties2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFormatProperties2 create(long address, @Nullable ByteBuffer container) {
-        return new VkFormatProperties2(address, container);
     }
 
     /**

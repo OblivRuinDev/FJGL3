@@ -61,13 +61,8 @@ public class VkDebugMarkerObjectNameInfoEXT extends Struct<VkDebugMarkerObjectNa
         POBJECTNAME = layout.offsetof(4);
     }
 
-    protected VkDebugMarkerObjectNameInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDebugMarkerObjectNameInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDebugMarkerObjectNameInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDebugMarkerObjectNameInfoEXT(address, container);
     }
 
     /**

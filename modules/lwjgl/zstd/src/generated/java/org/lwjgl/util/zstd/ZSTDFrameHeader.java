@@ -77,13 +77,8 @@ public class ZSTDFrameHeader extends Struct<ZSTDFrameHeader> implements NativeRe
         _RESERVED2 = layout.offsetof(8);
     }
 
-    protected ZSTDFrameHeader(long address, @Nullable ByteBuffer container) {
+    public ZSTDFrameHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZSTDFrameHeader create(long address, @Nullable ByteBuffer container) {
-        return new ZSTDFrameHeader(address, container);
     }
 
     /**

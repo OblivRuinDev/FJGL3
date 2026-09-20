@@ -57,13 +57,8 @@ public class VkDataGraphPipelineIdentifierCreateInfoARM extends Struct<VkDataGra
         PIDENTIFIER = layout.offsetof(3);
     }
 
-    protected VkDataGraphPipelineIdentifierCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineIdentifierCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineIdentifierCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineIdentifierCreateInfoARM(address, container);
     }
 
     /**

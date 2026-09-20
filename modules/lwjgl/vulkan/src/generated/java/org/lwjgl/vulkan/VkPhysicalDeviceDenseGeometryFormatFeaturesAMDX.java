@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDenseGeometryFormatFeaturesAMDX extends Struct<VkPh
         DENSEGEOMETRYFORMAT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDenseGeometryFormatFeaturesAMDX(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDenseGeometryFormatFeaturesAMDX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDenseGeometryFormatFeaturesAMDX create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDenseGeometryFormatFeaturesAMDX(address, container);
     }
 
     /**

@@ -48,13 +48,8 @@ public class XrEventDataRecommendedResolutionChangedANDROID extends Struct<XrEve
         NEXT = layout.offsetof(1);
     }
 
-    protected XrEventDataRecommendedResolutionChangedANDROID(long address, @Nullable ByteBuffer container) {
+    public XrEventDataRecommendedResolutionChangedANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataRecommendedResolutionChangedANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataRecommendedResolutionChangedANDROID(address, container);
     }
 
     /**

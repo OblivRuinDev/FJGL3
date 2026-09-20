@@ -64,13 +64,8 @@ public class DISPLAY_DEVICE extends Struct<DISPLAY_DEVICE> implements NativeReso
         DEVICEKEY = layout.offsetof(5);
     }
 
-    protected DISPLAY_DEVICE(long address, @Nullable ByteBuffer container) {
+    public DISPLAY_DEVICE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected DISPLAY_DEVICE create(long address, @Nullable ByteBuffer container) {
-        return new DISPLAY_DEVICE(address, container);
     }
 
     /**

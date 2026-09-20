@@ -56,13 +56,8 @@ public class CXIdxImportedASTFileInfo extends Struct<CXIdxImportedASTFileInfo> {
         ISIMPLICIT = layout.offsetof(3);
     }
 
-    protected CXIdxImportedASTFileInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxImportedASTFileInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxImportedASTFileInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxImportedASTFileInfo(address, container);
     }
 
     /**

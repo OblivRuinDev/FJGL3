@@ -116,13 +116,8 @@ public class VkPhysicalDeviceFloatControlsProperties extends Struct<VkPhysicalDe
         SHADERROUNDINGMODERTZFLOAT64 = layout.offsetof(18);
     }
 
-    protected VkPhysicalDeviceFloatControlsProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFloatControlsProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFloatControlsProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFloatControlsProperties(address, container);
     }
 
     /**

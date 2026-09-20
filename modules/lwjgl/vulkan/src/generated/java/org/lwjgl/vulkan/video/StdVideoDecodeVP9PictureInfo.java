@@ -117,13 +117,8 @@ public class StdVideoDecodeVP9PictureInfo extends Struct<StdVideoDecodeVP9Pictur
         PSEGMENTATION = layout.offsetof(17);
     }
 
-    protected StdVideoDecodeVP9PictureInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoDecodeVP9PictureInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoDecodeVP9PictureInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoDecodeVP9PictureInfo(address, container);
     }
 
     /**

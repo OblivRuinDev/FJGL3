@@ -60,13 +60,8 @@ public class StdVideoEncodeH264RefPicMarkingEntry extends Struct<StdVideoEncodeH
         MAX_LONG_TERM_FRAME_IDX_PLUS1 = layout.offsetof(4);
     }
 
-    protected StdVideoEncodeH264RefPicMarkingEntry(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeH264RefPicMarkingEntry(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeH264RefPicMarkingEntry create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeH264RefPicMarkingEntry(address, container);
     }
 
     /**

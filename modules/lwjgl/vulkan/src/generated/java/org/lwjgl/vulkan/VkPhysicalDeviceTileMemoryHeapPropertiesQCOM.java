@@ -56,13 +56,8 @@ public class VkPhysicalDeviceTileMemoryHeapPropertiesQCOM extends Struct<VkPhysi
         TILEBUFFERTRANSFERS = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceTileMemoryHeapPropertiesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTileMemoryHeapPropertiesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTileMemoryHeapPropertiesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTileMemoryHeapPropertiesQCOM(address, container);
     }
 
     /**

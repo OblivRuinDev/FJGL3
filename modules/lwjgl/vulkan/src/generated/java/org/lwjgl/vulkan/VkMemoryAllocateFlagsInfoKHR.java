@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkMemoryAllocateFlagsInfoKHR extends VkMemoryAllocateFlagsInfo {
 
-    protected VkMemoryAllocateFlagsInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkMemoryAllocateFlagsInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryAllocateFlagsInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryAllocateFlagsInfoKHR(address, container);
     }
 
     /**

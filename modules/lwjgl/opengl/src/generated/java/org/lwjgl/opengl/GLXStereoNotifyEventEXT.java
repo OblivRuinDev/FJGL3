@@ -70,13 +70,8 @@ public class GLXStereoNotifyEventEXT extends Struct<GLXStereoNotifyEventEXT> {
         STEREO_TREE = layout.offsetof(7);
     }
 
-    protected GLXStereoNotifyEventEXT(long address, @Nullable ByteBuffer container) {
+    public GLXStereoNotifyEventEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLXStereoNotifyEventEXT create(long address, @Nullable ByteBuffer container) {
-        return new GLXStereoNotifyEventEXT(address, container);
     }
 
     /**

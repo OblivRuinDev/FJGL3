@@ -52,13 +52,8 @@ public class XrVector3f extends Struct<XrVector3f> implements NativeResource {
         Z = layout.offsetof(2);
     }
 
-    protected XrVector3f(long address, @Nullable ByteBuffer container) {
+    public XrVector3f(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrVector3f create(long address, @Nullable ByteBuffer container) {
-        return new XrVector3f(address, container);
     }
 
     /**

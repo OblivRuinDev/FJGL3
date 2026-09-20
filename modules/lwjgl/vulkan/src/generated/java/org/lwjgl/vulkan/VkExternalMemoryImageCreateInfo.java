@@ -52,13 +52,8 @@ public class VkExternalMemoryImageCreateInfo extends Struct<VkExternalMemoryImag
         HANDLETYPES = layout.offsetof(2);
     }
 
-    protected VkExternalMemoryImageCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkExternalMemoryImageCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExternalMemoryImageCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkExternalMemoryImageCreateInfo(address, container);
     }
 
     /**

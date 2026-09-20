@@ -48,13 +48,8 @@ public class VkIndirectCommandsExecutionSetTokenEXT extends Struct<VkIndirectCom
         SHADERSTAGES = layout.offsetof(1);
     }
 
-    protected VkIndirectCommandsExecutionSetTokenEXT(long address, @Nullable ByteBuffer container) {
+    public VkIndirectCommandsExecutionSetTokenEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectCommandsExecutionSetTokenEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectCommandsExecutionSetTokenEXT(address, container);
     }
 
     /**

@@ -136,13 +136,8 @@ public class Statx extends Struct<Statx> implements NativeResource {
         __SPARE3 = layout.offsetof(22);
     }
 
-    protected Statx(long address, @Nullable ByteBuffer container) {
+    public Statx(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected Statx create(long address, @Nullable ByteBuffer container) {
-        return new Statx(address, container);
     }
 
     /**

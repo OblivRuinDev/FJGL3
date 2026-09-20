@@ -100,13 +100,8 @@ public class SDL_StorageInterface extends Struct<SDL_StorageInterface> implement
         SPACE_REMAINING = layout.offsetof(11);
     }
 
-    protected SDL_StorageInterface(long address, @Nullable ByteBuffer container) {
+    public SDL_StorageInterface(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_StorageInterface create(long address, @Nullable ByteBuffer container) {
-        return new SDL_StorageInterface(address, container);
     }
 
     /**

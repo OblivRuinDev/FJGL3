@@ -49,13 +49,8 @@ public class NFDWindowHandle extends Struct<NFDWindowHandle> implements NativeRe
         HANDLE = layout.offsetof(1);
     }
 
-    protected NFDWindowHandle(long address, @Nullable ByteBuffer container) {
+    public NFDWindowHandle(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NFDWindowHandle create(long address, @Nullable ByteBuffer container) {
-        return new NFDWindowHandle(address, container);
     }
 
     /**

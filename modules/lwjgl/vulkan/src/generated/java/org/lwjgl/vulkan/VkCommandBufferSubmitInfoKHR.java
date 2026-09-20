@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkCommandBufferSubmitInfoKHR extends VkCommandBufferSubmitInfo {
 
-    protected VkCommandBufferSubmitInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkCommandBufferSubmitInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCommandBufferSubmitInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkCommandBufferSubmitInfoKHR(address, container);
     }
 
     /**

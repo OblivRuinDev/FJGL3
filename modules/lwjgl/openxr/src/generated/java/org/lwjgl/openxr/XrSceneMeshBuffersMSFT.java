@@ -48,13 +48,8 @@ public class XrSceneMeshBuffersMSFT extends Struct<XrSceneMeshBuffersMSFT> imple
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSceneMeshBuffersMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneMeshBuffersMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMeshBuffersMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMeshBuffersMSFT(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class XrEventDataVirtualKeyboardCommitTextMETA extends Struct<XrEventData
         TEXT = layout.offsetof(3);
     }
 
-    protected XrEventDataVirtualKeyboardCommitTextMETA(long address, @Nullable ByteBuffer container) {
+    public XrEventDataVirtualKeyboardCommitTextMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataVirtualKeyboardCommitTextMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataVirtualKeyboardCommitTextMETA(address, container);
     }
 
     /**

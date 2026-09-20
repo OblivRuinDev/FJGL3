@@ -64,13 +64,8 @@ public class VkTensorCopyARM extends Struct<VkTensorCopyARM> implements NativeRe
         PEXTENT = layout.offsetof(5);
     }
 
-    protected VkTensorCopyARM(long address, @Nullable ByteBuffer container) {
+    public VkTensorCopyARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTensorCopyARM create(long address, @Nullable ByteBuffer container) {
-        return new VkTensorCopyARM(address, container);
     }
 
     /**

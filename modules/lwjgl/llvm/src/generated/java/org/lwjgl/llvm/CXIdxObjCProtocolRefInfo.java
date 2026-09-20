@@ -53,13 +53,8 @@ public class CXIdxObjCProtocolRefInfo extends Struct<CXIdxObjCProtocolRefInfo> {
         LOC = layout.offsetof(2);
     }
 
-    protected CXIdxObjCProtocolRefInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxObjCProtocolRefInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxObjCProtocolRefInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxObjCProtocolRefInfo(address, container);
     }
 
     /**

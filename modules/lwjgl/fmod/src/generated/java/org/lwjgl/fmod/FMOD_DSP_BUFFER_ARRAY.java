@@ -62,13 +62,8 @@ public class FMOD_DSP_BUFFER_ARRAY extends Struct<FMOD_DSP_BUFFER_ARRAY> impleme
         SPEAKERMODE = layout.offsetof(4);
     }
 
-    protected FMOD_DSP_BUFFER_ARRAY(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_BUFFER_ARRAY(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_BUFFER_ARRAY create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_BUFFER_ARRAY(address, container);
     }
 
     /**

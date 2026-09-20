@@ -52,13 +52,8 @@ public class XrSceneMeshBuffersGetInfoMSFT extends Struct<XrSceneMeshBuffersGetI
         MESHBUFFERID = layout.offsetof(2);
     }
 
-    protected XrSceneMeshBuffersGetInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneMeshBuffersGetInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneMeshBuffersGetInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneMeshBuffersGetInfoMSFT(address, container);
     }
 
     /**

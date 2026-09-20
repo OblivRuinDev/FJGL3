@@ -80,13 +80,8 @@ public class AICamera extends Struct<AICamera> implements NativeResource {
         MORTHOGRAPHICWIDTH = layout.offsetof(8);
     }
 
-    protected AICamera(long address, @Nullable ByteBuffer container) {
+    public AICamera(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AICamera create(long address, @Nullable ByteBuffer container) {
-        return new AICamera(address, container);
     }
 
     /**

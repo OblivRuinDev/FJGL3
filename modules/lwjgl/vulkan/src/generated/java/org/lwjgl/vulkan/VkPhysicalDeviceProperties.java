@@ -82,13 +82,8 @@ public class VkPhysicalDeviceProperties extends Struct<VkPhysicalDevicePropertie
         SPARSEPROPERTIES = layout.offsetof(8);
     }
 
-    protected VkPhysicalDeviceProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceProperties(address, container);
     }
 
     /**

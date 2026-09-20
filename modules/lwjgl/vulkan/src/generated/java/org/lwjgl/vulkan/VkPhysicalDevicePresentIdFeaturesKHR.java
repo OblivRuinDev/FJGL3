@@ -52,13 +52,8 @@ public class VkPhysicalDevicePresentIdFeaturesKHR extends Struct<VkPhysicalDevic
         PRESENTID = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePresentIdFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePresentIdFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePresentIdFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePresentIdFeaturesKHR(address, container);
     }
 
     /**

@@ -58,13 +58,8 @@ public class STBIIOCallbacks extends Struct<STBIIOCallbacks> implements NativeRe
         EOF = layout.offsetof(2);
     }
 
-    protected STBIIOCallbacks(long address, @Nullable ByteBuffer container) {
+    public STBIIOCallbacks(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBIIOCallbacks create(long address, @Nullable ByteBuffer container) {
-        return new STBIIOCallbacks(address, container);
     }
 
     /**

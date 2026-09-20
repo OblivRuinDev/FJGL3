@@ -65,13 +65,8 @@ public class IOURingQueryOpcode extends Struct<IOURingQueryOpcode> implements Na
         SQE_FLAGS = layout.offsetof(5);
     }
 
-    protected IOURingQueryOpcode(long address, @Nullable ByteBuffer container) {
+    public IOURingQueryOpcode(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingQueryOpcode create(long address, @Nullable ByteBuffer container) {
-        return new IOURingQueryOpcode(address, container);
     }
 
     /**

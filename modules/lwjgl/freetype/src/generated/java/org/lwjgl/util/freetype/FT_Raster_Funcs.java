@@ -70,13 +70,8 @@ public class FT_Raster_Funcs extends Struct<FT_Raster_Funcs> implements NativeRe
         RASTER_DONE = layout.offsetof(5);
     }
 
-    protected FT_Raster_Funcs(long address, @Nullable ByteBuffer container) {
+    public FT_Raster_Funcs(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Raster_Funcs create(long address, @Nullable ByteBuffer container) {
-        return new FT_Raster_Funcs(address, container);
     }
 
     /**

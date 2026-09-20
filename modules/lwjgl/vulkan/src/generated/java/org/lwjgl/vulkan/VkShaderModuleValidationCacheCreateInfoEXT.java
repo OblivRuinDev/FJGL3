@@ -52,13 +52,8 @@ public class VkShaderModuleValidationCacheCreateInfoEXT extends Struct<VkShaderM
         VALIDATIONCACHE = layout.offsetof(2);
     }
 
-    protected VkShaderModuleValidationCacheCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkShaderModuleValidationCacheCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkShaderModuleValidationCacheCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkShaderModuleValidationCacheCreateInfoEXT(address, container);
     }
 
     /**

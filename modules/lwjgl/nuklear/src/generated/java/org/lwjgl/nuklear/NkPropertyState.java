@@ -102,13 +102,8 @@ public class NkPropertyState extends Struct<NkPropertyState> {
         PREV_LENGTH = layout.offsetof(14);
     }
 
-    protected NkPropertyState(long address, @Nullable ByteBuffer container) {
+    public NkPropertyState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkPropertyState create(long address, @Nullable ByteBuffer container) {
-        return new NkPropertyState(address, container);
     }
 
     /**

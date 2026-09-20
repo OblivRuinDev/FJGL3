@@ -52,13 +52,8 @@ public class VkReleaseCapturedPipelineDataInfoKHR extends Struct<VkReleaseCaptur
         PIPELINE = layout.offsetof(2);
     }
 
-    protected VkReleaseCapturedPipelineDataInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkReleaseCapturedPipelineDataInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkReleaseCapturedPipelineDataInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkReleaseCapturedPipelineDataInfoKHR(address, container);
     }
 
     /**

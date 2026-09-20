@@ -52,13 +52,8 @@ public class XrSystemGeospatialPropertiesANDROID extends Struct<XrSystemGeospati
         SUPPORTSGEOSPATIAL = layout.offsetof(2);
     }
 
-    protected XrSystemGeospatialPropertiesANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSystemGeospatialPropertiesANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemGeospatialPropertiesANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemGeospatialPropertiesANDROID(address, container);
     }
 
     /**

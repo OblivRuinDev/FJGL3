@@ -64,13 +64,8 @@ public class VkPhysicalDevice16BitStorageFeatures extends Struct<VkPhysicalDevic
         STORAGEINPUTOUTPUT16 = layout.offsetof(5);
     }
 
-    protected VkPhysicalDevice16BitStorageFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevice16BitStorageFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevice16BitStorageFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevice16BitStorageFeatures(address, container);
     }
 
     /**

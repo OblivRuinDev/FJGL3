@@ -28,13 +28,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDescriptorUpdateTemplateEntryKHR extends VkDescriptorUpdateTemplateEntry {
 
-    protected VkDescriptorUpdateTemplateEntryKHR(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorUpdateTemplateEntryKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorUpdateTemplateEntryKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorUpdateTemplateEntryKHR(address, container);
     }
 
     /**

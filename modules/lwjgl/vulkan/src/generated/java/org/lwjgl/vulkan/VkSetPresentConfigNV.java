@@ -56,13 +56,8 @@ public class VkSetPresentConfigNV extends Struct<VkSetPresentConfigNV> implement
         PRESENTCONFIGFEEDBACK = layout.offsetof(3);
     }
 
-    protected VkSetPresentConfigNV(long address, @Nullable ByteBuffer container) {
+    public VkSetPresentConfigNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSetPresentConfigNV create(long address, @Nullable ByteBuffer container) {
-        return new VkSetPresentConfigNV(address, container);
     }
 
     /**

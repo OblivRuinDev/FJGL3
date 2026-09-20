@@ -53,13 +53,8 @@ public class rpmalloc_heap_statistics_t extends Struct<rpmalloc_heap_statistics_
         MAPPED_SIZE = layout.offsetof(2);
     }
 
-    protected rpmalloc_heap_statistics_t(long address, @Nullable ByteBuffer container) {
+    public rpmalloc_heap_statistics_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected rpmalloc_heap_statistics_t create(long address, @Nullable ByteBuffer container) {
-        return new rpmalloc_heap_statistics_t(address, container);
     }
 
     /**

@@ -44,13 +44,8 @@ public class VkIndirectCommandsIndexBufferTokenEXT extends Struct<VkIndirectComm
         MODE = layout.offsetof(0);
     }
 
-    protected VkIndirectCommandsIndexBufferTokenEXT(long address, @Nullable ByteBuffer container) {
+    public VkIndirectCommandsIndexBufferTokenEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectCommandsIndexBufferTokenEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectCommandsIndexBufferTokenEXT(address, container);
     }
 
     /**

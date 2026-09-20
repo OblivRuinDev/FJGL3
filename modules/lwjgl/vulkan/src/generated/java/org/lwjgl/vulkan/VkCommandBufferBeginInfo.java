@@ -56,13 +56,8 @@ public class VkCommandBufferBeginInfo extends Struct<VkCommandBufferBeginInfo> i
         PINHERITANCEINFO = layout.offsetof(3);
     }
 
-    protected VkCommandBufferBeginInfo(long address, @Nullable ByteBuffer container) {
+    public VkCommandBufferBeginInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCommandBufferBeginInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkCommandBufferBeginInfo(address, container);
     }
 
     /**

@@ -82,13 +82,8 @@ public class VkMemoryRangeBarrierKHR extends Struct<VkMemoryRangeBarrierKHR> imp
         ADDRESSFLAGS = layout.offsetof(9);
     }
 
-    protected VkMemoryRangeBarrierKHR(long address, @Nullable ByteBuffer container) {
+    public VkMemoryRangeBarrierKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryRangeBarrierKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryRangeBarrierKHR(address, container);
     }
 
     /**

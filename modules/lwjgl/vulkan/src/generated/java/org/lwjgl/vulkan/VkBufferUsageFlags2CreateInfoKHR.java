@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkBufferUsageFlags2CreateInfoKHR extends VkBufferUsageFlags2CreateInfo {
 
-    protected VkBufferUsageFlags2CreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkBufferUsageFlags2CreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferUsageFlags2CreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferUsageFlags2CreateInfoKHR(address, container);
     }
 
     /**

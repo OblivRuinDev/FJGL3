@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR extends VkPhysicalDeviceSamplerYcbcrConversionFeatures {
 
-    protected VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSamplerYcbcrConversionFeaturesKHR(address, container);
     }
 
     /**

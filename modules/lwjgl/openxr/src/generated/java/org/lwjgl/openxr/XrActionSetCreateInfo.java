@@ -63,13 +63,8 @@ public class XrActionSetCreateInfo extends Struct<XrActionSetCreateInfo> impleme
         PRIORITY = layout.offsetof(4);
     }
 
-    protected XrActionSetCreateInfo(long address, @Nullable ByteBuffer container) {
+    public XrActionSetCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrActionSetCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrActionSetCreateInfo(address, container);
     }
 
     /**

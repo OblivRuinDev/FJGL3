@@ -53,13 +53,8 @@ public class spng_offs extends Struct<spng_offs> implements NativeResource {
         UNIT_SPECIFIER = layout.offsetof(2);
     }
 
-    protected spng_offs(long address, @Nullable ByteBuffer container) {
+    public spng_offs(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_offs create(long address, @Nullable ByteBuffer container) {
-        return new spng_offs(address, container);
     }
 
     /**

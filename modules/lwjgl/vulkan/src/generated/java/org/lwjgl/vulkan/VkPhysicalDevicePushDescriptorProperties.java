@@ -52,13 +52,8 @@ public class VkPhysicalDevicePushDescriptorProperties extends Struct<VkPhysicalD
         MAXPUSHDESCRIPTORS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePushDescriptorProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePushDescriptorProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePushDescriptorProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePushDescriptorProperties(address, container);
     }
 
     /**

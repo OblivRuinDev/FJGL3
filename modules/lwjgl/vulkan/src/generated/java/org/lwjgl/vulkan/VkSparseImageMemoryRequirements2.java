@@ -54,13 +54,8 @@ public class VkSparseImageMemoryRequirements2 extends Struct<VkSparseImageMemory
         MEMORYREQUIREMENTS = layout.offsetof(2);
     }
 
-    protected VkSparseImageMemoryRequirements2(long address, @Nullable ByteBuffer container) {
+    public VkSparseImageMemoryRequirements2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSparseImageMemoryRequirements2 create(long address, @Nullable ByteBuffer container) {
-        return new VkSparseImageMemoryRequirements2(address, container);
     }
 
     /**

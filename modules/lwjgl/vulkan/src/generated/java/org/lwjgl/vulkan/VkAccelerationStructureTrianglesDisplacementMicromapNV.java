@@ -114,13 +114,8 @@ public class VkAccelerationStructureTrianglesDisplacementMicromapNV extends Stru
         MICROMAP = layout.offsetof(17);
     }
 
-    protected VkAccelerationStructureTrianglesDisplacementMicromapNV(long address, @Nullable ByteBuffer container) {
+    public VkAccelerationStructureTrianglesDisplacementMicromapNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAccelerationStructureTrianglesDisplacementMicromapNV create(long address, @Nullable ByteBuffer container) {
-        return new VkAccelerationStructureTrianglesDisplacementMicromapNV(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkDeviceFaultShaderAbortMessageInfoKHR extends Struct<VkDeviceFault
         PMESSAGEDATA = layout.offsetof(3);
     }
 
-    protected VkDeviceFaultShaderAbortMessageInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceFaultShaderAbortMessageInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceFaultShaderAbortMessageInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceFaultShaderAbortMessageInfoKHR(address, container);
     }
 
     /**

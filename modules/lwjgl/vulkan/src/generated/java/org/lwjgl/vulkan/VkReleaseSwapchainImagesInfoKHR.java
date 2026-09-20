@@ -61,13 +61,8 @@ public class VkReleaseSwapchainImagesInfoKHR extends Struct<VkReleaseSwapchainIm
         PIMAGEINDICES = layout.offsetof(4);
     }
 
-    protected VkReleaseSwapchainImagesInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkReleaseSwapchainImagesInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkReleaseSwapchainImagesInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkReleaseSwapchainImagesInfoKHR(address, container);
     }
 
     /**

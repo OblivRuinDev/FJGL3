@@ -65,13 +65,8 @@ public class hb_var_int_t extends Struct<hb_var_int_t> implements NativeResource
         I8 = layout.offsetof(5);
     }
 
-    protected hb_var_int_t(long address, @Nullable ByteBuffer container) {
+    public hb_var_int_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hb_var_int_t create(long address, @Nullable ByteBuffer container) {
-        return new hb_var_int_t(address, container);
     }
 
     /**

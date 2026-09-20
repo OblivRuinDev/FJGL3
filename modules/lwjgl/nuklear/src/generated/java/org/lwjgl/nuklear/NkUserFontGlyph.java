@@ -64,13 +64,8 @@ public class NkUserFontGlyph extends Struct<NkUserFontGlyph> implements NativeRe
         XADVANCE = layout.offsetof(4);
     }
 
-    protected NkUserFontGlyph(long address, @Nullable ByteBuffer container) {
+    public NkUserFontGlyph(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkUserFontGlyph create(long address, @Nullable ByteBuffer container) {
-        return new NkUserFontGlyph(address, container);
     }
 
     /**

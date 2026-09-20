@@ -80,13 +80,8 @@ public class SDL_JoyBallEvent extends Struct<SDL_JoyBallEvent> implements Native
         YREL = layout.offsetof(9);
     }
 
-    protected SDL_JoyBallEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_JoyBallEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_JoyBallEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_JoyBallEvent(address, container);
     }
 
     /**

@@ -72,13 +72,8 @@ public class VkCooperativeVectorPropertiesNV extends Struct<VkCooperativeVectorP
         TRANSPOSE = layout.offsetof(7);
     }
 
-    protected VkCooperativeVectorPropertiesNV(long address, @Nullable ByteBuffer container) {
+    public VkCooperativeVectorPropertiesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCooperativeVectorPropertiesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkCooperativeVectorPropertiesNV(address, container);
     }
 
     /**

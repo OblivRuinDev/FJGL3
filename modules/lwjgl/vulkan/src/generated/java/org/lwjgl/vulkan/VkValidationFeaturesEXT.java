@@ -65,13 +65,8 @@ public class VkValidationFeaturesEXT extends Struct<VkValidationFeaturesEXT> imp
         PDISABLEDVALIDATIONFEATURES = layout.offsetof(5);
     }
 
-    protected VkValidationFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkValidationFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkValidationFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkValidationFeaturesEXT(address, container);
     }
 
     /**

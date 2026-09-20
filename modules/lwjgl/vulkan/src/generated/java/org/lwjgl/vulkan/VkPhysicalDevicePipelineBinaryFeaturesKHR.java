@@ -52,13 +52,8 @@ public class VkPhysicalDevicePipelineBinaryFeaturesKHR extends Struct<VkPhysical
         PIPELINEBINARIES = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePipelineBinaryFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePipelineBinaryFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePipelineBinaryFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePipelineBinaryFeaturesKHR(address, container);
     }
 
     /**

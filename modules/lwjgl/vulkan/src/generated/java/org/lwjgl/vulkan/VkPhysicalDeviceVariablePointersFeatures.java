@@ -56,13 +56,8 @@ public class VkPhysicalDeviceVariablePointersFeatures extends Struct<VkPhysicalD
         VARIABLEPOINTERS = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceVariablePointersFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVariablePointersFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVariablePointersFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVariablePointersFeatures(address, container);
     }
 
     /**

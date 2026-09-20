@@ -50,13 +50,8 @@ public class AIFace extends Struct<AIFace> implements NativeResource {
         MINDICES = layout.offsetof(1);
     }
 
-    protected AIFace(long address, @Nullable ByteBuffer container) {
+    public AIFace(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIFace create(long address, @Nullable ByteBuffer container) {
-        return new AIFace(address, container);
     }
 
     /**

@@ -57,13 +57,8 @@ public class VkCudaFunctionCreateInfoNV extends Struct<VkCudaFunctionCreateInfoN
         PNAME = layout.offsetof(3);
     }
 
-    protected VkCudaFunctionCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkCudaFunctionCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCudaFunctionCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkCudaFunctionCreateInfoNV(address, container);
     }
 
     /**

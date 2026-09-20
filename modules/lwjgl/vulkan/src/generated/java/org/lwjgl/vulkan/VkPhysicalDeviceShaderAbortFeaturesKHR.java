@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderAbortFeaturesKHR extends Struct<VkPhysicalDev
         SHADERABORT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderAbortFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderAbortFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderAbortFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderAbortFeaturesKHR(address, container);
     }
 
     /**

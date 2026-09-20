@@ -49,13 +49,8 @@ public class CXIdxLoc extends Struct<CXIdxLoc> implements NativeResource {
         INT_DATA = layout.offsetof(1);
     }
 
-    protected CXIdxLoc(long address, @Nullable ByteBuffer container) {
+    public CXIdxLoc(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxLoc create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxLoc(address, container);
     }
 
     /**

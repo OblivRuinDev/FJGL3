@@ -48,13 +48,8 @@ public class VkPresentTimeGOOGLE extends Struct<VkPresentTimeGOOGLE> implements 
         DESIREDPRESENTTIME = layout.offsetof(1);
     }
 
-    protected VkPresentTimeGOOGLE(long address, @Nullable ByteBuffer container) {
+    public VkPresentTimeGOOGLE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPresentTimeGOOGLE create(long address, @Nullable ByteBuffer container) {
-        return new VkPresentTimeGOOGLE(address, container);
     }
 
     /**

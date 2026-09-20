@@ -53,13 +53,8 @@ public class CLMutableDispatchArgKHR extends Struct<CLMutableDispatchArgKHR> imp
         ARG_VALUE = layout.offsetof(2);
     }
 
-    protected CLMutableDispatchArgKHR(long address, @Nullable ByteBuffer container) {
+    public CLMutableDispatchArgKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLMutableDispatchArgKHR create(long address, @Nullable ByteBuffer container) {
-        return new CLMutableDispatchArgKHR(address, container);
     }
 
     /**

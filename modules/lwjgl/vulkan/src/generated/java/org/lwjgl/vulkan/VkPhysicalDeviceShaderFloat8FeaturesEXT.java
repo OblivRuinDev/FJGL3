@@ -56,13 +56,8 @@ public class VkPhysicalDeviceShaderFloat8FeaturesEXT extends Struct<VkPhysicalDe
         SHADERFLOAT8COOPERATIVEMATRIX = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceShaderFloat8FeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderFloat8FeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderFloat8FeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderFloat8FeaturesEXT(address, container);
     }
 
     /**

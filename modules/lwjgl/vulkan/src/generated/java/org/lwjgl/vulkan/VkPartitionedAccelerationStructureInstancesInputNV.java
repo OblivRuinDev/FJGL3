@@ -68,13 +68,8 @@ public class VkPartitionedAccelerationStructureInstancesInputNV extends Struct<V
         MAXINSTANCEINGLOBALPARTITIONCOUNT = layout.offsetof(6);
     }
 
-    protected VkPartitionedAccelerationStructureInstancesInputNV(long address, @Nullable ByteBuffer container) {
+    public VkPartitionedAccelerationStructureInstancesInputNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPartitionedAccelerationStructureInstancesInputNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPartitionedAccelerationStructureInstancesInputNV(address, container);
     }
 
     /**

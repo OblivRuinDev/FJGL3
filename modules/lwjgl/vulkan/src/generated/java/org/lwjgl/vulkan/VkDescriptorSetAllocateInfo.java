@@ -61,13 +61,8 @@ public class VkDescriptorSetAllocateInfo extends Struct<VkDescriptorSetAllocateI
         PSETLAYOUTS = layout.offsetof(4);
     }
 
-    protected VkDescriptorSetAllocateInfo(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetAllocateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetAllocateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetAllocateInfo(address, container);
     }
 
     /**

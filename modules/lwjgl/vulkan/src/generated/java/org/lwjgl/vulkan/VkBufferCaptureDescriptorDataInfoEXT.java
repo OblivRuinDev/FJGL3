@@ -52,13 +52,8 @@ public class VkBufferCaptureDescriptorDataInfoEXT extends Struct<VkBufferCapture
         BUFFER = layout.offsetof(2);
     }
 
-    protected VkBufferCaptureDescriptorDataInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkBufferCaptureDescriptorDataInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBufferCaptureDescriptorDataInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkBufferCaptureDescriptorDataInfoEXT(address, container);
     }
 
     /**

@@ -60,13 +60,8 @@ public class VkSubresourceLayout extends Struct<VkSubresourceLayout> implements 
         DEPTHPITCH = layout.offsetof(4);
     }
 
-    protected VkSubresourceLayout(long address, @Nullable ByteBuffer container) {
+    public VkSubresourceLayout(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubresourceLayout create(long address, @Nullable ByteBuffer container) {
-        return new VkSubresourceLayout(address, container);
     }
 
     /**

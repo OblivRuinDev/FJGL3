@@ -60,13 +60,8 @@ public class VkDescriptorAddressInfoEXT extends Struct<VkDescriptorAddressInfoEX
         FORMAT = layout.offsetof(4);
     }
 
-    protected VkDescriptorAddressInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorAddressInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorAddressInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorAddressInfoEXT(address, container);
     }
 
     /**

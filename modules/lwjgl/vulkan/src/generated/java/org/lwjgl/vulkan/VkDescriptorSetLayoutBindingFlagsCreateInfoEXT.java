@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDescriptorSetLayoutBindingFlagsCreateInfoEXT extends VkDescriptorSetLayoutBindingFlagsCreateInfo {
 
-    protected VkDescriptorSetLayoutBindingFlagsCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorSetLayoutBindingFlagsCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorSetLayoutBindingFlagsCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorSetLayoutBindingFlagsCreateInfoEXT(address, container);
     }
 
     /**

@@ -97,13 +97,8 @@ public class VkCuLaunchInfoNVX extends Struct<VkCuLaunchInfoNVX> implements Nati
         PEXTRAS = layout.offsetof(13);
     }
 
-    protected VkCuLaunchInfoNVX(long address, @Nullable ByteBuffer container) {
+    public VkCuLaunchInfoNVX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCuLaunchInfoNVX create(long address, @Nullable ByteBuffer container) {
-        return new VkCuLaunchInfoNVX(address, container);
     }
 
     /**

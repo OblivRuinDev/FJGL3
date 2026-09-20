@@ -55,13 +55,8 @@ public class LLVMOrcCSymbolDependenceGroup extends Struct<LLVMOrcCSymbolDependen
         NUMDEPENDENCIES = layout.offsetof(2);
     }
 
-    protected LLVMOrcCSymbolDependenceGroup(long address, @Nullable ByteBuffer container) {
+    public LLVMOrcCSymbolDependenceGroup(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMOrcCSymbolDependenceGroup create(long address, @Nullable ByteBuffer container) {
-        return new LLVMOrcCSymbolDependenceGroup(address, container);
     }
 
     /**

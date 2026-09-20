@@ -60,13 +60,8 @@ public class VkPhysicalDeviceExtendedDynamicState2FeaturesEXT extends Struct<VkP
         EXTENDEDDYNAMICSTATE2PATCHCONTROLPOINTS = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceExtendedDynamicState2FeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExtendedDynamicState2FeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExtendedDynamicState2FeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExtendedDynamicState2FeaturesEXT(address, container);
     }
 
     /**

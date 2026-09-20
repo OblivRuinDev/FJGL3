@@ -52,13 +52,8 @@ public class VkPhysicalDeviceTextureCompressionASTCHDRFeatures extends Struct<Vk
         TEXTURECOMPRESSIONASTC_HDR = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceTextureCompressionASTCHDRFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTextureCompressionASTCHDRFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTextureCompressionASTCHDRFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTextureCompressionASTCHDRFeatures(address, container);
     }
 
     /**

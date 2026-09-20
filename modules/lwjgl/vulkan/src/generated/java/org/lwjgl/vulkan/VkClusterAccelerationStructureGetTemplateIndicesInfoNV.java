@@ -44,13 +44,8 @@ public class VkClusterAccelerationStructureGetTemplateIndicesInfoNV extends Stru
         CLUSTERTEMPLATEADDRESS = layout.offsetof(0);
     }
 
-    protected VkClusterAccelerationStructureGetTemplateIndicesInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkClusterAccelerationStructureGetTemplateIndicesInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClusterAccelerationStructureGetTemplateIndicesInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkClusterAccelerationStructureGetTemplateIndicesInfoNV(address, container);
     }
 
     /**

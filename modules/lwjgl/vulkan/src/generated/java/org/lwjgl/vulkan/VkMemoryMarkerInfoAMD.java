@@ -66,13 +66,8 @@ public class VkMemoryMarkerInfoAMD extends Struct<VkMemoryMarkerInfoAMD> impleme
         MARKER = layout.offsetof(5);
     }
 
-    protected VkMemoryMarkerInfoAMD(long address, @Nullable ByteBuffer container) {
+    public VkMemoryMarkerInfoAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryMarkerInfoAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryMarkerInfoAMD(address, container);
     }
 
     /**

@@ -84,13 +84,8 @@ public class SDL_GPUColorTargetBlendState extends Struct<SDL_GPUColorTargetBlend
         PADDING2 = layout.offsetof(10);
     }
 
-    protected SDL_GPUColorTargetBlendState(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUColorTargetBlendState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUColorTargetBlendState create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUColorTargetBlendState(address, container);
     }
 
     /**

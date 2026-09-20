@@ -55,13 +55,8 @@ public class XrHandCapsuleFB extends Struct<XrHandCapsuleFB> {
         JOINT = layout.offsetof(2);
     }
 
-    protected XrHandCapsuleFB(long address, @Nullable ByteBuffer container) {
+    public XrHandCapsuleFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandCapsuleFB create(long address, @Nullable ByteBuffer container) {
-        return new XrHandCapsuleFB(address, container);
     }
 
     /**

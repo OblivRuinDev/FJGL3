@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderUniformBufferUnsizedArrayFeaturesEXT extends 
         SHADERUNIFORMBUFFERUNSIZEDARRAY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderUniformBufferUnsizedArrayFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderUniformBufferUnsizedArrayFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderUniformBufferUnsizedArrayFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderUniformBufferUnsizedArrayFeaturesEXT(address, container);
     }
 
     /**

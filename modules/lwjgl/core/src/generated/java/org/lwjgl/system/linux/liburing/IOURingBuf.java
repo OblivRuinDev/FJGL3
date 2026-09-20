@@ -57,13 +57,8 @@ public class IOURingBuf extends Struct<IOURingBuf> implements NativeResource {
         RESV = layout.offsetof(3);
     }
 
-    protected IOURingBuf(long address, @Nullable ByteBuffer container) {
+    public IOURingBuf(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingBuf create(long address, @Nullable ByteBuffer container) {
-        return new IOURingBuf(address, container);
     }
 
     /**

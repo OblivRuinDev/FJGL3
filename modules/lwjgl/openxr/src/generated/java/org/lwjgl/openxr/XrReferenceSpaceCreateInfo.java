@@ -58,13 +58,8 @@ public class XrReferenceSpaceCreateInfo extends Struct<XrReferenceSpaceCreateInf
         POSEINREFERENCESPACE = layout.offsetof(3);
     }
 
-    protected XrReferenceSpaceCreateInfo(long address, @Nullable ByteBuffer container) {
+    public XrReferenceSpaceCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrReferenceSpaceCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrReferenceSpaceCreateInfo(address, container);
     }
 
     /**

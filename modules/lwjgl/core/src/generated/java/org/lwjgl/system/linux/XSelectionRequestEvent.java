@@ -81,13 +81,8 @@ public class XSelectionRequestEvent extends Struct<XSelectionRequestEvent> imple
         TIME = layout.offsetof(9);
     }
 
-    protected XSelectionRequestEvent(long address, @Nullable ByteBuffer container) {
+    public XSelectionRequestEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XSelectionRequestEvent create(long address, @Nullable ByteBuffer container) {
-        return new XSelectionRequestEvent(address, container);
     }
 
     /**

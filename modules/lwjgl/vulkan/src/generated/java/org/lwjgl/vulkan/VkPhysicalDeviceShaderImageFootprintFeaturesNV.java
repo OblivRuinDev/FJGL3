@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderImageFootprintFeaturesNV extends Struct<VkPhy
         IMAGEFOOTPRINT = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderImageFootprintFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderImageFootprintFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderImageFootprintFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderImageFootprintFeaturesNV(address, container);
     }
 
     /**

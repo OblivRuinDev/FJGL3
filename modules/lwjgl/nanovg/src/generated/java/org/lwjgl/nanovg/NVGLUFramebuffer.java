@@ -55,13 +55,8 @@ public class NVGLUFramebuffer extends Struct<NVGLUFramebuffer> {
         IMAGE = layout.offsetof(3);
     }
 
-    protected NVGLUFramebuffer(long address, @Nullable ByteBuffer container) {
+    public NVGLUFramebuffer(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NVGLUFramebuffer create(long address, @Nullable ByteBuffer container) {
-        return new NVGLUFramebuffer(address, container);
     }
 
     /**

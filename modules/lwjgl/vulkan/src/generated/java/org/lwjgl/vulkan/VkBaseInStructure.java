@@ -48,13 +48,8 @@ public class VkBaseInStructure extends Struct<VkBaseInStructure> implements Nati
         PNEXT = layout.offsetof(1);
     }
 
-    protected VkBaseInStructure(long address, @Nullable ByteBuffer container) {
+    public VkBaseInStructure(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBaseInStructure create(long address, @Nullable ByteBuffer container) {
-        return new VkBaseInStructure(address, container);
     }
 
     /**

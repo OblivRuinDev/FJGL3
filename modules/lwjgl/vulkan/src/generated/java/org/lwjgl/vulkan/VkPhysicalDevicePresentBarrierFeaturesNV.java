@@ -52,13 +52,8 @@ public class VkPhysicalDevicePresentBarrierFeaturesNV extends Struct<VkPhysicalD
         PRESENTBARRIER = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePresentBarrierFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePresentBarrierFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePresentBarrierFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePresentBarrierFeaturesNV(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkSwapchainDisplayNativeHdrCreateInfoAMD extends Struct<VkSwapchain
         LOCALDIMMINGENABLE = layout.offsetof(2);
     }
 
-    protected VkSwapchainDisplayNativeHdrCreateInfoAMD(long address, @Nullable ByteBuffer container) {
+    public VkSwapchainDisplayNativeHdrCreateInfoAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSwapchainDisplayNativeHdrCreateInfoAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkSwapchainDisplayNativeHdrCreateInfoAMD(address, container);
     }
 
     /**

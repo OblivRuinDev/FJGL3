@@ -53,13 +53,8 @@ public class IOURingRSRCUpdate extends Struct<IOURingRSRCUpdate> implements Nati
         DATA = layout.offsetof(2);
     }
 
-    protected IOURingRSRCUpdate(long address, @Nullable ByteBuffer container) {
+    public IOURingRSRCUpdate(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingRSRCUpdate create(long address, @Nullable ByteBuffer container) {
-        return new IOURingRSRCUpdate(address, container);
     }
 
     /**

@@ -49,13 +49,8 @@ public class FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE extends Struct<FMOD_DSP_PARAMET
         RMS = layout.offsetof(1);
     }
 
-    protected FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_PARAMETER_DYNAMIC_RESPONSE(address, container);
     }
 
     /**

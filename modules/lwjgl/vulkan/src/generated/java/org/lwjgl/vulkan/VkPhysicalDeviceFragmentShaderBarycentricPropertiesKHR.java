@@ -52,13 +52,8 @@ public class VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR extends Stru
         TRISTRIPVERTEXORDERINDEPENDENTOFPROVOKINGVERTEX = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(address, container);
     }
 
     /**

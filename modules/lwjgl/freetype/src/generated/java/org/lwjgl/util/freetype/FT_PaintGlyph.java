@@ -48,13 +48,8 @@ public class FT_PaintGlyph extends Struct<FT_PaintGlyph> {
         GLYPHID = layout.offsetof(1);
     }
 
-    protected FT_PaintGlyph(long address, @Nullable ByteBuffer container) {
+    public FT_PaintGlyph(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintGlyph create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintGlyph(address, container);
     }
 
     /**

@@ -71,13 +71,8 @@ public class VkImportSemaphoreWin32HandleInfoKHR extends Struct<VkImportSemaphor
         NAME = layout.offsetof(6);
     }
 
-    protected VkImportSemaphoreWin32HandleInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkImportSemaphoreWin32HandleInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImportSemaphoreWin32HandleInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkImportSemaphoreWin32HandleInfoKHR(address, container);
     }
 
     /**

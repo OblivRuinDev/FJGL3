@@ -81,13 +81,8 @@ public class XExposeEvent extends Struct<XExposeEvent> implements NativeResource
         COUNT = layout.offsetof(9);
     }
 
-    protected XExposeEvent(long address, @Nullable ByteBuffer container) {
+    public XExposeEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XExposeEvent create(long address, @Nullable ByteBuffer container) {
-        return new XExposeEvent(address, container);
     }
 
     /**

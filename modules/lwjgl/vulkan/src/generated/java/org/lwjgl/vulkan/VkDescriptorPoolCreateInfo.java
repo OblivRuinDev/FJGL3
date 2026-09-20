@@ -65,13 +65,8 @@ public class VkDescriptorPoolCreateInfo extends Struct<VkDescriptorPoolCreateInf
         PPOOLSIZES = layout.offsetof(5);
     }
 
-    protected VkDescriptorPoolCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkDescriptorPoolCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDescriptorPoolCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDescriptorPoolCreateInfo(address, container);
     }
 
     /**

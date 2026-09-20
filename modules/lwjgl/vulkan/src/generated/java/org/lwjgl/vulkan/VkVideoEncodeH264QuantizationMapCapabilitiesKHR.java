@@ -56,13 +56,8 @@ public class VkVideoEncodeH264QuantizationMapCapabilitiesKHR extends Struct<VkVi
         MAXQPDELTA = layout.offsetof(3);
     }
 
-    protected VkVideoEncodeH264QuantizationMapCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH264QuantizationMapCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH264QuantizationMapCapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH264QuantizationMapCapabilitiesKHR(address, container);
     }
 
     /**

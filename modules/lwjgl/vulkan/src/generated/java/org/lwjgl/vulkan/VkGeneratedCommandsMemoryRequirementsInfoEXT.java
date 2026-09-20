@@ -64,13 +64,8 @@ public class VkGeneratedCommandsMemoryRequirementsInfoEXT extends Struct<VkGener
         MAXDRAWCOUNT = layout.offsetof(5);
     }
 
-    protected VkGeneratedCommandsMemoryRequirementsInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkGeneratedCommandsMemoryRequirementsInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGeneratedCommandsMemoryRequirementsInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkGeneratedCommandsMemoryRequirementsInfoEXT(address, container);
     }
 
     /**

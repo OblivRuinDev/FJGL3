@@ -57,13 +57,8 @@ public class VkFrameBoundaryTensorsARM extends Struct<VkFrameBoundaryTensorsARM>
         PTENSORS = layout.offsetof(3);
     }
 
-    protected VkFrameBoundaryTensorsARM(long address, @Nullable ByteBuffer container) {
+    public VkFrameBoundaryTensorsARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFrameBoundaryTensorsARM create(long address, @Nullable ByteBuffer container) {
-        return new VkFrameBoundaryTensorsARM(address, container);
     }
 
     /**

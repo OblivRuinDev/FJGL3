@@ -52,13 +52,8 @@ public class SQL_TIME_STRUCT extends Struct<SQL_TIME_STRUCT> implements NativeRe
         SECOND = layout.offsetof(2);
     }
 
-    protected SQL_TIME_STRUCT(long address, @Nullable ByteBuffer container) {
+    public SQL_TIME_STRUCT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SQL_TIME_STRUCT create(long address, @Nullable ByteBuffer container) {
-        return new SQL_TIME_STRUCT(address, container);
     }
 
     /**

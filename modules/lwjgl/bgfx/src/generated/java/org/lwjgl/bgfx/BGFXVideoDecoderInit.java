@@ -66,13 +66,8 @@ public class BGFXVideoDecoderInit extends Struct<BGFXVideoDecoderInit> implement
         FLAGS = layout.offsetof(5);
     }
 
-    protected BGFXVideoDecoderInit(long address, @Nullable ByteBuffer container) {
+    public BGFXVideoDecoderInit(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXVideoDecoderInit create(long address, @Nullable ByteBuffer container) {
-        return new BGFXVideoDecoderInit(address, container);
     }
 
     /**

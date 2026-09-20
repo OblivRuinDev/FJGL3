@@ -52,13 +52,8 @@ public class SQL_DATE_STRUCT extends Struct<SQL_DATE_STRUCT> implements NativeRe
         DAY = layout.offsetof(2);
     }
 
-    protected SQL_DATE_STRUCT(long address, @Nullable ByteBuffer container) {
+    public SQL_DATE_STRUCT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SQL_DATE_STRUCT create(long address, @Nullable ByteBuffer container) {
-        return new SQL_DATE_STRUCT(address, container);
     }
 
     /**

@@ -48,13 +48,8 @@ public class VkAttachmentReference extends Struct<VkAttachmentReference> impleme
         LAYOUT = layout.offsetof(1);
     }
 
-    protected VkAttachmentReference(long address, @Nullable ByteBuffer container) {
+    public VkAttachmentReference(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkAttachmentReference create(long address, @Nullable ByteBuffer container) {
-        return new VkAttachmentReference(address, container);
     }
 
     /**

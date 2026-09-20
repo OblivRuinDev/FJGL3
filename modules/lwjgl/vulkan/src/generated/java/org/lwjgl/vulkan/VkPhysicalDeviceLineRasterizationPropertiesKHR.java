@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceLineRasterizationPropertiesKHR extends VkPhysicalDeviceLineRasterizationProperties {
 
-    protected VkPhysicalDeviceLineRasterizationPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceLineRasterizationPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceLineRasterizationPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceLineRasterizationPropertiesKHR(address, container);
     }
 
     /**

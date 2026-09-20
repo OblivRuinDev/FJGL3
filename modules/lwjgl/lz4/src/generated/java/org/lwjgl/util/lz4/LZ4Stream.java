@@ -53,13 +53,8 @@ public class LZ4Stream extends Struct<LZ4Stream> {
         INTERNAL_DONOTUSE = layout.offsetof(1);
     }
 
-    protected LZ4Stream(long address, @Nullable ByteBuffer container) {
+    public LZ4Stream(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LZ4Stream create(long address, @Nullable ByteBuffer container) {
-        return new LZ4Stream(address, container);
     }
 
     /**

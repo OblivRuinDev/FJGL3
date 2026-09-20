@@ -52,13 +52,8 @@ public class VkPhysicalDeviceShaderUntypedPointersFeaturesKHR extends Struct<VkP
         SHADERUNTYPEDPOINTERS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceShaderUntypedPointersFeaturesKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderUntypedPointersFeaturesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderUntypedPointersFeaturesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderUntypedPointersFeaturesKHR(address, container);
     }
 
     /**

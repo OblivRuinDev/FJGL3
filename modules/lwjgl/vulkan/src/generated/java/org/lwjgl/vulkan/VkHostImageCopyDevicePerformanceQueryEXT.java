@@ -26,13 +26,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkHostImageCopyDevicePerformanceQueryEXT extends VkHostImageCopyDevicePerformanceQuery {
 
-    protected VkHostImageCopyDevicePerformanceQueryEXT(long address, @Nullable ByteBuffer container) {
+    public VkHostImageCopyDevicePerformanceQueryEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkHostImageCopyDevicePerformanceQueryEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkHostImageCopyDevicePerformanceQueryEXT(address, container);
     }
 
     /**

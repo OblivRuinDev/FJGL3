@@ -60,13 +60,8 @@ public class VkSubpassDescriptionDepthStencilResolve extends Struct<VkSubpassDes
         PDEPTHSTENCILRESOLVEATTACHMENT = layout.offsetof(4);
     }
 
-    protected VkSubpassDescriptionDepthStencilResolve(long address, @Nullable ByteBuffer container) {
+    public VkSubpassDescriptionDepthStencilResolve(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassDescriptionDepthStencilResolve create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassDescriptionDepthStencilResolve(address, container);
     }
 
     /**

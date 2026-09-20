@@ -124,13 +124,8 @@ public class VkPhysicalDeviceDescriptorHeapPropertiesEXT extends Struct<VkPhysic
         PROTECTEDDESCRIPTORHEAPS = layout.offsetof(20);
     }
 
-    protected VkPhysicalDeviceDescriptorHeapPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDescriptorHeapPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDescriptorHeapPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDescriptorHeapPropertiesEXT(address, container);
     }
 
     /**

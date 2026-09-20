@@ -64,13 +64,8 @@ public class FT_Outline extends Struct<FT_Outline> implements NativeResource {
         FLAGS = layout.offsetof(5);
     }
 
-    protected FT_Outline(long address, @Nullable ByteBuffer container) {
+    public FT_Outline(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_Outline create(long address, @Nullable ByteBuffer container) {
-        return new FT_Outline(address, container);
     }
 
     /**

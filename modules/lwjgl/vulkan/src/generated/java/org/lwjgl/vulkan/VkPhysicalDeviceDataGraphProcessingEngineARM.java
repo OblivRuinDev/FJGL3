@@ -48,13 +48,8 @@ public class VkPhysicalDeviceDataGraphProcessingEngineARM extends Struct<VkPhysi
         ISFOREIGN = layout.offsetof(1);
     }
 
-    protected VkPhysicalDeviceDataGraphProcessingEngineARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDataGraphProcessingEngineARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDataGraphProcessingEngineARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDataGraphProcessingEngineARM(address, container);
     }
 
     /**

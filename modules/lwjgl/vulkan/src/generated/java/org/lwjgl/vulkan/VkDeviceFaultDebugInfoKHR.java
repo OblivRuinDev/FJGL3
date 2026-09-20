@@ -56,13 +56,8 @@ public class VkDeviceFaultDebugInfoKHR extends Struct<VkDeviceFaultDebugInfoKHR>
         PVENDORBINARYDATA = layout.offsetof(3);
     }
 
-    protected VkDeviceFaultDebugInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceFaultDebugInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceFaultDebugInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceFaultDebugInfoKHR(address, container);
     }
 
     /**

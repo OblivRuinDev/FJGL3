@@ -52,13 +52,8 @@ public class XrSenseDataProviderCreateInfoBD extends Struct<XrSenseDataProviderC
         PROVIDERTYPE = layout.offsetof(2);
     }
 
-    protected XrSenseDataProviderCreateInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrSenseDataProviderCreateInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSenseDataProviderCreateInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSenseDataProviderCreateInfoBD(address, container);
     }
 
     /**

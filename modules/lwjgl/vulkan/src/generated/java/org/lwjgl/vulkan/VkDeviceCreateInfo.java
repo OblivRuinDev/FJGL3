@@ -81,13 +81,8 @@ public class VkDeviceCreateInfo extends Struct<VkDeviceCreateInfo> implements Na
         PENABLEDFEATURES = layout.offsetof(9);
     }
 
-    protected VkDeviceCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkDeviceCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceCreateInfo(address, container);
     }
 
     /**

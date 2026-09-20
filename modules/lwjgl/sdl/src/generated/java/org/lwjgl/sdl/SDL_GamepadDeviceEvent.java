@@ -56,13 +56,8 @@ public class SDL_GamepadDeviceEvent extends Struct<SDL_GamepadDeviceEvent> imple
         WHICH = layout.offsetof(3);
     }
 
-    protected SDL_GamepadDeviceEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_GamepadDeviceEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GamepadDeviceEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GamepadDeviceEvent(address, container);
     }
 
     /**

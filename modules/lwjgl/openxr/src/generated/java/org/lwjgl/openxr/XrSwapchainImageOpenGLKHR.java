@@ -52,13 +52,8 @@ public class XrSwapchainImageOpenGLKHR extends Struct<XrSwapchainImageOpenGLKHR>
         IMAGE = layout.offsetof(2);
     }
 
-    protected XrSwapchainImageOpenGLKHR(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainImageOpenGLKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainImageOpenGLKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainImageOpenGLKHR(address, container);
     }
 
     /**

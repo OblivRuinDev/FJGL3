@@ -64,13 +64,8 @@ public class SDL_WindowEvent extends Struct<SDL_WindowEvent> implements NativeRe
         DATA2 = layout.offsetof(5);
     }
 
-    protected SDL_WindowEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_WindowEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_WindowEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_WindowEvent(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VkPhysicalDeviceTransformFeedbackFeaturesEXT extends Struct<VkPhysi
         GEOMETRYSTREAMS = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceTransformFeedbackFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTransformFeedbackFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTransformFeedbackFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTransformFeedbackFeaturesEXT(address, container);
     }
 
     /**

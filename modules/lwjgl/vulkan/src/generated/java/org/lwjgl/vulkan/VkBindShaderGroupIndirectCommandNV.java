@@ -44,13 +44,8 @@ public class VkBindShaderGroupIndirectCommandNV extends Struct<VkBindShaderGroup
         GROUPINDEX = layout.offsetof(0);
     }
 
-    protected VkBindShaderGroupIndirectCommandNV(long address, @Nullable ByteBuffer container) {
+    public VkBindShaderGroupIndirectCommandNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindShaderGroupIndirectCommandNV create(long address, @Nullable ByteBuffer container) {
-        return new VkBindShaderGroupIndirectCommandNV(address, container);
     }
 
     /**

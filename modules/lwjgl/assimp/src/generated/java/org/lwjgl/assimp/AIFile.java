@@ -76,13 +76,8 @@ public class AIFile extends Struct<AIFile> implements NativeResource {
         USERDATA = layout.offsetof(6);
     }
 
-    protected AIFile(long address, @Nullable ByteBuffer container) {
+    public AIFile(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected AIFile create(long address, @Nullable ByteBuffer container) {
-        return new AIFile(address, container);
     }
 
     /**

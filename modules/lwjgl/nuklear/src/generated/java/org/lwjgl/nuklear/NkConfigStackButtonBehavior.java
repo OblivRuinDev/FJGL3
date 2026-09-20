@@ -50,13 +50,8 @@ class NkConfigStackButtonBehavior extends Struct<NkConfigStackButtonBehavior> {
         ELEMENTS = layout.offsetof(1);
     }
 
-    protected NkConfigStackButtonBehavior(long address, @Nullable ByteBuffer container) {
+    public NkConfigStackButtonBehavior(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkConfigStackButtonBehavior create(long address, @Nullable ByteBuffer container) {
-        return new NkConfigStackButtonBehavior(address, container);
     }
 
     /**

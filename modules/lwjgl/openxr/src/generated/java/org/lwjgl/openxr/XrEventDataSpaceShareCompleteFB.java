@@ -56,13 +56,8 @@ public class XrEventDataSpaceShareCompleteFB extends Struct<XrEventDataSpaceShar
         RESULT = layout.offsetof(3);
     }
 
-    protected XrEventDataSpaceShareCompleteFB(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSpaceShareCompleteFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSpaceShareCompleteFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSpaceShareCompleteFB(address, container);
     }
 
     /**

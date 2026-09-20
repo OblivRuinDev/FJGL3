@@ -52,13 +52,8 @@ public class VkPipelineShaderStageRequiredSubgroupSizeCreateInfo extends Struct<
         REQUIREDSUBGROUPSIZE = layout.offsetof(2);
     }
 
-    protected VkPipelineShaderStageRequiredSubgroupSizeCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineShaderStageRequiredSubgroupSizeCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineShaderStageRequiredSubgroupSizeCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineShaderStageRequiredSubgroupSizeCreateInfo(address, container);
     }
 
     /**

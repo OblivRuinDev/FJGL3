@@ -83,13 +83,8 @@ public class VkRenderingInfo extends Struct<VkRenderingInfo> implements NativeRe
         PSTENCILATTACHMENT = layout.offsetof(9);
     }
 
-    protected VkRenderingInfo(long address, @Nullable ByteBuffer container) {
+    public VkRenderingInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkRenderingInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkRenderingInfo(address, container);
     }
 
     /**

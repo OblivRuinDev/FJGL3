@@ -69,13 +69,8 @@ public class VkShaderStatisticsInfoAMD extends Struct<VkShaderStatisticsInfoAMD>
         COMPUTEWORKGROUPSIZE = layout.offsetof(6);
     }
 
-    protected VkShaderStatisticsInfoAMD(long address, @Nullable ByteBuffer container) {
+    public VkShaderStatisticsInfoAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkShaderStatisticsInfoAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkShaderStatisticsInfoAMD(address, container);
     }
 
     /**

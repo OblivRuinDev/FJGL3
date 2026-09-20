@@ -69,13 +69,8 @@ public class ZSTDCompressionParameters extends Struct<ZSTDCompressionParameters>
         STRATEGY = layout.offsetof(6);
     }
 
-    protected ZSTDCompressionParameters(long address, @Nullable ByteBuffer container) {
+    public ZSTDCompressionParameters(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ZSTDCompressionParameters create(long address, @Nullable ByteBuffer container) {
-        return new ZSTDCompressionParameters(address, container);
     }
 
     /**

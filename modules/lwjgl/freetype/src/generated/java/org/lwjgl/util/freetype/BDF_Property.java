@@ -63,13 +63,8 @@ public class BDF_Property extends Struct<BDF_Property> implements NativeResource
             U_CARDINAL = layout.offsetof(4);
     }
 
-    protected BDF_Property(long address, @Nullable ByteBuffer container) {
+    public BDF_Property(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BDF_Property create(long address, @Nullable ByteBuffer container) {
-        return new BDF_Property(address, container);
     }
 
     /**

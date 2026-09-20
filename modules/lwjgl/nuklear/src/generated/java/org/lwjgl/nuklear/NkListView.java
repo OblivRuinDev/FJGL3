@@ -69,13 +69,8 @@ public class NkListView extends Struct<NkListView> implements NativeResource {
         SCROLL_VALUE = layout.offsetof(6);
     }
 
-    protected NkListView(long address, @Nullable ByteBuffer container) {
+    public NkListView(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkListView create(long address, @Nullable ByteBuffer container) {
-        return new NkListView(address, container);
     }
 
     /**

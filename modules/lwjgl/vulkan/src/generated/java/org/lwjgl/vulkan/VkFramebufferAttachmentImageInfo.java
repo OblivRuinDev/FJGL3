@@ -77,13 +77,8 @@ public class VkFramebufferAttachmentImageInfo extends Struct<VkFramebufferAttach
         PVIEWFORMATS = layout.offsetof(8);
     }
 
-    protected VkFramebufferAttachmentImageInfo(long address, @Nullable ByteBuffer container) {
+    public VkFramebufferAttachmentImageInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkFramebufferAttachmentImageInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkFramebufferAttachmentImageInfo(address, container);
     }
 
     /**

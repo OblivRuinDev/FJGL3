@@ -52,13 +52,8 @@ public class VkImageAlignmentControlCreateInfoMESA extends Struct<VkImageAlignme
         MAXIMUMREQUESTEDALIGNMENT = layout.offsetof(2);
     }
 
-    protected VkImageAlignmentControlCreateInfoMESA(long address, @Nullable ByteBuffer container) {
+    public VkImageAlignmentControlCreateInfoMESA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageAlignmentControlCreateInfoMESA create(long address, @Nullable ByteBuffer container) {
-        return new VkImageAlignmentControlCreateInfoMESA(address, container);
     }
 
     /**

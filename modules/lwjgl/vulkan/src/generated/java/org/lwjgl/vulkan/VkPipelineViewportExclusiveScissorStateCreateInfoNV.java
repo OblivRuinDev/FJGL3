@@ -56,13 +56,8 @@ public class VkPipelineViewportExclusiveScissorStateCreateInfoNV extends Struct<
         PEXCLUSIVESCISSORS = layout.offsetof(3);
     }
 
-    protected VkPipelineViewportExclusiveScissorStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkPipelineViewportExclusiveScissorStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineViewportExclusiveScissorStateCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineViewportExclusiveScissorStateCreateInfoNV(address, container);
     }
 
     /**

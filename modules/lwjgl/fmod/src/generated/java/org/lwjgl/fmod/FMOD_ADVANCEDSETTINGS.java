@@ -129,13 +129,8 @@ public class FMOD_ADVANCEDSETTINGS extends Struct<FMOD_ADVANCEDSETTINGS> impleme
         MAXSPATIALOBJECTS = layout.offsetof(21);
     }
 
-    protected FMOD_ADVANCEDSETTINGS(long address, @Nullable ByteBuffer container) {
+    public FMOD_ADVANCEDSETTINGS(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_ADVANCEDSETTINGS create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_ADVANCEDSETTINGS(address, container);
     }
 
     /**

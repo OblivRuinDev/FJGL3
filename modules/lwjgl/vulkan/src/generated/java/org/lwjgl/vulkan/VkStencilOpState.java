@@ -68,13 +68,8 @@ public class VkStencilOpState extends Struct<VkStencilOpState> implements Native
         REFERENCE = layout.offsetof(6);
     }
 
-    protected VkStencilOpState(long address, @Nullable ByteBuffer container) {
+    public VkStencilOpState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkStencilOpState create(long address, @Nullable ByteBuffer container) {
-        return new VkStencilOpState(address, container);
     }
 
     /**

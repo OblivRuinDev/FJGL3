@@ -57,13 +57,8 @@ public class XrSwapchainStateFoveationFB extends Struct<XrSwapchainStateFoveatio
         PROFILE = layout.offsetof(3);
     }
 
-    protected XrSwapchainStateFoveationFB(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainStateFoveationFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainStateFoveationFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainStateFoveationFB(address, container);
     }
 
     /**

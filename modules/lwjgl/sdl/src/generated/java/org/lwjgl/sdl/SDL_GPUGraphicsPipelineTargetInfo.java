@@ -68,13 +68,8 @@ public class SDL_GPUGraphicsPipelineTargetInfo extends Struct<SDL_GPUGraphicsPip
         PADDING3 = layout.offsetof(6);
     }
 
-    protected SDL_GPUGraphicsPipelineTargetInfo(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUGraphicsPipelineTargetInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUGraphicsPipelineTargetInfo create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUGraphicsPipelineTargetInfo(address, container);
     }
 
     /**

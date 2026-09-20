@@ -71,13 +71,8 @@ public class rpmalloc_interface_t extends Struct<rpmalloc_interface_t> implement
         ERROR_CALLBACK = layout.offsetof(5);
     }
 
-    protected rpmalloc_interface_t(long address, @Nullable ByteBuffer container) {
+    public rpmalloc_interface_t(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected rpmalloc_interface_t create(long address, @Nullable ByteBuffer container) {
-        return new rpmalloc_interface_t(address, container);
     }
 
     /**

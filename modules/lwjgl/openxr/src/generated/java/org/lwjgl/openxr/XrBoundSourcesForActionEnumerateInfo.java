@@ -53,13 +53,8 @@ public class XrBoundSourcesForActionEnumerateInfo extends Struct<XrBoundSourcesF
         ACTION = layout.offsetof(2);
     }
 
-    protected XrBoundSourcesForActionEnumerateInfo(long address, @Nullable ByteBuffer container) {
+    public XrBoundSourcesForActionEnumerateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBoundSourcesForActionEnumerateInfo create(long address, @Nullable ByteBuffer container) {
-        return new XrBoundSourcesForActionEnumerateInfo(address, container);
     }
 
     /**

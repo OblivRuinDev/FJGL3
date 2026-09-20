@@ -56,13 +56,8 @@ public class VkPhysicalDevice4444FormatsFeaturesEXT extends Struct<VkPhysicalDev
         FORMATA4B4G4R4 = layout.offsetof(3);
     }
 
-    protected VkPhysicalDevice4444FormatsFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevice4444FormatsFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevice4444FormatsFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevice4444FormatsFeaturesEXT(address, container);
     }
 
     /**

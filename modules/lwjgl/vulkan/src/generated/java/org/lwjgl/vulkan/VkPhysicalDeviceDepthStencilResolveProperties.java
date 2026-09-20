@@ -64,13 +64,8 @@ public class VkPhysicalDeviceDepthStencilResolveProperties extends Struct<VkPhys
         INDEPENDENTRESOLVE = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceDepthStencilResolveProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDepthStencilResolveProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDepthStencilResolveProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDepthStencilResolveProperties(address, container);
     }
 
     /**

@@ -48,13 +48,8 @@ public class CXCompletionResult extends Struct<CXCompletionResult> implements Na
         COMPLETIONSTRING = layout.offsetof(1);
     }
 
-    protected CXCompletionResult(long address, @Nullable ByteBuffer container) {
+    public CXCompletionResult(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXCompletionResult create(long address, @Nullable ByteBuffer container) {
-        return new CXCompletionResult(address, container);
     }
 
     /**

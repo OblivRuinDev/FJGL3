@@ -63,13 +63,8 @@ public class NkNineSlice extends Struct<NkNineSlice> implements NativeResource {
         B = layout.offsetof(4);
     }
 
-    protected NkNineSlice(long address, @Nullable ByteBuffer container) {
+    public NkNineSlice(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkNineSlice create(long address, @Nullable ByteBuffer container) {
-        return new NkNineSlice(address, container);
     }
 
     /**

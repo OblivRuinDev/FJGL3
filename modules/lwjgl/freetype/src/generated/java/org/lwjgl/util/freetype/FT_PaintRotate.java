@@ -56,13 +56,8 @@ public class FT_PaintRotate extends Struct<FT_PaintRotate> {
         CENTER_Y = layout.offsetof(3);
     }
 
-    protected FT_PaintRotate(long address, @Nullable ByteBuffer container) {
+    public FT_PaintRotate(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintRotate create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintRotate(address, container);
     }
 
     /**

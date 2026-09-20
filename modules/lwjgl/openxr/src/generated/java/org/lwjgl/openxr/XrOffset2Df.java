@@ -48,13 +48,8 @@ public class XrOffset2Df extends Struct<XrOffset2Df> implements NativeResource {
         Y = layout.offsetof(1);
     }
 
-    protected XrOffset2Df(long address, @Nullable ByteBuffer container) {
+    public XrOffset2Df(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrOffset2Df create(long address, @Nullable ByteBuffer container) {
-        return new XrOffset2Df(address, container);
     }
 
     /**

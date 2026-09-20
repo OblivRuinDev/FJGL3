@@ -44,13 +44,8 @@ public class FT_PaintColrLayers extends Struct<FT_PaintColrLayers> {
         LAYER_ITERATOR = layout.offsetof(0);
     }
 
-    protected FT_PaintColrLayers(long address, @Nullable ByteBuffer container) {
+    public FT_PaintColrLayers(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_PaintColrLayers create(long address, @Nullable ByteBuffer container) {
-        return new FT_PaintColrLayers(address, container);
     }
 
     /**

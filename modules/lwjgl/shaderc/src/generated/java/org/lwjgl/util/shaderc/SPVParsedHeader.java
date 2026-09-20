@@ -59,13 +59,8 @@ public class SPVParsedHeader extends Struct<SPVParsedHeader> {
         RESERVED = layout.offsetof(4);
     }
 
-    protected SPVParsedHeader(long address, @Nullable ByteBuffer container) {
+    public SPVParsedHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SPVParsedHeader create(long address, @Nullable ByteBuffer container) {
-        return new SPVParsedHeader(address, container);
     }
 
     /**

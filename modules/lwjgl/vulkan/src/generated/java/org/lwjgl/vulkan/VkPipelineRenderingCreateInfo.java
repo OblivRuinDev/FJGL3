@@ -68,13 +68,8 @@ public class VkPipelineRenderingCreateInfo extends Struct<VkPipelineRenderingCre
         STENCILATTACHMENTFORMAT = layout.offsetof(6);
     }
 
-    protected VkPipelineRenderingCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkPipelineRenderingCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineRenderingCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineRenderingCreateInfo(address, container);
     }
 
     /**

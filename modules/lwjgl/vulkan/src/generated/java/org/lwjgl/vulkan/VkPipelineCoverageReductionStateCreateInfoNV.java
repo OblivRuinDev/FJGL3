@@ -56,13 +56,8 @@ public class VkPipelineCoverageReductionStateCreateInfoNV extends Struct<VkPipel
         COVERAGEREDUCTIONMODE = layout.offsetof(3);
     }
 
-    protected VkPipelineCoverageReductionStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkPipelineCoverageReductionStateCreateInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineCoverageReductionStateCreateInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineCoverageReductionStateCreateInfoNV(address, container);
     }
 
     /**

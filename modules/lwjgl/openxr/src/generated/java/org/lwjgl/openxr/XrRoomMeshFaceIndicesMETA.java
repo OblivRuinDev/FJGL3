@@ -60,13 +60,8 @@ public class XrRoomMeshFaceIndicesMETA extends Struct<XrRoomMeshFaceIndicesMETA>
         INDICES = layout.offsetof(4);
     }
 
-    protected XrRoomMeshFaceIndicesMETA(long address, @Nullable ByteBuffer container) {
+    public XrRoomMeshFaceIndicesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrRoomMeshFaceIndicesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrRoomMeshFaceIndicesMETA(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkImageSubresource extends Struct<VkImageSubresource> implements Na
         ARRAYLAYER = layout.offsetof(2);
     }
 
-    protected VkImageSubresource(long address, @Nullable ByteBuffer container) {
+    public VkImageSubresource(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageSubresource create(long address, @Nullable ByteBuffer container) {
-        return new VkImageSubresource(address, container);
     }
 
     /**

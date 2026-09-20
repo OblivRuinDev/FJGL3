@@ -56,13 +56,8 @@ public class XrSystemEnvironmentDepthPropertiesMETA extends Struct<XrSystemEnvir
         SUPPORTSHANDREMOVAL = layout.offsetof(3);
     }
 
-    protected XrSystemEnvironmentDepthPropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemEnvironmentDepthPropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemEnvironmentDepthPropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemEnvironmentDepthPropertiesMETA(address, container);
     }
 
     /**

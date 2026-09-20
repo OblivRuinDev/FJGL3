@@ -55,13 +55,8 @@ public class hwloc_topology_diff_u extends Struct<hwloc_topology_diff_u> {
         TOO_COMPLEX = layout.offsetof(2);
     }
 
-    protected hwloc_topology_diff_u(long address, @Nullable ByteBuffer container) {
+    public hwloc_topology_diff_u(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_topology_diff_u create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_topology_diff_u(address, container);
     }
 
     /**

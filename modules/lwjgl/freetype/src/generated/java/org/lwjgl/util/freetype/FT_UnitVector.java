@@ -48,13 +48,8 @@ public class FT_UnitVector extends Struct<FT_UnitVector> implements NativeResour
         Y = layout.offsetof(1);
     }
 
-    protected FT_UnitVector(long address, @Nullable ByteBuffer container) {
+    public FT_UnitVector(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FT_UnitVector create(long address, @Nullable ByteBuffer container) {
-        return new FT_UnitVector(address, container);
     }
 
     /**

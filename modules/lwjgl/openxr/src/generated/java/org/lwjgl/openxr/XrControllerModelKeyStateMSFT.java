@@ -52,13 +52,8 @@ public class XrControllerModelKeyStateMSFT extends Struct<XrControllerModelKeySt
         MODELKEY = layout.offsetof(2);
     }
 
-    protected XrControllerModelKeyStateMSFT(long address, @Nullable ByteBuffer container) {
+    public XrControllerModelKeyStateMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrControllerModelKeyStateMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrControllerModelKeyStateMSFT(address, container);
     }
 
     /**

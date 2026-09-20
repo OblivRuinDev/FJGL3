@@ -60,13 +60,8 @@ public class VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT extends Struct<
         PRIMITIVESGENERATEDQUERYWITHNONZEROSTREAMS = layout.offsetof(4);
     }
 
-    protected VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT(address, container);
     }
 
     /**

@@ -61,13 +61,8 @@ public class XrDebugUtilsObjectNameInfoEXT extends Struct<XrDebugUtilsObjectName
         OBJECTNAME = layout.offsetof(4);
     }
 
-    protected XrDebugUtilsObjectNameInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrDebugUtilsObjectNameInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrDebugUtilsObjectNameInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrDebugUtilsObjectNameInfoEXT(address, container);
     }
 
     /**

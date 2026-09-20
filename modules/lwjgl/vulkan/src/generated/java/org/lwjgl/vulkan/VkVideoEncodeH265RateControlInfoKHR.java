@@ -68,13 +68,8 @@ public class VkVideoEncodeH265RateControlInfoKHR extends Struct<VkVideoEncodeH26
         SUBLAYERCOUNT = layout.offsetof(6);
     }
 
-    protected VkVideoEncodeH265RateControlInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH265RateControlInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH265RateControlInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH265RateControlInfoKHR(address, container);
     }
 
     /**

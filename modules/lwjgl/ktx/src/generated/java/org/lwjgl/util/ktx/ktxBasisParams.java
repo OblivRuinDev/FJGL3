@@ -165,13 +165,8 @@ public class ktxBasisParams extends Struct<ktxBasisParams> implements NativeReso
         UASTCHDRLEVEL = layout.offsetof(30);
     }
 
-    protected ktxBasisParams(long address, @Nullable ByteBuffer container) {
+    public ktxBasisParams(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ktxBasisParams create(long address, @Nullable ByteBuffer container) {
-        return new ktxBasisParams(address, container);
     }
 
     /**

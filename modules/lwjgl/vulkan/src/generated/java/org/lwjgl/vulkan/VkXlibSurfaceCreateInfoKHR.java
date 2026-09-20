@@ -62,13 +62,8 @@ public class VkXlibSurfaceCreateInfoKHR extends Struct<VkXlibSurfaceCreateInfoKH
         WINDOW = layout.offsetof(4);
     }
 
-    protected VkXlibSurfaceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkXlibSurfaceCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkXlibSurfaceCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkXlibSurfaceCreateInfoKHR(address, container);
     }
 
     /**

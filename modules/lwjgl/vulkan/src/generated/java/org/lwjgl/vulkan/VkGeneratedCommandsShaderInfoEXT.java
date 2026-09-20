@@ -57,13 +57,8 @@ public class VkGeneratedCommandsShaderInfoEXT extends Struct<VkGeneratedCommands
         PSHADERS = layout.offsetof(3);
     }
 
-    protected VkGeneratedCommandsShaderInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkGeneratedCommandsShaderInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGeneratedCommandsShaderInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkGeneratedCommandsShaderInfoEXT(address, container);
     }
 
     /**

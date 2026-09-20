@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCoverageReductionModeFeaturesNV extends Struct<VkPh
         COVERAGEREDUCTIONMODE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCoverageReductionModeFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCoverageReductionModeFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCoverageReductionModeFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCoverageReductionModeFeaturesNV(address, container);
     }
 
     /**

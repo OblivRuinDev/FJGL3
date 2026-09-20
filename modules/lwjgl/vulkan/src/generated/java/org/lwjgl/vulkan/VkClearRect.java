@@ -54,13 +54,8 @@ public class VkClearRect extends Struct<VkClearRect> implements NativeResource {
         LAYERCOUNT = layout.offsetof(2);
     }
 
-    protected VkClearRect(long address, @Nullable ByteBuffer container) {
+    public VkClearRect(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkClearRect create(long address, @Nullable ByteBuffer container) {
-        return new VkClearRect(address, container);
     }
 
     /**

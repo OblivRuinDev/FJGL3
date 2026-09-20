@@ -54,13 +54,8 @@ public class XrBodyJointVelocityBD extends Struct<XrBodyJointVelocityBD> impleme
         ANGULARVELOCITY = layout.offsetof(2);
     }
 
-    protected XrBodyJointVelocityBD(long address, @Nullable ByteBuffer container) {
+    public XrBodyJointVelocityBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrBodyJointVelocityBD create(long address, @Nullable ByteBuffer container) {
-        return new XrBodyJointVelocityBD(address, container);
     }
 
     /**

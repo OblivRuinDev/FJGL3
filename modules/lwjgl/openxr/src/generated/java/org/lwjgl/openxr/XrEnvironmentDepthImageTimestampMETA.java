@@ -52,13 +52,8 @@ public class XrEnvironmentDepthImageTimestampMETA extends Struct<XrEnvironmentDe
         CAPTURETIME = layout.offsetof(2);
     }
 
-    protected XrEnvironmentDepthImageTimestampMETA(long address, @Nullable ByteBuffer container) {
+    public XrEnvironmentDepthImageTimestampMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEnvironmentDepthImageTimestampMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEnvironmentDepthImageTimestampMETA(address, container);
     }
 
     /**

@@ -72,13 +72,8 @@ public class SDL_PenMotionEvent extends Struct<SDL_PenMotionEvent> implements Na
         Y = layout.offsetof(7);
     }
 
-    protected SDL_PenMotionEvent(long address, @Nullable ByteBuffer container) {
+    public SDL_PenMotionEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_PenMotionEvent create(long address, @Nullable ByteBuffer container) {
-        return new SDL_PenMotionEvent(address, container);
     }
 
     /**

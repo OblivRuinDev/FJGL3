@@ -76,13 +76,8 @@ public class SDL_IOStreamInterface extends Struct<SDL_IOStreamInterface> impleme
         CLOSE = layout.offsetof(6);
     }
 
-    protected SDL_IOStreamInterface(long address, @Nullable ByteBuffer container) {
+    public SDL_IOStreamInterface(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_IOStreamInterface create(long address, @Nullable ByteBuffer container) {
-        return new SDL_IOStreamInterface(address, container);
     }
 
     /**

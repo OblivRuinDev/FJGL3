@@ -48,13 +48,8 @@ public class XrEnvironmentRaycasterCreateInfoMETA extends Struct<XrEnvironmentRa
         NEXT = layout.offsetof(1);
     }
 
-    protected XrEnvironmentRaycasterCreateInfoMETA(long address, @Nullable ByteBuffer container) {
+    public XrEnvironmentRaycasterCreateInfoMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEnvironmentRaycasterCreateInfoMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEnvironmentRaycasterCreateInfoMETA(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDescriptorBufferTensorFeaturesARM extends Struct<Vk
         DESCRIPTORBUFFERTENSORDESCRIPTORS = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDescriptorBufferTensorFeaturesARM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDescriptorBufferTensorFeaturesARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDescriptorBufferTensorFeaturesARM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDescriptorBufferTensorFeaturesARM(address, container);
     }
 
     /**

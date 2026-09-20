@@ -74,13 +74,8 @@ public class FMOD_STUDIO_BANK_INFO extends Struct<FMOD_STUDIO_BANK_INFO> impleme
         SEEKCALLBACK = layout.offsetof(6);
     }
 
-    protected FMOD_STUDIO_BANK_INFO(long address, @Nullable ByteBuffer container) {
+    public FMOD_STUDIO_BANK_INFO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_STUDIO_BANK_INFO create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_STUDIO_BANK_INFO(address, container);
     }
 
     /**

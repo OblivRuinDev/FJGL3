@@ -50,13 +50,8 @@ public class VkExtensionProperties extends Struct<VkExtensionProperties> impleme
         SPECVERSION = layout.offsetof(1);
     }
 
-    protected VkExtensionProperties(long address, @Nullable ByteBuffer container) {
+    public VkExtensionProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExtensionProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkExtensionProperties(address, container);
     }
 
     /**

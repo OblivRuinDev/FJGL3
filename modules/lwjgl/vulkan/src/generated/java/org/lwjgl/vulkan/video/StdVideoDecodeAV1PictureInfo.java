@@ -141,13 +141,8 @@ public class StdVideoDecodeAV1PictureInfo extends Struct<StdVideoDecodeAV1Pictur
         PFILMGRAIN = layout.offsetof(23);
     }
 
-    protected StdVideoDecodeAV1PictureInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoDecodeAV1PictureInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoDecodeAV1PictureInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoDecodeAV1PictureInfo(address, container);
     }
 
     /**

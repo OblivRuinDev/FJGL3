@@ -72,13 +72,8 @@ public class NVGPaint extends Struct<NVGPaint> implements NativeResource {
         IMAGE = layout.offsetof(6);
     }
 
-    protected NVGPaint(long address, @Nullable ByteBuffer container) {
+    public NVGPaint(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NVGPaint create(long address, @Nullable ByteBuffer container) {
-        return new NVGPaint(address, container);
     }
 
     /**

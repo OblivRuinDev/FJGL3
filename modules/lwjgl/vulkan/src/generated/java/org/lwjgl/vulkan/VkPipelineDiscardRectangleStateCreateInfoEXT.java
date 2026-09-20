@@ -64,13 +64,8 @@ public class VkPipelineDiscardRectangleStateCreateInfoEXT extends Struct<VkPipel
         PDISCARDRECTANGLES = layout.offsetof(5);
     }
 
-    protected VkPipelineDiscardRectangleStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineDiscardRectangleStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineDiscardRectangleStateCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineDiscardRectangleStateCreateInfoEXT(address, container);
     }
 
     /**

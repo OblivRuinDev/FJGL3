@@ -44,13 +44,8 @@ public class VkSetStateFlagsIndirectCommandNV extends Struct<VkSetStateFlagsIndi
         DATA = layout.offsetof(0);
     }
 
-    protected VkSetStateFlagsIndirectCommandNV(long address, @Nullable ByteBuffer container) {
+    public VkSetStateFlagsIndirectCommandNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSetStateFlagsIndirectCommandNV create(long address, @Nullable ByteBuffer container) {
-        return new VkSetStateFlagsIndirectCommandNV(address, container);
     }
 
     /**

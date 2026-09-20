@@ -57,13 +57,8 @@ public class XrSpatialComponentPlaneAlignmentListEXT extends Struct<XrSpatialCom
         PLANEALIGNMENTS = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentPlaneAlignmentListEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentPlaneAlignmentListEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentPlaneAlignmentListEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentPlaneAlignmentListEXT(address, container);
     }
 
     /**

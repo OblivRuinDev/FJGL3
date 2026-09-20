@@ -48,13 +48,8 @@ public class XrSpaceFilterInfoBaseHeaderFB extends Struct<XrSpaceFilterInfoBaseH
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSpaceFilterInfoBaseHeaderFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceFilterInfoBaseHeaderFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceFilterInfoBaseHeaderFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceFilterInfoBaseHeaderFB(address, container);
     }
 
     /**

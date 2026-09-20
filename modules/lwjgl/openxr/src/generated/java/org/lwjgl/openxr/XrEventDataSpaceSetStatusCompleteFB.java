@@ -74,13 +74,8 @@ public class XrEventDataSpaceSetStatusCompleteFB extends Struct<XrEventDataSpace
         ENABLED = layout.offsetof(7);
     }
 
-    protected XrEventDataSpaceSetStatusCompleteFB(long address, @Nullable ByteBuffer container) {
+    public XrEventDataSpaceSetStatusCompleteFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataSpaceSetStatusCompleteFB create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataSpaceSetStatusCompleteFB(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class XrDevicePcmSampleRateStateFB extends Struct<XrDevicePcmSampleRateSt
         SAMPLERATE = layout.offsetof(2);
     }
 
-    protected XrDevicePcmSampleRateStateFB(long address, @Nullable ByteBuffer container) {
+    public XrDevicePcmSampleRateStateFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrDevicePcmSampleRateStateFB create(long address, @Nullable ByteBuffer container) {
-        return new XrDevicePcmSampleRateStateFB(address, container);
     }
 
     /**

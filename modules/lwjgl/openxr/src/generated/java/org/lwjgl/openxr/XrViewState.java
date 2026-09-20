@@ -52,13 +52,8 @@ public class XrViewState extends Struct<XrViewState> implements NativeResource {
         VIEWSTATEFLAGS = layout.offsetof(2);
     }
 
-    protected XrViewState(long address, @Nullable ByteBuffer container) {
+    public XrViewState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrViewState create(long address, @Nullable ByteBuffer container) {
-        return new XrViewState(address, container);
     }
 
     /**

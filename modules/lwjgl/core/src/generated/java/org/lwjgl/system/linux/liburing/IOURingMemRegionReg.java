@@ -54,13 +54,8 @@ public class IOURingMemRegionReg extends Struct<IOURingMemRegionReg> implements 
         __RESV = layout.offsetof(2);
     }
 
-    protected IOURingMemRegionReg(long address, @Nullable ByteBuffer container) {
+    public IOURingMemRegionReg(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingMemRegionReg create(long address, @Nullable ByteBuffer container) {
-        return new IOURingMemRegionReg(address, container);
     }
 
     /**

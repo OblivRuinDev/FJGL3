@@ -52,13 +52,8 @@ public class VkVideoEncodeProfileRgbConversionInfoVALVE extends Struct<VkVideoEn
         PERFORMENCODERGBCONVERSION = layout.offsetof(2);
     }
 
-    protected VkVideoEncodeProfileRgbConversionInfoVALVE(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeProfileRgbConversionInfoVALVE(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeProfileRgbConversionInfoVALVE create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeProfileRgbConversionInfoVALVE(address, container);
     }
 
     /**

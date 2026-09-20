@@ -48,13 +48,8 @@ public class SDL_VirtualJoystickSensorDesc extends Struct<SDL_VirtualJoystickSen
         RATE = layout.offsetof(1);
     }
 
-    protected SDL_VirtualJoystickSensorDesc(long address, @Nullable ByteBuffer container) {
+    public SDL_VirtualJoystickSensorDesc(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_VirtualJoystickSensorDesc create(long address, @Nullable ByteBuffer container) {
-        return new SDL_VirtualJoystickSensorDesc(address, container);
     }
 
     /**

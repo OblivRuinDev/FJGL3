@@ -48,13 +48,8 @@ public class FMOD_DSP_PARAMETER_DESC_BOOL extends Struct<FMOD_DSP_PARAMETER_DESC
         VALUENAMES = layout.offsetof(1);
     }
 
-    protected FMOD_DSP_PARAMETER_DESC_BOOL(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_PARAMETER_DESC_BOOL(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_PARAMETER_DESC_BOOL create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_PARAMETER_DESC_BOOL(address, container);
     }
 
     /**

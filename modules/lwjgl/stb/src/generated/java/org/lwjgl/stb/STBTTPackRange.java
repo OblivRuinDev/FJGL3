@@ -70,13 +70,8 @@ public class STBTTPackRange extends Struct<STBTTPackRange> implements NativeReso
         V_OVERSAMPLE = layout.offsetof(6);
     }
 
-    protected STBTTPackRange(long address, @Nullable ByteBuffer container) {
+    public STBTTPackRange(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBTTPackRange create(long address, @Nullable ByteBuffer container) {
-        return new STBTTPackRange(address, container);
     }
 
     /**

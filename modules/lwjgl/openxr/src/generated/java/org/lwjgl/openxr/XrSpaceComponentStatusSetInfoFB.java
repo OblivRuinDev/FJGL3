@@ -60,13 +60,8 @@ public class XrSpaceComponentStatusSetInfoFB extends Struct<XrSpaceComponentStat
         TIMEOUT = layout.offsetof(4);
     }
 
-    protected XrSpaceComponentStatusSetInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSpaceComponentStatusSetInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceComponentStatusSetInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceComponentStatusSetInfoFB(address, container);
     }
 
     /**

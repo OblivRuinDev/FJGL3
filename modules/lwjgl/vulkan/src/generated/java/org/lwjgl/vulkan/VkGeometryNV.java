@@ -62,13 +62,8 @@ public class VkGeometryNV extends Struct<VkGeometryNV> implements NativeResource
         FLAGS = layout.offsetof(4);
     }
 
-    protected VkGeometryNV(long address, @Nullable ByteBuffer container) {
+    public VkGeometryNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkGeometryNV create(long address, @Nullable ByteBuffer container) {
-        return new VkGeometryNV(address, container);
     }
 
     /**

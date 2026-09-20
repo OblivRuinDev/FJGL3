@@ -69,13 +69,8 @@ public class RENDERDOC_AnnotationVectorValue extends Struct<RENDERDOC_Annotation
         FLOAT64 = layout.offsetof(6);
     }
 
-    protected RENDERDOC_AnnotationVectorValue(long address, @Nullable ByteBuffer container) {
+    public RENDERDOC_AnnotationVectorValue(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected RENDERDOC_AnnotationVectorValue create(long address, @Nullable ByteBuffer container) {
-        return new RENDERDOC_AnnotationVectorValue(address, container);
     }
 
     /**

@@ -64,13 +64,8 @@ public class CXIdxIncludedFileInfo extends Struct<CXIdxIncludedFileInfo> {
         ISMODULEIMPORT = layout.offsetof(5);
     }
 
-    protected CXIdxIncludedFileInfo(long address, @Nullable ByteBuffer container) {
+    public CXIdxIncludedFileInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CXIdxIncludedFileInfo create(long address, @Nullable ByteBuffer container) {
-        return new CXIdxIncludedFileInfo(address, container);
     }
 
     /**

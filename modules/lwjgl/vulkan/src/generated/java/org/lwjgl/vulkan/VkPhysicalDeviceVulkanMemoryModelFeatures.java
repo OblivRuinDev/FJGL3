@@ -60,13 +60,8 @@ public class VkPhysicalDeviceVulkanMemoryModelFeatures extends Struct<VkPhysical
         VULKANMEMORYMODELAVAILABILITYVISIBILITYCHAINS = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceVulkanMemoryModelFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceVulkanMemoryModelFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceVulkanMemoryModelFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceVulkanMemoryModelFeatures(address, container);
     }
 
     /**

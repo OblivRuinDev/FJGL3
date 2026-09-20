@@ -52,13 +52,8 @@ public class VkPhysicalDeviceColorWriteEnableFeaturesEXT extends Struct<VkPhysic
         COLORWRITEENABLE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceColorWriteEnableFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceColorWriteEnableFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceColorWriteEnableFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceColorWriteEnableFeaturesEXT(address, container);
     }
 
     /**

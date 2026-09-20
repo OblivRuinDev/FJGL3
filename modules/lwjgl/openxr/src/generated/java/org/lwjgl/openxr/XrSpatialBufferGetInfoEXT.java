@@ -52,13 +52,8 @@ public class XrSpatialBufferGetInfoEXT extends Struct<XrSpatialBufferGetInfoEXT>
         BUFFERID = layout.offsetof(2);
     }
 
-    protected XrSpatialBufferGetInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialBufferGetInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialBufferGetInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialBufferGetInfoEXT(address, container);
     }
 
     /**

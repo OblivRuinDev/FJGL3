@@ -70,13 +70,8 @@ public class StdVideoEncodeAV1OperatingPointInfo extends Struct<StdVideoEncodeAV
         INITIAL_DISPLAY_DELAY_MINUS_1 = layout.offsetof(6);
     }
 
-    protected StdVideoEncodeAV1OperatingPointInfo(long address, @Nullable ByteBuffer container) {
+    public StdVideoEncodeAV1OperatingPointInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoEncodeAV1OperatingPointInfo create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoEncodeAV1OperatingPointInfo(address, container);
     }
 
     /**

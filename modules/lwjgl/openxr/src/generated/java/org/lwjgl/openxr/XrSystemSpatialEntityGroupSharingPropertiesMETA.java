@@ -52,13 +52,8 @@ public class XrSystemSpatialEntityGroupSharingPropertiesMETA extends Struct<XrSy
         SUPPORTSSPATIALENTITYGROUPSHARING = layout.offsetof(2);
     }
 
-    protected XrSystemSpatialEntityGroupSharingPropertiesMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemSpatialEntityGroupSharingPropertiesMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemSpatialEntityGroupSharingPropertiesMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemSpatialEntityGroupSharingPropertiesMETA(address, container);
     }
 
     /**

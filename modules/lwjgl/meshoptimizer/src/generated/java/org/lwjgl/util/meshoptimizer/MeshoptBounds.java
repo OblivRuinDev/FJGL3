@@ -70,13 +70,8 @@ public class MeshoptBounds extends Struct<MeshoptBounds> implements NativeResour
         CONE_CUTOFF_S8 = layout.offsetof(6);
     }
 
-    protected MeshoptBounds(long address, @Nullable ByteBuffer container) {
+    public MeshoptBounds(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected MeshoptBounds create(long address, @Nullable ByteBuffer container) {
-        return new MeshoptBounds(address, container);
     }
 
     /**

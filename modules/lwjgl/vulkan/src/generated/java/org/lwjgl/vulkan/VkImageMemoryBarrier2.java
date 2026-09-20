@@ -90,13 +90,8 @@ public class VkImageMemoryBarrier2 extends Struct<VkImageMemoryBarrier2> impleme
         SUBRESOURCERANGE = layout.offsetof(11);
     }
 
-    protected VkImageMemoryBarrier2(long address, @Nullable ByteBuffer container) {
+    public VkImageMemoryBarrier2(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageMemoryBarrier2 create(long address, @Nullable ByteBuffer container) {
-        return new VkImageMemoryBarrier2(address, container);
     }
 
     /**

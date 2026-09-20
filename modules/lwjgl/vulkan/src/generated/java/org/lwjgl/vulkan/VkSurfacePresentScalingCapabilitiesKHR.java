@@ -70,13 +70,8 @@ public class VkSurfacePresentScalingCapabilitiesKHR extends Struct<VkSurfacePres
         MAXSCALEDIMAGEEXTENT = layout.offsetof(6);
     }
 
-    protected VkSurfacePresentScalingCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkSurfacePresentScalingCapabilitiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSurfacePresentScalingCapabilitiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkSurfacePresentScalingCapabilitiesKHR(address, container);
     }
 
     /**

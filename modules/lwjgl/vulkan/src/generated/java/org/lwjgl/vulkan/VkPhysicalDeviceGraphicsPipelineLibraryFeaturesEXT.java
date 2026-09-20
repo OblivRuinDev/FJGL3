@@ -52,13 +52,8 @@ public class VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT extends Struct<V
         GRAPHICSPIPELINELIBRARY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT(address, container);
     }
 
     /**

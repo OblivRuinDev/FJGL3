@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkPhysicalDeviceExternalFenceInfoKHR extends VkPhysicalDeviceExternalFenceInfo {
 
-    protected VkPhysicalDeviceExternalFenceInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceExternalFenceInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceExternalFenceInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceExternalFenceInfoKHR(address, container);
     }
 
     /**

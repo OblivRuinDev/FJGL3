@@ -64,13 +64,8 @@ public class VkImportSemaphoreFdInfoKHR extends Struct<VkImportSemaphoreFdInfoKH
         FD = layout.offsetof(5);
     }
 
-    protected VkImportSemaphoreFdInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkImportSemaphoreFdInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImportSemaphoreFdInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkImportSemaphoreFdInfoKHR(address, container);
     }
 
     /**

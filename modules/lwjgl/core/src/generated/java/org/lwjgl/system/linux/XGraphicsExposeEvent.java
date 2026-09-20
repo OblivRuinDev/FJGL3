@@ -89,13 +89,8 @@ public class XGraphicsExposeEvent extends Struct<XGraphicsExposeEvent> implement
         MINOR_CODE = layout.offsetof(11);
     }
 
-    protected XGraphicsExposeEvent(long address, @Nullable ByteBuffer container) {
+    public XGraphicsExposeEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XGraphicsExposeEvent create(long address, @Nullable ByteBuffer container) {
-        return new XGraphicsExposeEvent(address, container);
     }
 
     /**

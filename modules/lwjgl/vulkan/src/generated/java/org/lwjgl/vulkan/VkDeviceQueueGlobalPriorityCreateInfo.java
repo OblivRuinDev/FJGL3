@@ -52,13 +52,8 @@ public class VkDeviceQueueGlobalPriorityCreateInfo extends Struct<VkDeviceQueueG
         GLOBALPRIORITY = layout.offsetof(2);
     }
 
-    protected VkDeviceQueueGlobalPriorityCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkDeviceQueueGlobalPriorityCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceQueueGlobalPriorityCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceQueueGlobalPriorityCreateInfo(address, container);
     }
 
     /**

@@ -85,13 +85,8 @@ public class IOURingParams extends Struct<IOURingParams> implements NativeResour
         CQ_OFF = layout.offsetof(9);
     }
 
-    protected IOURingParams(long address, @Nullable ByteBuffer container) {
+    public IOURingParams(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingParams create(long address, @Nullable ByteBuffer container) {
-        return new IOURingParams(address, container);
     }
 
     /**

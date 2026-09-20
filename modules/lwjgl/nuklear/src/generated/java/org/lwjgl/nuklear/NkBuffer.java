@@ -82,13 +82,8 @@ public class NkBuffer extends Struct<NkBuffer> implements NativeResource {
         SIZE = layout.offsetof(8);
     }
 
-    protected NkBuffer(long address, @Nullable ByteBuffer container) {
+    public NkBuffer(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkBuffer create(long address, @Nullable ByteBuffer container) {
-        return new NkBuffer(address, container);
     }
 
     /**

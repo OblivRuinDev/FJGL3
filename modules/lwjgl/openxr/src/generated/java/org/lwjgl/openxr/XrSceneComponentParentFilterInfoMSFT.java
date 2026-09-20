@@ -54,13 +54,8 @@ public class XrSceneComponentParentFilterInfoMSFT extends Struct<XrSceneComponen
         PARENTID = layout.offsetof(2);
     }
 
-    protected XrSceneComponentParentFilterInfoMSFT(long address, @Nullable ByteBuffer container) {
+    public XrSceneComponentParentFilterInfoMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneComponentParentFilterInfoMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneComponentParentFilterInfoMSFT(address, container);
     }
 
     /**

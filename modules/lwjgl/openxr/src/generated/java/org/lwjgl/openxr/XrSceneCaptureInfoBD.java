@@ -48,13 +48,8 @@ public class XrSceneCaptureInfoBD extends Struct<XrSceneCaptureInfoBD> implement
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSceneCaptureInfoBD(long address, @Nullable ByteBuffer container) {
+    public XrSceneCaptureInfoBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSceneCaptureInfoBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSceneCaptureInfoBD(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class XrSystemSpaceWarpPropertiesFB extends Struct<XrSystemSpaceWarpPrope
         RECOMMENDEDMOTIONVECTORIMAGERECTHEIGHT = layout.offsetof(3);
     }
 
-    protected XrSystemSpaceWarpPropertiesFB(long address, @Nullable ByteBuffer container) {
+    public XrSystemSpaceWarpPropertiesFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemSpaceWarpPropertiesFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemSpaceWarpPropertiesFB(address, container);
     }
 
     /**

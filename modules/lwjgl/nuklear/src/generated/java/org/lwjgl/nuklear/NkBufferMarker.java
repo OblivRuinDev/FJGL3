@@ -47,13 +47,8 @@ public class NkBufferMarker extends Struct<NkBufferMarker> {
         OFFSET = layout.offsetof(1);
     }
 
-    protected NkBufferMarker(long address, @Nullable ByteBuffer container) {
+    public NkBufferMarker(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkBufferMarker create(long address, @Nullable ByteBuffer container) {
-        return new NkBufferMarker(address, container);
     }
 
     /**

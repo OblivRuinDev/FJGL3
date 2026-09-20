@@ -82,13 +82,8 @@ public class FMOD_CODEC_STATE_FUNCTIONS extends Struct<FMOD_CODEC_STATE_FUNCTION
         SIZE = layout.offsetof(7);
     }
 
-    protected FMOD_CODEC_STATE_FUNCTIONS(long address, @Nullable ByteBuffer container) {
+    public FMOD_CODEC_STATE_FUNCTIONS(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_CODEC_STATE_FUNCTIONS create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_CODEC_STATE_FUNCTIONS(address, container);
     }
 
     /**

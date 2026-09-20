@@ -52,13 +52,8 @@ public class VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC extends Str
         PIPELINECACHEINCREMENTALMODE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC(address, container);
     }
 
     /**

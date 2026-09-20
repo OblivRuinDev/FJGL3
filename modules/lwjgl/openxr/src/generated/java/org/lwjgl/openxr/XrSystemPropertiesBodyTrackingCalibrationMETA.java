@@ -52,13 +52,8 @@ public class XrSystemPropertiesBodyTrackingCalibrationMETA extends Struct<XrSyst
         SUPPORTSHEIGHTOVERRIDE = layout.offsetof(2);
     }
 
-    protected XrSystemPropertiesBodyTrackingCalibrationMETA(long address, @Nullable ByteBuffer container) {
+    public XrSystemPropertiesBodyTrackingCalibrationMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSystemPropertiesBodyTrackingCalibrationMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrSystemPropertiesBodyTrackingCalibrationMETA(address, container);
     }
 
     /**

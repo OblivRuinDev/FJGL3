@@ -57,13 +57,8 @@ public class XrSenseDataQueryCompletionBD extends Struct<XrSenseDataQueryComplet
         SNAPSHOT = layout.offsetof(3);
     }
 
-    protected XrSenseDataQueryCompletionBD(long address, @Nullable ByteBuffer container) {
+    public XrSenseDataQueryCompletionBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSenseDataQueryCompletionBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSenseDataQueryCompletionBD(address, container);
     }
 
     /**

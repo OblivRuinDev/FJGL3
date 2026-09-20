@@ -48,13 +48,8 @@ public class GLResourceReference extends Struct<GLResourceReference> implements 
         NAME = layout.offsetof(1);
     }
 
-    protected GLResourceReference(long address, @Nullable ByteBuffer container) {
+    public GLResourceReference(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLResourceReference create(long address, @Nullable ByteBuffer container) {
-        return new GLResourceReference(address, container);
     }
 
     /**

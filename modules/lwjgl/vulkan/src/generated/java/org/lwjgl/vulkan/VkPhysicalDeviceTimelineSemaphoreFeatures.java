@@ -52,13 +52,8 @@ public class VkPhysicalDeviceTimelineSemaphoreFeatures extends Struct<VkPhysical
         TIMELINESEMAPHORE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceTimelineSemaphoreFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceTimelineSemaphoreFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceTimelineSemaphoreFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceTimelineSemaphoreFeatures(address, container);
     }
 
     /**

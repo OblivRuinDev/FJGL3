@@ -52,13 +52,8 @@ public class VkExportSemaphoreCreateInfo extends Struct<VkExportSemaphoreCreateI
         HANDLETYPES = layout.offsetof(2);
     }
 
-    protected VkExportSemaphoreCreateInfo(long address, @Nullable ByteBuffer container) {
+    public VkExportSemaphoreCreateInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkExportSemaphoreCreateInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkExportSemaphoreCreateInfo(address, container);
     }
 
     /**

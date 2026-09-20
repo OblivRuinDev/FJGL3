@@ -52,13 +52,8 @@ public class XrSoundFieldChannelDefinitionFumaBD extends Struct<XrSoundFieldChan
         CHANNELMASK = layout.offsetof(2);
     }
 
-    protected XrSoundFieldChannelDefinitionFumaBD(long address, @Nullable ByteBuffer container) {
+    public XrSoundFieldChannelDefinitionFumaBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSoundFieldChannelDefinitionFumaBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSoundFieldChannelDefinitionFumaBD(address, container);
     }
 
     /**

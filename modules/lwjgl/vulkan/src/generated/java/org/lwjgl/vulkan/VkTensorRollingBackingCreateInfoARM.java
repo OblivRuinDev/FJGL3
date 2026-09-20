@@ -55,13 +55,8 @@ public class VkTensorRollingBackingCreateInfoARM extends Struct<VkTensorRollingB
         WRAPS = layout.offsetof(2);
     }
 
-    protected VkTensorRollingBackingCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkTensorRollingBackingCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTensorRollingBackingCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkTensorRollingBackingCreateInfoARM(address, container);
     }
 
     /**

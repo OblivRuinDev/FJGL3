@@ -58,13 +58,8 @@ public class VkCommandBufferInheritanceRenderPassTransformInfoQCOM extends Struc
         RENDERAREA = layout.offsetof(3);
     }
 
-    protected VkCommandBufferInheritanceRenderPassTransformInfoQCOM(long address, @Nullable ByteBuffer container) {
+    public VkCommandBufferInheritanceRenderPassTransformInfoQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCommandBufferInheritanceRenderPassTransformInfoQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkCommandBufferInheritanceRenderPassTransformInfoQCOM(address, container);
     }
 
     /**

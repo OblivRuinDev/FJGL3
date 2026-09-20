@@ -51,13 +51,8 @@ public class XrSpatialBounded2DDataEXT extends Struct<XrSpatialBounded2DDataEXT>
         EXTENTS = layout.offsetof(1);
     }
 
-    protected XrSpatialBounded2DDataEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialBounded2DDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialBounded2DDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialBounded2DDataEXT(address, container);
     }
 
     /**

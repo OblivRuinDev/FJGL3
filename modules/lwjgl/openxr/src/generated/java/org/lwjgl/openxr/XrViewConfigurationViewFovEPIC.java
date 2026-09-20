@@ -58,13 +58,8 @@ public class XrViewConfigurationViewFovEPIC extends Struct<XrViewConfigurationVi
         MAXMUTABLEFOV = layout.offsetof(3);
     }
 
-    protected XrViewConfigurationViewFovEPIC(long address, @Nullable ByteBuffer container) {
+    public XrViewConfigurationViewFovEPIC(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrViewConfigurationViewFovEPIC create(long address, @Nullable ByteBuffer container) {
-        return new XrViewConfigurationViewFovEPIC(address, container);
     }
 
     /**

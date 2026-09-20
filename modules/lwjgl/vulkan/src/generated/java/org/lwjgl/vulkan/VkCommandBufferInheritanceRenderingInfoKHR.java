@@ -32,13 +32,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkCommandBufferInheritanceRenderingInfoKHR extends VkCommandBufferInheritanceRenderingInfo {
 
-    protected VkCommandBufferInheritanceRenderingInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkCommandBufferInheritanceRenderingInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCommandBufferInheritanceRenderingInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkCommandBufferInheritanceRenderingInfoKHR(address, container);
     }
 
     /**

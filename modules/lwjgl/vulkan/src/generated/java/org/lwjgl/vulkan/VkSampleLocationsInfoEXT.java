@@ -67,13 +67,8 @@ public class VkSampleLocationsInfoEXT extends Struct<VkSampleLocationsInfoEXT> i
         PSAMPLELOCATIONS = layout.offsetof(5);
     }
 
-    protected VkSampleLocationsInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkSampleLocationsInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSampleLocationsInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSampleLocationsInfoEXT(address, container);
     }
 
     /**

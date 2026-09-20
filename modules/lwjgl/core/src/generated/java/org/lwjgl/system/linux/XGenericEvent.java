@@ -65,13 +65,8 @@ public class XGenericEvent extends Struct<XGenericEvent> implements NativeResour
         EVTYPE = layout.offsetof(5);
     }
 
-    protected XGenericEvent(long address, @Nullable ByteBuffer container) {
+    public XGenericEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XGenericEvent create(long address, @Nullable ByteBuffer container) {
-        return new XGenericEvent(address, container);
     }
 
     /**

@@ -45,13 +45,8 @@ public class VkTransformMatrixKHR extends Struct<VkTransformMatrixKHR> implement
         MATRIX = layout.offsetof(0);
     }
 
-    protected VkTransformMatrixKHR(long address, @Nullable ByteBuffer container) {
+    public VkTransformMatrixKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTransformMatrixKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkTransformMatrixKHR(address, container);
     }
 
     /**

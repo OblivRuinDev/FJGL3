@@ -56,13 +56,8 @@ public class VkMemoryBarrier extends Struct<VkMemoryBarrier> implements NativeRe
         DSTACCESSMASK = layout.offsetof(3);
     }
 
-    protected VkMemoryBarrier(long address, @Nullable ByteBuffer container) {
+    public VkMemoryBarrier(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMemoryBarrier create(long address, @Nullable ByteBuffer container) {
-        return new VkMemoryBarrier(address, container);
     }
 
     /**

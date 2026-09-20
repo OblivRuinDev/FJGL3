@@ -48,13 +48,8 @@ public class XrFoveationProfileCreateInfoFB extends Struct<XrFoveationProfileCre
         NEXT = layout.offsetof(1);
     }
 
-    protected XrFoveationProfileCreateInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrFoveationProfileCreateInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrFoveationProfileCreateInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrFoveationProfileCreateInfoFB(address, container);
     }
 
     /**

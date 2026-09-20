@@ -52,13 +52,8 @@ public class VkQueueFamilyOwnershipTransferPropertiesKHR extends Struct<VkQueueF
         OPTIMALIMAGETRANSFERTOQUEUEFAMILIES = layout.offsetof(2);
     }
 
-    protected VkQueueFamilyOwnershipTransferPropertiesKHR(long address, @Nullable ByteBuffer container) {
+    public VkQueueFamilyOwnershipTransferPropertiesKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkQueueFamilyOwnershipTransferPropertiesKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkQueueFamilyOwnershipTransferPropertiesKHR(address, container);
     }
 
     /**

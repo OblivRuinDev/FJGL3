@@ -60,13 +60,8 @@ public class VkPipelineColorBlendAdvancedStateCreateInfoEXT extends Struct<VkPip
         BLENDOVERLAP = layout.offsetof(4);
     }
 
-    protected VkPipelineColorBlendAdvancedStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkPipelineColorBlendAdvancedStateCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineColorBlendAdvancedStateCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineColorBlendAdvancedStateCreateInfoEXT(address, container);
     }
 
     /**

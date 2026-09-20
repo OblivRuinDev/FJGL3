@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkMicromapTriangleEXT extends VkMicromapTriangleKHR {
 
-    protected VkMicromapTriangleEXT(long address, @Nullable ByteBuffer container) {
+    public VkMicromapTriangleEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkMicromapTriangleEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkMicromapTriangleEXT(address, container);
     }
 
     /**

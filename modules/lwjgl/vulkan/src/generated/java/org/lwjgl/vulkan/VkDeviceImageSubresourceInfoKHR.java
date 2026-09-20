@@ -27,13 +27,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkDeviceImageSubresourceInfoKHR extends VkDeviceImageSubresourceInfo {
 
-    protected VkDeviceImageSubresourceInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkDeviceImageSubresourceInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceImageSubresourceInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceImageSubresourceInfoKHR(address, container);
     }
 
     /**

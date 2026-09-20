@@ -61,13 +61,8 @@ public class spng_splt_entry extends Struct<spng_splt_entry> implements NativeRe
         FREQUENCY = layout.offsetof(4);
     }
 
-    protected spng_splt_entry(long address, @Nullable ByteBuffer container) {
+    public spng_splt_entry(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_splt_entry create(long address, @Nullable ByteBuffer container) {
-        return new spng_splt_entry(address, container);
     }
 
     /**

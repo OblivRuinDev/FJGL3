@@ -56,13 +56,8 @@ public class XrHandMeshVertexBufferMSFT extends Struct<XrHandMeshVertexBufferMSF
         VERTICES = layout.offsetof(3);
     }
 
-    protected XrHandMeshVertexBufferMSFT(long address, @Nullable ByteBuffer container) {
+    public XrHandMeshVertexBufferMSFT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandMeshVertexBufferMSFT create(long address, @Nullable ByteBuffer container) {
-        return new XrHandMeshVertexBufferMSFT(address, container);
     }
 
     /**

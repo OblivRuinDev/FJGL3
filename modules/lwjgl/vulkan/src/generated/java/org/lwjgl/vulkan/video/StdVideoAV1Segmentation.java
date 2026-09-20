@@ -51,13 +51,8 @@ public class StdVideoAV1Segmentation extends Struct<StdVideoAV1Segmentation> imp
         FEATUREDATA = layout.offsetof(1);
     }
 
-    protected StdVideoAV1Segmentation(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1Segmentation(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1Segmentation create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1Segmentation(address, container);
     }
 
     /**

@@ -53,13 +53,8 @@ public class VkDataGraphPipelineCompilerControlCreateInfoARM extends Struct<VkDa
         PVENDOROPTIONS = layout.offsetof(2);
     }
 
-    protected VkDataGraphPipelineCompilerControlCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelineCompilerControlCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelineCompilerControlCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelineCompilerControlCreateInfoARM(address, container);
     }
 
     /**

@@ -80,13 +80,8 @@ public class VkWriteDescriptorSet extends Struct<VkWriteDescriptorSet> implement
         PTEXELBUFFERVIEW = layout.offsetof(9);
     }
 
-    protected VkWriteDescriptorSet(long address, @Nullable ByteBuffer container) {
+    public VkWriteDescriptorSet(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkWriteDescriptorSet create(long address, @Nullable ByteBuffer container) {
-        return new VkWriteDescriptorSet(address, container);
     }
 
     /**

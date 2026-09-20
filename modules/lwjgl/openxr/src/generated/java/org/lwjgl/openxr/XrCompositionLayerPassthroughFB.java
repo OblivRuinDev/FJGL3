@@ -61,13 +61,8 @@ public class XrCompositionLayerPassthroughFB extends Struct<XrCompositionLayerPa
         LAYERHANDLE = layout.offsetof(4);
     }
 
-    protected XrCompositionLayerPassthroughFB(long address, @Nullable ByteBuffer container) {
+    public XrCompositionLayerPassthroughFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrCompositionLayerPassthroughFB create(long address, @Nullable ByteBuffer container) {
-        return new XrCompositionLayerPassthroughFB(address, container);
     }
 
     /**

@@ -104,13 +104,8 @@ public class VkSRTDataNV extends Struct<VkSRTDataNV> implements NativeResource {
         TZ = layout.offsetof(15);
     }
 
-    protected VkSRTDataNV(long address, @Nullable ByteBuffer container) {
+    public VkSRTDataNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSRTDataNV create(long address, @Nullable ByteBuffer container) {
-        return new VkSRTDataNV(address, container);
     }
 
     /**

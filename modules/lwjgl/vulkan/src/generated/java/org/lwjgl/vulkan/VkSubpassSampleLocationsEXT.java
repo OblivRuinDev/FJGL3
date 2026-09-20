@@ -50,13 +50,8 @@ public class VkSubpassSampleLocationsEXT extends Struct<VkSubpassSampleLocations
         SAMPLELOCATIONSINFO = layout.offsetof(1);
     }
 
-    protected VkSubpassSampleLocationsEXT(long address, @Nullable ByteBuffer container) {
+    public VkSubpassSampleLocationsEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSubpassSampleLocationsEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkSubpassSampleLocationsEXT(address, container);
     }
 
     /**

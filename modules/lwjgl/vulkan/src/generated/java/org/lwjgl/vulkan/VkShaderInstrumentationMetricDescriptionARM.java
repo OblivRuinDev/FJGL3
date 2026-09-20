@@ -59,13 +59,8 @@ public class VkShaderInstrumentationMetricDescriptionARM extends Struct<VkShader
         DESCRIPTION = layout.offsetof(3);
     }
 
-    protected VkShaderInstrumentationMetricDescriptionARM(long address, @Nullable ByteBuffer container) {
+    public VkShaderInstrumentationMetricDescriptionARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkShaderInstrumentationMetricDescriptionARM create(long address, @Nullable ByteBuffer container) {
-        return new VkShaderInstrumentationMetricDescriptionARM(address, container);
     }
 
     /**

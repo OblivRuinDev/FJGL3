@@ -106,13 +106,8 @@ public class NkStyleWindowHeader extends Struct<NkStyleWindowHeader> implements 
         SPACING = layout.offsetof(14);
     }
 
-    protected NkStyleWindowHeader(long address, @Nullable ByteBuffer container) {
+    public NkStyleWindowHeader(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkStyleWindowHeader create(long address, @Nullable ByteBuffer container) {
-        return new NkStyleWindowHeader(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceDataGraphModelFeaturesQCOM extends Struct<VkPhysica
         DATAGRAPHMODEL = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceDataGraphModelFeaturesQCOM(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceDataGraphModelFeaturesQCOM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceDataGraphModelFeaturesQCOM create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceDataGraphModelFeaturesQCOM(address, container);
     }
 
     /**

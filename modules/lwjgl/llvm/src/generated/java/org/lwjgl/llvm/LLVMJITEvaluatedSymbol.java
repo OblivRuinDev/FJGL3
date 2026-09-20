@@ -50,13 +50,8 @@ public class LLVMJITEvaluatedSymbol extends Struct<LLVMJITEvaluatedSymbol> imple
         FLAGS = layout.offsetof(1);
     }
 
-    protected LLVMJITEvaluatedSymbol(long address, @Nullable ByteBuffer container) {
+    public LLVMJITEvaluatedSymbol(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMJITEvaluatedSymbol create(long address, @Nullable ByteBuffer container) {
-        return new LLVMJITEvaluatedSymbol(address, container);
     }
 
     /**

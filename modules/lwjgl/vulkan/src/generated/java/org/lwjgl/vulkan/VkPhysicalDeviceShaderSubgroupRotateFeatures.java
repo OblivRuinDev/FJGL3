@@ -56,13 +56,8 @@ public class VkPhysicalDeviceShaderSubgroupRotateFeatures extends Struct<VkPhysi
         SHADERSUBGROUPROTATECLUSTERED = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceShaderSubgroupRotateFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceShaderSubgroupRotateFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceShaderSubgroupRotateFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceShaderSubgroupRotateFeatures(address, container);
     }
 
     /**

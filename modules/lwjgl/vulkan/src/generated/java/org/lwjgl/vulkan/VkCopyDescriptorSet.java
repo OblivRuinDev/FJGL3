@@ -76,13 +76,8 @@ public class VkCopyDescriptorSet extends Struct<VkCopyDescriptorSet> implements 
         DESCRIPTORCOUNT = layout.offsetof(8);
     }
 
-    protected VkCopyDescriptorSet(long address, @Nullable ByteBuffer container) {
+    public VkCopyDescriptorSet(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCopyDescriptorSet create(long address, @Nullable ByteBuffer container) {
-        return new VkCopyDescriptorSet(address, container);
     }
 
     /**

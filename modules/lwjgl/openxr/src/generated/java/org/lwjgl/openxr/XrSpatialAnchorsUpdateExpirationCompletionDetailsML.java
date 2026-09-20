@@ -57,13 +57,8 @@ public class XrSpatialAnchorsUpdateExpirationCompletionDetailsML extends Struct<
         RESULTS = layout.offsetof(3);
     }
 
-    protected XrSpatialAnchorsUpdateExpirationCompletionDetailsML(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorsUpdateExpirationCompletionDetailsML(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorsUpdateExpirationCompletionDetailsML create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorsUpdateExpirationCompletionDetailsML(address, container);
     }
 
     /**

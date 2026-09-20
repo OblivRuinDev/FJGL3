@@ -60,13 +60,8 @@ public class VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV extends Struct<V
         NOINVOCATIONFRAGMENTSHADINGRATES = layout.offsetof(4);
     }
 
-    protected VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV(address, container);
     }
 
     /**

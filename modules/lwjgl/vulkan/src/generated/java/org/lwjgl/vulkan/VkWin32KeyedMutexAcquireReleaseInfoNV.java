@@ -77,13 +77,8 @@ public class VkWin32KeyedMutexAcquireReleaseInfoNV extends Struct<VkWin32KeyedMu
         PRELEASEKEYS = layout.offsetof(8);
     }
 
-    protected VkWin32KeyedMutexAcquireReleaseInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkWin32KeyedMutexAcquireReleaseInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkWin32KeyedMutexAcquireReleaseInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkWin32KeyedMutexAcquireReleaseInfoNV(address, container);
     }
 
     /**

@@ -77,13 +77,8 @@ public class BGFXTextureInfo extends Struct<BGFXTextureInfo> implements NativeRe
         CUBEMAP = layout.offsetof(8);
     }
 
-    protected BGFXTextureInfo(long address, @Nullable ByteBuffer container) {
+    public BGFXTextureInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXTextureInfo create(long address, @Nullable ByteBuffer container) {
-        return new BGFXTextureInfo(address, container);
     }
 
     /**

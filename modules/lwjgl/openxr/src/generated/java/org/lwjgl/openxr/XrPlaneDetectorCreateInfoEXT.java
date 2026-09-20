@@ -52,13 +52,8 @@ public class XrPlaneDetectorCreateInfoEXT extends Struct<XrPlaneDetectorCreateIn
         FLAGS = layout.offsetof(2);
     }
 
-    protected XrPlaneDetectorCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public XrPlaneDetectorCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrPlaneDetectorCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrPlaneDetectorCreateInfoEXT(address, container);
     }
 
     /**

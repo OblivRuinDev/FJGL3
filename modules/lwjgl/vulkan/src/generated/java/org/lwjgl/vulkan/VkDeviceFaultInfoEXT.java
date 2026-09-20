@@ -66,13 +66,8 @@ public class VkDeviceFaultInfoEXT extends Struct<VkDeviceFaultInfoEXT> implement
         PVENDORBINARYDATA = layout.offsetof(5);
     }
 
-    protected VkDeviceFaultInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkDeviceFaultInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceFaultInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceFaultInfoEXT(address, container);
     }
 
     /**

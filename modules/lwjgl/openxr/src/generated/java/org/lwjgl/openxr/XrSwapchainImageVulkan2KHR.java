@@ -27,13 +27,8 @@ import org.lwjgl.vulkan.*;
  */
 public class XrSwapchainImageVulkan2KHR extends XrSwapchainImageVulkanKHR {
 
-    protected XrSwapchainImageVulkan2KHR(long address, @Nullable ByteBuffer container) {
+    public XrSwapchainImageVulkan2KHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSwapchainImageVulkan2KHR create(long address, @Nullable ByteBuffer container) {
-        return new XrSwapchainImageVulkan2KHR(address, container);
     }
 
     /**

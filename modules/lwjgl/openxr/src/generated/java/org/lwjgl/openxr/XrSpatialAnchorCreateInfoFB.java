@@ -63,13 +63,8 @@ public class XrSpatialAnchorCreateInfoFB extends Struct<XrSpatialAnchorCreateInf
         TIME = layout.offsetof(4);
     }
 
-    protected XrSpatialAnchorCreateInfoFB(long address, @Nullable ByteBuffer container) {
+    public XrSpatialAnchorCreateInfoFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialAnchorCreateInfoFB create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialAnchorCreateInfoFB(address, container);
     }
 
     /**

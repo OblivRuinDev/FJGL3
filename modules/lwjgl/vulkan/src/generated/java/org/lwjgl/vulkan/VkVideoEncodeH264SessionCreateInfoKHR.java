@@ -58,13 +58,8 @@ public class VkVideoEncodeH264SessionCreateInfoKHR extends Struct<VkVideoEncodeH
         MAXLEVELIDC = layout.offsetof(3);
     }
 
-    protected VkVideoEncodeH264SessionCreateInfoKHR(long address, @Nullable ByteBuffer container) {
+    public VkVideoEncodeH264SessionCreateInfoKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkVideoEncodeH264SessionCreateInfoKHR create(long address, @Nullable ByteBuffer container) {
-        return new VkVideoEncodeH264SessionCreateInfoKHR(address, container);
     }
 
     /**

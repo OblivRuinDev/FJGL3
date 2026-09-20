@@ -69,13 +69,8 @@ public class spng_ihdr extends Struct<spng_ihdr> implements NativeResource {
         INTERLACE_METHOD = layout.offsetof(6);
     }
 
-    protected spng_ihdr(long address, @Nullable ByteBuffer container) {
+    public spng_ihdr(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected spng_ihdr create(long address, @Nullable ByteBuffer container) {
-        return new spng_ihdr(address, container);
     }
 
     /**

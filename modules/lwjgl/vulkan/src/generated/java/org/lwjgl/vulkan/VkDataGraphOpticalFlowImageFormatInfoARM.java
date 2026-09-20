@@ -52,13 +52,8 @@ public class VkDataGraphOpticalFlowImageFormatInfoARM extends Struct<VkDataGraph
         USAGE = layout.offsetof(2);
     }
 
-    protected VkDataGraphOpticalFlowImageFormatInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphOpticalFlowImageFormatInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphOpticalFlowImageFormatInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphOpticalFlowImageFormatInfoARM(address, container);
     }
 
     /**

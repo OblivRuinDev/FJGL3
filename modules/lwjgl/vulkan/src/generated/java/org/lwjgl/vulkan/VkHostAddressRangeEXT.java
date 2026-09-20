@@ -49,13 +49,8 @@ public class VkHostAddressRangeEXT extends Struct<VkHostAddressRangeEXT> impleme
         SIZE = layout.offsetof(1);
     }
 
-    protected VkHostAddressRangeEXT(long address, @Nullable ByteBuffer container) {
+    public VkHostAddressRangeEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkHostAddressRangeEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkHostAddressRangeEXT(address, container);
     }
 
     /**

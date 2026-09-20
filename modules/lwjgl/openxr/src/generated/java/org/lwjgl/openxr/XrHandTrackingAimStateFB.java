@@ -74,13 +74,8 @@ public class XrHandTrackingAimStateFB extends Struct<XrHandTrackingAimStateFB> i
         PINCHSTRENGTHLITTLE = layout.offsetof(7);
     }
 
-    protected XrHandTrackingAimStateFB(long address, @Nullable ByteBuffer container) {
+    public XrHandTrackingAimStateFB(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrHandTrackingAimStateFB create(long address, @Nullable ByteBuffer container) {
-        return new XrHandTrackingAimStateFB(address, container);
     }
 
     /**

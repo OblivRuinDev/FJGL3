@@ -60,13 +60,8 @@ public class VkBindDescriptorBufferEmbeddedSamplersInfoEXT extends Struct<VkBind
         SET = layout.offsetof(4);
     }
 
-    protected VkBindDescriptorBufferEmbeddedSamplersInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkBindDescriptorBufferEmbeddedSamplersInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkBindDescriptorBufferEmbeddedSamplersInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkBindDescriptorBufferEmbeddedSamplersInfoEXT(address, container);
     }
 
     /**

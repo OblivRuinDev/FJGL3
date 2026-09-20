@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class VkImageSubresource2EXT extends VkImageSubresource2 {
 
-    protected VkImageSubresource2EXT(long address, @Nullable ByteBuffer container) {
+    public VkImageSubresource2EXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageSubresource2EXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImageSubresource2EXT(address, container);
     }
 
     /**

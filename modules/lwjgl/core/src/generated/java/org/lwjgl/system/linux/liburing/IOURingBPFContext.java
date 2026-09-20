@@ -102,13 +102,8 @@ public class IOURingBPFContext extends Struct<IOURingBPFContext> implements Nati
             OPEN_RESOLVE = layout.offsetof(13);
     }
 
-    protected IOURingBPFContext(long address, @Nullable ByteBuffer container) {
+    public IOURingBPFContext(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected IOURingBPFContext create(long address, @Nullable ByteBuffer container) {
-        return new IOURingBPFContext(address, container);
     }
 
     /**

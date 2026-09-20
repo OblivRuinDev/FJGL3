@@ -64,13 +64,8 @@ public class SDL_CameraSpec extends Struct<SDL_CameraSpec> implements NativeReso
         FRAMERATE_DENOMINATOR = layout.offsetof(5);
     }
 
-    protected SDL_CameraSpec(long address, @Nullable ByteBuffer container) {
+    public SDL_CameraSpec(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_CameraSpec create(long address, @Nullable ByteBuffer container) {
-        return new SDL_CameraSpec(address, container);
     }
 
     /**

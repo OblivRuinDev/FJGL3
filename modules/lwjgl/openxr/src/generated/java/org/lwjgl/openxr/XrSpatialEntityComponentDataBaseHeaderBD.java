@@ -48,13 +48,8 @@ public class XrSpatialEntityComponentDataBaseHeaderBD extends Struct<XrSpatialEn
         NEXT = layout.offsetof(1);
     }
 
-    protected XrSpatialEntityComponentDataBaseHeaderBD(long address, @Nullable ByteBuffer container) {
+    public XrSpatialEntityComponentDataBaseHeaderBD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialEntityComponentDataBaseHeaderBD create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialEntityComponentDataBaseHeaderBD(address, container);
     }
 
     /**

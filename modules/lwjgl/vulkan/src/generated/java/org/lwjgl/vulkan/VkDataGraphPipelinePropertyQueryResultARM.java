@@ -64,13 +64,8 @@ public class VkDataGraphPipelinePropertyQueryResultARM extends Struct<VkDataGrap
         PDATA = layout.offsetof(5);
     }
 
-    protected VkDataGraphPipelinePropertyQueryResultARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphPipelinePropertyQueryResultARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphPipelinePropertyQueryResultARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphPipelinePropertyQueryResultARM(address, container);
     }
 
     /**

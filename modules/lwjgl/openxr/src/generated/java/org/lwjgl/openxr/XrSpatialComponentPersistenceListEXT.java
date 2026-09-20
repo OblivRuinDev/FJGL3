@@ -57,13 +57,8 @@ public class XrSpatialComponentPersistenceListEXT extends Struct<XrSpatialCompon
         PERSISTDATA = layout.offsetof(3);
     }
 
-    protected XrSpatialComponentPersistenceListEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialComponentPersistenceListEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialComponentPersistenceListEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialComponentPersistenceListEXT(address, container);
     }
 
     /**

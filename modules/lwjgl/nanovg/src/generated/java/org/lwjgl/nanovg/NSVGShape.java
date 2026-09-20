@@ -122,13 +122,8 @@ public class NSVGShape extends Struct<NSVGShape> {
         NEXT = layout.offsetof(19);
     }
 
-    protected NSVGShape(long address, @Nullable ByteBuffer container) {
+    public NSVGShape(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NSVGShape create(long address, @Nullable ByteBuffer container) {
-        return new NSVGShape(address, container);
     }
 
     /**

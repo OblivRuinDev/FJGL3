@@ -64,13 +64,8 @@ public class VkPhysicalDevicePCIBusInfoPropertiesEXT extends Struct<VkPhysicalDe
         PCIFUNCTION = layout.offsetof(5);
     }
 
-    protected VkPhysicalDevicePCIBusInfoPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePCIBusInfoPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePCIBusInfoPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePCIBusInfoPropertiesEXT(address, container);
     }
 
     /**

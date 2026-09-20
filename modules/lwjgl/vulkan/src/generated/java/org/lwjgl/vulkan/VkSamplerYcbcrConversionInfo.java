@@ -52,13 +52,8 @@ public class VkSamplerYcbcrConversionInfo extends Struct<VkSamplerYcbcrConversio
         CONVERSION = layout.offsetof(2);
     }
 
-    protected VkSamplerYcbcrConversionInfo(long address, @Nullable ByteBuffer container) {
+    public VkSamplerYcbcrConversionInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkSamplerYcbcrConversionInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkSamplerYcbcrConversionInfo(address, container);
     }
 
     /**

@@ -56,13 +56,8 @@ public class VmaDefragmentationStats extends Struct<VmaDefragmentationStats> imp
         DEVICEMEMORYBLOCKSFREED = layout.offsetof(3);
     }
 
-    protected VmaDefragmentationStats(long address, @Nullable ByteBuffer container) {
+    public VmaDefragmentationStats(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VmaDefragmentationStats create(long address, @Nullable ByteBuffer container) {
-        return new VmaDefragmentationStats(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPipelineRasterizationStateRasterizationOrderAMD extends Struct<Vk
         RASTERIZATIONORDER = layout.offsetof(2);
     }
 
-    protected VkPipelineRasterizationStateRasterizationOrderAMD(long address, @Nullable ByteBuffer container) {
+    public VkPipelineRasterizationStateRasterizationOrderAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineRasterizationStateRasterizationOrderAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineRasterizationStateRasterizationOrderAMD(address, container);
     }
 
     /**

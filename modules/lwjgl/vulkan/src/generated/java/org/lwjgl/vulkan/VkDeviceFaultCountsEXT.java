@@ -60,13 +60,8 @@ public class VkDeviceFaultCountsEXT extends Struct<VkDeviceFaultCountsEXT> imple
         VENDORBINARYSIZE = layout.offsetof(4);
     }
 
-    protected VkDeviceFaultCountsEXT(long address, @Nullable ByteBuffer container) {
+    public VkDeviceFaultCountsEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDeviceFaultCountsEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDeviceFaultCountsEXT(address, container);
     }
 
     /**

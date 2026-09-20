@@ -55,13 +55,8 @@ public class SDL_Vertex extends Struct<SDL_Vertex> implements NativeResource {
         TEX_COORD = layout.offsetof(2);
     }
 
-    protected SDL_Vertex(long address, @Nullable ByteBuffer container) {
+    public SDL_Vertex(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_Vertex create(long address, @Nullable ByteBuffer container) {
-        return new SDL_Vertex(address, container);
     }
 
     /**

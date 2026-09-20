@@ -50,13 +50,8 @@ public class VkDrmFormatModifierPropertiesEXT extends Struct<VkDrmFormatModifier
         DRMFORMATMODIFIERTILINGFEATURES = layout.offsetof(2);
     }
 
-    protected VkDrmFormatModifierPropertiesEXT(long address, @Nullable ByteBuffer container) {
+    public VkDrmFormatModifierPropertiesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDrmFormatModifierPropertiesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkDrmFormatModifierPropertiesEXT(address, container);
     }
 
     /**

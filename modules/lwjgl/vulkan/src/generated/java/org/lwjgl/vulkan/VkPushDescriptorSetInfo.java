@@ -69,13 +69,8 @@ public class VkPushDescriptorSetInfo extends Struct<VkPushDescriptorSetInfo> imp
         PDESCRIPTORWRITES = layout.offsetof(6);
     }
 
-    protected VkPushDescriptorSetInfo(long address, @Nullable ByteBuffer container) {
+    public VkPushDescriptorSetInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPushDescriptorSetInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkPushDescriptorSetInfo(address, container);
     }
 
     /**

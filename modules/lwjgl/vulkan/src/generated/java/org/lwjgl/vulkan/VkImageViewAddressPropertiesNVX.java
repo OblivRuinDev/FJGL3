@@ -56,13 +56,8 @@ public class VkImageViewAddressPropertiesNVX extends Struct<VkImageViewAddressPr
         SIZE = layout.offsetof(3);
     }
 
-    protected VkImageViewAddressPropertiesNVX(long address, @Nullable ByteBuffer container) {
+    public VkImageViewAddressPropertiesNVX(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageViewAddressPropertiesNVX create(long address, @Nullable ByteBuffer container) {
-        return new VkImageViewAddressPropertiesNVX(address, container);
     }
 
     /**

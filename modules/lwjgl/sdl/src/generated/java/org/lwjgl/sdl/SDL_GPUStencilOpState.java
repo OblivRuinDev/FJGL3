@@ -56,13 +56,8 @@ public class SDL_GPUStencilOpState extends Struct<SDL_GPUStencilOpState> impleme
         COMPARE_OP = layout.offsetof(3);
     }
 
-    protected SDL_GPUStencilOpState(long address, @Nullable ByteBuffer container) {
+    public SDL_GPUStencilOpState(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_GPUStencilOpState create(long address, @Nullable ByteBuffer container) {
-        return new SDL_GPUStencilOpState(address, container);
     }
 
     /**

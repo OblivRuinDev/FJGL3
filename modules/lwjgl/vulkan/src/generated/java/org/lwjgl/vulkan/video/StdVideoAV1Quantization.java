@@ -82,13 +82,8 @@ public class StdVideoAV1Quantization extends Struct<StdVideoAV1Quantization> imp
         QM_V = layout.offsetof(9);
     }
 
-    protected StdVideoAV1Quantization(long address, @Nullable ByteBuffer container) {
+    public StdVideoAV1Quantization(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected StdVideoAV1Quantization create(long address, @Nullable ByteBuffer container) {
-        return new StdVideoAV1Quantization(address, container);
     }
 
     /**

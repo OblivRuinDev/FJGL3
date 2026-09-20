@@ -52,13 +52,8 @@ public class XrGoogleCloudAuthErrorResultANDROID extends Struct<XrGoogleCloudAut
         ERROR = layout.offsetof(2);
     }
 
-    protected XrGoogleCloudAuthErrorResultANDROID(long address, @Nullable ByteBuffer container) {
+    public XrGoogleCloudAuthErrorResultANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrGoogleCloudAuthErrorResultANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrGoogleCloudAuthErrorResultANDROID(address, container);
     }
 
     /**

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceGpaProperties2AMD extends Struct<VkPhysicalDeviceGp
         REVISIONID = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceGpaProperties2AMD(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceGpaProperties2AMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceGpaProperties2AMD create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceGpaProperties2AMD(address, container);
     }
 
     /**

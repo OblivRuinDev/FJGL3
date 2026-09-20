@@ -50,13 +50,8 @@ public class FMOD_DSP_PARAMETER_FLOAT_MAPPING extends Struct<FMOD_DSP_PARAMETER_
         PIECEWISELINEARMAPPING = layout.offsetof(1);
     }
 
-    protected FMOD_DSP_PARAMETER_FLOAT_MAPPING(long address, @Nullable ByteBuffer container) {
+    public FMOD_DSP_PARAMETER_FLOAT_MAPPING(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_DSP_PARAMETER_FLOAT_MAPPING create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_DSP_PARAMETER_FLOAT_MAPPING(address, container);
     }
 
     /**

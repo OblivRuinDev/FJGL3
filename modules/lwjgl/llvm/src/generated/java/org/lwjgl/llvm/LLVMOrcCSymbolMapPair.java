@@ -51,13 +51,8 @@ public class LLVMOrcCSymbolMapPair extends Struct<LLVMOrcCSymbolMapPair> impleme
         SYM = layout.offsetof(1);
     }
 
-    protected LLVMOrcCSymbolMapPair(long address, @Nullable ByteBuffer container) {
+    public LLVMOrcCSymbolMapPair(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected LLVMOrcCSymbolMapPair create(long address, @Nullable ByteBuffer container) {
-        return new LLVMOrcCSymbolMapPair(address, container);
     }
 
     /**

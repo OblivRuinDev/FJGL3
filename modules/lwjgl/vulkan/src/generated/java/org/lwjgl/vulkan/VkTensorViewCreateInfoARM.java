@@ -60,13 +60,8 @@ public class VkTensorViewCreateInfoARM extends Struct<VkTensorViewCreateInfoARM>
         FORMAT = layout.offsetof(4);
     }
 
-    protected VkTensorViewCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkTensorViewCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkTensorViewCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkTensorViewCreateInfoARM(address, container);
     }
 
     /**

@@ -65,13 +65,8 @@ public class STBRPRect extends Struct<STBRPRect> implements NativeResource {
         WAS_PACKED = layout.offsetof(5);
     }
 
-    protected STBRPRect(long address, @Nullable ByteBuffer container) {
+    public STBRPRect(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected STBRPRect create(long address, @Nullable ByteBuffer container) {
-        return new STBRPRect(address, container);
     }
 
     /**

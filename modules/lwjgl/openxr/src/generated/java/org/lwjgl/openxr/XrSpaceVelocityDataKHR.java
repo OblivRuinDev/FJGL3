@@ -25,13 +25,8 @@ import static org.lwjgl.system.MemoryStack.*;
  */
 public class XrSpaceVelocityDataKHR extends XrSpaceVelocityData {
 
-    protected XrSpaceVelocityDataKHR(long address, @Nullable ByteBuffer container) {
+    public XrSpaceVelocityDataKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpaceVelocityDataKHR create(long address, @Nullable ByteBuffer container) {
-        return new XrSpaceVelocityDataKHR(address, container);
     }
 
     /**

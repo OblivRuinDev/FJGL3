@@ -124,13 +124,8 @@ public class NkWindow extends Struct<NkWindow> {
         PARENT = layout.offsetof(18);
     }
 
-    protected NkWindow(long address, @Nullable ByteBuffer container) {
+    public NkWindow(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected NkWindow create(long address, @Nullable ByteBuffer container) {
-        return new NkWindow(address, container);
     }
 
     /**

@@ -102,13 +102,8 @@ public class FMOD_CODEC_DESCRIPTION extends Struct<FMOD_CODEC_DESCRIPTION> imple
         GETWAVEFORMAT = layout.offsetof(12);
     }
 
-    protected FMOD_CODEC_DESCRIPTION(long address, @Nullable ByteBuffer container) {
+    public FMOD_CODEC_DESCRIPTION(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_CODEC_DESCRIPTION create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_CODEC_DESCRIPTION(address, container);
     }
 
     /**

@@ -69,13 +69,8 @@ public class ParOctasphereConfig extends Struct<ParOctasphereConfig> implements 
         NORMALS_MODE = layout.offsetof(6);
     }
 
-    protected ParOctasphereConfig(long address, @Nullable ByteBuffer container) {
+    public ParOctasphereConfig(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected ParOctasphereConfig create(long address, @Nullable ByteBuffer container) {
-        return new ParOctasphereConfig(address, container);
     }
 
     /**

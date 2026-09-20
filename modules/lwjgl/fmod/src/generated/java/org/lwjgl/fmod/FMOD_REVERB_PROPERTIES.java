@@ -88,13 +88,8 @@ public class FMOD_REVERB_PROPERTIES extends Struct<FMOD_REVERB_PROPERTIES> imple
         WETLEVEL = layout.offsetof(11);
     }
 
-    protected FMOD_REVERB_PROPERTIES(long address, @Nullable ByteBuffer container) {
+    public FMOD_REVERB_PROPERTIES(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected FMOD_REVERB_PROPERTIES create(long address, @Nullable ByteBuffer container) {
-        return new FMOD_REVERB_PROPERTIES(address, container);
     }
 
     /**

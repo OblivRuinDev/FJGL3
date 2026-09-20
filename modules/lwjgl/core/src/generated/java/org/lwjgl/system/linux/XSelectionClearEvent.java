@@ -69,13 +69,8 @@ public class XSelectionClearEvent extends Struct<XSelectionClearEvent> implement
         TIME = layout.offsetof(6);
     }
 
-    protected XSelectionClearEvent(long address, @Nullable ByteBuffer container) {
+    public XSelectionClearEvent(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XSelectionClearEvent create(long address, @Nullable ByteBuffer container) {
-        return new XSelectionClearEvent(address, container);
     }
 
     /**

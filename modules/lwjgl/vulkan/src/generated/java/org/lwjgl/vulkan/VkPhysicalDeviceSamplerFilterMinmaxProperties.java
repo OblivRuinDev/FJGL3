@@ -56,13 +56,8 @@ public class VkPhysicalDeviceSamplerFilterMinmaxProperties extends Struct<VkPhys
         FILTERMINMAXIMAGECOMPONENTMAPPING = layout.offsetof(3);
     }
 
-    protected VkPhysicalDeviceSamplerFilterMinmaxProperties(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceSamplerFilterMinmaxProperties(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceSamplerFilterMinmaxProperties create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceSamplerFilterMinmaxProperties(address, container);
     }
 
     /**

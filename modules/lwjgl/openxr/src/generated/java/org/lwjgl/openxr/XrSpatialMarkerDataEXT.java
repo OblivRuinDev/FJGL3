@@ -54,13 +54,8 @@ public class XrSpatialMarkerDataEXT extends Struct<XrSpatialMarkerDataEXT> imple
         DATA = layout.offsetof(2);
     }
 
-    protected XrSpatialMarkerDataEXT(long address, @Nullable ByteBuffer container) {
+    public XrSpatialMarkerDataEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialMarkerDataEXT create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialMarkerDataEXT(address, container);
     }
 
     /**

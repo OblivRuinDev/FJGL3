@@ -56,13 +56,8 @@ public class VkPipelineIndirectDeviceAddressInfoNV extends Struct<VkPipelineIndi
         PIPELINE = layout.offsetof(3);
     }
 
-    protected VkPipelineIndirectDeviceAddressInfoNV(long address, @Nullable ByteBuffer container) {
+    public VkPipelineIndirectDeviceAddressInfoNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPipelineIndirectDeviceAddressInfoNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPipelineIndirectDeviceAddressInfoNV(address, container);
     }
 
     /**

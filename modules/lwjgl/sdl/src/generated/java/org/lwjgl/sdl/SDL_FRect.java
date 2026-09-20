@@ -56,13 +56,8 @@ public class SDL_FRect extends Struct<SDL_FRect> implements NativeResource {
         H = layout.offsetof(3);
     }
 
-    protected SDL_FRect(long address, @Nullable ByteBuffer container) {
+    public SDL_FRect(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SDL_FRect create(long address, @Nullable ByteBuffer container) {
-        return new SDL_FRect(address, container);
     }
 
     /**

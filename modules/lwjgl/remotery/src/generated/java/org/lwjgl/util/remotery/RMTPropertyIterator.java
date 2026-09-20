@@ -49,13 +49,8 @@ public class RMTPropertyIterator extends Struct<RMTPropertyIterator> implements 
         INITIAL = layout.offsetof(1);
     }
 
-    protected RMTPropertyIterator(long address, @Nullable ByteBuffer container) {
+    public RMTPropertyIterator(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected RMTPropertyIterator create(long address, @Nullable ByteBuffer container) {
-        return new RMTPropertyIterator(address, container);
     }
 
     /**

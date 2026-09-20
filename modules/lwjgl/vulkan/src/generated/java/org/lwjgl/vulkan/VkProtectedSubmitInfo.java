@@ -52,13 +52,8 @@ public class VkProtectedSubmitInfo extends Struct<VkProtectedSubmitInfo> impleme
         PROTECTEDSUBMIT = layout.offsetof(2);
     }
 
-    protected VkProtectedSubmitInfo(long address, @Nullable ByteBuffer container) {
+    public VkProtectedSubmitInfo(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkProtectedSubmitInfo create(long address, @Nullable ByteBuffer container) {
-        return new VkProtectedSubmitInfo(address, container);
     }
 
     /**

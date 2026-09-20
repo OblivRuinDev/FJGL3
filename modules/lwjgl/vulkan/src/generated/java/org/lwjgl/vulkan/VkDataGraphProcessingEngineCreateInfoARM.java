@@ -57,13 +57,8 @@ public class VkDataGraphProcessingEngineCreateInfoARM extends Struct<VkDataGraph
         PPROCESSINGENGINES = layout.offsetof(3);
     }
 
-    protected VkDataGraphProcessingEngineCreateInfoARM(long address, @Nullable ByteBuffer container) {
+    public VkDataGraphProcessingEngineCreateInfoARM(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkDataGraphProcessingEngineCreateInfoARM create(long address, @Nullable ByteBuffer container) {
-        return new VkDataGraphProcessingEngineCreateInfoARM(address, container);
     }
 
     /**

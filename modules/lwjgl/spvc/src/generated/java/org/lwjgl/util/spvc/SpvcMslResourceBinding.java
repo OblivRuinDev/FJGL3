@@ -65,13 +65,8 @@ public class SpvcMslResourceBinding extends Struct<SpvcMslResourceBinding> imple
         MSL_SAMPLER = layout.offsetof(5);
     }
 
-    protected SpvcMslResourceBinding(long address, @Nullable ByteBuffer container) {
+    public SpvcMslResourceBinding(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected SpvcMslResourceBinding create(long address, @Nullable ByteBuffer container) {
-        return new SpvcMslResourceBinding(address, container);
     }
 
     /**

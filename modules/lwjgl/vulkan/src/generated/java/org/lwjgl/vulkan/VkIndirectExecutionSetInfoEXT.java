@@ -49,13 +49,8 @@ public class VkIndirectExecutionSetInfoEXT extends Struct<VkIndirectExecutionSet
         PSHADERINFO = layout.offsetof(1);
     }
 
-    protected VkIndirectExecutionSetInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkIndirectExecutionSetInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkIndirectExecutionSetInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkIndirectExecutionSetInfoEXT(address, container);
     }
 
     /**

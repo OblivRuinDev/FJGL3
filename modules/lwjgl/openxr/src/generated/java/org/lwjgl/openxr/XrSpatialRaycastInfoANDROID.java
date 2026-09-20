@@ -71,13 +71,8 @@ public class XrSpatialRaycastInfoANDROID extends Struct<XrSpatialRaycastInfoANDR
         MAXDISTANCE = layout.offsetof(6);
     }
 
-    protected XrSpatialRaycastInfoANDROID(long address, @Nullable ByteBuffer container) {
+    public XrSpatialRaycastInfoANDROID(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrSpatialRaycastInfoANDROID create(long address, @Nullable ByteBuffer container) {
-        return new XrSpatialRaycastInfoANDROID(address, container);
     }
 
     /**

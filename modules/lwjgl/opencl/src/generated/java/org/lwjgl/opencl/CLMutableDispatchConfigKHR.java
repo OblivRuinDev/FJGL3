@@ -86,13 +86,8 @@ public class CLMutableDispatchConfigKHR extends Struct<CLMutableDispatchConfigKH
         LOCAL_WORK_SIZE = layout.offsetof(10);
     }
 
-    protected CLMutableDispatchConfigKHR(long address, @Nullable ByteBuffer container) {
+    public CLMutableDispatchConfigKHR(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected CLMutableDispatchConfigKHR create(long address, @Nullable ByteBuffer container) {
-        return new CLMutableDispatchConfigKHR(address, container);
     }
 
     /**

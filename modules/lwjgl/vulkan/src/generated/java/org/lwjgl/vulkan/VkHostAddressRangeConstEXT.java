@@ -49,13 +49,8 @@ public class VkHostAddressRangeConstEXT extends Struct<VkHostAddressRangeConstEX
         SIZE = layout.offsetof(1);
     }
 
-    protected VkHostAddressRangeConstEXT(long address, @Nullable ByteBuffer container) {
+    public VkHostAddressRangeConstEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkHostAddressRangeConstEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkHostAddressRangeConstEXT(address, container);
     }
 
     /**

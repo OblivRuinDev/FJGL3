@@ -48,13 +48,8 @@ public class XrEnvironmentRaycastFilterBaseHeaderMETA extends Struct<XrEnvironme
         NEXT = layout.offsetof(1);
     }
 
-    protected XrEnvironmentRaycastFilterBaseHeaderMETA(long address, @Nullable ByteBuffer container) {
+    public XrEnvironmentRaycastFilterBaseHeaderMETA(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEnvironmentRaycastFilterBaseHeaderMETA create(long address, @Nullable ByteBuffer container) {
-        return new XrEnvironmentRaycastFilterBaseHeaderMETA(address, container);
     }
 
     /**

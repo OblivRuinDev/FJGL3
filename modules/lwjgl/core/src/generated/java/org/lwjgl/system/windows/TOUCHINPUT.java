@@ -80,13 +80,8 @@ public class TOUCHINPUT extends Struct<TOUCHINPUT> implements NativeResource {
         CYCONTACT = layout.offsetof(9);
     }
 
-    protected TOUCHINPUT(long address, @Nullable ByteBuffer container) {
+    public TOUCHINPUT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected TOUCHINPUT create(long address, @Nullable ByteBuffer container) {
-        return new TOUCHINPUT(address, container);
     }
 
     /**

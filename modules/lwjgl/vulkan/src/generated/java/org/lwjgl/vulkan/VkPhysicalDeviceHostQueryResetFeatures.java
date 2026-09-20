@@ -52,13 +52,8 @@ public class VkPhysicalDeviceHostQueryResetFeatures extends Struct<VkPhysicalDev
         HOSTQUERYRESET = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceHostQueryResetFeatures(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceHostQueryResetFeatures(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceHostQueryResetFeatures create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceHostQueryResetFeatures(address, container);
     }
 
     /**

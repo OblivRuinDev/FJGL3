@@ -103,13 +103,8 @@ public class hwloc_topology_membind_support extends Struct<hwloc_topology_membin
         MIGRATE_MEMBIND = layout.offsetof(15);
     }
 
-    protected hwloc_topology_membind_support(long address, @Nullable ByteBuffer container) {
+    public hwloc_topology_membind_support(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected hwloc_topology_membind_support create(long address, @Nullable ByteBuffer container) {
-        return new hwloc_topology_membind_support(address, container);
     }
 
     /**

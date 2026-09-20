@@ -52,13 +52,8 @@ public class VkPhysicalDeviceCoherentMemoryFeaturesAMD extends Struct<VkPhysical
         DEVICECOHERENTMEMORY = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceCoherentMemoryFeaturesAMD(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCoherentMemoryFeaturesAMD(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCoherentMemoryFeaturesAMD create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCoherentMemoryFeaturesAMD(address, container);
     }
 
     /**

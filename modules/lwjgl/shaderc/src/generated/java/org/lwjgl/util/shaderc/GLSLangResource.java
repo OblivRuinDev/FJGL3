@@ -455,13 +455,8 @@ public class GLSLangResource extends Struct<GLSLangResource> implements NativeRe
         LIMITS = layout.offsetof(102);
     }
 
-    protected GLSLangResource(long address, @Nullable ByteBuffer container) {
+    public GLSLangResource(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected GLSLangResource create(long address, @Nullable ByteBuffer container) {
-        return new GLSLangResource(address, container);
     }
 
     /**

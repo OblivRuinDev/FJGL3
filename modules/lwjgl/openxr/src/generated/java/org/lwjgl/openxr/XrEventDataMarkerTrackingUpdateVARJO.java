@@ -64,13 +64,8 @@ public class XrEventDataMarkerTrackingUpdateVARJO extends Struct<XrEventDataMark
         TIME = layout.offsetof(5);
     }
 
-    protected XrEventDataMarkerTrackingUpdateVARJO(long address, @Nullable ByteBuffer container) {
+    public XrEventDataMarkerTrackingUpdateVARJO(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrEventDataMarkerTrackingUpdateVARJO create(long address, @Nullable ByteBuffer container) {
-        return new XrEventDataMarkerTrackingUpdateVARJO(address, container);
     }
 
     /**
