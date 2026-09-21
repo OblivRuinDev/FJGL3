@@ -52,13 +52,8 @@ public class VkImageTilingControlCreateInfoEXT extends Struct<VkImageTilingContr
         TILINGCONTROL = layout.offsetof(2);
     }
 
-    protected VkImageTilingControlCreateInfoEXT(long address, @Nullable ByteBuffer container) {
+    public VkImageTilingControlCreateInfoEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkImageTilingControlCreateInfoEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkImageTilingControlCreateInfoEXT(address, container);
     }
 
     /**
@@ -247,9 +242,6 @@ public class VkImageTilingControlCreateInfoEXT extends Struct<VkImageTilingContr
 
     /** An array of {@link VkImageTilingControlCreateInfoEXT} structs. */
     public static class Buffer extends StructBuffer<VkImageTilingControlCreateInfoEXT, Buffer> implements NativeResource {
-
-        private static final VkImageTilingControlCreateInfoEXT ELEMENT_FACTORY = VkImageTilingControlCreateInfoEXT.create(-1L);
-
         /**
          * Creates a new {@code VkImageTilingControlCreateInfoEXT.Buffer} instance backed by the specified container.
          *
@@ -272,18 +264,13 @@ public class VkImageTilingControlCreateInfoEXT extends Struct<VkImageTilingContr
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkImageTilingControlCreateInfoEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkImageTilingControlCreateInfoEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

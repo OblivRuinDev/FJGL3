@@ -68,13 +68,8 @@ public class VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT extends St
         COOPERATIVEMATRIXGETCOORDINATE = layout.offsetof(6);
     }
 
-    protected VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT(address, container);
     }
 
     /**
@@ -307,9 +302,6 @@ public class VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT extends St
 
     /** An array of {@link VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -332,18 +324,13 @@ public class VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT extends St
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

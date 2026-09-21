@@ -73,13 +73,8 @@ public class BGFXTextureRegion extends Struct<BGFXTextureRegion> implements Nati
         DEPTH = layout.offsetof(7);
     }
 
-    protected BGFXTextureRegion(long address, @Nullable ByteBuffer container) {
+    public BGFXTextureRegion(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXTextureRegion create(long address, @Nullable ByteBuffer container) {
-        return new BGFXTextureRegion(address, container);
     }
 
     /**
@@ -321,9 +316,6 @@ public class BGFXTextureRegion extends Struct<BGFXTextureRegion> implements Nati
 
     /** An array of {@link BGFXTextureRegion} structs. */
     public static class Buffer extends StructBuffer<BGFXTextureRegion, Buffer> implements NativeResource {
-
-        private static final BGFXTextureRegion ELEMENT_FACTORY = BGFXTextureRegion.create(-1L);
-
         /**
          * Creates a new {@code BGFXTextureRegion.Buffer} instance backed by the specified container.
          *
@@ -346,18 +338,13 @@ public class BGFXTextureRegion extends Struct<BGFXTextureRegion> implements Nati
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected BGFXTextureRegion getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return BGFXTextureRegion.class;
         }
 
         /** @return the value of the {@code handle} field. */

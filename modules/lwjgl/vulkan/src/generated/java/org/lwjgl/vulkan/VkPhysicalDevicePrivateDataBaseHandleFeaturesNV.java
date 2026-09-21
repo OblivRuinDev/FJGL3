@@ -52,13 +52,8 @@ public class VkPhysicalDevicePrivateDataBaseHandleFeaturesNV extends Struct<VkPh
         PRIVATEDATABASEHANDLE = layout.offsetof(2);
     }
 
-    protected VkPhysicalDevicePrivateDataBaseHandleFeaturesNV(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDevicePrivateDataBaseHandleFeaturesNV(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDevicePrivateDataBaseHandleFeaturesNV create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDevicePrivateDataBaseHandleFeaturesNV(address, container);
     }
 
     /**
@@ -247,9 +242,6 @@ public class VkPhysicalDevicePrivateDataBaseHandleFeaturesNV extends Struct<VkPh
 
     /** An array of {@link VkPhysicalDevicePrivateDataBaseHandleFeaturesNV} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDevicePrivateDataBaseHandleFeaturesNV, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDevicePrivateDataBaseHandleFeaturesNV ELEMENT_FACTORY = VkPhysicalDevicePrivateDataBaseHandleFeaturesNV.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDevicePrivateDataBaseHandleFeaturesNV.Buffer} instance backed by the specified container.
          *
@@ -272,18 +264,13 @@ public class VkPhysicalDevicePrivateDataBaseHandleFeaturesNV extends Struct<VkPh
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDevicePrivateDataBaseHandleFeaturesNV getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDevicePrivateDataBaseHandleFeaturesNV.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -76,13 +76,8 @@ public class VkCooperativeMatrixProperties2EXT extends Struct<VkCooperativeMatri
         RESULTTYPE = layout.offsetof(8);
     }
 
-    protected VkCooperativeMatrixProperties2EXT(long address, @Nullable ByteBuffer container) {
+    public VkCooperativeMatrixProperties2EXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkCooperativeMatrixProperties2EXT create(long address, @Nullable ByteBuffer container) {
-        return new VkCooperativeMatrixProperties2EXT(address, container);
     }
 
     /**
@@ -295,9 +290,6 @@ public class VkCooperativeMatrixProperties2EXT extends Struct<VkCooperativeMatri
 
     /** An array of {@link VkCooperativeMatrixProperties2EXT} structs. */
     public static class Buffer extends StructBuffer<VkCooperativeMatrixProperties2EXT, Buffer> implements NativeResource {
-
-        private static final VkCooperativeMatrixProperties2EXT ELEMENT_FACTORY = VkCooperativeMatrixProperties2EXT.create(-1L);
-
         /**
          * Creates a new {@code VkCooperativeMatrixProperties2EXT.Buffer} instance backed by the specified container.
          *
@@ -320,18 +312,13 @@ public class VkCooperativeMatrixProperties2EXT extends Struct<VkCooperativeMatri
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkCooperativeMatrixProperties2EXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkCooperativeMatrixProperties2EXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -52,13 +52,8 @@ public class VkPhysicalDeviceImageTilingControlFeaturesEXT extends Struct<VkPhys
         IMAGETILINGCONTROL = layout.offsetof(2);
     }
 
-    protected VkPhysicalDeviceImageTilingControlFeaturesEXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceImageTilingControlFeaturesEXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceImageTilingControlFeaturesEXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceImageTilingControlFeaturesEXT(address, container);
     }
 
     /**
@@ -247,9 +242,6 @@ public class VkPhysicalDeviceImageTilingControlFeaturesEXT extends Struct<VkPhys
 
     /** An array of {@link VkPhysicalDeviceImageTilingControlFeaturesEXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceImageTilingControlFeaturesEXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceImageTilingControlFeaturesEXT ELEMENT_FACTORY = VkPhysicalDeviceImageTilingControlFeaturesEXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceImageTilingControlFeaturesEXT.Buffer} instance backed by the specified container.
          *
@@ -272,18 +264,13 @@ public class VkPhysicalDeviceImageTilingControlFeaturesEXT extends Struct<VkPhys
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceImageTilingControlFeaturesEXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceImageTilingControlFeaturesEXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

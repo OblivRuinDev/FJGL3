@@ -64,13 +64,8 @@ public class VkPhysicalDeviceCooperativeMatrixInfo2EXT extends Struct<VkPhysical
         FLAGS = layout.offsetof(5);
     }
 
-    protected VkPhysicalDeviceCooperativeMatrixInfo2EXT(long address, @Nullable ByteBuffer container) {
+    public VkPhysicalDeviceCooperativeMatrixInfo2EXT(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected VkPhysicalDeviceCooperativeMatrixInfo2EXT create(long address, @Nullable ByteBuffer container) {
-        return new VkPhysicalDeviceCooperativeMatrixInfo2EXT(address, container);
     }
 
     /**
@@ -292,9 +287,6 @@ public class VkPhysicalDeviceCooperativeMatrixInfo2EXT extends Struct<VkPhysical
 
     /** An array of {@link VkPhysicalDeviceCooperativeMatrixInfo2EXT} structs. */
     public static class Buffer extends StructBuffer<VkPhysicalDeviceCooperativeMatrixInfo2EXT, Buffer> implements NativeResource {
-
-        private static final VkPhysicalDeviceCooperativeMatrixInfo2EXT ELEMENT_FACTORY = VkPhysicalDeviceCooperativeMatrixInfo2EXT.create(-1L);
-
         /**
          * Creates a new {@code VkPhysicalDeviceCooperativeMatrixInfo2EXT.Buffer} instance backed by the specified container.
          *
@@ -317,18 +309,13 @@ public class VkPhysicalDeviceCooperativeMatrixInfo2EXT extends Struct<VkPhysical
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected VkPhysicalDeviceCooperativeMatrixInfo2EXT getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return VkPhysicalDeviceCooperativeMatrixInfo2EXT.class;
         }
 
         /** @return the value of the {@code sType} field. */

@@ -49,13 +49,8 @@ public class BGFXBufferHandle extends Struct<BGFXBufferHandle> implements Native
         TYPE = layout.offsetof(1);
     }
 
-    protected BGFXBufferHandle(long address, @Nullable ByteBuffer container) {
+    public BGFXBufferHandle(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected BGFXBufferHandle create(long address, @Nullable ByteBuffer container) {
-        return new BGFXBufferHandle(address, container);
     }
 
     /**
@@ -231,9 +226,6 @@ public class BGFXBufferHandle extends Struct<BGFXBufferHandle> implements Native
 
     /** An array of {@link BGFXBufferHandle} structs. */
     public static class Buffer extends StructBuffer<BGFXBufferHandle, Buffer> implements NativeResource {
-
-        private static final BGFXBufferHandle ELEMENT_FACTORY = BGFXBufferHandle.create(-1L);
-
         /**
          * Creates a new {@code BGFXBufferHandle.Buffer} instance backed by the specified container.
          *
@@ -256,18 +248,13 @@ public class BGFXBufferHandle extends Struct<BGFXBufferHandle> implements Native
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected BGFXBufferHandle getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return BGFXBufferHandle.class;
         }
 
         /** @return the value of the {@code idx} field. */

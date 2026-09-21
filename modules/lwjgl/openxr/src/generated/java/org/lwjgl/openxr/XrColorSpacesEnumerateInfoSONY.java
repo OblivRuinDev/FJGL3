@@ -52,13 +52,8 @@ public class XrColorSpacesEnumerateInfoSONY extends Struct<XrColorSpacesEnumerat
         FORMAT = layout.offsetof(2);
     }
 
-    protected XrColorSpacesEnumerateInfoSONY(long address, @Nullable ByteBuffer container) {
+    public XrColorSpacesEnumerateInfoSONY(long address, @Nullable ByteBuffer container) {
         super(address, container);
-    }
-
-    @Override
-    protected XrColorSpacesEnumerateInfoSONY create(long address, @Nullable ByteBuffer container) {
-        return new XrColorSpacesEnumerateInfoSONY(address, container);
     }
 
     /**
@@ -247,9 +242,6 @@ public class XrColorSpacesEnumerateInfoSONY extends Struct<XrColorSpacesEnumerat
 
     /** An array of {@link XrColorSpacesEnumerateInfoSONY} structs. */
     public static class Buffer extends StructBuffer<XrColorSpacesEnumerateInfoSONY, Buffer> implements NativeResource {
-
-        private static final XrColorSpacesEnumerateInfoSONY ELEMENT_FACTORY = XrColorSpacesEnumerateInfoSONY.create(-1L);
-
         /**
          * Creates a new {@code XrColorSpacesEnumerateInfoSONY.Buffer} instance backed by the specified container.
          *
@@ -272,18 +264,13 @@ public class XrColorSpacesEnumerateInfoSONY extends Struct<XrColorSpacesEnumerat
         }
 
         @Override
-        protected Buffer self() {
-            return this;
+        public int sizeof() {
+            return SIZEOF;
         }
 
         @Override
-        protected Buffer create(long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-            return new Buffer(address, container, mark, position, limit, capacity);
-        }
-
-        @Override
-        protected XrColorSpacesEnumerateInfoSONY getElementFactory() {
-            return ELEMENT_FACTORY;
+        public Class<?> getElementClass() {
+            return XrColorSpacesEnumerateInfoSONY.class;
         }
 
         /** @return the value of the {@code type} field. */
