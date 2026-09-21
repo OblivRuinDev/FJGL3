@@ -13,7 +13,7 @@ val mimalloc = "mimalloc".nativeClass(Module.MIMALLOC, prefix = "mi", prefixMeth
     bundledWithLWJGL = true
 )) {
     IntConstant(
-        "MI_MALLOC_VERSION".."30302"
+        "MI_MALLOC_VERSION".."30501"
     ).noPrefix()
 
     IntConstant(
@@ -50,7 +50,7 @@ val mimalloc = "mimalloc".nativeClass(Module.MIMALLOC, prefix = "mi", prefixMeth
         "option_deprecated_purge_extend_delay".enum,
         "option_disallow_arena_alloc".enum,
         "option_retry_on_oom".enum,
-        "option_visit_abandoned".enum,
+        "option_deprecated_visit_abandoned".enum,
         "option_guarded_min".enum,
         "option_guarded_max".enum,
         "option_guarded_precise".enum,
@@ -178,7 +178,20 @@ val mimalloc = "mimalloc".nativeClass(Module.MIMALLOC, prefix = "mi", prefixMeth
     )
 
     void(
+        "free_size",
+
+        MultiTypeAll..nullable..void.p("p"),
+        AutoSize("p")..size_t("size")
+    )
+
+    void(
         "free_small",
+
+        MultiTypeAll..Unsafe..nullable..void.p("p")
+    )
+
+    void(
+        "free_small_nonnull",
 
         MultiTypeAll..Unsafe..nullable..void.p("p")
     )
@@ -805,6 +818,12 @@ val mimalloc = "mimalloc".nativeClass(Module.MIMALLOC, prefix = "mi", prefixMeth
         void()
     )
 
+    size_t(
+        "arena_max_object_size",
+
+        void()
+    )
+
     void.p(
         "arena_area",
 
@@ -967,7 +986,23 @@ val mimalloc = "mimalloc".nativeClass(Module.MIMALLOC, prefix = "mi", prefixMeth
     )
 
     void.p(
+        "theap_zalloc_aligned",
+
+        mi_theap_t.p("theap"),
+        AutoSizeResult..size_t("size"),
+        size_t("alignment")
+    )
+
+    void.p(
         "theap_realloc",
+
+        mi_theap_t.p("theap"),
+        Unsafe..nullable..void.p("p"),
+        AutoSizeResult..size_t("newsize")
+    )
+
+    void.p(
+        "theap_rezalloc",
 
         mi_theap_t.p("theap"),
         Unsafe..nullable..void.p("p"),
@@ -1079,13 +1114,21 @@ val mimalloc = "mimalloc".nativeClass(Module.MIMALLOC, prefix = "mi", prefixMeth
         long("value")
     )
 
+    // for MemoryAllocator::aligned_alloc compatibility.
+    private..void.p(
+        "aligned_alloc",
+
+        size_t("alignment"),
+        AutoSizeResult..size_t("size")
+    )
+
     customMethod("""
     public static final class Allocator implements MemoryAllocator {
         @Override public long getMalloc()                              { return Functions.malloc; }
         @Override public long getCalloc()                              { return Functions.calloc; }
         @Override public long getRealloc()                             { return Functions.realloc; }
         @Override public long getFree()                                { return Functions.free; }
-        @Override public long getAlignedAlloc()                        { return Functions.malloc_aligned; }
+        @Override public long getAlignedAlloc()                        { return Functions.aligned_alloc; }
         @Override public long getAlignedFree()                         { return Functions.free; }
 
         @Override public long malloc(long size)                        { return nmi_malloc(size); }

@@ -9,7 +9,7 @@ import org.lwjgl.generator.*
 
 val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx_", binding = BGFX_BINDING) {
     IntConstant(
-        "API_VERSION".."149"
+        "API_VERSION".."157"
     )
 
     ShortConstant(
@@ -237,26 +237,6 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         | BGFX_BUFFER_COMPUTE_READ
         | BGFX_BUFFER_COMPUTE_WRITE)
         """
-    )
-
-    ShortConstant(
-        "BUFFER_COMPUTE_FORMAT_8x1"..0x0001.s,
-        "BUFFER_COMPUTE_FORMAT_8x2"..0x0002.s,
-        "BUFFER_COMPUTE_FORMAT_8x4"..0x0003.s,
-        "BUFFER_COMPUTE_FORMAT_16x1"..0x0004.s,
-        "BUFFER_COMPUTE_FORMAT_16x2"..0x0005.s,
-        "BUFFER_COMPUTE_FORMAT_16x4"..0x0006.s,
-        "BUFFER_COMPUTE_FORMAT_32x1"..0x0007.s,
-        "BUFFER_COMPUTE_FORMAT_32x2"..0x0008.s,
-        "BUFFER_COMPUTE_FORMAT_32x4"..0x0009.s,
-        "BUFFER_COMPUTE_FORMAT_SHIFT".."0",
-        "BUFFER_COMPUTE_FORMAT_MASK"..0x000f.s,
-
-        "BUFFER_COMPUTE_TYPE_INT"..0x0010.s,
-        "BUFFER_COMPUTE_TYPE_UINT"..0x0020.s,
-        "BUFFER_COMPUTE_TYPE_FLOAT"..0x0030.s,
-        "BUFFER_COMPUTE_TYPE_SHIFT".."4",
-        "BUFFER_COMPUTE_TYPE_MASK"..0x0030.s
     )
 
     LongConstant(
@@ -562,8 +542,16 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "ATTRIB_TEXCOORD5".enum,
         "ATTRIB_TEXCOORD6".enum,
         "ATTRIB_TEXCOORD7".enum,
+        "ATTRIB_TEXCOORD8".enum,
+        "ATTRIB_TEXCOORD9".enum,
+        "ATTRIB_TEXCOORD10".enum,
+        "ATTRIB_TEXCOORD11".enum,
+        "ATTRIB_TEXCOORD12".enum,
+        "ATTRIB_TEXCOORD13".enum,
+        "ATTRIB_TEXCOORD14".enum,
+        "ATTRIB_TEXCOORD15".enum,
 
-        "ATTRIB_COUNT".enum("BGFX_ATTRIB_TEXCOORD7 + 1")
+        "ATTRIB_COUNT".enum
     )
 
     EnumConstant(
@@ -574,8 +562,10 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "ATTRIB_TYPE_UINT16".enum,
         "ATTRIB_TYPE_HALF".enum,
         "ATTRIB_TYPE_FLOAT".enum,
+        "ATTRIB_TYPE_INT32".enum,
+        "ATTRIB_TYPE_UINT32".enum,
 
-        "ATTRIB_TYPE_COUNT".enum("BGFX_ATTRIB_TYPE_FLOAT + 1")
+        "ATTRIB_TYPE_COUNT".enum
     )
 
     EnumConstant(
@@ -583,8 +573,11 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "TEXTURE_FORMAT_BC2".enum,
         "TEXTURE_FORMAT_BC3".enum,
         "TEXTURE_FORMAT_BC4".enum,
+        "TEXTURE_FORMAT_BC4S".enum,
         "TEXTURE_FORMAT_BC5".enum,
+        "TEXTURE_FORMAT_BC5S".enum,
         "TEXTURE_FORMAT_BC6H".enum,
+        "TEXTURE_FORMAT_BC6HU".enum,
         "TEXTURE_FORMAT_BC7".enum,
         "TEXTURE_FORMAT_ETC1".enum,
         "TEXTURE_FORMAT_ETC2".enum,
@@ -671,6 +664,7 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "TEXTURE_FORMAT_BGR5A1".enum,
         "TEXTURE_FORMAT_RGB5A1".enum,
         "TEXTURE_FORMAT_RGB10A2".enum,
+        "TEXTURE_FORMAT_RGB10A2U".enum,
         "TEXTURE_FORMAT_RG11B10F".enum,
 
         "TEXTURE_FORMAT_UNKNOWN_DEPTH".enum,
@@ -682,9 +676,10 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "TEXTURE_FORMAT_D16F".enum,
         "TEXTURE_FORMAT_D24F".enum,
         "TEXTURE_FORMAT_D32F".enum,
+        "TEXTURE_FORMAT_D32FS8".enum,
         "TEXTURE_FORMAT_D0S8".enum,
 
-        "TEXTURE_FORMAT_COUNT".enum("BGFX_TEXTURE_FORMAT_D0S8 + 1")
+        "TEXTURE_FORMAT_COUNT".enum
     )
 
     EnumConstant(
@@ -796,6 +791,33 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "NATIVE_WINDOW_HANDLE_TYPE_WAYLAND".enum,
 
         "NATIVE_WINDOW_HANDLE_TYPE_COUNT".enum
+    )
+
+    void(
+        "texture_region_init",
+
+        bgfx_texture_region_t.p("_this"),
+        bgfx_texture_handle_t("_handle"),
+        MapToInt..uint16_t("_x"),
+        MapToInt..uint16_t("_y"),
+        MapToInt..uint16_t("_width"),
+        MapToInt..uint16_t("_height")
+    )
+
+    void(
+        "buffer_region_init_texture",
+
+        bgfx_buffer_region_t.p("_this"),
+        bgfx_texture_region_t.const.p("_texture")
+    )
+
+    void(
+        "buffer_region_init_buffer",
+
+        bgfx_buffer_region_t.p("_this"),
+        bgfx_buffer_handle_t("_handle"),
+        uint32_t("_offset"),
+        uint32_t("_size")
     )
 
     void(
@@ -1082,6 +1104,13 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
 
         bgfx_memory_t.const.p("_mem"),
         MapToInt..uint16_t("_flags")
+    )
+
+    uint32_t(
+        "read_buffer",
+
+        bgfx_buffer_region_t.const.p("_src"),
+        MultiTypeAll..Unsafe..void.p("_data")
     )
 
     void(
@@ -1449,17 +1478,25 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         MapToInt..uint16_t("_pitch")
     )
 
+    void(
+        "clear_texture",
+
+        bgfx_texture_handle_t("_handle"),
+        MapToInt..uint8_t("_mip"),
+        MapToInt..uint8_t("_numMips"),
+        MapToInt..uint16_t("_layer"),
+        MapToInt..uint16_t("_numLayers")
+    )
+
     uint32_t(
         "read_texture",
 
-        bgfx_texture_handle_t("_handle"),
+        bgfx_texture_region_t.const.p("_src"),
         MultiType(
             PointerMapping.DATA_SHORT,
             PointerMapping.DATA_INT,
             PointerMapping.DATA_FLOAT
-        )..Unsafe..void.p("_data"),
-        MapToInt..uint16_t("_layer"),
-        MapToInt..uint8_t("_mip")
+        )..Unsafe..void.p("_data")
     )
 
     void(
@@ -1631,8 +1668,8 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "set_view_rect",
 
         MapToInt..bgfx_view_id_t("_id"),
-        MapToInt..uint16_t("_x"),
-        MapToInt..uint16_t("_y"),
+        MapToInt..int16_t("_x"),
+        MapToInt..int16_t("_y"),
         MapToInt..uint16_t("_width"),
         MapToInt..uint16_t("_height")
     )
@@ -1641,8 +1678,8 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "set_view_rect_ratio",
 
         MapToInt..bgfx_view_id_t("_id"),
-        MapToInt..uint16_t("_x"),
-        MapToInt..uint16_t("_y"),
+        MapToInt..int16_t("_x"),
+        MapToInt..int16_t("_y"),
         bgfx_backbuffer_ratio_t("_ratio")
     )
 
@@ -2177,19 +2214,35 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
 
         bgfx_encoder_t.p("_this"),
         MapToInt..bgfx_view_id_t("_id"),
-        bgfx_texture_handle_t("_dst"),
-        MapToInt..uint8_t("_dstMip"),
-        MapToInt..uint16_t("_dstX"),
-        MapToInt..uint16_t("_dstY"),
-        MapToInt..uint16_t("_dstZ"),
-        bgfx_texture_handle_t("_src"),
-        MapToInt..uint8_t("_srcMip"),
-        MapToInt..uint16_t("_srcX"),
-        MapToInt..uint16_t("_srcY"),
-        MapToInt..uint16_t("_srcZ"),
-        MapToInt..uint16_t("_width"),
-        MapToInt..uint16_t("_height"),
-        MapToInt..uint16_t("_depth")
+        bgfx_texture_region_t.const.p("_dst"),
+        bgfx_texture_region_t.const.p("_src")
+    )
+
+    void(
+        "encoder_blit_buffer",
+
+        bgfx_encoder_t.p("_this"),
+        MapToInt..bgfx_view_id_t("_id"),
+        bgfx_buffer_region_t.const.p("_dst"),
+        bgfx_buffer_region_t.const.p("_src")
+    )
+
+    void(
+        "encoder_blit_to_buffer",
+
+        bgfx_encoder_t.p("_this"),
+        MapToInt..bgfx_view_id_t("_id"),
+        bgfx_buffer_region_t.const.p("_dst"),
+        bgfx_texture_region_t.const.p("_src")
+    )
+
+    void(
+        "encoder_blit_from_buffer",
+
+        bgfx_encoder_t.p("_this"),
+        MapToInt..bgfx_view_id_t("_id"),
+        bgfx_texture_region_t.const.p("_dst"),
+        bgfx_buffer_region_t.const.p("_src")
     )
 
     void(
@@ -2563,19 +2616,32 @@ val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx
         "blit",
 
         MapToInt..bgfx_view_id_t("_id"),
-        bgfx_texture_handle_t("_dst"),
-        MapToInt..uint8_t("_dstMip"),
-        MapToInt..uint16_t("_dstX"),
-        MapToInt..uint16_t("_dstY"),
-        MapToInt..uint16_t("_dstZ"),
-        bgfx_texture_handle_t("_src"),
-        MapToInt..uint8_t("_srcMip"),
-        MapToInt..uint16_t("_srcX"),
-        MapToInt..uint16_t("_srcY"),
-        MapToInt..uint16_t("_srcZ"),
-        MapToInt..uint16_t("_width"),
-        MapToInt..uint16_t("_height"),
-        MapToInt..uint16_t("_depth")
+        bgfx_texture_region_t.const.p("_dst"),
+        bgfx_texture_region_t.const.p("_src")
+    )
+
+    void(
+        "blit_buffer",
+
+        MapToInt..bgfx_view_id_t("_id"),
+        bgfx_buffer_region_t.const.p("_dst"),
+        bgfx_buffer_region_t.const.p("_src")
+    )
+
+    void(
+        "blit_to_buffer",
+
+        MapToInt..bgfx_view_id_t("_id"),
+        bgfx_buffer_region_t.const.p("_dst"),
+        bgfx_texture_region_t.const.p("_src")
+    )
+
+    void(
+        "blit_from_buffer",
+
+        MapToInt..bgfx_view_id_t("_id"),
+        bgfx_texture_region_t.const.p("_dst"),
+        bgfx_buffer_region_t.const.p("_src")
     )
 
     macro(expression = "(_ref << BGFX_STATE_ALPHA_REF_SHIFT) & BGFX_STATE_ALPHA_REF_MASK")..uint64_t(

@@ -2832,6 +2832,15 @@ val hb = "HarfBuzz".nativeClass(Module.HARFBUZZ, prefix = "HB", prefixMethod = "
     )
 
     void(
+        "paint_funcs_set_fill_glyph_func",
+
+        hb_paint_funcs_t.p("funcs"),
+        hb_paint_fill_glyph_func_t("func"),
+        nullable..opaque_p("user_data"),
+        nullable..hb_destroy_func_t("destroy")
+    )
+
+    void(
         "paint_funcs_set_push_clip_glyph_func",
 
         hb_paint_funcs_t.p("funcs"),
@@ -3002,6 +3011,17 @@ val hb = "HarfBuzz".nativeClass(Module.HARFBUZZ, prefix = "HB", prefixMethod = "
         nullable..opaque_p("paint_data"),
         hb_codepoint_t("glyph"),
         hb_font_t.p("font")
+    )
+
+    void(
+        "paint_fill_glyph",
+
+        hb_paint_funcs_t.p("funcs"),
+        nullable..opaque_p("paint_data"),
+        hb_codepoint_t("glyph"),
+        hb_font_t.p("font"),
+        hb_bool_t("is_foreground"),
+        hb_color_t("color")
     )
 
     void(
@@ -3299,6 +3319,13 @@ val hb = "HarfBuzz".nativeClass(Module.HARFBUZZ, prefix = "HB", prefixMethod = "
 
     hb_bool_t(
         "set_is_equal",
+
+        hb_set_t.const.p("set"),
+        hb_set_t.const.p("other")
+    )
+
+    hb_bool_t(
+        "set_intersects",
 
         hb_set_t.const.p("set"),
         hb_set_t.const.p("other")
@@ -3843,10 +3870,10 @@ val hb = "HarfBuzz".nativeClass(Module.HARFBUZZ, prefix = "HB", prefixMethod = "
     // hb-version.h
 
     IntConstant("VERSION_MAJOR".."14")
-    IntConstant("VERSION_MINOR".."2")
-    IntConstant("VERSION_MICRO".."1")
+    IntConstant("VERSION_MINOR".."4")
+    IntConstant("VERSION_MICRO".."0")
 
-    StringConstant("VERSION_STRING".."14.2.1")
+    StringConstant("VERSION_STRING".."14.4.0")
 
     customMethod("""
     public static boolean HB_VERSION_ATLEAST(int major, int minor, int micro) {

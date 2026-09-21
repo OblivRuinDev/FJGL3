@@ -10,7 +10,7 @@ import org.lwjgl.generator.*
 val spng_ctx = "spng_ctx".opaque
 
 val spng_option = "enum spng_option".enumType
-val spng_location = "spng_location".enumType
+val spng_location = "enum spng_location".enumType
 
 val spng_ihdr = struct(Module.SPNG, "spng_ihdr", nativeName = "struct spng_ihdr") {
     uint32_t("width")
@@ -220,13 +220,13 @@ val spng_row_info = struct(Module.SPNG, "spng_row_info", nativeName = "struct sp
 }
 
 val spng_rw_fn = Module.SPNG.callback {
-    void(
+    int(
         "spng_rw_fn",
 
         spng_ctx.p("ctx"),
         nullable..opaque_p("user"),
-        void.p("dest"),
-        AutoSize("dest")..size_t("length"),
+        void.p("dst_src"),
+        AutoSize("dst_src")..size_t("length"),
 
         nativeType = "spng_rw_fn *"
     )

@@ -119,11 +119,7 @@
 #include <string.h>
 
 #if defined(__GLIBC__)
-/* @@@ version check glibc more precisely... dl_iterate_phdr(): glibc ver >= 2.2.4*/
-#  if (__GLIBC__ >= 2) && (__GLIBC_MINOR__ >= 3)
-#    define DL_USE_GLIBC_ITER_PHDR
-#  endif
-/* to access dl_iterate_phdr(), and related w/ glibc */
+/* to access dlinfo(), dl_iterate_phdr() and related definitions */
 #  ifndef _GNU_SOURCE
 #    define _GNU_SOURCE
 #    define __USE_GNU
@@ -153,13 +149,12 @@ static int dl_strlen_strcpy(char* dst, const char* src, int dstSize)
 
 /* code for dlGetLibraryPath() is platform specific */
 
-/* if dlinfo() exists use it (except on glibc, where it exists since version
- * 2.3.3, but its implementation is dangerous, as no checks are done whether
- * the handle is valid, thus rendering the returned values useless) check for
- * RTLD_DI_LINKMAP and RTLD_SELF, which are #defines used by dlinfo() on most
- * supported targets, or specifically check the OS (e.g. dlinfo() is originally
- * from Solaris) */
-#if ((defined(RTLD_DI_LINKMAP) && defined(RTLD_SELF)) || defined(OS_SunOS)) && !defined(DL_USE_GLIBC_ITER_PHDR)
+/* If dlinfo() supports both link-map lookup and a handle for the process
+ * itself, use it for all requests. glibc does not provide RTLD_SELF and is
+ * handled separately below. Check for RTLD_DI_LINKMAP and RTLD_SELF, which are
+ * #defines used by dlinfo() on most supported targets, or specifically check
+ * the OS (e.g. dlinfo() is originally from Solaris). */
+#if (defined(RTLD_DI_LINKMAP) && defined(RTLD_SELF)) || defined(OS_SunOS)
 
 #include <link.h>
 
@@ -195,36 +190,48 @@ JNIEXPORT int JNICALL Java_org_lwjgl_system_SharedLibraryUtil_getLibraryPath(JNI
   void *pLib = (void *)(uintptr_t)pLibAddress;
   char *sOut = (char *)(uintptr_t)sOutAddress;
 
-  uint32_t i;
   int l = -1;
 
-  UNUSED_PARAMS(env, clazz)
-
-  /* request info about own process? lookup first loaded image */
+  /* request info about own process */
   if(pLib == NULL) {
-    const char* libPath = _dyld_get_image_name(0); //@@@ consider using _NSGetExecutablePath()
-    if(libPath)
-      l = dl_strlen_strcpy(sOut, libPath, bufSize);
-  }
-  else {
+    uint32_t size = (uint32_t)bufSize;
+    if(_NSGetExecutablePath(sOut, &size) != 0)
+      return (int)size;
+    l = (int)strlen(sOut);
+  } else {
     /* Darwin's code doesn't come with (non-standard) dlinfo(), so use dyld(1)
      * code. There doesn't seem to be a direct way to query the library path,
      * so "double-load" temporarily all already loaded images (just increases
      * ref count) and compare handles until we found ours. Return the name. */
-    for(i=_dyld_image_count(); i>0;) /* backwards, ours is more likely at end */
-    {
-      const char* libPath = _dyld_get_image_name(--i);
-      void* lib = dlopen(libPath, RTLD_LIGHTEST);
-      if(lib) {
-        dlclose(lib);
+    for(int attempt = 0; attempt < 3 && l == -1; ++attempt) {
+      uint32_t count = _dyld_image_count();
+      uint32_t i = count;
+      int stable = 1;
 
-        /* compare handle pointers' high bits (in low 2 bits some flags might */
-        /* be stored - should be safe b/c address needs alignment, anyways) */
-        if(((uintptr_t)pLib ^ (uintptr_t)lib) < 4) {
-          l = dl_strlen_strcpy(sOut, libPath, bufSize);
-          break;
+      while(i > 0) { /* backwards, ours is more likely at end */
+        const char* libPath = _dyld_get_image_name(--i);
+        if(libPath == NULL) {
+          stable = 0;
+          continue;
         }
+
+        void* lib = dlopen(libPath, RTLD_LIGHTEST);
+        if(lib) {
+          /* Compare handle pointers' high bits. Flags may be stored in the
+             low two bits, which are otherwise zero due to alignment. */
+          if(((uintptr_t)pLib ^ (uintptr_t)lib) < 4)
+            l = dl_strlen_strcpy(sOut, libPath, bufSize);
+          dlclose(lib);
+        }
+
+        if(l != -1)
+          break;
       }
+
+      /* Apple documents count-based iteration as not thread-safe. Retry if
+         an image disappeared or the image count changed during the scan. */
+      if(l != -1 || (stable && count == _dyld_image_count()))
+        break;
     }
   }
 
@@ -234,11 +241,11 @@ JNIEXPORT int JNICALL Java_org_lwjgl_system_SharedLibraryUtil_getLibraryPath(JNI
 EXTERN_C_EXIT
 
 
-/* - OpenBSD >= 3.7 has dl_iterate_phdr(), as well as glibc >= 2.2.4
+/* - OpenBSD >= 3.7 and glibc provide dl_iterate_phdr()
    - also some libc impls (like musl) provide dlinfo(), but not RTLD_SELF (see above), however they might come
      with dl_iterate_phdr (which comes from ELF program header iteration), so base it on that
    - skip and use dladdr()-based guessing (see below) if explicitly requested, e.g. by ./configure */
-#elif !defined(DL_DLADDR_TO_LIBPATH) && (defined(OS_OpenBSD) || defined(DL_USE_GLIBC_ITER_PHDR) || (!defined(RTLD_SELF) && defined(__ELF__)))
+#elif !defined(DL_DLADDR_TO_LIBPATH) && (defined(OS_OpenBSD) || (!defined(RTLD_SELF) && defined(__ELF__)))
 
 #include <sys/types.h>
 #include <link.h>
@@ -247,6 +254,9 @@ typedef struct {
   void* pLib;
   char*  sOut;
   int    bufSize;
+  void*  vladdr;
+  int    useDladdr;
+  size_t namesLength;
 } iter_phdr_data;
 
 static int iter_phdr_cb(struct dl_phdr_info* info, size_t size, void* data)
@@ -254,39 +264,35 @@ static int iter_phdr_cb(struct dl_phdr_info* info, size_t size, void* data)
   UNUSED_PARAM(size);
   int l = -1;
   iter_phdr_data* d = (iter_phdr_data*)data;
-  void* lib = NULL;
 
-  /* get loaded object's handle if not requesting info about process itself */
+  /* Snapshot image names for reopening after iteration returns. */
   if(d->pLib != NULL) {
-    /* unable to relate info->dlpi_addr directly to our dlopen handle, let's
-     * do what we do on macOS above, re-dlopen the already loaded lib (just
-     * increases ref count) and compare handles */
-    /* @@@ might be b/c it's the reloc addr... see below */
-    lib = dlopen(info->dlpi_name, RTLD_LIGHTEST);
-    if(lib)
-      dlclose(lib);
+    const char* name = info->dlpi_name;
+    if(name == NULL || name[0] == '\0')
+      return 0;
+
+    size_t nameLength = strlen(name) + 1;
+
+    if(0 < d->bufSize && d->namesLength + nameLength <= (size_t)d->bufSize)
+      memcpy(d->sOut + d->namesLength, name, nameLength);
+    d->namesLength += nameLength;
+    return 0;
   }
 
-  /* compare handles and get name if found; if d->pLib == NULL this will
-     enter info on first iterated object, which is the process itself */
-  if(lib == (void*)d->pLib) {
-    l = dl_strlen_strcpy(d->sOut, info->dlpi_name, d->bufSize);
+  /* The first iterated object is the process itself. */
+  l = dl_strlen_strcpy(d->sOut, info->dlpi_name, d->bufSize);
 
-    /* if dlpi_name is empty, lookup name via dladdr(proc_load_addr, ...) */
-    if(l == 0 && d->pLib == NULL) {
-      /* dlpi_addr is the reloc base (0 if PIE), find real virtual load addr */
-      void* vladdr = (void*)info->dlpi_addr;
-      int i = 0;
-      for(; i < info->dlpi_phnum; ++i) {
-        if(info->dlpi_phdr[i].p_type == PT_LOAD) {
-          vladdr = (void*)(info->dlpi_addr + info->dlpi_phdr[i].p_vaddr);
-          break;
-        }
+  /* If dlpi_name is empty, save the process load address. dladdr() must be
+     called after iteration because it may acquire another loader lock. */
+  if(l == 0) {
+    d->vladdr = (void*)info->dlpi_addr;
+    for(int i = 0; i < info->dlpi_phnum; ++i) {
+      if(info->dlpi_phdr[i].p_type == PT_LOAD) {
+        d->vladdr = (void*)(info->dlpi_addr + info->dlpi_phdr[i].p_vaddr);
+        break;
       }
-      Dl_info di;
-      if(dladdr(vladdr, &di) != 0)
-        l = dl_strlen_strcpy(d->sOut, di.dli_fname, d->bufSize);
     }
+    d->useDladdr = 1;
   }
 
   return l+1; /* strlen + '\0'; is 0 if lib not found, which continues iter */
@@ -300,25 +306,67 @@ JNIEXPORT int JNICALL Java_org_lwjgl_system_SharedLibraryUtil_getLibraryPath(JNI
   void *pLib = (void *)(uintptr_t)pLibAddress;
   char *sOut = (char *)(uintptr_t)sOutAddress;
 
-  iter_phdr_data d = { pLib, sOut, bufSize };
-  return dl_iterate_phdr(iter_phdr_cb, &d);
+#if defined(__GLIBC__)
+  if(pLib != NULL) {
+    struct link_map* p = NULL;
+    int l = -1;
+    if(dlinfo(pLib, RTLD_DI_LINKMAP, &p) == 0)
+      l = dl_strlen_strcpy(sOut, p->l_name, bufSize);
+    return l+1; /* strlen + '\0' */
+  }
+#endif
+
+  {
+    iter_phdr_data d = { pLib, sOut, bufSize, NULL, 0, 0 };
+    int result = dl_iterate_phdr(iter_phdr_cb, &d);
+
+    if(pLib != NULL) {
+      if((size_t)bufSize < d.namesLength)
+        return (int)d.namesLength;
+
+      char* name = sOut;
+      char* end = name + d.namesLength;
+
+      /* The callback packed the image names as consecutive null-terminated
+         strings. Reopen and compare each one, advancing to the next string. */
+      while(name < end) {
+        size_t nameLength = strlen(name) + 1;
+
+        void* lib = dlopen(name, RTLD_LIGHTEST);
+        if(lib != NULL) {
+          int found = lib == pLib;
+          dlclose(lib);
+          if(found) {
+            memmove(sOut, name, nameLength);
+            return (int)nameLength;
+          }
+        }
+
+        name += nameLength;
+      }
+
+      return 0;
+    }
+
+    if(d.useDladdr) {
+      Dl_info di;
+      if(dladdr(d.vladdr, &di) != 0)
+        return dl_strlen_strcpy(sOut, di.dli_fname, bufSize)+1;
+      return 0;
+    }
+    return result;
+  }
 }
 
 EXTERN_C_EXIT
-
-/* glibc with neither dl_iterate_phdr() nor dlinfo() (latter introduced after former) @@@
-#elif defined(__GLIBC__) && !defined(DL_USE_GLIBC_ITER_PHDR)
-
-@@@impl */
 
 /* fallback to dladdr() hack */
 #else
 
 #warning "Using non-optimal code for dlGetLibraryPath() b/c of platform limitations."
 
-/* if nothing else is available, fall back to guessing using dladdr() - this */
-/* might not always work, as it's trying to getit via the _fini() symbol,    */
-/* which is usually defined in ELF files, but not guaranteed                 */
+/* If nothing else is available, fall back to guessing with dladdr() on the
+   conventional _fini symbol, which is not guaranteed to exist. */
 
 /* @@@Note: On some platforms this might be improved, e.g. on BeOS we have */
 /* lt_dlgetinfo, which requires iterating over ltdl stuff, but was unable  */
@@ -332,15 +380,27 @@ JNIEXPORT int JNICALL Java_org_lwjgl_system_SharedLibraryUtil_getLibraryPath(JNI
   void *pLib = (void *)(uintptr_t)pLibAddress;
   char *sOut = (char *)(uintptr_t)sOutAddress;
 
-/*@@@ missing handler for pLib == NULL*/
-  /* cross fingers that shared object is standard ELF and look for _fini */
+  void* lib = pLib != NULL ? pLib : dlopen(NULL, RTLD_LAZY);
   int l = -1;
-  void* s = dlsym((void*)pLib, "_fini");
-  if(s) {
+
+  if(lib != NULL) {
+    void* s = dlsym(lib, "_fini");
     Dl_info i;
-    if(dladdr(s, &i) != 0)
-      l = dl_strlen_strcpy(sOut, i.dli_fname, bufSize);
+
+    if(s != NULL && dladdr(s, &i) != 0 && i.dli_fname != NULL) {
+      /* dlsym may find _fini in a dependency. Verify the resolved path. */
+      void* candidate = dlopen(i.dli_fname, RTLD_LIGHTEST);
+      if(candidate != NULL) {
+        if(candidate == lib)
+          l = dl_strlen_strcpy(sOut, i.dli_fname, bufSize);
+        dlclose(candidate);
+      }
+    }
   }
+
+  if(pLib == NULL && lib != NULL)
+    dlclose(lib);
+
   return l+1; /* strlen + '\0' */
 }
 

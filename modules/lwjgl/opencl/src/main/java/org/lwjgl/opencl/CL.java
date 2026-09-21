@@ -51,6 +51,8 @@ public final class CL {
         switch (Platform.get()) {
             case FREEBSD:
             case LINUX:
+                CL = Library.loadNative(CL.class, "org.lwjgl.opencl", Configuration.OPENCL_LIBRARY_NAME, "libOpenCL.so.1", "OpenCL");
+                break;
             case WINDOWS:
                 CL = Library.loadNative(CL.class, "org.lwjgl.opencl", Configuration.OPENCL_LIBRARY_NAME, "OpenCL");
                 break;

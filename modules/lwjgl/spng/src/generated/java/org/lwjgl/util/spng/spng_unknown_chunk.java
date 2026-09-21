@@ -22,7 +22,7 @@ import static org.lwjgl.system.MemoryStack.*;
  *     uint8_t type[4];
  *     size_t length;
  *     void * data;
- *     spng_location location;
+ *     enum spng_location location;
  * }}</pre>
  */
 @NativeType("struct spng_unknown_chunk")
@@ -88,7 +88,7 @@ public class spng_unknown_chunk extends Struct<spng_unknown_chunk> implements Na
     @NativeType("void *")
     public ByteBuffer data() { return ndata(address()); }
     /** @return the value of the {@code location} field. */
-    @NativeType("spng_location")
+    @NativeType("enum spng_location")
     public int location() { return nlocation(address()); }
 
     /** Copies the specified {@link ByteBuffer} to the {@code type} field. */
@@ -98,7 +98,7 @@ public class spng_unknown_chunk extends Struct<spng_unknown_chunk> implements Na
     /** Sets the address of the specified {@link ByteBuffer} to the {@code data} field. */
     public spng_unknown_chunk data(@NativeType("void *") ByteBuffer value) { ndata(address(), value); return this; }
     /** Sets the specified value to the {@code location} field. */
-    public spng_unknown_chunk location(@NativeType("spng_location") int value) { nlocation(address(), value); return this; }
+    public spng_unknown_chunk location(@NativeType("enum spng_location") int value) { nlocation(address(), value); return this; }
 
     /** Initializes this struct with the specified values. */
     public spng_unknown_chunk set(
@@ -322,7 +322,7 @@ public class spng_unknown_chunk extends Struct<spng_unknown_chunk> implements Na
         @NativeType("void *")
         public ByteBuffer data() { return spng_unknown_chunk.ndata(address()); }
         /** @return the value of the {@code location} field. */
-        @NativeType("spng_location")
+        @NativeType("enum spng_location")
         public int location() { return spng_unknown_chunk.nlocation(address()); }
 
         /** Copies the specified {@link ByteBuffer} to the {@code type} field. */
@@ -332,7 +332,7 @@ public class spng_unknown_chunk extends Struct<spng_unknown_chunk> implements Na
         /** Sets the address of the specified {@link ByteBuffer} to the {@code data} field. */
         public spng_unknown_chunk.Buffer data(@NativeType("void *") ByteBuffer value) { spng_unknown_chunk.ndata(address(), value); return this; }
         /** Sets the specified value to the {@code location} field. */
-        public spng_unknown_chunk.Buffer location(@NativeType("spng_location") int value) { spng_unknown_chunk.nlocation(address(), value); return this; }
+        public spng_unknown_chunk.Buffer location(@NativeType("enum spng_location") int value) { spng_unknown_chunk.nlocation(address(), value); return this; }
 
     }
 

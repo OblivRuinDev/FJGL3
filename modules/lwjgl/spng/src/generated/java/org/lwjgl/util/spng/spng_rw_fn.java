@@ -31,8 +31,8 @@ public abstract class spng_rw_fn extends Callback implements spng_rw_fnI {
         return instance instanceof spng_rw_fn
             ? (spng_rw_fn)instance
             : new spng_rw_fn(functionPointer) {
-                @Override public void invoke(long ctx, long user, long dest, long length) {
-                    instance.invoke(ctx, user, dest, length);
+                @Override public int invoke(long ctx, long user, long dst_src, long length) {
+                    return instance.invoke(ctx, user, dst_src, length);
                 }
             };
     }

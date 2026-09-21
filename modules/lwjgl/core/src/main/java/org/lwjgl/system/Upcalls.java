@@ -60,10 +60,16 @@ final class Upcalls {
         apiLog("Upcall Registry: ConcurrentHashMap");
 
         MemoryUtil.getAllocator();
+
+        Runtime.getRuntime().addShutdownHook(new Thread(Upcalls::shutdown, "LWJGL Upcalls Shutdown Hook"));
     }
 
     private Upcalls() {
     }
+
+    private static native long getCallbackHandler(Method callback);
+
+    private static native void shutdown();
 
     static long upcallCreate(Callback.Descriptor callbackDescriptor, Object instance) {
         // mapping from callback interface to upcall binder
