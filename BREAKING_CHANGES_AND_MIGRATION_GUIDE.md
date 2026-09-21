@@ -1,12 +1,15 @@
 # FJGL3 Breaking Changes and Migration Guide
 
-This guide documents the breaking changes introduced by the recent restructuring of the generated native-memory view classes in FJGL3.
+This guide documents the breaking changes introduced by the recent restructuring of generated native-memory view classes and the consolidation of the FFM stack-allocation API in FJGL3.
 
-The changes are centered around three related areas:
+The migration is intentionally kept simple. The generated-code changes are largely mechanical, while the `SegmentStack` deprecation is designed so that existing FFM stack-allocation code can move to `MemoryStack` with minimal source changes.
+
+The changes are centered around four related areas:
 
 * `Struct` generation and allocation
 * `CustomBuffer` allocation and subclassing
 * `StructBuffer` element type and size metadata
+* `SegmentStack` deprecation and migration to `MemoryStack`
 
 The overall goal is to change the object model used by generated bindings. `Struct` and `CustomBuffer` instances are fundamentally **views over native memory**, rather than ordinary Java objects whose identity depends on constructor execution or subclass-specific factory methods.
 
@@ -21,10 +24,11 @@ Across the generated bindings, the redesign removes **7,000+ generated instance 
 The relevant commits are:
 
 | Commit     | Description                                                                      | Migration impact |
-| ---------- | -------------------------------------------------------------------------------- | ---------------- |
+|------------|----------------------------------------------------------------------------------|------------------|
 | `2073aa94` | Make `Struct` constructors public and remove generated `create()` overrides      | Breaking         |
 | `ef41da2f` | Centralize `CustomBuffer` allocation and deprecate `self()` / `create()`         | Breaking         |
 | `ffad0989` | Replace `StructBuffer` element factories with `getElementClass()` and `sizeof()` | Breaking         |
+| `1ea10745` | Deprecate `SegmentStack` and use `MemoryStack` for FFM stack allocation          | Breaking         |
 
 ---
 
@@ -931,7 +935,136 @@ The Java object exists primarily to provide typed access to the native memory.
 
 ---
 
-# 20. Migration Checklist
+# 20. SegmentStack Migration
+
+`SegmentStack` is being deprecated for removal and its FFM allocation role is being consolidated into `MemoryStack`.
+
+The reason for this change is structural rather than semantic: maintaining a separate `SegmentStack` implementation creates a second stack object and backing allocation path for functionality that `MemoryStack` can already provide. The goal is to keep a single native-memory stack abstraction for LWJGL's FFM integration.
+
+For normal use, `MemoryStack` is a drop-in replacement for `SegmentStack`. `MemoryStack` supports the stack-allocation operations required by the FFM binders and generated downcall code.
+
+The only practical limitation is the maximum stack capacity exposed by the `MemoryStack` implementation. `MemoryStack` uses an `int`-sized stack region, while `SegmentStack` historically used `long` sizing. In normal applications this is not a meaningful restriction: allocating a single contiguous stack larger than 2 GiB is an extreme configuration and is not a realistic requirement for the intended stack-allocation use cases.
+
+## 20.1 Typical migration
+
+Most code only needs a static import change.
+
+### Before
+
+```java
+import static org.lwjgl.system.SegmentStack.*;
+```
+
+### After
+
+```java
+import static org.lwjgl.system.MemoryStack.*;
+```
+
+For code using `stackPush()`, no further change is normally required:
+
+```java
+try (MemoryStack stack = stackPush()) {
+    // stack allocations
+}
+```
+
+Existing allocation operations such as:
+
+```java
+stack.malloc(...)
+stack.calloc(...)
+stack.allocate(...)
+```
+
+remain available through `MemoryStack`.
+
+## 20.2 Explicit `SegmentStack` references
+
+Code that names the type explicitly must change the type as well.
+
+### Before
+
+```java
+SegmentStack stack = SegmentStack.stackPush();
+```
+
+### After
+
+```java
+MemoryStack stack = MemoryStack.stackPush();
+```
+
+Likewise, APIs that explicitly accept `SegmentStack` should migrate to the corresponding `MemoryStack` overload.
+
+The FFM binder APIs provide `MemoryStack` overloads for the existing stack-allocation operations, while the old `SegmentStack` overloads are deprecated for removal.
+
+For example:
+
+```java
+// Old
+StructType value = binder.malloc(segmentStack);
+StructArray<StructType> values = binder.malloc(segmentStack, count);
+
+// New
+StructType value = binder.malloc(memoryStack);
+StructArray<StructType> values = binder.malloc(memoryStack, count);
+```
+
+The same migration applies to `UnionBinder`, `StructBinder`, `GroupBinder`, and `DataMapping` stack-allocation methods.
+
+## 20.3 Generated FFM code
+
+Generated FFM downcall wrappers now use `MemoryStack.stackPush()` for their implicit stack allocation path.
+
+This is transparent to generated binding users. No generated source changes are required beyond regenerating bindings with the updated generator.
+
+## 20.4 Why `MemoryStack` is sufficient
+
+`SegmentStack` and `MemoryStack` both implement `StackAllocator`, so the generated FFM code only depends on the common push/pop and `SegmentAllocator` contract.
+
+The migration therefore does not require a second stack abstraction. `MemoryStack` provides the required:
+
+```text
+push/pop frame management
+native memory allocation
+FFM SegmentAllocator interface
+zero-initialized allocation
+MemorySegment allocation
+thread-local stack access
+```
+
+Applications that use the stack only for ordinary transient native allocations should not need to change their allocation strategy.
+
+## 20.5 API mapping
+
+| Old | New |
+| --- | --- |
+| `SegmentStack.stackPush()` | `MemoryStack.stackPush()` |
+| `SegmentStack.stackGet()` | `MemoryStack.stackGet()` |
+| `SegmentStack.create(...)` | `MemoryStack.create(...)` |
+| `SegmentStack` variable/type | `MemoryStack` |
+| `malloc(SegmentStack, ...)` | `malloc(MemoryStack, ...)` |
+| `allocate(SegmentStack, ...)` | `allocate(MemoryStack, ...)` |
+| `mallocSegment(SegmentStack, ...)` | `mallocSegment(MemoryStack, ...)` |
+| `allocateSegment(SegmentStack, ...)` | `allocateSegment(MemoryStack, ...)` |
+
+The old `SegmentStack` APIs remain temporarily available as deprecated-for-removal compatibility paths.
+
+## 20.6 Migration checklist
+
+For ordinary FFM usage:
+
+* [ ] Replace `import static org.lwjgl.system.SegmentStack.*;` with `import static org.lwjgl.system.MemoryStack.*;`.
+* [ ] Replace explicit `SegmentStack` type references with `MemoryStack`.
+* [ ] Regenerate generated bindings when updating generator-dependent code.
+* [ ] Remove remaining direct `SegmentStack` references before the deprecated API is removed.
+
+No redesign of allocation logic is required.
+
+---
+
+# 21. Migration Checklist
 
 ## Struct
 
@@ -972,7 +1105,7 @@ The Java object exists primarily to provide typed access to the native memory.
 
 ---
 
-# 21. API Mapping
+# 22. API Mapping
 
 | Old API / Pattern                                    | New API / Pattern                 |
 | ---------------------------------------------------- | --------------------------------- |
@@ -986,10 +1119,14 @@ The Java object exists primarily to provide typed access to the native memory.
 | Implicit StructBuffer element size through prototype | Explicit `sizeof()`               |
 | Per-class allocation logic                           | Centralized allocation            |
 | Constructor-based derived-view initialization        | Base-class initialization         |
+| `SegmentStack`                                      | `MemoryStack`                     |
+| `SegmentStack.stackPush()`                         | `MemoryStack.stackPush()`        |
+| `SegmentStack.stackGet()`                          | `MemoryStack.stackGet()`         |
+| FFM stack allocation through `SegmentStack`        | FFM stack allocation through `MemoryStack` |
 
 ---
 
-# 22. Final Design Rule
+# 23. Final Design Rule
 
 The most important rule for custom FJGL3 native-memory view classes is:
 
@@ -1012,6 +1149,8 @@ Prefer:
     getElementClass()
     centralized allocation
 ```
+
+For stack allocation, use `MemoryStack` as the single LWJGL stack abstraction. `SegmentStack` is retained only as a temporary deprecated-for-removal compatibility path.
 
 This keeps custom types compatible with the new `Unsafe.allocateInstance` allocation model and preserves the primary goals of the redesign:
 
