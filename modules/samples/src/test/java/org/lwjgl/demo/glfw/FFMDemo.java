@@ -20,7 +20,7 @@ import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11C.*;
 import static org.lwjgl.opengl.GL20C.*;
 import static org.lwjgl.system.MemoryUtil.*;
-import static org.lwjgl.system.SegmentStack.*;
+import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.ffm.FFM.*;
 
 public final class FFMDemo {

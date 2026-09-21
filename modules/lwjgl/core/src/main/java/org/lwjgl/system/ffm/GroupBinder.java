@@ -224,7 +224,9 @@ public sealed interface GroupBinder<L extends GroupLayout, T>
      *
      * @return the group instancen
      */
+    @Deprecated(forRemoval = true)
     default T malloc(SegmentStack stack) { return get(stack.allocate(layout())); }
+    default T malloc(MemoryStack  stack) { return get(stack.allocate(layout())); }
 
     /**
      * Allocates a memory segment, without zero-initialization, for the specified number of group instances on the specified segment stack.
@@ -234,7 +236,9 @@ public sealed interface GroupBinder<L extends GroupLayout, T>
      *
      * @return the group array
      */
+    @Deprecated(forRemoval = true)
     GroupArray<L, T> malloc(SegmentStack stack, long elementCount);
+    GroupArray<L, T> malloc(MemoryStack  stack, long elementCount);
 
     /**
      * Allocates a memory segment, without zero-initialization, for a single group instance using the specified segment allocator.
@@ -243,7 +247,9 @@ public sealed interface GroupBinder<L extends GroupLayout, T>
      *
      * @return the group instance
      */
+    @Deprecated(forRemoval = true)
     default T allocate(SegmentStack stack) { return get(stack.calloc(layout())); }
+    default T allocate(MemoryStack  stack) { return get(stack.calloc(layout())); }
 
     /**
      * Allocates a memory segment for a single group instance using the specified segment allocator.
@@ -268,7 +274,9 @@ public sealed interface GroupBinder<L extends GroupLayout, T>
      *
      * @return the group array
      */
+    @Deprecated(forRemoval = true)
     GroupArray<L, T> allocate(SegmentStack stack, long elementCount);
+    GroupArray<L, T> allocate(MemoryStack  stack, long elementCount);
 
     /**
      * Allocates a memory segment for the specified number of group instances using the specified segment allocator.

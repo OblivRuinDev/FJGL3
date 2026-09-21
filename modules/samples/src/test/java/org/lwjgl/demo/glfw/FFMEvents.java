@@ -21,7 +21,7 @@ import static org.lwjgl.opengl.GL11C.*;
 import static org.lwjgl.stb.STBImage.*;
 import static org.lwjgl.system.APIUtil.*;
 import static org.lwjgl.system.MemoryUtil.*;
-import static org.lwjgl.system.SegmentStack.*;
+import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.ffm.FFM.*;
 import static org.lwjgl.system.ffm.MemoryUtilFFM.*;
 

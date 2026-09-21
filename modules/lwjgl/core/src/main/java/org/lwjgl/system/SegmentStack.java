@@ -30,7 +30,10 @@ import static org.lwjgl.system.StackWalkUtil.*;
  *
  * @see Configuration#STACK_SIZE
  * @see Configuration#DEBUG_STACK
+ *
+ * @deprecated Use {@link MemoryStack} instead
  */
+@Deprecated(forRemoval = true)
 public class SegmentStack extends Pointer.Default implements StackAllocator<SegmentStack>, AutoCloseable {
 
     private static final long DEFAULT_STACK_SIZE   = Configuration.STACK_SIZE.get(64) * 1024L;

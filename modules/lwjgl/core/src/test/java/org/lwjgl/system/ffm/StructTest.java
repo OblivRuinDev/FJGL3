@@ -28,7 +28,7 @@ import java.util.regex.*;
 import static java.lang.Math.*;
 import static java.lang.foreign.MemoryLayout.PathElement.*;
 import static org.lwjgl.system.MemoryUtil.*;
-import static org.lwjgl.system.SegmentStack.*;
+import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.ffm.FFM.*;
 import static org.testng.Assert.*;
 

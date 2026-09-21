@@ -64,12 +64,22 @@ public non-sealed interface UnionBinder<T> extends GroupBinder<UnionLayout, T> {
     }
 
     @Override
+    @Deprecated(forRemoval = true)
     default UnionArray<T> malloc(SegmentStack stack, long elementCount) {
+        return new UnionArray<>(this, stack.allocate(layout(), elementCount));
+    }
+    @Override
+    default UnionArray<T> malloc(MemoryStack  stack, long elementCount) {
         return new UnionArray<>(this, stack.allocate(layout(), elementCount));
     }
 
     @Override
+    @Deprecated(forRemoval = true)
     default UnionArray<T> allocate(SegmentStack stack, long elementCount) {
+        return new UnionArray<>(this, stack.calloc(layout(), elementCount));
+    }
+    @Override
+    default UnionArray<T> allocate(MemoryStack  stack, long elementCount) {
         return new UnionArray<>(this, stack.calloc(layout(), elementCount));
     }
 

@@ -590,7 +590,7 @@ final class BCCallDown extends BCCall {
         if (allocatorClass == null || !StackAllocator.class.isAssignableFrom(allocatorClass)) {
             // try (var stack = stackPush()) {
             cb
-                .invokestatic(CD_SegmentStack, "stackPush", MTD_SegmentStack)
+                .invokestatic(CD_MemoryStack, "stackPush", MTD_MemoryStack)
                 .astore(stackSlot);
         } else {
             // stack.push();

@@ -42,7 +42,9 @@ public interface DataMapping<L extends MemoryLayout> extends Mapping<L> {
      *
      * @return the memory segment
      */
+    @Deprecated(forRemoval = true)
     default MemorySegment mallocSegment(SegmentStack stack) { return stack.allocate(layout()); }
+    default MemorySegment mallocSegment(MemoryStack stack)  { return stack.allocate(layout()); }
 
     /**
      * Allocates a memory segment, without zero-initialization, for the specified number of elements on the specified segment stack.
@@ -52,7 +54,9 @@ public interface DataMapping<L extends MemoryLayout> extends Mapping<L> {
      *
      * @return the memory segment
      */
+    @Deprecated(forRemoval = true)
     default MemorySegment mallocSegment(SegmentStack stack, long elementCount) { return stack.allocate(layout(), elementCount); }
+    default MemorySegment mallocSegment(MemoryStack  stack, long elementCount) { return stack.allocate(layout(), elementCount); }
 
     /**
      * Allocates a memory segment, with zero-initialization, for a single element on the specified segment stack.
@@ -61,7 +65,9 @@ public interface DataMapping<L extends MemoryLayout> extends Mapping<L> {
      *
      * @return the memory segment
      */
+    @Deprecated(forRemoval = true)
     default MemorySegment allocateSegment(SegmentStack stack) { return stack.calloc(layout()); }
+    default MemorySegment allocateSegment(MemoryStack  stack) { return stack.calloc(layout()); }
 
     /**
      * Allocates a memory segment for a single element using the specified segment allocator.
@@ -86,7 +92,9 @@ public interface DataMapping<L extends MemoryLayout> extends Mapping<L> {
      *
      * @return the memory segment
      */
+    @Deprecated(forRemoval = true)
     default MemorySegment allocateSegment(SegmentStack stack, long elementCount) { return stack.calloc(layout(), elementCount); }
+    default MemorySegment allocateSegment(MemoryStack  stack, long elementCount) { return stack.calloc(layout(), elementCount); }
 
     /**
      * Allocates a memory segment for the specified number of elements using the specified segment allocator.

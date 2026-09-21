@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 
 import java.lang.foreign.*;
 
-import static org.lwjgl.system.SegmentStack.*;
+import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.ffm.FFM.*;
 import static org.testng.Assert.*;
 

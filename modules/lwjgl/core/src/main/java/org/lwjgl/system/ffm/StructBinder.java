@@ -64,12 +64,22 @@ public non-sealed interface StructBinder<T> extends GroupBinder<StructLayout, T>
     }
 
     @Override
+    @Deprecated(forRemoval = true)
     default StructArray<T> malloc(SegmentStack stack, long elementCount) {
+        return new StructArray<>(this, stack.allocate(layout(), elementCount));
+    }
+    @Override
+    default StructArray<T> malloc(MemoryStack  stack, long elementCount) {
         return new StructArray<>(this, stack.allocate(layout(), elementCount));
     }
 
     @Override
+    @Deprecated(forRemoval = true)
     default StructArray<T> allocate(SegmentStack stack, long elementCount) {
+        return new StructArray<>(this, stack.calloc(layout(), elementCount));
+    }
+    @Override
+    default StructArray<T> allocate(MemoryStack  stack, long elementCount) {
         return new StructArray<>(this, stack.calloc(layout(), elementCount));
     }
 
