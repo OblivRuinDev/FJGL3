@@ -34,22 +34,22 @@ import static org.lwjgl.system.MemoryUtil.*;
 public interface Pointer {
 
     /** The pointer size in bytes. Will be 4 on a 32bit JVM and 8 on a 64bit one. */
-    int POINTER_SIZE = Unsafe.getUnsafe().addressSize();
-
-    /** The pointer size power-of-two. Will be 2 on a 32bit JVM and 3 on a 64bit one. */
-    int POINTER_SHIFT = POINTER_SIZE == 8 ? 3 : 2;
-
-    /** The value of {@code sizeof(long)} for the current platform. */
-    int CLONG_SIZE = POINTER_SIZE == 8 && Platform.get() == Platform.WINDOWS ? 4 : POINTER_SIZE;
-
-    /** The value of {@code sizeof(long)} as a power-of-two. */
-    int CLONG_SHIFT = CLONG_SIZE == 8 ? 3 : 2;
+    int POINTER_SIZE = Unsafe.ADDRESS_SIZE;
 
     /** Will be true on a 32bit JVM. */
     boolean BITS32 = POINTER_SIZE * 8 == 32;
 
     /** Will be true on a 64bit JVM. */
     boolean BITS64 = POINTER_SIZE * 8 == 64;
+
+    /** The pointer size power-of-two. Will be 2 on a 32bit JVM and 3 on a 64bit one. */
+    int POINTER_SHIFT = BITS64 ? 3 : 2;
+
+    /** The value of {@code sizeof(long)} for the current platform. */
+    int CLONG_SIZE = BITS64 && Platform.get() == Platform.WINDOWS ? 4 : POINTER_SIZE;
+
+    /** The value of {@code sizeof(long)} as a power-of-two. */
+    int CLONG_SHIFT = CLONG_SIZE == 8 ? 3 : 2;
 
     /**
      * Returns the raw pointer address as a {@code long} value.
@@ -71,6 +71,7 @@ public interface Pointer {
         }
 
         @Override
+        @ForceInline
         public long address() {
             return address;
         }
