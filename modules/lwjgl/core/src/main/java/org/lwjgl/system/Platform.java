@@ -1,4 +1,10 @@
 /*
+ * Copyright OblivRuinDev. All rights reserved.
+ *
+ * Modified from LWJGL source code.
+ * Original copyright notice below.
+ */
+/*
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
@@ -14,44 +20,11 @@ import static org.lwjgl.system.APIUtil.*;
 /** The platforms supported by LWJGL. */
 public enum Platform {
 
-    FREEBSD("FreeBSD", "freebsd") {
-        private final Pattern SO = Pattern.compile("(?:^|/)lib\\w+[.]so(?:[.]\\d+)*$");
-
-        @Override
-        String mapLibraryName(String name) {
-            if (SO.matcher(name).find()) {
-                return name;
-            }
-
-            return System.mapLibraryName(name);
-        }
-    },
-    LINUX("Linux", "linux") {
-        private final Pattern SO = Pattern.compile("(?:^|/)lib\\w+[.]so(?:[.]\\d+)*$");
-
-        @Override
-        String mapLibraryName(String name) {
-            if (SO.matcher(name).find()) {
-                return name;
-            }
-
-            return System.mapLibraryName(name);
-        }
-    },
+    FREEBSD("FreeBSD", "freebsd", Pattern.compile("(?:^|/)lib\\w+[.]so(?:[.]\\d+)*$")),
+    LINUX("Linux", "linux", FREEBSD.pattern),
     // TODO: Rename to MACOS in LWJGL 4
-    MACOSX("macOS", "macos") {
-        private final Pattern DYLIB = Pattern.compile("(?:^|/)lib\\w+(?:[.]\\d+)*[.]dylib$");
-
-        @Override
-        String mapLibraryName(String name) {
-            if (DYLIB.matcher(name).find()) {
-                return name;
-            }
-
-            return System.mapLibraryName(name);
-        }
-    },
-    WINDOWS("Windows", "windows") {
+    MACOSX("macOS", "macos", Pattern.compile("(?:^|/)lib\\w+(?:[.]\\d+)*[.]dylib$")),
+    WINDOWS("Windows", "windows", null) {
         @Override
         String mapLibraryName(String name) {
             if (name.endsWith(".dll")) {
@@ -148,7 +121,7 @@ public enum Platform {
 
         bundledLibraryNameMapper = getMapper(
             Configuration.BUNDLED_LIBRARY_NAME_MAPPER.get("default"),
-            name -> name,
+            Function.identity(),
             name -> Architecture.current.is64Bit ? name : name + "32"
         );
         bundledLibraryPathMapper = getMapper(
@@ -160,10 +133,12 @@ public enum Platform {
 
     private final String name;
     private final String nativePath;
+    private final Pattern pattern;
 
-    Platform(String name, String nativePath) {
+    Platform(String name, String nativePath, Pattern pattern) {
         this.name = name;
         this.nativePath = nativePath;
+        this.pattern = pattern;
     }
 
     /** Returns the platform name. */
@@ -171,7 +146,12 @@ public enum Platform {
         return name;
     }
 
-    abstract String mapLibraryName(String name);
+    String mapLibraryName(String name) {
+        if (pattern.matcher(name).find()) {
+            return name;
+        }
+        return System.mapLibraryName(name);
+    }
 
     public static int getJavaVersion() {
         return JAVA_VERSION;
