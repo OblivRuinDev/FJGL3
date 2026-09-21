@@ -1,6 +1,6 @@
 /*
- * Copyright OblivRuinDev. All rights reserved.
- * License terms: https://www.lwjgl.org/license
+ * Copyright (c) 2026-present OblivRuinDev. All rights reserved.
+ * License terms: https://github.com/OblivRuinDev/FJGL3/blob/master/LICENSE.md
  */
 package org.lwjgl.system;
 

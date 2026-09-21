@@ -1,5 +1,6 @@
 /*
- * Copyright OblivRuinDev. All rights reserved.
+ * Copyright (c) 2026-present OblivRuinDev. All rights reserved.
+ * License terms: https://github.com/OblivRuinDev/FJGL3/blob/master/LICENSE.md
  *
  * Modified from LWJGL source code.
  * Original copyright notice below.
