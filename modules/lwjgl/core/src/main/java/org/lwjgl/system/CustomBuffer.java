@@ -398,27 +398,13 @@ public abstract class CustomBuffer<SELF extends CustomBuffer<SELF>> extends Poin
      */
     @ForceInline
     public static <T extends CustomBuffer<T>> T create(Class<T> type, long address, @Nullable ByteBuffer container, int mark, int position, int limit, int capacity) {
-        //noinspection ConstantValue
-        if (type == null) { // must check here to avoid crash jvm!
-            throw new NullPointerException("type is null!");
-        }
-        if (CHECKS) {
-            if (address == NULL) {
-                throw new NullPointerException("address is null");
-            }
-        }
-        try {
-            T instance = (T) UNSAFE.allocateInstance(type);
-            UNSAFE.putLong(instance, POINTER_DEF_ADDRESS, address);
-            instance.container = container;
-            instance.mark = mark;
-            instance.position = position;
-            instance.limit = limit;
-            instance.capacity = capacity;
-            return instance;
-        } catch (InstantiationException e) {
-            throw new AssertionError(e);
-        }
+        T instance = createPointer(type, address);
+        instance.container = container;
+        instance.mark = mark;
+        instance.position = position;
+        instance.limit = limit;
+        instance.capacity = capacity;
+        return instance;
     }
 
     protected final int nextGetIndex() {

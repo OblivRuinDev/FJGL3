@@ -57,8 +57,8 @@ public abstract class Struct<SELF extends Struct<SELF>> extends Pointer.Default 
      * @see #create(Class, long)
      */
     @ForceInline
-    public static <T extends Struct<?>> T create(Class<T> clazz, long address, @Nullable ByteBuffer container) {
-        var v = create(clazz, address);
+    public static <T extends Struct<?>> T create(Class<T> type, long address, @Nullable ByteBuffer container) {
+        var v = createPointer(type, address);
         UNSAFE.putReference(v, STRUCT_CONTAINER, container);
         return v;
     }
@@ -66,43 +66,28 @@ public abstract class Struct<SELF extends Struct<SELF>> extends Pointer.Default 
      * Creates a new {@code Struct} instance of the specified class at the specified memory address.
      *
      * <p>This method does not run a constructor. The instance is allocated with {@code Unsafe.allocateInstance}, which
-     * initializes {@code clazz} if necessary but never invokes its constructor, and only the inherited {@code address}
-     * field is set. Instance fields declared by {@code clazz} are therefore left at their default values and field
+     * initializes {@code type} if necessary but never invokes its constructor, and only the inherited {@code address}
+     * field is set. Instance fields declared by {@code type} are therefore left at their default values and field
      * initializers do not run, which is why {@code Struct} subclasses must not declare instance fields; all state must be
      * derived from the memory address.</p>
      *
-     * @param clazz   the struct class; must not be {@code null} and must not declare instance fields
+     * @param type   the struct class; must not be {@code null} and must not declare instance fields
      * @param address the struct memory address; must not be {@code NULL} when {@link Checks#CHECKS checks} are enabled
      * @param <T>     the struct type
      *
      * @return a new {@code Struct} instance at the specified address
      *
-     * @throws NullPointerException      if {@code clazz} is {@code null}, or if {@code address} is {@code NULL} and
+     * @throws NullPointerException      if {@code type} is {@code null}, or if {@code address} is {@code NULL} and
      *                                   {@link Checks#CHECKS checks} are enabled
-     * @throws InstanceAllocateException if {@code clazz} cannot be instantiated
+     * @throws InstanceAllocateException if {@code type} cannot be instantiated
      *
      * @see #create(Class, long, ByteBuffer)
      * @see #createSafe(Class, long)
      */
     @ForceInline
     @SuppressWarnings("unchecked")
-    public static <T extends Struct<?>> T create(Class<T> clazz, long address) {
-        //noinspection ConstantValue
-        if (clazz == null) { // must check here to avoid crash jvm!
-            throw new NullPointerException("Class is null");
-        }
-        if (CHECKS) {
-            if (address == NULL) {
-                throw new NullPointerException("address is null");
-            }
-        }
-        try {
-            Object instance = UNSAFE.allocateInstance(clazz);
-            UNSAFE.putLong(instance, POINTER_DEF_ADDRESS, address);
-            return (T) instance;
-        } catch (InstantiationException e) {
-            throw new InstanceAllocateException(e);
-        }
+    public static <T extends Struct<?>> T create(Class<T> type, long address) {
+        return createPointer(type, address);
     }
 
     /**
@@ -125,7 +110,7 @@ public abstract class Struct<SELF extends Struct<SELF>> extends Pointer.Default 
     @Nullable
     @ForceInline
     public static <T extends Struct<?>> T createSafe(Class<T> clazz, long address) {
-        return address != NULL ? create(clazz, address) : null;
+        return address != NULL ? createPointer(clazz, address) : null;
     }
 
     /** Returns {@code sizeof(struct)}. */

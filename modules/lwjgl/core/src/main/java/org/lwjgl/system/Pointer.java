@@ -5,8 +5,11 @@
 package org.lwjgl.system;
 
 import jdk.internal.misc.*;
+import jdk.internal.vm.annotation.*;
 import org.jspecify.annotations.*;
 import org.lwjgl.*;
+
+import java.nio.*;
 
 import static org.lwjgl.system.Checks.*;
 import static org.lwjgl.system.MemoryUtil.*;
@@ -87,6 +90,43 @@ public interface Pointer {
             return String.format("%s pointer [0x%X]", getClass().getSimpleName(), address);
         }
 
+        /**
+         * Creates a new {@code Pointer.Default} instance of the specified class at the specified memory address.
+         *
+         * <p>This method does not run a constructor. The instance is allocated with {@code Unsafe.allocateInstance}, which
+         * initializes {@code type} if necessary but never invokes its constructor, and only the inherited {@code address}
+         * field is set. Instance fields declared by {@code type} are therefore left at their default values and field
+         * initializers do not run.</p>
+         *
+         * @param type   the pointer class; must not be {@code null}
+         * @param address the pointer memory address; must not be {@code NULL} when {@link Checks#CHECKS checks} are enabled
+         * @param <T>     the pointer type
+         *
+         * @return a new {@code Pointer.Default} instance at the specified address
+         *
+         * @throws NullPointerException      if {@code type} is {@code null}, or if {@code address} is {@code NULL} and
+         *                                   {@link Checks#CHECKS checks} are enabled
+         * @throws InstanceAllocateException if {@code type} cannot be instantiated
+         */
+        @ForceInline
+        protected static <T extends Pointer.Default> T createPointer(Class<T> type, long address) {
+            //noinspection ConstantValue
+            if (type == null) { // must check here to avoid crash jvm!
+                throw new NullPointerException("type is null!");
+            }
+            if (CHECKS) {
+                if (address == NULL) {
+                    throw new NullPointerException("address is null");
+                }
+            }
+            try {
+                Object instance = UNSAFE.allocateInstance(type);
+                UNSAFE.putLong(instance, POINTER_DEF_ADDRESS, address);
+                return (T) instance;
+            } catch (InstantiationException e) {
+                throw new InstanceAllocateException(e);
+            }
+        }
     }
 
 }
