@@ -9,6 +9,7 @@ import org.lwjgl.system.ffm.*;
 
 import java.lang.foreign.*;
 import java.lang.invoke.*;
+import java.lang.reflect.*;
 import java.util.concurrent.*;
 import java.util.function.*;
 
