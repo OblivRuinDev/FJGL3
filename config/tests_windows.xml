@@ -4,7 +4,7 @@
   ~ License terms: https://www.lwjgl.org/license
   -->
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="LWJGL Windows tests">
+<suite name="FJGL Windows tests">
     <test name="Windows">
         <packages>
             <package name="org.lwjgl.system.windows"/>

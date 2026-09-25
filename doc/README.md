@@ -60,14 +60,12 @@ Step-by-step:
 * `git clone https://github.com/LWJGL/lwjgl3.git`
 * `cd lwjgl3`
 * `ant init`
-* `ant init-wiki` (optional, only required if you work on the wiki)
 
 At this point you're ready to follow the build process explained below.
 
 LWJGL comes with a preconfigured **IntelliJ IDEA** project. You can use the Community Edition with the Kotlin and Ant plugins and, optionally, the TestNG and Copyright plugins.
 * File &gt; Open &gt; choose the folder that contains the cloned LWJGL repository
 * File &gt; Project Structure &gt; Project &gt; choose or create the Project SDK
-* If you haven't used the init-wiki target, either ignore the VCS errors, or go to Settings &gt; Version Control &gt; remove the missing directories from the list of VCS roots.
 
 LWJGL also comes with an **Eclipse** project. Copy the project files from the [eclipse](https://github.com/LWJGL/lwjgl3/tree/master/config/ide/eclipse) folder into the root directory and open it as an Eclipse file. There's also a Kotlin plugin for Eclipse available now, see [IDEs for Kotlin development](https://kotlinlang.org/docs/kotlin-ide.html#eclipse).
 

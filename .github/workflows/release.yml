@@ -1,26 +1,22 @@
 # Reproduces the current build, synchronizes S3 and publishes a Maven release
-name: LWJGL Release
+name: FJGL Release
 
 on:
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
 
 env:
-  AWS_DEFAULT_REGION: us-east-1
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  ORG_GRADLE_PROJECT_signingKeyId: 9B1FB0FC
-  ORG_GRADLE_PROJECT_signingKey: |
-    ${{ secrets.SIGNING_KEY }}
+  ORG_GRADLE_PROJECT_signingKeyId: 263D4349
+  ORG_GRADLE_PROJECT_signingKey: ${{ secrets.SIGNING_KEY }}
   ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.SIGNING_PWD }}
   ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.SONATYPE_USER }}
   ORG_GRADLE_PROJECT_sonatypePassword: ${{ secrets.SONATYPE_PWD }}
-  S3_PARAMS: --cache-control "public,must-revalidate,proxy-revalidate,max-age=0"
-  S3_PARAMS_CONST: --storage-class INTELLIGENT_TIERING --cache-control "public,max-age=86400"
   ANT_OPTS: -Xmx8G
   LWJGL_BUILD_TYPE: stable
+  LWJGL_BUILD_OFFLINE: true
 
 jobs:
   linux:
@@ -34,47 +30,100 @@ jobs:
       - uses: gradle/actions/wrapper-validation@3f131e8634966bd73d06cc69884922b02e6faf92 #v6.2.0
       - name: Retrieve version & build number
         run: |
-          LWJGL_VERSION=$(cat gradle.properties | grep lwjglVersion= | cut -d= -f2)
-          echo "LWJGL_VERSION=$LWJGL_VERSION" >> $GITHUB_ENV
-          aws s3 cp s3://lwjgl-build/ci/next-build.txt .
-          LWJGL_BUILD=$(cat next-build.txt)
-          LWJGL_BUILD=$((LWJGL_BUILD-1))
-          echo "LWJGL_BUILD=$LWJGL_BUILD" >> $GITHUB_ENV
+          FJGL_VERSION=$(cat gradle.properties | grep fjglVersion= | cut -d= -f2)
+          echo "FJGL_VERSION=$FJGL_VERSION" >> $GITHUB_ENV
       - name: Setup Java
         uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
         with:
           distribution: 'zulu'
-          java-version: |
-            27-ea
-            25
-            8
+          java-version: '25'
           check-latest: true
       - name: Install dependencies
         run: |
           git clone https://github.com/LWJGL-CI/OculusSDK.git ../OculusSDK
-          echo "JAVA8_HOME=$JAVA_HOME" >> "$GITHUB_ENV"
+      - name: Restore cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            bin/classes/generator
+            bin/classes/templates
+            bin/libs
+          key: fjgl-kotlinc-${{ github.sha }}
+          enableCrossOsArchive: true
+          fail-on-cache-miss: true
+
+      - name: Restore Linux x64 native cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: bin/libs/native/linux/x64
+          key: fjgl-native-${{ github.sha }}-linux-x64
+
+      - name: Restore Linux arm32 native cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: bin/libs/native/linux/arm32
+          key: fjgl-native-${{ github.sha }}-linux-arm32
+
+      - name: Restore Linux arm64 native cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: bin/libs/native/linux/arm64
+          key: fjgl-native-${{ github.sha }}-linux-arm64
+
+      - name: Restore Linux ppc64le native cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: bin/libs/native/linux/ppc64le
+          key: fjgl-native-${{ github.sha }}-linux-ppc64le
+
+      - name: Restore Linux riscv64 native cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: bin/libs/native/linux/riscv64
+          key: fjgl-native-${{ github.sha }}-linux-riscv64
+
+      - name: Restore FreeBSD x64 native cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: bin/libs/native/freebsd/x64
+          key: fjgl-native-${{ github.sha }}-freebsd-x64
+
+      - name: Restore macOS x64 native cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: bin/libs/native/macos/x64
+          key: fjgl-native-${{ github.sha }}-macos-x64
+          enableCrossOsArchive: true
+
+      - name: Restore macOS arm64 native cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: bin/libs/native/macos/arm64
+          key: fjgl-native-${{ github.sha }}-macos-arm64
+          enableCrossOsArchive: true
+
+      - name: Restore Windows x64 native cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: bin/libs/native/windows/x64
+          key: fjgl-native-${{ github.sha }}-windows-x64
+          enableCrossOsArchive: true
+
+      - name: Restore Windows arm64 native cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: bin/libs/native/windows/arm64
+          key: fjgl-native-${{ github.sha }}-windows-arm64
+          enableCrossOsArchive: true
+
+
       - name: Generate bindings
-        run: ant -emacs hydrate-kotlinc clean-generated generate
+        run: ant -emacs touch-kotlinc clean-generated generate
       - name: Build Java
         run: ant -emacs compile
-      - name: "Package ${{env.LWJGL_VERSION}}+${{env.LWJGL_BUILD}}"
+      - name: "Package ${{env.FJGL_VERSION}}+${{env.LWJGL_BUILD}}"
         run: |
-          export JAVA_HOME=$JAVA_HOME_27_X64
-          ant -emacs release -Dcore.java27=true -Dbuild.version=${{env.LWJGL_VERSION}} -Dbuild.revision=${{env.LWJGL_BUILD}}
+          ant -emacs release -Dbuild.version=${{env.FJGL_VERSION}} -Dbuild.revision=${{env.LWJGL_BUILD}}
           $JAVA_HOME/bin/jar cfM lwjgl.zip -C bin/RELEASE .
-      - name: Synchronize latest - Ant dependencies
-        run: |
-          aws s3 sync s3://lwjgl-build/stable/freebsd s3://lwjgl-build/release/latest/freebsd --delete $S3_PARAMS
-          aws s3 sync s3://lwjgl-build/stable/linux s3://lwjgl-build/release/latest/linux --delete $S3_PARAMS
-          aws s3 sync s3://lwjgl-build/stable/macosx s3://lwjgl-build/release/latest/macosx --delete $S3_PARAMS
-          aws s3 sync s3://lwjgl-build/stable/windows s3://lwjgl-build/release/latest/windows --delete $S3_PARAMS
-      - name: Synchronize latest - Artifacts
-        run: |
-          aws s3 cp lwjgl.zip s3://lwjgl-build/release/latest/lwjgl.zip $S3_PARAMS
-          aws s3 sync bin/RELEASE s3://lwjgl-build/release/latest/bin --delete $S3_PARAMS
-      - name: Synchronize release
-        run: |
-          aws s3 sync s3://lwjgl-build/release/latest s3://lwjgl-build/release/${{env.LWJGL_VERSION}} --delete --metadata-directive REPLACE $S3_PARAMS_CONST
-          aws s3 mv s3://lwjgl-build/release/${{env.LWJGL_VERSION}}/lwjgl.zip s3://lwjgl-build/release/${{env.LWJGL_VERSION}}/lwjgl-${{env.LWJGL_VERSION}}.zip --metadata-directive REPLACE $S3_PARAMS_CONST
       - name: Publish release to Maven
-        run: JAVA_HOME=$JAVA_HOME_25_X64 ./gradlew -Prelease publish --parallel --configuration-cache --max-workers=8 --info
+        run: ./gradlew -Prelease publish --parallel --configuration-cache --max-workers=8 --info

@@ -1,4 +1,11 @@
 /*
+ * Copyright (c) 2026-present OblivRuinDev. All rights reserved.
+ * License terms: https://github.com/OblivRuinDev/FJGL3/blob/master/LICENSE.md
+ *
+ * Modified from LWJGL source code.
+ * Original copyright notice below.
+ */
+/*
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
@@ -106,14 +113,15 @@ public final class URLValidator {
     }
 
     private static void parseFile(Path path) throws IOException {
-        String source = new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
+        String source = Files.readString(path);
 
         Matcher matcher = LINK.matcher(source);
         while (matcher.find()) {
             try {
-                LINKS.add(new URL(matcher.group(1)));
-            } catch (MalformedURLException e) {
-                System.err.println("Malformed URL: " + matcher.group(1) + " (" + path + ")");
+                LINKS.add(new URI(matcher.group(1)).toURL());
+            } catch (MalformedURLException | URISyntaxException e) {
+                System.err.println("Illegal URL: " + matcher.group(1) + " (" + path + ")");
+                e.printStackTrace();
             }
         }
 

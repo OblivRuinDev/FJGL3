@@ -19,9 +19,6 @@ public final class ModuleInfoGen implements AutoCloseable {
     private static final Pattern
         MODULE_NAME = Pattern.compile("^\\s*(?:open\\s+)?module\\s+(" + JAVA_PACKAGE + ")\\s*\\{", Pattern.MULTILINE),
         REQUIRES    = Pattern.compile("^\\s*requires(?:\\s+(static))?(?:\\s+(transitive))?\\s+(.+)\\s*;", Pattern.MULTILINE);
-
-    private static final Path METAINF = Paths.get("META-INF", "versions", "11");
-
     private final JavaCompiler compiler;
 
     private final DiagnosticCollector<JavaFileObject> diagnostics;
@@ -145,19 +142,6 @@ public final class ModuleInfoGen implements AutoCloseable {
             for (Module module : modules) {
                 module.compile(gen, moduleVersion);
             }
-
-            // Move module-info classes to <module>/META-INF/versions/11
-            for (String module : moduleNames) {
-                Path source = Paths.get("bin", "classes", "lwjgl", module, "module-info.class");
-                Path target = source.resolveSibling(METAINF);
-
-                Files.createDirectories(target);
-                Files.move(
-                    source,
-                    target.resolve(source.getFileName()),
-                    StandardCopyOption.REPLACE_EXISTING
-                );
-            }
         }
     }
 
@@ -186,9 +170,6 @@ public final class ModuleInfoGen implements AutoCloseable {
                                     .filter(Files::isDirectory)
                                     .forEach(architecture -> {
                                         String nativePackage = platform.getFileName().toString() + '.' + architecture.getFileName() + '.' + module.nameJava;
-
-                                        Path outputPath = architecture.resolve(METAINF);
-
                                         gen.compile(
                                             moduleNative,
                                             moduleVersion,
@@ -201,14 +182,14 @@ public final class ModuleInfoGen implements AutoCloseable {
                                                     Stream.of(module.name),
                                                     module.dependencies.stream().map(it -> it.name)
                                                 )
-                                                .map(it -> "bin/classes/lwjgl/" + it + "/META-INF/versions/11")
+                                                .map(it -> "bin/classes/lwjgl/" + it)
                                                 .collect(Collectors.joining(File.pathSeparator)),
                                             architecture,
-                                            outputPath,
+                                            architecture,
                                             nativePackage
                                         );
 
-                                        try (Stream<Path> dummy = Files.walk(outputPath.resolve(platform.getFileName()))) {
+                                        try (Stream<Path> dummy = Files.walk(architecture.resolve(platform.getFileName()))) {
                                             dummy
                                                 .sorted(Comparator.reverseOrder())
                                                 .map(Path::toFile)

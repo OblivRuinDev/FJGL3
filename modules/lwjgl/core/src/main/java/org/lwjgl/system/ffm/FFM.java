@@ -81,14 +81,11 @@ public final class FFM {
     }
 
     static void main() {
-        // Generate module-info.class for Java 25+
-        var path = Path.of("bin", "classes", "lwjgl", "core", "META-INF", "versions", "25", "module-info.class");
+        var path = Path.of("bin", "classes", "lwjgl", "core", "module-info.class");
 
-        // Make the jdk.unsupported module a static requirement and export the org.lwjgl.system.ffm package
         var moduleAttr = ModuleAttribute.of(ModuleDesc.of("org.lwjgl"), mab -> mab
             .moduleVersion(System.getProperty("module.version"))
             .requires(ModuleRequireInfo.of(ModuleDesc.of("java.base"), AccessFlag.MODULE.mask(), "25"))
-            .requires(ModuleRequireInfo.of(ModuleDesc.of("jdk.unsupported"), AccessFlag.STATIC_PHASE.mask(), null))
             .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl"), 0))
             .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl.system"), 0))
             .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl.system.ffm"), 0))

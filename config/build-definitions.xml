@@ -206,7 +206,6 @@ This script is included in /build.xml and /config/update-dependencies.xml.
             </classpath>
 
             <arg line="-kotlin-home ${kotlinc}"/>
-            <arg line='-jdk-home "${env.JAVA8_HOME}"' if:set="env.JAVA8_HOME"/>
             <arg value="@config/cli/kotlinc.args"/>
         </java>
     </presetdef>
@@ -217,6 +216,7 @@ This script is included in /build.xml and /config/update-dependencies.xml.
             <compilerarg value="-Xlint:all,-restricted"/>
             <compilerarg value="-XDignore.symbol.file"/> <!-- Suppresses internal API (e.g. Unsafe) usage warnings -->
             <compilerarg value="--add-exports=java.base/jdk.internal.access=ALL-UNNAMED"/>
+            <compilerarg value="--add-exports=java.base/jdk.internal.foreign=ALL-UNNAMED"/>
             <compilerarg value="--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"/>
             <compilerarg value="--add-exports=java.base/jdk.internal.util=ALL-UNNAMED"/>
             <compilerarg value="--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED"/>

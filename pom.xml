@@ -1,4 +1,11 @@
 <!--
+  ~ Copyright (c) 2026-present OblivRuinDev. All rights reserved.
+  ~ License terms: https://github.com/OblivRuinDev/FJGL3/blob/master/LICENSE.md
+  ~
+  ~ Modified from LWJGL source code.
+  ~ Original copyright notice below.
+  -->
+<!--
   ~ Copyright LWJGL. All rights reserved.
   ~ License terms: https://www.lwjgl.org/license
 
@@ -11,34 +18,34 @@
 >
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.lwjgl</groupId>
-    <artifactId>lwjgl</artifactId>
-    <version>3.4.1</version>
+    <groupId>dev.oblivruin.fjgl</groupId>
+    <artifactId>fjgl</artifactId>
+    <version>0.1.0</version>
 
-    <name>LWJGL</name>
-    <description>The LWJGL core library.</description>
-    <url>https://www.lwjgl.org</url>
+    <name>FJGL</name>
+    <description>The FJGL core library.</description>
+    <url>https://github.com/OblivRuinDev/FJGL3</url>
 
     <licenses>
         <license>
             <name>BSD-3-Clause</name>
-            <url>https://www.lwjgl.org/license</url>
+            <url>https://github.com/OblivRuinDev/FJGL3/blob/master/LICENSE.md</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <developers>
         <developer>
-            <id>spasi</id>
-            <name>Ioannis Tsakpinis</name>
-            <email>iotsakp@gmail.com</email>
-            <url>https://github.com/Spasi</url>
+            <id>OblivRuinDev</id>
+            <name>OblivRuinDev</name>
+            <email>contact@oblivruin.dev</email>
+            <url>https://github.com/OblivRuinDev</url>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/LWJGL/lwjgl3.git</connection>
-        <developerConnection>scm:git:https://github.com/LWJGL/lwjgl3.git</developerConnection>
-        <url>https://github.com/LWJGL/lwjgl3.git</url>
+        <connection>scm:git:https://github.com/OblivRuinDev/FJGL3.git</connection>
+        <developerConnection>scm:git:https://github.com/OblivRuinDev/FJGL3.git</developerConnection>
+        <url>https://github.com/OblivRuinDev/FJGL3.git</url>
     </scm>
 </project>

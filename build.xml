@@ -9,7 +9,7 @@
   ~ Copyright LWJGL. All rights reserved.
   ~ License terms: https://www.lwjgl.org/license
   -->
-<project name="LWJGL" basedir="." default="all" xmlns:if="ant:if" xmlns:unless="ant:unless">
+<project name="FJGL" basedir="." default="all" xmlns:if="ant:if" xmlns:unless="ant:unless">
 
     <property name="build.sysclasspath" value="ignore"/>
 
@@ -21,7 +21,7 @@
 
     <!-- Initialize build -->
     <target name="init" description="Initializes the directories required by the build process">
-        <fail message="LWJGL requires Ant version 1.9.3 or higher.">
+        <fail message="FJGL requires Ant version 1.9.3 or higher.">
             <condition>
                 <not><antversion atleast="1.9.3"/></not>
             </condition>
@@ -37,17 +37,6 @@
         <ant antfile="update-dependencies.xml" target="check-dependencies" inheritAll="false"/>
 
         <taskdef resource="testngtasks" classpath="${lib}/java/testng.jar;${lib}/java/slf4j-api.jar;${lib}/java/slf4j-jdk14.jar"/>
-    </target>
-
-    <target name="init-wiki" description="Initializes the lwjgl3-wiki git repository in /wiki. [Optional]">
-        <confirm-replace dir="wiki" msg="The wiki directory contents will be replaced with a fresh clone of the lwjgl3-wiki repository. Continue?"/>
-
-        <delete dir="wiki"/>
-        <exec executable="git" failonerror="true">
-            <arg value="clone"/>
-            <arg value="https://github.com/LWJGL/lwjgl3-wiki.wiki.git"/>
-            <arg value="wiki"/>
-        </exec>
     </target>
 
     <target name="reset" description="Resets the repository to its initial state.">
@@ -69,7 +58,6 @@
         <delete-symlink dir="bin"/>
 
         <delete dir=".gradle"/>
-        <delete dir="wiki"/>
 
         <echo message="Reset successful."/>
     </target>
@@ -127,7 +115,7 @@
         <delete dir="${module.lwjgl}/${module}/src/generated/c" quiet="true" if:set="module"/>
     </target>
 
-    <target name="all" description="Builds LWJGL and runs the tests" depends="compile-templates, tests"/>
+    <target name="all" description="Builds FJGL and runs the tests" depends="compile-templates, tests"/>
 
     <target name="-compile-generator" depends="init">
         <local name="generator-uptodate"/>
@@ -220,112 +208,6 @@
     <target name="touch-kotlinc" description="Used for touching from an IDE">
         <touch file="${bin.generator}/touch.txt"/>
         <touch file="${bin.templates}/touch.txt"/>
-    </target>
-
-    <target name="cache-kotlinc" description="Uploads the compiled Kotlin templates to build.lwjgl.org" depends="init">
-        <antcall target="clean-kotlin" unless:set="quick"/>
-        <antcall target="compile-templates" unless:set="quick"/>
-
-        <local name="commit"/>
-        <exec executable="git" failonerror="true" outputproperty="commit" taskname="Git revision">
-            <arg value="log"/>
-            <arg value="--first-parent"/>
-            <arg value="--pretty=format:%H"/>
-            <arg value="${revision}" if:set="revision"/>
-            <arg value="HEAD~1..HEAD" unless:set="revision"/>
-        </exec>
-
-        <jar destfile="templates.jar" level="9" taskname="Building templates.jar">
-            <manifest>
-                <attribute name="Specification-Title" value="LWJGL Kotlin Template Cache"/>
-                <attribute name="Specification-Vendor" value="lwjgl.org"/>
-                <attribute name="Implementation-Version" value="${commit}"/>
-            </manifest>
-            <fileset dir=".">
-                <include name="${bin.generator}/**"/>
-                <include name="${bin.templates}/**"/>
-                <exclude name="**/*.txt"/>
-            </fileset>
-        </jar>
-
-        <apply executable="aws" failonerror="true" relative="true" taskname="S3 upload">
-            <arg value="s3"/>
-            <arg value="mv"/>
-
-            <srcfile/>
-
-            <arg value="s3://lwjgl-build/ci/"/>
-            <arg line='--cache-control "public, must-revalidate, proxy-revalidate, max-age=0"'/>
-
-            <fileset file="templates.jar"/>
-        </apply>
-    </target>
-
-    <target name="hydrate-kotlinc" description="Downloads the compiled Kotlin templates to build.lwjgl.org" depends="init">
-        <!-- Download cache -->
-        <get taskname="Downloading templates.jar" src="https://build.lwjgl.org/ci/templates.jar" dest="."/>
-
-        <!-- Validate commit -->
-        <local name="Implementation-Version"/>
-        <loadproperties taskname="Cache revision">
-            <zipentry zipfile="templates.jar" name="META-INF/MANIFEST.MF"/>
-            <filterchain>
-                <linecontains>
-                    <contains value="Implementation-Version"/>
-                </linecontains>
-            </filterchain>
-        </loadproperties>
-
-        <local name="commit_message"/>
-        <exec executable="git" failonerror="true" outputproperty="commit_message" taskname="Git message">
-            <arg value="log"/>
-            <arg value="--first-parent"/>
-            <arg value="--pretty=format:%s"/>
-            <arg value="HEAD~1..HEAD"/>
-        </exec>
-
-        <local name="commit_CI"/>
-        <condition property="commit_CI" value="true" else="false">
-            <equals arg1="${commit_message}" arg2="CI configuration"/>
-        </condition>
-
-        <local name="commit"/>
-        <exec executable="git" failonerror="true" outputproperty="commit" taskname="Git revision">
-            <arg value="log"/>
-            <arg value="--first-parent"/>
-            <arg value="--pretty=format:%H"/>
-            <arg value="HEAD~2..HEAD~1" if:true="${commit_CI}"/>
-            <arg value="HEAD~1..HEAD" unless:true="${commit_CI}"/>
-        </exec>
-
-        <local name="commit_mismatch"/>
-        <local name="fail_on_mismatch"/>
-        <condition property="commit_mismatch" value="true">
-            <not><equals arg1="${Implementation-Version}" arg2="${commit}"/></not>
-        </condition>
-        <condition property="fail_on_mismatch" value="true">
-            <and>
-                <isset property="commit_mismatch"/>
-                <not><isset property="hydrate-kotlinc.force"/></not>
-            </and>
-        </condition>
-        <delete file="templates.jar" taskname="Deleting the compiled Kotlin templates cache" if:set="fail_on_mismatch"/>
-        <fail message="The current commit does not match the Kotlin template cache's commit." if="fail_on_mismatch"/>
-        <echo message="The current commit does not match the Kotlin template cache's commit, but hydration has been forced." taskname="WARNING" if:set="commit_mismatch"/>
-
-        <!-- Hydrate -->
-        <antcall target="clean-kotlin"/>
-        <unzip src="templates.jar" dest="." taskname="Hydrating the compiled Kotlin templates">
-            <patternset>
-                <include name="**/*"/>
-                <exclude name="META-INF"/>
-                <exclude name="META-INF/MANIFEST.MF"/>
-            </patternset>
-        </unzip>
-        <antcall target="touch-kotlinc"/>
-
-        <!-- Cleanup -->
-        <delete file="templates.jar" taskname="Deleting the compiled Kotlin templates cache"/>
     </target>
 
     <target name="formatter" description="Runs the template formatter tool" depends="-compile-generator">
@@ -553,7 +435,7 @@
             <srcfiles dir="${src.extract}/kotlin" includes="**"/>
         </uptodate>
 
-        <echo message="Compiling LWJGL Template Extraction Tool..." level="info" taskname="Extract" unless:set="extract-uptodate"/>
+        <echo message="Compiling FJGL Template Extraction Tool..." level="info" taskname="Extract" unless:set="extract-uptodate"/>
         <mkdir dir="${bin.extract}"/>
         <kotlinc taskname="Extract" unless:set="extract-uptodate">
             <jvmarg value="-Xmx2G"/>
@@ -571,8 +453,8 @@
         <touch file="${bin.extract}/touch.txt"/>
     </target>
 
-    <target name="extract" description="Runs the LWJGL Template Extraction tool" depends="compile-native, -compile-extract">
-        <java classname="org.lwjgl.extract.MainKt" fork="true" spawn="true" taskname="LWJGL Template Extraction Tool">
+    <target name="extract" description="Runs the FJGL Template Extraction tool" depends="compile-native, -compile-extract">
+        <java classname="org.lwjgl.extract.MainKt" fork="true" spawn="true" taskname="FJGL Template Extraction Tool">
             <classpath>
                 <pathelement path="${module.classpath}"/>
                 <pathelement path="${bin.extract}"/>
@@ -588,7 +470,7 @@
         </java>
     </target>
 
-    <target name="compile-tests" description="Compiles the LWJGL test suite" depends="compile">
+    <target name="compile-tests" description="Compiles the FJGL test suite" depends="compile">
         <mkdir dir="${bin.test}"/>
         <forEachModule core8="true">
             <local name="hasTests"/>
@@ -845,12 +727,12 @@
 	            <!-- Benchmarks -->
 	            <include name="org/lwjgl/jmh/**"/>
 	            <exclude name="org/lwjgl/jmh/Hashing*" unless:true="${binding.xxhash}"/>
-	            <exclude name="org/lwjgl/jmh/VarHandle*" unless:set="jdk11"/>
+	            <exclude name="org/lwjgl/jmh/VarHandle*"/>
             </javac>
         </sequential>
     </macrodef>
 
-    <target name="tests" description="Runs the LWJGL test suite" depends="compile-tests, compile-native">
+    <target name="tests" description="Runs the FJGL test suite" depends="compile-tests, compile-native">
         <testng haltonfailure="true" outputDir="${bin.test.html}" taskname="Tests">
             <classpath>
                 <pathelement path="${module.classpath}"/>
@@ -870,7 +752,9 @@
             <jvmarg value="-Dorg.lwjgl.util.DebugAllocator=true"/>
             <jvmarg value="--enable-native-access=ALL-UNNAMED"/>
             <jvmarg value="--add-exports=java.base/jdk.internal.access=ALL-UNNAMED"/>
+            <jvmarg value="--add-exports=java.base/jdk.internal.foreign=ALL-UNNAMED"/>
             <jvmarg value="--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"/>
+            <jvmarg value="--add-exports=java.base/jdk.internal.util=ALL-UNNAMED"/>
             <jvmarg value="--add-exports=java.base/jdk.internal.util=ALL-UNNAMED"/>
             <jvmarg value="-XstartOnFirstThread" if:set="platform.macos"/>
             <jvmarg value="-Xss256k" if:set="build.arch.x64|x86"/> <!-- for StackTest::testSOE -->
@@ -883,7 +767,7 @@
         </testng>
     </target>
 
-    <target name="demo" description="Runs an LWJGL demo" depends="compile-tests, compile-native, -update-assets">
+    <target name="demo" description="Runs an FJGL demo" depends="compile-tests, compile-native, -update-assets">
         <fail message="Please use -Dclass=&lt;class&gt; to specify the demo main class to run." unless="class"/>
 
         <java classname="${class}" fork="true" failonerror="true" taskname="Demo">
@@ -952,7 +836,7 @@
     </target>
 
     <!-- Includes all modules for javadoc.lwjgl.org -->
-    <target name="javadoc" description="Generates the LWJGL JavaDoc" depends="-compile-generator,-build-version">
+    <target name="javadoc" description="Generates the FJGL JavaDoc" depends="-compile-generator,-build-version">
         <delete dir="${bin.javadoc}"/>
 
         <path id="javadoc.sources">
@@ -963,7 +847,7 @@
             destdir="${bin.javadoc}"
             sourcepathref="javadoc.sources"
             source="25"
-            windowtitle="LWJGL ${build.version}"
+            windowtitle="FJGL ${build.version}"
             encoding="UTF-8"
             docencoding="UTF-8"
             charset="UTF-8"
@@ -975,7 +859,7 @@
             failonerror="true"
             verbose="true"
         >
-            <doctitle><![CDATA[<h1>Lightweight Java Game Library</h1>]]></doctitle>
+            <doctitle><![CDATA[<h1>Feather Java Game Library</h1>]]></doctitle>
             <bottom><![CDATA[<i>Copyright LWJGL. All Rights Reserved. <a href="https://www.lwjgl.org/license">License terms</a>.</i>]]></bottom>
 
             <classpath>
@@ -990,8 +874,12 @@
             <arg line="-notimestamp"/>
             <arg value="-html5"/>
             <arg line="-J-Dfile.encoding=UTF-8 -J-Dstdout.encoding=UTF-8 -J-Dstderr.encoding=UTF-8 -J-Dline.separator=&#10;"/>
-            <arg line="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED"/>
-            <arg line="--add-exports jdk.javadoc/com.sun.tools.doclets=ALL-UNNAMED"/>
+            <arg line="--add-exports=java.base/jdk.internal.access=ALL-UNNAMED"/>
+            <arg line="--add-exports=java.base/jdk.internal.foreign=ALL-UNNAMED"/>
+            <arg line="--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"/>
+            <arg line="--add-exports=java.base/jdk.internal.util=ALL-UNNAMED"/>
+            <arg line="--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED"/>
+            <arg line="--add-exports=jdk.javadoc/com.sun.tools.doclets=ALL-UNNAMED"/>
         </javadoc>
         <get-quiet name="favicon" url="https://www.lwjgl.org/favicon.ico" dest="${bin.javadoc}"/>
     </target>
@@ -1077,7 +965,7 @@
                     <local name="available"/>
                     <available file="${source}" property="available"/>
 
-                    <echo message="Missing offline artifact: ${source}" level="warning" unless:set="available"/>
+                    <fail message="Missing offline artifact: ${source}" unless:set="available"/>
                     <quiet if:set="available">
                         <mkdir dir="${destination}"/>
                         <copy file="${source}" todir="${destination}"/>
@@ -1105,7 +993,6 @@
                     <attribute name="Implementation-Version" value="${revision}"/>
                     <attribute name="Implementation-Vendor" value="lwjgl.org"/>
                     <attribute name="LWJGL-Platform" value="@{platform}" if:true="${platform-attrib}"/>
-                    <attribute name="Multi-Release" value="true" if:set="jdk11"/>
                 </manifest>
                 <content/>
             </jar>
@@ -1130,7 +1017,7 @@
             <lwjgl-jar destfile="${release}/${module}/${module}-natives-@{platform}.jar" platform="@{path}" title="@{title}" unless:set="platform.skip">
                 <fileset dir="${release}/${module}" includes="META-INF/@{path}/${module.path}/*.@{type}*"/>
                 <fileset dir="${release}/${module}/native" includes="@{path}/${module.path}/*.@{type}*"/>
-                <fileset dir="${release}/${module}/native/@{path}" includes="META-INF/versions/11/module-info.class" if:set="jdk11"/>
+                <fileset dir="${release}/${module}/native/@{path}" includes="module-info.class"/>
                 <content/>
             </lwjgl-jar>
         </sequential>
@@ -1150,7 +1037,6 @@
         <element name="macos-content" optional="true"/>
         <element name="macos-arm64-content" optional="true"/>
         <element name="windows-content" optional="true"/>
-        <element name="windows-x86-content" optional="true"/>
         <element name="windows-arm64-content" optional="true"/>
         <sequential>
             <local name="auto-natives"/>
@@ -1194,9 +1080,6 @@
 
                 <get-release platform="windows" arch="x64" file="@{native-library}.dll" if:set="auto-natives"/>
                 <get-release platform="windows" arch="x64" file="@{native-library}.dll.git" if:set="git-revision"/>
-
-                <get-release platform="windows" arch="x86" file="@{native-library}.dll" if:set="auto-natives"/>
-                <get-release platform="windows" arch="x86" file="@{native-library}.dll.git" if:set="git-revision"/>
 
                 <get-release platform="windows" arch="arm64" file="@{native-library}.dll" if:set="auto-natives"/>
                 <get-release platform="windows" arch="arm64" file="@{native-library}.dll.git" if:set="git-revision"/>
@@ -1270,9 +1153,6 @@
                     <natives-jar name="@{name}" title="@{title}" platform="windows" path="windows/x64" type="dll">
                         <windows-content/>
                     </natives-jar>
-                    <natives-jar name="@{name}" title="@{title}" platform="windows-x86" path="windows/x86" type="dll">
-                        <windows-x86-content/>
-                    </natives-jar>
                     <natives-jar name="@{name}" title="@{title}" platform="windows-arm64" path="windows/arm64" type="dll">
                         <windows-arm64-content/>
                     </natives-jar>
@@ -1295,14 +1175,13 @@
         <element name="macos" optional="true"/>
         <element name="macos-arm64" optional="true"/>
         <element name="windows" optional="true"/>
-        <element name="windows-x86" optional="true"/>
         <element name="windows-arm64" optional="true"/>
         <sequential>
             <local name="module.name"/>
             <property name="module.name" value="@{name}"/>
 
             <local name="module"/>
-            <condition property="module" value="lwjgl" else="lwjgl-@{name}">
+            <condition property="module" value="fjgl" else="fjgl-@{name}">
                 <equals arg1="@{name}" arg2="core"/>
             </condition>
 
@@ -1325,7 +1204,6 @@
                 <macos-content><macos/></macos-content>
                 <macos-arm64-content><macos-arm64/></macos-arm64-content>
                 <windows-content><windows/></windows-content>
-                <windows-x86-content><windows-x86/></windows-x86-content>
                 <windows-arm64-content><windows-arm64/></windows-arm64-content>
             </release-natives>
 
@@ -1351,7 +1229,7 @@
             <javadoc
                 destdir="${release}/${module}/javadoc"
                 source="25"
-                windowtitle="LWJGL ${build.version} - @{title}"
+                windowtitle="FJGL ${build.version} - @{title}"
                 encoding="UTF-8"
                 docencoding="UTF-8"
                 charset="UTF-8"
@@ -1363,7 +1241,7 @@
                 verbose="true"
                 unless:set="javadoc.skip"
             >
-                <doctitle><![CDATA[<h1>LWJGL - @{title}</h1>]]></doctitle>
+                <doctitle><![CDATA[<h1>FJGL - @{title}</h1>]]></doctitle>
                 <bottom><![CDATA[<i>Copyright LWJGL. All Rights Reserved. <a href="https://www.lwjgl.org/license">License terms</a>.</i>]]></bottom>
 
                 <classpath>
@@ -1380,8 +1258,12 @@
                 <arg line="-notimestamp"/>
                 <arg value="-html5"/>
                 <arg line="-J-Dfile.encoding=UTF-8 -J-Dstdout.encoding=UTF-8 -J-Dstderr.encoding=UTF-8 -J-Dline.separator=&#10;"/>
-                <arg line="--add-exports java.base/jdk.internal.misc=ALL-UNNAMED"/>
-                <arg line="--add-exports jdk.javadoc/com.sun.tools.doclets=ALL-UNNAMED"/>
+                <arg line="--add-exports=java.base/jdk.internal.access=ALL-UNNAMED"/>
+                <arg line="--add-exports=java.base/jdk.internal.foreign=ALL-UNNAMED"/>
+                <arg line="--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"/>
+                <arg line="--add-exports=java.base/jdk.internal.util=ALL-UNNAMED"/>
+                <arg line="--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED"/>
+                <arg line="--add-exports=jdk.javadoc/com.sun.tools.doclets=ALL-UNNAMED"/>
             </javadoc>
             <get-quiet name="favicon" url="https://www.lwjgl.org/favicon.ico" dest="${release}/${module}/javadoc" unless:set="javadoc.skip"/>
 
@@ -1413,21 +1295,7 @@
         </sequential>
     </macrodef>
 
-    <target name="-check-release-jdk">
-        <local name="input"/>
-        <input
-            message="It is recommended to build LWJGL releases on JDK 25 or higher. Continue with current JDK?"
-            validargs="y,n"
-            defaultvalue="n"
-            addproperty="input"
-            unless:set="jdk25"
-        />
-        <fail message="Cancelled" unless:set="jdk25">
-            <condition>
-                <equals arg1="n" arg2="${input}"/>
-            </condition>
-        </fail>
-    </target>
+    <target name="-check-release-jdk"><fail message="Cancelled" unless:set="jdk25"/></target>
 
     <!-- Set the LWJGL_BUILD_OFFLINE=true environment variable for local builds. -->
     <target name="release" depends="-check-release-jdk,compile,-compile-generator,-build-version">
@@ -1453,7 +1321,7 @@
             <isset property="build.revision"/>
         </condition>
 
-        <property name="module.version" value="${build.version}+${build.revision}" if:true="${build.release}"/>
+        <property name="module.version" value="${build.version}" if:true="${build.release}"/>
         <condition property="module.version" value="${build.version.plain}-snapshot+${build.revision}" else="${build.version.plain}-snapshot" unless:true="${build.release}">
             <isset property="build.revision"/>
         </condition>
@@ -1467,8 +1335,8 @@
         </quiet>
 
         <!-- Generate build.txt -->
-        <echo file="${release}/build.txt" if:set="build.revision">LWJGL ${build.version} ${revision}</echo>
-        <echo file="${release}/build.txt" unless:set="build.revision">LWJGL ${build.version}</echo>
+        <echo file="${release}/build.txt" if:set="build.revision">FJGL ${build.version} ${revision}</echo>
+        <echo file="${release}/build.txt" unless:set="build.revision">FJGL ${build.version}</echo>
 
 
         <!-- CORE -->
@@ -1538,10 +1406,6 @@
                 <get-release platform="windows" arch="x64" file="assimp.dll.git"/>
                 <get-release platform="windows" arch="x64" file="draco.dll"/>
 
-                <get-release platform="windows" arch="x86" file="assimp.dll"/>
-                <get-release platform="windows" arch="x86" file="assimp.dll.git"/>
-                <get-release platform="windows" arch="x86" file="draco.dll"/>
-
                 <get-release platform="windows" arch="arm64" file="assimp.dll"/>
                 <get-release platform="windows" arch="arm64" file="assimp.dll.git"/>
                 <get-release platform="windows" arch="arm64" file="draco.dll"/>
@@ -1593,9 +1457,6 @@
 
                 <get-release platform="windows" arch="x64" file="glfw.dll"/>
                 <get-release platform="windows" arch="x64" file="glfw.dll.git"/>
-
-                <get-release platform="windows" arch="x86" file="glfw.dll"/>
-                <get-release platform="windows" arch="x86" file="glfw.dll.git"/>
 
                 <get-release platform="windows" arch="arm64" file="glfw.dll"/>
                 <get-release platform="windows" arch="arm64" file="glfw.dll.git"/>
@@ -1658,12 +1519,6 @@
                 <get-release platform="windows" arch="x64" file="harfbuzz-raster.dll"/>
                 <get-release platform="windows" arch="x64" file="harfbuzz-vector.dll"/>
                 <get-release platform="windows" arch="x64" file="harfbuzz.dll.git"/>
-
-                <get-release platform="windows" arch="x86" file="harfbuzz.dll"/>
-                <get-release platform="windows" arch="x86" file="harfbuzz-gpu.dll"/>
-                <get-release platform="windows" arch="x86" file="harfbuzz-raster.dll"/>
-                <get-release platform="windows" arch="x86" file="harfbuzz-vector.dll"/>
-                <get-release platform="windows" arch="x86" file="harfbuzz.dll.git"/>
 
                 <get-release platform="windows" arch="arm64" file="harfbuzz.dll"/>
                 <get-release platform="windows" arch="arm64" file="harfbuzz-gpu.dll"/>
@@ -1787,9 +1642,6 @@
                 <get-release platform="windows" arch="x64" file="OpenAL.dll"/>
                 <get-release platform="windows" arch="x64" file="OpenAL.dll.git"/>
 
-                <get-release platform="windows" arch="x86" file="OpenAL.dll"/>
-                <get-release platform="windows" arch="x86" file="OpenAL.dll.git"/>
-
                 <get-release platform="windows" arch="arm64" file="OpenAL.dll"/>
                 <get-release platform="windows" arch="arm64" file="OpenAL.dll.git"/>
             </natives>
@@ -1828,9 +1680,6 @@
                 <get-release platform="windows" arch="x64" file="openxr-loader.dll"/>
                 <get-release platform="windows" arch="x64" file="openxr-loader.dll.git"/>
 
-                <get-release platform="windows" arch="x86" file="openxr-loader.dll"/>
-                <get-release platform="windows" arch="x86" file="openxr-loader.dll.git"/>
-
                 <get-release platform="windows" arch="arm64" file="openxr-loader.dll"/>
                 <get-release platform="windows" arch="arm64" file="openxr-loader.dll.git"/>
             </natives>
@@ -1857,7 +1706,6 @@
                 <get-release platform="macos" arch="arm64" file="liblwjgl_remotery.dylib"/>
 
                 <get-release platform="windows" arch="x64" file="lwjgl_remotery.dll"/>
-                <get-release platform="windows" arch="x86" file="lwjgl_remotery.dll"/>
             </natives>
         </release-module>
 

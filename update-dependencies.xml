@@ -1,10 +1,17 @@
 <!--
+  ~ Copyright (c) 2026-present OblivRuinDev. All rights reserved.
+  ~ License terms: https://github.com/OblivRuinDev/FJGL3/blob/master/LICENSE.md
+  ~
+  ~ Modified from LWJGL source code.
+  ~ Original copyright notice below.
+  -->
+<!--
   ~ Copyright LWJGL. All rights reserved.
   ~ License terms: https://www.lwjgl.org/license
   -->
 
-<!-- Downloads LWJGL's library dependencies. -->
-<project name="LWJGL" basedir="." default="update-dependencies" xmlns:if="ant:if" xmlns:unless="ant:unless">
+<!-- Downloads FJGL's library dependencies. -->
+<project name="FJGL" basedir="." default="update-dependencies" xmlns:if="ant:if" xmlns:unless="ant:unless">
 
     <property name="config" location="config" relative="true"/>
     <import file="${config}/build-definitions.xml" id="defs"/>
@@ -24,12 +31,12 @@
         <property name="commons-math3" value="3.6.1"/>
     <!-- *********************************** -->
 
-    <target name="check-dependencies" description="Updates LWJGL dependencies, if required" unless="${build.offline}">
+    <target name="check-dependencies" description="Updates FJGL dependencies, if required" unless="${build.offline}">
         <uptodate property="dependencies-uptodate" srcfile="update-dependencies.xml" targetfile="${lib}/touch.txt"/>
         <antcall target="update-dependencies" unless:set="dependencies-uptodate"/>
     </target>
 
-    <target name="update-dependencies" description="Updates LWJGL dependencies" unless="${build.offline}">
+    <target name="update-dependencies" description="Updates FJGL dependencies" unless="${build.offline}">
         <taskdef name="logLevel" classname="org.lwjgl.SetLogLevel" classpath="${bin.ant}"/>
 
         <mkdir dir="${lib}/java/kotlinc/lib"/>
@@ -59,7 +66,7 @@
         <touch file="${lib}/touch.txt" verbose="false"/>
     </target>
 
-    <target name="clean" description="Deletes LWJGL dependencies">
+    <target name="clean" description="Deletes FJGL dependencies">
         <delete taskname="Java dependencies" dir="${lib}/java"/>
     </target>
 
