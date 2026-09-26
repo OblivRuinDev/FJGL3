@@ -62,7 +62,7 @@ fun main(args: Array<String>) {
 
         // Generate bindings
         try {
-            val errors = AtomicInteger()
+            val errorQueue = ConcurrentLinkedQueue<Throwable>()
 
             Module.values().let { modules ->
                 val latch = CountDownLatch(modules.size)
@@ -71,8 +71,7 @@ fun main(args: Array<String>) {
                         try {
                             this.generateModule(it)
                         } catch (t: Throwable) {
-                            errors.incrementAndGet()
-                            t.printStackTrace()
+                            errorQueue.add(t)
                         }
                         latch.countDown()
                     }
@@ -80,8 +79,14 @@ fun main(args: Array<String>) {
                 latch.await()
             }
 
-            if (errors.get() != 0)
-                throw RuntimeException("Generation failed")
+            if (errorQueue.peek() != null) {
+                val ex = RuntimeException("Generation failed")
+                while (true) {
+                    val e = errorQueue.poll() ?: break
+                    ex.addSuppressed(e)
+                }
+                throw ex
+            }
 
             // Generate utility classes. These are auto-registered during the process above.
 
@@ -91,8 +96,7 @@ fun main(args: Array<String>) {
                         try {
                             work()
                         } catch (t: Throwable) {
-                            errors.incrementAndGet()
-                            t.printStackTrace()
+                            errorQueue.add(t)
                         }
                         latch.countDown()
                     }
@@ -124,8 +128,14 @@ fun main(args: Array<String>) {
                 latch.await()
             }
 
-            if (errors.get() != 0)
-                throw RuntimeException("Generation failed")
+            if (errorQueue.peek() != null) {
+                val ex = RuntimeException("Generation failed")
+                while (true) {
+                    val e = errorQueue.poll() ?: break
+                    ex.addSuppressed(e)
+                }
+                throw ex
+            }
         } finally {
             pool.shutdown()
         }
