@@ -254,12 +254,12 @@ final class MemoryManage {
         static long track(long address, long size) {
             if (address != NULL) {
                 Thread t = Thread.currentThread();
-                THREADS.putIfAbsent(t.getId(), t.getName());
+                THREADS.putIfAbsent(t.threadId(), t.getName());
 
                 Allocation allocationNew = new Allocation(
                     address,
                     size,
-                    t.getId(),
+                    t.threadId(),
                     Configuration.DEBUG_MEMORY_ALLOCATOR_FAST.get(false) ? null : stackWalkGetTrace()
                 );
 
