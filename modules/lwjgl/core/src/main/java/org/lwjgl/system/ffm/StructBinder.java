@@ -14,6 +14,7 @@ import java.util.function.*;
  *
  * <p>Struct binder implementations can be created using the builder returned by {@link FFM#ffmStruct ffmStruct}.</p>
  */
+@SuppressWarnings("removal")
 public non-sealed interface StructBinder<T> extends GroupBinder<StructLayout, T> {
     @Override
     StructBinder<T> withByteAlignment(long byteAlignment);

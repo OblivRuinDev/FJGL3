@@ -14,6 +14,7 @@ import java.util.function.*;
  *
  * <p>Union binder implementations can be created using the builder returned by {@link FFM#ffmUnion ffmUnion}.</p>
  */
+@SuppressWarnings("removal")
 public non-sealed interface UnionBinder<T> extends GroupBinder<UnionLayout, T> {
     @Override
     UnionBinder<T> withByteAlignment(long byteAlignment);

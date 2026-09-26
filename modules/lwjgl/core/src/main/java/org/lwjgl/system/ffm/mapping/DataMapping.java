@@ -13,6 +13,7 @@ import java.lang.foreign.*;
  *
  * @param <L> the memory layout type
  */
+@SuppressWarnings("removal")
 public interface DataMapping<L extends MemoryLayout> extends Mapping<L> {
 
     /**

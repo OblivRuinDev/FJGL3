@@ -26,6 +26,7 @@ import static org.lwjgl.system.MemoryUtil.*;
  * @see StructBinder
  * @see UnionBinder
  */
+@SuppressWarnings("removal")
 public sealed interface GroupBinder<L extends GroupLayout, T>
     extends Binder<T>, GroupMapping<L>
     permits StructBinder, UnionBinder {
