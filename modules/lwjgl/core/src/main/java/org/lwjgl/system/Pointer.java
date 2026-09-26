@@ -117,6 +117,7 @@ public interface Pointer {
          * @throws InstanceAllocateException if {@code type} cannot be instantiated
          */
         @ForceInline
+        @SuppressWarnings("unchecked")
         protected static <T extends Pointer.Default> T createPointer(Class<T> type, long address) {
             //noinspection ConstantValue
             if (type == null) { // must check here to avoid crash jvm!
