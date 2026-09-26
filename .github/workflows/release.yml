@@ -127,3 +127,9 @@ jobs:
           $JAVA_HOME/bin/jar cfM lwjgl.zip -C bin/RELEASE .
       - name: Publish release to Maven
         run: ./gradlew -Prelease publish --parallel --configuration-cache --max-workers=8 --info
+      - name: Transfer Maven deployment to Central Publisher Portal
+        run: |
+          SONATYPE_TOKEN=$(printf '%s:%s' "${{ secrets.SONATYPE_USER }}" "${{ secrets.SONATYPE_PWD }}" | base64 -w 0)
+          curl --fail-with-body --show-error --request POST \
+            --header "Authorization: Bearer $SONATYPE_TOKEN" \
+            "https://ossrh-staging-api.central.sonatype.com/manual/upload/defaultRepository/dev.oblivruin"
