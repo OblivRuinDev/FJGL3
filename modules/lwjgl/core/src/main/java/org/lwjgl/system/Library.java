@@ -30,7 +30,7 @@ import static org.lwjgl.system.Checks.*;
 public final class Library {
 
     /** The LWJGL shared library name. */
-    public static final String JNI_LIBRARY_NAME = Configuration.LIBRARY_NAME.get(Platform.mapLibraryNameBundled("lwjgl"));
+    public static final String JNI_LIBRARY_NAME = Configuration.LIBRARY_NAME.get(Platform.mapLibraryNameBundled("fjgl"));
 
     static final String JAVA_LIBRARY_PATH = "java.library.path";
 
@@ -52,7 +52,7 @@ public final class Library {
             );
         }
 
-        loadSystem("org.lwjgl", JNI_LIBRARY_NAME);
+        loadSystem("dev.oblivruin.fjgl", JNI_LIBRARY_NAME);
     }
 
     private Library() {}
@@ -105,7 +105,7 @@ public final class Library {
 
         String libName = Platform.get().mapLibraryName(name);
 
-        boolean bundledWithLWJGL = name.contains("lwjgl");
+        boolean bundledWithLWJGL = name.contains("fjgl");
 
         // METHOD 2: org.lwjgl.librarypath
         URL libURL = findResource(context, module, libName, bundledWithLWJGL);
@@ -504,11 +504,11 @@ public final class Library {
     }
 
     private static void detectPlatformMismatch(Class<?> context, String module) {
-        if (!module.startsWith("org.lwjgl")) {
+        if (!module.startsWith("dev.oblivruin.fjgl")) {
             return;
         }
 
-        String moduleTitle = module.equals("org.lwjgl") ? "lwjgl" : "lwjgl-" + module.substring("org.lwjgl.".length());
+        String moduleTitle = module.equals("dev.oblivruin.fjgl") ? "fjgl" : "fjgl-" + module.substring("dev.oblivruin.fjgl.".length());
 
         List<String> platforms = new ArrayList<>(8);
         try {

@@ -19,8 +19,8 @@ import org.lwjgl.system.*;
 final class LibYoga {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_yoga");
-        Library.loadSystem(System::load, System::loadLibrary, LibYoga.class, "org.lwjgl.yoga", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_yoga");
+        Library.loadSystem(System::load, System::loadLibrary, LibYoga.class, "dev.oblivruin.fjgl.yoga", libName);
     }
 
     private LibYoga() {

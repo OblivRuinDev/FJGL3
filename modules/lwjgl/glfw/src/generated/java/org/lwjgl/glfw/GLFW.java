@@ -29,7 +29,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class GLFW {
 
-    private static final SharedLibrary GLFW = Library.loadNative(GLFW.class, "org.lwjgl.glfw", Configuration.GLFW_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("glfw")), true);
+    private static final SharedLibrary GLFW = Library.loadNative(GLFW.class, "dev.oblivruin.fjgl.glfw", Configuration.GLFW_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("glfw")), true);
 
     /** Contains the function pointers loaded from the glfw {@link SharedLibrary}. */
     public static final class Functions {

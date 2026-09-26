@@ -114,7 +114,7 @@ public final class ALC {
      * @param libName the native library name
      */
     public static void create(String libName) {
-        SharedLibrary OPENAL = Library.loadNative(ALC.class, "org.lwjgl.openal", libName, true);
+        SharedLibrary OPENAL = Library.loadNative(ALC.class, "dev.oblivruin.fjgl.openal", libName, true);
         try {
             create(new SharedLibraryAL(OPENAL));
         } catch (RuntimeException e) {

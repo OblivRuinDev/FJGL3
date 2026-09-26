@@ -51,13 +51,13 @@ public final class CL {
         switch (Platform.get()) {
             case FREEBSD:
             case LINUX:
-                CL = Library.loadNative(CL.class, "org.lwjgl.opencl", Configuration.OPENCL_LIBRARY_NAME, "libOpenCL.so.1", "OpenCL");
+                CL = Library.loadNative(CL.class, "dev.oblivruin.fjgl.opencl", Configuration.OPENCL_LIBRARY_NAME, "libOpenCL.so.1", "OpenCL");
                 break;
             case WINDOWS:
-                CL = Library.loadNative(CL.class, "org.lwjgl.opencl", Configuration.OPENCL_LIBRARY_NAME, "OpenCL");
+                CL = Library.loadNative(CL.class, "dev.oblivruin.fjgl.opencl", Configuration.OPENCL_LIBRARY_NAME, "OpenCL");
                 break;
             case MACOSX:
-                CL = Library.loadNative(CL.class, "org.lwjgl.opencl", Configuration.OPENCL_LIBRARY_NAME, "/System/Library/Frameworks/OpenCL.framework/Versions/Current/OpenCL");
+                CL = Library.loadNative(CL.class, "dev.oblivruin.fjgl.opencl", Configuration.OPENCL_LIBRARY_NAME, "/System/Library/Frameworks/OpenCL.framework/Versions/Current/OpenCL");
                 break;
             default:
                 throw new IllegalStateException();
@@ -71,7 +71,7 @@ public final class CL {
      * @param libName the native library name
      */
     public static void create(String libName) {
-        create(Library.loadNative(CL.class, "org.lwjgl.opencl", libName));
+        create(Library.loadNative(CL.class, "dev.oblivruin.fjgl.opencl", libName));
     }
 
     private static class SharedLibraryCL extends SharedLibrary.Delegate implements FunctionProviderLocal {

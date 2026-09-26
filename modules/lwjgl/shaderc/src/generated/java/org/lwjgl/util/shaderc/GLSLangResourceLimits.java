@@ -26,7 +26,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class GLSLangResourceLimits {
 
-    private static final SharedLibrary SHADERC = Library.loadNative(GLSLangResourceLimits.class, "org.lwjgl.shaderc", Configuration.GLSLANG_RESOURCE_LIBRARY_NAME, Shaderc::getLibrary);
+    private static final SharedLibrary SHADERC = Library.loadNative(GLSLangResourceLimits.class, "dev.oblivruin.fjgl.shaderc", Configuration.GLSLANG_RESOURCE_LIBRARY_NAME, Shaderc::getLibrary);
 
     /** Contains the function pointers loaded from the shaderc {@link SharedLibrary}. */
     public static final class Functions {

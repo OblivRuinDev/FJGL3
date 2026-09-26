@@ -21,8 +21,8 @@ import static org.lwjgl.system.MemoryUtil.*;
 final class LibVma {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_vma");
-        Library.loadSystem(System::load, System::loadLibrary, LibVma.class, "org.lwjgl.vma", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_vma");
+        Library.loadSystem(System::load, System::loadLibrary, LibVma.class, "dev.oblivruin.fjgl.vma", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

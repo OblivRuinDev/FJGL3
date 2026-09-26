@@ -23,7 +23,7 @@ import static org.testng.AssertJUnit.*;
 public class YGMeasureFuncTest {
 
     static final SymbolLookup YOGA = SymbolLookup.libraryLookup(
-        Objects.requireNonNull(Library.loadNative(Yoga.class, "org.lwjgl.yoga", "lwjgl_yoga", true).getPath()),
+        Objects.requireNonNull(Library.loadNative(Yoga.class, "dev.oblivruin.fjgl.yoga", "fjgl_yoga", true).getPath()),
         Arena.global()
     );
 

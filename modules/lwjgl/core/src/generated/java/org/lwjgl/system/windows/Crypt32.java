@@ -28,7 +28,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class Crypt32 {
 
-    private static final SharedLibrary CRYPT32 = Library.loadNative(Crypt32.class, "org.lwjgl", "crypt32");
+    private static final SharedLibrary CRYPT32 = Library.loadNative(Crypt32.class, "dev.oblivruin.fjgl", "crypt32");
 
     /** Contains the function pointers loaded from the crypt32 {@link SharedLibrary}. */
     public static final class Functions {

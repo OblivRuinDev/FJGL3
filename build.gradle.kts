@@ -220,7 +220,7 @@ enum class Module(
         "A royalty-free, open standard that provides high-performance access to Augmented Reality (AR) and Virtual Reality (VR)—collectively known as XR—platforms and devices.",
         Platforms.FREEBSD,
         Platforms.LINUX, Platforms.LINUX_ARM64, Platforms.LINUX_ARM32, Platforms.LINUX_PPC64LE, Platforms.LINUX_RISCV64,
-        Platforms.WINDOWS, Platforms.WINDOWS_X86, Platforms.WINDOWS_ARM64
+        Platforms.WINDOWS, Platforms.WINDOWS_ARM64
     ),
     OPUS(
         "fjgl-opus", "FJGL - Opus bindings",
@@ -238,7 +238,7 @@ enum class Module(
         Platforms.FREEBSD,
         Platforms.LINUX, Platforms.LINUX_ARM64, Platforms.LINUX_ARM32, Platforms.LINUX_PPC64LE, Platforms.LINUX_RISCV64,
         Platforms.MACOS, Platforms.MACOS_ARM64,
-        Platforms.WINDOWS, Platforms.WINDOWS_X86
+        Platforms.WINDOWS
     ),
     RENDERDOC(
         "fjgl-renderdoc", "FJGL - RenderDoc bindings",
@@ -310,19 +310,14 @@ enum class Module(
         *Platforms.ALL
     );
 
-    private fun directory(buildDir: String) = "./$buildDir/$artifact"
+    private fun directory(root: File, buildDir: String) = File(root, "$buildDir/$artifact")
 
-    private fun path() = "${directory("bin/MAVEN")}/$artifact"
+    fun isActive(root: File) = File(root, "bin/RELEASE/$artifact").exists()
 
-    val isActive get() = File(directory("bin/RELEASE")).exists()
+    fun hasArtifact(root: File, classifier: String) = File(directory(root, "bin/RELEASE"), "$artifact-$classifier.jar").exists()
 
-    fun hasArtifact(classifier: String) = File("${directory("bin/RELEASE")}/${artifact}-${classifier}.jar").exists()
-
-    fun artifact(classifier: String? = null) =
-        if (classifier === null)
-            File("${path()}.jar").absoluteFile
-        else
-            File("${path()}-$classifier.jar").absoluteFile
+    fun artifact(root: File, classifier: String? = null) =
+        File(directory(root, "bin/MAVEN"), if (classifier === null) "$artifact.jar" else "$artifact-$classifier.jar")
 
 }
 
@@ -383,31 +378,31 @@ Module.values().forEach { module ->
         extensions.configure<PublishingExtension> {
             setupRepository()
             publications {
-                if (module.isActive) {
+                if (module.isActive(artifactsRoot)) {
                     val moduleVersion = deployment.version // do not inline: required for compatibility with --configuration-cache
                     create<MavenPublication>("maven${module.name}") {
                         artifactId = module.artifact
-                        artifact(module.artifact())
+                        artifact(module.artifact(artifactsRoot))
                         if (module.custom != null) {
                             module.custom.classifiers.forEach {
-                                artifact(module.artifact(it)) {
+                                artifact(module.artifact(artifactsRoot, it)) {
                                     classifier = it
                                 }
                             }
                         }
-                        if (deployment.type !== BuildType.LOCAL || module.hasArtifact("sources")) {
-                            artifact(module.artifact("sources")) {
+                        if (deployment.type !== BuildType.LOCAL || module.hasArtifact(artifactsRoot, "sources")) {
+                            artifact(module.artifact(artifactsRoot, "sources")) {
                                 classifier = "sources"
                             }
                         }
-                        if (deployment.type !== BuildType.LOCAL || module.hasArtifact("javadoc")) {
-                            artifact(module.artifact("javadoc")) {
+                        if (deployment.type !== BuildType.LOCAL || module.hasArtifact(artifactsRoot, "javadoc")) {
+                            artifact(module.artifact(artifactsRoot, "javadoc")) {
                                 classifier = "javadoc"
                             }
                         }
                         module.platforms.forEach {
-                            if (deployment.type !== BuildType.LOCAL || module.hasArtifact(it.classifier)) {
-                                artifact(module.artifact(it.classifier)) {
+                            if (deployment.type !== BuildType.LOCAL || module.hasArtifact(artifactsRoot, it.classifier)) {
+                                artifact(module.artifact(artifactsRoot, it.classifier)) {
                                     classifier = it.classifier
                                 }
                             }

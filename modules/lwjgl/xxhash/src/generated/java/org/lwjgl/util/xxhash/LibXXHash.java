@@ -21,8 +21,8 @@ import static org.lwjgl.system.MemoryUtil.*;
 final class LibXXHash {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_xxhash");
-        Library.loadSystem(System::load, System::loadLibrary, LibXXHash.class, "org.lwjgl.xxhash", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_xxhash");
+        Library.loadSystem(System::load, System::loadLibrary, LibXXHash.class, "dev.oblivruin.fjgl.xxhash", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

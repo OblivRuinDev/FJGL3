@@ -29,7 +29,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class FMOD {
 
-    private static final SharedLibrary FMOD = Library.loadNative(FMOD.class, "org.lwjgl.fmod", Configuration.FMOD_LIBRARY_NAME, "fmod");
+    private static final SharedLibrary FMOD = Library.loadNative(FMOD.class, "dev.oblivruin.fjgl.fmod", Configuration.FMOD_LIBRARY_NAME, "fmod");
 
     /** Contains the function pointers loaded from the FMOD {@link SharedLibrary}. */
     public static final class Functions {

@@ -21,8 +21,8 @@ import static org.lwjgl.system.MemoryUtil.*;
 final class LibLZ4 {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_lz4");
-        Library.loadSystem(System::load, System::loadLibrary, LibLZ4.class, "org.lwjgl.lz4", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_lz4");
+        Library.loadSystem(System::load, System::loadLibrary, LibLZ4.class, "dev.oblivruin.fjgl.lz4", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

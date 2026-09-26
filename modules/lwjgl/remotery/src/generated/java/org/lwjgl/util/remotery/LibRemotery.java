@@ -19,8 +19,8 @@ import org.lwjgl.system.*;
 final class LibRemotery {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_remotery");
-        Library.loadSystem(System::load, System::loadLibrary, LibRemotery.class, "org.lwjgl.remotery", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_remotery");
+        Library.loadSystem(System::load, System::loadLibrary, LibRemotery.class, "dev.oblivruin.fjgl.remotery", libName);
     }
 
     private LibRemotery() {

@@ -33,7 +33,7 @@ public class HarfBuzzVector {
         HarfBuzz.getLibrary();
     }
 
-    private static final SharedLibrary HARFBUZZ = Library.loadNative(HarfBuzzVector.class, "org.lwjgl.harfbuzz", Configuration.HARFBUZZ_VECTOR_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("harfbuzz-vector")), true);
+    private static final SharedLibrary HARFBUZZ = Library.loadNative(HarfBuzzVector.class, "dev.oblivruin.fjgl.harfbuzz", Configuration.HARFBUZZ_VECTOR_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("harfbuzz-vector")), true);
 
     /** Contains the function pointers loaded from the harfbuzz {@link SharedLibrary}. */
     public static final class Functions {

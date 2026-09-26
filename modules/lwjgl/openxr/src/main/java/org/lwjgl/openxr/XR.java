@@ -44,7 +44,7 @@ public final class XR {
     public static void create() {
         create(Library.loadNative(
             XR.class,
-            "org.lwjgl.openxr",
+            "dev.oblivruin.fjgl.openxr",
             Configuration.OPENXR_LIBRARY_NAME.get(Platform.mapLibraryNameBundled(Platform.get() == Platform.WINDOWS
                 ? "openxr-loader"
                 : "openxr_loader")),
@@ -63,7 +63,7 @@ public final class XR {
      * @see #create(FunctionProvider)
      */
     public static void create(String libName) {
-        create(Library.loadNative(XR.class, "org.lwjgl.openxr", libName));
+        create(Library.loadNative(XR.class, "dev.oblivruin.fjgl.openxr", libName));
     }
 
     /**

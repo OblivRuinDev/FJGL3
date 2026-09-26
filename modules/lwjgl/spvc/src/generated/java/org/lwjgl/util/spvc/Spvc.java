@@ -29,7 +29,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class Spvc {
 
-    private static final SharedLibrary SPVC = Library.loadNative(Spvc.class, "org.lwjgl.spvc", Configuration.SPVC_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("spirv-cross")), true);
+    private static final SharedLibrary SPVC = Library.loadNative(Spvc.class, "dev.oblivruin.fjgl.spvc", Configuration.SPVC_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("spirv-cross")), true);
 
     /** Contains the function pointers loaded from the spvc {@link SharedLibrary}. */
     public static final class Functions {

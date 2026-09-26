@@ -450,7 +450,7 @@ class Application {
 
     private fun checkClangLibrary(path: String, silent: Boolean = false): Boolean {
         try {
-            val clang = Library.loadNative("org.lwjgl.llvm", path)
+            val clang = Library.loadNative("dev.oblivruin.fjgl.llvm", path)
             try {
                 if (clang.getFunctionAddress("clang_createIndex") == NULL) {
                     if (!silent) {

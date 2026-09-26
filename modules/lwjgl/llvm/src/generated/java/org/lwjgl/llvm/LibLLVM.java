@@ -19,8 +19,8 @@ import org.lwjgl.system.*;
 final class LibLLVM {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_llvm");
-        Library.loadSystem(System::load, System::loadLibrary, LibLLVM.class, "org.lwjgl.llvm", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_llvm");
+        Library.loadSystem(System::load, System::loadLibrary, LibLLVM.class, "dev.oblivruin.fjgl.llvm", libName);
     }
 
     private LibLLVM() {

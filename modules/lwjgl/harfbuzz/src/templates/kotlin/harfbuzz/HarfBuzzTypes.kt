@@ -31,7 +31,7 @@ $t$t$t$t} catch (Exception e) {
 $t$t$t$t${t}throw new RuntimeException(e);
 $t$t$t$t}
 $t$t$t} else {
-$t$t$t${t}library = Library.loadNative(HarfBuzz.class, "org.lwjgl.harfbuzz", name, true);
+$t$t$t${t}library = Library.loadNative(HarfBuzz.class, "dev.oblivruin.fjgl.harfbuzz", name, true);
 $t$t$t}
 $t$t}
 

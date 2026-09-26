@@ -31,7 +31,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class BGFX {
 
-    private static final SharedLibrary BGFX = Library.loadNative(BGFX.class, "org.lwjgl.bgfx", Configuration.BGFX_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("bgfx")), true);
+    private static final SharedLibrary BGFX = Library.loadNative(BGFX.class, "dev.oblivruin.fjgl.bgfx", Configuration.BGFX_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("bgfx")), true);
 
     /** Contains the function pointers loaded from the bgfx {@link SharedLibrary}. */
     public static final class Functions {

@@ -27,7 +27,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class Nuklear {
 
-    static { Library.loadSystem(System::load, System::loadLibrary, Nuklear.class, "org.lwjgl.nuklear", Platform.mapLibraryNameBundled("lwjgl_nuklear")); }
+    static { Library.loadSystem(System::load, System::loadLibrary, Nuklear.class, "dev.oblivruin.fjgl.nuklear", Platform.mapLibraryNameBundled("fjgl_nuklear")); }
 
     public static final int
         NK_UTF_INVALID       = 0xFFFD,

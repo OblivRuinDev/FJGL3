@@ -28,7 +28,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class CoreGraphics {
 
-    private static final SharedLibrary COREGRAPHICS = Library.loadNative(CoreGraphics.class, "org.lwjgl", "/System/Library/Frameworks/CoreGraphics.framework");
+    private static final SharedLibrary COREGRAPHICS = Library.loadNative(CoreGraphics.class, "dev.oblivruin.fjgl", "/System/Library/Frameworks/CoreGraphics.framework");
 
     /** Contains the function pointers loaded from the CoreGraphics {@link SharedLibrary}. */
     public static final class Functions {

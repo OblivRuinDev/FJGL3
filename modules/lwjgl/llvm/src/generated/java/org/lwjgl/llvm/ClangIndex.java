@@ -31,7 +31,7 @@ public class ClangIndex {
 
     static { LibLLVM.initialize(); }
 
-    private static final SharedLibrary CLANG = Library.loadNative(ClangIndex.class, "org.lwjgl.llvm", Configuration.LLVM_CLANG_LIBRARY_NAME, "clang", "libclang");
+    private static final SharedLibrary CLANG = Library.loadNative(ClangIndex.class, "dev.oblivruin.fjgl.llvm", Configuration.LLVM_CLANG_LIBRARY_NAME, "clang", "libclang");
 
     /** Contains the function pointers loaded from the CLANG {@link SharedLibrary}. */
     public static final class Functions {

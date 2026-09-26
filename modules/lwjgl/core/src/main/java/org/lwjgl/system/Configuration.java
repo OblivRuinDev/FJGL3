@@ -79,7 +79,7 @@ public class Configuration<T> {
     /**
      * Changes the temporary directory name created by LWJGL when extracting shared libraries from JAR files.
      *
-     * <p>If this option is not set, it defaults to {@code lwjgl_<user name>}.</p>
+     * <p>If this option is not set, it defaults to {@code fjgl_<user name>}.</p>
      *
      * <p style="font-family: monospace">
      * Property: <b>org.lwjgl.system.SharedLibraryExtractDirectory</b>

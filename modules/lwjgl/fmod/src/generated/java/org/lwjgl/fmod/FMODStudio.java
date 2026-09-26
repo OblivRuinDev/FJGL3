@@ -36,7 +36,7 @@ public class FMODStudio {
         FMOD.getLibrary();
     }
 
-    private static final SharedLibrary FMODSTUDIO = Library.loadNative(FMODStudio.class, "org.lwjgl.fmod", Configuration.FMOD_STUDIO_LIBRARY_NAME, "fmodstudio");
+    private static final SharedLibrary FMODSTUDIO = Library.loadNative(FMODStudio.class, "dev.oblivruin.fjgl.fmod", Configuration.FMOD_STUDIO_LIBRARY_NAME, "fmodstudio");
 
     /** Contains the function pointers loaded from the FMODSTUDIO {@link SharedLibrary}. */
     public static final class Functions {

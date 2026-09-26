@@ -29,7 +29,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class X11 {
 
-    private static final SharedLibrary X11 = Library.loadNative(X11.class, "org.lwjgl", null, "libX11.so.6", "libX11.so");
+    private static final SharedLibrary X11 = Library.loadNative(X11.class, "dev.oblivruin.fjgl", null, "libX11.so.6", "libX11.so");
 
     /** Contains the function pointers loaded from the X11 {@link SharedLibrary}. */
     public static final class Functions {

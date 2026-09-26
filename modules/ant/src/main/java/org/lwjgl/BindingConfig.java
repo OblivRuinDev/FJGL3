@@ -68,7 +68,7 @@ public class BindingConfig extends Task {
         classes.add("bin/libs/java/jspecify.jar");
 
         modules.forEach(it -> {
-            LWJGL.setProperty("module." + it + ".path", it.equals("core") ? "org/lwjgl" : "org/lwjgl/" + it);
+            LWJGL.setProperty("module." + it + ".path", it.equals("core") ? "dev/oblivruin/fjgl" : "dev/oblivruin/fjgl/" + it);
 
             classes.add("bin/classes/lwjgl/" + it);
 

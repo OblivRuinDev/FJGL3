@@ -29,7 +29,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class JEmalloc {
 
-    private static final SharedLibrary JEMALLOC = Library.loadNative(JEmalloc.class, "org.lwjgl.jemalloc", Configuration.JEMALLOC_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("jemalloc")), true);
+    private static final SharedLibrary JEMALLOC = Library.loadNative(JEmalloc.class, "dev.oblivruin.fjgl.jemalloc", Configuration.JEMALLOC_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("jemalloc")), true);
 
     /** Contains the function pointers loaded from the jemalloc {@link SharedLibrary}. */
     public static final class Functions {

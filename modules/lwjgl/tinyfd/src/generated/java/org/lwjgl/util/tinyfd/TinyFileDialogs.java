@@ -28,7 +28,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 public class TinyFileDialogs {
 
     static {
-        Library.loadSystem(System::load, System::loadLibrary, TinyFileDialogs.class, "org.lwjgl.tinyfd", Platform.mapLibraryNameBundled("lwjgl_tinyfd"));
+        Library.loadSystem(System::load, System::loadLibrary, TinyFileDialogs.class, "org.lwjgl.tinyfd", Platform.mapLibraryNameBundled("fjgl_tinyfd"));
         if (Platform.get() == Platform.WINDOWS) {
             tinyfd_setGlobalInt("tinyfd_winUtf8", 1);
         }

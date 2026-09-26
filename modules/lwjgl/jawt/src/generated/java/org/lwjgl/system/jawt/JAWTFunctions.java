@@ -26,7 +26,7 @@ import java.awt.Frame;
 
 public class JAWTFunctions {
 
-    private static final SharedLibrary JAWT = Library.loadNative(JAWTFunctions.class, "org.lwjgl.jawt", Configuration.JAWT_LIBRARY_NAME, "jawt", apiFindLibrary(System.getProperty("java.home"), "jawt"));
+    private static final SharedLibrary JAWT = Library.loadNative(JAWTFunctions.class, "dev.oblivruin.fjgl.jawt", Configuration.JAWT_LIBRARY_NAME, "jawt", apiFindLibrary(System.getProperty("java.home"), "jawt"));
 
     /** Contains the function pointers loaded from the jawt {@link SharedLibrary}. */
     public static final class Functions {

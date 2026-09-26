@@ -21,8 +21,8 @@ import static org.lwjgl.system.MemoryUtil.*;
 final class LibSTB {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_stb");
-        Library.loadSystem(System::load, System::loadLibrary, LibSTB.class, "org.lwjgl.stb", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_stb");
+        Library.loadSystem(System::load, System::loadLibrary, LibSTB.class, "dev.oblivruin.fjgl.stb", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

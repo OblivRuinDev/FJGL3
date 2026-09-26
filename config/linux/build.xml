@@ -84,7 +84,7 @@
             <property name="src.generated" location="${module.lwjgl}/@{module}/src/generated/c" relative="true"/>
 
             <local name="name"/>
-            <condition property="name" value="lwjgl" else="lwjgl_@{module}@{suffix}">
+            <condition property="name" value="fjgl" else="fjgl_@{module}@{suffix}">
                 <equals arg1="@{module}" arg2="core"/>
             </condition>
 
@@ -202,7 +202,7 @@
                 </parallel>
             </beforeLink>
             <link>
-                <fileset dir="${lib.native}/org/lwjgl">
+                <fileset dir="${lib.native}/${module.core.path}">
                     <include name="libffi.a"/>
                 </fileset>
                 <arg value="-ldl"/>

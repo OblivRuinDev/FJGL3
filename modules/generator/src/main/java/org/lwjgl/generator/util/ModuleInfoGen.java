@@ -87,7 +87,7 @@ public final class ModuleInfoGen implements AutoCloseable {
             String info = this.info;
             for (Dependency dependency : dependencies) {
                 if (dependency.missing) {
-                    String stmt = "requires static org.lwjgl." + dependency.name + ";";
+                    String stmt = "requires static dev.oblivruin.fjgl." + dependency.name + ";";
                     info = info.replace(stmt, "//" + stmt);
                 }
             }
@@ -208,9 +208,9 @@ public final class ModuleInfoGen implements AutoCloseable {
     }
 
     private static String getModule(String moduleJava) {
-        return "org.lwjgl".equals(moduleJava)
+        return "dev.oblivruin.fjgl".equals(moduleJava)
             ? "core"
-            : moduleJava.substring("org.lwjgl.".length());
+            : moduleJava.substring("dev.oblivruin.fjgl.".length());
     }
 
     private static Module parseModuleInfo(byte[] file) {
@@ -227,7 +227,7 @@ public final class ModuleInfoGen implements AutoCloseable {
         matcher = REQUIRES.matcher(info);
         while (matcher.find()) {
             String dependency = matcher.group(3);
-            if (dependency.startsWith("org.lwjgl")) {
+            if (dependency.startsWith("dev.oblivruin.fjgl")) {
                 dependencies.add(new Module.Dependency(getModule(dependency), "static".equals(matcher.group(1))));
             }
         }

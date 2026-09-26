@@ -29,7 +29,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class KTX {
 
-    private static final SharedLibrary KTX = Library.loadNative(KTX.class, "org.lwjgl.ktx", Configuration.KTX_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("ktx")), true);
+    private static final SharedLibrary KTX = Library.loadNative(KTX.class, "dev.oblivruin.fjgl.ktx", Configuration.KTX_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("ktx")), true);
 
     /** Contains the function pointers loaded from the ktx {@link SharedLibrary}. */
     public static final class Functions {

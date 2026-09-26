@@ -25,7 +25,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class GDI32 {
 
-    private static final SharedLibrary GDI32 = Library.loadNative(GDI32.class, "org.lwjgl", "gdi32");
+    private static final SharedLibrary GDI32 = Library.loadNative(GDI32.class, "dev.oblivruin.fjgl", "gdi32");
 
     /** Contains the function pointers loaded from the gdi32 {@link SharedLibrary}. */
     public static final class Functions {

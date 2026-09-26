@@ -19,8 +19,8 @@ import org.lwjgl.system.*;
 final class LibMeshOptimizer {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_meshoptimizer");
-        Library.loadSystem(System::load, System::loadLibrary, LibMeshOptimizer.class, "org.lwjgl.meshoptimizer", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_meshoptimizer");
+        Library.loadSystem(System::load, System::loadLibrary, LibMeshOptimizer.class, "dev.oblivruin.fjgl.meshoptimizer", libName);
     }
 
     private LibMeshOptimizer() {

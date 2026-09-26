@@ -17,7 +17,7 @@ import org.lwjgl.system.*;
 
 public final class LibSystem {
 
-    private static final SharedLibrary SYSTEM = Library.loadNative(LibSystem.class, "org.lwjgl", "System");
+    private static final SharedLibrary SYSTEM = Library.loadNative(LibSystem.class, "dev.oblivruin.fjgl", "System");
 
     /** Returns the System {@link SharedLibrary}. */
     public static SharedLibrary getLibrary() {

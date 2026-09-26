@@ -21,8 +21,8 @@ import static org.lwjgl.system.MemoryUtil.*;
 final class LibZstd {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_zstd");
-        Library.loadSystem(System::load, System::loadLibrary, LibZstd.class, "org.lwjgl.zstd", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_zstd");
+        Library.loadSystem(System::load, System::loadLibrary, LibZstd.class, "dev.oblivruin.fjgl.zstd", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

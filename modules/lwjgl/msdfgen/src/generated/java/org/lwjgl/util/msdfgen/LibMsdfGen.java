@@ -19,8 +19,8 @@ import org.lwjgl.system.*;
 final class LibMsdfGen {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_msdfgen");
-        Library.loadSystem(System::load, System::loadLibrary, LibMsdfGen.class, "org.lwjgl.msdfgen", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_msdfgen");
+        Library.loadSystem(System::load, System::loadLibrary, LibMsdfGen.class, "dev.oblivruin.fjgl.msdfgen", libName);
     }
 
     private LibMsdfGen() {

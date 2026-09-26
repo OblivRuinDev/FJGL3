@@ -83,7 +83,7 @@ public final class FFM {
     static void main() {
         var path = Path.of("bin", "classes", "lwjgl", "core", "module-info.class");
 
-        var moduleAttr = ModuleAttribute.of(ModuleDesc.of("org.lwjgl"), mab -> mab
+        var moduleAttr = ModuleAttribute.of(ModuleDesc.of("dev.oblivruin.fjgl"), mab -> mab
             .moduleVersion(System.getProperty("module.version"))
             .requires(ModuleRequireInfo.of(ModuleDesc.of("java.base"), AccessFlag.MODULE.mask(), "25"))
             .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl"), 0))

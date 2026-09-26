@@ -31,7 +31,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class mimalloc {
 
-    private static final SharedLibrary MIMALLOC = Library.loadNative(mimalloc.class, "org.lwjgl.mimalloc", Configuration.MIMALLOC_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("mimalloc")), true);
+    private static final SharedLibrary MIMALLOC = Library.loadNative(mimalloc.class, "dev.oblivruin.fjgl.mimalloc", Configuration.MIMALLOC_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("mimalloc")), true);
 
     /** Contains the function pointers loaded from the mimalloc {@link SharedLibrary}. */
     public static final class Functions {

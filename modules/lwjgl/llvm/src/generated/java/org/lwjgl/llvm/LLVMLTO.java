@@ -31,7 +31,7 @@ public class LLVMLTO {
 
     static { LibLLVM.initialize(); }
 
-    private static final SharedLibrary LTO = Library.loadNative(LLVMLTO.class, "org.lwjgl.llvm", Configuration.LLVM_LTO_LIBRARY_NAME, "LTO");
+    private static final SharedLibrary LTO = Library.loadNative(LLVMLTO.class, "dev.oblivruin.fjgl.llvm", Configuration.LLVM_LTO_LIBRARY_NAME, "LTO");
 
     /** Contains the function pointers loaded from the LTO {@link SharedLibrary}. */
     public static final class Functions {

@@ -21,8 +21,8 @@ import static org.lwjgl.system.MemoryUtil.*;
 final class LibSPNG {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_spng");
-        Library.loadSystem(System::load, System::loadLibrary, LibSPNG.class, "org.lwjgl.spng", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_spng");
+        Library.loadSystem(System::load, System::loadLibrary, LibSPNG.class, "dev.oblivruin.fjgl.spng", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

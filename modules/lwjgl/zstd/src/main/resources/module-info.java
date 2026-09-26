@@ -2,8 +2,8 @@
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
-module org.lwjgl.zstd {
-    requires transitive org.lwjgl;
+module dev.oblivruin.fjgl.zstd {
+    requires transitive dev.oblivruin.fjgl;
 
     exports org.lwjgl.util.zstd;
 }

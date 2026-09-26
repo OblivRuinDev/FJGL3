@@ -90,7 +90,7 @@ public class LibFFITest {
     }
 
     private static long getMemPutIntAddress() {
-        SharedLibrary lib = Library.loadNative(MemoryUtil.class, "org.lwjgl", Library.JNI_LIBRARY_NAME, true);
+        SharedLibrary lib = Library.loadNative(MemoryUtil.class, "dev.oblivruin.fjgl", Library.JNI_LIBRARY_NAME, true);
 
         long putInt = lib.getFunctionAddress(
             Platform.get() == Platform.WINDOWS && Pointer.BITS32

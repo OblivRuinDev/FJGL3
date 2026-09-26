@@ -19,8 +19,8 @@ import org.lwjgl.system.*;
 final class LibRPmalloc {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_rpmalloc");
-        Library.loadSystem(System::load, System::loadLibrary, LibRPmalloc.class, "org.lwjgl.rpmalloc", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_rpmalloc");
+        Library.loadSystem(System::load, System::loadLibrary, LibRPmalloc.class, "dev.oblivruin.fjgl.rpmalloc", libName);
     }
 
     private LibRPmalloc() {

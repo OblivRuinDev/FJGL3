@@ -51,7 +51,7 @@ public final class EGL {
 
     /** Loads the EGL native library, using the default library name. */
     public static void create() {
-        create(Library.loadNative(EGL.class, "org.lwjgl.egl", Configuration.EGL_LIBRARY_NAME, Configuration.EGL_LIBRARY_NAME_DEFAULTS()));
+        create(Library.loadNative(EGL.class, "dev.oblivruin.fjgl.egl", Configuration.EGL_LIBRARY_NAME, Configuration.EGL_LIBRARY_NAME_DEFAULTS()));
     }
 
     /**
@@ -60,7 +60,7 @@ public final class EGL {
      * @param libName the native library name
      */
     public static void create(String libName) {
-        create(Library.loadNative(EGL.class, "org.lwjgl.egl", libName));
+        create(Library.loadNative(EGL.class, "dev.oblivruin.fjgl.egl", libName));
     }
 
     private static void create(SharedLibrary EGL) {

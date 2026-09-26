@@ -31,7 +31,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class FreeType {
 
-    private static final SharedLibrary FREETYPE = Library.loadNative(FreeType.class, "org.lwjgl.freetype", Configuration.FREETYPE_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("freetype")), true);
+    private static final SharedLibrary FREETYPE = Library.loadNative(FreeType.class, "dev.oblivruin.fjgl.freetype", Configuration.FREETYPE_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("freetype")), true);
 
     /** Contains the function pointers loaded from the freetype {@link SharedLibrary}. */
     public static final class Functions {

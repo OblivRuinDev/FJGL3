@@ -71,7 +71,7 @@ public final class GL {
     private static @Nullable GLXCapabilities capabilitiesGLX;
 
     static {
-        Library.loadSystem(System::load, System::loadLibrary, GL.class, "org.lwjgl.opengl", Platform.mapLibraryNameBundled("lwjgl_opengl"));
+        Library.loadSystem(System::load, System::loadLibrary, GL.class, "dev.oblivruin.fjgl.opengl", Platform.mapLibraryNameBundled("fjgl_opengl"));
 
         MAX_VERSION = apiParseVersion(Configuration.OPENGL_MAXVERSION);
 
@@ -133,7 +133,7 @@ public final class GL {
 
     private static @Nullable SharedLibrary loadNative() {
         try {
-            return Library.loadNative(GL.class, "org.lwjgl.opengl", Configuration.OPENGL_LIBRARY_NAME, Configuration.OPENGL_LIBRARY_NAME_DEFAULTS());
+            return Library.loadNative(GL.class, "dev.oblivruin.fjgl.opengl", Configuration.OPENGL_LIBRARY_NAME, Configuration.OPENGL_LIBRARY_NAME_DEFAULTS());
         } catch (Throwable ignored) {
             apiLog("[GL] Failed to initialize context management based on native OpenGL platform API");
             return null;
@@ -142,7 +142,7 @@ public final class GL {
 
     private static @Nullable SharedLibrary loadEGL() {
         try {
-            return Library.loadNative(GL.class, "org.lwjgl.opengl", Configuration.EGL_LIBRARY_NAME, Configuration.EGL_LIBRARY_NAME_DEFAULTS());
+            return Library.loadNative(GL.class, "dev.oblivruin.fjgl.opengl", Configuration.EGL_LIBRARY_NAME, Configuration.EGL_LIBRARY_NAME_DEFAULTS());
         } catch (Throwable ignored) {
             apiLog("[GL] Failed to initialize context management based on EGL");
             return null;
@@ -151,7 +151,7 @@ public final class GL {
 
     private static @Nullable SharedLibrary loadOSMesa() {
         try {
-            return Library.loadNative(GL.class, "org.lwjgl.opengl", Configuration.OPENGL_OSMESA_LIBRARY_NAME, Configuration.OPENGL_OSMESA_LIBRARY_NAME_DEFAULTS());
+            return Library.loadNative(GL.class, "dev.oblivruin.fjgl.opengl", Configuration.OPENGL_OSMESA_LIBRARY_NAME, Configuration.OPENGL_OSMESA_LIBRARY_NAME_DEFAULTS());
         } catch (Throwable ignored) {
             apiLog("[GL] Failed to initialize context management based on OSMesa");
             return null;
@@ -164,7 +164,7 @@ public final class GL {
      * @param libName the native library name
      */
     public static void create(String libName) {
-        create(Library.loadNative(GL.class, "org.lwjgl.opengl", libName));
+        create(Library.loadNative(GL.class, "dev.oblivruin.fjgl.opengl", libName));
     }
 
     private static void create(SharedLibrary OPENGL) {

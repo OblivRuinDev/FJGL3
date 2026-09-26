@@ -30,7 +30,7 @@ public class HarfBuzzGPU {
         HarfBuzz.getLibrary();
     }
 
-    private static final SharedLibrary HARFBUZZ = Library.loadNative(HarfBuzzGPU.class, "org.lwjgl.harfbuzz", Configuration.HARFBUZZ_GPU_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("harfbuzz-gpu")), true);
+    private static final SharedLibrary HARFBUZZ = Library.loadNative(HarfBuzzGPU.class, "dev.oblivruin.fjgl.harfbuzz", Configuration.HARFBUZZ_GPU_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("harfbuzz-gpu")), true);
 
     /** Contains the function pointers loaded from the harfbuzz {@link SharedLibrary}. */
     public static final class Functions {

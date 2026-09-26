@@ -30,7 +30,7 @@ public class HarfBuzzRaster {
         HarfBuzz.getLibrary();
     }
 
-    private static final SharedLibrary HARFBUZZ = Library.loadNative(HarfBuzzRaster.class, "org.lwjgl.harfbuzz", Configuration.HARFBUZZ_RASTER_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("harfbuzz-raster")), true);
+    private static final SharedLibrary HARFBUZZ = Library.loadNative(HarfBuzzRaster.class, "dev.oblivruin.fjgl.harfbuzz", Configuration.HARFBUZZ_RASTER_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("harfbuzz-raster")), true);
 
     /** Contains the function pointers loaded from the harfbuzz {@link SharedLibrary}. */
     public static final class Functions {

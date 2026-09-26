@@ -2,12 +2,12 @@
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
-module org.lwjgl.nanovg {
-    requires transitive org.lwjgl;
+module dev.oblivruin.fjgl.nanovg {
+    requires transitive dev.oblivruin.fjgl;
 
-    requires static org.lwjgl.bgfx;
-    requires static org.lwjgl.opengl;
-    requires static org.lwjgl.opengles;
+    requires static dev.oblivruin.fjgl.bgfx;
+    requires static dev.oblivruin.fjgl.opengl;
+    requires static dev.oblivruin.fjgl.opengles;
 
     exports org.lwjgl.nanovg;
 }

@@ -21,8 +21,8 @@ import static org.lwjgl.system.MemoryUtil.*;
 final class LibNFD {
 
     static {
-        String libName = Platform.mapLibraryNameBundled((Platform.get() == Platform.FREEBSD || Platform.get() == Platform.LINUX) && Configuration.NFD_LINUX_PORTAL.get(false) ? "lwjgl_nfd_portal" : "lwjgl_nfd");
-        Library.loadSystem(System::load, System::loadLibrary, LibNFD.class, "org.lwjgl.nfd", libName);
+        String libName = Platform.mapLibraryNameBundled((Platform.get() == Platform.FREEBSD || Platform.get() == Platform.LINUX) && Configuration.NFD_LINUX_PORTAL.get(false) ? "fjgl_nfd_portal" : "fjgl_nfd");
+        Library.loadSystem(System::load, System::loadLibrary, LibNFD.class, "dev.oblivruin.fjgl.nfd", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

@@ -34,7 +34,7 @@ public class FSBank {
         FMOD.getLibrary();
     }
 
-    private static final SharedLibrary FSBANK = Library.loadNative(FSBank.class, "org.lwjgl.fmod", Configuration.FMOD_FSBANK_LIBRARY_NAME, "fsbank");
+    private static final SharedLibrary FSBANK = Library.loadNative(FSBank.class, "dev.oblivruin.fjgl.fmod", Configuration.FMOD_FSBANK_LIBRARY_NAME, "fsbank");
 
     /** Contains the function pointers loaded from the FSBANK {@link SharedLibrary}. */
     public static final class Functions {

@@ -48,7 +48,7 @@ public class HarfBuzz {
                     throw new RuntimeException(e);
                 }
             } else {
-                library = Library.loadNative(HarfBuzz.class, "org.lwjgl.harfbuzz", name, true);
+                library = Library.loadNative(HarfBuzz.class, "dev.oblivruin.fjgl.harfbuzz", name, true);
             }
         }
 

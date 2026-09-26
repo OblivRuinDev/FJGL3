@@ -29,7 +29,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class LLVMCore {
 
-    private static final SharedLibrary LLVM = Library.loadNative(LLVMCore.class, "org.lwjgl.llvm", Configuration.LLVM_LIBRARY_NAME, "LLVM", "LLVM-C");
+    private static final SharedLibrary LLVM = Library.loadNative(LLVMCore.class, "dev.oblivruin.fjgl.llvm", Configuration.LLVM_LIBRARY_NAME, "LLVM", "LLVM-C");
 
     /** Contains the function pointers loaded from the LLVM {@link SharedLibrary}. */
     public static final class Functions {

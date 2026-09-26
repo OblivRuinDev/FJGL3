@@ -29,7 +29,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class ObjCRuntime {
 
-    private static final SharedLibrary OBJC = Library.loadNative(ObjCRuntime.class, "org.lwjgl", "objc");
+    private static final SharedLibrary OBJC = Library.loadNative(ObjCRuntime.class, "dev.oblivruin.fjgl", "objc");
 
     /** Contains the function pointers loaded from the objc {@link SharedLibrary}. */
     public static final class Functions {

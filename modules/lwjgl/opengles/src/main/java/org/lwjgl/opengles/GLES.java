@@ -58,7 +58,7 @@ public final class GLES {
     private static ICD icd = new ICDStatic();
 
     static {
-        Library.loadSystem(System::load, System::loadLibrary, GLES.class, "org.lwjgl.opengles", Platform.mapLibraryNameBundled("lwjgl_opengles"));
+        Library.loadSystem(System::load, System::loadLibrary, GLES.class, "dev.oblivruin.fjgl.opengles", Platform.mapLibraryNameBundled("fjgl_opengles"));
 
         MAX_VERSION = apiParseVersion(Configuration.OPENGLES_MAXVERSION);
 
@@ -76,7 +76,7 @@ public final class GLES {
 
     /** Loads the OpenGL ES native library, using the default library name. */
     public static void create() {
-        create(Library.loadNative(GLES.class, "org.lwjgl.opengles", Configuration.OPENGLES_LIBRARY_NAME, Configuration.OPENGLES_LIBRARY_NAME_DEFAULTS()));
+        create(Library.loadNative(GLES.class, "dev.oblivruin.fjgl.opengles", Configuration.OPENGLES_LIBRARY_NAME, Configuration.OPENGLES_LIBRARY_NAME_DEFAULTS()));
     }
 
     /**
@@ -85,7 +85,7 @@ public final class GLES {
      * @param libName the native library name
      */
     public static void create(String libName) {
-        create(Library.loadNative(GLES.class, "org.lwjgl.opengles", libName));
+        create(Library.loadNative(GLES.class, "dev.oblivruin.fjgl.opengles", libName));
     }
 
     private static @Nullable SharedLibrary getContextProvider() {
@@ -151,7 +151,7 @@ public final class GLES {
 
     private static @Nullable SharedLibrary loadEGL() {
         try {
-            return Library.loadNative(GLES.class, "org.lwjgl.opengles", Configuration.EGL_LIBRARY_NAME, Configuration.EGL_LIBRARY_NAME_DEFAULTS());
+            return Library.loadNative(GLES.class, "dev.oblivruin.fjgl.opengles", Configuration.EGL_LIBRARY_NAME, Configuration.EGL_LIBRARY_NAME_DEFAULTS());
         } catch (Throwable ignored) {
             apiLog("[GLES] Failed to initialize context management based on EGL");
             return null;
@@ -160,7 +160,7 @@ public final class GLES {
 
     private static @Nullable SharedLibrary loadNative() {
         try {
-            return Library.loadNative(GLES.class, "org.lwjgl.opengles", Configuration.OPENGL_LIBRARY_NAME, Configuration.OPENGL_LIBRARY_NAME_DEFAULTS());
+            return Library.loadNative(GLES.class, "dev.oblivruin.fjgl.opengles", Configuration.OPENGL_LIBRARY_NAME, Configuration.OPENGL_LIBRARY_NAME_DEFAULTS());
         } catch (Throwable ignored) {
             apiLog("[GLES] Failed to initialize context management based on native OpenGL platform API");
             return null;
@@ -169,7 +169,7 @@ public final class GLES {
 
     private static @Nullable SharedLibrary loadOSMesa() {
         try {
-            return Library.loadNative(GLES.class, "org.lwjgl.opengles", Configuration.OPENGL_OSMESA_LIBRARY_NAME, Configuration.OPENGL_OSMESA_LIBRARY_NAME_DEFAULTS());
+            return Library.loadNative(GLES.class, "dev.oblivruin.fjgl.opengles", Configuration.OPENGL_OSMESA_LIBRARY_NAME, Configuration.OPENGL_OSMESA_LIBRARY_NAME_DEFAULTS());
         } catch (Throwable ignored) {
             apiLog("[GLES] Failed to initialize context management based on OSMesa");
             return null;

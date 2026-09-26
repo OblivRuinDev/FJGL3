@@ -755,7 +755,6 @@
             <jvmarg value="--add-exports=java.base/jdk.internal.foreign=ALL-UNNAMED"/>
             <jvmarg value="--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"/>
             <jvmarg value="--add-exports=java.base/jdk.internal.util=ALL-UNNAMED"/>
-            <jvmarg value="--add-exports=java.base/jdk.internal.util=ALL-UNNAMED"/>
             <jvmarg value="-XstartOnFirstThread" if:set="platform.macos"/>
             <jvmarg value="-Xss256k" if:set="build.arch.x64|x86"/> <!-- for StackTest::testSOE -->
             <jvmarg line="${jvmargs}" if:set="jvmargs"/>
@@ -986,12 +985,12 @@
 
             <jar destfile="@{destfile}" level="9" index="true" indexmetainf="true" whenmanifestonly="skip">
                 <manifest>
-                    <attribute name="Specification-Title" value="Lightweight Java Game Library - @{title}"/>
+                    <attribute name="Specification-Title" value="Feather Java Game Library - @{title}"/>
                     <attribute name="Specification-Version" value="${build.version}"/>
-                    <attribute name="Specification-Vendor" value="lwjgl.org"/>
+                    <attribute name="Specification-Vendor" value="OblivRuinDev"/>
                     <attribute name="Implementation-Title" value="${module}"/>
                     <attribute name="Implementation-Version" value="${revision}"/>
-                    <attribute name="Implementation-Vendor" value="lwjgl.org"/>
+                    <attribute name="Implementation-Vendor" value="OblivRuinDev"/>
                     <attribute name="LWJGL-Platform" value="@{platform}" if:true="${platform-attrib}"/>
                 </manifest>
                 <content/>
@@ -1049,7 +1048,7 @@
             <local name="git-revision"/>
             <condition property="git-revision" if:set="auto-natives">
                 <not>
-                    <matches pattern="^lwjgl_.+" string="@{native-library}"/>
+                    <matches pattern="^fjgl_.+" string="@{native-library}"/>
                 </not>
             </condition>
 
@@ -1339,6 +1338,18 @@
         <echo file="${release}/build.txt" unless:set="build.revision">FJGL ${build.version}</echo>
 
 
+        <!-- Generate module-info classes for all Java modules -->
+        <java
+            classpath="bin/classes/generator"
+            classname="org.lwjgl.generator.util.ModuleInfoGen"
+            fork="true"
+            failonerror="true"
+            taskname="module-info-gen :: java"
+        >
+            <jvmarg value="-Dmodule.name.list=${module.list}"/>
+            <jvmarg value="-Dmodule.version=${module.version}"/>
+        </java>
+
         <!-- CORE -->
         <sequential>
             <quiet>
@@ -1360,7 +1371,7 @@
                 <jvmarg value="--enable-native-access=ALL-UNNAMED"/>
             </java>
 
-            <release-module name="core" native-library="lwjgl" title="Core"/>
+            <release-module name="core" native-library="fjgl" title="Core"/>
 
             <delete dir="${bin.lwjgl}/core/META-INF/native-image" quiet="true"/>
         </sequential>
@@ -1573,41 +1584,41 @@
         </release-module>
 
         <!-- LLVM -->
-        <release-module name="llvm" native-library="lwjgl_llvm" title="LLVM/Clang" if:true="${binding.llvm}"/>
+        <release-module name="llvm" native-library="fjgl_llvm" title="LLVM/Clang" if:true="${binding.llvm}"/>
 
         <!-- LMDB -->
-        <release-module name="lmdb" native-library="lwjgl_lmdb" title="LMDB" if:true="${binding.lmdb}"/>
+        <release-module name="lmdb" native-library="fjgl_lmdb" title="LMDB" if:true="${binding.lmdb}"/>
 
         <!-- lz4 -->
-        <release-module name="lz4" native-library="lwjgl_lz4" title="lz4" if:true="${binding.lz4}"/>
+        <release-module name="lz4" native-library="fjgl_lz4" title="lz4" if:true="${binding.lz4}"/>
 
         <!-- meshoptimizer -->
-        <release-module name="meshoptimizer" native-library="lwjgl_meshoptimizer" title="meshoptimizer" if:true="${binding.meshoptimizer}"/>
+        <release-module name="meshoptimizer" native-library="fjgl_meshoptimizer" title="meshoptimizer" if:true="${binding.meshoptimizer}"/>
 
         <!-- mimalloc -->
         <release-module name="mimalloc" native-library="mimalloc" title="mimalloc" if:true="${binding.mimalloc}"/>
 
         <!-- msdfgen -->
-        <release-module name="msdfgen" native-library="lwjgl_msdfgen" title="msdfgen" if:true="${binding.msdfgen}"/>
+        <release-module name="msdfgen" native-library="fjgl_msdfgen" title="msdfgen" if:true="${binding.msdfgen}"/>
 
         <!-- NanoVG -->
-        <release-module name="nanovg" native-library="lwjgl_nanovg" title="NanoVG" if:true="${binding.nanovg}"/>
+        <release-module name="nanovg" native-library="fjgl_nanovg" title="NanoVG" if:true="${binding.nanovg}"/>
 
         <!-- Native File Dialog -->
-        <release-module name="nfd" native-library="lwjgl_nfd" title="Native File Dialog" if:true="${binding.nfd}">
+        <release-module name="nfd" native-library="fjgl_nfd" title="Native File Dialog" if:true="${binding.nfd}">
             <natives>
-                <get-release platform="freebsd" arch="x64" file="liblwjgl_nfd_portal.so"/>
+                <get-release platform="freebsd" arch="x64" file="libfjgl_nfd_portal.so"/>
 
-                <get-release platform="linux" arch="x64" file="liblwjgl_nfd_portal.so"/>
-                <get-release platform="linux" arch="arm64" file="liblwjgl_nfd_portal.so"/>
-                <get-release platform="linux" arch="arm32" file="liblwjgl_nfd_portal.so"/>
-                <get-release platform="linux" arch="ppc64le" file="liblwjgl_nfd_portal.so"/>
-                <get-release platform="linux" arch="riscv64" file="liblwjgl_nfd_portal.so"/>
+                <get-release platform="linux" arch="x64" file="libfjgl_nfd_portal.so"/>
+                <get-release platform="linux" arch="arm64" file="libfjgl_nfd_portal.so"/>
+                <get-release platform="linux" arch="arm32" file="libfjgl_nfd_portal.so"/>
+                <get-release platform="linux" arch="ppc64le" file="libfjgl_nfd_portal.so"/>
+                <get-release platform="linux" arch="riscv64" file="libfjgl_nfd_portal.so"/>
             </natives>
         </release-module>
 
         <!-- Nuklear -->
-        <release-module name="nuklear" native-library="lwjgl_nuklear" title="Nuklear" if:true="${binding.nuklear}"/>
+        <release-module name="nuklear" native-library="fjgl_nuklear" title="Nuklear" if:true="${binding.nuklear}"/>
 
         <!-- ODBC -->
         <release-module name="odbc" title="ODBC" if:true="${binding.odbc}"/>
@@ -1651,10 +1662,10 @@
         <release-module name="opencl" title="OpenCL" if:true="${binding.opencl}"/>
 
         <!-- OpenGL -->
-        <release-module name="opengl" native-library="lwjgl_opengl" title="OpenGL" if:true="${binding.opengl}"/>
+        <release-module name="opengl" native-library="fjgl_opengl" title="OpenGL" if:true="${binding.opengl}"/>
 
         <!-- OpenGL ES -->
-        <release-module name="opengles" native-library="lwjgl_opengles" title="OpenGL ES" if:true="${binding.opengles}"/>
+        <release-module name="opengles" native-library="fjgl_opengles" title="OpenGL ES" if:true="${binding.opengles}"/>
 
         <!-- OpenXR -->
         <release-module name="openxr" title="OpenXR" if:true="${binding.openxr}">
@@ -1689,23 +1700,23 @@
         <release-module name="opus" native-library="opus" title="Opus" if:true="${binding.opus}"/>
 
         <!-- Par -->
-        <release-module name="par" native-library="lwjgl_par" title="par" if:true="${binding.par}"/>
+        <release-module name="par" native-library="fjgl_par" title="par" if:true="${binding.par}"/>
 
         <!-- Remotery -->
         <release-module name="remotery" title="remotery" if:true="${binding.remotery}">
             <natives>
-                <get-release platform="freebsd" arch="x64" file="liblwjgl_remotery.so"/>
+                <get-release platform="freebsd" arch="x64" file="libfjgl_remotery.so"/>
 
-                <get-release platform="linux" arch="x64" file="liblwjgl_remotery.so"/>
-                <get-release platform="linux" arch="arm64" file="liblwjgl_remotery.so"/>
-                <get-release platform="linux" arch="arm32" file="liblwjgl_remotery.so"/>
-                <get-release platform="linux" arch="ppc64le" file="liblwjgl_remotery.so"/>
-                <get-release platform="linux" arch="riscv64" file="liblwjgl_remotery.so"/>
+                <get-release platform="linux" arch="x64" file="libfjgl_remotery.so"/>
+                <get-release platform="linux" arch="arm64" file="libfjgl_remotery.so"/>
+                <get-release platform="linux" arch="arm32" file="libfjgl_remotery.so"/>
+                <get-release platform="linux" arch="ppc64le" file="libfjgl_remotery.so"/>
+                <get-release platform="linux" arch="riscv64" file="libfjgl_remotery.so"/>
 
-                <get-release platform="macos" arch="x64" file="liblwjgl_remotery.dylib"/>
-                <get-release platform="macos" arch="arm64" file="liblwjgl_remotery.dylib"/>
+                <get-release platform="macos" arch="x64" file="libfjgl_remotery.dylib"/>
+                <get-release platform="macos" arch="arm64" file="libfjgl_remotery.dylib"/>
 
-                <get-release platform="windows" arch="x64" file="lwjgl_remotery.dll"/>
+                <get-release platform="windows" arch="x64" file="fjgl_remotery.dll"/>
             </natives>
         </release-module>
 
@@ -1713,7 +1724,7 @@
         <release-module name="renderdoc" title="RenderDoc" if:true="${binding.renderdoc}"/>
 
         <!-- rpmalloc -->
-        <release-module name="rpmalloc" native-library="lwjgl_rpmalloc" title="rpmalloc" if:true="${binding.rpmalloc}"/>
+        <release-module name="rpmalloc" native-library="fjgl_rpmalloc" title="rpmalloc" if:true="${binding.rpmalloc}"/>
 
         <!-- SDL -->
         <release-module name="sdl" native-library="SDL3" title="SDL" if:true="${binding.sdl}"/>
@@ -1722,22 +1733,22 @@
         <release-module name="shaderc" native-library="shaderc" title="Shaderc" if:true="${binding.shaderc}"/>
 
         <!-- spng -->
-        <release-module name="spng" native-library="lwjgl_spng" title="spng" if:true="${binding.spng}"/>
+        <release-module name="spng" native-library="fjgl_spng" title="spng" if:true="${binding.spng}"/>
 
         <!-- SPIRV-Cross -->
         <release-module name="spvc" native-library="spirv-cross" title="SPIRV-Cross" if:true="${binding.spvc}"/>
 
         <!-- stb -->
-        <release-module name="stb" native-library="lwjgl_stb" title="stb" if:true="${binding.stb}"/>
+        <release-module name="stb" native-library="fjgl_stb" title="stb" if:true="${binding.stb}"/>
 
         <!-- Tiny OpenEXR -->
-        <release-module name="tinyexr" native-library="lwjgl_tinyexr" title="Tiny OpenEXR" if:true="${binding.tinyexr}"/>
+        <release-module name="tinyexr" native-library="fjgl_tinyexr" title="Tiny OpenEXR" if:true="${binding.tinyexr}"/>
 
         <!-- tiny file dialogs -->
-        <release-module name="tinyfd" native-library="lwjgl_tinyfd" title="tiny file dialogs" if:true="${binding.tinyfd}"/>
+        <release-module name="tinyfd" native-library="fjgl_tinyfd" title="tiny file dialogs" if:true="${binding.tinyfd}"/>
 
         <!-- Vulkan Memory Allocator -->
-        <release-module name="vma" native-library="lwjgl_vma" title="vma" if:true="${binding.vma}"/>
+        <release-module name="vma" native-library="fjgl_vma" title="vma" if:true="${binding.vma}"/>
 
         <!-- Vulkan -->
         <release-module name="vulkan" title="Vulkan" if:true="${binding.vulkan}">
@@ -1750,13 +1761,13 @@
         </release-module>
 
         <!-- xxHash -->
-        <release-module name="xxhash" native-library="lwjgl_xxhash" title="xxHash" if:true="${binding.xxhash}"/>
+        <release-module name="xxhash" native-library="fjgl_xxhash" title="xxHash" if:true="${binding.xxhash}"/>
 
         <!-- yoga -->
-        <release-module name="yoga" native-library="lwjgl_yoga" title="yoga" if:true="${binding.yoga}"/>
+        <release-module name="yoga" native-library="fjgl_yoga" title="yoga" if:true="${binding.yoga}"/>
 
         <!-- zstd -->
-        <release-module name="zstd" native-library="lwjgl_zstd" title="zstd" if:true="${binding.zstd}"/>
+        <release-module name="zstd" native-library="fjgl_zstd" title="zstd" if:true="${binding.zstd}"/>
 
         </parallel>
     </target>

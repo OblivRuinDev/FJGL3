@@ -21,8 +21,8 @@ import static org.lwjgl.system.MemoryUtil.*;
 final class LibPar {
 
     static {
-        String libName = Platform.mapLibraryNameBundled("lwjgl_par");
-        Library.loadSystem(System::load, System::loadLibrary, LibPar.class, "org.lwjgl.par", libName);
+        String libName = Platform.mapLibraryNameBundled("fjgl_par");
+        Library.loadSystem(System::load, System::loadLibrary, LibPar.class, "dev.oblivruin.fjgl.par", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

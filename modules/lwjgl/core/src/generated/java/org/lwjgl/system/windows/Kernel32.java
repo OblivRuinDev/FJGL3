@@ -21,7 +21,7 @@ import static org.lwjgl.system.JNI.*;
 
 public class Kernel32 {
 
-    private static final SharedLibrary KERNEL32 = Library.loadNative(Kernel32.class, "org.lwjgl", "kernel32");
+    private static final SharedLibrary KERNEL32 = Library.loadNative(Kernel32.class, "dev.oblivruin.fjgl", "kernel32");
 
     /** Contains the function pointers loaded from the kernel32 {@link SharedLibrary}. */
     public static final class Functions {

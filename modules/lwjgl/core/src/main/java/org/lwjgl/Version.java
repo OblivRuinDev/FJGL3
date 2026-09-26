@@ -7,6 +7,7 @@ package org.lwjgl;
 import org.jspecify.annotations.*;
 
 import java.io.*;
+import java.lang.module.*;
 import java.net.*;
 import java.util.*;
 import java.util.jar.*;
@@ -28,7 +29,42 @@ public final class Version {
         '.' + VERSION_MINOR +
         '.' + VERSION_REVISION + BUILD_TYPE.postfix;
 
-    private static final String version = versionPlain + VersionImpl.find();
+    private static final String version;
+    static {
+        String  result    = "-snapshot";
+        Package org_lwjgl = Version.class.getPackage();
+
+        String specVersion = org_lwjgl.getSpecificationVersion();
+        String implVersion = org_lwjgl.getImplementationVersion();
+        if (specVersion != null && implVersion != null) {
+            result = createImplementation(specVersion, implVersion);
+        } else lab: {
+            Module module = Version.class.getModule();
+            if ("dev.oblivruin.fjgl".equals(module.getName())) {
+                String moduleVersion = module.getDescriptor()
+                    .version()
+                    .map(ModuleDescriptor.Version::toString)
+                    .orElse(null);
+
+                if (moduleVersion != null) {
+                    int plusIndex = moduleVersion.indexOf('+');
+                    if (plusIndex != -1) {
+                        result = createImplementation(
+                            moduleVersion.substring(0, plusIndex),
+                            moduleVersion.substring(plusIndex + 1)
+                        );
+                        break lab;
+                    }
+                }
+            }
+            String version1 = findImplementationFromManifest();
+            if (version1 != null) {
+                result = version1;
+            }
+        }
+
+        version = versionPlain + result;
+    }
 
     private Version() {
     }
@@ -103,11 +139,11 @@ public final class Version {
         try (InputStream stream = url.openStream()) {
             Attributes attribs = new Manifest(stream).getMainAttributes();
 
-            // make sure this is the manifest from lwjgl.jar
-            if (!"lwjgl".equals(attribs.getValue(Attributes.Name.IMPLEMENTATION_TITLE))) {
+            // make sure this is the manifest from fjgl.jar
+            if (!"fjgl".equals(attribs.getValue(Attributes.Name.IMPLEMENTATION_TITLE))) {
                 return null;
             }
-            if (!"lwjgl.org".equals(attribs.getValue(Attributes.Name.IMPLEMENTATION_VENDOR))) {
+            if (!"OblivRuinDev".equals(attribs.getValue(Attributes.Name.IMPLEMENTATION_VENDOR))) {
                 return null;
             }
 

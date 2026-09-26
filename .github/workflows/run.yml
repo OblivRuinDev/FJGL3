@@ -150,10 +150,10 @@ jobs:
       - name: Run tests
         run: |
           source /opt/rh/gcc-toolset-15/enable || true
-            ant -emacs tests -Djvmargs="${{ env.RUNTIME_EXPORTS }}"
+          ant -emacs tests -Djvmargs="${{ env.RUNTIME_EXPORTS }}"
 
       - name: Print test results
-        run: cat bin/test/testng-results.xml
+        run: cat bin/test/testng-results.xml 2>/dev/null || true
         if: failure()
 
       - name: Run demo with OpenJDK
@@ -174,8 +174,8 @@ jobs:
           bin/libs/native:\
           config/native-image \
           org.lwjgl.demo.util.lz4.HelloLZ4 --verbose --no-fallback \
+          --enable-native-access=ALL-UNNAMED \
           ${{ env.COMPILE_EXPORTS }}
-          --enable-native-access=ALL-UNNAMED
       - name: Run demo with GraalVM JIT
         if: ${{ inputs.buildType == 'build' }}
         run: JAVA_HOME=jdk-graalvm ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4 -Djvmargs="${{ env.RUNTIME_EXPORTS }}"
@@ -415,7 +415,7 @@ jobs:
         shell: cpa.sh {0} # zizmor: ignore[misfeature] cpa.sh runs the step inside the FreeBSD VM
         run: ant -emacs tests -Djvmargs="${{ env.RUNTIME_EXPORTS }}"
       - name: Print test results
-        run: cat bin/test/testng-results.xml
+        run: cat bin/test/testng-results.xml 2>/dev/null || true
         if: failure()
       - name: Run demo with OpenJDK
         if: ${{ inputs.buildType == 'build' }}
@@ -490,7 +490,7 @@ jobs:
       - name: Run tests
         run: ant -emacs tests -Djvmargs="${{ env.RUNTIME_EXPORTS }}"
       - name: Print test results
-        run: cat bin/test/testng-results.xml
+        run: cat bin/test/testng-results.xml 2>/dev/null || true
         if: failure()
 
       - name: Run demo with OpenJDK
@@ -510,8 +510,8 @@ jobs:
           bin/libs/native:\
           config/native-image \
           org.lwjgl.demo.util.lz4.HelloLZ4 --verbose --no-fallback \
+          --enable-native-access=ALL-UNNAMED \
           ${{ env.COMPILE_EXPORTS }}
-          --enable-native-access=ALL-UNNAMED
       - name: Run demo with GraalVM JIT
         if: ${{ inputs.buildType == 'build' }}
         run: JAVA_HOME=jdk-graalvm/Home ant demo -Dclass=org.lwjgl.demo.util.lz4.HelloLZ4 -Djvmargs="${{ env.RUNTIME_EXPORTS }}"
@@ -610,7 +610,7 @@ jobs:
         if: ${{ matrix.ARCH != 'arm64' }}
         run: ant -emacs tests -Djvmargs="${{ env.RUNTIME_EXPORTS }}"
       - name: Print test results
-        run: type bin\test\testng-results.xml
+        run: if exist bin\test\testng-results.xml type bin\test\testng-results.xml
         if: failure()
 
       - name: Run demo with OpenJDK
@@ -635,8 +635,8 @@ jobs:
           bin/libs/native;^
           config/native-image ^
           org.lwjgl.demo.util.lz4.HelloLZ4 --verbose --no-fallback ^
+          --enable-native-access=ALL-UNNAMED ^
           ${{ env.COMPILE_EXPORTS }}
-          --enable-native-access=ALL-UNNAMED
       - name: Run demo with GraalVM JIT
         if: ${{ inputs.buildType == 'build' && matrix.ARCH == 'x64' }}
         run: |

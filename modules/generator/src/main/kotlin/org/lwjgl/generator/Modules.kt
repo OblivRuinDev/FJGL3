@@ -400,7 +400,7 @@ enum class Module(
         """,
         library = JNILibrary.create(
             "LibNFD",
-            libraryName = "(Platform.get() == Platform.FREEBSD || Platform.get() == Platform.LINUX) && Configuration.NFD_LINUX_PORTAL.get(false) ? \"lwjgl_nfd_portal\" : \"lwjgl_nfd\"",
+            libraryName = "(Platform.get() == Platform.FREEBSD || Platform.get() == Platform.LINUX) && Configuration.NFD_LINUX_PORTAL.get(false) ? \"fjgl_nfd_portal\" : \"fjgl_nfd\"",
             setupAllocator = true
         )
     ),
@@ -792,7 +792,7 @@ git branch -D @{-1}""")}"""}()}
         "org.lwjgl.util.tinyfd",
         "Contains bindings to ${url("https://sourceforge.net/projects/tinyfiledialogs/", "tiny file dialogs")}.",
         library = JNILibrary.simple(
-            """Library.loadSystem(System::load, System::loadLibrary, TinyFileDialogs.class, "org.lwjgl.tinyfd", Platform.mapLibraryNameBundled("lwjgl_tinyfd"));
+            """Library.loadSystem(System::load, System::loadLibrary, TinyFileDialogs.class, "org.lwjgl.tinyfd", Platform.mapLibraryNameBundled("fjgl_tinyfd"));
         if (Platform.get() == Platform.WINDOWS) {
             tinyfd_setGlobalInt("tinyfd_winUtf8", 1);
         }"""
@@ -922,7 +922,7 @@ git branch -D @{-1}""")}"""}()}
         get() = key.startsWith("core") || System.getProperty("binding.$key", "false")!!.toBoolean()
 
     val path = if (name.startsWith("CORE_")) "core" else name.lowercase()
-    val java = if (name.startsWith("CORE_")) "org.lwjgl" else "org.lwjgl.${name.lowercase()}"
+    val java = if (name.startsWith("CORE_")) "dev.oblivruin.fjgl" else "dev.oblivruin.fjgl.${name.lowercase()}"
 
     internal val packageKotlin
         get() = name.let {
@@ -960,7 +960,7 @@ private class JNILibrarySimple(private val expression: String?) : JNILibrary {
     override fun expression(module: Module) = if (expression != null)
         expression
     else
-        "lwjgl_${module.key}"
+        "fjgl_${module.key}"
     override fun configure(module: Module) = Unit
 }
 
@@ -998,7 +998,7 @@ private class JNILibraryWithInit constructor(
                     """${access.modifier}final class $className {
 
     static {
-        String libName = Platform.mapLibraryNameBundled(${libraryName ?: "\"lwjgl_${module.key}\""});
+        String libName = Platform.mapLibraryNameBundled(${libraryName ?: "\"fjgl_${module.key}\""});
         Library.loadSystem(System::load, System::loadLibrary, $className.class, "${module.java}", libName);${if (setupAllocator) """
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));

@@ -32,7 +32,7 @@ import java.util.regex.*;
 
 public class HWLoc {
 
-    private static final SharedLibrary HWLOC = Library.loadNative(HWLoc.class, "org.lwjgl.hwloc", Configuration.HWLOC_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("hwloc")), true);
+    private static final SharedLibrary HWLOC = Library.loadNative(HWLoc.class, "dev.oblivruin.fjgl.hwloc", Configuration.HWLOC_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("hwloc")), true);
 
     /** Contains the function pointers loaded from the HWLOC {@link SharedLibrary}. */
     public static final class Functions {
