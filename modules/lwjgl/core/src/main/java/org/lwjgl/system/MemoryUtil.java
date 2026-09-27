@@ -11,6 +11,7 @@
  */
 package org.lwjgl.system;
 
+import jdk.internal.vm.annotation.*;
 import org.jspecify.annotations.*;
 import org.lwjgl.*;
 import org.lwjgl.system.MemoryManage.*;
@@ -804,21 +805,21 @@ public final class MemoryUtil {
      *
      * @return the memory address
      */
-    public static long memAddress0(Buffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
+    @ForceInline public static long memAddress0(Buffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
     /** {@code ByteBuffer} version of {@link #memAddress0(Buffer)}. */
-    public static long memAddress0(ByteBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
+    @ForceInline public static long memAddress0(ByteBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
     /** {@code ShortBuffer} version of {@link #memAddress0(Buffer)}. */
-    public static long memAddress0(ShortBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
+    @ForceInline public static long memAddress0(ShortBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
     /** {@code CharBuffer} version of {@link #memAddress0(Buffer)}. */
-    public static long memAddress0(CharBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
+    @ForceInline public static long memAddress0(CharBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
     /** {@code IntBuffer} version of {@link #memAddress0(Buffer)}. */
-    public static long memAddress0(IntBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
+    @ForceInline public static long memAddress0(IntBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
     /** {@code LongBuffer} version of {@link #memAddress0(Buffer)}. */
-    public static long memAddress0(LongBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
+    @ForceInline public static long memAddress0(LongBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
     /** {@code FloatBuffer} version of {@link #memAddress0(Buffer)}. */
-    public static long memAddress0(FloatBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
+    @ForceInline public static long memAddress0(FloatBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
     /** {@code DoubleBuffer} version of {@link #memAddress0(Buffer)}. */
-    public static long memAddress0(DoubleBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
+    @ForceInline public static long memAddress0(DoubleBuffer buffer) { return UNSAFE.getLong(buffer, ADDRESS); }
 
     // --- [ Buffer address ] ---
 
@@ -847,7 +848,7 @@ public final class MemoryUtil {
         return memAddress0(buffer) + Integer.toUnsignedLong(position);
     }
 
-    private static long address(int position, int elementShift, long address) {
+    @ForceInline private static long address(int position, int elementShift, long address) {
         return address + ((position & 0xFFFF_FFFFL) << elementShift);
     }
 
@@ -2617,30 +2618,34 @@ public final class MemoryUtil {
 
     // ---
 
-    public static boolean memGetBoolean(long ptr) { return UNSAFE.getBoolean(null, ptr); }
-    public static byte memGetByte(long ptr)       { return UNSAFE.getByte   (null, ptr); }
-    public static char memGetChar(long ptr)       { return UNSAFE.getChar   (null, ptr); }
-    public static short memGetShort(long ptr)     { return UNSAFE.getShort  (null, ptr); }
-    public static int memGetInt(long ptr)         { return UNSAFE.getInt    (null, ptr); }
-    public static long memGetLong(long ptr)       { return UNSAFE.getLong   (null, ptr); }
-    public static float memGetFloat(long ptr)     { return UNSAFE.getFloat  (null, ptr); }
-    public static double memGetDouble(long ptr)   { return UNSAFE.getDouble (null, ptr); }
-    public static long memGetAddress(long ptr)    { return UNSAFE.getAddress(ptr); }
-    public static long memGetCLong(long ptr) {
-        return CLONG_SIZE == 8 ? UNSAFE.getLong(null, ptr)
-                               : UNSAFE.getInt (null, ptr);
+    @ForceInline public static boolean memGetBoolean(long ptr) { return UNSAFE.getBoolean(null, ptr); }
+    @ForceInline public static byte memGetByte(long ptr)       { return UNSAFE.getByte   (null, ptr); }
+    @ForceInline public static char memGetChar(long ptr)       { return UNSAFE.getChar   (null, ptr); }
+    @ForceInline public static short memGetShort(long ptr)     { return UNSAFE.getShort  (null, ptr); }
+    @ForceInline public static int memGetInt(long ptr)         { return UNSAFE.getInt    (null, ptr); }
+    @ForceInline public static long memGetLong(long ptr)       { return UNSAFE.getLong   (null, ptr); }
+    @ForceInline public static float memGetFloat(long ptr)     { return UNSAFE.getFloat  (null, ptr); }
+    @ForceInline public static double memGetDouble(long ptr)   { return UNSAFE.getDouble (null, ptr); }
+    @ForceInline public static long memGetAddress(long ptr)    {
+        return BITS64 ? UNSAFE.getLong(null, ptr) : ((long) UNSAFE.getInt(null, ptr)) & 0xFFFFFFFFL;
+    }
+    @ForceInline public static long memGetCLong(long ptr) {
+        return CLONG_SIZE == 8 ? UNSAFE.getLong(null, ptr) : UNSAFE.getInt(null, ptr);
     }
 
-    public static void memPutBoolean(long ptr, boolean value) { UNSAFE.putBoolean(null, ptr, value); }
-    public static void memPutByte(long ptr, byte value)       { UNSAFE.putByte   (null, ptr, value); }
-    public static void memPutChar(long ptr, char value)       { UNSAFE.putChar   (null, ptr, value); }
-    public static void memPutShort(long ptr, short value)     { UNSAFE.putShort  (null, ptr, value); }
-    public static void memPutInt(long ptr, int value)         { UNSAFE.putInt    (null, ptr, value); }
-    public static void memPutLong(long ptr, long value)       { UNSAFE.putLong   (null, ptr, value); }
-    public static void memPutFloat(long ptr, float value)     { UNSAFE.putFloat  (null, ptr, value); }
-    public static void memPutDouble(long ptr, double value)   { UNSAFE.putDouble (null, ptr, value); }
-    public static void memPutAddress(long ptr, long value)    { UNSAFE.putAddress(null, ptr, value); }
-    public static void memPutCLong(long ptr, long value) {
+    @ForceInline public static void memPutBoolean(long ptr, boolean value) { UNSAFE.putBoolean(null, ptr, value); }
+    @ForceInline public static void memPutByte(long ptr, byte value)       { UNSAFE.putByte   (null, ptr, value); }
+    @ForceInline public static void memPutChar(long ptr, char value)       { UNSAFE.putChar   (null, ptr, value); }
+    @ForceInline public static void memPutShort(long ptr, short value)     { UNSAFE.putShort  (null, ptr, value); }
+    @ForceInline public static void memPutInt(long ptr, int value)         { UNSAFE.putInt    (null, ptr, value); }
+    @ForceInline public static void memPutLong(long ptr, long value)       { UNSAFE.putLong   (null, ptr, value); }
+    @ForceInline public static void memPutFloat(long ptr, float value)     { UNSAFE.putFloat  (null, ptr, value); }
+    @ForceInline public static void memPutDouble(long ptr, double value)   { UNSAFE.putDouble (null, ptr, value); }
+    @ForceInline public static void memPutAddress(long ptr, long value)    {
+        if (BITS64) UNSAFE.putLong(null, ptr, value);
+        else        UNSAFE.putInt(null, ptr, (int)value);
+    }
+    @ForceInline public static void memPutCLong(long ptr, long value) {
         if (CLONG_SIZE == 8) UNSAFE.putLong(null, ptr, value);
         else                 UNSAFE.putInt(null, ptr, (int)value);
     }
@@ -2648,32 +2653,32 @@ public final class MemoryUtil {
     // Used internally for packed struct member access
     // see java.lang.invoke.VarHandleSegmentAsDoubles
     // see java.lang.invoke.VarHandleSegmentAsFloat
-    public static char memGetCharUnaligned(long ptr)                 { return UNSAFE.getCharUnaligned(null, ptr); }
-    public static short memGetShortUnaligned(long ptr)               { return UNSAFE.getShortUnaligned(null, ptr); }
-    public static int memGetIntUnaligned(long ptr)                   { return UNSAFE.getIntUnaligned(null, ptr); }
-    public static long memGetLongUnaligned(long ptr)                 { return UNSAFE.getLongUnaligned(null, ptr); }
-    public static float memGetFloatUnaligned(long ptr)               { return Float.intBitsToFloat(UNSAFE.getIntUnaligned(null, ptr)); }
-    public static double memGetDoubleUnaligned(long ptr)             { return Double.longBitsToDouble(UNSAFE.getLongUnaligned(null, ptr)); }
-    public static long memGetAddressUnaligned(long ptr) {
+    @ForceInline public static char memGetCharUnaligned(long ptr)                 { return UNSAFE.getCharUnaligned(null, ptr); }
+    @ForceInline public static short memGetShortUnaligned(long ptr)               { return UNSAFE.getShortUnaligned(null, ptr); }
+    @ForceInline public static int memGetIntUnaligned(long ptr)                   { return UNSAFE.getIntUnaligned(null, ptr); }
+    @ForceInline public static long memGetLongUnaligned(long ptr)                 { return UNSAFE.getLongUnaligned(null, ptr); }
+    @ForceInline public static float memGetFloatUnaligned(long ptr)               { return Float.intBitsToFloat(UNSAFE.getIntUnaligned(null, ptr)); }
+    @ForceInline public static double memGetDoubleUnaligned(long ptr)             { return Double.longBitsToDouble(UNSAFE.getLongUnaligned(null, ptr)); }
+    @ForceInline public static long memGetAddressUnaligned(long ptr) {
         return BITS64 ? UNSAFE.getLongUnaligned(null, ptr)
                       : UNSAFE.getIntUnaligned (null, ptr) & 0xFFFFFFFFL;
     }
-    public static long memGetCLongUnaligned(long ptr) {
+    @ForceInline public static long memGetCLongUnaligned(long ptr) {
         return CLONG_SIZE == 8 ? UNSAFE.getLongUnaligned(null, ptr)
                                : UNSAFE.getIntUnaligned (null, ptr);
     }
 
-    public static void memPutCharUnaligned(long ptr, char value)     { UNSAFE.putCharUnaligned(null, ptr, value); }
-    public static void memPutShortUnaligned(long ptr, short value)   { UNSAFE.putShortUnaligned(null, ptr, value); }
-    public static void memPutIntUnaligned(long ptr, int value)       { UNSAFE.putIntUnaligned(null, ptr, value); }
-    public static void memPutLongUnaligned(long ptr, long value)     { UNSAFE.putLongUnaligned(null, ptr, value); }
-    public static void memPutFloatUnaligned(long ptr, float value)   { UNSAFE.putIntUnaligned(null, ptr, Float.floatToRawIntBits(value)); }
-    public static void memPutDoubleUnaligned(long ptr, double value) { UNSAFE.putLongUnaligned(null, ptr, Double.doubleToRawLongBits(value)); }
-    public static void memPutAddressUnaligned(long ptr, long value) {
+    @ForceInline public static void memPutCharUnaligned(long ptr, char value)     { UNSAFE.putCharUnaligned(null, ptr, value); }
+    @ForceInline public static void memPutShortUnaligned(long ptr, short value)   { UNSAFE.putShortUnaligned(null, ptr, value); }
+    @ForceInline public static void memPutIntUnaligned(long ptr, int value)       { UNSAFE.putIntUnaligned(null, ptr, value); }
+    @ForceInline public static void memPutLongUnaligned(long ptr, long value)     { UNSAFE.putLongUnaligned(null, ptr, value); }
+    @ForceInline public static void memPutFloatUnaligned(long ptr, float value)   { UNSAFE.putIntUnaligned(null, ptr, Float.floatToRawIntBits(value)); }
+    @ForceInline public static void memPutDoubleUnaligned(long ptr, double value) { UNSAFE.putLongUnaligned(null, ptr, Double.doubleToRawLongBits(value)); }
+    @ForceInline public static void memPutAddressUnaligned(long ptr, long value) {
         if (BITS64) UNSAFE.putLongUnaligned(null, ptr,      value);
         else        UNSAFE.putIntUnaligned (null, ptr, (int)value);
     }
-    public static void memPutCLongUnaligned(long ptr, long value) {
+    @ForceInline public static void memPutCLongUnaligned(long ptr, long value) {
         if (CLONG_SIZE == 8) UNSAFE.putLongUnaligned(null, ptr,      value);
         else                 UNSAFE.putIntUnaligned (null, ptr, (int)value);
     }

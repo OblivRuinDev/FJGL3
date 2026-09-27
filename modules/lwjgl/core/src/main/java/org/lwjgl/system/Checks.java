@@ -4,6 +4,7 @@
  */
 package org.lwjgl.system;
 
+import jdk.internal.vm.annotation.*;
 import org.jspecify.annotations.*;
 import org.lwjgl.*;
 
@@ -65,13 +66,13 @@ public final class Checks {
     private Checks() {
     }
 
-    public static int lengthSafe(short @Nullable [] array)            { return array == null ? 0 : array.length; }
-    public static int lengthSafe(int @Nullable [] array)              { return array == null ? 0 : array.length; }
-    public static int lengthSafe(long @Nullable [] array)             { return array == null ? 0 : array.length; }
-    public static int lengthSafe(float @Nullable [] array)            { return array == null ? 0 : array.length; }
-    public static int lengthSafe(double @Nullable [] array)           { return array == null ? 0 : array.length; }
-    public static int remainingSafe(@Nullable Buffer buffer)          { return buffer == null ? 0 : buffer.remaining(); }
-    public static int remainingSafe(@Nullable CustomBuffer<?> buffer) { return buffer == null ? 0 : buffer.remaining(); }
+    @ForceInline public static int lengthSafe(short @Nullable [] array)            { return array == null ? 0 : array.length; }
+    @ForceInline public static int lengthSafe(int @Nullable [] array)              { return array == null ? 0 : array.length; }
+    @ForceInline public static int lengthSafe(long @Nullable [] array)             { return array == null ? 0 : array.length; }
+    @ForceInline public static int lengthSafe(float @Nullable [] array)            { return array == null ? 0 : array.length; }
+    @ForceInline public static int lengthSafe(double @Nullable [] array)           { return array == null ? 0 : array.length; }
+    @ForceInline public static int remainingSafe(@Nullable Buffer buffer)          { return buffer == null ? 0 : buffer.remaining(); }
+    @ForceInline public static int remainingSafe(@Nullable CustomBuffer<?> buffer) { return buffer == null ? 0 : buffer.remaining(); }
 
     /**
      * Checks if any of the specified functions pointers is {@code NULL}.
