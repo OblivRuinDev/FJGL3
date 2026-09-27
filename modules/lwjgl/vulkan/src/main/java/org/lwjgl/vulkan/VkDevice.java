@@ -69,7 +69,7 @@ public class VkDevice extends DispatchableHandleDevice {
         }
 
         return new VKCapabilitiesDevice(functionName -> {
-            long address = callPPP(handle, memAddress(functionName), GetDeviceProcAddr);
+            long address = invokePPP(handle, memAddress(functionName), GetDeviceProcAddr);
             if (address == NULL && Checks.DEBUG_FUNCTIONS) {
                 apiLogMissing("VK device", functionName);
             }

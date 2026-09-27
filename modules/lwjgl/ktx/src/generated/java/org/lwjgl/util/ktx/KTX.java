@@ -2029,7 +2029,7 @@ public class KTX {
     // --- [ vtbl macros ] ---
 
     public static void ktxTexture_Destroy(@NativeType("ktxTexture *") ktxTexture This) {
-        callPV(This.address(), This.vtbl().Destroy());
+        invokePV(This.address(), This.vtbl().Destroy());
     }
 
     @NativeType("KTX_error_code")
@@ -2037,47 +2037,47 @@ public class KTX {
         if (CHECKS) {
             check(pOffset, 1);
         }
-        return callPPI(This.address(), level, layer, faceSlice, memAddress(pOffset), This.vtbl().GetImageOffset());
+        return invokePPI(This.address(), level, layer, faceSlice, memAddress(pOffset), This.vtbl().GetImageOffset());
     }
 
     @NativeType("ktx_size_t")
     public static long ktxTexture_GetDataSizeUncompressed(@NativeType("ktxTexture *") ktxTexture This) {
-        return callPP(This.address(), This.vtbl().GetDataSizeUncompressed());
+        return invokePP(This.address(), This.vtbl().GetDataSizeUncompressed());
     }
 
     @NativeType("ktx_size_t")
     public static long ktxTexture_GetImageSize(@NativeType("ktxTexture *") ktxTexture This, @NativeType("ktx_uint32_t") int level) {
-        return callPP(This.address(), level, This.vtbl().GetImageSize());
+        return invokePP(This.address(), level, This.vtbl().GetImageSize());
     }
 
     @NativeType("ktx_size_t")
     public static long ktxTexture_GetLevelSize(@NativeType("ktxTexture *") ktxTexture This, @NativeType("ktx_uint32_t") int level) {
-        return callPP(This.address(), level, This.vtbl().GetLevelSize());
+        return invokePP(This.address(), level, This.vtbl().GetLevelSize());
     }
 
     @NativeType("KTX_error_code")
     public static int ktxTexture_IterateLevels(@NativeType("ktxTexture *") ktxTexture This, @NativeType("PFNKTXITERCB") PFNKTXITERCBI iterCb, @NativeType("void *") long userdata) {
-        return callPPPI(This.address(), iterCb.address(), userdata, This.vtbl().IterateLevels());
+        return invokePPPI(This.address(), iterCb.address(), userdata, This.vtbl().IterateLevels());
     }
 
     @NativeType("KTX_error_code")
     public static int ktxTexture_IterateLoadLevelFaces(@NativeType("ktxTexture *") ktxTexture This, @NativeType("PFNKTXITERCB") PFNKTXITERCBI iterCb, @NativeType("void *") long userdata) {
-        return callPPPI(This.address(), iterCb.address(), userdata, This.vtbl().IterateLoadLevelFaces());
+        return invokePPPI(This.address(), iterCb.address(), userdata, This.vtbl().IterateLoadLevelFaces());
     }
 
     @NativeType("KTX_error_code")
     public static int ktxTexture_LoadImageData(@NativeType("ktxTexture *") ktxTexture This, @NativeType("ktx_uint8_t *") ByteBuffer pBuffer) {
-        return callPPPI(This.address(), memAddress(pBuffer), pBuffer.remaining(), This.vtbl().LoadImageData());
+        return invokePPPI(This.address(), memAddress(pBuffer), pBuffer.remaining(), This.vtbl().LoadImageData());
     }
 
     @NativeType("ktx_bool_t")
     public static boolean ktxTexture_NeedsTranscoding(@NativeType("ktxTexture *") ktxTexture This) {
-        return callPZ(This.address(), This.vtbl().NeedsTranscoding());
+        return invokePZ(This.address(), This.vtbl().NeedsTranscoding());
     }
 
     @NativeType("KTX_error_code")
     public static int ktxTexture_SetImageFromMemory(@NativeType("ktxTexture *") ktxTexture This, @NativeType("ktx_uint32_t") int level, @NativeType("ktx_uint32_t") int layer, @NativeType("ktx_uint32_t") int faceSlice, @NativeType("ktx_uint8_t const *") ByteBuffer src) {
-        return callPPPI(This.address(), level, layer, faceSlice, memAddress(src), src.remaining(), This.vtbl().SetImageFromMemory());
+        return invokePPPI(This.address(), level, layer, faceSlice, memAddress(src), (long) src.remaining(), This.vtbl().SetImageFromMemory());
     }
 
     @NativeType("KTX_error_code")
@@ -2085,7 +2085,7 @@ public class KTX {
         if (CHECKS) {
             checkNT1(dstname);
         }
-        return callPPI(This.address(), memAddress(dstname), This.vtbl().WriteToNamedFile());
+        return invokePPI(This.address(), memAddress(dstname), This.vtbl().WriteToNamedFile());
     }
 
     @NativeType("KTX_error_code")
@@ -2094,7 +2094,7 @@ public class KTX {
         try {
             stack.nUTF8(dstname, true);
             long dstnameEncoded = stack.getPointerAddress();
-            return callPPI(This.address(), dstnameEncoded, This.vtbl().WriteToNamedFile());
+            return invokePPI(This.address(), dstnameEncoded, This.vtbl().WriteToNamedFile());
         } finally {
             stack.setPointer(stackPointer);
         }
@@ -2106,7 +2106,7 @@ public class KTX {
             check(bytes, 1);
             check(size, 1);
         }
-        return callPPPI(This.address(), memAddress(bytes), memAddress(size), This.vtbl().WriteToMemory());
+        return invokePPPI(This.address(), memAddress(bytes), memAddress(size), This.vtbl().WriteToMemory());
     }
 
     @NativeType("KTX_error_code")
@@ -2114,7 +2114,7 @@ public class KTX {
         if (CHECKS) {
             check(dststr);
         }
-        return callPPI(This.address(), dststr, This.vtbl().WriteToStream());
+        return invokePPI(This.address(), dststr, This.vtbl().WriteToStream());
     }
 
 }

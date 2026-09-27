@@ -131,7 +131,7 @@ public final class XR {
             try (MemoryStack stack = stackPush()) {
                 PointerBuffer pp = stack.mallocPointer(1);
 
-                int result = callPPPI(NULL, memAddress(stack.ASCII(name)), pp.address(), xrGetInstanceProcAddr);
+                int result = invokePPPI(NULL, memAddress(stack.ASCII(name)), pp.address(), xrGetInstanceProcAddr);
                 if (result != XR_SUCCESS && required) {
                     throw new IllegalArgumentException("A critical function is missing. Make sure that OpenXR is available.");
                 }

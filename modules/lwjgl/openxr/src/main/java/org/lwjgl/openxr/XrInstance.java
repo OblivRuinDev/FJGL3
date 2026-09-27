@@ -37,7 +37,7 @@ public class XrInstance extends DispatchableHandle {
             try (MemoryStack stack = stackPush()) {
                 PointerBuffer pp = stack.mallocPointer(1);
 
-                int result = callPPPI(handle, memAddress(functionName), pp.address(), XR.getGlobalCommands().xrGetInstanceProcAddr);
+                int result = invokePPPI(handle, memAddress(functionName), pp.address(), XR.getGlobalCommands().xrGetInstanceProcAddr);
                 if (result != XR_SUCCESS && Checks.DEBUG_FUNCTIONS) {
                     apiLogMissing("XR", functionName);
                 }

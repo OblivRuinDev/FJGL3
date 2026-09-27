@@ -140,7 +140,7 @@ public final class GLES {
 
             @Override
             public long getFunctionAddress(ByteBuffer functionName) {
-                long address = GetProcAddress == NULL ? NULL : callPP(memAddress(functionName), GetProcAddress);
+                long address = GetProcAddress == NULL ? NULL : invokePP(memAddress(functionName), GetProcAddress);
                 if (address == NULL) {
                     address = library.getFunctionAddress(functionName);
                 }
@@ -319,7 +319,7 @@ public final class GLES {
             );
         }
 
-        int errorCode = callI(GetError);
+        int errorCode = invokeI(GetError);
         if (errorCode != GL_NO_ERROR) {
             apiLog(String.format("An OpenGL ES context was in an error state before the creation of its capabilities instance. Error: [0x%X]", errorCode));
         }
@@ -331,15 +331,15 @@ public final class GLES {
             IntBuffer pi = stack.ints(0);
 
             // Try the 3.0+ version query first
-            callPV(GL_MAJOR_VERSION, memAddress(pi), GetIntegerv);
-            if (callI(GetError) == GL_NO_ERROR && 3 <= (majorVersion = pi.get(0))) {
+            invokePV(GL_MAJOR_VERSION, memAddress(pi), GetIntegerv);
+            if (invokeI(GetError) == GL_NO_ERROR && 3 <= (majorVersion = pi.get(0))) {
                 // We're on an 3.0+ context.
-                callPV(GL_MINOR_VERSION, memAddress(pi), GetIntegerv);
+                invokePV(GL_MINOR_VERSION, memAddress(pi), GetIntegerv);
                 minorVersion = pi.get(0);
             } else {
                 // Fallback to the string query.
-                String versionString = memUTF8Safe(callP(GL_VERSION, GetString));
-                if (versionString == null || callI(GetError) != GL_NO_ERROR) {
+                String versionString = memUTF8Safe(invokeP(GL_VERSION, GetString));
+                if (versionString == null || invokeI(GetError) != GL_NO_ERROR) {
                     throw new IllegalStateException("There is no OpenGL ES context current in the current thread.");
                 }
 
@@ -382,7 +382,7 @@ public final class GLES {
 
         if (majorVersion < 3) {
             // Parse EXTENSIONS string
-            String extensionsString = memASCIISafe(callP(GL_EXTENSIONS, GetString));
+            String extensionsString = memASCIISafe(invokeP(GL_EXTENSIONS, GetString));
             if (extensionsString != null) {
                 StringTokenizer tokenizer = new StringTokenizer(extensionsString);
                 while (tokenizer.hasMoreTokens()) {
@@ -396,13 +396,13 @@ public final class GLES {
             try (MemoryStack stack = stackPush()) {
                 IntBuffer pi = stack.ints(0);
 
-                callPV(GL_NUM_EXTENSIONS, memAddress(pi), GetIntegerv);
+                invokePV(GL_NUM_EXTENSIONS, memAddress(pi), GetIntegerv);
                 extensionCount = pi.get(0);
             }
 
             long GetStringi = apiGetFunctionAddress(functionProvider, "glGetStringi");
             for (int i = 0; i < extensionCount; i++) {
-                supportedExtensions.add(memASCII(callP(GL_EXTENSIONS, i, GetStringi)));
+                supportedExtensions.add(memASCII(invokeP(GL_EXTENSIONS, i, GetStringi)));
             }
         }
         apiFilterExtensions(supportedExtensions, Configuration.OPENGLES_EXTENSION_FILTER);

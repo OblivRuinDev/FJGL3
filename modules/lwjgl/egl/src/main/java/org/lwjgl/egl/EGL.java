@@ -76,7 +76,7 @@ public final class EGL {
 
                 @Override
                 public long getFunctionAddress(ByteBuffer functionName) {
-                    long address = callPP(memAddress(functionName), eglGetProcAddress);
+                    long address = invokePP(memAddress(functionName), eglGetProcAddress);
                     if (address == NULL) {
                         address = library.getFunctionAddress(functionName);
                         if (address == NULL && Checks.DEBUG_FUNCTIONS) {
@@ -155,14 +155,14 @@ public final class EGL {
         long QueryString = functionProvider.getFunctionAddress("eglQueryString");
 
         // Available on EGL 1.5 or EGL_EXT_client_extensions
-        long extensionsString = callPP(EGL_NO_DISPLAY, EGL_EXTENSIONS, QueryString);
+        long extensionsString = invokePP(EGL_NO_DISPLAY, EGL_EXTENSIONS, QueryString);
         if (extensionsString == NULL) {
-            callI(functionProvider.getFunctionAddress("eglGetError")); // clear error
+            invokeI(functionProvider.getFunctionAddress("eglGetError")); // clear error
         } else {
             // Available on EGL 1.5 only
-            String versionString = memASCIISafe(callPP(EGL_NO_DISPLAY, EGL_VERSION, QueryString));
+            String versionString = memASCIISafe(invokePP(EGL_NO_DISPLAY, EGL_VERSION, QueryString));
             if (versionString == null) {
-                callI(functionProvider.getFunctionAddress("eglGetError")); // clear error
+                invokeI(functionProvider.getFunctionAddress("eglGetError")); // clear error
             } else {
                 APIVersion version = apiParseVersion(versionString);
                 addEGLVersions(version.major, version.minor, supportedExtensions);

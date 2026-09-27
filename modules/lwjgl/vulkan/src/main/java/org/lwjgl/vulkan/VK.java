@@ -196,7 +196,7 @@ public final class VK {
         private long getFunctionAddress(String name) { return getFunctionAddress(name, true); }
         private long getFunctionAddress(String name, boolean required) {
             try (MemoryStack stack = stackPush()) {
-                long address = callPPP(NULL, memAddress(stack.ASCII(name)), vkGetInstanceProcAddr);
+                long address = invokePPP(NULL, memAddress(stack.ASCII(name)), vkGetInstanceProcAddr);
                 if (address == NULL && required) {
                     throw new IllegalArgumentException("A critical function is missing. Make sure that Vulkan is available.");
                 }

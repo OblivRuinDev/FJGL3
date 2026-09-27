@@ -199,7 +199,7 @@ public final class GL {
 
                 @Override
                 public long getFunctionAddress(ByteBuffer functionName) {
-                    long address = GetProcAddress == NULL ? NULL : callPP(memAddress(functionName), GetProcAddress);
+                    long address = GetProcAddress == NULL ? NULL : invokePP(memAddress(functionName), GetProcAddress);
                     if (address == NULL) {
                         address = library.getFunctionAddress(functionName);
                         if (address == NULL && DEBUG_FUNCTIONS) {
@@ -405,7 +405,7 @@ public final class GL {
             throw new IllegalStateException("Core OpenGL functions could not be found. Make sure that the OpenGL library has been loaded correctly.");
         }
 
-        int errorCode = callI(GetError);
+        int errorCode = invokeI(GetError);
         if (errorCode != GL_NO_ERROR) {
             apiLog(String.format("An OpenGL context was in an error state before the creation of its capabilities instance. Error: 0x%X", errorCode));
         }
@@ -417,15 +417,15 @@ public final class GL {
             IntBuffer version = stack.ints(0);
 
             // Try the 3.0+ version query first
-            callPV(GL_MAJOR_VERSION, memAddress(version), GetIntegerv);
-            if (callI(GetError) == GL_NO_ERROR && 3 <= (majorVersion = version.get(0))) {
+            invokePV(GL_MAJOR_VERSION, memAddress(version), GetIntegerv);
+            if (invokeI(GetError) == GL_NO_ERROR && 3 <= (majorVersion = version.get(0))) {
                 // We're on an 3.0+ context.
-                callPV(GL_MINOR_VERSION, memAddress(version), GetIntegerv);
+                invokePV(GL_MINOR_VERSION, memAddress(version), GetIntegerv);
                 minorVersion = version.get(0);
             } else {
                 // Fallback to the string query.
-                String versionString = memUTF8Safe(callP(GL_VERSION, GetString));
-                if (versionString == null || callI(GetError) != GL_NO_ERROR) {
+                String versionString = memUTF8Safe(invokeP(GL_VERSION, GetString));
+                if (versionString == null || invokeI(GetError) != GL_NO_ERROR) {
                     throw new IllegalStateException("There is no OpenGL context current in the current thread.");
                 }
 
@@ -469,7 +469,7 @@ public final class GL {
 
         if (majorVersion < 3) {
             // Parse EXTENSIONS string
-            String extensionsString = memASCIISafe(callP(GL_EXTENSIONS, GetString));
+            String extensionsString = memASCIISafe(invokeP(GL_EXTENSIONS, GetString));
             if (extensionsString != null) {
                 StringTokenizer tokenizer = new StringTokenizer(extensionsString);
                 while (tokenizer.hasMoreTokens()) {
@@ -481,12 +481,12 @@ public final class GL {
             try (MemoryStack stack = stackPush()) {
                 IntBuffer pi = stack.ints(0);
 
-                callPV(GL_NUM_EXTENSIONS, memAddress(pi), GetIntegerv);
+                invokePV(GL_NUM_EXTENSIONS, memAddress(pi), GetIntegerv);
                 int extensionCount = pi.get(0);
 
                 long GetStringi = apiGetFunctionAddress(functionProvider, "glGetStringi");
                 for (int i = 0; i < extensionCount; i++) {
-                    supportedExtensions.add(memASCII(callP(GL_EXTENSIONS, i, GetStringi)));
+                    supportedExtensions.add(memASCII(invokeP(GL_EXTENSIONS, i, GetStringi)));
                 }
 
                 // In real drivers, we may encounter the following weird scenarios:
@@ -495,14 +495,14 @@ public final class GL {
                 // We ignore these and go by the spec.
 
                 // Force forwardCompatible to true if the context is a forward-compatible context.
-                callPV(GL_CONTEXT_FLAGS, memAddress(pi), GetIntegerv);
+                invokePV(GL_CONTEXT_FLAGS, memAddress(pi), GetIntegerv);
                 if ((pi.get(0) & GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT) != 0) {
                     forwardCompatible = true;
                 } else {
                     // Force forwardCompatible to true if the context is a core profile context.
                     if ((3 < majorVersion || 1 <= minorVersion)) { // OpenGL 3.1+
                         if (3 < majorVersion || 2 <= minorVersion) { // OpenGL 3.2+
-                            callPV(GL_CONTEXT_PROFILE_MASK, memAddress(pi), GetIntegerv);
+                            invokePV(GL_CONTEXT_PROFILE_MASK, memAddress(pi), GetIntegerv);
                             if ((pi.get(0) & GL_CONTEXT_CORE_PROFILE_BIT) != 0) {
                                 forwardCompatible = true;
                             }
@@ -635,11 +635,11 @@ public final class GL {
 
         long wglGetExtensionsString = functionProvider.getFunctionAddress("wglGetExtensionsStringARB");
         if (wglGetExtensionsString != NULL) {
-            extensionsString = memASCII(callPP(hdc, wglGetExtensionsString));
+            extensionsString = memASCII(invokePP(hdc, wglGetExtensionsString));
         } else {
             wglGetExtensionsString = functionProvider.getFunctionAddress("wglGetExtensionsStringEXT");
             if (wglGetExtensionsString != NULL) {
-                extensionsString = memASCII(callP(wglGetExtensionsString));
+                extensionsString = memASCII(invokeP(wglGetExtensionsString));
             }
         }
 
@@ -720,10 +720,10 @@ public final class GL {
 
             if (screen == -1) {
                 long glXGetClientString = functionProvider.getFunctionAddress("glXGetClientString");
-                extensionsString = memASCIISafe(callPP(display, GLX_EXTENSIONS, glXGetClientString));
+                extensionsString = memASCIISafe(invokePP(display, GLX_EXTENSIONS, glXGetClientString));
             } else {
                 long glXQueryExtensionsString = functionProvider.getFunctionAddress("glXQueryExtensionsString");
-                extensionsString = memASCIISafe(callPP(display, screen, glXQueryExtensionsString));
+                extensionsString = memASCIISafe(invokePP(display, screen, glXQueryExtensionsString));
             }
 
             if (extensionsString != null) {

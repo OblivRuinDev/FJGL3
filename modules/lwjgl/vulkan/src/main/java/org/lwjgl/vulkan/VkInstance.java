@@ -37,7 +37,7 @@ public class VkInstance extends DispatchableHandleInstance {
             : VK_API_VERSION_1_0;
 
         return new VKCapabilitiesInstance(functionName -> {
-            long address = callPPP(handle, memAddress(functionName), VK.getGlobalCommands().vkGetInstanceProcAddr);
+            long address = invokePPP(handle, memAddress(functionName), VK.getGlobalCommands().vkGetInstanceProcAddr);
             if (address == NULL && Checks.DEBUG_FUNCTIONS) {
                 apiLogMissing("VK instance", functionName);
             }
@@ -55,31 +55,31 @@ public class VkInstance extends DispatchableHandleInstance {
             IntBuffer ip = stack.callocInt(1);
 
             long GetInstanceProcAddr                = VK.getGlobalCommands().vkGetInstanceProcAddr;
-            long EnumeratePhysicalDevices           = callPPP(instance, memAddress(stack.ASCII("vkEnumeratePhysicalDevices")), GetInstanceProcAddr);
-            long EnumerateDeviceExtensionProperties = callPPP(instance, memAddress(stack.ASCII("vkEnumerateDeviceExtensionProperties")), GetInstanceProcAddr);
+            long EnumeratePhysicalDevices           = invokePPP(instance, memAddress(stack.ASCII("vkEnumeratePhysicalDevices")), GetInstanceProcAddr);
+            long EnumerateDeviceExtensionProperties = invokePPP(instance, memAddress(stack.ASCII("vkEnumerateDeviceExtensionProperties")), GetInstanceProcAddr);
             if (EnumeratePhysicalDevices == NULL || EnumerateDeviceExtensionProperties == NULL) {
                 break out;
             }
 
-            int err = callPPPI(instance, memAddress(ip), NULL, EnumeratePhysicalDevices);
+            int err = invokePPPI(instance, memAddress(ip), NULL, EnumeratePhysicalDevices);
             if (err != VK_SUCCESS || ip.get(0) == 0) {
                 break out;
             }
 
             PointerBuffer physicalDevices = stack.mallocPointer(ip.get(0));
-            err = callPPPI(instance, memAddress(ip), memAddress(physicalDevices), EnumeratePhysicalDevices);
+            err = invokePPPI(instance, memAddress(ip), memAddress(physicalDevices), EnumeratePhysicalDevices);
             if (err != VK_SUCCESS) {
                 break out;
             }
 
             for (int i = 0; i < physicalDevices.remaining(); i++) {
-                err = callPPPPI(physicalDevices.get(i), NULL, memAddress(ip), NULL, EnumerateDeviceExtensionProperties);
+                err = invokePPPPI(physicalDevices.get(i), NULL, memAddress(ip), NULL, EnumerateDeviceExtensionProperties);
                 if (err != VK_SUCCESS || ip.get(0) == 0) {
                     continue;
                 }
 
                 try (VkExtensionProperties.Buffer deviceExtensions = VkExtensionProperties.malloc(ip.get(0))) {
-                    err = callPPPPI(physicalDevices.get(i), NULL, memAddress(ip), deviceExtensions.address(), EnumerateDeviceExtensionProperties);
+                    err = invokePPPPI(physicalDevices.get(i), NULL, memAddress(ip), deviceExtensions.address(), EnumerateDeviceExtensionProperties);
                     if (err != VK_SUCCESS) {
                         continue;
                     }

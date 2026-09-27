@@ -105,14 +105,14 @@ public final class CL {
 
                 try (MemoryStack stack = stackPush()) {
                     IntBuffer pi = stack.ints(0);
-                    callPPI(0, NULL, memAddress(pi), clGetPlatformIDs);
+                    invokePPI(0, NULL, memAddress(pi), clGetPlatformIDs);
 
                     int platforms = pi.get(0);
 
                     if (platforms == 1) {
                         PointerBuffer pp = stack.pointers(0);
 
-                        callPPI(1, memAddress(pp), NULL, clGetPlatformIDs);
+                        invokePPI(1, memAddress(pp), NULL, clGetPlatformIDs);
                         long cl_platform_id = pp.get(0);
                         if (supportsOpenCL12(stack, cl_platform_id)) {
                             platform = cl_platform_id;
@@ -133,7 +133,7 @@ public final class CL {
 
             PointerBuffer pp = stack.mallocPointer(1);
 
-            int errcode = callPPPPI(platform, CL_PLATFORM_VERSION, 0L, NULL, memAddress(pp), clGetPlatformInfo);
+            int errcode = invokePPPPI(platform, CL_PLATFORM_VERSION, 0L, NULL, memAddress(pp), clGetPlatformInfo);
             if (errcode != CL_SUCCESS) {
                 return false;
             }
@@ -142,7 +142,7 @@ public final class CL {
 
             ByteBuffer version = stack.malloc(bytes);
 
-            errcode = callPPPPI(platform, CL_PLATFORM_VERSION, (long)bytes, memAddress(version), NULL, clGetPlatformInfo);
+            errcode = invokePPPPI(platform, CL_PLATFORM_VERSION, (long)bytes, memAddress(version), NULL, clGetPlatformInfo);
             if (errcode != CL_SUCCESS) {
                 return false;
             }
@@ -156,8 +156,8 @@ public final class CL {
             long nameEncoded = memAddress(functionName);
 
             long address = platform == NULL
-                ? callPP(nameEncoded, clGetExtensionFunctionAddress)
-                : callPPP(platform, nameEncoded, clGetExtensionFunctionAddressForPlatform);
+                ? invokePP(nameEncoded, clGetExtensionFunctionAddress)
+                : invokePPP(platform, nameEncoded, clGetExtensionFunctionAddressForPlatform);
 
             if (address == NULL) {
                 address = library.getFunctionAddress(functionName);
@@ -171,7 +171,7 @@ public final class CL {
 
         @Override
         public long getFunctionAddress(long handle, ByteBuffer functionName) {
-            long address = callPPP(handle, memAddress(functionName), clGetExtensionFunctionAddressForPlatform);
+            long address = invokePPP(handle, memAddress(functionName), clGetExtensionFunctionAddressForPlatform);
             return address != NULL ? address : getFunctionAddress(functionName);
         }
     }
