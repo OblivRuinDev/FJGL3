@@ -21,18 +21,6 @@ val MemoryAccessJNI = "MemoryAccessJNI".nativeClass(Module.CORE) {
 
     access = Access.INTERNAL
 
-    val primitives = arrayOf(
-        Triple(int8_t, "Byte", "a byte value"),
-        Triple(int16_t, "Short", "a short value"),
-        Triple(int32_t, "Int", "an int value"),
-        Triple(int64_t, "Long", "a long value"),
-
-        Triple(float, "Float", "a float value"),
-        Triple(double, "Double", "a double value"),
-
-        Triple(uintptr_t, "Address", "a pointer address")
-    )
-
     nativeDirective(
         """#ifdef LWJGL_WINDOWS
     static void* __aligned_alloc(size_t alignment, size_t size) {
@@ -50,28 +38,7 @@ val MemoryAccessJNI = "MemoryAccessJNI".nativeClass(Module.CORE) {
     #endif
     #define __aligned_free free
 #endif
-
-// -----------
-
-${primitives
-            .asSequence()
-            .map {
-                val (type, name) = it
-                "static inline ${type.name} get$name(void *ptr) { return *(${type.name} *)ptr; }"
-            }
-            .joinToString("\n")}
-
-// -----------
-
-${primitives
-            .asSequence()
-            .map {
-                val (type, name) = it
-                "static inline void put$name(void *ptr, ${type.name} value) { *(${type.name} *)ptr = value; }"
-            }
-            .joinToString("\n")}
-
-// -----------""")
+""")
 
     arrayOf(
         "malloc" to "void * (*) (size_t)",
@@ -98,19 +65,4 @@ ${primitives
         "aligned_free",
         void()
     )
-
-    for ((type, name, msg) in primitives)
-        type(
-            "get$name",
-
-            opaque_p("ptr")
-        )
-
-    for ((type, name, msg) in primitives)
-        void(
-            "put$name",
-
-            opaque_p("ptr"),
-            type("value")
-        )
 }
