@@ -120,7 +120,7 @@ public class MSFTSceneUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, featureCapacityInput, featureCountOutput, features, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, featureCapacityInput, featureCountOutput, features, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSceneComputeFeaturesMSFT(XrInstance instance, XrSystemId systemId, uint32_t featureCapacityInput, uint32_t * featureCountOutput, XrSceneComputeFeatureMSFT * features)} */
@@ -140,7 +140,7 @@ public class MSFTSceneUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, sceneObserver, __functionAddress);
+        return invokePPPI(session.address(), createInfo, sceneObserver, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSceneObserverMSFT(XrSession session, XrSceneObserverCreateInfoMSFT const * createInfo, XrSceneObserverMSFT * sceneObserver)} */
@@ -161,7 +161,7 @@ public class MSFTSceneUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(sceneObserver.address(), __functionAddress);
+        return invokePI(sceneObserver.address(), __functionAddress);
     }
 
     // --- [ xrCreateSceneMSFT ] ---
@@ -172,7 +172,7 @@ public class MSFTSceneUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(sceneObserver.address(), createInfo, scene, __functionAddress);
+        return invokePPPI(sceneObserver.address(), createInfo, scene, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSceneMSFT(XrSceneObserverMSFT sceneObserver, XrSceneCreateInfoMSFT const * createInfo, XrSceneMSFT * scene)} */
@@ -193,7 +193,7 @@ public class MSFTSceneUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(scene.address(), __functionAddress);
+        return invokePI(scene.address(), __functionAddress);
     }
 
     // --- [ xrComputeNewSceneMSFT ] ---
@@ -205,7 +205,7 @@ public class MSFTSceneUnderstanding {
             check(__functionAddress);
             XrNewSceneComputeInfoMSFT.validate(computeInfo);
         }
-        return callPPI(sceneObserver.address(), computeInfo, __functionAddress);
+        return invokePPI(sceneObserver.address(), computeInfo, __functionAddress);
     }
 
     /** {@code XrResult xrComputeNewSceneMSFT(XrSceneObserverMSFT sceneObserver, XrNewSceneComputeInfoMSFT const * computeInfo)} */
@@ -222,7 +222,7 @@ public class MSFTSceneUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(sceneObserver.address(), state, __functionAddress);
+        return invokePPI(sceneObserver.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrGetSceneComputeStateMSFT(XrSceneObserverMSFT sceneObserver, XrSceneComputeStateMSFT * state)} */
@@ -242,7 +242,7 @@ public class MSFTSceneUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(scene.address(), getInfo, components, __functionAddress);
+        return invokePPPI(scene.address(), getInfo, components, __functionAddress);
     }
 
     /** {@code XrResult xrGetSceneComponentsMSFT(XrSceneMSFT scene, XrSceneComponentsGetInfoMSFT const * getInfo, XrSceneComponentsMSFT * components)} */
@@ -260,7 +260,7 @@ public class MSFTSceneUnderstanding {
             check(__functionAddress);
             XrSceneComponentsLocateInfoMSFT.validate(locateInfo);
         }
-        return callPPPI(scene.address(), locateInfo, locations, __functionAddress);
+        return invokePPPI(scene.address(), locateInfo, locations, __functionAddress);
     }
 
     /** {@code XrResult xrLocateSceneComponentsMSFT(XrSceneMSFT scene, XrSceneComponentsLocateInfoMSFT const * locateInfo, XrSceneComponentLocationsMSFT * locations)} */
@@ -277,7 +277,7 @@ public class MSFTSceneUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(scene.address(), getInfo, buffers, __functionAddress);
+        return invokePPPI(scene.address(), getInfo, buffers, __functionAddress);
     }
 
     /** {@code XrResult xrGetSceneMeshBuffersMSFT(XrSceneMSFT scene, XrSceneMeshBuffersGetInfoMSFT const * getInfo, XrSceneMeshBuffersMSFT * buffers)} */

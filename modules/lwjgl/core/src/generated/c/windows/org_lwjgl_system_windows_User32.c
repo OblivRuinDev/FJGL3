@@ -14,32 +14,32 @@
 #include "common_tools.h"
 #include "WindowsLWJGL.h"
 
-typedef uint16_t (APIENTRY *RegisterClassExWPROC) (uintptr_t);
-typedef jint (APIENTRY *UnregisterClassWPROC) (uintptr_t, uintptr_t);
-typedef uintptr_t (APIENTRY *CreateWindowExWPROC) (jint, uintptr_t, uintptr_t, jint, jint, jint, jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
-typedef jint (APIENTRY *DestroyWindowPROC) (uintptr_t);
-typedef jint (APIENTRY *SetWindowPosPROC) (uintptr_t, uintptr_t, jint, jint, jint, jint, jint);
-typedef jint (APIENTRY *SetWindowTextWPROC) (uintptr_t, uintptr_t);
-typedef jint (APIENTRY *GetMessageWPROC) (uintptr_t, uintptr_t, jint, jint);
-typedef jint (APIENTRY *WaitMessagePROC) (void);
-typedef jint (APIENTRY *PostMessageWPROC) (uintptr_t, jint, uintptr_t, uintptr_t);
-typedef jint (APIENTRY *SendMessageWPROC) (uintptr_t, jint, uintptr_t, uintptr_t);
-typedef jint (APIENTRY *AdjustWindowRectExPROC) (uintptr_t, jint, jint, jint);
-typedef jint (APIENTRY *GetWindowRectPROC) (uintptr_t, uintptr_t);
-typedef jint (APIENTRY *MoveWindowPROC) (uintptr_t, jint, jint, jint, jint, jint);
-typedef jint (APIENTRY *GetWindowPlacementPROC) (uintptr_t, uintptr_t);
-typedef jint (APIENTRY *SetWindowPlacementPROC) (uintptr_t, uintptr_t);
-typedef uintptr_t (APIENTRY *SetWindowLongPtrPROC) (uintptr_t, jint, uintptr_t);
-typedef uintptr_t (APIENTRY *GetWindowLongPtrPROC) (uintptr_t, jint);
-typedef uintptr_t (APIENTRY *SetClassLongPtrPROC) (uintptr_t, jint, uintptr_t);
-typedef uintptr_t (APIENTRY *GetClassLongPtrPROC) (uintptr_t, jint);
-typedef jint (APIENTRY *SetLayeredWindowAttributesPROC) (uintptr_t, jint, jbyte, jint);
-typedef uintptr_t (APIENTRY *LoadIconWPROC) (uintptr_t, uintptr_t);
-typedef uintptr_t (APIENTRY *LoadCursorWPROC) (uintptr_t, uintptr_t);
-typedef jint (APIENTRY *RegisterTouchWindowPROC) (uintptr_t, jint);
-typedef jint (APIENTRY *UnregisterTouchWindowPROC) (uintptr_t);
-typedef jint (APIENTRY *GetTouchInputInfoPROC) (uintptr_t, jint, uintptr_t, jint);
-typedef jint (APIENTRY *CloseTouchInputHandlePROC) (uintptr_t);
+typedef uint16_t (*RegisterClassExWPROC) (uintptr_t);
+typedef jint (*UnregisterClassWPROC) (uintptr_t, uintptr_t);
+typedef uintptr_t (*CreateWindowExWPROC) (jint, uintptr_t, uintptr_t, jint, jint, jint, jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
+typedef jint (*DestroyWindowPROC) (uintptr_t);
+typedef jint (*SetWindowPosPROC) (uintptr_t, uintptr_t, jint, jint, jint, jint, jint);
+typedef jint (*SetWindowTextWPROC) (uintptr_t, uintptr_t);
+typedef jint (*GetMessageWPROC) (uintptr_t, uintptr_t, jint, jint);
+typedef jint (*WaitMessagePROC) (void);
+typedef jint (*PostMessageWPROC) (uintptr_t, jint, uintptr_t, uintptr_t);
+typedef jint (*SendMessageWPROC) (uintptr_t, jint, uintptr_t, uintptr_t);
+typedef jint (*AdjustWindowRectExPROC) (uintptr_t, jint, jint, jint);
+typedef jint (*GetWindowRectPROC) (uintptr_t, uintptr_t);
+typedef jint (*MoveWindowPROC) (uintptr_t, jint, jint, jint, jint, jint);
+typedef jint (*GetWindowPlacementPROC) (uintptr_t, uintptr_t);
+typedef jint (*SetWindowPlacementPROC) (uintptr_t, uintptr_t);
+typedef uintptr_t (*SetWindowLongPtrPROC) (uintptr_t, jint, uintptr_t);
+typedef uintptr_t (*GetWindowLongPtrPROC) (uintptr_t, jint);
+typedef uintptr_t (*SetClassLongPtrPROC) (uintptr_t, jint, uintptr_t);
+typedef uintptr_t (*GetClassLongPtrPROC) (uintptr_t, jint);
+typedef jint (*SetLayeredWindowAttributesPROC) (uintptr_t, jint, jbyte, jint);
+typedef uintptr_t (*LoadIconWPROC) (uintptr_t, uintptr_t);
+typedef uintptr_t (*LoadCursorWPROC) (uintptr_t, uintptr_t);
+typedef jint (*RegisterTouchWindowPROC) (uintptr_t, jint);
+typedef jint (*UnregisterTouchWindowPROC) (uintptr_t);
+typedef jint (*GetTouchInputInfoPROC) (uintptr_t, jint, uintptr_t, jint);
+typedef jint (*CloseTouchInputHandlePROC) (uintptr_t);
 
 EXTERN_C_ENTER
 

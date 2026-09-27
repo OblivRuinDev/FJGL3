@@ -51,7 +51,7 @@ public class FBSpatialEntitySharing {
             check(__functionAddress);
             XrSpaceShareInfoFB.validate(info);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrShareSpacesFB(XrSession session, XrSpaceShareInfoFB const * info, XrAsyncRequestIdFB * requestId)} */

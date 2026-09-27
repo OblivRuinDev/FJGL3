@@ -36,7 +36,7 @@ public class KHRLoaderInit {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(loaderInitInfo, __functionAddress);
+        return invokePI(loaderInitInfo, __functionAddress);
     }
 
     /** {@code XrResult xrInitializeLoaderKHR(XrLoaderInitInfoBaseHeaderKHR const * loaderInitInfo)} */

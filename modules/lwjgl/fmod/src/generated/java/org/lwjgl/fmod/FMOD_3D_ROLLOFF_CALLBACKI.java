@@ -30,7 +30,6 @@ public interface FMOD_3D_ROLLOFF_CALLBACKI extends CallbackI {
         FMOD_3D_ROLLOFF_CALLBACKI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_float,
             ffi_type_pointer, ffi_type_float
         )

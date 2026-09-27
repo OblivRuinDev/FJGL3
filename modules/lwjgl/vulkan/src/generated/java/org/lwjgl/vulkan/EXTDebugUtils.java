@@ -61,7 +61,7 @@ public class EXTDebugUtils {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pNameInfo, __functionAddress);
+        return invokePPI(device.address(), pNameInfo, __functionAddress);
     }
 
     /** {@code VkResult vkSetDebugUtilsObjectNameEXT(VkDevice device, VkDebugUtilsObjectNameInfoEXT const * pNameInfo)} */
@@ -79,7 +79,7 @@ public class EXTDebugUtils {
             check(__functionAddress);
             VkDebugUtilsObjectTagInfoEXT.validate(pTagInfo);
         }
-        return callPPI(device.address(), pTagInfo, __functionAddress);
+        return invokePPI(device.address(), pTagInfo, __functionAddress);
     }
 
     /** {@code VkResult vkSetDebugUtilsObjectTagEXT(VkDevice device, VkDebugUtilsObjectTagInfoEXT const * pTagInfo)} */
@@ -97,7 +97,7 @@ public class EXTDebugUtils {
             check(__functionAddress);
             VkDebugUtilsLabelEXT.validate(pLabelInfo);
         }
-        callPPV(queue.address(), pLabelInfo, __functionAddress);
+        invokePPV(queue.address(), pLabelInfo, __functionAddress);
     }
 
     /** {@code void vkQueueBeginDebugUtilsLabelEXT(VkQueue queue, VkDebugUtilsLabelEXT const * pLabelInfo)} */
@@ -113,7 +113,7 @@ public class EXTDebugUtils {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(queue.address(), __functionAddress);
+        invokePV(queue.address(), __functionAddress);
     }
 
     // --- [ vkQueueInsertDebugUtilsLabelEXT ] ---
@@ -125,7 +125,7 @@ public class EXTDebugUtils {
             check(__functionAddress);
             VkDebugUtilsLabelEXT.validate(pLabelInfo);
         }
-        callPPV(queue.address(), pLabelInfo, __functionAddress);
+        invokePPV(queue.address(), pLabelInfo, __functionAddress);
     }
 
     /** {@code void vkQueueInsertDebugUtilsLabelEXT(VkQueue queue, VkDebugUtilsLabelEXT const * pLabelInfo)} */
@@ -142,7 +142,7 @@ public class EXTDebugUtils {
             check(__functionAddress);
             VkDebugUtilsLabelEXT.validate(pLabelInfo);
         }
-        callPPV(commandBuffer.address(), pLabelInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pLabelInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBeginDebugUtilsLabelEXT(VkCommandBuffer commandBuffer, VkDebugUtilsLabelEXT const * pLabelInfo)} */
@@ -158,7 +158,7 @@ public class EXTDebugUtils {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), __functionAddress);
+        invokePV(commandBuffer.address(), __functionAddress);
     }
 
     // --- [ vkCmdInsertDebugUtilsLabelEXT ] ---
@@ -170,7 +170,7 @@ public class EXTDebugUtils {
             check(__functionAddress);
             VkDebugUtilsLabelEXT.validate(pLabelInfo);
         }
-        callPPV(commandBuffer.address(), pLabelInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pLabelInfo, __functionAddress);
     }
 
     /** {@code void vkCmdInsertDebugUtilsLabelEXT(VkCommandBuffer commandBuffer, VkDebugUtilsLabelEXT const * pLabelInfo)} */
@@ -187,7 +187,7 @@ public class EXTDebugUtils {
             check(__functionAddress);
             VkDebugUtilsMessengerCreateInfoEXT.validate(pCreateInfo);
         }
-        return callPPPPI(instance.address(), pCreateInfo, pAllocator, pMessenger, __functionAddress);
+        return invokePPPPI(instance.address(), pCreateInfo, pAllocator, pMessenger, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerCreateInfoEXT const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkDebugUtilsMessengerEXT * pMessenger)} */
@@ -207,7 +207,7 @@ public class EXTDebugUtils {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(instance.address(), messenger, pAllocator, __functionAddress);
+        invokePJPV(instance.address(), messenger, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT messenger, VkAllocationCallbacks const * pAllocator)} */
@@ -224,7 +224,7 @@ public class EXTDebugUtils {
             check(__functionAddress);
             VkDebugUtilsMessengerCallbackDataEXT.validate(pCallbackData);
         }
-        callPPV(instance.address(), messageSeverity, messageTypes, pCallbackData, __functionAddress);
+        invokePPV(instance.address(), messageSeverity, messageTypes, pCallbackData, __functionAddress);
     }
 
     /** {@code void vkSubmitDebugUtilsMessageEXT(VkInstance instance, VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity, VkDebugUtilsMessageTypeFlagsEXT messageTypes, VkDebugUtilsMessengerCallbackDataEXT const * pCallbackData)} */
@@ -241,7 +241,7 @@ public class EXTDebugUtils {
             check(pMessenger, 1);
             VkDebugUtilsMessengerCreateInfoEXT.validate(pCreateInfo.address());
         }
-        return callPPPPI(instance.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pMessenger, __functionAddress);
+        return invokePPPPI(instance.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pMessenger, __functionAddress);
     }
 
 }

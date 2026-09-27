@@ -14,23 +14,23 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glSecondaryColor3bEXTPROC) (jbyte, jbyte, jbyte);
-typedef void (APIENTRY *glSecondaryColor3sEXTPROC) (jshort, jshort, jshort);
-typedef void (APIENTRY *glSecondaryColor3iEXTPROC) (jint, jint, jint);
-typedef void (APIENTRY *glSecondaryColor3fEXTPROC) (jfloat, jfloat, jfloat);
-typedef void (APIENTRY *glSecondaryColor3dEXTPROC) (jdouble, jdouble, jdouble);
-typedef void (APIENTRY *glSecondaryColor3ubEXTPROC) (uint8_t, uint8_t, uint8_t);
-typedef void (APIENTRY *glSecondaryColor3usEXTPROC) (uint16_t, uint16_t, uint16_t);
-typedef void (APIENTRY *glSecondaryColor3uiEXTPROC) (jint, jint, jint);
-typedef void (APIENTRY *glSecondaryColor3bvEXTPROC) (uintptr_t);
-typedef void (APIENTRY *glSecondaryColor3svEXTPROC) (uintptr_t);
-typedef void (APIENTRY *glSecondaryColor3ivEXTPROC) (uintptr_t);
-typedef void (APIENTRY *glSecondaryColor3fvEXTPROC) (uintptr_t);
-typedef void (APIENTRY *glSecondaryColor3dvEXTPROC) (uintptr_t);
-typedef void (APIENTRY *glSecondaryColor3ubvEXTPROC) (uintptr_t);
-typedef void (APIENTRY *glSecondaryColor3usvEXTPROC) (uintptr_t);
-typedef void (APIENTRY *glSecondaryColor3uivEXTPROC) (uintptr_t);
-typedef void (APIENTRY *glSecondaryColorPointerEXTPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glSecondaryColor3bEXTPROC) (jbyte, jbyte, jbyte);
+typedef void (*glSecondaryColor3sEXTPROC) (jshort, jshort, jshort);
+typedef void (*glSecondaryColor3iEXTPROC) (jint, jint, jint);
+typedef void (*glSecondaryColor3fEXTPROC) (jfloat, jfloat, jfloat);
+typedef void (*glSecondaryColor3dEXTPROC) (jdouble, jdouble, jdouble);
+typedef void (*glSecondaryColor3ubEXTPROC) (uint8_t, uint8_t, uint8_t);
+typedef void (*glSecondaryColor3usEXTPROC) (uint16_t, uint16_t, uint16_t);
+typedef void (*glSecondaryColor3uiEXTPROC) (jint, jint, jint);
+typedef void (*glSecondaryColor3bvEXTPROC) (uintptr_t);
+typedef void (*glSecondaryColor3svEXTPROC) (uintptr_t);
+typedef void (*glSecondaryColor3ivEXTPROC) (uintptr_t);
+typedef void (*glSecondaryColor3fvEXTPROC) (uintptr_t);
+typedef void (*glSecondaryColor3dvEXTPROC) (uintptr_t);
+typedef void (*glSecondaryColor3ubvEXTPROC) (uintptr_t);
+typedef void (*glSecondaryColor3usvEXTPROC) (uintptr_t);
+typedef void (*glSecondaryColor3uivEXTPROC) (uintptr_t);
+typedef void (*glSecondaryColorPointerEXTPROC) (jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

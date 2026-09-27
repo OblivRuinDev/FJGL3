@@ -190,7 +190,7 @@ public class BDSpatialAudioRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), sampleRateCapacityInput, sampleRateCountOutput, sampleRates, __functionAddress);
+        return invokePPPI(session.address(), sampleRateCapacityInput, sampleRateCountOutput, sampleRates, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSupportedAudioSampleRateBD(XrSession session, uint32_t sampleRateCapacityInput, uint32_t * sampleRateCountOutput, XrAudioSampleRateBD * sampleRates)} */
@@ -210,7 +210,7 @@ public class BDSpatialAudioRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), sampleRate, min, max, __functionAddress);
+        return invokePPPI(session.address(), sampleRate, min, max, __functionAddress);
     }
 
     /** {@code XrResult xrQueryFramesPerBufferRangeBD(XrSession session, XrAudioSampleRateBD sampleRate, uint32_t * min, uint32_t * max)} */
@@ -231,7 +231,7 @@ public class BDSpatialAudioRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, renderer, __functionAddress);
+        return invokePPPI(session.address(), createInfo, renderer, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAudioRendererBD(XrSession session, XrSpatialAudioRendererCreateInfoBD const * createInfo, XrSpatialAudioRendererBD * renderer)} */
@@ -252,7 +252,7 @@ public class BDSpatialAudioRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(renderer.address(), __functionAddress);
+        return invokePI(renderer.address(), __functionAddress);
     }
 
     // --- [ xrCreateSoundObstacleMaterialBD ] ---
@@ -264,7 +264,7 @@ public class BDSpatialAudioRendering {
             check(__functionAddress);
             XrSoundObstacleMaterialConfigBD.validate(config);
         }
-        return callPPPI(renderer.address(), config, material, __functionAddress);
+        return invokePPPI(renderer.address(), config, material, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSoundObstacleMaterialBD(XrSpatialAudioRendererBD renderer, XrSoundObstacleMaterialConfigBD const * config, XrSoundObstacleMaterialBD * material)} */
@@ -285,7 +285,7 @@ public class BDSpatialAudioRendering {
             check(__functionAddress);
             XrSoundObstacleMaterialConfigBD.validate(config);
         }
-        return callPPI(material.address(), config, __functionAddress);
+        return invokePPI(material.address(), config, __functionAddress);
     }
 
     /** {@code XrResult xrUpdateSoundObstacleMaterialConfigBD(XrSoundObstacleMaterialBD material, XrSoundObstacleMaterialConfigBD const * config)} */
@@ -303,7 +303,7 @@ public class BDSpatialAudioRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(material.address(), __functionAddress);
+        return invokePI(material.address(), __functionAddress);
     }
 
     // --- [ xrCreateSoundObstacleBD ] ---
@@ -316,7 +316,7 @@ public class BDSpatialAudioRendering {
             XrSoundObstacleConfigBD.validate(config);
             XrSoundTriangleMeshBD.validate(mesh);
         }
-        return callPPPPI(renderer.address(), config, mesh, soundObstacle, __functionAddress);
+        return invokePPPPI(renderer.address(), config, mesh, soundObstacle, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSoundObstacleBD(XrSpatialAudioRendererBD renderer, XrSoundObstacleConfigBD const * config, XrSoundTriangleMeshBD const * mesh, XrSoundObstacleBD * soundObstacle)} */
@@ -338,7 +338,7 @@ public class BDSpatialAudioRendering {
             if (config != NULL) { XrSoundObstacleConfigBD.validate(config); }
             if (mesh != NULL) { XrSoundTriangleMeshBD.validate(mesh); }
         }
-        return callPPPJI(soundObstacle.address(), config, mesh, flags, __functionAddress);
+        return invokePPPJI(soundObstacle.address(), config, mesh, flags, __functionAddress);
     }
 
     /** {@code XrResult xrUpdateSoundObstacleConfigBD(XrSoundObstacleBD soundObstacle, XrSoundObstacleConfigBD const * config, XrSoundTriangleMeshBD const * mesh, XrSoundObstacleFlagsBD flags)} */
@@ -356,7 +356,7 @@ public class BDSpatialAudioRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(soundObstacle.address(), __functionAddress);
+        return invokePI(soundObstacle.address(), __functionAddress);
     }
 
     // --- [ xrCreateSoundObjectBD ] ---
@@ -368,7 +368,7 @@ public class BDSpatialAudioRendering {
             check(__functionAddress);
             XrSoundObjectConfigBD.validate(config);
         }
-        return callPPPI(renderer.address(), config, soundObject, __functionAddress);
+        return invokePPPI(renderer.address(), config, soundObject, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSoundObjectBD(XrSpatialAudioRendererBD renderer, XrSoundObjectConfigBD const * config, XrSoundObjectBD * soundObject)} */
@@ -389,7 +389,7 @@ public class BDSpatialAudioRendering {
             check(__functionAddress);
             XrSoundObjectConfigBD.validate(config);
         }
-        return callPPJI(soundObject.address(), config, flags, __functionAddress);
+        return invokePPJI(soundObject.address(), config, flags, __functionAddress);
     }
 
     /** {@code XrResult xrUpdateSoundObjectConfigBD(XrSoundObjectBD soundObject, XrSoundObjectConfigBD const * config, XrSoundObjectFlagsBD flags)} */
@@ -407,7 +407,7 @@ public class BDSpatialAudioRendering {
             check(__functionAddress);
             XrAudioBufferBD.validate(buffer);
         }
-        return callPPI(soundObject.address(), buffer, __functionAddress);
+        return invokePPI(soundObject.address(), buffer, __functionAddress);
     }
 
     /** {@code XrResult xrSubmitSoundObjectBufferBD(XrSoundObjectBD soundObject, XrAudioBufferBD const * buffer)} */
@@ -425,7 +425,7 @@ public class BDSpatialAudioRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(soundObject.address(), __functionAddress);
+        return invokePI(soundObject.address(), __functionAddress);
     }
 
     // --- [ xrCreateSoundFieldBD ] ---
@@ -437,7 +437,7 @@ public class BDSpatialAudioRendering {
             check(__functionAddress);
             XrSoundFieldConfigBD.validate(config);
         }
-        return callPPPI(renderer.address(), config, soundField, __functionAddress);
+        return invokePPPI(renderer.address(), config, soundField, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSoundFieldBD(XrSpatialAudioRendererBD renderer, XrSoundFieldConfigBD const * config, XrSoundFieldBD * soundField)} */
@@ -458,7 +458,7 @@ public class BDSpatialAudioRendering {
             check(__functionAddress);
             if (config != NULL) { XrSoundFieldConfigBD.validate(config); }
         }
-        return callPPJI(soundField.address(), config, flags, __functionAddress);
+        return invokePPJI(soundField.address(), config, flags, __functionAddress);
     }
 
     /** {@code XrResult xrUpdateSoundFieldConfigBD(XrSoundFieldBD soundField, XrSoundFieldConfigBD const * config, XrSoundFieldFlagsBD flags)} */
@@ -476,7 +476,7 @@ public class BDSpatialAudioRendering {
             check(__functionAddress);
             XrAudioBufferBD.validate(buffer);
         }
-        return callPPI(soundField.address(), buffer, __functionAddress);
+        return invokePPI(soundField.address(), buffer, __functionAddress);
     }
 
     /** {@code XrResult xrSubmitSoundFieldBufferBD(XrSoundFieldBD soundField, XrAudioBufferBD const * buffer)} */
@@ -494,7 +494,7 @@ public class BDSpatialAudioRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(soundField.address(), __functionAddress);
+        return invokePI(soundField.address(), __functionAddress);
     }
 
     // --- [ xrWaitAudioPeriodBD ] ---
@@ -506,7 +506,7 @@ public class BDSpatialAudioRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(renderer.address(), timeout, __functionAddress);
+        return invokePJI(renderer.address(), timeout, __functionAddress);
     }
 
     // --- [ xrEndAudioPeriodBD ] ---
@@ -518,7 +518,7 @@ public class BDSpatialAudioRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(renderer.address(), __functionAddress);
+        return invokePI(renderer.address(), __functionAddress);
     }
 
 }

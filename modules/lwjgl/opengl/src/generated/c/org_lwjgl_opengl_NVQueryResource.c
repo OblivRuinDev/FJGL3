@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef jint (APIENTRY *glQueryResourceNVPROC) (jint, jint, jint, uintptr_t);
+typedef jint (*glQueryResourceNVPROC) (jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glTexBufferOESPROC) (jint, jint, jint);
-typedef void (APIENTRY *glTexBufferRangeOESPROC) (jint, jint, jint, uintptr_t, uintptr_t);
+typedef void (*glTexBufferOESPROC) (jint, jint, jint);
+typedef void (*glTexBufferRangeOESPROC) (jint, jint, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

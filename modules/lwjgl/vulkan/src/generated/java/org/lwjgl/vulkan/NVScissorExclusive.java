@@ -47,7 +47,7 @@ public class NVScissorExclusive {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstExclusiveScissor, exclusiveScissorCount, pExclusiveScissorEnables, __functionAddress);
+        invokePPV(commandBuffer.address(), firstExclusiveScissor, exclusiveScissorCount, pExclusiveScissorEnables, __functionAddress);
     }
 
     /** {@code void vkCmdSetExclusiveScissorEnableNV(VkCommandBuffer commandBuffer, uint32_t firstExclusiveScissor, uint32_t exclusiveScissorCount, VkBool32 const * pExclusiveScissorEnables)} */
@@ -63,7 +63,7 @@ public class NVScissorExclusive {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstExclusiveScissor, exclusiveScissorCount, pExclusiveScissors, __functionAddress);
+        invokePPV(commandBuffer.address(), firstExclusiveScissor, exclusiveScissorCount, pExclusiveScissors, __functionAddress);
     }
 
     /** {@code void vkCmdSetExclusiveScissorNV(VkCommandBuffer commandBuffer, uint32_t firstExclusiveScissor, uint32_t exclusiveScissorCount, VkRect2D const * pExclusiveScissors)} */
@@ -77,7 +77,7 @@ public class NVScissorExclusive {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstExclusiveScissor, pExclusiveScissorEnables.length, pExclusiveScissorEnables, __functionAddress);
+        invokePPV(commandBuffer.address(), firstExclusiveScissor, pExclusiveScissorEnables.length, pExclusiveScissorEnables, __functionAddress);
     }
 
 }

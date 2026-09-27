@@ -66,7 +66,7 @@ public class FBSpatialEntity {
             check(__functionAddress);
             XrSpatialAnchorCreateInfoFB.validate(info);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorFB(XrSession session, XrSpatialAnchorCreateInfoFB const * info, XrAsyncRequestIdFB * requestId)} */
@@ -86,7 +86,7 @@ public class FBSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(space.address(), uuid, __functionAddress);
+        return invokePPI(space.address(), uuid, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpaceUuidFB(XrSpace space, XrUuidEXT * uuid)} */
@@ -103,7 +103,7 @@ public class FBSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(space.address(), componentTypeCapacityInput, componentTypeCountOutput, componentTypes, __functionAddress);
+        return invokePPPI(space.address(), componentTypeCapacityInput, componentTypeCountOutput, componentTypes, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSpaceSupportedComponentsFB(XrSpace space, uint32_t componentTypeCapacityInput, uint32_t * componentTypeCountOutput, XrSpaceComponentTypeFB * componentTypes)} */
@@ -123,7 +123,7 @@ public class FBSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(space.address(), info, requestId, __functionAddress);
+        return invokePPPI(space.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrSetSpaceComponentStatusFB(XrSpace space, XrSpaceComponentStatusSetInfoFB const * info, XrAsyncRequestIdFB * requestId)} */
@@ -143,7 +143,7 @@ public class FBSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(space.address(), componentType, status, __functionAddress);
+        return invokePPI(space.address(), componentType, status, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpaceComponentStatusFB(XrSpace space, XrSpaceComponentTypeFB componentType, XrSpaceComponentStatusFB * status)} */

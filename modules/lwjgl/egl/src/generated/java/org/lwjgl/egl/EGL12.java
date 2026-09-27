@@ -69,7 +69,7 @@ public class EGL12 extends EGL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(api, __functionAddress) != 0;
+        return invokeI(api, __functionAddress) != 0;
     }
 
     // --- [ eglQueryAPI ] ---
@@ -81,7 +81,7 @@ public class EGL12 extends EGL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(__functionAddress);
+        return invokeI(__functionAddress);
     }
 
     // --- [ eglCreatePbufferFromClientBuffer ] ---
@@ -95,7 +95,7 @@ public class EGL12 extends EGL11 {
             check(buffer);
             check(config);
         }
-        return callPPPPP(dpy, buftype, buffer, config, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, buftype, buffer, config, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreatePbufferFromClientBuffer(EGLDisplay dpy, EGLenum buftype, EGLClientBuffer buffer, EGLConfig config, EGLint const * attrib_list)} */
@@ -116,7 +116,7 @@ public class EGL12 extends EGL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(__functionAddress) != 0;
+        return invokeI(__functionAddress) != 0;
     }
 
     // --- [ eglWaitClient ] ---
@@ -128,7 +128,7 @@ public class EGL12 extends EGL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(__functionAddress) != 0;
+        return invokeI(__functionAddress) != 0;
     }
 
     /** {@code EGLSurface eglCreatePbufferFromClientBuffer(EGLDisplay dpy, EGLenum buftype, EGLClientBuffer buffer, EGLConfig config, EGLint const * attrib_list)} */
@@ -142,7 +142,7 @@ public class EGL12 extends EGL11 {
             check(config);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPPPP(dpy, buftype, buffer, config, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, buftype, buffer, config, attrib_list, __functionAddress);
     }
 
 }

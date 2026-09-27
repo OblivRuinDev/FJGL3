@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glGetQueryObjecti64vEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetQueryObjectui64vEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glGetQueryObjecti64vEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glGetQueryObjectui64vEXTPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

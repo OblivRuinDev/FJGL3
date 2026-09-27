@@ -37,7 +37,7 @@ public class VARJOEnvironmentDepthEstimation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(session.address(), enabled ? 1 : 0, __functionAddress);
+        return invokePI(session.address(), enabled ? 1 : 0, __functionAddress);
     }
 
 }

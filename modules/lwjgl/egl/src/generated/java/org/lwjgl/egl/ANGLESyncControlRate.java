@@ -37,7 +37,7 @@ public class ANGLESyncControlRate {
             check(dpy);
             check(surface);
         }
-        return callPPPPI(dpy, surface, numerator, denominator, __functionAddress);
+        return invokePPPPI(dpy, surface, numerator, denominator, __functionAddress);
     }
 
     /** {@code EGLBoolean eglGetMscRateANGLE(EGLDisplay dpy, EGLSurface surface, int32_t * numerator, int32_t * denominator)} */
@@ -61,7 +61,7 @@ public class ANGLESyncControlRate {
             check(numerator, 1);
             check(denominator, 1);
         }
-        return callPPPPI(dpy, surface, numerator, denominator, __functionAddress) != 0;
+        return invokePPPPI(dpy, surface, numerator, denominator, __functionAddress) != 0;
     }
 
 }

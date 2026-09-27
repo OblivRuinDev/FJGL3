@@ -95,7 +95,7 @@ public class NVTimelineSemaphore {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(semaphores.length, semaphores, __functionAddress);
+        invokePV(semaphores.length, semaphores, __functionAddress);
     }
 
     /** {@code void glSemaphoreParameterivNV(GLuint semaphore, GLenum pname, GLint const * params)} */
@@ -105,7 +105,7 @@ public class NVTimelineSemaphore {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(semaphore, pname, params, __functionAddress);
+        invokePV(semaphore, pname, params, __functionAddress);
     }
 
     /** {@code void glGetSemaphoreParameterivNV(GLuint semaphore, GLenum pname, GLint * params)} */
@@ -115,7 +115,7 @@ public class NVTimelineSemaphore {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(semaphore, pname, params, __functionAddress);
+        invokePV(semaphore, pname, params, __functionAddress);
     }
 
 }

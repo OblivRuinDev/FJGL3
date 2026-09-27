@@ -61,7 +61,7 @@ public class ANDROIDTrackablesImage {
             check(__functionAddress);
             XrTrackableImageDatabaseCreateInfoANDROID.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, future, __functionAddress);
+        return invokePPPI(session.address(), createInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrCreateTrackableImageDatabaseAsyncANDROID(XrSession session, XrTrackableImageDatabaseCreateInfoANDROID const * createInfo, XrFutureEXT * future)} */
@@ -81,7 +81,7 @@ public class ANDROIDTrackablesImage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), future, completion, __functionAddress);
+        return invokePJPI(session.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrCreateTrackableImageDatabaseCompleteANDROID(XrSession session, XrFutureEXT future, XrCreateTrackableImageDatabaseCompletionANDROID * completion)} */
@@ -99,7 +99,7 @@ public class ANDROIDTrackablesImage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(database.address(), __functionAddress);
+        return invokePI(database.address(), __functionAddress);
     }
 
     // --- [ xrAddTrackableImageDatabaseANDROID ] ---
@@ -111,7 +111,7 @@ public class ANDROIDTrackablesImage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(tracker.address(), database.address(), __functionAddress);
+        return invokePPI(tracker.address(), database.address(), __functionAddress);
     }
 
     // --- [ xrRemoveTrackableImageDatabaseANDROID ] ---
@@ -123,7 +123,7 @@ public class ANDROIDTrackablesImage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(tracker.address(), database.address(), __functionAddress);
+        return invokePPI(tracker.address(), database.address(), __functionAddress);
     }
 
     // --- [ xrGetTrackableImageANDROID ] ---
@@ -135,7 +135,7 @@ public class ANDROIDTrackablesImage {
             check(__functionAddress);
             XrTrackableGetInfoANDROID.validate(getInfo);
         }
-        return callPPPI(tracker.address(), getInfo, trackable, __functionAddress);
+        return invokePPPI(tracker.address(), getInfo, trackable, __functionAddress);
     }
 
     /** {@code XrResult xrGetTrackableImageANDROID(XrTrackableTrackerANDROID tracker, XrTrackableGetInfoANDROID const * getInfo, XrTrackableImageANDROID * trackable)} */

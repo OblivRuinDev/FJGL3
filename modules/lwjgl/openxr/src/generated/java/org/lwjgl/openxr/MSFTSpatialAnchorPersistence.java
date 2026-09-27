@@ -55,7 +55,7 @@ public class MSFTSpatialAnchorPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), spatialAnchorStore, __functionAddress);
+        return invokePPI(session.address(), spatialAnchorStore, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorStoreConnectionMSFT(XrSession session, XrSpatialAnchorStoreConnectionMSFT * spatialAnchorStore)} */
@@ -76,7 +76,7 @@ public class MSFTSpatialAnchorPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(spatialAnchorStore.address(), __functionAddress);
+        return invokePI(spatialAnchorStore.address(), __functionAddress);
     }
 
     // --- [ xrPersistSpatialAnchorMSFT ] ---
@@ -88,7 +88,7 @@ public class MSFTSpatialAnchorPersistence {
             check(__functionAddress);
             XrSpatialAnchorPersistenceInfoMSFT.validate(spatialAnchorPersistenceInfo);
         }
-        return callPPI(spatialAnchorStore.address(), spatialAnchorPersistenceInfo, __functionAddress);
+        return invokePPI(spatialAnchorStore.address(), spatialAnchorPersistenceInfo, __functionAddress);
     }
 
     /** {@code XrResult xrPersistSpatialAnchorMSFT(XrSpatialAnchorStoreConnectionMSFT spatialAnchorStore, XrSpatialAnchorPersistenceInfoMSFT const * spatialAnchorPersistenceInfo)} */
@@ -105,7 +105,7 @@ public class MSFTSpatialAnchorPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(spatialAnchorStore.address(), spatialAnchorNameCapacityInput, spatialAnchorNameCountOutput, spatialAnchorNames, __functionAddress);
+        return invokePPPI(spatialAnchorStore.address(), spatialAnchorNameCapacityInput, spatialAnchorNameCountOutput, spatialAnchorNames, __functionAddress);
     }
 
     /** {@code XrResult xrEnumeratePersistedSpatialAnchorNamesMSFT(XrSpatialAnchorStoreConnectionMSFT spatialAnchorStore, uint32_t spatialAnchorNameCapacityInput, uint32_t * spatialAnchorNameCountOutput, XrSpatialAnchorPersistenceNameMSFT * spatialAnchorNames)} */
@@ -126,7 +126,7 @@ public class MSFTSpatialAnchorPersistence {
             check(__functionAddress);
             XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT.validate(spatialAnchorCreateInfo);
         }
-        return callPPPI(session.address(), spatialAnchorCreateInfo, spatialAnchor, __functionAddress);
+        return invokePPPI(session.address(), spatialAnchorCreateInfo, spatialAnchor, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorFromPersistedNameMSFT(XrSession session, XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT const * spatialAnchorCreateInfo, XrSpatialAnchorMSFT * spatialAnchor)} */
@@ -146,7 +146,7 @@ public class MSFTSpatialAnchorPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(spatialAnchorStore.address(), spatialAnchorPersistenceName, __functionAddress);
+        return invokePPI(spatialAnchorStore.address(), spatialAnchorPersistenceName, __functionAddress);
     }
 
     /** {@code XrResult xrUnpersistSpatialAnchorMSFT(XrSpatialAnchorStoreConnectionMSFT spatialAnchorStore, XrSpatialAnchorPersistenceNameMSFT const * spatialAnchorPersistenceName)} */
@@ -164,7 +164,7 @@ public class MSFTSpatialAnchorPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(spatialAnchorStore.address(), __functionAddress);
+        return invokePI(spatialAnchorStore.address(), __functionAddress);
     }
 
 }

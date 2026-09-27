@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glTexPageCommitmentARBPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jboolean);
-typedef void (APIENTRY *glTexturePageCommitmentEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTexPageCommitmentARBPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTexturePageCommitmentEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jboolean);
 
 EXTERN_C_ENTER
 

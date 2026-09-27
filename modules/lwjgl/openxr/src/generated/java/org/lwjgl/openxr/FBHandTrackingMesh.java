@@ -40,7 +40,7 @@ public class FBHandTrackingMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(handTracker.address(), mesh, __functionAddress);
+        return invokePPI(handTracker.address(), mesh, __functionAddress);
     }
 
     /** {@code XrResult xrGetHandMeshFB(XrHandTrackerEXT handTracker, XrHandTrackingMeshFB * mesh)} */

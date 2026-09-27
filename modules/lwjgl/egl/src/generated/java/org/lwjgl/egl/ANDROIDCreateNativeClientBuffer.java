@@ -44,7 +44,7 @@ public class ANDROIDCreateNativeClientBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPP(attrib_list, __functionAddress);
+        return invokePP(attrib_list, __functionAddress);
     }
 
     /** {@code EGLClientBuffer eglCreateNativeClientBufferANDROID(EGLint const * attrib_list)} */
@@ -64,7 +64,7 @@ public class ANDROIDCreateNativeClientBuffer {
             check(__functionAddress);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPP(attrib_list, __functionAddress);
+        return invokePP(attrib_list, __functionAddress);
     }
 
 }

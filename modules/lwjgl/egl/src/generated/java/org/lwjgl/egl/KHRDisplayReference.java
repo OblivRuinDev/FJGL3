@@ -38,7 +38,7 @@ public class KHRDisplayReference {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPI(dpy, name, value, __functionAddress);
+        return invokePPI(dpy, name, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryDisplayAttribKHR(EGLDisplay dpy, EGLint name, EGLAttrib * value)} */

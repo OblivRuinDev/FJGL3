@@ -48,7 +48,7 @@ public class EXTPrivateData {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pPrivateDataSlot, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pPrivateDataSlot, __functionAddress);
     }
 
     /** {@code VkResult vkCreatePrivateDataSlotEXT(VkDevice device, VkPrivateDataSlotCreateInfo const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkPrivateDataSlot * pPrivateDataSlot)} */
@@ -68,7 +68,7 @@ public class EXTPrivateData {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), privateDataSlot, pAllocator, __functionAddress);
+        invokePJPV(device.address(), privateDataSlot, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyPrivateDataSlotEXT(VkDevice device, VkPrivateDataSlot privateDataSlot, VkAllocationCallbacks const * pAllocator)} */
@@ -85,7 +85,7 @@ public class EXTPrivateData {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJJJI(device.address(), objectType, objectHandle, privateDataSlot, data, __functionAddress);
+        return invokePJJJI(device.address(), objectType, objectHandle, privateDataSlot, data, __functionAddress);
     }
 
     // --- [ vkGetPrivateDataEXT ] ---
@@ -96,7 +96,7 @@ public class EXTPrivateData {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJPV(device.address(), objectType, objectHandle, privateDataSlot, pData, __functionAddress);
+        invokePJJPV(device.address(), objectType, objectHandle, privateDataSlot, pData, __functionAddress);
     }
 
     /** {@code void vkGetPrivateDataEXT(VkDevice device, VkObjectType objectType, uint64_t objectHandle, VkPrivateDataSlot privateDataSlot, uint64_t * pData)} */
@@ -115,7 +115,7 @@ public class EXTPrivateData {
             check(__functionAddress);
             check(pPrivateDataSlot, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pPrivateDataSlot, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pPrivateDataSlot, __functionAddress);
     }
 
     /** {@code void vkGetPrivateDataEXT(VkDevice device, VkObjectType objectType, uint64_t objectHandle, VkPrivateDataSlot privateDataSlot, uint64_t * pData)} */
@@ -125,7 +125,7 @@ public class EXTPrivateData {
             check(__functionAddress);
             check(pData, 1);
         }
-        callPJJPV(device.address(), objectType, objectHandle, privateDataSlot, pData, __functionAddress);
+        invokePJJPV(device.address(), objectType, objectHandle, privateDataSlot, pData, __functionAddress);
     }
 
 }

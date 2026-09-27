@@ -14,11 +14,11 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glElementPointerAPPLEPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDrawElementArrayAPPLEPROC) (jint, jint, jint);
-typedef void (APIENTRY *glDrawRangeElementArrayAPPLEPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glMultiDrawElementArrayAPPLEPROC) (jint, uintptr_t, uintptr_t, jint);
-typedef void (APIENTRY *glMultiDrawRangeElementArrayAPPLEPROC) (jint, jint, jint, uintptr_t, uintptr_t, jint);
+typedef void (*glElementPointerAPPLEPROC) (jint, uintptr_t);
+typedef void (*glDrawElementArrayAPPLEPROC) (jint, jint, jint);
+typedef void (*glDrawRangeElementArrayAPPLEPROC) (jint, jint, jint, jint, jint);
+typedef void (*glMultiDrawElementArrayAPPLEPROC) (jint, uintptr_t, uintptr_t, jint);
+typedef void (*glMultiDrawRangeElementArrayAPPLEPROC) (jint, jint, jint, uintptr_t, uintptr_t, jint);
 
 EXTERN_C_ENTER
 

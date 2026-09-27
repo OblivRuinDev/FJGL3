@@ -42,7 +42,7 @@ public class KHRBindMemory2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
+        return invokePPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
     }
 
     /** {@code VkResult vkBindBufferMemory2KHR(VkDevice device, uint32_t bindInfoCount, VkBindBufferMemoryInfo const * pBindInfos)} */
@@ -59,7 +59,7 @@ public class KHRBindMemory2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
+        return invokePPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
     }
 
     /** {@code VkResult vkBindImageMemory2KHR(VkDevice device, uint32_t bindInfoCount, VkBindImageMemoryInfo const * pBindInfos)} */

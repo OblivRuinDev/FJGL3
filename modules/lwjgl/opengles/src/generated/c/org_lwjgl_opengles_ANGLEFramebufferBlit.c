@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glBlitFramebufferANGLEPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glBlitFramebufferANGLEPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

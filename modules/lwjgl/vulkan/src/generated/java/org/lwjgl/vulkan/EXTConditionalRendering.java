@@ -49,7 +49,7 @@ public class EXTConditionalRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pConditionalRenderingBegin, __functionAddress);
+        invokePPV(commandBuffer.address(), pConditionalRenderingBegin, __functionAddress);
     }
 
     /** {@code void vkCmdBeginConditionalRenderingEXT(VkCommandBuffer commandBuffer, VkConditionalRenderingBeginInfoEXT const * pConditionalRenderingBegin)} */
@@ -65,7 +65,7 @@ public class EXTConditionalRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), __functionAddress);
+        invokePV(commandBuffer.address(), __functionAddress);
     }
 
 }

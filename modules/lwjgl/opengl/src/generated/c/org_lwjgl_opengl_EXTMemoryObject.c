@@ -14,25 +14,25 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glGetUnsignedBytevEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGetUnsignedBytei_vEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glDeleteMemoryObjectsEXTPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsMemoryObjectEXTPROC) (jint);
-typedef void (APIENTRY *glCreateMemoryObjectsEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMemoryObjectParameterivEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetMemoryObjectParameterivEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glTexStorageMem2DEXTPROC) (jint, jint, jint, jint, jint, jint, jlong);
-typedef void (APIENTRY *glTexStorageMem2DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jboolean, jint, jlong);
-typedef void (APIENTRY *glTexStorageMem3DEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jlong);
-typedef void (APIENTRY *glTexStorageMem3DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jint, jboolean, jint, jlong);
-typedef void (APIENTRY *glBufferStorageMemEXTPROC) (jint, uintptr_t, jint, jlong);
-typedef void (APIENTRY *glTextureStorageMem2DEXTPROC) (jint, jint, jint, jint, jint, jint, jlong);
-typedef void (APIENTRY *glTextureStorageMem2DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jboolean, jint, jlong);
-typedef void (APIENTRY *glTextureStorageMem3DEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jlong);
-typedef void (APIENTRY *glTextureStorageMem3DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jint, jboolean, jint, jlong);
-typedef void (APIENTRY *glNamedBufferStorageMemEXTPROC) (jint, uintptr_t, jint, jlong);
-typedef void (APIENTRY *glTexStorageMem1DEXTPROC) (jint, jint, jint, jint, jint, jlong);
-typedef void (APIENTRY *glTextureStorageMem1DEXTPROC) (jint, jint, jint, jint, jint, jlong);
+typedef void (*glGetUnsignedBytevEXTPROC) (jint, uintptr_t);
+typedef void (*glGetUnsignedBytei_vEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glDeleteMemoryObjectsEXTPROC) (jint, uintptr_t);
+typedef jboolean (*glIsMemoryObjectEXTPROC) (jint);
+typedef void (*glCreateMemoryObjectsEXTPROC) (jint, uintptr_t);
+typedef void (*glMemoryObjectParameterivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glGetMemoryObjectParameterivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glTexStorageMem2DEXTPROC) (jint, jint, jint, jint, jint, jint, jlong);
+typedef void (*glTexStorageMem2DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jboolean, jint, jlong);
+typedef void (*glTexStorageMem3DEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jlong);
+typedef void (*glTexStorageMem3DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jint, jboolean, jint, jlong);
+typedef void (*glBufferStorageMemEXTPROC) (jint, uintptr_t, jint, jlong);
+typedef void (*glTextureStorageMem2DEXTPROC) (jint, jint, jint, jint, jint, jint, jlong);
+typedef void (*glTextureStorageMem2DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jboolean, jint, jlong);
+typedef void (*glTextureStorageMem3DEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jlong);
+typedef void (*glTextureStorageMem3DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jint, jboolean, jint, jlong);
+typedef void (*glNamedBufferStorageMemEXTPROC) (jint, uintptr_t, jint, jlong);
+typedef void (*glTexStorageMem1DEXTPROC) (jint, jint, jint, jint, jint, jlong);
+typedef void (*glTextureStorageMem1DEXTPROC) (jint, jint, jint, jint, jint, jlong);
 
 EXTERN_C_ENTER
 

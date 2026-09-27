@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glFramebufferSampleLocationsfvNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glNamedFramebufferSampleLocationsfvNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glResolveDepthValuesNVPROC) (void);
+typedef void (*glFramebufferSampleLocationsfvNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glNamedFramebufferSampleLocationsfvNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glResolveDepthValuesNVPROC) (void);
 
 EXTERN_C_ENTER
 

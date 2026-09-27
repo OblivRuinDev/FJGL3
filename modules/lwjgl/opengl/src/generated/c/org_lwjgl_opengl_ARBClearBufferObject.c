@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glClearNamedBufferDataEXTPROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glClearNamedBufferSubDataEXTPROC) (jint, jint, uintptr_t, uintptr_t, jint, jint, uintptr_t);
+typedef void (*glClearNamedBufferDataEXTPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glClearNamedBufferSubDataEXTPROC) (jint, jint, uintptr_t, uintptr_t, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

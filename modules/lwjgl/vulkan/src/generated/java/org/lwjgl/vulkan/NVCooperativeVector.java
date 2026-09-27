@@ -72,7 +72,7 @@ public class NVCooperativeVector {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pPropertyCount, pProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pPropertyCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceCooperativeVectorPropertiesNV(VkPhysicalDevice physicalDevice, uint32_t * pPropertyCount, VkCooperativeVectorPropertiesNV * pProperties)} */
@@ -93,7 +93,7 @@ public class NVCooperativeVector {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pInfo, __functionAddress);
+        return invokePPI(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code VkResult vkConvertCooperativeVectorMatrixNV(VkDevice device, VkConvertCooperativeVectorMatrixInfoNV const * pInfo)} */
@@ -110,7 +110,7 @@ public class NVCooperativeVector {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), infoCount, pInfos, __functionAddress);
+        invokePPV(commandBuffer.address(), infoCount, pInfos, __functionAddress);
     }
 
     /** {@code void vkCmdConvertCooperativeVectorMatrixNV(VkCommandBuffer commandBuffer, uint32_t infoCount, VkConvertCooperativeVectorMatrixInfoNV const * pInfos)} */
@@ -127,7 +127,7 @@ public class NVCooperativeVector {
             check(pPropertyCount, 1);
             checkSafe(pProperties, pPropertyCount[0]);
         }
-        return callPPPI(physicalDevice.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
+        return invokePPPI(physicalDevice.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
     }
 
 }

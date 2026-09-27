@@ -456,7 +456,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glVertex3hvNV(GLhalfNV const * v)} */
@@ -466,7 +466,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glVertex4hvNV(GLhalfNV const * v)} */
@@ -476,7 +476,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glNormal3hvNV(GLhalfNV const * v)} */
@@ -486,7 +486,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor3hvNV(GLhalfNV const * v)} */
@@ -496,7 +496,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor4hvNV(GLhalfNV const * v)} */
@@ -506,7 +506,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord1hvNV(GLhalfNV const * v)} */
@@ -516,7 +516,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord2hvNV(GLhalfNV const * v)} */
@@ -526,7 +526,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord3hvNV(GLhalfNV const * v)} */
@@ -536,7 +536,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord4hvNV(GLhalfNV const * v)} */
@@ -546,7 +546,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord1hvNV(GLenum target, GLhalfNV const * v)} */
@@ -556,7 +556,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(target, v, __functionAddress);
+        invokePV(target, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord2hvNV(GLenum target, GLhalfNV const * v)} */
@@ -566,7 +566,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(target, v, __functionAddress);
+        invokePV(target, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord3hvNV(GLenum target, GLhalfNV const * v)} */
@@ -576,7 +576,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(target, v, __functionAddress);
+        invokePV(target, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord4hvNV(GLenum target, GLhalfNV const * v)} */
@@ -586,7 +586,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(target, v, __functionAddress);
+        invokePV(target, v, __functionAddress);
     }
 
     /** {@code void glFogCoordhvNV(GLhalfNV const * fog)} */
@@ -596,7 +596,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(fog, 1);
         }
-        callPV(fog, __functionAddress);
+        invokePV(fog, __functionAddress);
     }
 
     /** {@code void glSecondaryColor3hvNV(GLhalfNV const * v)} */
@@ -606,7 +606,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glVertexWeighthvNV(GLhalfNV const * weight)} */
@@ -616,7 +616,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(weight, 1);
         }
-        callPV(weight, __functionAddress);
+        invokePV(weight, __functionAddress);
     }
 
     /** {@code void glVertexAttrib1hvNV(GLuint index, GLhalfNV const * v)} */
@@ -626,7 +626,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib2hvNV(GLuint index, GLhalfNV const * v)} */
@@ -636,7 +636,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib3hvNV(GLuint index, GLhalfNV const * v)} */
@@ -646,7 +646,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4hvNV(GLuint index, GLhalfNV const * v)} */
@@ -656,7 +656,7 @@ public class NVHalfFloat {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribs1hvNV(GLuint index, GLsizei n, GLhalfNV const * v)} */
@@ -665,7 +665,7 @@ public class NVHalfFloat {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(index, v.length, v, __functionAddress);
+        invokePV(index, v.length, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribs2hvNV(GLuint index, GLsizei n, GLhalfNV const * v)} */
@@ -674,7 +674,7 @@ public class NVHalfFloat {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(index, v.length >> 1, v, __functionAddress);
+        invokePV(index, v.length >> 1, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribs3hvNV(GLuint index, GLsizei n, GLhalfNV const * v)} */
@@ -683,7 +683,7 @@ public class NVHalfFloat {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(index, v.length / 3, v, __functionAddress);
+        invokePV(index, v.length / 3, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribs4hvNV(GLuint index, GLsizei n, GLhalfNV const * v)} */
@@ -692,7 +692,7 @@ public class NVHalfFloat {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(index, v.length >> 2, v, __functionAddress);
+        invokePV(index, v.length >> 2, v, __functionAddress);
     }
 
 }

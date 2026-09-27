@@ -36,7 +36,7 @@ public class EXTDisplayAlloc {
             check(__functionAddress);
             check(dpy);
         }
-        return callPI(dpy, __functionAddress) != 0;
+        return invokePI(dpy, __functionAddress) != 0;
     }
 
 }

@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glDebugMessageEnableAMDPROC) (jint, jint, jint, uintptr_t, jboolean);
-typedef void (APIENTRY *glDebugMessageInsertAMDPROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glDebugMessageCallbackAMDPROC) (uintptr_t, uintptr_t);
-typedef jint (APIENTRY *glGetDebugMessageLogAMDPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glDebugMessageEnableAMDPROC) (jint, jint, jint, uintptr_t, jboolean);
+typedef void (*glDebugMessageInsertAMDPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glDebugMessageCallbackAMDPROC) (uintptr_t, uintptr_t);
+typedef jint (*glGetDebugMessageLogAMDPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -30,7 +30,6 @@ public interface ktxStream_readI extends CallbackI {
         ktxStream_readI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_uint32,
             ffi_type_pointer, ffi_type_pointer, ffi_type_pointer
         )

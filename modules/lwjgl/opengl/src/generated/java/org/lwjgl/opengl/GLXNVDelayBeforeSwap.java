@@ -35,7 +35,7 @@ public class GLXNVDelayBeforeSwap {
             check(display);
             check(drawable);
         }
-        return callPPI(display, drawable, seconds, __functionAddress) != 0;
+        return invokePPI(display, drawable, seconds, __functionAddress) != 0;
     }
 
 }

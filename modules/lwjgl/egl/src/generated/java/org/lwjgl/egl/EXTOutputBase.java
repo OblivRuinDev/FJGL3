@@ -49,7 +49,7 @@ public class EXTOutputBase {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPPPI(dpy, attrib_list, layers, max_layers, num_layers, __functionAddress);
+        return invokePPPPI(dpy, attrib_list, layers, max_layers, num_layers, __functionAddress);
     }
 
     /** {@code EGLBoolean eglGetOutputLayersEXT(EGLDisplay dpy, EGLAttrib const * attrib_list, EGLOutputLayerEXT * layers, EGLint max_layers, EGLint * num_layers)} */
@@ -71,7 +71,7 @@ public class EXTOutputBase {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPPPI(dpy, attrib_list, ports, max_ports, num_ports, __functionAddress);
+        return invokePPPPI(dpy, attrib_list, ports, max_ports, num_ports, __functionAddress);
     }
 
     /** {@code EGLBoolean eglGetOutputPortsEXT(EGLDisplay dpy, EGLAttrib const * attrib_list, EGLOutputPortEXT * ports, EGLint max_ports, EGLint * num_ports)} */
@@ -95,7 +95,7 @@ public class EXTOutputBase {
             check(dpy);
             check(layer);
         }
-        return callPPPI(dpy, layer, attribute, value, __functionAddress) != 0;
+        return invokePPPI(dpy, layer, attribute, value, __functionAddress) != 0;
     }
 
     // --- [ eglQueryOutputLayerAttribEXT ] ---
@@ -108,7 +108,7 @@ public class EXTOutputBase {
             check(dpy);
             check(layer);
         }
-        return callPPPI(dpy, layer, attribute, value, __functionAddress);
+        return invokePPPI(dpy, layer, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryOutputLayerAttribEXT(EGLDisplay dpy, EGLOutputLayerEXT layer, EGLint attribute, EGLAttrib * value)} */
@@ -130,7 +130,7 @@ public class EXTOutputBase {
             check(dpy);
             check(layer);
         }
-        return callPPP(dpy, layer, name, __functionAddress);
+        return invokePPP(dpy, layer, name, __functionAddress);
     }
 
     /** {@code char * eglQueryOutputLayerStringEXT(EGLDisplay dpy, EGLOutputLayerEXT layer, EGLint name)} */
@@ -151,7 +151,7 @@ public class EXTOutputBase {
             check(dpy);
             check(port);
         }
-        return callPPPI(dpy, port, attribute, value, __functionAddress) != 0;
+        return invokePPPI(dpy, port, attribute, value, __functionAddress) != 0;
     }
 
     // --- [ eglQueryOutputPortAttribEXT ] ---
@@ -164,7 +164,7 @@ public class EXTOutputBase {
             check(dpy);
             check(port);
         }
-        return callPPPI(dpy, port, attribute, value, __functionAddress);
+        return invokePPPI(dpy, port, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryOutputPortAttribEXT(EGLDisplay dpy, EGLOutputPortEXT port, EGLint attribute, EGLAttrib * value)} */
@@ -186,7 +186,7 @@ public class EXTOutputBase {
             check(dpy);
             check(port);
         }
-        return callPPP(dpy, port, name, __functionAddress);
+        return invokePPP(dpy, port, name, __functionAddress);
     }
 
     /** {@code char * eglQueryOutputPortStringEXT(EGLDisplay dpy, EGLOutputPortEXT port, EGLint name)} */
@@ -206,7 +206,7 @@ public class EXTOutputBase {
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
             check(num_layers, 1);
         }
-        return callPPPPI(dpy, memAddressSafe(attrib_list), memAddressSafe(layers), remainingSafe(layers), num_layers, __functionAddress) != 0;
+        return invokePPPPI(dpy, memAddressSafe(attrib_list), memAddressSafe(layers), remainingSafe(layers), num_layers, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglGetOutputPortsEXT(EGLDisplay dpy, EGLAttrib const * attrib_list, EGLOutputPortEXT * ports, EGLint max_ports, EGLint * num_ports)} */
@@ -219,7 +219,7 @@ public class EXTOutputBase {
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
             check(num_ports, 1);
         }
-        return callPPPPI(dpy, memAddressSafe(attrib_list), memAddressSafe(ports), remainingSafe(ports), num_ports, __functionAddress) != 0;
+        return invokePPPPI(dpy, memAddressSafe(attrib_list), memAddressSafe(ports), remainingSafe(ports), num_ports, __functionAddress) != 0;
     }
 
 }

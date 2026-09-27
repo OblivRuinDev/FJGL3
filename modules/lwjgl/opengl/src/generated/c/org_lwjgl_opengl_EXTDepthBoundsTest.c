@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glDepthBoundsEXTPROC) (jdouble, jdouble);
+typedef void (*glDepthBoundsEXTPROC) (jdouble, jdouble);
 
 EXTERN_C_ENTER
 

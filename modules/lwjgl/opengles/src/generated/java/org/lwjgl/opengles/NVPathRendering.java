@@ -903,7 +903,7 @@ public class NVPathRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(path, commands.remaining(), memAddress(commands), coords.length, coordType, coords, __functionAddress);
+        invokePPV(path, commands.remaining(), memAddress(commands), coords.length, coordType, coords, __functionAddress);
     }
 
     /** {@code void glPathCommandsNV(GLuint path, GLsizei numCommands, GLubyte const * commands, GLsizei numCoords, GLenum coordType, void const * coords)} */
@@ -912,7 +912,7 @@ public class NVPathRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(path, commands.remaining(), memAddress(commands), coords.length, coordType, coords, __functionAddress);
+        invokePPV(path, commands.remaining(), memAddress(commands), coords.length, coordType, coords, __functionAddress);
     }
 
     /** {@code void glPathCoordsNV(GLuint path, GLsizei numCoords, GLenum coordType, void const * coords)} */
@@ -921,7 +921,7 @@ public class NVPathRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(path, coords.length, coordType, coords, __functionAddress);
+        invokePV(path, coords.length, coordType, coords, __functionAddress);
     }
 
     /** {@code void glPathCoordsNV(GLuint path, GLsizei numCoords, GLenum coordType, void const * coords)} */
@@ -930,7 +930,7 @@ public class NVPathRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(path, coords.length, coordType, coords, __functionAddress);
+        invokePV(path, coords.length, coordType, coords, __functionAddress);
     }
 
     /** {@code void glPathSubCommandsNV(GLuint path, GLsizei commandStart, GLsizei commandsToDelete, GLsizei numCommands, GLubyte const * commands, GLsizei numCoords, GLenum coordType, void const * coords)} */
@@ -939,7 +939,7 @@ public class NVPathRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(path, commandStart, commandsToDelete, commands.remaining(), memAddress(commands), coords.length, coordType, coords, __functionAddress);
+        invokePPV(path, commandStart, commandsToDelete, commands.remaining(), memAddress(commands), coords.length, coordType, coords, __functionAddress);
     }
 
     /** {@code void glPathSubCommandsNV(GLuint path, GLsizei commandStart, GLsizei commandsToDelete, GLsizei numCommands, GLubyte const * commands, GLsizei numCoords, GLenum coordType, void const * coords)} */
@@ -948,7 +948,7 @@ public class NVPathRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(path, commandStart, commandsToDelete, commands.remaining(), memAddress(commands), coords.length, coordType, coords, __functionAddress);
+        invokePPV(path, commandStart, commandsToDelete, commands.remaining(), memAddress(commands), coords.length, coordType, coords, __functionAddress);
     }
 
     /** {@code void glPathSubCoordsNV(GLuint path, GLsizei coordStart, GLsizei numCoords, GLenum coordType, void const * coords)} */
@@ -957,7 +957,7 @@ public class NVPathRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(path, coordStart, coords.length, coordType, coords, __functionAddress);
+        invokePV(path, coordStart, coords.length, coordType, coords, __functionAddress);
     }
 
     /** {@code void glPathSubCoordsNV(GLuint path, GLsizei coordStart, GLsizei numCoords, GLenum coordType, void const * coords)} */
@@ -966,7 +966,7 @@ public class NVPathRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(path, coordStart, coords.length, coordType, coords, __functionAddress);
+        invokePV(path, coordStart, coords.length, coordType, coords, __functionAddress);
     }
 
     /** {@code void glWeightPathsNV(GLuint resultPath, GLsizei numPaths, GLuint const * paths, GLfloat const * weights)} */
@@ -976,7 +976,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(weights, paths.length);
         }
-        callPPV(resultPath, paths.length, paths, weights, __functionAddress);
+        invokePPV(resultPath, paths.length, paths, weights, __functionAddress);
     }
 
     /** {@code void glTransformPathNV(GLuint resultPath, GLuint srcPath, GLenum transformType, GLfloat const * transformValues)} */
@@ -986,7 +986,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(transformValues, transformTypeToElements(transformType));
         }
-        callPV(resultPath, srcPath, transformType, transformValues, __functionAddress);
+        invokePV(resultPath, srcPath, transformType, transformValues, __functionAddress);
     }
 
     /** {@code void glPathParameterivNV(GLuint path, GLenum pname, GLint const * value)} */
@@ -996,7 +996,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(path, pname, value, __functionAddress);
+        invokePV(path, pname, value, __functionAddress);
     }
 
     /** {@code void glPathParameterfvNV(GLuint path, GLenum pname, GLfloat const * value)} */
@@ -1006,7 +1006,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(path, pname, value, __functionAddress);
+        invokePV(path, pname, value, __functionAddress);
     }
 
     /** {@code void glPathDashArrayNV(GLuint path, GLsizei dashCount, GLfloat const * dashArray)} */
@@ -1015,7 +1015,7 @@ public class NVPathRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(path, dashArray.length, dashArray, __functionAddress);
+        invokePV(path, dashArray.length, dashArray, __functionAddress);
     }
 
     /** {@code void glStencilFillPathInstancedNV(GLsizei numPaths, GLenum pathNameType, void const * paths, GLuint pathBase, GLenum fillMode, GLuint mask, GLenum transformType, GLfloat const * transformValues)} */
@@ -1026,7 +1026,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(transformValues, numPaths * transformTypeToElements(transformType));
         }
-        callPPV(numPaths, pathNameType, memAddress(paths), pathBase, fillMode, mask, transformType, transformValues, __functionAddress);
+        invokePPV(numPaths, pathNameType, memAddress(paths), pathBase, fillMode, mask, transformType, transformValues, __functionAddress);
     }
 
     /** {@code void glStencilStrokePathInstancedNV(GLsizei numPaths, GLenum pathNameType, void const * paths, GLuint pathBase, GLint reference, GLuint mask, GLenum transformType, GLfloat const * transformValues)} */
@@ -1037,7 +1037,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(transformValues, numPaths * transformTypeToElements(transformType));
         }
-        callPPV(numPaths, pathNameType, memAddress(paths), pathBase, reference, mask, transformType, transformValues, __functionAddress);
+        invokePPV(numPaths, pathNameType, memAddress(paths), pathBase, reference, mask, transformType, transformValues, __functionAddress);
     }
 
     /** {@code void glCoverFillPathInstancedNV(GLsizei numPaths, GLenum pathNameType, void const * paths, GLuint pathBase, GLenum coverMode, GLenum transformType, GLfloat const * transformValues)} */
@@ -1048,7 +1048,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(transformValues, numPaths * transformTypeToElements(transformType));
         }
-        callPPV(numPaths, pathNameType, memAddress(paths), pathBase, coverMode, transformType, transformValues, __functionAddress);
+        invokePPV(numPaths, pathNameType, memAddress(paths), pathBase, coverMode, transformType, transformValues, __functionAddress);
     }
 
     /** {@code void glCoverStrokePathInstancedNV(GLsizei numPaths, GLenum pathNameType, void const * paths, GLuint pathBase, GLenum coverMode, GLenum transformType, GLfloat const * transformValues)} */
@@ -1059,7 +1059,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(transformValues, numPaths * transformTypeToElements(transformType));
         }
-        callPPV(numPaths, pathNameType, memAddress(paths), pathBase, coverMode, transformType, transformValues, __functionAddress);
+        invokePPV(numPaths, pathNameType, memAddress(paths), pathBase, coverMode, transformType, transformValues, __functionAddress);
     }
 
     /** {@code void glStencilThenCoverFillPathInstancedNV(GLsizei numPaths, GLenum pathNameType, void const * paths, GLuint pathBase, GLenum fillMode, GLuint mask, GLenum coverMode, GLenum transformType, GLfloat const * transformValues)} */
@@ -1070,7 +1070,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(transformValues, numPaths * transformTypeToElements(transformType));
         }
-        callPPV(numPaths, pathNameType, memAddress(paths), pathBase, fillMode, mask, coverMode, transformType, transformValues, __functionAddress);
+        invokePPV(numPaths, pathNameType, memAddress(paths), pathBase, fillMode, mask, coverMode, transformType, transformValues, __functionAddress);
     }
 
     /** {@code void glStencilThenCoverStrokePathInstancedNV(GLsizei numPaths, GLenum pathNameType, void const * paths, GLuint pathBase, GLint reference, GLuint mask, GLenum coverMode, GLenum transformType, GLfloat const * transformValues)} */
@@ -1081,7 +1081,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(transformValues, numPaths * transformTypeToElements(transformType));
         }
-        callPPV(numPaths, pathNameType, memAddress(paths), pathBase, reference, mask, coverMode, transformType, transformValues, __functionAddress);
+        invokePPV(numPaths, pathNameType, memAddress(paths), pathBase, reference, mask, coverMode, transformType, transformValues, __functionAddress);
     }
 
     /** {@code void glProgramPathFragmentInputGenNV(GLuint program, GLint location, GLenum genMode, GLint components, GLfloat const * coeffs)} */
@@ -1091,7 +1091,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(coeffs, genModeToElements(genMode) * components);
         }
-        callPV(program, location, genMode, components, coeffs, __functionAddress);
+        invokePV(program, location, genMode, components, coeffs, __functionAddress);
     }
 
     /** {@code void glGetPathParameterivNV(GLuint path, GLenum pname, GLint * value)} */
@@ -1101,7 +1101,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(path, pname, value, __functionAddress);
+        invokePV(path, pname, value, __functionAddress);
     }
 
     /** {@code void glGetPathParameterfvNV(GLuint path, GLenum pname, GLfloat * value)} */
@@ -1111,7 +1111,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(path, pname, value, __functionAddress);
+        invokePV(path, pname, value, __functionAddress);
     }
 
     /** {@code void glGetPathCoordsNV(GLuint path, GLfloat * coords)} */
@@ -1123,7 +1123,7 @@ public class NVPathRendering {
                 check(coords, glGetPathParameteriNV(path, GL_PATH_COORD_COUNT_NV));
             }
         }
-        callPV(path, coords, __functionAddress);
+        invokePV(path, coords, __functionAddress);
     }
 
     /** {@code void glGetPathDashArrayNV(GLuint path, GLfloat * dashArray)} */
@@ -1135,7 +1135,7 @@ public class NVPathRendering {
                 check(dashArray, glGetPathParameteriNV(path, GL_PATH_DASH_ARRAY_COUNT_NV));
             }
         }
-        callPV(path, dashArray, __functionAddress);
+        invokePV(path, dashArray, __functionAddress);
     }
 
     /** {@code void glGetPathMetricsNV(GLbitfield metricQueryMask, GLsizei numPaths, GLenum pathNameType, void const * paths, GLuint pathBase, GLsizei stride, GLfloat * metrics)} */
@@ -1146,7 +1146,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(metrics, numPaths * (stride == 0 ? Integer.bitCount(metricQueryMask) : (stride >> 2)));
         }
-        callPPV(metricQueryMask, numPaths, pathNameType, memAddress(paths), pathBase, stride, metrics, __functionAddress);
+        invokePPV(metricQueryMask, numPaths, pathNameType, memAddress(paths), pathBase, stride, metrics, __functionAddress);
     }
 
     /** {@code void glGetPathMetricRangeNV(GLbitfield metricQueryMask, GLuint firstPathName, GLsizei numPaths, GLsizei stride, GLfloat * metrics)} */
@@ -1156,7 +1156,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(metrics, numPaths * (stride == 0 ? Integer.bitCount(metricQueryMask) : (stride >> 2)));
         }
-        callPV(metricQueryMask, firstPathName, numPaths, stride, metrics, __functionAddress);
+        invokePV(metricQueryMask, firstPathName, numPaths, stride, metrics, __functionAddress);
     }
 
     /** {@code void glGetPathSpacingNV(GLenum pathListMode, GLsizei numPaths, GLenum pathNameType, void const * paths, GLuint pathBase, GLfloat advanceScale, GLfloat kerningScale, GLenum transformType, GLfloat * returnedSpacing)} */
@@ -1167,7 +1167,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(returnedSpacing, (numPaths - 1) * (transformType == GL_TRANSLATE_X_NV ? 1 : 2));
         }
-        callPPV(pathListMode, numPaths, pathNameType, memAddress(paths), pathBase, advanceScale, kerningScale, transformType, returnedSpacing, __functionAddress);
+        invokePPV(pathListMode, numPaths, pathNameType, memAddress(paths), pathBase, advanceScale, kerningScale, transformType, returnedSpacing, __functionAddress);
     }
 
     /** {@code GLboolean glPointAlongPathNV(GLuint path, GLsizei startSegment, GLsizei numSegments, GLfloat distance, GLfloat * x, GLfloat * y, GLfloat * tangentX, GLfloat * tangentY)} */
@@ -1181,7 +1181,7 @@ public class NVPathRendering {
             checkSafe(tangentX, 1);
             checkSafe(tangentY, 1);
         }
-        return callPPPPZ(path, startSegment, numSegments, distance, x, y, tangentX, tangentY, __functionAddress);
+        return invokePPPPZ(path, startSegment, numSegments, distance, x, y, tangentX, tangentY, __functionAddress);
     }
 
     /** {@code void glMatrixLoad3x2fNV(GLenum matrixMode, GLfloat const * m)} */
@@ -1191,7 +1191,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(m, 6);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glMatrixLoad3x3fNV(GLenum matrixMode, GLfloat const * m)} */
@@ -1201,7 +1201,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(m, 9);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glMatrixLoadTranspose3x3fNV(GLenum matrixMode, GLfloat const * m)} */
@@ -1211,7 +1211,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(m, 9);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glMatrixMult3x2fNV(GLenum matrixMode, GLfloat const * m)} */
@@ -1221,7 +1221,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(m, 6);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glMatrixMult3x3fNV(GLenum matrixMode, GLfloat const * m)} */
@@ -1231,7 +1231,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(m, 9);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glMatrixMultTranspose3x3fNV(GLenum matrixMode, GLfloat const * m)} */
@@ -1241,7 +1241,7 @@ public class NVPathRendering {
             check(__functionAddress);
             check(m, 9);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glGetProgramResourcefvNV(GLuint program, GLenum programInterface, GLuint index, GLsizei propCount, GLenum const * props, GLsizei bufSize, GLsizei * length, GLfloat * params)} */
@@ -1251,7 +1251,7 @@ public class NVPathRendering {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPPV(program, programInterface, index, props.length, props, params.length, length, params, __functionAddress);
+        invokePPPV(program, programInterface, index, props.length, props, params.length, length, params, __functionAddress);
     }
 
     private static int charcodeTypeToBytes(int type) {

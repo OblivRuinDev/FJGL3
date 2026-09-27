@@ -44,7 +44,7 @@ public class ANDROIDAnchorSharingExport {
             check(__functionAddress);
             XrAnchorSharingInfoANDROID.validate(sharingInfo);
         }
-        return callPPPI(session.address(), sharingInfo, anchorToken, __functionAddress);
+        return invokePPPI(session.address(), sharingInfo, anchorToken, __functionAddress);
     }
 
     /** {@code XrResult xrShareAnchorANDROID(XrSession session, XrAnchorSharingInfoANDROID const * sharingInfo, XrAnchorSharingTokenANDROID * anchorToken)} */
@@ -62,7 +62,7 @@ public class ANDROIDAnchorSharingExport {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), anchor.address(), __functionAddress);
+        return invokePPI(session.address(), anchor.address(), __functionAddress);
     }
 
 }

@@ -59,7 +59,7 @@ public class EXTDebugUtils {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(instance.address(), nameInfo, __functionAddress);
+        return invokePPI(instance.address(), nameInfo, __functionAddress);
     }
 
     /** {@code XrResult xrSetDebugUtilsObjectNameEXT(XrInstance instance, XrDebugUtilsObjectNameInfoEXT const * nameInfo)} */
@@ -77,7 +77,7 @@ public class EXTDebugUtils {
             check(__functionAddress);
             XrDebugUtilsMessengerCreateInfoEXT.validate(createInfo);
         }
-        return callPPPI(instance.address(), createInfo, messenger, __functionAddress);
+        return invokePPPI(instance.address(), createInfo, messenger, __functionAddress);
     }
 
     /** {@code XrResult xrCreateDebugUtilsMessengerEXT(XrInstance instance, XrDebugUtilsMessengerCreateInfoEXT const * createInfo, XrDebugUtilsMessengerEXT * messenger)} */
@@ -98,7 +98,7 @@ public class EXTDebugUtils {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(messenger.address(), __functionAddress);
+        return invokePI(messenger.address(), __functionAddress);
     }
 
     // --- [ xrSubmitDebugUtilsMessageEXT ] ---
@@ -110,7 +110,7 @@ public class EXTDebugUtils {
             check(__functionAddress);
             XrDebugUtilsMessengerCallbackDataEXT.validate(callbackData);
         }
-        return callPJJPI(instance.address(), messageSeverity, messageTypes, callbackData, __functionAddress);
+        return invokePJJPI(instance.address(), messageSeverity, messageTypes, callbackData, __functionAddress);
     }
 
     /** {@code XrResult xrSubmitDebugUtilsMessageEXT(XrInstance instance, XrDebugUtilsMessageSeverityFlagsEXT messageSeverity, XrDebugUtilsMessageTypeFlagsEXT messageTypes, XrDebugUtilsMessengerCallbackDataEXT const * callbackData)} */
@@ -128,7 +128,7 @@ public class EXTDebugUtils {
             check(__functionAddress);
             XrDebugUtilsLabelEXT.validate(labelInfo);
         }
-        return callPPI(session.address(), labelInfo, __functionAddress);
+        return invokePPI(session.address(), labelInfo, __functionAddress);
     }
 
     /** {@code XrResult xrSessionBeginDebugUtilsLabelRegionEXT(XrSession session, XrDebugUtilsLabelEXT const * labelInfo)} */
@@ -146,7 +146,7 @@ public class EXTDebugUtils {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(session.address(), __functionAddress);
+        return invokePI(session.address(), __functionAddress);
     }
 
     // --- [ xrSessionInsertDebugUtilsLabelEXT ] ---
@@ -158,7 +158,7 @@ public class EXTDebugUtils {
             check(__functionAddress);
             XrDebugUtilsLabelEXT.validate(labelInfo);
         }
-        return callPPI(session.address(), labelInfo, __functionAddress);
+        return invokePPI(session.address(), labelInfo, __functionAddress);
     }
 
     /** {@code XrResult xrSessionInsertDebugUtilsLabelEXT(XrSession session, XrDebugUtilsLabelEXT const * labelInfo)} */

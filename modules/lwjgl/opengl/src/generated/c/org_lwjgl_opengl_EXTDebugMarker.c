@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glInsertEventMarkerEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glPushGroupMarkerEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glPopGroupMarkerEXTPROC) (void);
+typedef void (*glInsertEventMarkerEXTPROC) (jint, uintptr_t);
+typedef void (*glPushGroupMarkerEXTPROC) (jint, uintptr_t);
+typedef void (*glPopGroupMarkerEXTPROC) (void);
 
 EXTERN_C_ENTER
 

@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef uintptr_t (APIENTRY *glImportSyncEXTPROC) (jint, uintptr_t, jint);
+typedef uintptr_t (*glImportSyncEXTPROC) (jint, uintptr_t, jint);
 
 EXTERN_C_ENTER
 

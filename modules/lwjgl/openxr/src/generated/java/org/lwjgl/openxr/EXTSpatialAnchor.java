@@ -51,7 +51,7 @@ public class EXTSpatialAnchor {
             check(__functionAddress);
             XrSpatialAnchorCreateInfoEXT.validate(createInfo);
         }
-        return callPPPPI(spatialContext.address(), createInfo, anchorEntityId, anchorEntity, __functionAddress);
+        return invokePPPPI(spatialContext.address(), createInfo, anchorEntityId, anchorEntity, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorEXT(XrSpatialContextEXT spatialContext, XrSpatialAnchorCreateInfoEXT const * createInfo, XrSpatialEntityIdEXT * anchorEntityId, XrSpatialEntityEXT * anchorEntity)} */

@@ -37,7 +37,7 @@ public class ANGLEQuerySurfacePointer {
             check(dpy);
             check(surface);
         }
-        return callPPPI(dpy, surface, attribute, value, __functionAddress);
+        return invokePPPI(dpy, surface, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQuerySurfacePointerANGLE(EGLDisplay dpy, EGLSurface surface, EGLint attribute, void ** value)} */

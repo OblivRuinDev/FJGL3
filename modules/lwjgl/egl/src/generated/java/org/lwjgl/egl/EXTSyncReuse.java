@@ -39,7 +39,7 @@ public class EXTSyncReuse {
             check(dpy);
             check(sync);
         }
-        return callPPPI(dpy, sync, attrib_list, __functionAddress);
+        return invokePPPI(dpy, sync, attrib_list, __functionAddress);
     }
 
     /** {@code EGLBoolean eglUnsignalSyncEXT(EGLDisplay dpy, EGLSync sync, EGLAttrib const * attrib_list)} */

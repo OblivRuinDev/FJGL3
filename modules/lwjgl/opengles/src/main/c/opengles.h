@@ -5,10 +5,6 @@
 #pragma once
 #include "common_tools.h"
 
-#ifdef LWJGL_WINDOWS
-    #define APIENTRY __stdcall
-#else
-    #define APIENTRY
-#endif
+#define APIENTRY
 
 #define tlsGetFunction(index) (uintptr_t)((void **)(*__env)->reserved3)[index]

@@ -74,7 +74,7 @@ public class KHRFragmentShadingRate {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pFragmentShadingRateCount, pFragmentShadingRates, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pFragmentShadingRateCount, pFragmentShadingRates, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceFragmentShadingRatesKHR(VkPhysicalDevice physicalDevice, uint32_t * pFragmentShadingRateCount, VkPhysicalDeviceFragmentShadingRateKHR * pFragmentShadingRates)} */
@@ -95,7 +95,7 @@ public class KHRFragmentShadingRate {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), pFragmentSize, combinerOps, __functionAddress);
+        invokePPPV(commandBuffer.address(), pFragmentSize, combinerOps, __functionAddress);
     }
 
     /** {@code void vkCmdSetFragmentShadingRateKHR(VkCommandBuffer commandBuffer, VkExtent2D const * pFragmentSize, VkFragmentShadingRateCombinerOpKHR const * combinerOps)} */
@@ -115,7 +115,7 @@ public class KHRFragmentShadingRate {
             check(pFragmentShadingRateCount, 1);
             checkSafe(pFragmentShadingRates, pFragmentShadingRateCount[0]);
         }
-        return callPPPI(physicalDevice.address(), pFragmentShadingRateCount, memAddressSafe(pFragmentShadingRates), __functionAddress);
+        return invokePPPI(physicalDevice.address(), pFragmentShadingRateCount, memAddressSafe(pFragmentShadingRates), __functionAddress);
     }
 
     /** {@code void vkCmdSetFragmentShadingRateKHR(VkCommandBuffer commandBuffer, VkExtent2D const * pFragmentSize, VkFragmentShadingRateCombinerOpKHR const * combinerOps)} */
@@ -125,7 +125,7 @@ public class KHRFragmentShadingRate {
             check(__functionAddress);
             check(combinerOps, 2);
         }
-        callPPPV(commandBuffer.address(), pFragmentSize.address(), combinerOps, __functionAddress);
+        invokePPPV(commandBuffer.address(), pFragmentSize.address(), combinerOps, __functionAddress);
     }
 
 }

@@ -45,7 +45,7 @@ public class NVComputeOccupancyPriority {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pParameters, __functionAddress);
+        invokePPV(commandBuffer.address(), pParameters, __functionAddress);
     }
 
     /** {@code void vkCmdSetComputeOccupancyPriorityNV(VkCommandBuffer commandBuffer, VkComputeOccupancyPriorityParametersNV const * pParameters)} */

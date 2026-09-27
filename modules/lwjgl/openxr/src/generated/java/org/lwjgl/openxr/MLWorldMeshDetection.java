@@ -86,7 +86,7 @@ public class MLWorldMeshDetection {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, detector, __functionAddress);
+        return invokePPPI(session.address(), createInfo, detector, __functionAddress);
     }
 
     /** {@code XrResult xrCreateWorldMeshDetectorML(XrSession session, XrWorldMeshDetectorCreateInfoML const * createInfo, XrWorldMeshDetectorML * detector)} */
@@ -107,7 +107,7 @@ public class MLWorldMeshDetection {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(detector.address(), __functionAddress);
+        return invokePI(detector.address(), __functionAddress);
     }
 
     // --- [ xrRequestWorldMeshStateAsyncML ] ---
@@ -119,7 +119,7 @@ public class MLWorldMeshDetection {
             check(__functionAddress);
             XrWorldMeshStateRequestInfoML.validate(stateRequest);
         }
-        return callPPPI(detector.address(), stateRequest, future, __functionAddress);
+        return invokePPPI(detector.address(), stateRequest, future, __functionAddress);
     }
 
     /** {@code XrResult xrRequestWorldMeshStateAsyncML(XrWorldMeshDetectorML detector, XrWorldMeshStateRequestInfoML const * stateRequest, XrFutureEXT * future)} */
@@ -139,7 +139,7 @@ public class MLWorldMeshDetection {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(detector.address(), future, completion, __functionAddress);
+        return invokePJPI(detector.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrRequestWorldMeshStateCompleteML(XrWorldMeshDetectorML detector, XrFutureEXT future, XrWorldMeshStateRequestCompletionML * completion)} */
@@ -156,7 +156,7 @@ public class MLWorldMeshDetection {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(detector.address(), sizeInfo, size, __functionAddress);
+        return invokePPPI(detector.address(), sizeInfo, size, __functionAddress);
     }
 
     /** {@code XrResult xrGetWorldMeshBufferRecommendSizeML(XrWorldMeshDetectorML detector, XrWorldMeshBufferRecommendedSizeInfoML const * sizeInfo, XrWorldMeshBufferSizeML * size)} */
@@ -173,7 +173,7 @@ public class MLWorldMeshDetection {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(detector.address(), size, buffer, __functionAddress);
+        return invokePPPI(detector.address(), size, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrAllocateWorldMeshBufferML(XrWorldMeshDetectorML detector, XrWorldMeshBufferSizeML const * size, XrWorldMeshBufferML * buffer)} */
@@ -191,7 +191,7 @@ public class MLWorldMeshDetection {
             check(__functionAddress);
             XrWorldMeshBufferML.validate(buffer);
         }
-        return callPPI(detector.address(), buffer, __functionAddress);
+        return invokePPI(detector.address(), buffer, __functionAddress);
     }
 
     /** {@code XrResult xrFreeWorldMeshBufferML(XrWorldMeshDetectorML detector, XrWorldMeshBufferML const * buffer)} */
@@ -209,7 +209,7 @@ public class MLWorldMeshDetection {
             check(__functionAddress);
             XrWorldMeshGetInfoML.validate(getInfo);
         }
-        return callPPPPI(detector.address(), getInfo, buffer, future, __functionAddress);
+        return invokePPPPI(detector.address(), getInfo, buffer, future, __functionAddress);
     }
 
     /** {@code XrResult xrRequestWorldMeshAsyncML(XrWorldMeshDetectorML detector, XrWorldMeshGetInfoML const * getInfo, XrWorldMeshBufferML * buffer, XrFutureEXT * future)} */
@@ -230,7 +230,7 @@ public class MLWorldMeshDetection {
             check(__functionAddress);
             XrWorldMeshRequestCompletionInfoML.validate(completionInfo);
         }
-        return callPPJPI(detector.address(), completionInfo, future, completion, __functionAddress);
+        return invokePPJPI(detector.address(), completionInfo, future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrRequestWorldMeshCompleteML(XrWorldMeshDetectorML detector, XrWorldMeshRequestCompletionInfoML const * completionInfo, XrFutureEXT future, XrWorldMeshRequestCompletionML * completion)} */

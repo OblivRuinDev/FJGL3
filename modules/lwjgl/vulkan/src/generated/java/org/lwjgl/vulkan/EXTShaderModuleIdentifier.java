@@ -44,7 +44,7 @@ public class EXTShaderModuleIdentifier {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), shaderModule, pIdentifier, __functionAddress);
+        invokePJPV(device.address(), shaderModule, pIdentifier, __functionAddress);
     }
 
     /** {@code void vkGetShaderModuleIdentifierEXT(VkDevice device, VkShaderModule shaderModule, VkShaderModuleIdentifierEXT * pIdentifier)} */
@@ -61,7 +61,7 @@ public class EXTShaderModuleIdentifier {
             check(__functionAddress);
             VkShaderModuleCreateInfo.validate(pCreateInfo);
         }
-        callPPPV(device.address(), pCreateInfo, pIdentifier, __functionAddress);
+        invokePPPV(device.address(), pCreateInfo, pIdentifier, __functionAddress);
     }
 
     /** {@code void vkGetShaderModuleCreateInfoIdentifierEXT(VkDevice device, VkShaderModuleCreateInfo const * pCreateInfo, VkShaderModuleIdentifierEXT * pIdentifier)} */

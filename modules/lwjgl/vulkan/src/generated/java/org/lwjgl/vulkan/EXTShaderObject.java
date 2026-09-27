@@ -71,7 +71,7 @@ public class EXTShaderObject {
             check(__functionAddress);
             Struct.validate(pCreateInfos, createInfoCount, VkShaderCreateInfoEXT.SIZEOF, VkShaderCreateInfoEXT::validate);
         }
-        return callPPPPI(device.address(), createInfoCount, pCreateInfos, pAllocator, pShaders, __functionAddress);
+        return invokePPPPI(device.address(), createInfoCount, pCreateInfos, pAllocator, pShaders, __functionAddress);
     }
 
     /** {@code VkResult vkCreateShadersEXT(VkDevice device, uint32_t createInfoCount, VkShaderCreateInfoEXT const * pCreateInfos, VkAllocationCallbacks const * pAllocator, VkShaderEXT * pShaders)} */
@@ -91,7 +91,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), shader, pAllocator, __functionAddress);
+        invokePJPV(device.address(), shader, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyShaderEXT(VkDevice device, VkShaderEXT shader, VkAllocationCallbacks const * pAllocator)} */
@@ -107,7 +107,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), shader, pDataSize, pData, __functionAddress);
+        return invokePJPPI(device.address(), shader, pDataSize, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetShaderBinaryDataEXT(VkDevice device, VkShaderEXT shader, size_t * pDataSize, void * pData)} */
@@ -128,7 +128,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), stageCount, pStages, pShaders, __functionAddress);
+        invokePPPV(commandBuffer.address(), stageCount, pStages, pShaders, __functionAddress);
     }
 
     /** {@code void vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, uint32_t stageCount, VkShaderStageFlagBits const * pStages, VkShaderEXT const * pShaders)} */
@@ -147,7 +147,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), cullMode, __functionAddress);
+        invokePV(commandBuffer.address(), cullMode, __functionAddress);
     }
 
     // --- [ vkCmdSetFrontFaceEXT ] ---
@@ -158,7 +158,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), frontFace, __functionAddress);
+        invokePV(commandBuffer.address(), frontFace, __functionAddress);
     }
 
     // --- [ vkCmdSetPrimitiveTopologyEXT ] ---
@@ -169,7 +169,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), primitiveTopology, __functionAddress);
+        invokePV(commandBuffer.address(), primitiveTopology, __functionAddress);
     }
 
     // --- [ vkCmdSetViewportWithCountEXT ] ---
@@ -180,7 +180,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), viewportCount, pViewports, __functionAddress);
+        invokePPV(commandBuffer.address(), viewportCount, pViewports, __functionAddress);
     }
 
     /** {@code void vkCmdSetViewportWithCountEXT(VkCommandBuffer commandBuffer, uint32_t viewportCount, VkViewport const * pViewports)} */
@@ -196,7 +196,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), scissorCount, pScissors, __functionAddress);
+        invokePPV(commandBuffer.address(), scissorCount, pScissors, __functionAddress);
     }
 
     /** {@code void vkCmdSetScissorWithCountEXT(VkCommandBuffer commandBuffer, uint32_t scissorCount, VkRect2D const * pScissors)} */
@@ -212,7 +212,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPPPV(commandBuffer.address(), firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides, __functionAddress);
+        invokePPPPPV(commandBuffer.address(), firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides, __functionAddress);
     }
 
     /** {@code void vkCmdBindVertexBuffers2EXT(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, VkBuffer const * pBuffers, VkDeviceSize const * pOffsets, VkDeviceSize const * pSizes, VkDeviceSize const * pStrides)} */
@@ -233,7 +233,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthTestEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), depthTestEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthWriteEnableEXT ] ---
@@ -244,7 +244,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthWriteEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), depthWriteEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthCompareOpEXT ] ---
@@ -255,7 +255,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthCompareOp, __functionAddress);
+        invokePV(commandBuffer.address(), depthCompareOp, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthBoundsTestEnableEXT ] ---
@@ -266,7 +266,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthBoundsTestEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), depthBoundsTestEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetStencilTestEnableEXT ] ---
@@ -277,7 +277,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), stencilTestEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), stencilTestEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetStencilOpEXT ] ---
@@ -288,7 +288,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), faceMask, failOp, passOp, depthFailOp, compareOp, __functionAddress);
+        invokePV(commandBuffer.address(), faceMask, failOp, passOp, depthFailOp, compareOp, __functionAddress);
     }
 
     // --- [ vkCmdSetVertexInputEXT ] ---
@@ -299,7 +299,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), vertexBindingDescriptionCount, pVertexBindingDescriptions, vertexAttributeDescriptionCount, pVertexAttributeDescriptions, __functionAddress);
+        invokePPPV(commandBuffer.address(), vertexBindingDescriptionCount, pVertexBindingDescriptions, vertexAttributeDescriptionCount, pVertexAttributeDescriptions, __functionAddress);
     }
 
     /** {@code void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint32_t vertexBindingDescriptionCount, VkVertexInputBindingDescription2EXT const * pVertexBindingDescriptions, uint32_t vertexAttributeDescriptionCount, VkVertexInputAttributeDescription2EXT const * pVertexAttributeDescriptions)} */
@@ -315,7 +315,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), patchControlPoints, __functionAddress);
+        invokePV(commandBuffer.address(), patchControlPoints, __functionAddress);
     }
 
     // --- [ vkCmdSetRasterizerDiscardEnableEXT ] ---
@@ -326,7 +326,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), rasterizerDiscardEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), rasterizerDiscardEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthBiasEnableEXT ] ---
@@ -337,7 +337,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthBiasEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), depthBiasEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetLogicOpEXT ] ---
@@ -348,7 +348,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), logicOp, __functionAddress);
+        invokePV(commandBuffer.address(), logicOp, __functionAddress);
     }
 
     // --- [ vkCmdSetPrimitiveRestartEnableEXT ] ---
@@ -359,7 +359,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), primitiveRestartEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), primitiveRestartEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetTessellationDomainOriginEXT ] ---
@@ -370,7 +370,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), domainOrigin, __functionAddress);
+        invokePV(commandBuffer.address(), domainOrigin, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthClampEnableEXT ] ---
@@ -381,7 +381,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthClampEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), depthClampEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetPolygonModeEXT ] ---
@@ -392,7 +392,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), polygonMode, __functionAddress);
+        invokePV(commandBuffer.address(), polygonMode, __functionAddress);
     }
 
     // --- [ vkCmdSetRasterizationSamplesEXT ] ---
@@ -403,7 +403,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), rasterizationSamples, __functionAddress);
+        invokePV(commandBuffer.address(), rasterizationSamples, __functionAddress);
     }
 
     // --- [ vkCmdSetSampleMaskEXT ] ---
@@ -414,7 +414,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), samples, pSampleMask, __functionAddress);
+        invokePPV(commandBuffer.address(), samples, pSampleMask, __functionAddress);
     }
 
     /** {@code void vkCmdSetSampleMaskEXT(VkCommandBuffer commandBuffer, VkSampleCountFlagBits samples, VkSampleMask const * pSampleMask)} */
@@ -430,7 +430,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), alphaToCoverageEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), alphaToCoverageEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetAlphaToOneEnableEXT ] ---
@@ -441,7 +441,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), alphaToOneEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), alphaToOneEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetLogicOpEnableEXT ] ---
@@ -452,7 +452,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), logicOpEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), logicOpEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetColorBlendEnableEXT ] ---
@@ -463,7 +463,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorBlendEnables, __functionAddress);
+        invokePPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorBlendEnables, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorBlendEnableEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, VkBool32 const * pColorBlendEnables)} */
@@ -479,7 +479,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorBlendEquations, __functionAddress);
+        invokePPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorBlendEquations, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorBlendEquationEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, VkColorBlendEquationEXT const * pColorBlendEquations)} */
@@ -495,7 +495,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorWriteMasks, __functionAddress);
+        invokePPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorWriteMasks, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorWriteMaskEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, VkColorComponentFlags const * pColorWriteMasks)} */
@@ -511,7 +511,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), rasterizationStream, __functionAddress);
+        invokePV(commandBuffer.address(), rasterizationStream, __functionAddress);
     }
 
     // --- [ vkCmdSetConservativeRasterizationModeEXT ] ---
@@ -522,7 +522,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), conservativeRasterizationMode, __functionAddress);
+        invokePV(commandBuffer.address(), conservativeRasterizationMode, __functionAddress);
     }
 
     // --- [ vkCmdSetExtraPrimitiveOverestimationSizeEXT ] ---
@@ -533,7 +533,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), extraPrimitiveOverestimationSize, __functionAddress);
+        invokePV(commandBuffer.address(), extraPrimitiveOverestimationSize, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthClipEnableEXT ] ---
@@ -544,7 +544,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthClipEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), depthClipEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetSampleLocationsEnableEXT ] ---
@@ -555,7 +555,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), sampleLocationsEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), sampleLocationsEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetColorBlendAdvancedEXT ] ---
@@ -566,7 +566,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorBlendAdvanced, __functionAddress);
+        invokePPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorBlendAdvanced, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorBlendAdvancedEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, VkColorBlendAdvancedEXT const * pColorBlendAdvanced)} */
@@ -582,7 +582,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), provokingVertexMode, __functionAddress);
+        invokePV(commandBuffer.address(), provokingVertexMode, __functionAddress);
     }
 
     // --- [ vkCmdSetLineRasterizationModeEXT ] ---
@@ -593,7 +593,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), lineRasterizationMode, __functionAddress);
+        invokePV(commandBuffer.address(), lineRasterizationMode, __functionAddress);
     }
 
     // --- [ vkCmdSetLineStippleEnableEXT ] ---
@@ -604,7 +604,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), stippledLineEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), stippledLineEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthClipNegativeOneToOneEXT ] ---
@@ -615,7 +615,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), negativeOneToOne ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), negativeOneToOne ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetViewportWScalingEnableNV ] ---
@@ -626,7 +626,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), viewportWScalingEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), viewportWScalingEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetViewportSwizzleNV ] ---
@@ -637,7 +637,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstViewport, viewportCount, pViewportSwizzles, __functionAddress);
+        invokePPV(commandBuffer.address(), firstViewport, viewportCount, pViewportSwizzles, __functionAddress);
     }
 
     /** {@code void vkCmdSetViewportSwizzleNV(VkCommandBuffer commandBuffer, uint32_t firstViewport, uint32_t viewportCount, VkViewportSwizzleNV const * pViewportSwizzles)} */
@@ -653,7 +653,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), coverageToColorEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), coverageToColorEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetCoverageToColorLocationNV ] ---
@@ -664,7 +664,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), coverageToColorLocation, __functionAddress);
+        invokePV(commandBuffer.address(), coverageToColorLocation, __functionAddress);
     }
 
     // --- [ vkCmdSetCoverageModulationModeNV ] ---
@@ -675,7 +675,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), coverageModulationMode, __functionAddress);
+        invokePV(commandBuffer.address(), coverageModulationMode, __functionAddress);
     }
 
     // --- [ vkCmdSetCoverageModulationTableEnableNV ] ---
@@ -686,7 +686,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), coverageModulationTableEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), coverageModulationTableEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetCoverageModulationTableNV ] ---
@@ -697,7 +697,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), coverageModulationTableCount, pCoverageModulationTable, __functionAddress);
+        invokePPV(commandBuffer.address(), coverageModulationTableCount, pCoverageModulationTable, __functionAddress);
     }
 
     /** {@code void vkCmdSetCoverageModulationTableNV(VkCommandBuffer commandBuffer, uint32_t coverageModulationTableCount, float const * pCoverageModulationTable)} */
@@ -713,7 +713,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), shadingRateImageEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), shadingRateImageEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetRepresentativeFragmentTestEnableNV ] ---
@@ -724,7 +724,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), representativeFragmentTestEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), representativeFragmentTestEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetCoverageReductionModeNV ] ---
@@ -735,7 +735,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), coverageReductionMode, __functionAddress);
+        invokePV(commandBuffer.address(), coverageReductionMode, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthClampRangeEXT ] ---
@@ -746,7 +746,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), depthClampMode, pDepthClampRange, __functionAddress);
+        invokePPV(commandBuffer.address(), depthClampMode, pDepthClampRange, __functionAddress);
     }
 
     /** {@code void vkCmdSetDepthClampRangeEXT(VkCommandBuffer commandBuffer, VkDepthClampModeEXT depthClampMode, VkDepthClampRangeEXT const * pDepthClampRange)} */
@@ -763,7 +763,7 @@ public class EXTShaderObject {
             check(pShaders, pCreateInfos.remaining());
             Struct.validate(pCreateInfos.address(), pCreateInfos.remaining(), VkShaderCreateInfoEXT.SIZEOF, VkShaderCreateInfoEXT::validate);
         }
-        return callPPPPI(device.address(), pCreateInfos.remaining(), pCreateInfos.address(), memAddressSafe(pAllocator), pShaders, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfos.remaining(), pCreateInfos.address(), memAddressSafe(pAllocator), pShaders, __functionAddress);
     }
 
     /** {@code void vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, uint32_t stageCount, VkShaderStageFlagBits const * pStages, VkShaderEXT const * pShaders)} */
@@ -773,7 +773,7 @@ public class EXTShaderObject {
             check(__functionAddress);
             check(pShaders, pStages.length);
         }
-        callPPPV(commandBuffer.address(), pStages.length, pStages, pShaders, __functionAddress);
+        invokePPPV(commandBuffer.address(), pStages.length, pStages, pShaders, __functionAddress);
     }
 
     /** {@code void vkCmdBindVertexBuffers2EXT(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, VkBuffer const * pBuffers, VkDeviceSize const * pOffsets, VkDeviceSize const * pSizes, VkDeviceSize const * pStrides)} */
@@ -785,7 +785,7 @@ public class EXTShaderObject {
             checkSafe(pSizes, pBuffers.length);
             checkSafe(pStrides, pBuffers.length);
         }
-        callPPPPPV(commandBuffer.address(), firstBinding, pBuffers.length, pBuffers, pOffsets, pSizes, pStrides, __functionAddress);
+        invokePPPPPV(commandBuffer.address(), firstBinding, pBuffers.length, pBuffers, pOffsets, pSizes, pStrides, __functionAddress);
     }
 
     /** {@code void vkCmdSetSampleMaskEXT(VkCommandBuffer commandBuffer, VkSampleCountFlagBits samples, VkSampleMask const * pSampleMask)} */
@@ -794,7 +794,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), samples, pSampleMask, __functionAddress);
+        invokePPV(commandBuffer.address(), samples, pSampleMask, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorBlendEnableEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, VkBool32 const * pColorBlendEnables)} */
@@ -803,7 +803,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstAttachment, pColorBlendEnables.length, pColorBlendEnables, __functionAddress);
+        invokePPV(commandBuffer.address(), firstAttachment, pColorBlendEnables.length, pColorBlendEnables, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorWriteMaskEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, VkColorComponentFlags const * pColorWriteMasks)} */
@@ -812,7 +812,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstAttachment, pColorWriteMasks.length, pColorWriteMasks, __functionAddress);
+        invokePPV(commandBuffer.address(), firstAttachment, pColorWriteMasks.length, pColorWriteMasks, __functionAddress);
     }
 
     /** {@code void vkCmdSetCoverageModulationTableNV(VkCommandBuffer commandBuffer, uint32_t coverageModulationTableCount, float const * pCoverageModulationTable)} */
@@ -821,7 +821,7 @@ public class EXTShaderObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pCoverageModulationTable.length, pCoverageModulationTable, __functionAddress);
+        invokePPV(commandBuffer.address(), pCoverageModulationTable.length, pCoverageModulationTable, __functionAddress);
     }
 
 }

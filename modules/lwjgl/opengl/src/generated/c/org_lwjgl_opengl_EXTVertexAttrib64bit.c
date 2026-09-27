@@ -14,16 +14,16 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glVertexAttribL1dEXTPROC) (jint, jdouble);
-typedef void (APIENTRY *glVertexAttribL2dEXTPROC) (jint, jdouble, jdouble);
-typedef void (APIENTRY *glVertexAttribL3dEXTPROC) (jint, jdouble, jdouble, jdouble);
-typedef void (APIENTRY *glVertexAttribL4dEXTPROC) (jint, jdouble, jdouble, jdouble, jdouble);
-typedef void (APIENTRY *glVertexAttribL1dvEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribL2dvEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribL3dvEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribL4dvEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribLPointerEXTPROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetVertexAttribLdvEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glVertexAttribL1dEXTPROC) (jint, jdouble);
+typedef void (*glVertexAttribL2dEXTPROC) (jint, jdouble, jdouble);
+typedef void (*glVertexAttribL3dEXTPROC) (jint, jdouble, jdouble, jdouble);
+typedef void (*glVertexAttribL4dEXTPROC) (jint, jdouble, jdouble, jdouble, jdouble);
+typedef void (*glVertexAttribL1dvEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribL2dvEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribL3dvEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribL4dvEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribLPointerEXTPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glGetVertexAttribLdvEXTPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

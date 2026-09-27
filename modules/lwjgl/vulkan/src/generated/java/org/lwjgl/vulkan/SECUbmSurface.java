@@ -43,7 +43,7 @@ public class SECUbmSurface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(instance.address(), pCreateInfo, pAllocator, pSurface, __functionAddress);
+        return invokePPPPI(instance.address(), pCreateInfo, pAllocator, pSurface, __functionAddress);
     }
 
     /** {@code VkResult vkCreateUbmSurfaceSEC(VkInstance instance, VkUbmSurfaceCreateInfoSEC const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkSurfaceKHR * pSurface)} */
@@ -65,7 +65,7 @@ public class SECUbmSurface {
             check(__functionAddress);
             check(device);
         }
-        return callPPI(physicalDevice.address(), queueFamilyIndex, device, __functionAddress) != 0;
+        return invokePPI(physicalDevice.address(), queueFamilyIndex, device, __functionAddress) != 0;
     }
 
     /** {@code VkResult vkCreateUbmSurfaceSEC(VkInstance instance, VkUbmSurfaceCreateInfoSEC const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkSurfaceKHR * pSurface)} */
@@ -76,7 +76,7 @@ public class SECUbmSurface {
             check(__functionAddress);
             check(pSurface, 1);
         }
-        return callPPPPI(instance.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSurface, __functionAddress);
+        return invokePPPPI(instance.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSurface, __functionAddress);
     }
 
 }

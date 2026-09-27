@@ -48,7 +48,7 @@ public class IMGUseGrallocPtr {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPI(command_queue, num_objects, mem_objects, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPI(command_queue, num_objects, mem_objects, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueAcquireGrallocObjectsIMG(cl_command_queue command_queue, cl_uint num_objects, cl_mem const * mem_objects, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -69,7 +69,7 @@ public class IMGUseGrallocPtr {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPI(command_queue, num_objects, mem_objects, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPI(command_queue, num_objects, mem_objects, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReleaseGrallocObjectsIMG(cl_command_queue command_queue, cl_uint num_objects, cl_mem const * mem_objects, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */

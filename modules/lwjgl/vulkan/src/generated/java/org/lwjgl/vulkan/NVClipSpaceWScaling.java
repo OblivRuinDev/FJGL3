@@ -40,7 +40,7 @@ public class NVClipSpaceWScaling {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstViewport, viewportCount, pViewportWScalings, __functionAddress);
+        invokePPV(commandBuffer.address(), firstViewport, viewportCount, pViewportWScalings, __functionAddress);
     }
 
     /** {@code void vkCmdSetViewportWScalingNV(VkCommandBuffer commandBuffer, uint32_t firstViewport, uint32_t viewportCount, VkViewportWScalingNV const * pViewportWScalings)} */

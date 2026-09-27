@@ -58,7 +58,7 @@ public class ANDROIDLightEstimation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, outHandle, __functionAddress);
+        return invokePPPI(session.address(), createInfo, outHandle, __functionAddress);
     }
 
     /** {@code XrResult xrCreateLightEstimatorANDROID(XrSession session, XrLightEstimatorCreateInfoANDROID * createInfo, XrLightEstimatorANDROID * outHandle)} */
@@ -79,7 +79,7 @@ public class ANDROIDLightEstimation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(estimator.address(), __functionAddress);
+        return invokePI(estimator.address(), __functionAddress);
     }
 
     // --- [ xrGetLightEstimateANDROID ] ---
@@ -91,7 +91,7 @@ public class ANDROIDLightEstimation {
             check(__functionAddress);
             XrLightEstimateGetInfoANDROID.validate(input);
         }
-        return callPPPI(estimator.address(), input, output, __functionAddress);
+        return invokePPPI(estimator.address(), input, output, __functionAddress);
     }
 
     /** {@code XrResult xrGetLightEstimateANDROID(XrLightEstimatorANDROID estimator, XrLightEstimateGetInfoANDROID const * input, XrLightEstimateANDROID * output)} */

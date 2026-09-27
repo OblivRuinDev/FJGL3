@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glFragmentCoverageColorNVPROC) (jint);
+typedef void (*glFragmentCoverageColorNVPROC) (jint);
 
 EXTERN_C_ENTER
 

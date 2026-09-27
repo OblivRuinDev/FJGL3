@@ -45,7 +45,7 @@ public class EXTColorWriteEnable {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), attachmentCount, pColorWriteEnables, __functionAddress);
+        invokePPV(commandBuffer.address(), attachmentCount, pColorWriteEnables, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorWriteEnableEXT(VkCommandBuffer commandBuffer, uint32_t attachmentCount, VkBool32 const * pColorWriteEnables)} */
@@ -59,7 +59,7 @@ public class EXTColorWriteEnable {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pColorWriteEnables.length, pColorWriteEnables, __functionAddress);
+        invokePPV(commandBuffer.address(), pColorWriteEnables.length, pColorWriteEnables, __functionAddress);
     }
 
 }

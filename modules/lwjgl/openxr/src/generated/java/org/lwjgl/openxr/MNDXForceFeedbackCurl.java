@@ -48,7 +48,7 @@ public class MNDXForceFeedbackCurl {
             check(__functionAddress);
             XrForceFeedbackCurlApplyLocationsMNDX.validate(locations);
         }
-        return callPPI(handTracker.address(), locations, __functionAddress);
+        return invokePPI(handTracker.address(), locations, __functionAddress);
     }
 
     /** {@code XrResult xrApplyForceFeedbackCurlMNDX(XrHandTrackerEXT handTracker, XrForceFeedbackCurlApplyLocationsMNDX const * locations)} */

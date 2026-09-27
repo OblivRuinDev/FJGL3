@@ -42,7 +42,7 @@ public class KHRStreamProducerEGLSurface {
             check(config);
             check(stream);
         }
-        return callPPPPP(dpy, config, stream, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, stream, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreateStreamProducerSurfaceKHR(EGLDisplay dpy, EGLConfig config, EGLStreamKHR stream, EGLint const * attrib_list)} */
@@ -65,7 +65,7 @@ public class KHRStreamProducerEGLSurface {
             check(stream);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPPPP(dpy, config, stream, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, stream, attrib_list, __functionAddress);
     }
 
 }

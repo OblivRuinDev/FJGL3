@@ -180,7 +180,7 @@ public class ARBWindowPos {
             check(__functionAddress);
             check(p, 2);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos2svARB(GLshort const * p)} */
@@ -190,7 +190,7 @@ public class ARBWindowPos {
             check(__functionAddress);
             check(p, 2);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos2fvARB(GLfloat const * p)} */
@@ -200,7 +200,7 @@ public class ARBWindowPos {
             check(__functionAddress);
             check(p, 2);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos2dvARB(GLdouble const * p)} */
@@ -210,7 +210,7 @@ public class ARBWindowPos {
             check(__functionAddress);
             check(p, 2);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos3ivARB(GLint const * p)} */
@@ -220,7 +220,7 @@ public class ARBWindowPos {
             check(__functionAddress);
             check(p, 3);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos3svARB(GLshort const * p)} */
@@ -230,7 +230,7 @@ public class ARBWindowPos {
             check(__functionAddress);
             check(p, 3);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos3fvARB(GLfloat const * p)} */
@@ -240,7 +240,7 @@ public class ARBWindowPos {
             check(__functionAddress);
             check(p, 3);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos3dvARB(GLdouble const * p)} */
@@ -250,7 +250,7 @@ public class ARBWindowPos {
             check(__functionAddress);
             check(p, 3);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
 }

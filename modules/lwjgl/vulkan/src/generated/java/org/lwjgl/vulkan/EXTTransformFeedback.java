@@ -59,7 +59,7 @@ public class EXTTransformFeedback {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPPV(commandBuffer.address(), firstBinding, bindingCount, pBuffers, pOffsets, pSizes, __functionAddress);
+        invokePPPPV(commandBuffer.address(), firstBinding, bindingCount, pBuffers, pOffsets, pSizes, __functionAddress);
     }
 
     /** {@code void vkCmdBindTransformFeedbackBuffersEXT(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, VkBuffer const * pBuffers, VkDeviceSize const * pOffsets, VkDeviceSize const * pSizes)} */
@@ -79,7 +79,7 @@ public class EXTTransformFeedback {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets, __functionAddress);
+        invokePPPV(commandBuffer.address(), firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets, __functionAddress);
     }
 
     /** {@code void vkCmdBeginTransformFeedbackEXT(VkCommandBuffer commandBuffer, uint32_t firstCounterBuffer, uint32_t counterBufferCount, VkBuffer const * pCounterBuffers, VkDeviceSize const * pCounterBufferOffsets)} */
@@ -98,7 +98,7 @@ public class EXTTransformFeedback {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets, __functionAddress);
+        invokePPPV(commandBuffer.address(), firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets, __functionAddress);
     }
 
     /** {@code void vkCmdEndTransformFeedbackEXT(VkCommandBuffer commandBuffer, uint32_t firstCounterBuffer, uint32_t counterBufferCount, VkBuffer const * pCounterBuffers, VkDeviceSize const * pCounterBufferOffsets)} */
@@ -117,7 +117,7 @@ public class EXTTransformFeedback {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(commandBuffer.address(), queryPool, query, flags, index, __functionAddress);
+        invokePJV(commandBuffer.address(), queryPool, query, flags, index, __functionAddress);
     }
 
     // --- [ vkCmdEndQueryIndexedEXT ] ---
@@ -128,7 +128,7 @@ public class EXTTransformFeedback {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(commandBuffer.address(), queryPool, query, index, __functionAddress);
+        invokePJV(commandBuffer.address(), queryPool, query, index, __functionAddress);
     }
 
     // --- [ vkCmdDrawIndirectByteCountEXT ] ---
@@ -139,7 +139,7 @@ public class EXTTransformFeedback {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJV(commandBuffer.address(), instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride, __functionAddress);
+        invokePJJV(commandBuffer.address(), instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride, __functionAddress);
     }
 
     /** {@code void vkCmdBindTransformFeedbackBuffersEXT(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, VkBuffer const * pBuffers, VkDeviceSize const * pOffsets, VkDeviceSize const * pSizes)} */
@@ -150,7 +150,7 @@ public class EXTTransformFeedback {
             check(pOffsets, pBuffers.length);
             checkSafe(pSizes, pBuffers.length);
         }
-        callPPPPV(commandBuffer.address(), firstBinding, pBuffers.length, pBuffers, pOffsets, pSizes, __functionAddress);
+        invokePPPPV(commandBuffer.address(), firstBinding, pBuffers.length, pBuffers, pOffsets, pSizes, __functionAddress);
     }
 
     /** {@code void vkCmdBeginTransformFeedbackEXT(VkCommandBuffer commandBuffer, uint32_t firstCounterBuffer, uint32_t counterBufferCount, VkBuffer const * pCounterBuffers, VkDeviceSize const * pCounterBufferOffsets)} */
@@ -160,7 +160,7 @@ public class EXTTransformFeedback {
             check(__functionAddress);
             checkSafe(pCounterBufferOffsets, lengthSafe(pCounterBuffers));
         }
-        callPPPV(commandBuffer.address(), firstCounterBuffer, lengthSafe(pCounterBuffers), pCounterBuffers, pCounterBufferOffsets, __functionAddress);
+        invokePPPV(commandBuffer.address(), firstCounterBuffer, lengthSafe(pCounterBuffers), pCounterBuffers, pCounterBufferOffsets, __functionAddress);
     }
 
     /** {@code void vkCmdEndTransformFeedbackEXT(VkCommandBuffer commandBuffer, uint32_t firstCounterBuffer, uint32_t counterBufferCount, VkBuffer const * pCounterBuffers, VkDeviceSize const * pCounterBufferOffsets)} */
@@ -170,7 +170,7 @@ public class EXTTransformFeedback {
             check(__functionAddress);
             checkSafe(pCounterBufferOffsets, lengthSafe(pCounterBuffers));
         }
-        callPPPV(commandBuffer.address(), firstCounterBuffer, lengthSafe(pCounterBuffers), pCounterBuffers, pCounterBufferOffsets, __functionAddress);
+        invokePPPV(commandBuffer.address(), firstCounterBuffer, lengthSafe(pCounterBuffers), pCounterBuffers, pCounterBufferOffsets, __functionAddress);
     }
 
 }

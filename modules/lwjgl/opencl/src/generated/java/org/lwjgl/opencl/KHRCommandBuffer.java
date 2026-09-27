@@ -70,7 +70,7 @@ public class KHRCommandBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPP(num_queues, queues, properties, errcode_ret, __functionAddress);
+        return invokePPPP(num_queues, queues, properties, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_command_buffer_khr clCreateCommandBufferKHR(cl_uint num_queues, cl_command_queue const * queues, cl_command_buffer_properties_khr const * properties, cl_int * errcode_ret)} */
@@ -93,7 +93,7 @@ public class KHRCommandBuffer {
             check(__functionAddress);
             check(command_buffer);
         }
-        return callPI(command_buffer, __functionAddress);
+        return invokePI(command_buffer, __functionAddress);
     }
 
     // --- [ clReleaseCommandBufferKHR ] ---
@@ -106,7 +106,7 @@ public class KHRCommandBuffer {
             check(__functionAddress);
             check(command_buffer);
         }
-        return callPI(command_buffer, __functionAddress);
+        return invokePI(command_buffer, __functionAddress);
     }
 
     // --- [ clFinalizeCommandBufferKHR ] ---
@@ -119,7 +119,7 @@ public class KHRCommandBuffer {
             check(__functionAddress);
             check(command_buffer);
         }
-        return callPI(command_buffer, __functionAddress);
+        return invokePI(command_buffer, __functionAddress);
     }
 
     // --- [ clEnqueueCommandBufferKHR ] ---
@@ -131,7 +131,7 @@ public class KHRCommandBuffer {
             check(__functionAddress);
             check(command_buffer);
         }
-        return callPPPPI(num_queues, queues, command_buffer, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPI(num_queues, queues, command_buffer, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueCommandBufferKHR(cl_uint num_queues, cl_command_queue * queues, cl_command_buffer_khr command_buffer, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -152,7 +152,7 @@ public class KHRCommandBuffer {
             check(__functionAddress);
             check(command_buffer);
         }
-        return callPPPPPPI(command_buffer, command_queue, properties, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
+        return invokePPPPPPI(command_buffer, command_queue, properties, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
     }
 
     /** {@code cl_int clCommandBarrierWithWaitListKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -177,7 +177,7 @@ public class KHRCommandBuffer {
             check(src_buffer);
             check(dst_buffer);
         }
-        return callPPPPPPPPPPPI(command_buffer, command_queue, properties, src_buffer, dst_buffer, src_offset, dst_offset, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
+        return invokePPPPPPPPPPPI(command_buffer, command_queue, properties, src_buffer, dst_buffer, src_offset, dst_offset, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
     }
 
     /** {@code cl_int clCommandCopyBufferKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem src_buffer, cl_mem dst_buffer, size_t src_offset, size_t dst_offset, size_t size, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -202,7 +202,7 @@ public class KHRCommandBuffer {
             check(src_buffer);
             check(dst_buffer);
         }
-        return callPPPPPPPPPPPPPPPI(command_buffer, command_queue, properties, src_buffer, dst_buffer, src_origin, dst_origin, region, src_row_pitch, src_slice_pitch, dst_row_pitch, dst_slice_pitch, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
+        return invokePPPPPPPPPPPPPPPI(command_buffer, command_queue, properties, src_buffer, dst_buffer, src_origin, dst_origin, region, src_row_pitch, src_slice_pitch, dst_row_pitch, dst_slice_pitch, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
     }
 
     /** {@code cl_int clCommandCopyBufferRectKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem src_buffer, cl_mem dst_buffer, size_t const * src_origin, size_t const * dst_origin, size_t const * region, size_t src_row_pitch, size_t src_slice_pitch, size_t dst_row_pitch, size_t dst_slice_pitch, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -230,7 +230,7 @@ public class KHRCommandBuffer {
             check(src_buffer);
             check(dst_image);
         }
-        return callPPPPPPPPPPPI(command_buffer, command_queue, properties, src_buffer, dst_image, src_offset, dst_origin, region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
+        return invokePPPPPPPPPPPI(command_buffer, command_queue, properties, src_buffer, dst_image, src_offset, dst_origin, region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
     }
 
     /** {@code cl_int clCommandCopyBufferToImageKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem src_buffer, cl_mem dst_image, size_t src_offset, size_t const * dst_origin, size_t const * region, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -257,7 +257,7 @@ public class KHRCommandBuffer {
             check(src_image);
             check(dst_image);
         }
-        return callPPPPPPPPPPPI(command_buffer, command_queue, properties, src_image, dst_image, src_origin, dst_origin, region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
+        return invokePPPPPPPPPPPI(command_buffer, command_queue, properties, src_image, dst_image, src_origin, dst_origin, region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
     }
 
     /** {@code cl_int clCommandCopyImageKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem src_image, cl_mem dst_image, size_t const * src_origin, size_t const * dst_origin, size_t const * region, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -285,7 +285,7 @@ public class KHRCommandBuffer {
             check(src_image);
             check(dst_buffer);
         }
-        return callPPPPPPPPPPPI(command_buffer, command_queue, properties, src_image, dst_buffer, src_origin, region, dst_offset, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
+        return invokePPPPPPPPPPPI(command_buffer, command_queue, properties, src_image, dst_buffer, src_origin, region, dst_offset, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
     }
 
     /** {@code cl_int clCommandCopyImageToBufferKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem src_image, cl_mem dst_buffer, size_t const * src_origin, size_t const * region, size_t dst_offset, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -311,7 +311,7 @@ public class KHRCommandBuffer {
             check(command_buffer);
             check(buffer);
         }
-        return callPPPPPPPPPPPI(command_buffer, command_queue, properties, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
+        return invokePPPPPPPPPPPI(command_buffer, command_queue, properties, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
     }
 
     /** {@code cl_int clCommandFillBufferKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem buffer, void const * pattern, size_t pattern_size, size_t offset, size_t size, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -335,7 +335,7 @@ public class KHRCommandBuffer {
             check(command_buffer);
             check(image);
         }
-        return callPPPPPPPPPPI(command_buffer, command_queue, properties, image, fill_color, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
+        return invokePPPPPPPPPPI(command_buffer, command_queue, properties, image, fill_color, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
     }
 
     /** {@code cl_int clCommandFillImageKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem image, void const * fill_color, size_t const * origin, size_t const * region, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -390,7 +390,7 @@ public class KHRCommandBuffer {
             check(command_buffer);
             check(kernel);
         }
-        return callPPPPPPPPPPI(command_buffer, command_queue, properties, kernel, work_dim, global_work_offset, global_work_size, local_work_size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
+        return invokePPPPPPPPPPI(command_buffer, command_queue, properties, kernel, work_dim, global_work_offset, global_work_size, local_work_size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
     }
 
     /** {@code cl_int clCommandNDRangeKernelKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_ndrange_kernel_command_properties_khr const * properties, cl_kernel kernel, cl_uint work_dim, size_t const * global_work_offset, size_t const * global_work_size, size_t const * local_work_size, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -416,7 +416,7 @@ public class KHRCommandBuffer {
             check(__functionAddress);
             check(command_buffer);
         }
-        return callPPPPI(command_buffer, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(command_buffer, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetCommandBufferInfoKHR(cl_command_buffer_khr command_buffer, cl_command_buffer_info_khr param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -456,7 +456,7 @@ public class KHRCommandBuffer {
             check(command_buffer);
             check(command_queue);
         }
-        return callPPPPPPPPPI(command_buffer, command_queue, properties, dst_ptr, src_ptr, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
+        return invokePPPPPPPPPI(command_buffer, command_queue, properties, dst_ptr, src_ptr, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
     }
 
     /** {@code cl_int clCommandSVMMemcpyKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, void * dst_ptr, void const * src_ptr, size_t size, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -481,7 +481,7 @@ public class KHRCommandBuffer {
             check(command_buffer);
             check(command_queue);
         }
-        return callPPPPPPPPPPI(command_buffer, command_queue, properties, svm_ptr, pattern, pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
+        return invokePPPPPPPPPPI(command_buffer, command_queue, properties, svm_ptr, pattern, pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle, __functionAddress);
     }
 
     /** {@code cl_int clCommandSVMMemFillKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, void * svm_ptr, void const * pattern, size_t pattern_size, size_t size, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -504,7 +504,7 @@ public class KHRCommandBuffer {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPP(queues.remaining(), memAddress(queues), properties, errcode_ret, __functionAddress);
+        return invokePPPP(queues.remaining(), memAddress(queues), properties, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_int clCommandBarrierWithWaitListKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -518,7 +518,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPI(command_buffer, command_queue, properties, lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPI(command_buffer, command_queue, properties, lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
     /** {@code cl_int clCommandCopyBufferKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem src_buffer, cl_mem dst_buffer, size_t src_offset, size_t dst_offset, size_t size, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -534,7 +534,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPPPPPPI(command_buffer, command_queue, properties, src_buffer, dst_buffer, src_offset, dst_offset, size, lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPPPPPPI(command_buffer, command_queue, properties, src_buffer, dst_buffer, src_offset, dst_offset, size, lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
     /** {@code cl_int clCommandCopyBufferRectKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem src_buffer, cl_mem dst_buffer, size_t const * src_origin, size_t const * dst_origin, size_t const * region, size_t src_row_pitch, size_t src_slice_pitch, size_t dst_row_pitch, size_t dst_slice_pitch, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -553,7 +553,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPPPPPPPPPPI(command_buffer, command_queue, properties, src_buffer, dst_buffer, memAddress(src_origin), memAddress(dst_origin), memAddress(region), src_row_pitch, src_slice_pitch, dst_row_pitch, dst_slice_pitch, lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPPPPPPPPPPI(command_buffer, command_queue, properties, src_buffer, dst_buffer, memAddress(src_origin), memAddress(dst_origin), memAddress(region), src_row_pitch, src_slice_pitch, dst_row_pitch, dst_slice_pitch, lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
     /** {@code cl_int clCommandCopyBufferToImageKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem src_buffer, cl_mem dst_image, size_t src_offset, size_t const * dst_origin, size_t const * region, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -571,7 +571,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPPPPPPI(command_buffer, command_queue, properties, src_buffer, dst_image, src_offset, memAddress(dst_origin), memAddress(region), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPPPPPPI(command_buffer, command_queue, properties, src_buffer, dst_image, src_offset, memAddress(dst_origin), memAddress(region), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
     /** {@code cl_int clCommandCopyImageKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem src_image, cl_mem dst_image, size_t const * src_origin, size_t const * dst_origin, size_t const * region, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -590,7 +590,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPPPPPPI(command_buffer, command_queue, properties, src_image, dst_image, memAddress(src_origin), memAddress(dst_origin), memAddress(region), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPPPPPPI(command_buffer, command_queue, properties, src_image, dst_image, memAddress(src_origin), memAddress(dst_origin), memAddress(region), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
     /** {@code cl_int clCommandCopyImageToBufferKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem src_image, cl_mem dst_buffer, size_t const * src_origin, size_t const * region, size_t dst_offset, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -608,7 +608,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPPPPPPI(command_buffer, command_queue, properties, src_image, dst_buffer, memAddress(src_origin), memAddress(region), dst_offset, lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPPPPPPI(command_buffer, command_queue, properties, src_image, dst_buffer, memAddress(src_origin), memAddress(region), dst_offset, lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
     /** {@code cl_int clCommandFillBufferKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem buffer, void const * pattern, size_t pattern_size, size_t offset, size_t size, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -623,7 +623,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPPPPPPI(command_buffer, command_queue, properties, buffer, memAddress(pattern), (long)pattern.remaining(), offset, size, lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPPPPPPI(command_buffer, command_queue, properties, buffer, memAddress(pattern), (long)pattern.remaining(), offset, size, lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
     /** {@code cl_int clCommandFillImageKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem image, void const * fill_color, size_t const * origin, size_t const * region, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -641,7 +641,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPPPPPI(command_buffer, command_queue, properties, image, memAddress(fill_color), memAddress(origin), memAddress(region), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPPPPPI(command_buffer, command_queue, properties, image, memAddress(fill_color), memAddress(origin), memAddress(region), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
     /** {@code cl_int clCommandFillImageKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem image, void const * fill_color, size_t const * origin, size_t const * region, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -659,7 +659,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPPPPPI(command_buffer, command_queue, properties, image, fill_color, memAddress(origin), memAddress(region), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPPPPPI(command_buffer, command_queue, properties, image, fill_color, memAddress(origin), memAddress(region), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
     /** {@code cl_int clCommandFillImageKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, cl_mem image, void const * fill_color, size_t const * origin, size_t const * region, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -677,7 +677,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPPPPPI(command_buffer, command_queue, properties, image, fill_color, memAddress(origin), memAddress(region), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPPPPPI(command_buffer, command_queue, properties, image, fill_color, memAddress(origin), memAddress(region), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
     /** {@code cl_int clCommandNDRangeKernelKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_ndrange_kernel_command_properties_khr const * properties, cl_kernel kernel, cl_uint work_dim, size_t const * global_work_offset, size_t const * global_work_size, size_t const * local_work_size, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -695,7 +695,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPPPPPI(command_buffer, command_queue, properties, kernel, work_dim, memAddressSafe(global_work_offset), memAddressSafe(global_work_size), memAddressSafe(local_work_size), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPPPPPI(command_buffer, command_queue, properties, kernel, work_dim, memAddressSafe(global_work_offset), memAddressSafe(global_work_size), memAddressSafe(local_work_size), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
     /** {@code cl_int clGetCommandBufferInfoKHR(cl_command_buffer_khr command_buffer, cl_command_buffer_info_khr param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -707,7 +707,7 @@ public class KHRCommandBuffer {
             check(command_buffer);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(command_buffer, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(command_buffer, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clCommandSVMMemcpyKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, void * dst_ptr, void const * src_ptr, size_t size, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -723,7 +723,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPPPPI(command_buffer, command_queue, properties, memAddress(dst_ptr), memAddress(src_ptr), (long)dst_ptr.remaining(), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPPPPI(command_buffer, command_queue, properties, memAddress(dst_ptr), memAddress(src_ptr), (long)dst_ptr.remaining(), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
     /** {@code cl_int clCommandSVMMemFillKHR(cl_command_buffer_khr command_buffer, cl_command_queue command_queue, cl_command_properties_khr const * properties, void * svm_ptr, void const * pattern, size_t pattern_size, size_t size, cl_uint num_sync_points_in_wait_list, cl_sync_point_khr const * sync_point_wait_list, cl_sync_point_khr * sync_point, cl_mutable_command_khr * mutable_handle)} */
@@ -738,7 +738,7 @@ public class KHRCommandBuffer {
             checkSafe(sync_point, 1);
             checkSafe(mutable_handle, 1);
         }
-        return callPPPPPPPPPPI(command_buffer, command_queue, properties, memAddress(svm_ptr), memAddress(pattern), (long)pattern.remaining(), (long)svm_ptr.remaining(), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
+        return invokePPPPPPPPPPI(command_buffer, command_queue, properties, memAddress(svm_ptr), memAddress(pattern), (long)pattern.remaining(), (long)svm_ptr.remaining(), lengthSafe(sync_point_wait_list), sync_point_wait_list, sync_point, memAddressSafe(mutable_handle), __functionAddress);
     }
 
 }

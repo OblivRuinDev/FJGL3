@@ -14,16 +14,16 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glWeightfvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glWeightbvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glWeightubvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glWeightsvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glWeightusvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glWeightivARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glWeightuivARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glWeightdvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glWeightPointerARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glVertexBlendARBPROC) (jint);
+typedef void (*glWeightfvARBPROC) (jint, uintptr_t);
+typedef void (*glWeightbvARBPROC) (jint, uintptr_t);
+typedef void (*glWeightubvARBPROC) (jint, uintptr_t);
+typedef void (*glWeightsvARBPROC) (jint, uintptr_t);
+typedef void (*glWeightusvARBPROC) (jint, uintptr_t);
+typedef void (*glWeightivARBPROC) (jint, uintptr_t);
+typedef void (*glWeightuivARBPROC) (jint, uintptr_t);
+typedef void (*glWeightdvARBPROC) (jint, uintptr_t);
+typedef void (*glWeightPointerARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glVertexBlendARBPROC) (jint);
 
 EXTERN_C_ENTER
 

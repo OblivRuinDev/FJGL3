@@ -122,7 +122,7 @@ public class KHRSamplerYcbcrConversion {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pYcbcrConversion, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pYcbcrConversion, __functionAddress);
     }
 
     /** {@code VkResult vkCreateSamplerYcbcrConversionKHR(VkDevice device, VkSamplerYcbcrConversionCreateInfo const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkSamplerYcbcrConversion * pYcbcrConversion)} */
@@ -142,7 +142,7 @@ public class KHRSamplerYcbcrConversion {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), ycbcrConversion, pAllocator, __functionAddress);
+        invokePJPV(device.address(), ycbcrConversion, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroySamplerYcbcrConversionKHR(VkDevice device, VkSamplerYcbcrConversion ycbcrConversion, VkAllocationCallbacks const * pAllocator)} */
@@ -158,7 +158,7 @@ public class KHRSamplerYcbcrConversion {
             check(__functionAddress);
             check(pYcbcrConversion, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pYcbcrConversion, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pYcbcrConversion, __functionAddress);
     }
 
 }

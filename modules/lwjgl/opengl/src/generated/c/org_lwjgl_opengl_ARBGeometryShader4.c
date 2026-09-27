@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glProgramParameteriARBPROC) (jint, jint, jint);
-typedef void (APIENTRY *glFramebufferTextureARBPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glFramebufferTextureLayerARBPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glFramebufferTextureFaceARBPROC) (jint, jint, jint, jint, jint);
+typedef void (*glProgramParameteriARBPROC) (jint, jint, jint);
+typedef void (*glFramebufferTextureARBPROC) (jint, jint, jint, jint);
+typedef void (*glFramebufferTextureLayerARBPROC) (jint, jint, jint, jint, jint);
+typedef void (*glFramebufferTextureFaceARBPROC) (jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

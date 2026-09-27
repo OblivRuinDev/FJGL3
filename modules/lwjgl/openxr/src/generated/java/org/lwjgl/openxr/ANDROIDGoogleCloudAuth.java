@@ -55,7 +55,7 @@ public class ANDROIDGoogleCloudAuth {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), authInfo, future, __functionAddress);
+        return invokePPPI(session.address(), authInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrSetGoogleCloudAuthAsyncANDROID(XrSession session, XrGoogleCloudAuthInfoBaseHeaderANDROID const * authInfo, XrFutureEXT * future)} */
@@ -75,7 +75,7 @@ public class ANDROIDGoogleCloudAuth {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), future, completion, __functionAddress);
+        return invokePJPI(session.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrSetGoogleCloudAuthCompleteANDROID(XrSession session, XrFutureEXT future, XrFutureCompletionEXT * completion)} */

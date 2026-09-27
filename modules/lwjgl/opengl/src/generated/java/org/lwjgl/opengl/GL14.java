@@ -589,7 +589,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(coord, 1);
         }
-        callPV(coord, __functionAddress);
+        invokePV(coord, __functionAddress);
     }
 
     /** {@code void glFogCoorddv(GLdouble const * coord)} */
@@ -599,7 +599,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(coord, 1);
         }
-        callPV(coord, __functionAddress);
+        invokePV(coord, __functionAddress);
     }
 
     /** {@code void glMultiDrawArrays(GLenum mode, GLint const * first, GLsizei const * count, GLsizei drawcount)} */
@@ -629,7 +629,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glSecondaryColor3iv(GLint const * v)} */
@@ -639,7 +639,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glSecondaryColor3fv(GLfloat const * v)} */
@@ -649,7 +649,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glSecondaryColor3dv(GLdouble const * v)} */
@@ -659,7 +659,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glSecondaryColor3usv(GLushort const * v)} */
@@ -669,7 +669,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glSecondaryColor3uiv(GLuint const * v)} */
@@ -679,7 +679,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glWindowPos2iv(GLint const * p)} */
@@ -689,7 +689,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(p, 2);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos2sv(GLshort const * p)} */
@@ -699,7 +699,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(p, 2);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos2fv(GLfloat const * p)} */
@@ -709,7 +709,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(p, 2);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos2dv(GLdouble const * p)} */
@@ -719,7 +719,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(p, 2);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos3iv(GLint const * p)} */
@@ -729,7 +729,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(p, 3);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos3sv(GLshort const * p)} */
@@ -739,7 +739,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(p, 3);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos3fv(GLfloat const * p)} */
@@ -749,7 +749,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(p, 3);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
     /** {@code void glWindowPos3dv(GLdouble const * p)} */
@@ -759,7 +759,7 @@ public class GL14 extends GL13 {
             check(__functionAddress);
             check(p, 3);
         }
-        callPV(p, __functionAddress);
+        invokePV(p, __functionAddress);
     }
 
 }

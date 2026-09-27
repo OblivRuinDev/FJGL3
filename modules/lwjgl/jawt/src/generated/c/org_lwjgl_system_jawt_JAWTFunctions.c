@@ -19,14 +19,14 @@ ENABLE_WARNINGS()
     #define APIENTRY
 #endif
 
-typedef jboolean (APIENTRY *JAWT_GetAWTPROC) (JNIEnv *, uintptr_t);
-typedef uintptr_t (APIENTRY *JAWT_GetDrawingSurfacePROC) (JNIEnv *, jobject);
-typedef void (APIENTRY *JAWT_LockPROC) (JNIEnv *);
-typedef void (APIENTRY *JAWT_UnlockPROC) (JNIEnv *);
-typedef jobject (APIENTRY *JAWT_GetComponentPROC) (JNIEnv *, uintptr_t);
-typedef jobject (APIENTRY *JAWT_CreateEmbeddedFramePROC) (JNIEnv *, uintptr_t);
-typedef void (APIENTRY *JAWT_SetBoundsPROC) (JNIEnv *, jobject, jint, jint, jint, jint);
-typedef void (APIENTRY *JAWT_SynthesizeWindowActivationPROC) (JNIEnv *, jobject, jboolean);
+typedef jboolean (*JAWT_GetAWTPROC) (JNIEnv *, uintptr_t);
+typedef uintptr_t (*JAWT_GetDrawingSurfacePROC) (JNIEnv *, jobject);
+typedef void (*JAWT_LockPROC) (JNIEnv *);
+typedef void (*JAWT_UnlockPROC) (JNIEnv *);
+typedef jobject (*JAWT_GetComponentPROC) (JNIEnv *, uintptr_t);
+typedef jobject (*JAWT_CreateEmbeddedFramePROC) (JNIEnv *, uintptr_t);
+typedef void (*JAWT_SetBoundsPROC) (JNIEnv *, jobject, jint, jint, jint, jint);
+typedef void (*JAWT_SynthesizeWindowActivationPROC) (JNIEnv *, jobject, jboolean);
 
 EXTERN_C_ENTER
 

@@ -30,7 +30,6 @@ public interface FSBANK_MEMORY_REALLOC_CALLBACKI extends CallbackI {
         FSBANK_MEMORY_REALLOC_CALLBACKI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_pointer,
             ffi_type_pointer, ffi_type_uint32, ffi_type_uint32, ffi_type_pointer
         )

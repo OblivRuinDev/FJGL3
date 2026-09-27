@@ -40,7 +40,7 @@ public class INTELSharingFormatQuery {
             check(__functionAddress);
             check(context);
         }
-        return callPJPPI(context, flags, image_type, num_entries, gl_formats, num_texture_formats, __functionAddress);
+        return invokePJPPI(context, flags, image_type, num_entries, gl_formats, num_texture_formats, __functionAddress);
     }
 
     /** {@code cl_int clGetSupportedGLTextureFormatsINTEL(cl_context context, cl_mem_flags flags, cl_mem_object_type image_type, cl_uint num_entries, GLenum * gl_formats, cl_uint * num_texture_formats)} */
@@ -61,7 +61,7 @@ public class INTELSharingFormatQuery {
             check(__functionAddress);
             check(context);
         }
-        return callPJPPI(context, flags, image_type, plane, num_entries, va_api_formats, num_surface_formats, __functionAddress);
+        return invokePJPPI(context, flags, image_type, plane, num_entries, va_api_formats, num_surface_formats, __functionAddress);
     }
 
     /** {@code cl_int clGetSupportedVA_APIMediaSurfaceFormatsINTEL(cl_context context, cl_mem_flags flags, cl_mem_object_type image_type, cl_uint plane, cl_uint num_entries, VAImageFormat * va_api_formats, cl_uint * num_surface_formats)} */
@@ -82,7 +82,7 @@ public class INTELSharingFormatQuery {
             check(context);
             checkSafe(num_texture_formats, 1);
         }
-        return callPJPPI(context, flags, image_type, lengthSafe(gl_formats), gl_formats, num_texture_formats, __functionAddress);
+        return invokePJPPI(context, flags, image_type, lengthSafe(gl_formats), gl_formats, num_texture_formats, __functionAddress);
     }
 
     /** {@code cl_int clGetSupportedVA_APIMediaSurfaceFormatsINTEL(cl_context context, cl_mem_flags flags, cl_mem_object_type image_type, cl_uint plane, cl_uint num_entries, VAImageFormat * va_api_formats, cl_uint * num_surface_formats)} */
@@ -94,7 +94,7 @@ public class INTELSharingFormatQuery {
             check(context);
             checkSafe(num_surface_formats, 1);
         }
-        return callPJPPI(context, flags, image_type, plane, remainingSafe(va_api_formats), memAddressSafe(va_api_formats), num_surface_formats, __functionAddress);
+        return invokePJPPI(context, flags, image_type, plane, remainingSafe(va_api_formats), memAddressSafe(va_api_formats), num_surface_formats, __functionAddress);
     }
 
 }

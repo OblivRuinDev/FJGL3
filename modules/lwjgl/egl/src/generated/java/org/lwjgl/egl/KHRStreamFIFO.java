@@ -43,7 +43,7 @@ public class KHRStreamFIFO {
             check(dpy);
             check(stream);
         }
-        return callPPPI(dpy, stream, attribute, value, __functionAddress);
+        return invokePPPI(dpy, stream, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryStreamTimeKHR(EGLDisplay dpy, EGLStreamKHR stream, EGLenum attribute, EGLTimeKHR * value)} */
@@ -65,7 +65,7 @@ public class KHRStreamFIFO {
             check(stream);
             check(value, 1);
         }
-        return callPPPI(dpy, stream, attribute, value, __functionAddress) != 0;
+        return invokePPPI(dpy, stream, attribute, value, __functionAddress) != 0;
     }
 
 }

@@ -49,7 +49,7 @@ public class ANDROIDPassthroughCameraState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), getInfo, cameraStateOutput, __functionAddress);
+        return invokePPPI(session.address(), getInfo, cameraStateOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetPassthroughCameraStateANDROID(XrSession session, XrPassthroughCameraStateGetInfoANDROID const * getInfo, XrPassthroughCameraStateANDROID * cameraStateOutput)} */

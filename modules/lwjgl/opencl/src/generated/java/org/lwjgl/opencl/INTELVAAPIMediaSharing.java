@@ -65,7 +65,7 @@ public class INTELVAAPIMediaSharing {
             check(platform);
             check(media_adapter);
         }
-        return callPPPPI(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, devices, num_devices, __functionAddress);
+        return invokePPPPI(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, devices, num_devices, __functionAddress);
     }
 
     /** {@code cl_int clGetDeviceIDsFromVA_APIMediaAdapterINTEL(cl_platform_id platform, cl_va_api_device_source_intel media_adapter_type, void * media_adapter, cl_va_api_device_set_intel media_adapter_set, cl_uint num_entries, cl_device_id * devices, cl_uint * num_devices)} */
@@ -86,7 +86,7 @@ public class INTELVAAPIMediaSharing {
             check(__functionAddress);
             check(context);
         }
-        return callPJPPP(context, flags, surface, plane, errcode_ret, __functionAddress);
+        return invokePJPPP(context, flags, surface, plane, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateFromVA_APIMediaSurfaceINTEL(cl_context context, cl_mem_flags flags, VASurfaceID * surface, cl_uint plane, cl_int * errcode_ret)} */
@@ -108,7 +108,7 @@ public class INTELVAAPIMediaSharing {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPI(command_queue, num_objects, mem_objects, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPI(command_queue, num_objects, mem_objects, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueAcquireVA_APIMediaSurfacesINTEL(cl_command_queue command_queue, cl_uint num_objects, cl_mem const * mem_objects, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -129,7 +129,7 @@ public class INTELVAAPIMediaSharing {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPI(command_queue, num_objects, mem_objects, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPI(command_queue, num_objects, mem_objects, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReleaseVA_APIMediaSurfacesINTEL(cl_command_queue command_queue, cl_uint num_objects, cl_mem const * mem_objects, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -151,7 +151,7 @@ public class INTELVAAPIMediaSharing {
             check(media_adapter);
             checkSafe(num_devices, 1);
         }
-        return callPPPPI(platform, media_adapter_type, media_adapter, media_adapter_set, remainingSafe(devices), memAddressSafe(devices), num_devices, __functionAddress);
+        return invokePPPPI(platform, media_adapter_type, media_adapter, media_adapter_set, remainingSafe(devices), memAddressSafe(devices), num_devices, __functionAddress);
     }
 
     /** {@code cl_mem clCreateFromVA_APIMediaSurfaceINTEL(cl_context context, cl_mem_flags flags, VASurfaceID * surface, cl_uint plane, cl_int * errcode_ret)} */
@@ -164,7 +164,7 @@ public class INTELVAAPIMediaSharing {
             check(surface, 1);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPP(context, flags, surface, plane, errcode_ret, __functionAddress);
+        return invokePJPPP(context, flags, surface, plane, errcode_ret, __functionAddress);
     }
 
 }

@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glMultiDrawArraysIndirectBindlessCountNVPROC) (jint, uintptr_t, uintptr_t, jint, jint, jint);
-typedef void (APIENTRY *glMultiDrawElementsIndirectBindlessCountNVPROC) (jint, jint, uintptr_t, uintptr_t, jint, jint, jint);
+typedef void (*glMultiDrawArraysIndirectBindlessCountNVPROC) (jint, uintptr_t, uintptr_t, jint, jint, jint);
+typedef void (*glMultiDrawElementsIndirectBindlessCountNVPROC) (jint, jint, uintptr_t, uintptr_t, jint, jint, jint);
 
 EXTERN_C_ENTER
 

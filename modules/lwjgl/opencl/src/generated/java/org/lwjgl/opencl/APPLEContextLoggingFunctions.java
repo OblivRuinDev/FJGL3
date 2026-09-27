@@ -38,7 +38,7 @@ public class APPLEContextLoggingFunctions {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callV(__functionAddress);
+        invokeV(__functionAddress);
     }
 
     // --- [ clLogMessagesToStdoutAPPLE ] ---
@@ -49,7 +49,7 @@ public class APPLEContextLoggingFunctions {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callV(__functionAddress);
+        invokeV(__functionAddress);
     }
 
     // --- [ clLogMessagesToStderrAPPLE ] ---
@@ -60,7 +60,7 @@ public class APPLEContextLoggingFunctions {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callV(__functionAddress);
+        invokeV(__functionAddress);
     }
 
 }

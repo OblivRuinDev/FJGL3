@@ -70,7 +70,7 @@ public class ANDROIDGeospatial {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, geospatialTrackerOutput, __functionAddress);
+        return invokePPPI(session.address(), createInfo, geospatialTrackerOutput, __functionAddress);
     }
 
     /** {@code XrResult xrCreateGeospatialTrackerANDROID(XrSession session, XrGeospatialTrackerCreateInfoANDROID const * createInfo, XrGeospatialTrackerANDROID * geospatialTrackerOutput)} */
@@ -91,7 +91,7 @@ public class ANDROIDGeospatial {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(geospatialTracker.address(), __functionAddress);
+        return invokePI(geospatialTracker.address(), __functionAddress);
     }
 
     // --- [ xrLocateGeospatialPoseFromPoseANDROID ] ---
@@ -103,7 +103,7 @@ public class ANDROIDGeospatial {
             check(__functionAddress);
             XrGeospatialPoseFromPoseLocateInfoANDROID.validate(locateInfo);
         }
-        return callPPPI(geospatialTracker.address(), locateInfo, geospatialPoseResult, __functionAddress);
+        return invokePPPI(geospatialTracker.address(), locateInfo, geospatialPoseResult, __functionAddress);
     }
 
     /** {@code XrResult xrLocateGeospatialPoseFromPoseANDROID(XrGeospatialTrackerANDROID geospatialTracker, XrGeospatialPoseFromPoseLocateInfoANDROID const * locateInfo, XrGeospatialPoseResultANDROID * geospatialPoseResult)} */
@@ -121,7 +121,7 @@ public class ANDROIDGeospatial {
             check(__functionAddress);
             XrGeospatialPoseLocateInfoANDROID.validate(locateInfo);
         }
-        return callPPPI(geospatialTracker.address(), locateInfo, location, __functionAddress);
+        return invokePPPI(geospatialTracker.address(), locateInfo, location, __functionAddress);
     }
 
     /** {@code XrResult xrLocateGeospatialPoseANDROID(XrGeospatialTrackerANDROID geospatialTracker, XrGeospatialPoseLocateInfoANDROID const * locateInfo, XrSpaceLocation * location)} */
@@ -138,7 +138,7 @@ public class ANDROIDGeospatial {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), latitude, longitude, future, __functionAddress);
+        return invokePPI(session.address(), latitude, longitude, future, __functionAddress);
     }
 
     /** {@code XrResult xrCheckVpsAvailabilityAsyncANDROID(XrSession session, double latitude, double longitude, XrFutureEXT * future)} */
@@ -158,7 +158,7 @@ public class ANDROIDGeospatial {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), future, completion, __functionAddress);
+        return invokePJPI(session.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrCheckVpsAvailabilityCompleteANDROID(XrSession session, XrFutureEXT future, XrVPSAvailabilityCheckCompletionANDROID * completion)} */

@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef uintptr_t (APIENTRY *glMapBufferOESPROC) (jint, jint);
-typedef jboolean (APIENTRY *glUnmapBufferOESPROC) (jint);
-typedef void (APIENTRY *glGetBufferPointervOESPROC) (jint, jint, uintptr_t);
+typedef uintptr_t (*glMapBufferOESPROC) (jint, jint);
+typedef jboolean (*glUnmapBufferOESPROC) (jint);
+typedef void (*glGetBufferPointervOESPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

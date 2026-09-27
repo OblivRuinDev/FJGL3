@@ -45,7 +45,7 @@ public class QCOMTileProperties {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), framebuffer, pPropertiesCount, pProperties, __functionAddress);
+        return invokePJPPI(device.address(), framebuffer, pPropertiesCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetFramebufferTilePropertiesQCOM(VkDevice device, VkFramebuffer framebuffer, uint32_t * pPropertiesCount, VkTilePropertiesQCOM * pProperties)} */
@@ -67,7 +67,7 @@ public class QCOMTileProperties {
             check(__functionAddress);
             VkRenderingInfo.validate(pRenderingInfo);
         }
-        return callPPPI(device.address(), pRenderingInfo, pProperties, __functionAddress);
+        return invokePPPI(device.address(), pRenderingInfo, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetDynamicRenderingTilePropertiesQCOM(VkDevice device, VkRenderingInfo const * pRenderingInfo, VkTilePropertiesQCOM * pProperties)} */
@@ -85,7 +85,7 @@ public class QCOMTileProperties {
             check(pPropertiesCount, 1);
             checkSafe(pProperties, pPropertiesCount[0]);
         }
-        return callPJPPI(device.address(), framebuffer, pPropertiesCount, memAddressSafe(pProperties), __functionAddress);
+        return invokePJPPI(device.address(), framebuffer, pPropertiesCount, memAddressSafe(pProperties), __functionAddress);
     }
 
 }

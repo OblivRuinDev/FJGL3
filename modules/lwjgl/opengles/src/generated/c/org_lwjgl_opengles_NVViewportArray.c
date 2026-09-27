@@ -14,18 +14,18 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glViewportArrayvNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glViewportIndexedfNVPROC) (jint, jfloat, jfloat, jfloat, jfloat);
-typedef void (APIENTRY *glViewportIndexedfvNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glScissorArrayvNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glScissorIndexedNVPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glScissorIndexedvNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDepthRangeArrayfvNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glDepthRangeIndexedfNVPROC) (jint, jfloat, jfloat);
-typedef void (APIENTRY *glGetFloati_vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glEnableiNVPROC) (jint, jint);
-typedef void (APIENTRY *glDisableiNVPROC) (jint, jint);
-typedef jboolean (APIENTRY *glIsEnablediNVPROC) (jint, jint);
+typedef void (*glViewportArrayvNVPROC) (jint, jint, uintptr_t);
+typedef void (*glViewportIndexedfNVPROC) (jint, jfloat, jfloat, jfloat, jfloat);
+typedef void (*glViewportIndexedfvNVPROC) (jint, uintptr_t);
+typedef void (*glScissorArrayvNVPROC) (jint, jint, uintptr_t);
+typedef void (*glScissorIndexedNVPROC) (jint, jint, jint, jint, jint);
+typedef void (*glScissorIndexedvNVPROC) (jint, uintptr_t);
+typedef void (*glDepthRangeArrayfvNVPROC) (jint, jint, uintptr_t);
+typedef void (*glDepthRangeIndexedfNVPROC) (jint, jfloat, jfloat);
+typedef void (*glGetFloati_vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glEnableiNVPROC) (jint, jint);
+typedef void (*glDisableiNVPROC) (jint, jint);
+typedef jboolean (*glIsEnablediNVPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

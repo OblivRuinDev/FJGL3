@@ -50,7 +50,7 @@ public class NVCoverageReductionMode {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pCombinationCount, pCombinations, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pCombinationCount, pCombinations, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV(VkPhysicalDevice physicalDevice, uint32_t * pCombinationCount, VkFramebufferMixedSamplesCombinationNV * pCombinations)} */
@@ -72,7 +72,7 @@ public class NVCoverageReductionMode {
             check(pCombinationCount, 1);
             checkSafe(pCombinations, pCombinationCount[0]);
         }
-        return callPPPI(physicalDevice.address(), pCombinationCount, memAddressSafe(pCombinations), __functionAddress);
+        return invokePPPI(physicalDevice.address(), pCombinationCount, memAddressSafe(pCombinations), __functionAddress);
     }
 
 }

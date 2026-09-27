@@ -14,12 +14,12 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glColorMaskIndexedEXTPROC) (jint, jboolean, jboolean, jboolean, jboolean);
-typedef void (APIENTRY *glGetBooleanIndexedvEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetIntegerIndexedvEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glEnableIndexedEXTPROC) (jint, jint);
-typedef void (APIENTRY *glDisableIndexedEXTPROC) (jint, jint);
-typedef jboolean (APIENTRY *glIsEnabledIndexedEXTPROC) (jint, jint);
+typedef void (*glColorMaskIndexedEXTPROC) (jint, jboolean, jboolean, jboolean, jboolean);
+typedef void (*glGetBooleanIndexedvEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glGetIntegerIndexedvEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glEnableIndexedEXTPROC) (jint, jint);
+typedef void (*glDisableIndexedEXTPROC) (jint, jint);
+typedef jboolean (*glIsEnabledIndexedEXTPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

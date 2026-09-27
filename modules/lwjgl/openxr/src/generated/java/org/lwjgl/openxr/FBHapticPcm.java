@@ -44,7 +44,7 @@ public class FBHapticPcm {
             check(__functionAddress);
             XrHapticActionInfo.validate(hapticActionInfo);
         }
-        return callPPPI(session.address(), hapticActionInfo, deviceSampleRate, __functionAddress);
+        return invokePPPI(session.address(), hapticActionInfo, deviceSampleRate, __functionAddress);
     }
 
     /** {@code XrResult xrGetDeviceSampleRateFB(XrSession session, XrHapticActionInfo const * hapticActionInfo, XrDevicePcmSampleRateGetInfoFB * deviceSampleRate)} */

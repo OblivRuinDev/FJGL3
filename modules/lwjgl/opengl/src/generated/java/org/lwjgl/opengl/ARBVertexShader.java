@@ -651,7 +651,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib1svARB(GLuint index, GLshort const * v)} */
@@ -661,7 +661,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib1dvARB(GLuint index, GLdouble const * v)} */
@@ -671,7 +671,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib2fvARB(GLuint index, GLfloat const * v)} */
@@ -681,7 +681,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib2svARB(GLuint index, GLshort const * v)} */
@@ -691,7 +691,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib2dvARB(GLuint index, GLdouble const * v)} */
@@ -701,7 +701,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib3fvARB(GLuint index, GLfloat const * v)} */
@@ -711,7 +711,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib3svARB(GLuint index, GLshort const * v)} */
@@ -721,7 +721,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib3dvARB(GLuint index, GLdouble const * v)} */
@@ -731,7 +731,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4fvARB(GLuint index, GLfloat const * v)} */
@@ -741,7 +741,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4svARB(GLuint index, GLshort const * v)} */
@@ -751,7 +751,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4dvARB(GLuint index, GLdouble const * v)} */
@@ -761,7 +761,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4ivARB(GLuint index, GLint const * v)} */
@@ -771,7 +771,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4usvARB(GLuint index, GLushort const * v)} */
@@ -781,7 +781,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4uivARB(GLuint index, GLuint const * v)} */
@@ -791,7 +791,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4NsvARB(GLuint index, GLshort const * v)} */
@@ -801,7 +801,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4NivARB(GLuint index, GLint const * v)} */
@@ -811,7 +811,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4NusvARB(GLuint index, GLushort const * v)} */
@@ -821,7 +821,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4NuivARB(GLuint index, GLuint const * v)} */
@@ -831,7 +831,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribPointerARB(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, void const * pointer)} */
@@ -840,7 +840,7 @@ public class ARBVertexShader {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(index, size, type, normalized, stride, pointer, __functionAddress);
+        invokePV(index, size, type, normalized, stride, pointer, __functionAddress);
     }
 
     /** {@code void glVertexAttribPointerARB(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, void const * pointer)} */
@@ -849,7 +849,7 @@ public class ARBVertexShader {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(index, size, type, normalized, stride, pointer, __functionAddress);
+        invokePV(index, size, type, normalized, stride, pointer, __functionAddress);
     }
 
     /** {@code void glVertexAttribPointerARB(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, void const * pointer)} */
@@ -858,7 +858,7 @@ public class ARBVertexShader {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(index, size, type, normalized, stride, pointer, __functionAddress);
+        invokePV(index, size, type, normalized, stride, pointer, __functionAddress);
     }
 
     /** {@code void glGetActiveAttribARB(GLhandleARB programObj, GLuint index, GLsizei maxLength, GLsizei * length, GLint * size, GLenum * type, GLchar * name)} */
@@ -870,7 +870,7 @@ public class ARBVertexShader {
             check(size, 1);
             check(type, 1);
         }
-        callPPPPV(programObj, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
+        invokePPPPV(programObj, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
     }
 
     /** {@code void glGetVertexAttribivARB(GLuint index, GLenum pname, GLint * params)} */
@@ -880,7 +880,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribfvARB(GLuint index, GLenum pname, GLfloat * params)} */
@@ -890,7 +890,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribdvARB(GLuint index, GLenum pname, GLdouble * params)} */
@@ -900,7 +900,7 @@ public class ARBVertexShader {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
 }

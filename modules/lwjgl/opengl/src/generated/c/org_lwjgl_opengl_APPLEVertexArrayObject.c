@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBindVertexArrayAPPLEPROC) (jint);
-typedef void (APIENTRY *glDeleteVertexArraysAPPLEPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGenVertexArraysAPPLEPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsVertexArrayAPPLEPROC) (jint);
+typedef void (*glBindVertexArrayAPPLEPROC) (jint);
+typedef void (*glDeleteVertexArraysAPPLEPROC) (jint, uintptr_t);
+typedef void (*glGenVertexArraysAPPLEPROC) (jint, uintptr_t);
+typedef jboolean (*glIsVertexArrayAPPLEPROC) (jint);
 
 EXTERN_C_ENTER
 

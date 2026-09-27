@@ -40,7 +40,7 @@ public class KHRConvertTimespecTime {
             check(__functionAddress);
             check(timespecTime);
         }
-        return callPPPI(instance.address(), timespecTime, time, __functionAddress);
+        return invokePPPI(instance.address(), timespecTime, time, __functionAddress);
     }
 
     /** {@code XrResult xrConvertTimespecTimeToTimeKHR(XrInstance instance, struct timespec const * timespecTime, XrTime * time)} */
@@ -62,7 +62,7 @@ public class KHRConvertTimespecTime {
             check(__functionAddress);
             check(timespecTime);
         }
-        return callPJPI(instance.address(), time, timespecTime, __functionAddress);
+        return invokePJPI(instance.address(), time, timespecTime, __functionAddress);
     }
 
 }

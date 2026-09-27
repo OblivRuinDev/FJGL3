@@ -58,7 +58,7 @@ public class EXTMetalObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(device.address(), pMetalObjectsInfo, __functionAddress);
+        invokePPV(device.address(), pMetalObjectsInfo, __functionAddress);
     }
 
     /** {@code void vkExportMetalObjectsEXT(VkDevice device, VkExportMetalObjectsInfoEXT * pMetalObjectsInfo)} */

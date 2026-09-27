@@ -47,7 +47,7 @@ public class NVDeviceDiagnosticCheckpoints {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pCheckpointMarker, __functionAddress);
+        invokePPV(commandBuffer.address(), pCheckpointMarker, __functionAddress);
     }
 
     // --- [ vkGetQueueCheckpointDataNV ] ---
@@ -58,7 +58,7 @@ public class NVDeviceDiagnosticCheckpoints {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(queue.address(), pCheckpointDataCount, pCheckpointData, __functionAddress);
+        invokePPPV(queue.address(), pCheckpointDataCount, pCheckpointData, __functionAddress);
     }
 
     /** {@code void vkGetQueueCheckpointDataNV(VkQueue queue, uint32_t * pCheckpointDataCount, VkCheckpointDataNV * pCheckpointData)} */
@@ -78,7 +78,7 @@ public class NVDeviceDiagnosticCheckpoints {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(queue.address(), pCheckpointDataCount, pCheckpointData, __functionAddress);
+        invokePPPV(queue.address(), pCheckpointDataCount, pCheckpointData, __functionAddress);
     }
 
     /** {@code void vkGetQueueCheckpointData2NV(VkQueue queue, uint32_t * pCheckpointDataCount, VkCheckpointData2NV * pCheckpointData)} */
@@ -98,7 +98,7 @@ public class NVDeviceDiagnosticCheckpoints {
             check(pCheckpointDataCount, 1);
             checkSafe(pCheckpointData, pCheckpointDataCount[0]);
         }
-        callPPPV(queue.address(), pCheckpointDataCount, memAddressSafe(pCheckpointData), __functionAddress);
+        invokePPPV(queue.address(), pCheckpointDataCount, memAddressSafe(pCheckpointData), __functionAddress);
     }
 
     /** {@code void vkGetQueueCheckpointData2NV(VkQueue queue, uint32_t * pCheckpointDataCount, VkCheckpointData2NV * pCheckpointData)} */
@@ -109,7 +109,7 @@ public class NVDeviceDiagnosticCheckpoints {
             check(pCheckpointDataCount, 1);
             checkSafe(pCheckpointData, pCheckpointDataCount[0]);
         }
-        callPPPV(queue.address(), pCheckpointDataCount, memAddressSafe(pCheckpointData), __functionAddress);
+        invokePPPV(queue.address(), pCheckpointDataCount, memAddressSafe(pCheckpointData), __functionAddress);
     }
 
 }

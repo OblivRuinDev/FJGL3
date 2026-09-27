@@ -59,7 +59,7 @@ public class HTCFoveation {
             check(__functionAddress);
             XrFoveationApplyInfoHTC.validate(applyInfo);
         }
-        return callPPI(session.address(), applyInfo, __functionAddress);
+        return invokePPI(session.address(), applyInfo, __functionAddress);
     }
 
     /** {@code XrResult xrApplyFoveationHTC(XrSession session, XrFoveationApplyInfoHTC const * applyInfo)} */

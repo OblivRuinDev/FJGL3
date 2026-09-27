@@ -1510,7 +1510,7 @@ public class FMOD {
     /** {@code FMOD_RESULT FMOD_Memory_Initialize(void * poolmem, int poollen, FMOD_MEMORY_ALLOC_CALLBACK useralloc, FMOD_MEMORY_REALLOC_CALLBACK userrealloc, FMOD_MEMORY_FREE_CALLBACK userfree, FMOD_MEMORY_TYPE memtypeflags)} */
     public static int nFMOD_Memory_Initialize(long poolmem, int poollen, long useralloc, long userrealloc, long userfree, int memtypeflags) {
         long __functionAddress = Functions.Memory_Initialize;
-        return callPPPPI(poolmem, poollen, useralloc, userrealloc, userfree, memtypeflags, __functionAddress);
+        return invokePPPPI(poolmem, poollen, useralloc, userrealloc, userfree, memtypeflags, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Memory_Initialize(void * poolmem, int poollen, FMOD_MEMORY_ALLOC_CALLBACK useralloc, FMOD_MEMORY_REALLOC_CALLBACK userrealloc, FMOD_MEMORY_FREE_CALLBACK userfree, FMOD_MEMORY_TYPE memtypeflags)} */
@@ -1524,7 +1524,7 @@ public class FMOD {
     /** {@code FMOD_RESULT FMOD_Memory_GetStats(int * currentalloced, int * maxalloced, FMOD_BOOL blocking)} */
     public static int nFMOD_Memory_GetStats(long currentalloced, long maxalloced, int blocking) {
         long __functionAddress = Functions.Memory_GetStats;
-        return callPPI(currentalloced, maxalloced, blocking, __functionAddress);
+        return invokePPI(currentalloced, maxalloced, blocking, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Memory_GetStats(int * currentalloced, int * maxalloced, FMOD_BOOL blocking)} */
@@ -1542,7 +1542,7 @@ public class FMOD {
     /** {@code FMOD_RESULT FMOD_Debug_Initialize(FMOD_DEBUG_FLAGS flags, FMOD_DEBUG_MODE mode, FMOD_DEBUG_CALLBACK callback, char const * filename)} */
     public static int nFMOD_Debug_Initialize(int flags, int mode, long callback, long filename) {
         long __functionAddress = Functions.Debug_Initialize;
-        return callPPI(flags, mode, callback, filename, __functionAddress);
+        return invokePPI(flags, mode, callback, filename, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Debug_Initialize(FMOD_DEBUG_FLAGS flags, FMOD_DEBUG_MODE mode, FMOD_DEBUG_CALLBACK callback, char const * filename)} */
@@ -1573,7 +1573,7 @@ public class FMOD {
     @NativeType("FMOD_RESULT")
     public static int FMOD_File_SetDiskBusy(int busy) {
         long __functionAddress = Functions.File_SetDiskBusy;
-        return callI(busy, __functionAddress);
+        return invokeI(busy, __functionAddress);
     }
 
     // --- [ FMOD_File_GetDiskBusy ] ---
@@ -1581,7 +1581,7 @@ public class FMOD {
     /** {@code FMOD_RESULT FMOD_File_GetDiskBusy(int * busy)} */
     public static int nFMOD_File_GetDiskBusy(long busy) {
         long __functionAddress = Functions.File_GetDiskBusy;
-        return callPI(busy, __functionAddress);
+        return invokePI(busy, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_File_GetDiskBusy(int * busy)} */
@@ -1599,7 +1599,7 @@ public class FMOD {
     @NativeType("FMOD_RESULT")
     public static int FMOD_Thread_SetAttributes(@NativeType("FMOD_THREAD_TYPE") int type, @NativeType("FMOD_THREAD_AFFINITY") long affinity, @NativeType("FMOD_THREAD_PRIORITY") int priority, @NativeType("FMOD_THREAD_STACK_SIZE") int stacksize) {
         long __functionAddress = Functions.Thread_SetAttributes;
-        return callJI(type, affinity, priority, stacksize, __functionAddress);
+        return invokeJI(type, affinity, priority, stacksize, __functionAddress);
     }
 
     // --- [ FMOD_System_Create ] ---
@@ -1607,7 +1607,7 @@ public class FMOD {
     /** {@code FMOD_RESULT FMOD_System_Create(FMOD_SYSTEM ** system, unsigned int headerversion)} */
     public static int nFMOD_System_Create(long system, int headerversion) {
         long __functionAddress = Functions.System_Create;
-        return callPI(system, headerversion, __functionAddress);
+        return invokePI(system, headerversion, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_Create(FMOD_SYSTEM ** system, unsigned int headerversion)} */
@@ -1628,7 +1628,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_System_SetOutput ] ---
@@ -1640,7 +1640,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, output, __functionAddress);
+        return invokePI(system, output, __functionAddress);
     }
 
     // --- [ FMOD_System_GetOutput ] ---
@@ -1651,7 +1651,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, output, __functionAddress);
+        return invokePPI(system, output, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetOutput(FMOD_SYSTEM * system, FMOD_OUTPUTTYPE * output)} */
@@ -1671,7 +1671,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, numdrivers, __functionAddress);
+        return invokePPI(system, numdrivers, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetNumDrivers(FMOD_SYSTEM * system, int * numdrivers)} */
@@ -1691,7 +1691,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPPPI(system, id, name, namelen, guid, systemrate, speakermode, speakermodechannels, __functionAddress);
+        return invokePPPPPPI(system, id, name, namelen, guid, systemrate, speakermode, speakermodechannels, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetDriverInfo(FMOD_SYSTEM * system, int id, char * name, int namelen, FMOD_GUID * guid, int * systemrate, FMOD_SPEAKERMODE * speakermode, int * speakermodechannels)} */
@@ -1714,7 +1714,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, driver, __functionAddress);
+        return invokePI(system, driver, __functionAddress);
     }
 
     // --- [ FMOD_System_GetDriver ] ---
@@ -1725,7 +1725,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, driver, __functionAddress);
+        return invokePPI(system, driver, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetDriver(FMOD_SYSTEM * system, int * driver)} */
@@ -1746,7 +1746,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, numsoftwarechannels, __functionAddress);
+        return invokePI(system, numsoftwarechannels, __functionAddress);
     }
 
     // --- [ FMOD_System_GetSoftwareChannels ] ---
@@ -1757,7 +1757,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, numsoftwarechannels, __functionAddress);
+        return invokePPI(system, numsoftwarechannels, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetSoftwareChannels(FMOD_SYSTEM * system, int * numsoftwarechannels)} */
@@ -1778,7 +1778,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, samplerate, speakermode, numrawspeakers, __functionAddress);
+        return invokePI(system, samplerate, speakermode, numrawspeakers, __functionAddress);
     }
 
     // --- [ FMOD_System_GetSoftwareFormat ] ---
@@ -1789,7 +1789,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPI(system, samplerate, speakermode, numrawspeakers, __functionAddress);
+        return invokePPPPI(system, samplerate, speakermode, numrawspeakers, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetSoftwareFormat(FMOD_SYSTEM * system, int * samplerate, FMOD_SPEAKERMODE * speakermode, int * numrawspeakers)} */
@@ -1812,7 +1812,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, bufferlength, numbuffers, __functionAddress);
+        return invokePI(system, bufferlength, numbuffers, __functionAddress);
     }
 
     // --- [ FMOD_System_GetDSPBufferSize ] ---
@@ -1823,7 +1823,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, bufferlength, numbuffers, __functionAddress);
+        return invokePPPI(system, bufferlength, numbuffers, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetDSPBufferSize(FMOD_SYSTEM * system, unsigned int * bufferlength, int * numbuffers)} */
@@ -1844,7 +1844,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPPPPI(system, useropen, userclose, userread, userseek, userasyncread, userasynccancel, blockalign, __functionAddress);
+        return invokePPPPPPPI(system, useropen, userclose, userread, userseek, userasyncread, userasynccancel, blockalign, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_SetFileSystem(FMOD_SYSTEM * system, FMOD_FILE_OPEN_CALLBACK useropen, FMOD_FILE_CLOSE_CALLBACK userclose, FMOD_FILE_READ_CALLBACK userread, FMOD_FILE_SEEK_CALLBACK userseek, FMOD_FILE_ASYNCREAD_CALLBACK userasyncread, FMOD_FILE_ASYNCCANCEL_CALLBACK userasynccancel, int blockalign)} */
@@ -1861,7 +1861,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPPI(system, useropen, userclose, userread, userseek, __functionAddress);
+        return invokePPPPPI(system, useropen, userclose, userread, userseek, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_AttachFileSystem(FMOD_SYSTEM * system, FMOD_FILE_OPEN_CALLBACK useropen, FMOD_FILE_CLOSE_CALLBACK userclose, FMOD_FILE_READ_CALLBACK userread, FMOD_FILE_SEEK_CALLBACK userseek)} */
@@ -1878,7 +1878,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, settings, __functionAddress);
+        return invokePPI(system, settings, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_SetAdvancedSettings(FMOD_SYSTEM * system, FMOD_ADVANCEDSETTINGS * settings)} */
@@ -1895,7 +1895,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, settings, __functionAddress);
+        return invokePPI(system, settings, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetAdvancedSettings(FMOD_SYSTEM * system, FMOD_ADVANCEDSETTINGS * settings)} */
@@ -1912,7 +1912,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, callback, callbackmask, __functionAddress);
+        return invokePPI(system, callback, callbackmask, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_SetCallback(FMOD_SYSTEM * system, FMOD_SYSTEM_CALLBACK callback, FMOD_SYSTEM_CALLBACK_TYPE callbackmask)} */
@@ -1929,7 +1929,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, path, __functionAddress);
+        return invokePPI(system, path, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_SetPluginPath(FMOD_SYSTEM * system, char const * path)} */
@@ -1962,7 +1962,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, filename, handle, priority, __functionAddress);
+        return invokePPPI(system, filename, handle, priority, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_LoadPlugin(FMOD_SYSTEM * system, char const * filename, unsigned int * handle, unsigned int priority)} */
@@ -2000,7 +2000,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, handle, __functionAddress);
+        return invokePI(system, handle, __functionAddress);
     }
 
     // --- [ FMOD_System_GetNumNestedPlugins ] ---
@@ -2011,7 +2011,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, handle, count, __functionAddress);
+        return invokePPI(system, handle, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetNumNestedPlugins(FMOD_SYSTEM * system, unsigned int handle, int * count)} */
@@ -2031,7 +2031,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, handle, index, nestedhandle, __functionAddress);
+        return invokePPI(system, handle, index, nestedhandle, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetNestedPlugin(FMOD_SYSTEM * system, unsigned int handle, int index, unsigned int * nestedhandle)} */
@@ -2051,7 +2051,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, plugintype, numplugins, __functionAddress);
+        return invokePPI(system, plugintype, numplugins, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetNumPlugins(FMOD_SYSTEM * system, FMOD_PLUGINTYPE plugintype, int * numplugins)} */
@@ -2071,7 +2071,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, plugintype, index, handle, __functionAddress);
+        return invokePPI(system, plugintype, index, handle, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetPluginHandle(FMOD_SYSTEM * system, FMOD_PLUGINTYPE plugintype, int index, unsigned int * handle)} */
@@ -2091,7 +2091,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPI(system, handle, plugintype, name, namelen, version, __functionAddress);
+        return invokePPPPI(system, handle, plugintype, name, namelen, version, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetPluginInfo(FMOD_SYSTEM * system, unsigned int handle, FMOD_PLUGINTYPE * plugintype, char * name, int namelen, unsigned int * version)} */
@@ -2113,7 +2113,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, handle, __functionAddress);
+        return invokePI(system, handle, __functionAddress);
     }
 
     // --- [ FMOD_System_GetOutputByPlugin ] ---
@@ -2124,7 +2124,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, handle, __functionAddress);
+        return invokePPI(system, handle, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetOutputByPlugin(FMOD_SYSTEM * system, unsigned int * handle)} */
@@ -2144,7 +2144,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, handle, dsp, __functionAddress);
+        return invokePPI(system, handle, dsp, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_CreateDSPByPlugin(FMOD_SYSTEM * system, unsigned int handle, FMOD_DSP ** dsp)} */
@@ -2164,7 +2164,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, handle, description, __functionAddress);
+        return invokePPI(system, handle, description, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetDSPInfoByPlugin(FMOD_SYSTEM * system, unsigned int handle, FMOD_DSP_DESCRIPTION const ** description)} */
@@ -2184,7 +2184,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, description, handle, priority, __functionAddress);
+        return invokePPPI(system, description, handle, priority, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_RegisterCodec(FMOD_SYSTEM * system, FMOD_CODEC_DESCRIPTION * description, unsigned int * handle, unsigned int priority)} */
@@ -2205,7 +2205,7 @@ public class FMOD {
             check(system);
             FMOD_DSP_DESCRIPTION.validate(description);
         }
-        return callPPPI(system, description, handle, __functionAddress);
+        return invokePPPI(system, description, handle, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_RegisterDSP(FMOD_SYSTEM * system, FMOD_DSP_DESCRIPTION const * description, unsigned int * handle)} */
@@ -2226,7 +2226,7 @@ public class FMOD {
             check(system);
             FMOD_OUTPUT_DESCRIPTION.validate(description);
         }
-        return callPPPI(system, description, handle, __functionAddress);
+        return invokePPPI(system, description, handle, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_RegisterOutput(FMOD_SYSTEM * system, FMOD_OUTPUT_DESCRIPTION const * description, unsigned int * handle)} */
@@ -2247,7 +2247,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, maxchannels, flags, extradriverdata, __functionAddress);
+        return invokePPI(system, maxchannels, flags, extradriverdata, __functionAddress);
     }
 
     // --- [ FMOD_System_Close ] ---
@@ -2259,7 +2259,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_System_Update ] ---
@@ -2271,7 +2271,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_System_SetSpeakerPosition ] ---
@@ -2283,7 +2283,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, speaker, x, y, active, __functionAddress);
+        return invokePI(system, speaker, x, y, active, __functionAddress);
     }
 
     // --- [ FMOD_System_GetSpeakerPosition ] ---
@@ -2294,7 +2294,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPI(system, speaker, x, y, active, __functionAddress);
+        return invokePPPPI(system, speaker, x, y, active, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetSpeakerPosition(FMOD_SYSTEM * system, FMOD_SPEAKER speaker, float * x, float * y, FMOD_BOOL * active)} */
@@ -2317,7 +2317,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, filebuffersize, filebuffersizetype, __functionAddress);
+        return invokePI(system, filebuffersize, filebuffersizetype, __functionAddress);
     }
 
     // --- [ FMOD_System_GetStreamBufferSize ] ---
@@ -2328,7 +2328,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, filebuffersize, filebuffersizetype, __functionAddress);
+        return invokePPPI(system, filebuffersize, filebuffersizetype, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetStreamBufferSize(FMOD_SYSTEM * system, unsigned int * filebuffersize, FMOD_TIMEUNIT * filebuffersizetype)} */
@@ -2350,7 +2350,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, dopplerscale, distancefactor, rolloffscale, __functionAddress);
+        return invokePI(system, dopplerscale, distancefactor, rolloffscale, __functionAddress);
     }
 
     // --- [ FMOD_System_Get3DSettings ] ---
@@ -2361,7 +2361,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPI(system, dopplerscale, distancefactor, rolloffscale, __functionAddress);
+        return invokePPPPI(system, dopplerscale, distancefactor, rolloffscale, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_Get3DSettings(FMOD_SYSTEM * system, float * dopplerscale, float * distancefactor, float * rolloffscale)} */
@@ -2384,7 +2384,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, numlisteners, __functionAddress);
+        return invokePI(system, numlisteners, __functionAddress);
     }
 
     // --- [ FMOD_System_Get3DNumListeners ] ---
@@ -2395,7 +2395,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, numlisteners, __functionAddress);
+        return invokePPI(system, numlisteners, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_Get3DNumListeners(FMOD_SYSTEM * system, int * numlisteners)} */
@@ -2415,7 +2415,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPPI(system, listener, pos, vel, forward, up, __functionAddress);
+        return invokePPPPPI(system, listener, pos, vel, forward, up, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_Set3DListenerAttributes(FMOD_SYSTEM * system, int listener, FMOD_VECTOR const * pos, FMOD_VECTOR const * vel, FMOD_VECTOR const * forward, FMOD_VECTOR const * up)} */
@@ -2432,7 +2432,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPPI(system, listener, pos, vel, forward, up, __functionAddress);
+        return invokePPPPPI(system, listener, pos, vel, forward, up, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_Get3DListenerAttributes(FMOD_SYSTEM * system, int listener, FMOD_VECTOR * pos, FMOD_VECTOR * vel, FMOD_VECTOR * forward, FMOD_VECTOR * up)} */
@@ -2449,7 +2449,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, callback, __functionAddress);
+        return invokePPI(system, callback, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_Set3DRolloffCallback(FMOD_SYSTEM * system, FMOD_3D_ROLLOFF_CALLBACK callback)} */
@@ -2467,7 +2467,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_System_MixerResume ] ---
@@ -2479,7 +2479,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_System_GetDefaultMixMatrix ] ---
@@ -2490,7 +2490,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, sourcespeakermode, targetspeakermode, matrix, matrixhop, __functionAddress);
+        return invokePPI(system, sourcespeakermode, targetspeakermode, matrix, matrixhop, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetDefaultMixMatrix(FMOD_SYSTEM * system, FMOD_SPEAKERMODE sourcespeakermode, FMOD_SPEAKERMODE targetspeakermode, float * matrix, int matrixhop)} */
@@ -2507,7 +2507,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, mode, channels, __functionAddress);
+        return invokePPI(system, mode, channels, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetSpeakerModeChannels(FMOD_SYSTEM * system, FMOD_SPEAKERMODE mode, int * channels)} */
@@ -2527,7 +2527,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, version, buildnumber, __functionAddress);
+        return invokePPPI(system, version, buildnumber, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetVersion(FMOD_SYSTEM * system, unsigned int * version, unsigned int * buildnumber)} */
@@ -2548,7 +2548,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, handle, __functionAddress);
+        return invokePPI(system, handle, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetOutputHandle(FMOD_SYSTEM * system, void ** handle)} */
@@ -2568,7 +2568,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, channels, realchannels, __functionAddress);
+        return invokePPPI(system, channels, realchannels, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetChannelsPlaying(FMOD_SYSTEM * system, int * channels, int * realchannels)} */
@@ -2589,7 +2589,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, usage, __functionAddress);
+        return invokePPI(system, usage, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetCPUUsage(FMOD_SYSTEM * system, FMOD_CPU_USAGE * usage)} */
@@ -2606,7 +2606,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPI(system, sampleBytesRead, streamBytesRead, otherBytesRead, __functionAddress);
+        return invokePPPPI(system, sampleBytesRead, streamBytesRead, otherBytesRead, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetFileUsage(FMOD_SYSTEM * system, long long * sampleBytesRead, long long * streamBytesRead, long long * otherBytesRead)} */
@@ -2628,7 +2628,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPI(system, name_or_data, mode, exinfo, sound, __functionAddress);
+        return invokePPPPI(system, name_or_data, mode, exinfo, sound, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_CreateSound(FMOD_SYSTEM * system, char const * name_or_data, FMOD_MODE mode, FMOD_CREATESOUNDEXINFO * exinfo, FMOD_SOUND ** sound)} */
@@ -2648,7 +2648,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPI(system, name_or_data, mode, exinfo, sound, __functionAddress);
+        return invokePPPPI(system, name_or_data, mode, exinfo, sound, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_CreateStream(FMOD_SYSTEM * system, char const * name_or_data, FMOD_MODE mode, FMOD_CREATESOUNDEXINFO * exinfo, FMOD_SOUND ** sound)} */
@@ -2669,7 +2669,7 @@ public class FMOD {
             check(system);
             FMOD_DSP_DESCRIPTION.validate(description);
         }
-        return callPPPI(system, description, dsp, __functionAddress);
+        return invokePPPI(system, description, dsp, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_CreateDSP(FMOD_SYSTEM * system, FMOD_DSP_DESCRIPTION const * description, FMOD_DSP ** dsp)} */
@@ -2689,7 +2689,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, type, dsp, __functionAddress);
+        return invokePPI(system, type, dsp, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_CreateDSPByType(FMOD_SYSTEM * system, FMOD_DSP_TYPE type, FMOD_DSP ** dsp)} */
@@ -2710,7 +2710,7 @@ public class FMOD {
             check(__functionAddress);
             check(system);
         }
-        return callPPI(system, type, connection, __functionAddress);
+        return invokePPI(system, type, connection, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_CreateDSPConnection(FMOD_SYSTEM * system, FMOD_DSPCONNECTION_TYPE type, FMOD_DSPCONNECTION ** connection)} */
@@ -2730,7 +2730,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, name, channelgroup, __functionAddress);
+        return invokePPPI(system, name, channelgroup, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_CreateChannelGroup(FMOD_SYSTEM * system, char const * name, FMOD_CHANNELGROUP ** channelgroup)} */
@@ -2767,7 +2767,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, name, soundgroup, __functionAddress);
+        return invokePPPI(system, name, soundgroup, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_CreateSoundGroup(FMOD_SYSTEM * system, char const * name, FMOD_SOUNDGROUP ** soundgroup)} */
@@ -2804,7 +2804,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, reverb, __functionAddress);
+        return invokePPI(system, reverb, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_CreateReverb3D(FMOD_SYSTEM * system, FMOD_REVERB3D ** reverb)} */
@@ -2825,7 +2825,7 @@ public class FMOD {
             check(system);
             check(sound);
         }
-        return callPPPPI(system, sound, channelgroup, paused, channel, __functionAddress);
+        return invokePPPPI(system, sound, channelgroup, paused, channel, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_PlaySound(FMOD_SYSTEM * system, FMOD_SOUND * sound, FMOD_CHANNELGROUP * channelgroup, FMOD_BOOL paused, FMOD_CHANNEL ** channel)} */
@@ -2846,7 +2846,7 @@ public class FMOD {
             check(system);
             check(dsp);
         }
-        return callPPPPI(system, dsp, channelgroup, paused, channel, __functionAddress);
+        return invokePPPPI(system, dsp, channelgroup, paused, channel, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_PlayDSP(FMOD_SYSTEM * system, FMOD_DSP * dsp, FMOD_CHANNELGROUP * channelgroup, FMOD_BOOL paused, FMOD_CHANNEL ** channel)} */
@@ -2866,7 +2866,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, channelid, channel, __functionAddress);
+        return invokePPI(system, channelid, channel, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetChannel(FMOD_SYSTEM * system, int channelid, FMOD_CHANNEL ** channel)} */
@@ -2886,7 +2886,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, type, description, __functionAddress);
+        return invokePPI(system, type, description, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetDSPInfoByType(FMOD_SYSTEM * system, FMOD_DSP_TYPE type, FMOD_DSP_DESCRIPTION const ** description)} */
@@ -2906,7 +2906,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, channelgroup, __functionAddress);
+        return invokePPI(system, channelgroup, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetMasterChannelGroup(FMOD_SYSTEM * system, FMOD_CHANNELGROUP ** channelgroup)} */
@@ -2926,7 +2926,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, soundgroup, __functionAddress);
+        return invokePPI(system, soundgroup, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetMasterSoundGroup(FMOD_SYSTEM * system, FMOD_SOUNDGROUP ** soundgroup)} */
@@ -2948,7 +2948,7 @@ public class FMOD {
             check(system);
             check(channelgroup);
         }
-        return callPJPI(system, portType, portIndex, channelgroup, passThru, __functionAddress);
+        return invokePJPI(system, portType, portIndex, channelgroup, passThru, __functionAddress);
     }
 
     // --- [ FMOD_System_DetachChannelGroupFromPort ] ---
@@ -2961,7 +2961,7 @@ public class FMOD {
             check(system);
             check(channelgroup);
         }
-        return callPPI(system, channelgroup, __functionAddress);
+        return invokePPI(system, channelgroup, __functionAddress);
     }
 
     // --- [ FMOD_System_SetReverbProperties ] ---
@@ -2972,7 +2972,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, instance, prop, __functionAddress);
+        return invokePPI(system, instance, prop, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_SetReverbProperties(FMOD_SYSTEM * system, int instance, FMOD_REVERB_PROPERTIES const * prop)} */
@@ -2989,7 +2989,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, instance, prop, __functionAddress);
+        return invokePPI(system, instance, prop, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetReverbProperties(FMOD_SYSTEM * system, int instance, FMOD_REVERB_PROPERTIES * prop)} */
@@ -3007,7 +3007,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_System_UnlockDSP ] ---
@@ -3019,7 +3019,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_System_GetRecordNumDrivers ] ---
@@ -3030,7 +3030,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, numdrivers, numconnected, __functionAddress);
+        return invokePPPI(system, numdrivers, numconnected, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetRecordNumDrivers(FMOD_SYSTEM * system, int * numdrivers, int * numconnected)} */
@@ -3051,7 +3051,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPPPPI(system, id, name, namelen, guid, systemrate, speakermode, speakermodechannels, state, __functionAddress);
+        return invokePPPPPPPI(system, id, name, namelen, guid, systemrate, speakermode, speakermodechannels, state, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetRecordDriverInfo(FMOD_SYSTEM * system, int id, char * name, int namelen, FMOD_GUID * guid, int * systemrate, FMOD_SPEAKERMODE * speakermode, int * speakermodechannels, FMOD_DRIVER_STATE * state)} */
@@ -3074,7 +3074,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, id, position, __functionAddress);
+        return invokePPI(system, id, position, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetRecordPosition(FMOD_SYSTEM * system, int id, unsigned int * position)} */
@@ -3096,7 +3096,7 @@ public class FMOD {
             check(system);
             check(sound);
         }
-        return callPPI(system, id, sound, loop, __functionAddress);
+        return invokePPI(system, id, sound, loop, __functionAddress);
     }
 
     // --- [ FMOD_System_RecordStop ] ---
@@ -3108,7 +3108,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, id, __functionAddress);
+        return invokePI(system, id, __functionAddress);
     }
 
     // --- [ FMOD_System_IsRecording ] ---
@@ -3119,7 +3119,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, id, recording, __functionAddress);
+        return invokePPI(system, id, recording, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_IsRecording(FMOD_SYSTEM * system, int id, FMOD_BOOL * recording)} */
@@ -3139,7 +3139,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, maxpolygons, maxvertices, geometry, __functionAddress);
+        return invokePPI(system, maxpolygons, maxvertices, geometry, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_CreateGeometry(FMOD_SYSTEM * system, int maxpolygons, int maxvertices, FMOD_GEOMETRY ** geometry)} */
@@ -3160,7 +3160,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, maxworldsize, __functionAddress);
+        return invokePI(system, maxworldsize, __functionAddress);
     }
 
     // --- [ FMOD_System_GetGeometrySettings ] ---
@@ -3171,7 +3171,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, maxworldsize, __functionAddress);
+        return invokePPI(system, maxworldsize, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetGeometrySettings(FMOD_SYSTEM * system, float * maxworldsize)} */
@@ -3191,7 +3191,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, data, datasize, geometry, __functionAddress);
+        return invokePPPI(system, data, datasize, geometry, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_LoadGeometry(FMOD_SYSTEM * system, void const * data, int datasize, FMOD_GEOMETRY ** geometry)} */
@@ -3211,7 +3211,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPPI(system, listener, source, direct, reverb, __functionAddress);
+        return invokePPPPPI(system, listener, source, direct, reverb, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetGeometryOcclusion(FMOD_SYSTEM * system, FMOD_VECTOR const * listener, FMOD_VECTOR const * source, float * direct, float * reverb)} */
@@ -3232,7 +3232,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, proxy, __functionAddress);
+        return invokePPI(system, proxy, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_SetNetworkProxy(FMOD_SYSTEM * system, char const * proxy)} */
@@ -3265,7 +3265,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, proxy, proxylen, __functionAddress);
+        return invokePPI(system, proxy, proxylen, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetNetworkProxy(FMOD_SYSTEM * system, char * proxy, int proxylen)} */
@@ -3283,7 +3283,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, timeout, __functionAddress);
+        return invokePI(system, timeout, __functionAddress);
     }
 
     // --- [ FMOD_System_GetNetworkTimeout ] ---
@@ -3294,7 +3294,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, timeout, __functionAddress);
+        return invokePPI(system, timeout, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetNetworkTimeout(FMOD_SYSTEM * system, int * timeout)} */
@@ -3316,7 +3316,7 @@ public class FMOD {
             check(system);
             check(userdata);
         }
-        return callPPI(system, userdata, __functionAddress);
+        return invokePPI(system, userdata, __functionAddress);
     }
 
     // --- [ FMOD_System_GetUserData ] ---
@@ -3327,7 +3327,7 @@ public class FMOD {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, userdata, __functionAddress);
+        return invokePPI(system, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_System_GetUserData(FMOD_SYSTEM * system, void ** userdata)} */
@@ -3348,7 +3348,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPI(sound, __functionAddress);
+        return invokePI(sound, __functionAddress);
     }
 
     // --- [ FMOD_Sound_GetSystemObject ] ---
@@ -3359,7 +3359,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, system, __functionAddress);
+        return invokePPI(sound, system, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetSystemObject(FMOD_SOUND * sound, FMOD_SYSTEM ** system)} */
@@ -3379,7 +3379,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPPPI(sound, offset, length, ptr1, ptr2, len1, len2, __functionAddress);
+        return invokePPPPPI(sound, offset, length, ptr1, ptr2, len1, len2, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_Lock(FMOD_SOUND * sound, unsigned int offset, unsigned int length, void ** ptr1, void ** ptr2, unsigned int * len1, unsigned int * len2)} */
@@ -3402,7 +3402,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPI(sound, ptr1, ptr2, len1, len2, __functionAddress);
+        return invokePPPI(sound, ptr1, ptr2, len1, len2, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_Unlock(FMOD_SOUND * sound, void * ptr1, void * ptr2, unsigned int len1, unsigned int len2)} */
@@ -3420,7 +3420,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPI(sound, frequency, priority, __functionAddress);
+        return invokePI(sound, frequency, priority, __functionAddress);
     }
 
     // --- [ FMOD_Sound_GetDefaults ] ---
@@ -3431,7 +3431,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPI(sound, frequency, priority, __functionAddress);
+        return invokePPPI(sound, frequency, priority, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetDefaults(FMOD_SOUND * sound, float * frequency, int * priority)} */
@@ -3453,7 +3453,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPI(sound, min, max, __functionAddress);
+        return invokePI(sound, min, max, __functionAddress);
     }
 
     // --- [ FMOD_Sound_Get3DMinMaxDistance ] ---
@@ -3464,7 +3464,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPI(sound, min, max, __functionAddress);
+        return invokePPPI(sound, min, max, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_Get3DMinMaxDistance(FMOD_SOUND * sound, float * min, float * max)} */
@@ -3486,7 +3486,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPI(sound, insideconeangle, outsideconeangle, outsidevolume, __functionAddress);
+        return invokePI(sound, insideconeangle, outsideconeangle, outsidevolume, __functionAddress);
     }
 
     // --- [ FMOD_Sound_Get3DConeSettings ] ---
@@ -3497,7 +3497,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPPI(sound, insideconeangle, outsideconeangle, outsidevolume, __functionAddress);
+        return invokePPPPI(sound, insideconeangle, outsideconeangle, outsidevolume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_Get3DConeSettings(FMOD_SOUND * sound, float * insideconeangle, float * outsideconeangle, float * outsidevolume)} */
@@ -3519,7 +3519,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, points, numpoints, __functionAddress);
+        return invokePPI(sound, points, numpoints, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_Set3DCustomRolloff(FMOD_SOUND * sound, FMOD_VECTOR * points, int numpoints)} */
@@ -3536,7 +3536,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPI(sound, points, numpoints, __functionAddress);
+        return invokePPPI(sound, points, numpoints, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_Get3DCustomRolloff(FMOD_SOUND * sound, FMOD_VECTOR ** points, int * numpoints)} */
@@ -3557,7 +3557,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, index, subsound, __functionAddress);
+        return invokePPI(sound, index, subsound, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetSubSound(FMOD_SOUND * sound, int index, FMOD_SOUND ** subsound)} */
@@ -3577,7 +3577,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, parentsound, __functionAddress);
+        return invokePPI(sound, parentsound, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetSubSoundParent(FMOD_SOUND * sound, FMOD_SOUND ** parentsound)} */
@@ -3597,7 +3597,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, name, namelen, __functionAddress);
+        return invokePPI(sound, name, namelen, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetName(FMOD_SOUND * sound, char * name, int namelen)} */
@@ -3614,7 +3614,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, length, lengthtype, __functionAddress);
+        return invokePPI(sound, length, lengthtype, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetLength(FMOD_SOUND * sound, unsigned int * length, FMOD_TIMEUNIT lengthtype)} */
@@ -3634,7 +3634,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPPPI(sound, type, format, channels, bits, __functionAddress);
+        return invokePPPPPI(sound, type, format, channels, bits, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetFormat(FMOD_SOUND * sound, FMOD_SOUND_TYPE * type, FMOD_SOUND_FORMAT * format, int * channels, int * bits)} */
@@ -3657,7 +3657,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, numsubsounds, __functionAddress);
+        return invokePPI(sound, numsubsounds, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetNumSubSounds(FMOD_SOUND * sound, int * numsubsounds)} */
@@ -3677,7 +3677,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPI(sound, numtags, numtagsupdated, __functionAddress);
+        return invokePPPI(sound, numtags, numtagsupdated, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetNumTags(FMOD_SOUND * sound, int * numtags, int * numtagsupdated)} */
@@ -3698,7 +3698,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPI(sound, name, index, tag, __functionAddress);
+        return invokePPPI(sound, name, index, tag, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetTag(FMOD_SOUND * sound, char const * name, int index, FMOD_TAG * tag)} */
@@ -3731,7 +3731,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPPPI(sound, openstate, percentbuffered, starving, diskbusy, __functionAddress);
+        return invokePPPPPI(sound, openstate, percentbuffered, starving, diskbusy, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetOpenState(FMOD_SOUND * sound, FMOD_OPENSTATE * openstate, unsigned int * percentbuffered, FMOD_BOOL * starving, FMOD_BOOL * diskbusy)} */
@@ -3754,7 +3754,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPI(sound, buffer, length, read, __functionAddress);
+        return invokePPPI(sound, buffer, length, read, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_ReadData(FMOD_SOUND * sound, void * buffer, unsigned int length, unsigned int * read)} */
@@ -3775,7 +3775,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPI(sound, pcm, __functionAddress);
+        return invokePI(sound, pcm, __functionAddress);
     }
 
     // --- [ FMOD_Sound_SetSoundGroup ] ---
@@ -3788,7 +3788,7 @@ public class FMOD {
             check(sound);
             check(soundgroup);
         }
-        return callPPI(sound, soundgroup, __functionAddress);
+        return invokePPI(sound, soundgroup, __functionAddress);
     }
 
     // --- [ FMOD_Sound_GetSoundGroup ] ---
@@ -3799,7 +3799,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, soundgroup, __functionAddress);
+        return invokePPI(sound, soundgroup, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetSoundGroup(FMOD_SOUND * sound, FMOD_SOUNDGROUP ** soundgroup)} */
@@ -3819,7 +3819,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, numsyncpoints, __functionAddress);
+        return invokePPI(sound, numsyncpoints, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetNumSyncPoints(FMOD_SOUND * sound, int * numsyncpoints)} */
@@ -3839,7 +3839,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, index, point, __functionAddress);
+        return invokePPI(sound, index, point, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetSyncPoint(FMOD_SOUND * sound, int index, FMOD_SYNCPOINT ** point)} */
@@ -3860,7 +3860,7 @@ public class FMOD {
             check(sound);
             check(point);
         }
-        return callPPPPI(sound, point, name, namelen, offset, offsettype, __functionAddress);
+        return invokePPPPI(sound, point, name, namelen, offset, offsettype, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetSyncPointInfo(FMOD_SOUND * sound, FMOD_SYNCPOINT * point, char * name, int namelen, unsigned int * offset, FMOD_TIMEUNIT offsettype)} */
@@ -3880,7 +3880,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPI(sound, offset, offsettype, name, point, __functionAddress);
+        return invokePPPI(sound, offset, offsettype, name, point, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_AddSyncPoint(FMOD_SOUND * sound, unsigned int offset, FMOD_TIMEUNIT offsettype, char const * name, FMOD_SYNCPOINT ** point)} */
@@ -3919,7 +3919,7 @@ public class FMOD {
             check(sound);
             check(point);
         }
-        return callPPI(sound, point, __functionAddress);
+        return invokePPI(sound, point, __functionAddress);
     }
 
     // --- [ FMOD_Sound_SetMode ] ---
@@ -3931,7 +3931,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPI(sound, mode, __functionAddress);
+        return invokePI(sound, mode, __functionAddress);
     }
 
     // --- [ FMOD_Sound_GetMode ] ---
@@ -3942,7 +3942,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, mode, __functionAddress);
+        return invokePPI(sound, mode, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetMode(FMOD_SOUND * sound, FMOD_MODE * mode)} */
@@ -3963,7 +3963,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPI(sound, loopcount, __functionAddress);
+        return invokePI(sound, loopcount, __functionAddress);
     }
 
     // --- [ FMOD_Sound_GetLoopCount ] ---
@@ -3974,7 +3974,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, loopcount, __functionAddress);
+        return invokePPI(sound, loopcount, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetLoopCount(FMOD_SOUND * sound, int * loopcount)} */
@@ -3995,7 +3995,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPI(sound, loopstart, loopstarttype, loopend, loopendtype, __functionAddress);
+        return invokePI(sound, loopstart, loopstarttype, loopend, loopendtype, __functionAddress);
     }
 
     // --- [ FMOD_Sound_GetLoopPoints ] ---
@@ -4006,7 +4006,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPPI(sound, loopstart, loopstarttype, loopend, loopendtype, __functionAddress);
+        return invokePPPI(sound, loopstart, loopstarttype, loopend, loopendtype, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetLoopPoints(FMOD_SOUND * sound, unsigned int * loopstart, FMOD_TIMEUNIT loopstarttype, unsigned int * loopend, FMOD_TIMEUNIT loopendtype)} */
@@ -4027,7 +4027,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, numchannels, __functionAddress);
+        return invokePPI(sound, numchannels, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetMusicNumChannels(FMOD_SOUND * sound, int * numchannels)} */
@@ -4048,7 +4048,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPI(sound, channel, volume, __functionAddress);
+        return invokePI(sound, channel, volume, __functionAddress);
     }
 
     // --- [ FMOD_Sound_GetMusicChannelVolume ] ---
@@ -4059,7 +4059,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, channel, volume, __functionAddress);
+        return invokePPI(sound, channel, volume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetMusicChannelVolume(FMOD_SOUND * sound, int channel, float * volume)} */
@@ -4080,7 +4080,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPI(sound, speed, __functionAddress);
+        return invokePI(sound, speed, __functionAddress);
     }
 
     // --- [ FMOD_Sound_GetMusicSpeed ] ---
@@ -4091,7 +4091,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, speed, __functionAddress);
+        return invokePPI(sound, speed, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetMusicSpeed(FMOD_SOUND * sound, float * speed)} */
@@ -4112,7 +4112,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, userdata, __functionAddress);
+        return invokePPI(sound, userdata, __functionAddress);
     }
 
     // --- [ FMOD_Sound_GetUserData ] ---
@@ -4123,7 +4123,7 @@ public class FMOD {
         if (CHECKS) {
             check(sound);
         }
-        return callPPI(sound, userdata, __functionAddress);
+        return invokePPI(sound, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Sound_GetUserData(FMOD_SOUND * sound, void ** userdata)} */
@@ -4143,7 +4143,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, system, __functionAddress);
+        return invokePPI(channel, system, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetSystemObject(FMOD_CHANNEL * channel, FMOD_SYSTEM ** system)} */
@@ -4164,7 +4164,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, __functionAddress);
+        return invokePI(channel, __functionAddress);
     }
 
     // --- [ FMOD_Channel_SetPaused ] ---
@@ -4176,7 +4176,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, paused, __functionAddress);
+        return invokePI(channel, paused, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetPaused ] ---
@@ -4187,7 +4187,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, paused, __functionAddress);
+        return invokePPI(channel, paused, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetPaused(FMOD_CHANNEL * channel, FMOD_BOOL * paused)} */
@@ -4208,7 +4208,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, volume, __functionAddress);
+        return invokePI(channel, volume, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetVolume ] ---
@@ -4219,7 +4219,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, volume, __functionAddress);
+        return invokePPI(channel, volume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetVolume(FMOD_CHANNEL * channel, float * volume)} */
@@ -4240,7 +4240,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, ramp, __functionAddress);
+        return invokePI(channel, ramp, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetVolumeRamp ] ---
@@ -4251,7 +4251,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, ramp, __functionAddress);
+        return invokePPI(channel, ramp, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetVolumeRamp(FMOD_CHANNEL * channel, FMOD_BOOL * ramp)} */
@@ -4271,7 +4271,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, audibility, __functionAddress);
+        return invokePPI(channel, audibility, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetAudibility(FMOD_CHANNEL * channel, float * audibility)} */
@@ -4292,7 +4292,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, pitch, __functionAddress);
+        return invokePI(channel, pitch, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetPitch ] ---
@@ -4303,7 +4303,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, pitch, __functionAddress);
+        return invokePPI(channel, pitch, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetPitch(FMOD_CHANNEL * channel, float * pitch)} */
@@ -4324,7 +4324,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, mute, __functionAddress);
+        return invokePI(channel, mute, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetMute ] ---
@@ -4335,7 +4335,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, mute, __functionAddress);
+        return invokePPI(channel, mute, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetMute(FMOD_CHANNEL * channel, FMOD_BOOL * mute)} */
@@ -4356,7 +4356,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, instance, wet, __functionAddress);
+        return invokePI(channel, instance, wet, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetReverbProperties ] ---
@@ -4367,7 +4367,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, instance, wet, __functionAddress);
+        return invokePPI(channel, instance, wet, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetReverbProperties(FMOD_CHANNEL * channel, int instance, float * wet)} */
@@ -4388,7 +4388,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, gain, __functionAddress);
+        return invokePI(channel, gain, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetLowPassGain ] ---
@@ -4399,7 +4399,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, gain, __functionAddress);
+        return invokePPI(channel, gain, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetLowPassGain(FMOD_CHANNEL * channel, float * gain)} */
@@ -4420,7 +4420,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, mode, __functionAddress);
+        return invokePI(channel, mode, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetMode ] ---
@@ -4431,7 +4431,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, mode, __functionAddress);
+        return invokePPI(channel, mode, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetMode(FMOD_CHANNEL * channel, FMOD_MODE * mode)} */
@@ -4451,7 +4451,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, callback, __functionAddress);
+        return invokePPI(channel, callback, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_SetCallback(FMOD_CHANNEL * channel, FMOD_CHANNELCONTROL_CALLBACK callback)} */
@@ -4468,7 +4468,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, isplaying, __functionAddress);
+        return invokePPI(channel, isplaying, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_IsPlaying(FMOD_CHANNEL * channel, FMOD_BOOL * isplaying)} */
@@ -4489,7 +4489,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, pan, __functionAddress);
+        return invokePI(channel, pan, __functionAddress);
     }
 
     // --- [ FMOD_Channel_SetMixLevelsOutput ] ---
@@ -4501,7 +4501,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, frontleft, frontright, center, lfe, surroundleft, surroundright, backleft, backright, __functionAddress);
+        return invokePI(channel, frontleft, frontright, center, lfe, surroundleft, surroundright, backleft, backright, __functionAddress);
     }
 
     // --- [ FMOD_Channel_SetMixLevelsInput ] ---
@@ -4512,7 +4512,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, levels, numlevels, __functionAddress);
+        return invokePPI(channel, levels, numlevels, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_SetMixLevelsInput(FMOD_CHANNEL * channel, float * levels, int numlevels)} */
@@ -4529,7 +4529,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, matrix, outchannels, inchannels, inchannel_hop, __functionAddress);
+        return invokePPI(channel, matrix, outchannels, inchannels, inchannel_hop, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_SetMixMatrix(FMOD_CHANNEL * channel, float * matrix, int outchannels, int inchannels, int inchannel_hop)} */
@@ -4549,7 +4549,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPPPI(channel, matrix, outchannels, inchannels, inchannel_hop, __functionAddress);
+        return invokePPPPI(channel, matrix, outchannels, inchannels, inchannel_hop, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetMixMatrix(FMOD_CHANNEL * channel, float * matrix, int * outchannels, int * inchannels, int inchannel_hop)} */
@@ -4570,7 +4570,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPPI(channel, dspclock, parentclock, __functionAddress);
+        return invokePPPI(channel, dspclock, parentclock, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetDSPClock(FMOD_CHANNEL * channel, unsigned long long * dspclock, unsigned long long * parentclock)} */
@@ -4592,7 +4592,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPJJI(channel, dspclock_start, dspclock_end, stopchannels, __functionAddress);
+        return invokePJJI(channel, dspclock_start, dspclock_end, stopchannels, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetDelay ] ---
@@ -4603,7 +4603,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPPPI(channel, dspclock_start, dspclock_end, stopchannels, __functionAddress);
+        return invokePPPPI(channel, dspclock_start, dspclock_end, stopchannels, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetDelay(FMOD_CHANNEL * channel, unsigned long long * dspclock_start, unsigned long long * dspclock_end, FMOD_BOOL * stopchannels)} */
@@ -4626,7 +4626,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPJI(channel, dspclock, volume, __functionAddress);
+        return invokePJI(channel, dspclock, volume, __functionAddress);
     }
 
     // --- [ FMOD_Channel_SetFadePointRamp ] ---
@@ -4638,7 +4638,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPJI(channel, dspclock, volume, __functionAddress);
+        return invokePJI(channel, dspclock, volume, __functionAddress);
     }
 
     // --- [ FMOD_Channel_RemoveFadePoints ] ---
@@ -4650,7 +4650,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPJJI(channel, dspclock_start, dspclock_end, __functionAddress);
+        return invokePJJI(channel, dspclock_start, dspclock_end, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetFadePoints ] ---
@@ -4661,7 +4661,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPPPI(channel, numpoints, point_dspclock, point_volume, __functionAddress);
+        return invokePPPPI(channel, numpoints, point_dspclock, point_volume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetFadePoints(FMOD_CHANNEL * channel, unsigned int * numpoints, unsigned long long * point_dspclock, float * point_volume)} */
@@ -4683,7 +4683,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, index, dsp, __functionAddress);
+        return invokePPI(channel, index, dsp, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetDSP(FMOD_CHANNEL * channel, int index, FMOD_DSP ** dsp)} */
@@ -4705,7 +4705,7 @@ public class FMOD {
             check(channel);
             check(dsp);
         }
-        return callPPI(channel, index, dsp, __functionAddress);
+        return invokePPI(channel, index, dsp, __functionAddress);
     }
 
     // --- [ FMOD_Channel_RemoveDSP ] ---
@@ -4718,7 +4718,7 @@ public class FMOD {
             check(channel);
             check(dsp);
         }
-        return callPPI(channel, dsp, __functionAddress);
+        return invokePPI(channel, dsp, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetNumDSPs ] ---
@@ -4729,7 +4729,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, numdsps, __functionAddress);
+        return invokePPI(channel, numdsps, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetNumDSPs(FMOD_CHANNEL * channel, int * numdsps)} */
@@ -4751,7 +4751,7 @@ public class FMOD {
             check(channel);
             check(dsp);
         }
-        return callPPI(channel, dsp, index, __functionAddress);
+        return invokePPI(channel, dsp, index, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetDSPIndex ] ---
@@ -4763,7 +4763,7 @@ public class FMOD {
             check(channel);
             check(dsp);
         }
-        return callPPPI(channel, dsp, index, __functionAddress);
+        return invokePPPI(channel, dsp, index, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetDSPIndex(FMOD_CHANNEL * channel, FMOD_DSP * dsp, int * index)} */
@@ -4783,7 +4783,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPPI(channel, pos, vel, __functionAddress);
+        return invokePPPI(channel, pos, vel, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Set3DAttributes(FMOD_CHANNEL * channel, FMOD_VECTOR const * pos, FMOD_VECTOR const * vel)} */
@@ -4800,7 +4800,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPPI(channel, pos, vel, __functionAddress);
+        return invokePPPI(channel, pos, vel, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Get3DAttributes(FMOD_CHANNEL * channel, FMOD_VECTOR * pos, FMOD_VECTOR * vel)} */
@@ -4818,7 +4818,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, mindistance, maxdistance, __functionAddress);
+        return invokePI(channel, mindistance, maxdistance, __functionAddress);
     }
 
     // --- [ FMOD_Channel_Get3DMinMaxDistance ] ---
@@ -4829,7 +4829,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPPI(channel, mindistance, maxdistance, __functionAddress);
+        return invokePPPI(channel, mindistance, maxdistance, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Get3DMinMaxDistance(FMOD_CHANNEL * channel, float * mindistance, float * maxdistance)} */
@@ -4851,7 +4851,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, insideconeangle, outsideconeangle, outsidevolume, __functionAddress);
+        return invokePI(channel, insideconeangle, outsideconeangle, outsidevolume, __functionAddress);
     }
 
     // --- [ FMOD_Channel_Get3DConeSettings ] ---
@@ -4862,7 +4862,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPPPI(channel, insideconeangle, outsideconeangle, outsidevolume, __functionAddress);
+        return invokePPPPI(channel, insideconeangle, outsideconeangle, outsidevolume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Get3DConeSettings(FMOD_CHANNEL * channel, float * insideconeangle, float * outsideconeangle, float * outsidevolume)} */
@@ -4884,7 +4884,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, orientation, __functionAddress);
+        return invokePPI(channel, orientation, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Set3DConeOrientation(FMOD_CHANNEL * channel, FMOD_VECTOR * orientation)} */
@@ -4901,7 +4901,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, orientation, __functionAddress);
+        return invokePPI(channel, orientation, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Get3DConeOrientation(FMOD_CHANNEL * channel, FMOD_VECTOR * orientation)} */
@@ -4918,7 +4918,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, points, numpoints, __functionAddress);
+        return invokePPI(channel, points, numpoints, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Set3DCustomRolloff(FMOD_CHANNEL * channel, FMOD_VECTOR * points, int numpoints)} */
@@ -4935,7 +4935,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPPI(channel, points, numpoints, __functionAddress);
+        return invokePPPI(channel, points, numpoints, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Get3DCustomRolloff(FMOD_CHANNEL * channel, FMOD_VECTOR ** points, int * numpoints)} */
@@ -4957,7 +4957,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, directocclusion, reverbocclusion, __functionAddress);
+        return invokePI(channel, directocclusion, reverbocclusion, __functionAddress);
     }
 
     // --- [ FMOD_Channel_Get3DOcclusion ] ---
@@ -4968,7 +4968,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPPI(channel, directocclusion, reverbocclusion, __functionAddress);
+        return invokePPPI(channel, directocclusion, reverbocclusion, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Get3DOcclusion(FMOD_CHANNEL * channel, float * directocclusion, float * reverbocclusion)} */
@@ -4990,7 +4990,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, angle, __functionAddress);
+        return invokePI(channel, angle, __functionAddress);
     }
 
     // --- [ FMOD_Channel_Get3DSpread ] ---
@@ -5001,7 +5001,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, angle, __functionAddress);
+        return invokePPI(channel, angle, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Get3DSpread(FMOD_CHANNEL * channel, float * angle)} */
@@ -5022,7 +5022,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, level, __functionAddress);
+        return invokePI(channel, level, __functionAddress);
     }
 
     // --- [ FMOD_Channel_Get3DLevel ] ---
@@ -5033,7 +5033,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, level, __functionAddress);
+        return invokePPI(channel, level, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Get3DLevel(FMOD_CHANNEL * channel, float * level)} */
@@ -5054,7 +5054,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, level, __functionAddress);
+        return invokePI(channel, level, __functionAddress);
     }
 
     // --- [ FMOD_Channel_Get3DDopplerLevel ] ---
@@ -5065,7 +5065,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, level, __functionAddress);
+        return invokePPI(channel, level, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Get3DDopplerLevel(FMOD_CHANNEL * channel, float * level)} */
@@ -5086,7 +5086,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, custom, customLevel, centerFreq, __functionAddress);
+        return invokePI(channel, custom, customLevel, centerFreq, __functionAddress);
     }
 
     // --- [ FMOD_Channel_Get3DDistanceFilter ] ---
@@ -5097,7 +5097,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPPPI(channel, custom, customLevel, centerFreq, __functionAddress);
+        return invokePPPPI(channel, custom, customLevel, centerFreq, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_Get3DDistanceFilter(FMOD_CHANNEL * channel, FMOD_BOOL * custom, float * customLevel, float * centerFreq)} */
@@ -5120,7 +5120,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, userdata, __functionAddress);
+        return invokePPI(channel, userdata, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetUserData ] ---
@@ -5131,7 +5131,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, userdata, __functionAddress);
+        return invokePPI(channel, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetUserData(FMOD_CHANNEL * channel, void ** userdata)} */
@@ -5152,7 +5152,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, frequency, __functionAddress);
+        return invokePI(channel, frequency, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetFrequency ] ---
@@ -5163,7 +5163,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, frequency, __functionAddress);
+        return invokePPI(channel, frequency, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetFrequency(FMOD_CHANNEL * channel, float * frequency)} */
@@ -5184,7 +5184,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, priority, __functionAddress);
+        return invokePI(channel, priority, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetPriority ] ---
@@ -5195,7 +5195,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, priority, __functionAddress);
+        return invokePPI(channel, priority, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetPriority(FMOD_CHANNEL * channel, int * priority)} */
@@ -5216,7 +5216,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, position, postype, __functionAddress);
+        return invokePI(channel, position, postype, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetPosition ] ---
@@ -5227,7 +5227,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, position, postype, __functionAddress);
+        return invokePPI(channel, position, postype, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetPosition(FMOD_CHANNEL * channel, unsigned int * position, FMOD_TIMEUNIT postype)} */
@@ -5249,7 +5249,7 @@ public class FMOD {
             check(channel);
             check(channelgroup);
         }
-        return callPPI(channel, channelgroup, __functionAddress);
+        return invokePPI(channel, channelgroup, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetChannelGroup ] ---
@@ -5260,7 +5260,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, channelgroup, __functionAddress);
+        return invokePPI(channel, channelgroup, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetChannelGroup(FMOD_CHANNEL * channel, FMOD_CHANNELGROUP ** channelgroup)} */
@@ -5281,7 +5281,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, loopcount, __functionAddress);
+        return invokePI(channel, loopcount, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetLoopCount ] ---
@@ -5292,7 +5292,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, loopcount, __functionAddress);
+        return invokePPI(channel, loopcount, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetLoopCount(FMOD_CHANNEL * channel, int * loopcount)} */
@@ -5313,7 +5313,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPI(channel, loopstart, loopstarttype, loopend, loopendtype, __functionAddress);
+        return invokePI(channel, loopstart, loopstarttype, loopend, loopendtype, __functionAddress);
     }
 
     // --- [ FMOD_Channel_GetLoopPoints ] ---
@@ -5324,7 +5324,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPPI(channel, loopstart, loopstarttype, loopend, loopendtype, __functionAddress);
+        return invokePPPI(channel, loopstart, loopstarttype, loopend, loopendtype, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetLoopPoints(FMOD_CHANNEL * channel, unsigned int * loopstart, FMOD_TIMEUNIT loopstarttype, unsigned int * loopend, FMOD_TIMEUNIT loopendtype)} */
@@ -5345,7 +5345,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, isvirtual, __functionAddress);
+        return invokePPI(channel, isvirtual, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_IsVirtual(FMOD_CHANNEL * channel, FMOD_BOOL * isvirtual)} */
@@ -5365,7 +5365,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, sound, __functionAddress);
+        return invokePPI(channel, sound, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetCurrentSound(FMOD_CHANNEL * channel, FMOD_SOUND ** sound)} */
@@ -5385,7 +5385,7 @@ public class FMOD {
         if (CHECKS) {
             check(channel);
         }
-        return callPPI(channel, index, __functionAddress);
+        return invokePPI(channel, index, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Channel_GetIndex(FMOD_CHANNEL * channel, int * index)} */
@@ -5405,7 +5405,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, system, __functionAddress);
+        return invokePPI(channelgroup, system, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetSystemObject(FMOD_CHANNELGROUP * channelgroup, FMOD_SYSTEM ** system)} */
@@ -5426,7 +5426,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, __functionAddress);
+        return invokePI(channelgroup, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_SetPaused ] ---
@@ -5438,7 +5438,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, paused, __functionAddress);
+        return invokePI(channelgroup, paused, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetPaused ] ---
@@ -5449,7 +5449,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, paused, __functionAddress);
+        return invokePPI(channelgroup, paused, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetPaused(FMOD_CHANNELGROUP * channelgroup, FMOD_BOOL * paused)} */
@@ -5470,7 +5470,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, volume, __functionAddress);
+        return invokePI(channelgroup, volume, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetVolume ] ---
@@ -5481,7 +5481,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, volume, __functionAddress);
+        return invokePPI(channelgroup, volume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetVolume(FMOD_CHANNELGROUP * channelgroup, float * volume)} */
@@ -5502,7 +5502,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, ramp, __functionAddress);
+        return invokePI(channelgroup, ramp, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetVolumeRamp ] ---
@@ -5513,7 +5513,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, ramp, __functionAddress);
+        return invokePPI(channelgroup, ramp, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetVolumeRamp(FMOD_CHANNELGROUP * channelgroup, FMOD_BOOL * ramp)} */
@@ -5533,7 +5533,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, audibility, __functionAddress);
+        return invokePPI(channelgroup, audibility, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetAudibility(FMOD_CHANNELGROUP * channelgroup, float * audibility)} */
@@ -5554,7 +5554,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, pitch, __functionAddress);
+        return invokePI(channelgroup, pitch, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetPitch ] ---
@@ -5565,7 +5565,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, pitch, __functionAddress);
+        return invokePPI(channelgroup, pitch, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetPitch(FMOD_CHANNELGROUP * channelgroup, float * pitch)} */
@@ -5586,7 +5586,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, mute, __functionAddress);
+        return invokePI(channelgroup, mute, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetMute ] ---
@@ -5597,7 +5597,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, mute, __functionAddress);
+        return invokePPI(channelgroup, mute, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetMute(FMOD_CHANNELGROUP * channelgroup, FMOD_BOOL * mute)} */
@@ -5618,7 +5618,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, instance, wet, __functionAddress);
+        return invokePI(channelgroup, instance, wet, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetReverbProperties ] ---
@@ -5629,7 +5629,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, instance, wet, __functionAddress);
+        return invokePPI(channelgroup, instance, wet, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetReverbProperties(FMOD_CHANNELGROUP * channelgroup, int instance, float * wet)} */
@@ -5650,7 +5650,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, gain, __functionAddress);
+        return invokePI(channelgroup, gain, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetLowPassGain ] ---
@@ -5661,7 +5661,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, gain, __functionAddress);
+        return invokePPI(channelgroup, gain, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetLowPassGain(FMOD_CHANNELGROUP * channelgroup, float * gain)} */
@@ -5682,7 +5682,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, mode, __functionAddress);
+        return invokePI(channelgroup, mode, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetMode ] ---
@@ -5693,7 +5693,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, mode, __functionAddress);
+        return invokePPI(channelgroup, mode, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetMode(FMOD_CHANNELGROUP * channelgroup, FMOD_MODE * mode)} */
@@ -5713,7 +5713,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, callback, __functionAddress);
+        return invokePPI(channelgroup, callback, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_SetCallback(FMOD_CHANNELGROUP * channelgroup, FMOD_CHANNELCONTROL_CALLBACK callback)} */
@@ -5730,7 +5730,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, isplaying, __functionAddress);
+        return invokePPI(channelgroup, isplaying, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_IsPlaying(FMOD_CHANNELGROUP * channelgroup, FMOD_BOOL * isplaying)} */
@@ -5751,7 +5751,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, pan, __functionAddress);
+        return invokePI(channelgroup, pan, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_SetMixLevelsOutput ] ---
@@ -5763,7 +5763,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, frontleft, frontright, center, lfe, surroundleft, surroundright, backleft, backright, __functionAddress);
+        return invokePI(channelgroup, frontleft, frontright, center, lfe, surroundleft, surroundright, backleft, backright, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_SetMixLevelsInput ] ---
@@ -5774,7 +5774,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, levels, numlevels, __functionAddress);
+        return invokePPI(channelgroup, levels, numlevels, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_SetMixLevelsInput(FMOD_CHANNELGROUP * channelgroup, float * levels, int numlevels)} */
@@ -5791,7 +5791,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, matrix, outchannels, inchannels, inchannel_hop, __functionAddress);
+        return invokePPI(channelgroup, matrix, outchannels, inchannels, inchannel_hop, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_SetMixMatrix(FMOD_CHANNELGROUP * channelgroup, float * matrix, int outchannels, int inchannels, int inchannel_hop)} */
@@ -5811,7 +5811,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPPPI(channelgroup, matrix, outchannels, inchannels, inchannel_hop, __functionAddress);
+        return invokePPPPI(channelgroup, matrix, outchannels, inchannels, inchannel_hop, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetMixMatrix(FMOD_CHANNELGROUP * channelgroup, float * matrix, int * outchannels, int * inchannels, int inchannel_hop)} */
@@ -5832,7 +5832,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPPI(channelgroup, dspclock, parentclock, __functionAddress);
+        return invokePPPI(channelgroup, dspclock, parentclock, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetDSPClock(FMOD_CHANNELGROUP * channelgroup, unsigned long long * dspclock, unsigned long long * parentclock)} */
@@ -5854,7 +5854,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPJJI(channelgroup, dspclock_start, dspclock_end, stopchannels, __functionAddress);
+        return invokePJJI(channelgroup, dspclock_start, dspclock_end, stopchannels, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetDelay ] ---
@@ -5865,7 +5865,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPPPI(channelgroup, dspclock_start, dspclock_end, stopchannels, __functionAddress);
+        return invokePPPPI(channelgroup, dspclock_start, dspclock_end, stopchannels, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetDelay(FMOD_CHANNELGROUP * channelgroup, unsigned long long * dspclock_start, unsigned long long * dspclock_end, FMOD_BOOL * stopchannels)} */
@@ -5888,7 +5888,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPJI(channelgroup, dspclock, volume, __functionAddress);
+        return invokePJI(channelgroup, dspclock, volume, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_SetFadePointRamp ] ---
@@ -5900,7 +5900,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPJI(channelgroup, dspclock, volume, __functionAddress);
+        return invokePJI(channelgroup, dspclock, volume, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_RemoveFadePoints ] ---
@@ -5912,7 +5912,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPJJI(channelgroup, dspclock_start, dspclock_end, __functionAddress);
+        return invokePJJI(channelgroup, dspclock_start, dspclock_end, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetFadePoints ] ---
@@ -5923,7 +5923,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPPPI(channelgroup, numpoints, point_dspclock, point_volume, __functionAddress);
+        return invokePPPPI(channelgroup, numpoints, point_dspclock, point_volume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetFadePoints(FMOD_CHANNELGROUP * channelgroup, unsigned int * numpoints, unsigned long long * point_dspclock, float * point_volume)} */
@@ -5945,7 +5945,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, index, dsp, __functionAddress);
+        return invokePPI(channelgroup, index, dsp, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetDSP(FMOD_CHANNELGROUP * channelgroup, int index, FMOD_DSP ** dsp)} */
@@ -5967,7 +5967,7 @@ public class FMOD {
             check(channelgroup);
             check(dsp);
         }
-        return callPPI(channelgroup, index, dsp, __functionAddress);
+        return invokePPI(channelgroup, index, dsp, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_RemoveDSP ] ---
@@ -5980,7 +5980,7 @@ public class FMOD {
             check(channelgroup);
             check(dsp);
         }
-        return callPPI(channelgroup, dsp, __functionAddress);
+        return invokePPI(channelgroup, dsp, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetNumDSPs ] ---
@@ -5991,7 +5991,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, numdsps, __functionAddress);
+        return invokePPI(channelgroup, numdsps, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetNumDSPs(FMOD_CHANNELGROUP * channelgroup, int * numdsps)} */
@@ -6013,7 +6013,7 @@ public class FMOD {
             check(channelgroup);
             check(dsp);
         }
-        return callPPI(channelgroup, dsp, index, __functionAddress);
+        return invokePPI(channelgroup, dsp, index, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetDSPIndex ] ---
@@ -6025,7 +6025,7 @@ public class FMOD {
             check(channelgroup);
             check(dsp);
         }
-        return callPPPI(channelgroup, dsp, index, __functionAddress);
+        return invokePPPI(channelgroup, dsp, index, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetDSPIndex(FMOD_CHANNELGROUP * channelgroup, FMOD_DSP * dsp, int * index)} */
@@ -6045,7 +6045,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPPI(channelgroup, pos, vel, __functionAddress);
+        return invokePPPI(channelgroup, pos, vel, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Set3DAttributes(FMOD_CHANNELGROUP * channelgroup, FMOD_VECTOR const * pos, FMOD_VECTOR const * vel)} */
@@ -6062,7 +6062,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPPI(channelgroup, pos, vel, __functionAddress);
+        return invokePPPI(channelgroup, pos, vel, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Get3DAttributes(FMOD_CHANNELGROUP * channelgroup, FMOD_VECTOR * pos, FMOD_VECTOR * vel)} */
@@ -6080,7 +6080,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, mindistance, maxdistance, __functionAddress);
+        return invokePI(channelgroup, mindistance, maxdistance, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_Get3DMinMaxDistance ] ---
@@ -6091,7 +6091,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPPI(channelgroup, mindistance, maxdistance, __functionAddress);
+        return invokePPPI(channelgroup, mindistance, maxdistance, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Get3DMinMaxDistance(FMOD_CHANNELGROUP * channelgroup, float * mindistance, float * maxdistance)} */
@@ -6113,7 +6113,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, insideconeangle, outsideconeangle, outsidevolume, __functionAddress);
+        return invokePI(channelgroup, insideconeangle, outsideconeangle, outsidevolume, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_Get3DConeSettings ] ---
@@ -6124,7 +6124,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPPPI(channelgroup, insideconeangle, outsideconeangle, outsidevolume, __functionAddress);
+        return invokePPPPI(channelgroup, insideconeangle, outsideconeangle, outsidevolume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Get3DConeSettings(FMOD_CHANNELGROUP * channelgroup, float * insideconeangle, float * outsideconeangle, float * outsidevolume)} */
@@ -6146,7 +6146,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, orientation, __functionAddress);
+        return invokePPI(channelgroup, orientation, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Set3DConeOrientation(FMOD_CHANNELGROUP * channelgroup, FMOD_VECTOR * orientation)} */
@@ -6163,7 +6163,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, orientation, __functionAddress);
+        return invokePPI(channelgroup, orientation, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Get3DConeOrientation(FMOD_CHANNELGROUP * channelgroup, FMOD_VECTOR * orientation)} */
@@ -6180,7 +6180,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, points, numpoints, __functionAddress);
+        return invokePPI(channelgroup, points, numpoints, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Set3DCustomRolloff(FMOD_CHANNELGROUP * channelgroup, FMOD_VECTOR * points, int numpoints)} */
@@ -6197,7 +6197,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPPI(channelgroup, points, numpoints, __functionAddress);
+        return invokePPPI(channelgroup, points, numpoints, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Get3DCustomRolloff(FMOD_CHANNELGROUP * channelgroup, FMOD_VECTOR ** points, int * numpoints)} */
@@ -6219,7 +6219,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, directocclusion, reverbocclusion, __functionAddress);
+        return invokePI(channelgroup, directocclusion, reverbocclusion, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_Get3DOcclusion ] ---
@@ -6230,7 +6230,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPPI(channelgroup, directocclusion, reverbocclusion, __functionAddress);
+        return invokePPPI(channelgroup, directocclusion, reverbocclusion, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Get3DOcclusion(FMOD_CHANNELGROUP * channelgroup, float * directocclusion, float * reverbocclusion)} */
@@ -6252,7 +6252,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, angle, __functionAddress);
+        return invokePI(channelgroup, angle, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_Get3DSpread ] ---
@@ -6263,7 +6263,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, angle, __functionAddress);
+        return invokePPI(channelgroup, angle, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Get3DSpread(FMOD_CHANNELGROUP * channelgroup, float * angle)} */
@@ -6284,7 +6284,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, level, __functionAddress);
+        return invokePI(channelgroup, level, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_Get3DLevel ] ---
@@ -6295,7 +6295,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, level, __functionAddress);
+        return invokePPI(channelgroup, level, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Get3DLevel(FMOD_CHANNELGROUP * channelgroup, float * level)} */
@@ -6316,7 +6316,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, level, __functionAddress);
+        return invokePI(channelgroup, level, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_Get3DDopplerLevel ] ---
@@ -6327,7 +6327,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, level, __functionAddress);
+        return invokePPI(channelgroup, level, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Get3DDopplerLevel(FMOD_CHANNELGROUP * channelgroup, float * level)} */
@@ -6348,7 +6348,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, custom, customLevel, centerFreq, __functionAddress);
+        return invokePI(channelgroup, custom, customLevel, centerFreq, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_Get3DDistanceFilter ] ---
@@ -6359,7 +6359,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPPPI(channelgroup, custom, customLevel, centerFreq, __functionAddress);
+        return invokePPPPI(channelgroup, custom, customLevel, centerFreq, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_Get3DDistanceFilter(FMOD_CHANNELGROUP * channelgroup, FMOD_BOOL * custom, float * customLevel, float * centerFreq)} */
@@ -6382,7 +6382,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, userdata, __functionAddress);
+        return invokePPI(channelgroup, userdata, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_GetUserData ] ---
@@ -6393,7 +6393,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, userdata, __functionAddress);
+        return invokePPI(channelgroup, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetUserData(FMOD_CHANNELGROUP * channelgroup, void ** userdata)} */
@@ -6414,7 +6414,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPI(channelgroup, __functionAddress);
+        return invokePI(channelgroup, __functionAddress);
     }
 
     // --- [ FMOD_ChannelGroup_AddGroup ] ---
@@ -6426,7 +6426,7 @@ public class FMOD {
             check(channelgroup);
             check(group);
         }
-        return callPPPI(channelgroup, group, propagatedspclock, connection, __functionAddress);
+        return invokePPPI(channelgroup, group, propagatedspclock, connection, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_AddGroup(FMOD_CHANNELGROUP * channelgroup, FMOD_CHANNELGROUP * group, FMOD_BOOL propagatedspclock, FMOD_DSPCONNECTION ** connection)} */
@@ -6446,7 +6446,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, numgroups, __functionAddress);
+        return invokePPI(channelgroup, numgroups, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetNumGroups(FMOD_CHANNELGROUP * channelgroup, int * numgroups)} */
@@ -6466,7 +6466,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, index, group, __functionAddress);
+        return invokePPI(channelgroup, index, group, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetGroup(FMOD_CHANNELGROUP * channelgroup, int index, FMOD_CHANNELGROUP ** group)} */
@@ -6486,7 +6486,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, group, __functionAddress);
+        return invokePPI(channelgroup, group, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetParentGroup(FMOD_CHANNELGROUP * channelgroup, FMOD_CHANNELGROUP ** group)} */
@@ -6506,7 +6506,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, name, namelen, __functionAddress);
+        return invokePPI(channelgroup, name, namelen, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetName(FMOD_CHANNELGROUP * channelgroup, char * name, int namelen)} */
@@ -6523,7 +6523,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, numchannels, __functionAddress);
+        return invokePPI(channelgroup, numchannels, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetNumChannels(FMOD_CHANNELGROUP * channelgroup, int * numchannels)} */
@@ -6543,7 +6543,7 @@ public class FMOD {
         if (CHECKS) {
             check(channelgroup);
         }
-        return callPPI(channelgroup, index, channel, __functionAddress);
+        return invokePPI(channelgroup, index, channel, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_ChannelGroup_GetChannel(FMOD_CHANNELGROUP * channelgroup, int index, FMOD_CHANNEL ** channel)} */
@@ -6564,7 +6564,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPI(soundgroup, __functionAddress);
+        return invokePI(soundgroup, __functionAddress);
     }
 
     // --- [ FMOD_SoundGroup_GetSystemObject ] ---
@@ -6575,7 +6575,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPPI(soundgroup, system, __functionAddress);
+        return invokePPI(soundgroup, system, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_SoundGroup_GetSystemObject(FMOD_SOUNDGROUP * soundgroup, FMOD_SYSTEM ** system)} */
@@ -6596,7 +6596,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPI(soundgroup, maxaudible, __functionAddress);
+        return invokePI(soundgroup, maxaudible, __functionAddress);
     }
 
     // --- [ FMOD_SoundGroup_GetMaxAudible ] ---
@@ -6607,7 +6607,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPPI(soundgroup, maxaudible, __functionAddress);
+        return invokePPI(soundgroup, maxaudible, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_SoundGroup_GetMaxAudible(FMOD_SOUNDGROUP * soundgroup, int * maxaudible)} */
@@ -6628,7 +6628,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPI(soundgroup, behavior, __functionAddress);
+        return invokePI(soundgroup, behavior, __functionAddress);
     }
 
     // --- [ FMOD_SoundGroup_GetMaxAudibleBehavior ] ---
@@ -6639,7 +6639,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPPI(soundgroup, behavior, __functionAddress);
+        return invokePPI(soundgroup, behavior, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_SoundGroup_GetMaxAudibleBehavior(FMOD_SOUNDGROUP * soundgroup, FMOD_SOUNDGROUP_BEHAVIOR * behavior)} */
@@ -6660,7 +6660,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPI(soundgroup, speed, __functionAddress);
+        return invokePI(soundgroup, speed, __functionAddress);
     }
 
     // --- [ FMOD_SoundGroup_GetMuteFadeSpeed ] ---
@@ -6671,7 +6671,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPPI(soundgroup, speed, __functionAddress);
+        return invokePPI(soundgroup, speed, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_SoundGroup_GetMuteFadeSpeed(FMOD_SOUNDGROUP * soundgroup, float * speed)} */
@@ -6692,7 +6692,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPI(soundgroup, volume, __functionAddress);
+        return invokePI(soundgroup, volume, __functionAddress);
     }
 
     // --- [ FMOD_SoundGroup_GetVolume ] ---
@@ -6703,7 +6703,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPPI(soundgroup, volume, __functionAddress);
+        return invokePPI(soundgroup, volume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_SoundGroup_GetVolume(FMOD_SOUNDGROUP * soundgroup, float * volume)} */
@@ -6724,7 +6724,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPI(soundgroup, __functionAddress);
+        return invokePI(soundgroup, __functionAddress);
     }
 
     // --- [ FMOD_SoundGroup_GetName ] ---
@@ -6735,7 +6735,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPPI(soundgroup, name, namelen, __functionAddress);
+        return invokePPI(soundgroup, name, namelen, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_SoundGroup_GetName(FMOD_SOUNDGROUP * soundgroup, char * name, int namelen)} */
@@ -6752,7 +6752,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPPI(soundgroup, numsounds, __functionAddress);
+        return invokePPI(soundgroup, numsounds, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_SoundGroup_GetNumSounds(FMOD_SOUNDGROUP * soundgroup, int * numsounds)} */
@@ -6772,7 +6772,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPPI(soundgroup, index, sound, __functionAddress);
+        return invokePPI(soundgroup, index, sound, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_SoundGroup_GetSound(FMOD_SOUNDGROUP * soundgroup, int index, FMOD_SOUND ** sound)} */
@@ -6792,7 +6792,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPPI(soundgroup, numplaying, __functionAddress);
+        return invokePPI(soundgroup, numplaying, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_SoundGroup_GetNumPlaying(FMOD_SOUNDGROUP * soundgroup, int * numplaying)} */
@@ -6813,7 +6813,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPPI(soundgroup, userdata, __functionAddress);
+        return invokePPI(soundgroup, userdata, __functionAddress);
     }
 
     // --- [ FMOD_SoundGroup_GetUserData ] ---
@@ -6824,7 +6824,7 @@ public class FMOD {
         if (CHECKS) {
             check(soundgroup);
         }
-        return callPPI(soundgroup, userdata, __functionAddress);
+        return invokePPI(soundgroup, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_SoundGroup_GetUserData(FMOD_SOUNDGROUP * soundgroup, void ** userdata)} */
@@ -6845,7 +6845,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPI(dsp, __functionAddress);
+        return invokePI(dsp, __functionAddress);
     }
 
     // --- [ FMOD_DSP_GetSystemObject ] ---
@@ -6856,7 +6856,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, system, __functionAddress);
+        return invokePPI(dsp, system, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetSystemObject(FMOD_DSP * dsp, FMOD_SYSTEM ** system)} */
@@ -6877,7 +6877,7 @@ public class FMOD {
             check(dsp);
             check(input);
         }
-        return callPPPI(dsp, input, connection, type, __functionAddress);
+        return invokePPPI(dsp, input, connection, type, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_AddInput(FMOD_DSP * dsp, FMOD_DSP * input, FMOD_DSPCONNECTION ** connection, FMOD_DSPCONNECTION_TYPE type)} */
@@ -6899,7 +6899,7 @@ public class FMOD {
             check(dsp);
             check(input);
         }
-        return callPPPI(dsp, input, connection, __functionAddress);
+        return invokePPPI(dsp, input, connection, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_AddInputPreallocated(FMOD_DSP * dsp, FMOD_DSP * input, FMOD_DSPCONNECTION ** connection)} */
@@ -6920,7 +6920,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPI(dsp, target, connection, __functionAddress);
+        return invokePPPI(dsp, target, connection, __functionAddress);
     }
 
     // --- [ FMOD_DSP_DisconnectAll ] ---
@@ -6932,7 +6932,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPI(dsp, inputs, outputs, __functionAddress);
+        return invokePI(dsp, inputs, outputs, __functionAddress);
     }
 
     // --- [ FMOD_DSP_GetNumInputs ] ---
@@ -6943,7 +6943,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, numinputs, __functionAddress);
+        return invokePPI(dsp, numinputs, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetNumInputs(FMOD_DSP * dsp, int * numinputs)} */
@@ -6963,7 +6963,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, numoutputs, __functionAddress);
+        return invokePPI(dsp, numoutputs, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetNumOutputs(FMOD_DSP * dsp, int * numoutputs)} */
@@ -6983,7 +6983,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPI(dsp, index, input, inputconnection, __functionAddress);
+        return invokePPPI(dsp, index, input, inputconnection, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetInput(FMOD_DSP * dsp, int index, FMOD_DSP ** input, FMOD_DSPCONNECTION ** inputconnection)} */
@@ -7004,7 +7004,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPI(dsp, index, output, outputconnection, __functionAddress);
+        return invokePPPI(dsp, index, output, outputconnection, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetOutput(FMOD_DSP * dsp, int index, FMOD_DSP ** output, FMOD_DSPCONNECTION ** outputconnection)} */
@@ -7026,7 +7026,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPI(dsp, active, __functionAddress);
+        return invokePI(dsp, active, __functionAddress);
     }
 
     // --- [ FMOD_DSP_GetActive ] ---
@@ -7037,7 +7037,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, active, __functionAddress);
+        return invokePPI(dsp, active, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetActive(FMOD_DSP * dsp, FMOD_BOOL * active)} */
@@ -7058,7 +7058,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPI(dsp, bypass, __functionAddress);
+        return invokePI(dsp, bypass, __functionAddress);
     }
 
     // --- [ FMOD_DSP_GetBypass ] ---
@@ -7069,7 +7069,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, bypass, __functionAddress);
+        return invokePPI(dsp, bypass, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetBypass(FMOD_DSP * dsp, FMOD_BOOL * bypass)} */
@@ -7090,7 +7090,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPI(dsp, prewet, postwet, dry, __functionAddress);
+        return invokePI(dsp, prewet, postwet, dry, __functionAddress);
     }
 
     // --- [ FMOD_DSP_GetWetDryMix ] ---
@@ -7101,7 +7101,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPPI(dsp, prewet, postwet, dry, __functionAddress);
+        return invokePPPPI(dsp, prewet, postwet, dry, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetWetDryMix(FMOD_DSP * dsp, float * prewet, float * postwet, float * dry)} */
@@ -7124,7 +7124,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPI(dsp, channelmask, numchannels, source_speakermode, __functionAddress);
+        return invokePI(dsp, channelmask, numchannels, source_speakermode, __functionAddress);
     }
 
     // --- [ FMOD_DSP_GetChannelFormat ] ---
@@ -7135,7 +7135,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPPI(dsp, channelmask, numchannels, source_speakermode, __functionAddress);
+        return invokePPPPI(dsp, channelmask, numchannels, source_speakermode, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetChannelFormat(FMOD_DSP * dsp, FMOD_CHANNELMASK * channelmask, int * numchannels, FMOD_SPEAKERMODE * source_speakermode)} */
@@ -7157,7 +7157,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPPI(dsp, inmask, inchannels, inspeakermode, outmask, outchannels, outspeakermode, __functionAddress);
+        return invokePPPPI(dsp, inmask, inchannels, inspeakermode, outmask, outchannels, outspeakermode, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetOutputChannelFormat(FMOD_DSP * dsp, FMOD_CHANNELMASK inmask, int inchannels, FMOD_SPEAKERMODE inspeakermode, FMOD_CHANNELMASK * outmask, int * outchannels, FMOD_SPEAKERMODE * outspeakermode)} */
@@ -7180,7 +7180,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPI(dsp, __functionAddress);
+        return invokePI(dsp, __functionAddress);
     }
 
     // --- [ FMOD_DSP_SetCallback ] ---
@@ -7191,7 +7191,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, callback, __functionAddress);
+        return invokePPI(dsp, callback, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_SetCallback(FMOD_DSP * dsp, FMOD_DSP_CALLBACK callback)} */
@@ -7209,7 +7209,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPI(dsp, index, value, __functionAddress);
+        return invokePI(dsp, index, value, __functionAddress);
     }
 
     // --- [ FMOD_DSP_SetParameterInt ] ---
@@ -7221,7 +7221,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPI(dsp, index, value, __functionAddress);
+        return invokePI(dsp, index, value, __functionAddress);
     }
 
     // --- [ FMOD_DSP_SetParameterBool ] ---
@@ -7233,7 +7233,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPI(dsp, index, value, __functionAddress);
+        return invokePI(dsp, index, value, __functionAddress);
     }
 
     // --- [ FMOD_DSP_SetParameterData ] ---
@@ -7244,7 +7244,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, index, data, length, __functionAddress);
+        return invokePPI(dsp, index, data, length, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_SetParameterData(FMOD_DSP * dsp, int index, void * data, unsigned int length)} */
@@ -7261,7 +7261,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPI(dsp, index, value, valuestr, valuestrlen, __functionAddress);
+        return invokePPPI(dsp, index, value, valuestr, valuestrlen, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetParameterFloat(FMOD_DSP * dsp, int index, float * value, char * valuestr, int valuestrlen)} */
@@ -7281,7 +7281,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPI(dsp, index, value, valuestr, valuestrlen, __functionAddress);
+        return invokePPPI(dsp, index, value, valuestr, valuestrlen, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetParameterInt(FMOD_DSP * dsp, int index, int * value, char * valuestr, int valuestrlen)} */
@@ -7301,7 +7301,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPI(dsp, index, value, valuestr, valuestrlen, __functionAddress);
+        return invokePPPI(dsp, index, value, valuestr, valuestrlen, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetParameterBool(FMOD_DSP * dsp, int index, FMOD_BOOL * value, char * valuestr, int valuestrlen)} */
@@ -7321,7 +7321,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPPI(dsp, index, data, length, valuestr, valuestrlen, __functionAddress);
+        return invokePPPPI(dsp, index, data, length, valuestr, valuestrlen, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetParameterData(FMOD_DSP * dsp, int index, void ** data, unsigned int * length, char * valuestr, int valuestrlen)} */
@@ -7342,7 +7342,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, numparams, __functionAddress);
+        return invokePPI(dsp, numparams, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetNumParameters(FMOD_DSP * dsp, int * numparams)} */
@@ -7362,7 +7362,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, index, desc, __functionAddress);
+        return invokePPI(dsp, index, desc, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetParameterInfo(FMOD_DSP * dsp, int index, FMOD_DSP_PARAMETER_DESC ** desc)} */
@@ -7382,7 +7382,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, datatype, index, __functionAddress);
+        return invokePPI(dsp, datatype, index, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetDataParameterIndex(FMOD_DSP * dsp, int datatype, int * index)} */
@@ -7404,7 +7404,7 @@ public class FMOD {
             check(dsp);
             check(hwnd);
         }
-        return callPPI(dsp, hwnd, show, __functionAddress);
+        return invokePPI(dsp, hwnd, show, __functionAddress);
     }
 
     // --- [ FMOD_DSP_GetInfo ] ---
@@ -7415,7 +7415,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPPPPI(dsp, name, version, channels, configwidth, configheight, __functionAddress);
+        return invokePPPPPPI(dsp, name, version, channels, configwidth, configheight, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetInfo(FMOD_DSP * dsp, char * name, unsigned int * version, int * channels, int * configwidth, int * configheight)} */
@@ -7439,7 +7439,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, type, __functionAddress);
+        return invokePPI(dsp, type, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetType(FMOD_DSP * dsp, FMOD_DSP_TYPE * type)} */
@@ -7459,7 +7459,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, idle, __functionAddress);
+        return invokePPI(dsp, idle, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetIdle(FMOD_DSP * dsp, FMOD_BOOL * idle)} */
@@ -7480,7 +7480,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, userdata, __functionAddress);
+        return invokePPI(dsp, userdata, __functionAddress);
     }
 
     // --- [ FMOD_DSP_GetUserData ] ---
@@ -7491,7 +7491,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPI(dsp, userdata, __functionAddress);
+        return invokePPI(dsp, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetUserData(FMOD_DSP * dsp, void ** userdata)} */
@@ -7512,7 +7512,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPI(dsp, inputEnabled, outputEnabled, __functionAddress);
+        return invokePI(dsp, inputEnabled, outputEnabled, __functionAddress);
     }
 
     // --- [ FMOD_DSP_GetMeteringEnabled ] ---
@@ -7523,7 +7523,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPI(dsp, inputEnabled, outputEnabled, __functionAddress);
+        return invokePPPI(dsp, inputEnabled, outputEnabled, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetMeteringEnabled(FMOD_DSP * dsp, FMOD_BOOL * inputEnabled, FMOD_BOOL * outputEnabled)} */
@@ -7544,7 +7544,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPI(dsp, inputInfo, outputInfo, __functionAddress);
+        return invokePPPI(dsp, inputInfo, outputInfo, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetMeteringInfo(FMOD_DSP * dsp, FMOD_DSP_METERING_INFO * inputInfo, FMOD_DSP_METERING_INFO * outputInfo)} */
@@ -7561,7 +7561,7 @@ public class FMOD {
         if (CHECKS) {
             check(dsp);
         }
-        return callPPPI(dsp, exclusive, inclusive, __functionAddress);
+        return invokePPPI(dsp, exclusive, inclusive, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSP_GetCPUUsage(FMOD_DSP * dsp, unsigned int * exclusive, unsigned int * inclusive)} */
@@ -7582,7 +7582,7 @@ public class FMOD {
         if (CHECKS) {
             check(dspconnection);
         }
-        return callPPI(dspconnection, input, __functionAddress);
+        return invokePPI(dspconnection, input, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSPConnection_GetInput(FMOD_DSPCONNECTION * dspconnection, FMOD_DSP ** input)} */
@@ -7602,7 +7602,7 @@ public class FMOD {
         if (CHECKS) {
             check(dspconnection);
         }
-        return callPPI(dspconnection, output, __functionAddress);
+        return invokePPI(dspconnection, output, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSPConnection_GetOutput(FMOD_DSPCONNECTION * dspconnection, FMOD_DSP ** output)} */
@@ -7623,7 +7623,7 @@ public class FMOD {
         if (CHECKS) {
             check(dspconnection);
         }
-        return callPI(dspconnection, volume, __functionAddress);
+        return invokePI(dspconnection, volume, __functionAddress);
     }
 
     // --- [ FMOD_DSPConnection_GetMix ] ---
@@ -7634,7 +7634,7 @@ public class FMOD {
         if (CHECKS) {
             check(dspconnection);
         }
-        return callPPI(dspconnection, volume, __functionAddress);
+        return invokePPI(dspconnection, volume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSPConnection_GetMix(FMOD_DSPCONNECTION * dspconnection, float * volume)} */
@@ -7654,7 +7654,7 @@ public class FMOD {
         if (CHECKS) {
             check(dspconnection);
         }
-        return callPPI(dspconnection, matrix, outchannels, inchannels, inchannel_hop, __functionAddress);
+        return invokePPI(dspconnection, matrix, outchannels, inchannels, inchannel_hop, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSPConnection_SetMixMatrix(FMOD_DSPCONNECTION * dspconnection, float * matrix, int outchannels, int inchannels, int inchannel_hop)} */
@@ -7674,7 +7674,7 @@ public class FMOD {
         if (CHECKS) {
             check(dspconnection);
         }
-        return callPPPPI(dspconnection, matrix, outchannels, inchannels, inchannel_hop, __functionAddress);
+        return invokePPPPI(dspconnection, matrix, outchannels, inchannels, inchannel_hop, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSPConnection_GetMixMatrix(FMOD_DSPCONNECTION * dspconnection, float * matrix, int * outchannels, int * inchannels, int inchannel_hop)} */
@@ -7695,7 +7695,7 @@ public class FMOD {
         if (CHECKS) {
             check(dspconnection);
         }
-        return callPPI(dspconnection, type, __functionAddress);
+        return invokePPI(dspconnection, type, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSPConnection_GetType(FMOD_DSPCONNECTION * dspconnection, FMOD_DSPCONNECTION_TYPE * type)} */
@@ -7716,7 +7716,7 @@ public class FMOD {
         if (CHECKS) {
             check(dspconnection);
         }
-        return callPPI(dspconnection, userdata, __functionAddress);
+        return invokePPI(dspconnection, userdata, __functionAddress);
     }
 
     // --- [ FMOD_DSPConnection_GetUserData ] ---
@@ -7727,7 +7727,7 @@ public class FMOD {
         if (CHECKS) {
             check(dspconnection);
         }
-        return callPPI(dspconnection, userdata, __functionAddress);
+        return invokePPI(dspconnection, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_DSPConnection_GetUserData(FMOD_DSPCONNECTION * dspconnection, void ** userdata)} */
@@ -7748,7 +7748,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPI(geometry, __functionAddress);
+        return invokePI(geometry, __functionAddress);
     }
 
     // --- [ FMOD_Geometry_AddPolygon ] ---
@@ -7759,7 +7759,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPPI(geometry, directocclusion, reverbocclusion, doublesided, numvertices, vertices, polygonindex, __functionAddress);
+        return invokePPPI(geometry, directocclusion, reverbocclusion, doublesided, numvertices, vertices, polygonindex, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_AddPolygon(FMOD_GEOMETRY * geometry, float directocclusion, float reverbocclusion, FMOD_BOOL doublesided, int numvertices, FMOD_VECTOR const * vertices, int * polygonindex)} */
@@ -7779,7 +7779,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPI(geometry, numpolygons, __functionAddress);
+        return invokePPI(geometry, numpolygons, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_GetNumPolygons(FMOD_GEOMETRY * geometry, int * numpolygons)} */
@@ -7799,7 +7799,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPPI(geometry, maxpolygons, maxvertices, __functionAddress);
+        return invokePPPI(geometry, maxpolygons, maxvertices, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_GetMaxPolygons(FMOD_GEOMETRY * geometry, int * maxpolygons, int * maxvertices)} */
@@ -7820,7 +7820,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPI(geometry, index, numvertices, __functionAddress);
+        return invokePPI(geometry, index, numvertices, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_GetPolygonNumVertices(FMOD_GEOMETRY * geometry, int index, int * numvertices)} */
@@ -7840,7 +7840,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPI(geometry, index, vertexindex, vertex, __functionAddress);
+        return invokePPI(geometry, index, vertexindex, vertex, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_SetPolygonVertex(FMOD_GEOMETRY * geometry, int index, int vertexindex, FMOD_VECTOR const * vertex)} */
@@ -7857,7 +7857,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPI(geometry, index, vertexindex, vertex, __functionAddress);
+        return invokePPI(geometry, index, vertexindex, vertex, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_GetPolygonVertex(FMOD_GEOMETRY * geometry, int index, int vertexindex, FMOD_VECTOR * vertex)} */
@@ -7875,7 +7875,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPI(geometry, index, directocclusion, reverbocclusion, doublesided, __functionAddress);
+        return invokePI(geometry, index, directocclusion, reverbocclusion, doublesided, __functionAddress);
     }
 
     // --- [ FMOD_Geometry_GetPolygonAttributes ] ---
@@ -7886,7 +7886,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPPPI(geometry, index, directocclusion, reverbocclusion, doublesided, __functionAddress);
+        return invokePPPPI(geometry, index, directocclusion, reverbocclusion, doublesided, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_GetPolygonAttributes(FMOD_GEOMETRY * geometry, int index, float * directocclusion, float * reverbocclusion, FMOD_BOOL * doublesided)} */
@@ -7909,7 +7909,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPI(geometry, active, __functionAddress);
+        return invokePI(geometry, active, __functionAddress);
     }
 
     // --- [ FMOD_Geometry_GetActive ] ---
@@ -7920,7 +7920,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPI(geometry, active, __functionAddress);
+        return invokePPI(geometry, active, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_GetActive(FMOD_GEOMETRY * geometry, FMOD_BOOL * active)} */
@@ -7940,7 +7940,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPPI(geometry, forward, up, __functionAddress);
+        return invokePPPI(geometry, forward, up, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_SetRotation(FMOD_GEOMETRY * geometry, FMOD_VECTOR const * forward, FMOD_VECTOR const * up)} */
@@ -7957,7 +7957,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPPI(geometry, forward, up, __functionAddress);
+        return invokePPPI(geometry, forward, up, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_GetRotation(FMOD_GEOMETRY * geometry, FMOD_VECTOR * forward, FMOD_VECTOR * up)} */
@@ -7974,7 +7974,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPI(geometry, position, __functionAddress);
+        return invokePPI(geometry, position, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_SetPosition(FMOD_GEOMETRY * geometry, FMOD_VECTOR const * position)} */
@@ -7991,7 +7991,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPI(geometry, position, __functionAddress);
+        return invokePPI(geometry, position, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_GetPosition(FMOD_GEOMETRY * geometry, FMOD_VECTOR * position)} */
@@ -8008,7 +8008,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPI(geometry, scale, __functionAddress);
+        return invokePPI(geometry, scale, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_SetScale(FMOD_GEOMETRY * geometry, FMOD_VECTOR const * scale)} */
@@ -8025,7 +8025,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPI(geometry, scale, __functionAddress);
+        return invokePPI(geometry, scale, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_GetScale(FMOD_GEOMETRY * geometry, FMOD_VECTOR * scale)} */
@@ -8042,7 +8042,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPPI(geometry, data, datasize, __functionAddress);
+        return invokePPPI(geometry, data, datasize, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_Save(FMOD_GEOMETRY * geometry, void * data, int * datasize)} */
@@ -8063,7 +8063,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPI(geometry, userdata, __functionAddress);
+        return invokePPI(geometry, userdata, __functionAddress);
     }
 
     // --- [ FMOD_Geometry_GetUserData ] ---
@@ -8074,7 +8074,7 @@ public class FMOD {
         if (CHECKS) {
             check(geometry);
         }
-        return callPPI(geometry, userdata, __functionAddress);
+        return invokePPI(geometry, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Geometry_GetUserData(FMOD_GEOMETRY * geometry, void ** userdata)} */
@@ -8095,7 +8095,7 @@ public class FMOD {
         if (CHECKS) {
             check(reverb3d);
         }
-        return callPI(reverb3d, __functionAddress);
+        return invokePI(reverb3d, __functionAddress);
     }
 
     // --- [ FMOD_Reverb3D_Set3DAttributes ] ---
@@ -8106,7 +8106,7 @@ public class FMOD {
         if (CHECKS) {
             check(reverb3d);
         }
-        return callPPI(reverb3d, position, mindistance, maxdistance, __functionAddress);
+        return invokePPI(reverb3d, position, mindistance, maxdistance, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Reverb3D_Set3DAttributes(FMOD_REVERB3D * reverb3d, FMOD_VECTOR const * position, float mindistance, float maxdistance)} */
@@ -8123,7 +8123,7 @@ public class FMOD {
         if (CHECKS) {
             check(reverb3d);
         }
-        return callPPPPI(reverb3d, position, mindistance, maxdistance, __functionAddress);
+        return invokePPPPI(reverb3d, position, mindistance, maxdistance, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Reverb3D_Get3DAttributes(FMOD_REVERB3D * reverb3d, FMOD_VECTOR * position, float * mindistance, float * maxdistance)} */
@@ -8144,7 +8144,7 @@ public class FMOD {
         if (CHECKS) {
             check(reverb3d);
         }
-        return callPPI(reverb3d, properties, __functionAddress);
+        return invokePPI(reverb3d, properties, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Reverb3D_SetProperties(FMOD_REVERB3D * reverb3d, FMOD_REVERB_PROPERTIES const * properties)} */
@@ -8161,7 +8161,7 @@ public class FMOD {
         if (CHECKS) {
             check(reverb3d);
         }
-        return callPPI(reverb3d, properties, __functionAddress);
+        return invokePPI(reverb3d, properties, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Reverb3D_GetProperties(FMOD_REVERB3D * reverb3d, FMOD_REVERB_PROPERTIES * properties)} */
@@ -8179,7 +8179,7 @@ public class FMOD {
         if (CHECKS) {
             check(reverb3d);
         }
-        return callPI(reverb3d, active, __functionAddress);
+        return invokePI(reverb3d, active, __functionAddress);
     }
 
     // --- [ FMOD_Reverb3D_GetActive ] ---
@@ -8190,7 +8190,7 @@ public class FMOD {
         if (CHECKS) {
             check(reverb3d);
         }
-        return callPPI(reverb3d, active, __functionAddress);
+        return invokePPI(reverb3d, active, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Reverb3D_GetActive(FMOD_REVERB3D * reverb3d, FMOD_BOOL * active)} */
@@ -8211,7 +8211,7 @@ public class FMOD {
         if (CHECKS) {
             check(reverb3d);
         }
-        return callPPI(reverb3d, userdata, __functionAddress);
+        return invokePPI(reverb3d, userdata, __functionAddress);
     }
 
     // --- [ FMOD_Reverb3D_GetUserData ] ---
@@ -8222,7 +8222,7 @@ public class FMOD {
         if (CHECKS) {
             check(reverb3d);
         }
-        return callPPI(reverb3d, userdata, __functionAddress);
+        return invokePPI(reverb3d, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Reverb3D_GetUserData(FMOD_REVERB3D * reverb3d, void ** userdata)} */

@@ -384,7 +384,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length, value, __functionAddress);
+        invokePV(location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform1i64vARB(GLuint program, GLint location, GLsizei count, GLint64 * value)} */
@@ -393,7 +393,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glUniform2i64vARB(GLint location, GLsizei count, GLint64 * value)} */
@@ -402,7 +402,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 1, value, __functionAddress);
+        invokePV(location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2i64vARB(GLuint program, GLint location, GLsizei count, GLint64 * value)} */
@@ -411,7 +411,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glUniform3i64vARB(GLint location, GLsizei count, GLint64 * value)} */
@@ -420,7 +420,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 3, value, __functionAddress);
+        invokePV(location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3i64vARB(GLuint program, GLint location, GLsizei count, GLint64 * value)} */
@@ -429,7 +429,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glUniform4i64vARB(GLint location, GLsizei count, GLint64 * value)} */
@@ -438,7 +438,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 2, value, __functionAddress);
+        invokePV(location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4i64vARB(GLuint program, GLint location, GLsizei count, GLint64 * value)} */
@@ -447,7 +447,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glUniform1ui64vARB(GLint location, GLsizei count, GLuint64 const * value)} */
@@ -456,7 +456,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length, value, __functionAddress);
+        invokePV(location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform1ui64vARB(GLuint program, GLint location, GLsizei count, GLuint64 const * value)} */
@@ -465,7 +465,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glUniform2ui64vARB(GLint location, GLsizei count, GLuint64 const * value)} */
@@ -474,7 +474,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 1, value, __functionAddress);
+        invokePV(location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2ui64vARB(GLuint program, GLint location, GLsizei count, GLuint64 const * value)} */
@@ -483,7 +483,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glUniform3ui64vARB(GLint location, GLsizei count, GLuint64 const * value)} */
@@ -492,7 +492,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 3, value, __functionAddress);
+        invokePV(location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3ui64vARB(GLuint program, GLint location, GLsizei count, GLuint64 const * value)} */
@@ -501,7 +501,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glUniform4ui64vARB(GLint location, GLsizei count, GLuint64 const * value)} */
@@ -510,7 +510,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 2, value, __functionAddress);
+        invokePV(location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4ui64vARB(GLuint program, GLint location, GLsizei count, GLuint64 const * value)} */
@@ -519,7 +519,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glGetUniformi64vARB(GLuint program, GLint location, GLint64 * params)} */
@@ -529,7 +529,7 @@ public class ARBGPUShaderInt64 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, location, params, __functionAddress);
+        invokePV(program, location, params, __functionAddress);
     }
 
     /** {@code void glGetUniformui64vARB(GLuint program, GLint location, GLuint64 * params)} */
@@ -539,7 +539,7 @@ public class ARBGPUShaderInt64 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, location, params, __functionAddress);
+        invokePV(program, location, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformi64vARB(GLuint program, GLint location, GLsizei bufSize, GLint64 * params)} */
@@ -548,7 +548,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformui64vARB(GLuint program, GLint location, GLsizei bufSize, GLuint64 * params)} */
@@ -557,7 +557,7 @@ public class ARBGPUShaderInt64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
 }

@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glAlphaToCoverageDitherControlNVPROC) (jint);
+typedef void (*glAlphaToCoverageDitherControlNVPROC) (jint);
 
 EXTERN_C_ENTER
 

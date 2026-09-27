@@ -47,7 +47,7 @@ public class QCOMQueuePerfHint {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(queue.address(), pPerfHintInfo, __functionAddress);
+        return invokePPI(queue.address(), pPerfHintInfo, __functionAddress);
     }
 
     /** {@code VkResult vkQueueSetPerfHintQCOM(VkQueue queue, VkPerfHintInfoQCOM const * pPerfHintInfo)} */

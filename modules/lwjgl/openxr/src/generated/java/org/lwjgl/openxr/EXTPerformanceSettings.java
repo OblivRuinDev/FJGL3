@@ -59,7 +59,7 @@ public class EXTPerformanceSettings {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(session.address(), domain, level, __functionAddress);
+        return invokePI(session.address(), domain, level, __functionAddress);
     }
 
 }

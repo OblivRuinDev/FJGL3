@@ -41,7 +41,7 @@ public class METARecommendedLayerResolution {
             check(__functionAddress);
             XrRecommendedLayerResolutionGetInfoMETA.validate(info);
         }
-        return callPPPI(session.address(), info, resolution, __functionAddress);
+        return invokePPPI(session.address(), info, resolution, __functionAddress);
     }
 
     /** {@code XrResult xrGetRecommendedLayerResolutionMETA(XrSession session, XrRecommendedLayerResolutionGetInfoMETA const * info, XrRecommendedLayerResolutionMETA * resolution)} */

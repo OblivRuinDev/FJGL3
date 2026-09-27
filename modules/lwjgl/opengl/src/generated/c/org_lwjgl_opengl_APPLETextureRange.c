@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glTextureRangeAPPLEPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetTexParameterPointervAPPLEPROC) (jint, jint, uintptr_t);
+typedef void (*glTextureRangeAPPLEPROC) (jint, jint, uintptr_t);
+typedef void (*glGetTexParameterPointervAPPLEPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

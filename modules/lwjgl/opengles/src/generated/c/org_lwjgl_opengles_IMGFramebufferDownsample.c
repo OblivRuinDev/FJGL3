@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glFramebufferTexture2DDownsampleIMGPROC) (jint, jint, jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glFramebufferTextureLayerDownsampleIMGPROC) (jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glFramebufferTexture2DDownsampleIMGPROC) (jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glFramebufferTextureLayerDownsampleIMGPROC) (jint, jint, jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

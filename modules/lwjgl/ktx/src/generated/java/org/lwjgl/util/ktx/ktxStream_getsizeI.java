@@ -30,7 +30,6 @@ public interface ktxStream_getsizeI extends CallbackI {
         ktxStream_getsizeI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_uint32,
             ffi_type_pointer, ffi_type_pointer
         )

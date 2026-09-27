@@ -65,7 +65,7 @@ public class NVCooperativeMatrix {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pPropertyCount, pProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pPropertyCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceCooperativeMatrixPropertiesNV(VkPhysicalDevice physicalDevice, uint32_t * pPropertyCount, VkCooperativeMatrixPropertiesNV * pProperties)} */
@@ -87,7 +87,7 @@ public class NVCooperativeMatrix {
             check(pPropertyCount, 1);
             checkSafe(pProperties, pPropertyCount[0]);
         }
-        return callPPPI(physicalDevice.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
+        return invokePPPI(physicalDevice.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
     }
 
 }

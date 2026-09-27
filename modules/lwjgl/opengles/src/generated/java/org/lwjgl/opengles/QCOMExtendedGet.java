@@ -174,7 +174,7 @@ public class QCOMExtendedGet {
             check(__functionAddress);
             checkSafe(numTextures, 1);
         }
-        callPPV(textures, lengthSafe(textures), numTextures, __functionAddress);
+        invokePPV(textures, lengthSafe(textures), numTextures, __functionAddress);
     }
 
     /** {@code void glExtGetBuffersQCOM(GLuint * buffers, GLint maxBuffers, GLint * numBuffers)} */
@@ -184,7 +184,7 @@ public class QCOMExtendedGet {
             check(__functionAddress);
             checkSafe(numBuffers, 1);
         }
-        callPPV(buffers, lengthSafe(buffers), numBuffers, __functionAddress);
+        invokePPV(buffers, lengthSafe(buffers), numBuffers, __functionAddress);
     }
 
     /** {@code void glExtGetRenderbuffersQCOM(GLuint * renderbuffers, GLint maxRenderbuffers, GLint * numRenderbuffers)} */
@@ -194,7 +194,7 @@ public class QCOMExtendedGet {
             check(__functionAddress);
             checkSafe(numRenderbuffers, 1);
         }
-        callPPV(renderbuffers, lengthSafe(renderbuffers), numRenderbuffers, __functionAddress);
+        invokePPV(renderbuffers, lengthSafe(renderbuffers), numRenderbuffers, __functionAddress);
     }
 
     /** {@code void glExtGetFramebuffersQCOM(GLuint * framebuffers, GLint maxFramebuffers, GLint * numFramebuffers)} */
@@ -204,7 +204,7 @@ public class QCOMExtendedGet {
             check(__functionAddress);
             checkSafe(numFramebuffers, 1);
         }
-        callPPV(framebuffers, lengthSafe(framebuffers), numFramebuffers, __functionAddress);
+        invokePPV(framebuffers, lengthSafe(framebuffers), numFramebuffers, __functionAddress);
     }
 
     /** {@code void glExtGetTexLevelParameterivQCOM(GLuint texture, GLenum face, GLint level, GLenum pname, GLint * params)} */
@@ -214,7 +214,7 @@ public class QCOMExtendedGet {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, face, level, pname, params, __functionAddress);
+        invokePV(texture, face, level, pname, params, __functionAddress);
     }
 
 }

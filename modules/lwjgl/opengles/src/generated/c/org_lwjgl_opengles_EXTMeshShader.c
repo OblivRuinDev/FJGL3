@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glDrawMeshTasksEXTPROC) (jint, jint, jint);
-typedef void (APIENTRY *glDrawMeshTasksIndirectEXTPROC) (uintptr_t);
-typedef void (APIENTRY *glMultiDrawMeshTasksIndirectEXTPROC) (uintptr_t, jint, jint);
-typedef void (APIENTRY *glMultiDrawMeshTasksIndirectCountEXTPROC) (uintptr_t, uintptr_t, jint, jint);
+typedef void (*glDrawMeshTasksEXTPROC) (jint, jint, jint);
+typedef void (*glDrawMeshTasksIndirectEXTPROC) (uintptr_t);
+typedef void (*glMultiDrawMeshTasksIndirectEXTPROC) (uintptr_t, jint, jint);
+typedef void (*glMultiDrawMeshTasksIndirectCountEXTPROC) (uintptr_t, uintptr_t, jint, jint);
 
 EXTERN_C_ENTER
 

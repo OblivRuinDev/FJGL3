@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glNamedFramebufferParameteriEXTPROC) (jint, jint, jint);
-typedef void (APIENTRY *glGetNamedFramebufferParameterivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glNamedFramebufferParameteriEXTPROC) (jint, jint, jint);
+typedef void (*glGetNamedFramebufferParameterivEXTPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

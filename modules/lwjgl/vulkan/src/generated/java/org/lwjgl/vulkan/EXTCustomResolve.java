@@ -54,7 +54,7 @@ public class EXTCustomResolve {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pBeginCustomResolveInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pBeginCustomResolveInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBeginCustomResolveEXT(VkCommandBuffer commandBuffer, VkBeginCustomResolveInfoEXT const * pBeginCustomResolveInfo)} */

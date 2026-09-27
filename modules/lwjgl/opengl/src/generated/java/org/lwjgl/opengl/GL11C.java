@@ -1056,7 +1056,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(textures.length, textures, __functionAddress);
+        invokePV(textures.length, textures, __functionAddress);
     }
 
     /** {@code void glDeleteTextures(GLsizei n, GLuint const * textures)} */
@@ -1065,7 +1065,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(textures.length, textures, __functionAddress);
+        invokePV(textures.length, textures, __functionAddress);
     }
 
     /** {@code void glGetFloatv(GLenum pname, GLfloat * params)} */
@@ -1075,7 +1075,7 @@ public class GL11C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pname, params, __functionAddress);
+        invokePV(pname, params, __functionAddress);
     }
 
     /** {@code void glGetIntegerv(GLenum pname, GLint * params)} */
@@ -1085,7 +1085,7 @@ public class GL11C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pname, params, __functionAddress);
+        invokePV(pname, params, __functionAddress);
     }
 
     /** {@code void glGetDoublev(GLenum pname, GLdouble * params)} */
@@ -1095,7 +1095,7 @@ public class GL11C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pname, params, __functionAddress);
+        invokePV(pname, params, __functionAddress);
     }
 
     /** {@code void glGetTexImage(GLenum tex, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -1104,7 +1104,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tex, level, format, type, pixels, __functionAddress);
+        invokePV(tex, level, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetTexImage(GLenum tex, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -1113,7 +1113,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tex, level, format, type, pixels, __functionAddress);
+        invokePV(tex, level, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetTexImage(GLenum tex, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -1122,7 +1122,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tex, level, format, type, pixels, __functionAddress);
+        invokePV(tex, level, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetTexImage(GLenum tex, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -1131,7 +1131,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tex, level, format, type, pixels, __functionAddress);
+        invokePV(tex, level, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetTexLevelParameteriv(GLenum target, GLint level, GLenum pname, GLint * params)} */
@@ -1141,7 +1141,7 @@ public class GL11C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, level, pname, params, __functionAddress);
+        invokePV(target, level, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTexLevelParameterfv(GLenum target, GLint level, GLenum pname, GLfloat * params)} */
@@ -1151,7 +1151,7 @@ public class GL11C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, level, pname, params, __functionAddress);
+        invokePV(target, level, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTexParameteriv(GLenum target, GLenum pname, GLint * params)} */
@@ -1161,7 +1161,7 @@ public class GL11C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTexParameterfv(GLenum target, GLenum pname, GLfloat * params)} */
@@ -1171,7 +1171,7 @@ public class GL11C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glReadPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, void * pixels)} */
@@ -1180,7 +1180,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, pixels, __functionAddress);
+        invokePV(x, y, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glReadPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, void * pixels)} */
@@ -1189,7 +1189,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, pixels, __functionAddress);
+        invokePV(x, y, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glReadPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, void * pixels)} */
@@ -1198,7 +1198,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, pixels, __functionAddress);
+        invokePV(x, y, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage1D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -1207,7 +1207,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage1D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -1216,7 +1216,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage1D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -1225,7 +1225,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage1D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -1234,7 +1234,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -1243,7 +1243,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -1252,7 +1252,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -1261,7 +1261,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -1270,7 +1270,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexParameteriv(GLenum target, GLenum pname, GLint const * params)} */
@@ -1280,7 +1280,7 @@ public class GL11C {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glTexParameterfv(GLenum target, GLenum pname, GLfloat const * params)} */
@@ -1290,7 +1290,7 @@ public class GL11C {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glTexSubImage1D(GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -1299,7 +1299,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage1D(GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -1308,7 +1308,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage1D(GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -1317,7 +1317,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage1D(GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -1326,7 +1326,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -1335,7 +1335,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -1344,7 +1344,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -1353,7 +1353,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -1362,7 +1362,7 @@ public class GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
 }

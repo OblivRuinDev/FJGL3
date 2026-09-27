@@ -165,7 +165,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(platform);
         }
-        return callPPP(platform, funcname, __functionAddress);
+        return invokePPP(platform, funcname, __functionAddress);
     }
 
     /** {@code void * clGetExtensionFunctionAddressForPlatform(cl_platform_id platform, cl_char const * funcname)} */
@@ -200,7 +200,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(device);
         }
-        return callPI(device, __functionAddress);
+        return invokePI(device, __functionAddress);
     }
 
     // --- [ clReleaseDevice ] ---
@@ -213,7 +213,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(device);
         }
-        return callPI(device, __functionAddress);
+        return invokePI(device, __functionAddress);
     }
 
     // --- [ clCreateSubDevices ] ---
@@ -225,7 +225,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(in_device);
         }
-        return callPPPPI(in_device, properties, num_devices, out_devices, num_devices_ret, __functionAddress);
+        return invokePPPPI(in_device, properties, num_devices, out_devices, num_devices_ret, __functionAddress);
     }
 
     /** {@code cl_int clCreateSubDevices(cl_device_id in_device, cl_device_partition_property const * properties, cl_uint num_devices, cl_device_id * out_devices, cl_uint * num_devices_ret)} */
@@ -247,7 +247,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(context);
         }
-        return callPJPPPPP(context, flags, image_format, image_desc, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPPP(context, flags, image_format, image_desc, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, cl_image_desc const * image_desc, void * host_ptr, cl_int * errcode_ret)} */
@@ -295,7 +295,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(context);
         }
-        return callPPPPP(context, num_devices, device_list, kernel_names, errcode_ret, __functionAddress);
+        return invokePPPPP(context, num_devices, device_list, kernel_names, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_program clCreateProgramWithBuiltInKernels(cl_context context, cl_uint num_devices, cl_device_id const * device_list, cl_char const * kernel_names, cl_int * errcode_ret)} */
@@ -350,7 +350,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(program);
         }
-        return callPPPPPPPI(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data, __functionAddress);
+        return invokePPPPPPPI(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data, __functionAddress);
     }
 
     /** {@code cl_int clCompileProgram(cl_program program, cl_uint num_devices, cl_device_id const * device_list, cl_char const * options, cl_uint num_input_headers, cl_program const * input_headers, cl_char const ** header_include_names, void (*) (cl_program, void *) pfn_notify, void * user_data)} */
@@ -388,7 +388,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(context);
         }
-        return callPPPPPPPP(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, user_data, errcode_ret, __functionAddress);
+        return invokePPPPPPPP(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, user_data, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_program clLinkProgram(cl_context context, cl_uint num_devices, cl_device_id const * device_list, cl_char const * options, cl_uint num_input_programs, cl_program const * input_programs, void (*) (cl_program, void *) pfn_notify, void * user_data, cl_int * errcode_ret)} */
@@ -444,7 +444,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(platform);
         }
-        return callPI(platform, __functionAddress);
+        return invokePI(platform, __functionAddress);
     }
 
     // --- [ clGetKernelArgInfo ] ---
@@ -456,7 +456,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(kernel);
         }
-        return callPPPPI(kernel, arg_indx, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(kernel, arg_indx, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetKernelArgInfo(cl_kernel kernel, cl_uint arg_indx, cl_kernel_arg_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -496,7 +496,7 @@ public class CL12 extends CL11 {
             check(command_queue);
             check(buffer);
         }
-        return callPPPPPPPPI(command_queue, buffer, pattern, pattern_size, offset, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPPI(command_queue, buffer, pattern, pattern_size, offset, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueFillBuffer(cl_command_queue command_queue, cl_mem buffer, void const * pattern, size_t pattern_size, size_t offset, size_t size, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -518,7 +518,7 @@ public class CL12 extends CL11 {
             check(command_queue);
             check(image);
         }
-        return callPPPPPPPI(command_queue, image, fill_color, origin, region, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPI(command_queue, image, fill_color, origin, region, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueFillImage(cl_command_queue command_queue, cl_mem image, void const * fill_color, size_t const * origin, size_t const * region, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -566,7 +566,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPJPPI(command_queue, num_mem_objects, mem_objects, flags, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPJPPI(command_queue, num_mem_objects, mem_objects, flags, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueMigrateMemObjects(cl_command_queue command_queue, cl_uint num_mem_objects, cl_mem const * mem_objects, cl_mem_migration_flags flags, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -587,7 +587,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPI(command_queue, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPI(command_queue, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueMarkerWithWaitList(cl_command_queue command_queue, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -608,7 +608,7 @@ public class CL12 extends CL11 {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPI(command_queue, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPI(command_queue, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueBarrierWithWaitList(cl_command_queue command_queue, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -630,7 +630,7 @@ public class CL12 extends CL11 {
             checkNT(properties);
             checkSafe(num_devices_ret, 1);
         }
-        return callPPPPI(in_device, memAddress(properties), remainingSafe(out_devices), memAddressSafe(out_devices), num_devices_ret, __functionAddress);
+        return invokePPPPI(in_device, memAddress(properties), remainingSafe(out_devices), memAddressSafe(out_devices), num_devices_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, cl_image_desc const * image_desc, void * host_ptr, cl_int * errcode_ret)} */
@@ -642,7 +642,7 @@ public class CL12 extends CL11 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPP(context, flags, image_format.address(), image_desc.address(), memAddressSafe(host_ptr), errcode_ret, __functionAddress);
+        return invokePJPPPPP(context, flags, image_format.address(), image_desc.address(), memAddressSafe(host_ptr), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, cl_image_desc const * image_desc, void * host_ptr, cl_int * errcode_ret)} */
@@ -654,7 +654,7 @@ public class CL12 extends CL11 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPP(context, flags, image_format.address(), image_desc.address(), host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPPP(context, flags, image_format.address(), image_desc.address(), host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, cl_image_desc const * image_desc, void * host_ptr, cl_int * errcode_ret)} */
@@ -666,7 +666,7 @@ public class CL12 extends CL11 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPP(context, flags, image_format.address(), image_desc.address(), host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPPP(context, flags, image_format.address(), image_desc.address(), host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, cl_image_desc const * image_desc, void * host_ptr, cl_int * errcode_ret)} */
@@ -678,7 +678,7 @@ public class CL12 extends CL11 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPP(context, flags, image_format.address(), image_desc.address(), host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPPP(context, flags, image_format.address(), image_desc.address(), host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_program clCreateProgramWithBuiltInKernels(cl_context context, cl_uint num_devices, cl_device_id const * device_list, cl_char const * kernel_names, cl_int * errcode_ret)} */
@@ -691,7 +691,7 @@ public class CL12 extends CL11 {
             checkNT1(kernel_names);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPPP(context, device_list.remaining(), memAddress(device_list), memAddress(kernel_names), errcode_ret, __functionAddress);
+        return invokePPPPP(context, device_list.remaining(), memAddress(device_list), memAddress(kernel_names), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_program clCreateProgramWithBuiltInKernels(cl_context context, cl_uint num_devices, cl_device_id const * device_list, cl_char const * kernel_names, cl_int * errcode_ret)} */
@@ -707,7 +707,7 @@ public class CL12 extends CL11 {
         try {
             stack.nASCII(kernel_names, true);
             long kernel_namesEncoded = stack.getPointerAddress();
-            return callPPPPP(context, device_list.remaining(), memAddress(device_list), kernel_namesEncoded, errcode_ret, __functionAddress);
+            return invokePPPPP(context, device_list.remaining(), memAddress(device_list), kernel_namesEncoded, errcode_ret, __functionAddress);
         } finally {
             stack.setPointer(stackPointer);
         }
@@ -723,7 +723,7 @@ public class CL12 extends CL11 {
             checkNT1(options);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPPPPPP(context, remainingSafe(device_list), memAddressSafe(device_list), memAddress(options), remainingSafe(input_programs), memAddressSafe(input_programs), memAddressSafe(pfn_notify), user_data, errcode_ret, __functionAddress);
+        return invokePPPPPPPP(context, remainingSafe(device_list), memAddressSafe(device_list), memAddress(options), remainingSafe(input_programs), memAddressSafe(input_programs), memAddressSafe(pfn_notify), user_data, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_program clLinkProgram(cl_context context, cl_uint num_devices, cl_device_id const * device_list, cl_char const * options, cl_uint num_input_programs, cl_program const * input_programs, void (*) (cl_program, void *) pfn_notify, void * user_data, cl_int * errcode_ret)} */
@@ -739,7 +739,7 @@ public class CL12 extends CL11 {
         try {
             stack.nASCII(options, true);
             long optionsEncoded = stack.getPointerAddress();
-            return callPPPPPPPP(context, remainingSafe(device_list), memAddressSafe(device_list), optionsEncoded, remainingSafe(input_programs), memAddressSafe(input_programs), memAddressSafe(pfn_notify), user_data, errcode_ret, __functionAddress);
+            return invokePPPPPPPP(context, remainingSafe(device_list), memAddressSafe(device_list), optionsEncoded, remainingSafe(input_programs), memAddressSafe(input_programs), memAddressSafe(pfn_notify), user_data, errcode_ret, __functionAddress);
         } finally {
             stack.setPointer(stackPointer);
         }
@@ -754,7 +754,7 @@ public class CL12 extends CL11 {
             check(kernel);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(kernel, arg_indx, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(kernel, arg_indx, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetKernelArgInfo(cl_kernel kernel, cl_uint arg_indx, cl_kernel_arg_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -766,7 +766,7 @@ public class CL12 extends CL11 {
             check(kernel);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(kernel, arg_indx, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(kernel, arg_indx, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueFillImage(cl_command_queue command_queue, cl_mem image, void const * fill_color, size_t const * origin, size_t const * region, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -782,7 +782,7 @@ public class CL12 extends CL11 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPI(command_queue, image, fill_color, memAddress(origin), memAddress(region), remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPI(command_queue, image, fill_color, memAddress(origin), memAddress(region), remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueFillImage(cl_command_queue command_queue, cl_mem image, void const * fill_color, size_t const * origin, size_t const * region, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -798,7 +798,7 @@ public class CL12 extends CL11 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPI(command_queue, image, fill_color, memAddress(origin), memAddress(region), remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPI(command_queue, image, fill_color, memAddress(origin), memAddress(region), remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
 }

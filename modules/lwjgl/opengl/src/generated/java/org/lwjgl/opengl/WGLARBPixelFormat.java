@@ -92,7 +92,7 @@ public class WGLARBPixelFormat {
             check(__functionAddress);
             check(hdc);
         }
-        return callPPPI(hdc, pixelFormat, layerPlane, n, attributes, values, __functionAddress);
+        return invokePPPI(hdc, pixelFormat, layerPlane, n, attributes, values, __functionAddress);
     }
 
     /** {@code BOOL wglGetPixelFormatAttribivARB(HDC hdc, int pixelFormat, int layerPlane, UINT n, int const * attributes, int * values)} */
@@ -128,7 +128,7 @@ public class WGLARBPixelFormat {
             check(__functionAddress);
             check(hdc);
         }
-        return callPPPI(hdc, pixelFormat, layerPlane, n, attributes, values, __functionAddress);
+        return invokePPPI(hdc, pixelFormat, layerPlane, n, attributes, values, __functionAddress);
     }
 
     /** {@code BOOL wglGetPixelFormatAttribfvARB(HDC hdc, int pixelFormat, int layerPlane, UINT n, int const * attributes, FLOAT * values)} */
@@ -164,7 +164,7 @@ public class WGLARBPixelFormat {
             check(__functionAddress);
             check(hdc);
         }
-        return callPPPPPI(hdc, attribIList, attribFList, maxFormats, formats, numFormats, __functionAddress);
+        return invokePPPPPI(hdc, attribIList, attribFList, maxFormats, formats, numFormats, __functionAddress);
     }
 
     /** {@code BOOL wglChoosePixelFormatARB(HDC hdc, int const * attribIList, FLOAT const * attribFList, UINT maxFormats, int * formats, UINT * numFormats)} */
@@ -187,7 +187,7 @@ public class WGLARBPixelFormat {
             check(hdc);
             check(values, attributes.length);
         }
-        return callPPPI(hdc, pixelFormat, layerPlane, attributes.length, attributes, values, __functionAddress) != 0;
+        return invokePPPI(hdc, pixelFormat, layerPlane, attributes.length, attributes, values, __functionAddress) != 0;
     }
 
     /** {@code BOOL wglGetPixelFormatAttribfvARB(HDC hdc, int pixelFormat, int layerPlane, UINT n, int const * attributes, FLOAT * values)} */
@@ -199,7 +199,7 @@ public class WGLARBPixelFormat {
             check(hdc);
             check(values, attributes.length);
         }
-        return callPPPI(hdc, pixelFormat, layerPlane, attributes.length, attributes, values, __functionAddress) != 0;
+        return invokePPPI(hdc, pixelFormat, layerPlane, attributes.length, attributes, values, __functionAddress) != 0;
     }
 
     /** {@code BOOL wglChoosePixelFormatARB(HDC hdc, int const * attribIList, FLOAT const * attribFList, UINT maxFormats, int * formats, UINT * numFormats)} */
@@ -213,7 +213,7 @@ public class WGLARBPixelFormat {
             checkNTSafe(attribFList);
             check(numFormats, 1);
         }
-        return callPPPPPI(hdc, attribIList, attribFList, formats.length, formats, numFormats, __functionAddress) != 0;
+        return invokePPPPPI(hdc, attribIList, attribFList, formats.length, formats, numFormats, __functionAddress) != 0;
     }
 
 }

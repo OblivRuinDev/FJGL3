@@ -74,7 +74,7 @@ public class KHRSurface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(instance.address(), surface, pAllocator, __functionAddress);
+        invokePJPV(instance.address(), surface, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroySurfaceKHR(VkInstance instance, VkSurfaceKHR surface, VkAllocationCallbacks const * pAllocator)} */
@@ -90,7 +90,7 @@ public class KHRSurface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(physicalDevice.address(), queueFamilyIndex, surface, pSupported, __functionAddress);
+        return invokePJPI(physicalDevice.address(), queueFamilyIndex, surface, pSupported, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceSurfaceSupportKHR(VkPhysicalDevice physicalDevice, uint32_t queueFamilyIndex, VkSurfaceKHR surface, VkBool32 * pSupported)} */
@@ -110,7 +110,7 @@ public class KHRSurface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(physicalDevice.address(), surface, pSurfaceCapabilities, __functionAddress);
+        return invokePJPI(physicalDevice.address(), surface, pSurfaceCapabilities, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceSurfaceCapabilitiesKHR(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface, VkSurfaceCapabilitiesKHR * pSurfaceCapabilities)} */
@@ -127,7 +127,7 @@ public class KHRSurface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(physicalDevice.address(), surface, pSurfaceFormatCount, pSurfaceFormats, __functionAddress);
+        return invokePJPPI(physicalDevice.address(), surface, pSurfaceFormatCount, pSurfaceFormats, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceSurfaceFormatsKHR(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface, uint32_t * pSurfaceFormatCount, VkSurfaceFormatKHR * pSurfaceFormats)} */
@@ -148,7 +148,7 @@ public class KHRSurface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(physicalDevice.address(), surface, pPresentModeCount, pPresentModes, __functionAddress);
+        return invokePJPPI(physicalDevice.address(), surface, pPresentModeCount, pPresentModes, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceSurfacePresentModesKHR(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface, uint32_t * pPresentModeCount, VkPresentModeKHR * pPresentModes)} */
@@ -169,7 +169,7 @@ public class KHRSurface {
             check(__functionAddress);
             check(pSupported, 1);
         }
-        return callPJPI(physicalDevice.address(), queueFamilyIndex, surface, pSupported, __functionAddress);
+        return invokePJPI(physicalDevice.address(), queueFamilyIndex, surface, pSupported, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceSurfaceFormatsKHR(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface, uint32_t * pSurfaceFormatCount, VkSurfaceFormatKHR * pSurfaceFormats)} */
@@ -181,7 +181,7 @@ public class KHRSurface {
             check(pSurfaceFormatCount, 1);
             checkSafe(pSurfaceFormats, pSurfaceFormatCount[0]);
         }
-        return callPJPPI(physicalDevice.address(), surface, pSurfaceFormatCount, memAddressSafe(pSurfaceFormats), __functionAddress);
+        return invokePJPPI(physicalDevice.address(), surface, pSurfaceFormatCount, memAddressSafe(pSurfaceFormats), __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceSurfacePresentModesKHR(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface, uint32_t * pPresentModeCount, VkPresentModeKHR * pPresentModes)} */
@@ -193,7 +193,7 @@ public class KHRSurface {
             check(pPresentModeCount, 1);
             checkSafe(pPresentModes, pPresentModeCount[0]);
         }
-        return callPJPPI(physicalDevice.address(), surface, pPresentModeCount, pPresentModes, __functionAddress);
+        return invokePJPPI(physicalDevice.address(), surface, pPresentModeCount, pPresentModes, __functionAddress);
     }
 
 }

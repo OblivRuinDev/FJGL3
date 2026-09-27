@@ -118,7 +118,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pMicromap, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pMicromap, __functionAddress);
     }
 
     /** {@code VkResult vkCreateMicromapEXT(VkDevice device, VkMicromapCreateInfoEXT const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkMicromapEXT * pMicromap)} */
@@ -138,7 +138,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), micromap, pAllocator, __functionAddress);
+        invokePJPV(device.address(), micromap, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyMicromapEXT(VkDevice device, VkMicromapEXT micromap, VkAllocationCallbacks const * pAllocator)} */
@@ -154,7 +154,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), infoCount, pInfos, __functionAddress);
+        invokePPV(commandBuffer.address(), infoCount, pInfos, __functionAddress);
     }
 
     /** {@code void vkCmdBuildMicromapsEXT(VkCommandBuffer commandBuffer, uint32_t infoCount, VkMicromapBuildInfoEXT const * pInfos)} */
@@ -170,7 +170,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), deferredOperation, infoCount, pInfos, __functionAddress);
+        return invokePJPI(device.address(), deferredOperation, infoCount, pInfos, __functionAddress);
     }
 
     /** {@code VkResult vkBuildMicromapsEXT(VkDevice device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, VkMicromapBuildInfoEXT const * pInfos)} */
@@ -187,7 +187,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), deferredOperation, pInfo, __functionAddress);
+        return invokePJPI(device.address(), deferredOperation, pInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCopyMicromapEXT(VkDevice device, VkDeferredOperationKHR deferredOperation, VkCopyMicromapInfoEXT const * pInfo)} */
@@ -204,7 +204,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), deferredOperation, pInfo, __functionAddress);
+        return invokePJPI(device.address(), deferredOperation, pInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCopyMicromapToMemoryEXT(VkDevice device, VkDeferredOperationKHR deferredOperation, VkCopyMicromapToMemoryInfoEXT const * pInfo)} */
@@ -221,7 +221,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), deferredOperation, pInfo, __functionAddress);
+        return invokePJPI(device.address(), deferredOperation, pInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCopyMemoryToMicromapEXT(VkDevice device, VkDeferredOperationKHR deferredOperation, VkCopyMemoryToMicromapInfoEXT const * pInfo)} */
@@ -238,7 +238,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPPI(device.address(), micromapCount, pMicromaps, queryType, dataSize, pData, stride, __functionAddress);
+        return invokePPPPPI(device.address(), micromapCount, pMicromaps, queryType, dataSize, pData, stride, __functionAddress);
     }
 
     /** {@code VkResult vkWriteMicromapsPropertiesEXT(VkDevice device, uint32_t micromapCount, VkMicromapEXT const * pMicromaps, VkQueryType queryType, size_t dataSize, void * pData, size_t stride)} */
@@ -255,7 +255,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyMicromapEXT(VkCommandBuffer commandBuffer, VkCopyMicromapInfoEXT const * pInfo)} */
@@ -271,7 +271,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyMicromapToMemoryEXT(VkCommandBuffer commandBuffer, VkCopyMicromapToMemoryInfoEXT const * pInfo)} */
@@ -287,7 +287,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyMemoryToMicromapEXT(VkCommandBuffer commandBuffer, VkCopyMemoryToMicromapInfoEXT const * pInfo)} */
@@ -303,7 +303,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPJV(commandBuffer.address(), micromapCount, pMicromaps, queryType, queryPool, firstQuery, __functionAddress);
+        invokePPJV(commandBuffer.address(), micromapCount, pMicromaps, queryType, queryPool, firstQuery, __functionAddress);
     }
 
     /** {@code void vkCmdWriteMicromapsPropertiesEXT(VkCommandBuffer commandBuffer, uint32_t micromapCount, VkMicromapEXT const * pMicromaps, VkQueryType queryType, VkQueryPool queryPool, uint32_t firstQuery)} */
@@ -320,7 +320,7 @@ public class EXTOpacityMicromap {
             check(__functionAddress);
             VkMicromapVersionInfoEXT.validate(pVersionInfo);
         }
-        callPPPV(device.address(), pVersionInfo, pCompatibility, __functionAddress);
+        invokePPPV(device.address(), pVersionInfo, pCompatibility, __functionAddress);
     }
 
     /** {@code void vkGetDeviceMicromapCompatibilityEXT(VkDevice device, VkMicromapVersionInfoEXT const * pVersionInfo, VkAccelerationStructureCompatibilityKHR * pCompatibility)} */
@@ -339,7 +339,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), buildType, pBuildInfo, pSizeInfo, __functionAddress);
+        invokePPPV(device.address(), buildType, pBuildInfo, pSizeInfo, __functionAddress);
     }
 
     /** {@code void vkGetMicromapBuildSizesEXT(VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, VkMicromapBuildInfoEXT const * pBuildInfo, VkMicromapBuildSizesInfoEXT * pSizeInfo)} */
@@ -355,7 +355,7 @@ public class EXTOpacityMicromap {
             check(__functionAddress);
             check(pMicromap, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pMicromap, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pMicromap, __functionAddress);
     }
 
     /** {@code VkResult vkWriteMicromapsPropertiesEXT(VkDevice device, uint32_t micromapCount, VkMicromapEXT const * pMicromaps, VkQueryType queryType, size_t dataSize, void * pData, size_t stride)} */
@@ -365,7 +365,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPPI(device.address(), pMicromaps.length, pMicromaps, queryType, (long)pData.remaining(), memAddress(pData), stride, __functionAddress);
+        return invokePPPPPI(device.address(), pMicromaps.length, pMicromaps, queryType, (long)pData.remaining(), memAddress(pData), stride, __functionAddress);
     }
 
     /** {@code void vkCmdWriteMicromapsPropertiesEXT(VkCommandBuffer commandBuffer, uint32_t micromapCount, VkMicromapEXT const * pMicromaps, VkQueryType queryType, VkQueryPool queryPool, uint32_t firstQuery)} */
@@ -374,7 +374,7 @@ public class EXTOpacityMicromap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPJV(commandBuffer.address(), pMicromaps.length, pMicromaps, queryType, queryPool, firstQuery, __functionAddress);
+        invokePPJV(commandBuffer.address(), pMicromaps.length, pMicromaps, queryType, queryPool, firstQuery, __functionAddress);
     }
 
     /** {@code void vkGetDeviceMicromapCompatibilityEXT(VkDevice device, VkMicromapVersionInfoEXT const * pVersionInfo, VkAccelerationStructureCompatibilityKHR * pCompatibility)} */
@@ -385,7 +385,7 @@ public class EXTOpacityMicromap {
             check(pCompatibility, 1);
             VkMicromapVersionInfoEXT.validate(pVersionInfo.address());
         }
-        callPPPV(device.address(), pVersionInfo.address(), pCompatibility, __functionAddress);
+        invokePPPV(device.address(), pVersionInfo.address(), pCompatibility, __functionAddress);
     }
 
 }

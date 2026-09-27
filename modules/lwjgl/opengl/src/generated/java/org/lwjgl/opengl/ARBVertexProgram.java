@@ -934,7 +934,7 @@ public class ARBVertexProgram {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(programs.length, programs, __functionAddress);
+        invokePV(programs.length, programs, __functionAddress);
     }
 
     /** {@code void glGenProgramsARB(GLsizei n, GLuint * programs)} */
@@ -943,7 +943,7 @@ public class ARBVertexProgram {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(programs.length, programs, __functionAddress);
+        invokePV(programs.length, programs, __functionAddress);
     }
 
     /** {@code void glProgramEnvParameter4dvARB(GLenum target, GLuint index, GLdouble const * params)} */
@@ -953,7 +953,7 @@ public class ARBVertexProgram {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, index, params, __functionAddress);
+        invokePV(target, index, params, __functionAddress);
     }
 
     /** {@code void glProgramEnvParameter4fvARB(GLenum target, GLuint index, GLfloat const * params)} */
@@ -963,7 +963,7 @@ public class ARBVertexProgram {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, index, params, __functionAddress);
+        invokePV(target, index, params, __functionAddress);
     }
 
     /** {@code void glProgramLocalParameter4dvARB(GLenum target, GLuint index, GLdouble const * params)} */
@@ -973,7 +973,7 @@ public class ARBVertexProgram {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, index, params, __functionAddress);
+        invokePV(target, index, params, __functionAddress);
     }
 
     /** {@code void glProgramLocalParameter4fvARB(GLenum target, GLuint index, GLfloat const * params)} */
@@ -983,7 +983,7 @@ public class ARBVertexProgram {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, index, params, __functionAddress);
+        invokePV(target, index, params, __functionAddress);
     }
 
     /** {@code void glGetProgramEnvParameterfvARB(GLenum target, GLuint index, GLfloat * params)} */
@@ -993,7 +993,7 @@ public class ARBVertexProgram {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, index, params, __functionAddress);
+        invokePV(target, index, params, __functionAddress);
     }
 
     /** {@code void glGetProgramEnvParameterdvARB(GLenum target, GLuint index, GLdouble * params)} */
@@ -1003,7 +1003,7 @@ public class ARBVertexProgram {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, index, params, __functionAddress);
+        invokePV(target, index, params, __functionAddress);
     }
 
     /** {@code void glGetProgramLocalParameterfvARB(GLenum target, GLuint index, GLfloat * params)} */
@@ -1013,7 +1013,7 @@ public class ARBVertexProgram {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, index, params, __functionAddress);
+        invokePV(target, index, params, __functionAddress);
     }
 
     /** {@code void glGetProgramLocalParameterdvARB(GLenum target, GLuint index, GLdouble * params)} */
@@ -1023,7 +1023,7 @@ public class ARBVertexProgram {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, index, params, __functionAddress);
+        invokePV(target, index, params, __functionAddress);
     }
 
     /** {@code void glGetProgramivARB(GLenum target, GLenum pname, GLint * params)} */
@@ -1033,7 +1033,7 @@ public class ARBVertexProgram {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribfvARB(GLuint index, GLenum pname, GLfloat * params)} */

@@ -84,7 +84,7 @@ public class GLXEXTTextureFromPixmap {
             check(display);
             check(drawable);
         }
-        callPPPV(display, drawable, buffer, attrib_list, __functionAddress);
+        invokePPPV(display, drawable, buffer, attrib_list, __functionAddress);
     }
 
     /** {@code void glXBindTexImageEXT(Display * display, GLXDrawable drawable, int buffer, int const * attrib_list)} */
@@ -105,7 +105,7 @@ public class GLXEXTTextureFromPixmap {
             check(display);
             check(drawable);
         }
-        callPPV(display, drawable, buffer, __functionAddress);
+        invokePPV(display, drawable, buffer, __functionAddress);
     }
 
     /** {@code void glXBindTexImageEXT(Display * display, GLXDrawable drawable, int buffer, int const * attrib_list)} */
@@ -117,7 +117,7 @@ public class GLXEXTTextureFromPixmap {
             check(drawable);
             checkNTSafe(attrib_list);
         }
-        callPPPV(display, drawable, buffer, attrib_list, __functionAddress);
+        invokePPPV(display, drawable, buffer, attrib_list, __functionAddress);
     }
 
 }

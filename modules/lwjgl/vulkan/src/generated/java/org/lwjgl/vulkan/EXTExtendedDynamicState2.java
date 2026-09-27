@@ -45,7 +45,7 @@ public class EXTExtendedDynamicState2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), patchControlPoints, __functionAddress);
+        invokePV(commandBuffer.address(), patchControlPoints, __functionAddress);
     }
 
     // --- [ vkCmdSetRasterizerDiscardEnableEXT ] ---
@@ -56,7 +56,7 @@ public class EXTExtendedDynamicState2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), rasterizerDiscardEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), rasterizerDiscardEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthBiasEnableEXT ] ---
@@ -67,7 +67,7 @@ public class EXTExtendedDynamicState2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthBiasEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), depthBiasEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetLogicOpEXT ] ---
@@ -78,7 +78,7 @@ public class EXTExtendedDynamicState2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), logicOp, __functionAddress);
+        invokePV(commandBuffer.address(), logicOp, __functionAddress);
     }
 
     // --- [ vkCmdSetPrimitiveRestartEnableEXT ] ---
@@ -89,7 +89,7 @@ public class EXTExtendedDynamicState2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), primitiveRestartEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), primitiveRestartEnable ? 1 : 0, __functionAddress);
     }
 
 }

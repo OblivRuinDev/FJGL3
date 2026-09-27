@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glViewportSwizzleNVPROC) (jint, jint, jint, jint, jint);
+typedef void (*glViewportSwizzleNVPROC) (jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

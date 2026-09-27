@@ -50,7 +50,7 @@ public class FBSpatialEntityStorage {
             check(__functionAddress);
             XrSpaceSaveInfoFB.validate(info);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrSaveSpaceFB(XrSession session, XrSpaceSaveInfoFB const * info, XrAsyncRequestIdFB * requestId)} */
@@ -71,7 +71,7 @@ public class FBSpatialEntityStorage {
             check(__functionAddress);
             XrSpaceEraseInfoFB.validate(info);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrEraseSpaceFB(XrSession session, XrSpaceEraseInfoFB const * info, XrAsyncRequestIdFB * requestId)} */

@@ -48,7 +48,7 @@ public class MSFTSpatialAnchor {
             check(__functionAddress);
             XrSpatialAnchorCreateInfoMSFT.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, anchor, __functionAddress);
+        return invokePPPI(session.address(), createInfo, anchor, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorMSFT(XrSession session, XrSpatialAnchorCreateInfoMSFT const * createInfo, XrSpatialAnchorMSFT * anchor)} */
@@ -69,7 +69,7 @@ public class MSFTSpatialAnchor {
             check(__functionAddress);
             XrSpatialAnchorSpaceCreateInfoMSFT.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, space, __functionAddress);
+        return invokePPPI(session.address(), createInfo, space, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorSpaceMSFT(XrSession session, XrSpatialAnchorSpaceCreateInfoMSFT const * createInfo, XrSpace * space)} */
@@ -90,7 +90,7 @@ public class MSFTSpatialAnchor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(anchor.address(), __functionAddress);
+        return invokePI(anchor.address(), __functionAddress);
     }
 
 }

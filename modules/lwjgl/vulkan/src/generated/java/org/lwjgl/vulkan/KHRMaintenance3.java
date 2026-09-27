@@ -45,7 +45,7 @@ public class KHRMaintenance3 {
             check(__functionAddress);
             VkDescriptorSetLayoutCreateInfo.validate(pCreateInfo);
         }
-        callPPPV(device.address(), pCreateInfo, pSupport, __functionAddress);
+        invokePPPV(device.address(), pCreateInfo, pSupport, __functionAddress);
     }
 
     /** {@code void vkGetDescriptorSetLayoutSupportKHR(VkDevice device, VkDescriptorSetLayoutCreateInfo const * pCreateInfo, VkDescriptorSetLayoutSupport * pSupport)} */

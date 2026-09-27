@@ -994,7 +994,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(shaders.length, shaders, binaryformat, memAddress(binary), binary.remaining(), __functionAddress);
+        invokePPV(shaders.length, shaders, binaryformat, memAddress(binary), binary.remaining(), __functionAddress);
     }
 
     /** {@code void glGetShaderPrecisionFormat(GLenum shadertype, GLenum precisiontype, GLint * range, GLint * precision)} */
@@ -1005,7 +1005,7 @@ public class GL41C extends GL40C {
             check(range, 2);
             check(precision, 1);
         }
-        callPPV(shadertype, precisiontype, range, precision, __functionAddress);
+        invokePPV(shadertype, precisiontype, range, precision, __functionAddress);
     }
 
     /** {@code void glGetProgramBinary(GLuint program, GLsizei bufSize, GLsizei * length, GLenum * binaryFormat, void * binary)} */
@@ -1016,7 +1016,7 @@ public class GL41C extends GL40C {
             checkSafe(length, 1);
             check(binaryFormat, 1);
         }
-        callPPPV(program, binary.remaining(), length, binaryFormat, memAddress(binary), __functionAddress);
+        invokePPPV(program, binary.remaining(), length, binaryFormat, memAddress(binary), __functionAddress);
     }
 
     /** {@code void glDeleteProgramPipelines(GLsizei n, GLuint const * pipelines)} */
@@ -1025,7 +1025,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(pipelines.length, pipelines, __functionAddress);
+        invokePV(pipelines.length, pipelines, __functionAddress);
     }
 
     /** {@code void glGenProgramPipelines(GLsizei n, GLuint * pipelines)} */
@@ -1034,7 +1034,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(pipelines.length, pipelines, __functionAddress);
+        invokePV(pipelines.length, pipelines, __functionAddress);
     }
 
     /** {@code void glGetProgramPipelineiv(GLuint pipeline, GLenum pname, GLint * params)} */
@@ -1044,7 +1044,7 @@ public class GL41C extends GL40C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pipeline, pname, params, __functionAddress);
+        invokePV(pipeline, pname, params, __functionAddress);
     }
 
     /** {@code void glProgramUniform1iv(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -1053,7 +1053,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2iv(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -1062,7 +1062,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3iv(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -1071,7 +1071,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4iv(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -1080,7 +1080,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform1uiv(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -1089,7 +1089,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2uiv(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -1098,7 +1098,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3uiv(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -1107,7 +1107,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4uiv(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -1116,7 +1116,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform1fv(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -1125,7 +1125,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2fv(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -1134,7 +1134,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3fv(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -1143,7 +1143,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4fv(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -1152,7 +1152,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform1dv(GLuint program, GLint location, GLsizei count, GLdouble const * value)} */
@@ -1161,7 +1161,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2dv(GLuint program, GLint location, GLsizei count, GLdouble const * value)} */
@@ -1170,7 +1170,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3dv(GLuint program, GLint location, GLsizei count, GLdouble const * value)} */
@@ -1179,7 +1179,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4dv(GLuint program, GLint location, GLsizei count, GLdouble const * value)} */
@@ -1188,7 +1188,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1197,7 +1197,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1206,7 +1206,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 9, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 9, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1215,7 +1215,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 4, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 4, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2dv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -1224,7 +1224,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3dv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -1233,7 +1233,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 9, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 9, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4dv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -1242,7 +1242,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 4, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 4, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2x3fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1251,7 +1251,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3x2fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1260,7 +1260,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2x4fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1269,7 +1269,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4x2fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1278,7 +1278,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3x4fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1287,7 +1287,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 12, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4x3fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1296,7 +1296,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 12, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2x3dv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -1305,7 +1305,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3x2dv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -1314,7 +1314,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2x4dv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -1323,7 +1323,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4x2dv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -1332,7 +1332,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3x4dv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -1341,7 +1341,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 12, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4x3dv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -1350,7 +1350,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 12, transpose, value, __functionAddress);
     }
 
     /** {@code void glGetProgramPipelineInfoLog(GLuint pipeline, GLsizei bufSize, GLsizei * length, GLchar * infoLog)} */
@@ -1360,7 +1360,7 @@ public class GL41C extends GL40C {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(pipeline, infoLog.remaining(), length, memAddress(infoLog), __functionAddress);
+        invokePPV(pipeline, infoLog.remaining(), length, memAddress(infoLog), __functionAddress);
     }
 
     /** {@code void glVertexAttribL1dv(GLuint index, GLdouble const * v)} */
@@ -1370,7 +1370,7 @@ public class GL41C extends GL40C {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL2dv(GLuint index, GLdouble const * v)} */
@@ -1380,7 +1380,7 @@ public class GL41C extends GL40C {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL3dv(GLuint index, GLdouble const * v)} */
@@ -1390,7 +1390,7 @@ public class GL41C extends GL40C {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL4dv(GLuint index, GLdouble const * v)} */
@@ -1400,7 +1400,7 @@ public class GL41C extends GL40C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribLdv(GLuint index, GLenum pname, GLdouble * params)} */
@@ -1410,7 +1410,7 @@ public class GL41C extends GL40C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
     /** {@code void glViewportArrayv(GLuint first, GLsizei count, GLfloat const * v)} */
@@ -1419,7 +1419,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(first, v.length >> 2, v, __functionAddress);
+        invokePV(first, v.length >> 2, v, __functionAddress);
     }
 
     /** {@code void glViewportIndexedfv(GLuint index, GLfloat const * v)} */
@@ -1429,7 +1429,7 @@ public class GL41C extends GL40C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glScissorArrayv(GLuint first, GLsizei count, GLint const * v)} */
@@ -1438,7 +1438,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(first, v.length >> 2, v, __functionAddress);
+        invokePV(first, v.length >> 2, v, __functionAddress);
     }
 
     /** {@code void glScissorIndexedv(GLuint index, GLint const * v)} */
@@ -1448,7 +1448,7 @@ public class GL41C extends GL40C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glDepthRangeArrayv(GLuint first, GLsizei count, GLdouble const * v)} */
@@ -1457,7 +1457,7 @@ public class GL41C extends GL40C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(first, v.length >> 1, v, __functionAddress);
+        invokePV(first, v.length >> 1, v, __functionAddress);
     }
 
     /** {@code void glGetFloati_v(GLenum target, GLuint index, GLfloat * data)} */
@@ -1467,7 +1467,7 @@ public class GL41C extends GL40C {
             check(__functionAddress);
             check(data, 1);
         }
-        callPV(target, index, data, __functionAddress);
+        invokePV(target, index, data, __functionAddress);
     }
 
     /** {@code void glGetDoublei_v(GLenum target, GLuint index, GLdouble * data)} */
@@ -1477,7 +1477,7 @@ public class GL41C extends GL40C {
             check(__functionAddress);
             check(data, 1);
         }
-        callPV(target, index, data, __functionAddress);
+        invokePV(target, index, data, __functionAddress);
     }
 
 }

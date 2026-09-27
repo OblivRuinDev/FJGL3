@@ -194,7 +194,7 @@ public class ARBOcclusionQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(ids.length, ids, __functionAddress);
+        invokePV(ids.length, ids, __functionAddress);
     }
 
     /** {@code void glDeleteQueriesARB(GLsizei n, GLuint const * ids)} */
@@ -203,7 +203,7 @@ public class ARBOcclusionQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(ids.length, ids, __functionAddress);
+        invokePV(ids.length, ids, __functionAddress);
     }
 
     /** {@code void glGetQueryivARB(GLenum target, GLenum pname, GLint * params)} */
@@ -213,7 +213,7 @@ public class ARBOcclusionQuery {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetQueryObjectivARB(GLuint id, GLenum pname, GLint * params)} */
@@ -223,7 +223,7 @@ public class ARBOcclusionQuery {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(id, pname, params, __functionAddress);
+        invokePV(id, pname, params, __functionAddress);
     }
 
     /** {@code void glGetQueryObjectuivARB(GLuint id, GLenum pname, GLuint * params)} */
@@ -233,7 +233,7 @@ public class ARBOcclusionQuery {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(id, pname, params, __functionAddress);
+        invokePV(id, pname, params, __functionAddress);
     }
 
 }

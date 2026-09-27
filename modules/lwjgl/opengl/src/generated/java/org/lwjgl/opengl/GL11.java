@@ -4184,7 +4184,7 @@ public class GL11 {
             check(__functionAddress);
             check(residences, textures.length);
         }
-        return callPPZ(textures.length, textures, memAddress(residences), __functionAddress);
+        return invokePPZ(textures.length, textures, memAddress(residences), __functionAddress);
     }
 
     /** {@code void glClipPlane(GLenum plane, GLdouble const * equation)} */
@@ -4194,7 +4194,7 @@ public class GL11 {
             check(__functionAddress);
             check(equation, 4);
         }
-        callPV(plane, equation, __functionAddress);
+        invokePV(plane, equation, __functionAddress);
     }
 
     /** {@code void glColor3sv(GLshort const * v)} */
@@ -4204,7 +4204,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor3iv(GLint const * v)} */
@@ -4214,7 +4214,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor3fv(GLfloat const * v)} */
@@ -4224,7 +4224,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor3dv(GLdouble const * v)} */
@@ -4234,7 +4234,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor3usv(GLushort const * v)} */
@@ -4244,7 +4244,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor3uiv(GLuint const * v)} */
@@ -4254,7 +4254,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor4sv(GLshort const * v)} */
@@ -4264,7 +4264,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor4iv(GLint const * v)} */
@@ -4274,7 +4274,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor4fv(GLfloat const * v)} */
@@ -4284,7 +4284,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor4dv(GLdouble const * v)} */
@@ -4294,7 +4294,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor4usv(GLushort const * v)} */
@@ -4304,7 +4304,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glColor4uiv(GLuint const * v)} */
@@ -4314,7 +4314,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glDrawPixels(GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -4323,7 +4323,7 @@ public class GL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(width, height, format, type, pixels, __functionAddress);
+        invokePV(width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glDrawPixels(GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -4332,7 +4332,7 @@ public class GL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(width, height, format, type, pixels, __functionAddress);
+        invokePV(width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glDrawPixels(GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -4341,7 +4341,7 @@ public class GL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(width, height, format, type, pixels, __functionAddress);
+        invokePV(width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glEvalCoord1fv(GLfloat const * u)} */
@@ -4351,7 +4351,7 @@ public class GL11 {
             check(__functionAddress);
             check(u, 1);
         }
-        callPV(u, __functionAddress);
+        invokePV(u, __functionAddress);
     }
 
     /** {@code void glEvalCoord1dv(GLdouble const * u)} */
@@ -4361,7 +4361,7 @@ public class GL11 {
             check(__functionAddress);
             check(u, 1);
         }
-        callPV(u, __functionAddress);
+        invokePV(u, __functionAddress);
     }
 
     /** {@code void glEvalCoord2fv(GLfloat const * u)} */
@@ -4371,7 +4371,7 @@ public class GL11 {
             check(__functionAddress);
             check(u, 2);
         }
-        callPV(u, __functionAddress);
+        invokePV(u, __functionAddress);
     }
 
     /** {@code void glEvalCoord2dv(GLdouble const * u)} */
@@ -4381,7 +4381,7 @@ public class GL11 {
             check(__functionAddress);
             check(u, 2);
         }
-        callPV(u, __functionAddress);
+        invokePV(u, __functionAddress);
     }
 
     /** {@code void glFeedbackBuffer(GLsizei size, GLenum type, GLfloat * buffer)} */
@@ -4390,7 +4390,7 @@ public class GL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffer.length, type, buffer, __functionAddress);
+        invokePV(buffer.length, type, buffer, __functionAddress);
     }
 
     /** {@code void glFogiv(GLenum pname, GLint const * params)} */
@@ -4400,7 +4400,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pname, params, __functionAddress);
+        invokePV(pname, params, __functionAddress);
     }
 
     /** {@code void glFogfv(GLenum pname, GLfloat const * params)} */
@@ -4410,7 +4410,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pname, params, __functionAddress);
+        invokePV(pname, params, __functionAddress);
     }
 
     /** {@code void glGenTextures(GLsizei n, GLuint * textures)} */
@@ -4430,7 +4430,7 @@ public class GL11 {
             check(__functionAddress);
             check(equation, 4);
         }
-        callPV(plane, equation, __functionAddress);
+        invokePV(plane, equation, __functionAddress);
     }
 
     /** {@code void glGetFloatv(GLenum pname, GLfloat * params)} */
@@ -4455,7 +4455,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 4);
         }
-        callPV(light, pname, data, __functionAddress);
+        invokePV(light, pname, data, __functionAddress);
     }
 
     /** {@code void glGetLightfv(GLenum light, GLenum pname, GLfloat * data)} */
@@ -4465,7 +4465,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 4);
         }
-        callPV(light, pname, data, __functionAddress);
+        invokePV(light, pname, data, __functionAddress);
     }
 
     /** {@code void glGetMapiv(GLenum target, GLenum query, GLint * data)} */
@@ -4475,7 +4475,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 4);
         }
-        callPV(target, query, data, __functionAddress);
+        invokePV(target, query, data, __functionAddress);
     }
 
     /** {@code void glGetMapfv(GLenum target, GLenum query, GLfloat * data)} */
@@ -4485,7 +4485,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 4);
         }
-        callPV(target, query, data, __functionAddress);
+        invokePV(target, query, data, __functionAddress);
     }
 
     /** {@code void glGetMapdv(GLenum target, GLenum query, GLdouble * data)} */
@@ -4495,7 +4495,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 4);
         }
-        callPV(target, query, data, __functionAddress);
+        invokePV(target, query, data, __functionAddress);
     }
 
     /** {@code void glGetMaterialiv(GLenum face, GLenum pname, GLint * data)} */
@@ -4505,7 +4505,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 1);
         }
-        callPV(face, pname, data, __functionAddress);
+        invokePV(face, pname, data, __functionAddress);
     }
 
     /** {@code void glGetMaterialfv(GLenum face, GLenum pname, GLfloat * data)} */
@@ -4515,7 +4515,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 1);
         }
-        callPV(face, pname, data, __functionAddress);
+        invokePV(face, pname, data, __functionAddress);
     }
 
     /** {@code void glGetPixelMapfv(GLenum map, GLfloat * data)} */
@@ -4525,7 +4525,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 32);
         }
-        callPV(map, data, __functionAddress);
+        invokePV(map, data, __functionAddress);
     }
 
     /** {@code void glGetPixelMapusv(GLenum map, GLushort * data)} */
@@ -4535,7 +4535,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 32);
         }
-        callPV(map, data, __functionAddress);
+        invokePV(map, data, __functionAddress);
     }
 
     /** {@code void glGetPixelMapuiv(GLenum map, GLuint * data)} */
@@ -4545,7 +4545,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 32);
         }
-        callPV(map, data, __functionAddress);
+        invokePV(map, data, __functionAddress);
     }
 
     /** {@code void glGetTexEnviv(GLenum env, GLenum pname, GLint * data)} */
@@ -4555,7 +4555,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 1);
         }
-        callPV(env, pname, data, __functionAddress);
+        invokePV(env, pname, data, __functionAddress);
     }
 
     /** {@code void glGetTexEnvfv(GLenum env, GLenum pname, GLfloat * data)} */
@@ -4565,7 +4565,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 1);
         }
-        callPV(env, pname, data, __functionAddress);
+        invokePV(env, pname, data, __functionAddress);
     }
 
     /** {@code void glGetTexGeniv(GLenum coord, GLenum pname, GLint * data)} */
@@ -4575,7 +4575,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 1);
         }
-        callPV(coord, pname, data, __functionAddress);
+        invokePV(coord, pname, data, __functionAddress);
     }
 
     /** {@code void glGetTexGenfv(GLenum coord, GLenum pname, GLfloat * data)} */
@@ -4585,7 +4585,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 4);
         }
-        callPV(coord, pname, data, __functionAddress);
+        invokePV(coord, pname, data, __functionAddress);
     }
 
     /** {@code void glGetTexGendv(GLenum coord, GLenum pname, GLdouble * data)} */
@@ -4595,7 +4595,7 @@ public class GL11 {
             check(__functionAddress);
             check(data, 4);
         }
-        callPV(coord, pname, data, __functionAddress);
+        invokePV(coord, pname, data, __functionAddress);
     }
 
     /** {@code void glGetTexImage(GLenum tex, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -4645,7 +4645,7 @@ public class GL11 {
             check(__functionAddress);
             check(index, 1);
         }
-        callPV(index, __functionAddress);
+        invokePV(index, __functionAddress);
     }
 
     /** {@code void glIndexsv(GLshort const * index)} */
@@ -4655,7 +4655,7 @@ public class GL11 {
             check(__functionAddress);
             check(index, 1);
         }
-        callPV(index, __functionAddress);
+        invokePV(index, __functionAddress);
     }
 
     /** {@code void glIndexfv(GLfloat const * index)} */
@@ -4665,7 +4665,7 @@ public class GL11 {
             check(__functionAddress);
             check(index, 1);
         }
-        callPV(index, __functionAddress);
+        invokePV(index, __functionAddress);
     }
 
     /** {@code void glIndexdv(GLdouble const * index)} */
@@ -4675,7 +4675,7 @@ public class GL11 {
             check(__functionAddress);
             check(index, 1);
         }
-        callPV(index, __functionAddress);
+        invokePV(index, __functionAddress);
     }
 
     /** {@code void glInterleavedArrays(GLenum format, GLsizei stride, void const * pointer)} */
@@ -4684,7 +4684,7 @@ public class GL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(format, stride, pointer, __functionAddress);
+        invokePV(format, stride, pointer, __functionAddress);
     }
 
     /** {@code void glInterleavedArrays(GLenum format, GLsizei stride, void const * pointer)} */
@@ -4693,7 +4693,7 @@ public class GL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(format, stride, pointer, __functionAddress);
+        invokePV(format, stride, pointer, __functionAddress);
     }
 
     /** {@code void glInterleavedArrays(GLenum format, GLsizei stride, void const * pointer)} */
@@ -4702,7 +4702,7 @@ public class GL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(format, stride, pointer, __functionAddress);
+        invokePV(format, stride, pointer, __functionAddress);
     }
 
     /** {@code void glInterleavedArrays(GLenum format, GLsizei stride, void const * pointer)} */
@@ -4711,7 +4711,7 @@ public class GL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(format, stride, pointer, __functionAddress);
+        invokePV(format, stride, pointer, __functionAddress);
     }
 
     /** {@code void glLightModeliv(GLenum pname, GLint const * params)} */
@@ -4721,7 +4721,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(pname, params, __functionAddress);
+        invokePV(pname, params, __functionAddress);
     }
 
     /** {@code void glLightModelfv(GLenum pname, GLfloat const * params)} */
@@ -4731,7 +4731,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(pname, params, __functionAddress);
+        invokePV(pname, params, __functionAddress);
     }
 
     /** {@code void glLightiv(GLenum light, GLenum pname, GLint const * params)} */
@@ -4741,7 +4741,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(light, pname, params, __functionAddress);
+        invokePV(light, pname, params, __functionAddress);
     }
 
     /** {@code void glLightfv(GLenum light, GLenum pname, GLfloat const * params)} */
@@ -4751,7 +4751,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(light, pname, params, __functionAddress);
+        invokePV(light, pname, params, __functionAddress);
     }
 
     /** {@code void glLoadMatrixf(GLfloat const * m)} */
@@ -4761,7 +4761,7 @@ public class GL11 {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(m, __functionAddress);
+        invokePV(m, __functionAddress);
     }
 
     /** {@code void glLoadMatrixd(GLdouble const * m)} */
@@ -4771,7 +4771,7 @@ public class GL11 {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(m, __functionAddress);
+        invokePV(m, __functionAddress);
     }
 
     /** {@code void glMap1f(GLenum target, GLfloat u1, GLfloat u2, GLint stride, GLint order, GLfloat const * points)} */
@@ -4781,7 +4781,7 @@ public class GL11 {
             check(__functionAddress);
             check(points, order * stride);
         }
-        callPV(target, u1, u2, stride, order, points, __functionAddress);
+        invokePV(target, u1, u2, stride, order, points, __functionAddress);
     }
 
     /** {@code void glMap1d(GLenum target, GLdouble u1, GLdouble u2, GLint stride, GLint order, GLdouble const * points)} */
@@ -4791,7 +4791,7 @@ public class GL11 {
             check(__functionAddress);
             check(points, stride * order);
         }
-        callPV(target, u1, u2, stride, order, points, __functionAddress);
+        invokePV(target, u1, u2, stride, order, points, __functionAddress);
     }
 
     /** {@code void glMap2f(GLenum target, GLfloat u1, GLfloat u2, GLint ustride, GLint uorder, GLfloat v1, GLfloat v2, GLint vstride, GLint vorder, GLfloat const * points)} */
@@ -4801,7 +4801,7 @@ public class GL11 {
             check(__functionAddress);
             check(points, ustride * uorder * vstride * vorder);
         }
-        callPV(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points, __functionAddress);
+        invokePV(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points, __functionAddress);
     }
 
     /** {@code void glMap2d(GLenum target, GLdouble u1, GLdouble u2, GLint ustride, GLint uorder, GLdouble v1, GLdouble v2, GLint vstride, GLint vorder, GLdouble const * points)} */
@@ -4811,7 +4811,7 @@ public class GL11 {
             check(__functionAddress);
             check(points, ustride * uorder * vstride * vorder);
         }
-        callPV(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points, __functionAddress);
+        invokePV(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points, __functionAddress);
     }
 
     /** {@code void glMaterialiv(GLenum face, GLenum pname, GLint const * params)} */
@@ -4821,7 +4821,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(face, pname, params, __functionAddress);
+        invokePV(face, pname, params, __functionAddress);
     }
 
     /** {@code void glMaterialfv(GLenum face, GLenum pname, GLfloat const * params)} */
@@ -4831,7 +4831,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(face, pname, params, __functionAddress);
+        invokePV(face, pname, params, __functionAddress);
     }
 
     /** {@code void glMultMatrixf(GLfloat const * m)} */
@@ -4841,7 +4841,7 @@ public class GL11 {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(m, __functionAddress);
+        invokePV(m, __functionAddress);
     }
 
     /** {@code void glMultMatrixd(GLdouble const * m)} */
@@ -4851,7 +4851,7 @@ public class GL11 {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(m, __functionAddress);
+        invokePV(m, __functionAddress);
     }
 
     /** {@code void glNormal3fv(GLfloat const * v)} */
@@ -4861,7 +4861,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glNormal3sv(GLshort const * v)} */
@@ -4871,7 +4871,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glNormal3iv(GLint const * v)} */
@@ -4881,7 +4881,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glNormal3dv(GLdouble const * v)} */
@@ -4891,7 +4891,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glPixelMapfv(GLenum map, GLsizei size, GLfloat const * values)} */
@@ -4900,7 +4900,7 @@ public class GL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(map, values.length, values, __functionAddress);
+        invokePV(map, values.length, values, __functionAddress);
     }
 
     /** {@code void glPixelMapusv(GLenum map, GLsizei size, GLushort const * values)} */
@@ -4909,7 +4909,7 @@ public class GL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(map, values.length, values, __functionAddress);
+        invokePV(map, values.length, values, __functionAddress);
     }
 
     /** {@code void glPixelMapuiv(GLenum map, GLsizei size, GLuint const * values)} */
@@ -4918,7 +4918,7 @@ public class GL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(map, values.length, values, __functionAddress);
+        invokePV(map, values.length, values, __functionAddress);
     }
 
     /** {@code void glPrioritizeTextures(GLsizei n, GLuint const * textures, GLfloat const * priorities)} */
@@ -4928,7 +4928,7 @@ public class GL11 {
             check(__functionAddress);
             check(priorities, textures.length);
         }
-        callPPV(textures.length, textures, priorities, __functionAddress);
+        invokePPV(textures.length, textures, priorities, __functionAddress);
     }
 
     /** {@code void glRasterPos2iv(GLint const * coords)} */
@@ -4938,7 +4938,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 2);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glRasterPos2sv(GLshort const * coords)} */
@@ -4948,7 +4948,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 2);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glRasterPos2fv(GLfloat const * coords)} */
@@ -4958,7 +4958,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 2);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glRasterPos2dv(GLdouble const * coords)} */
@@ -4968,7 +4968,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 2);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glRasterPos3iv(GLint const * coords)} */
@@ -4978,7 +4978,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 3);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glRasterPos3sv(GLshort const * coords)} */
@@ -4988,7 +4988,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 3);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glRasterPos3fv(GLfloat const * coords)} */
@@ -4998,7 +4998,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 3);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glRasterPos3dv(GLdouble const * coords)} */
@@ -5008,7 +5008,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 3);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glRasterPos4iv(GLint const * coords)} */
@@ -5018,7 +5018,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 4);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glRasterPos4sv(GLshort const * coords)} */
@@ -5028,7 +5028,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 4);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glRasterPos4fv(GLfloat const * coords)} */
@@ -5038,7 +5038,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 4);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glRasterPos4dv(GLdouble const * coords)} */
@@ -5048,7 +5048,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 4);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glReadPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, void * pixels)} */
@@ -5074,7 +5074,7 @@ public class GL11 {
             check(v1, 2);
             check(v2, 2);
         }
-        callPPV(v1, v2, __functionAddress);
+        invokePPV(v1, v2, __functionAddress);
     }
 
     /** {@code void glRectsv(GLshort const * v1, GLshort const * v2)} */
@@ -5085,7 +5085,7 @@ public class GL11 {
             check(v1, 2);
             check(v2, 2);
         }
-        callPPV(v1, v2, __functionAddress);
+        invokePPV(v1, v2, __functionAddress);
     }
 
     /** {@code void glRectfv(GLfloat const * v1, GLfloat const * v2)} */
@@ -5096,7 +5096,7 @@ public class GL11 {
             check(v1, 2);
             check(v2, 2);
         }
-        callPPV(v1, v2, __functionAddress);
+        invokePPV(v1, v2, __functionAddress);
     }
 
     /** {@code void glRectdv(GLdouble const * v1, GLdouble const * v2)} */
@@ -5107,7 +5107,7 @@ public class GL11 {
             check(v1, 2);
             check(v2, 2);
         }
-        callPPV(v1, v2, __functionAddress);
+        invokePPV(v1, v2, __functionAddress);
     }
 
     /** {@code void glSelectBuffer(GLsizei size, GLuint * buffer)} */
@@ -5116,7 +5116,7 @@ public class GL11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffer.length, buffer, __functionAddress);
+        invokePV(buffer.length, buffer, __functionAddress);
     }
 
     /** {@code void glTexCoord1fv(GLfloat const * v)} */
@@ -5126,7 +5126,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord1sv(GLshort const * v)} */
@@ -5136,7 +5136,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord1iv(GLint const * v)} */
@@ -5146,7 +5146,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord1dv(GLdouble const * v)} */
@@ -5156,7 +5156,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord2fv(GLfloat const * v)} */
@@ -5166,7 +5166,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord2sv(GLshort const * v)} */
@@ -5176,7 +5176,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord2iv(GLint const * v)} */
@@ -5186,7 +5186,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord2dv(GLdouble const * v)} */
@@ -5196,7 +5196,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord3fv(GLfloat const * v)} */
@@ -5206,7 +5206,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord3sv(GLshort const * v)} */
@@ -5216,7 +5216,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord3iv(GLint const * v)} */
@@ -5226,7 +5226,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord3dv(GLdouble const * v)} */
@@ -5236,7 +5236,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord4fv(GLfloat const * v)} */
@@ -5246,7 +5246,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord4sv(GLshort const * v)} */
@@ -5256,7 +5256,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord4iv(GLint const * v)} */
@@ -5266,7 +5266,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexCoord4dv(GLdouble const * v)} */
@@ -5276,7 +5276,7 @@ public class GL11 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glTexEnviv(GLenum target, GLenum pname, GLint const * params)} */
@@ -5286,7 +5286,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glTexEnvfv(GLenum target, GLenum pname, GLfloat const * params)} */
@@ -5296,7 +5296,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glTexGeniv(GLenum coord, GLenum pname, GLint const * params)} */
@@ -5306,7 +5306,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(coord, pname, params, __functionAddress);
+        invokePV(coord, pname, params, __functionAddress);
     }
 
     /** {@code void glTexGenfv(GLenum coord, GLenum pname, GLfloat const * params)} */
@@ -5316,7 +5316,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(coord, pname, params, __functionAddress);
+        invokePV(coord, pname, params, __functionAddress);
     }
 
     /** {@code void glTexGendv(GLenum coord, GLenum pname, GLdouble const * params)} */
@@ -5326,7 +5326,7 @@ public class GL11 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(coord, pname, params, __functionAddress);
+        invokePV(coord, pname, params, __functionAddress);
     }
 
     /** {@code void glTexImage1D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -5426,7 +5426,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 2);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glVertex2sv(GLshort const * coords)} */
@@ -5436,7 +5436,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 2);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glVertex2iv(GLint const * coords)} */
@@ -5446,7 +5446,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 2);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glVertex2dv(GLdouble const * coords)} */
@@ -5456,7 +5456,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 2);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glVertex3fv(GLfloat const * coords)} */
@@ -5466,7 +5466,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 3);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glVertex3sv(GLshort const * coords)} */
@@ -5476,7 +5476,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 3);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glVertex3iv(GLint const * coords)} */
@@ -5486,7 +5486,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 3);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glVertex3dv(GLdouble const * coords)} */
@@ -5496,7 +5496,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 3);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glVertex4fv(GLfloat const * coords)} */
@@ -5506,7 +5506,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 4);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glVertex4sv(GLshort const * coords)} */
@@ -5516,7 +5516,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 4);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glVertex4iv(GLint const * coords)} */
@@ -5526,7 +5526,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 4);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
     /** {@code void glVertex4dv(GLdouble const * coords)} */
@@ -5536,7 +5536,7 @@ public class GL11 {
             check(__functionAddress);
             check(coords, 4);
         }
-        callPV(coords, __functionAddress);
+        invokePV(coords, __functionAddress);
     }
 
 }

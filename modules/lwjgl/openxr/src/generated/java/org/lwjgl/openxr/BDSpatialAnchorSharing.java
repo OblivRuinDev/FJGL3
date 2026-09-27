@@ -52,7 +52,7 @@ public class BDSpatialAnchorSharing {
             check(__functionAddress);
             XrSpatialAnchorShareInfoBD.validate(info);
         }
-        return callPPPI(provider.address(), info, future, __functionAddress);
+        return invokePPPI(provider.address(), info, future, __functionAddress);
     }
 
     /** {@code XrResult xrShareSpatialAnchorAsyncBD(XrSenseDataProviderBD provider, XrSpatialAnchorShareInfoBD const * info, XrFutureEXT * future)} */
@@ -72,7 +72,7 @@ public class BDSpatialAnchorSharing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(provider.address(), future, completion, __functionAddress);
+        return invokePJPI(provider.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrShareSpatialAnchorCompleteBD(XrSenseDataProviderBD provider, XrFutureEXT future, XrFutureCompletionEXT * completion)} */
@@ -89,7 +89,7 @@ public class BDSpatialAnchorSharing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(provider.address(), info, future, __functionAddress);
+        return invokePPPI(provider.address(), info, future, __functionAddress);
     }
 
     /** {@code XrResult xrDownloadSharedSpatialAnchorAsyncBD(XrSenseDataProviderBD provider, XrSharedSpatialAnchorDownloadInfoBD const * info, XrFutureEXT * future)} */
@@ -109,7 +109,7 @@ public class BDSpatialAnchorSharing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(provider.address(), future, completion, __functionAddress);
+        return invokePJPI(provider.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrDownloadSharedSpatialAnchorCompleteBD(XrSenseDataProviderBD provider, XrFutureEXT future, XrFutureCompletionEXT * completion)} */

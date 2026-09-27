@@ -179,11 +179,7 @@ typedef ptrdiff_t GLintptr;
 #define GL_ZERO                           0
 
 #ifndef APIENTRY
- #ifdef _WIN32
-  #define APIENTRY __stdcall
- #else
-  #define APIENTRY
- #endif
+#define APIENTRY
 #endif
 #define GLAPI
 

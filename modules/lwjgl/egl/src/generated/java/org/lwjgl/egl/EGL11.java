@@ -51,7 +51,7 @@ public class EGL11 extends EGL10 {
             check(dpy);
             check(surface);
         }
-        return callPPI(dpy, surface, buffer, __functionAddress) != 0;
+        return invokePPI(dpy, surface, buffer, __functionAddress) != 0;
     }
 
     // --- [ eglReleaseTexImage ] ---
@@ -65,7 +65,7 @@ public class EGL11 extends EGL10 {
             check(dpy);
             check(surface);
         }
-        return callPPI(dpy, surface, buffer, __functionAddress) != 0;
+        return invokePPI(dpy, surface, buffer, __functionAddress) != 0;
     }
 
     // --- [ eglSurfaceAttrib ] ---
@@ -79,7 +79,7 @@ public class EGL11 extends EGL10 {
             check(dpy);
             check(surface);
         }
-        return callPPI(dpy, surface, attribute, value, __functionAddress) != 0;
+        return invokePPI(dpy, surface, attribute, value, __functionAddress) != 0;
     }
 
     // --- [ eglSwapInterval ] ---
@@ -92,7 +92,7 @@ public class EGL11 extends EGL10 {
             check(__functionAddress);
             check(dpy);
         }
-        return callPI(dpy, interval, __functionAddress) != 0;
+        return invokePI(dpy, interval, __functionAddress) != 0;
     }
 
 }

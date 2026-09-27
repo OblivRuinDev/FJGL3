@@ -84,7 +84,7 @@ public class EXTHandTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, handTracker, __functionAddress);
+        return invokePPPI(session.address(), createInfo, handTracker, __functionAddress);
     }
 
     /** {@code XrResult xrCreateHandTrackerEXT(XrSession session, XrHandTrackerCreateInfoEXT const * createInfo, XrHandTrackerEXT * handTracker)} */
@@ -105,7 +105,7 @@ public class EXTHandTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(handTracker.address(), __functionAddress);
+        return invokePI(handTracker.address(), __functionAddress);
     }
 
     // --- [ xrLocateHandJointsEXT ] ---
@@ -117,7 +117,7 @@ public class EXTHandTracking {
             check(__functionAddress);
             XrHandJointsLocateInfoEXT.validate(locateInfo);
         }
-        return callPPPI(handTracker.address(), locateInfo, locations, __functionAddress);
+        return invokePPPI(handTracker.address(), locateInfo, locations, __functionAddress);
     }
 
     /** {@code XrResult xrLocateHandJointsEXT(XrHandTrackerEXT handTracker, XrHandJointsLocateInfoEXT const * locateInfo, XrHandJointLocationsEXT * locations)} */

@@ -36,7 +36,7 @@ public class KHRDrawIndirectCount {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
+        invokePJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
     }
 
     // --- [ vkCmdDrawIndexedIndirectCountKHR ] ---
@@ -47,7 +47,7 @@ public class KHRDrawIndirectCount {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
+        invokePJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
     }
 
 }

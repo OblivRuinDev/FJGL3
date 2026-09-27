@@ -52,7 +52,7 @@ public class KHRVulkanEnable2 {
             check(__functionAddress);
             XrVulkanInstanceCreateInfoKHR.validate(createInfo);
         }
-        return callPPPPI(instance.address(), createInfo, vulkanInstance, vulkanResult, __functionAddress);
+        return invokePPPPI(instance.address(), createInfo, vulkanInstance, vulkanResult, __functionAddress);
     }
 
     /** {@code XrResult xrCreateVulkanInstanceKHR(XrInstance instance, XrVulkanInstanceCreateInfoKHR const * createInfo, VkInstance * vulkanInstance, VkResult * vulkanResult)} */
@@ -74,7 +74,7 @@ public class KHRVulkanEnable2 {
             check(__functionAddress);
             XrVulkanDeviceCreateInfoKHR.validate(createInfo);
         }
-        return callPPPPI(instance.address(), createInfo, vulkanDevice, vulkanResult, __functionAddress);
+        return invokePPPPI(instance.address(), createInfo, vulkanDevice, vulkanResult, __functionAddress);
     }
 
     /** {@code XrResult xrCreateVulkanDeviceKHR(XrInstance instance, XrVulkanDeviceCreateInfoKHR const * createInfo, VkDevice * vulkanDevice, VkResult * vulkanResult)} */
@@ -96,7 +96,7 @@ public class KHRVulkanEnable2 {
             check(__functionAddress);
             XrVulkanGraphicsDeviceGetInfoKHR.validate(getInfo);
         }
-        return callPPPI(instance.address(), getInfo, vulkanPhysicalDevice, __functionAddress);
+        return invokePPPI(instance.address(), getInfo, vulkanPhysicalDevice, __functionAddress);
     }
 
     /** {@code XrResult xrGetVulkanGraphicsDevice2KHR(XrInstance instance, XrVulkanGraphicsDeviceGetInfoKHR const * getInfo, VkPhysicalDevice * vulkanPhysicalDevice)} */
@@ -116,7 +116,7 @@ public class KHRVulkanEnable2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(instance.address(), systemId, graphicsRequirements, __functionAddress);
+        return invokePJPI(instance.address(), systemId, graphicsRequirements, __functionAddress);
     }
 
     /** {@code XrResult xrGetVulkanGraphicsRequirements2KHR(XrInstance instance, XrSystemId systemId, XrGraphicsRequirementsVulkanKHR * graphicsRequirements)} */

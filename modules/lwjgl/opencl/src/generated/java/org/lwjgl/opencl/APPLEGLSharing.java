@@ -50,7 +50,7 @@ public class APPLEGLSharing {
             check(context);
             check(platform_gl_ctx);
         }
-        return callPPPPPI(context, platform_gl_ctx, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPPI(context, platform_gl_ctx, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetGLContextInfoAPPLE(cl_context context, void * platform_gl_ctx, cl_gl_platform_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */

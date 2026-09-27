@@ -30,7 +30,6 @@ public interface FMOD_DSP_CREATE_CALLBACKI extends CallbackI {
         FMOD_DSP_CREATE_CALLBACKI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_uint32,
             ffi_type_pointer
         )

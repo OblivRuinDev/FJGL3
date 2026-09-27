@@ -61,7 +61,7 @@ public class METAColocationDiscovery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), info, discoveryRequestId, __functionAddress);
+        return invokePPPI(session.address(), info, discoveryRequestId, __functionAddress);
     }
 
     /** {@code XrResult xrStartColocationDiscoveryMETA(XrSession session, XrColocationDiscoveryStartInfoMETA const * info, XrAsyncRequestIdFB * discoveryRequestId)} */
@@ -81,7 +81,7 @@ public class METAColocationDiscovery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrStopColocationDiscoveryMETA(XrSession session, XrColocationDiscoveryStopInfoMETA const * info, XrAsyncRequestIdFB * requestId)} */
@@ -102,7 +102,7 @@ public class METAColocationDiscovery {
             check(__functionAddress);
             XrColocationAdvertisementStartInfoMETA.validate(info);
         }
-        return callPPPI(session.address(), info, advertisementRequestId, __functionAddress);
+        return invokePPPI(session.address(), info, advertisementRequestId, __functionAddress);
     }
 
     /** {@code XrResult xrStartColocationAdvertisementMETA(XrSession session, XrColocationAdvertisementStartInfoMETA const * info, XrAsyncRequestIdFB * advertisementRequestId)} */
@@ -122,7 +122,7 @@ public class METAColocationDiscovery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrStopColocationAdvertisementMETA(XrSession session, XrColocationAdvertisementStopInfoMETA const * info, XrAsyncRequestIdFB * requestId)} */

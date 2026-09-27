@@ -48,7 +48,7 @@ public class KHRGetMemoryRequirements2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetImageMemoryRequirements2KHR(VkDevice device, VkImageMemoryRequirementsInfo2 const * pInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -64,7 +64,7 @@ public class KHRGetMemoryRequirements2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetBufferMemoryRequirements2KHR(VkDevice device, VkBufferMemoryRequirementsInfo2 const * pInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -80,7 +80,7 @@ public class KHRGetMemoryRequirements2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPPV(device.address(), pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements, __functionAddress);
+        invokePPPPV(device.address(), pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetImageSparseMemoryRequirements2KHR(VkDevice device, VkImageSparseMemoryRequirementsInfo2 const * pInfo, uint32_t * pSparseMemoryRequirementCount, VkSparseImageMemoryRequirements2 * pSparseMemoryRequirements)} */
@@ -100,7 +100,7 @@ public class KHRGetMemoryRequirements2 {
             check(pSparseMemoryRequirementCount, 1);
             checkSafe(pSparseMemoryRequirements, pSparseMemoryRequirementCount[0]);
         }
-        callPPPPV(device.address(), pInfo.address(), pSparseMemoryRequirementCount, memAddressSafe(pSparseMemoryRequirements), __functionAddress);
+        invokePPPPV(device.address(), pInfo.address(), pSparseMemoryRequirementCount, memAddressSafe(pSparseMemoryRequirements), __functionAddress);
     }
 
 }

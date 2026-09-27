@@ -55,11 +55,9 @@ object JNI : GeneratorTargetNative(Module.CORE, "JNI") {
             matching signature. Due to overloading, method names are partially mangled:
             ${ul(
                 """
-                {@code call} or {@code invoke}
+                {@code invoke}
 
-                Methods with the {@code invoke} prefix will invoke the native function with the default calling convention. Methods with the {@code call}
-                prefix will invoke the native function with the {@code __stdcall} calling convention on Windows and the default calling convention on other
-                systems.
+                Methods with the {@code invoke} prefix will invoke the native function with the default calling convention.
                 """,
                 "a {@code U} (unsigned) or a {@code B} (signed) for each {@code byte} parameter",
                 "a {@code C} (unsigned) or an {@code S} (signed) for each {@code short} parameter",
@@ -118,13 +116,10 @@ object JNI : GeneratorTargetNative(Module.CORE, "JNI") {
 
     private val NativeType.jniFunctionTypeArray get() = if (this is ArrayType<*>) "j${this.mapping.primitive}Array" else this.jniFunctionType
 
+    @Suppress("DEPRECATION")
     override fun PrintWriter.generateNative() {
         nativeDirective("""
-#ifdef LWJGL_WINDOWS
-    #define APIENTRY __stdcall
-#else
-    #define APIENTRY
-#endif
+#define APIENTRY
 """)
 
         print(HEADER)

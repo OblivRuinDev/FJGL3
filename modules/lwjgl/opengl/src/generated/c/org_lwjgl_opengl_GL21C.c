@@ -14,12 +14,12 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glUniformMatrix2x3fvPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glUniformMatrix3x2fvPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glUniformMatrix2x4fvPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glUniformMatrix4x2fvPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glUniformMatrix3x4fvPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glUniformMatrix4x3fvPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glUniformMatrix2x3fvPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glUniformMatrix3x2fvPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glUniformMatrix2x4fvPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glUniformMatrix4x2fvPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glUniformMatrix3x4fvPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glUniformMatrix4x3fvPROC) (jint, jint, jboolean, uintptr_t);
 
 EXTERN_C_ENTER
 

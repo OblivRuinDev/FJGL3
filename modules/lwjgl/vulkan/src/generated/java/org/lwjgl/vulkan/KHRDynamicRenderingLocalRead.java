@@ -43,7 +43,7 @@ public class KHRDynamicRenderingLocalRead {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pLocationInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pLocationInfo, __functionAddress);
     }
 
     /** {@code void vkCmdSetRenderingAttachmentLocationsKHR(VkCommandBuffer commandBuffer, VkRenderingAttachmentLocationInfo const * pLocationInfo)} */
@@ -59,7 +59,7 @@ public class KHRDynamicRenderingLocalRead {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInputAttachmentIndexInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInputAttachmentIndexInfo, __functionAddress);
     }
 
     /** {@code void vkCmdSetRenderingInputAttachmentIndicesKHR(VkCommandBuffer commandBuffer, VkRenderingInputAttachmentIndexInfo const * pInputAttachmentIndexInfo)} */

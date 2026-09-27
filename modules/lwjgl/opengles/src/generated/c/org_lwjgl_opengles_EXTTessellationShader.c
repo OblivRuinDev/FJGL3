@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glPatchParameteriEXTPROC) (jint, jint);
+typedef void (*glPatchParameteriEXTPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

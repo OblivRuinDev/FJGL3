@@ -58,7 +58,7 @@ public class OCULUSExternalCamera {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), cameraCapacityInput, cameraCountOutput, cameras, __functionAddress);
+        return invokePPPI(session.address(), cameraCapacityInput, cameraCountOutput, cameras, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateExternalCamerasOCULUS(XrSession session, uint32_t cameraCapacityInput, uint32_t * cameraCountOutput, XrExternalCameraOCULUS * cameras)} */

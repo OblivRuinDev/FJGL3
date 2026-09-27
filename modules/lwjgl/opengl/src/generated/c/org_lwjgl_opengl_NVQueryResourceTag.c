@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glGenQueryResourceTagNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDeleteQueryResourceTagNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glQueryResourceTagNVPROC) (jint, uintptr_t);
+typedef void (*glGenQueryResourceTagNVPROC) (jint, uintptr_t);
+typedef void (*glDeleteQueryResourceTagNVPROC) (jint, uintptr_t);
+typedef void (*glQueryResourceTagNVPROC) (jint, uintptr_t);
 
 EXTERN_C_ENTER
 

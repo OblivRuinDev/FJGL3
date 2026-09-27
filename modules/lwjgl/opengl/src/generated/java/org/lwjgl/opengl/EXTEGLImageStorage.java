@@ -67,7 +67,7 @@ public class EXTEGLImageStorage {
             check(image);
             checkNTSafe(attrib_list);
         }
-        callPPV(target, image, attrib_list, __functionAddress);
+        invokePPV(target, image, attrib_list, __functionAddress);
     }
 
     /** {@code void glEGLImageTargetTextureStorageEXT(GLuint texture, GLeglImageOES image, int const * attrib_list)} */
@@ -78,7 +78,7 @@ public class EXTEGLImageStorage {
             check(image);
             checkNTSafe(attrib_list);
         }
-        callPPV(texture, image, attrib_list, __functionAddress);
+        invokePPV(texture, image, attrib_list, __functionAddress);
     }
 
 }

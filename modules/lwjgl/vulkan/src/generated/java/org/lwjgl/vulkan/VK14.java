@@ -172,7 +172,7 @@ public class VK14 extends VK13 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pMemoryMapInfo, ppData, __functionAddress);
+        return invokePPPI(device.address(), pMemoryMapInfo, ppData, __functionAddress);
     }
 
     /** {@code VkResult vkMapMemory2(VkDevice device, VkMemoryMapInfo const * pMemoryMapInfo, void ** ppData)} */
@@ -192,7 +192,7 @@ public class VK14 extends VK13 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pMemoryUnmapInfo, __functionAddress);
+        return invokePPI(device.address(), pMemoryUnmapInfo, __functionAddress);
     }
 
     /** {@code VkResult vkUnmapMemory2(VkDevice device, VkMemoryUnmapInfo const * pMemoryUnmapInfo)} */
@@ -210,7 +210,7 @@ public class VK14 extends VK13 {
             check(__functionAddress);
             VkDeviceImageSubresourceInfo.validate(pInfo);
         }
-        callPPPV(device.address(), pInfo, pLayout, __functionAddress);
+        invokePPPV(device.address(), pInfo, pLayout, __functionAddress);
     }
 
     /** {@code void vkGetDeviceImageSubresourceLayout(VkDevice device, VkDeviceImageSubresourceInfo const * pInfo, VkSubresourceLayout2 * pLayout)} */
@@ -226,7 +226,7 @@ public class VK14 extends VK13 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPPV(device.address(), image, pSubresource, pLayout, __functionAddress);
+        invokePJPPV(device.address(), image, pSubresource, pLayout, __functionAddress);
     }
 
     /** {@code void vkGetImageSubresourceLayout2(VkDevice device, VkImage image, VkImageSubresource2 const * pSubresource, VkSubresourceLayout2 * pLayout)} */
@@ -243,7 +243,7 @@ public class VK14 extends VK13 {
             check(__functionAddress);
             VkCopyMemoryToImageInfo.validate(pCopyMemoryToImageInfo);
         }
-        return callPPI(device.address(), pCopyMemoryToImageInfo, __functionAddress);
+        return invokePPI(device.address(), pCopyMemoryToImageInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCopyMemoryToImage(VkDevice device, VkCopyMemoryToImageInfo const * pCopyMemoryToImageInfo)} */
@@ -261,7 +261,7 @@ public class VK14 extends VK13 {
             check(__functionAddress);
             VkCopyImageToMemoryInfo.validate(pCopyImageToMemoryInfo);
         }
-        return callPPI(device.address(), pCopyImageToMemoryInfo, __functionAddress);
+        return invokePPI(device.address(), pCopyImageToMemoryInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCopyImageToMemory(VkDevice device, VkCopyImageToMemoryInfo const * pCopyImageToMemoryInfo)} */
@@ -279,7 +279,7 @@ public class VK14 extends VK13 {
             check(__functionAddress);
             VkCopyImageToImageInfo.validate(pCopyImageToImageInfo);
         }
-        return callPPI(device.address(), pCopyImageToImageInfo, __functionAddress);
+        return invokePPI(device.address(), pCopyImageToImageInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCopyImageToImage(VkDevice device, VkCopyImageToImageInfo const * pCopyImageToImageInfo)} */
@@ -296,7 +296,7 @@ public class VK14 extends VK13 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), transitionCount, pTransitions, __functionAddress);
+        return invokePPI(device.address(), transitionCount, pTransitions, __functionAddress);
     }
 
     /** {@code VkResult vkTransitionImageLayout(VkDevice device, uint32_t transitionCount, VkHostImageLayoutTransitionInfo const * pTransitions)} */
@@ -313,7 +313,7 @@ public class VK14 extends VK13 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(commandBuffer.address(), pipelineBindPoint, layout, set, descriptorWriteCount, pDescriptorWrites, __functionAddress);
+        invokePJPV(commandBuffer.address(), pipelineBindPoint, layout, set, descriptorWriteCount, pDescriptorWrites, __functionAddress);
     }
 
     /** {@code void vkCmdPushDescriptorSet(VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipelineLayout layout, uint32_t set, uint32_t descriptorWriteCount, VkWriteDescriptorSet const * pDescriptorWrites)} */
@@ -329,7 +329,7 @@ public class VK14 extends VK13 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJPV(commandBuffer.address(), descriptorUpdateTemplate, layout, set, pData, __functionAddress);
+        invokePJJPV(commandBuffer.address(), descriptorUpdateTemplate, layout, set, pData, __functionAddress);
     }
 
     // --- [ vkCmdBindDescriptorSets2 ] ---
@@ -341,7 +341,7 @@ public class VK14 extends VK13 {
             check(__functionAddress);
             VkBindDescriptorSetsInfo.validate(pBindDescriptorSetsInfo);
         }
-        callPPV(commandBuffer.address(), pBindDescriptorSetsInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pBindDescriptorSetsInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBindDescriptorSets2(VkCommandBuffer commandBuffer, VkBindDescriptorSetsInfo const * pBindDescriptorSetsInfo)} */
@@ -358,7 +358,7 @@ public class VK14 extends VK13 {
             check(__functionAddress);
             VkPushConstantsInfo.validate(pPushConstantsInfo);
         }
-        callPPV(commandBuffer.address(), pPushConstantsInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pPushConstantsInfo, __functionAddress);
     }
 
     /** {@code void vkCmdPushConstants2(VkCommandBuffer commandBuffer, VkPushConstantsInfo const * pPushConstantsInfo)} */
@@ -375,7 +375,7 @@ public class VK14 extends VK13 {
             check(__functionAddress);
             VkPushDescriptorSetInfo.validate(pPushDescriptorSetInfo);
         }
-        callPPV(commandBuffer.address(), pPushDescriptorSetInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pPushDescriptorSetInfo, __functionAddress);
     }
 
     /** {@code void vkCmdPushDescriptorSet2(VkCommandBuffer commandBuffer, VkPushDescriptorSetInfo const * pPushDescriptorSetInfo)} */
@@ -392,7 +392,7 @@ public class VK14 extends VK13 {
             check(__functionAddress);
             VkPushDescriptorSetWithTemplateInfo.validate(pPushDescriptorSetWithTemplateInfo);
         }
-        callPPV(commandBuffer.address(), pPushDescriptorSetWithTemplateInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pPushDescriptorSetWithTemplateInfo, __functionAddress);
     }
 
     /** {@code void vkCmdPushDescriptorSetWithTemplate2(VkCommandBuffer commandBuffer, VkPushDescriptorSetWithTemplateInfo const * pPushDescriptorSetWithTemplateInfo)} */
@@ -408,7 +408,7 @@ public class VK14 extends VK13 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPCV(commandBuffer.address(), lineStippleFactor, lineStipplePattern, __functionAddress);
+        invokePCV(commandBuffer.address(), lineStippleFactor, lineStipplePattern, __functionAddress);
     }
 
     // --- [ vkCmdBindIndexBuffer2 ] ---
@@ -419,7 +419,7 @@ public class VK14 extends VK13 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJV(commandBuffer.address(), buffer, offset, size, indexType, __functionAddress);
+        invokePJJJV(commandBuffer.address(), buffer, offset, size, indexType, __functionAddress);
     }
 
     // --- [ vkGetRenderingAreaGranularity ] ---
@@ -430,7 +430,7 @@ public class VK14 extends VK13 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pRenderingAreaInfo, pGranularity, __functionAddress);
+        invokePPPV(device.address(), pRenderingAreaInfo, pGranularity, __functionAddress);
     }
 
     /** {@code void vkGetRenderingAreaGranularity(VkDevice device, VkRenderingAreaInfo const * pRenderingAreaInfo, VkExtent2D * pGranularity)} */
@@ -446,7 +446,7 @@ public class VK14 extends VK13 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pLocationInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pLocationInfo, __functionAddress);
     }
 
     /** {@code void vkCmdSetRenderingAttachmentLocations(VkCommandBuffer commandBuffer, VkRenderingAttachmentLocationInfo const * pLocationInfo)} */
@@ -462,7 +462,7 @@ public class VK14 extends VK13 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInputAttachmentIndexInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInputAttachmentIndexInfo, __functionAddress);
     }
 
     /** {@code void vkCmdSetRenderingInputAttachmentIndices(VkCommandBuffer commandBuffer, VkRenderingInputAttachmentIndexInfo const * pInputAttachmentIndexInfo)} */

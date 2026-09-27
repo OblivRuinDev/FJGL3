@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glFramebufferSampleLocationsfvARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glNamedFramebufferSampleLocationsfvARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glEvaluateDepthValuesARBPROC) (void);
+typedef void (*glFramebufferSampleLocationsfvARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glNamedFramebufferSampleLocationsfvARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glEvaluateDepthValuesARBPROC) (void);
 
 EXTERN_C_ENTER
 

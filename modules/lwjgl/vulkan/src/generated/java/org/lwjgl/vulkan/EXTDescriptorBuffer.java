@@ -77,7 +77,7 @@ public class EXTDescriptorBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), layout, pLayoutSizeInBytes, __functionAddress);
+        invokePJPV(device.address(), layout, pLayoutSizeInBytes, __functionAddress);
     }
 
     /** {@code void vkGetDescriptorSetLayoutSizeEXT(VkDevice device, VkDescriptorSetLayout layout, VkDeviceSize * pLayoutSizeInBytes)} */
@@ -96,7 +96,7 @@ public class EXTDescriptorBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), layout, binding, pOffset, __functionAddress);
+        invokePJPV(device.address(), layout, binding, pOffset, __functionAddress);
     }
 
     /** {@code void vkGetDescriptorSetLayoutBindingOffsetEXT(VkDevice device, VkDescriptorSetLayout layout, uint32_t binding, VkDeviceSize * pOffset)} */
@@ -115,7 +115,7 @@ public class EXTDescriptorBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPPV(device.address(), pDescriptorInfo, dataSize, pDescriptor, __functionAddress);
+        invokePPPPV(device.address(), pDescriptorInfo, dataSize, pDescriptor, __functionAddress);
     }
 
     /** {@code void vkGetDescriptorEXT(VkDevice device, VkDescriptorGetInfoEXT const * pDescriptorInfo, size_t dataSize, void * pDescriptor)} */
@@ -131,7 +131,7 @@ public class EXTDescriptorBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), bufferCount, pBindingInfos, __functionAddress);
+        invokePPV(commandBuffer.address(), bufferCount, pBindingInfos, __functionAddress);
     }
 
     /** {@code void vkCmdBindDescriptorBuffersEXT(VkCommandBuffer commandBuffer, uint32_t bufferCount, VkDescriptorBufferBindingInfoEXT const * pBindingInfos)} */
@@ -147,7 +147,7 @@ public class EXTDescriptorBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPPV(commandBuffer.address(), pipelineBindPoint, layout, firstSet, setCount, pBufferIndices, pOffsets, __functionAddress);
+        invokePJPPV(commandBuffer.address(), pipelineBindPoint, layout, firstSet, setCount, pBufferIndices, pOffsets, __functionAddress);
     }
 
     /** {@code void vkCmdSetDescriptorBufferOffsetsEXT(VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipelineLayout layout, uint32_t firstSet, uint32_t setCount, uint32_t const * pBufferIndices, VkDeviceSize const * pOffsets)} */
@@ -166,7 +166,7 @@ public class EXTDescriptorBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(commandBuffer.address(), pipelineBindPoint, layout, set, __functionAddress);
+        invokePJV(commandBuffer.address(), pipelineBindPoint, layout, set, __functionAddress);
     }
 
     // --- [ vkGetBufferOpaqueCaptureDescriptorDataEXT ] ---
@@ -177,7 +177,7 @@ public class EXTDescriptorBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pInfo, pData, __functionAddress);
+        return invokePPPI(device.address(), pInfo, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetBufferOpaqueCaptureDescriptorDataEXT(VkDevice device, VkBufferCaptureDescriptorDataInfoEXT const * pInfo, void * pData)} */
@@ -197,7 +197,7 @@ public class EXTDescriptorBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pInfo, pData, __functionAddress);
+        return invokePPPI(device.address(), pInfo, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetImageOpaqueCaptureDescriptorDataEXT(VkDevice device, VkImageCaptureDescriptorDataInfoEXT const * pInfo, void * pData)} */
@@ -217,7 +217,7 @@ public class EXTDescriptorBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pInfo, pData, __functionAddress);
+        return invokePPPI(device.address(), pInfo, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetImageViewOpaqueCaptureDescriptorDataEXT(VkDevice device, VkImageViewCaptureDescriptorDataInfoEXT const * pInfo, void * pData)} */
@@ -237,7 +237,7 @@ public class EXTDescriptorBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pInfo, pData, __functionAddress);
+        return invokePPPI(device.address(), pInfo, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetSamplerOpaqueCaptureDescriptorDataEXT(VkDevice device, VkSamplerCaptureDescriptorDataInfoEXT const * pInfo, void * pData)} */
@@ -257,7 +257,7 @@ public class EXTDescriptorBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pInfo, pData, __functionAddress);
+        return invokePPPI(device.address(), pInfo, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT(VkDevice device, VkAccelerationStructureCaptureDescriptorDataInfoEXT const * pInfo, void * pData)} */
@@ -276,7 +276,7 @@ public class EXTDescriptorBuffer {
             check(__functionAddress);
             check(pLayoutSizeInBytes, 1);
         }
-        callPJPV(device.address(), layout, pLayoutSizeInBytes, __functionAddress);
+        invokePJPV(device.address(), layout, pLayoutSizeInBytes, __functionAddress);
     }
 
     /** {@code void vkGetDescriptorSetLayoutBindingOffsetEXT(VkDevice device, VkDescriptorSetLayout layout, uint32_t binding, VkDeviceSize * pOffset)} */
@@ -286,7 +286,7 @@ public class EXTDescriptorBuffer {
             check(__functionAddress);
             check(pOffset, 1);
         }
-        callPJPV(device.address(), layout, binding, pOffset, __functionAddress);
+        invokePJPV(device.address(), layout, binding, pOffset, __functionAddress);
     }
 
     /** {@code void vkCmdSetDescriptorBufferOffsetsEXT(VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipelineLayout layout, uint32_t firstSet, uint32_t setCount, uint32_t const * pBufferIndices, VkDeviceSize const * pOffsets)} */
@@ -296,7 +296,7 @@ public class EXTDescriptorBuffer {
             check(__functionAddress);
             check(pOffsets, pBufferIndices.length);
         }
-        callPJPPV(commandBuffer.address(), pipelineBindPoint, layout, firstSet, pBufferIndices.length, pBufferIndices, pOffsets, __functionAddress);
+        invokePJPPV(commandBuffer.address(), pipelineBindPoint, layout, firstSet, pBufferIndices.length, pBufferIndices, pOffsets, __functionAddress);
     }
 
 }

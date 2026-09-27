@@ -54,7 +54,7 @@ public class EXTFullScreenExclusive {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(physicalDevice.address(), pSurfaceInfo, pPresentModeCount, pPresentModes, __functionAddress);
+        return invokePPPPI(physicalDevice.address(), pSurfaceInfo, pPresentModeCount, pPresentModes, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceSurfacePresentModes2EXT(VkPhysicalDevice physicalDevice, VkPhysicalDeviceSurfaceInfo2KHR const * pSurfaceInfo, uint32_t * pPresentModeCount, VkPresentModeKHR * pPresentModes)} */
@@ -76,7 +76,7 @@ public class EXTFullScreenExclusive {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(device.address(), swapchain, __functionAddress);
+        return invokePJI(device.address(), swapchain, __functionAddress);
     }
 
     // --- [ vkReleaseFullScreenExclusiveModeEXT ] ---
@@ -88,7 +88,7 @@ public class EXTFullScreenExclusive {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(device.address(), swapchain, __functionAddress);
+        return invokePJI(device.address(), swapchain, __functionAddress);
     }
 
     // --- [ vkGetDeviceGroupSurfacePresentModes2EXT ] ---
@@ -99,7 +99,7 @@ public class EXTFullScreenExclusive {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pSurfaceInfo, pModes, __functionAddress);
+        return invokePPPI(device.address(), pSurfaceInfo, pModes, __functionAddress);
     }
 
     /** {@code VkResult vkGetDeviceGroupSurfacePresentModes2EXT(VkDevice device, VkPhysicalDeviceSurfaceInfo2KHR const * pSurfaceInfo, VkDeviceGroupPresentModeFlagsKHR * pModes)} */
@@ -120,7 +120,7 @@ public class EXTFullScreenExclusive {
             check(pPresentModeCount, 1);
             checkSafe(pPresentModes, pPresentModeCount[0]);
         }
-        return callPPPPI(physicalDevice.address(), pSurfaceInfo.address(), pPresentModeCount, pPresentModes, __functionAddress);
+        return invokePPPPI(physicalDevice.address(), pSurfaceInfo.address(), pPresentModeCount, pPresentModes, __functionAddress);
     }
 
     /** {@code VkResult vkGetDeviceGroupSurfacePresentModes2EXT(VkDevice device, VkPhysicalDeviceSurfaceInfo2KHR const * pSurfaceInfo, VkDeviceGroupPresentModeFlagsKHR * pModes)} */
@@ -131,7 +131,7 @@ public class EXTFullScreenExclusive {
             check(__functionAddress);
             check(pModes, 1);
         }
-        return callPPPI(device.address(), pSurfaceInfo.address(), pModes, __functionAddress);
+        return invokePPPI(device.address(), pSurfaceInfo.address(), pModes, __functionAddress);
     }
 
 }

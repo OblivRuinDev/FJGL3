@@ -146,7 +146,7 @@ public class KHRSynchronization2 {
             check(__functionAddress);
             VkDependencyInfo.validate(pDependencyInfo);
         }
-        callPJPV(commandBuffer.address(), event, pDependencyInfo, __functionAddress);
+        invokePJPV(commandBuffer.address(), event, pDependencyInfo, __functionAddress);
     }
 
     /** {@code void vkCmdSetEvent2KHR(VkCommandBuffer commandBuffer, VkEvent event, VkDependencyInfo const * pDependencyInfo)} */
@@ -162,7 +162,7 @@ public class KHRSynchronization2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJV(commandBuffer.address(), event, stageMask, __functionAddress);
+        invokePJJV(commandBuffer.address(), event, stageMask, __functionAddress);
     }
 
     // --- [ vkCmdWaitEvents2KHR ] ---
@@ -174,7 +174,7 @@ public class KHRSynchronization2 {
             check(__functionAddress);
             Struct.validate(pDependencyInfos, eventCount, VkDependencyInfo.SIZEOF, VkDependencyInfo::validate);
         }
-        callPPPV(commandBuffer.address(), eventCount, pEvents, pDependencyInfos, __functionAddress);
+        invokePPPV(commandBuffer.address(), eventCount, pEvents, pDependencyInfos, __functionAddress);
     }
 
     /** {@code void vkCmdWaitEvents2KHR(VkCommandBuffer commandBuffer, uint32_t eventCount, VkEvent const * pEvents, VkDependencyInfo const * pDependencyInfos)} */
@@ -194,7 +194,7 @@ public class KHRSynchronization2 {
             check(__functionAddress);
             VkDependencyInfo.validate(pDependencyInfo);
         }
-        callPPV(commandBuffer.address(), pDependencyInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pDependencyInfo, __functionAddress);
     }
 
     /** {@code void vkCmdPipelineBarrier2KHR(VkCommandBuffer commandBuffer, VkDependencyInfo const * pDependencyInfo)} */
@@ -210,7 +210,7 @@ public class KHRSynchronization2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJV(commandBuffer.address(), stage, queryPool, query, __functionAddress);
+        invokePJJV(commandBuffer.address(), stage, queryPool, query, __functionAddress);
     }
 
     // --- [ vkQueueSubmit2KHR ] ---
@@ -222,7 +222,7 @@ public class KHRSynchronization2 {
             check(__functionAddress);
             if (pSubmits != NULL) { Struct.validate(pSubmits, submitCount, VkSubmitInfo2.SIZEOF, VkSubmitInfo2::validate); }
         }
-        return callPPJI(queue.address(), submitCount, pSubmits, fence, __functionAddress);
+        return invokePPJI(queue.address(), submitCount, pSubmits, fence, __functionAddress);
     }
 
     /** {@code VkResult vkQueueSubmit2KHR(VkQueue queue, uint32_t submitCount, VkSubmitInfo2 const * pSubmits, VkFence fence)} */
@@ -239,7 +239,7 @@ public class KHRSynchronization2 {
             check(pDependencyInfos, pEvents.length);
             Struct.validate(pDependencyInfos.address(), pEvents.length, VkDependencyInfo.SIZEOF, VkDependencyInfo::validate);
         }
-        callPPPV(commandBuffer.address(), pEvents.length, pEvents, pDependencyInfos.address(), __functionAddress);
+        invokePPPV(commandBuffer.address(), pEvents.length, pEvents, pDependencyInfos.address(), __functionAddress);
     }
 
 }

@@ -96,7 +96,7 @@ public class EXTDebugReport {
             check(__functionAddress);
             VkDebugReportCallbackCreateInfoEXT.validate(pCreateInfo);
         }
-        return callPPPPI(instance.address(), pCreateInfo, pAllocator, pCallback, __functionAddress);
+        return invokePPPPI(instance.address(), pCreateInfo, pAllocator, pCallback, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDebugReportCallbackEXT(VkInstance instance, VkDebugReportCallbackCreateInfoEXT const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkDebugReportCallbackEXT * pCallback)} */
@@ -116,7 +116,7 @@ public class EXTDebugReport {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(instance.address(), callback, pAllocator, __functionAddress);
+        invokePJPV(instance.address(), callback, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyDebugReportCallbackEXT(VkInstance instance, VkDebugReportCallbackEXT callback, VkAllocationCallbacks const * pAllocator)} */
@@ -132,7 +132,7 @@ public class EXTDebugReport {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPPPV(instance.address(), flags, objectType, object, location, messageCode, pLayerPrefix, pMessage, __functionAddress);
+        invokePJPPPV(instance.address(), flags, objectType, object, location, messageCode, pLayerPrefix, pMessage, __functionAddress);
     }
 
     /** {@code void vkDebugReportMessageEXT(VkInstance instance, VkDebugReportFlagsEXT flags, VkDebugReportObjectTypeEXT objectType, uint64_t object, size_t location, int32_t messageCode, char const * pLayerPrefix, char const * pMessage)} */
@@ -167,7 +167,7 @@ public class EXTDebugReport {
             check(pCallback, 1);
             VkDebugReportCallbackCreateInfoEXT.validate(pCreateInfo.address());
         }
-        return callPPPPI(instance.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pCallback, __functionAddress);
+        return invokePPPPI(instance.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pCallback, __functionAddress);
     }
 
 }

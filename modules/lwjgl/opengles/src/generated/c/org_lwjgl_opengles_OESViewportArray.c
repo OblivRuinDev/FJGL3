@@ -14,15 +14,15 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glViewportArrayvOESPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glViewportIndexedfOESPROC) (jint, jfloat, jfloat, jfloat, jfloat);
-typedef void (APIENTRY *glViewportIndexedfvOESPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glScissorArrayvOESPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glScissorIndexedOESPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glScissorIndexedvOESPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDepthRangeArrayfvOESPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glDepthRangeIndexedfOESPROC) (jint, jfloat, jfloat);
-typedef void (APIENTRY *glGetFloati_vOESPROC) (jint, jint, uintptr_t);
+typedef void (*glViewportArrayvOESPROC) (jint, jint, uintptr_t);
+typedef void (*glViewportIndexedfOESPROC) (jint, jfloat, jfloat, jfloat, jfloat);
+typedef void (*glViewportIndexedfvOESPROC) (jint, uintptr_t);
+typedef void (*glScissorArrayvOESPROC) (jint, jint, uintptr_t);
+typedef void (*glScissorIndexedOESPROC) (jint, jint, jint, jint, jint);
+typedef void (*glScissorIndexedvOESPROC) (jint, uintptr_t);
+typedef void (*glDepthRangeArrayfvOESPROC) (jint, jint, uintptr_t);
+typedef void (*glDepthRangeIndexedfOESPROC) (jint, jfloat, jfloat);
+typedef void (*glGetFloati_vOESPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

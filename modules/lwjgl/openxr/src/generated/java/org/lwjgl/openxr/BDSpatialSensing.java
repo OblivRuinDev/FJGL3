@@ -119,7 +119,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(snapshot.address(), entityId, componentTypeCapacityInput, componentTypeCountOutput, componentTypes, __functionAddress);
+        return invokePJPPI(snapshot.address(), entityId, componentTypeCapacityInput, componentTypeCountOutput, componentTypes, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSpatialEntityComponentTypesBD(XrSenseDataSnapshotBD snapshot, XrSpatialEntityIdBD entityId, uint32_t componentTypeCapacityInput, uint32_t * componentTypeCountOutput, XrSpatialEntityComponentTypeBD * componentTypes)} */
@@ -139,7 +139,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(snapshot.address(), entityId, uuid, __functionAddress);
+        return invokePJPI(snapshot.address(), entityId, uuid, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpatialEntityUuidBD(XrSenseDataSnapshotBD snapshot, XrSpatialEntityIdBD entityId, XrUuidEXT * uuid)} */
@@ -156,7 +156,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(snapshot.address(), getInfo, componentData, __functionAddress);
+        return invokePPPI(snapshot.address(), getInfo, componentData, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpatialEntityComponentDataBD(XrSenseDataSnapshotBD snapshot, XrSpatialEntityComponentGetInfoBD const * getInfo, XrSpatialEntityComponentDataBaseHeaderBD * componentData)} */
@@ -173,7 +173,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, provider, __functionAddress);
+        return invokePPPI(session.address(), createInfo, provider, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSenseDataProviderBD(XrSession session, XrSenseDataProviderCreateInfoBD const * createInfo, XrSenseDataProviderBD * provider)} */
@@ -193,7 +193,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(provider.address(), startInfo, future, __functionAddress);
+        return invokePPPI(provider.address(), startInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrStartSenseDataProviderAsyncBD(XrSenseDataProviderBD provider, XrSenseDataProviderStartInfoBD const * startInfo, XrFutureEXT * future)} */
@@ -213,7 +213,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), future, completion, __functionAddress);
+        return invokePJPI(session.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrStartSenseDataProviderCompleteBD(XrSession session, XrFutureEXT future, XrFutureCompletionEXT * completion)} */
@@ -230,7 +230,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(provider.address(), state, __functionAddress);
+        return invokePPI(provider.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrGetSenseDataProviderStateBD(XrSenseDataProviderBD provider, XrSenseDataProviderStateBD * state)} */
@@ -250,7 +250,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(provider.address(), queryInfo, future, __functionAddress);
+        return invokePPPI(provider.address(), queryInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrQuerySenseDataAsyncBD(XrSenseDataProviderBD provider, XrSenseDataQueryInfoBD const * queryInfo, XrFutureEXT * future)} */
@@ -270,7 +270,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(provider.address(), future, completion, __functionAddress);
+        return invokePJPI(provider.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrQuerySenseDataCompleteBD(XrSenseDataProviderBD provider, XrFutureEXT future, XrSenseDataQueryCompletionBD * completion)} */
@@ -288,7 +288,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(snapshot.address(), __functionAddress);
+        return invokePI(snapshot.address(), __functionAddress);
     }
 
     // --- [ xrGetQueriedSenseDataBD ] ---
@@ -299,7 +299,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(snapshot.address(), getInfo, queriedSenseData, __functionAddress);
+        return invokePPPI(snapshot.address(), getInfo, queriedSenseData, __functionAddress);
     }
 
     /** {@code XrResult xrGetQueriedSenseDataBD(XrSenseDataSnapshotBD snapshot, XrQueriedSenseDataGetInfoBD * getInfo, XrQueriedSenseDataBD * queriedSenseData)} */
@@ -317,7 +317,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(provider.address(), __functionAddress);
+        return invokePI(provider.address(), __functionAddress);
     }
 
     // --- [ xrDestroySenseDataProviderBD ] ---
@@ -329,7 +329,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(provider.address(), __functionAddress);
+        return invokePI(provider.address(), __functionAddress);
     }
 
     // --- [ xrCreateSpatialEntityAnchorBD ] ---
@@ -341,7 +341,7 @@ public class BDSpatialSensing {
             check(__functionAddress);
             XrSpatialEntityAnchorCreateInfoBD.validate(createInfo);
         }
-        return callPPPI(provider.address(), createInfo, anchor, __functionAddress);
+        return invokePPPI(provider.address(), createInfo, anchor, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialEntityAnchorBD(XrSenseDataProviderBD provider, XrSpatialEntityAnchorCreateInfoBD const * createInfo, XrAnchorBD * anchor)} */
@@ -362,7 +362,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(anchor.address(), __functionAddress);
+        return invokePI(anchor.address(), __functionAddress);
     }
 
     // --- [ xrGetAnchorUuidBD ] ---
@@ -373,7 +373,7 @@ public class BDSpatialSensing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(anchor.address(), uuid, __functionAddress);
+        return invokePPI(anchor.address(), uuid, __functionAddress);
     }
 
     /** {@code XrResult xrGetAnchorUuidBD(XrAnchorBD anchor, XrUuidEXT * uuid)} */
@@ -391,7 +391,7 @@ public class BDSpatialSensing {
             check(__functionAddress);
             XrAnchorSpaceCreateInfoBD.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, space, __functionAddress);
+        return invokePPPI(session.address(), createInfo, space, __functionAddress);
     }
 
     /** {@code XrResult xrCreateAnchorSpaceBD(XrSession session, XrAnchorSpaceCreateInfoBD const * createInfo, XrSpace * space)} */

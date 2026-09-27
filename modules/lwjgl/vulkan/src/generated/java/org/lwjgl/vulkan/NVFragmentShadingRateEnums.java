@@ -62,7 +62,7 @@ public class NVFragmentShadingRateEnums {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), shadingRate, combinerOps, __functionAddress);
+        invokePPV(commandBuffer.address(), shadingRate, combinerOps, __functionAddress);
     }
 
     /** {@code void vkCmdSetFragmentShadingRateEnumNV(VkCommandBuffer commandBuffer, VkFragmentShadingRateNV shadingRate, VkFragmentShadingRateCombinerOpKHR const * combinerOps)} */
@@ -80,7 +80,7 @@ public class NVFragmentShadingRateEnums {
             check(__functionAddress);
             check(combinerOps, 2);
         }
-        callPPV(commandBuffer.address(), shadingRate, combinerOps, __functionAddress);
+        invokePPV(commandBuffer.address(), shadingRate, combinerOps, __functionAddress);
     }
 
 }

@@ -47,7 +47,7 @@ public class KHRExternalFenceWin32 {
             check(__functionAddress);
             VkImportFenceWin32HandleInfoKHR.validate(pImportFenceWin32HandleInfo);
         }
-        return callPPI(device.address(), pImportFenceWin32HandleInfo, __functionAddress);
+        return invokePPI(device.address(), pImportFenceWin32HandleInfo, __functionAddress);
     }
 
     /** {@code VkResult vkImportFenceWin32HandleKHR(VkDevice device, VkImportFenceWin32HandleInfoKHR const * pImportFenceWin32HandleInfo)} */
@@ -64,7 +64,7 @@ public class KHRExternalFenceWin32 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pGetWin32HandleInfo, pHandle, __functionAddress);
+        return invokePPPI(device.address(), pGetWin32HandleInfo, pHandle, __functionAddress);
     }
 
     /** {@code VkResult vkGetFenceWin32HandleKHR(VkDevice device, VkFenceGetWin32HandleInfoKHR const * pGetWin32HandleInfo, HANDLE * pHandle)} */

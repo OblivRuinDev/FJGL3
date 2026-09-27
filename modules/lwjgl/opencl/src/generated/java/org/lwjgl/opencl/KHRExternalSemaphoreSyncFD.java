@@ -40,7 +40,7 @@ public class KHRExternalSemaphoreSyncFD {
             check(__functionAddress);
             check(sema_object);
         }
-        return callPPI(sema_object, reimport_props, fd, __functionAddress);
+        return invokePPI(sema_object, reimport_props, fd, __functionAddress);
     }
 
     /** {@code cl_int clReImportSemaphoreSyncFdKHR(cl_semaphore_khr sema_object, cl_semaphore_reimport_properties_khr * reimport_props, int fd)} */
@@ -61,7 +61,7 @@ public class KHRExternalSemaphoreSyncFD {
             check(sema_object);
             checkNTSafe(reimport_props);
         }
-        return callPPI(sema_object, reimport_props, fd, __functionAddress);
+        return invokePPI(sema_object, reimport_props, fd, __functionAddress);
     }
 
 }

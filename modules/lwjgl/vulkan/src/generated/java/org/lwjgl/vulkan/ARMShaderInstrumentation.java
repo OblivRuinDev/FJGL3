@@ -53,7 +53,7 @@ public class ARMShaderInstrumentation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pDescriptionCount, pDescriptions, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pDescriptionCount, pDescriptions, __functionAddress);
     }
 
     /** {@code VkResult vkEnumeratePhysicalDeviceShaderInstrumentationMetricsARM(VkPhysicalDevice physicalDevice, uint32_t * pDescriptionCount, VkShaderInstrumentationMetricDescriptionARM * pDescriptions)} */
@@ -74,7 +74,7 @@ public class ARMShaderInstrumentation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pInstrumentation, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pInstrumentation, __functionAddress);
     }
 
     /** {@code VkResult vkCreateShaderInstrumentationARM(VkDevice device, VkShaderInstrumentationCreateInfoARM const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkShaderInstrumentationARM * pInstrumentation)} */
@@ -94,7 +94,7 @@ public class ARMShaderInstrumentation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), instrumentation, pAllocator, __functionAddress);
+        invokePJPV(device.address(), instrumentation, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyShaderInstrumentationARM(VkDevice device, VkShaderInstrumentationARM instrumentation, VkAllocationCallbacks const * pAllocator)} */
@@ -110,7 +110,7 @@ public class ARMShaderInstrumentation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(commandBuffer.address(), instrumentation, __functionAddress);
+        invokePJV(commandBuffer.address(), instrumentation, __functionAddress);
     }
 
     // --- [ vkCmdEndShaderInstrumentationARM ] ---
@@ -121,7 +121,7 @@ public class ARMShaderInstrumentation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), __functionAddress);
+        invokePV(commandBuffer.address(), __functionAddress);
     }
 
     // --- [ vkGetShaderInstrumentationValuesARM ] ---
@@ -132,7 +132,7 @@ public class ARMShaderInstrumentation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), instrumentation, pMetricBlockCount, pMetricValues, flags, __functionAddress);
+        return invokePJPPI(device.address(), instrumentation, pMetricBlockCount, pMetricValues, flags, __functionAddress);
     }
 
     /** {@code VkResult vkGetShaderInstrumentationValuesARM(VkDevice device, VkShaderInstrumentationARM instrumentation, uint32_t * pMetricBlockCount, void * pMetricValues, VkShaderInstrumentationValuesFlagsARM flags)} */
@@ -153,7 +153,7 @@ public class ARMShaderInstrumentation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(device.address(), instrumentation, __functionAddress);
+        invokePJV(device.address(), instrumentation, __functionAddress);
     }
 
     /** {@code VkResult vkEnumeratePhysicalDeviceShaderInstrumentationMetricsARM(VkPhysicalDevice physicalDevice, uint32_t * pDescriptionCount, VkShaderInstrumentationMetricDescriptionARM * pDescriptions)} */
@@ -165,7 +165,7 @@ public class ARMShaderInstrumentation {
             check(pDescriptionCount, 1);
             checkSafe(pDescriptions, pDescriptionCount[0]);
         }
-        return callPPPI(physicalDevice.address(), pDescriptionCount, memAddressSafe(pDescriptions), __functionAddress);
+        return invokePPPI(physicalDevice.address(), pDescriptionCount, memAddressSafe(pDescriptions), __functionAddress);
     }
 
     /** {@code VkResult vkCreateShaderInstrumentationARM(VkDevice device, VkShaderInstrumentationCreateInfoARM const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkShaderInstrumentationARM * pInstrumentation)} */
@@ -176,7 +176,7 @@ public class ARMShaderInstrumentation {
             check(__functionAddress);
             check(pInstrumentation, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pInstrumentation, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pInstrumentation, __functionAddress);
     }
 
     /** {@code VkResult vkGetShaderInstrumentationValuesARM(VkDevice device, VkShaderInstrumentationARM instrumentation, uint32_t * pMetricBlockCount, void * pMetricValues, VkShaderInstrumentationValuesFlagsARM flags)} */
@@ -188,7 +188,7 @@ public class ARMShaderInstrumentation {
             check(pMetricBlockCount, 1);
             checkSafe(pMetricValues, 1);
         }
-        return callPJPPI(device.address(), instrumentation, pMetricBlockCount, memAddressSafe(pMetricValues), flags, __functionAddress);
+        return invokePJPPI(device.address(), instrumentation, pMetricBlockCount, memAddressSafe(pMetricValues), flags, __functionAddress);
     }
 
 }

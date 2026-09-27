@@ -42,7 +42,7 @@ public class METASpatialEntityMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(space.address(), getInfo, triangleMeshOutput, __functionAddress);
+        return invokePPPI(space.address(), getInfo, triangleMeshOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpaceTriangleMeshMETA(XrSpace space, XrSpaceTriangleMeshGetInfoMETA const * getInfo, XrSpaceTriangleMeshMETA * triangleMeshOutput)} */

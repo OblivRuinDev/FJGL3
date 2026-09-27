@@ -42,7 +42,7 @@ public class NVMemoryDecompression {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), decompressRegionCount, pDecompressMemoryRegions, __functionAddress);
+        invokePPV(commandBuffer.address(), decompressRegionCount, pDecompressMemoryRegions, __functionAddress);
     }
 
     /** {@code void vkCmdDecompressMemoryNV(VkCommandBuffer commandBuffer, uint32_t decompressRegionCount, VkDecompressMemoryRegionNV const * pDecompressMemoryRegions)} */
@@ -58,7 +58,7 @@ public class NVMemoryDecompression {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJV(commandBuffer.address(), indirectCommandsAddress, indirectCommandsCountAddress, stride, __functionAddress);
+        invokePJJV(commandBuffer.address(), indirectCommandsAddress, indirectCommandsCountAddress, stride, __functionAddress);
     }
 
 }

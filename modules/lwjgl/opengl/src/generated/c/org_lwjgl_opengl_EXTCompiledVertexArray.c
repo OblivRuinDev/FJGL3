@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glLockArraysEXTPROC) (jint, jint);
-typedef void (APIENTRY *glUnlockArraysEXTPROC) (void);
+typedef void (*glLockArraysEXTPROC) (jint, jint);
+typedef void (*glUnlockArraysEXTPROC) (void);
 
 EXTERN_C_ENTER
 

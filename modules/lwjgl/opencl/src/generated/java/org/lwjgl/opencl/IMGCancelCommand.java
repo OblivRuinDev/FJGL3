@@ -39,7 +39,7 @@ public class IMGCancelCommand {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(event_list, num_events_in_list, __functionAddress);
+        return invokePPI(event_list, num_events_in_list, __functionAddress);
     }
 
     /** {@code cl_int clCancelCommandsIMG(cl_event const * event_list, size_t num_events_in_list)} */

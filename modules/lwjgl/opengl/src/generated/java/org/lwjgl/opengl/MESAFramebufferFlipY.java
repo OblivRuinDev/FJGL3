@@ -56,7 +56,7 @@ public class MESAFramebufferFlipY {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
 }

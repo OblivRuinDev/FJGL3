@@ -14,14 +14,14 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glTexParameterIivOESPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glTexParameterIuivOESPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetTexParameterIivOESPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetTexParameterIuivOESPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glSamplerParameterIivOESPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glSamplerParameterIuivOESPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetSamplerParameterIivOESPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetSamplerParameterIuivOESPROC) (jint, jint, uintptr_t);
+typedef void (*glTexParameterIivOESPROC) (jint, jint, uintptr_t);
+typedef void (*glTexParameterIuivOESPROC) (jint, jint, uintptr_t);
+typedef void (*glGetTexParameterIivOESPROC) (jint, jint, uintptr_t);
+typedef void (*glGetTexParameterIuivOESPROC) (jint, jint, uintptr_t);
+typedef void (*glSamplerParameterIivOESPROC) (jint, jint, uintptr_t);
+typedef void (*glSamplerParameterIuivOESPROC) (jint, jint, uintptr_t);
+typedef void (*glGetSamplerParameterIivOESPROC) (jint, jint, uintptr_t);
+typedef void (*glGetSamplerParameterIuivOESPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -62,7 +62,7 @@ public class EXTSurfaceCompression {
             check(dpy);
             check(config);
         }
-        return callPPPPPI(dpy, config, attrib_list, rates, rate_size, num_rates, __functionAddress);
+        return invokePPPPPI(dpy, config, attrib_list, rates, rate_size, num_rates, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQuerySupportedCompressionRatesEXT(EGLDisplay dpy, EGLConfig config, EGLAttrib const * attrib_list, EGLint * rates, EGLint rate_size, EGLint * num_rates)} */
@@ -86,7 +86,7 @@ public class EXTSurfaceCompression {
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
             check(num_rates, 1);
         }
-        return callPPPPPI(dpy, config, memAddressSafe(attrib_list), rates, lengthSafe(rates), num_rates, __functionAddress) != 0;
+        return invokePPPPPI(dpy, config, memAddressSafe(attrib_list), rates, lengthSafe(rates), num_rates, __functionAddress) != 0;
     }
 
 }

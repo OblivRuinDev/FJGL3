@@ -52,7 +52,7 @@ public class KHRGetPhysicalDeviceProperties2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(physicalDevice.address(), pFeatures, __functionAddress);
+        invokePPV(physicalDevice.address(), pFeatures, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceFeatures2KHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceFeatures2 * pFeatures)} */
@@ -68,7 +68,7 @@ public class KHRGetPhysicalDeviceProperties2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(physicalDevice.address(), pProperties, __functionAddress);
+        invokePPV(physicalDevice.address(), pProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceProperties2KHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceProperties2 * pProperties)} */
@@ -84,7 +84,7 @@ public class KHRGetPhysicalDeviceProperties2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(physicalDevice.address(), format, pFormatProperties, __functionAddress);
+        invokePPV(physicalDevice.address(), format, pFormatProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceFormatProperties2KHR(VkPhysicalDevice physicalDevice, VkFormat format, VkFormatProperties2 * pFormatProperties)} */
@@ -100,7 +100,7 @@ public class KHRGetPhysicalDeviceProperties2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pImageFormatInfo, pImageFormatProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pImageFormatInfo, pImageFormatProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceImageFormatProperties2KHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceImageFormatInfo2 const * pImageFormatInfo, VkImageFormatProperties2 * pImageFormatProperties)} */
@@ -117,7 +117,7 @@ public class KHRGetPhysicalDeviceProperties2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(physicalDevice.address(), pQueueFamilyPropertyCount, pQueueFamilyProperties, __functionAddress);
+        invokePPPV(physicalDevice.address(), pQueueFamilyPropertyCount, pQueueFamilyProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceQueueFamilyProperties2KHR(VkPhysicalDevice physicalDevice, uint32_t * pQueueFamilyPropertyCount, VkQueueFamilyProperties2 * pQueueFamilyProperties)} */
@@ -137,7 +137,7 @@ public class KHRGetPhysicalDeviceProperties2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(physicalDevice.address(), pMemoryProperties, __functionAddress);
+        invokePPV(physicalDevice.address(), pMemoryProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceMemoryProperties2KHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceMemoryProperties2 * pMemoryProperties)} */
@@ -153,7 +153,7 @@ public class KHRGetPhysicalDeviceProperties2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPPV(physicalDevice.address(), pFormatInfo, pPropertyCount, pProperties, __functionAddress);
+        invokePPPPV(physicalDevice.address(), pFormatInfo, pPropertyCount, pProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceSparseImageFormatProperties2KHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceSparseImageFormatInfo2 const * pFormatInfo, uint32_t * pPropertyCount, VkSparseImageFormatProperties2 * pProperties)} */
@@ -173,7 +173,7 @@ public class KHRGetPhysicalDeviceProperties2 {
             check(pQueueFamilyPropertyCount, 1);
             checkSafe(pQueueFamilyProperties, pQueueFamilyPropertyCount[0]);
         }
-        callPPPV(physicalDevice.address(), pQueueFamilyPropertyCount, memAddressSafe(pQueueFamilyProperties), __functionAddress);
+        invokePPPV(physicalDevice.address(), pQueueFamilyPropertyCount, memAddressSafe(pQueueFamilyProperties), __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceSparseImageFormatProperties2KHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceSparseImageFormatInfo2 const * pFormatInfo, uint32_t * pPropertyCount, VkSparseImageFormatProperties2 * pProperties)} */
@@ -184,7 +184,7 @@ public class KHRGetPhysicalDeviceProperties2 {
             check(pPropertyCount, 1);
             checkSafe(pProperties, pPropertyCount[0]);
         }
-        callPPPPV(physicalDevice.address(), pFormatInfo.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
+        invokePPPPV(physicalDevice.address(), pFormatInfo.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
     }
 
 }

@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glStringMarkerGREMEDYPROC) (jint, uintptr_t);
+typedef void (*glStringMarkerGREMEDYPROC) (jint, uintptr_t);
 
 EXTERN_C_ENTER
 

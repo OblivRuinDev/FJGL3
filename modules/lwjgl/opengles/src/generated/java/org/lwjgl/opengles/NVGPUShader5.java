@@ -358,7 +358,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length, value, __functionAddress);
+        invokePV(location, value.length, value, __functionAddress);
     }
 
     /** {@code void glUniform2i64vNV(GLint location, GLsizei count, GLint64 const * value)} */
@@ -367,7 +367,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 1, value, __functionAddress);
+        invokePV(location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glUniform3i64vNV(GLint location, GLsizei count, GLint64 const * value)} */
@@ -376,7 +376,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 3, value, __functionAddress);
+        invokePV(location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glUniform4i64vNV(GLint location, GLsizei count, GLint64 const * value)} */
@@ -385,7 +385,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 2, value, __functionAddress);
+        invokePV(location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glUniform1ui64vNV(GLint location, GLsizei count, GLuint64 const * value)} */
@@ -394,7 +394,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length, value, __functionAddress);
+        invokePV(location, value.length, value, __functionAddress);
     }
 
     /** {@code void glUniform2ui64vNV(GLint location, GLsizei count, GLuint64 * value)} */
@@ -403,7 +403,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 1, value, __functionAddress);
+        invokePV(location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glUniform3ui64vNV(GLint location, GLsizei count, GLuint64 const * value)} */
@@ -412,7 +412,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 3, value, __functionAddress);
+        invokePV(location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glUniform4ui64vNV(GLint location, GLsizei count, GLuint64 const * value)} */
@@ -421,7 +421,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 2, value, __functionAddress);
+        invokePV(location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glGetUniformi64vNV(GLuint program, GLint location, GLint64 * params)} */
@@ -431,7 +431,7 @@ public class NVGPUShader5 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, location, params, __functionAddress);
+        invokePV(program, location, params, __functionAddress);
     }
 
     /** {@code void glGetUniformui64vNV(GLuint program, GLint location, GLint64 * params)} */
@@ -441,7 +441,7 @@ public class NVGPUShader5 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, location, params, __functionAddress);
+        invokePV(program, location, params, __functionAddress);
     }
 
     /** {@code void glProgramUniform1i64vNV(GLuint program, GLint location, GLsizei count, GLint64 const * value)} */
@@ -450,7 +450,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2i64vNV(GLuint program, GLint location, GLsizei count, GLint64 const * value)} */
@@ -459,7 +459,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3i64vNV(GLuint program, GLint location, GLsizei count, GLint64 const * value)} */
@@ -468,7 +468,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4i64vNV(GLuint program, GLint location, GLsizei count, GLint64 const * value)} */
@@ -477,7 +477,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform1ui64vNV(GLuint program, GLint location, GLsizei count, GLuint64 const * value)} */
@@ -486,7 +486,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2ui64vNV(GLuint program, GLint location, GLsizei count, GLuint64 const * value)} */
@@ -495,7 +495,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3ui64vNV(GLuint program, GLint location, GLsizei count, GLuint64 const * value)} */
@@ -504,7 +504,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4ui64vNV(GLuint program, GLint location, GLsizei count, GLuint64 const * value)} */
@@ -513,7 +513,7 @@ public class NVGPUShader5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
 }

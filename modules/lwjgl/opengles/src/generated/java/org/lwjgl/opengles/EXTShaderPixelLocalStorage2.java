@@ -62,7 +62,7 @@ public class EXTShaderPixelLocalStorage2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(offset, values.length, values, __functionAddress);
+        invokePV(offset, values.length, values, __functionAddress);
     }
 
 }

@@ -38,7 +38,7 @@ public class EXTPageableDeviceLocalMemory {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(device.address(), memory, priority, __functionAddress);
+        invokePJV(device.address(), memory, priority, __functionAddress);
     }
 
 }

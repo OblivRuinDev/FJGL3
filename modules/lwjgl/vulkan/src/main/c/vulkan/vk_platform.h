@@ -36,9 +36,8 @@ extern "C"
  * Function pointer type: typedef void (VKAPI_PTR *PFN_vkCommand)(void);
  */
 #if defined(_WIN32)
-    // On Windows, Vulkan commands use the stdcall convention
     #define VKAPI_ATTR
-    #define VKAPI_CALL __stdcall
+    #define VKAPI_CALL
     #define VKAPI_PTR  VKAPI_CALL
 #elif defined(__ANDROID__) && defined(__ARM_ARCH) && __ARM_ARCH < 7
     #error "Vulkan is not supported for the 'armeabi' NDK ABI"

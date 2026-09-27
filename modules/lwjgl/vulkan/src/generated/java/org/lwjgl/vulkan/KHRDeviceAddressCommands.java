@@ -67,7 +67,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBindIndexBuffer3KHR(VkCommandBuffer commandBuffer, VkBindIndexBuffer3InfoKHR const * pInfo)} */
@@ -83,7 +83,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstBinding, bindingCount, pBindingInfos, __functionAddress);
+        invokePPV(commandBuffer.address(), firstBinding, bindingCount, pBindingInfos, __functionAddress);
     }
 
     /** {@code void vkCmdBindVertexBuffers3KHR(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, VkBindVertexBuffer3InfoKHR const * pBindingInfos)} */
@@ -99,7 +99,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDrawIndirect2KHR(VkCommandBuffer commandBuffer, VkDrawIndirect2InfoKHR const * pInfo)} */
@@ -115,7 +115,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDrawIndexedIndirect2KHR(VkCommandBuffer commandBuffer, VkDrawIndirect2InfoKHR const * pInfo)} */
@@ -131,7 +131,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDispatchIndirect2KHR(VkCommandBuffer commandBuffer, VkDispatchIndirect2InfoKHR const * pInfo)} */
@@ -148,7 +148,7 @@ public class KHRDeviceAddressCommands {
             check(__functionAddress);
             if (pCopyMemoryInfo != NULL) { VkCopyDeviceMemoryInfoKHR.validate(pCopyMemoryInfo); }
         }
-        callPPV(commandBuffer.address(), pCopyMemoryInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pCopyMemoryInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyMemoryKHR(VkCommandBuffer commandBuffer, VkCopyDeviceMemoryInfoKHR const * pCopyMemoryInfo)} */
@@ -165,7 +165,7 @@ public class KHRDeviceAddressCommands {
             check(__functionAddress);
             if (pCopyMemoryInfo != NULL) { VkCopyDeviceMemoryImageInfoKHR.validate(pCopyMemoryInfo); }
         }
-        callPPV(commandBuffer.address(), pCopyMemoryInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pCopyMemoryInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyMemoryToImageKHR(VkCommandBuffer commandBuffer, VkCopyDeviceMemoryImageInfoKHR const * pCopyMemoryInfo)} */
@@ -182,7 +182,7 @@ public class KHRDeviceAddressCommands {
             check(__functionAddress);
             if (pCopyMemoryInfo != NULL) { VkCopyDeviceMemoryImageInfoKHR.validate(pCopyMemoryInfo); }
         }
-        callPPV(commandBuffer.address(), pCopyMemoryInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pCopyMemoryInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyImageToMemoryKHR(VkCommandBuffer commandBuffer, VkCopyDeviceMemoryImageInfoKHR const * pCopyMemoryInfo)} */
@@ -198,7 +198,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPJPV(commandBuffer.address(), pDstRange, dstFlags, dataSize, pData, __functionAddress);
+        invokePPJPV(commandBuffer.address(), pDstRange, dstFlags, dataSize, pData, __functionAddress);
     }
 
     /** {@code void vkCmdUpdateMemoryKHR(VkCommandBuffer commandBuffer, VkDeviceAddressRangeKHR const * pDstRange, VkAddressCommandFlagsKHR dstFlags, VkDeviceSize dataSize, void const * pData)} */
@@ -214,7 +214,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pDstRange, dstFlags, data, __functionAddress);
+        invokePPV(commandBuffer.address(), pDstRange, dstFlags, data, __functionAddress);
     }
 
     /** {@code void vkCmdFillMemoryKHR(VkCommandBuffer commandBuffer, VkDeviceAddressRangeKHR const * pDstRange, VkAddressCommandFlagsKHR dstFlags, uint32_t data)} */
@@ -230,7 +230,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(commandBuffer.address(), queryPool, firstQuery, queryCount, pDstRange, dstFlags, queryResultFlags, __functionAddress);
+        invokePJPV(commandBuffer.address(), queryPool, firstQuery, queryCount, pDstRange, dstFlags, queryResultFlags, __functionAddress);
     }
 
     /** {@code void vkCmdCopyQueryPoolResultsToMemoryKHR(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t firstQuery, uint32_t queryCount, VkStridedDeviceAddressRangeKHR const * pDstRange, VkAddressCommandFlagsKHR dstFlags, VkQueryResultFlags queryResultFlags)} */
@@ -246,7 +246,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDrawIndirectCount2KHR(VkCommandBuffer commandBuffer, VkDrawIndirectCount2InfoKHR const * pInfo)} */
@@ -262,7 +262,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDrawIndexedIndirectCount2KHR(VkCommandBuffer commandBuffer, VkDrawIndirectCount2InfoKHR const * pInfo)} */
@@ -278,7 +278,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pConditionalRenderingBegin, __functionAddress);
+        invokePPV(commandBuffer.address(), pConditionalRenderingBegin, __functionAddress);
     }
 
     /** {@code void vkCmdBeginConditionalRendering2EXT(VkCommandBuffer commandBuffer, VkConditionalRenderingBeginInfo2EXT const * pConditionalRenderingBegin)} */
@@ -294,7 +294,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstBinding, bindingCount, pBindingInfos, __functionAddress);
+        invokePPV(commandBuffer.address(), firstBinding, bindingCount, pBindingInfos, __functionAddress);
     }
 
     /** {@code void vkCmdBindTransformFeedbackBuffers2EXT(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, VkBindTransformFeedbackBuffer2InfoEXT const * pBindingInfos)} */
@@ -310,7 +310,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstCounterRange, counterRangeCount, pCounterInfos, __functionAddress);
+        invokePPV(commandBuffer.address(), firstCounterRange, counterRangeCount, pCounterInfos, __functionAddress);
     }
 
     /** {@code void vkCmdBeginTransformFeedback2EXT(VkCommandBuffer commandBuffer, uint32_t firstCounterRange, uint32_t counterRangeCount, VkBindTransformFeedbackBuffer2InfoEXT const * pCounterInfos)} */
@@ -326,7 +326,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstCounterRange, counterRangeCount, pCounterInfos, __functionAddress);
+        invokePPV(commandBuffer.address(), firstCounterRange, counterRangeCount, pCounterInfos, __functionAddress);
     }
 
     /** {@code void vkCmdEndTransformFeedback2EXT(VkCommandBuffer commandBuffer, uint32_t firstCounterRange, uint32_t counterRangeCount, VkBindTransformFeedbackBuffer2InfoEXT const * pCounterInfos)} */
@@ -342,7 +342,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), instanceCount, firstInstance, pCounterInfo, counterOffset, vertexStride, __functionAddress);
+        invokePPV(commandBuffer.address(), instanceCount, firstInstance, pCounterInfo, counterOffset, vertexStride, __functionAddress);
     }
 
     /** {@code void vkCmdDrawIndirectByteCount2EXT(VkCommandBuffer commandBuffer, uint32_t instanceCount, uint32_t firstInstance, VkBindTransformFeedbackBuffer2InfoEXT const * pCounterInfo, uint32_t counterOffset, uint32_t vertexStride)} */
@@ -358,7 +358,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDrawMeshTasksIndirect2EXT(VkCommandBuffer commandBuffer, VkDrawIndirect2InfoKHR const * pInfo)} */
@@ -374,7 +374,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDrawMeshTasksIndirectCount2EXT(VkCommandBuffer commandBuffer, VkDrawIndirectCount2InfoKHR const * pInfo)} */
@@ -390,7 +390,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdWriteMarkerToMemoryAMD(VkCommandBuffer commandBuffer, VkMemoryMarkerInfoAMD const * pInfo)} */
@@ -406,7 +406,7 @@ public class KHRDeviceAddressCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pAccelerationStructure, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pAccelerationStructure, __functionAddress);
     }
 
     /** {@code VkResult vkCreateAccelerationStructure2KHR(VkDevice device, VkAccelerationStructureCreateInfo2KHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkAccelerationStructureKHR * pAccelerationStructure)} */
@@ -426,7 +426,7 @@ public class KHRDeviceAddressCommands {
             check(__functionAddress);
             check(pAccelerationStructure, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pAccelerationStructure, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pAccelerationStructure, __functionAddress);
     }
 
 }

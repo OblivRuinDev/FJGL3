@@ -40,7 +40,7 @@ public class EXTBufferDeviceAddress {
             check(__functionAddress);
             check(kernel);
         }
-        return callPJI(kernel, arg_index, arg_value, __functionAddress);
+        return invokePJI(kernel, arg_index, arg_value, __functionAddress);
     }
 
 }

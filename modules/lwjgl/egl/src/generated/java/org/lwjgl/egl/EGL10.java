@@ -104,7 +104,7 @@ public class EGL10 {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPPPI(dpy, attrib_list, configs, config_size, num_config, __functionAddress);
+        return invokePPPPI(dpy, attrib_list, configs, config_size, num_config, __functionAddress);
     }
 
     /** {@code EGLBoolean eglChooseConfig(EGLDisplay dpy, EGLint const * attrib_list, EGLConfig * configs, EGLint config_size, EGLint * num_config)} */
@@ -129,7 +129,7 @@ public class EGL10 {
             check(surface);
             check(target);
         }
-        return callPPPI(dpy, surface, target, __functionAddress) != 0;
+        return invokePPPI(dpy, surface, target, __functionAddress) != 0;
     }
 
     // --- [ eglCreateContext ] ---
@@ -142,7 +142,7 @@ public class EGL10 {
             check(dpy);
             check(config);
         }
-        return callPPPPP(dpy, config, share_context, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, share_context, attrib_list, __functionAddress);
     }
 
     /** {@code EGLContext eglCreateContext(EGLDisplay dpy, EGLConfig config, EGLContext share_context, EGLint const * attrib_list)} */
@@ -164,7 +164,7 @@ public class EGL10 {
             check(dpy);
             check(config);
         }
-        return callPPPP(dpy, config, attrib_list, __functionAddress);
+        return invokePPPP(dpy, config, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreatePbufferSurface(EGLDisplay dpy, EGLConfig config, EGLint const * attrib_list)} */
@@ -187,7 +187,7 @@ public class EGL10 {
             check(config);
             check(pixmap);
         }
-        return callPPPPP(dpy, config, pixmap, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, pixmap, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreatePixmapSurface(EGLDisplay dpy, EGLConfig config, EGLNativePixmapType pixmap, EGLint const * attrib_list)} */
@@ -210,7 +210,7 @@ public class EGL10 {
             check(config);
             check(win);
         }
-        return callPPPPP(dpy, config, win, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, win, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreateWindowSurface(EGLDisplay dpy, EGLConfig config, EGLNativeWindowType win, EGLint const * attrib_list)} */
@@ -233,7 +233,7 @@ public class EGL10 {
             check(dpy);
             check(ctx);
         }
-        return callPPI(dpy, ctx, __functionAddress) != 0;
+        return invokePPI(dpy, ctx, __functionAddress) != 0;
     }
 
     // --- [ eglDestroySurface ] ---
@@ -247,7 +247,7 @@ public class EGL10 {
             check(dpy);
             check(surface);
         }
-        return callPPI(dpy, surface, __functionAddress) != 0;
+        return invokePPI(dpy, surface, __functionAddress) != 0;
     }
 
     // --- [ eglGetConfigAttrib ] ---
@@ -260,7 +260,7 @@ public class EGL10 {
             check(dpy);
             check(config);
         }
-        return callPPPI(dpy, config, attribute, value, __functionAddress);
+        return invokePPPI(dpy, config, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglGetConfigAttrib(EGLDisplay dpy, EGLConfig config, EGLint attribute, EGLint * value)} */
@@ -281,7 +281,7 @@ public class EGL10 {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPPI(dpy, configs, config_size, num_config, __functionAddress);
+        return invokePPPI(dpy, configs, config_size, num_config, __functionAddress);
     }
 
     /** {@code EGLBoolean eglGetConfigs(EGLDisplay dpy, EGLConfig * configs, EGLint config_size, EGLint * num_config)} */
@@ -302,7 +302,7 @@ public class EGL10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
     // --- [ eglGetCurrentSurface ] ---
@@ -314,7 +314,7 @@ public class EGL10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callP(readdraw, __functionAddress);
+        return invokeP(readdraw, __functionAddress);
     }
 
     // --- [ eglGetDisplay ] ---
@@ -326,7 +326,7 @@ public class EGL10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPP(display_id, __functionAddress);
+        return invokePP(display_id, __functionAddress);
     }
 
     // --- [ eglGetError ] ---
@@ -338,7 +338,7 @@ public class EGL10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(__functionAddress);
+        return invokeI(__functionAddress);
     }
 
     // --- [ eglGetProcAddress ] ---
@@ -349,7 +349,7 @@ public class EGL10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPP(procname, __functionAddress);
+        return invokePP(procname, __functionAddress);
     }
 
     /** {@code __eglMustCastToProperFunctionPointerType eglGetProcAddress(char const * procname)} */
@@ -383,7 +383,7 @@ public class EGL10 {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPPI(dpy, major, minor, __functionAddress);
+        return invokePPPI(dpy, major, minor, __functionAddress);
     }
 
     /** {@code EGLBoolean eglInitialize(EGLDisplay dpy, EGLint * major, EGLint * minor)} */
@@ -406,7 +406,7 @@ public class EGL10 {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPPPI(dpy, draw, read, ctx, __functionAddress) != 0;
+        return invokePPPPI(dpy, draw, read, ctx, __functionAddress) != 0;
     }
 
     // --- [ eglQueryContext ] ---
@@ -419,7 +419,7 @@ public class EGL10 {
             check(dpy);
             check(ctx);
         }
-        return callPPPI(dpy, ctx, attribute, value, __functionAddress);
+        return invokePPPI(dpy, ctx, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryContext(EGLDisplay dpy, EGLContext ctx, EGLint attribute, EGLint * value)} */
@@ -439,7 +439,7 @@ public class EGL10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPP(dpy, name, __functionAddress);
+        return invokePP(dpy, name, __functionAddress);
     }
 
     /** {@code char * eglQueryString(EGLDisplay dpy, EGLint name)} */
@@ -459,7 +459,7 @@ public class EGL10 {
             check(dpy);
             check(surface);
         }
-        return callPPPI(dpy, surface, attribute, value, __functionAddress);
+        return invokePPPI(dpy, surface, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQuerySurface(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLint * value)} */
@@ -482,7 +482,7 @@ public class EGL10 {
             check(dpy);
             check(surface);
         }
-        return callPPI(dpy, surface, __functionAddress) != 0;
+        return invokePPI(dpy, surface, __functionAddress) != 0;
     }
 
     // --- [ eglTerminate ] ---
@@ -495,7 +495,7 @@ public class EGL10 {
             check(__functionAddress);
             check(dpy);
         }
-        return callPI(dpy, __functionAddress) != 0;
+        return invokePI(dpy, __functionAddress) != 0;
     }
 
     // --- [ eglWaitGL ] ---
@@ -507,7 +507,7 @@ public class EGL10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(__functionAddress) != 0;
+        return invokeI(__functionAddress) != 0;
     }
 
     // --- [ eglWaitNative ] ---
@@ -519,7 +519,7 @@ public class EGL10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(engine, __functionAddress) != 0;
+        return invokeI(engine, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglChooseConfig(EGLDisplay dpy, EGLint const * attrib_list, EGLConfig * configs, EGLint config_size, EGLint * num_config)} */
@@ -532,7 +532,7 @@ public class EGL10 {
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
             check(num_config, 1);
         }
-        return callPPPPI(dpy, attrib_list, memAddressSafe(configs), remainingSafe(configs), num_config, __functionAddress) != 0;
+        return invokePPPPI(dpy, attrib_list, memAddressSafe(configs), remainingSafe(configs), num_config, __functionAddress) != 0;
     }
 
     /** {@code EGLContext eglCreateContext(EGLDisplay dpy, EGLConfig config, EGLContext share_context, EGLint const * attrib_list)} */
@@ -545,7 +545,7 @@ public class EGL10 {
             check(config);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPPPP(dpy, config, share_context, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, share_context, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreatePbufferSurface(EGLDisplay dpy, EGLConfig config, EGLint const * attrib_list)} */
@@ -558,7 +558,7 @@ public class EGL10 {
             check(config);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPPP(dpy, config, attrib_list, __functionAddress);
+        return invokePPPP(dpy, config, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreatePixmapSurface(EGLDisplay dpy, EGLConfig config, EGLNativePixmapType pixmap, EGLint const * attrib_list)} */
@@ -572,7 +572,7 @@ public class EGL10 {
             check(pixmap);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPPPP(dpy, config, pixmap, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, pixmap, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreateWindowSurface(EGLDisplay dpy, EGLConfig config, EGLNativeWindowType win, EGLint const * attrib_list)} */
@@ -586,7 +586,7 @@ public class EGL10 {
             check(win);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPPPP(dpy, config, win, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, win, attrib_list, __functionAddress);
     }
 
     /** {@code EGLBoolean eglGetConfigAttrib(EGLDisplay dpy, EGLConfig config, EGLint attribute, EGLint * value)} */
@@ -599,7 +599,7 @@ public class EGL10 {
             check(config);
             check(value, 1);
         }
-        return callPPPI(dpy, config, attribute, value, __functionAddress) != 0;
+        return invokePPPI(dpy, config, attribute, value, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglGetConfigs(EGLDisplay dpy, EGLConfig * configs, EGLint config_size, EGLint * num_config)} */
@@ -611,7 +611,7 @@ public class EGL10 {
             check(dpy);
             check(num_config, 1);
         }
-        return callPPPI(dpy, memAddressSafe(configs), remainingSafe(configs), num_config, __functionAddress) != 0;
+        return invokePPPI(dpy, memAddressSafe(configs), remainingSafe(configs), num_config, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglInitialize(EGLDisplay dpy, EGLint * major, EGLint * minor)} */
@@ -624,7 +624,7 @@ public class EGL10 {
             checkSafe(major, 1);
             checkSafe(minor, 1);
         }
-        return callPPPI(dpy, major, minor, __functionAddress) != 0;
+        return invokePPPI(dpy, major, minor, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglQueryContext(EGLDisplay dpy, EGLContext ctx, EGLint attribute, EGLint * value)} */
@@ -637,7 +637,7 @@ public class EGL10 {
             check(ctx);
             check(value, 1);
         }
-        return callPPPI(dpy, ctx, attribute, value, __functionAddress) != 0;
+        return invokePPPI(dpy, ctx, attribute, value, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglQuerySurface(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLint * value)} */
@@ -650,7 +650,7 @@ public class EGL10 {
             check(surface);
             check(value, 1);
         }
-        return callPPPI(dpy, surface, attribute, value, __functionAddress) != 0;
+        return invokePPPI(dpy, surface, attribute, value, __functionAddress) != 0;
     }
 
 }

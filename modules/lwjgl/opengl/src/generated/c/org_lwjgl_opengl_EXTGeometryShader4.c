@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glProgramParameteriEXTPROC) (jint, jint, jint);
-typedef void (APIENTRY *glFramebufferTextureEXTPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glFramebufferTextureFaceEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glProgramParameteriEXTPROC) (jint, jint, jint);
+typedef void (*glFramebufferTextureEXTPROC) (jint, jint, jint, jint);
+typedef void (*glFramebufferTextureFaceEXTPROC) (jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

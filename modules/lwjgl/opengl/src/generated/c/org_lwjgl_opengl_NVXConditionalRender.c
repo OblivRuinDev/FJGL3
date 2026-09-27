@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBeginConditionalRenderNVXPROC) (jint);
-typedef void (APIENTRY *glEndConditionalRenderNVXPROC) (void);
+typedef void (*glBeginConditionalRenderNVXPROC) (jint);
+typedef void (*glEndConditionalRenderNVXPROC) (void);
 
 EXTERN_C_ENTER
 

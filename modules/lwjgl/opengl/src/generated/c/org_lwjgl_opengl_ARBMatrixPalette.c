@@ -14,11 +14,11 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glCurrentPaletteMatrixARBPROC) (jint);
-typedef void (APIENTRY *glMatrixIndexuivARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMatrixIndexubvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMatrixIndexusvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMatrixIndexPointerARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glCurrentPaletteMatrixARBPROC) (jint);
+typedef void (*glMatrixIndexuivARBPROC) (jint, uintptr_t);
+typedef void (*glMatrixIndexubvARBPROC) (jint, uintptr_t);
+typedef void (*glMatrixIndexusvARBPROC) (jint, uintptr_t);
+typedef void (*glMatrixIndexPointerARBPROC) (jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

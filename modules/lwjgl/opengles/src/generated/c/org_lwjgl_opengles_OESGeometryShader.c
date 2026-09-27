@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glFramebufferTextureOESPROC) (jint, jint, jint, jint);
+typedef void (*glFramebufferTextureOESPROC) (jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

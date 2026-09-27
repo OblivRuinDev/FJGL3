@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glTextureBarrierNVPROC) (void);
+typedef void (*glTextureBarrierNVPROC) (void);
 
 EXTERN_C_ENTER
 

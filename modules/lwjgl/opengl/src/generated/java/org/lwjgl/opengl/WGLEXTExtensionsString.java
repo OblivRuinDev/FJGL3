@@ -35,7 +35,7 @@ public class WGLEXTExtensionsString {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
     /** {@code char const * wglGetExtensionsStringEXT(void)} */

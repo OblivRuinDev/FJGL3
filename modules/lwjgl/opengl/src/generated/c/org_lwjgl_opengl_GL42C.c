@@ -14,18 +14,18 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glGetActiveAtomicCounterBufferivPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glTexStorage1DPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glTexStorage2DPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glTexStorage3DPROC) (jint, jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glDrawTransformFeedbackInstancedPROC) (jint, jint, jint);
-typedef void (APIENTRY *glDrawTransformFeedbackStreamInstancedPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glDrawArraysInstancedBaseInstancePROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glDrawElementsInstancedBaseInstancePROC) (jint, jint, jint, uintptr_t, jint, jint);
-typedef void (APIENTRY *glDrawElementsInstancedBaseVertexBaseInstancePROC) (jint, jint, jint, uintptr_t, jint, jint, jint);
-typedef void (APIENTRY *glBindImageTexturePROC) (jint, jint, jint, jboolean, jint, jint, jint);
-typedef void (APIENTRY *glMemoryBarrierPROC) (jint);
-typedef void (APIENTRY *glGetInternalformativPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glGetActiveAtomicCounterBufferivPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glTexStorage1DPROC) (jint, jint, jint, jint);
+typedef void (*glTexStorage2DPROC) (jint, jint, jint, jint, jint);
+typedef void (*glTexStorage3DPROC) (jint, jint, jint, jint, jint, jint);
+typedef void (*glDrawTransformFeedbackInstancedPROC) (jint, jint, jint);
+typedef void (*glDrawTransformFeedbackStreamInstancedPROC) (jint, jint, jint, jint);
+typedef void (*glDrawArraysInstancedBaseInstancePROC) (jint, jint, jint, jint, jint);
+typedef void (*glDrawElementsInstancedBaseInstancePROC) (jint, jint, jint, uintptr_t, jint, jint);
+typedef void (*glDrawElementsInstancedBaseVertexBaseInstancePROC) (jint, jint, jint, uintptr_t, jint, jint, jint);
+typedef void (*glBindImageTexturePROC) (jint, jint, jint, jboolean, jint, jint, jint);
+typedef void (*glMemoryBarrierPROC) (jint);
+typedef void (*glGetInternalformativPROC) (jint, jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

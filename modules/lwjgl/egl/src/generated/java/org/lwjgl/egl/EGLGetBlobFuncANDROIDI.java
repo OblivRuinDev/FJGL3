@@ -30,7 +30,6 @@ public interface EGLGetBlobFuncANDROIDI extends CallbackI {
         EGLGetBlobFuncANDROIDI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_pointer,
             ffi_type_pointer, ffi_type_pointer, ffi_type_pointer, ffi_type_pointer
         )

@@ -40,7 +40,7 @@ public class NVXImageViewHandle {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pInfo, __functionAddress);
+        return invokePPI(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code uint32_t vkGetImageViewHandleNVX(VkDevice device, VkImageViewHandleInfoNVX const * pInfo)} */
@@ -57,7 +57,7 @@ public class NVXImageViewHandle {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPJ(device.address(), pInfo, __functionAddress);
+        return invokePPJ(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code uint64_t vkGetImageViewHandle64NVX(VkDevice device, VkImageViewHandleInfoNVX const * pInfo)} */
@@ -74,7 +74,7 @@ public class NVXImageViewHandle {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), imageView, pProperties, __functionAddress);
+        return invokePJPI(device.address(), imageView, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetImageViewAddressNVX(VkDevice device, VkImageView imageView, VkImageViewAddressPropertiesNVX * pProperties)} */
@@ -92,7 +92,7 @@ public class NVXImageViewHandle {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJJJ(device.address(), imageViewIndex, samplerIndex, __functionAddress);
+        return invokePJJJ(device.address(), imageViewIndex, samplerIndex, __functionAddress);
     }
 
 }

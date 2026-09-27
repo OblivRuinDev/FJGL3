@@ -85,7 +85,7 @@ public class HTCBodyTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, bodyTracker, __functionAddress);
+        return invokePPPI(session.address(), createInfo, bodyTracker, __functionAddress);
     }
 
     /** {@code XrResult xrCreateBodyTrackerHTC(XrSession session, XrBodyTrackerCreateInfoHTC const * createInfo, XrBodyTrackerHTC * bodyTracker)} */
@@ -106,7 +106,7 @@ public class HTCBodyTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(bodyTracker.address(), __functionAddress);
+        return invokePI(bodyTracker.address(), __functionAddress);
     }
 
     // --- [ xrLocateBodyJointsHTC ] ---
@@ -118,7 +118,7 @@ public class HTCBodyTracking {
             check(__functionAddress);
             XrBodyJointsLocateInfoHTC.validate(locateInfo);
         }
-        return callPPPI(bodyTracker.address(), locateInfo, locations, __functionAddress);
+        return invokePPPI(bodyTracker.address(), locateInfo, locations, __functionAddress);
     }
 
     /** {@code XrResult xrLocateBodyJointsHTC(XrBodyTrackerHTC bodyTracker, XrBodyJointsLocateInfoHTC const * locateInfo, XrBodyJointLocationsHTC * locations)} */
@@ -135,7 +135,7 @@ public class HTCBodyTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(bodyTracker.address(), baseSpace.address(), skeletonGenerationId, skeleton, __functionAddress);
+        return invokePPPI(bodyTracker.address(), baseSpace.address(), skeletonGenerationId, skeleton, __functionAddress);
     }
 
     /** {@code XrResult xrGetBodySkeletonHTC(XrBodyTrackerHTC bodyTracker, XrSpace baseSpace, uint32_t skeletonGenerationId, XrBodySkeletonHTC * skeleton)} */

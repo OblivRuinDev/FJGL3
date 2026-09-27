@@ -98,7 +98,7 @@ public class NVXGpuMulticast2 {
             check(waitValueArray, waitSemaphoreArray.length);
             check(signalValueArray, signalSemaphoreArray.length);
         }
-        return callPPPPI(waitSemaphoreArray.length, waitSemaphoreArray, waitValueArray, srcGpu, dstGpuMask, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth, signalSemaphoreArray.length, signalSemaphoreArray, signalValueArray, __functionAddress);
+        return invokePPPPI(waitSemaphoreArray.length, waitSemaphoreArray, waitValueArray, srcGpu, dstGpuMask, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth, signalSemaphoreArray.length, signalSemaphoreArray, signalValueArray, __functionAddress);
     }
 
     /** {@code GLsync glAsyncCopyBufferSubDataNVX(GLsizei waitSemaphoreCount, GLuint const * waitSemaphoreArray, GLuint64 const * fenceValueArray, GLuint readGpu, GLbitfield writeGpuMask, GLuint readBuffer, GLuint writeBuffer, GLintptr readOffset, GLintptr writeOffset, GLsizeiptr size, GLsizei signalSemaphoreCount, GLuint const * signalSemaphoreArray, GLuint64 const * signalValueArray)} */
@@ -110,7 +110,7 @@ public class NVXGpuMulticast2 {
             check(fenceValueArray, waitSemaphoreArray.length);
             check(signalValueArray, signalSemaphoreArray.length);
         }
-        return callPPPPPPPP(waitSemaphoreArray.length, waitSemaphoreArray, fenceValueArray, readGpu, writeGpuMask, readBuffer, writeBuffer, readOffset, writeOffset, size, signalSemaphoreArray.length, signalSemaphoreArray, signalValueArray, __functionAddress);
+        return invokePPPPPPPP(waitSemaphoreArray.length, waitSemaphoreArray, fenceValueArray, readGpu, writeGpuMask, readBuffer, writeBuffer, readOffset, writeOffset, size, signalSemaphoreArray.length, signalSemaphoreArray, signalValueArray, __functionAddress);
     }
 
     /** {@code void glMulticastViewportArrayvNVX(GLuint gpu, GLuint first, GLsizei count, GLfloat const * v)} */
@@ -119,7 +119,7 @@ public class NVXGpuMulticast2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(gpu, first, v.length >> 2, v, __functionAddress);
+        invokePV(gpu, first, v.length >> 2, v, __functionAddress);
     }
 
     /** {@code void glMulticastScissorArrayvNVX(GLuint gpu, GLuint first, GLsizei count, GLint const * v)} */
@@ -128,7 +128,7 @@ public class NVXGpuMulticast2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(gpu, first, v.length >> 2, v, __functionAddress);
+        invokePV(gpu, first, v.length >> 2, v, __functionAddress);
     }
 
 }

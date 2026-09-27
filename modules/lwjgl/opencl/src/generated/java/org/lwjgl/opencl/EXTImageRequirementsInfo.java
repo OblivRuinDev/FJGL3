@@ -50,7 +50,7 @@ public class EXTImageRequirementsInfo {
             check(__functionAddress);
             check(context);
         }
-        return callPPJPPPPPI(context, properties, flags, image_format, image_desc, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPJPPPPPI(context, properties, flags, image_format, image_desc, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetImageRequirementsInfoEXT(cl_context context, cl_mem_properties const * properties, cl_mem_flags flags, cl_image_format const * image_format, cl_image_desc const * image_desc, cl_image_requirements_info_ext param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -93,7 +93,7 @@ public class EXTImageRequirementsInfo {
             checkNTSafe(properties);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPJPPPPPI(context, properties, flags, image_format.address(), image_desc.address(), param_name, (long)remainingSafe(param_value), memAddressSafe(param_value), memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPJPPPPPI(context, properties, flags, image_format.address(), image_desc.address(), param_name, (long)remainingSafe(param_value), memAddressSafe(param_value), memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetImageRequirementsInfoEXT(cl_context context, cl_mem_properties const * properties, cl_mem_flags flags, cl_image_format const * image_format, cl_image_desc const * image_desc, cl_image_requirements_info_ext param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -106,7 +106,7 @@ public class EXTImageRequirementsInfo {
             checkNTSafe(properties);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPJPPPPPI(context, properties, flags, image_format.address(), image_desc.address(), param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPJPPPPPI(context, properties, flags, image_format.address(), image_desc.address(), param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
 }

@@ -47,7 +47,7 @@ public class EXTFragmentDensityMapOffset {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pRenderingEndInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pRenderingEndInfo, __functionAddress);
     }
 
     /** {@code void vkCmdEndRendering2EXT(VkCommandBuffer commandBuffer, VkRenderingEndInfoKHR const * pRenderingEndInfo)} */

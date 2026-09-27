@@ -14,25 +14,25 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glGetBufferParameteri64vPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glDrawElementsBaseVertexPROC) (jint, jint, jint, uintptr_t, jint);
-typedef void (APIENTRY *glDrawRangeElementsBaseVertexPROC) (jint, jint, jint, jint, jint, uintptr_t, jint);
-typedef void (APIENTRY *glDrawElementsInstancedBaseVertexPROC) (jint, jint, jint, uintptr_t, jint, jint);
-typedef void (APIENTRY *glMultiDrawElementsBaseVertexPROC) (jint, uintptr_t, jint, uintptr_t, jint, uintptr_t);
-typedef void (APIENTRY *glProvokingVertexPROC) (jint);
-typedef void (APIENTRY *glTexImage2DMultisamplePROC) (jint, jint, jint, jint, jint, jboolean);
-typedef void (APIENTRY *glTexImage3DMultisamplePROC) (jint, jint, jint, jint, jint, jint, jboolean);
-typedef void (APIENTRY *glGetMultisamplefvPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glSampleMaskiPROC) (jint, jint);
-typedef void (APIENTRY *glFramebufferTexturePROC) (jint, jint, jint, jint);
-typedef uintptr_t (APIENTRY *glFenceSyncPROC) (jint, jint);
-typedef jboolean (APIENTRY *glIsSyncPROC) (uintptr_t);
-typedef void (APIENTRY *glDeleteSyncPROC) (uintptr_t);
-typedef jint (APIENTRY *glClientWaitSyncPROC) (uintptr_t, jint, jlong);
-typedef void (APIENTRY *glWaitSyncPROC) (uintptr_t, jint, jlong);
-typedef void (APIENTRY *glGetInteger64vPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGetInteger64i_vPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetSyncivPROC) (uintptr_t, jint, jint, uintptr_t, uintptr_t);
+typedef void (*glGetBufferParameteri64vPROC) (jint, jint, uintptr_t);
+typedef void (*glDrawElementsBaseVertexPROC) (jint, jint, jint, uintptr_t, jint);
+typedef void (*glDrawRangeElementsBaseVertexPROC) (jint, jint, jint, jint, jint, uintptr_t, jint);
+typedef void (*glDrawElementsInstancedBaseVertexPROC) (jint, jint, jint, uintptr_t, jint, jint);
+typedef void (*glMultiDrawElementsBaseVertexPROC) (jint, uintptr_t, jint, uintptr_t, jint, uintptr_t);
+typedef void (*glProvokingVertexPROC) (jint);
+typedef void (*glTexImage2DMultisamplePROC) (jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTexImage3DMultisamplePROC) (jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glGetMultisamplefvPROC) (jint, jint, uintptr_t);
+typedef void (*glSampleMaskiPROC) (jint, jint);
+typedef void (*glFramebufferTexturePROC) (jint, jint, jint, jint);
+typedef uintptr_t (*glFenceSyncPROC) (jint, jint);
+typedef jboolean (*glIsSyncPROC) (uintptr_t);
+typedef void (*glDeleteSyncPROC) (uintptr_t);
+typedef jint (*glClientWaitSyncPROC) (uintptr_t, jint, jlong);
+typedef void (*glWaitSyncPROC) (uintptr_t, jint, jlong);
+typedef void (*glGetInteger64vPROC) (jint, uintptr_t);
+typedef void (*glGetInteger64i_vPROC) (jint, jint, uintptr_t);
+typedef void (*glGetSyncivPROC) (uintptr_t, jint, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

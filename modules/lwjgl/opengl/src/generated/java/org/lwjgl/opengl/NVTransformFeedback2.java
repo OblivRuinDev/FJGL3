@@ -116,7 +116,7 @@ public class NVTransformFeedback2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(ids.length, ids, __functionAddress);
+        invokePV(ids.length, ids, __functionAddress);
     }
 
     /** {@code void glGenTransformFeedbacksNV(GLsizei n, GLuint * ids)} */
@@ -126,7 +126,7 @@ public class NVTransformFeedback2 {
             check(__functionAddress);
             check(ids, 1);
         }
-        callPV(ids.length, ids, __functionAddress);
+        invokePV(ids.length, ids, __functionAddress);
     }
 
 }

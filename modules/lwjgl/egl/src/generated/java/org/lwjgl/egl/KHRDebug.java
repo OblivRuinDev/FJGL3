@@ -54,7 +54,7 @@ public class KHRDebug {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(callback, attrib_list, __functionAddress);
+        return invokePPI(callback, attrib_list, __functionAddress);
     }
 
     /** {@code EGLint eglDebugMessageControlKHR(EGLDEBUGPROCKHR callback, EGLAttrib const * attrib_list)} */
@@ -74,7 +74,7 @@ public class KHRDebug {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(attribute, value, __functionAddress);
+        return invokePI(attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryDebugKHR(EGLint attribute, EGLAttrib * value)} */
@@ -98,7 +98,7 @@ public class KHRDebug {
             check(object);
             check(label);
         }
-        return callPPPI(display, objectType, object, label, __functionAddress);
+        return invokePPPI(display, objectType, object, label, __functionAddress);
     }
 
 }

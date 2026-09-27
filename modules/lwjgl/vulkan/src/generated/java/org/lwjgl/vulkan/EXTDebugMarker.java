@@ -78,7 +78,7 @@ public class EXTDebugMarker {
             check(__functionAddress);
             VkDebugMarkerObjectTagInfoEXT.validate(pTagInfo);
         }
-        return callPPI(device.address(), pTagInfo, __functionAddress);
+        return invokePPI(device.address(), pTagInfo, __functionAddress);
     }
 
     /** {@code VkResult vkDebugMarkerSetObjectTagEXT(VkDevice device, VkDebugMarkerObjectTagInfoEXT const * pTagInfo)} */
@@ -96,7 +96,7 @@ public class EXTDebugMarker {
             check(__functionAddress);
             VkDebugMarkerObjectNameInfoEXT.validate(pNameInfo);
         }
-        return callPPI(device.address(), pNameInfo, __functionAddress);
+        return invokePPI(device.address(), pNameInfo, __functionAddress);
     }
 
     /** {@code VkResult vkDebugMarkerSetObjectNameEXT(VkDevice device, VkDebugMarkerObjectNameInfoEXT const * pNameInfo)} */
@@ -114,7 +114,7 @@ public class EXTDebugMarker {
             check(__functionAddress);
             VkDebugMarkerMarkerInfoEXT.validate(pMarkerInfo);
         }
-        callPPV(commandBuffer.address(), pMarkerInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pMarkerInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDebugMarkerBeginEXT(VkCommandBuffer commandBuffer, VkDebugMarkerMarkerInfoEXT const * pMarkerInfo)} */
@@ -130,7 +130,7 @@ public class EXTDebugMarker {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), __functionAddress);
+        invokePV(commandBuffer.address(), __functionAddress);
     }
 
     // --- [ vkCmdDebugMarkerInsertEXT ] ---
@@ -142,7 +142,7 @@ public class EXTDebugMarker {
             check(__functionAddress);
             VkDebugMarkerMarkerInfoEXT.validate(pMarkerInfo);
         }
-        callPPV(commandBuffer.address(), pMarkerInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pMarkerInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDebugMarkerInsertEXT(VkCommandBuffer commandBuffer, VkDebugMarkerMarkerInfoEXT const * pMarkerInfo)} */

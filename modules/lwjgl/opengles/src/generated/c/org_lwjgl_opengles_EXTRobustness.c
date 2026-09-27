@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef jint (APIENTRY *glGetGraphicsResetStatusEXTPROC) (void);
-typedef void (APIENTRY *glReadnPixelsEXTPROC) (jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnUniformfvEXTPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnUniformivEXTPROC) (jint, jint, jint, uintptr_t);
+typedef jint (*glGetGraphicsResetStatusEXTPROC) (void);
+typedef void (*glReadnPixelsEXTPROC) (jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glGetnUniformfvEXTPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetnUniformivEXTPROC) (jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

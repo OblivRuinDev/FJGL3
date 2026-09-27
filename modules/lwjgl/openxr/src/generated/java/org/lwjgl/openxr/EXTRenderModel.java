@@ -67,7 +67,7 @@ public class EXTRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, renderModel, __functionAddress);
+        return invokePPPI(session.address(), createInfo, renderModel, __functionAddress);
     }
 
     /** {@code XrResult xrCreateRenderModelEXT(XrSession session, XrRenderModelCreateInfoEXT const * createInfo, XrRenderModelEXT * renderModel)} */
@@ -88,7 +88,7 @@ public class EXTRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(renderModel.address(), __functionAddress);
+        return invokePI(renderModel.address(), __functionAddress);
     }
 
     // --- [ xrGetRenderModelPropertiesEXT ] ---
@@ -99,7 +99,7 @@ public class EXTRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(renderModel.address(), getInfo, properties, __functionAddress);
+        return invokePPPI(renderModel.address(), getInfo, properties, __functionAddress);
     }
 
     /** {@code XrResult xrGetRenderModelPropertiesEXT(XrRenderModelEXT renderModel, XrRenderModelPropertiesGetInfoEXT const * getInfo, XrRenderModelPropertiesEXT * properties)} */
@@ -117,7 +117,7 @@ public class EXTRenderModel {
             check(__functionAddress);
             XrRenderModelSpaceCreateInfoEXT.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, space, __functionAddress);
+        return invokePPPI(session.address(), createInfo, space, __functionAddress);
     }
 
     /** {@code XrResult xrCreateRenderModelSpaceEXT(XrSession session, XrRenderModelSpaceCreateInfoEXT const * createInfo, XrSpace * space)} */
@@ -137,7 +137,7 @@ public class EXTRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, asset, __functionAddress);
+        return invokePPPI(session.address(), createInfo, asset, __functionAddress);
     }
 
     /** {@code XrResult xrCreateRenderModelAssetEXT(XrSession session, XrRenderModelAssetCreateInfoEXT const * createInfo, XrRenderModelAssetEXT * asset)} */
@@ -158,7 +158,7 @@ public class EXTRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(asset.address(), __functionAddress);
+        return invokePI(asset.address(), __functionAddress);
     }
 
     // --- [ xrGetRenderModelAssetDataEXT ] ---
@@ -169,7 +169,7 @@ public class EXTRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(asset.address(), getInfo, buffer, __functionAddress);
+        return invokePPPI(asset.address(), getInfo, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetRenderModelAssetDataEXT(XrRenderModelAssetEXT asset, XrRenderModelAssetDataGetInfoEXT const * getInfo, XrRenderModelAssetDataEXT * buffer)} */
@@ -186,7 +186,7 @@ public class EXTRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(asset.address(), getInfo, properties, __functionAddress);
+        return invokePPPI(asset.address(), getInfo, properties, __functionAddress);
     }
 
     /** {@code XrResult xrGetRenderModelAssetPropertiesEXT(XrRenderModelAssetEXT asset, XrRenderModelAssetPropertiesGetInfoEXT const * getInfo, XrRenderModelAssetPropertiesEXT * properties)} */
@@ -203,7 +203,7 @@ public class EXTRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(renderModel.address(), getInfo, state, __functionAddress);
+        return invokePPPI(renderModel.address(), getInfo, state, __functionAddress);
     }
 
     /** {@code XrResult xrGetRenderModelStateEXT(XrRenderModelEXT renderModel, XrRenderModelStateGetInfoEXT const * getInfo, XrRenderModelStateEXT * state)} */

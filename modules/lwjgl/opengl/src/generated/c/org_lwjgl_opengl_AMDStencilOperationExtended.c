@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glStencilOpValueAMDPROC) (jint, jint);
+typedef void (*glStencilOpValueAMDPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

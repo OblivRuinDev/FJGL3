@@ -47,7 +47,7 @@ public class MESADRMImage {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPP(dpy, attrib_list, __functionAddress);
+        return invokePPP(dpy, attrib_list, __functionAddress);
     }
 
     /** {@code EGLImageKHR eglCreateDRMImageMESA(EGLDisplay dpy, EGLint const * attrib_list)} */
@@ -69,7 +69,7 @@ public class MESADRMImage {
             check(dpy);
             check(image);
         }
-        return callPPPPPI(dpy, image, name, handle, stride, __functionAddress);
+        return invokePPPPPI(dpy, image, name, handle, stride, __functionAddress);
     }
 
     /** {@code EGLBoolean eglExportDRMImageMESA(EGLDisplay dpy, EGLImageKHR image, EGLint * name, EGLint * handle, EGLint * stride)} */
@@ -92,7 +92,7 @@ public class MESADRMImage {
             check(dpy);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPP(dpy, attrib_list, __functionAddress);
+        return invokePPP(dpy, attrib_list, __functionAddress);
     }
 
     /** {@code EGLBoolean eglExportDRMImageMESA(EGLDisplay dpy, EGLImageKHR image, EGLint * name, EGLint * handle, EGLint * stride)} */
@@ -107,7 +107,7 @@ public class MESADRMImage {
             checkSafe(handle, 1);
             checkSafe(stride, 1);
         }
-        return callPPPPPI(dpy, image, name, handle, stride, __functionAddress) != 0;
+        return invokePPPPPI(dpy, image, name, handle, stride, __functionAddress) != 0;
     }
 
 }

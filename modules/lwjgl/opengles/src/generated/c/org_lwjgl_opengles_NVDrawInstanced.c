@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glDrawArraysInstancedNVPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glDrawElementsInstancedNVPROC) (jint, jint, jint, uintptr_t, jint);
+typedef void (*glDrawArraysInstancedNVPROC) (jint, jint, jint, jint);
+typedef void (*glDrawElementsInstancedNVPROC) (jint, jint, jint, uintptr_t, jint);
 
 EXTERN_C_ENTER
 

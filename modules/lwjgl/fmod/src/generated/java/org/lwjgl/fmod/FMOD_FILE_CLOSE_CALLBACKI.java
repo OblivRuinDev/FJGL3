@@ -30,7 +30,6 @@ public interface FMOD_FILE_CLOSE_CALLBACKI extends CallbackI {
         FMOD_FILE_CLOSE_CALLBACKI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_uint32,
             ffi_type_pointer, ffi_type_pointer
         )

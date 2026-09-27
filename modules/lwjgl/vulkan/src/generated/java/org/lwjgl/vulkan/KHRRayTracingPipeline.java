@@ -88,7 +88,7 @@ public class KHRRayTracingPipeline {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPPPV(commandBuffer.address(), pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, width, height, depth, __functionAddress);
+        invokePPPPPV(commandBuffer.address(), pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, width, height, depth, __functionAddress);
     }
 
     /** {@code void vkCmdTraceRaysKHR(VkCommandBuffer commandBuffer, VkStridedDeviceAddressRegionKHR const * pRaygenShaderBindingTable, VkStridedDeviceAddressRegionKHR const * pMissShaderBindingTable, VkStridedDeviceAddressRegionKHR const * pHitShaderBindingTable, VkStridedDeviceAddressRegionKHR const * pCallableShaderBindingTable, uint32_t width, uint32_t height, uint32_t depth)} */
@@ -105,7 +105,7 @@ public class KHRRayTracingPipeline {
             check(__functionAddress);
             Struct.validate(pCreateInfos, createInfoCount, VkRayTracingPipelineCreateInfoKHR.SIZEOF, VkRayTracingPipelineCreateInfoKHR::validate);
         }
-        return callPJJPPPI(device.address(), deferredOperation, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines, __functionAddress);
+        return invokePJJPPPI(device.address(), deferredOperation, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines, __functionAddress);
     }
 
     /** {@code VkResult vkCreateRayTracingPipelinesKHR(VkDevice device, VkDeferredOperationKHR deferredOperation, VkPipelineCache pipelineCache, uint32_t createInfoCount, VkRayTracingPipelineCreateInfoKHR const * pCreateInfos, VkAllocationCallbacks const * pAllocator, VkPipeline * pPipelines)} */
@@ -125,7 +125,7 @@ public class KHRRayTracingPipeline {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), pipeline, firstGroup, groupCount, dataSize, pData, __functionAddress);
+        return invokePJPPI(device.address(), pipeline, firstGroup, groupCount, dataSize, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetRayTracingShaderGroupHandlesKHR(VkDevice device, VkPipeline pipeline, uint32_t firstGroup, uint32_t groupCount, size_t dataSize, void * pData)} */
@@ -142,7 +142,7 @@ public class KHRRayTracingPipeline {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), pipeline, firstGroup, groupCount, dataSize, pData, __functionAddress);
+        return invokePJPPI(device.address(), pipeline, firstGroup, groupCount, dataSize, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetRayTracingCaptureReplayShaderGroupHandlesKHR(VkDevice device, VkPipeline pipeline, uint32_t firstGroup, uint32_t groupCount, size_t dataSize, void * pData)} */
@@ -159,7 +159,7 @@ public class KHRRayTracingPipeline {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPPPJV(commandBuffer.address(), pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, indirectDeviceAddress, __functionAddress);
+        invokePPPPPJV(commandBuffer.address(), pRaygenShaderBindingTable, pMissShaderBindingTable, pHitShaderBindingTable, pCallableShaderBindingTable, indirectDeviceAddress, __functionAddress);
     }
 
     /** {@code void vkCmdTraceRaysIndirectKHR(VkCommandBuffer commandBuffer, VkStridedDeviceAddressRegionKHR const * pRaygenShaderBindingTable, VkStridedDeviceAddressRegionKHR const * pMissShaderBindingTable, VkStridedDeviceAddressRegionKHR const * pHitShaderBindingTable, VkStridedDeviceAddressRegionKHR const * pCallableShaderBindingTable, VkDeviceAddress indirectDeviceAddress)} */
@@ -176,7 +176,7 @@ public class KHRRayTracingPipeline {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJJ(device.address(), pipeline, group, groupShader, __functionAddress);
+        return invokePJJ(device.address(), pipeline, group, groupShader, __functionAddress);
     }
 
     // --- [ vkCmdSetRayTracingPipelineStackSizeKHR ] ---
@@ -187,7 +187,7 @@ public class KHRRayTracingPipeline {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), pipelineStackSize, __functionAddress);
+        invokePV(commandBuffer.address(), pipelineStackSize, __functionAddress);
     }
 
     /** {@code VkResult vkCreateRayTracingPipelinesKHR(VkDevice device, VkDeferredOperationKHR deferredOperation, VkPipelineCache pipelineCache, uint32_t createInfoCount, VkRayTracingPipelineCreateInfoKHR const * pCreateInfos, VkAllocationCallbacks const * pAllocator, VkPipeline * pPipelines)} */
@@ -199,7 +199,7 @@ public class KHRRayTracingPipeline {
             check(pPipelines, pCreateInfos.remaining());
             Struct.validate(pCreateInfos.address(), pCreateInfos.remaining(), VkRayTracingPipelineCreateInfoKHR.SIZEOF, VkRayTracingPipelineCreateInfoKHR::validate);
         }
-        return callPJJPPPI(device.address(), deferredOperation, pipelineCache, pCreateInfos.remaining(), pCreateInfos.address(), memAddressSafe(pAllocator), pPipelines, __functionAddress);
+        return invokePJJPPPI(device.address(), deferredOperation, pipelineCache, pCreateInfos.remaining(), pCreateInfos.address(), memAddressSafe(pAllocator), pPipelines, __functionAddress);
     }
 
 }

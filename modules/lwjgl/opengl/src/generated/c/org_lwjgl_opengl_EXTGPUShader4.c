@@ -14,40 +14,40 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glVertexAttribI1iEXTPROC) (jint, jint);
-typedef void (APIENTRY *glVertexAttribI2iEXTPROC) (jint, jint, jint);
-typedef void (APIENTRY *glVertexAttribI3iEXTPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glVertexAttribI4iEXTPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glVertexAttribI1uiEXTPROC) (jint, jint);
-typedef void (APIENTRY *glVertexAttribI2uiEXTPROC) (jint, jint, jint);
-typedef void (APIENTRY *glVertexAttribI3uiEXTPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glVertexAttribI4uiEXTPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glVertexAttribI1ivEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribI2ivEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribI3ivEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribI4ivEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribI1uivEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribI2uivEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribI3uivEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribI4uivEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribI4bvEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribI4svEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribI4ubvEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribI4usvEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribIPointerEXTPROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetVertexAttribIivEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetVertexAttribIuivEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetUniformuivEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glBindFragDataLocationEXTPROC) (jint, jint, uintptr_t);
-typedef jint (APIENTRY *glGetFragDataLocationEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glUniform1uiEXTPROC) (jint, jint);
-typedef void (APIENTRY *glUniform2uiEXTPROC) (jint, jint, jint);
-typedef void (APIENTRY *glUniform3uiEXTPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glUniform4uiEXTPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glUniform1uivEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform2uivEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform3uivEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform4uivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glVertexAttribI1iEXTPROC) (jint, jint);
+typedef void (*glVertexAttribI2iEXTPROC) (jint, jint, jint);
+typedef void (*glVertexAttribI3iEXTPROC) (jint, jint, jint, jint);
+typedef void (*glVertexAttribI4iEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glVertexAttribI1uiEXTPROC) (jint, jint);
+typedef void (*glVertexAttribI2uiEXTPROC) (jint, jint, jint);
+typedef void (*glVertexAttribI3uiEXTPROC) (jint, jint, jint, jint);
+typedef void (*glVertexAttribI4uiEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glVertexAttribI1ivEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribI2ivEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribI3ivEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribI4ivEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribI1uivEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribI2uivEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribI3uivEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribI4uivEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribI4bvEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribI4svEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribI4ubvEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribI4usvEXTPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribIPointerEXTPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glGetVertexAttribIivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glGetVertexAttribIuivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glGetUniformuivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glBindFragDataLocationEXTPROC) (jint, jint, uintptr_t);
+typedef jint (*glGetFragDataLocationEXTPROC) (jint, uintptr_t);
+typedef void (*glUniform1uiEXTPROC) (jint, jint);
+typedef void (*glUniform2uiEXTPROC) (jint, jint, jint);
+typedef void (*glUniform3uiEXTPROC) (jint, jint, jint, jint);
+typedef void (*glUniform4uiEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glUniform1uivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glUniform2uivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glUniform3uivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glUniform4uivEXTPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

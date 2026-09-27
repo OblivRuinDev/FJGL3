@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glPolygonOffsetClampEXTPROC) (jfloat, jfloat, jfloat);
+typedef void (*glPolygonOffsetClampEXTPROC) (jfloat, jfloat, jfloat);
 
 EXTERN_C_ENTER
 

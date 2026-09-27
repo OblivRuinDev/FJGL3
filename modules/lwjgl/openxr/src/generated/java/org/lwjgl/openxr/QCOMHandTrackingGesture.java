@@ -42,7 +42,7 @@ public class QCOMHandTrackingGesture {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(handTracker.address(), time, handGesture, __functionAddress);
+        return invokePJPI(handTracker.address(), time, handGesture, __functionAddress);
     }
 
     /** {@code XrResult xrGetHandGestureQCOM(XrHandTrackerEXT handTracker, XrTime time, XrHandGestureQCOM * handGesture)} */

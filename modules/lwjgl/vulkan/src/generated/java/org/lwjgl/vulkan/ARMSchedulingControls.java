@@ -47,7 +47,7 @@ public class ARMSchedulingControls {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pDispatchParameters, __functionAddress);
+        invokePPV(commandBuffer.address(), pDispatchParameters, __functionAddress);
     }
 
     /** {@code void vkCmdSetDispatchParametersARM(VkCommandBuffer commandBuffer, VkDispatchParametersARM const * pDispatchParameters)} */

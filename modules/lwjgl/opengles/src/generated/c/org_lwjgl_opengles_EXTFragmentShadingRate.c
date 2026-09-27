@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glShadingRateEXTPROC) (jint);
-typedef void (APIENTRY *glShadingRateCombinerOpsEXTPROC) (jint, jint);
-typedef void (APIENTRY *glFramebufferShadingRateEXTPROC) (jint, jint, jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glGetFragmentShadingRatesEXTPROC) (jint, jint, uintptr_t, uintptr_t);
+typedef void (*glShadingRateEXTPROC) (jint);
+typedef void (*glShadingRateCombinerOpsEXTPROC) (jint, jint);
+typedef void (*glFramebufferShadingRateEXTPROC) (jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glGetFragmentShadingRatesEXTPROC) (jint, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -64,7 +64,7 @@ public class KTXVulkan {
     /** {@code void ktxVulkanTexture_Destruct(ktxVulkanTexture * This, VkDevice device, VkAllocationCallbacks const * pAllocator)} */
     public static void nktxVulkanTexture_Destruct(long This, long device, long pAllocator) {
         long __functionAddress = Functions.VulkanTexture_Destruct;
-        callPPPV(This, device, pAllocator, __functionAddress);
+        invokePPPV(This, device, pAllocator, __functionAddress);
     }
 
     /** {@code void ktxVulkanTexture_Destruct(ktxVulkanTexture * This, VkDevice device, VkAllocationCallbacks const * pAllocator)} */
@@ -80,7 +80,7 @@ public class KTXVulkan {
         if (CHECKS) {
             ktxVulkanFunctions.validate(pFunctions);
         }
-        return callPPPPJPPP(instance, physicalDevice, device, queue, cmdPool, pAllocator, pFunctions, __functionAddress);
+        return invokePPPPJPPP(instance, physicalDevice, device, queue, cmdPool, pAllocator, pFunctions, __functionAddress);
     }
 
     /** {@code ktxVulkanDeviceInfo * ktxVulkanDeviceInfo_CreateEx(VkInstance instance, VkPhysicalDevice physicalDevice, VkDevice device, VkQueue queue, VkCommandPool cmdPool, VkAllocationCallbacks const * pAllocator, ktxVulkanFunctions const * pFunctions)} */
@@ -95,7 +95,7 @@ public class KTXVulkan {
     /** {@code ktxVulkanDeviceInfo * ktxVulkanDeviceInfo_Create(VkPhysicalDevice physicalDevice, VkDevice device, VkQueue queue, VkCommandPool cmdPool, VkAllocationCallbacks const * pAllocator)} */
     public static long nktxVulkanDeviceInfo_Create(long physicalDevice, long device, long queue, long cmdPool, long pAllocator) {
         long __functionAddress = Functions.VulkanDeviceInfo_Create;
-        return callPPPJPP(physicalDevice, device, queue, cmdPool, pAllocator, __functionAddress);
+        return invokePPPJPP(physicalDevice, device, queue, cmdPool, pAllocator, __functionAddress);
     }
 
     /** {@code ktxVulkanDeviceInfo * ktxVulkanDeviceInfo_Create(VkPhysicalDevice physicalDevice, VkDevice device, VkQueue queue, VkCommandPool cmdPool, VkAllocationCallbacks const * pAllocator)} */
@@ -110,7 +110,7 @@ public class KTXVulkan {
     /** {@code KTX_error_code ktxVulkanDeviceInfo_Construct(ktxVulkanDeviceInfo * This, VkPhysicalDevice physicalDevice, VkDevice device, VkQueue queue, VkCommandPool cmdPool, VkAllocationCallbacks const * pAllocator)} */
     public static int nktxVulkanDeviceInfo_Construct(long This, long physicalDevice, long device, long queue, long cmdPool, long pAllocator) {
         long __functionAddress = Functions.VulkanDeviceInfo_Construct;
-        return callPPPPJPI(This, physicalDevice, device, queue, cmdPool, pAllocator, __functionAddress);
+        return invokePPPPJPI(This, physicalDevice, device, queue, cmdPool, pAllocator, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxVulkanDeviceInfo_Construct(ktxVulkanDeviceInfo * This, VkPhysicalDevice physicalDevice, VkDevice device, VkQueue queue, VkCommandPool cmdPool, VkAllocationCallbacks const * pAllocator)} */
@@ -127,7 +127,7 @@ public class KTXVulkan {
         if (CHECKS) {
             ktxVulkanFunctions.validate(pFunctions);
         }
-        return callPPPPPJPPI(This, instance, physicalDevice, device, queue, cmdPool, pAllocator, pFunctions, __functionAddress);
+        return invokePPPPPJPPI(This, instance, physicalDevice, device, queue, cmdPool, pAllocator, pFunctions, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxVulkanDeviceInfo_ConstructEx(ktxVulkanDeviceInfo * This, VkInstance instance, VkPhysicalDevice physicalDevice, VkDevice device, VkQueue queue, VkCommandPool cmdPool, VkAllocationCallbacks const * pAllocator, ktxVulkanFunctions const * pFunctions)} */
@@ -141,7 +141,7 @@ public class KTXVulkan {
     /** {@code void ktxVulkanDeviceInfo_Destruct(ktxVulkanDeviceInfo * This)} */
     public static void nktxVulkanDeviceInfo_Destruct(long This) {
         long __functionAddress = Functions.VulkanDeviceInfo_Destruct;
-        callPV(This, __functionAddress);
+        invokePV(This, __functionAddress);
     }
 
     /** {@code void ktxVulkanDeviceInfo_Destruct(ktxVulkanDeviceInfo * This)} */
@@ -154,7 +154,7 @@ public class KTXVulkan {
     /** {@code void ktxVulkanDeviceInfo_Destroy(ktxVulkanDeviceInfo * This)} */
     public static void nktxVulkanDeviceInfo_Destroy(long This) {
         long __functionAddress = Functions.VulkanDeviceInfo_Destroy;
-        callPV(This, __functionAddress);
+        invokePV(This, __functionAddress);
     }
 
     /** {@code void ktxVulkanDeviceInfo_Destroy(ktxVulkanDeviceInfo * This)} */
@@ -167,7 +167,7 @@ public class KTXVulkan {
     /** {@code KTX_error_code ktxTexture_VkUploadEx_WithSuballocator(ktxTexture * This, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture, VkImageTiling tiling, VkImageUsageFlags usageFlags, VkImageLayout finalLayout, ktxVulkanTexture_subAllocatorCallbacks * subAllocatorCallbacks)} */
     public static int nktxTexture_VkUploadEx_WithSuballocator(long This, long vdi, long vkTexture, int tiling, int usageFlags, int finalLayout, long subAllocatorCallbacks) {
         long __functionAddress = Functions.Texture_VkUploadEx_WithSuballocator;
-        return callPPPPI(This, vdi, vkTexture, tiling, usageFlags, finalLayout, subAllocatorCallbacks, __functionAddress);
+        return invokePPPPI(This, vdi, vkTexture, tiling, usageFlags, finalLayout, subAllocatorCallbacks, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture_VkUploadEx_WithSuballocator(ktxTexture * This, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture, VkImageTiling tiling, VkImageUsageFlags usageFlags, VkImageLayout finalLayout, ktxVulkanTexture_subAllocatorCallbacks * subAllocatorCallbacks)} */
@@ -181,7 +181,7 @@ public class KTXVulkan {
     /** {@code KTX_error_code ktxTexture_VkUploadEx(ktxTexture * This, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture, VkImageTiling tiling, VkImageUsageFlags usageFlags, VkImageLayout finalLayout)} */
     public static int nktxTexture_VkUploadEx(long This, long vdi, long vkTexture, int tiling, int usageFlags, int finalLayout) {
         long __functionAddress = Functions.Texture_VkUploadEx;
-        return callPPPI(This, vdi, vkTexture, tiling, usageFlags, finalLayout, __functionAddress);
+        return invokePPPI(This, vdi, vkTexture, tiling, usageFlags, finalLayout, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture_VkUploadEx(ktxTexture * This, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture, VkImageTiling tiling, VkImageUsageFlags usageFlags, VkImageLayout finalLayout)} */
@@ -195,7 +195,7 @@ public class KTXVulkan {
     /** {@code KTX_error_code ktxTexture_VkUpload(ktxTexture * texture, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture)} */
     public static int nktxTexture_VkUpload(long texture, long vdi, long vkTexture) {
         long __functionAddress = Functions.Texture_VkUpload;
-        return callPPPI(texture, vdi, vkTexture, __functionAddress);
+        return invokePPPI(texture, vdi, vkTexture, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture_VkUpload(ktxTexture * texture, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture)} */
@@ -209,7 +209,7 @@ public class KTXVulkan {
     /** {@code KTX_error_code ktxTexture1_VkUploadEx_WithSuballocator(ktxTexture1 * This, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture, VkImageTiling tiling, VkImageUsageFlags usageFlags, VkImageLayout finalLayout, ktxVulkanTexture_subAllocatorCallbacks * subAllocatorCallbacks)} */
     public static int nktxTexture1_VkUploadEx_WithSuballocator(long This, long vdi, long vkTexture, int tiling, int usageFlags, int finalLayout, long subAllocatorCallbacks) {
         long __functionAddress = Functions.Texture1_VkUploadEx_WithSuballocator;
-        return callPPPPI(This, vdi, vkTexture, tiling, usageFlags, finalLayout, subAllocatorCallbacks, __functionAddress);
+        return invokePPPPI(This, vdi, vkTexture, tiling, usageFlags, finalLayout, subAllocatorCallbacks, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_VkUploadEx_WithSuballocator(ktxTexture1 * This, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture, VkImageTiling tiling, VkImageUsageFlags usageFlags, VkImageLayout finalLayout, ktxVulkanTexture_subAllocatorCallbacks * subAllocatorCallbacks)} */
@@ -223,7 +223,7 @@ public class KTXVulkan {
     /** {@code KTX_error_code ktxTexture1_VkUploadEx(ktxTexture1 * This, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture, VkImageTiling tiling, VkImageUsageFlags usageFlags, VkImageLayout finalLayout)} */
     public static int nktxTexture1_VkUploadEx(long This, long vdi, long vkTexture, int tiling, int usageFlags, int finalLayout) {
         long __functionAddress = Functions.Texture1_VkUploadEx;
-        return callPPPI(This, vdi, vkTexture, tiling, usageFlags, finalLayout, __functionAddress);
+        return invokePPPI(This, vdi, vkTexture, tiling, usageFlags, finalLayout, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_VkUploadEx(ktxTexture1 * This, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture, VkImageTiling tiling, VkImageUsageFlags usageFlags, VkImageLayout finalLayout)} */
@@ -237,7 +237,7 @@ public class KTXVulkan {
     /** {@code KTX_error_code ktxTexture1_VkUpload(ktxTexture1 * texture, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture)} */
     public static int nktxTexture1_VkUpload(long texture, long vdi, long vkTexture) {
         long __functionAddress = Functions.Texture1_VkUpload;
-        return callPPPI(texture, vdi, vkTexture, __functionAddress);
+        return invokePPPI(texture, vdi, vkTexture, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_VkUpload(ktxTexture1 * texture, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture)} */
@@ -251,7 +251,7 @@ public class KTXVulkan {
     /** {@code KTX_error_code ktxTexture2_VkUploadEx_WithSuballocator(ktxTexture2 * This, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture, VkImageTiling tiling, VkImageUsageFlags usageFlags, VkImageLayout finalLayout, ktxVulkanTexture_subAllocatorCallbacks * subAllocatorCallbacks)} */
     public static int nktxTexture2_VkUploadEx_WithSuballocator(long This, long vdi, long vkTexture, int tiling, int usageFlags, int finalLayout, long subAllocatorCallbacks) {
         long __functionAddress = Functions.Texture2_VkUploadEx_WithSuballocator;
-        return callPPPPI(This, vdi, vkTexture, tiling, usageFlags, finalLayout, subAllocatorCallbacks, __functionAddress);
+        return invokePPPPI(This, vdi, vkTexture, tiling, usageFlags, finalLayout, subAllocatorCallbacks, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_VkUploadEx_WithSuballocator(ktxTexture2 * This, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture, VkImageTiling tiling, VkImageUsageFlags usageFlags, VkImageLayout finalLayout, ktxVulkanTexture_subAllocatorCallbacks * subAllocatorCallbacks)} */
@@ -265,7 +265,7 @@ public class KTXVulkan {
     /** {@code KTX_error_code ktxTexture2_VkUploadEx(ktxTexture2 * This, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture, VkImageTiling tiling, VkImageUsageFlags usageFlags, VkImageLayout finalLayout)} */
     public static int nktxTexture2_VkUploadEx(long This, long vdi, long vkTexture, int tiling, int usageFlags, int finalLayout) {
         long __functionAddress = Functions.Texture2_VkUploadEx;
-        return callPPPI(This, vdi, vkTexture, tiling, usageFlags, finalLayout, __functionAddress);
+        return invokePPPI(This, vdi, vkTexture, tiling, usageFlags, finalLayout, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_VkUploadEx(ktxTexture2 * This, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture, VkImageTiling tiling, VkImageUsageFlags usageFlags, VkImageLayout finalLayout)} */
@@ -279,7 +279,7 @@ public class KTXVulkan {
     /** {@code KTX_error_code ktxTexture2_VkUpload(ktxTexture2 * texture, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture)} */
     public static int nktxTexture2_VkUpload(long texture, long vdi, long vkTexture) {
         long __functionAddress = Functions.Texture2_VkUpload;
-        return callPPPI(texture, vdi, vkTexture, __functionAddress);
+        return invokePPPI(texture, vdi, vkTexture, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_VkUpload(ktxTexture2 * texture, ktxVulkanDeviceInfo * vdi, ktxVulkanTexture * vkTexture)} */
@@ -293,7 +293,7 @@ public class KTXVulkan {
     /** {@code VkFormat ktxTexture_GetVkFormat(ktxTexture * This)} */
     public static int nktxTexture_GetVkFormat(long This) {
         long __functionAddress = Functions.Texture_GetVkFormat;
-        return callPI(This, __functionAddress);
+        return invokePI(This, __functionAddress);
     }
 
     /** {@code VkFormat ktxTexture_GetVkFormat(ktxTexture * This)} */
@@ -307,7 +307,7 @@ public class KTXVulkan {
     /** {@code VkFormat ktxTexture1_GetVkFormat(ktxTexture1 * This)} */
     public static int nktxTexture1_GetVkFormat(long This) {
         long __functionAddress = Functions.Texture1_GetVkFormat;
-        return callPI(This, __functionAddress);
+        return invokePI(This, __functionAddress);
     }
 
     /** {@code VkFormat ktxTexture1_GetVkFormat(ktxTexture1 * This)} */
@@ -321,7 +321,7 @@ public class KTXVulkan {
     /** {@code VkFormat ktxTexture2_GetVkFormat(ktxTexture2 * This)} */
     public static int nktxTexture2_GetVkFormat(long This) {
         long __functionAddress = Functions.Texture2_GetVkFormat;
-        return callPI(This, __functionAddress);
+        return invokePI(This, __functionAddress);
     }
 
     /** {@code VkFormat ktxTexture2_GetVkFormat(ktxTexture2 * This)} */

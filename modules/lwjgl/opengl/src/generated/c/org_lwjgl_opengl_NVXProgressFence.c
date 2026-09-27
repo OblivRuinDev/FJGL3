@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef jint (APIENTRY *glCreateProgressFenceNVXPROC) (void);
-typedef void (APIENTRY *glSignalSemaphoreui64NVXPROC) (jint, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glWaitSemaphoreui64NVXPROC) (jint, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glClientWaitSemaphoreui64NVXPROC) (jint, uintptr_t, uintptr_t);
+typedef jint (*glCreateProgressFenceNVXPROC) (void);
+typedef void (*glSignalSemaphoreui64NVXPROC) (jint, jint, uintptr_t, uintptr_t);
+typedef void (*glWaitSemaphoreui64NVXPROC) (jint, jint, uintptr_t, uintptr_t);
+typedef void (*glClientWaitSemaphoreui64NVXPROC) (jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

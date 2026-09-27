@@ -101,7 +101,7 @@ public class MLFacialExpression {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, facialExpressionClient, __functionAddress);
+        return invokePPPI(session.address(), createInfo, facialExpressionClient, __functionAddress);
     }
 
     /** {@code XrResult xrCreateFacialExpressionClientML(XrSession session, XrFacialExpressionClientCreateInfoML const * createInfo, XrFacialExpressionClientML * facialExpressionClient)} */
@@ -122,7 +122,7 @@ public class MLFacialExpression {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(facialExpressionClient.address(), __functionAddress);
+        return invokePI(facialExpressionClient.address(), __functionAddress);
     }
 
     // --- [ xrGetFacialExpressionBlendShapePropertiesML ] ---
@@ -133,7 +133,7 @@ public class MLFacialExpression {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(facialExpressionClient.address(), blendShapeGetInfo, blendShapeCount, blendShapes, __functionAddress);
+        return invokePPPI(facialExpressionClient.address(), blendShapeGetInfo, blendShapeCount, blendShapes, __functionAddress);
     }
 
     /** {@code XrResult xrGetFacialExpressionBlendShapePropertiesML(XrFacialExpressionClientML facialExpressionClient, XrFacialExpressionBlendShapeGetInfoML const * blendShapeGetInfo, uint32_t blendShapeCount, XrFacialExpressionBlendShapePropertiesML * blendShapes)} */

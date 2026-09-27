@@ -14,13 +14,13 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glGenSemaphoresEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDeleteSemaphoresEXTPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsSemaphoreEXTPROC) (jint);
-typedef void (APIENTRY *glSemaphoreParameterui64vEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetSemaphoreParameterui64vEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glWaitSemaphoreEXTPROC) (jint, jint, uintptr_t, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glSignalSemaphoreEXTPROC) (jint, jint, uintptr_t, jint, uintptr_t, uintptr_t);
+typedef void (*glGenSemaphoresEXTPROC) (jint, uintptr_t);
+typedef void (*glDeleteSemaphoresEXTPROC) (jint, uintptr_t);
+typedef jboolean (*glIsSemaphoreEXTPROC) (jint);
+typedef void (*glSemaphoreParameterui64vEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glGetSemaphoreParameterui64vEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glWaitSemaphoreEXTPROC) (jint, jint, uintptr_t, jint, uintptr_t, uintptr_t);
+typedef void (*glSignalSemaphoreEXTPROC) (jint, jint, uintptr_t, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

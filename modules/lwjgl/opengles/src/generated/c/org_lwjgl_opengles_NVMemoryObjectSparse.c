@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glBufferPageCommitmentMemNVPROC) (jint, uintptr_t, uintptr_t, jint, jlong, jboolean);
-typedef void (APIENTRY *glNamedBufferPageCommitmentMemNVPROC) (jint, uintptr_t, uintptr_t, jint, jlong, jboolean);
-typedef void (APIENTRY *glTexPageCommitmentMemNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jlong, jboolean);
-typedef void (APIENTRY *glTexturePageCommitmentMemNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jlong, jboolean);
+typedef void (*glBufferPageCommitmentMemNVPROC) (jint, uintptr_t, uintptr_t, jint, jlong, jboolean);
+typedef void (*glNamedBufferPageCommitmentMemNVPROC) (jint, uintptr_t, uintptr_t, jint, jlong, jboolean);
+typedef void (*glTexPageCommitmentMemNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jlong, jboolean);
+typedef void (*glTexturePageCommitmentMemNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jlong, jboolean);
 
 EXTERN_C_ENTER
 

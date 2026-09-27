@@ -204,7 +204,7 @@ public class EXTSemaphore {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(semaphores.length, semaphores, __functionAddress);
+        invokePV(semaphores.length, semaphores, __functionAddress);
     }
 
     /** {@code void glDeleteSemaphoresEXT(GLsizei n, GLuint const * semaphores)} */
@@ -213,7 +213,7 @@ public class EXTSemaphore {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(semaphores.length, semaphores, __functionAddress);
+        invokePV(semaphores.length, semaphores, __functionAddress);
     }
 
     /** {@code void glSemaphoreParameterui64vEXT(GLuint semaphore, GLenum pname, GLuint64 const * params)} */
@@ -223,7 +223,7 @@ public class EXTSemaphore {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(semaphore, pname, params, __functionAddress);
+        invokePV(semaphore, pname, params, __functionAddress);
     }
 
     /** {@code void glGetSemaphoreParameterui64vEXT(GLuint semaphore, GLenum pname, GLuint64 * params)} */
@@ -233,7 +233,7 @@ public class EXTSemaphore {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(semaphore, pname, params, __functionAddress);
+        invokePV(semaphore, pname, params, __functionAddress);
     }
 
     /** {@code void glWaitSemaphoreEXT(GLuint semaphore, GLuint numBufferBarriers, GLuint const * buffers, GLuint numTextureBarriers, GLuint const * textures, GLenum const * srcLayouts)} */
@@ -243,7 +243,7 @@ public class EXTSemaphore {
             check(__functionAddress);
             check(srcLayouts, textures.length);
         }
-        callPPPV(semaphore, buffers.length, buffers, textures.length, textures, srcLayouts, __functionAddress);
+        invokePPPV(semaphore, buffers.length, buffers, textures.length, textures, srcLayouts, __functionAddress);
     }
 
     /** {@code void glSignalSemaphoreEXT(GLuint semaphore, GLuint numBufferBarriers, GLuint const * buffers, GLuint numTextureBarriers, GLuint const * textures, GLenum const * dstLayouts)} */
@@ -253,7 +253,7 @@ public class EXTSemaphore {
             check(__functionAddress);
             check(dstLayouts, textures.length);
         }
-        callPPPV(semaphore, buffers.length, buffers, textures.length, textures, dstLayouts, __functionAddress);
+        invokePPPV(semaphore, buffers.length, buffers, textures.length, textures, dstLayouts, __functionAddress);
     }
 
 }

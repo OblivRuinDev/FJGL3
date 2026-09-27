@@ -61,7 +61,7 @@ public class FBRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), pathCapacityInput, pathCountOutput, paths, __functionAddress);
+        return invokePPPI(session.address(), pathCapacityInput, pathCountOutput, paths, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateRenderModelPathsFB(XrSession session, uint32_t pathCapacityInput, uint32_t * pathCountOutput, XrRenderModelPathInfoFB * paths)} */
@@ -81,7 +81,7 @@ public class FBRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), path, properties, __functionAddress);
+        return invokePJPI(session.address(), path, properties, __functionAddress);
     }
 
     /** {@code XrResult xrGetRenderModelPropertiesFB(XrSession session, XrPath path, XrRenderModelPropertiesFB * properties)} */
@@ -98,7 +98,7 @@ public class FBRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), info, buffer, __functionAddress);
+        return invokePPPI(session.address(), info, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrLoadRenderModelFB(XrSession session, XrRenderModelLoadInfoFB const * info, XrRenderModelBufferFB * buffer)} */

@@ -118,7 +118,7 @@ public class ARBMatrixPalette {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(indices.length, indices, __functionAddress);
+        invokePV(indices.length, indices, __functionAddress);
     }
 
     /** {@code void glMatrixIndexusvARB(GLint size, GLushort * indices)} */
@@ -127,7 +127,7 @@ public class ARBMatrixPalette {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(indices.length, indices, __functionAddress);
+        invokePV(indices.length, indices, __functionAddress);
     }
 
 }

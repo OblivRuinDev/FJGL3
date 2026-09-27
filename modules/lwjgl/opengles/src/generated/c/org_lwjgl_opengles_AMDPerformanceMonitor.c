@@ -14,17 +14,17 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glGetPerfMonitorGroupsAMDPROC) (uintptr_t, jint, uintptr_t);
-typedef void (APIENTRY *glGetPerfMonitorCountersAMDPROC) (jint, uintptr_t, uintptr_t, jint, uintptr_t);
-typedef void (APIENTRY *glGetPerfMonitorGroupStringAMDPROC) (jint, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetPerfMonitorCounterStringAMDPROC) (jint, jint, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetPerfMonitorCounterInfoAMDPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGenPerfMonitorsAMDPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDeletePerfMonitorsAMDPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glSelectPerfMonitorCountersAMDPROC) (jint, jboolean, jint, jint, uintptr_t);
-typedef void (APIENTRY *glBeginPerfMonitorAMDPROC) (jint);
-typedef void (APIENTRY *glEndPerfMonitorAMDPROC) (jint);
-typedef void (APIENTRY *glGetPerfMonitorCounterDataAMDPROC) (jint, jint, jint, uintptr_t, uintptr_t);
+typedef void (*glGetPerfMonitorGroupsAMDPROC) (uintptr_t, jint, uintptr_t);
+typedef void (*glGetPerfMonitorCountersAMDPROC) (jint, uintptr_t, uintptr_t, jint, uintptr_t);
+typedef void (*glGetPerfMonitorGroupStringAMDPROC) (jint, jint, uintptr_t, uintptr_t);
+typedef void (*glGetPerfMonitorCounterStringAMDPROC) (jint, jint, jint, uintptr_t, uintptr_t);
+typedef void (*glGetPerfMonitorCounterInfoAMDPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGenPerfMonitorsAMDPROC) (jint, uintptr_t);
+typedef void (*glDeletePerfMonitorsAMDPROC) (jint, uintptr_t);
+typedef void (*glSelectPerfMonitorCountersAMDPROC) (jint, jboolean, jint, jint, uintptr_t);
+typedef void (*glBeginPerfMonitorAMDPROC) (jint);
+typedef void (*glEndPerfMonitorAMDPROC) (jint);
+typedef void (*glGetPerfMonitorCounterDataAMDPROC) (jint, jint, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

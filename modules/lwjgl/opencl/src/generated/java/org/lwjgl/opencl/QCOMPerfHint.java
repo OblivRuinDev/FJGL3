@@ -41,7 +41,7 @@ public class QCOMPerfHint {
             check(__functionAddress);
             check(context);
         }
-        return callPI(context, perf_hint, __functionAddress);
+        return invokePI(context, perf_hint, __functionAddress);
     }
 
 }

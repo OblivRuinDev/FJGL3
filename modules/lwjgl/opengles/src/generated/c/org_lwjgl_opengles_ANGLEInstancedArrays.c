@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glDrawArraysInstancedANGLEPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glDrawElementsInstancedANGLEPROC) (jint, jint, jint, uintptr_t, jint);
-typedef void (APIENTRY *glVertexAttribDivisorANGLEPROC) (jint, jint);
+typedef void (*glDrawArraysInstancedANGLEPROC) (jint, jint, jint, jint);
+typedef void (*glDrawElementsInstancedANGLEPROC) (jint, jint, jint, uintptr_t, jint);
+typedef void (*glVertexAttribDivisorANGLEPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBindImageTextureEXTPROC) (jint, jint, jint, jboolean, jint, jint, jint);
-typedef void (APIENTRY *glMemoryBarrierEXTPROC) (jint);
+typedef void (*glBindImageTextureEXTPROC) (jint, jint, jint, jboolean, jint, jint, jint);
+typedef void (*glMemoryBarrierEXTPROC) (jint);
 
 EXTERN_C_ENTER
 

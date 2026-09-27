@@ -54,7 +54,7 @@ public class NVScissorExclusive {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(first, v.length >> 2, v, __functionAddress);
+        invokePV(first, v.length >> 2, v, __functionAddress);
     }
 
 }

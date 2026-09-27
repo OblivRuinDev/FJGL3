@@ -96,7 +96,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, capabilityCapacityInput, capabilityCountOutput, capabilities, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, capabilityCapacityInput, capabilityCountOutput, capabilities, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSpatialCapabilitiesEXT(XrInstance instance, XrSystemId systemId, uint32_t capabilityCapacityInput, uint32_t * capabilityCountOutput, XrSpatialCapabilityEXT * capabilities)} */
@@ -116,7 +116,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(instance.address(), systemId, capability, capabilityComponents, __functionAddress);
+        return invokePJPI(instance.address(), systemId, capability, capabilityComponents, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSpatialCapabilityComponentTypesEXT(XrInstance instance, XrSystemId systemId, XrSpatialCapabilityEXT capability, XrSpatialCapabilityComponentTypesEXT * capabilityComponents)} */
@@ -133,7 +133,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, capability, capabilityFeatureCapacityInput, capabilityFeatureCountOutput, capabilityFeatures, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, capability, capabilityFeatureCapacityInput, capabilityFeatureCountOutput, capabilityFeatures, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSpatialCapabilityFeaturesEXT(XrInstance instance, XrSystemId systemId, XrSpatialCapabilityEXT capability, uint32_t capabilityFeatureCapacityInput, uint32_t * capabilityFeatureCountOutput, XrSpatialCapabilityFeatureEXT * capabilityFeatures)} */
@@ -154,7 +154,7 @@ public class EXTSpatialEntity {
             check(__functionAddress);
             XrSpatialContextCreateInfoEXT.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, future, __functionAddress);
+        return invokePPPI(session.address(), createInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialContextAsyncEXT(XrSession session, XrSpatialContextCreateInfoEXT const * createInfo, XrFutureEXT * future)} */
@@ -174,7 +174,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), future, completion, __functionAddress);
+        return invokePJPI(session.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialContextCompleteEXT(XrSession session, XrFutureEXT future, XrCreateSpatialContextCompletionEXT * completion)} */
@@ -192,7 +192,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(spatialContext.address(), __functionAddress);
+        return invokePI(spatialContext.address(), __functionAddress);
     }
 
     // --- [ xrCreateSpatialDiscoverySnapshotAsyncEXT ] ---
@@ -203,7 +203,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(spatialContext.address(), createInfo, future, __functionAddress);
+        return invokePPPI(spatialContext.address(), createInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialDiscoverySnapshotAsyncEXT(XrSpatialContextEXT spatialContext, XrSpatialDiscoverySnapshotCreateInfoEXT const * createInfo, XrFutureEXT * future)} */
@@ -224,7 +224,7 @@ public class EXTSpatialEntity {
             check(__functionAddress);
             XrCreateSpatialDiscoverySnapshotCompletionInfoEXT.validate(createSnapshotCompletionInfo);
         }
-        return callPPPI(spatialContext.address(), createSnapshotCompletionInfo, completion, __functionAddress);
+        return invokePPPI(spatialContext.address(), createSnapshotCompletionInfo, completion, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialDiscoverySnapshotCompleteEXT(XrSpatialContextEXT spatialContext, XrCreateSpatialDiscoverySnapshotCompletionInfoEXT const * createSnapshotCompletionInfo, XrCreateSpatialDiscoverySnapshotCompletionEXT * completion)} */
@@ -241,7 +241,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(snapshot.address(), queryCondition, queryResult, __functionAddress);
+        return invokePPPI(snapshot.address(), queryCondition, queryResult, __functionAddress);
     }
 
     /** {@code XrResult xrQuerySpatialComponentDataEXT(XrSpatialSnapshotEXT snapshot, XrSpatialComponentDataQueryConditionEXT const * queryCondition, XrSpatialComponentDataQueryResultEXT * queryResult)} */
@@ -259,7 +259,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(snapshot.address(), __functionAddress);
+        return invokePI(snapshot.address(), __functionAddress);
     }
 
     // --- [ xrCreateSpatialEntityFromIdEXT ] ---
@@ -270,7 +270,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(spatialContext.address(), createInfo, spatialEntity, __functionAddress);
+        return invokePPPI(spatialContext.address(), createInfo, spatialEntity, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialEntityFromIdEXT(XrSpatialContextEXT spatialContext, XrSpatialEntityFromIdCreateInfoEXT const * createInfo, XrSpatialEntityEXT * spatialEntity)} */
@@ -291,7 +291,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(spatialEntity.address(), __functionAddress);
+        return invokePI(spatialEntity.address(), __functionAddress);
     }
 
     // --- [ xrCreateSpatialUpdateSnapshotEXT ] ---
@@ -303,7 +303,7 @@ public class EXTSpatialEntity {
             check(__functionAddress);
             XrSpatialUpdateSnapshotCreateInfoEXT.validate(createInfo);
         }
-        return callPPPI(spatialContext.address(), createInfo, snapshot, __functionAddress);
+        return invokePPPI(spatialContext.address(), createInfo, snapshot, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialUpdateSnapshotEXT(XrSpatialContextEXT spatialContext, XrSpatialUpdateSnapshotCreateInfoEXT const * createInfo, XrSpatialSnapshotEXT * snapshot)} */
@@ -323,7 +323,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpatialBufferStringEXT(XrSpatialSnapshotEXT snapshot, XrSpatialBufferGetInfoEXT const * info, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, char * buffer)} */
@@ -343,7 +343,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpatialBufferUint8EXT(XrSpatialSnapshotEXT snapshot, XrSpatialBufferGetInfoEXT const * info, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, uint8_t * buffer)} */
@@ -363,7 +363,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpatialBufferUint16EXT(XrSpatialSnapshotEXT snapshot, XrSpatialBufferGetInfoEXT const * info, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, uint16_t * buffer)} */
@@ -383,7 +383,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpatialBufferUint32EXT(XrSpatialSnapshotEXT snapshot, XrSpatialBufferGetInfoEXT const * info, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, uint32_t * buffer)} */
@@ -403,7 +403,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpatialBufferFloatEXT(XrSpatialSnapshotEXT snapshot, XrSpatialBufferGetInfoEXT const * info, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, float * buffer)} */
@@ -423,7 +423,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpatialBufferVector2fEXT(XrSpatialSnapshotEXT snapshot, XrSpatialBufferGetInfoEXT const * info, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, XrVector2f * buffer)} */
@@ -443,7 +443,7 @@ public class EXTSpatialEntity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePPPPI(snapshot.address(), info, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpatialBufferVector3fEXT(XrSpatialSnapshotEXT snapshot, XrSpatialBufferGetInfoEXT const * info, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, XrVector3f * buffer)} */

@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glGetTranslatedShaderSourceANGLEPROC) (jint, jint, uintptr_t, uintptr_t);
+typedef void (*glGetTranslatedShaderSourceANGLEPROC) (jint, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

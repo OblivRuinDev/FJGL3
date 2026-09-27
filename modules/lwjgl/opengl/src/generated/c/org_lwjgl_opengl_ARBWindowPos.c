@@ -14,22 +14,22 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glWindowPos2iARBPROC) (jint, jint);
-typedef void (APIENTRY *glWindowPos2sARBPROC) (jshort, jshort);
-typedef void (APIENTRY *glWindowPos2fARBPROC) (jfloat, jfloat);
-typedef void (APIENTRY *glWindowPos2dARBPROC) (jdouble, jdouble);
-typedef void (APIENTRY *glWindowPos2ivARBPROC) (uintptr_t);
-typedef void (APIENTRY *glWindowPos2svARBPROC) (uintptr_t);
-typedef void (APIENTRY *glWindowPos2fvARBPROC) (uintptr_t);
-typedef void (APIENTRY *glWindowPos2dvARBPROC) (uintptr_t);
-typedef void (APIENTRY *glWindowPos3iARBPROC) (jint, jint, jint);
-typedef void (APIENTRY *glWindowPos3sARBPROC) (jshort, jshort, jshort);
-typedef void (APIENTRY *glWindowPos3fARBPROC) (jfloat, jfloat, jfloat);
-typedef void (APIENTRY *glWindowPos3dARBPROC) (jdouble, jdouble, jdouble);
-typedef void (APIENTRY *glWindowPos3ivARBPROC) (uintptr_t);
-typedef void (APIENTRY *glWindowPos3svARBPROC) (uintptr_t);
-typedef void (APIENTRY *glWindowPos3fvARBPROC) (uintptr_t);
-typedef void (APIENTRY *glWindowPos3dvARBPROC) (uintptr_t);
+typedef void (*glWindowPos2iARBPROC) (jint, jint);
+typedef void (*glWindowPos2sARBPROC) (jshort, jshort);
+typedef void (*glWindowPos2fARBPROC) (jfloat, jfloat);
+typedef void (*glWindowPos2dARBPROC) (jdouble, jdouble);
+typedef void (*glWindowPos2ivARBPROC) (uintptr_t);
+typedef void (*glWindowPos2svARBPROC) (uintptr_t);
+typedef void (*glWindowPos2fvARBPROC) (uintptr_t);
+typedef void (*glWindowPos2dvARBPROC) (uintptr_t);
+typedef void (*glWindowPos3iARBPROC) (jint, jint, jint);
+typedef void (*glWindowPos3sARBPROC) (jshort, jshort, jshort);
+typedef void (*glWindowPos3fARBPROC) (jfloat, jfloat, jfloat);
+typedef void (*glWindowPos3dARBPROC) (jdouble, jdouble, jdouble);
+typedef void (*glWindowPos3ivARBPROC) (uintptr_t);
+typedef void (*glWindowPos3svARBPROC) (uintptr_t);
+typedef void (*glWindowPos3fvARBPROC) (uintptr_t);
+typedef void (*glWindowPos3dvARBPROC) (uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -44,7 +44,7 @@ public class EXTDisplaySurfaceCounter {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(physicalDevice.address(), surface, pSurfaceCapabilities, __functionAddress);
+        return invokePJPI(physicalDevice.address(), surface, pSurfaceCapabilities, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceSurfaceCapabilities2EXT(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface, VkSurfaceCapabilities2EXT * pSurfaceCapabilities)} */

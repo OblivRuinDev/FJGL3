@@ -2922,7 +2922,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glMatrixLoaddEXT(GLenum matrixMode, GLdouble const * m)} */
@@ -2932,7 +2932,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glMatrixMultfEXT(GLenum matrixMode, GLfloat const * m)} */
@@ -2942,7 +2942,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glMatrixMultdEXT(GLenum matrixMode, GLdouble const * m)} */
@@ -2952,7 +2952,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glTextureParameterivEXT(GLuint texture, GLenum target, GLenum pname, GLint const * param)} */
@@ -2962,7 +2962,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(param, 4);
         }
-        callPV(texture, target, pname, param, __functionAddress);
+        invokePV(texture, target, pname, param, __functionAddress);
     }
 
     /** {@code void glTextureParameterfvEXT(GLuint texture, GLenum target, GLenum pname, GLfloat const * param)} */
@@ -2972,7 +2972,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(param, 4);
         }
-        callPV(texture, target, pname, param, __functionAddress);
+        invokePV(texture, target, pname, param, __functionAddress);
     }
 
     /** {@code void glTextureImage1DEXT(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -2981,7 +2981,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureImage1DEXT(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -2990,7 +2990,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureImage1DEXT(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -2999,7 +2999,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureImage1DEXT(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3008,7 +3008,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureImage2DEXT(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3017,7 +3017,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureImage2DEXT(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3026,7 +3026,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureImage2DEXT(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3035,7 +3035,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureImage2DEXT(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3044,7 +3044,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage1DEXT(GLuint texture, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -3053,7 +3053,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage1DEXT(GLuint texture, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -3062,7 +3062,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage1DEXT(GLuint texture, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -3071,7 +3071,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage1DEXT(GLuint texture, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -3080,7 +3080,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage2DEXT(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -3089,7 +3089,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage2DEXT(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -3098,7 +3098,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage2DEXT(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -3107,7 +3107,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage2DEXT(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -3116,7 +3116,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetTextureImageEXT(GLuint texture, GLenum target, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -3125,7 +3125,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetTextureImageEXT(GLuint texture, GLenum target, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -3134,7 +3134,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetTextureImageEXT(GLuint texture, GLenum target, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -3143,7 +3143,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetTextureImageEXT(GLuint texture, GLenum target, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -3152,7 +3152,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetTextureParameterfvEXT(GLuint texture, GLenum target, GLenum pname, GLfloat * params)} */
@@ -3162,7 +3162,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, target, pname, params, __functionAddress);
+        invokePV(texture, target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTextureParameterivEXT(GLuint texture, GLenum target, GLenum pname, GLint * params)} */
@@ -3172,7 +3172,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, target, pname, params, __functionAddress);
+        invokePV(texture, target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTextureLevelParameterfvEXT(GLuint texture, GLenum target, GLint level, GLenum pname, GLfloat * params)} */
@@ -3182,7 +3182,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, target, level, pname, params, __functionAddress);
+        invokePV(texture, target, level, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTextureLevelParameterivEXT(GLuint texture, GLenum target, GLint level, GLenum pname, GLint * params)} */
@@ -3192,7 +3192,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, target, level, pname, params, __functionAddress);
+        invokePV(texture, target, level, pname, params, __functionAddress);
     }
 
     /** {@code void glTextureImage3DEXT(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3201,7 +3201,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureImage3DEXT(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3210,7 +3210,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureImage3DEXT(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3219,7 +3219,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureImage3DEXT(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3228,7 +3228,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage3DEXT(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -3237,7 +3237,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage3DEXT(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -3246,7 +3246,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage3DEXT(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -3255,7 +3255,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage3DEXT(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -3264,7 +3264,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexCoordPointerEXT(GLenum texunit, GLint size, GLenum type, GLsizei stride, void const * pointer)} */
@@ -3273,7 +3273,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, size, type, stride, pointer, __functionAddress);
+        invokePV(texunit, size, type, stride, pointer, __functionAddress);
     }
 
     /** {@code void glMultiTexCoordPointerEXT(GLenum texunit, GLint size, GLenum type, GLsizei stride, void const * pointer)} */
@@ -3282,7 +3282,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, size, type, stride, pointer, __functionAddress);
+        invokePV(texunit, size, type, stride, pointer, __functionAddress);
     }
 
     /** {@code void glMultiTexCoordPointerEXT(GLenum texunit, GLint size, GLenum type, GLsizei stride, void const * pointer)} */
@@ -3291,7 +3291,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, size, type, stride, pointer, __functionAddress);
+        invokePV(texunit, size, type, stride, pointer, __functionAddress);
     }
 
     /** {@code void glMultiTexEnvfvEXT(GLenum texunit, GLenum target, GLenum pname, GLfloat const * params)} */
@@ -3301,7 +3301,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(texunit, target, pname, params, __functionAddress);
+        invokePV(texunit, target, pname, params, __functionAddress);
     }
 
     /** {@code void glMultiTexEnvivEXT(GLenum texunit, GLenum target, GLenum pname, GLint const * params)} */
@@ -3311,7 +3311,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(texunit, target, pname, params, __functionAddress);
+        invokePV(texunit, target, pname, params, __functionAddress);
     }
 
     /** {@code void glMultiTexGendvEXT(GLenum texunit, GLenum coord, GLenum pname, GLdouble const * params)} */
@@ -3321,7 +3321,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(texunit, coord, pname, params, __functionAddress);
+        invokePV(texunit, coord, pname, params, __functionAddress);
     }
 
     /** {@code void glMultiTexGenfvEXT(GLenum texunit, GLenum coord, GLenum pname, GLfloat const * params)} */
@@ -3331,7 +3331,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(texunit, coord, pname, params, __functionAddress);
+        invokePV(texunit, coord, pname, params, __functionAddress);
     }
 
     /** {@code void glMultiTexGenivEXT(GLenum texunit, GLenum coord, GLenum pname, GLint const * params)} */
@@ -3341,7 +3341,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(texunit, coord, pname, params, __functionAddress);
+        invokePV(texunit, coord, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMultiTexEnvfvEXT(GLenum texunit, GLenum target, GLenum pname, GLfloat * params)} */
@@ -3351,7 +3351,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texunit, target, pname, params, __functionAddress);
+        invokePV(texunit, target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMultiTexEnvivEXT(GLenum texunit, GLenum target, GLenum pname, GLint * params)} */
@@ -3361,7 +3361,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texunit, target, pname, params, __functionAddress);
+        invokePV(texunit, target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMultiTexGendvEXT(GLenum texunit, GLenum coord, GLenum pname, GLdouble * params)} */
@@ -3371,7 +3371,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texunit, coord, pname, params, __functionAddress);
+        invokePV(texunit, coord, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMultiTexGenfvEXT(GLenum texunit, GLenum coord, GLenum pname, GLfloat * params)} */
@@ -3381,7 +3381,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texunit, coord, pname, params, __functionAddress);
+        invokePV(texunit, coord, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMultiTexGenivEXT(GLenum texunit, GLenum coord, GLenum pname, GLint * params)} */
@@ -3391,7 +3391,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texunit, coord, pname, params, __functionAddress);
+        invokePV(texunit, coord, pname, params, __functionAddress);
     }
 
     /** {@code void glMultiTexParameterivEXT(GLenum texunit, GLenum target, GLenum pname, GLint const * param)} */
@@ -3401,7 +3401,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(param, 4);
         }
-        callPV(texunit, target, pname, param, __functionAddress);
+        invokePV(texunit, target, pname, param, __functionAddress);
     }
 
     /** {@code void glMultiTexParameterfvEXT(GLenum texunit, GLenum target, GLenum pname, GLfloat const * param)} */
@@ -3411,7 +3411,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(param, 4);
         }
-        callPV(texunit, target, pname, param, __functionAddress);
+        invokePV(texunit, target, pname, param, __functionAddress);
     }
 
     /** {@code void glMultiTexImage1DEXT(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3420,7 +3420,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexImage1DEXT(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3429,7 +3429,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexImage1DEXT(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3438,7 +3438,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexImage1DEXT(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3447,7 +3447,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, internalformat, width, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexImage2DEXT(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3456,7 +3456,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexImage2DEXT(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3465,7 +3465,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexImage2DEXT(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3474,7 +3474,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexImage2DEXT(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3483,7 +3483,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, internalformat, width, height, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexSubImage1DEXT(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -3492,7 +3492,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexSubImage1DEXT(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -3501,7 +3501,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexSubImage1DEXT(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -3510,7 +3510,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexSubImage1DEXT(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -3519,7 +3519,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexSubImage2DEXT(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -3528,7 +3528,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexSubImage2DEXT(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -3537,7 +3537,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexSubImage2DEXT(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -3546,7 +3546,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexSubImage2DEXT(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -3555,7 +3555,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetMultiTexImageEXT(GLenum texunit, GLenum target, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -3564,7 +3564,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetMultiTexImageEXT(GLenum texunit, GLenum target, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -3573,7 +3573,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetMultiTexImageEXT(GLenum texunit, GLenum target, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -3582,7 +3582,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetMultiTexImageEXT(GLenum texunit, GLenum target, GLint level, GLenum format, GLenum type, void * pixels)} */
@@ -3591,7 +3591,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetMultiTexParameterfvEXT(GLenum texunit, GLenum target, GLenum pname, GLfloat * params)} */
@@ -3601,7 +3601,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texunit, target, pname, params, __functionAddress);
+        invokePV(texunit, target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMultiTexParameterivEXT(GLenum texunit, GLenum target, GLenum pname, GLint * params)} */
@@ -3611,7 +3611,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texunit, target, pname, params, __functionAddress);
+        invokePV(texunit, target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMultiTexLevelParameterfvEXT(GLenum texunit, GLenum target, GLint level, GLenum pname, GLfloat * params)} */
@@ -3621,7 +3621,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texunit, target, level, pname, params, __functionAddress);
+        invokePV(texunit, target, level, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMultiTexLevelParameterivEXT(GLenum texunit, GLenum target, GLint level, GLenum pname, GLint * params)} */
@@ -3631,7 +3631,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texunit, target, level, pname, params, __functionAddress);
+        invokePV(texunit, target, level, pname, params, __functionAddress);
     }
 
     /** {@code void glMultiTexImage3DEXT(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3640,7 +3640,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexImage3DEXT(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3649,7 +3649,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexImage3DEXT(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3658,7 +3658,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexImage3DEXT(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -3667,7 +3667,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexSubImage3DEXT(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -3676,7 +3676,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexSubImage3DEXT(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -3685,7 +3685,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexSubImage3DEXT(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -3694,7 +3694,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glMultiTexSubImage3DEXT(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -3703,7 +3703,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glGetFloatIndexedvEXT(GLenum target, GLuint index, GLfloat * params)} */
@@ -3713,7 +3713,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, index, params, __functionAddress);
+        invokePV(target, index, params, __functionAddress);
     }
 
     /** {@code void glGetDoubleIndexedvEXT(GLenum target, GLuint index, GLdouble * params)} */
@@ -3723,7 +3723,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, index, params, __functionAddress);
+        invokePV(target, index, params, __functionAddress);
     }
 
     /** {@code void glGetFloati_vEXT(GLenum pname, GLuint index, GLfloat * params)} */
@@ -3733,7 +3733,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pname, index, params, __functionAddress);
+        invokePV(pname, index, params, __functionAddress);
     }
 
     /** {@code void glGetDoublei_vEXT(GLenum pname, GLuint index, GLdouble * params)} */
@@ -3743,7 +3743,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pname, index, params, __functionAddress);
+        invokePV(pname, index, params, __functionAddress);
     }
 
     /** {@code void glGetIntegerIndexedvEXT(GLenum target, GLuint index, GLint * data)} */
@@ -3758,7 +3758,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(program, target, index, params, __functionAddress);
+        invokePV(program, target, index, params, __functionAddress);
     }
 
     /** {@code void glNamedProgramLocalParameter4fvEXT(GLuint program, GLenum target, GLuint index, GLfloat const * params)} */
@@ -3768,7 +3768,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(program, target, index, params, __functionAddress);
+        invokePV(program, target, index, params, __functionAddress);
     }
 
     /** {@code void glGetNamedProgramLocalParameterdvEXT(GLuint program, GLenum target, GLuint index, GLdouble * params)} */
@@ -3778,7 +3778,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(program, target, index, params, __functionAddress);
+        invokePV(program, target, index, params, __functionAddress);
     }
 
     /** {@code void glGetNamedProgramLocalParameterfvEXT(GLuint program, GLenum target, GLuint index, GLfloat * params)} */
@@ -3788,7 +3788,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(program, target, index, params, __functionAddress);
+        invokePV(program, target, index, params, __functionAddress);
     }
 
     /** {@code void glGetNamedProgramivEXT(GLuint program, GLenum target, GLenum pname, GLint * params)} */
@@ -3798,7 +3798,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, target, pname, params, __functionAddress);
+        invokePV(program, target, pname, params, __functionAddress);
     }
 
     /** {@code void glMatrixLoadTransposefEXT(GLenum matrixMode, GLfloat const * m)} */
@@ -3808,7 +3808,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glMatrixLoadTransposedEXT(GLenum matrixMode, GLdouble const * m)} */
@@ -3818,7 +3818,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glMatrixMultTransposefEXT(GLenum matrixMode, GLfloat const * m)} */
@@ -3828,7 +3828,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glMatrixMultTransposedEXT(GLenum matrixMode, GLdouble const * m)} */
@@ -3838,7 +3838,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(matrixMode, m, __functionAddress);
+        invokePV(matrixMode, m, __functionAddress);
     }
 
     /** {@code void glNamedBufferDataEXT(GLuint buffer, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -3847,7 +3847,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 1, data, usage, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 1, data, usage, __functionAddress);
     }
 
     /** {@code void glNamedBufferDataEXT(GLuint buffer, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -3856,7 +3856,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
     }
 
     /** {@code void glNamedBufferDataEXT(GLuint buffer, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -3865,7 +3865,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
     }
 
     /** {@code void glNamedBufferDataEXT(GLuint buffer, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -3874,7 +3874,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 3, data, usage, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 3, data, usage, __functionAddress);
     }
 
     /** {@code void glNamedBufferSubDataEXT(GLuint buffer, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -3883,7 +3883,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
     }
 
     /** {@code void glNamedBufferSubDataEXT(GLuint buffer, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -3892,7 +3892,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glNamedBufferSubDataEXT(GLuint buffer, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -3901,7 +3901,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glNamedBufferSubDataEXT(GLuint buffer, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -3910,7 +3910,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferParameterivEXT(GLuint buffer, GLenum pname, GLint * params)} */
@@ -3920,7 +3920,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(buffer, pname, params, __functionAddress);
+        invokePV(buffer, pname, params, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferSubDataEXT(GLuint buffer, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -3929,7 +3929,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferSubDataEXT(GLuint buffer, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -3938,7 +3938,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferSubDataEXT(GLuint buffer, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -3947,7 +3947,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferSubDataEXT(GLuint buffer, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -3956,7 +3956,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glProgramUniform1fvEXT(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -3965,7 +3965,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2fvEXT(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -3974,7 +3974,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3fvEXT(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -3983,7 +3983,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4fvEXT(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -3992,7 +3992,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform1ivEXT(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -4001,7 +4001,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2ivEXT(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -4010,7 +4010,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3ivEXT(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -4019,7 +4019,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4ivEXT(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -4028,7 +4028,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -4037,7 +4037,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -4046,7 +4046,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 9, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 9, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -4055,7 +4055,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 4, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 4, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2x3fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -4064,7 +4064,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3x2fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -4073,7 +4073,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2x4fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -4082,7 +4082,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4x2fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -4091,7 +4091,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3x4fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -4100,7 +4100,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 12, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4x3fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -4109,7 +4109,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 12, transpose, value, __functionAddress);
     }
 
     /** {@code void glTextureParameterIivEXT(GLuint texture, GLenum target, GLenum pname, GLint const * params)} */
@@ -4119,7 +4119,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(texture, target, pname, params, __functionAddress);
+        invokePV(texture, target, pname, params, __functionAddress);
     }
 
     /** {@code void glTextureParameterIuivEXT(GLuint texture, GLenum target, GLenum pname, GLuint const * params)} */
@@ -4129,7 +4129,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(texture, target, pname, params, __functionAddress);
+        invokePV(texture, target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTextureParameterIivEXT(GLuint texture, GLenum target, GLenum pname, GLint * params)} */
@@ -4139,7 +4139,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, target, pname, params, __functionAddress);
+        invokePV(texture, target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTextureParameterIuivEXT(GLuint texture, GLenum target, GLenum pname, GLuint * params)} */
@@ -4149,7 +4149,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, target, pname, params, __functionAddress);
+        invokePV(texture, target, pname, params, __functionAddress);
     }
 
     /** {@code void glMultiTexParameterIivEXT(GLenum texunit, GLenum target, GLenum pname, GLint const * params)} */
@@ -4159,7 +4159,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(texunit, target, pname, params, __functionAddress);
+        invokePV(texunit, target, pname, params, __functionAddress);
     }
 
     /** {@code void glMultiTexParameterIuivEXT(GLenum texunit, GLenum target, GLenum pname, GLuint const * params)} */
@@ -4169,7 +4169,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(texunit, target, pname, params, __functionAddress);
+        invokePV(texunit, target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMultiTexParameterIivEXT(GLenum texunit, GLenum target, GLenum pname, GLint * params)} */
@@ -4179,7 +4179,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texunit, target, pname, params, __functionAddress);
+        invokePV(texunit, target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMultiTexParameterIuivEXT(GLenum texunit, GLenum target, GLenum pname, GLuint * params)} */
@@ -4189,7 +4189,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texunit, target, pname, params, __functionAddress);
+        invokePV(texunit, target, pname, params, __functionAddress);
     }
 
     /** {@code void glProgramUniform1uivEXT(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -4198,7 +4198,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2uivEXT(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -4207,7 +4207,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3uivEXT(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -4216,7 +4216,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4uivEXT(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -4225,7 +4225,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glNamedProgramLocalParameters4fvEXT(GLuint program, GLenum target, GLuint index, GLsizei count, GLfloat const * params)} */
@@ -4234,7 +4234,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, target, index, params.length >> 2, params, __functionAddress);
+        invokePV(program, target, index, params.length >> 2, params, __functionAddress);
     }
 
     /** {@code void glNamedProgramLocalParameterI4ivEXT(GLuint program, GLenum target, GLuint index, GLint const * params)} */
@@ -4244,7 +4244,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(program, target, index, params, __functionAddress);
+        invokePV(program, target, index, params, __functionAddress);
     }
 
     /** {@code void glNamedProgramLocalParametersI4ivEXT(GLuint program, GLenum target, GLuint index, GLsizei count, GLint const * params)} */
@@ -4253,7 +4253,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, target, index, params.length >> 2, params, __functionAddress);
+        invokePV(program, target, index, params.length >> 2, params, __functionAddress);
     }
 
     /** {@code void glNamedProgramLocalParameterI4uivEXT(GLuint program, GLenum target, GLuint index, GLuint const * params)} */
@@ -4263,7 +4263,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(program, target, index, params, __functionAddress);
+        invokePV(program, target, index, params, __functionAddress);
     }
 
     /** {@code void glNamedProgramLocalParametersI4uivEXT(GLuint program, GLenum target, GLuint index, GLsizei count, GLuint const * params)} */
@@ -4272,7 +4272,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, target, index, params.length >> 2, params, __functionAddress);
+        invokePV(program, target, index, params.length >> 2, params, __functionAddress);
     }
 
     /** {@code void glGetNamedProgramLocalParameterIivEXT(GLuint program, GLenum target, GLuint index, GLint * params)} */
@@ -4282,7 +4282,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(program, target, index, params, __functionAddress);
+        invokePV(program, target, index, params, __functionAddress);
     }
 
     /** {@code void glGetNamedProgramLocalParameterIuivEXT(GLuint program, GLenum target, GLuint index, GLuint * params)} */
@@ -4292,7 +4292,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(program, target, index, params, __functionAddress);
+        invokePV(program, target, index, params, __functionAddress);
     }
 
     /** {@code void glGetNamedRenderbufferParameterivEXT(GLuint renderbuffer, GLenum pname, GLint * params)} */
@@ -4302,7 +4302,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(renderbuffer, pname, params, __functionAddress);
+        invokePV(renderbuffer, pname, params, __functionAddress);
     }
 
     /** {@code void glGetNamedFramebufferAttachmentParameterivEXT(GLuint framebuffer, GLenum attachment, GLenum pname, GLint * params)} */
@@ -4312,7 +4312,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(framebuffer, attachment, pname, params, __functionAddress);
+        invokePV(framebuffer, attachment, pname, params, __functionAddress);
     }
 
     /** {@code void glFramebufferDrawBuffersEXT(GLuint framebuffer, GLsizei n, GLenum const * bufs)} */
@@ -4321,7 +4321,7 @@ public class EXTDirectStateAccess {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(framebuffer, bufs.length, bufs, __functionAddress);
+        invokePV(framebuffer, bufs.length, bufs, __functionAddress);
     }
 
     /** {@code void glGetFramebufferParameterivEXT(GLuint framebuffer, GLenum pname, GLint * param)} */
@@ -4331,7 +4331,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(param, 1);
         }
-        callPV(framebuffer, pname, param, __functionAddress);
+        invokePV(framebuffer, pname, param, __functionAddress);
     }
 
     /** {@code void glGetVertexArrayIntegervEXT(GLuint vaobj, GLenum pname, GLint * param)} */
@@ -4341,7 +4341,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(param, 1);
         }
-        callPV(vaobj, pname, param, __functionAddress);
+        invokePV(vaobj, pname, param, __functionAddress);
     }
 
     /** {@code void glGetVertexArrayIntegeri_vEXT(GLuint vaobj, GLuint index, GLenum pname, GLint * param)} */
@@ -4351,7 +4351,7 @@ public class EXTDirectStateAccess {
             check(__functionAddress);
             check(param, 1);
         }
-        callPV(vaobj, index, pname, param, __functionAddress);
+        invokePV(vaobj, index, pname, param, __functionAddress);
     }
 
 }

@@ -54,7 +54,7 @@ public class QCOMTileMemoryHeap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pTileMemoryBindInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pTileMemoryBindInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBindTileMemoryQCOM(VkCommandBuffer commandBuffer, VkTileMemoryBindInfoQCOM const * pTileMemoryBindInfo)} */

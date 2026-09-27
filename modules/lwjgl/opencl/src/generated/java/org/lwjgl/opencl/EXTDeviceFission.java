@@ -72,7 +72,7 @@ public class EXTDeviceFission {
             check(__functionAddress);
             check(device);
         }
-        return callPI(device, __functionAddress);
+        return invokePI(device, __functionAddress);
     }
 
     // --- [ clRetainDeviceEXT ] ---
@@ -85,7 +85,7 @@ public class EXTDeviceFission {
             check(__functionAddress);
             check(device);
         }
-        return callPI(device, __functionAddress);
+        return invokePI(device, __functionAddress);
     }
 
     // --- [ clCreateSubDevicesEXT ] ---
@@ -97,7 +97,7 @@ public class EXTDeviceFission {
             check(__functionAddress);
             check(in_device);
         }
-        return callPPPPI(in_device, properties, num_entries, out_devices, num_devices, __functionAddress);
+        return invokePPPPI(in_device, properties, num_entries, out_devices, num_devices, __functionAddress);
     }
 
     /** {@code cl_int clCreateSubDevicesEXT(cl_device_id in_device, cl_device_partition_property_ext const * properties, cl_uint num_entries, cl_device_id * out_devices, cl_uint * num_devices)} */
@@ -120,7 +120,7 @@ public class EXTDeviceFission {
             checkNT(properties);
             checkSafe(num_devices, 1);
         }
-        return callPPPPI(in_device, properties, remainingSafe(out_devices), memAddressSafe(out_devices), num_devices, __functionAddress);
+        return invokePPPPI(in_device, properties, remainingSafe(out_devices), memAddressSafe(out_devices), num_devices, __functionAddress);
     }
 
 }

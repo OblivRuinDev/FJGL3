@@ -35,7 +35,7 @@ public class GLXSGIVideoSync {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(count, __functionAddress);
+        return invokePI(count, __functionAddress);
     }
 
     /** {@code GLint glXGetVideoSyncSGI(unsigned int * count)} */
@@ -55,7 +55,7 @@ public class GLXSGIVideoSync {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(divisor, remainder, count, __functionAddress);
+        return invokePI(divisor, remainder, count, __functionAddress);
     }
 
     /** {@code GLint glXWaitVideoSyncSGI(int divisor, int remainder, unsigned int * count)} */
@@ -75,7 +75,7 @@ public class GLXSGIVideoSync {
             check(__functionAddress);
             check(count, 1);
         }
-        return callPI(count, __functionAddress);
+        return invokePI(count, __functionAddress);
     }
 
     /** {@code GLint glXWaitVideoSyncSGI(int divisor, int remainder, unsigned int * count)} */
@@ -86,7 +86,7 @@ public class GLXSGIVideoSync {
             check(__functionAddress);
             check(count, 1);
         }
-        return callPI(divisor, remainder, count, __functionAddress);
+        return invokePI(divisor, remainder, count, __functionAddress);
     }
 
 }

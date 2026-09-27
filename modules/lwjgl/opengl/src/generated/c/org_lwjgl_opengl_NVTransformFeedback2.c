@@ -14,13 +14,13 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBindTransformFeedbackNVPROC) (jint, jint);
-typedef void (APIENTRY *glDeleteTransformFeedbacksNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGenTransformFeedbacksNVPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsTransformFeedbackNVPROC) (jint);
-typedef void (APIENTRY *glPauseTransformFeedbackNVPROC) (void);
-typedef void (APIENTRY *glResumeTransformFeedbackNVPROC) (void);
-typedef void (APIENTRY *glDrawTransformFeedbackNVPROC) (jint, jint);
+typedef void (*glBindTransformFeedbackNVPROC) (jint, jint);
+typedef void (*glDeleteTransformFeedbacksNVPROC) (jint, uintptr_t);
+typedef void (*glGenTransformFeedbacksNVPROC) (jint, uintptr_t);
+typedef jboolean (*glIsTransformFeedbackNVPROC) (jint);
+typedef void (*glPauseTransformFeedbackNVPROC) (void);
+typedef void (*glResumeTransformFeedbackNVPROC) (void);
+typedef void (*glDrawTransformFeedbackNVPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

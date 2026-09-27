@@ -87,7 +87,7 @@ public class EXTClearTexture {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, format, type, data, __functionAddress);
+        invokePV(texture, level, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearTexImageEXT(GLuint texture, GLint level, GLenum format, GLenum type, void const * data)} */
@@ -96,7 +96,7 @@ public class EXTClearTexture {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, format, type, data, __functionAddress);
+        invokePV(texture, level, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearTexImageEXT(GLuint texture, GLint level, GLenum format, GLenum type, void const * data)} */
@@ -105,7 +105,7 @@ public class EXTClearTexture {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, format, type, data, __functionAddress);
+        invokePV(texture, level, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearTexSubImageEXT(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * data)} */
@@ -114,7 +114,7 @@ public class EXTClearTexture {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearTexSubImageEXT(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * data)} */
@@ -123,7 +123,7 @@ public class EXTClearTexture {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearTexSubImageEXT(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * data)} */
@@ -132,7 +132,7 @@ public class EXTClearTexture {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data, __functionAddress);
     }
 
 }

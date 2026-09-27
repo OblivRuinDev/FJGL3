@@ -52,7 +52,7 @@ public class FBEyeTrackingSocial {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, eyeTracker, __functionAddress);
+        return invokePPPI(session.address(), createInfo, eyeTracker, __functionAddress);
     }
 
     /** {@code XrResult xrCreateEyeTrackerFB(XrSession session, XrEyeTrackerCreateInfoFB const * createInfo, XrEyeTrackerFB * eyeTracker)} */
@@ -73,7 +73,7 @@ public class FBEyeTrackingSocial {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(eyeTracker.address(), __functionAddress);
+        return invokePI(eyeTracker.address(), __functionAddress);
     }
 
     // --- [ xrGetEyeGazesFB ] ---
@@ -85,7 +85,7 @@ public class FBEyeTrackingSocial {
             check(__functionAddress);
             XrEyeGazesInfoFB.validate(gazeInfo);
         }
-        return callPPPI(eyeTracker.address(), gazeInfo, eyeGazes, __functionAddress);
+        return invokePPPI(eyeTracker.address(), gazeInfo, eyeGazes, __functionAddress);
     }
 
     /** {@code XrResult xrGetEyeGazesFB(XrEyeTrackerFB eyeTracker, XrEyeGazesInfoFB const * gazeInfo, XrEyeGazesFB * eyeGazes)} */

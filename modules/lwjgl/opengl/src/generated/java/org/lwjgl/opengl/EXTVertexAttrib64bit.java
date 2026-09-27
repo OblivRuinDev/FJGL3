@@ -162,7 +162,7 @@ public class EXTVertexAttrib64bit {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL2dvEXT(GLuint index, GLdouble const * v)} */
@@ -172,7 +172,7 @@ public class EXTVertexAttrib64bit {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL3dvEXT(GLuint index, GLdouble const * v)} */
@@ -182,7 +182,7 @@ public class EXTVertexAttrib64bit {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL4dvEXT(GLuint index, GLdouble const * v)} */
@@ -192,7 +192,7 @@ public class EXTVertexAttrib64bit {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribLdvEXT(GLuint index, GLenum pname, GLdouble * params)} */
@@ -202,7 +202,7 @@ public class EXTVertexAttrib64bit {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
 }

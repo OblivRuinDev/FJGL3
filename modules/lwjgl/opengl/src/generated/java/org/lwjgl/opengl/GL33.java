@@ -751,7 +751,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(type, value, __functionAddress);
+        invokePV(type, value, __functionAddress);
     }
 
     /** {@code void glVertexP3uiv(GLenum type, GLuint const * value)} */
@@ -761,7 +761,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(type, value, __functionAddress);
+        invokePV(type, value, __functionAddress);
     }
 
     /** {@code void glVertexP4uiv(GLenum type, GLuint const * value)} */
@@ -771,7 +771,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(type, value, __functionAddress);
+        invokePV(type, value, __functionAddress);
     }
 
     /** {@code void glTexCoordP1uiv(GLenum type, GLuint const * coords)} */
@@ -781,7 +781,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(coords, 1);
         }
-        callPV(type, coords, __functionAddress);
+        invokePV(type, coords, __functionAddress);
     }
 
     /** {@code void glTexCoordP2uiv(GLenum type, GLuint const * coords)} */
@@ -791,7 +791,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(coords, 1);
         }
-        callPV(type, coords, __functionAddress);
+        invokePV(type, coords, __functionAddress);
     }
 
     /** {@code void glTexCoordP3uiv(GLenum type, GLuint const * coords)} */
@@ -801,7 +801,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(coords, 1);
         }
-        callPV(type, coords, __functionAddress);
+        invokePV(type, coords, __functionAddress);
     }
 
     /** {@code void glTexCoordP4uiv(GLenum type, GLuint const * coords)} */
@@ -811,7 +811,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(coords, 1);
         }
-        callPV(type, coords, __functionAddress);
+        invokePV(type, coords, __functionAddress);
     }
 
     /** {@code void glMultiTexCoordP1uiv(GLenum texture, GLenum type, GLuint const * coords)} */
@@ -821,7 +821,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(coords, 1);
         }
-        callPV(texture, type, coords, __functionAddress);
+        invokePV(texture, type, coords, __functionAddress);
     }
 
     /** {@code void glMultiTexCoordP2uiv(GLenum texture, GLenum type, GLuint const * coords)} */
@@ -831,7 +831,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(coords, 1);
         }
-        callPV(texture, type, coords, __functionAddress);
+        invokePV(texture, type, coords, __functionAddress);
     }
 
     /** {@code void glMultiTexCoordP3uiv(GLenum texture, GLenum type, GLuint const * coords)} */
@@ -841,7 +841,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(coords, 1);
         }
-        callPV(texture, type, coords, __functionAddress);
+        invokePV(texture, type, coords, __functionAddress);
     }
 
     /** {@code void glMultiTexCoordP4uiv(GLenum texture, GLenum type, GLuint const * coords)} */
@@ -851,7 +851,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(coords, 1);
         }
-        callPV(texture, type, coords, __functionAddress);
+        invokePV(texture, type, coords, __functionAddress);
     }
 
     /** {@code void glNormalP3uiv(GLenum type, GLuint const * coords)} */
@@ -861,7 +861,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(coords, 1);
         }
-        callPV(type, coords, __functionAddress);
+        invokePV(type, coords, __functionAddress);
     }
 
     /** {@code void glColorP3uiv(GLenum type, GLuint const * color)} */
@@ -871,7 +871,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(color, 1);
         }
-        callPV(type, color, __functionAddress);
+        invokePV(type, color, __functionAddress);
     }
 
     /** {@code void glColorP4uiv(GLenum type, GLuint const * color)} */
@@ -881,7 +881,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(color, 1);
         }
-        callPV(type, color, __functionAddress);
+        invokePV(type, color, __functionAddress);
     }
 
     /** {@code void glSecondaryColorP3uiv(GLenum type, GLuint const * color)} */
@@ -891,7 +891,7 @@ public class GL33 extends GL32 {
             check(__functionAddress);
             check(color, 1);
         }
-        callPV(type, color, __functionAddress);
+        invokePV(type, color, __functionAddress);
     }
 
     /** {@code void glVertexAttribP1uiv(GLuint index, GLenum type, GLboolean normalized, GLuint const * value)} */

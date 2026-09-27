@@ -105,7 +105,7 @@ public class NVQueryResourceTag {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tagIds.length, tagIds, __functionAddress);
+        invokePV(tagIds.length, tagIds, __functionAddress);
     }
 
     /** {@code void glDeleteQueryResourceTagNV(GLsizei n, GLuint const * tagIds)} */
@@ -114,7 +114,7 @@ public class NVQueryResourceTag {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tagIds.length, tagIds, __functionAddress);
+        invokePV(tagIds.length, tagIds, __functionAddress);
     }
 
 }

@@ -118,7 +118,7 @@ public class APPLEVertexProgramEvaluators {
             check(__functionAddress);
             check(points, stride * order);
         }
-        callPV(index, size, u1, u2, stride, order, points, __functionAddress);
+        invokePV(index, size, u1, u2, stride, order, points, __functionAddress);
     }
 
     /** {@code void glMapVertexAttrib1fAPPLE(GLuint index, GLuint size, GLfloat u1, GLfloat u2, GLint stride, GLint order, GLfloat const * points)} */
@@ -128,7 +128,7 @@ public class APPLEVertexProgramEvaluators {
             check(__functionAddress);
             check(points, stride * order);
         }
-        callPV(index, size, u1, u2, stride, order, points, __functionAddress);
+        invokePV(index, size, u1, u2, stride, order, points, __functionAddress);
     }
 
     /** {@code void glMapVertexAttrib2dAPPLE(GLuint index, GLuint size, GLdouble u1, GLdouble u2, GLint ustride, GLint uorder, GLdouble v1, GLdouble v2, GLint vstride, GLint vorder, GLdouble const * points)} */
@@ -138,7 +138,7 @@ public class APPLEVertexProgramEvaluators {
             check(__functionAddress);
             check(points, ustride * uorder * vstride * vorder);
         }
-        callPV(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points, __functionAddress);
+        invokePV(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points, __functionAddress);
     }
 
     /** {@code void glMapVertexAttrib2fAPPLE(GLuint index, GLuint size, GLfloat u1, GLfloat u2, GLint ustride, GLint uorder, GLfloat v1, GLfloat v2, GLint vstride, GLint vorder, GLfloat const * points)} */
@@ -148,7 +148,7 @@ public class APPLEVertexProgramEvaluators {
             check(__functionAddress);
             check(points, ustride * uorder * vstride * vorder);
         }
-        callPV(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points, __functionAddress);
+        invokePV(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points, __functionAddress);
     }
 
 }

@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glDrawArraysInstancedBaseInstanceEXTPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glDrawElementsInstancedBaseInstanceEXTPROC) (jint, jint, jint, uintptr_t, jint, jint);
-typedef void (APIENTRY *glDrawElementsInstancedBaseVertexBaseInstanceEXTPROC) (jint, jint, jint, uintptr_t, jint, jint, jint);
+typedef void (*glDrawArraysInstancedBaseInstanceEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glDrawElementsInstancedBaseInstanceEXTPROC) (jint, jint, jint, uintptr_t, jint, jint);
+typedef void (*glDrawElementsInstancedBaseVertexBaseInstanceEXTPROC) (jint, jint, jint, uintptr_t, jint, jint, jint);
 
 EXTERN_C_ENTER
 

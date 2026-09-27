@@ -14,13 +14,13 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBindBufferRangeEXTPROC) (jint, jint, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glBindBufferOffsetEXTPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glBindBufferBaseEXTPROC) (jint, jint, jint);
-typedef void (APIENTRY *glBeginTransformFeedbackEXTPROC) (jint);
-typedef void (APIENTRY *glEndTransformFeedbackEXTPROC) (void);
-typedef void (APIENTRY *glTransformFeedbackVaryingsEXTPROC) (jint, jint, uintptr_t, jint);
-typedef void (APIENTRY *glGetTransformFeedbackVaryingEXTPROC) (jint, jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glBindBufferRangeEXTPROC) (jint, jint, jint, uintptr_t, uintptr_t);
+typedef void (*glBindBufferOffsetEXTPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glBindBufferBaseEXTPROC) (jint, jint, jint);
+typedef void (*glBeginTransformFeedbackEXTPROC) (jint);
+typedef void (*glEndTransformFeedbackEXTPROC) (void);
+typedef void (*glTransformFeedbackVaryingsEXTPROC) (jint, jint, uintptr_t, jint);
+typedef void (*glGetTransformFeedbackVaryingEXTPROC) (jint, jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

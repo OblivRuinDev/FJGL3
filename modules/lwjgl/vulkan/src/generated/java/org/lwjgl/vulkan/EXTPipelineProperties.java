@@ -44,7 +44,7 @@ public class EXTPipelineProperties {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pPipelineInfo, pPipelineProperties, __functionAddress);
+        return invokePPPI(device.address(), pPipelineInfo, pPipelineProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPipelinePropertiesEXT(VkDevice device, VkPipelineInfoKHR const * pPipelineInfo, VkBaseOutStructure * pPipelineProperties)} */

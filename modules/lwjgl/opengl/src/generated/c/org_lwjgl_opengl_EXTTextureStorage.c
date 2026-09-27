@@ -14,12 +14,12 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glTexStorage1DEXTPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glTexStorage2DEXTPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glTexStorage3DEXTPROC) (jint, jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glTextureStorage1DEXTPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glTextureStorage2DEXTPROC) (jint, jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glTextureStorage3DEXTPROC) (jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glTexStorage1DEXTPROC) (jint, jint, jint, jint);
+typedef void (*glTexStorage2DEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glTexStorage3DEXTPROC) (jint, jint, jint, jint, jint, jint);
+typedef void (*glTextureStorage1DEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glTextureStorage2DEXTPROC) (jint, jint, jint, jint, jint, jint);
+typedef void (*glTextureStorage3DEXTPROC) (jint, jint, jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

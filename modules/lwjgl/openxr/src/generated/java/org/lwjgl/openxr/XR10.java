@@ -280,7 +280,7 @@ public class XR10 {
     /** {@code XrResult xrGetInstanceProcAddr(XrInstance instance, char const * name, PFN_xrVoidFunction * function)} */
     public static int nxrGetInstanceProcAddr(long instance, long name, long function) {
         long __functionAddress = XR.getGlobalCommands().xrGetInstanceProcAddr;
-        return callPPPI(instance, name, function, __functionAddress);
+        return invokePPPI(instance, name, function, __functionAddress);
     }
 
     /** {@code XrResult xrGetInstanceProcAddr(XrInstance instance, char const * name, PFN_xrVoidFunction * function)} */
@@ -314,7 +314,7 @@ public class XR10 {
     /** {@code XrResult xrEnumerateApiLayerProperties(uint32_t propertyCapacityInput, uint32_t * propertyCountOutput, XrApiLayerProperties * properties)} */
     public static int nxrEnumerateApiLayerProperties(int propertyCapacityInput, long propertyCountOutput, long properties) {
         long __functionAddress = XR.getGlobalCommands().xrEnumerateApiLayerProperties;
-        return callPPI(propertyCapacityInput, propertyCountOutput, properties, __functionAddress);
+        return invokePPI(propertyCapacityInput, propertyCountOutput, properties, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateApiLayerProperties(uint32_t propertyCapacityInput, uint32_t * propertyCountOutput, XrApiLayerProperties * properties)} */
@@ -331,7 +331,7 @@ public class XR10 {
     /** {@code XrResult xrEnumerateInstanceExtensionProperties(char const * layerName, uint32_t propertyCapacityInput, uint32_t * propertyCountOutput, XrExtensionProperties * properties)} */
     public static int nxrEnumerateInstanceExtensionProperties(long layerName, int propertyCapacityInput, long propertyCountOutput, long properties) {
         long __functionAddress = XR.getGlobalCommands().xrEnumerateInstanceExtensionProperties;
-        return callPPPI(layerName, propertyCapacityInput, propertyCountOutput, properties, __functionAddress);
+        return invokePPPI(layerName, propertyCapacityInput, propertyCountOutput, properties, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateInstanceExtensionProperties(char const * layerName, uint32_t propertyCapacityInput, uint32_t * propertyCountOutput, XrExtensionProperties * properties)} */
@@ -368,7 +368,7 @@ public class XR10 {
         if (CHECKS) {
             XrInstanceCreateInfo.validate(createInfo);
         }
-        return callPPI(createInfo, instance, __functionAddress);
+        return invokePPI(createInfo, instance, __functionAddress);
     }
 
     /** {@code XrResult xrCreateInstance(XrInstanceCreateInfo const * createInfo, XrInstance * instance)} */
@@ -386,7 +386,7 @@ public class XR10 {
     @NativeType("XrResult")
     public static int xrDestroyInstance(XrInstance instance) {
         long __functionAddress = instance.getCapabilities().xrDestroyInstance;
-        return callPI(instance.address(), __functionAddress);
+        return invokePI(instance.address(), __functionAddress);
     }
 
     // --- [ xrGetInstanceProperties ] ---
@@ -394,7 +394,7 @@ public class XR10 {
     /** {@code XrResult xrGetInstanceProperties(XrInstance instance, XrInstanceProperties * instanceProperties)} */
     public static int nxrGetInstanceProperties(XrInstance instance, long instanceProperties) {
         long __functionAddress = instance.getCapabilities().xrGetInstanceProperties;
-        return callPPI(instance.address(), instanceProperties, __functionAddress);
+        return invokePPI(instance.address(), instanceProperties, __functionAddress);
     }
 
     /** {@code XrResult xrGetInstanceProperties(XrInstance instance, XrInstanceProperties * instanceProperties)} */
@@ -408,7 +408,7 @@ public class XR10 {
     /** {@code XrResult xrPollEvent(XrInstance instance, XrEventDataBuffer * eventData)} */
     public static int nxrPollEvent(XrInstance instance, long eventData) {
         long __functionAddress = instance.getCapabilities().xrPollEvent;
-        return callPPI(instance.address(), eventData, __functionAddress);
+        return invokePPI(instance.address(), eventData, __functionAddress);
     }
 
     /** {@code XrResult xrPollEvent(XrInstance instance, XrEventDataBuffer * eventData)} */
@@ -422,7 +422,7 @@ public class XR10 {
     /** {@code XrResult xrResultToString(XrInstance instance, XrResult value, char * buffer)} */
     public static int nxrResultToString(XrInstance instance, int value, long buffer) {
         long __functionAddress = instance.getCapabilities().xrResultToString;
-        return callPPI(instance.address(), value, buffer, __functionAddress);
+        return invokePPI(instance.address(), value, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrResultToString(XrInstance instance, XrResult value, char * buffer)} */
@@ -439,7 +439,7 @@ public class XR10 {
     /** {@code XrResult xrStructureTypeToString(XrInstance instance, XrStructureType value, char * buffer)} */
     public static int nxrStructureTypeToString(XrInstance instance, int value, long buffer) {
         long __functionAddress = instance.getCapabilities().xrStructureTypeToString;
-        return callPPI(instance.address(), value, buffer, __functionAddress);
+        return invokePPI(instance.address(), value, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrStructureTypeToString(XrInstance instance, XrStructureType value, char * buffer)} */
@@ -456,7 +456,7 @@ public class XR10 {
     /** {@code XrResult xrGetSystem(XrInstance instance, XrSystemGetInfo const * getInfo, XrSystemId * systemId)} */
     public static int nxrGetSystem(XrInstance instance, long getInfo, long systemId) {
         long __functionAddress = instance.getCapabilities().xrGetSystem;
-        return callPPPI(instance.address(), getInfo, systemId, __functionAddress);
+        return invokePPPI(instance.address(), getInfo, systemId, __functionAddress);
     }
 
     /** {@code XrResult xrGetSystem(XrInstance instance, XrSystemGetInfo const * getInfo, XrSystemId * systemId)} */
@@ -473,7 +473,7 @@ public class XR10 {
     /** {@code XrResult xrGetSystemProperties(XrInstance instance, XrSystemId systemId, XrSystemProperties * properties)} */
     public static int nxrGetSystemProperties(XrInstance instance, long systemId, long properties) {
         long __functionAddress = instance.getCapabilities().xrGetSystemProperties;
-        return callPJPI(instance.address(), systemId, properties, __functionAddress);
+        return invokePJPI(instance.address(), systemId, properties, __functionAddress);
     }
 
     /** {@code XrResult xrGetSystemProperties(XrInstance instance, XrSystemId systemId, XrSystemProperties * properties)} */
@@ -487,7 +487,7 @@ public class XR10 {
     /** {@code XrResult xrEnumerateEnvironmentBlendModes(XrInstance instance, XrSystemId systemId, XrViewConfigurationType viewConfigurationType, uint32_t environmentBlendModeCapacityInput, uint32_t * environmentBlendModeCountOutput, XrEnvironmentBlendMode * environmentBlendModes)} */
     public static int nxrEnumerateEnvironmentBlendModes(XrInstance instance, long systemId, int viewConfigurationType, int environmentBlendModeCapacityInput, long environmentBlendModeCountOutput, long environmentBlendModes) {
         long __functionAddress = instance.getCapabilities().xrEnumerateEnvironmentBlendModes;
-        return callPJPPI(instance.address(), systemId, viewConfigurationType, environmentBlendModeCapacityInput, environmentBlendModeCountOutput, environmentBlendModes, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, viewConfigurationType, environmentBlendModeCapacityInput, environmentBlendModeCountOutput, environmentBlendModes, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateEnvironmentBlendModes(XrInstance instance, XrSystemId systemId, XrViewConfigurationType viewConfigurationType, uint32_t environmentBlendModeCapacityInput, uint32_t * environmentBlendModeCountOutput, XrEnvironmentBlendMode * environmentBlendModes)} */
@@ -504,7 +504,7 @@ public class XR10 {
     /** {@code XrResult xrCreateSession(XrInstance instance, XrSessionCreateInfo const * createInfo, XrSession * session)} */
     public static int nxrCreateSession(XrInstance instance, long createInfo, long session) {
         long __functionAddress = instance.getCapabilities().xrCreateSession;
-        return callPPPI(instance.address(), createInfo, session, __functionAddress);
+        return invokePPPI(instance.address(), createInfo, session, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSession(XrInstance instance, XrSessionCreateInfo const * createInfo, XrSession * session)} */
@@ -522,7 +522,7 @@ public class XR10 {
     @NativeType("XrResult")
     public static int xrDestroySession(XrSession session) {
         long __functionAddress = session.getCapabilities().xrDestroySession;
-        return callPI(session.address(), __functionAddress);
+        return invokePI(session.address(), __functionAddress);
     }
 
     // --- [ xrEnumerateReferenceSpaces ] ---
@@ -530,7 +530,7 @@ public class XR10 {
     /** {@code XrResult xrEnumerateReferenceSpaces(XrSession session, uint32_t spaceCapacityInput, uint32_t * spaceCountOutput, XrReferenceSpaceType * spaces)} */
     public static int nxrEnumerateReferenceSpaces(XrSession session, int spaceCapacityInput, long spaceCountOutput, long spaces) {
         long __functionAddress = session.getCapabilities().xrEnumerateReferenceSpaces;
-        return callPPPI(session.address(), spaceCapacityInput, spaceCountOutput, spaces, __functionAddress);
+        return invokePPPI(session.address(), spaceCapacityInput, spaceCountOutput, spaces, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateReferenceSpaces(XrSession session, uint32_t spaceCapacityInput, uint32_t * spaceCountOutput, XrReferenceSpaceType * spaces)} */
@@ -547,7 +547,7 @@ public class XR10 {
     /** {@code XrResult xrCreateReferenceSpace(XrSession session, XrReferenceSpaceCreateInfo const * createInfo, XrSpace * space)} */
     public static int nxrCreateReferenceSpace(XrSession session, long createInfo, long space) {
         long __functionAddress = session.getCapabilities().xrCreateReferenceSpace;
-        return callPPPI(session.address(), createInfo, space, __functionAddress);
+        return invokePPPI(session.address(), createInfo, space, __functionAddress);
     }
 
     /** {@code XrResult xrCreateReferenceSpace(XrSession session, XrReferenceSpaceCreateInfo const * createInfo, XrSpace * space)} */
@@ -564,7 +564,7 @@ public class XR10 {
     /** {@code XrResult xrGetReferenceSpaceBoundsRect(XrSession session, XrReferenceSpaceType referenceSpaceType, XrExtent2Df * bounds)} */
     public static int nxrGetReferenceSpaceBoundsRect(XrSession session, int referenceSpaceType, long bounds) {
         long __functionAddress = session.getCapabilities().xrGetReferenceSpaceBoundsRect;
-        return callPPI(session.address(), referenceSpaceType, bounds, __functionAddress);
+        return invokePPI(session.address(), referenceSpaceType, bounds, __functionAddress);
     }
 
     /** {@code XrResult xrGetReferenceSpaceBoundsRect(XrSession session, XrReferenceSpaceType referenceSpaceType, XrExtent2Df * bounds)} */
@@ -581,7 +581,7 @@ public class XR10 {
         if (CHECKS) {
             XrActionSpaceCreateInfo.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, space, __functionAddress);
+        return invokePPPI(session.address(), createInfo, space, __functionAddress);
     }
 
     /** {@code XrResult xrCreateActionSpace(XrSession session, XrActionSpaceCreateInfo const * createInfo, XrSpace * space)} */
@@ -598,7 +598,7 @@ public class XR10 {
     /** {@code XrResult xrLocateSpace(XrSpace space, XrSpace baseSpace, XrTime time, XrSpaceLocation * location)} */
     public static int nxrLocateSpace(XrSpace space, XrSpace baseSpace, long time, long location) {
         long __functionAddress = space.getCapabilities().xrLocateSpace;
-        return callPPJPI(space.address(), baseSpace.address(), time, location, __functionAddress);
+        return invokePPJPI(space.address(), baseSpace.address(), time, location, __functionAddress);
     }
 
     /** {@code XrResult xrLocateSpace(XrSpace space, XrSpace baseSpace, XrTime time, XrSpaceLocation * location)} */
@@ -613,7 +613,7 @@ public class XR10 {
     @NativeType("XrResult")
     public static int xrDestroySpace(XrSpace space) {
         long __functionAddress = space.getCapabilities().xrDestroySpace;
-        return callPI(space.address(), __functionAddress);
+        return invokePI(space.address(), __functionAddress);
     }
 
     // --- [ xrEnumerateViewConfigurations ] ---
@@ -621,7 +621,7 @@ public class XR10 {
     /** {@code XrResult xrEnumerateViewConfigurations(XrInstance instance, XrSystemId systemId, uint32_t viewConfigurationTypeCapacityInput, uint32_t * viewConfigurationTypeCountOutput, XrViewConfigurationType * viewConfigurationTypes)} */
     public static int nxrEnumerateViewConfigurations(XrInstance instance, long systemId, int viewConfigurationTypeCapacityInput, long viewConfigurationTypeCountOutput, long viewConfigurationTypes) {
         long __functionAddress = instance.getCapabilities().xrEnumerateViewConfigurations;
-        return callPJPPI(instance.address(), systemId, viewConfigurationTypeCapacityInput, viewConfigurationTypeCountOutput, viewConfigurationTypes, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, viewConfigurationTypeCapacityInput, viewConfigurationTypeCountOutput, viewConfigurationTypes, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateViewConfigurations(XrInstance instance, XrSystemId systemId, uint32_t viewConfigurationTypeCapacityInput, uint32_t * viewConfigurationTypeCountOutput, XrViewConfigurationType * viewConfigurationTypes)} */
@@ -638,7 +638,7 @@ public class XR10 {
     /** {@code XrResult xrGetViewConfigurationProperties(XrInstance instance, XrSystemId systemId, XrViewConfigurationType viewConfigurationType, XrViewConfigurationProperties * configurationProperties)} */
     public static int nxrGetViewConfigurationProperties(XrInstance instance, long systemId, int viewConfigurationType, long configurationProperties) {
         long __functionAddress = instance.getCapabilities().xrGetViewConfigurationProperties;
-        return callPJPI(instance.address(), systemId, viewConfigurationType, configurationProperties, __functionAddress);
+        return invokePJPI(instance.address(), systemId, viewConfigurationType, configurationProperties, __functionAddress);
     }
 
     /** {@code XrResult xrGetViewConfigurationProperties(XrInstance instance, XrSystemId systemId, XrViewConfigurationType viewConfigurationType, XrViewConfigurationProperties * configurationProperties)} */
@@ -652,7 +652,7 @@ public class XR10 {
     /** {@code XrResult xrEnumerateViewConfigurationViews(XrInstance instance, XrSystemId systemId, XrViewConfigurationType viewConfigurationType, uint32_t viewCapacityInput, uint32_t * viewCountOutput, XrViewConfigurationView * views)} */
     public static int nxrEnumerateViewConfigurationViews(XrInstance instance, long systemId, int viewConfigurationType, int viewCapacityInput, long viewCountOutput, long views) {
         long __functionAddress = instance.getCapabilities().xrEnumerateViewConfigurationViews;
-        return callPJPPI(instance.address(), systemId, viewConfigurationType, viewCapacityInput, viewCountOutput, views, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, viewConfigurationType, viewCapacityInput, viewCountOutput, views, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateViewConfigurationViews(XrInstance instance, XrSystemId systemId, XrViewConfigurationType viewConfigurationType, uint32_t viewCapacityInput, uint32_t * viewCountOutput, XrViewConfigurationView * views)} */
@@ -669,7 +669,7 @@ public class XR10 {
     /** {@code XrResult xrEnumerateSwapchainFormats(XrSession session, uint32_t formatCapacityInput, uint32_t * formatCountOutput, int64_t * formats)} */
     public static int nxrEnumerateSwapchainFormats(XrSession session, int formatCapacityInput, long formatCountOutput, long formats) {
         long __functionAddress = session.getCapabilities().xrEnumerateSwapchainFormats;
-        return callPPPI(session.address(), formatCapacityInput, formatCountOutput, formats, __functionAddress);
+        return invokePPPI(session.address(), formatCapacityInput, formatCountOutput, formats, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSwapchainFormats(XrSession session, uint32_t formatCapacityInput, uint32_t * formatCountOutput, int64_t * formats)} */
@@ -686,7 +686,7 @@ public class XR10 {
     /** {@code XrResult xrCreateSwapchain(XrSession session, XrSwapchainCreateInfo const * createInfo, XrSwapchain * swapchain)} */
     public static int nxrCreateSwapchain(XrSession session, long createInfo, long swapchain) {
         long __functionAddress = session.getCapabilities().xrCreateSwapchain;
-        return callPPPI(session.address(), createInfo, swapchain, __functionAddress);
+        return invokePPPI(session.address(), createInfo, swapchain, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSwapchain(XrSession session, XrSwapchainCreateInfo const * createInfo, XrSwapchain * swapchain)} */
@@ -704,7 +704,7 @@ public class XR10 {
     @NativeType("XrResult")
     public static int xrDestroySwapchain(XrSwapchain swapchain) {
         long __functionAddress = swapchain.getCapabilities().xrDestroySwapchain;
-        return callPI(swapchain.address(), __functionAddress);
+        return invokePI(swapchain.address(), __functionAddress);
     }
 
     // --- [ xrEnumerateSwapchainImages ] ---
@@ -712,7 +712,7 @@ public class XR10 {
     /** {@code XrResult xrEnumerateSwapchainImages(XrSwapchain swapchain, uint32_t imageCapacityInput, uint32_t * imageCountOutput, XrSwapchainImageBaseHeader * images)} */
     public static int nxrEnumerateSwapchainImages(XrSwapchain swapchain, int imageCapacityInput, long imageCountOutput, long images) {
         long __functionAddress = swapchain.getCapabilities().xrEnumerateSwapchainImages;
-        return callPPPI(swapchain.address(), imageCapacityInput, imageCountOutput, images, __functionAddress);
+        return invokePPPI(swapchain.address(), imageCapacityInput, imageCountOutput, images, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSwapchainImages(XrSwapchain swapchain, uint32_t imageCapacityInput, uint32_t * imageCountOutput, XrSwapchainImageBaseHeader * images)} */
@@ -729,7 +729,7 @@ public class XR10 {
     /** {@code XrResult xrAcquireSwapchainImage(XrSwapchain swapchain, XrSwapchainImageAcquireInfo const * acquireInfo, uint32_t * index)} */
     public static int nxrAcquireSwapchainImage(XrSwapchain swapchain, long acquireInfo, long index) {
         long __functionAddress = swapchain.getCapabilities().xrAcquireSwapchainImage;
-        return callPPPI(swapchain.address(), acquireInfo, index, __functionAddress);
+        return invokePPPI(swapchain.address(), acquireInfo, index, __functionAddress);
     }
 
     /** {@code XrResult xrAcquireSwapchainImage(XrSwapchain swapchain, XrSwapchainImageAcquireInfo const * acquireInfo, uint32_t * index)} */
@@ -746,7 +746,7 @@ public class XR10 {
     /** {@code XrResult xrWaitSwapchainImage(XrSwapchain swapchain, XrSwapchainImageWaitInfo const * waitInfo)} */
     public static int nxrWaitSwapchainImage(XrSwapchain swapchain, long waitInfo) {
         long __functionAddress = swapchain.getCapabilities().xrWaitSwapchainImage;
-        return callPPI(swapchain.address(), waitInfo, __functionAddress);
+        return invokePPI(swapchain.address(), waitInfo, __functionAddress);
     }
 
     /** {@code XrResult xrWaitSwapchainImage(XrSwapchain swapchain, XrSwapchainImageWaitInfo const * waitInfo)} */
@@ -760,7 +760,7 @@ public class XR10 {
     /** {@code XrResult xrReleaseSwapchainImage(XrSwapchain swapchain, XrSwapchainImageReleaseInfo const * releaseInfo)} */
     public static int nxrReleaseSwapchainImage(XrSwapchain swapchain, long releaseInfo) {
         long __functionAddress = swapchain.getCapabilities().xrReleaseSwapchainImage;
-        return callPPI(swapchain.address(), releaseInfo, __functionAddress);
+        return invokePPI(swapchain.address(), releaseInfo, __functionAddress);
     }
 
     /** {@code XrResult xrReleaseSwapchainImage(XrSwapchain swapchain, XrSwapchainImageReleaseInfo const * releaseInfo)} */
@@ -774,7 +774,7 @@ public class XR10 {
     /** {@code XrResult xrBeginSession(XrSession session, XrSessionBeginInfo const * beginInfo)} */
     public static int nxrBeginSession(XrSession session, long beginInfo) {
         long __functionAddress = session.getCapabilities().xrBeginSession;
-        return callPPI(session.address(), beginInfo, __functionAddress);
+        return invokePPI(session.address(), beginInfo, __functionAddress);
     }
 
     /** {@code XrResult xrBeginSession(XrSession session, XrSessionBeginInfo const * beginInfo)} */
@@ -789,7 +789,7 @@ public class XR10 {
     @NativeType("XrResult")
     public static int xrEndSession(XrSession session) {
         long __functionAddress = session.getCapabilities().xrEndSession;
-        return callPI(session.address(), __functionAddress);
+        return invokePI(session.address(), __functionAddress);
     }
 
     // --- [ xrRequestExitSession ] ---
@@ -798,7 +798,7 @@ public class XR10 {
     @NativeType("XrResult")
     public static int xrRequestExitSession(XrSession session) {
         long __functionAddress = session.getCapabilities().xrRequestExitSession;
-        return callPI(session.address(), __functionAddress);
+        return invokePI(session.address(), __functionAddress);
     }
 
     // --- [ xrWaitFrame ] ---
@@ -806,7 +806,7 @@ public class XR10 {
     /** {@code XrResult xrWaitFrame(XrSession session, XrFrameWaitInfo const * frameWaitInfo, XrFrameState * frameState)} */
     public static int nxrWaitFrame(XrSession session, long frameWaitInfo, long frameState) {
         long __functionAddress = session.getCapabilities().xrWaitFrame;
-        return callPPPI(session.address(), frameWaitInfo, frameState, __functionAddress);
+        return invokePPPI(session.address(), frameWaitInfo, frameState, __functionAddress);
     }
 
     /** {@code XrResult xrWaitFrame(XrSession session, XrFrameWaitInfo const * frameWaitInfo, XrFrameState * frameState)} */
@@ -820,7 +820,7 @@ public class XR10 {
     /** {@code XrResult xrBeginFrame(XrSession session, XrFrameBeginInfo const * frameBeginInfo)} */
     public static int nxrBeginFrame(XrSession session, long frameBeginInfo) {
         long __functionAddress = session.getCapabilities().xrBeginFrame;
-        return callPPI(session.address(), frameBeginInfo, __functionAddress);
+        return invokePPI(session.address(), frameBeginInfo, __functionAddress);
     }
 
     /** {@code XrResult xrBeginFrame(XrSession session, XrFrameBeginInfo const * frameBeginInfo)} */
@@ -834,7 +834,7 @@ public class XR10 {
     /** {@code XrResult xrEndFrame(XrSession session, XrFrameEndInfo const * frameEndInfo)} */
     public static int nxrEndFrame(XrSession session, long frameEndInfo) {
         long __functionAddress = session.getCapabilities().xrEndFrame;
-        return callPPI(session.address(), frameEndInfo, __functionAddress);
+        return invokePPI(session.address(), frameEndInfo, __functionAddress);
     }
 
     /** {@code XrResult xrEndFrame(XrSession session, XrFrameEndInfo const * frameEndInfo)} */
@@ -851,7 +851,7 @@ public class XR10 {
         if (CHECKS) {
             XrViewLocateInfo.validate(viewLocateInfo);
         }
-        return callPPPPPI(session.address(), viewLocateInfo, viewState, viewCapacityInput, viewCountOutput, views, __functionAddress);
+        return invokePPPPPI(session.address(), viewLocateInfo, viewState, viewCapacityInput, viewCountOutput, views, __functionAddress);
     }
 
     /** {@code XrResult xrLocateViews(XrSession session, XrViewLocateInfo const * viewLocateInfo, XrViewState * viewState, uint32_t viewCapacityInput, uint32_t * viewCountOutput, XrView * views)} */
@@ -868,7 +868,7 @@ public class XR10 {
     /** {@code XrResult xrStringToPath(XrInstance instance, char const * pathString, XrPath * path)} */
     public static int nxrStringToPath(XrInstance instance, long pathString, long path) {
         long __functionAddress = instance.getCapabilities().xrStringToPath;
-        return callPPPI(instance.address(), pathString, path, __functionAddress);
+        return invokePPPI(instance.address(), pathString, path, __functionAddress);
     }
 
     /** {@code XrResult xrStringToPath(XrInstance instance, char const * pathString, XrPath * path)} */
@@ -902,7 +902,7 @@ public class XR10 {
     /** {@code XrResult xrPathToString(XrInstance instance, XrPath path, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, char * buffer)} */
     public static int nxrPathToString(XrInstance instance, long path, int bufferCapacityInput, long bufferCountOutput, long buffer) {
         long __functionAddress = instance.getCapabilities().xrPathToString;
-        return callPJPPI(instance.address(), path, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePJPPI(instance.address(), path, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrPathToString(XrInstance instance, XrPath path, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, char * buffer)} */
@@ -919,7 +919,7 @@ public class XR10 {
     /** {@code XrResult xrCreateActionSet(XrInstance instance, XrActionSetCreateInfo const * createInfo, XrActionSet * actionSet)} */
     public static int nxrCreateActionSet(XrInstance instance, long createInfo, long actionSet) {
         long __functionAddress = instance.getCapabilities().xrCreateActionSet;
-        return callPPPI(instance.address(), createInfo, actionSet, __functionAddress);
+        return invokePPPI(instance.address(), createInfo, actionSet, __functionAddress);
     }
 
     /** {@code XrResult xrCreateActionSet(XrInstance instance, XrActionSetCreateInfo const * createInfo, XrActionSet * actionSet)} */
@@ -937,7 +937,7 @@ public class XR10 {
     @NativeType("XrResult")
     public static int xrDestroyActionSet(XrActionSet actionSet) {
         long __functionAddress = actionSet.getCapabilities().xrDestroyActionSet;
-        return callPI(actionSet.address(), __functionAddress);
+        return invokePI(actionSet.address(), __functionAddress);
     }
 
     // --- [ xrCreateAction ] ---
@@ -945,7 +945,7 @@ public class XR10 {
     /** {@code XrResult xrCreateAction(XrActionSet actionSet, XrActionCreateInfo const * createInfo, XrAction * action)} */
     public static int nxrCreateAction(XrActionSet actionSet, long createInfo, long action) {
         long __functionAddress = actionSet.getCapabilities().xrCreateAction;
-        return callPPPI(actionSet.address(), createInfo, action, __functionAddress);
+        return invokePPPI(actionSet.address(), createInfo, action, __functionAddress);
     }
 
     /** {@code XrResult xrCreateAction(XrActionSet actionSet, XrActionCreateInfo const * createInfo, XrAction * action)} */
@@ -963,7 +963,7 @@ public class XR10 {
     @NativeType("XrResult")
     public static int xrDestroyAction(XrAction action) {
         long __functionAddress = action.getCapabilities().xrDestroyAction;
-        return callPI(action.address(), __functionAddress);
+        return invokePI(action.address(), __functionAddress);
     }
 
     // --- [ xrSuggestInteractionProfileBindings ] ---
@@ -974,7 +974,7 @@ public class XR10 {
         if (CHECKS) {
             XrInteractionProfileSuggestedBinding.validate(suggestedBindings);
         }
-        return callPPI(instance.address(), suggestedBindings, __functionAddress);
+        return invokePPI(instance.address(), suggestedBindings, __functionAddress);
     }
 
     /** {@code XrResult xrSuggestInteractionProfileBindings(XrInstance instance, XrInteractionProfileSuggestedBinding const * suggestedBindings)} */
@@ -991,7 +991,7 @@ public class XR10 {
         if (CHECKS) {
             XrSessionActionSetsAttachInfo.validate(attachInfo);
         }
-        return callPPI(session.address(), attachInfo, __functionAddress);
+        return invokePPI(session.address(), attachInfo, __functionAddress);
     }
 
     /** {@code XrResult xrAttachSessionActionSets(XrSession session, XrSessionActionSetsAttachInfo const * attachInfo)} */
@@ -1005,7 +1005,7 @@ public class XR10 {
     /** {@code XrResult xrGetCurrentInteractionProfile(XrSession session, XrPath topLevelUserPath, XrInteractionProfileState * interactionProfile)} */
     public static int nxrGetCurrentInteractionProfile(XrSession session, long topLevelUserPath, long interactionProfile) {
         long __functionAddress = session.getCapabilities().xrGetCurrentInteractionProfile;
-        return callPJPI(session.address(), topLevelUserPath, interactionProfile, __functionAddress);
+        return invokePJPI(session.address(), topLevelUserPath, interactionProfile, __functionAddress);
     }
 
     /** {@code XrResult xrGetCurrentInteractionProfile(XrSession session, XrPath topLevelUserPath, XrInteractionProfileState * interactionProfile)} */
@@ -1022,7 +1022,7 @@ public class XR10 {
         if (CHECKS) {
             XrActionStateGetInfo.validate(getInfo);
         }
-        return callPPPI(session.address(), getInfo, state, __functionAddress);
+        return invokePPPI(session.address(), getInfo, state, __functionAddress);
     }
 
     /** {@code XrResult xrGetActionStateBoolean(XrSession session, XrActionStateGetInfo const * getInfo, XrActionStateBoolean * state)} */
@@ -1039,7 +1039,7 @@ public class XR10 {
         if (CHECKS) {
             XrActionStateGetInfo.validate(getInfo);
         }
-        return callPPPI(session.address(), getInfo, state, __functionAddress);
+        return invokePPPI(session.address(), getInfo, state, __functionAddress);
     }
 
     /** {@code XrResult xrGetActionStateFloat(XrSession session, XrActionStateGetInfo const * getInfo, XrActionStateFloat * state)} */
@@ -1056,7 +1056,7 @@ public class XR10 {
         if (CHECKS) {
             XrActionStateGetInfo.validate(getInfo);
         }
-        return callPPPI(session.address(), getInfo, state, __functionAddress);
+        return invokePPPI(session.address(), getInfo, state, __functionAddress);
     }
 
     /** {@code XrResult xrGetActionStateVector2f(XrSession session, XrActionStateGetInfo const * getInfo, XrActionStateVector2f * state)} */
@@ -1073,7 +1073,7 @@ public class XR10 {
         if (CHECKS) {
             XrActionStateGetInfo.validate(getInfo);
         }
-        return callPPPI(session.address(), getInfo, state, __functionAddress);
+        return invokePPPI(session.address(), getInfo, state, __functionAddress);
     }
 
     /** {@code XrResult xrGetActionStatePose(XrSession session, XrActionStateGetInfo const * getInfo, XrActionStatePose * state)} */
@@ -1087,7 +1087,7 @@ public class XR10 {
     /** {@code XrResult xrSyncActions(XrSession session, XrActionsSyncInfo const * syncInfo)} */
     public static int nxrSyncActions(XrSession session, long syncInfo) {
         long __functionAddress = session.getCapabilities().xrSyncActions;
-        return callPPI(session.address(), syncInfo, __functionAddress);
+        return invokePPI(session.address(), syncInfo, __functionAddress);
     }
 
     /** {@code XrResult xrSyncActions(XrSession session, XrActionsSyncInfo const * syncInfo)} */
@@ -1104,7 +1104,7 @@ public class XR10 {
         if (CHECKS) {
             XrBoundSourcesForActionEnumerateInfo.validate(enumerateInfo);
         }
-        return callPPPPI(session.address(), enumerateInfo, sourceCapacityInput, sourceCountOutput, sources, __functionAddress);
+        return invokePPPPI(session.address(), enumerateInfo, sourceCapacityInput, sourceCountOutput, sources, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateBoundSourcesForAction(XrSession session, XrBoundSourcesForActionEnumerateInfo const * enumerateInfo, uint32_t sourceCapacityInput, uint32_t * sourceCountOutput, XrPath * sources)} */
@@ -1121,7 +1121,7 @@ public class XR10 {
     /** {@code XrResult xrGetInputSourceLocalizedName(XrSession session, XrInputSourceLocalizedNameGetInfo const * getInfo, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, char * buffer)} */
     public static int nxrGetInputSourceLocalizedName(XrSession session, long getInfo, int bufferCapacityInput, long bufferCountOutput, long buffer) {
         long __functionAddress = session.getCapabilities().xrGetInputSourceLocalizedName;
-        return callPPPPI(session.address(), getInfo, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePPPPI(session.address(), getInfo, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetInputSourceLocalizedName(XrSession session, XrInputSourceLocalizedNameGetInfo const * getInfo, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, char * buffer)} */
@@ -1141,7 +1141,7 @@ public class XR10 {
         if (CHECKS) {
             XrHapticActionInfo.validate(hapticActionInfo);
         }
-        return callPPPI(session.address(), hapticActionInfo, hapticFeedback, __functionAddress);
+        return invokePPPI(session.address(), hapticActionInfo, hapticFeedback, __functionAddress);
     }
 
     /** {@code XrResult xrApplyHapticFeedback(XrSession session, XrHapticActionInfo const * hapticActionInfo, XrHapticBaseHeader const * hapticFeedback)} */
@@ -1158,7 +1158,7 @@ public class XR10 {
         if (CHECKS) {
             XrHapticActionInfo.validate(hapticActionInfo);
         }
-        return callPPI(session.address(), hapticActionInfo, __functionAddress);
+        return invokePPI(session.address(), hapticActionInfo, __functionAddress);
     }
 
     /** {@code XrResult xrStopHapticFeedback(XrSession session, XrHapticActionInfo const * hapticActionInfo)} */

@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBlendBarrierKHRPROC) (void);
+typedef void (*glBlendBarrierKHRPROC) (void);
 
 EXTERN_C_ENTER
 

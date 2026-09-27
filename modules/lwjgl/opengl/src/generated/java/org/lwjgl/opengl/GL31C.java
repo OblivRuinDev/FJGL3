@@ -377,7 +377,7 @@ public class GL31C extends GL30C {
             check(__functionAddress);
             check(uniformIndices, uniformNames.remaining());
         }
-        callPPV(program, uniformNames.remaining(), memAddress(uniformNames), uniformIndices, __functionAddress);
+        invokePPV(program, uniformNames.remaining(), memAddress(uniformNames), uniformIndices, __functionAddress);
     }
 
     /** {@code void glGetActiveUniformsiv(GLuint program, GLsizei uniformCount, GLuint const * uniformIndices, GLenum pname, GLint * params)} */
@@ -387,7 +387,7 @@ public class GL31C extends GL30C {
             check(__functionAddress);
             check(params, uniformIndices.length);
         }
-        callPPV(program, uniformIndices.length, uniformIndices, pname, params, __functionAddress);
+        invokePPV(program, uniformIndices.length, uniformIndices, pname, params, __functionAddress);
     }
 
     /** {@code void glGetActiveUniformName(GLuint program, GLuint uniformIndex, GLsizei bufSize, GLsizei * length, GLchar * uniformName)} */
@@ -397,7 +397,7 @@ public class GL31C extends GL30C {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(program, uniformIndex, uniformName.remaining(), length, memAddress(uniformName), __functionAddress);
+        invokePPV(program, uniformIndex, uniformName.remaining(), length, memAddress(uniformName), __functionAddress);
     }
 
     /** {@code void glGetActiveUniformBlockiv(GLuint program, GLuint uniformBlockIndex, GLenum pname, GLint * params)} */
@@ -407,7 +407,7 @@ public class GL31C extends GL30C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, uniformBlockIndex, pname, params, __functionAddress);
+        invokePV(program, uniformBlockIndex, pname, params, __functionAddress);
     }
 
     /** {@code void glGetActiveUniformBlockName(GLuint program, GLuint uniformBlockIndex, GLsizei bufSize, GLsizei * length, GLchar * uniformBlockName)} */
@@ -417,7 +417,7 @@ public class GL31C extends GL30C {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(program, uniformBlockIndex, uniformBlockName.remaining(), length, memAddress(uniformBlockName), __functionAddress);
+        invokePPV(program, uniformBlockIndex, uniformBlockName.remaining(), length, memAddress(uniformBlockName), __functionAddress);
     }
 
 }

@@ -49,7 +49,7 @@ public class EXTInteractionRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(session.address(), getInfo, renderModelIdCapacityInput, renderModelIdCountOutput, renderModelIds, __functionAddress);
+        return invokePPPPI(session.address(), getInfo, renderModelIdCapacityInput, renderModelIdCountOutput, renderModelIds, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateInteractionRenderModelIdsEXT(XrSession session, XrInteractionRenderModelIdsEnumerateInfoEXT const * getInfo, uint32_t renderModelIdCapacityInput, uint32_t * renderModelIdCountOutput, XrRenderModelIdEXT * renderModelIds)} */
@@ -69,7 +69,7 @@ public class EXTInteractionRenderModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(renderModel.address(), info, pathCapacityInput, pathCountOutput, paths, __functionAddress);
+        return invokePPPPI(renderModel.address(), info, pathCapacityInput, pathCountOutput, paths, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateRenderModelSubactionPathsEXT(XrRenderModelEXT renderModel, XrInteractionRenderModelSubactionPathInfoEXT const * info, uint32_t pathCapacityInput, uint32_t * pathCountOutput, XrPath * paths)} */
@@ -90,7 +90,7 @@ public class EXTInteractionRenderModel {
             check(__functionAddress);
             XrInteractionRenderModelTopLevelUserPathGetInfoEXT.validate(info);
         }
-        return callPPPI(renderModel.address(), info, topLevelUserPath, __functionAddress);
+        return invokePPPI(renderModel.address(), info, topLevelUserPath, __functionAddress);
     }
 
     /** {@code XrResult xrGetRenderModelPoseTopLevelUserPathEXT(XrRenderModelEXT renderModel, XrInteractionRenderModelTopLevelUserPathGetInfoEXT const * info, XrPath * topLevelUserPath)} */

@@ -134,7 +134,7 @@ public class BDFacialSimulation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), modeCapacityInput, modeCountOutput, modes, __functionAddress);
+        return invokePPPI(session.address(), modeCapacityInput, modeCountOutput, modes, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateFacialSimulationModesBD(XrSession session, uint32_t modeCapacityInput, uint32_t * modeCountOutput, XrFacialSimulationModeBD * modes)} */
@@ -154,7 +154,7 @@ public class BDFacialSimulation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, tracker, __functionAddress);
+        return invokePPPI(session.address(), createInfo, tracker, __functionAddress);
     }
 
     /** {@code XrResult xrCreateFaceTrackerBD(XrSession session, XrFaceTrackerCreateInfoBD const * createInfo, XrFaceTrackerBD * tracker)} */
@@ -175,7 +175,7 @@ public class BDFacialSimulation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(tracker.address(), __functionAddress);
+        return invokePI(tracker.address(), __functionAddress);
     }
 
     // --- [ xrGetFacialSimulationDataBD ] ---
@@ -186,7 +186,7 @@ public class BDFacialSimulation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(tracker.address(), info, facialData, __functionAddress);
+        return invokePPPI(tracker.address(), info, facialData, __functionAddress);
     }
 
     /** {@code XrResult xrGetFacialSimulationDataBD(XrFaceTrackerBD tracker, XrFacialSimulationDataGetInfoBD const * info, XrFacialSimulationDataBD * facialData)} */
@@ -204,7 +204,7 @@ public class BDFacialSimulation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(tracker.address(), mode, __functionAddress);
+        return invokePI(tracker.address(), mode, __functionAddress);
     }
 
     // --- [ xrGetFacialSimulationModeBD ] ---
@@ -215,7 +215,7 @@ public class BDFacialSimulation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(tracker.address(), mode, __functionAddress);
+        return invokePPI(tracker.address(), mode, __functionAddress);
     }
 
     /** {@code XrResult xrGetFacialSimulationModeBD(XrFaceTrackerBD tracker, XrFacialSimulationModeBD * mode)} */

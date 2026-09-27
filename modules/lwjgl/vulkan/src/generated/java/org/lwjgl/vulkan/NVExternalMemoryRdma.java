@@ -47,7 +47,7 @@ public class NVExternalMemoryRdma {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pMemoryGetRemoteAddressInfo, pAddress, __functionAddress);
+        return invokePPPI(device.address(), pMemoryGetRemoteAddressInfo, pAddress, __functionAddress);
     }
 
     /** {@code VkResult vkGetMemoryRemoteAddressNV(VkDevice device, VkMemoryGetRemoteAddressInfoNV const * pMemoryGetRemoteAddressInfo, VkRemoteAddressNV * pAddress)} */

@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glEGLImageTargetTexture2DOESPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glEGLImageTargetRenderbufferStorageOESPROC) (jint, uintptr_t);
+typedef void (*glEGLImageTargetTexture2DOESPROC) (jint, uintptr_t);
+typedef void (*glEGLImageTargetRenderbufferStorageOESPROC) (jint, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -96,7 +96,7 @@ public class OESVertexArrayObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(arrays.length, arrays, __functionAddress);
+        invokePV(arrays.length, arrays, __functionAddress);
     }
 
     /** {@code void glGenVertexArraysOES(GLsizei n, GLuint * arrays)} */
@@ -106,7 +106,7 @@ public class OESVertexArrayObject {
             check(__functionAddress);
             check(arrays, 1);
         }
-        callPV(arrays.length, arrays, __functionAddress);
+        invokePV(arrays.length, arrays, __functionAddress);
     }
 
 }

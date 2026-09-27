@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glTextureViewEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glTextureViewEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

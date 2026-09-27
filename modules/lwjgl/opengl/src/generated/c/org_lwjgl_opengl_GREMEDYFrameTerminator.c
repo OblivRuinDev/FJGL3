@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glFrameTerminatorGREMEDYPROC) (void);
+typedef void (*glFrameTerminatorGREMEDYPROC) (void);
 
 EXTERN_C_ENTER
 

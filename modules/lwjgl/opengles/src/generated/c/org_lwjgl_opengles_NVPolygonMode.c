@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glPolygonModeNVPROC) (jint, jint);
+typedef void (*glPolygonModeNVPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

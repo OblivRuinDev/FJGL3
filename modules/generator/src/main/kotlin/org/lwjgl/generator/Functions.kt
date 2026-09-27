@@ -707,6 +707,7 @@ class Func(
         }
     }
 
+    @Suppress("DEPRECATION")
     private fun PrintWriter.generateUnsafeMethod(constantMacro: Boolean, hasReuse: Boolean) {
         val customJNI = hasCustomJNI
         val useLibFFI = !customJNI && (returns.isStructValue || hasParam { it.nativeType is StructType })

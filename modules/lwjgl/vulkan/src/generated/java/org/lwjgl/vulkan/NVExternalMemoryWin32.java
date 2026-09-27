@@ -45,7 +45,7 @@ public class NVExternalMemoryWin32 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), memory, handleType, pHandle, __functionAddress);
+        return invokePJPI(device.address(), memory, handleType, pHandle, __functionAddress);
     }
 
     /** {@code VkResult vkGetMemoryWin32HandleNV(VkDevice device, VkDeviceMemory memory, VkExternalMemoryHandleTypeFlagsNV handleType, HANDLE * pHandle)} */

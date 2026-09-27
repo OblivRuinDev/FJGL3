@@ -48,7 +48,7 @@ public class ARMPerformanceCountersByRegion {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(physicalDevice.address(), queueFamilyIndex, pCounterCount, pCounters, pCounterDescriptions, __functionAddress);
+        return invokePPPPI(physicalDevice.address(), queueFamilyIndex, pCounterCount, pCounters, pCounterDescriptions, __functionAddress);
     }
 
     /** {@code VkResult vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM(VkPhysicalDevice physicalDevice, uint32_t queueFamilyIndex, uint32_t * pCounterCount, VkPerformanceCounterARM * pCounters, VkPerformanceCounterDescriptionARM * pCounterDescriptions)} */
@@ -72,7 +72,7 @@ public class ARMPerformanceCountersByRegion {
             checkSafe(pCounters, pCounterCount[0]);
             checkSafe(pCounterDescriptions, pCounterCount[0]);
         }
-        return callPPPPI(physicalDevice.address(), queueFamilyIndex, pCounterCount, memAddressSafe(pCounters), memAddressSafe(pCounterDescriptions), __functionAddress);
+        return invokePPPPI(physicalDevice.address(), queueFamilyIndex, pCounterCount, memAddressSafe(pCounters), memAddressSafe(pCounterDescriptions), __functionAddress);
     }
 
 }

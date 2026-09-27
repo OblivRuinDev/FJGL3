@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glMaxShaderCompilerThreadsKHRPROC) (jint);
+typedef void (*glMaxShaderCompilerThreadsKHRPROC) (jint);
 
 EXTERN_C_ENTER
 

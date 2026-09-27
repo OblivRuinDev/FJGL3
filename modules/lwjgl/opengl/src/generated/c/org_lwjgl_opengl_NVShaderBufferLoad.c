@@ -14,20 +14,20 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glMakeBufferResidentNVPROC) (jint, jint);
-typedef void (APIENTRY *glMakeBufferNonResidentNVPROC) (jint);
-typedef jboolean (APIENTRY *glIsBufferResidentNVPROC) (jint);
-typedef void (APIENTRY *glMakeNamedBufferResidentNVPROC) (jint, jint);
-typedef void (APIENTRY *glMakeNamedBufferNonResidentNVPROC) (jint);
-typedef jboolean (APIENTRY *glIsNamedBufferResidentNVPROC) (jint);
-typedef void (APIENTRY *glGetBufferParameterui64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetNamedBufferParameterui64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetIntegerui64vNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glUniformui64NVPROC) (jint, jlong);
-typedef void (APIENTRY *glUniformui64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetUniformui64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniformui64NVPROC) (jint, jint, jlong);
-typedef void (APIENTRY *glProgramUniformui64vNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glMakeBufferResidentNVPROC) (jint, jint);
+typedef void (*glMakeBufferNonResidentNVPROC) (jint);
+typedef jboolean (*glIsBufferResidentNVPROC) (jint);
+typedef void (*glMakeNamedBufferResidentNVPROC) (jint, jint);
+typedef void (*glMakeNamedBufferNonResidentNVPROC) (jint);
+typedef jboolean (*glIsNamedBufferResidentNVPROC) (jint);
+typedef void (*glGetBufferParameterui64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glGetNamedBufferParameterui64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glGetIntegerui64vNVPROC) (jint, uintptr_t);
+typedef void (*glUniformui64NVPROC) (jint, jlong);
+typedef void (*glUniformui64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glGetUniformui64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramUniformui64NVPROC) (jint, jint, jlong);
+typedef void (*glProgramUniformui64vNVPROC) (jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

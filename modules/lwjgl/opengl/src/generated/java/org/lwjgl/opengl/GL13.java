@@ -648,7 +648,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord1sv(GLenum texture, GLshort const * v)} */
@@ -658,7 +658,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord1iv(GLenum texture, GLint const * v)} */
@@ -668,7 +668,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord1dv(GLenum texture, GLdouble const * v)} */
@@ -678,7 +678,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord2fv(GLenum texture, GLfloat const * v)} */
@@ -688,7 +688,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord2sv(GLenum texture, GLshort const * v)} */
@@ -698,7 +698,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord2iv(GLenum texture, GLint const * v)} */
@@ -708,7 +708,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord2dv(GLenum texture, GLdouble const * v)} */
@@ -718,7 +718,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord3fv(GLenum texture, GLfloat const * v)} */
@@ -728,7 +728,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord3sv(GLenum texture, GLshort const * v)} */
@@ -738,7 +738,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord3iv(GLenum texture, GLint const * v)} */
@@ -748,7 +748,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord3dv(GLenum texture, GLdouble const * v)} */
@@ -758,7 +758,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord4fv(GLenum texture, GLfloat const * v)} */
@@ -768,7 +768,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord4sv(GLenum texture, GLshort const * v)} */
@@ -778,7 +778,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord4iv(GLenum texture, GLint const * v)} */
@@ -788,7 +788,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord4dv(GLenum texture, GLdouble const * v)} */
@@ -798,7 +798,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glLoadTransposeMatrixf(GLfloat const * m)} */
@@ -808,7 +808,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(m, __functionAddress);
+        invokePV(m, __functionAddress);
     }
 
     /** {@code void glLoadTransposeMatrixd(GLdouble const * m)} */
@@ -818,7 +818,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(m, __functionAddress);
+        invokePV(m, __functionAddress);
     }
 
     /** {@code void glMultTransposeMatrixf(GLfloat const * m)} */
@@ -828,7 +828,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(m, __functionAddress);
+        invokePV(m, __functionAddress);
     }
 
     /** {@code void glMultTransposeMatrixd(GLdouble const * m)} */
@@ -838,7 +838,7 @@ public class GL13 extends GL12 {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(m, __functionAddress);
+        invokePV(m, __functionAddress);
     }
 
 }

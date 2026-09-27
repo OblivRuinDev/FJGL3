@@ -143,7 +143,7 @@ public class KHRUnifiedSVM {
             check(__functionAddress);
             check(context);
         }
-        return callPPPPP(context, properties, svm_type_index, size, errcode_ret, __functionAddress);
+        return invokePPPPP(context, properties, svm_type_index, size, errcode_ret, __functionAddress);
     }
 
     /** {@code void * clSVMAllocWithPropertiesKHR(cl_context context, cl_svm_alloc_properties_khr const * properties, cl_uint svm_type_index, size_t size, cl_int * errcode_ret)} */
@@ -166,7 +166,7 @@ public class KHRUnifiedSVM {
             check(__functionAddress);
             check(context);
         }
-        return callPPJPI(context, properties, flags, ptr, __functionAddress);
+        return invokePPJPI(context, properties, flags, ptr, __functionAddress);
     }
 
     /** {@code cl_int clSVMFreeWithPropertiesKHR(cl_context context, cl_svm_free_properties_khr const * properties, cl_svm_free_flags_khr flags, void * ptr)} */
@@ -188,7 +188,7 @@ public class KHRUnifiedSVM {
             check(context);
             check(device);
         }
-        return callPPPPPPI(context, device, ptr, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPPPI(context, device, ptr, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetSVMPointerInfoKHR(cl_context context, cl_device_id device, void const * ptr, cl_svm_pointer_info_khr param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -236,7 +236,7 @@ public class KHRUnifiedSVM {
             check(__functionAddress);
             check(context);
         }
-        return callPJJPPPI(context, required_capabilities, desired_capabilities, properties, size, suggested_svm_type_index, __functionAddress);
+        return invokePJJPPPI(context, required_capabilities, desired_capabilities, properties, size, suggested_svm_type_index, __functionAddress);
     }
 
     /** {@code cl_int clGetSVMSuggestedTypeIndexKHR(cl_context context, cl_svm_capabilities_khr required_capabilities, cl_svm_capabilities_khr desired_capabilities, cl_svm_alloc_properties_khr const * properties, size_t size, cl_uint * suggested_svm_type_index)} */
@@ -259,7 +259,7 @@ public class KHRUnifiedSVM {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        long __result = callPPPPP(context, properties, svm_type_index, size, errcode_ret, __functionAddress);
+        long __result = invokePPPPP(context, properties, svm_type_index, size, errcode_ret, __functionAddress);
         return memByteBufferSafe(__result, (int)size);
     }
 
@@ -272,7 +272,7 @@ public class KHRUnifiedSVM {
             check(context);
             checkNTSafe(properties);
         }
-        return callPPJPI(context, properties, flags, memAddress(ptr), __functionAddress);
+        return invokePPJPI(context, properties, flags, memAddress(ptr), __functionAddress);
     }
 
     /** {@code cl_int clGetSVMPointerInfoKHR(cl_context context, cl_device_id device, void const * ptr, cl_svm_pointer_info_khr param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -285,7 +285,7 @@ public class KHRUnifiedSVM {
             check(device);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPPPI(context, device, memAddress(ptr), param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPPPI(context, device, memAddress(ptr), param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetSVMPointerInfoKHR(cl_context context, cl_device_id device, void const * ptr, cl_svm_pointer_info_khr param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -298,7 +298,7 @@ public class KHRUnifiedSVM {
             check(device);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPPPI(context, device, memAddress(ptr), param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPPPI(context, device, memAddress(ptr), param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetSVMSuggestedTypeIndexKHR(cl_context context, cl_svm_capabilities_khr required_capabilities, cl_svm_capabilities_khr desired_capabilities, cl_svm_alloc_properties_khr const * properties, size_t size, cl_uint * suggested_svm_type_index)} */
@@ -311,7 +311,7 @@ public class KHRUnifiedSVM {
             checkNTSafe(properties);
             check(suggested_svm_type_index, 1);
         }
-        return callPJJPPPI(context, required_capabilities, desired_capabilities, properties, size, suggested_svm_type_index, __functionAddress);
+        return invokePJJPPPI(context, required_capabilities, desired_capabilities, properties, size, suggested_svm_type_index, __functionAddress);
     }
 
 }

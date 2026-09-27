@@ -60,7 +60,7 @@ public class METAEnvironmentDepth {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, environmentDepthProvider, __functionAddress);
+        return invokePPPI(session.address(), createInfo, environmentDepthProvider, __functionAddress);
     }
 
     /** {@code XrResult xrCreateEnvironmentDepthProviderMETA(XrSession session, XrEnvironmentDepthProviderCreateInfoMETA const * createInfo, XrEnvironmentDepthProviderMETA * environmentDepthProvider)} */
@@ -81,7 +81,7 @@ public class METAEnvironmentDepth {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(environmentDepthProvider.address(), __functionAddress);
+        return invokePI(environmentDepthProvider.address(), __functionAddress);
     }
 
     // --- [ xrStartEnvironmentDepthProviderMETA ] ---
@@ -93,7 +93,7 @@ public class METAEnvironmentDepth {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(environmentDepthProvider.address(), __functionAddress);
+        return invokePI(environmentDepthProvider.address(), __functionAddress);
     }
 
     // --- [ xrStopEnvironmentDepthProviderMETA ] ---
@@ -105,7 +105,7 @@ public class METAEnvironmentDepth {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(environmentDepthProvider.address(), __functionAddress);
+        return invokePI(environmentDepthProvider.address(), __functionAddress);
     }
 
     // --- [ xrCreateEnvironmentDepthSwapchainMETA ] ---
@@ -116,7 +116,7 @@ public class METAEnvironmentDepth {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(environmentDepthProvider.address(), createInfo, swapchain, __functionAddress);
+        return invokePPPI(environmentDepthProvider.address(), createInfo, swapchain, __functionAddress);
     }
 
     /** {@code XrResult xrCreateEnvironmentDepthSwapchainMETA(XrEnvironmentDepthProviderMETA environmentDepthProvider, XrEnvironmentDepthSwapchainCreateInfoMETA const * createInfo, XrEnvironmentDepthSwapchainMETA * swapchain)} */
@@ -137,7 +137,7 @@ public class METAEnvironmentDepth {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(swapchain.address(), __functionAddress);
+        return invokePI(swapchain.address(), __functionAddress);
     }
 
     // --- [ xrEnumerateEnvironmentDepthSwapchainImagesMETA ] ---
@@ -148,7 +148,7 @@ public class METAEnvironmentDepth {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(swapchain.address(), imageCapacityInput, imageCountOutput, images, __functionAddress);
+        return invokePPPI(swapchain.address(), imageCapacityInput, imageCountOutput, images, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateEnvironmentDepthSwapchainImagesMETA(XrEnvironmentDepthSwapchainMETA swapchain, uint32_t imageCapacityInput, uint32_t * imageCountOutput, XrSwapchainImageBaseHeader * images)} */
@@ -168,7 +168,7 @@ public class METAEnvironmentDepth {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(swapchain.address(), state, __functionAddress);
+        return invokePPI(swapchain.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrGetEnvironmentDepthSwapchainStateMETA(XrEnvironmentDepthSwapchainMETA swapchain, XrEnvironmentDepthSwapchainStateMETA * state)} */
@@ -186,7 +186,7 @@ public class METAEnvironmentDepth {
             check(__functionAddress);
             XrEnvironmentDepthImageAcquireInfoMETA.validate(acquireInfo);
         }
-        return callPPPI(environmentDepthProvider.address(), acquireInfo, environmentDepthImage, __functionAddress);
+        return invokePPPI(environmentDepthProvider.address(), acquireInfo, environmentDepthImage, __functionAddress);
     }
 
     /** {@code XrResult xrAcquireEnvironmentDepthImageMETA(XrEnvironmentDepthProviderMETA environmentDepthProvider, XrEnvironmentDepthImageAcquireInfoMETA const * acquireInfo, XrEnvironmentDepthImageMETA * environmentDepthImage)} */
@@ -203,7 +203,7 @@ public class METAEnvironmentDepth {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(environmentDepthProvider.address(), setInfo, __functionAddress);
+        return invokePPI(environmentDepthProvider.address(), setInfo, __functionAddress);
     }
 
     /** {@code XrResult xrSetEnvironmentDepthHandRemovalMETA(XrEnvironmentDepthProviderMETA environmentDepthProvider, XrEnvironmentDepthHandRemovalSetInfoMETA const * setInfo)} */

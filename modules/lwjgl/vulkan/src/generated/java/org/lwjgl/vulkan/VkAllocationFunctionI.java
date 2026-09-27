@@ -30,7 +30,6 @@ public interface VkAllocationFunctionI extends CallbackI {
         VkAllocationFunctionI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_pointer,
             ffi_type_pointer, ffi_type_pointer, ffi_type_pointer, ffi_type_uint32
         )

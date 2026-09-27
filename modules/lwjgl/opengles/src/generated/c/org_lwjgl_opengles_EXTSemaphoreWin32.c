@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glImportSemaphoreWin32HandleEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glImportSemaphoreWin32NameEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glImportSemaphoreWin32HandleEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glImportSemaphoreWin32NameEXTPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

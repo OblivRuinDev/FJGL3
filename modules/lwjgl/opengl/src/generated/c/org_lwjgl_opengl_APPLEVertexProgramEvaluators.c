@@ -14,13 +14,13 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glEnableVertexAttribAPPLEPROC) (jint, jint);
-typedef void (APIENTRY *glDisableVertexAttribAPPLEPROC) (jint, jint);
-typedef jboolean (APIENTRY *glIsVertexAttribEnabledAPPLEPROC) (jint, jint);
-typedef void (APIENTRY *glMapVertexAttrib1dAPPLEPROC) (jint, jint, jdouble, jdouble, jint, jint, uintptr_t);
-typedef void (APIENTRY *glMapVertexAttrib1fAPPLEPROC) (jint, jint, jfloat, jfloat, jint, jint, uintptr_t);
-typedef void (APIENTRY *glMapVertexAttrib2dAPPLEPROC) (jint, jint, jdouble, jdouble, jint, jint, jdouble, jdouble, jint, jint, uintptr_t);
-typedef void (APIENTRY *glMapVertexAttrib2fAPPLEPROC) (jint, jint, jfloat, jfloat, jint, jint, jfloat, jfloat, jint, jint, uintptr_t);
+typedef void (*glEnableVertexAttribAPPLEPROC) (jint, jint);
+typedef void (*glDisableVertexAttribAPPLEPROC) (jint, jint);
+typedef jboolean (*glIsVertexAttribEnabledAPPLEPROC) (jint, jint);
+typedef void (*glMapVertexAttrib1dAPPLEPROC) (jint, jint, jdouble, jdouble, jint, jint, uintptr_t);
+typedef void (*glMapVertexAttrib1fAPPLEPROC) (jint, jint, jfloat, jfloat, jint, jint, uintptr_t);
+typedef void (*glMapVertexAttrib2dAPPLEPROC) (jint, jint, jdouble, jdouble, jint, jint, jdouble, jdouble, jint, jint, uintptr_t);
+typedef void (*glMapVertexAttrib2fAPPLEPROC) (jint, jint, jfloat, jfloat, jint, jint, jfloat, jfloat, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -41,7 +41,7 @@ public class KHRGLEvent {
             check(context);
             check(sync);
         }
-        return callPPPP(context, sync, errcode_ret, __functionAddress);
+        return invokePPPP(context, sync, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_event clCreateEventFromGLsyncKHR(cl_context context, GLsync sync, cl_int * errcode_ret)} */
@@ -63,7 +63,7 @@ public class KHRGLEvent {
             check(sync);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPP(context, sync, errcode_ret, __functionAddress);
+        return invokePPPP(context, sync, errcode_ret, __functionAddress);
     }
 
 }

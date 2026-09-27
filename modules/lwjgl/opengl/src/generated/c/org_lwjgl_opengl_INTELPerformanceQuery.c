@@ -14,16 +14,16 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBeginPerfQueryINTELPROC) (jint);
-typedef void (APIENTRY *glCreatePerfQueryINTELPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDeletePerfQueryINTELPROC) (jint);
-typedef void (APIENTRY *glEndPerfQueryINTELPROC) (jint);
-typedef void (APIENTRY *glGetFirstPerfQueryIdINTELPROC) (uintptr_t);
-typedef void (APIENTRY *glGetNextPerfQueryIdINTELPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGetPerfCounterInfoINTELPROC) (jint, jint, jint, uintptr_t, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetPerfQueryDataINTELPROC) (jint, jint, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetPerfQueryIdByNameINTELPROC) (uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetPerfQueryInfoINTELPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glBeginPerfQueryINTELPROC) (jint);
+typedef void (*glCreatePerfQueryINTELPROC) (jint, uintptr_t);
+typedef void (*glDeletePerfQueryINTELPROC) (jint);
+typedef void (*glEndPerfQueryINTELPROC) (jint);
+typedef void (*glGetFirstPerfQueryIdINTELPROC) (uintptr_t);
+typedef void (*glGetNextPerfQueryIdINTELPROC) (jint, uintptr_t);
+typedef void (*glGetPerfCounterInfoINTELPROC) (jint, jint, jint, uintptr_t, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glGetPerfQueryDataINTELPROC) (jint, jint, jint, uintptr_t, uintptr_t);
+typedef void (*glGetPerfQueryIdByNameINTELPROC) (uintptr_t, uintptr_t);
+typedef void (*glGetPerfQueryInfoINTELPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

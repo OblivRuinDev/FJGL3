@@ -58,7 +58,7 @@ public class NVStreamMetadata {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPI(dpy, attribute, value, __functionAddress);
+        return invokePPI(dpy, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryDisplayAttribNV(EGLDisplay dpy, EGLint attribute, EGLAttrib * value)} */
@@ -80,7 +80,7 @@ public class NVStreamMetadata {
             check(dpy);
             check(stream);
         }
-        return callPPPI(dpy, stream, n, offset, size, data, __functionAddress);
+        return invokePPPI(dpy, stream, n, offset, size, data, __functionAddress);
     }
 
     /** {@code EGLBoolean eglSetStreamMetadataNV(EGLDisplay dpy, EGLStreamKHR stream, EGLint n, EGLint offset, EGLint size, void const * data)} */
@@ -99,7 +99,7 @@ public class NVStreamMetadata {
             check(dpy);
             check(stream);
         }
-        return callPPPI(dpy, stream, name, n, offset, size, data, __functionAddress);
+        return invokePPPI(dpy, stream, name, n, offset, size, data, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryStreamMetadataNV(EGLDisplay dpy, EGLStreamKHR stream, EGLenum name, EGLint n, EGLint offset, EGLint size, void * data)} */

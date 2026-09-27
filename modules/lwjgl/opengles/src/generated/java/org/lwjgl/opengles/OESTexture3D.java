@@ -145,7 +145,7 @@ public class OESTexture3D {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage3DOES(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -154,7 +154,7 @@ public class OESTexture3D {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage3DOES(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -163,7 +163,7 @@ public class OESTexture3D {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage3DOES(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -172,7 +172,7 @@ public class OESTexture3D {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage3DOES(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -181,7 +181,7 @@ public class OESTexture3D {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage3DOES(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -190,7 +190,7 @@ public class OESTexture3D {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
 }

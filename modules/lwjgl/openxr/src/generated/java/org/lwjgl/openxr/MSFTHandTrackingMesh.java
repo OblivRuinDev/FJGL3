@@ -50,7 +50,7 @@ public class MSFTHandTrackingMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(handTracker.address(), createInfo, space, __functionAddress);
+        return invokePPPI(handTracker.address(), createInfo, space, __functionAddress);
     }
 
     /** {@code XrResult xrCreateHandMeshSpaceMSFT(XrHandTrackerEXT handTracker, XrHandMeshSpaceCreateInfoMSFT const * createInfo, XrSpace * space)} */
@@ -70,7 +70,7 @@ public class MSFTHandTrackingMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(handTracker.address(), updateInfo, handMesh, __functionAddress);
+        return invokePPPI(handTracker.address(), updateInfo, handMesh, __functionAddress);
     }
 
     /** {@code XrResult xrUpdateHandMeshMSFT(XrHandTrackerEXT handTracker, XrHandMeshUpdateInfoMSFT const * updateInfo, XrHandMeshMSFT * handMesh)} */

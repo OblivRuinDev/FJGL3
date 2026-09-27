@@ -14,14 +14,14 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glGenFencesAPPLEPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDeleteFencesAPPLEPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glSetFenceAPPLEPROC) (jint);
-typedef jboolean (APIENTRY *glIsFenceAPPLEPROC) (jint);
-typedef jboolean (APIENTRY *glTestFenceAPPLEPROC) (jint);
-typedef void (APIENTRY *glFinishFenceAPPLEPROC) (jint);
-typedef jboolean (APIENTRY *glTestObjectAPPLEPROC) (jint, jint);
-typedef void (APIENTRY *glFinishObjectAPPLEPROC) (jint, jint);
+typedef void (*glGenFencesAPPLEPROC) (jint, uintptr_t);
+typedef void (*glDeleteFencesAPPLEPROC) (jint, uintptr_t);
+typedef void (*glSetFenceAPPLEPROC) (jint);
+typedef jboolean (*glIsFenceAPPLEPROC) (jint);
+typedef jboolean (*glTestFenceAPPLEPROC) (jint);
+typedef void (*glFinishFenceAPPLEPROC) (jint);
+typedef jboolean (*glTestObjectAPPLEPROC) (jint, jint);
+typedef void (*glFinishObjectAPPLEPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

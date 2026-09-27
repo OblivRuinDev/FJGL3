@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glVertexArrayRangeAPPLEPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glFlushVertexArrayRangeAPPLEPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexArrayParameteriAPPLEPROC) (jint, jint);
+typedef void (*glVertexArrayRangeAPPLEPROC) (jint, uintptr_t);
+typedef void (*glFlushVertexArrayRangeAPPLEPROC) (jint, uintptr_t);
+typedef void (*glVertexArrayParameteriAPPLEPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

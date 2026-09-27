@@ -39,7 +39,7 @@ public class KHRSuggestedLocalWorkSize {
             check(command_queue);
             check(kernel);
         }
-        return callPPPPPI(command_queue, kernel, work_dim, global_work_offset, global_work_size, suggested_local_work_size, __functionAddress);
+        return invokePPPPPI(command_queue, kernel, work_dim, global_work_offset, global_work_size, suggested_local_work_size, __functionAddress);
     }
 
     /** {@code cl_int clGetKernelSuggestedLocalWorkSizeKHR(cl_command_queue command_queue, cl_kernel kernel, cl_uint work_dim, size_t const * global_work_offset, size_t const * global_work_size, size_t * suggested_local_work_size)} */

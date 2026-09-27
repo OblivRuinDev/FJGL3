@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glDepthRangedNVPROC) (jdouble, jdouble);
-typedef void (APIENTRY *glClearDepthdNVPROC) (jdouble);
-typedef void (APIENTRY *glDepthBoundsdNVPROC) (jdouble, jdouble);
+typedef void (*glDepthRangedNVPROC) (jdouble, jdouble);
+typedef void (*glClearDepthdNVPROC) (jdouble);
+typedef void (*glDepthBoundsdNVPROC) (jdouble, jdouble);
 
 EXTERN_C_ENTER
 

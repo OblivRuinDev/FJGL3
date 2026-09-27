@@ -40,7 +40,7 @@ public class NVAcquireWinrtDisplay {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(physicalDevice.address(), display, __functionAddress);
+        return invokePJI(physicalDevice.address(), display, __functionAddress);
     }
 
     // --- [ vkGetWinrtDisplayNV ] ---
@@ -51,7 +51,7 @@ public class NVAcquireWinrtDisplay {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(physicalDevice.address(), deviceRelativeId, pDisplay, __functionAddress);
+        return invokePPI(physicalDevice.address(), deviceRelativeId, pDisplay, __functionAddress);
     }
 
     /** {@code VkResult vkGetWinrtDisplayNV(VkPhysicalDevice physicalDevice, uint32_t deviceRelativeId, VkDisplayKHR * pDisplay)} */
@@ -71,7 +71,7 @@ public class NVAcquireWinrtDisplay {
             check(__functionAddress);
             check(pDisplay, 1);
         }
-        return callPPI(physicalDevice.address(), deviceRelativeId, pDisplay, __functionAddress);
+        return invokePPI(physicalDevice.address(), deviceRelativeId, pDisplay, __functionAddress);
     }
 
 }

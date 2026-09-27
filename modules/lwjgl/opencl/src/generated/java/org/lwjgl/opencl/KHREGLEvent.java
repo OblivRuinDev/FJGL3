@@ -44,7 +44,7 @@ public class KHREGLEvent {
             check(sync);
             check(display);
         }
-        return callPPPPP(context, sync, display, errcode_ret, __functionAddress);
+        return invokePPPPP(context, sync, display, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_event clCreateEventFromEGLSyncKHR(cl_context context, CLeglSyncKHR sync, CLeglDisplayKHR display, cl_int * errcode_ret)} */
@@ -67,7 +67,7 @@ public class KHREGLEvent {
             check(display);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPPP(context, sync, display, errcode_ret, __functionAddress);
+        return invokePPPPP(context, sync, display, errcode_ret, __functionAddress);
     }
 
 }

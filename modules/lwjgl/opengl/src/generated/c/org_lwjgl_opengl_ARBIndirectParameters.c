@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glMultiDrawArraysIndirectCountARBPROC) (jint, uintptr_t, uintptr_t, jint, jint);
-typedef void (APIENTRY *glMultiDrawElementsIndirectCountARBPROC) (jint, jint, uintptr_t, uintptr_t, jint, jint);
+typedef void (*glMultiDrawArraysIndirectCountARBPROC) (jint, uintptr_t, uintptr_t, jint, jint);
+typedef void (*glMultiDrawElementsIndirectCountARBPROC) (jint, jint, uintptr_t, uintptr_t, jint, jint);
 
 EXTERN_C_ENTER
 

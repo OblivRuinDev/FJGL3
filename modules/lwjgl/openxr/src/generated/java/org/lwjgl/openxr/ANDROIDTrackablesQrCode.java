@@ -48,7 +48,7 @@ public class ANDROIDTrackablesQrCode {
             check(__functionAddress);
             XrTrackableGetInfoANDROID.validate(getInfo);
         }
-        return callPPPI(tracker.address(), getInfo, qrCodeOutput, __functionAddress);
+        return invokePPPI(tracker.address(), getInfo, qrCodeOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetTrackableQrCodeANDROID(XrTrackableTrackerANDROID tracker, XrTrackableGetInfoANDROID const * getInfo, XrTrackableQrCodeANDROID * qrCodeOutput)} */

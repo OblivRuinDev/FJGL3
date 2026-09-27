@@ -51,7 +51,7 @@ public class NVInternalformatSampleQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, internalformat, samples, pname, params.length, params, __functionAddress);
+        invokePV(target, internalformat, samples, pname, params.length, params, __functionAddress);
     }
 
 }

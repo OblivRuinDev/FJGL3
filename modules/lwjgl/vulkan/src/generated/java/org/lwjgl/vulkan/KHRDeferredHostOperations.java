@@ -49,7 +49,7 @@ public class KHRDeferredHostOperations {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pAllocator, pDeferredOperation, __functionAddress);
+        return invokePPPI(device.address(), pAllocator, pDeferredOperation, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDeferredOperationKHR(VkDevice device, VkAllocationCallbacks const * pAllocator, VkDeferredOperationKHR * pDeferredOperation)} */
@@ -69,7 +69,7 @@ public class KHRDeferredHostOperations {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), operation, pAllocator, __functionAddress);
+        invokePJPV(device.address(), operation, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyDeferredOperationKHR(VkDevice device, VkDeferredOperationKHR operation, VkAllocationCallbacks const * pAllocator)} */
@@ -86,7 +86,7 @@ public class KHRDeferredHostOperations {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(device.address(), operation, __functionAddress);
+        return invokePJI(device.address(), operation, __functionAddress);
     }
 
     // --- [ vkGetDeferredOperationResultKHR ] ---
@@ -98,7 +98,7 @@ public class KHRDeferredHostOperations {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(device.address(), operation, __functionAddress);
+        return invokePJI(device.address(), operation, __functionAddress);
     }
 
     // --- [ vkDeferredOperationJoinKHR ] ---
@@ -110,7 +110,7 @@ public class KHRDeferredHostOperations {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(device.address(), operation, __functionAddress);
+        return invokePJI(device.address(), operation, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDeferredOperationKHR(VkDevice device, VkAllocationCallbacks const * pAllocator, VkDeferredOperationKHR * pDeferredOperation)} */
@@ -121,7 +121,7 @@ public class KHRDeferredHostOperations {
             check(__functionAddress);
             check(pDeferredOperation, 1);
         }
-        return callPPPI(device.address(), memAddressSafe(pAllocator), pDeferredOperation, __functionAddress);
+        return invokePPPI(device.address(), memAddressSafe(pAllocator), pDeferredOperation, __functionAddress);
     }
 
 }

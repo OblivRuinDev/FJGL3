@@ -89,7 +89,7 @@ public class MLLocalizationMap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), info, __functionAddress);
+        return invokePPI(session.address(), info, __functionAddress);
     }
 
     /** {@code XrResult xrEnableLocalizationEventsML(XrSession session, XrLocalizationEnableEventsInfoML const * info)} */
@@ -106,7 +106,7 @@ public class MLLocalizationMap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(session.address(), queryInfo, mapCapacityInput, mapCountOutput, maps, __functionAddress);
+        return invokePPPPI(session.address(), queryInfo, mapCapacityInput, mapCountOutput, maps, __functionAddress);
     }
 
     /** {@code XrResult xrQueryLocalizationMapsML(XrSession session, XrLocalizationMapQueryInfoBaseHeaderML const * queryInfo, uint32_t mapCapacityInput, uint32_t * mapCountOutput, XrLocalizationMapML * maps)} */
@@ -126,7 +126,7 @@ public class MLLocalizationMap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), requestInfo, __functionAddress);
+        return invokePPI(session.address(), requestInfo, __functionAddress);
     }
 
     /** {@code XrResult xrRequestMapLocalizationML(XrSession session, XrMapLocalizationRequestInfoML const * requestInfo)} */
@@ -144,7 +144,7 @@ public class MLLocalizationMap {
             check(__functionAddress);
             XrLocalizationMapImportInfoML.validate(importInfo);
         }
-        return callPPPI(session.address(), importInfo, mapUuid, __functionAddress);
+        return invokePPPI(session.address(), importInfo, mapUuid, __functionAddress);
     }
 
     /** {@code XrResult xrImportLocalizationMapML(XrSession session, XrLocalizationMapImportInfoML const * importInfo, XrUuidEXT * mapUuid)} */
@@ -161,7 +161,7 @@ public class MLLocalizationMap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), mapUuid, map, __functionAddress);
+        return invokePPPI(session.address(), mapUuid, map, __functionAddress);
     }
 
     /** {@code XrResult xrCreateExportedLocalizationMapML(XrSession session, XrUuidEXT const * mapUuid, XrExportedLocalizationMapML * map)} */
@@ -182,7 +182,7 @@ public class MLLocalizationMap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(map.address(), __functionAddress);
+        return invokePI(map.address(), __functionAddress);
     }
 
     // --- [ xrGetExportedLocalizationMapDataML ] ---
@@ -193,7 +193,7 @@ public class MLLocalizationMap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(map.address(), bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePPPI(map.address(), bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetExportedLocalizationMapDataML(XrExportedLocalizationMapML map, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, char * buffer)} */

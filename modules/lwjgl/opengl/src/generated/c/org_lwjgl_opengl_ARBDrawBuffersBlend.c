@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBlendEquationiARBPROC) (jint, jint);
-typedef void (APIENTRY *glBlendEquationSeparateiARBPROC) (jint, jint, jint);
-typedef void (APIENTRY *glBlendFunciARBPROC) (jint, jint, jint);
-typedef void (APIENTRY *glBlendFuncSeparateiARBPROC) (jint, jint, jint, jint, jint);
+typedef void (*glBlendEquationiARBPROC) (jint, jint);
+typedef void (*glBlendEquationSeparateiARBPROC) (jint, jint, jint);
+typedef void (*glBlendFunciARBPROC) (jint, jint, jint);
+typedef void (*glBlendFuncSeparateiARBPROC) (jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

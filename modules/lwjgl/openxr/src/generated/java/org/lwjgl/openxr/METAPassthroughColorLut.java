@@ -55,7 +55,7 @@ public class METAPassthroughColorLut {
             check(__functionAddress);
             XrPassthroughColorLutCreateInfoMETA.validate(createInfo);
         }
-        return callPPPI(passthrough.address(), createInfo, colorLut, __functionAddress);
+        return invokePPPI(passthrough.address(), createInfo, colorLut, __functionAddress);
     }
 
     /** {@code XrResult xrCreatePassthroughColorLutMETA(XrPassthroughFB passthrough, XrPassthroughColorLutCreateInfoMETA const * createInfo, XrPassthroughColorLutMETA * colorLut)} */
@@ -76,7 +76,7 @@ public class METAPassthroughColorLut {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(colorLut.address(), __functionAddress);
+        return invokePI(colorLut.address(), __functionAddress);
     }
 
     // --- [ xrUpdatePassthroughColorLutMETA ] ---
@@ -88,7 +88,7 @@ public class METAPassthroughColorLut {
             check(__functionAddress);
             XrPassthroughColorLutUpdateInfoMETA.validate(updateInfo);
         }
-        return callPPI(colorLut.address(), updateInfo, __functionAddress);
+        return invokePPI(colorLut.address(), updateInfo, __functionAddress);
     }
 
     /** {@code XrResult xrUpdatePassthroughColorLutMETA(XrPassthroughColorLutMETA colorLut, XrPassthroughColorLutUpdateInfoMETA const * updateInfo)} */

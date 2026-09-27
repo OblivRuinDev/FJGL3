@@ -30,7 +30,6 @@ public interface ktxStream_getposI extends CallbackI {
         ktxStream_getposI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_uint32,
             ffi_type_pointer, ffi_type_pointer
         )

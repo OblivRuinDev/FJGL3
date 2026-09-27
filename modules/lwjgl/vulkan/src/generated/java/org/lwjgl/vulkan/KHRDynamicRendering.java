@@ -51,7 +51,7 @@ public class KHRDynamicRendering {
             check(__functionAddress);
             VkRenderingInfo.validate(pRenderingInfo);
         }
-        callPPV(commandBuffer.address(), pRenderingInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pRenderingInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBeginRenderingKHR(VkCommandBuffer commandBuffer, VkRenderingInfo const * pRenderingInfo)} */
@@ -67,7 +67,7 @@ public class KHRDynamicRendering {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), __functionAddress);
+        invokePV(commandBuffer.address(), __functionAddress);
     }
 
 }

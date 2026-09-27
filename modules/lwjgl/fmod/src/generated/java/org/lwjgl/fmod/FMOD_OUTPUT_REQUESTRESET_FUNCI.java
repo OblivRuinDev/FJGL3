@@ -30,7 +30,6 @@ public interface FMOD_OUTPUT_REQUESTRESET_FUNCI extends CallbackI {
         FMOD_OUTPUT_REQUESTRESET_FUNCI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_uint32,
             ffi_type_pointer
         )

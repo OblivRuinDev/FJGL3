@@ -14,26 +14,26 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef jint (APIENTRY *glGetGraphicsResetStatusARBPROC) (void);
-typedef void (APIENTRY *glGetnMapdvARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnMapfvARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnMapivARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnPixelMapfvARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnPixelMapuivARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnPixelMapusvARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnPolygonStippleARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGetnTexImageARBPROC) (jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glReadnPixelsARBPROC) (jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnColorTableARBPROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnConvolutionFilterARBPROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnSeparableFilterARBPROC) (jint, jint, jint, jint, uintptr_t, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetnHistogramARBPROC) (jint, jboolean, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnMinmaxARBPROC) (jint, jboolean, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnCompressedTexImageARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnUniformfvARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnUniformivARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnUniformuivARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnUniformdvARBPROC) (jint, jint, jint, uintptr_t);
+typedef jint (*glGetGraphicsResetStatusARBPROC) (void);
+typedef void (*glGetnMapdvARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetnMapfvARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetnMapivARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetnPixelMapfvARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetnPixelMapuivARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetnPixelMapusvARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetnPolygonStippleARBPROC) (jint, uintptr_t);
+typedef void (*glGetnTexImageARBPROC) (jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glReadnPixelsARBPROC) (jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glGetnColorTableARBPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glGetnConvolutionFilterARBPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glGetnSeparableFilterARBPROC) (jint, jint, jint, jint, uintptr_t, jint, uintptr_t, uintptr_t);
+typedef void (*glGetnHistogramARBPROC) (jint, jboolean, jint, jint, jint, uintptr_t);
+typedef void (*glGetnMinmaxARBPROC) (jint, jboolean, jint, jint, jint, uintptr_t);
+typedef void (*glGetnCompressedTexImageARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetnUniformfvARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetnUniformivARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetnUniformuivARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetnUniformdvARBPROC) (jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

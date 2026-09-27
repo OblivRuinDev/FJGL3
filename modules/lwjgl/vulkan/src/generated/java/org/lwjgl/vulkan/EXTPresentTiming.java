@@ -76,7 +76,7 @@ public class EXTPresentTiming {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(device.address(), swapchain, size, __functionAddress);
+        return invokePJI(device.address(), swapchain, size, __functionAddress);
     }
 
     // --- [ vkGetSwapchainTimingPropertiesEXT ] ---
@@ -87,7 +87,7 @@ public class EXTPresentTiming {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), swapchain, pSwapchainTimingProperties, pSwapchainTimingPropertiesCounter, __functionAddress);
+        return invokePJPPI(device.address(), swapchain, pSwapchainTimingProperties, pSwapchainTimingPropertiesCounter, __functionAddress);
     }
 
     /** {@code VkResult vkGetSwapchainTimingPropertiesEXT(VkDevice device, VkSwapchainKHR swapchain, VkSwapchainTimingPropertiesEXT * pSwapchainTimingProperties, uint64_t * pSwapchainTimingPropertiesCounter)} */
@@ -107,7 +107,7 @@ public class EXTPresentTiming {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), swapchain, pSwapchainTimeDomainProperties, pTimeDomainsCounter, __functionAddress);
+        return invokePJPPI(device.address(), swapchain, pSwapchainTimeDomainProperties, pTimeDomainsCounter, __functionAddress);
     }
 
     /** {@code VkResult vkGetSwapchainTimeDomainPropertiesEXT(VkDevice device, VkSwapchainKHR swapchain, VkSwapchainTimeDomainPropertiesEXT * pSwapchainTimeDomainProperties, uint64_t * pTimeDomainsCounter)} */
@@ -127,7 +127,7 @@ public class EXTPresentTiming {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pPastPresentationTimingInfo, pPastPresentationTimingProperties, __functionAddress);
+        return invokePPPI(device.address(), pPastPresentationTimingInfo, pPastPresentationTimingProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPastPresentationTimingEXT(VkDevice device, VkPastPresentationTimingInfoEXT const * pPastPresentationTimingInfo, VkPastPresentationTimingPropertiesEXT * pPastPresentationTimingProperties)} */
@@ -144,7 +144,7 @@ public class EXTPresentTiming {
             check(__functionAddress);
             checkSafe(pSwapchainTimingPropertiesCounter, 1);
         }
-        return callPJPPI(device.address(), swapchain, pSwapchainTimingProperties.address(), pSwapchainTimingPropertiesCounter, __functionAddress);
+        return invokePJPPI(device.address(), swapchain, pSwapchainTimingProperties.address(), pSwapchainTimingPropertiesCounter, __functionAddress);
     }
 
     /** {@code VkResult vkGetSwapchainTimeDomainPropertiesEXT(VkDevice device, VkSwapchainKHR swapchain, VkSwapchainTimeDomainPropertiesEXT * pSwapchainTimeDomainProperties, uint64_t * pTimeDomainsCounter)} */
@@ -155,7 +155,7 @@ public class EXTPresentTiming {
             check(__functionAddress);
             checkSafe(pTimeDomainsCounter, 1);
         }
-        return callPJPPI(device.address(), swapchain, pSwapchainTimeDomainProperties.address(), pTimeDomainsCounter, __functionAddress);
+        return invokePJPPI(device.address(), swapchain, pSwapchainTimeDomainProperties.address(), pTimeDomainsCounter, __functionAddress);
     }
 
 }

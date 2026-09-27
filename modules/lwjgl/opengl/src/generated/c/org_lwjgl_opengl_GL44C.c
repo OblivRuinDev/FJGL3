@@ -14,15 +14,15 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBufferStoragePROC) (jint, uintptr_t, uintptr_t, jint);
-typedef void (APIENTRY *glClearTexSubImagePROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glClearTexImagePROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glBindBuffersBasePROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glBindBuffersRangePROC) (jint, jint, jint, uintptr_t, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glBindTexturesPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glBindSamplersPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glBindImageTexturesPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glBindVertexBuffersPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glBufferStoragePROC) (jint, uintptr_t, uintptr_t, jint);
+typedef void (*glClearTexSubImagePROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glClearTexImagePROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glBindBuffersBasePROC) (jint, jint, jint, uintptr_t);
+typedef void (*glBindBuffersRangePROC) (jint, jint, jint, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glBindTexturesPROC) (jint, jint, uintptr_t);
+typedef void (*glBindSamplersPROC) (jint, jint, uintptr_t);
+typedef void (*glBindImageTexturesPROC) (jint, jint, uintptr_t);
+typedef void (*glBindVertexBuffersPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

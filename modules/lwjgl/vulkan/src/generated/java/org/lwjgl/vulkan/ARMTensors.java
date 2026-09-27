@@ -105,7 +105,7 @@ public class ARMTensors {
             check(__functionAddress);
             VkTensorCreateInfoARM.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pTensor, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pTensor, __functionAddress);
     }
 
     /** {@code VkResult vkCreateTensorARM(VkDevice device, VkTensorCreateInfoARM const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkTensorARM * pTensor)} */
@@ -125,7 +125,7 @@ public class ARMTensors {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), tensor, pAllocator, __functionAddress);
+        invokePJPV(device.address(), tensor, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyTensorARM(VkDevice device, VkTensorARM tensor, VkAllocationCallbacks const * pAllocator)} */
@@ -141,7 +141,7 @@ public class ARMTensors {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pView, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pView, __functionAddress);
     }
 
     /** {@code VkResult vkCreateTensorViewARM(VkDevice device, VkTensorViewCreateInfoARM const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkTensorViewARM * pView)} */
@@ -161,7 +161,7 @@ public class ARMTensors {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), tensorView, pAllocator, __functionAddress);
+        invokePJPV(device.address(), tensorView, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyTensorViewARM(VkDevice device, VkTensorViewARM tensorView, VkAllocationCallbacks const * pAllocator)} */
@@ -177,7 +177,7 @@ public class ARMTensors {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetTensorMemoryRequirementsARM(VkDevice device, VkTensorMemoryRequirementsInfoARM const * pInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -193,7 +193,7 @@ public class ARMTensors {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
+        return invokePPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
     }
 
     /** {@code VkResult vkBindTensorMemoryARM(VkDevice device, uint32_t bindInfoCount, VkBindTensorMemoryInfoARM const * pBindInfos)} */
@@ -211,7 +211,7 @@ public class ARMTensors {
             check(__functionAddress);
             VkDeviceTensorMemoryRequirementsARM.validate(pInfo);
         }
-        callPPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetDeviceTensorMemoryRequirementsARM(VkDevice device, VkDeviceTensorMemoryRequirementsARM const * pInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -228,7 +228,7 @@ public class ARMTensors {
             check(__functionAddress);
             VkCopyTensorInfoARM.validate(pCopyTensorInfo);
         }
-        callPPV(commandBuffer.address(), pCopyTensorInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pCopyTensorInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyTensorARM(VkCommandBuffer commandBuffer, VkCopyTensorInfoARM const * pCopyTensorInfo)} */
@@ -245,7 +245,7 @@ public class ARMTensors {
             check(__functionAddress);
             VkPhysicalDeviceExternalTensorInfoARM.validate(pExternalTensorInfo);
         }
-        callPPPV(physicalDevice.address(), pExternalTensorInfo, pExternalTensorProperties, __functionAddress);
+        invokePPPV(physicalDevice.address(), pExternalTensorInfo, pExternalTensorProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceExternalTensorPropertiesARM(VkPhysicalDevice physicalDevice, VkPhysicalDeviceExternalTensorInfoARM const * pExternalTensorInfo, VkExternalTensorPropertiesARM * pExternalTensorProperties)} */
@@ -261,7 +261,7 @@ public class ARMTensors {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pInfo, pData, __functionAddress);
+        return invokePPPI(device.address(), pInfo, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetTensorOpaqueCaptureDescriptorDataARM(VkDevice device, VkTensorCaptureDescriptorDataInfoARM const * pInfo, void * pData)} */
@@ -281,7 +281,7 @@ public class ARMTensors {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pInfo, pData, __functionAddress);
+        return invokePPPI(device.address(), pInfo, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetTensorViewOpaqueCaptureDescriptorDataARM(VkDevice device, VkTensorViewCaptureDescriptorDataInfoARM const * pInfo, void * pData)} */
@@ -302,7 +302,7 @@ public class ARMTensors {
             check(pTensor, 1);
             VkTensorCreateInfoARM.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pTensor, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pTensor, __functionAddress);
     }
 
     /** {@code VkResult vkCreateTensorViewARM(VkDevice device, VkTensorViewCreateInfoARM const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkTensorViewARM * pView)} */
@@ -313,7 +313,7 @@ public class ARMTensors {
             check(__functionAddress);
             check(pView, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pView, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pView, __functionAddress);
     }
 
 }

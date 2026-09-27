@@ -52,7 +52,7 @@ public class QCOMTrackingOptimizationSettings {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(session.address(), domain, hint, __functionAddress);
+        return invokePI(session.address(), domain, hint, __functionAddress);
     }
 
 }

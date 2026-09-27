@@ -47,7 +47,7 @@ public class METASpatialEntitySharing {
             check(__functionAddress);
             XrShareSpacesInfoMETA.validate(info);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrShareSpacesMETA(XrSession session, XrShareSpacesInfoMETA const * info, XrAsyncRequestIdFB * requestId)} */

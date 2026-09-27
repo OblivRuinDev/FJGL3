@@ -41,7 +41,7 @@ public class KHRCLEvent2 {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPP(dpy, type, attrib_list, __functionAddress);
+        return invokePPP(dpy, type, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSyncKHR eglCreateSync64KHR(EGLDisplay dpy, EGLenum type, EGLAttribKHR const * attrib_list)} */

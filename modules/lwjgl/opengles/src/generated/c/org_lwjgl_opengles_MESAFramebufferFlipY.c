@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glFramebufferParameteriMESAPROC) (jint, jint, jint);
-typedef void (APIENTRY *glGetFramebufferParameterivMESAPROC) (jint, jint, uintptr_t);
+typedef void (*glFramebufferParameteriMESAPROC) (jint, jint, jint);
+typedef void (*glGetFramebufferParameterivMESAPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

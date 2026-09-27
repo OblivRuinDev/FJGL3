@@ -14,22 +14,22 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef jlong (APIENTRY *glGetTextureHandleARBPROC) (jint);
-typedef jlong (APIENTRY *glGetTextureSamplerHandleARBPROC) (jint, jint);
-typedef void (APIENTRY *glMakeTextureHandleResidentARBPROC) (jlong);
-typedef void (APIENTRY *glMakeTextureHandleNonResidentARBPROC) (jlong);
-typedef jlong (APIENTRY *glGetImageHandleARBPROC) (jint, jint, jboolean, jint, jint);
-typedef void (APIENTRY *glMakeImageHandleResidentARBPROC) (jlong, jint);
-typedef void (APIENTRY *glMakeImageHandleNonResidentARBPROC) (jlong);
-typedef void (APIENTRY *glUniformHandleui64ARBPROC) (jint, jlong);
-typedef void (APIENTRY *glUniformHandleui64vARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniformHandleui64ARBPROC) (jint, jint, jlong);
-typedef void (APIENTRY *glProgramUniformHandleui64vARBPROC) (jint, jint, jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsTextureHandleResidentARBPROC) (jlong);
-typedef jboolean (APIENTRY *glIsImageHandleResidentARBPROC) (jlong);
-typedef void (APIENTRY *glVertexAttribL1ui64ARBPROC) (jint, jlong);
-typedef void (APIENTRY *glVertexAttribL1ui64vARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGetVertexAttribLui64vARBPROC) (jint, jint, uintptr_t);
+typedef jlong (*glGetTextureHandleARBPROC) (jint);
+typedef jlong (*glGetTextureSamplerHandleARBPROC) (jint, jint);
+typedef void (*glMakeTextureHandleResidentARBPROC) (jlong);
+typedef void (*glMakeTextureHandleNonResidentARBPROC) (jlong);
+typedef jlong (*glGetImageHandleARBPROC) (jint, jint, jboolean, jint, jint);
+typedef void (*glMakeImageHandleResidentARBPROC) (jlong, jint);
+typedef void (*glMakeImageHandleNonResidentARBPROC) (jlong);
+typedef void (*glUniformHandleui64ARBPROC) (jint, jlong);
+typedef void (*glUniformHandleui64vARBPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramUniformHandleui64ARBPROC) (jint, jint, jlong);
+typedef void (*glProgramUniformHandleui64vARBPROC) (jint, jint, jint, uintptr_t);
+typedef jboolean (*glIsTextureHandleResidentARBPROC) (jlong);
+typedef jboolean (*glIsImageHandleResidentARBPROC) (jlong);
+typedef void (*glVertexAttribL1ui64ARBPROC) (jint, jlong);
+typedef void (*glVertexAttribL1ui64vARBPROC) (jint, uintptr_t);
+typedef void (*glGetVertexAttribLui64vARBPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

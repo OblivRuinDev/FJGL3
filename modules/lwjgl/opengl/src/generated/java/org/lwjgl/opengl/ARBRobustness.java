@@ -438,7 +438,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, query, data.length, data, __functionAddress);
+        invokePV(target, query, data.length, data, __functionAddress);
     }
 
     /** {@code void glGetnMapfvARB(GLenum target, GLenum query, GLsizei bufSize, GLfloat * data)} */
@@ -447,7 +447,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, query, data.length, data, __functionAddress);
+        invokePV(target, query, data.length, data, __functionAddress);
     }
 
     /** {@code void glGetnMapivARB(GLenum target, GLenum query, GLsizei bufSize, GLint * data)} */
@@ -456,7 +456,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, query, data.length, data, __functionAddress);
+        invokePV(target, query, data.length, data, __functionAddress);
     }
 
     /** {@code void glGetnPixelMapfvARB(GLenum map, GLsizei bufSize, GLfloat * data)} */
@@ -465,7 +465,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(map, data.length, data, __functionAddress);
+        invokePV(map, data.length, data, __functionAddress);
     }
 
     /** {@code void glGetnPixelMapuivARB(GLenum map, GLsizei bufSize, GLuint * data)} */
@@ -474,7 +474,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(map, data.length, data, __functionAddress);
+        invokePV(map, data.length, data, __functionAddress);
     }
 
     /** {@code void glGetnPixelMapusvARB(GLenum map, GLsizei bufSize, GLushort * data)} */
@@ -483,7 +483,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(map, data.length, data, __functionAddress);
+        invokePV(map, data.length, data, __functionAddress);
     }
 
     /** {@code void glGetnTexImageARB(GLenum tex, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * img)} */
@@ -492,7 +492,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tex, level, format, type, img.length << 1, img, __functionAddress);
+        invokePV(tex, level, format, type, img.length << 1, img, __functionAddress);
     }
 
     /** {@code void glGetnTexImageARB(GLenum tex, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * img)} */
@@ -501,7 +501,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tex, level, format, type, img.length << 2, img, __functionAddress);
+        invokePV(tex, level, format, type, img.length << 2, img, __functionAddress);
     }
 
     /** {@code void glGetnTexImageARB(GLenum tex, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * img)} */
@@ -510,7 +510,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tex, level, format, type, img.length << 2, img, __functionAddress);
+        invokePV(tex, level, format, type, img.length << 2, img, __functionAddress);
     }
 
     /** {@code void glGetnTexImageARB(GLenum tex, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * img)} */
@@ -519,7 +519,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tex, level, format, type, img.length << 3, img, __functionAddress);
+        invokePV(tex, level, format, type, img.length << 3, img, __functionAddress);
     }
 
     /** {@code void glReadnPixelsARB(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * data)} */
@@ -528,7 +528,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, data.length << 1, data, __functionAddress);
+        invokePV(x, y, width, height, format, type, data.length << 1, data, __functionAddress);
     }
 
     /** {@code void glReadnPixelsARB(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * data)} */
@@ -537,7 +537,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, data.length << 2, data, __functionAddress);
+        invokePV(x, y, width, height, format, type, data.length << 2, data, __functionAddress);
     }
 
     /** {@code void glReadnPixelsARB(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * data)} */
@@ -546,7 +546,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, data.length << 2, data, __functionAddress);
+        invokePV(x, y, width, height, format, type, data.length << 2, data, __functionAddress);
     }
 
     /** {@code void glGetnColorTableARB(GLenum target, GLenum format, GLenum type, GLsizei bufSize, void * table)} */
@@ -555,7 +555,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, format, type, table.length << 1, table, __functionAddress);
+        invokePV(target, format, type, table.length << 1, table, __functionAddress);
     }
 
     /** {@code void glGetnColorTableARB(GLenum target, GLenum format, GLenum type, GLsizei bufSize, void * table)} */
@@ -564,7 +564,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, format, type, table.length << 2, table, __functionAddress);
+        invokePV(target, format, type, table.length << 2, table, __functionAddress);
     }
 
     /** {@code void glGetnColorTableARB(GLenum target, GLenum format, GLenum type, GLsizei bufSize, void * table)} */
@@ -573,7 +573,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, format, type, table.length << 2, table, __functionAddress);
+        invokePV(target, format, type, table.length << 2, table, __functionAddress);
     }
 
     /** {@code void glGetnUniformfvARB(GLuint program, GLint location, GLsizei bufSize, GLfloat * params)} */
@@ -582,7 +582,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformivARB(GLuint program, GLint location, GLsizei bufSize, GLint * params)} */
@@ -591,7 +591,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformuivARB(GLuint program, GLint location, GLsizei bufSize, GLuint * params)} */
@@ -600,7 +600,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformdvARB(GLuint program, GLint location, GLsizei bufSize, GLdouble * params)} */
@@ -609,7 +609,7 @@ public class ARBRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
 }

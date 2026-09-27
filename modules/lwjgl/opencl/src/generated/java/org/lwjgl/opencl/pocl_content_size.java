@@ -35,7 +35,7 @@ public class pocl_content_size {
             check(buffer);
             check(content_size_buffer);
         }
-        return callPPI(buffer, content_size_buffer, __functionAddress);
+        return invokePPI(buffer, content_size_buffer, __functionAddress);
     }
 
 }

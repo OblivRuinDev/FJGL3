@@ -14,15 +14,15 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glCompressedTexImage3DPROC) (jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCompressedTexImage2DPROC) (jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCompressedTexImage1DPROC) (jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCompressedTexSubImage3DPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCompressedTexSubImage2DPROC) (jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCompressedTexSubImage1DPROC) (jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetCompressedTexImagePROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glSampleCoveragePROC) (jfloat, jboolean);
-typedef void (APIENTRY *glActiveTexturePROC) (jint);
+typedef void (*glCompressedTexImage3DPROC) (jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCompressedTexImage2DPROC) (jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCompressedTexImage1DPROC) (jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCompressedTexSubImage3DPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCompressedTexSubImage2DPROC) (jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCompressedTexSubImage1DPROC) (jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glGetCompressedTexImagePROC) (jint, jint, uintptr_t);
+typedef void (*glSampleCoveragePROC) (jfloat, jboolean);
+typedef void (*glActiveTexturePROC) (jint);
 
 EXTERN_C_ENTER
 

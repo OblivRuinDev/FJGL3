@@ -49,7 +49,7 @@ public class HUAWEISubpassShading {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), renderpass, pMaxWorkgroupSize, __functionAddress);
+        return invokePJPI(device.address(), renderpass, pMaxWorkgroupSize, __functionAddress);
     }
 
     /** {@code VkResult vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI(VkDevice device, VkRenderPass renderpass, VkExtent2D * pMaxWorkgroupSize)} */
@@ -66,7 +66,7 @@ public class HUAWEISubpassShading {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), __functionAddress);
+        invokePV(commandBuffer.address(), __functionAddress);
     }
 
 }

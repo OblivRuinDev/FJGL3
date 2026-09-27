@@ -184,7 +184,7 @@ public class APPLESync {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pname, params, __functionAddress);
+        invokePV(pname, params, __functionAddress);
     }
 
     /** {@code void glGetSyncivAPPLE(GLsync sync, GLenum pname, GLsizei bufSize, GLsizei * length, GLint * values)} */
@@ -195,7 +195,7 @@ public class APPLESync {
             check(sync);
             checkSafe(length, 1);
         }
-        callPPPV(sync, pname, values.length, length, values, __functionAddress);
+        invokePPPV(sync, pname, values.length, length, values, __functionAddress);
     }
 
 }

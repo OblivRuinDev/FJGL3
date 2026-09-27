@@ -14,38 +14,38 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glColorTablePROC) (jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCopyColorTablePROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glColorTableParameterivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glColorTableParameterfvPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetColorTablePROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetColorTableParameterivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetColorTableParameterfvPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glColorSubTablePROC) (jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCopyColorSubTablePROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glConvolutionFilter1DPROC) (jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glConvolutionFilter2DPROC) (jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCopyConvolutionFilter1DPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glCopyConvolutionFilter2DPROC) (jint, jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glGetConvolutionFilterPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glSeparableFilter2DPROC) (jint, jint, jint, jint, jint, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetSeparableFilterPROC) (jint, jint, jint, uintptr_t, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glConvolutionParameteriPROC) (jint, jint, jint);
-typedef void (APIENTRY *glConvolutionParameterivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glConvolutionParameterfPROC) (jint, jint, jfloat);
-typedef void (APIENTRY *glConvolutionParameterfvPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetConvolutionParameterivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetConvolutionParameterfvPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glHistogramPROC) (jint, jint, jint, jboolean);
-typedef void (APIENTRY *glResetHistogramPROC) (jint);
-typedef void (APIENTRY *glGetHistogramPROC) (jint, jboolean, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetHistogramParameterivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetHistogramParameterfvPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glMinmaxPROC) (jint, jint, jboolean);
-typedef void (APIENTRY *glResetMinmaxPROC) (jint);
-typedef void (APIENTRY *glGetMinmaxPROC) (jint, jboolean, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetMinmaxParameterivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetMinmaxParameterfvPROC) (jint, jint, uintptr_t);
+typedef void (*glColorTablePROC) (jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCopyColorTablePROC) (jint, jint, jint, jint, jint);
+typedef void (*glColorTableParameterivPROC) (jint, jint, uintptr_t);
+typedef void (*glColorTableParameterfvPROC) (jint, jint, uintptr_t);
+typedef void (*glGetColorTablePROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetColorTableParameterivPROC) (jint, jint, uintptr_t);
+typedef void (*glGetColorTableParameterfvPROC) (jint, jint, uintptr_t);
+typedef void (*glColorSubTablePROC) (jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCopyColorSubTablePROC) (jint, jint, jint, jint, jint);
+typedef void (*glConvolutionFilter1DPROC) (jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glConvolutionFilter2DPROC) (jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCopyConvolutionFilter1DPROC) (jint, jint, jint, jint, jint);
+typedef void (*glCopyConvolutionFilter2DPROC) (jint, jint, jint, jint, jint, jint);
+typedef void (*glGetConvolutionFilterPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glSeparableFilter2DPROC) (jint, jint, jint, jint, jint, jint, uintptr_t, uintptr_t);
+typedef void (*glGetSeparableFilterPROC) (jint, jint, jint, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glConvolutionParameteriPROC) (jint, jint, jint);
+typedef void (*glConvolutionParameterivPROC) (jint, jint, uintptr_t);
+typedef void (*glConvolutionParameterfPROC) (jint, jint, jfloat);
+typedef void (*glConvolutionParameterfvPROC) (jint, jint, uintptr_t);
+typedef void (*glGetConvolutionParameterivPROC) (jint, jint, uintptr_t);
+typedef void (*glGetConvolutionParameterfvPROC) (jint, jint, uintptr_t);
+typedef void (*glHistogramPROC) (jint, jint, jint, jboolean);
+typedef void (*glResetHistogramPROC) (jint);
+typedef void (*glGetHistogramPROC) (jint, jboolean, jint, jint, uintptr_t);
+typedef void (*glGetHistogramParameterivPROC) (jint, jint, uintptr_t);
+typedef void (*glGetHistogramParameterfvPROC) (jint, jint, uintptr_t);
+typedef void (*glMinmaxPROC) (jint, jint, jboolean);
+typedef void (*glResetMinmaxPROC) (jint);
+typedef void (*glGetMinmaxPROC) (jint, jboolean, jint, jint, uintptr_t);
+typedef void (*glGetMinmaxParameterivPROC) (jint, jint, uintptr_t);
+typedef void (*glGetMinmaxParameterfvPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

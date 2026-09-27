@@ -14,25 +14,25 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glVertexAttribL1i64NVPROC) (jint, jlong);
-typedef void (APIENTRY *glVertexAttribL2i64NVPROC) (jint, jlong, jlong);
-typedef void (APIENTRY *glVertexAttribL3i64NVPROC) (jint, jlong, jlong, jlong);
-typedef void (APIENTRY *glVertexAttribL4i64NVPROC) (jint, jlong, jlong, jlong, jlong);
-typedef void (APIENTRY *glVertexAttribL1i64vNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribL2i64vNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribL3i64vNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribL4i64vNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribL1ui64NVPROC) (jint, jlong);
-typedef void (APIENTRY *glVertexAttribL2ui64NVPROC) (jint, jlong, jlong);
-typedef void (APIENTRY *glVertexAttribL3ui64NVPROC) (jint, jlong, jlong, jlong);
-typedef void (APIENTRY *glVertexAttribL4ui64NVPROC) (jint, jlong, jlong, jlong, jlong);
-typedef void (APIENTRY *glVertexAttribL1ui64vNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribL2ui64vNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribL3ui64vNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribL4ui64vNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGetVertexAttribLi64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetVertexAttribLui64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribLFormatNVPROC) (jint, jint, jint, jint);
+typedef void (*glVertexAttribL1i64NVPROC) (jint, jlong);
+typedef void (*glVertexAttribL2i64NVPROC) (jint, jlong, jlong);
+typedef void (*glVertexAttribL3i64NVPROC) (jint, jlong, jlong, jlong);
+typedef void (*glVertexAttribL4i64NVPROC) (jint, jlong, jlong, jlong, jlong);
+typedef void (*glVertexAttribL1i64vNVPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribL2i64vNVPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribL3i64vNVPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribL4i64vNVPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribL1ui64NVPROC) (jint, jlong);
+typedef void (*glVertexAttribL2ui64NVPROC) (jint, jlong, jlong);
+typedef void (*glVertexAttribL3ui64NVPROC) (jint, jlong, jlong, jlong);
+typedef void (*glVertexAttribL4ui64NVPROC) (jint, jlong, jlong, jlong, jlong);
+typedef void (*glVertexAttribL1ui64vNVPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribL2ui64vNVPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribL3ui64vNVPROC) (jint, uintptr_t);
+typedef void (*glVertexAttribL4ui64vNVPROC) (jint, uintptr_t);
+typedef void (*glGetVertexAttribLi64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glGetVertexAttribLui64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glVertexAttribLFormatNVPROC) (jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

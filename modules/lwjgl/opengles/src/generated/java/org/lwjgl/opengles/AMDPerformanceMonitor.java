@@ -211,7 +211,7 @@ public class AMDPerformanceMonitor {
             check(__functionAddress);
             checkSafe(numGroups, 1);
         }
-        callPPV(numGroups, lengthSafe(groups), groups, __functionAddress);
+        invokePPV(numGroups, lengthSafe(groups), groups, __functionAddress);
     }
 
     /** {@code void glGetPerfMonitorCountersAMD(GLuint group, GLint * numCounters, GLint * maxActiveCounters, GLsizei counterSize, GLuint * counters)} */
@@ -222,7 +222,7 @@ public class AMDPerformanceMonitor {
             check(numCounters, 1);
             check(maxActiveCounters, 1);
         }
-        callPPPV(group, numCounters, maxActiveCounters, counters.length, counters, __functionAddress);
+        invokePPPV(group, numCounters, maxActiveCounters, counters.length, counters, __functionAddress);
     }
 
     /** {@code void glGetPerfMonitorGroupStringAMD(GLuint group, GLsizei bufSize, GLsizei * length, GLchar * groupString)} */
@@ -232,7 +232,7 @@ public class AMDPerformanceMonitor {
             check(__functionAddress);
             check(length, 1);
         }
-        callPPV(group, groupString.remaining(), length, memAddress(groupString), __functionAddress);
+        invokePPV(group, groupString.remaining(), length, memAddress(groupString), __functionAddress);
     }
 
     /** {@code void glGetPerfMonitorCounterStringAMD(GLuint group, GLuint counter, GLsizei bufSize, GLsizei * length, GLchar * counterString)} */
@@ -242,7 +242,7 @@ public class AMDPerformanceMonitor {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(group, counter, remainingSafe(counterString), length, memAddressSafe(counterString), __functionAddress);
+        invokePPV(group, counter, remainingSafe(counterString), length, memAddressSafe(counterString), __functionAddress);
     }
 
     /** {@code void glGetPerfMonitorCounterInfoAMD(GLuint group, GLuint counter, GLenum pname, void * data)} */
@@ -252,7 +252,7 @@ public class AMDPerformanceMonitor {
             check(__functionAddress);
             check(data, 4 >> 2);
         }
-        callPV(group, counter, pname, data, __functionAddress);
+        invokePV(group, counter, pname, data, __functionAddress);
     }
 
     /** {@code void glGetPerfMonitorCounterInfoAMD(GLuint group, GLuint counter, GLenum pname, void * data)} */
@@ -262,7 +262,7 @@ public class AMDPerformanceMonitor {
             check(__functionAddress);
             check(data, 4 >> 2);
         }
-        callPV(group, counter, pname, data, __functionAddress);
+        invokePV(group, counter, pname, data, __functionAddress);
     }
 
     /** {@code void glGenPerfMonitorsAMD(GLsizei n, GLuint * monitors)} */
@@ -271,7 +271,7 @@ public class AMDPerformanceMonitor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(monitors.length, monitors, __functionAddress);
+        invokePV(monitors.length, monitors, __functionAddress);
     }
 
     /** {@code void glDeletePerfMonitorsAMD(GLsizei n, GLuint * monitors)} */
@@ -280,7 +280,7 @@ public class AMDPerformanceMonitor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(monitors.length, monitors, __functionAddress);
+        invokePV(monitors.length, monitors, __functionAddress);
     }
 
     /** {@code void glSelectPerfMonitorCountersAMD(GLuint monitor, GLboolean enable, GLuint group, GLint numCounters, GLuint * counterList)} */
@@ -289,7 +289,7 @@ public class AMDPerformanceMonitor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(monitor, enable, group, counterList.length, counterList, __functionAddress);
+        invokePV(monitor, enable, group, counterList.length, counterList, __functionAddress);
     }
 
     /** {@code void glGetPerfMonitorCounterDataAMD(GLuint monitor, GLenum pname, GLsizei dataSize, GLuint * data, GLint * bytesWritten)} */
@@ -299,7 +299,7 @@ public class AMDPerformanceMonitor {
             check(__functionAddress);
             checkSafe(bytesWritten, 1);
         }
-        callPPV(monitor, pname, data.length, data, bytesWritten, __functionAddress);
+        invokePPV(monitor, pname, data.length, data, bytesWritten, __functionAddress);
     }
 
 }

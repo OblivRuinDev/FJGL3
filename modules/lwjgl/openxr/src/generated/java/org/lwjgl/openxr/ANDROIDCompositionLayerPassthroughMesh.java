@@ -54,7 +54,7 @@ public class ANDROIDCompositionLayerPassthroughMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, layer, __functionAddress);
+        return invokePPPI(session.address(), createInfo, layer, __functionAddress);
     }
 
     /** {@code XrResult xrCreatePassthroughLayerANDROID(XrSession session, XrPassthroughLayerCreateInfoANDROID const * createInfo, XrPassthroughLayerANDROID * layer)} */
@@ -75,7 +75,7 @@ public class ANDROIDCompositionLayerPassthroughMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(layer.address(), __functionAddress);
+        return invokePI(layer.address(), __functionAddress);
     }
 
     // --- [ xrSetPassthroughLayerMeshANDROID ] ---
@@ -87,7 +87,7 @@ public class ANDROIDCompositionLayerPassthroughMesh {
             check(__functionAddress);
             XrPassthroughLayerMeshANDROID.validate(mesh);
         }
-        return callPPI(layer.address(), mesh, __functionAddress);
+        return invokePPI(layer.address(), mesh, __functionAddress);
     }
 
     /** {@code XrResult xrSetPassthroughLayerMeshANDROID(XrPassthroughLayerANDROID layer, XrPassthroughLayerMeshANDROID const * mesh)} */

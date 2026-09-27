@@ -52,7 +52,7 @@ public class WGLARBPbuffer {
             check(__functionAddress);
             check(hdc);
         }
-        return callPPP(hdc, pixelFormat, width, height, attribList, __functionAddress);
+        return invokePPP(hdc, pixelFormat, width, height, attribList, __functionAddress);
     }
 
     /** {@code HPBUFFERARB wglCreatePbufferARB(HDC hdc, int pixelFormat, int width, int height, int const * attribList)} */
@@ -74,7 +74,7 @@ public class WGLARBPbuffer {
             check(__functionAddress);
             check(pbuffer);
         }
-        return callPP(pbuffer, __functionAddress);
+        return invokePP(pbuffer, __functionAddress);
     }
 
     // --- [ wglReleasePbufferDCARB ] ---
@@ -87,7 +87,7 @@ public class WGLARBPbuffer {
             check(pbuffer);
             check(hdc);
         }
-        return callPPI(pbuffer, hdc, __functionAddress);
+        return invokePPI(pbuffer, hdc, __functionAddress);
     }
 
     // --- [ wglDestroyPbufferARB ] ---
@@ -100,7 +100,7 @@ public class WGLARBPbuffer {
             check(__functionAddress);
             check(pbuffer);
         }
-        return callPI(pbuffer, __functionAddress) != 0;
+        return invokePI(pbuffer, __functionAddress) != 0;
     }
 
     // --- [ wglQueryPbufferARB ] ---
@@ -112,7 +112,7 @@ public class WGLARBPbuffer {
             check(__functionAddress);
             check(pbuffer);
         }
-        return callPPI(pbuffer, attribute, value, __functionAddress);
+        return invokePPI(pbuffer, attribute, value, __functionAddress);
     }
 
     /** {@code BOOL wglQueryPbufferARB(HPBUFFERARB pbuffer, int attribute, int * value)} */
@@ -133,7 +133,7 @@ public class WGLARBPbuffer {
             check(hdc);
             checkNTSafe(attribList);
         }
-        return callPPP(hdc, pixelFormat, width, height, attribList, __functionAddress);
+        return invokePPP(hdc, pixelFormat, width, height, attribList, __functionAddress);
     }
 
     /** {@code BOOL wglQueryPbufferARB(HPBUFFERARB pbuffer, int attribute, int * value)} */
@@ -145,7 +145,7 @@ public class WGLARBPbuffer {
             check(pbuffer);
             check(value, 1);
         }
-        return callPPI(pbuffer, attribute, value, __functionAddress) != 0;
+        return invokePPI(pbuffer, attribute, value, __functionAddress) != 0;
     }
 
 }

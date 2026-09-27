@@ -43,7 +43,7 @@ public class KHRExternalSemaphoreFd {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pImportSemaphoreFdInfo, __functionAddress);
+        return invokePPI(device.address(), pImportSemaphoreFdInfo, __functionAddress);
     }
 
     /** {@code VkResult vkImportSemaphoreFdKHR(VkDevice device, VkImportSemaphoreFdInfoKHR const * pImportSemaphoreFdInfo)} */
@@ -60,7 +60,7 @@ public class KHRExternalSemaphoreFd {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pGetFdInfo, pFd, __functionAddress);
+        return invokePPPI(device.address(), pGetFdInfo, pFd, __functionAddress);
     }
 
     /** {@code VkResult vkGetSemaphoreFdKHR(VkDevice device, VkSemaphoreGetFdInfoKHR const * pGetFdInfo, int * pFd)} */
@@ -80,7 +80,7 @@ public class KHRExternalSemaphoreFd {
             check(__functionAddress);
             check(pFd, 1);
         }
-        return callPPPI(device.address(), pGetFdInfo.address(), pFd, __functionAddress);
+        return invokePPPI(device.address(), pGetFdInfo.address(), pFd, __functionAddress);
     }
 
 }

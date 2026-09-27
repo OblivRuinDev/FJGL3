@@ -30,7 +30,6 @@ public interface ktxStream_destructI extends CallbackI {
         ktxStream_destructI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_void,
             ffi_type_pointer
         )

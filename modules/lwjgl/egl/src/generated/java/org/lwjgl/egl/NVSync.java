@@ -53,7 +53,7 @@ public class NVSync {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPP(dpy, condition, attrib_list, __functionAddress);
+        return invokePPP(dpy, condition, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSyncNV eglCreateFenceSyncNV(EGLDisplay dpy, EGLenum condition, EGLint const * attrib_list)} */
@@ -75,7 +75,7 @@ public class NVSync {
             check(__functionAddress);
             check(sync);
         }
-        return callPI(sync, __functionAddress) != 0;
+        return invokePI(sync, __functionAddress) != 0;
     }
 
     // --- [ eglFenceNV ] ---
@@ -88,7 +88,7 @@ public class NVSync {
             check(__functionAddress);
             check(sync);
         }
-        return callPI(sync, __functionAddress) != 0;
+        return invokePI(sync, __functionAddress) != 0;
     }
 
     // --- [ eglClientWaitSyncNV ] ---
@@ -101,7 +101,7 @@ public class NVSync {
             check(__functionAddress);
             check(sync);
         }
-        return callPJI(sync, flags, timeout, __functionAddress);
+        return invokePJI(sync, flags, timeout, __functionAddress);
     }
 
     // --- [ eglSignalSyncNV ] ---
@@ -114,7 +114,7 @@ public class NVSync {
             check(__functionAddress);
             check(sync);
         }
-        return callPI(sync, mode, __functionAddress) != 0;
+        return invokePI(sync, mode, __functionAddress) != 0;
     }
 
     // --- [ eglGetSyncAttribNV ] ---
@@ -126,7 +126,7 @@ public class NVSync {
             check(__functionAddress);
             check(sync);
         }
-        return callPPI(sync, attribute, value, __functionAddress);
+        return invokePPI(sync, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglGetSyncAttribNV(EGLSyncNV sync, EGLint attribute, EGLint * value)} */
@@ -147,7 +147,7 @@ public class NVSync {
             check(dpy);
             checkNT(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPP(dpy, condition, attrib_list, __functionAddress);
+        return invokePPP(dpy, condition, attrib_list, __functionAddress);
     }
 
     /** {@code EGLBoolean eglGetSyncAttribNV(EGLSyncNV sync, EGLint attribute, EGLint * value)} */
@@ -159,7 +159,7 @@ public class NVSync {
             check(sync);
             check(value, 1);
         }
-        return callPPI(sync, attribute, value, __functionAddress) != 0;
+        return invokePPI(sync, attribute, value, __functionAddress) != 0;
     }
 
 }

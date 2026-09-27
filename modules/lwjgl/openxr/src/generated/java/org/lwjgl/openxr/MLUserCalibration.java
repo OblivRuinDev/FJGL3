@@ -53,7 +53,7 @@ public class MLUserCalibration {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(instance.address(), enableInfo, __functionAddress);
+        return invokePPI(instance.address(), enableInfo, __functionAddress);
     }
 
     /** {@code XrResult xrEnableUserCalibrationEventsML(XrInstance instance, XrUserCalibrationEnableEventsInfoML const * enableInfo)} */

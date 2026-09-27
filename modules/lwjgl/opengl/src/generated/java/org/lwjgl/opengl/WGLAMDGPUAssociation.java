@@ -49,7 +49,7 @@ public class WGLAMDGPUAssociation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(maxCount, ids, __functionAddress);
+        return invokePI(maxCount, ids, __functionAddress);
     }
 
     /** {@code UINT wglGetGPUIDsAMD(UINT maxCount, UINT * ids)} */
@@ -66,7 +66,7 @@ public class WGLAMDGPUAssociation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(id, property, dataType, size, data, __functionAddress);
+        return invokePI(id, property, dataType, size, data, __functionAddress);
     }
 
     /** {@code int wglGetGPUInfoAMD(UINT id, int property, GLenum dataType, UINT size, void * data)} */
@@ -94,7 +94,7 @@ public class WGLAMDGPUAssociation {
             check(__functionAddress);
             check(hglrc);
         }
-        return callPI(hglrc, __functionAddress);
+        return invokePI(hglrc, __functionAddress);
     }
 
     // --- [ wglCreateAssociatedContextAMD ] ---
@@ -106,7 +106,7 @@ public class WGLAMDGPUAssociation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callP(id, __functionAddress);
+        return invokeP(id, __functionAddress);
     }
 
     // --- [ wglCreateAssociatedContextAttribsAMD ] ---
@@ -117,7 +117,7 @@ public class WGLAMDGPUAssociation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPP(id, shareContext, attribList, __functionAddress);
+        return invokePPP(id, shareContext, attribList, __functionAddress);
     }
 
     /** {@code HGLRC wglCreateAssociatedContextAttribsAMD(UINT id, HGLRC shareContext, int const * attribList)} */
@@ -139,7 +139,7 @@ public class WGLAMDGPUAssociation {
             check(__functionAddress);
             check(hglrc);
         }
-        return callPI(hglrc, __functionAddress) != 0;
+        return invokePI(hglrc, __functionAddress) != 0;
     }
 
     // --- [ wglMakeAssociatedContextCurrentAMD ] ---
@@ -152,7 +152,7 @@ public class WGLAMDGPUAssociation {
             check(__functionAddress);
             check(hglrc);
         }
-        return callPI(hglrc, __functionAddress) != 0;
+        return invokePI(hglrc, __functionAddress) != 0;
     }
 
     // --- [ wglGetCurrentAssociatedContextAMD ] ---
@@ -164,7 +164,7 @@ public class WGLAMDGPUAssociation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
     // --- [ wglBlitContextFramebufferAMD ] ---
@@ -177,7 +177,7 @@ public class WGLAMDGPUAssociation {
             check(__functionAddress);
             check(dstCtx);
         }
-        callPV(dstCtx, srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter, __functionAddress);
+        invokePV(dstCtx, srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter, __functionAddress);
     }
 
     /** {@code UINT wglGetGPUIDsAMD(UINT maxCount, UINT * ids)} */
@@ -187,7 +187,7 @@ public class WGLAMDGPUAssociation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(lengthSafe(ids), ids, __functionAddress);
+        return invokePI(lengthSafe(ids), ids, __functionAddress);
     }
 
     /** {@code int wglGetGPUInfoAMD(UINT id, int property, GLenum dataType, UINT size, void * data)} */
@@ -196,7 +196,7 @@ public class WGLAMDGPUAssociation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(id, property, dataType, data.length, data, __functionAddress);
+        return invokePI(id, property, dataType, data.length, data, __functionAddress);
     }
 
     /** {@code int wglGetGPUInfoAMD(UINT id, int property, GLenum dataType, UINT size, void * data)} */
@@ -205,7 +205,7 @@ public class WGLAMDGPUAssociation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(id, property, dataType, data.length, data, __functionAddress);
+        return invokePI(id, property, dataType, data.length, data, __functionAddress);
     }
 
     /** {@code HGLRC wglCreateAssociatedContextAttribsAMD(UINT id, HGLRC shareContext, int const * attribList)} */
@@ -216,7 +216,7 @@ public class WGLAMDGPUAssociation {
             check(__functionAddress);
             checkNTSafe(attribList);
         }
-        return callPPP(id, shareContext, attribList, __functionAddress);
+        return invokePPP(id, shareContext, attribList, __functionAddress);
     }
 
 }

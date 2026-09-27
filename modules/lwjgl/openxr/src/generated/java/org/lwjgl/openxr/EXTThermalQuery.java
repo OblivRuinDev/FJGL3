@@ -39,7 +39,7 @@ public class EXTThermalQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(session.address(), domain, notificationLevel, tempHeadroom, tempSlope, __functionAddress);
+        return invokePPPPI(session.address(), domain, notificationLevel, tempHeadroom, tempSlope, __functionAddress);
     }
 
     /** {@code XrResult xrThermalGetTemperatureTrendEXT(XrSession session, XrPerfSettingsDomainEXT domain, XrPerfSettingsNotificationLevelEXT * notificationLevel, float * tempHeadroom, float * tempSlope)} */

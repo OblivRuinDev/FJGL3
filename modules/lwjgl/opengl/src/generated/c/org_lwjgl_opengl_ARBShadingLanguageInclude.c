@@ -14,12 +14,12 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glNamedStringARBPROC) (jint, jint, uintptr_t, jint, uintptr_t);
-typedef void (APIENTRY *glDeleteNamedStringARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glCompileShaderIncludeARBPROC) (jint, jint, uintptr_t, uintptr_t);
-typedef jboolean (APIENTRY *glIsNamedStringARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGetNamedStringARBPROC) (jint, uintptr_t, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetNamedStringivARBPROC) (jint, uintptr_t, jint, uintptr_t);
+typedef void (*glNamedStringARBPROC) (jint, jint, uintptr_t, jint, uintptr_t);
+typedef void (*glDeleteNamedStringARBPROC) (jint, uintptr_t);
+typedef void (*glCompileShaderIncludeARBPROC) (jint, jint, uintptr_t, uintptr_t);
+typedef jboolean (*glIsNamedStringARBPROC) (jint, uintptr_t);
+typedef void (*glGetNamedStringARBPROC) (jint, uintptr_t, jint, uintptr_t, uintptr_t);
+typedef void (*glGetNamedStringivARBPROC) (jint, uintptr_t, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

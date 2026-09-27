@@ -43,7 +43,7 @@ public class KHRMapMemory2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pMemoryMapInfo, ppData, __functionAddress);
+        return invokePPPI(device.address(), pMemoryMapInfo, ppData, __functionAddress);
     }
 
     /** {@code VkResult vkMapMemory2KHR(VkDevice device, VkMemoryMapInfo const * pMemoryMapInfo, void ** ppData)} */
@@ -63,7 +63,7 @@ public class KHRMapMemory2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pMemoryUnmapInfo, __functionAddress);
+        return invokePPI(device.address(), pMemoryUnmapInfo, __functionAddress);
     }
 
     /** {@code VkResult vkUnmapMemory2KHR(VkDevice device, VkMemoryUnmapInfo const * pMemoryUnmapInfo)} */

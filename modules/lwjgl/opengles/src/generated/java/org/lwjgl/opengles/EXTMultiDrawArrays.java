@@ -64,7 +64,7 @@ public class EXTMultiDrawArrays {
             check(__functionAddress);
             check(count, first.length);
         }
-        callPPV(mode, first, count, first.length, __functionAddress);
+        invokePPV(mode, first, count, first.length, __functionAddress);
     }
 
     /** {@code void glMultiDrawElementsEXT(GLenum mode, GLsizei const * count, GLenum type, void const * const * indices, GLsizei drawcount)} */
@@ -74,7 +74,7 @@ public class EXTMultiDrawArrays {
             check(__functionAddress);
             check(indices, count.length);
         }
-        callPPV(mode, count, type, memAddress(indices), count.length, __functionAddress);
+        invokePPV(mode, count, type, memAddress(indices), count.length, __functionAddress);
     }
 
 }

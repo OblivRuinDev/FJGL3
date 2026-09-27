@@ -55,7 +55,7 @@ public class EXTGPUProgramParameters {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, index, params.length >> 2, params, __functionAddress);
+        invokePV(target, index, params.length >> 2, params, __functionAddress);
     }
 
     /** {@code void glProgramLocalParameters4fvEXT(GLenum target, GLuint index, GLsizei count, GLfloat const * params)} */
@@ -64,7 +64,7 @@ public class EXTGPUProgramParameters {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, index, params.length >> 2, params, __functionAddress);
+        invokePV(target, index, params.length >> 2, params, __functionAddress);
     }
 
 }

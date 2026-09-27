@@ -112,7 +112,7 @@ public class KHRMaintenance5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJV(commandBuffer.address(), buffer, offset, size, indexType, __functionAddress);
+        invokePJJJV(commandBuffer.address(), buffer, offset, size, indexType, __functionAddress);
     }
 
     // --- [ vkGetRenderingAreaGranularityKHR ] ---
@@ -123,7 +123,7 @@ public class KHRMaintenance5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pRenderingAreaInfo, pGranularity, __functionAddress);
+        invokePPPV(device.address(), pRenderingAreaInfo, pGranularity, __functionAddress);
     }
 
     /** {@code void vkGetRenderingAreaGranularityKHR(VkDevice device, VkRenderingAreaInfo const * pRenderingAreaInfo, VkExtent2D * pGranularity)} */
@@ -140,7 +140,7 @@ public class KHRMaintenance5 {
             check(__functionAddress);
             VkDeviceImageSubresourceInfo.validate(pInfo);
         }
-        callPPPV(device.address(), pInfo, pLayout, __functionAddress);
+        invokePPPV(device.address(), pInfo, pLayout, __functionAddress);
     }
 
     /** {@code void vkGetDeviceImageSubresourceLayoutKHR(VkDevice device, VkDeviceImageSubresourceInfo const * pInfo, VkSubresourceLayout2 * pLayout)} */
@@ -156,7 +156,7 @@ public class KHRMaintenance5 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPPV(device.address(), image, pSubresource, pLayout, __functionAddress);
+        invokePJPPV(device.address(), image, pSubresource, pLayout, __functionAddress);
     }
 
     /** {@code void vkGetImageSubresourceLayout2KHR(VkDevice device, VkImage image, VkImageSubresource2 const * pSubresource, VkSubresourceLayout2 * pLayout)} */

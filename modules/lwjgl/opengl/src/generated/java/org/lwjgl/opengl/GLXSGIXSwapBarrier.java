@@ -37,7 +37,7 @@ public class GLXSGIXSwapBarrier {
             check(display);
             check(drawable);
         }
-        callPPV(display, drawable, barrier, __functionAddress);
+        invokePPV(display, drawable, barrier, __functionAddress);
     }
 
     // --- [ glXQueryMaxSwapBarriersSGIX ] ---
@@ -49,7 +49,7 @@ public class GLXSGIXSwapBarrier {
             check(__functionAddress);
             check(display);
         }
-        return callPPI(display, screen, max, __functionAddress);
+        return invokePPI(display, screen, max, __functionAddress);
     }
 
     /** {@code Bool glXQueryMaxSwapBarriersSGIX(Display * display, int screen, int * max)} */
@@ -70,7 +70,7 @@ public class GLXSGIXSwapBarrier {
             check(display);
             check(max, 1);
         }
-        return callPPI(display, screen, max, __functionAddress) != 0;
+        return invokePPI(display, screen, max, __functionAddress) != 0;
     }
 
 }

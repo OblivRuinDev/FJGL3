@@ -54,7 +54,7 @@ public class EXTImageDrmFormatModifier {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), image, pProperties, __functionAddress);
+        return invokePJPI(device.address(), image, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetImageDrmFormatModifierPropertiesEXT(VkDevice device, VkImage image, VkImageDrmFormatModifierPropertiesEXT * pProperties)} */

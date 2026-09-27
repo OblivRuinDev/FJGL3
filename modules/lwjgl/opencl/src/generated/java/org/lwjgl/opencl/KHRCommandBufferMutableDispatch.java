@@ -81,7 +81,7 @@ public class KHRCommandBufferMutableDispatch {
             check(__functionAddress);
             check(command_buffer);
         }
-        return callPPPI(command_buffer, num_configs, config_types, configs, __functionAddress);
+        return invokePPPI(command_buffer, num_configs, config_types, configs, __functionAddress);
     }
 
     /** {@code cl_int clUpdateMutableCommandsKHR(cl_command_buffer_khr command_buffer, cl_uint num_configs, cl_command_buffer_update_type_khr const * config_types, void const ** configs)} */
@@ -102,7 +102,7 @@ public class KHRCommandBufferMutableDispatch {
             check(__functionAddress);
             check(command);
         }
-        return callPPPPI(command, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(command, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetMutableCommandInfoKHR(cl_mutable_command_khr command, cl_mutable_command_info_khr param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -141,7 +141,7 @@ public class KHRCommandBufferMutableDispatch {
             check(command_buffer);
             checkSafe(configs, lengthSafe(config_types));
         }
-        return callPPPI(command_buffer, lengthSafe(config_types), config_types, memAddressSafe(configs), __functionAddress);
+        return invokePPPI(command_buffer, lengthSafe(config_types), config_types, memAddressSafe(configs), __functionAddress);
     }
 
     /** {@code cl_int clGetMutableCommandInfoKHR(cl_mutable_command_khr command, cl_mutable_command_info_khr param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -153,7 +153,7 @@ public class KHRCommandBufferMutableDispatch {
             check(command);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(command, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(command, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
 }

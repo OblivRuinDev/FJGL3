@@ -42,7 +42,7 @@ public class AMDDisplayNativeHdr {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(device.address(), swapChain, localDimmingEnable ? 1 : 0, __functionAddress);
+        invokePJV(device.address(), swapChain, localDimmingEnable ? 1 : 0, __functionAddress);
     }
 
 }

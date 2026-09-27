@@ -33,7 +33,7 @@ public class GLXSGISwapControl {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(interval, __functionAddress);
+        return invokeI(interval, __functionAddress);
     }
 
 }

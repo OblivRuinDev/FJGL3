@@ -52,7 +52,7 @@ public class KHRDescriptorUpdateTemplate {
             check(__functionAddress);
             VkDescriptorUpdateTemplateCreateInfo.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pDescriptorUpdateTemplate, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pDescriptorUpdateTemplate, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDescriptorUpdateTemplateKHR(VkDevice device, VkDescriptorUpdateTemplateCreateInfo const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkDescriptorUpdateTemplate * pDescriptorUpdateTemplate)} */
@@ -72,7 +72,7 @@ public class KHRDescriptorUpdateTemplate {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), descriptorUpdateTemplate, pAllocator, __functionAddress);
+        invokePJPV(device.address(), descriptorUpdateTemplate, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyDescriptorUpdateTemplateKHR(VkDevice device, VkDescriptorUpdateTemplate descriptorUpdateTemplate, VkAllocationCallbacks const * pAllocator)} */
@@ -88,7 +88,7 @@ public class KHRDescriptorUpdateTemplate {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJPV(device.address(), descriptorSet, descriptorUpdateTemplate, pData, __functionAddress);
+        invokePJJPV(device.address(), descriptorSet, descriptorUpdateTemplate, pData, __functionAddress);
     }
 
     // --- [ vkCmdPushDescriptorSetWithTemplateKHR ] ---
@@ -99,7 +99,7 @@ public class KHRDescriptorUpdateTemplate {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJPV(commandBuffer.address(), descriptorUpdateTemplate, layout, set, pData, __functionAddress);
+        invokePJJPV(commandBuffer.address(), descriptorUpdateTemplate, layout, set, pData, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDescriptorUpdateTemplateKHR(VkDevice device, VkDescriptorUpdateTemplateCreateInfo const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkDescriptorUpdateTemplate * pDescriptorUpdateTemplate)} */
@@ -111,7 +111,7 @@ public class KHRDescriptorUpdateTemplate {
             check(pDescriptorUpdateTemplate, 1);
             VkDescriptorUpdateTemplateCreateInfo.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pDescriptorUpdateTemplate, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pDescriptorUpdateTemplate, __functionAddress);
     }
 
 }

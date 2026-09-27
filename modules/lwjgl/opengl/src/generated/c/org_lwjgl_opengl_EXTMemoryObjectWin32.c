@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glImportMemoryWin32HandleEXTPROC) (jint, jlong, jint, uintptr_t);
-typedef void (APIENTRY *glImportMemoryWin32NameEXTPROC) (jint, jlong, jint, uintptr_t);
+typedef void (*glImportMemoryWin32HandleEXTPROC) (jint, jlong, jint, uintptr_t);
+typedef void (*glImportMemoryWin32NameEXTPROC) (jint, jlong, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

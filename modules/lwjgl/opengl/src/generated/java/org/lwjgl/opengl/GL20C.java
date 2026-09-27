@@ -1296,7 +1296,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             checkSafe(length, strings.remaining());
         }
-        callPPV(shader, strings.remaining(), memAddress(strings), length, __functionAddress);
+        invokePPV(shader, strings.remaining(), memAddress(strings), length, __functionAddress);
     }
 
     /** {@code void glUniform1fv(GLint location, GLsizei count, GLfloat const * value)} */
@@ -1305,7 +1305,7 @@ public class GL20C extends GL15C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length, value, __functionAddress);
+        invokePV(location, value.length, value, __functionAddress);
     }
 
     /** {@code void glUniform2fv(GLint location, GLsizei count, GLfloat const * value)} */
@@ -1314,7 +1314,7 @@ public class GL20C extends GL15C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 1, value, __functionAddress);
+        invokePV(location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glUniform3fv(GLint location, GLsizei count, GLfloat const * value)} */
@@ -1323,7 +1323,7 @@ public class GL20C extends GL15C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 3, value, __functionAddress);
+        invokePV(location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glUniform4fv(GLint location, GLsizei count, GLfloat const * value)} */
@@ -1332,7 +1332,7 @@ public class GL20C extends GL15C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 2, value, __functionAddress);
+        invokePV(location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glUniform1iv(GLint location, GLsizei count, GLint const * value)} */
@@ -1341,7 +1341,7 @@ public class GL20C extends GL15C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length, value, __functionAddress);
+        invokePV(location, value.length, value, __functionAddress);
     }
 
     /** {@code void glUniform2iv(GLint location, GLsizei count, GLint const * value)} */
@@ -1350,7 +1350,7 @@ public class GL20C extends GL15C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 1, value, __functionAddress);
+        invokePV(location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glUniform3iv(GLint location, GLsizei count, GLint const * value)} */
@@ -1359,7 +1359,7 @@ public class GL20C extends GL15C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 3, value, __functionAddress);
+        invokePV(location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glUniform4iv(GLint location, GLsizei count, GLint const * value)} */
@@ -1368,7 +1368,7 @@ public class GL20C extends GL15C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 2, value, __functionAddress);
+        invokePV(location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix2fv(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1377,7 +1377,7 @@ public class GL20C extends GL15C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 2, transpose, value, __functionAddress);
+        invokePV(location, value.length >> 2, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix3fv(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1386,7 +1386,7 @@ public class GL20C extends GL15C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 9, transpose, value, __functionAddress);
+        invokePV(location, value.length / 9, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix4fv(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1395,7 +1395,7 @@ public class GL20C extends GL15C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 4, transpose, value, __functionAddress);
+        invokePV(location, value.length >> 4, transpose, value, __functionAddress);
     }
 
     /** {@code void glGetShaderiv(GLuint shader, GLenum pname, GLint * params)} */
@@ -1405,7 +1405,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(shader, pname, params, __functionAddress);
+        invokePV(shader, pname, params, __functionAddress);
     }
 
     /** {@code void glGetProgramiv(GLuint program, GLenum pname, GLint * params)} */
@@ -1415,7 +1415,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, pname, params, __functionAddress);
+        invokePV(program, pname, params, __functionAddress);
     }
 
     /** {@code void glGetShaderInfoLog(GLuint shader, GLsizei maxLength, GLsizei * length, GLchar * infoLog)} */
@@ -1425,7 +1425,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(shader, infoLog.remaining(), length, memAddress(infoLog), __functionAddress);
+        invokePPV(shader, infoLog.remaining(), length, memAddress(infoLog), __functionAddress);
     }
 
     /** {@code void glGetProgramInfoLog(GLuint program, GLsizei maxLength, GLsizei * length, GLchar * infoLog)} */
@@ -1435,7 +1435,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(program, infoLog.remaining(), length, memAddress(infoLog), __functionAddress);
+        invokePPV(program, infoLog.remaining(), length, memAddress(infoLog), __functionAddress);
     }
 
     /** {@code void glGetAttachedShaders(GLuint program, GLsizei maxCount, GLsizei * count, GLuint * shaders)} */
@@ -1445,7 +1445,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             checkSafe(count, 1);
         }
-        callPPV(program, shaders.length, count, shaders, __functionAddress);
+        invokePPV(program, shaders.length, count, shaders, __functionAddress);
     }
 
     /** {@code void glGetActiveUniform(GLuint program, GLuint index, GLsizei maxLength, GLsizei * length, GLint * size, GLenum * type, GLchar * name)} */
@@ -1457,7 +1457,7 @@ public class GL20C extends GL15C {
             check(size, 1);
             check(type, 1);
         }
-        callPPPPV(program, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
+        invokePPPPV(program, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
     }
 
     /** {@code void glGetUniformfv(GLuint program, GLint location, GLfloat * params)} */
@@ -1467,7 +1467,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, location, params, __functionAddress);
+        invokePV(program, location, params, __functionAddress);
     }
 
     /** {@code void glGetUniformiv(GLuint program, GLint location, GLint * params)} */
@@ -1477,7 +1477,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, location, params, __functionAddress);
+        invokePV(program, location, params, __functionAddress);
     }
 
     /** {@code void glGetShaderSource(GLuint shader, GLsizei maxLength, GLsizei * length, GLchar * source)} */
@@ -1487,7 +1487,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(shader, source.remaining(), length, memAddress(source), __functionAddress);
+        invokePPV(shader, source.remaining(), length, memAddress(source), __functionAddress);
     }
 
     /** {@code void glVertexAttrib1fv(GLuint index, GLfloat const * v)} */
@@ -1497,7 +1497,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib1sv(GLuint index, GLshort const * v)} */
@@ -1507,7 +1507,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib1dv(GLuint index, GLdouble const * v)} */
@@ -1517,7 +1517,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib2fv(GLuint index, GLfloat const * v)} */
@@ -1527,7 +1527,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib2sv(GLuint index, GLshort const * v)} */
@@ -1537,7 +1537,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib2dv(GLuint index, GLdouble const * v)} */
@@ -1547,7 +1547,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib3fv(GLuint index, GLfloat const * v)} */
@@ -1557,7 +1557,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib3sv(GLuint index, GLshort const * v)} */
@@ -1567,7 +1567,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib3dv(GLuint index, GLdouble const * v)} */
@@ -1577,7 +1577,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4fv(GLuint index, GLfloat const * v)} */
@@ -1587,7 +1587,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4sv(GLuint index, GLshort const * v)} */
@@ -1597,7 +1597,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4dv(GLuint index, GLdouble const * v)} */
@@ -1607,7 +1607,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4iv(GLuint index, GLint const * v)} */
@@ -1617,7 +1617,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4usv(GLuint index, GLushort const * v)} */
@@ -1627,7 +1627,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4uiv(GLuint index, GLuint const * v)} */
@@ -1637,7 +1637,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4Nsv(GLuint index, GLshort const * v)} */
@@ -1647,7 +1647,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4Niv(GLuint index, GLint const * v)} */
@@ -1657,7 +1657,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4Nusv(GLuint index, GLushort const * v)} */
@@ -1667,7 +1667,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttrib4Nuiv(GLuint index, GLuint const * v)} */
@@ -1677,7 +1677,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glGetActiveAttrib(GLuint program, GLuint index, GLsizei maxLength, GLsizei * length, GLint * size, GLenum * type, GLchar * name)} */
@@ -1689,7 +1689,7 @@ public class GL20C extends GL15C {
             check(size, 1);
             check(type, 1);
         }
-        callPPPPV(program, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
+        invokePPPPV(program, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
     }
 
     /** {@code void glGetVertexAttribiv(GLuint index, GLenum pname, GLint * params)} */
@@ -1699,7 +1699,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribfv(GLuint index, GLenum pname, GLfloat * params)} */
@@ -1709,7 +1709,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribdv(GLuint index, GLenum pname, GLdouble * params)} */
@@ -1719,7 +1719,7 @@ public class GL20C extends GL15C {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
     /** {@code void glDrawBuffers(GLsizei n, GLenum const * bufs)} */
@@ -1728,7 +1728,7 @@ public class GL20C extends GL15C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(bufs.length, bufs, __functionAddress);
+        invokePV(bufs.length, bufs, __functionAddress);
     }
 
 }

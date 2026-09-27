@@ -14,13 +14,13 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glCompressedTexImage3DARBPROC) (jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCompressedTexImage2DARBPROC) (jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCompressedTexImage1DARBPROC) (jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCompressedTexSubImage3DARBPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCompressedTexSubImage2DARBPROC) (jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCompressedTexSubImage1DARBPROC) (jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetCompressedTexImageARBPROC) (jint, jint, uintptr_t);
+typedef void (*glCompressedTexImage3DARBPROC) (jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCompressedTexImage2DARBPROC) (jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCompressedTexImage1DARBPROC) (jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCompressedTexSubImage3DARBPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCompressedTexSubImage2DARBPROC) (jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCompressedTexSubImage1DARBPROC) (jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glGetCompressedTexImageARBPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -52,7 +52,7 @@ public class KHRReusableSync {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPP(dpy, type, attrib_list, __functionAddress);
+        return invokePPP(dpy, type, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSyncKHR eglCreateSyncKHR(EGLDisplay dpy, EGLenum type, EGLint const * attrib_list)} */
@@ -75,7 +75,7 @@ public class KHRReusableSync {
             check(dpy);
             check(sync);
         }
-        return callPPI(dpy, sync, __functionAddress) != 0;
+        return invokePPI(dpy, sync, __functionAddress) != 0;
     }
 
     // --- [ eglClientWaitSyncKHR ] ---
@@ -89,7 +89,7 @@ public class KHRReusableSync {
             check(dpy);
             check(sync);
         }
-        return callPPJI(dpy, sync, flags, timeout, __functionAddress);
+        return invokePPJI(dpy, sync, flags, timeout, __functionAddress);
     }
 
     // --- [ eglSignalSyncKHR ] ---
@@ -103,7 +103,7 @@ public class KHRReusableSync {
             check(dpy);
             check(sync);
         }
-        return callPPI(dpy, sync, mode, __functionAddress) != 0;
+        return invokePPI(dpy, sync, mode, __functionAddress) != 0;
     }
 
     // --- [ eglGetSyncAttribKHR ] ---
@@ -116,7 +116,7 @@ public class KHRReusableSync {
             check(dpy);
             check(sync);
         }
-        return callPPPI(dpy, sync, attribute, value, __functionAddress);
+        return invokePPPI(dpy, sync, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglGetSyncAttribKHR(EGLDisplay dpy, EGLSyncKHR sync, EGLint attribute, EGLint * value)} */
@@ -137,7 +137,7 @@ public class KHRReusableSync {
             check(dpy);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPP(dpy, type, attrib_list, __functionAddress);
+        return invokePPP(dpy, type, attrib_list, __functionAddress);
     }
 
     /** {@code EGLBoolean eglGetSyncAttribKHR(EGLDisplay dpy, EGLSyncKHR sync, EGLint attribute, EGLint * value)} */
@@ -150,7 +150,7 @@ public class KHRReusableSync {
             check(sync);
             check(value, 1);
         }
-        return callPPPI(dpy, sync, attribute, value, __functionAddress) != 0;
+        return invokePPPI(dpy, sync, attribute, value, __functionAddress) != 0;
     }
 
 }

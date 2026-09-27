@@ -44,7 +44,7 @@ public class EXTDeviceQuery {
             check(__functionAddress);
             check(device);
         }
-        return callPPI(device, attribute, value, __functionAddress);
+        return invokePPI(device, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryDeviceAttribEXT(EGLDeviceEXT device, EGLint attribute, EGLAttrib * value)} */
@@ -65,7 +65,7 @@ public class EXTDeviceQuery {
             check(__functionAddress);
             check(device);
         }
-        return callPP(device, name, __functionAddress);
+        return invokePP(device, name, __functionAddress);
     }
 
     /** {@code char * eglQueryDeviceStringEXT(EGLDeviceEXT device, EGLint name)} */
@@ -84,7 +84,7 @@ public class EXTDeviceQuery {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPI(dpy, attribute, value, __functionAddress);
+        return invokePPI(dpy, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryDisplayAttribEXT(EGLDisplay dpy, EGLint attribute, EGLAttrib * value)} */

@@ -12,6 +12,7 @@ const val EXT_FLAG = ""
 
 enum class CallingConvention(val method: String) {
     DEFAULT("invoke"),
+    @Deprecated(message = "Windows x86 is not supported")
     STDCALL("call") // __stdcall on Windows, default on other systems
 }
 

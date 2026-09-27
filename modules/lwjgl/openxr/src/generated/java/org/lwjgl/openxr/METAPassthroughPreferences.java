@@ -40,7 +40,7 @@ public class METAPassthroughPreferences {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), preferences, __functionAddress);
+        return invokePPI(session.address(), preferences, __functionAddress);
     }
 
     /** {@code XrResult xrGetPassthroughPreferencesMETA(XrSession session, XrPassthroughPreferencesMETA * preferences)} */

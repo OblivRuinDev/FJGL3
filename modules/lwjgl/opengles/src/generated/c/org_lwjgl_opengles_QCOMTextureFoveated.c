@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glTextureFoveationParametersQCOMPROC) (jint, jint, jint, jfloat, jfloat, jfloat, jfloat, jfloat);
+typedef void (*glTextureFoveationParametersQCOMPROC) (jint, jint, jint, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 EXTERN_C_ENTER
 

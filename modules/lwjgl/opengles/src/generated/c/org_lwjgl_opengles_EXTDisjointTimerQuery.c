@@ -14,11 +14,11 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glQueryCounterEXTPROC) (jint, jint);
-typedef void (APIENTRY *glGetQueryObjectivEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetQueryObjecti64vEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetQueryObjectui64vEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetInteger64vEXTPROC) (jint, uintptr_t);
+typedef void (*glQueryCounterEXTPROC) (jint, jint);
+typedef void (*glGetQueryObjectivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glGetQueryObjecti64vEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glGetQueryObjectui64vEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glGetInteger64vEXTPROC) (jint, uintptr_t);
 
 EXTERN_C_ENTER
 

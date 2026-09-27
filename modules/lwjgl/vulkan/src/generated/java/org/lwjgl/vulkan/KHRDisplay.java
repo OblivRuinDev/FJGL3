@@ -55,7 +55,7 @@ public class KHRDisplay {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pPropertyCount, pProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pPropertyCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceDisplayPropertiesKHR(VkPhysicalDevice physicalDevice, uint32_t * pPropertyCount, VkDisplayPropertiesKHR * pProperties)} */
@@ -76,7 +76,7 @@ public class KHRDisplay {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pPropertyCount, pProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pPropertyCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceDisplayPlanePropertiesKHR(VkPhysicalDevice physicalDevice, uint32_t * pPropertyCount, VkDisplayPlanePropertiesKHR * pProperties)} */
@@ -97,7 +97,7 @@ public class KHRDisplay {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), planeIndex, pDisplayCount, pDisplays, __functionAddress);
+        return invokePPPI(physicalDevice.address(), planeIndex, pDisplayCount, pDisplays, __functionAddress);
     }
 
     /** {@code VkResult vkGetDisplayPlaneSupportedDisplaysKHR(VkPhysicalDevice physicalDevice, uint32_t planeIndex, uint32_t * pDisplayCount, VkDisplayKHR * pDisplays)} */
@@ -118,7 +118,7 @@ public class KHRDisplay {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(physicalDevice.address(), display, pPropertyCount, pProperties, __functionAddress);
+        return invokePJPPI(physicalDevice.address(), display, pPropertyCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetDisplayModePropertiesKHR(VkPhysicalDevice physicalDevice, VkDisplayKHR display, uint32_t * pPropertyCount, VkDisplayModePropertiesKHR * pProperties)} */
@@ -139,7 +139,7 @@ public class KHRDisplay {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPPI(physicalDevice.address(), display, pCreateInfo, pAllocator, pMode, __functionAddress);
+        return invokePJPPPI(physicalDevice.address(), display, pCreateInfo, pAllocator, pMode, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDisplayModeKHR(VkPhysicalDevice physicalDevice, VkDisplayKHR display, VkDisplayModeCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkDisplayModeKHR * pMode)} */
@@ -159,7 +159,7 @@ public class KHRDisplay {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(physicalDevice.address(), mode, planeIndex, pCapabilities, __functionAddress);
+        return invokePJPI(physicalDevice.address(), mode, planeIndex, pCapabilities, __functionAddress);
     }
 
     /** {@code VkResult vkGetDisplayPlaneCapabilitiesKHR(VkPhysicalDevice physicalDevice, VkDisplayModeKHR mode, uint32_t planeIndex, VkDisplayPlaneCapabilitiesKHR * pCapabilities)} */
@@ -176,7 +176,7 @@ public class KHRDisplay {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(instance.address(), pCreateInfo, pAllocator, pSurface, __functionAddress);
+        return invokePPPPI(instance.address(), pCreateInfo, pAllocator, pSurface, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDisplayPlaneSurfaceKHR(VkInstance instance, VkDisplaySurfaceCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkSurfaceKHR * pSurface)} */
@@ -197,7 +197,7 @@ public class KHRDisplay {
             check(pPropertyCount, 1);
             checkSafe(pProperties, pPropertyCount[0]);
         }
-        return callPPPI(physicalDevice.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
+        return invokePPPI(physicalDevice.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceDisplayPlanePropertiesKHR(VkPhysicalDevice physicalDevice, uint32_t * pPropertyCount, VkDisplayPlanePropertiesKHR * pProperties)} */
@@ -209,7 +209,7 @@ public class KHRDisplay {
             check(pPropertyCount, 1);
             checkSafe(pProperties, pPropertyCount[0]);
         }
-        return callPPPI(physicalDevice.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
+        return invokePPPI(physicalDevice.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
     }
 
     /** {@code VkResult vkGetDisplayPlaneSupportedDisplaysKHR(VkPhysicalDevice physicalDevice, uint32_t planeIndex, uint32_t * pDisplayCount, VkDisplayKHR * pDisplays)} */
@@ -221,7 +221,7 @@ public class KHRDisplay {
             check(pDisplayCount, 1);
             checkSafe(pDisplays, pDisplayCount[0]);
         }
-        return callPPPI(physicalDevice.address(), planeIndex, pDisplayCount, pDisplays, __functionAddress);
+        return invokePPPI(physicalDevice.address(), planeIndex, pDisplayCount, pDisplays, __functionAddress);
     }
 
     /** {@code VkResult vkGetDisplayModePropertiesKHR(VkPhysicalDevice physicalDevice, VkDisplayKHR display, uint32_t * pPropertyCount, VkDisplayModePropertiesKHR * pProperties)} */
@@ -233,7 +233,7 @@ public class KHRDisplay {
             check(pPropertyCount, 1);
             checkSafe(pProperties, pPropertyCount[0]);
         }
-        return callPJPPI(physicalDevice.address(), display, pPropertyCount, memAddressSafe(pProperties), __functionAddress);
+        return invokePJPPI(physicalDevice.address(), display, pPropertyCount, memAddressSafe(pProperties), __functionAddress);
     }
 
     /** {@code VkResult vkCreateDisplayModeKHR(VkPhysicalDevice physicalDevice, VkDisplayKHR display, VkDisplayModeCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkDisplayModeKHR * pMode)} */
@@ -244,7 +244,7 @@ public class KHRDisplay {
             check(__functionAddress);
             check(pMode, 1);
         }
-        return callPJPPPI(physicalDevice.address(), display, pCreateInfo.address(), memAddressSafe(pAllocator), pMode, __functionAddress);
+        return invokePJPPPI(physicalDevice.address(), display, pCreateInfo.address(), memAddressSafe(pAllocator), pMode, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDisplayPlaneSurfaceKHR(VkInstance instance, VkDisplaySurfaceCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkSurfaceKHR * pSurface)} */
@@ -255,7 +255,7 @@ public class KHRDisplay {
             check(__functionAddress);
             check(pSurface, 1);
         }
-        return callPPPPI(instance.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSurface, __functionAddress);
+        return invokePPPPI(instance.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSurface, __functionAddress);
     }
 
 }

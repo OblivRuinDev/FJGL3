@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glLoadTransposeMatrixfARBPROC) (uintptr_t);
-typedef void (APIENTRY *glLoadTransposeMatrixdARBPROC) (uintptr_t);
-typedef void (APIENTRY *glMultTransposeMatrixfARBPROC) (uintptr_t);
-typedef void (APIENTRY *glMultTransposeMatrixdARBPROC) (uintptr_t);
+typedef void (*glLoadTransposeMatrixfARBPROC) (uintptr_t);
+typedef void (*glLoadTransposeMatrixdARBPROC) (uintptr_t);
+typedef void (*glMultTransposeMatrixfARBPROC) (uintptr_t);
+typedef void (*glMultTransposeMatrixdARBPROC) (uintptr_t);
 
 EXTERN_C_ENTER
 

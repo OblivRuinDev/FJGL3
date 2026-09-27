@@ -53,7 +53,7 @@ public class KHRExternalFenceCapabilities {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(physicalDevice.address(), pExternalFenceInfo, pExternalFenceProperties, __functionAddress);
+        invokePPPV(physicalDevice.address(), pExternalFenceInfo, pExternalFenceProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceExternalFencePropertiesKHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceExternalFenceInfo const * pExternalFenceInfo, VkExternalFenceProperties * pExternalFenceProperties)} */

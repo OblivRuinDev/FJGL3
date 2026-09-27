@@ -54,7 +54,7 @@ public class MSFTControllerModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), topLevelUserPath, controllerModelKeyState, __functionAddress);
+        return invokePJPI(session.address(), topLevelUserPath, controllerModelKeyState, __functionAddress);
     }
 
     /** {@code XrResult xrGetControllerModelKeyMSFT(XrSession session, XrPath topLevelUserPath, XrControllerModelKeyStateMSFT * controllerModelKeyState)} */
@@ -71,7 +71,7 @@ public class MSFTControllerModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(session.address(), modelKey, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePJPPI(session.address(), modelKey, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrLoadControllerModelMSFT(XrSession session, XrControllerModelKeyMSFT modelKey, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, uint8_t * buffer)} */
@@ -91,7 +91,7 @@ public class MSFTControllerModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), modelKey, properties, __functionAddress);
+        return invokePJPI(session.address(), modelKey, properties, __functionAddress);
     }
 
     /** {@code XrResult xrGetControllerModelPropertiesMSFT(XrSession session, XrControllerModelKeyMSFT modelKey, XrControllerModelPropertiesMSFT * properties)} */
@@ -108,7 +108,7 @@ public class MSFTControllerModel {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), modelKey, state, __functionAddress);
+        return invokePJPI(session.address(), modelKey, state, __functionAddress);
     }
 
     /** {@code XrResult xrGetControllerModelStateMSFT(XrSession session, XrControllerModelKeyMSFT modelKey, XrControllerModelStateMSFT * state)} */

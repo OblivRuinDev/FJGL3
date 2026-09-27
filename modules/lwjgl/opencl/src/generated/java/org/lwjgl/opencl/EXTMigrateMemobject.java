@@ -42,7 +42,7 @@ public class EXTMigrateMemobject {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPJPPI(command_queue, num_mem_objects, mem_objects, flags, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPJPPI(command_queue, num_mem_objects, mem_objects, flags, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueMigrateMemObjectEXT(cl_command_queue command_queue, cl_uint num_mem_objects, cl_mem const * mem_objects, cl_mem_migration_flags_ext flags, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */

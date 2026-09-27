@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glMultiDrawArraysIndirectEXTPROC) (jint, uintptr_t, jint, jint);
-typedef void (APIENTRY *glMultiDrawElementsIndirectEXTPROC) (jint, jint, uintptr_t, jint, jint);
+typedef void (*glMultiDrawArraysIndirectEXTPROC) (jint, uintptr_t, jint, jint);
+typedef void (*glMultiDrawElementsIndirectEXTPROC) (jint, jint, uintptr_t, jint, jint);
 
 EXTERN_C_ENTER
 

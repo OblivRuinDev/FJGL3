@@ -56,7 +56,7 @@ public class METASpatialEntityPersistence {
             check(__functionAddress);
             XrSpacesSaveInfoMETA.validate(info);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrSaveSpacesMETA(XrSession session, XrSpacesSaveInfoMETA const * info, XrAsyncRequestIdFB * requestId)} */
@@ -76,7 +76,7 @@ public class METASpatialEntityPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrEraseSpacesMETA(XrSession session, XrSpacesEraseInfoMETA const * info, XrAsyncRequestIdFB * requestId)} */

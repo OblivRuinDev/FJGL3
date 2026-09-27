@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glReadBufferIndexedEXTPROC) (jint, jint);
-typedef void (APIENTRY *glDrawBuffersIndexedEXTPROC) (jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetIntegeri_vEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glReadBufferIndexedEXTPROC) (jint, jint);
+typedef void (*glDrawBuffersIndexedEXTPROC) (jint, uintptr_t, uintptr_t);
+typedef void (*glGetIntegeri_vEXTPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

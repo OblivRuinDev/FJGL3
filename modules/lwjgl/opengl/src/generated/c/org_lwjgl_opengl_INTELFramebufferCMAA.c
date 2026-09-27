@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glApplyFramebufferAttachmentCMAAINTELPROC) (void);
+typedef void (*glApplyFramebufferAttachmentCMAAINTELPROC) (void);
 
 EXTERN_C_ENTER
 

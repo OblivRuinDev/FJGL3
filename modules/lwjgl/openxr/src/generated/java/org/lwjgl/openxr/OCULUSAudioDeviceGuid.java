@@ -41,7 +41,7 @@ public class OCULUSAudioDeviceGuid {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(instance.address(), buffer, __functionAddress);
+        return invokePPI(instance.address(), buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetAudioOutputDeviceGuidOculus(XrInstance instance, wchar_t * buffer)} */
@@ -61,7 +61,7 @@ public class OCULUSAudioDeviceGuid {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(instance.address(), buffer, __functionAddress);
+        return invokePPI(instance.address(), buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetAudioInputDeviceGuidOculus(XrInstance instance, wchar_t * buffer)} */

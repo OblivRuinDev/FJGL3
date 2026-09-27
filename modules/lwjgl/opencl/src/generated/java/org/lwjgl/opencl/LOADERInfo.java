@@ -46,7 +46,7 @@ public class LOADERInfo {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPI(param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetICDLoaderInfoOCLICD(cl_icdl_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -84,7 +84,7 @@ public class LOADERInfo {
             check(__functionAddress);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPI(param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPI(param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
 }

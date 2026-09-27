@@ -45,7 +45,7 @@ public class KHRSubgroups {
             check(__functionAddress);
             check(kernel);
         }
-        return callPPPPPPPI(kernel, device, param_name, input_value_size, input_value, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPPPPI(kernel, device, param_name, input_value_size, input_value, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetKernelSubGroupInfoKHR(cl_kernel kernel, cl_device_id device, cl_kernel_sub_group_info param_name, size_t input_value_size, void const * input_value, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */

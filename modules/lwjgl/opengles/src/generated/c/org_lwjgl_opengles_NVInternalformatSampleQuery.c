@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glGetInternalformatSampleivNVPROC) (jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glGetInternalformatSampleivNVPROC) (jint, jint, jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

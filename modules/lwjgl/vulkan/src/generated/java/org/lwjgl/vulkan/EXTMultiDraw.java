@@ -45,7 +45,7 @@ public class EXTMultiDraw {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), drawCount, pVertexInfo, instanceCount, firstInstance, stride, __functionAddress);
+        invokePPV(commandBuffer.address(), drawCount, pVertexInfo, instanceCount, firstInstance, stride, __functionAddress);
     }
 
     /** {@code void vkCmdDrawMultiEXT(VkCommandBuffer commandBuffer, uint32_t drawCount, VkMultiDrawInfoEXT const * pVertexInfo, uint32_t instanceCount, uint32_t firstInstance, uint32_t stride)} */
@@ -61,7 +61,7 @@ public class EXTMultiDraw {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), drawCount, pIndexInfo, instanceCount, firstInstance, stride, pVertexOffset, __functionAddress);
+        invokePPPV(commandBuffer.address(), drawCount, pIndexInfo, instanceCount, firstInstance, stride, pVertexOffset, __functionAddress);
     }
 
     /** {@code void vkCmdDrawMultiIndexedEXT(VkCommandBuffer commandBuffer, uint32_t drawCount, VkMultiDrawIndexedInfoEXT const * pIndexInfo, uint32_t instanceCount, uint32_t firstInstance, uint32_t stride, int32_t const * pVertexOffset)} */
@@ -75,7 +75,7 @@ public class EXTMultiDraw {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), remainingSafe(pIndexInfo), memAddressSafe(pIndexInfo), instanceCount, firstInstance, stride, pVertexOffset, __functionAddress);
+        invokePPPV(commandBuffer.address(), remainingSafe(pIndexInfo), memAddressSafe(pIndexInfo), instanceCount, firstInstance, stride, pVertexOffset, __functionAddress);
     }
 
 }

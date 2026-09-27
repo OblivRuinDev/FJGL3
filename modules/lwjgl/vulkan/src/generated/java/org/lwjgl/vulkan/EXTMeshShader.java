@@ -60,7 +60,7 @@ public class EXTMeshShader {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), groupCountX, groupCountY, groupCountZ, __functionAddress);
+        invokePV(commandBuffer.address(), groupCountX, groupCountY, groupCountZ, __functionAddress);
     }
 
     // --- [ vkCmdDrawMeshTasksIndirectEXT ] ---
@@ -71,7 +71,7 @@ public class EXTMeshShader {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJV(commandBuffer.address(), buffer, offset, drawCount, stride, __functionAddress);
+        invokePJJV(commandBuffer.address(), buffer, offset, drawCount, stride, __functionAddress);
     }
 
     // --- [ vkCmdDrawMeshTasksIndirectCountEXT ] ---
@@ -82,7 +82,7 @@ public class EXTMeshShader {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
+        invokePJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
     }
 
 }

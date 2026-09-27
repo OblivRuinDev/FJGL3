@@ -48,7 +48,7 @@ public class KHRGetDisplayProperties2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pPropertyCount, pProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pPropertyCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceDisplayProperties2KHR(VkPhysicalDevice physicalDevice, uint32_t * pPropertyCount, VkDisplayProperties2KHR * pProperties)} */
@@ -69,7 +69,7 @@ public class KHRGetDisplayProperties2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pPropertyCount, pProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pPropertyCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceDisplayPlaneProperties2KHR(VkPhysicalDevice physicalDevice, uint32_t * pPropertyCount, VkDisplayPlaneProperties2KHR * pProperties)} */
@@ -90,7 +90,7 @@ public class KHRGetDisplayProperties2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(physicalDevice.address(), display, pPropertyCount, pProperties, __functionAddress);
+        return invokePJPPI(physicalDevice.address(), display, pPropertyCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetDisplayModeProperties2KHR(VkPhysicalDevice physicalDevice, VkDisplayKHR display, uint32_t * pPropertyCount, VkDisplayModeProperties2KHR * pProperties)} */
@@ -111,7 +111,7 @@ public class KHRGetDisplayProperties2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pDisplayPlaneInfo, pCapabilities, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pDisplayPlaneInfo, pCapabilities, __functionAddress);
     }
 
     /** {@code VkResult vkGetDisplayPlaneCapabilities2KHR(VkPhysicalDevice physicalDevice, VkDisplayPlaneInfo2KHR const * pDisplayPlaneInfo, VkDisplayPlaneCapabilities2KHR * pCapabilities)} */
@@ -129,7 +129,7 @@ public class KHRGetDisplayProperties2 {
             check(pPropertyCount, 1);
             checkSafe(pProperties, pPropertyCount[0]);
         }
-        return callPPPI(physicalDevice.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
+        return invokePPPI(physicalDevice.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceDisplayPlaneProperties2KHR(VkPhysicalDevice physicalDevice, uint32_t * pPropertyCount, VkDisplayPlaneProperties2KHR * pProperties)} */
@@ -141,7 +141,7 @@ public class KHRGetDisplayProperties2 {
             check(pPropertyCount, 1);
             checkSafe(pProperties, pPropertyCount[0]);
         }
-        return callPPPI(physicalDevice.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
+        return invokePPPI(physicalDevice.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
     }
 
     /** {@code VkResult vkGetDisplayModeProperties2KHR(VkPhysicalDevice physicalDevice, VkDisplayKHR display, uint32_t * pPropertyCount, VkDisplayModeProperties2KHR * pProperties)} */
@@ -153,7 +153,7 @@ public class KHRGetDisplayProperties2 {
             check(pPropertyCount, 1);
             checkSafe(pProperties, pPropertyCount[0]);
         }
-        return callPJPPI(physicalDevice.address(), display, pPropertyCount, memAddressSafe(pProperties), __functionAddress);
+        return invokePJPPI(physicalDevice.address(), display, pPropertyCount, memAddressSafe(pProperties), __functionAddress);
     }
 
 }

@@ -161,7 +161,7 @@ public class OESViewportArray {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(first, v.length >> 2, v, __functionAddress);
+        invokePV(first, v.length >> 2, v, __functionAddress);
     }
 
     /** {@code void glViewportIndexedfvOES(GLuint index, GLfloat const * v)} */
@@ -171,7 +171,7 @@ public class OESViewportArray {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glScissorArrayvOES(GLuint first, GLsizei count, GLint const * v)} */
@@ -180,7 +180,7 @@ public class OESViewportArray {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(first, v.length >> 2, v, __functionAddress);
+        invokePV(first, v.length >> 2, v, __functionAddress);
     }
 
     /** {@code void glScissorIndexedvOES(GLuint index, GLint const * v)} */
@@ -190,7 +190,7 @@ public class OESViewportArray {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glDepthRangeArrayfvOES(GLuint first, GLsizei count, GLfloat const * v)} */
@@ -199,7 +199,7 @@ public class OESViewportArray {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(first, v.length >> 1, v, __functionAddress);
+        invokePV(first, v.length >> 1, v, __functionAddress);
     }
 
     /** {@code void glGetFloati_vOES(GLenum target, GLuint index, GLfloat * data)} */
@@ -209,7 +209,7 @@ public class OESViewportArray {
             check(__functionAddress);
             check(data, 1);
         }
-        callPV(target, index, data, __functionAddress);
+        invokePV(target, index, data, __functionAddress);
     }
 
 }

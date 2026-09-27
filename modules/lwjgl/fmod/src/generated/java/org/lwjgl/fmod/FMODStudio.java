@@ -380,7 +380,7 @@ public class FMODStudio {
     /** {@code FMOD_RESULT FMOD_Studio_ParseID(char const * idstring, FMOD_GUID * id)} */
     public static int nFMOD_Studio_ParseID(long idstring, long id) {
         long __functionAddress = Functions.ParseID;
-        return callPPI(idstring, id, __functionAddress);
+        return invokePPI(idstring, id, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_ParseID(char const * idstring, FMOD_GUID * id)} */
@@ -410,7 +410,7 @@ public class FMODStudio {
     /** {@code FMOD_RESULT FMOD_Studio_System_Create(FMOD_STUDIO_SYSTEM ** system, unsigned int headerversion)} */
     public static int nFMOD_Studio_System_Create(long system, int headerversion) {
         long __functionAddress = Functions.System_Create;
-        return callPI(system, headerversion, __functionAddress);
+        return invokePI(system, headerversion, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_Create(FMOD_STUDIO_SYSTEM ** system, unsigned int headerversion)} */
@@ -431,7 +431,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_Studio_System_SetAdvancedSettings ] ---
@@ -442,7 +442,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, settings, __functionAddress);
+        return invokePPI(system, settings, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_SetAdvancedSettings(FMOD_STUDIO_SYSTEM * system, FMOD_STUDIO_ADVANCEDSETTINGS * settings)} */
@@ -459,7 +459,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, settings, __functionAddress);
+        return invokePPI(system, settings, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetAdvancedSettings(FMOD_STUDIO_SYSTEM * system, FMOD_STUDIO_ADVANCEDSETTINGS * settings)} */
@@ -477,7 +477,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, maxchannels, studioflags, flags, extradriverdata, __functionAddress);
+        return invokePPI(system, maxchannels, studioflags, flags, extradriverdata, __functionAddress);
     }
 
     // --- [ FMOD_Studio_System_Release ] ---
@@ -489,7 +489,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_Studio_System_Update ] ---
@@ -501,7 +501,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_Studio_System_GetCoreSystem ] ---
@@ -512,7 +512,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, coresystem, __functionAddress);
+        return invokePPI(system, coresystem, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetCoreSystem(FMOD_STUDIO_SYSTEM * system, FMOD_SYSTEM ** coresystem)} */
@@ -532,7 +532,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, pathOrID, event, __functionAddress);
+        return invokePPPI(system, pathOrID, event, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetEvent(FMOD_STUDIO_SYSTEM * system, char const * pathOrID, FMOD_STUDIO_EVENTDESCRIPTION ** event)} */
@@ -569,7 +569,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, pathOrID, bus, __functionAddress);
+        return invokePPPI(system, pathOrID, bus, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetBus(FMOD_STUDIO_SYSTEM * system, char const * pathOrID, FMOD_STUDIO_BUS ** bus)} */
@@ -606,7 +606,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, pathOrID, vca, __functionAddress);
+        return invokePPPI(system, pathOrID, vca, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetVCA(FMOD_STUDIO_SYSTEM * system, char const * pathOrID, FMOD_STUDIO_VCA ** vca)} */
@@ -643,7 +643,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, pathOrID, bank, __functionAddress);
+        return invokePPPI(system, pathOrID, bank, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetBank(FMOD_STUDIO_SYSTEM * system, char const * pathOrID, FMOD_STUDIO_BANK ** bank)} */
@@ -680,7 +680,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, id, event, __functionAddress);
+        return invokePPPI(system, id, event, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetEventByID(FMOD_STUDIO_SYSTEM * system, FMOD_GUID const * id, FMOD_STUDIO_EVENTDESCRIPTION ** event)} */
@@ -700,7 +700,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, id, bus, __functionAddress);
+        return invokePPPI(system, id, bus, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetBusByID(FMOD_STUDIO_SYSTEM * system, FMOD_GUID const * id, FMOD_STUDIO_BUS ** bus)} */
@@ -720,7 +720,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, id, vca, __functionAddress);
+        return invokePPPI(system, id, vca, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetVCAByID(FMOD_STUDIO_SYSTEM * system, FMOD_GUID const * id, FMOD_STUDIO_VCA ** vca)} */
@@ -740,7 +740,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, id, bank, __functionAddress);
+        return invokePPPI(system, id, bank, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetBankByID(FMOD_STUDIO_SYSTEM * system, FMOD_GUID const * id, FMOD_STUDIO_BANK ** bank)} */
@@ -760,7 +760,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, key, info, __functionAddress);
+        return invokePPPI(system, key, info, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetSoundInfo(FMOD_STUDIO_SYSTEM * system, char const * key, FMOD_STUDIO_SOUND_INFO * info)} */
@@ -793,7 +793,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, name, parameter, __functionAddress);
+        return invokePPPI(system, name, parameter, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetParameterDescriptionByName(FMOD_STUDIO_SYSTEM * system, char const * name, FMOD_STUDIO_PARAMETER_DESCRIPTION * parameter)} */
@@ -822,7 +822,7 @@ public class FMODStudio {
 
     private static final class FMOD_Studio_System_GetParameterDescriptionByID {
         static final FFICIF CIF = apiCreateCIF(
-            apiStdcall(), ffi_type_uint32,
+            ffi_type_uint32,
             ffi_type_pointer, apiCreateStruct(ffi_type_uint32, ffi_type_uint32), ffi_type_pointer
         );
     }
@@ -863,7 +863,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPI(system, name, labelindex, label, size, retrieved, __functionAddress);
+        return invokePPPPI(system, name, labelindex, label, size, retrieved, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetParameterLabelByName(FMOD_STUDIO_SYSTEM * system, char const * name, int labelindex, char * label, int size, int * retrieved)} */
@@ -896,7 +896,7 @@ public class FMODStudio {
 
     private static final class FMOD_Studio_System_GetParameterLabelByID {
         static final FFICIF CIF = apiCreateCIF(
-            apiStdcall(), ffi_type_uint32,
+            ffi_type_uint32,
             ffi_type_pointer, apiCreateStruct(ffi_type_uint32, ffi_type_uint32), ffi_type_sint32, ffi_type_pointer, ffi_type_sint32, ffi_type_pointer
         );
     }
@@ -939,7 +939,7 @@ public class FMODStudio {
 
     private static final class FMOD_Studio_System_GetParameterByID {
         static final FFICIF CIF = apiCreateCIF(
-            apiStdcall(), ffi_type_uint32,
+            ffi_type_uint32,
             ffi_type_pointer, apiCreateStruct(ffi_type_uint32, ffi_type_uint32), ffi_type_pointer, ffi_type_pointer
         );
     }
@@ -981,7 +981,7 @@ public class FMODStudio {
 
     private static final class FMOD_Studio_System_SetParameterByID {
         static final FFICIF CIF = apiCreateCIF(
-            apiStdcall(), ffi_type_uint32,
+            ffi_type_uint32,
             ffi_type_pointer, apiCreateStruct(ffi_type_uint32, ffi_type_uint32), ffi_type_float, ffi_type_sint32
         );
     }
@@ -1019,7 +1019,7 @@ public class FMODStudio {
 
     private static final class FMOD_Studio_System_SetParameterByIDWithLabel {
         static final FFICIF CIF = apiCreateCIF(
-            apiStdcall(), ffi_type_uint32,
+            ffi_type_uint32,
             ffi_type_pointer, apiCreateStruct(ffi_type_uint32, ffi_type_uint32), ffi_type_pointer, ffi_type_sint32
         );
     }
@@ -1077,7 +1077,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, ids, values, count, ignoreseekspeed, __functionAddress);
+        return invokePPPI(system, ids, values, count, ignoreseekspeed, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_SetParametersByIDs(FMOD_STUDIO_SYSTEM * system, FMOD_STUDIO_PARAMETER_ID const * ids, float * values, int count, FMOD_BOOL ignoreseekspeed)} */
@@ -1094,7 +1094,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPI(system, name, value, finalvalue, __functionAddress);
+        return invokePPPPI(system, name, value, finalvalue, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetParameterByName(FMOD_STUDIO_SYSTEM * system, char const * name, float * value, float * finalvalue)} */
@@ -1133,7 +1133,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, name, value, ignoreseekspeed, __functionAddress);
+        return invokePPI(system, name, value, ignoreseekspeed, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_SetParameterByName(FMOD_STUDIO_SYSTEM * system, char const * name, float value, FMOD_BOOL ignoreseekspeed)} */
@@ -1166,7 +1166,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, name, label, ignoreseekspeed, __functionAddress);
+        return invokePPPI(system, name, label, ignoreseekspeed, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_SetParameterByNameWithLabel(FMOD_STUDIO_SYSTEM * system, char const * name, char const * label, FMOD_BOOL ignoreseekspeed)} */
@@ -1202,7 +1202,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, path, id, __functionAddress);
+        return invokePPPI(system, path, id, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_LookupID(FMOD_STUDIO_SYSTEM * system, char const * path, FMOD_GUID * id)} */
@@ -1235,7 +1235,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPPI(system, id, path, size, retrieved, __functionAddress);
+        return invokePPPPI(system, id, path, size, retrieved, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_LookupPath(FMOD_STUDIO_SYSTEM * system, FMOD_GUID const * id, char * path, int size, int * retrieved)} */
@@ -1255,7 +1255,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, numlisteners, __functionAddress);
+        return invokePPI(system, numlisteners, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetNumListeners(FMOD_STUDIO_SYSTEM * system, int * numlisteners)} */
@@ -1276,7 +1276,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, numlisteners, __functionAddress);
+        return invokePI(system, numlisteners, __functionAddress);
     }
 
     // --- [ FMOD_Studio_System_GetListenerAttributes ] ---
@@ -1287,7 +1287,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, index, attributes, attenuationposition, __functionAddress);
+        return invokePPPI(system, index, attributes, attenuationposition, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetListenerAttributes(FMOD_STUDIO_SYSTEM * system, int index, FMOD_3D_ATTRIBUTES * attributes, FMOD_VECTOR * attenuationposition)} */
@@ -1304,7 +1304,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, index, attributes, attenuationposition, __functionAddress);
+        return invokePPPI(system, index, attributes, attenuationposition, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_SetListenerAttributes(FMOD_STUDIO_SYSTEM * system, int index, FMOD_3D_ATTRIBUTES const * attributes, FMOD_VECTOR const * attenuationposition)} */
@@ -1321,7 +1321,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, index, weight, __functionAddress);
+        return invokePPI(system, index, weight, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetListenerWeight(FMOD_STUDIO_SYSTEM * system, int index, float * weight)} */
@@ -1342,7 +1342,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, index, weight, __functionAddress);
+        return invokePI(system, index, weight, __functionAddress);
     }
 
     // --- [ FMOD_Studio_System_LoadBankFile ] ---
@@ -1353,7 +1353,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, filename, flags, bank, __functionAddress);
+        return invokePPPI(system, filename, flags, bank, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_LoadBankFile(FMOD_STUDIO_SYSTEM * system, char const * filename, FMOD_STUDIO_LOAD_BANK_FLAGS flags, FMOD_STUDIO_BANK ** bank)} */
@@ -1390,7 +1390,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, buffer, length, mode, flags, bank, __functionAddress);
+        return invokePPPI(system, buffer, length, mode, flags, bank, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_LoadBankMemory(FMOD_STUDIO_SYSTEM * system, char const * buffer, int length, FMOD_STUDIO_LOAD_MEMORY_MODE mode, FMOD_STUDIO_LOAD_BANK_FLAGS flags, FMOD_STUDIO_BANK ** bank)} */
@@ -1411,7 +1411,7 @@ public class FMODStudio {
             check(system);
             FMOD_STUDIO_BANK_INFO.validate(info);
         }
-        return callPPPI(system, info, flags, bank, __functionAddress);
+        return invokePPPI(system, info, flags, bank, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_LoadBankCustom(FMOD_STUDIO_SYSTEM * system, FMOD_STUDIO_BANK_INFO const * info, FMOD_STUDIO_LOAD_BANK_FLAGS flags, FMOD_STUDIO_BANK ** bank)} */
@@ -1432,7 +1432,7 @@ public class FMODStudio {
             check(system);
             FMOD_DSP_DESCRIPTION.validate(description);
         }
-        return callPPI(system, description, __functionAddress);
+        return invokePPI(system, description, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_RegisterPlugin(FMOD_STUDIO_SYSTEM * system, FMOD_DSP_DESCRIPTION const * description)} */
@@ -1449,7 +1449,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, name, __functionAddress);
+        return invokePPI(system, name, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_UnregisterPlugin(FMOD_STUDIO_SYSTEM * system, char const * name)} */
@@ -1483,7 +1483,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_Studio_System_FlushCommands ] ---
@@ -1495,7 +1495,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_Studio_System_FlushSampleLoading ] ---
@@ -1507,7 +1507,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_Studio_System_StartCommandCapture ] ---
@@ -1518,7 +1518,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, filename, flags, __functionAddress);
+        return invokePPI(system, filename, flags, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_StartCommandCapture(FMOD_STUDIO_SYSTEM * system, char const * filename, FMOD_STUDIO_COMMANDCAPTURE_FLAGS flags)} */
@@ -1552,7 +1552,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_Studio_System_LoadCommandReplay ] ---
@@ -1563,7 +1563,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, filename, flags, replay, __functionAddress);
+        return invokePPPI(system, filename, flags, replay, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_LoadCommandReplay(FMOD_STUDIO_SYSTEM * system, char const * filename, FMOD_STUDIO_COMMANDREPLAY_FLAGS flags, FMOD_STUDIO_COMMANDREPLAY ** replay)} */
@@ -1600,7 +1600,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, count, __functionAddress);
+        return invokePPI(system, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetBankCount(FMOD_STUDIO_SYSTEM * system, int * count)} */
@@ -1620,7 +1620,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, array, capacity, count, __functionAddress);
+        return invokePPPI(system, array, capacity, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetBankList(FMOD_STUDIO_SYSTEM * system, FMOD_STUDIO_BANK ** array, int capacity, int * count)} */
@@ -1640,7 +1640,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, count, __functionAddress);
+        return invokePPI(system, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetParameterDescriptionCount(FMOD_STUDIO_SYSTEM * system, int * count)} */
@@ -1660,7 +1660,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, array, capacity, count, __functionAddress);
+        return invokePPPI(system, array, capacity, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetParameterDescriptionList(FMOD_STUDIO_SYSTEM * system, FMOD_STUDIO_PARAMETER_DESCRIPTION * array, int capacity, int * count)} */
@@ -1680,7 +1680,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPPI(system, usage, usage_core, __functionAddress);
+        return invokePPPI(system, usage, usage_core, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetCPUUsage(FMOD_STUDIO_SYSTEM * system, FMOD_STUDIO_CPU_USAGE * usage, FMOD_CPU_USAGE * usage_core)} */
@@ -1697,7 +1697,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, usage, __functionAddress);
+        return invokePPI(system, usage, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetBufferUsage(FMOD_STUDIO_SYSTEM * system, FMOD_STUDIO_BUFFER_USAGE * usage)} */
@@ -1715,7 +1715,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPI(system, __functionAddress);
+        return invokePI(system, __functionAddress);
     }
 
     // --- [ FMOD_Studio_System_SetCallback ] ---
@@ -1726,7 +1726,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, callback, callbackmask, __functionAddress);
+        return invokePPI(system, callback, callbackmask, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_SetCallback(FMOD_STUDIO_SYSTEM * system, FMOD_STUDIO_SYSTEM_CALLBACK callback, FMOD_STUDIO_SYSTEM_CALLBACK_TYPE callbackmask)} */
@@ -1744,7 +1744,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, userdata, __functionAddress);
+        return invokePPI(system, userdata, __functionAddress);
     }
 
     // --- [ FMOD_Studio_System_GetUserData ] ---
@@ -1755,7 +1755,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, userdata, __functionAddress);
+        return invokePPI(system, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetUserData(FMOD_STUDIO_SYSTEM * system, void ** userdata)} */
@@ -1775,7 +1775,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(system);
         }
-        return callPPI(system, memoryusage, __functionAddress);
+        return invokePPI(system, memoryusage, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_System_GetMemoryUsage(FMOD_STUDIO_SYSTEM * system, FMOD_STUDIO_MEMORY_USAGE * memoryusage)} */
@@ -1793,7 +1793,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPI(eventdescription, __functionAddress);
+        return invokePI(eventdescription, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventDescription_GetID ] ---
@@ -1804,7 +1804,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, id, __functionAddress);
+        return invokePPI(eventdescription, id, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetID(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, FMOD_GUID * id)} */
@@ -1821,7 +1821,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPPI(eventdescription, path, size, retrieved, __functionAddress);
+        return invokePPPI(eventdescription, path, size, retrieved, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetPath(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, char * path, int size, int * retrieved)} */
@@ -1841,7 +1841,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, count, __functionAddress);
+        return invokePPI(eventdescription, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetParameterDescriptionCount(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, int * count)} */
@@ -1861,7 +1861,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, index, parameter, __functionAddress);
+        return invokePPI(eventdescription, index, parameter, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetParameterDescriptionByIndex(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, int index, FMOD_STUDIO_PARAMETER_DESCRIPTION * parameter)} */
@@ -1878,7 +1878,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPPI(eventdescription, name, parameter, __functionAddress);
+        return invokePPPI(eventdescription, name, parameter, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetParameterDescriptionByName(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, char const * name, FMOD_STUDIO_PARAMETER_DESCRIPTION * parameter)} */
@@ -1907,7 +1907,7 @@ public class FMODStudio {
 
     private static final class FMOD_Studio_EventDescription_GetParameterDescriptionByID {
         static final FFICIF CIF = apiCreateCIF(
-            apiStdcall(), ffi_type_uint32,
+            ffi_type_uint32,
             ffi_type_pointer, apiCreateStruct(ffi_type_uint32, ffi_type_uint32), ffi_type_pointer
         );
     }
@@ -1948,7 +1948,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPPI(eventdescription, index, labelindex, label, size, retrieved, __functionAddress);
+        return invokePPPI(eventdescription, index, labelindex, label, size, retrieved, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetParameterLabelByIndex(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, int index, int labelindex, char * label, int size, int * retrieved)} */
@@ -1968,7 +1968,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPPPI(eventdescription, name, labelindex, label, size, retrieved, __functionAddress);
+        return invokePPPPI(eventdescription, name, labelindex, label, size, retrieved, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetParameterLabelByName(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, char const * name, int labelindex, char * label, int size, int * retrieved)} */
@@ -2001,7 +2001,7 @@ public class FMODStudio {
 
     private static final class FMOD_Studio_EventDescription_GetParameterLabelByID {
         static final FFICIF CIF = apiCreateCIF(
-            apiStdcall(), ffi_type_uint32,
+            ffi_type_uint32,
             ffi_type_pointer, apiCreateStruct(ffi_type_uint32, ffi_type_uint32), ffi_type_sint32, ffi_type_pointer, ffi_type_sint32, ffi_type_pointer
         );
     }
@@ -2048,7 +2048,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, count, __functionAddress);
+        return invokePPI(eventdescription, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetUserPropertyCount(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, int * count)} */
@@ -2068,7 +2068,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, index, property, __functionAddress);
+        return invokePPI(eventdescription, index, property, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetUserPropertyByIndex(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, int index, FMOD_STUDIO_USER_PROPERTY * property)} */
@@ -2085,7 +2085,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPPI(eventdescription, name, property, __functionAddress);
+        return invokePPPI(eventdescription, name, property, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetUserProperty(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, char const * name, FMOD_STUDIO_USER_PROPERTY * property)} */
@@ -2118,7 +2118,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, length, __functionAddress);
+        return invokePPI(eventdescription, length, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetLength(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, int * length)} */
@@ -2138,7 +2138,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPPI(eventdescription, min, max, __functionAddress);
+        return invokePPPI(eventdescription, min, max, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetMinMaxDistance(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, float * min, float * max)} */
@@ -2159,7 +2159,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, size, __functionAddress);
+        return invokePPI(eventdescription, size, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetSoundSize(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, float * size)} */
@@ -2179,7 +2179,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, snapshot, __functionAddress);
+        return invokePPI(eventdescription, snapshot, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_IsSnapshot(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, FMOD_BOOL * snapshot)} */
@@ -2199,7 +2199,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, oneshot, __functionAddress);
+        return invokePPI(eventdescription, oneshot, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_IsOneshot(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, FMOD_BOOL * oneshot)} */
@@ -2219,7 +2219,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, isStream, __functionAddress);
+        return invokePPI(eventdescription, isStream, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_IsStream(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, FMOD_BOOL * isStream)} */
@@ -2239,7 +2239,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, is3D, __functionAddress);
+        return invokePPI(eventdescription, is3D, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_Is3D(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, FMOD_BOOL * is3D)} */
@@ -2259,7 +2259,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, doppler, __functionAddress);
+        return invokePPI(eventdescription, doppler, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_IsDopplerEnabled(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, FMOD_BOOL * doppler)} */
@@ -2279,7 +2279,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, sustainPoint, __functionAddress);
+        return invokePPI(eventdescription, sustainPoint, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_HasSustainPoint(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, FMOD_BOOL * sustainPoint)} */
@@ -2299,7 +2299,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, instance, __functionAddress);
+        return invokePPI(eventdescription, instance, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_CreateInstance(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, FMOD_STUDIO_EVENTINSTANCE ** instance)} */
@@ -2319,7 +2319,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, count, __functionAddress);
+        return invokePPI(eventdescription, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetInstanceCount(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, int * count)} */
@@ -2339,7 +2339,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPPI(eventdescription, array, capacity, count, __functionAddress);
+        return invokePPPI(eventdescription, array, capacity, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetInstanceList(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, FMOD_STUDIO_EVENTINSTANCE ** array, int capacity, int * count)} */
@@ -2360,7 +2360,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPI(eventdescription, __functionAddress);
+        return invokePI(eventdescription, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventDescription_UnloadSampleData ] ---
@@ -2372,7 +2372,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPI(eventdescription, __functionAddress);
+        return invokePI(eventdescription, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventDescription_GetSampleLoadingState ] ---
@@ -2383,7 +2383,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, state, __functionAddress);
+        return invokePPI(eventdescription, state, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetSampleLoadingState(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, FMOD_STUDIO_LOADING_STATE * state)} */
@@ -2404,7 +2404,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPI(eventdescription, __functionAddress);
+        return invokePI(eventdescription, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventDescription_SetCallback ] ---
@@ -2415,7 +2415,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, callback, callbackmask, __functionAddress);
+        return invokePPI(eventdescription, callback, callbackmask, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_SetCallback(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, FMOD_STUDIO_EVENT_CALLBACK callback, FMOD_STUDIO_EVENT_CALLBACK_TYPE callbackmask)} */
@@ -2432,7 +2432,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, userdata, __functionAddress);
+        return invokePPI(eventdescription, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventDescription_GetUserData(FMOD_STUDIO_EVENTDESCRIPTION * eventdescription, void ** userdata)} */
@@ -2453,7 +2453,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventdescription);
         }
-        return callPPI(eventdescription, userdata, __functionAddress);
+        return invokePPI(eventdescription, userdata, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_IsValid ] ---
@@ -2465,7 +2465,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPI(eventinstance, __functionAddress);
+        return invokePI(eventinstance, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_GetDescription ] ---
@@ -2476,7 +2476,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, description, __functionAddress);
+        return invokePPI(eventinstance, description, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetDescription(FMOD_STUDIO_EVENTINSTANCE * eventinstance, FMOD_STUDIO_EVENTDESCRIPTION ** description)} */
@@ -2496,7 +2496,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, system, __functionAddress);
+        return invokePPI(eventinstance, system, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetSystem(FMOD_STUDIO_EVENTINSTANCE * eventinstance, FMOD_STUDIO_SYSTEM ** system)} */
@@ -2516,7 +2516,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPPI(eventinstance, volume, finalvolume, __functionAddress);
+        return invokePPPI(eventinstance, volume, finalvolume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetVolume(FMOD_STUDIO_EVENTINSTANCE * eventinstance, float * volume, float * finalvolume)} */
@@ -2538,7 +2538,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPI(eventinstance, volume, __functionAddress);
+        return invokePI(eventinstance, volume, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_GetPitch ] ---
@@ -2549,7 +2549,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPPI(eventinstance, pitch, finalpitch, __functionAddress);
+        return invokePPPI(eventinstance, pitch, finalpitch, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetPitch(FMOD_STUDIO_EVENTINSTANCE * eventinstance, float * pitch, float * finalpitch)} */
@@ -2571,7 +2571,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPI(eventinstance, pitch, __functionAddress);
+        return invokePI(eventinstance, pitch, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_Get3DAttributes ] ---
@@ -2582,7 +2582,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, attributes, __functionAddress);
+        return invokePPI(eventinstance, attributes, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_Get3DAttributes(FMOD_STUDIO_EVENTINSTANCE * eventinstance, FMOD_3D_ATTRIBUTES * attributes)} */
@@ -2599,7 +2599,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, attributes, __functionAddress);
+        return invokePPI(eventinstance, attributes, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_Set3DAttributes(FMOD_STUDIO_EVENTINSTANCE * eventinstance, FMOD_3D_ATTRIBUTES * attributes)} */
@@ -2616,7 +2616,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, mask, __functionAddress);
+        return invokePPI(eventinstance, mask, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetListenerMask(FMOD_STUDIO_EVENTINSTANCE * eventinstance, unsigned int * mask)} */
@@ -2637,7 +2637,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPI(eventinstance, mask, __functionAddress);
+        return invokePI(eventinstance, mask, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_GetProperty ] ---
@@ -2648,7 +2648,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, index, value, __functionAddress);
+        return invokePPI(eventinstance, index, value, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetProperty(FMOD_STUDIO_EVENTINSTANCE * eventinstance, FMOD_STUDIO_EVENT_PROPERTY index, float * value)} */
@@ -2669,7 +2669,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPI(eventinstance, index, value, __functionAddress);
+        return invokePI(eventinstance, index, value, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_GetReverbLevel ] ---
@@ -2680,7 +2680,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, index, level, __functionAddress);
+        return invokePPI(eventinstance, index, level, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetReverbLevel(FMOD_STUDIO_EVENTINSTANCE * eventinstance, int index, float * level)} */
@@ -2701,7 +2701,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPI(eventinstance, index, level, __functionAddress);
+        return invokePI(eventinstance, index, level, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_GetPaused ] ---
@@ -2712,7 +2712,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, paused, __functionAddress);
+        return invokePPI(eventinstance, paused, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetPaused(FMOD_STUDIO_EVENTINSTANCE * eventinstance, FMOD_BOOL * paused)} */
@@ -2733,7 +2733,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPI(eventinstance, paused, __functionAddress);
+        return invokePI(eventinstance, paused, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_Start ] ---
@@ -2745,7 +2745,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPI(eventinstance, __functionAddress);
+        return invokePI(eventinstance, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_Stop ] ---
@@ -2757,7 +2757,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPI(eventinstance, mode, __functionAddress);
+        return invokePI(eventinstance, mode, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_GetTimelinePosition ] ---
@@ -2768,7 +2768,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, position, __functionAddress);
+        return invokePPI(eventinstance, position, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetTimelinePosition(FMOD_STUDIO_EVENTINSTANCE * eventinstance, int * position)} */
@@ -2789,7 +2789,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPI(eventinstance, position, __functionAddress);
+        return invokePI(eventinstance, position, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_GetPlaybackState ] ---
@@ -2800,7 +2800,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, state, __functionAddress);
+        return invokePPI(eventinstance, state, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetPlaybackState(FMOD_STUDIO_EVENTINSTANCE * eventinstance, FMOD_STUDIO_PLAYBACK_STATE * state)} */
@@ -2820,7 +2820,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, group, __functionAddress);
+        return invokePPI(eventinstance, group, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetChannelGroup(FMOD_STUDIO_EVENTINSTANCE * eventinstance, FMOD_CHANNELGROUP ** group)} */
@@ -2840,7 +2840,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPPI(eventinstance, min, max, __functionAddress);
+        return invokePPPI(eventinstance, min, max, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetMinMaxDistance(FMOD_STUDIO_EVENTINSTANCE * eventinstance, float * min, float * max)} */
@@ -2862,7 +2862,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPI(eventinstance, __functionAddress);
+        return invokePI(eventinstance, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_IsVirtual ] ---
@@ -2873,7 +2873,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, virtualstate, __functionAddress);
+        return invokePPI(eventinstance, virtualstate, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_IsVirtual(FMOD_STUDIO_EVENTINSTANCE * eventinstance, FMOD_BOOL * virtualstate)} */
@@ -2893,7 +2893,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPPPI(eventinstance, name, value, finalvalue, __functionAddress);
+        return invokePPPPI(eventinstance, name, value, finalvalue, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetParameterByName(FMOD_STUDIO_EVENTINSTANCE * eventinstance, char const * name, float * value, float * finalvalue)} */
@@ -2932,7 +2932,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, name, value, ignoreseekspeed, __functionAddress);
+        return invokePPI(eventinstance, name, value, ignoreseekspeed, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_SetParameterByName(FMOD_STUDIO_EVENTINSTANCE * eventinstance, char const * name, float value, FMOD_BOOL ignoreseekspeed)} */
@@ -2965,7 +2965,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPPI(eventinstance, name, label, ignoreseekspeed, __functionAddress);
+        return invokePPPI(eventinstance, name, label, ignoreseekspeed, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_SetParameterByNameWithLabel(FMOD_STUDIO_EVENTINSTANCE * eventinstance, char const * name, char const * label, FMOD_BOOL ignoreseekspeed)} */
@@ -2997,7 +2997,7 @@ public class FMODStudio {
 
     private static final class FMOD_Studio_EventInstance_GetParameterByID {
         static final FFICIF CIF = apiCreateCIF(
-            apiStdcall(), ffi_type_uint32,
+            ffi_type_uint32,
             ffi_type_pointer, apiCreateStruct(ffi_type_uint32, ffi_type_uint32), ffi_type_pointer, ffi_type_pointer
         );
     }
@@ -3039,7 +3039,7 @@ public class FMODStudio {
 
     private static final class FMOD_Studio_EventInstance_SetParameterByID {
         static final FFICIF CIF = apiCreateCIF(
-            apiStdcall(), ffi_type_uint32,
+            ffi_type_uint32,
             ffi_type_pointer, apiCreateStruct(ffi_type_uint32, ffi_type_uint32), ffi_type_float, ffi_type_sint32
         );
     }
@@ -3077,7 +3077,7 @@ public class FMODStudio {
 
     private static final class FMOD_Studio_EventInstance_SetParameterByIDWithLabel {
         static final FFICIF CIF = apiCreateCIF(
-            apiStdcall(), ffi_type_uint32,
+            ffi_type_uint32,
             ffi_type_pointer, apiCreateStruct(ffi_type_uint32, ffi_type_uint32), ffi_type_pointer, ffi_type_sint32
         );
     }
@@ -3135,7 +3135,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPPI(eventinstance, ids, values, count, ignoreseekspeed, __functionAddress);
+        return invokePPPI(eventinstance, ids, values, count, ignoreseekspeed, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_SetParametersByIDs(FMOD_STUDIO_EVENTINSTANCE * eventinstance, FMOD_STUDIO_PARAMETER_ID const * ids, float * values, int count, FMOD_BOOL ignoreseekspeed)} */
@@ -3153,7 +3153,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPI(eventinstance, __functionAddress);
+        return invokePI(eventinstance, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_SetCallback ] ---
@@ -3164,7 +3164,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, callback, callbackmask, __functionAddress);
+        return invokePPI(eventinstance, callback, callbackmask, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_SetCallback(FMOD_STUDIO_EVENTINSTANCE * eventinstance, FMOD_STUDIO_EVENT_CALLBACK callback, FMOD_STUDIO_EVENT_CALLBACK_TYPE callbackmask)} */
@@ -3181,7 +3181,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, userdata, __functionAddress);
+        return invokePPI(eventinstance, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetUserData(FMOD_STUDIO_EVENTINSTANCE * eventinstance, void ** userdata)} */
@@ -3202,7 +3202,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, userdata, __functionAddress);
+        return invokePPI(eventinstance, userdata, __functionAddress);
     }
 
     // --- [ FMOD_Studio_EventInstance_GetCPUUsage ] ---
@@ -3213,7 +3213,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPPI(eventinstance, exclusive, inclusive, __functionAddress);
+        return invokePPPI(eventinstance, exclusive, inclusive, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetCPUUsage(FMOD_STUDIO_EVENTINSTANCE * eventinstance, unsigned int * exclusive, unsigned int * inclusive)} */
@@ -3234,7 +3234,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(eventinstance);
         }
-        return callPPI(eventinstance, memoryusage, __functionAddress);
+        return invokePPI(eventinstance, memoryusage, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_EventInstance_GetMemoryUsage(FMOD_STUDIO_EVENTINSTANCE * eventinstance, FMOD_STUDIO_MEMORY_USAGE * memoryusage)} */
@@ -3252,7 +3252,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPI(bus, __functionAddress);
+        return invokePI(bus, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bus_GetID ] ---
@@ -3263,7 +3263,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPPI(bus, id, __functionAddress);
+        return invokePPI(bus, id, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bus_GetID(FMOD_STUDIO_BUS * bus, FMOD_GUID * id)} */
@@ -3280,7 +3280,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPPPI(bus, path, size, retrieved, __functionAddress);
+        return invokePPPI(bus, path, size, retrieved, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bus_GetPath(FMOD_STUDIO_BUS * bus, char * path, int size, int * retrieved)} */
@@ -3300,7 +3300,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPPPI(bus, volume, finalvolume, __functionAddress);
+        return invokePPPI(bus, volume, finalvolume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bus_GetVolume(FMOD_STUDIO_BUS * bus, float * volume, float * finalvolume)} */
@@ -3322,7 +3322,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPI(bus, volume, __functionAddress);
+        return invokePI(bus, volume, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bus_GetPaused ] ---
@@ -3333,7 +3333,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPPI(bus, paused, __functionAddress);
+        return invokePPI(bus, paused, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bus_GetPaused(FMOD_STUDIO_BUS * bus, FMOD_BOOL * paused)} */
@@ -3354,7 +3354,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPI(bus, paused, __functionAddress);
+        return invokePI(bus, paused, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bus_GetMute ] ---
@@ -3365,7 +3365,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPPI(bus, mute, __functionAddress);
+        return invokePPI(bus, mute, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bus_GetMute(FMOD_STUDIO_BUS * bus, FMOD_BOOL * mute)} */
@@ -3386,7 +3386,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPI(bus, mute, __functionAddress);
+        return invokePI(bus, mute, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bus_StopAllEvents ] ---
@@ -3398,7 +3398,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPI(bus, mode, __functionAddress);
+        return invokePI(bus, mode, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bus_GetPortIndex ] ---
@@ -3409,7 +3409,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPPI(bus, index, __functionAddress);
+        return invokePPI(bus, index, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bus_GetPortIndex(FMOD_STUDIO_BUS * bus, FMOD_PORT_INDEX * index)} */
@@ -3430,7 +3430,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPJI(bus, index, __functionAddress);
+        return invokePJI(bus, index, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bus_LockChannelGroup ] ---
@@ -3442,7 +3442,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPI(bus, __functionAddress);
+        return invokePI(bus, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bus_UnlockChannelGroup ] ---
@@ -3454,7 +3454,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPI(bus, __functionAddress);
+        return invokePI(bus, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bus_GetChannelGroup ] ---
@@ -3465,7 +3465,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPPI(bus, group, __functionAddress);
+        return invokePPI(bus, group, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bus_GetChannelGroup(FMOD_STUDIO_BUS * bus, FMOD_CHANNELGROUP ** group)} */
@@ -3485,7 +3485,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPPPI(bus, exclusive, inclusive, __functionAddress);
+        return invokePPPI(bus, exclusive, inclusive, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bus_GetCPUUsage(FMOD_STUDIO_BUS * bus, unsigned int * exclusive, unsigned int * inclusive)} */
@@ -3506,7 +3506,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bus);
         }
-        return callPPI(bus, memoryusage, __functionAddress);
+        return invokePPI(bus, memoryusage, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bus_GetMemoryUsage(FMOD_STUDIO_BUS * bus, FMOD_STUDIO_MEMORY_USAGE * memoryusage)} */
@@ -3524,7 +3524,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(vca);
         }
-        return callPI(vca, __functionAddress);
+        return invokePI(vca, __functionAddress);
     }
 
     // --- [ FMOD_Studio_VCA_GetID ] ---
@@ -3535,7 +3535,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(vca);
         }
-        return callPPI(vca, id, __functionAddress);
+        return invokePPI(vca, id, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_VCA_GetID(FMOD_STUDIO_VCA * vca, FMOD_GUID * id)} */
@@ -3552,7 +3552,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(vca);
         }
-        return callPPPI(vca, path, size, retrieved, __functionAddress);
+        return invokePPPI(vca, path, size, retrieved, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_VCA_GetPath(FMOD_STUDIO_VCA * vca, char * path, int size, int * retrieved)} */
@@ -3572,7 +3572,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(vca);
         }
-        return callPPPI(vca, volume, finalvolume, __functionAddress);
+        return invokePPPI(vca, volume, finalvolume, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_VCA_GetVolume(FMOD_STUDIO_VCA * vca, float * volume, float * finalvolume)} */
@@ -3594,7 +3594,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(vca);
         }
-        return callPI(vca, volume, __functionAddress);
+        return invokePI(vca, volume, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bank_IsValid ] ---
@@ -3606,7 +3606,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPI(bank, __functionAddress);
+        return invokePI(bank, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bank_GetID ] ---
@@ -3617,7 +3617,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPI(bank, id, __functionAddress);
+        return invokePPI(bank, id, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetID(FMOD_STUDIO_BANK * bank, FMOD_GUID * id)} */
@@ -3634,7 +3634,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPPI(bank, path, size, retrieved, __functionAddress);
+        return invokePPPI(bank, path, size, retrieved, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetPath(FMOD_STUDIO_BANK * bank, char * path, int size, int * retrieved)} */
@@ -3655,7 +3655,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPI(bank, __functionAddress);
+        return invokePI(bank, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bank_LoadSampleData ] ---
@@ -3667,7 +3667,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPI(bank, __functionAddress);
+        return invokePI(bank, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bank_UnloadSampleData ] ---
@@ -3679,7 +3679,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPI(bank, __functionAddress);
+        return invokePI(bank, __functionAddress);
     }
 
     // --- [ FMOD_Studio_Bank_GetLoadingState ] ---
@@ -3690,7 +3690,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPI(bank, state, __functionAddress);
+        return invokePPI(bank, state, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetLoadingState(FMOD_STUDIO_BANK * bank, FMOD_STUDIO_LOADING_STATE * state)} */
@@ -3710,7 +3710,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPI(bank, state, __functionAddress);
+        return invokePPI(bank, state, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetSampleLoadingState(FMOD_STUDIO_BANK * bank, FMOD_STUDIO_LOADING_STATE * state)} */
@@ -3730,7 +3730,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPI(bank, count, __functionAddress);
+        return invokePPI(bank, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetStringCount(FMOD_STUDIO_BANK * bank, int * count)} */
@@ -3750,7 +3750,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPPPI(bank, index, id, path, size, retrieved, __functionAddress);
+        return invokePPPPI(bank, index, id, path, size, retrieved, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetStringInfo(FMOD_STUDIO_BANK * bank, int index, FMOD_GUID * id, char * path, int size, int * retrieved)} */
@@ -3770,7 +3770,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPI(bank, count, __functionAddress);
+        return invokePPI(bank, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetEventCount(FMOD_STUDIO_BANK * bank, int * count)} */
@@ -3790,7 +3790,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPPI(bank, array, capacity, count, __functionAddress);
+        return invokePPPI(bank, array, capacity, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetEventList(FMOD_STUDIO_BANK * bank, FMOD_STUDIO_EVENTDESCRIPTION ** array, int capacity, int * count)} */
@@ -3810,7 +3810,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPI(bank, count, __functionAddress);
+        return invokePPI(bank, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetBusCount(FMOD_STUDIO_BANK * bank, int * count)} */
@@ -3830,7 +3830,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPPI(bank, array, capacity, count, __functionAddress);
+        return invokePPPI(bank, array, capacity, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetBusList(FMOD_STUDIO_BANK * bank, FMOD_STUDIO_BUS ** array, int capacity, int * count)} */
@@ -3850,7 +3850,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPI(bank, count, __functionAddress);
+        return invokePPI(bank, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetVCACount(FMOD_STUDIO_BANK * bank, int * count)} */
@@ -3870,7 +3870,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPPI(bank, array, capacity, count, __functionAddress);
+        return invokePPPI(bank, array, capacity, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetVCAList(FMOD_STUDIO_BANK * bank, FMOD_STUDIO_VCA ** array, int capacity, int * count)} */
@@ -3890,7 +3890,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPI(bank, userdata, __functionAddress);
+        return invokePPI(bank, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_Bank_GetUserData(FMOD_STUDIO_BANK * bank, void ** userdata)} */
@@ -3911,7 +3911,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(bank);
         }
-        return callPPI(bank, userdata, __functionAddress);
+        return invokePPI(bank, userdata, __functionAddress);
     }
 
     // --- [ FMOD_Studio_CommandReplay_IsValid ] ---
@@ -3923,7 +3923,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPI(replay, __functionAddress);
+        return invokePI(replay, __functionAddress);
     }
 
     // --- [ FMOD_Studio_CommandReplay_GetSystem ] ---
@@ -3934,7 +3934,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, system, __functionAddress);
+        return invokePPI(replay, system, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_GetSystem(FMOD_STUDIO_COMMANDREPLAY * replay, FMOD_STUDIO_SYSTEM ** system)} */
@@ -3954,7 +3954,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, length, __functionAddress);
+        return invokePPI(replay, length, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_GetLength(FMOD_STUDIO_COMMANDREPLAY * replay, float * length)} */
@@ -3974,7 +3974,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, count, __functionAddress);
+        return invokePPI(replay, count, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_GetCommandCount(FMOD_STUDIO_COMMANDREPLAY * replay, int * count)} */
@@ -3994,7 +3994,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, commandindex, info, __functionAddress);
+        return invokePPI(replay, commandindex, info, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_GetCommandInfo(FMOD_STUDIO_COMMANDREPLAY * replay, int commandindex, FMOD_STUDIO_COMMAND_INFO * info)} */
@@ -4011,7 +4011,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, commandindex, buffer, length, __functionAddress);
+        return invokePPI(replay, commandindex, buffer, length, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_GetCommandString(FMOD_STUDIO_COMMANDREPLAY * replay, int commandindex, char * buffer, int length)} */
@@ -4028,7 +4028,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, time, commandindex, __functionAddress);
+        return invokePPI(replay, time, commandindex, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_GetCommandAtTime(FMOD_STUDIO_COMMANDREPLAY * replay, float time, int * commandindex)} */
@@ -4048,7 +4048,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, bankPath, __functionAddress);
+        return invokePPI(replay, bankPath, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_SetBankPath(FMOD_STUDIO_COMMANDREPLAY * replay, char const * bankPath)} */
@@ -4082,7 +4082,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPI(replay, __functionAddress);
+        return invokePI(replay, __functionAddress);
     }
 
     // --- [ FMOD_Studio_CommandReplay_Stop ] ---
@@ -4094,7 +4094,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPI(replay, __functionAddress);
+        return invokePI(replay, __functionAddress);
     }
 
     // --- [ FMOD_Studio_CommandReplay_SeekToTime ] ---
@@ -4106,7 +4106,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPI(replay, time, __functionAddress);
+        return invokePI(replay, time, __functionAddress);
     }
 
     // --- [ FMOD_Studio_CommandReplay_SeekToCommand ] ---
@@ -4118,7 +4118,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPI(replay, commandindex, __functionAddress);
+        return invokePI(replay, commandindex, __functionAddress);
     }
 
     // --- [ FMOD_Studio_CommandReplay_GetPaused ] ---
@@ -4129,7 +4129,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, paused, __functionAddress);
+        return invokePPI(replay, paused, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_GetPaused(FMOD_STUDIO_COMMANDREPLAY * replay, FMOD_BOOL * paused)} */
@@ -4150,7 +4150,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPI(replay, paused, __functionAddress);
+        return invokePI(replay, paused, __functionAddress);
     }
 
     // --- [ FMOD_Studio_CommandReplay_GetPlaybackState ] ---
@@ -4161,7 +4161,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, state, __functionAddress);
+        return invokePPI(replay, state, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_GetPlaybackState(FMOD_STUDIO_COMMANDREPLAY * replay, FMOD_STUDIO_PLAYBACK_STATE * state)} */
@@ -4181,7 +4181,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPPI(replay, commandindex, currenttime, __functionAddress);
+        return invokePPPI(replay, commandindex, currenttime, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_GetCurrentCommand(FMOD_STUDIO_COMMANDREPLAY * replay, int * commandindex, float * currenttime)} */
@@ -4203,7 +4203,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPI(replay, __functionAddress);
+        return invokePI(replay, __functionAddress);
     }
 
     // --- [ FMOD_Studio_CommandReplay_SetFrameCallback ] ---
@@ -4214,7 +4214,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, callback, __functionAddress);
+        return invokePPI(replay, callback, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_SetFrameCallback(FMOD_STUDIO_COMMANDREPLAY * replay, FMOD_STUDIO_COMMANDREPLAY_FRAME_CALLBACK callback)} */
@@ -4231,7 +4231,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, callback, __functionAddress);
+        return invokePPI(replay, callback, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_SetLoadBankCallback(FMOD_STUDIO_COMMANDREPLAY * replay, FMOD_STUDIO_COMMANDREPLAY_LOAD_BANK_CALLBACK callback)} */
@@ -4248,7 +4248,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, callback, __functionAddress);
+        return invokePPI(replay, callback, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_SetCreateInstanceCallback(FMOD_STUDIO_COMMANDREPLAY * replay, FMOD_STUDIO_COMMANDREPLAY_CREATE_INSTANCE_CALLBACK callback)} */
@@ -4265,7 +4265,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, userdata, __functionAddress);
+        return invokePPI(replay, userdata, __functionAddress);
     }
 
     /** {@code FMOD_RESULT FMOD_Studio_CommandReplay_GetUserData(FMOD_STUDIO_COMMANDREPLAY * replay, void ** userdata)} */
@@ -4286,7 +4286,7 @@ public class FMODStudio {
         if (CHECKS) {
             check(replay);
         }
-        return callPPI(replay, userdata, __functionAddress);
+        return invokePPI(replay, userdata, __functionAddress);
     }
 
 }

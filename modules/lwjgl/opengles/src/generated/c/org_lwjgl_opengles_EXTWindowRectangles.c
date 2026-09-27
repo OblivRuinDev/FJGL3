@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glWindowRectanglesEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glWindowRectanglesEXTPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

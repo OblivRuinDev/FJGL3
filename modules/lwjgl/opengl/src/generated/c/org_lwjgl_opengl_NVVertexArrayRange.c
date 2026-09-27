@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glVertexArrayRangeNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glFlushVertexArrayRangeNVPROC) (void);
+typedef void (*glVertexArrayRangeNVPROC) (jint, uintptr_t);
+typedef void (*glFlushVertexArrayRangeNVPROC) (void);
 
 EXTERN_C_ENTER
 

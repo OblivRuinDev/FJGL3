@@ -220,7 +220,7 @@ public class NVGPUMulticast {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(gpuMask, buffer, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
+        invokePPPV(gpuMask, buffer, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
     }
 
     /** {@code void glMulticastBufferSubDataNV(GLbitfield gpuMask, GLuint buffer, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -229,7 +229,7 @@ public class NVGPUMulticast {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(gpuMask, buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(gpuMask, buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glMulticastBufferSubDataNV(GLbitfield gpuMask, GLuint buffer, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -238,7 +238,7 @@ public class NVGPUMulticast {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(gpuMask, buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(gpuMask, buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glMulticastBufferSubDataNV(GLbitfield gpuMask, GLuint buffer, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -247,7 +247,7 @@ public class NVGPUMulticast {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(gpuMask, buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(gpuMask, buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glMulticastFramebufferSampleLocationsfvNV(GLuint gpu, GLuint framebuffer, GLuint start, GLsizei count, GLfloat const * v)} */
@@ -256,7 +256,7 @@ public class NVGPUMulticast {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(gpu, framebuffer, start, v.length >> 1, v, __functionAddress);
+        invokePV(gpu, framebuffer, start, v.length >> 1, v, __functionAddress);
     }
 
     /** {@code void glMulticastGetQueryObjectivNV(GLuint gpu, GLuint id, GLenum pname, GLint * params)} */
@@ -266,7 +266,7 @@ public class NVGPUMulticast {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(gpu, id, pname, params, __functionAddress);
+        invokePV(gpu, id, pname, params, __functionAddress);
     }
 
     /** {@code void glMulticastGetQueryObjectuivNV(GLuint gpu, GLuint id, GLenum pname, GLuint * params)} */
@@ -276,7 +276,7 @@ public class NVGPUMulticast {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(gpu, id, pname, params, __functionAddress);
+        invokePV(gpu, id, pname, params, __functionAddress);
     }
 
     /** {@code void glMulticastGetQueryObjecti64vNV(GLuint gpu, GLuint id, GLenum pname, GLint64 * params)} */
@@ -286,7 +286,7 @@ public class NVGPUMulticast {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(gpu, id, pname, params, __functionAddress);
+        invokePV(gpu, id, pname, params, __functionAddress);
     }
 
     /** {@code void glMulticastGetQueryObjectui64vNV(GLuint gpu, GLuint id, GLenum pname, GLuint64 * params)} */
@@ -296,7 +296,7 @@ public class NVGPUMulticast {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(gpu, id, pname, params, __functionAddress);
+        invokePV(gpu, id, pname, params, __functionAddress);
     }
 
 }

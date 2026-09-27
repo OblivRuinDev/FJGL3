@@ -37,7 +37,7 @@ public class WGLNVSwapGroup {
             check(__functionAddress);
             check(hDC);
         }
-        return callPI(hDC, group, __functionAddress) != 0;
+        return invokePI(hDC, group, __functionAddress) != 0;
     }
 
     // --- [ wglBindSwapBarrierNV ] ---
@@ -49,7 +49,7 @@ public class WGLNVSwapGroup {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(group, barrier, __functionAddress) != 0;
+        return invokeI(group, barrier, __functionAddress) != 0;
     }
 
     // --- [ wglQuerySwapGroupNV ] ---
@@ -61,7 +61,7 @@ public class WGLNVSwapGroup {
             check(__functionAddress);
             check(hDC);
         }
-        return callPPPI(hDC, group, barrier, __functionAddress);
+        return invokePPPI(hDC, group, barrier, __functionAddress);
     }
 
     /** {@code BOOL wglQuerySwapGroupNV(HDC hDC, GLuint * group, GLuint * barrier)} */
@@ -83,7 +83,7 @@ public class WGLNVSwapGroup {
             check(__functionAddress);
             check(hDC);
         }
-        return callPPPI(hDC, maxGroups, maxBarriers, __functionAddress);
+        return invokePPPI(hDC, maxGroups, maxBarriers, __functionAddress);
     }
 
     /** {@code BOOL wglQueryMaxSwapGroupsNV(HDC hDC, GLuint * maxGroups, GLuint * maxBarriers)} */
@@ -105,7 +105,7 @@ public class WGLNVSwapGroup {
             check(__functionAddress);
             check(hDC);
         }
-        return callPPI(hDC, count, __functionAddress);
+        return invokePPI(hDC, count, __functionAddress);
     }
 
     /** {@code BOOL wglQueryFrameCountNV(HDC hDC, GLuint * count)} */
@@ -127,7 +127,7 @@ public class WGLNVSwapGroup {
             check(__functionAddress);
             check(hDC);
         }
-        return callPI(hDC, __functionAddress) != 0;
+        return invokePI(hDC, __functionAddress) != 0;
     }
 
     /** {@code BOOL wglQuerySwapGroupNV(HDC hDC, GLuint * group, GLuint * barrier)} */
@@ -140,7 +140,7 @@ public class WGLNVSwapGroup {
             check(group, 1);
             check(barrier, 1);
         }
-        return callPPPI(hDC, group, barrier, __functionAddress) != 0;
+        return invokePPPI(hDC, group, barrier, __functionAddress) != 0;
     }
 
     /** {@code BOOL wglQueryMaxSwapGroupsNV(HDC hDC, GLuint * maxGroups, GLuint * maxBarriers)} */
@@ -153,7 +153,7 @@ public class WGLNVSwapGroup {
             check(maxGroups, 1);
             check(maxBarriers, 1);
         }
-        return callPPPI(hDC, maxGroups, maxBarriers, __functionAddress) != 0;
+        return invokePPPI(hDC, maxGroups, maxBarriers, __functionAddress) != 0;
     }
 
     /** {@code BOOL wglQueryFrameCountNV(HDC hDC, GLuint * count)} */
@@ -165,7 +165,7 @@ public class WGLNVSwapGroup {
             check(hDC);
             check(count, 1);
         }
-        return callPPI(hDC, count, __functionAddress) != 0;
+        return invokePPI(hDC, count, __functionAddress) != 0;
     }
 
 }

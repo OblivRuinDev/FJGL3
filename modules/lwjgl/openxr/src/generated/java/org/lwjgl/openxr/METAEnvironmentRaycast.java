@@ -59,7 +59,7 @@ public class METAEnvironmentRaycast {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), info, future, __functionAddress);
+        return invokePPPI(session.address(), info, future, __functionAddress);
     }
 
     /** {@code XrResult xrCreateEnvironmentRaycasterAsyncMETA(XrSession session, XrEnvironmentRaycasterCreateInfoMETA const * info, XrFutureEXT * future)} */
@@ -79,7 +79,7 @@ public class METAEnvironmentRaycast {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), future, completion, __functionAddress);
+        return invokePJPI(session.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrCreateEnvironmentRaycasterCompleteMETA(XrSession session, XrFutureEXT future, XrEnvironmentRaycasterCreateCompletionMETA * completion)} */
@@ -97,7 +97,7 @@ public class METAEnvironmentRaycast {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(environmentRaycaster.address(), __functionAddress);
+        return invokePI(environmentRaycaster.address(), __functionAddress);
     }
 
     // --- [ xrPerformEnvironmentRaycastMETA ] ---
@@ -109,7 +109,7 @@ public class METAEnvironmentRaycast {
             check(__functionAddress);
             XrEnvironmentRaycastHitGetInfoMETA.validate(info);
         }
-        return callPPPI(environmentRaycaster.address(), info, hitPoint, __functionAddress);
+        return invokePPPI(environmentRaycaster.address(), info, hitPoint, __functionAddress);
     }
 
     /** {@code XrResult xrPerformEnvironmentRaycastMETA(XrEnvironmentRaycasterMETA environmentRaycaster, XrEnvironmentRaycastHitGetInfoMETA const * info, XrEnvironmentRaycastHitMETA * hitPoint)} */

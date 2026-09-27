@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glBindVertexArrayOESPROC) (jint);
-typedef void (APIENTRY *glDeleteVertexArraysOESPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGenVertexArraysOESPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsVertexArrayOESPROC) (jint);
+typedef void (*glBindVertexArrayOESPROC) (jint);
+typedef void (*glDeleteVertexArraysOESPROC) (jint, uintptr_t);
+typedef void (*glGenVertexArraysOESPROC) (jint, uintptr_t);
+typedef jboolean (*glIsVertexArrayOESPROC) (jint);
 
 EXTERN_C_ENTER
 

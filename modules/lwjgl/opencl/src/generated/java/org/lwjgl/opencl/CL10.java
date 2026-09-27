@@ -345,7 +345,7 @@ public class CL10 {
     /** {@code cl_int clGetPlatformIDs(cl_uint num_entries, cl_platform_id * platforms, cl_uint * num_platforms)} */
     public static int nclGetPlatformIDs(int num_entries, long platforms, long num_platforms) {
         long __functionAddress = CL.getICD().clGetPlatformIDs;
-        return callPPI(num_entries, platforms, num_platforms, __functionAddress);
+        return invokePPI(num_entries, platforms, num_platforms, __functionAddress);
     }
 
     /** {@code cl_int clGetPlatformIDs(cl_uint num_entries, cl_platform_id * platforms, cl_uint * num_platforms)} */
@@ -365,7 +365,7 @@ public class CL10 {
         if (CHECKS) {
             check(platform);
         }
-        return callPPPPI(platform, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(platform, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetPlatformInfo(cl_platform_id platform, cl_platform_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -391,7 +391,7 @@ public class CL10 {
     /** {@code cl_int clGetDeviceIDs(cl_platform_id platform, cl_device_type device_type, cl_uint num_entries, cl_device_id * devices, cl_uint * num_devices)} */
     public static int nclGetDeviceIDs(long platform, long device_type, int num_entries, long devices, long num_devices) {
         long __functionAddress = CL.getICD().clGetDeviceIDs;
-        return callPJPPI(platform, device_type, num_entries, devices, num_devices, __functionAddress);
+        return invokePJPPI(platform, device_type, num_entries, devices, num_devices, __functionAddress);
     }
 
     /** {@code cl_int clGetDeviceIDs(cl_platform_id platform, cl_device_type device_type, cl_uint num_entries, cl_device_id * devices, cl_uint * num_devices)} */
@@ -411,7 +411,7 @@ public class CL10 {
         if (CHECKS) {
             check(device);
         }
-        return callPPPPI(device, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(device, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetDeviceInfo(cl_device_id device, cl_device_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -455,7 +455,7 @@ public class CL10 {
     /** {@code cl_context clCreateContext(cl_context_properties const * properties, cl_uint num_devices, cl_device_id const * devices, void (*) (cl_char const *, void const *, size_t, void *) pfn_notify, void * user_data, cl_int * errcode_ret)} */
     public static long nclCreateContext(long properties, int num_devices, long devices, long pfn_notify, long user_data, long errcode_ret) {
         long __functionAddress = CL.getICD().clCreateContext;
-        return callPPPPPP(properties, num_devices, devices, pfn_notify, user_data, errcode_ret, __functionAddress);
+        return invokePPPPPP(properties, num_devices, devices, pfn_notify, user_data, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_context clCreateContext(cl_context_properties const * properties, cl_uint num_devices, cl_device_id const * devices, void (*) (cl_char const *, void const *, size_t, void *) pfn_notify, void * user_data, cl_int * errcode_ret)} */
@@ -489,7 +489,7 @@ public class CL10 {
     /** {@code cl_context clCreateContextFromType(cl_context_properties const * properties, cl_device_type device_type, void (*) (cl_char const *, void const *, size_t, void *) pfn_notify, void * user_data, cl_int * errcode_ret)} */
     public static long nclCreateContextFromType(long properties, long device_type, long pfn_notify, long user_data, long errcode_ret) {
         long __functionAddress = CL.getICD().clCreateContextFromType;
-        return callPJPPPP(properties, device_type, pfn_notify, user_data, errcode_ret, __functionAddress);
+        return invokePJPPPP(properties, device_type, pfn_notify, user_data, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_context clCreateContextFromType(cl_context_properties const * properties, cl_device_type device_type, void (*) (cl_char const *, void const *, size_t, void *) pfn_notify, void * user_data, cl_int * errcode_ret)} */
@@ -511,7 +511,7 @@ public class CL10 {
         if (CHECKS) {
             check(context);
         }
-        return callPI(context, __functionAddress);
+        return invokePI(context, __functionAddress);
     }
 
     // --- [ clReleaseContext ] ---
@@ -523,7 +523,7 @@ public class CL10 {
         if (CHECKS) {
             check(context);
         }
-        return callPI(context, __functionAddress);
+        return invokePI(context, __functionAddress);
     }
 
     // --- [ clGetContextInfo ] ---
@@ -534,7 +534,7 @@ public class CL10 {
         if (CHECKS) {
             check(context);
         }
-        return callPPPPI(context, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(context, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetContextInfo(cl_context context, cl_context_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -573,7 +573,7 @@ public class CL10 {
             check(context);
             check(device);
         }
-        return callPPJPP(context, device, properties, errcode_ret, __functionAddress);
+        return invokePPJPP(context, device, properties, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_command_queue clCreateCommandQueue(cl_context context, cl_device_id device, cl_command_queue_properties properties, cl_int * errcode_ret)} */
@@ -594,7 +594,7 @@ public class CL10 {
         if (CHECKS) {
             check(command_queue);
         }
-        return callPI(command_queue, __functionAddress);
+        return invokePI(command_queue, __functionAddress);
     }
 
     // --- [ clReleaseCommandQueue ] ---
@@ -606,7 +606,7 @@ public class CL10 {
         if (CHECKS) {
             check(command_queue);
         }
-        return callPI(command_queue, __functionAddress);
+        return invokePI(command_queue, __functionAddress);
     }
 
     // --- [ clGetCommandQueueInfo ] ---
@@ -617,7 +617,7 @@ public class CL10 {
         if (CHECKS) {
             check(command_queue);
         }
-        return callPPPPI(command_queue, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(command_queue, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetCommandQueueInfo(cl_command_queue command_queue, cl_command_queue_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -664,7 +664,7 @@ public class CL10 {
         if (CHECKS) {
             check(context);
         }
-        return callPJPPPP(context, flags, size, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPP(context, flags, size, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBuffer(cl_context context, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -730,7 +730,7 @@ public class CL10 {
             check(command_queue);
             check(buffer);
         }
-        return callPPPPPPPI(command_queue, buffer, blocking_read, offset, size, ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPI(command_queue, buffer, blocking_read, offset, size, ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadBuffer(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_read, size_t offset, size_t size, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -787,7 +787,7 @@ public class CL10 {
             check(command_queue);
             check(buffer);
         }
-        return callPPPPPPPI(command_queue, buffer, blocking_write, offset, size, ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPI(command_queue, buffer, blocking_write, offset, size, ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteBuffer(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_write, size_t offset, size_t size, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -845,7 +845,7 @@ public class CL10 {
             check(src_buffer);
             check(dst_buffer);
         }
-        return callPPPPPPPPI(command_queue, src_buffer, dst_buffer, src_offset, dst_offset, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPPI(command_queue, src_buffer, dst_buffer, src_offset, dst_offset, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueCopyBuffer(cl_command_queue command_queue, cl_mem src_buffer, cl_mem dst_buffer, size_t src_offset, size_t dst_offset, size_t size, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -866,7 +866,7 @@ public class CL10 {
             check(command_queue);
             check(buffer);
         }
-        return callPPJPPPPPP(command_queue, buffer, blocking_map, map_flags, offset, size, num_events_in_wait_list, event_wait_list, event, errcode_ret, __functionAddress);
+        return invokePPJPPPPPP(command_queue, buffer, blocking_map, map_flags, offset, size, num_events_in_wait_list, event_wait_list, event, errcode_ret, __functionAddress);
     }
 
     /** {@code void * clEnqueueMapBuffer(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_map, cl_map_flags map_flags, size_t offset, size_t size, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event, cl_int * errcode_ret)} */
@@ -888,7 +888,7 @@ public class CL10 {
         if (CHECKS) {
             check(context);
         }
-        return callPJPPPPPPP(context, flags, image_format, image_width, image_height, image_row_pitch, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPPPPP(context, flags, image_format, image_width, image_height, image_row_pitch, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage2D(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, size_t image_width, size_t image_height, size_t image_row_pitch, void * host_ptr, cl_int * errcode_ret)} */
@@ -935,7 +935,7 @@ public class CL10 {
         if (CHECKS) {
             check(context);
         }
-        return callPJPPPPPPPPP(context, flags, image_format, image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPPPPPPP(context, flags, image_format, image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage3D(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, size_t image_width, size_t image_height, size_t image_depth, size_t image_row_pitch, size_t image_slice_pitch, void * host_ptr, cl_int * errcode_ret)} */
@@ -982,7 +982,7 @@ public class CL10 {
         if (CHECKS) {
             check(context);
         }
-        return callPJPPI(context, flags, image_type, num_entries, image_formats, num_image_formats, __functionAddress);
+        return invokePJPPI(context, flags, image_type, num_entries, image_formats, num_image_formats, __functionAddress);
     }
 
     /** {@code cl_int clGetSupportedImageFormats(cl_context context, cl_mem_flags flags, cl_mem_object_type image_type, cl_uint num_entries, cl_image_format * image_formats, cl_uint * num_image_formats)} */
@@ -1003,7 +1003,7 @@ public class CL10 {
             check(command_queue);
             check(image);
         }
-        return callPPPPPPPPPI(command_queue, image, blocking_read, origin, region, row_pitch, slice_pitch, ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPPPI(command_queue, image, blocking_read, origin, region, row_pitch, slice_pitch, ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadImage(cl_command_queue command_queue, cl_mem image, cl_bool blocking_read, size_t const * origin, size_t const * region, size_t row_pitch, size_t slice_pitch, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -1070,7 +1070,7 @@ public class CL10 {
             check(command_queue);
             check(image);
         }
-        return callPPPPPPPPPI(command_queue, image, blocking_write, origin, region, input_row_pitch, input_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPPPI(command_queue, image, blocking_write, origin, region, input_row_pitch, input_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteImage(cl_command_queue command_queue, cl_mem image, cl_bool blocking_write, size_t const * origin, size_t const * region, size_t input_row_pitch, size_t input_slice_pitch, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -1138,7 +1138,7 @@ public class CL10 {
             check(src_image);
             check(dst_image);
         }
-        return callPPPPPPPPI(command_queue, src_image, dst_image, src_origin, dst_origin, region, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPPI(command_queue, src_image, dst_image, src_origin, dst_origin, region, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueCopyImage(cl_command_queue command_queue, cl_mem src_image, cl_mem dst_image, size_t const * src_origin, size_t const * dst_origin, size_t const * region, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -1163,7 +1163,7 @@ public class CL10 {
             check(src_image);
             check(dst_buffer);
         }
-        return callPPPPPPPPI(command_queue, src_image, dst_buffer, src_origin, region, dst_offset, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPPI(command_queue, src_image, dst_buffer, src_origin, region, dst_offset, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueCopyImageToBuffer(cl_command_queue command_queue, cl_mem src_image, cl_mem dst_buffer, size_t const * src_origin, size_t const * region, size_t dst_offset, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -1187,7 +1187,7 @@ public class CL10 {
             check(src_buffer);
             check(dst_image);
         }
-        return callPPPPPPPPI(command_queue, src_buffer, dst_image, src_offset, dst_origin, region, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPPI(command_queue, src_buffer, dst_image, src_offset, dst_origin, region, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueCopyBufferToImage(cl_command_queue command_queue, cl_mem src_buffer, cl_mem dst_image, size_t src_offset, size_t const * dst_origin, size_t const * region, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -1210,7 +1210,7 @@ public class CL10 {
             check(command_queue);
             check(image);
         }
-        return callPPJPPPPPPPP(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, event, errcode_ret, __functionAddress);
+        return invokePPJPPPPPPPP(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, event, errcode_ret, __functionAddress);
     }
 
     /** {@code void * clEnqueueMapImage(cl_command_queue command_queue, cl_mem image, cl_bool blocking_map, cl_map_flags map_flags, size_t const * origin, size_t const * region, size_t * image_row_pitch, size_t * image_slice_pitch, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event, cl_int * errcode_ret)} */
@@ -1252,7 +1252,7 @@ public class CL10 {
         if (CHECKS) {
             check(image);
         }
-        return callPPPPI(image, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(image, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetImageInfo(cl_mem image, cl_image_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -1291,7 +1291,7 @@ public class CL10 {
         if (CHECKS) {
             check(memobj);
         }
-        return callPI(memobj, __functionAddress);
+        return invokePI(memobj, __functionAddress);
     }
 
     // --- [ clReleaseMemObject ] ---
@@ -1303,7 +1303,7 @@ public class CL10 {
         if (CHECKS) {
             check(memobj);
         }
-        return callPI(memobj, __functionAddress);
+        return invokePI(memobj, __functionAddress);
     }
 
     // --- [ clEnqueueUnmapMemObject ] ---
@@ -1315,7 +1315,7 @@ public class CL10 {
             check(command_queue);
             check(memobj);
         }
-        return callPPPPPI(command_queue, memobj, mapped_ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPI(command_queue, memobj, mapped_ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueUnmapMemObject(cl_command_queue command_queue, cl_mem memobj, void * mapped_ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -1335,7 +1335,7 @@ public class CL10 {
         if (CHECKS) {
             check(memobj);
         }
-        return callPPPPI(memobj, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(memobj, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetMemObjectInfo(cl_mem memobj, cl_mem_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -1382,7 +1382,7 @@ public class CL10 {
         if (CHECKS) {
             check(context);
         }
-        return callPPP(context, normalized_coords, addressing_mode, filter_mode, errcode_ret, __functionAddress);
+        return invokePPP(context, normalized_coords, addressing_mode, filter_mode, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_sampler clCreateSampler(cl_context context, cl_bool normalized_coords, cl_addressing_mode addressing_mode, cl_filter_mode filter_mode, cl_int * errcode_ret)} */
@@ -1403,7 +1403,7 @@ public class CL10 {
         if (CHECKS) {
             check(sampler);
         }
-        return callPI(sampler, __functionAddress);
+        return invokePI(sampler, __functionAddress);
     }
 
     // --- [ clReleaseSampler ] ---
@@ -1415,7 +1415,7 @@ public class CL10 {
         if (CHECKS) {
             check(sampler);
         }
-        return callPI(sampler, __functionAddress);
+        return invokePI(sampler, __functionAddress);
     }
 
     // --- [ clGetSamplerInfo ] ---
@@ -1426,7 +1426,7 @@ public class CL10 {
         if (CHECKS) {
             check(sampler);
         }
-        return callPPPPI(sampler, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(sampler, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetSamplerInfo(cl_sampler sampler, cl_sampler_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -1464,7 +1464,7 @@ public class CL10 {
         if (CHECKS) {
             check(context);
         }
-        return callPPPPP(context, count, strings, lengths, errcode_ret, __functionAddress);
+        return invokePPPPP(context, count, strings, lengths, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_program clCreateProgramWithSource(cl_context context, cl_uint count, cl_char const ** strings, size_t const * lengths, cl_int * errcode_ret)} */
@@ -1519,7 +1519,7 @@ public class CL10 {
         if (CHECKS) {
             check(context);
         }
-        return callPPPPPPP(context, num_devices, device_list, lengths, binaries, binary_status, errcode_ret, __functionAddress);
+        return invokePPPPPPP(context, num_devices, device_list, lengths, binaries, binary_status, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_program clCreateProgramWithBinary(cl_context context, cl_uint num_devices, cl_device_id const * device_list, size_t const * lengths, cl_uchar const ** binaries, cl_int * binary_status, cl_int * errcode_ret)} */
@@ -1577,7 +1577,7 @@ public class CL10 {
         if (CHECKS) {
             check(program);
         }
-        return callPI(program, __functionAddress);
+        return invokePI(program, __functionAddress);
     }
 
     // --- [ clReleaseProgram ] ---
@@ -1589,7 +1589,7 @@ public class CL10 {
         if (CHECKS) {
             check(program);
         }
-        return callPI(program, __functionAddress);
+        return invokePI(program, __functionAddress);
     }
 
     // --- [ clBuildProgram ] ---
@@ -1600,7 +1600,7 @@ public class CL10 {
         if (CHECKS) {
             check(program);
         }
-        return callPPPPPI(program, num_devices, device_list, options, pfn_notify, user_data, __functionAddress);
+        return invokePPPPPI(program, num_devices, device_list, options, pfn_notify, user_data, __functionAddress);
     }
 
     /** {@code cl_int clBuildProgram(cl_program program, cl_uint num_devices, cl_device_id const * device_list, cl_char const * options, void (*) (cl_program, void *) pfn_notify, void * user_data)} */
@@ -1645,7 +1645,7 @@ public class CL10 {
     @NativeType("cl_int")
     public static int clUnloadCompiler() {
         long __functionAddress = CL.getICD().clUnloadCompiler;
-        return callI(__functionAddress);
+        return invokeI(__functionAddress);
     }
 
     // --- [ clGetProgramInfo ] ---
@@ -1656,7 +1656,7 @@ public class CL10 {
         if (CHECKS) {
             check(program);
         }
-        return callPPPPI(program, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(program, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetProgramInfo(cl_program program, cl_program_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -1695,7 +1695,7 @@ public class CL10 {
             check(program);
             check(device);
         }
-        return callPPPPPI(program, device, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPPI(program, device, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetProgramBuildInfo(cl_program program, cl_device_id device, cl_program_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -1733,7 +1733,7 @@ public class CL10 {
         if (CHECKS) {
             check(program);
         }
-        return callPPPP(program, kernel_name, errcode_ret, __functionAddress);
+        return invokePPPP(program, kernel_name, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_kernel clCreateKernel(cl_program program, cl_char const * kernel_name, cl_int * errcode_ret)} */
@@ -1770,7 +1770,7 @@ public class CL10 {
         if (CHECKS) {
             check(program);
         }
-        return callPPPI(program, num_kernels, kernels, num_kernels_ret, __functionAddress);
+        return invokePPPI(program, num_kernels, kernels, num_kernels_ret, __functionAddress);
     }
 
     /** {@code cl_int clCreateKernelsInProgram(cl_program program, cl_uint num_kernels, cl_kernel * kernels, cl_uint * num_kernels_ret)} */
@@ -1791,7 +1791,7 @@ public class CL10 {
         if (CHECKS) {
             check(kernel);
         }
-        return callPI(kernel, __functionAddress);
+        return invokePI(kernel, __functionAddress);
     }
 
     // --- [ clReleaseKernel ] ---
@@ -1803,7 +1803,7 @@ public class CL10 {
         if (CHECKS) {
             check(kernel);
         }
-        return callPI(kernel, __functionAddress);
+        return invokePI(kernel, __functionAddress);
     }
 
     // --- [ clSetKernelArg ] ---
@@ -1814,7 +1814,7 @@ public class CL10 {
         if (CHECKS) {
             check(kernel);
         }
-        return callPPPI(kernel, arg_index, arg_size, arg_value, __functionAddress);
+        return invokePPPI(kernel, arg_index, arg_size, arg_value, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArg(cl_kernel kernel, cl_uint arg_index, size_t arg_size, void const * arg_value)} */
@@ -2125,7 +2125,7 @@ public class CL10 {
         if (CHECKS) {
             check(kernel);
         }
-        return callPPPPI(kernel, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(kernel, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetKernelInfo(cl_kernel kernel, cl_kernel_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -2164,7 +2164,7 @@ public class CL10 {
             check(kernel);
             check(device);
         }
-        return callPPPPPI(kernel, device, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPPI(kernel, device, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetKernelWorkGroupInfo(cl_kernel kernel, cl_device_id device, cl_kernel_work_group_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -2212,7 +2212,7 @@ public class CL10 {
             check(command_queue);
             check(kernel);
         }
-        return callPPPPPPPI(command_queue, kernel, work_dim, global_work_offset, global_work_size, local_work_size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPI(command_queue, kernel, work_dim, global_work_offset, global_work_size, local_work_size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueNDRangeKernel(cl_command_queue command_queue, cl_kernel kernel, cl_uint work_dim, size_t const * global_work_offset, size_t const * global_work_size, size_t const * local_work_size, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2236,7 +2236,7 @@ public class CL10 {
             check(command_queue);
             check(kernel);
         }
-        return callPPPPI(command_queue, kernel, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPI(command_queue, kernel, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueTask(cl_command_queue command_queue, cl_kernel kernel, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2256,7 +2256,7 @@ public class CL10 {
         if (CHECKS) {
             check(command_queue);
         }
-        return callPPPPPPPPI(command_queue, user_func, args, cb_args, num_mem_objects, mem_list, args_mem_loc, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPPI(command_queue, user_func, args, cb_args, num_mem_objects, mem_list, args_mem_loc, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueNativeKernel(cl_command_queue command_queue, void (*) (void *) user_func, void * args, size_t cb_args, cl_uint num_mem_objects, cl_mem const * mem_list, void const ** args_mem_loc, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2290,7 +2290,7 @@ public class CL10 {
     /** {@code cl_int clWaitForEvents(cl_uint num_events, cl_event const * event_list)} */
     public static int nclWaitForEvents(int num_events, long event_list) {
         long __functionAddress = CL.getICD().clWaitForEvents;
-        return callPI(num_events, event_list, __functionAddress);
+        return invokePI(num_events, event_list, __functionAddress);
     }
 
     /** {@code cl_int clWaitForEvents(cl_uint num_events, cl_event const * event_list)} */
@@ -2319,7 +2319,7 @@ public class CL10 {
         if (CHECKS) {
             check(event);
         }
-        return callPPPPI(event, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(event, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetEventInfo(cl_event event, cl_event_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -2358,7 +2358,7 @@ public class CL10 {
         if (CHECKS) {
             check(event);
         }
-        return callPI(event, __functionAddress);
+        return invokePI(event, __functionAddress);
     }
 
     // --- [ clReleaseEvent ] ---
@@ -2370,7 +2370,7 @@ public class CL10 {
         if (CHECKS) {
             check(event);
         }
-        return callPI(event, __functionAddress);
+        return invokePI(event, __functionAddress);
     }
 
     // --- [ clEnqueueMarker ] ---
@@ -2381,7 +2381,7 @@ public class CL10 {
         if (CHECKS) {
             check(command_queue);
         }
-        return callPPI(command_queue, event, __functionAddress);
+        return invokePPI(command_queue, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueMarker(cl_command_queue command_queue, cl_event * event)} */
@@ -2402,7 +2402,7 @@ public class CL10 {
         if (CHECKS) {
             check(command_queue);
         }
-        return callPI(command_queue, __functionAddress);
+        return invokePI(command_queue, __functionAddress);
     }
 
     // --- [ clEnqueueWaitForEvents ] ---
@@ -2413,7 +2413,7 @@ public class CL10 {
         if (CHECKS) {
             check(command_queue);
         }
-        return callPPI(command_queue, num_events, event_list, __functionAddress);
+        return invokePPI(command_queue, num_events, event_list, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWaitForEvents(cl_command_queue command_queue, cl_uint num_events, cl_event const * event_list)} */
@@ -2442,7 +2442,7 @@ public class CL10 {
         if (CHECKS) {
             check(event);
         }
-        return callPPPPI(event, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(event, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetEventProfilingInfo(cl_event event, cl_profiling_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -2472,7 +2472,7 @@ public class CL10 {
         if (CHECKS) {
             check(command_queue);
         }
-        return callPI(command_queue, __functionAddress);
+        return invokePI(command_queue, __functionAddress);
     }
 
     // --- [ clFinish ] ---
@@ -2484,7 +2484,7 @@ public class CL10 {
         if (CHECKS) {
             check(command_queue);
         }
-        return callPI(command_queue, __functionAddress);
+        return invokePI(command_queue, __functionAddress);
     }
 
     // --- [ clGetExtensionFunctionAddress ] ---
@@ -2492,7 +2492,7 @@ public class CL10 {
     /** {@code void * clGetExtensionFunctionAddress(cl_char const * funcname)} */
     public static long nclGetExtensionFunctionAddress(long funcname) {
         long __functionAddress = CL.getICD().clGetExtensionFunctionAddress;
-        return callPP(funcname, __functionAddress);
+        return invokePP(funcname, __functionAddress);
     }
 
     /** {@code void * clGetExtensionFunctionAddress(cl_char const * funcname)} */
@@ -2524,7 +2524,7 @@ public class CL10 {
         if (CHECKS) {
             checkSafe(num_platforms, 1);
         }
-        return callPPI(remainingSafe(platforms), memAddressSafe(platforms), num_platforms, __functionAddress);
+        return invokePPI(remainingSafe(platforms), memAddressSafe(platforms), num_platforms, __functionAddress);
     }
 
     /** {@code cl_int clGetPlatformInfo(cl_platform_id platform, cl_platform_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -2535,7 +2535,7 @@ public class CL10 {
             check(platform);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(platform, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(platform, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetDeviceIDs(cl_platform_id platform, cl_device_type device_type, cl_uint num_entries, cl_device_id * devices, cl_uint * num_devices)} */
@@ -2545,7 +2545,7 @@ public class CL10 {
         if (CHECKS) {
             checkSafe(num_devices, 1);
         }
-        return callPJPPI(platform, device_type, remainingSafe(devices), memAddressSafe(devices), num_devices, __functionAddress);
+        return invokePJPPI(platform, device_type, remainingSafe(devices), memAddressSafe(devices), num_devices, __functionAddress);
     }
 
     /** {@code cl_int clGetDeviceInfo(cl_device_id device, cl_device_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -2556,7 +2556,7 @@ public class CL10 {
             check(device);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(device, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(device, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetDeviceInfo(cl_device_id device, cl_device_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -2567,7 +2567,7 @@ public class CL10 {
             check(device);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(device, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(device, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_context clCreateContext(cl_context_properties const * properties, cl_uint num_devices, cl_device_id const * devices, void (*) (cl_char const *, void const *, size_t, void *) pfn_notify, void * user_data, cl_int * errcode_ret)} */
@@ -2578,7 +2578,7 @@ public class CL10 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPPPP(memAddressSafe(properties), devices.remaining(), memAddress(devices), memAddressSafe(pfn_notify), user_data, errcode_ret, __functionAddress);
+        return invokePPPPPP(memAddressSafe(properties), devices.remaining(), memAddress(devices), memAddressSafe(pfn_notify), user_data, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_context clCreateContextFromType(cl_context_properties const * properties, cl_device_type device_type, void (*) (cl_char const *, void const *, size_t, void *) pfn_notify, void * user_data, cl_int * errcode_ret)} */
@@ -2589,7 +2589,7 @@ public class CL10 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPP(memAddressSafe(properties), device_type, memAddressSafe(pfn_notify), user_data, errcode_ret, __functionAddress);
+        return invokePJPPPP(memAddressSafe(properties), device_type, memAddressSafe(pfn_notify), user_data, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetContextInfo(cl_context context, cl_context_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -2600,7 +2600,7 @@ public class CL10 {
             check(context);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(context, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(context, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_command_queue clCreateCommandQueue(cl_context context, cl_device_id device, cl_command_queue_properties properties, cl_int * errcode_ret)} */
@@ -2612,7 +2612,7 @@ public class CL10 {
             check(device);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPP(context, device, properties, errcode_ret, __functionAddress);
+        return invokePPJPP(context, device, properties, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetCommandQueueInfo(cl_command_queue command_queue, cl_command_queue_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -2623,7 +2623,7 @@ public class CL10 {
             check(command_queue);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(command_queue, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(command_queue, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetCommandQueueInfo(cl_command_queue command_queue, cl_command_queue_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -2634,7 +2634,7 @@ public class CL10 {
             check(command_queue);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(command_queue, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(command_queue, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_mem clCreateBuffer(cl_context context, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -2645,7 +2645,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPP(context, flags, (long)host_ptr.remaining(), memAddress(host_ptr), errcode_ret, __functionAddress);
+        return invokePJPPPP(context, flags, (long)host_ptr.remaining(), memAddress(host_ptr), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBuffer(cl_context context, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -2656,7 +2656,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPP(context, flags, Integer.toUnsignedLong(host_ptr.length) << 1, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPP(context, flags, Integer.toUnsignedLong(host_ptr.length) << 1, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBuffer(cl_context context, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -2667,7 +2667,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPP(context, flags, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPP(context, flags, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBuffer(cl_context context, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -2678,7 +2678,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPP(context, flags, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPP(context, flags, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBuffer(cl_context context, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -2689,7 +2689,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPP(context, flags, Integer.toUnsignedLong(host_ptr.length) << 3, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPP(context, flags, Integer.toUnsignedLong(host_ptr.length) << 3, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadBuffer(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_read, size_t offset, size_t size, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2702,7 +2702,7 @@ public class CL10 {
             check(buffer);
             checkSafe(event, 1);
         }
-        return callPPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 1, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 1, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadBuffer(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_read, size_t offset, size_t size, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2715,7 +2715,7 @@ public class CL10 {
             check(buffer);
             checkSafe(event, 1);
         }
-        return callPPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 2, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 2, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadBuffer(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_read, size_t offset, size_t size, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2728,7 +2728,7 @@ public class CL10 {
             check(buffer);
             checkSafe(event, 1);
         }
-        return callPPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 2, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 2, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadBuffer(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_read, size_t offset, size_t size, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2741,7 +2741,7 @@ public class CL10 {
             check(buffer);
             checkSafe(event, 1);
         }
-        return callPPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 3, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 3, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteBuffer(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_write, size_t offset, size_t size, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2754,7 +2754,7 @@ public class CL10 {
             check(buffer);
             checkSafe(event, 1);
         }
-        return callPPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 1, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 1, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteBuffer(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_write, size_t offset, size_t size, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2767,7 +2767,7 @@ public class CL10 {
             check(buffer);
             checkSafe(event, 1);
         }
-        return callPPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 2, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 2, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteBuffer(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_write, size_t offset, size_t size, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2780,7 +2780,7 @@ public class CL10 {
             check(buffer);
             checkSafe(event, 1);
         }
-        return callPPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 2, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 2, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteBuffer(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_write, size_t offset, size_t size, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2793,7 +2793,7 @@ public class CL10 {
             check(buffer);
             checkSafe(event, 1);
         }
-        return callPPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 3, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, offset, Integer.toUnsignedLong(ptr.length) << 3, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code void * clEnqueueMapBuffer(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_map, cl_map_flags map_flags, size_t offset, size_t size, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event, cl_int * errcode_ret)} */
@@ -2806,7 +2806,7 @@ public class CL10 {
             checkSafe(event, 1);
             checkSafe(errcode_ret, 1);
         }
-        long __result = callPPJPPPPPP(command_queue, buffer, blocking_map ? 1 : 0, map_flags, offset, size, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), errcode_ret, __functionAddress);
+        long __result = invokePPJPPPPPP(command_queue, buffer, blocking_map ? 1 : 0, map_flags, offset, size, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), errcode_ret, __functionAddress);
         return apiGetMappedBuffer(old_buffer, __result, (int)size);
     }
 
@@ -2818,7 +2818,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_row_pitch, memAddressSafe(host_ptr), errcode_ret, __functionAddress);
+        return invokePJPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_row_pitch, memAddressSafe(host_ptr), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage2D(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, size_t image_width, size_t image_height, size_t image_row_pitch, void * host_ptr, cl_int * errcode_ret)} */
@@ -2829,7 +2829,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_row_pitch, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_row_pitch, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage2D(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, size_t image_width, size_t image_height, size_t image_row_pitch, void * host_ptr, cl_int * errcode_ret)} */
@@ -2840,7 +2840,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_row_pitch, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_row_pitch, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage2D(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, size_t image_width, size_t image_height, size_t image_row_pitch, void * host_ptr, cl_int * errcode_ret)} */
@@ -2851,7 +2851,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_row_pitch, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_row_pitch, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage3D(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, size_t image_width, size_t image_height, size_t image_depth, size_t image_row_pitch, size_t image_slice_pitch, void * host_ptr, cl_int * errcode_ret)} */
@@ -2862,7 +2862,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, memAddressSafe(host_ptr), errcode_ret, __functionAddress);
+        return invokePJPPPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, memAddressSafe(host_ptr), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage3D(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, size_t image_width, size_t image_height, size_t image_depth, size_t image_row_pitch, size_t image_slice_pitch, void * host_ptr, cl_int * errcode_ret)} */
@@ -2873,7 +2873,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage3D(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, size_t image_width, size_t image_height, size_t image_depth, size_t image_row_pitch, size_t image_slice_pitch, void * host_ptr, cl_int * errcode_ret)} */
@@ -2884,7 +2884,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImage3D(cl_context context, cl_mem_flags flags, cl_image_format const * image_format, size_t image_width, size_t image_height, size_t image_depth, size_t image_row_pitch, size_t image_slice_pitch, void * host_ptr, cl_int * errcode_ret)} */
@@ -2895,7 +2895,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptr, errcode_ret, __functionAddress);
+        return invokePJPPPPPPPPP(context, flags, image_format.address(), image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetSupportedImageFormats(cl_context context, cl_mem_flags flags, cl_mem_object_type image_type, cl_uint num_entries, cl_image_format * image_formats, cl_uint * num_image_formats)} */
@@ -2906,7 +2906,7 @@ public class CL10 {
             check(context);
             checkSafe(num_image_formats, 1);
         }
-        return callPJPPI(context, flags, image_type, remainingSafe(image_formats), memAddressSafe(image_formats), num_image_formats, __functionAddress);
+        return invokePJPPI(context, flags, image_type, remainingSafe(image_formats), memAddressSafe(image_formats), num_image_formats, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadImage(cl_command_queue command_queue, cl_mem image, cl_bool blocking_read, size_t const * origin, size_t const * region, size_t row_pitch, size_t slice_pitch, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2921,7 +2921,7 @@ public class CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPI(command_queue, image, blocking_read ? 1 : 0, memAddress(origin), memAddress(region), row_pitch, slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPI(command_queue, image, blocking_read ? 1 : 0, memAddress(origin), memAddress(region), row_pitch, slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadImage(cl_command_queue command_queue, cl_mem image, cl_bool blocking_read, size_t const * origin, size_t const * region, size_t row_pitch, size_t slice_pitch, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2936,7 +2936,7 @@ public class CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPI(command_queue, image, blocking_read ? 1 : 0, memAddress(origin), memAddress(region), row_pitch, slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPI(command_queue, image, blocking_read ? 1 : 0, memAddress(origin), memAddress(region), row_pitch, slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadImage(cl_command_queue command_queue, cl_mem image, cl_bool blocking_read, size_t const * origin, size_t const * region, size_t row_pitch, size_t slice_pitch, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2951,7 +2951,7 @@ public class CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPI(command_queue, image, blocking_read ? 1 : 0, memAddress(origin), memAddress(region), row_pitch, slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPI(command_queue, image, blocking_read ? 1 : 0, memAddress(origin), memAddress(region), row_pitch, slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadImage(cl_command_queue command_queue, cl_mem image, cl_bool blocking_read, size_t const * origin, size_t const * region, size_t row_pitch, size_t slice_pitch, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2966,7 +2966,7 @@ public class CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPI(command_queue, image, blocking_read ? 1 : 0, memAddress(origin), memAddress(region), row_pitch, slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPI(command_queue, image, blocking_read ? 1 : 0, memAddress(origin), memAddress(region), row_pitch, slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteImage(cl_command_queue command_queue, cl_mem image, cl_bool blocking_write, size_t const * origin, size_t const * region, size_t input_row_pitch, size_t input_slice_pitch, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2981,7 +2981,7 @@ public class CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPI(command_queue, image, blocking_write ? 1 : 0, memAddress(origin), memAddress(region), input_row_pitch, input_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPI(command_queue, image, blocking_write ? 1 : 0, memAddress(origin), memAddress(region), input_row_pitch, input_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteImage(cl_command_queue command_queue, cl_mem image, cl_bool blocking_write, size_t const * origin, size_t const * region, size_t input_row_pitch, size_t input_slice_pitch, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -2996,7 +2996,7 @@ public class CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPI(command_queue, image, blocking_write ? 1 : 0, memAddress(origin), memAddress(region), input_row_pitch, input_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPI(command_queue, image, blocking_write ? 1 : 0, memAddress(origin), memAddress(region), input_row_pitch, input_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteImage(cl_command_queue command_queue, cl_mem image, cl_bool blocking_write, size_t const * origin, size_t const * region, size_t input_row_pitch, size_t input_slice_pitch, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -3011,7 +3011,7 @@ public class CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPI(command_queue, image, blocking_write ? 1 : 0, memAddress(origin), memAddress(region), input_row_pitch, input_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPI(command_queue, image, blocking_write ? 1 : 0, memAddress(origin), memAddress(region), input_row_pitch, input_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteImage(cl_command_queue command_queue, cl_mem image, cl_bool blocking_write, size_t const * origin, size_t const * region, size_t input_row_pitch, size_t input_slice_pitch, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -3026,7 +3026,7 @@ public class CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPI(command_queue, image, blocking_write ? 1 : 0, memAddress(origin), memAddress(region), input_row_pitch, input_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPI(command_queue, image, blocking_write ? 1 : 0, memAddress(origin), memAddress(region), input_row_pitch, input_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code void * clEnqueueMapImage(cl_command_queue command_queue, cl_mem image, cl_bool blocking_map, cl_map_flags map_flags, size_t const * origin, size_t const * region, size_t * image_row_pitch, size_t * image_slice_pitch, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event, cl_int * errcode_ret)} */
@@ -3043,7 +3043,7 @@ public class CL10 {
             checkSafe(event, 1);
             checkSafe(errcode_ret, 1);
         }
-        long __result = callPPJPPPPPPPP(command_queue, image, blocking_map ? 1 : 0, map_flags, memAddress(origin), memAddress(region), memAddress(image_row_pitch), memAddressSafe(image_slice_pitch), remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), errcode_ret, __functionAddress);
+        long __result = invokePPJPPPPPPPP(command_queue, image, blocking_map ? 1 : 0, map_flags, memAddress(origin), memAddress(region), memAddress(image_row_pitch), memAddressSafe(image_slice_pitch), remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), errcode_ret, __functionAddress);
         int length = (int)getMemObjectInfoPointer(image, CL_MEM_SIZE);
         return apiGetMappedBuffer(old_buffer, __result, length);
     }
@@ -3062,7 +3062,7 @@ public class CL10 {
             checkSafe(event, 1);
             checkSafe(errcode_ret, 1);
         }
-        long __result = callPPJPPPPPPPP(command_queue, image, blocking_map ? 1 : 0, map_flags, memAddress(origin), memAddress(region), memAddress(image_row_pitch), memAddressSafe(image_slice_pitch), remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), errcode_ret, __functionAddress);
+        long __result = invokePPJPPPPPPPP(command_queue, image, blocking_map ? 1 : 0, map_flags, memAddress(origin), memAddress(region), memAddress(image_row_pitch), memAddressSafe(image_slice_pitch), remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), errcode_ret, __functionAddress);
         return apiGetMappedBuffer(old_buffer, __result, (int)length);
     }
 
@@ -3074,7 +3074,7 @@ public class CL10 {
             check(image);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(image, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(image, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetMemObjectInfo(cl_mem memobj, cl_mem_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -3085,7 +3085,7 @@ public class CL10 {
             check(memobj);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(memobj, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(memobj, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetMemObjectInfo(cl_mem memobj, cl_mem_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -3096,7 +3096,7 @@ public class CL10 {
             check(memobj);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(memobj, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(memobj, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_sampler clCreateSampler(cl_context context, cl_bool normalized_coords, cl_addressing_mode addressing_mode, cl_filter_mode filter_mode, cl_int * errcode_ret)} */
@@ -3107,7 +3107,7 @@ public class CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPPP(context, normalized_coords ? 1 : 0, addressing_mode, filter_mode, errcode_ret, __functionAddress);
+        return invokePPP(context, normalized_coords ? 1 : 0, addressing_mode, filter_mode, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetSamplerInfo(cl_sampler sampler, cl_sampler_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -3118,7 +3118,7 @@ public class CL10 {
             check(sampler);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(sampler, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(sampler, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_program clCreateProgramWithSource(cl_context context, cl_uint count, cl_char const ** strings, size_t const * lengths, cl_int * errcode_ret)} */
@@ -3130,7 +3130,7 @@ public class CL10 {
             checkSafe(lengths, strings.remaining());
             checkSafe(errcode_ret, 1);
         }
-        return callPPPPP(context, strings.remaining(), memAddress(strings), memAddressSafe(lengths), errcode_ret, __functionAddress);
+        return invokePPPPP(context, strings.remaining(), memAddress(strings), memAddressSafe(lengths), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_program clCreateProgramWithBinary(cl_context context, cl_uint num_devices, cl_device_id const * device_list, size_t const * lengths, cl_uchar const ** binaries, cl_int * binary_status, cl_int * errcode_ret)} */
@@ -3144,7 +3144,7 @@ public class CL10 {
             checkSafe(binary_status, binaries.remaining());
             checkSafe(errcode_ret, 1);
         }
-        return callPPPPPPP(context, binaries.remaining(), memAddress(device_list), memAddress(lengths), memAddress(binaries), binary_status, errcode_ret, __functionAddress);
+        return invokePPPPPPP(context, binaries.remaining(), memAddress(device_list), memAddress(lengths), memAddress(binaries), binary_status, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetProgramInfo(cl_program program, cl_program_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -3155,7 +3155,7 @@ public class CL10 {
             check(program);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(program, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(program, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetProgramBuildInfo(cl_program program, cl_device_id device, cl_program_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -3167,7 +3167,7 @@ public class CL10 {
             check(device);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPPI(program, device, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPPI(program, device, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_kernel clCreateKernel(cl_program program, cl_char const * kernel_name, cl_int * errcode_ret)} */
@@ -3179,7 +3179,7 @@ public class CL10 {
             checkNT1(kernel_name);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPP(program, memAddress(kernel_name), errcode_ret, __functionAddress);
+        return invokePPPP(program, memAddress(kernel_name), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_kernel clCreateKernel(cl_program program, cl_char const * kernel_name, cl_int * errcode_ret)} */
@@ -3194,7 +3194,7 @@ public class CL10 {
         try {
             stack.nASCII(kernel_name, true);
             long kernel_nameEncoded = stack.getPointerAddress();
-            return callPPPP(program, kernel_nameEncoded, errcode_ret, __functionAddress);
+            return invokePPPP(program, kernel_nameEncoded, errcode_ret, __functionAddress);
         } finally {
             stack.setPointer(stackPointer);
         }
@@ -3208,7 +3208,7 @@ public class CL10 {
             check(program);
             checkSafe(num_kernels_ret, 1);
         }
-        return callPPPI(program, remainingSafe(kernels), memAddressSafe(kernels), num_kernels_ret, __functionAddress);
+        return invokePPPI(program, remainingSafe(kernels), memAddressSafe(kernels), num_kernels_ret, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArg(cl_kernel kernel, cl_uint arg_index, size_t arg_size, void const * arg_value)} */
@@ -3218,7 +3218,7 @@ public class CL10 {
         if (CHECKS) {
             check(kernel);
         }
-        return callPPPI(kernel, arg_index, Integer.toUnsignedLong(arg_value.length) << 1, arg_value, __functionAddress);
+        return invokePPPI(kernel, arg_index, Integer.toUnsignedLong(arg_value.length) << 1, arg_value, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArg(cl_kernel kernel, cl_uint arg_index, size_t arg_size, void const * arg_value)} */
@@ -3228,7 +3228,7 @@ public class CL10 {
         if (CHECKS) {
             check(kernel);
         }
-        return callPPPI(kernel, arg_index, Integer.toUnsignedLong(arg_value.length) << 2, arg_value, __functionAddress);
+        return invokePPPI(kernel, arg_index, Integer.toUnsignedLong(arg_value.length) << 2, arg_value, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArg(cl_kernel kernel, cl_uint arg_index, size_t arg_size, void const * arg_value)} */
@@ -3238,7 +3238,7 @@ public class CL10 {
         if (CHECKS) {
             check(kernel);
         }
-        return callPPPI(kernel, arg_index, Integer.toUnsignedLong(arg_value.length) << 3, arg_value, __functionAddress);
+        return invokePPPI(kernel, arg_index, Integer.toUnsignedLong(arg_value.length) << 3, arg_value, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArg(cl_kernel kernel, cl_uint arg_index, size_t arg_size, void const * arg_value)} */
@@ -3248,7 +3248,7 @@ public class CL10 {
         if (CHECKS) {
             check(kernel);
         }
-        return callPPPI(kernel, arg_index, Integer.toUnsignedLong(arg_value.length) << 2, arg_value, __functionAddress);
+        return invokePPPI(kernel, arg_index, Integer.toUnsignedLong(arg_value.length) << 2, arg_value, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArg(cl_kernel kernel, cl_uint arg_index, size_t arg_size, void const * arg_value)} */
@@ -3258,7 +3258,7 @@ public class CL10 {
         if (CHECKS) {
             check(kernel);
         }
-        return callPPPI(kernel, arg_index, Integer.toUnsignedLong(arg_value.length) << 3, arg_value, __functionAddress);
+        return invokePPPI(kernel, arg_index, Integer.toUnsignedLong(arg_value.length) << 3, arg_value, __functionAddress);
     }
 
     /** {@code cl_int clGetKernelInfo(cl_kernel kernel, cl_kernel_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -3269,7 +3269,7 @@ public class CL10 {
             check(kernel);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(kernel, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(kernel, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetKernelWorkGroupInfo(cl_kernel kernel, cl_device_id device, cl_kernel_work_group_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -3281,7 +3281,7 @@ public class CL10 {
             check(device);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPPI(kernel, device, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPPI(kernel, device, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetKernelWorkGroupInfo(cl_kernel kernel, cl_device_id device, cl_kernel_work_group_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -3293,7 +3293,7 @@ public class CL10 {
             check(device);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPPI(kernel, device, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPPI(kernel, device, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetEventInfo(cl_event event, cl_event_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -3304,7 +3304,7 @@ public class CL10 {
             check(event);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(event, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(event, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clGetEventProfilingInfo(cl_event event, cl_profiling_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -3315,7 +3315,7 @@ public class CL10 {
             check(event);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(event, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(event, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 3, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     private static long getMemObjectInfoPointer(long cl_mem, int param_name) {

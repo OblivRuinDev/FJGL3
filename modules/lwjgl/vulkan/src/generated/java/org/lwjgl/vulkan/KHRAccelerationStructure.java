@@ -135,7 +135,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pAccelerationStructure, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pAccelerationStructure, __functionAddress);
     }
 
     /** {@code VkResult vkCreateAccelerationStructureKHR(VkDevice device, VkAccelerationStructureCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkAccelerationStructureKHR * pAccelerationStructure)} */
@@ -155,7 +155,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), accelerationStructure, pAllocator, __functionAddress);
+        invokePJPV(device.address(), accelerationStructure, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyAccelerationStructureKHR(VkDevice device, VkAccelerationStructureKHR accelerationStructure, VkAllocationCallbacks const * pAllocator)} */
@@ -171,7 +171,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), infoCount, pInfos, ppBuildRangeInfos, __functionAddress);
+        invokePPPV(commandBuffer.address(), infoCount, pInfos, ppBuildRangeInfos, __functionAddress);
     }
 
     /** {@code void vkCmdBuildAccelerationStructuresKHR(VkCommandBuffer commandBuffer, uint32_t infoCount, VkAccelerationStructureBuildGeometryInfoKHR const * pInfos, VkAccelerationStructureBuildRangeInfoKHR const * const * ppBuildRangeInfos)} */
@@ -190,7 +190,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPPPV(commandBuffer.address(), infoCount, pInfos, pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts, __functionAddress);
+        invokePPPPPV(commandBuffer.address(), infoCount, pInfos, pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts, __functionAddress);
     }
 
     /** {@code void vkCmdBuildAccelerationStructuresIndirectKHR(VkCommandBuffer commandBuffer, uint32_t infoCount, VkAccelerationStructureBuildGeometryInfoKHR const * pInfos, VkDeviceAddress const * pIndirectDeviceAddresses, uint32_t const * pIndirectStrides, uint32_t const * const * ppMaxPrimitiveCounts)} */
@@ -211,7 +211,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), deferredOperation, infoCount, pInfos, ppBuildRangeInfos, __functionAddress);
+        return invokePJPPI(device.address(), deferredOperation, infoCount, pInfos, ppBuildRangeInfos, __functionAddress);
     }
 
     /** {@code VkResult vkBuildAccelerationStructuresKHR(VkDevice device, VkDeferredOperationKHR deferredOperation, uint32_t infoCount, VkAccelerationStructureBuildGeometryInfoKHR const * pInfos, VkAccelerationStructureBuildRangeInfoKHR const * const * ppBuildRangeInfos)} */
@@ -231,7 +231,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), deferredOperation, pInfo, __functionAddress);
+        return invokePJPI(device.address(), deferredOperation, pInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCopyAccelerationStructureKHR(VkDevice device, VkDeferredOperationKHR deferredOperation, VkCopyAccelerationStructureInfoKHR const * pInfo)} */
@@ -248,7 +248,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), deferredOperation, pInfo, __functionAddress);
+        return invokePJPI(device.address(), deferredOperation, pInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCopyAccelerationStructureToMemoryKHR(VkDevice device, VkDeferredOperationKHR deferredOperation, VkCopyAccelerationStructureToMemoryInfoKHR const * pInfo)} */
@@ -265,7 +265,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), deferredOperation, pInfo, __functionAddress);
+        return invokePJPI(device.address(), deferredOperation, pInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCopyMemoryToAccelerationStructureKHR(VkDevice device, VkDeferredOperationKHR deferredOperation, VkCopyMemoryToAccelerationStructureInfoKHR const * pInfo)} */
@@ -282,7 +282,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPPI(device.address(), accelerationStructureCount, pAccelerationStructures, queryType, dataSize, pData, stride, __functionAddress);
+        return invokePPPPPI(device.address(), accelerationStructureCount, pAccelerationStructures, queryType, dataSize, pData, stride, __functionAddress);
     }
 
     /** {@code VkResult vkWriteAccelerationStructuresPropertiesKHR(VkDevice device, uint32_t accelerationStructureCount, VkAccelerationStructureKHR const * pAccelerationStructures, VkQueryType queryType, size_t dataSize, void * pData, size_t stride)} */
@@ -299,7 +299,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyAccelerationStructureKHR(VkCommandBuffer commandBuffer, VkCopyAccelerationStructureInfoKHR const * pInfo)} */
@@ -315,7 +315,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyAccelerationStructureToMemoryKHR(VkCommandBuffer commandBuffer, VkCopyAccelerationStructureToMemoryInfoKHR const * pInfo)} */
@@ -331,7 +331,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyMemoryToAccelerationStructureKHR(VkCommandBuffer commandBuffer, VkCopyMemoryToAccelerationStructureInfoKHR const * pInfo)} */
@@ -347,7 +347,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPJ(device.address(), pInfo, __functionAddress);
+        return invokePPJ(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code VkDeviceAddress vkGetAccelerationStructureDeviceAddressKHR(VkDevice device, VkAccelerationStructureDeviceAddressInfoKHR const * pInfo)} */
@@ -364,7 +364,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPJV(commandBuffer.address(), accelerationStructureCount, pAccelerationStructures, queryType, queryPool, firstQuery, __functionAddress);
+        invokePPJV(commandBuffer.address(), accelerationStructureCount, pAccelerationStructures, queryType, queryPool, firstQuery, __functionAddress);
     }
 
     /** {@code void vkCmdWriteAccelerationStructuresPropertiesKHR(VkCommandBuffer commandBuffer, uint32_t accelerationStructureCount, VkAccelerationStructureKHR const * pAccelerationStructures, VkQueryType queryType, VkQueryPool queryPool, uint32_t firstQuery)} */
@@ -381,7 +381,7 @@ public class KHRAccelerationStructure {
             check(__functionAddress);
             VkAccelerationStructureVersionInfoKHR.validate(pVersionInfo);
         }
-        callPPPV(device.address(), pVersionInfo, pCompatibility, __functionAddress);
+        invokePPPV(device.address(), pVersionInfo, pCompatibility, __functionAddress);
     }
 
     /** {@code void vkGetDeviceAccelerationStructureCompatibilityKHR(VkDevice device, VkAccelerationStructureVersionInfoKHR const * pVersionInfo, VkAccelerationStructureCompatibilityKHR * pCompatibility)} */
@@ -400,7 +400,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPPV(device.address(), buildType, pBuildInfo, pMaxPrimitiveCounts, pSizeInfo, __functionAddress);
+        invokePPPPV(device.address(), buildType, pBuildInfo, pMaxPrimitiveCounts, pSizeInfo, __functionAddress);
     }
 
     /** {@code void vkGetAccelerationStructureBuildSizesKHR(VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, VkAccelerationStructureBuildGeometryInfoKHR const * pBuildInfo, uint32_t const * pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR * pSizeInfo)} */
@@ -419,7 +419,7 @@ public class KHRAccelerationStructure {
             check(__functionAddress);
             check(pAccelerationStructure, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pAccelerationStructure, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pAccelerationStructure, __functionAddress);
     }
 
     /** {@code void vkCmdBuildAccelerationStructuresIndirectKHR(VkCommandBuffer commandBuffer, uint32_t infoCount, VkAccelerationStructureBuildGeometryInfoKHR const * pInfos, VkDeviceAddress const * pIndirectDeviceAddresses, uint32_t const * pIndirectStrides, uint32_t const * const * ppMaxPrimitiveCounts)} */
@@ -431,7 +431,7 @@ public class KHRAccelerationStructure {
             check(pIndirectStrides, pInfos.remaining());
             check(ppMaxPrimitiveCounts, pInfos.remaining());
         }
-        callPPPPPV(commandBuffer.address(), pInfos.remaining(), pInfos.address(), pIndirectDeviceAddresses, pIndirectStrides, memAddress(ppMaxPrimitiveCounts), __functionAddress);
+        invokePPPPPV(commandBuffer.address(), pInfos.remaining(), pInfos.address(), pIndirectDeviceAddresses, pIndirectStrides, memAddress(ppMaxPrimitiveCounts), __functionAddress);
     }
 
     /** {@code VkResult vkWriteAccelerationStructuresPropertiesKHR(VkDevice device, uint32_t accelerationStructureCount, VkAccelerationStructureKHR const * pAccelerationStructures, VkQueryType queryType, size_t dataSize, void * pData, size_t stride)} */
@@ -441,7 +441,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPPI(device.address(), pAccelerationStructures.length, pAccelerationStructures, queryType, (long)pData.remaining(), memAddress(pData), stride, __functionAddress);
+        return invokePPPPPI(device.address(), pAccelerationStructures.length, pAccelerationStructures, queryType, (long)pData.remaining(), memAddress(pData), stride, __functionAddress);
     }
 
     /** {@code void vkCmdWriteAccelerationStructuresPropertiesKHR(VkCommandBuffer commandBuffer, uint32_t accelerationStructureCount, VkAccelerationStructureKHR const * pAccelerationStructures, VkQueryType queryType, VkQueryPool queryPool, uint32_t firstQuery)} */
@@ -450,7 +450,7 @@ public class KHRAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPJV(commandBuffer.address(), pAccelerationStructures.length, pAccelerationStructures, queryType, queryPool, firstQuery, __functionAddress);
+        invokePPJV(commandBuffer.address(), pAccelerationStructures.length, pAccelerationStructures, queryType, queryPool, firstQuery, __functionAddress);
     }
 
     /** {@code void vkGetDeviceAccelerationStructureCompatibilityKHR(VkDevice device, VkAccelerationStructureVersionInfoKHR const * pVersionInfo, VkAccelerationStructureCompatibilityKHR * pCompatibility)} */
@@ -461,7 +461,7 @@ public class KHRAccelerationStructure {
             check(pCompatibility, 1);
             VkAccelerationStructureVersionInfoKHR.validate(pVersionInfo.address());
         }
-        callPPPV(device.address(), pVersionInfo.address(), pCompatibility, __functionAddress);
+        invokePPPV(device.address(), pVersionInfo.address(), pCompatibility, __functionAddress);
     }
 
     /** {@code void vkGetAccelerationStructureBuildSizesKHR(VkDevice device, VkAccelerationStructureBuildTypeKHR buildType, VkAccelerationStructureBuildGeometryInfoKHR const * pBuildInfo, uint32_t const * pMaxPrimitiveCounts, VkAccelerationStructureBuildSizesInfoKHR * pSizeInfo)} */
@@ -471,7 +471,7 @@ public class KHRAccelerationStructure {
             check(__functionAddress);
             checkSafe(pMaxPrimitiveCounts, pBuildInfo.geometryCount());
         }
-        callPPPPV(device.address(), buildType, pBuildInfo.address(), pMaxPrimitiveCounts, pSizeInfo.address(), __functionAddress);
+        invokePPPPV(device.address(), buildType, pBuildInfo.address(), pMaxPrimitiveCounts, pSizeInfo.address(), __functionAddress);
     }
 
 }

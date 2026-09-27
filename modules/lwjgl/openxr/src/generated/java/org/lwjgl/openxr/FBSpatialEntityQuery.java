@@ -55,7 +55,7 @@ public class FBSpatialEntityQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrQuerySpacesFB(XrSession session, XrSpaceQueryInfoBaseHeaderFB const * info, XrAsyncRequestIdFB * requestId)} */
@@ -75,7 +75,7 @@ public class FBSpatialEntityQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), requestId, results, __functionAddress);
+        return invokePJPI(session.address(), requestId, results, __functionAddress);
     }
 
     /** {@code XrResult xrRetrieveSpaceQueryResultsFB(XrSession session, XrAsyncRequestIdFB requestId, XrSpaceQueryResultsFB * results)} */

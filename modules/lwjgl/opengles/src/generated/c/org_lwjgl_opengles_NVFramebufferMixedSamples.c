@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glCoverageModulationTableNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGetCoverageModulationTableNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glCoverageModulationNVPROC) (jint);
+typedef void (*glCoverageModulationTableNVPROC) (jint, uintptr_t);
+typedef void (*glGetCoverageModulationTableNVPROC) (jint, uintptr_t);
+typedef void (*glCoverageModulationNVPROC) (jint);
 
 EXTERN_C_ENTER
 

@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glClampColorARBPROC) (jint, jint);
+typedef void (*glClampColorARBPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

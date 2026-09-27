@@ -49,7 +49,7 @@ public class ANDROIDTrackablesObject {
             check(__functionAddress);
             XrTrackableGetInfoANDROID.validate(getInfo);
         }
-        return callPPPI(tracker.address(), getInfo, objectOutput, __functionAddress);
+        return invokePPPI(tracker.address(), getInfo, objectOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetTrackableObjectANDROID(XrTrackableTrackerANDROID tracker, XrTrackableGetInfoANDROID const * getInfo, XrTrackableObjectANDROID * objectOutput)} */

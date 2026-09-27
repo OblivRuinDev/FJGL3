@@ -41,7 +41,7 @@ public class NVStreamSync {
             check(dpy);
             check(stream);
         }
-        return callPPPP(dpy, stream, type, attrib_list, __functionAddress);
+        return invokePPPP(dpy, stream, type, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSyncKHR eglCreateStreamSyncNV(EGLDisplay dpy, EGLStreamKHR stream, EGLenum type, EGLint const * attrib_list)} */
@@ -63,7 +63,7 @@ public class NVStreamSync {
             check(stream);
             checkNT(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPPP(dpy, stream, type, attrib_list, __functionAddress);
+        return invokePPPP(dpy, stream, type, attrib_list, __functionAddress);
     }
 
 }

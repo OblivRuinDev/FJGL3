@@ -14,19 +14,19 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef jlong (APIENTRY *glGetTextureHandleNVPROC) (jint);
-typedef jlong (APIENTRY *glGetTextureSamplerHandleNVPROC) (jint, jint);
-typedef void (APIENTRY *glMakeTextureHandleResidentNVPROC) (jlong);
-typedef void (APIENTRY *glMakeTextureHandleNonResidentNVPROC) (jlong);
-typedef jlong (APIENTRY *glGetImageHandleNVPROC) (jint, jint, jboolean, jint, jint);
-typedef void (APIENTRY *glMakeImageHandleResidentNVPROC) (jlong, jint);
-typedef void (APIENTRY *glMakeImageHandleNonResidentNVPROC) (jlong);
-typedef void (APIENTRY *glUniformHandleui64NVPROC) (jint, jlong);
-typedef void (APIENTRY *glUniformHandleui64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniformHandleui64NVPROC) (jint, jint, jlong);
-typedef void (APIENTRY *glProgramUniformHandleui64vNVPROC) (jint, jint, jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsTextureHandleResidentNVPROC) (jlong);
-typedef jboolean (APIENTRY *glIsImageHandleResidentNVPROC) (jlong);
+typedef jlong (*glGetTextureHandleNVPROC) (jint);
+typedef jlong (*glGetTextureSamplerHandleNVPROC) (jint, jint);
+typedef void (*glMakeTextureHandleResidentNVPROC) (jlong);
+typedef void (*glMakeTextureHandleNonResidentNVPROC) (jlong);
+typedef jlong (*glGetImageHandleNVPROC) (jint, jint, jboolean, jint, jint);
+typedef void (*glMakeImageHandleResidentNVPROC) (jlong, jint);
+typedef void (*glMakeImageHandleNonResidentNVPROC) (jlong);
+typedef void (*glUniformHandleui64NVPROC) (jint, jlong);
+typedef void (*glUniformHandleui64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramUniformHandleui64NVPROC) (jint, jint, jlong);
+typedef void (*glProgramUniformHandleui64vNVPROC) (jint, jint, jint, uintptr_t);
+typedef jboolean (*glIsTextureHandleResidentNVPROC) (jlong);
+typedef jboolean (*glIsImageHandleResidentNVPROC) (jlong);
 
 EXTERN_C_ENTER
 

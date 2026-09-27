@@ -14,15 +14,15 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBlendColorPROC) (jfloat, jfloat, jfloat, jfloat);
-typedef void (APIENTRY *glBlendEquationPROC) (jint);
-typedef void (APIENTRY *glMultiDrawArraysPROC) (jint, uintptr_t, uintptr_t, jint);
-typedef void (APIENTRY *glMultiDrawElementsPROC) (jint, uintptr_t, jint, uintptr_t, jint);
-typedef void (APIENTRY *glPointParameterfPROC) (jint, jfloat);
-typedef void (APIENTRY *glPointParameteriPROC) (jint, jint);
-typedef void (APIENTRY *glPointParameterfvPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glPointParameterivPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glBlendFuncSeparatePROC) (jint, jint, jint, jint);
+typedef void (*glBlendColorPROC) (jfloat, jfloat, jfloat, jfloat);
+typedef void (*glBlendEquationPROC) (jint);
+typedef void (*glMultiDrawArraysPROC) (jint, uintptr_t, uintptr_t, jint);
+typedef void (*glMultiDrawElementsPROC) (jint, uintptr_t, jint, uintptr_t, jint);
+typedef void (*glPointParameterfPROC) (jint, jfloat);
+typedef void (*glPointParameteriPROC) (jint, jint);
+typedef void (*glPointParameterfvPROC) (jint, uintptr_t);
+typedef void (*glPointParameterivPROC) (jint, uintptr_t);
+typedef void (*glBlendFuncSeparatePROC) (jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

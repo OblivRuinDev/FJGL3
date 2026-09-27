@@ -1396,7 +1396,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(buffer, drawbuffer, value, __functionAddress);
+        invokePV(buffer, drawbuffer, value, __functionAddress);
     }
 
     /** {@code void glClearBufferuiv(GLenum buffer, GLint drawbuffer, GLint const * value)} */
@@ -1406,7 +1406,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(value, 4);
         }
-        callPV(buffer, drawbuffer, value, __functionAddress);
+        invokePV(buffer, drawbuffer, value, __functionAddress);
     }
 
     /** {@code void glClearBufferfv(GLenum buffer, GLint drawbuffer, GLfloat const * value)} */
@@ -1416,7 +1416,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(buffer, drawbuffer, value, __functionAddress);
+        invokePV(buffer, drawbuffer, value, __functionAddress);
     }
 
     /** {@code void glVertexAttribI1iv(GLuint index, GLint const * v)} */
@@ -1426,7 +1426,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI2iv(GLuint index, GLint const * v)} */
@@ -1436,7 +1436,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI3iv(GLuint index, GLint const * v)} */
@@ -1446,7 +1446,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI4iv(GLuint index, GLint const * v)} */
@@ -1456,7 +1456,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI1uiv(GLuint index, GLuint const * v)} */
@@ -1466,7 +1466,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI2uiv(GLuint index, GLuint const * v)} */
@@ -1476,7 +1476,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI3uiv(GLuint index, GLuint const * v)} */
@@ -1486,7 +1486,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI4uiv(GLuint index, GLuint const * v)} */
@@ -1496,7 +1496,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI4sv(GLuint index, GLshort const * v)} */
@@ -1506,7 +1506,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI4usv(GLuint index, GLshort const * v)} */
@@ -1516,7 +1516,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribIiv(GLuint index, GLenum pname, GLint * params)} */
@@ -1526,7 +1526,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribIuiv(GLuint index, GLenum pname, GLuint * params)} */
@@ -1536,7 +1536,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
     /** {@code void glUniform1uiv(GLint location, GLsizei count, GLuint const * value)} */
@@ -1545,7 +1545,7 @@ public class GL30C extends GL21C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length, value, __functionAddress);
+        invokePV(location, value.length, value, __functionAddress);
     }
 
     /** {@code void glUniform2uiv(GLint location, GLsizei count, GLuint const * value)} */
@@ -1554,7 +1554,7 @@ public class GL30C extends GL21C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 1, value, __functionAddress);
+        invokePV(location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glUniform3uiv(GLint location, GLsizei count, GLuint const * value)} */
@@ -1563,7 +1563,7 @@ public class GL30C extends GL21C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 3, value, __functionAddress);
+        invokePV(location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glUniform4uiv(GLint location, GLsizei count, GLuint const * value)} */
@@ -1572,7 +1572,7 @@ public class GL30C extends GL21C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 2, value, __functionAddress);
+        invokePV(location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glGetUniformuiv(GLuint program, GLint location, GLuint * params)} */
@@ -1582,7 +1582,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, location, params, __functionAddress);
+        invokePV(program, location, params, __functionAddress);
     }
 
     /** {@code void glDeleteRenderbuffers(GLsizei n, GLuint const * renderbuffers)} */
@@ -1591,7 +1591,7 @@ public class GL30C extends GL21C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(renderbuffers.length, renderbuffers, __functionAddress);
+        invokePV(renderbuffers.length, renderbuffers, __functionAddress);
     }
 
     /** {@code void glGenRenderbuffers(GLsizei n, GLuint * renderbuffers)} */
@@ -1600,7 +1600,7 @@ public class GL30C extends GL21C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(renderbuffers.length, renderbuffers, __functionAddress);
+        invokePV(renderbuffers.length, renderbuffers, __functionAddress);
     }
 
     /** {@code void glGetRenderbufferParameteriv(GLenum target, GLenum pname, GLint * params)} */
@@ -1610,7 +1610,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glDeleteFramebuffers(GLsizei n, GLuint const * framebuffers)} */
@@ -1619,7 +1619,7 @@ public class GL30C extends GL21C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(framebuffers.length, framebuffers, __functionAddress);
+        invokePV(framebuffers.length, framebuffers, __functionAddress);
     }
 
     /** {@code void glGenFramebuffers(GLsizei n, GLuint * framebuffers)} */
@@ -1628,7 +1628,7 @@ public class GL30C extends GL21C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(framebuffers.length, framebuffers, __functionAddress);
+        invokePV(framebuffers.length, framebuffers, __functionAddress);
     }
 
     /** {@code void glGetFramebufferAttachmentParameteriv(GLenum target, GLenum attachment, GLenum pname, GLint * params)} */
@@ -1638,7 +1638,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, attachment, pname, params, __functionAddress);
+        invokePV(target, attachment, pname, params, __functionAddress);
     }
 
     /** {@code void glTexParameterIiv(GLenum target, GLenum pname, GLint const * params)} */
@@ -1648,7 +1648,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glTexParameterIuiv(GLenum target, GLenum pname, GLuint const * params)} */
@@ -1658,7 +1658,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTexParameterIiv(GLenum target, GLenum pname, GLint * params)} */
@@ -1668,7 +1668,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTexParameterIuiv(GLenum target, GLenum pname, GLuint * params)} */
@@ -1678,7 +1678,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetIntegeri_v(GLenum target, GLuint index, GLint * data)} */
@@ -1688,7 +1688,7 @@ public class GL30C extends GL21C {
             check(__functionAddress);
             check(data, 1);
         }
-        callPV(target, index, data, __functionAddress);
+        invokePV(target, index, data, __functionAddress);
     }
 
     /** {@code void glGetTransformFeedbackVarying(GLuint program, GLuint index, GLsizei bufSize, GLsizei * length, GLsizei * size, GLenum * type, GLchar * name)} */
@@ -1700,7 +1700,7 @@ public class GL30C extends GL21C {
             check(size, 1);
             check(type, 1);
         }
-        callPPPPV(program, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
+        invokePPPPV(program, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
     }
 
     /** {@code void glDeleteVertexArrays(GLsizei n, GLuint const * arrays)} */
@@ -1709,7 +1709,7 @@ public class GL30C extends GL21C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(arrays.length, arrays, __functionAddress);
+        invokePV(arrays.length, arrays, __functionAddress);
     }
 
     /** {@code void glGenVertexArrays(GLsizei n, GLuint * arrays)} */
@@ -1718,7 +1718,7 @@ public class GL30C extends GL21C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(arrays.length, arrays, __functionAddress);
+        invokePV(arrays.length, arrays, __functionAddress);
     }
 
 }

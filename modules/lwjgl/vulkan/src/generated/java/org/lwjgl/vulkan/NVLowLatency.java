@@ -41,7 +41,7 @@ public class NVLowLatency {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(device.address(), lowLatencyMode ? 1 : 0, lowLatencyBoost ? 1 : 0, minimumIntervalUs, __functionAddress);
+        invokePV(device.address(), lowLatencyMode ? 1 : 0, lowLatencyBoost ? 1 : 0, minimumIntervalUs, __functionAddress);
     }
 
     // --- [ vkLatencySleepLegacyNV ] ---
@@ -52,7 +52,7 @@ public class NVLowLatency {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJV(device.address(), signalSemaphore, value, __functionAddress);
+        invokePJJV(device.address(), signalSemaphore, value, __functionAddress);
     }
 
     // --- [ vkSetLatencyMarkerLegacyNV ] ---
@@ -63,7 +63,7 @@ public class NVLowLatency {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(device.address(), frameID, marker, __functionAddress);
+        invokePJV(device.address(), frameID, marker, __functionAddress);
     }
 
     // --- [ vkGetLatencyTimingsLegacyNV ] ---
@@ -74,7 +74,7 @@ public class NVLowLatency {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(device.address(), pTimings, __functionAddress);
+        invokePPV(device.address(), pTimings, __functionAddress);
     }
 
     /** {@code void vkGetLatencyTimingsLegacyNV(VkDevice device, void * pTimings)} */
@@ -93,7 +93,7 @@ public class NVLowLatency {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(queue.address(), queueType, __functionAddress);
+        invokePV(queue.address(), queueType, __functionAddress);
     }
 
     // --- [ vkGetSleepStatusLegacyNV ] ---
@@ -104,7 +104,7 @@ public class NVLowLatency {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(device.address(), pLowLatencyMode, __functionAddress);
+        invokePPV(device.address(), pLowLatencyMode, __functionAddress);
     }
 
     /** {@code void vkGetSleepStatusLegacyNV(VkDevice device, VkBool32 * pLowLatencyMode)} */
@@ -123,7 +123,7 @@ public class NVLowLatency {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(device.address(), __functionAddress);
+        invokePV(device.address(), __functionAddress);
     }
 
     /** {@code void vkGetSleepStatusLegacyNV(VkDevice device, VkBool32 * pLowLatencyMode)} */
@@ -133,7 +133,7 @@ public class NVLowLatency {
             check(__functionAddress);
             check(pLowLatencyMode, 1);
         }
-        callPPV(device.address(), pLowLatencyMode, __functionAddress);
+        invokePPV(device.address(), pLowLatencyMode, __functionAddress);
     }
 
 }

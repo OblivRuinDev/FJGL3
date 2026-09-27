@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glPrimitiveRestartNVPROC) (void);
-typedef void (APIENTRY *glPrimitiveRestartIndexNVPROC) (jint);
+typedef void (*glPrimitiveRestartNVPROC) (void);
+typedef void (*glPrimitiveRestartIndexNVPROC) (jint);
 
 EXTERN_C_ENTER
 

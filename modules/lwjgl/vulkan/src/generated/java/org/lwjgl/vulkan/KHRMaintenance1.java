@@ -48,7 +48,7 @@ public class KHRMaintenance1 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(device.address(), commandPool, flags, __functionAddress);
+        invokePJV(device.address(), commandPool, flags, __functionAddress);
     }
 
 }

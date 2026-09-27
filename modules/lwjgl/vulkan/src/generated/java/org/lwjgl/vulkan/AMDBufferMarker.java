@@ -36,7 +36,7 @@ public class AMDBufferMarker {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJV(commandBuffer.address(), pipelineStage, dstBuffer, dstOffset, marker, __functionAddress);
+        invokePJJV(commandBuffer.address(), pipelineStage, dstBuffer, dstOffset, marker, __functionAddress);
     }
 
     // --- [ vkCmdWriteBufferMarker2AMD ] ---
@@ -47,7 +47,7 @@ public class AMDBufferMarker {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJV(commandBuffer.address(), stage, dstBuffer, dstOffset, marker, __functionAddress);
+        invokePJJJV(commandBuffer.address(), stage, dstBuffer, dstOffset, marker, __functionAddress);
     }
 
 }

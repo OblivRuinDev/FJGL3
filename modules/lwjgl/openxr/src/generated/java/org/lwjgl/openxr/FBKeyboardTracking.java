@@ -56,7 +56,7 @@ public class FBKeyboardTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), queryInfo, keyboard, __functionAddress);
+        return invokePPPI(session.address(), queryInfo, keyboard, __functionAddress);
     }
 
     /** {@code XrResult xrQuerySystemTrackedKeyboardFB(XrSession session, XrKeyboardTrackingQueryFB const * queryInfo, XrKeyboardTrackingDescriptionFB * keyboard)} */
@@ -73,7 +73,7 @@ public class FBKeyboardTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, keyboardSpace, __functionAddress);
+        return invokePPPI(session.address(), createInfo, keyboardSpace, __functionAddress);
     }
 
     /** {@code XrResult xrCreateKeyboardSpaceFB(XrSession session, XrKeyboardSpaceCreateInfoFB const * createInfo, XrSpace * keyboardSpace)} */

@@ -14,11 +14,11 @@
 #include "common_tools.h"
 #include "WindowsLWJGL.h"
 
-typedef jint (APIENTRY *ChoosePixelFormatPROC) (uintptr_t, uintptr_t);
-typedef jint (APIENTRY *DescribePixelFormatPROC) (uintptr_t, jint, jint, uintptr_t);
-typedef jint (APIENTRY *GetPixelFormatPROC) (uintptr_t);
-typedef jint (APIENTRY *SetPixelFormatPROC) (uintptr_t, jint, uintptr_t);
-typedef jint (APIENTRY *SwapBuffersPROC) (uintptr_t);
+typedef jint (*ChoosePixelFormatPROC) (uintptr_t, uintptr_t);
+typedef jint (*DescribePixelFormatPROC) (uintptr_t, jint, jint, uintptr_t);
+typedef jint (*GetPixelFormatPROC) (uintptr_t);
+typedef jint (*SetPixelFormatPROC) (uintptr_t, jint, uintptr_t);
+typedef jint (*SwapBuffersPROC) (uintptr_t);
 
 EXTERN_C_ENTER
 

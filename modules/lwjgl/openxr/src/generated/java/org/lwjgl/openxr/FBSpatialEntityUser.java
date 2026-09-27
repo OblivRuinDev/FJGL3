@@ -45,7 +45,7 @@ public class FBSpatialEntityUser {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), info, user, __functionAddress);
+        return invokePPPI(session.address(), info, user, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpaceUserFB(XrSession session, XrSpaceUserCreateInfoFB const * info, XrSpaceUserFB * user)} */
@@ -65,7 +65,7 @@ public class FBSpatialEntityUser {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(user.address(), userId, __functionAddress);
+        return invokePPI(user.address(), userId, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpaceUserIdFB(XrSpaceUserFB user, XrSpaceUserIdFB * userId)} */
@@ -86,7 +86,7 @@ public class FBSpatialEntityUser {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(user.address(), __functionAddress);
+        return invokePI(user.address(), __functionAddress);
     }
 
 }

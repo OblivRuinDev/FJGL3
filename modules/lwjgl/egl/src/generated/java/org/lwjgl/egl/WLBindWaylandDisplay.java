@@ -38,7 +38,7 @@ public class WLBindWaylandDisplay {
             check(dpy);
             check(display);
         }
-        return callPPI(dpy, display, __functionAddress) != 0;
+        return invokePPI(dpy, display, __functionAddress) != 0;
     }
 
     // --- [ eglUnbindWaylandDisplayWL ] ---
@@ -52,7 +52,7 @@ public class WLBindWaylandDisplay {
             check(dpy);
             check(display);
         }
-        return callPPI(dpy, display, __functionAddress) != 0;
+        return invokePPI(dpy, display, __functionAddress) != 0;
     }
 
     // --- [ eglQueryWaylandBufferWL ] ---
@@ -65,7 +65,7 @@ public class WLBindWaylandDisplay {
             check(dpy);
             check(buffer);
         }
-        return callPPPI(dpy, buffer, attribute, value, __functionAddress);
+        return invokePPPI(dpy, buffer, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryWaylandBufferWL(EGLDisplay dpy, struct wl_resource * buffer, EGLint attribute, EGLint * value)} */
@@ -87,7 +87,7 @@ public class WLBindWaylandDisplay {
             check(buffer);
             check(value, 1);
         }
-        return callPPPI(dpy, buffer, attribute, value, __functionAddress) != 0;
+        return invokePPPI(dpy, buffer, attribute, value, __functionAddress) != 0;
     }
 
 }

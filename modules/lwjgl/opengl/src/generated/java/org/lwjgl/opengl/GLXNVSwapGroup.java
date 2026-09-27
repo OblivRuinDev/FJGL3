@@ -38,7 +38,7 @@ public class GLXNVSwapGroup {
             check(display);
             check(drawable);
         }
-        return callPPI(display, drawable, group, __functionAddress) != 0;
+        return invokePPI(display, drawable, group, __functionAddress) != 0;
     }
 
     // --- [ glXBindSwapBarrierNV ] ---
@@ -51,7 +51,7 @@ public class GLXNVSwapGroup {
             check(__functionAddress);
             check(display);
         }
-        return callPI(display, group, barrier, __functionAddress) != 0;
+        return invokePI(display, group, barrier, __functionAddress) != 0;
     }
 
     // --- [ glXQuerySwapGroupNV ] ---
@@ -64,7 +64,7 @@ public class GLXNVSwapGroup {
             check(display);
             check(drawable);
         }
-        return callPPPPI(display, drawable, group, barrier, __functionAddress);
+        return invokePPPPI(display, drawable, group, barrier, __functionAddress);
     }
 
     /** {@code Bool glXQuerySwapGroupNV(Display * display, GLXDrawable drawable, GLuint * group, GLuint * barrier)} */
@@ -86,7 +86,7 @@ public class GLXNVSwapGroup {
             check(__functionAddress);
             check(display);
         }
-        return callPPPI(display, screen, maxGroups, maxBarriers, __functionAddress);
+        return invokePPPI(display, screen, maxGroups, maxBarriers, __functionAddress);
     }
 
     /** {@code Bool glXQueryMaxSwapGroupsNV(Display * display, int screen, GLuint * maxGroups, GLuint * maxBarriers)} */
@@ -108,7 +108,7 @@ public class GLXNVSwapGroup {
             check(__functionAddress);
             check(display);
         }
-        return callPPI(display, screen, count, __functionAddress);
+        return invokePPI(display, screen, count, __functionAddress);
     }
 
     /** {@code Bool glXQueryFrameCountNV(Display * display, int screen, GLuint * count)} */
@@ -130,7 +130,7 @@ public class GLXNVSwapGroup {
             check(__functionAddress);
             check(display);
         }
-        return callPI(display, screen, __functionAddress) != 0;
+        return invokePI(display, screen, __functionAddress) != 0;
     }
 
     /** {@code Bool glXQuerySwapGroupNV(Display * display, GLXDrawable drawable, GLuint * group, GLuint * barrier)} */
@@ -144,7 +144,7 @@ public class GLXNVSwapGroup {
             check(group, 1);
             check(barrier, 1);
         }
-        return callPPPPI(display, drawable, group, barrier, __functionAddress) != 0;
+        return invokePPPPI(display, drawable, group, barrier, __functionAddress) != 0;
     }
 
     /** {@code Bool glXQueryMaxSwapGroupsNV(Display * display, int screen, GLuint * maxGroups, GLuint * maxBarriers)} */
@@ -157,7 +157,7 @@ public class GLXNVSwapGroup {
             check(maxGroups, 1);
             check(maxBarriers, 1);
         }
-        return callPPPI(display, screen, maxGroups, maxBarriers, __functionAddress) != 0;
+        return invokePPPI(display, screen, maxGroups, maxBarriers, __functionAddress) != 0;
     }
 
     /** {@code Bool glXQueryFrameCountNV(Display * display, int screen, GLuint * count)} */
@@ -169,7 +169,7 @@ public class GLXNVSwapGroup {
             check(display);
             check(count, 1);
         }
-        return callPPI(display, screen, count, __functionAddress) != 0;
+        return invokePPI(display, screen, count, __functionAddress) != 0;
     }
 
 }

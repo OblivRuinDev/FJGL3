@@ -45,7 +45,7 @@ public class HTCXViveTrackerInteraction {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(instance.address(), pathCapacityInput, pathCountOutput, paths, __functionAddress);
+        return invokePPPI(instance.address(), pathCapacityInput, pathCountOutput, paths, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateViveTrackerPathsHTCX(XrInstance instance, uint32_t pathCapacityInput, uint32_t * pathCountOutput, XrViveTrackerPathsHTCX * paths)} */

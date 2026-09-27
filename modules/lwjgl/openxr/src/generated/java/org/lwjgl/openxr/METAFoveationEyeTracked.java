@@ -45,7 +45,7 @@ public class METAFoveationEyeTracked {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), foveationState, __functionAddress);
+        return invokePPI(session.address(), foveationState, __functionAddress);
     }
 
     /** {@code XrResult xrGetFoveationEyeTrackedStateMETA(XrSession session, XrFoveationEyeTrackedStateMETA * foveationState)} */

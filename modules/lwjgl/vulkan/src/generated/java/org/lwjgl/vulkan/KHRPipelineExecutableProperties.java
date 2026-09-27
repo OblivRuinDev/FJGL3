@@ -59,7 +59,7 @@ public class KHRPipelineExecutableProperties {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pPipelineInfo, pExecutableCount, pProperties, __functionAddress);
+        return invokePPPPI(device.address(), pPipelineInfo, pExecutableCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPipelineExecutablePropertiesKHR(VkDevice device, VkPipelineInfoKHR const * pPipelineInfo, uint32_t * pExecutableCount, VkPipelineExecutablePropertiesKHR * pProperties)} */
@@ -80,7 +80,7 @@ public class KHRPipelineExecutableProperties {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pExecutableInfo, pStatisticCount, pStatistics, __functionAddress);
+        return invokePPPPI(device.address(), pExecutableInfo, pStatisticCount, pStatistics, __functionAddress);
     }
 
     /** {@code VkResult vkGetPipelineExecutableStatisticsKHR(VkDevice device, VkPipelineExecutableInfoKHR const * pExecutableInfo, uint32_t * pStatisticCount, VkPipelineExecutableStatisticKHR * pStatistics)} */
@@ -101,7 +101,7 @@ public class KHRPipelineExecutableProperties {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pExecutableInfo, pInternalRepresentationCount, pInternalRepresentations, __functionAddress);
+        return invokePPPPI(device.address(), pExecutableInfo, pInternalRepresentationCount, pInternalRepresentations, __functionAddress);
     }
 
     /** {@code VkResult vkGetPipelineExecutableInternalRepresentationsKHR(VkDevice device, VkPipelineExecutableInfoKHR const * pExecutableInfo, uint32_t * pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR * pInternalRepresentations)} */
@@ -123,7 +123,7 @@ public class KHRPipelineExecutableProperties {
             check(pExecutableCount, 1);
             checkSafe(pProperties, pExecutableCount[0]);
         }
-        return callPPPPI(device.address(), pPipelineInfo.address(), pExecutableCount, memAddressSafe(pProperties), __functionAddress);
+        return invokePPPPI(device.address(), pPipelineInfo.address(), pExecutableCount, memAddressSafe(pProperties), __functionAddress);
     }
 
     /** {@code VkResult vkGetPipelineExecutableStatisticsKHR(VkDevice device, VkPipelineExecutableInfoKHR const * pExecutableInfo, uint32_t * pStatisticCount, VkPipelineExecutableStatisticKHR * pStatistics)} */
@@ -135,7 +135,7 @@ public class KHRPipelineExecutableProperties {
             check(pStatisticCount, 1);
             checkSafe(pStatistics, pStatisticCount[0]);
         }
-        return callPPPPI(device.address(), pExecutableInfo.address(), pStatisticCount, memAddressSafe(pStatistics), __functionAddress);
+        return invokePPPPI(device.address(), pExecutableInfo.address(), pStatisticCount, memAddressSafe(pStatistics), __functionAddress);
     }
 
     /** {@code VkResult vkGetPipelineExecutableInternalRepresentationsKHR(VkDevice device, VkPipelineExecutableInfoKHR const * pExecutableInfo, uint32_t * pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR * pInternalRepresentations)} */
@@ -147,7 +147,7 @@ public class KHRPipelineExecutableProperties {
             check(pInternalRepresentationCount, 1);
             checkSafe(pInternalRepresentations, pInternalRepresentationCount[0]);
         }
-        return callPPPPI(device.address(), pExecutableInfo.address(), pInternalRepresentationCount, memAddressSafe(pInternalRepresentations), __functionAddress);
+        return invokePPPPI(device.address(), pExecutableInfo.address(), pInternalRepresentationCount, memAddressSafe(pInternalRepresentations), __functionAddress);
     }
 
 }

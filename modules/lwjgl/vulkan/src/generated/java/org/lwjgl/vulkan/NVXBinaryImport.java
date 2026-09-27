@@ -56,7 +56,7 @@ public class NVXBinaryImport {
             check(__functionAddress);
             VkCuModuleCreateInfoNVX.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pModule, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pModule, __functionAddress);
     }
 
     /** {@code VkResult vkCreateCuModuleNVX(VkDevice device, VkCuModuleCreateInfoNVX const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkCuModuleNVX * pModule)} */
@@ -77,7 +77,7 @@ public class NVXBinaryImport {
             check(__functionAddress);
             VkCuFunctionCreateInfoNVX.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pFunction, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pFunction, __functionAddress);
     }
 
     /** {@code VkResult vkCreateCuFunctionNVX(VkDevice device, VkCuFunctionCreateInfoNVX const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkCuFunctionNVX * pFunction)} */
@@ -97,7 +97,7 @@ public class NVXBinaryImport {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), module, pAllocator, __functionAddress);
+        invokePJPV(device.address(), module, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyCuModuleNVX(VkDevice device, VkCuModuleNVX module, VkAllocationCallbacks const * pAllocator)} */
@@ -113,7 +113,7 @@ public class NVXBinaryImport {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), function, pAllocator, __functionAddress);
+        invokePJPV(device.address(), function, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyCuFunctionNVX(VkDevice device, VkCuFunctionNVX function, VkAllocationCallbacks const * pAllocator)} */
@@ -130,7 +130,7 @@ public class NVXBinaryImport {
             check(__functionAddress);
             VkCuLaunchInfoNVX.validate(pLaunchInfo);
         }
-        callPPV(commandBuffer.address(), pLaunchInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pLaunchInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCuLaunchKernelNVX(VkCommandBuffer commandBuffer, VkCuLaunchInfoNVX const * pLaunchInfo)} */
@@ -147,7 +147,7 @@ public class NVXBinaryImport {
             check(pModule, 1);
             VkCuModuleCreateInfoNVX.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pModule, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pModule, __functionAddress);
     }
 
     /** {@code VkResult vkCreateCuFunctionNVX(VkDevice device, VkCuFunctionCreateInfoNVX const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkCuFunctionNVX * pFunction)} */
@@ -159,7 +159,7 @@ public class NVXBinaryImport {
             check(pFunction, 1);
             VkCuFunctionCreateInfoNVX.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pFunction, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pFunction, __functionAddress);
     }
 
 }

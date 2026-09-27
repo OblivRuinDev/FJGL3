@@ -84,7 +84,7 @@ public class EXTTextureStorageCompression {
             check(__functionAddress);
             checkNTSafe(attrib_list);
         }
-        callPV(target, levels, internalformat, width, height, attrib_list, __functionAddress);
+        invokePV(target, levels, internalformat, width, height, attrib_list, __functionAddress);
     }
 
     /** {@code void glTexStorageAttribs3DEXT(GLenum target, GLsizei levels, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint const * attrib_list)} */
@@ -94,7 +94,7 @@ public class EXTTextureStorageCompression {
             check(__functionAddress);
             checkNTSafe(attrib_list);
         }
-        callPV(target, levels, internalformat, width, height, depth, attrib_list, __functionAddress);
+        invokePV(target, levels, internalformat, width, height, depth, attrib_list, __functionAddress);
     }
 
 }

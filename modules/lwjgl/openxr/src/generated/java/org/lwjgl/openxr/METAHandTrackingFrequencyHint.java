@@ -41,7 +41,7 @@ public class METAHandTrackingFrequencyHint {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(session.address(), frequencyHint, __functionAddress);
+        return invokePI(session.address(), frequencyHint, __functionAddress);
     }
 
 }

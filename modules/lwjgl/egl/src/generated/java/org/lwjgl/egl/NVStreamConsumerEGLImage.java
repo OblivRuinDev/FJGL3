@@ -48,7 +48,7 @@ public class NVStreamConsumerEGLImage {
             check(dpy);
             check(stream);
         }
-        return callPPPPI(dpy, stream, num_modifiers, modifiers, attrib_list, __functionAddress);
+        return invokePPPPI(dpy, stream, num_modifiers, modifiers, attrib_list, __functionAddress);
     }
 
     /** {@code EGLBoolean eglStreamImageConsumerConnectNV(EGLDisplay dpy, EGLStreamKHR stream, EGLint num_modifiers, EGLuint64KHR const * modifiers, EGLAttrib const * attrib_list)} */
@@ -70,7 +70,7 @@ public class NVStreamConsumerEGLImage {
             check(dpy);
             check(stream);
         }
-        return callPPJPPI(dpy, stream, timeout, event, aux, __functionAddress);
+        return invokePPJPPI(dpy, stream, timeout, event, aux, __functionAddress);
     }
 
     /** {@code EGLint eglQueryStreamConsumerEventNV(EGLDisplay dpy, EGLStreamKHR stream, EGLTime timeout, EGLenum * event, EGLAttrib * aux)} */
@@ -94,7 +94,7 @@ public class NVStreamConsumerEGLImage {
             check(stream);
             check(sync);
         }
-        return callPPPPI(dpy, stream, pImage, sync, __functionAddress);
+        return invokePPPPI(dpy, stream, pImage, sync, __functionAddress);
     }
 
     /** {@code EGLBoolean eglStreamAcquireImageNV(EGLDisplay dpy, EGLStreamKHR stream, EGLImage * pImage, EGLSync sync)} */
@@ -119,7 +119,7 @@ public class NVStreamConsumerEGLImage {
             check(image);
             check(sync);
         }
-        return callPPPPI(dpy, stream, image, sync, __functionAddress) != 0;
+        return invokePPPPI(dpy, stream, image, sync, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglStreamImageConsumerConnectNV(EGLDisplay dpy, EGLStreamKHR stream, EGLint num_modifiers, EGLuint64KHR const * modifiers, EGLAttrib const * attrib_list)} */
@@ -132,7 +132,7 @@ public class NVStreamConsumerEGLImage {
             check(stream);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPPPI(dpy, stream, modifiers.length, modifiers, memAddressSafe(attrib_list), __functionAddress) != 0;
+        return invokePPPPI(dpy, stream, modifiers.length, modifiers, memAddressSafe(attrib_list), __functionAddress) != 0;
     }
 
     /** {@code EGLint eglQueryStreamConsumerEventNV(EGLDisplay dpy, EGLStreamKHR stream, EGLTime timeout, EGLenum * event, EGLAttrib * aux)} */
@@ -146,7 +146,7 @@ public class NVStreamConsumerEGLImage {
             check(event, 1);
             check(aux, 1);
         }
-        return callPPJPPI(dpy, stream, timeout, event, memAddress(aux), __functionAddress);
+        return invokePPJPPI(dpy, stream, timeout, event, memAddress(aux), __functionAddress);
     }
 
 }

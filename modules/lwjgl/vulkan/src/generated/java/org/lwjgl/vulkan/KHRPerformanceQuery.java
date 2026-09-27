@@ -87,7 +87,7 @@ public class KHRPerformanceQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(physicalDevice.address(), queueFamilyIndex, pCounterCount, pCounters, pCounterDescriptions, __functionAddress);
+        return invokePPPPI(physicalDevice.address(), queueFamilyIndex, pCounterCount, pCounters, pCounterDescriptions, __functionAddress);
     }
 
     /** {@code VkResult vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR(VkPhysicalDevice physicalDevice, uint32_t queueFamilyIndex, uint32_t * pCounterCount, VkPerformanceCounterKHR * pCounters, VkPerformanceCounterDescriptionKHR * pCounterDescriptions)} */
@@ -110,7 +110,7 @@ public class KHRPerformanceQuery {
             check(__functionAddress);
             VkQueryPoolPerformanceCreateInfoKHR.validate(pPerformanceQueryCreateInfo);
         }
-        callPPPV(physicalDevice.address(), pPerformanceQueryCreateInfo, pNumPasses, __functionAddress);
+        invokePPPV(physicalDevice.address(), pPerformanceQueryCreateInfo, pNumPasses, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR(VkPhysicalDevice physicalDevice, VkQueryPoolPerformanceCreateInfoKHR const * pPerformanceQueryCreateInfo, uint32_t * pNumPasses)} */
@@ -129,7 +129,7 @@ public class KHRPerformanceQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pInfo, __functionAddress);
+        return invokePPI(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code VkResult vkAcquireProfilingLockKHR(VkDevice device, VkAcquireProfilingLockInfoKHR const * pInfo)} */
@@ -146,7 +146,7 @@ public class KHRPerformanceQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(device.address(), __functionAddress);
+        invokePV(device.address(), __functionAddress);
     }
 
     /** {@code VkResult vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR(VkPhysicalDevice physicalDevice, uint32_t queueFamilyIndex, uint32_t * pCounterCount, VkPerformanceCounterKHR * pCounters, VkPerformanceCounterDescriptionKHR * pCounterDescriptions)} */
@@ -159,7 +159,7 @@ public class KHRPerformanceQuery {
             checkSafe(pCounters, pCounterCount[0]);
             checkSafe(pCounterDescriptions, pCounterCount[0]);
         }
-        return callPPPPI(physicalDevice.address(), queueFamilyIndex, pCounterCount, memAddressSafe(pCounters), memAddressSafe(pCounterDescriptions), __functionAddress);
+        return invokePPPPI(physicalDevice.address(), queueFamilyIndex, pCounterCount, memAddressSafe(pCounters), memAddressSafe(pCounterDescriptions), __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR(VkPhysicalDevice physicalDevice, VkQueryPoolPerformanceCreateInfoKHR const * pPerformanceQueryCreateInfo, uint32_t * pNumPasses)} */
@@ -170,7 +170,7 @@ public class KHRPerformanceQuery {
             check(pNumPasses, 1);
             VkQueryPoolPerformanceCreateInfoKHR.validate(pPerformanceQueryCreateInfo.address());
         }
-        callPPPV(physicalDevice.address(), pPerformanceQueryCreateInfo.address(), pNumPasses, __functionAddress);
+        invokePPPV(physicalDevice.address(), pPerformanceQueryCreateInfo.address(), pNumPasses, __functionAddress);
     }
 
 }

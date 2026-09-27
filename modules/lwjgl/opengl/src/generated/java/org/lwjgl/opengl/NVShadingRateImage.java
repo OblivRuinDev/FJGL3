@@ -124,7 +124,7 @@ public class NVShadingRateImage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(viewport, first, rates.length, rates, __functionAddress);
+        invokePV(viewport, first, rates.length, rates, __functionAddress);
     }
 
     /** {@code void glGetShadingRateImagePaletteNV(GLuint viewport, GLuint entry, GLenum * rate)} */
@@ -134,7 +134,7 @@ public class NVShadingRateImage {
             check(__functionAddress);
             check(rate, 1);
         }
-        callPV(viewport, entry, rate, __functionAddress);
+        invokePV(viewport, entry, rate, __functionAddress);
     }
 
     /** {@code void glShadingRateSampleOrderCustomNV(GLenum rate, GLuint samples, GLint const * locations)} */
@@ -143,7 +143,7 @@ public class NVShadingRateImage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(rate, samples, locations, __functionAddress);
+        invokePV(rate, samples, locations, __functionAddress);
     }
 
     /** {@code void glGetShadingRateSampleLocationivNV(GLenum rate, GLuint samples, GLuint index, GLint * location)} */
@@ -153,7 +153,7 @@ public class NVShadingRateImage {
             check(__functionAddress);
             check(location, 3);
         }
-        callPV(rate, samples, index, location, __functionAddress);
+        invokePV(rate, samples, index, location, __functionAddress);
     }
 
 }

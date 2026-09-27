@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glSpecializeShaderARBPROC) (jint, uintptr_t, jint, uintptr_t, uintptr_t);
+typedef void (*glSpecializeShaderARBPROC) (jint, uintptr_t, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -52,7 +52,7 @@ public class FBTriangleMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, outTriangleMesh, __functionAddress);
+        return invokePPPI(session.address(), createInfo, outTriangleMesh, __functionAddress);
     }
 
     /** {@code XrResult xrCreateTriangleMeshFB(XrSession session, XrTriangleMeshCreateInfoFB const * createInfo, XrTriangleMeshFB * outTriangleMesh)} */
@@ -73,7 +73,7 @@ public class FBTriangleMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(mesh.address(), __functionAddress);
+        return invokePI(mesh.address(), __functionAddress);
     }
 
     // --- [ xrTriangleMeshGetVertexBufferFB ] ---
@@ -84,7 +84,7 @@ public class FBTriangleMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(mesh.address(), outVertexBuffer, __functionAddress);
+        return invokePPI(mesh.address(), outVertexBuffer, __functionAddress);
     }
 
     /** {@code XrResult xrTriangleMeshGetVertexBufferFB(XrTriangleMeshFB mesh, XrVector3f ** outVertexBuffer)} */
@@ -104,7 +104,7 @@ public class FBTriangleMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(mesh.address(), outIndexBuffer, __functionAddress);
+        return invokePPI(mesh.address(), outIndexBuffer, __functionAddress);
     }
 
     /** {@code XrResult xrTriangleMeshGetIndexBufferFB(XrTriangleMeshFB mesh, uint32_t ** outIndexBuffer)} */
@@ -125,7 +125,7 @@ public class FBTriangleMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(mesh.address(), __functionAddress);
+        return invokePI(mesh.address(), __functionAddress);
     }
 
     // --- [ xrTriangleMeshEndUpdateFB ] ---
@@ -137,7 +137,7 @@ public class FBTriangleMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(mesh.address(), vertexCount, triangleCount, __functionAddress);
+        return invokePI(mesh.address(), vertexCount, triangleCount, __functionAddress);
     }
 
     // --- [ xrTriangleMeshBeginVertexBufferUpdateFB ] ---
@@ -148,7 +148,7 @@ public class FBTriangleMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(mesh.address(), outVertexCount, __functionAddress);
+        return invokePPI(mesh.address(), outVertexCount, __functionAddress);
     }
 
     /** {@code XrResult xrTriangleMeshBeginVertexBufferUpdateFB(XrTriangleMeshFB mesh, uint32_t * outVertexCount)} */
@@ -169,7 +169,7 @@ public class FBTriangleMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(mesh.address(), __functionAddress);
+        return invokePI(mesh.address(), __functionAddress);
     }
 
 }

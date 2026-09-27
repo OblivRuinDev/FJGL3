@@ -55,7 +55,7 @@ public class MSFTSpatialGraphBridge {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, space, __functionAddress);
+        return invokePPPI(session.address(), createInfo, space, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialGraphNodeSpaceMSFT(XrSession session, XrSpatialGraphNodeSpaceCreateInfoMSFT const * createInfo, XrSpace * space)} */
@@ -76,7 +76,7 @@ public class MSFTSpatialGraphBridge {
             check(__functionAddress);
             XrSpatialGraphStaticNodeBindingCreateInfoMSFT.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, nodeBinding, __functionAddress);
+        return invokePPPI(session.address(), createInfo, nodeBinding, __functionAddress);
     }
 
     /** {@code XrResult xrTryCreateSpatialGraphStaticNodeBindingMSFT(XrSession session, XrSpatialGraphStaticNodeBindingCreateInfoMSFT const * createInfo, XrSpatialGraphNodeBindingMSFT * nodeBinding)} */
@@ -97,7 +97,7 @@ public class MSFTSpatialGraphBridge {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(nodeBinding.address(), __functionAddress);
+        return invokePI(nodeBinding.address(), __functionAddress);
     }
 
     // --- [ xrGetSpatialGraphNodeBindingPropertiesMSFT ] ---
@@ -108,7 +108,7 @@ public class MSFTSpatialGraphBridge {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(nodeBinding.address(), getInfo, properties, __functionAddress);
+        return invokePPPI(nodeBinding.address(), getInfo, properties, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpatialGraphNodeBindingPropertiesMSFT(XrSpatialGraphNodeBindingMSFT nodeBinding, XrSpatialGraphNodeBindingPropertiesGetInfoMSFT const * getInfo, XrSpatialGraphNodeBindingPropertiesMSFT * properties)} */

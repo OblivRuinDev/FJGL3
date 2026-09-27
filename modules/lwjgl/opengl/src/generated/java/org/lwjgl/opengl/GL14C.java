@@ -163,7 +163,7 @@ public class GL14C extends GL13C {
             check(__functionAddress);
             check(count, first.length);
         }
-        callPPV(mode, first, count, first.length, __functionAddress);
+        invokePPV(mode, first, count, first.length, __functionAddress);
     }
 
     /** {@code void glMultiDrawElements(GLenum mode, GLsizei * count, GLenum type, void const ** indices, GLsizei drawcount)} */
@@ -173,7 +173,7 @@ public class GL14C extends GL13C {
             check(__functionAddress);
             check(indices, count.length);
         }
-        callPPV(mode, count, type, memAddress(indices), count.length, __functionAddress);
+        invokePPV(mode, count, type, memAddress(indices), count.length, __functionAddress);
     }
 
     /** {@code void glPointParameterfv(GLenum pname, GLfloat const * params)} */
@@ -183,7 +183,7 @@ public class GL14C extends GL13C {
             check(__functionAddress);
             check(params, 3);
         }
-        callPV(pname, params, __functionAddress);
+        invokePV(pname, params, __functionAddress);
     }
 
     /** {@code void glPointParameteriv(GLenum pname, GLint const * params)} */
@@ -193,7 +193,7 @@ public class GL14C extends GL13C {
             check(__functionAddress);
             check(params, 3);
         }
-        callPV(pname, params, __functionAddress);
+        invokePV(pname, params, __functionAddress);
     }
 
 }

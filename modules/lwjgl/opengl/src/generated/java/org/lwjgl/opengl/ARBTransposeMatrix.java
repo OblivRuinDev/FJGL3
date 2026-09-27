@@ -94,7 +94,7 @@ public class ARBTransposeMatrix {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(m, __functionAddress);
+        invokePV(m, __functionAddress);
     }
 
     /** {@code void glLoadTransposeMatrixdARB(GLdouble const * m)} */
@@ -104,7 +104,7 @@ public class ARBTransposeMatrix {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(m, __functionAddress);
+        invokePV(m, __functionAddress);
     }
 
     /** {@code void glMultTransposeMatrixfARB(GLfloat const * m)} */
@@ -114,7 +114,7 @@ public class ARBTransposeMatrix {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(m, __functionAddress);
+        invokePV(m, __functionAddress);
     }
 
     /** {@code void glMultTransposeMatrixdARB(GLdouble const * m)} */
@@ -124,7 +124,7 @@ public class ARBTransposeMatrix {
             check(__functionAddress);
             check(m, 16);
         }
-        callPV(m, __functionAddress);
+        invokePV(m, __functionAddress);
     }
 
 }

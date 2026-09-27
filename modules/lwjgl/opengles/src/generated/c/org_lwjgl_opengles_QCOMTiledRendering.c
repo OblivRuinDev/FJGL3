@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glStartTilingQCOMPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glEndTilingQCOMPROC) (jint);
+typedef void (*glStartTilingQCOMPROC) (jint, jint, jint, jint, jint);
+typedef void (*glEndTilingQCOMPROC) (jint);
 
 EXTERN_C_ENTER
 

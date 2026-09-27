@@ -39,7 +39,7 @@ public class KHRPresentWait {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJJJI(device.address(), swapchain, presentId, timeout, __functionAddress);
+        return invokePJJJI(device.address(), swapchain, presentId, timeout, __functionAddress);
     }
 
 }

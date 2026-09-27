@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glVertexAttribDivisorNVPROC) (jint, jint);
+typedef void (*glVertexAttribDivisorNVPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

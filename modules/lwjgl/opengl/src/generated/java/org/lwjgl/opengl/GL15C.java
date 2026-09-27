@@ -485,7 +485,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffers.length, buffers, __functionAddress);
+        invokePV(buffers.length, buffers, __functionAddress);
     }
 
     /** {@code void glGenBuffers(GLsizei n, GLuint * buffers)} */
@@ -494,7 +494,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffers.length, buffers, __functionAddress);
+        invokePV(buffers.length, buffers, __functionAddress);
     }
 
     /** {@code void glBufferData(GLenum target, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -503,7 +503,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(target, Integer.toUnsignedLong(data.length) << 1, data, usage, __functionAddress);
+        invokePPV(target, Integer.toUnsignedLong(data.length) << 1, data, usage, __functionAddress);
     }
 
     /** {@code void glBufferData(GLenum target, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -512,7 +512,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(target, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
+        invokePPV(target, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
     }
 
     /** {@code void glBufferData(GLenum target, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -521,7 +521,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(target, Integer.toUnsignedLong(data.length) << 3, data, usage, __functionAddress);
+        invokePPV(target, Integer.toUnsignedLong(data.length) << 3, data, usage, __functionAddress);
     }
 
     /** {@code void glBufferData(GLenum target, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -530,7 +530,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(target, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
+        invokePPV(target, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
     }
 
     /** {@code void glBufferData(GLenum target, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -539,7 +539,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(target, Integer.toUnsignedLong(data.length) << 3, data, usage, __functionAddress);
+        invokePPV(target, Integer.toUnsignedLong(data.length) << 3, data, usage, __functionAddress);
     }
 
     /** {@code void glBufferSubData(GLenum target, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -548,7 +548,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
     }
 
     /** {@code void glBufferSubData(GLenum target, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -557,7 +557,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glBufferSubData(GLenum target, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -566,7 +566,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glBufferSubData(GLenum target, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -575,7 +575,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glBufferSubData(GLenum target, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -584,7 +584,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glGetBufferSubData(GLenum target, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -593,7 +593,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
     }
 
     /** {@code void glGetBufferSubData(GLenum target, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -602,7 +602,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glGetBufferSubData(GLenum target, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -611,7 +611,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glGetBufferSubData(GLenum target, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -620,7 +620,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glGetBufferSubData(GLenum target, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -629,7 +629,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glGetBufferParameteriv(GLenum target, GLenum pname, GLint * params)} */
@@ -639,7 +639,7 @@ public class GL15C extends GL14C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGenQueries(GLsizei n, GLuint * ids)} */
@@ -648,7 +648,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(ids.length, ids, __functionAddress);
+        invokePV(ids.length, ids, __functionAddress);
     }
 
     /** {@code void glDeleteQueries(GLsizei n, GLuint const * ids)} */
@@ -657,7 +657,7 @@ public class GL15C extends GL14C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(ids.length, ids, __functionAddress);
+        invokePV(ids.length, ids, __functionAddress);
     }
 
     /** {@code void glGetQueryiv(GLenum target, GLenum pname, GLint * params)} */
@@ -667,7 +667,7 @@ public class GL15C extends GL14C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetQueryObjectiv(GLuint id, GLenum pname, GLint * params)} */
@@ -677,7 +677,7 @@ public class GL15C extends GL14C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(id, pname, params, __functionAddress);
+        invokePV(id, pname, params, __functionAddress);
     }
 
     /** {@code void glGetQueryObjectuiv(GLuint id, GLenum pname, GLuint * params)} */
@@ -687,7 +687,7 @@ public class GL15C extends GL14C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(id, pname, params, __functionAddress);
+        invokePV(id, pname, params, __functionAddress);
     }
 
 }

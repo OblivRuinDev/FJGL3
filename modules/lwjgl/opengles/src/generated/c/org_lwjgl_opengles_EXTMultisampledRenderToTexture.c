@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glRenderbufferStorageMultisampleEXTPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glFramebufferTexture2DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jint);
+typedef void (*glRenderbufferStorageMultisampleEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glFramebufferTexture2DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

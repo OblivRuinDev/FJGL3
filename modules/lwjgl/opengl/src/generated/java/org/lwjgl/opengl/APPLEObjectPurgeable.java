@@ -87,7 +87,7 @@ public class APPLEObjectPurgeable {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(objectType, name, pname, params, __functionAddress);
+        invokePV(objectType, name, pname, params, __functionAddress);
     }
 
 }

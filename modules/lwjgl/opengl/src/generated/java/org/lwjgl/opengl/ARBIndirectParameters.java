@@ -92,7 +92,7 @@ public class ARBIndirectParameters {
             check(__functionAddress);
             check(indirect, (maxdrawcount * (stride == 0 ? (4 * 4) : stride)) >> 2);
         }
-        callPPV(mode, indirect, drawcount, maxdrawcount, stride, __functionAddress);
+        invokePPV(mode, indirect, drawcount, maxdrawcount, stride, __functionAddress);
     }
 
     /** {@code void glMultiDrawElementsIndirectCountARB(GLenum mode, GLenum type, void const * indirect, GLintptr drawcount, GLsizei maxdrawcount, GLsizei stride)} */
@@ -102,7 +102,7 @@ public class ARBIndirectParameters {
             check(__functionAddress);
             check(indirect, (maxdrawcount * (stride == 0 ? (5 * 4) : stride)) >> 2);
         }
-        callPPV(mode, type, indirect, drawcount, maxdrawcount, stride, __functionAddress);
+        invokePPV(mode, type, indirect, drawcount, maxdrawcount, stride, __functionAddress);
     }
 
 }

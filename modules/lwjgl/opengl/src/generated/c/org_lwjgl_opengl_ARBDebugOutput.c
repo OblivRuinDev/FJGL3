@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glDebugMessageControlARBPROC) (jint, jint, jint, jint, uintptr_t, jboolean);
-typedef void (APIENTRY *glDebugMessageInsertARBPROC) (jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glDebugMessageCallbackARBPROC) (uintptr_t, uintptr_t);
-typedef jint (APIENTRY *glGetDebugMessageLogARBPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glDebugMessageControlARBPROC) (jint, jint, jint, jint, uintptr_t, jboolean);
+typedef void (*glDebugMessageInsertARBPROC) (jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glDebugMessageCallbackARBPROC) (uintptr_t, uintptr_t);
+typedef jint (*glGetDebugMessageLogARBPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

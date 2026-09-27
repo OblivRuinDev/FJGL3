@@ -74,7 +74,7 @@ public class NVSampleLocations {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, start, v.length >> 1, v, __functionAddress);
+        invokePV(target, start, v.length >> 1, v, __functionAddress);
     }
 
     /** {@code void glNamedFramebufferSampleLocationsfvNV(GLuint framebuffer, GLuint start, GLsizei count, GLfloat const * v)} */
@@ -83,7 +83,7 @@ public class NVSampleLocations {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(framebuffer, start, v.length >> 1, v, __functionAddress);
+        invokePV(framebuffer, start, v.length >> 1, v, __functionAddress);
     }
 
 }

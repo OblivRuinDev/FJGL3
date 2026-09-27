@@ -82,7 +82,7 @@ public class KHRVideoDecodeQueue {
             check(__functionAddress);
             VkVideoDecodeInfoKHR.validate(pDecodeInfo);
         }
-        callPPV(commandBuffer.address(), pDecodeInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pDecodeInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDecodeVideoKHR(VkCommandBuffer commandBuffer, VkVideoDecodeInfoKHR const * pDecodeInfo)} */

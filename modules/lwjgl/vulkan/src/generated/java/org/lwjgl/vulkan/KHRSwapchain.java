@@ -69,7 +69,7 @@ public class KHRSwapchain {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pSwapchain, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pSwapchain, __functionAddress);
     }
 
     /** {@code VkResult vkCreateSwapchainKHR(VkDevice device, VkSwapchainCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkSwapchainKHR * pSwapchain)} */
@@ -89,7 +89,7 @@ public class KHRSwapchain {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), swapchain, pAllocator, __functionAddress);
+        invokePJPV(device.address(), swapchain, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroySwapchainKHR(VkDevice device, VkSwapchainKHR swapchain, VkAllocationCallbacks const * pAllocator)} */
@@ -105,7 +105,7 @@ public class KHRSwapchain {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), swapchain, pSwapchainImageCount, pSwapchainImages, __functionAddress);
+        return invokePJPPI(device.address(), swapchain, pSwapchainImageCount, pSwapchainImages, __functionAddress);
     }
 
     /** {@code VkResult vkGetSwapchainImagesKHR(VkDevice device, VkSwapchainKHR swapchain, uint32_t * pSwapchainImageCount, VkImage * pSwapchainImages)} */
@@ -126,7 +126,7 @@ public class KHRSwapchain {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJJJJPI(device.address(), swapchain, timeout, semaphore, fence, pImageIndex, __functionAddress);
+        return invokePJJJJPI(device.address(), swapchain, timeout, semaphore, fence, pImageIndex, __functionAddress);
     }
 
     /** {@code VkResult vkAcquireNextImageKHR(VkDevice device, VkSwapchainKHR swapchain, uint64_t timeout, VkSemaphore semaphore, VkFence fence, uint32_t * pImageIndex)} */
@@ -147,7 +147,7 @@ public class KHRSwapchain {
             check(__functionAddress);
             VkPresentInfoKHR.validate(pPresentInfo);
         }
-        return callPPI(queue.address(), pPresentInfo, __functionAddress);
+        return invokePPI(queue.address(), pPresentInfo, __functionAddress);
     }
 
     /** {@code VkResult vkQueuePresentKHR(VkQueue queue, VkPresentInfoKHR const * pPresentInfo)} */
@@ -164,7 +164,7 @@ public class KHRSwapchain {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pDeviceGroupPresentCapabilities, __functionAddress);
+        return invokePPI(device.address(), pDeviceGroupPresentCapabilities, __functionAddress);
     }
 
     /** {@code VkResult vkGetDeviceGroupPresentCapabilitiesKHR(VkDevice device, VkDeviceGroupPresentCapabilitiesKHR * pDeviceGroupPresentCapabilities)} */
@@ -181,7 +181,7 @@ public class KHRSwapchain {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), surface, pModes, __functionAddress);
+        return invokePJPI(device.address(), surface, pModes, __functionAddress);
     }
 
     /** {@code VkResult vkGetDeviceGroupSurfacePresentModesKHR(VkDevice device, VkSurfaceKHR surface, VkDeviceGroupPresentModeFlagsKHR * pModes)} */
@@ -201,7 +201,7 @@ public class KHRSwapchain {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(physicalDevice.address(), surface, pRectCount, pRects, __functionAddress);
+        return invokePJPPI(physicalDevice.address(), surface, pRectCount, pRects, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDevicePresentRectanglesKHR(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface, uint32_t * pRectCount, VkRect2D * pRects)} */
@@ -222,7 +222,7 @@ public class KHRSwapchain {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pAcquireInfo, pImageIndex, __functionAddress);
+        return invokePPPI(device.address(), pAcquireInfo, pImageIndex, __functionAddress);
     }
 
     /** {@code VkResult vkAcquireNextImage2KHR(VkDevice device, VkAcquireNextImageInfoKHR const * pAcquireInfo, uint32_t * pImageIndex)} */
@@ -242,7 +242,7 @@ public class KHRSwapchain {
             check(__functionAddress);
             check(pSwapchain, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSwapchain, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSwapchain, __functionAddress);
     }
 
     /** {@code VkResult vkGetSwapchainImagesKHR(VkDevice device, VkSwapchainKHR swapchain, uint32_t * pSwapchainImageCount, VkImage * pSwapchainImages)} */
@@ -254,7 +254,7 @@ public class KHRSwapchain {
             check(pSwapchainImageCount, 1);
             checkSafe(pSwapchainImages, pSwapchainImageCount[0]);
         }
-        return callPJPPI(device.address(), swapchain, pSwapchainImageCount, pSwapchainImages, __functionAddress);
+        return invokePJPPI(device.address(), swapchain, pSwapchainImageCount, pSwapchainImages, __functionAddress);
     }
 
     /** {@code VkResult vkAcquireNextImageKHR(VkDevice device, VkSwapchainKHR swapchain, uint64_t timeout, VkSemaphore semaphore, VkFence fence, uint32_t * pImageIndex)} */
@@ -265,7 +265,7 @@ public class KHRSwapchain {
             check(__functionAddress);
             check(pImageIndex, 1);
         }
-        return callPJJJJPI(device.address(), swapchain, timeout, semaphore, fence, pImageIndex, __functionAddress);
+        return invokePJJJJPI(device.address(), swapchain, timeout, semaphore, fence, pImageIndex, __functionAddress);
     }
 
     /** {@code VkResult vkGetDeviceGroupSurfacePresentModesKHR(VkDevice device, VkSurfaceKHR surface, VkDeviceGroupPresentModeFlagsKHR * pModes)} */
@@ -276,7 +276,7 @@ public class KHRSwapchain {
             check(__functionAddress);
             check(pModes, 1);
         }
-        return callPJPI(device.address(), surface, pModes, __functionAddress);
+        return invokePJPI(device.address(), surface, pModes, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDevicePresentRectanglesKHR(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface, uint32_t * pRectCount, VkRect2D * pRects)} */
@@ -288,7 +288,7 @@ public class KHRSwapchain {
             check(pRectCount, 1);
             checkSafe(pRects, pRectCount[0]);
         }
-        return callPJPPI(physicalDevice.address(), surface, pRectCount, memAddressSafe(pRects), __functionAddress);
+        return invokePJPPI(physicalDevice.address(), surface, pRectCount, memAddressSafe(pRects), __functionAddress);
     }
 
     /** {@code VkResult vkAcquireNextImage2KHR(VkDevice device, VkAcquireNextImageInfoKHR const * pAcquireInfo, uint32_t * pImageIndex)} */
@@ -299,7 +299,7 @@ public class KHRSwapchain {
             check(__functionAddress);
             check(pImageIndex, 1);
         }
-        return callPPPI(device.address(), pAcquireInfo.address(), pImageIndex, __functionAddress);
+        return invokePPPI(device.address(), pAcquireInfo.address(), pImageIndex, __functionAddress);
     }
 
 }

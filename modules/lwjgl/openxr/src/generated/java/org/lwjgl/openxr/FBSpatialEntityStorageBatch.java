@@ -44,7 +44,7 @@ public class FBSpatialEntityStorageBatch {
             check(__functionAddress);
             XrSpaceListSaveInfoFB.validate(info);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrSaveSpaceListFB(XrSession session, XrSpaceListSaveInfoFB const * info, XrAsyncRequestIdFB * requestId)} */

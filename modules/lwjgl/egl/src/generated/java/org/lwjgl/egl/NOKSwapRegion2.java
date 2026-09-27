@@ -39,7 +39,7 @@ public class NOKSwapRegion2 {
             check(dpy);
             check(surface);
         }
-        return callPPPI(dpy, surface, numRects, rects, __functionAddress);
+        return invokePPPI(dpy, surface, numRects, rects, __functionAddress);
     }
 
     /** {@code EGLBoolean eglSwapBuffersRegion2NOK(EGLDisplay dpy, EGLSurface surface, EGLint numRects, EGLint const * rects)} */
@@ -57,7 +57,7 @@ public class NOKSwapRegion2 {
             check(dpy);
             check(surface);
         }
-        return callPPPI(dpy, surface, lengthSafe(rects), rects, __functionAddress) != 0;
+        return invokePPPI(dpy, surface, lengthSafe(rects), rects, __functionAddress) != 0;
     }
 
 }

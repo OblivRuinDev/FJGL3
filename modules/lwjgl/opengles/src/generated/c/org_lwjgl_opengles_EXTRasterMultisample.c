@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glRasterSamplesEXTPROC) (jint, jboolean);
+typedef void (*glRasterSamplesEXTPROC) (jint, jboolean);
 
 EXTERN_C_ENTER
 

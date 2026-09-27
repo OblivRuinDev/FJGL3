@@ -67,7 +67,7 @@ public class KHRMaintenance10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pRenderingEndInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pRenderingEndInfo, __functionAddress);
     }
 
     /** {@code void vkCmdEndRendering2KHR(VkCommandBuffer commandBuffer, VkRenderingEndInfoKHR const * pRenderingEndInfo)} */

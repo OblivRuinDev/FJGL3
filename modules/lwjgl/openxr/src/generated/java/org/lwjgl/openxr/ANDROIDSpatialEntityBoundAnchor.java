@@ -45,7 +45,7 @@ public class ANDROIDSpatialEntityBoundAnchor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, attachableComponentCapacityInput, attachableComponentCountOutput, attachableComponents, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, attachableComponentCapacityInput, attachableComponentCountOutput, attachableComponents, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSpatialAnchorAttachableComponentsANDROID(XrInstance instance, XrSystemId systemId, uint32_t attachableComponentCapacityInput, uint32_t * attachableComponentCountOutput, XrSpatialComponentTypeEXT * attachableComponents)} */

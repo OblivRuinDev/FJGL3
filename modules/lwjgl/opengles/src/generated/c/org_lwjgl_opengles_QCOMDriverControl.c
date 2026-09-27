@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glGetDriverControlsQCOMPROC) (uintptr_t, jint, uintptr_t);
-typedef void (APIENTRY *glGetDriverControlStringQCOMPROC) (jint, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glEnableDriverControlQCOMPROC) (jint);
-typedef void (APIENTRY *glDisableDriverControlQCOMPROC) (jint);
+typedef void (*glGetDriverControlsQCOMPROC) (uintptr_t, jint, uintptr_t);
+typedef void (*glGetDriverControlStringQCOMPROC) (jint, jint, uintptr_t, uintptr_t);
+typedef void (*glEnableDriverControlQCOMPROC) (jint);
+typedef void (*glDisableDriverControlQCOMPROC) (jint);
 
 EXTERN_C_ENTER
 

@@ -14,40 +14,40 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glActiveTextureARBPROC) (jint);
-typedef void (APIENTRY *glClientActiveTextureARBPROC) (jint);
-typedef void (APIENTRY *glMultiTexCoord1fARBPROC) (jint, jfloat);
-typedef void (APIENTRY *glMultiTexCoord1sARBPROC) (jint, jshort);
-typedef void (APIENTRY *glMultiTexCoord1iARBPROC) (jint, jint);
-typedef void (APIENTRY *glMultiTexCoord1dARBPROC) (jint, jdouble);
-typedef void (APIENTRY *glMultiTexCoord1fvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord1svARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord1ivARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord1dvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord2fARBPROC) (jint, jfloat, jfloat);
-typedef void (APIENTRY *glMultiTexCoord2sARBPROC) (jint, jshort, jshort);
-typedef void (APIENTRY *glMultiTexCoord2iARBPROC) (jint, jint, jint);
-typedef void (APIENTRY *glMultiTexCoord2dARBPROC) (jint, jdouble, jdouble);
-typedef void (APIENTRY *glMultiTexCoord2fvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord2svARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord2ivARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord2dvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord3fARBPROC) (jint, jfloat, jfloat, jfloat);
-typedef void (APIENTRY *glMultiTexCoord3sARBPROC) (jint, jshort, jshort, jshort);
-typedef void (APIENTRY *glMultiTexCoord3iARBPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glMultiTexCoord3dARBPROC) (jint, jdouble, jdouble, jdouble);
-typedef void (APIENTRY *glMultiTexCoord3fvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord3svARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord3ivARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord3dvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord4fARBPROC) (jint, jfloat, jfloat, jfloat, jfloat);
-typedef void (APIENTRY *glMultiTexCoord4sARBPROC) (jint, jshort, jshort, jshort, jshort);
-typedef void (APIENTRY *glMultiTexCoord4iARBPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glMultiTexCoord4dARBPROC) (jint, jdouble, jdouble, jdouble, jdouble);
-typedef void (APIENTRY *glMultiTexCoord4fvARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord4svARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord4ivARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoord4dvARBPROC) (jint, uintptr_t);
+typedef void (*glActiveTextureARBPROC) (jint);
+typedef void (*glClientActiveTextureARBPROC) (jint);
+typedef void (*glMultiTexCoord1fARBPROC) (jint, jfloat);
+typedef void (*glMultiTexCoord1sARBPROC) (jint, jshort);
+typedef void (*glMultiTexCoord1iARBPROC) (jint, jint);
+typedef void (*glMultiTexCoord1dARBPROC) (jint, jdouble);
+typedef void (*glMultiTexCoord1fvARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord1svARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord1ivARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord1dvARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord2fARBPROC) (jint, jfloat, jfloat);
+typedef void (*glMultiTexCoord2sARBPROC) (jint, jshort, jshort);
+typedef void (*glMultiTexCoord2iARBPROC) (jint, jint, jint);
+typedef void (*glMultiTexCoord2dARBPROC) (jint, jdouble, jdouble);
+typedef void (*glMultiTexCoord2fvARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord2svARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord2ivARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord2dvARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord3fARBPROC) (jint, jfloat, jfloat, jfloat);
+typedef void (*glMultiTexCoord3sARBPROC) (jint, jshort, jshort, jshort);
+typedef void (*glMultiTexCoord3iARBPROC) (jint, jint, jint, jint);
+typedef void (*glMultiTexCoord3dARBPROC) (jint, jdouble, jdouble, jdouble);
+typedef void (*glMultiTexCoord3fvARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord3svARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord3ivARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord3dvARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord4fARBPROC) (jint, jfloat, jfloat, jfloat, jfloat);
+typedef void (*glMultiTexCoord4sARBPROC) (jint, jshort, jshort, jshort, jshort);
+typedef void (*glMultiTexCoord4iARBPROC) (jint, jint, jint, jint, jint);
+typedef void (*glMultiTexCoord4dARBPROC) (jint, jdouble, jdouble, jdouble, jdouble);
+typedef void (*glMultiTexCoord4fvARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord4svARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord4ivARBPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoord4dvARBPROC) (jint, uintptr_t);
 
 EXTERN_C_ENTER
 

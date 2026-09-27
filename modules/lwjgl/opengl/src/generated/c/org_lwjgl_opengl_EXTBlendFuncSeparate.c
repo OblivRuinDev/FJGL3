@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBlendFuncSeparateEXTPROC) (jint, jint, jint, jint);
+typedef void (*glBlendFuncSeparateEXTPROC) (jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

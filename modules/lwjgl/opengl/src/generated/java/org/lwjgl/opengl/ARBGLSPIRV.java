@@ -71,7 +71,7 @@ public class ARBGLSPIRV {
             checkNT1(pEntryPoint);
             check(pConstantValue, pConstantIndex.length);
         }
-        callPPPV(shader, memAddress(pEntryPoint), pConstantIndex.length, pConstantIndex, pConstantValue, __functionAddress);
+        invokePPPV(shader, memAddress(pEntryPoint), pConstantIndex.length, pConstantIndex, pConstantValue, __functionAddress);
     }
 
     /** {@code void glSpecializeShaderARB(GLuint shader, GLchar const * pEntryPoint, GLuint numSpecializationConstants, GLuint const * pConstantIndex, GLuint const * pConstantValue)} */
@@ -85,7 +85,7 @@ public class ARBGLSPIRV {
         try {
             stack.nUTF8(pEntryPoint, true);
             long pEntryPointEncoded = stack.getPointerAddress();
-            callPPPV(shader, pEntryPointEncoded, pConstantIndex.length, pConstantIndex, pConstantValue, __functionAddress);
+            invokePPPV(shader, pEntryPointEncoded, pConstantIndex.length, pConstantIndex, pConstantValue, __functionAddress);
         } finally {
             stack.setPointer(stackPointer);
         }

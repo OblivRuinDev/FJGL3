@@ -37,7 +37,7 @@ public class EXTDirectModeDisplay {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(physicalDevice.address(), display, __functionAddress);
+        return invokePJI(physicalDevice.address(), display, __functionAddress);
     }
 
 }

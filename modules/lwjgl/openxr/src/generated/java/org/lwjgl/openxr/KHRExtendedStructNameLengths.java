@@ -41,7 +41,7 @@ public class KHRExtendedStructNameLengths {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(instance.address(), value, buffer, __functionAddress);
+        return invokePPI(instance.address(), value, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrStructureTypeToString2KHR(XrInstance instance, XrStructureType value, char * buffer)} */

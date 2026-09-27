@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glSyncTextureINTELPROC) (jint);
-typedef void (APIENTRY *glUnmapTexture2DINTELPROC) (jint, jint);
-typedef uintptr_t (APIENTRY *glMapTexture2DINTELPROC) (jint, jint, jint, uintptr_t, uintptr_t);
+typedef void (*glSyncTextureINTELPROC) (jint);
+typedef void (*glUnmapTexture2DINTELPROC) (jint, jint);
+typedef uintptr_t (*glMapTexture2DINTELPROC) (jint, jint, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -54,7 +54,7 @@ public class QCOMTileShading {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pDispatchTileInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pDispatchTileInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDispatchTileQCOM(VkCommandBuffer commandBuffer, VkDispatchTileInfoQCOM const * pDispatchTileInfo)} */
@@ -70,7 +70,7 @@ public class QCOMTileShading {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pPerTileBeginInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pPerTileBeginInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBeginPerTileExecutionQCOM(VkCommandBuffer commandBuffer, VkPerTileBeginInfoQCOM const * pPerTileBeginInfo)} */
@@ -86,7 +86,7 @@ public class QCOMTileShading {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pPerTileEndInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pPerTileEndInfo, __functionAddress);
     }
 
     /** {@code void vkCmdEndPerTileExecutionQCOM(VkCommandBuffer commandBuffer, VkPerTileEndInfoQCOM const * pPerTileEndInfo)} */

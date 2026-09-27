@@ -14,18 +14,18 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glGetnMapdvPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnMapfvPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnMapivPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnPixelMapfvPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnPixelMapuivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnPixelMapusvPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnPolygonStipplePROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGetnColorTablePROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnConvolutionFilterPROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnSeparableFilterPROC) (jint, jint, jint, jint, uintptr_t, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetnHistogramPROC) (jint, jboolean, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnMinmaxPROC) (jint, jboolean, jint, jint, jint, uintptr_t);
+typedef void (*glGetnMapdvPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetnMapfvPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetnMapivPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetnPixelMapfvPROC) (jint, jint, uintptr_t);
+typedef void (*glGetnPixelMapuivPROC) (jint, jint, uintptr_t);
+typedef void (*glGetnPixelMapusvPROC) (jint, jint, uintptr_t);
+typedef void (*glGetnPolygonStipplePROC) (jint, uintptr_t);
+typedef void (*glGetnColorTablePROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glGetnConvolutionFilterPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glGetnSeparableFilterPROC) (jint, jint, jint, jint, uintptr_t, jint, uintptr_t, uintptr_t);
+typedef void (*glGetnHistogramPROC) (jint, jboolean, jint, jint, jint, uintptr_t);
+typedef void (*glGetnMinmaxPROC) (jint, jboolean, jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -139,7 +139,7 @@ public class FSBank {
     /** {@code FSBANK_RESULT FSBank_MemoryInit(FSBANK_MEMORY_ALLOC_CALLBACK userAlloc, FSBANK_MEMORY_REALLOC_CALLBACK userRealloc, FSBANK_MEMORY_FREE_CALLBACK userFree)} */
     public static int nFSBank_MemoryInit(long userAlloc, long userRealloc, long userFree) {
         long __functionAddress = Functions.MemoryInit;
-        return callPPPI(userAlloc, userRealloc, userFree, __functionAddress);
+        return invokePPPI(userAlloc, userRealloc, userFree, __functionAddress);
     }
 
     /** {@code FSBANK_RESULT FSBank_MemoryInit(FSBANK_MEMORY_ALLOC_CALLBACK userAlloc, FSBANK_MEMORY_REALLOC_CALLBACK userRealloc, FSBANK_MEMORY_FREE_CALLBACK userFree)} */
@@ -153,7 +153,7 @@ public class FSBank {
     /** {@code FSBANK_RESULT FSBank_Init(FSBANK_FSBVERSION version, FSBANK_INITFLAGS flags, unsigned int numSimultaneousJobs, char const * cacheDirectory)} */
     public static int nFSBank_Init(int version, int flags, int numSimultaneousJobs, long cacheDirectory) {
         long __functionAddress = Functions.Init;
-        return callPI(version, flags, numSimultaneousJobs, cacheDirectory, __functionAddress);
+        return invokePI(version, flags, numSimultaneousJobs, cacheDirectory, __functionAddress);
     }
 
     /** {@code FSBANK_RESULT FSBank_Init(FSBANK_FSBVERSION version, FSBANK_INITFLAGS flags, unsigned int numSimultaneousJobs, char const * cacheDirectory)} */
@@ -184,7 +184,7 @@ public class FSBank {
     @NativeType("FSBANK_RESULT")
     public static int FSBank_Release() {
         long __functionAddress = Functions.Release;
-        return callI(__functionAddress);
+        return invokeI(__functionAddress);
     }
 
     // --- [ FSBank_Build ] ---
@@ -195,7 +195,7 @@ public class FSBank {
         if (CHECKS) {
             FSBANK_SUBSOUND.validate(subSounds);
         }
-        return callPPPI(subSounds, numSubSounds, encodeFormat, buildFlags, quality, encryptKey, outputFileName, __functionAddress);
+        return invokePPPI(subSounds, numSubSounds, encodeFormat, buildFlags, quality, encryptKey, outputFileName, __functionAddress);
     }
 
     /** {@code FSBANK_RESULT FSBank_Build(FSBANK_SUBSOUND const * subSounds, unsigned int numSubSounds, FSBANK_FORMAT encodeFormat, FSBANK_BUILDFLAGS buildFlags, unsigned int quality, char const * encryptKey, char const * outputFileName)} */
@@ -228,7 +228,7 @@ public class FSBank {
     /** {@code FSBANK_RESULT FSBank_FetchFSBMemory(void const ** data, unsigned int * length)} */
     public static int nFSBank_FetchFSBMemory(long data, long length) {
         long __functionAddress = Functions.FetchFSBMemory;
-        return callPPI(data, length, __functionAddress);
+        return invokePPI(data, length, __functionAddress);
     }
 
     /** {@code FSBANK_RESULT FSBank_FetchFSBMemory(void const ** data, unsigned int * length)} */
@@ -247,7 +247,7 @@ public class FSBank {
     @NativeType("FSBANK_RESULT")
     public static int FSBank_BuildCancel() {
         long __functionAddress = Functions.BuildCancel;
-        return callI(__functionAddress);
+        return invokeI(__functionAddress);
     }
 
     // --- [ FSBank_FetchNextProgressItem ] ---
@@ -255,7 +255,7 @@ public class FSBank {
     /** {@code FSBANK_RESULT FSBank_FetchNextProgressItem(FSBANK_PROGRESSITEM const ** progressItem)} */
     public static int nFSBank_FetchNextProgressItem(long progressItem) {
         long __functionAddress = Functions.FetchNextProgressItem;
-        return callPI(progressItem, __functionAddress);
+        return invokePI(progressItem, __functionAddress);
     }
 
     /** {@code FSBANK_RESULT FSBank_FetchNextProgressItem(FSBANK_PROGRESSITEM const ** progressItem)} */
@@ -272,7 +272,7 @@ public class FSBank {
     /** {@code FSBANK_RESULT FSBank_ReleaseProgressItem(FSBANK_PROGRESSITEM const * progressItem)} */
     public static int nFSBank_ReleaseProgressItem(long progressItem) {
         long __functionAddress = Functions.ReleaseProgressItem;
-        return callPI(progressItem, __functionAddress);
+        return invokePI(progressItem, __functionAddress);
     }
 
     /** {@code FSBANK_RESULT FSBank_ReleaseProgressItem(FSBANK_PROGRESSITEM const * progressItem)} */
@@ -286,7 +286,7 @@ public class FSBank {
     /** {@code FSBANK_RESULT FSBank_MemoryGetStats(unsigned int * currentAllocated, unsigned int * maximumAllocated)} */
     public static int nFSBank_MemoryGetStats(long currentAllocated, long maximumAllocated) {
         long __functionAddress = Functions.MemoryGetStats;
-        return callPPI(currentAllocated, maximumAllocated, __functionAddress);
+        return invokePPI(currentAllocated, maximumAllocated, __functionAddress);
     }
 
     /** {@code FSBANK_RESULT FSBank_MemoryGetStats(unsigned int * currentAllocated, unsigned int * maximumAllocated)} */

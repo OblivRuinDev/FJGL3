@@ -131,7 +131,7 @@ public class FBFaceTracking2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, faceTracker, __functionAddress);
+        return invokePPPI(session.address(), createInfo, faceTracker, __functionAddress);
     }
 
     /** {@code XrResult xrCreateFaceTracker2FB(XrSession session, XrFaceTrackerCreateInfo2FB const * createInfo, XrFaceTracker2FB * faceTracker)} */
@@ -152,7 +152,7 @@ public class FBFaceTracking2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(faceTracker.address(), __functionAddress);
+        return invokePI(faceTracker.address(), __functionAddress);
     }
 
     // --- [ xrGetFaceExpressionWeights2FB ] ---
@@ -163,7 +163,7 @@ public class FBFaceTracking2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(faceTracker.address(), expressionInfo, expressionWeights, __functionAddress);
+        return invokePPPI(faceTracker.address(), expressionInfo, expressionWeights, __functionAddress);
     }
 
     /** {@code XrResult xrGetFaceExpressionWeights2FB(XrFaceTracker2FB faceTracker, XrFaceExpressionInfo2FB const * expressionInfo, XrFaceExpressionWeights2FB * expressionWeights)} */

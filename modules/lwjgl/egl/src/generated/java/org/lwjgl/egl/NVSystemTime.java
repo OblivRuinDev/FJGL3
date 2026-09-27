@@ -33,7 +33,7 @@ public class NVSystemTime {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callJ(__functionAddress);
+        return invokeJ(__functionAddress);
     }
 
     // --- [ eglGetSystemTimeNV ] ---
@@ -45,7 +45,7 @@ public class NVSystemTime {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callJ(__functionAddress);
+        return invokeJ(__functionAddress);
     }
 
 }

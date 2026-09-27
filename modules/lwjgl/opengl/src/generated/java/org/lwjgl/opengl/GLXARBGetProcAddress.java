@@ -36,7 +36,7 @@ public class GLXARBGetProcAddress {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPP(procName, __functionAddress);
+        return invokePP(procName, __functionAddress);
     }
 
     /** {@code void * glXGetProcAddressARB(GLchar const * procName)} */

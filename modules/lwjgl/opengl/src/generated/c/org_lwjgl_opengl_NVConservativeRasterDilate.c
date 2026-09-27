@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glConservativeRasterParameterfNVPROC) (jint, jfloat);
+typedef void (*glConservativeRasterParameterfNVPROC) (jint, jfloat);
 
 EXTERN_C_ENTER
 

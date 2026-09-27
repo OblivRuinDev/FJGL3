@@ -154,6 +154,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 }""")
     }
 
+    @Suppress("DEPRECATION")
     internal fun PrintWriter.generateInterface() {
         print(HEADER)
         println("package $packageName;\n")

@@ -466,7 +466,7 @@ public class GL32C extends GL31C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glMultiDrawElementsBaseVertex(GLenum mode, GLsizei const * count, GLenum type, void const * const * indices, GLsizei drawcount, GLint * basevertex)} */
@@ -477,7 +477,7 @@ public class GL32C extends GL31C {
             check(indices, count.length);
             check(basevertex, count.length);
         }
-        callPPPV(mode, count, type, memAddress(indices), count.length, basevertex, __functionAddress);
+        invokePPPV(mode, count, type, memAddress(indices), count.length, basevertex, __functionAddress);
     }
 
     /** {@code void glGetMultisamplefv(GLenum pname, GLuint index, GLfloat * val)} */
@@ -487,7 +487,7 @@ public class GL32C extends GL31C {
             check(__functionAddress);
             check(val, 1);
         }
-        callPV(pname, index, val, __functionAddress);
+        invokePV(pname, index, val, __functionAddress);
     }
 
     /** {@code void glGetInteger64v(GLenum pname, GLint64 * params)} */
@@ -497,7 +497,7 @@ public class GL32C extends GL31C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pname, params, __functionAddress);
+        invokePV(pname, params, __functionAddress);
     }
 
     /** {@code void glGetInteger64i_v(GLenum pname, GLuint index, GLint64 * params)} */
@@ -507,7 +507,7 @@ public class GL32C extends GL31C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pname, index, params, __functionAddress);
+        invokePV(pname, index, params, __functionAddress);
     }
 
     /** {@code void glGetSynciv(GLsync sync, GLenum pname, GLsizei bufSize, GLsizei * length, GLint * values)} */
@@ -518,7 +518,7 @@ public class GL32C extends GL31C {
             check(sync);
             checkSafe(length, 1);
         }
-        callPPPV(sync, pname, values.length, length, values, __functionAddress);
+        invokePPPV(sync, pname, values.length, length, values, __functionAddress);
     }
 
 }

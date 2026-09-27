@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glActiveStencilFaceEXTPROC) (jint);
+typedef void (*glActiveStencilFaceEXTPROC) (jint);
 
 EXTERN_C_ENTER
 

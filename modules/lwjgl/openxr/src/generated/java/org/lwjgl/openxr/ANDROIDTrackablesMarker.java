@@ -70,7 +70,7 @@ public class ANDROIDTrackablesMarker {
             check(__functionAddress);
             XrTrackableGetInfoANDROID.validate(getInfo);
         }
-        return callPPPI(tracker.address(), getInfo, markerOutput, __functionAddress);
+        return invokePPPI(tracker.address(), getInfo, markerOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetTrackableMarkerANDROID(XrTrackableTrackerANDROID tracker, XrTrackableGetInfoANDROID const * getInfo, XrTrackableMarkerANDROID * markerOutput)} */

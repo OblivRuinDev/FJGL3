@@ -108,7 +108,7 @@ public class APPLEElementArray {
             check(__functionAddress);
             check(count, first.length);
         }
-        callPPV(mode, first, count, first.length, __functionAddress);
+        invokePPV(mode, first, count, first.length, __functionAddress);
     }
 
     /** {@code void glMultiDrawRangeElementArrayAPPLE(GLenum mode, GLuint start, GLuint end, GLint const * first, GLsizei const * count, GLsizei primcount)} */
@@ -118,7 +118,7 @@ public class APPLEElementArray {
             check(__functionAddress);
             check(count, first.length);
         }
-        callPPV(mode, start, end, first, count, first.length, __functionAddress);
+        invokePPV(mode, start, end, first, count, first.length, __functionAddress);
     }
 
 }

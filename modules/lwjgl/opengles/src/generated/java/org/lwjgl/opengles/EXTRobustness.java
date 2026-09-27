@@ -131,7 +131,7 @@ public class EXTRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, data.length << 1, data, __functionAddress);
+        invokePV(x, y, width, height, format, type, data.length << 1, data, __functionAddress);
     }
 
     /** {@code void glReadnPixelsEXT(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * data)} */
@@ -140,7 +140,7 @@ public class EXTRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, data.length << 2, data, __functionAddress);
+        invokePV(x, y, width, height, format, type, data.length << 2, data, __functionAddress);
     }
 
     /** {@code void glReadnPixelsEXT(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * data)} */
@@ -149,7 +149,7 @@ public class EXTRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, data.length << 2, data, __functionAddress);
+        invokePV(x, y, width, height, format, type, data.length << 2, data, __functionAddress);
     }
 
     /** {@code void glGetnUniformfvEXT(GLuint program, GLint location, GLsizei bufSize, GLfloat * params)} */
@@ -158,7 +158,7 @@ public class EXTRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformivEXT(GLuint program, GLint location, GLsizei bufSize, GLint * params)} */
@@ -167,7 +167,7 @@ public class EXTRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
 }

@@ -49,7 +49,7 @@ public class EXTDiscardRectangles {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstDiscardRectangle, discardRectangleCount, pDiscardRectangles, __functionAddress);
+        invokePPV(commandBuffer.address(), firstDiscardRectangle, discardRectangleCount, pDiscardRectangles, __functionAddress);
     }
 
     /** {@code void vkCmdSetDiscardRectangleEXT(VkCommandBuffer commandBuffer, uint32_t firstDiscardRectangle, uint32_t discardRectangleCount, VkRect2D const * pDiscardRectangles)} */
@@ -65,7 +65,7 @@ public class EXTDiscardRectangles {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), discardRectangleEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), discardRectangleEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetDiscardRectangleModeEXT ] ---
@@ -76,7 +76,7 @@ public class EXTDiscardRectangles {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), discardRectangleMode, __functionAddress);
+        invokePV(commandBuffer.address(), discardRectangleMode, __functionAddress);
     }
 
 }

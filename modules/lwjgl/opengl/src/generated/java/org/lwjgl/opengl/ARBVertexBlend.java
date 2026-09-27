@@ -203,7 +203,7 @@ public class ARBVertexBlend {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(weights.length, weights, __functionAddress);
+        invokePV(weights.length, weights, __functionAddress);
     }
 
     /** {@code void glWeightsvARB(GLint size, GLshort * weights)} */
@@ -212,7 +212,7 @@ public class ARBVertexBlend {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(weights.length, weights, __functionAddress);
+        invokePV(weights.length, weights, __functionAddress);
     }
 
     /** {@code void glWeightusvARB(GLint size, GLushort * weights)} */
@@ -221,7 +221,7 @@ public class ARBVertexBlend {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(weights.length, weights, __functionAddress);
+        invokePV(weights.length, weights, __functionAddress);
     }
 
     /** {@code void glWeightivARB(GLint size, GLint * weights)} */
@@ -230,7 +230,7 @@ public class ARBVertexBlend {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(weights.length, weights, __functionAddress);
+        invokePV(weights.length, weights, __functionAddress);
     }
 
     /** {@code void glWeightuivARB(GLint size, GLuint * weights)} */
@@ -239,7 +239,7 @@ public class ARBVertexBlend {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(weights.length, weights, __functionAddress);
+        invokePV(weights.length, weights, __functionAddress);
     }
 
     /** {@code void glWeightdvARB(GLint size, GLdouble * weights)} */
@@ -248,7 +248,7 @@ public class ARBVertexBlend {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(weights.length, weights, __functionAddress);
+        invokePV(weights.length, weights, __functionAddress);
     }
 
     /** {@code void glWeightPointerARB(GLint size, GLenum type, GLsizei stride, void const * pointer)} */
@@ -257,7 +257,7 @@ public class ARBVertexBlend {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(size, type, stride, pointer, __functionAddress);
+        invokePV(size, type, stride, pointer, __functionAddress);
     }
 
     /** {@code void glWeightPointerARB(GLint size, GLenum type, GLsizei stride, void const * pointer)} */
@@ -266,7 +266,7 @@ public class ARBVertexBlend {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(size, type, stride, pointer, __functionAddress);
+        invokePV(size, type, stride, pointer, __functionAddress);
     }
 
     /** {@code void glWeightPointerARB(GLint size, GLenum type, GLsizei stride, void const * pointer)} */
@@ -275,7 +275,7 @@ public class ARBVertexBlend {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(size, type, stride, pointer, __functionAddress);
+        invokePV(size, type, stride, pointer, __functionAddress);
     }
 
 }

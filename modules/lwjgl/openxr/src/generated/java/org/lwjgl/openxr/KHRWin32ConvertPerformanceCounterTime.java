@@ -41,7 +41,7 @@ public class KHRWin32ConvertPerformanceCounterTime {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(instance.address(), performanceCounter, time, __functionAddress);
+        return invokePPPI(instance.address(), performanceCounter, time, __functionAddress);
     }
 
     /** {@code XrResult xrConvertWin32PerformanceCounterToTimeKHR(XrInstance instance, LARGE_INTEGER const * performanceCounter, XrTime * time)} */
@@ -61,7 +61,7 @@ public class KHRWin32ConvertPerformanceCounterTime {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(instance.address(), time, performanceCounter, __functionAddress);
+        return invokePJPI(instance.address(), time, performanceCounter, __functionAddress);
     }
 
     /** {@code XrResult xrConvertTimeToWin32PerformanceCounterKHR(XrInstance instance, XrTime time, LARGE_INTEGER * performanceCounter)} */

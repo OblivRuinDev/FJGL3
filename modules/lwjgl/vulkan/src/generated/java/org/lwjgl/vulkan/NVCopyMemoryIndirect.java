@@ -40,7 +40,7 @@ public class NVCopyMemoryIndirect {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(commandBuffer.address(), copyBufferAddress, copyCount, stride, __functionAddress);
+        invokePJV(commandBuffer.address(), copyBufferAddress, copyCount, stride, __functionAddress);
     }
 
     // --- [ vkCmdCopyMemoryToImageIndirectNV ] ---
@@ -51,7 +51,7 @@ public class NVCopyMemoryIndirect {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJPV(commandBuffer.address(), copyBufferAddress, copyCount, stride, dstImage, dstImageLayout, pImageSubresources, __functionAddress);
+        invokePJJPV(commandBuffer.address(), copyBufferAddress, copyCount, stride, dstImage, dstImageLayout, pImageSubresources, __functionAddress);
     }
 
     /** {@code void vkCmdCopyMemoryToImageIndirectNV(VkCommandBuffer commandBuffer, VkDeviceAddress copyBufferAddress, uint32_t copyCount, uint32_t stride, VkImage dstImage, VkImageLayout dstImageLayout, VkImageSubresourceLayers const * pImageSubresources)} */

@@ -105,7 +105,7 @@ public class EXTDescriptorHeap {
             check(__functionAddress);
             Struct.validate(pDescriptors, samplerCount, VkHostAddressRangeEXT.SIZEOF, VkHostAddressRangeEXT::validate);
         }
-        return callPPPI(device.address(), samplerCount, pSamplers, pDescriptors, __functionAddress);
+        return invokePPPI(device.address(), samplerCount, pSamplers, pDescriptors, __functionAddress);
     }
 
     /** {@code VkResult vkWriteSamplerDescriptorsEXT(VkDevice device, uint32_t samplerCount, VkSamplerCreateInfo const * pSamplers, VkHostAddressRangeEXT const * pDescriptors)} */
@@ -126,7 +126,7 @@ public class EXTDescriptorHeap {
             check(__functionAddress);
             Struct.validate(pDescriptors, resourceCount, VkHostAddressRangeEXT.SIZEOF, VkHostAddressRangeEXT::validate);
         }
-        return callPPPI(device.address(), resourceCount, pResources, pDescriptors, __functionAddress);
+        return invokePPPI(device.address(), resourceCount, pResources, pDescriptors, __functionAddress);
     }
 
     /** {@code VkResult vkWriteResourceDescriptorsEXT(VkDevice device, uint32_t resourceCount, VkResourceDescriptorInfoEXT const * pResources, VkHostAddressRangeEXT const * pDescriptors)} */
@@ -146,7 +146,7 @@ public class EXTDescriptorHeap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pBindInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pBindInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBindSamplerHeapEXT(VkCommandBuffer commandBuffer, VkBindHeapInfoEXT const * pBindInfo)} */
@@ -162,7 +162,7 @@ public class EXTDescriptorHeap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pBindInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pBindInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBindResourceHeapEXT(VkCommandBuffer commandBuffer, VkBindHeapInfoEXT const * pBindInfo)} */
@@ -179,7 +179,7 @@ public class EXTDescriptorHeap {
             check(__functionAddress);
             VkPushDataInfoEXT.validate(pPushDataInfo);
         }
-        callPPV(commandBuffer.address(), pPushDataInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pPushDataInfo, __functionAddress);
     }
 
     /** {@code void vkCmdPushDataEXT(VkCommandBuffer commandBuffer, VkPushDataInfoEXT const * pPushDataInfo)} */
@@ -195,7 +195,7 @@ public class EXTDescriptorHeap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), imageCount, pImages, pDatas, __functionAddress);
+        return invokePPPI(device.address(), imageCount, pImages, pDatas, __functionAddress);
     }
 
     /** {@code VkResult vkGetImageOpaqueCaptureDataEXT(VkDevice device, uint32_t imageCount, VkImage const * pImages, VkHostAddressRangeEXT * pDatas)} */
@@ -216,7 +216,7 @@ public class EXTDescriptorHeap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJ(physicalDevice.address(), descriptorType, __functionAddress);
+        return invokePJ(physicalDevice.address(), descriptorType, __functionAddress);
     }
 
     // --- [ vkRegisterCustomBorderColorEXT ] ---
@@ -227,7 +227,7 @@ public class EXTDescriptorHeap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pBorderColor, requestIndex, pIndex, __functionAddress);
+        return invokePPPI(device.address(), pBorderColor, requestIndex, pIndex, __functionAddress);
     }
 
     /** {@code VkResult vkRegisterCustomBorderColorEXT(VkDevice device, VkSamplerCustomBorderColorCreateInfoEXT const * pBorderColor, VkBool32 requestIndex, uint32_t * pIndex)} */
@@ -247,7 +247,7 @@ public class EXTDescriptorHeap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(device.address(), index, __functionAddress);
+        invokePV(device.address(), index, __functionAddress);
     }
 
     // --- [ vkGetTensorOpaqueCaptureDataARM ] ---
@@ -258,7 +258,7 @@ public class EXTDescriptorHeap {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), tensorCount, pTensors, pDatas, __functionAddress);
+        return invokePPPI(device.address(), tensorCount, pTensors, pDatas, __functionAddress);
     }
 
     /** {@code VkResult vkGetTensorOpaqueCaptureDataARM(VkDevice device, uint32_t tensorCount, VkTensorARM const * pTensors, VkHostAddressRangeEXT * pDatas)} */
@@ -278,7 +278,7 @@ public class EXTDescriptorHeap {
             check(__functionAddress);
             check(pDatas, pImages.length);
         }
-        return callPPPI(device.address(), pImages.length, pImages, pDatas.address(), __functionAddress);
+        return invokePPPI(device.address(), pImages.length, pImages, pDatas.address(), __functionAddress);
     }
 
     /** {@code VkResult vkRegisterCustomBorderColorEXT(VkDevice device, VkSamplerCustomBorderColorCreateInfoEXT const * pBorderColor, VkBool32 requestIndex, uint32_t * pIndex)} */
@@ -289,7 +289,7 @@ public class EXTDescriptorHeap {
             check(__functionAddress);
             check(pIndex, 1);
         }
-        return callPPPI(device.address(), pBorderColor.address(), requestIndex ? 1 : 0, pIndex, __functionAddress);
+        return invokePPPI(device.address(), pBorderColor.address(), requestIndex ? 1 : 0, pIndex, __functionAddress);
     }
 
     /** {@code VkResult vkGetTensorOpaqueCaptureDataARM(VkDevice device, uint32_t tensorCount, VkTensorARM const * pTensors, VkHostAddressRangeEXT * pDatas)} */
@@ -300,7 +300,7 @@ public class EXTDescriptorHeap {
             check(__functionAddress);
             check(pDatas, pTensors.length);
         }
-        return callPPPI(device.address(), pTensors.length, pTensors, pDatas.address(), __functionAddress);
+        return invokePPPI(device.address(), pTensors.length, pTensors, pDatas.address(), __functionAddress);
     }
 
 }

@@ -117,7 +117,7 @@ public class APPLEFence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(fences.length, fences, __functionAddress);
+        invokePV(fences.length, fences, __functionAddress);
     }
 
     /** {@code void glDeleteFencesAPPLE(GLsizei n, GLuint const * fences)} */
@@ -126,7 +126,7 @@ public class APPLEFence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(fences.length, fences, __functionAddress);
+        invokePV(fences.length, fences, __functionAddress);
     }
 
 }

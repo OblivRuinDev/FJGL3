@@ -53,7 +53,7 @@ public class MSFTCompositionLayerReprojection {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, viewConfigurationType, modeCapacityInput, modeCountOutput, modes, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, viewConfigurationType, modeCapacityInput, modeCountOutput, modes, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateReprojectionModesMSFT(XrInstance instance, XrSystemId systemId, XrViewConfigurationType viewConfigurationType, uint32_t modeCapacityInput, uint32_t * modeCountOutput, XrReprojectionModeMSFT * modes)} */

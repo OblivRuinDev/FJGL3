@@ -14,12 +14,12 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glTexImage2DMultisampleCoverageNVPROC) (jint, jint, jint, jint, jint, jint, jboolean);
-typedef void (APIENTRY *glTexImage3DMultisampleCoverageNVPROC) (jint, jint, jint, jint, jint, jint, jint, jboolean);
-typedef void (APIENTRY *glTextureImage2DMultisampleNVPROC) (jint, jint, jint, jint, jint, jint, jboolean);
-typedef void (APIENTRY *glTextureImage3DMultisampleNVPROC) (jint, jint, jint, jint, jint, jint, jint, jboolean);
-typedef void (APIENTRY *glTextureImage2DMultisampleCoverageNVPROC) (jint, jint, jint, jint, jint, jint, jint, jboolean);
-typedef void (APIENTRY *glTextureImage3DMultisampleCoverageNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTexImage2DMultisampleCoverageNVPROC) (jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTexImage3DMultisampleCoverageNVPROC) (jint, jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTextureImage2DMultisampleNVPROC) (jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTextureImage3DMultisampleNVPROC) (jint, jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTextureImage2DMultisampleCoverageNVPROC) (jint, jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTextureImage3DMultisampleCoverageNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jboolean);
 
 EXTERN_C_ENTER
 

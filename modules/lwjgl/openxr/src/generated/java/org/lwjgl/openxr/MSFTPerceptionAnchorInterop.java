@@ -40,7 +40,7 @@ public class MSFTPerceptionAnchorInterop {
             check(__functionAddress);
             check(perceptionAnchor);
         }
-        return callPPPI(session.address(), perceptionAnchor, anchor, __functionAddress);
+        return invokePPPI(session.address(), perceptionAnchor, anchor, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorFromPerceptionAnchorMSFT(XrSession session, IUnknown * perceptionAnchor, XrSpatialAnchorMSFT * anchor)} */
@@ -60,7 +60,7 @@ public class MSFTPerceptionAnchorInterop {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), anchor.address(), perceptionAnchor, __functionAddress);
+        return invokePPPI(session.address(), anchor.address(), perceptionAnchor, __functionAddress);
     }
 
     /** {@code XrResult xrTryGetPerceptionAnchorFromSpatialAnchorMSFT(XrSession session, XrSpatialAnchorMSFT anchor, IUnknown ** perceptionAnchor)} */

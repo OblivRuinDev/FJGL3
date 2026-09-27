@@ -58,7 +58,7 @@ public class SONYSwapchainColorSpace {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(session.address(), enumerateInfo, colorSpaceCapacityInput, colorSpaceCountOutput, colorSpaces, __functionAddress);
+        return invokePPPPI(session.address(), enumerateInfo, colorSpaceCapacityInput, colorSpaceCountOutput, colorSpaces, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateColorSpacesSONY(XrSession session, XrColorSpacesEnumerateInfoSONY const * enumerateInfo, uint32_t colorSpaceCapacityInput, uint32_t * colorSpaceCountOutput, XrColorSpaceSONY * colorSpaces)} */

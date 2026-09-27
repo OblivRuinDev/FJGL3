@@ -52,7 +52,7 @@ public class EXTMemoryDecompression {
             check(__functionAddress);
             VkDecompressMemoryInfoEXT.validate(pDecompressMemoryInfoEXT);
         }
-        callPPV(commandBuffer.address(), pDecompressMemoryInfoEXT, __functionAddress);
+        invokePPV(commandBuffer.address(), pDecompressMemoryInfoEXT, __functionAddress);
     }
 
     /** {@code void vkCmdDecompressMemoryEXT(VkCommandBuffer commandBuffer, VkDecompressMemoryInfoEXT const * pDecompressMemoryInfoEXT)} */
@@ -68,7 +68,7 @@ public class EXTMemoryDecompression {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJV(commandBuffer.address(), decompressionMethod, indirectCommandsAddress, indirectCommandsCountAddress, maxDecompressionCount, stride, __functionAddress);
+        invokePJJJV(commandBuffer.address(), decompressionMethod, indirectCommandsAddress, indirectCommandsCountAddress, maxDecompressionCount, stride, __functionAddress);
     }
 
 }

@@ -292,7 +292,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(pApiVersion, __functionAddress);
+        return invokePI(pApiVersion, __functionAddress);
     }
 
     /** {@code VkResult vkEnumerateInstanceVersion(uint32_t * pApiVersion)} */
@@ -312,7 +312,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
+        return invokePPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
     }
 
     /** {@code VkResult vkBindBufferMemory2(VkDevice device, uint32_t bindInfoCount, VkBindBufferMemoryInfo const * pBindInfos)} */
@@ -329,7 +329,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
+        return invokePPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
     }
 
     /** {@code VkResult vkBindImageMemory2(VkDevice device, uint32_t bindInfoCount, VkBindImageMemoryInfo const * pBindInfos)} */
@@ -346,7 +346,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(device.address(), heapIndex, localDeviceIndex, remoteDeviceIndex, pPeerMemoryFeatures, __functionAddress);
+        invokePPV(device.address(), heapIndex, localDeviceIndex, remoteDeviceIndex, pPeerMemoryFeatures, __functionAddress);
     }
 
     /** {@code void vkGetDeviceGroupPeerMemoryFeatures(VkDevice device, uint32_t heapIndex, uint32_t localDeviceIndex, uint32_t remoteDeviceIndex, VkPeerMemoryFeatureFlags * pPeerMemoryFeatures)} */
@@ -365,7 +365,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), deviceMask, __functionAddress);
+        invokePV(commandBuffer.address(), deviceMask, __functionAddress);
     }
 
     // --- [ vkEnumeratePhysicalDeviceGroups ] ---
@@ -376,7 +376,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(instance.address(), pPhysicalDeviceGroupCount, pPhysicalDeviceGroupProperties, __functionAddress);
+        return invokePPPI(instance.address(), pPhysicalDeviceGroupCount, pPhysicalDeviceGroupProperties, __functionAddress);
     }
 
     /** {@code VkResult vkEnumeratePhysicalDeviceGroups(VkInstance instance, uint32_t * pPhysicalDeviceGroupCount, VkPhysicalDeviceGroupProperties * pPhysicalDeviceGroupProperties)} */
@@ -397,7 +397,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetImageMemoryRequirements2(VkDevice device, VkImageMemoryRequirementsInfo2 const * pInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -413,7 +413,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetBufferMemoryRequirements2(VkDevice device, VkBufferMemoryRequirementsInfo2 const * pInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -429,7 +429,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPPV(device.address(), pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements, __functionAddress);
+        invokePPPPV(device.address(), pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetImageSparseMemoryRequirements2(VkDevice device, VkImageSparseMemoryRequirementsInfo2 const * pInfo, uint32_t * pSparseMemoryRequirementCount, VkSparseImageMemoryRequirements2 * pSparseMemoryRequirements)} */
@@ -449,7 +449,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(physicalDevice.address(), pFeatures, __functionAddress);
+        invokePPV(physicalDevice.address(), pFeatures, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceFeatures2(VkPhysicalDevice physicalDevice, VkPhysicalDeviceFeatures2 * pFeatures)} */
@@ -465,7 +465,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(physicalDevice.address(), pProperties, __functionAddress);
+        invokePPV(physicalDevice.address(), pProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceProperties2(VkPhysicalDevice physicalDevice, VkPhysicalDeviceProperties2 * pProperties)} */
@@ -481,7 +481,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(physicalDevice.address(), format, pFormatProperties, __functionAddress);
+        invokePPV(physicalDevice.address(), format, pFormatProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceFormatProperties2(VkPhysicalDevice physicalDevice, VkFormat format, VkFormatProperties2 * pFormatProperties)} */
@@ -497,7 +497,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pImageFormatInfo, pImageFormatProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pImageFormatInfo, pImageFormatProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceImageFormatProperties2(VkPhysicalDevice physicalDevice, VkPhysicalDeviceImageFormatInfo2 const * pImageFormatInfo, VkImageFormatProperties2 * pImageFormatProperties)} */
@@ -514,7 +514,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(physicalDevice.address(), pQueueFamilyPropertyCount, pQueueFamilyProperties, __functionAddress);
+        invokePPPV(physicalDevice.address(), pQueueFamilyPropertyCount, pQueueFamilyProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceQueueFamilyProperties2(VkPhysicalDevice physicalDevice, uint32_t * pQueueFamilyPropertyCount, VkQueueFamilyProperties2 * pQueueFamilyProperties)} */
@@ -534,7 +534,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(physicalDevice.address(), pMemoryProperties, __functionAddress);
+        invokePPV(physicalDevice.address(), pMemoryProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceMemoryProperties2(VkPhysicalDevice physicalDevice, VkPhysicalDeviceMemoryProperties2 * pMemoryProperties)} */
@@ -550,7 +550,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPPV(physicalDevice.address(), pFormatInfo, pPropertyCount, pProperties, __functionAddress);
+        invokePPPPV(physicalDevice.address(), pFormatInfo, pPropertyCount, pProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceSparseImageFormatProperties2(VkPhysicalDevice physicalDevice, VkPhysicalDeviceSparseImageFormatInfo2 const * pFormatInfo, uint32_t * pPropertyCount, VkSparseImageFormatProperties2 * pProperties)} */
@@ -570,7 +570,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(device.address(), commandPool, flags, __functionAddress);
+        invokePJV(device.address(), commandPool, flags, __functionAddress);
     }
 
     // --- [ vkGetDeviceQueue2 ] ---
@@ -581,7 +581,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pQueueInfo, pQueue, __functionAddress);
+        invokePPPV(device.address(), pQueueInfo, pQueue, __functionAddress);
     }
 
     /** {@code void vkGetDeviceQueue2(VkDevice device, VkDeviceQueueInfo2 const * pQueueInfo, VkQueue * pQueue)} */
@@ -600,7 +600,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(physicalDevice.address(), pExternalBufferInfo, pExternalBufferProperties, __functionAddress);
+        invokePPPV(physicalDevice.address(), pExternalBufferInfo, pExternalBufferProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceExternalBufferProperties(VkPhysicalDevice physicalDevice, VkPhysicalDeviceExternalBufferInfo const * pExternalBufferInfo, VkExternalBufferProperties * pExternalBufferProperties)} */
@@ -616,7 +616,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(physicalDevice.address(), pExternalFenceInfo, pExternalFenceProperties, __functionAddress);
+        invokePPPV(physicalDevice.address(), pExternalFenceInfo, pExternalFenceProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceExternalFenceProperties(VkPhysicalDevice physicalDevice, VkPhysicalDeviceExternalFenceInfo const * pExternalFenceInfo, VkExternalFenceProperties * pExternalFenceProperties)} */
@@ -632,7 +632,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(physicalDevice.address(), pExternalSemaphoreInfo, pExternalSemaphoreProperties, __functionAddress);
+        invokePPPV(physicalDevice.address(), pExternalSemaphoreInfo, pExternalSemaphoreProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceExternalSemaphoreProperties(VkPhysicalDevice physicalDevice, VkPhysicalDeviceExternalSemaphoreInfo const * pExternalSemaphoreInfo, VkExternalSemaphoreProperties * pExternalSemaphoreProperties)} */
@@ -648,7 +648,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), baseGroupX, baseGroupY, baseGroupZ, groupCountX, groupCountY, groupCountZ, __functionAddress);
+        invokePV(commandBuffer.address(), baseGroupX, baseGroupY, baseGroupZ, groupCountX, groupCountY, groupCountZ, __functionAddress);
     }
 
     // --- [ vkCreateDescriptorUpdateTemplate ] ---
@@ -660,7 +660,7 @@ public class VK11 extends VK10 {
             check(__functionAddress);
             VkDescriptorUpdateTemplateCreateInfo.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pDescriptorUpdateTemplate, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pDescriptorUpdateTemplate, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDescriptorUpdateTemplate(VkDevice device, VkDescriptorUpdateTemplateCreateInfo const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkDescriptorUpdateTemplate * pDescriptorUpdateTemplate)} */
@@ -680,7 +680,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), descriptorUpdateTemplate, pAllocator, __functionAddress);
+        invokePJPV(device.address(), descriptorUpdateTemplate, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyDescriptorUpdateTemplate(VkDevice device, VkDescriptorUpdateTemplate descriptorUpdateTemplate, VkAllocationCallbacks const * pAllocator)} */
@@ -696,7 +696,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJPV(device.address(), descriptorSet, descriptorUpdateTemplate, pData, __functionAddress);
+        invokePJJPV(device.address(), descriptorSet, descriptorUpdateTemplate, pData, __functionAddress);
     }
 
     // --- [ vkGetDescriptorSetLayoutSupport ] ---
@@ -708,7 +708,7 @@ public class VK11 extends VK10 {
             check(__functionAddress);
             VkDescriptorSetLayoutCreateInfo.validate(pCreateInfo);
         }
-        callPPPV(device.address(), pCreateInfo, pSupport, __functionAddress);
+        invokePPPV(device.address(), pCreateInfo, pSupport, __functionAddress);
     }
 
     /** {@code void vkGetDescriptorSetLayoutSupport(VkDevice device, VkDescriptorSetLayoutCreateInfo const * pCreateInfo, VkDescriptorSetLayoutSupport * pSupport)} */
@@ -724,7 +724,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pYcbcrConversion, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pYcbcrConversion, __functionAddress);
     }
 
     /** {@code VkResult vkCreateSamplerYcbcrConversion(VkDevice device, VkSamplerYcbcrConversionCreateInfo const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkSamplerYcbcrConversion * pYcbcrConversion)} */
@@ -744,7 +744,7 @@ public class VK11 extends VK10 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), ycbcrConversion, pAllocator, __functionAddress);
+        invokePJPV(device.address(), ycbcrConversion, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroySamplerYcbcrConversion(VkDevice device, VkSamplerYcbcrConversion ycbcrConversion, VkAllocationCallbacks const * pAllocator)} */
@@ -760,7 +760,7 @@ public class VK11 extends VK10 {
             check(__functionAddress);
             check(pApiVersion, 1);
         }
-        return callPI(pApiVersion, __functionAddress);
+        return invokePI(pApiVersion, __functionAddress);
     }
 
     /** {@code void vkGetDeviceGroupPeerMemoryFeatures(VkDevice device, uint32_t heapIndex, uint32_t localDeviceIndex, uint32_t remoteDeviceIndex, VkPeerMemoryFeatureFlags * pPeerMemoryFeatures)} */
@@ -770,7 +770,7 @@ public class VK11 extends VK10 {
             check(__functionAddress);
             check(pPeerMemoryFeatures, 1);
         }
-        callPPV(device.address(), heapIndex, localDeviceIndex, remoteDeviceIndex, pPeerMemoryFeatures, __functionAddress);
+        invokePPV(device.address(), heapIndex, localDeviceIndex, remoteDeviceIndex, pPeerMemoryFeatures, __functionAddress);
     }
 
     /** {@code VkResult vkEnumeratePhysicalDeviceGroups(VkInstance instance, uint32_t * pPhysicalDeviceGroupCount, VkPhysicalDeviceGroupProperties * pPhysicalDeviceGroupProperties)} */
@@ -782,7 +782,7 @@ public class VK11 extends VK10 {
             check(pPhysicalDeviceGroupCount, 1);
             checkSafe(pPhysicalDeviceGroupProperties, pPhysicalDeviceGroupCount[0]);
         }
-        return callPPPI(instance.address(), pPhysicalDeviceGroupCount, memAddressSafe(pPhysicalDeviceGroupProperties), __functionAddress);
+        return invokePPPI(instance.address(), pPhysicalDeviceGroupCount, memAddressSafe(pPhysicalDeviceGroupProperties), __functionAddress);
     }
 
     /** {@code void vkGetImageSparseMemoryRequirements2(VkDevice device, VkImageSparseMemoryRequirementsInfo2 const * pInfo, uint32_t * pSparseMemoryRequirementCount, VkSparseImageMemoryRequirements2 * pSparseMemoryRequirements)} */
@@ -793,7 +793,7 @@ public class VK11 extends VK10 {
             check(pSparseMemoryRequirementCount, 1);
             checkSafe(pSparseMemoryRequirements, pSparseMemoryRequirementCount[0]);
         }
-        callPPPPV(device.address(), pInfo.address(), pSparseMemoryRequirementCount, memAddressSafe(pSparseMemoryRequirements), __functionAddress);
+        invokePPPPV(device.address(), pInfo.address(), pSparseMemoryRequirementCount, memAddressSafe(pSparseMemoryRequirements), __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceQueueFamilyProperties2(VkPhysicalDevice physicalDevice, uint32_t * pQueueFamilyPropertyCount, VkQueueFamilyProperties2 * pQueueFamilyProperties)} */
@@ -804,7 +804,7 @@ public class VK11 extends VK10 {
             check(pQueueFamilyPropertyCount, 1);
             checkSafe(pQueueFamilyProperties, pQueueFamilyPropertyCount[0]);
         }
-        callPPPV(physicalDevice.address(), pQueueFamilyPropertyCount, memAddressSafe(pQueueFamilyProperties), __functionAddress);
+        invokePPPV(physicalDevice.address(), pQueueFamilyPropertyCount, memAddressSafe(pQueueFamilyProperties), __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceSparseImageFormatProperties2(VkPhysicalDevice physicalDevice, VkPhysicalDeviceSparseImageFormatInfo2 const * pFormatInfo, uint32_t * pPropertyCount, VkSparseImageFormatProperties2 * pProperties)} */
@@ -815,7 +815,7 @@ public class VK11 extends VK10 {
             check(pPropertyCount, 1);
             checkSafe(pProperties, pPropertyCount[0]);
         }
-        callPPPPV(physicalDevice.address(), pFormatInfo.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
+        invokePPPPV(physicalDevice.address(), pFormatInfo.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
     }
 
     /** {@code VkResult vkCreateDescriptorUpdateTemplate(VkDevice device, VkDescriptorUpdateTemplateCreateInfo const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkDescriptorUpdateTemplate * pDescriptorUpdateTemplate)} */
@@ -827,7 +827,7 @@ public class VK11 extends VK10 {
             check(pDescriptorUpdateTemplate, 1);
             VkDescriptorUpdateTemplateCreateInfo.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pDescriptorUpdateTemplate, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pDescriptorUpdateTemplate, __functionAddress);
     }
 
     /** {@code VkResult vkCreateSamplerYcbcrConversion(VkDevice device, VkSamplerYcbcrConversionCreateInfo const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkSamplerYcbcrConversion * pYcbcrConversion)} */
@@ -838,7 +838,7 @@ public class VK11 extends VK10 {
             check(__functionAddress);
             check(pYcbcrConversion, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pYcbcrConversion, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pYcbcrConversion, __functionAddress);
     }
 
 }

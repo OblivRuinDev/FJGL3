@@ -53,7 +53,7 @@ public class KHRTimelineSemaphore {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), semaphore, pValue, __functionAddress);
+        return invokePJPI(device.address(), semaphore, pValue, __functionAddress);
     }
 
     /** {@code VkResult vkGetSemaphoreCounterValueKHR(VkDevice device, VkSemaphore semaphore, uint64_t * pValue)} */
@@ -74,7 +74,7 @@ public class KHRTimelineSemaphore {
             check(__functionAddress);
             VkSemaphoreWaitInfo.validate(pWaitInfo);
         }
-        return callPPJI(device.address(), pWaitInfo, timeout, __functionAddress);
+        return invokePPJI(device.address(), pWaitInfo, timeout, __functionAddress);
     }
 
     /** {@code VkResult vkWaitSemaphoresKHR(VkDevice device, VkSemaphoreWaitInfo const * pWaitInfo, uint64_t timeout)} */
@@ -91,7 +91,7 @@ public class KHRTimelineSemaphore {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pSignalInfo, __functionAddress);
+        return invokePPI(device.address(), pSignalInfo, __functionAddress);
     }
 
     /** {@code VkResult vkSignalSemaphoreKHR(VkDevice device, VkSemaphoreSignalInfo const * pSignalInfo)} */
@@ -108,7 +108,7 @@ public class KHRTimelineSemaphore {
             check(__functionAddress);
             check(pValue, 1);
         }
-        return callPJPI(device.address(), semaphore, pValue, __functionAddress);
+        return invokePJPI(device.address(), semaphore, pValue, __functionAddress);
     }
 
 }

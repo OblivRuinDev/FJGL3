@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glGetMultisamplefvNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glSampleMaskIndexedNVPROC) (jint, jint);
-typedef void (APIENTRY *glTexRenderbufferNVPROC) (jint, jint);
+typedef void (*glGetMultisamplefvNVPROC) (jint, jint, uintptr_t);
+typedef void (*glSampleMaskIndexedNVPROC) (jint, jint);
+typedef void (*glTexRenderbufferNVPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

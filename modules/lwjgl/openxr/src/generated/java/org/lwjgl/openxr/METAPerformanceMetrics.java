@@ -57,7 +57,7 @@ public class METAPerformanceMetrics {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(instance.address(), counterPathCapacityInput, counterPathCountOutput, counterPaths, __functionAddress);
+        return invokePPPI(instance.address(), counterPathCapacityInput, counterPathCountOutput, counterPaths, __functionAddress);
     }
 
     /** {@code XrResult xrEnumeratePerformanceMetricsCounterPathsMETA(XrInstance instance, uint32_t counterPathCapacityInput, uint32_t * counterPathCountOutput, XrPath * counterPaths)} */
@@ -77,7 +77,7 @@ public class METAPerformanceMetrics {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), state, __functionAddress);
+        return invokePPI(session.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrSetPerformanceMetricsStateMETA(XrSession session, XrPerformanceMetricsStateMETA const * state)} */
@@ -94,7 +94,7 @@ public class METAPerformanceMetrics {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), state, __functionAddress);
+        return invokePPI(session.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrGetPerformanceMetricsStateMETA(XrSession session, XrPerformanceMetricsStateMETA * state)} */
@@ -111,7 +111,7 @@ public class METAPerformanceMetrics {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), counterPath, counter, __functionAddress);
+        return invokePJPI(session.address(), counterPath, counter, __functionAddress);
     }
 
     /** {@code XrResult xrQueryPerformanceMetricsCounterMETA(XrSession session, XrPath counterPath, XrPerformanceMetricsCounterMETA * counter)} */

@@ -51,7 +51,7 @@ public class KHREGLImage {
             check(display);
             check(image);
         }
-        return callPPPJPPP(context, display, image, flags, properties, errcode_ret, __functionAddress);
+        return invokePPPJPPP(context, display, image, flags, properties, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateFromEGLImageKHR(cl_context context, CLeglDisplayKHR display, CLeglImageKHR image, cl_mem_flags flags, cl_egl_image_properties_khr const * properties, cl_int * errcode_ret)} */
@@ -73,7 +73,7 @@ public class KHREGLImage {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPI(command_queue, num_objects, mem_objects, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPI(command_queue, num_objects, mem_objects, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueAcquireEGLObjectsKHR(cl_command_queue command_queue, cl_uint num_objects, cl_mem const * mem_objects, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -94,7 +94,7 @@ public class KHREGLImage {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPI(command_queue, num_objects, mem_objects, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPI(command_queue, num_objects, mem_objects, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReleaseEGLObjectsKHR(cl_command_queue command_queue, cl_uint num_objects, cl_mem const * mem_objects, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -133,7 +133,7 @@ public class KHREGLImage {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPJPPP(context, display, image, flags, memAddressSafe(properties), errcode_ret, __functionAddress);
+        return invokePPPJPPP(context, display, image, flags, memAddressSafe(properties), errcode_ret, __functionAddress);
     }
 
 }

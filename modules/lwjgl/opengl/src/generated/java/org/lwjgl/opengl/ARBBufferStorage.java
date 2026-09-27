@@ -139,7 +139,7 @@ public class ARBBufferStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 1, data, flags, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 1, data, flags, __functionAddress);
     }
 
     /** {@code void glNamedBufferStorageEXT(GLuint buffer, GLsizeiptr size, void const * data, GLbitfield flags)} */
@@ -148,7 +148,7 @@ public class ARBBufferStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, flags, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, flags, __functionAddress);
     }
 
     /** {@code void glNamedBufferStorageEXT(GLuint buffer, GLsizeiptr size, void const * data, GLbitfield flags)} */
@@ -157,7 +157,7 @@ public class ARBBufferStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, flags, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, flags, __functionAddress);
     }
 
     /** {@code void glNamedBufferStorageEXT(GLuint buffer, GLsizeiptr size, void const * data, GLbitfield flags)} */
@@ -166,7 +166,7 @@ public class ARBBufferStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 3, data, flags, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 3, data, flags, __functionAddress);
     }
 
 }

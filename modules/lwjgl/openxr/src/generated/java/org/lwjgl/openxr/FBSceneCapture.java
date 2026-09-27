@@ -43,7 +43,7 @@ public class FBSceneCapture {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrRequestSceneCaptureFB(XrSession session, XrSceneCaptureRequestInfoFB const * info, XrAsyncRequestIdFB * requestId)} */

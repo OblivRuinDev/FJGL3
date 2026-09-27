@@ -35,7 +35,7 @@ public class WGLNVCopyImage {
             check(srcRC);
             check(dstRC);
         }
-        return callPPI(srcRC, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstRC, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, width, height, depth, __functionAddress) != 0;
+        return invokePPI(srcRC, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstRC, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, width, height, depth, __functionAddress) != 0;
     }
 
 }

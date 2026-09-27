@@ -42,7 +42,7 @@ public class FBPassthroughKeyboardHands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(layer.address(), intensity, __functionAddress);
+        return invokePPI(layer.address(), intensity, __functionAddress);
     }
 
     /** {@code XrResult xrPassthroughLayerSetKeyboardHandsIntensityFB(XrPassthroughLayerFB layer, XrPassthroughKeyboardHandsIntensityFB const * intensity)} */

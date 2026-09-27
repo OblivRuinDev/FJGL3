@@ -60,7 +60,7 @@ public class ARBPointParameters {
             check(__functionAddress);
             check(params, 3);
         }
-        callPV(pname, params, __functionAddress);
+        invokePV(pname, params, __functionAddress);
     }
 
 }

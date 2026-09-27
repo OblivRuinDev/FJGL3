@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glRenderbufferStorageMultisampleANGLEPROC) (jint, jint, jint, jint, jint);
+typedef void (*glRenderbufferStorageMultisampleANGLEPROC) (jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

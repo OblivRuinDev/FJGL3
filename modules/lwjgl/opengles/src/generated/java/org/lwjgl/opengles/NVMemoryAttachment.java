@@ -87,7 +87,7 @@ public class NVMemoryAttachment {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(memory, pname, first, params.length, params, __functionAddress);
+        invokePV(memory, pname, first, params.length, params, __functionAddress);
     }
 
 }

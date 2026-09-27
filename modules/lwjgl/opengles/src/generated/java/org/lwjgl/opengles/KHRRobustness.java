@@ -156,7 +156,7 @@ public class KHRRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, pixels.length << 1, pixels, __functionAddress);
+        invokePV(x, y, width, height, format, type, pixels.length << 1, pixels, __functionAddress);
     }
 
     /** {@code void glReadnPixelsKHR(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -165,7 +165,7 @@ public class KHRRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, pixels.length << 2, pixels, __functionAddress);
+        invokePV(x, y, width, height, format, type, pixels.length << 2, pixels, __functionAddress);
     }
 
     /** {@code void glReadnPixelsKHR(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -174,7 +174,7 @@ public class KHRRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, pixels.length << 2, pixels, __functionAddress);
+        invokePV(x, y, width, height, format, type, pixels.length << 2, pixels, __functionAddress);
     }
 
     /** {@code void glGetnUniformfvKHR(GLuint program, GLint location, GLsizei bufSize, GLfloat * params)} */
@@ -183,7 +183,7 @@ public class KHRRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformivKHR(GLuint program, GLint location, GLsizei bufSize, GLfloat * params)} */
@@ -192,7 +192,7 @@ public class KHRRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformuivKHR(GLuint program, GLint location, GLsizei bufSize, GLfloat * params)} */
@@ -201,7 +201,7 @@ public class KHRRobustness {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
 }

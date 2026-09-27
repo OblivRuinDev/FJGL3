@@ -11,6 +11,7 @@
  */
 package org.lwjgl.system;
 
+import jdk.internal.foreign.*;
 import org.jspecify.annotations.*;
 import org.lwjgl.*;
 import org.lwjgl.system.freebsd.*;
@@ -21,6 +22,7 @@ import org.lwjgl.system.windows.*;
 
 import java.io.*;
 import java.lang.foreign.*;
+import java.lang.invoke.*;
 import java.lang.reflect.*;
 import java.nio.*;
 import java.nio.file.*;
@@ -61,17 +63,24 @@ public final class APIUtil {
         API_VERSION_PATTERN = Pattern.compile("^" + PREFIX + VERSION + IMPLEMENTATION + "$", Pattern.DOTALL);
 
         boolean useJavaForeign = FORCE_USE_JAVA_FOREIGN_LINKER.get(false);
-
-        try {
-            Class<?> linkerC = Linker.nativeLinker().getClass();
-            if (!linkerC.getName().contains("fallback") && !linkerC.getName().contains("Fallback") && !linkerC.getName().contains("ffi"))
-                useJavaForeign = true;
-        } catch (UnsupportedOperationException e) {
-            if (useJavaForeign) {
-                throw new IllegalArgumentException("Force use java foreign linker bu it is unavailble", e);
+        if (useJavaForeign) {
+            try {
+                Linker.nativeLinker();
+            } catch (Exception e) {
+                throw new IllegalStateException("Force use java foreign linker but failed to get it!", e);
             }
         }
-        USE_JAVA_FOREIGN_LINKER = useJavaForeign;
+
+        CABI cabi;
+        try {
+            cabi = CABI.current();
+            if (cabi == CABI.UNSUPPORTED && useJavaForeign) {
+                throw new IllegalArgumentException("Force use java foreign linker but it is unsupported");
+            }
+        } catch (LinkageError e) {
+            throw new RuntimeException(e);
+        }
+        USE_JAVA_FOREIGN_LINKER = useJavaForeign || cabi != CABI.FALLBACK;
     }
 
     @SuppressWarnings({"unchecked", "UseOfSystemOutOrSystemErr"})
@@ -585,6 +594,63 @@ public final class APIUtil {
             .elements(elementBuffer);
     }
 
+    /**
+     * Creates an FFM struct layout with the specified members.
+     *
+     * <p>Member offsets, struct alignment and struct size are computed exactly like {@link Struct} computes them when generating the class of the equivalent
+     * struct, that is:</p>
+     * <ul>
+     *     <li>each member is aligned to its own alignment, capped by the default pack alignment,</li>
+     *     <li>the padding between members is inserted explicitly, and</li>
+     *     <li>the struct size is aligned to the maximum member alignment (tail padding).</li>
+     * </ul>
+     *
+     * <p>This is required because the resulting layout must be byte-for-byte identical to the layout of the equivalent {@link Struct} implementation, otherwise
+     * structs that are passed to or returned from native functions by value would use an ABI-incompatible layout.</p>
+     *
+     * @param members the member layouts
+     */
+    public static StructLayout apiCreateStruct(MemoryLayout... members) {
+        List<MemoryLayout> struct = new ArrayList<>(members.length * 2);
+
+        long offset    = 0;
+        long alignment = Struct.DEFAULT_ALIGN_AS;
+        for (MemoryLayout member : members) {
+            member = pack(member);
+
+            long memberAlignment = member.byteAlignment();
+
+            long memberOffset = align(offset, memberAlignment);
+            if (offset < memberOffset) {
+                struct.add(MemoryLayout.paddingLayout(memberOffset - offset));
+                offset = memberOffset;
+            }
+
+            struct.add(member);
+            offset += member.byteSize();
+            alignment = Math.max(alignment, memberAlignment);
+        }
+
+        // tail padding
+        long sizeof = align(offset, Math.max(1, alignment));
+        if (offset < sizeof) {
+            struct.add(MemoryLayout.paddingLayout(sizeof - offset));
+        }
+
+        return MemoryLayout.structLayout(struct.toArray(new MemoryLayout[0]));
+    }
+
+    /** Applies the default pack alignment to the specified member layout. */
+    private static MemoryLayout pack(MemoryLayout member) {
+        long alignment = Math.min(member.byteAlignment(), Struct.DEFAULT_PACK_ALIGNMENT);
+        return alignment == member.byteAlignment() ? member : member.withByteAlignment(alignment);
+    }
+
+    /** Aligns the specified offset to the specified alignment, which must be a power of two. */
+    private static long align(long offset, long alignment) {
+        return (offset + alignment - 1) & -alignment;
+    }
+
     private static FFIType prep(FFIType type) {
         try (MemoryStack stack = stackPush()) {
             FFICIF cif = FFICIF.calloc(stack);
@@ -685,6 +751,7 @@ public final class APIUtil {
         return cif;
     }
 
+    @Deprecated(forRemoval = true)
     public static int apiStdcall() {
         return BITS64 || Platform.get() != Platform.WINDOWS ? FFI_DEFAULT_ABI : FFI_STDCALL;
     }

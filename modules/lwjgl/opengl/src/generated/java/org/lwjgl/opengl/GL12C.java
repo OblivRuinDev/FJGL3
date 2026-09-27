@@ -197,7 +197,7 @@ public class GL12C extends GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage3D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -206,7 +206,7 @@ public class GL12C extends GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage3D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -215,7 +215,7 @@ public class GL12C extends GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexImage3D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void const * pixels)} */
@@ -224,7 +224,7 @@ public class GL12C extends GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
+        invokePV(target, level, internalformat, width, height, depth, border, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage3D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -233,7 +233,7 @@ public class GL12C extends GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage3D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -242,7 +242,7 @@ public class GL12C extends GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage3D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -251,7 +251,7 @@ public class GL12C extends GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTexSubImage3D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -260,7 +260,7 @@ public class GL12C extends GL11C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
 }

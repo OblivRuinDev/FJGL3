@@ -287,7 +287,7 @@ public class CGL {
     @NativeType("CGLContextObj")
     public static long CGLGetCurrentContext() {
         long __functionAddress = Functions.GetCurrentContext;
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
     // --- [ CGLSetCurrentContext ] ---
@@ -296,7 +296,7 @@ public class CGL {
     @NativeType("CGLError")
     public static int CGLSetCurrentContext(@NativeType("CGLContextObj") long context) {
         long __functionAddress = Functions.SetCurrentContext;
-        return callPI(context, __functionAddress);
+        return invokePI(context, __functionAddress);
     }
 
     // --- [ CGLGetShareGroup ] ---
@@ -308,7 +308,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPP(ctx, __functionAddress);
+        return invokePP(ctx, __functionAddress);
     }
 
     // --- [ CGLChoosePixelFormat ] ---
@@ -316,7 +316,7 @@ public class CGL {
     /** {@code CGLError CGLChoosePixelFormat(CGLPixelFormatAttribute const * attribs, CGLPixelFormatObj * pix, GLint * npix)} */
     public static int nCGLChoosePixelFormat(long attribs, long pix, long npix) {
         long __functionAddress = Functions.ChoosePixelFormat;
-        return callPPPI(attribs, pix, npix, __functionAddress);
+        return invokePPPI(attribs, pix, npix, __functionAddress);
     }
 
     /** {@code CGLError CGLChoosePixelFormat(CGLPixelFormatAttribute const * attribs, CGLPixelFormatObj * pix, GLint * npix)} */
@@ -339,7 +339,7 @@ public class CGL {
         if (CHECKS) {
             check(pix);
         }
-        return callPI(pix, __functionAddress);
+        return invokePI(pix, __functionAddress);
     }
 
     // --- [ CGLDescribePixelFormat ] ---
@@ -350,7 +350,7 @@ public class CGL {
         if (CHECKS) {
             check(pix);
         }
-        return callPPI(pix, pix_num, attrib, value, __functionAddress);
+        return invokePPI(pix, pix_num, attrib, value, __functionAddress);
     }
 
     /** {@code CGLError CGLDescribePixelFormat(CGLPixelFormatObj pix, GLint pix_num, CGLPixelFormatAttribute attrib, GLint * value)} */
@@ -370,7 +370,7 @@ public class CGL {
         if (CHECKS) {
             check(pix);
         }
-        callPV(pix, __functionAddress);
+        invokePV(pix, __functionAddress);
     }
 
     // --- [ CGLRetainPixelFormat ] ---
@@ -382,7 +382,7 @@ public class CGL {
         if (CHECKS) {
             check(pix);
         }
-        return callPP(pix, __functionAddress);
+        return invokePP(pix, __functionAddress);
     }
 
     // --- [ CGLGetPixelFormatRetainCount ] ---
@@ -394,7 +394,7 @@ public class CGL {
         if (CHECKS) {
             check(pix);
         }
-        return callPI(pix, __functionAddress);
+        return invokePI(pix, __functionAddress);
     }
 
     // --- [ CGLQueryRendererInfo ] ---
@@ -402,7 +402,7 @@ public class CGL {
     /** {@code CGLError CGLQueryRendererInfo(GLuint display_mask, CGLRendererInfoObj * rend, GLint * nrend)} */
     public static int nCGLQueryRendererInfo(int display_mask, long rend, long nrend) {
         long __functionAddress = Functions.QueryRendererInfo;
-        return callPPI(display_mask, rend, nrend, __functionAddress);
+        return invokePPI(display_mask, rend, nrend, __functionAddress);
     }
 
     /** {@code CGLError CGLQueryRendererInfo(GLuint display_mask, CGLRendererInfoObj * rend, GLint * nrend)} */
@@ -424,7 +424,7 @@ public class CGL {
         if (CHECKS) {
             check(rend);
         }
-        return callPI(rend, __functionAddress);
+        return invokePI(rend, __functionAddress);
     }
 
     // --- [ CGLDescribeRenderer ] ---
@@ -435,7 +435,7 @@ public class CGL {
         if (CHECKS) {
             check(rend);
         }
-        return callPPI(rend, rend_num, prop, value, __functionAddress);
+        return invokePPI(rend, rend_num, prop, value, __functionAddress);
     }
 
     /** {@code CGLError CGLDescribeRenderer(CGLRendererInfoObj rend, GLint rend_num, CGLRendererProperty prop, GLint * value)} */
@@ -455,7 +455,7 @@ public class CGL {
         if (CHECKS) {
             check(pix);
         }
-        return callPPPI(pix, share, ctx, __functionAddress);
+        return invokePPPI(pix, share, ctx, __functionAddress);
     }
 
     /** {@code CGLError CGLCreateContext(CGLPixelFormatObj pix, CGLContextObj share, CGLContextObj * ctx)} */
@@ -476,7 +476,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPI(ctx, __functionAddress);
+        return invokePI(ctx, __functionAddress);
     }
 
     // --- [ CGLCopyContext ] ---
@@ -489,7 +489,7 @@ public class CGL {
             check(src);
             check(dst);
         }
-        return callPPI(src, dst, mask, __functionAddress);
+        return invokePPI(src, dst, mask, __functionAddress);
     }
 
     // --- [ CGLRetainContext ] ---
@@ -501,7 +501,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPP(ctx, __functionAddress);
+        return invokePP(ctx, __functionAddress);
     }
 
     // --- [ CGLReleaseContext ] ---
@@ -512,7 +512,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        callPV(ctx, __functionAddress);
+        invokePV(ctx, __functionAddress);
     }
 
     // --- [ CGLGetContextRetainCount ] ---
@@ -524,7 +524,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPI(ctx, __functionAddress);
+        return invokePI(ctx, __functionAddress);
     }
 
     // --- [ CGLGetPixelFormat ] ---
@@ -536,7 +536,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPP(ctx, __functionAddress);
+        return invokePP(ctx, __functionAddress);
     }
 
     // --- [ CGLCreatePBuffer ] ---
@@ -544,7 +544,7 @@ public class CGL {
     /** {@code CGLError CGLCreatePBuffer(GLsizei width, GLsizei height, GLenum target, GLenum internalFormat, GLint max_level, CGLPBufferObj * pbuffer)} */
     public static int nCGLCreatePBuffer(int width, int height, int target, int internalFormat, int max_level, long pbuffer) {
         long __functionAddress = Functions.CreatePBuffer;
-        return callPI(width, height, target, internalFormat, max_level, pbuffer, __functionAddress);
+        return invokePI(width, height, target, internalFormat, max_level, pbuffer, __functionAddress);
     }
 
     /** {@code CGLError CGLCreatePBuffer(GLsizei width, GLsizei height, GLenum target, GLenum internalFormat, GLint max_level, CGLPBufferObj * pbuffer)} */
@@ -565,7 +565,7 @@ public class CGL {
         if (CHECKS) {
             check(pbuffer);
         }
-        return callPI(pbuffer, __functionAddress);
+        return invokePI(pbuffer, __functionAddress);
     }
 
     // --- [ CGLDescribePBuffer ] ---
@@ -576,7 +576,7 @@ public class CGL {
         if (CHECKS) {
             check(obj);
         }
-        return callPPPPPPI(obj, width, height, target, internalFormat, mipmap, __functionAddress);
+        return invokePPPPPPI(obj, width, height, target, internalFormat, mipmap, __functionAddress);
     }
 
     /** {@code CGLError CGLDescribePBuffer(CGLPBufferObj obj, GLsizei * width, GLsizei * height, GLenum * target, GLenum * internalFormat, GLint * mipmap)} */
@@ -602,7 +602,7 @@ public class CGL {
             check(ctx);
             check(pbuffer);
         }
-        return callPPI(ctx, pbuffer, source, __functionAddress);
+        return invokePPI(ctx, pbuffer, source, __functionAddress);
     }
 
     // --- [ CGLRetainPBuffer ] ---
@@ -614,7 +614,7 @@ public class CGL {
         if (CHECKS) {
             check(pbuffer);
         }
-        return callPP(pbuffer, __functionAddress);
+        return invokePP(pbuffer, __functionAddress);
     }
 
     // --- [ CGLReleasePBuffer ] ---
@@ -625,7 +625,7 @@ public class CGL {
         if (CHECKS) {
             check(pbuffer);
         }
-        callPV(pbuffer, __functionAddress);
+        invokePV(pbuffer, __functionAddress);
     }
 
     // --- [ CGLGetPBufferRetainCount ] ---
@@ -637,7 +637,7 @@ public class CGL {
         if (CHECKS) {
             check(pbuffer);
         }
-        return callPI(pbuffer, __functionAddress);
+        return invokePI(pbuffer, __functionAddress);
     }
 
     // --- [ CGLSetOffScreen ] ---
@@ -648,7 +648,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPPI(ctx, width, height, rowbytes, baseaddr, __functionAddress);
+        return invokePPI(ctx, width, height, rowbytes, baseaddr, __functionAddress);
     }
 
     /** {@code CGLError CGLSetOffScreen(CGLContextObj ctx, GLsizei width, GLsizei height, GLint rowbytes, void * baseaddr)} */
@@ -668,7 +668,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPPPPPI(ctx, width, height, rowbytes, baseaddr, __functionAddress);
+        return invokePPPPPI(ctx, width, height, rowbytes, baseaddr, __functionAddress);
     }
 
     /** {@code CGLError CGLGetOffScreen(CGLContextObj ctx, GLsizei * width, GLsizei * height, GLint * rowbytes, void ** baseaddr)} */
@@ -692,7 +692,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPI(ctx, __functionAddress);
+        return invokePI(ctx, __functionAddress);
     }
 
     // --- [ CGLSetFullScreenOnDisplay ] ---
@@ -704,7 +704,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPI(ctx, display_mask, __functionAddress);
+        return invokePI(ctx, display_mask, __functionAddress);
     }
 
     // --- [ CGLSetPBuffer ] ---
@@ -717,7 +717,7 @@ public class CGL {
             check(ctx);
             check(pbuffer);
         }
-        return callPPI(ctx, pbuffer, face, level, screen, __functionAddress);
+        return invokePPI(ctx, pbuffer, face, level, screen, __functionAddress);
     }
 
     // --- [ CGLGetPBuffer ] ---
@@ -728,7 +728,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPPPPPI(ctx, pbuffer, face, level, screen, __functionAddress);
+        return invokePPPPPI(ctx, pbuffer, face, level, screen, __functionAddress);
     }
 
     /** {@code CGLError CGLGetPBuffer(CGLContextObj ctx, CGLPBufferObj * pbuffer, GLenum * face, GLint * level, GLint * screen)} */
@@ -752,7 +752,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPI(ctx, __functionAddress);
+        return invokePI(ctx, __functionAddress);
     }
 
     // --- [ CGLFlushDrawable ] ---
@@ -764,7 +764,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPI(ctx, __functionAddress);
+        return invokePI(ctx, __functionAddress);
     }
 
     // --- [ CGLEnable ] ---
@@ -776,7 +776,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPI(ctx, pname, __functionAddress);
+        return invokePI(ctx, pname, __functionAddress);
     }
 
     // --- [ CGLDisable ] ---
@@ -788,7 +788,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPI(ctx, pname, __functionAddress);
+        return invokePI(ctx, pname, __functionAddress);
     }
 
     // --- [ CGLIsEnabled ] ---
@@ -799,7 +799,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPPI(ctx, pname, enable, __functionAddress);
+        return invokePPI(ctx, pname, enable, __functionAddress);
     }
 
     /** {@code CGLError CGLIsEnabled(CGLContextObj ctx, CGLContextEnable pname, GLint * enable)} */
@@ -819,7 +819,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPPI(ctx, pname, params, __functionAddress);
+        return invokePPI(ctx, pname, params, __functionAddress);
     }
 
     /** {@code CGLError CGLSetParameter(CGLContextObj ctx, CGLContextParameter pname, GLint const * params)} */
@@ -851,7 +851,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPPI(ctx, pname, params, __functionAddress);
+        return invokePPI(ctx, pname, params, __functionAddress);
     }
 
     /** {@code CGLError CGLGetParameter(CGLContextObj ctx, CGLContextParameter pname, GLint * params)} */
@@ -872,7 +872,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPI(ctx, screen, __functionAddress);
+        return invokePI(ctx, screen, __functionAddress);
     }
 
     // --- [ CGLGetVirtualScreen ] ---
@@ -883,7 +883,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPPI(ctx, screen, __functionAddress);
+        return invokePPI(ctx, screen, __functionAddress);
     }
 
     /** {@code CGLError CGLGetVirtualScreen(CGLContextObj ctx, GLint * screen)} */
@@ -904,7 +904,7 @@ public class CGL {
         if (CHECKS) {
             check(ctx);
         }
-        return callPI(ctx, __functionAddress);
+        return invokePI(ctx, __functionAddress);
     }
 
     // --- [ CGLSetGlobalOption ] ---
@@ -912,7 +912,7 @@ public class CGL {
     /** {@code CGLError CGLSetGlobalOption(CGLGlobalOption pname, GLint const * params)} */
     public static int nCGLSetGlobalOption(int pname, long params) {
         long __functionAddress = Functions.SetGlobalOption;
-        return callPI(pname, params, __functionAddress);
+        return invokePI(pname, params, __functionAddress);
     }
 
     /** {@code CGLError CGLSetGlobalOption(CGLGlobalOption pname, GLint const * params)} */
@@ -941,7 +941,7 @@ public class CGL {
     /** {@code CGLError CGLGetGlobalOption(CGLGlobalOption pname, GLint * params)} */
     public static int nCGLGetGlobalOption(int pname, long params) {
         long __functionAddress = Functions.GetGlobalOption;
-        return callPI(pname, params, __functionAddress);
+        return invokePI(pname, params, __functionAddress);
     }
 
     /** {@code CGLError CGLGetGlobalOption(CGLGlobalOption pname, GLint * params)} */
@@ -962,7 +962,7 @@ public class CGL {
         if (CHECKS) {
             check(context);
         }
-        return callPI(context, __functionAddress);
+        return invokePI(context, __functionAddress);
     }
 
     // --- [ CGLUnlockContext ] ---
@@ -974,7 +974,7 @@ public class CGL {
         if (CHECKS) {
             check(context);
         }
-        return callPI(context, __functionAddress);
+        return invokePI(context, __functionAddress);
     }
 
     // --- [ CGLGetVersion ] ---
@@ -982,7 +982,7 @@ public class CGL {
     /** {@code void CGLGetVersion(GLint * majorvers, GLint * minorvers)} */
     public static void nCGLGetVersion(long majorvers, long minorvers) {
         long __functionAddress = Functions.GetVersion;
-        callPPV(majorvers, minorvers, __functionAddress);
+        invokePPV(majorvers, minorvers, __functionAddress);
     }
 
     /** {@code void CGLGetVersion(GLint * majorvers, GLint * minorvers)} */
@@ -999,7 +999,7 @@ public class CGL {
     /** {@code char const * CGLErrorString(CGLError error)} */
     public static long nCGLErrorString(int error) {
         long __functionAddress = Functions.ErrorString;
-        return callP(error, __functionAddress);
+        return invokeP(error, __functionAddress);
     }
 
     /** {@code char const * CGLErrorString(CGLError error)} */
@@ -1018,7 +1018,7 @@ public class CGL {
             check(pix, 1);
             check(npix, 1);
         }
-        return callPPPI(attribs, memAddress(pix), npix, __functionAddress);
+        return invokePPPI(attribs, memAddress(pix), npix, __functionAddress);
     }
 
     /** {@code CGLError CGLDescribePixelFormat(CGLPixelFormatObj pix, GLint pix_num, CGLPixelFormatAttribute attrib, GLint * value)} */
@@ -1029,7 +1029,7 @@ public class CGL {
             check(pix);
             check(value, 1);
         }
-        return callPPI(pix, pix_num, attrib, value, __functionAddress);
+        return invokePPI(pix, pix_num, attrib, value, __functionAddress);
     }
 
     /** {@code CGLError CGLQueryRendererInfo(GLuint display_mask, CGLRendererInfoObj * rend, GLint * nrend)} */
@@ -1040,7 +1040,7 @@ public class CGL {
             check(rend, 1);
             check(nrend, 1);
         }
-        return callPPI(display_mask, memAddress(rend), nrend, __functionAddress);
+        return invokePPI(display_mask, memAddress(rend), nrend, __functionAddress);
     }
 
     /** {@code CGLError CGLDescribeRenderer(CGLRendererInfoObj rend, GLint rend_num, CGLRendererProperty prop, GLint * value)} */
@@ -1051,7 +1051,7 @@ public class CGL {
             check(rend);
             check(value, 1);
         }
-        return callPPI(rend, rend_num, prop, value, __functionAddress);
+        return invokePPI(rend, rend_num, prop, value, __functionAddress);
     }
 
     /** {@code CGLError CGLDescribePBuffer(CGLPBufferObj obj, GLsizei * width, GLsizei * height, GLenum * target, GLenum * internalFormat, GLint * mipmap)} */
@@ -1066,7 +1066,7 @@ public class CGL {
             check(internalFormat, 1);
             check(mipmap, 1);
         }
-        return callPPPPPPI(obj, width, height, target, internalFormat, mipmap, __functionAddress);
+        return invokePPPPPPI(obj, width, height, target, internalFormat, mipmap, __functionAddress);
     }
 
     /** {@code CGLError CGLGetOffScreen(CGLContextObj ctx, GLsizei * width, GLsizei * height, GLint * rowbytes, void ** baseaddr)} */
@@ -1080,7 +1080,7 @@ public class CGL {
             check(rowbytes, 1);
             check(baseaddr, 1);
         }
-        return callPPPPPI(ctx, width, height, rowbytes, memAddress(baseaddr), __functionAddress);
+        return invokePPPPPI(ctx, width, height, rowbytes, memAddress(baseaddr), __functionAddress);
     }
 
     /** {@code CGLError CGLGetPBuffer(CGLContextObj ctx, CGLPBufferObj * pbuffer, GLenum * face, GLint * level, GLint * screen)} */
@@ -1094,7 +1094,7 @@ public class CGL {
             check(level, 1);
             check(screen, 1);
         }
-        return callPPPPPI(ctx, memAddress(pbuffer), face, level, screen, __functionAddress);
+        return invokePPPPPI(ctx, memAddress(pbuffer), face, level, screen, __functionAddress);
     }
 
     /** {@code CGLError CGLIsEnabled(CGLContextObj ctx, CGLContextEnable pname, GLint * enable)} */
@@ -1105,7 +1105,7 @@ public class CGL {
             check(ctx);
             check(enable, 1);
         }
-        return callPPI(ctx, pname, enable, __functionAddress);
+        return invokePPI(ctx, pname, enable, __functionAddress);
     }
 
     /** {@code CGLError CGLSetParameter(CGLContextObj ctx, CGLContextParameter pname, GLint const * params)} */
@@ -1116,7 +1116,7 @@ public class CGL {
             check(ctx);
             check(params, 1);
         }
-        return callPPI(ctx, pname, params, __functionAddress);
+        return invokePPI(ctx, pname, params, __functionAddress);
     }
 
     /** {@code CGLError CGLGetParameter(CGLContextObj ctx, CGLContextParameter pname, GLint * params)} */
@@ -1127,7 +1127,7 @@ public class CGL {
             check(ctx);
             check(params, 1);
         }
-        return callPPI(ctx, pname, params, __functionAddress);
+        return invokePPI(ctx, pname, params, __functionAddress);
     }
 
     /** {@code CGLError CGLGetVirtualScreen(CGLContextObj ctx, GLint * screen)} */
@@ -1138,7 +1138,7 @@ public class CGL {
             check(ctx);
             check(screen, 1);
         }
-        return callPPI(ctx, screen, __functionAddress);
+        return invokePPI(ctx, screen, __functionAddress);
     }
 
     /** {@code CGLError CGLSetGlobalOption(CGLGlobalOption pname, GLint const * params)} */
@@ -1148,7 +1148,7 @@ public class CGL {
         if (CHECKS) {
             check(params, 1);
         }
-        return callPI(pname, params, __functionAddress);
+        return invokePI(pname, params, __functionAddress);
     }
 
     /** {@code CGLError CGLGetGlobalOption(CGLGlobalOption pname, GLint * params)} */
@@ -1158,7 +1158,7 @@ public class CGL {
         if (CHECKS) {
             check(params, 1);
         }
-        return callPI(pname, params, __functionAddress);
+        return invokePI(pname, params, __functionAddress);
     }
 
     /** {@code void CGLGetVersion(GLint * majorvers, GLint * minorvers)} */
@@ -1168,7 +1168,7 @@ public class CGL {
             check(majorvers, 1);
             check(minorvers, 1);
         }
-        callPPV(majorvers, minorvers, __functionAddress);
+        invokePPV(majorvers, minorvers, __functionAddress);
     }
 
 }

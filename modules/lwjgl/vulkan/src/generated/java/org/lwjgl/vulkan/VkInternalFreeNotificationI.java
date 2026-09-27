@@ -30,7 +30,6 @@ public interface VkInternalFreeNotificationI extends CallbackI {
         VkInternalFreeNotificationI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_void,
             ffi_type_pointer, ffi_type_pointer, ffi_type_uint32, ffi_type_uint32
         )

@@ -54,7 +54,7 @@ public class EXTSpatialPersistenceOperations {
             check(__functionAddress);
             XrSpatialEntityPersistInfoEXT.validate(persistInfo);
         }
-        return callPPPI(persistenceContext.address(), persistInfo, future, __functionAddress);
+        return invokePPPI(persistenceContext.address(), persistInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrPersistSpatialEntityAsyncEXT(XrSpatialPersistenceContextEXT persistenceContext, XrSpatialEntityPersistInfoEXT const * persistInfo, XrFutureEXT * future)} */
@@ -74,7 +74,7 @@ public class EXTSpatialPersistenceOperations {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(persistenceContext.address(), future, completion, __functionAddress);
+        return invokePJPI(persistenceContext.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrPersistSpatialEntityCompleteEXT(XrSpatialPersistenceContextEXT persistenceContext, XrFutureEXT future, XrPersistSpatialEntityCompletionEXT * completion)} */
@@ -91,7 +91,7 @@ public class EXTSpatialPersistenceOperations {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(persistenceContext.address(), unpersistInfo, future, __functionAddress);
+        return invokePPPI(persistenceContext.address(), unpersistInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrUnpersistSpatialEntityAsyncEXT(XrSpatialPersistenceContextEXT persistenceContext, XrSpatialEntityUnpersistInfoEXT const * unpersistInfo, XrFutureEXT * future)} */
@@ -111,7 +111,7 @@ public class EXTSpatialPersistenceOperations {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(persistenceContext.address(), future, completion, __functionAddress);
+        return invokePJPI(persistenceContext.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrUnpersistSpatialEntityCompleteEXT(XrSpatialPersistenceContextEXT persistenceContext, XrFutureEXT future, XrUnpersistSpatialEntityCompletionEXT * completion)} */

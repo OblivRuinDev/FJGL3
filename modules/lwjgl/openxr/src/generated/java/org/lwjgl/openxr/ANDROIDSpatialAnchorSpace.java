@@ -46,7 +46,7 @@ public class ANDROIDSpatialAnchorSpace {
             check(__functionAddress);
             XrSpatialAnchorCreateInfoEXT.validate(createInfo);
         }
-        return callPPPPPI(session.address(), spatialContext.address(), createInfo, anchorEntityId, anchorSpace, __functionAddress);
+        return invokePPPPPI(session.address(), spatialContext.address(), createInfo, anchorEntityId, anchorSpace, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorSpaceANDROID(XrSession session, XrSpatialContextEXT spatialContext, XrSpatialAnchorCreateInfoEXT const * createInfo, XrSpatialEntityIdEXT * anchorEntityId, XrSpace * anchorSpace)} */
@@ -67,7 +67,7 @@ public class ANDROIDSpatialAnchorSpace {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(session.address(), spatialContext.address(), createInfo, anchorSpace, __functionAddress);
+        return invokePPPPI(session.address(), spatialContext.address(), createInfo, anchorSpace, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorSpaceFromIdANDROID(XrSession session, XrSpatialContextEXT spatialContext, XrSpatialAnchorSpaceFromIdCreateInfoANDROID const * createInfo, XrSpace * anchorSpace)} */

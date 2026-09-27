@@ -559,7 +559,7 @@ public class ARBShaderObjects {
             check(__functionAddress);
             checkSafe(length, string.remaining());
         }
-        callPPV(shaderObj, string.remaining(), memAddress(string), length, __functionAddress);
+        invokePPV(shaderObj, string.remaining(), memAddress(string), length, __functionAddress);
     }
 
     /** {@code void glUniform1fvARB(GLint location, GLsizei count, GLfloat const * value)} */
@@ -568,7 +568,7 @@ public class ARBShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length, value, __functionAddress);
+        invokePV(location, value.length, value, __functionAddress);
     }
 
     /** {@code void glUniform2fvARB(GLint location, GLsizei count, GLfloat const * value)} */
@@ -577,7 +577,7 @@ public class ARBShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 1, value, __functionAddress);
+        invokePV(location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glUniform3fvARB(GLint location, GLsizei count, GLfloat const * value)} */
@@ -586,7 +586,7 @@ public class ARBShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 3, value, __functionAddress);
+        invokePV(location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glUniform4fvARB(GLint location, GLsizei count, GLfloat const * value)} */
@@ -595,7 +595,7 @@ public class ARBShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 2, value, __functionAddress);
+        invokePV(location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glUniform1ivARB(GLint location, GLsizei count, GLint const * value)} */
@@ -604,7 +604,7 @@ public class ARBShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length, value, __functionAddress);
+        invokePV(location, value.length, value, __functionAddress);
     }
 
     /** {@code void glUniform2ivARB(GLint location, GLsizei count, GLint const * value)} */
@@ -613,7 +613,7 @@ public class ARBShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 1, value, __functionAddress);
+        invokePV(location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glUniform3ivARB(GLint location, GLsizei count, GLint const * value)} */
@@ -622,7 +622,7 @@ public class ARBShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 3, value, __functionAddress);
+        invokePV(location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glUniform4ivARB(GLint location, GLsizei count, GLint const * value)} */
@@ -631,7 +631,7 @@ public class ARBShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 2, value, __functionAddress);
+        invokePV(location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix2fvARB(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -640,7 +640,7 @@ public class ARBShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 2, transpose, value, __functionAddress);
+        invokePV(location, value.length >> 2, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix3fvARB(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -649,7 +649,7 @@ public class ARBShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 9, transpose, value, __functionAddress);
+        invokePV(location, value.length / 9, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix4fvARB(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -658,7 +658,7 @@ public class ARBShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 4, transpose, value, __functionAddress);
+        invokePV(location, value.length >> 4, transpose, value, __functionAddress);
     }
 
     /** {@code void glGetObjectParameterfvARB(GLhandleARB obj, GLenum pname, GLfloat * params)} */
@@ -668,7 +668,7 @@ public class ARBShaderObjects {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(obj, pname, params, __functionAddress);
+        invokePV(obj, pname, params, __functionAddress);
     }
 
     /** {@code void glGetObjectParameterivARB(GLhandleARB obj, GLenum pname, GLint * params)} */
@@ -678,7 +678,7 @@ public class ARBShaderObjects {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(obj, pname, params, __functionAddress);
+        invokePV(obj, pname, params, __functionAddress);
     }
 
     /** {@code void glGetInfoLogARB(GLhandleARB obj, GLsizei maxLength, GLsizei * length, GLcharARB * infoLog)} */
@@ -688,7 +688,7 @@ public class ARBShaderObjects {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(obj, infoLog.remaining(), length, memAddress(infoLog), __functionAddress);
+        invokePPV(obj, infoLog.remaining(), length, memAddress(infoLog), __functionAddress);
     }
 
     /** {@code void glGetAttachedObjectsARB(GLhandleARB containerObj, GLsizei maxCount, GLsizei * count, GLhandleARB * obj)} */
@@ -698,7 +698,7 @@ public class ARBShaderObjects {
             check(__functionAddress);
             checkSafe(count, 1);
         }
-        callPPV(containerObj, obj.length, count, obj, __functionAddress);
+        invokePPV(containerObj, obj.length, count, obj, __functionAddress);
     }
 
     /** {@code void glGetActiveUniformARB(GLhandleARB programObj, GLuint index, GLsizei maxLength, GLsizei * length, GLint * size, GLenum * type, GLcharARB * name)} */
@@ -710,7 +710,7 @@ public class ARBShaderObjects {
             check(size, 1);
             check(type, 1);
         }
-        callPPPPV(programObj, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
+        invokePPPPV(programObj, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
     }
 
     /** {@code void glGetUniformfvARB(GLhandleARB programObj, GLint location, GLfloat * params)} */
@@ -720,7 +720,7 @@ public class ARBShaderObjects {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(programObj, location, params, __functionAddress);
+        invokePV(programObj, location, params, __functionAddress);
     }
 
     /** {@code void glGetUniformivARB(GLhandleARB programObj, GLint location, GLint * params)} */
@@ -730,7 +730,7 @@ public class ARBShaderObjects {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(programObj, location, params, __functionAddress);
+        invokePV(programObj, location, params, __functionAddress);
     }
 
     /** {@code void glGetShaderSourceARB(GLhandleARB obj, GLsizei maxLength, GLsizei * length, GLcharARB * source)} */
@@ -740,7 +740,7 @@ public class ARBShaderObjects {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(obj, source.remaining(), length, memAddress(source), __functionAddress);
+        invokePPV(obj, source.remaining(), length, memAddress(source), __functionAddress);
     }
 
 }

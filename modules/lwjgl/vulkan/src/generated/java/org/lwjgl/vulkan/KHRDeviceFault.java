@@ -66,7 +66,7 @@ public class KHRDeviceFault {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), timeout, pFaultCounts, pFaultInfo, __functionAddress);
+        return invokePJPPI(device.address(), timeout, pFaultCounts, pFaultInfo, __functionAddress);
     }
 
     /** {@code VkResult vkGetDeviceFaultReportsKHR(VkDevice device, uint64_t timeout, uint32_t * pFaultCounts, VkDeviceFaultInfoKHR * pFaultInfo)} */
@@ -87,7 +87,7 @@ public class KHRDeviceFault {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pDebugInfo, __functionAddress);
+        return invokePPI(device.address(), pDebugInfo, __functionAddress);
     }
 
     /** {@code VkResult vkGetDeviceFaultDebugInfoKHR(VkDevice device, VkDeviceFaultDebugInfoKHR * pDebugInfo)} */
@@ -105,7 +105,7 @@ public class KHRDeviceFault {
             check(pFaultCounts, 1);
             checkSafe(pFaultInfo, pFaultCounts[0]);
         }
-        return callPJPPI(device.address(), timeout, pFaultCounts, memAddressSafe(pFaultInfo), __functionAddress);
+        return invokePJPPI(device.address(), timeout, pFaultCounts, memAddressSafe(pFaultInfo), __functionAddress);
     }
 
 }

@@ -91,7 +91,7 @@ public class EXTMultiviewDrawBuffers {
             check(__functionAddress);
             check(indices, location.length);
         }
-        callPPV(location.length, location, indices, __functionAddress);
+        invokePPV(location.length, location, indices, __functionAddress);
     }
 
     /** {@code void glGetIntegeri_vEXT(GLenum target, GLuint index, GLint * data)} */
@@ -101,7 +101,7 @@ public class EXTMultiviewDrawBuffers {
             check(__functionAddress);
             check(data, 1);
         }
-        callPV(target, index, data, __functionAddress);
+        invokePV(target, index, data, __functionAddress);
     }
 
 }

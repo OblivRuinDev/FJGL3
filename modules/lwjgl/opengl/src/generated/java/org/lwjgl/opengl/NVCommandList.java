@@ -262,7 +262,7 @@ public class NVCommandList {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(states.length, states, __functionAddress);
+        invokePV(states.length, states, __functionAddress);
     }
 
     /** {@code void glDeleteStatesNV(GLsizei n, GLuint const * states)} */
@@ -271,7 +271,7 @@ public class NVCommandList {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(states.length, states, __functionAddress);
+        invokePV(states.length, states, __functionAddress);
     }
 
     /** {@code void glDrawCommandsNV(GLenum primitiveMode, GLuint buffer, GLintptr const * indirects, GLsizei const * sizes, GLuint count)} */
@@ -281,7 +281,7 @@ public class NVCommandList {
             check(__functionAddress);
             check(sizes, indirects.remaining());
         }
-        callPPV(primitiveMode, buffer, memAddress(indirects), sizes, indirects.remaining(), __functionAddress);
+        invokePPV(primitiveMode, buffer, memAddress(indirects), sizes, indirects.remaining(), __functionAddress);
     }
 
     /** {@code void glDrawCommandsAddressNV(GLenum primitiveMode, GLuint64 const * indirects, GLsizei const * sizes, GLuint count)} */
@@ -291,7 +291,7 @@ public class NVCommandList {
             check(__functionAddress);
             check(sizes, indirects.length);
         }
-        callPPV(primitiveMode, indirects, sizes, indirects.length, __functionAddress);
+        invokePPV(primitiveMode, indirects, sizes, indirects.length, __functionAddress);
     }
 
     /** {@code void glDrawCommandsStatesNV(GLuint buffer, GLintptr const * indirects, GLsizei const * sizes, GLuint const * states, GLuint const * fbos, GLuint count)} */
@@ -303,7 +303,7 @@ public class NVCommandList {
             check(states, indirects.remaining());
             check(fbos, indirects.remaining());
         }
-        callPPPPV(buffer, memAddress(indirects), sizes, states, fbos, indirects.remaining(), __functionAddress);
+        invokePPPPV(buffer, memAddress(indirects), sizes, states, fbos, indirects.remaining(), __functionAddress);
     }
 
     /** {@code void glDrawCommandsStatesAddressNV(GLuint64 const * indirects, GLsizei const * sizes, GLuint const * states, GLuint const * fbos, GLuint count)} */
@@ -315,7 +315,7 @@ public class NVCommandList {
             check(states, indirects.length);
             check(fbos, indirects.length);
         }
-        callPPPPV(indirects, sizes, states, fbos, indirects.length, __functionAddress);
+        invokePPPPV(indirects, sizes, states, fbos, indirects.length, __functionAddress);
     }
 
     /** {@code void glCreateCommandListsNV(GLsizei n, GLuint * lists)} */
@@ -324,7 +324,7 @@ public class NVCommandList {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(lists.length, lists, __functionAddress);
+        invokePV(lists.length, lists, __functionAddress);
     }
 
     /** {@code void glDeleteCommandListsNV(GLsizei n, GLuint const * lists)} */
@@ -333,7 +333,7 @@ public class NVCommandList {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(lists.length, lists, __functionAddress);
+        invokePV(lists.length, lists, __functionAddress);
     }
 
     /** {@code void glListDrawCommandsStatesClientNV(GLuint list, GLuint segment, void const ** indirects, GLsizei const * sizes, GLuint const * states, GLuint const * fbos, GLuint count)} */
@@ -345,7 +345,7 @@ public class NVCommandList {
             check(states, indirects.remaining());
             check(fbos, indirects.remaining());
         }
-        callPPPPV(list, segment, memAddress(indirects), sizes, states, fbos, indirects.remaining(), __functionAddress);
+        invokePPPPV(list, segment, memAddress(indirects), sizes, states, fbos, indirects.remaining(), __functionAddress);
     }
 
 }

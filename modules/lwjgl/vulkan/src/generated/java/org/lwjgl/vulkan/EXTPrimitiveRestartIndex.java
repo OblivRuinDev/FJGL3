@@ -38,7 +38,7 @@ public class EXTPrimitiveRestartIndex {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), primitiveRestartIndex, __functionAddress);
+        invokePV(commandBuffer.address(), primitiveRestartIndex, __functionAddress);
     }
 
 }

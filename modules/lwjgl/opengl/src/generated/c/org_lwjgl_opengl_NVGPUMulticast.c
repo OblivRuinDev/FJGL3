@@ -14,18 +14,18 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glRenderGpuMaskNVPROC) (jint);
-typedef void (APIENTRY *glMulticastBufferSubDataNVPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glMulticastCopyBufferSubDataNVPROC) (jint, jint, jint, jint, uintptr_t, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glMulticastCopyImageSubDataNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glMulticastBlitFramebufferNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glMulticastFramebufferSampleLocationsfvNVPROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glMulticastBarrierNVPROC) (void);
-typedef void (APIENTRY *glMulticastWaitSyncNVPROC) (jint, jint);
-typedef void (APIENTRY *glMulticastGetQueryObjectivNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glMulticastGetQueryObjectuivNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glMulticastGetQueryObjecti64vNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glMulticastGetQueryObjectui64vNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glRenderGpuMaskNVPROC) (jint);
+typedef void (*glMulticastBufferSubDataNVPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glMulticastCopyBufferSubDataNVPROC) (jint, jint, jint, jint, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glMulticastCopyImageSubDataNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glMulticastBlitFramebufferNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glMulticastFramebufferSampleLocationsfvNVPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glMulticastBarrierNVPROC) (void);
+typedef void (*glMulticastWaitSyncNVPROC) (jint, jint);
+typedef void (*glMulticastGetQueryObjectivNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glMulticastGetQueryObjectuivNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glMulticastGetQueryObjecti64vNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glMulticastGetQueryObjectui64vNVPROC) (jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

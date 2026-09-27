@@ -14,14 +14,14 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glEnableiEXTPROC) (jint, jint);
-typedef void (APIENTRY *glDisableiEXTPROC) (jint, jint);
-typedef void (APIENTRY *glBlendEquationiEXTPROC) (jint, jint);
-typedef void (APIENTRY *glBlendEquationSeparateiEXTPROC) (jint, jint, jint);
-typedef void (APIENTRY *glBlendFunciEXTPROC) (jint, jint, jint);
-typedef void (APIENTRY *glBlendFuncSeparateiEXTPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glColorMaskiEXTPROC) (jint, jboolean, jboolean, jboolean, jboolean);
-typedef jboolean (APIENTRY *glIsEnablediEXTPROC) (jint, jint);
+typedef void (*glEnableiEXTPROC) (jint, jint);
+typedef void (*glDisableiEXTPROC) (jint, jint);
+typedef void (*glBlendEquationiEXTPROC) (jint, jint);
+typedef void (*glBlendEquationSeparateiEXTPROC) (jint, jint, jint);
+typedef void (*glBlendFunciEXTPROC) (jint, jint, jint);
+typedef void (*glBlendFuncSeparateiEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glColorMaskiEXTPROC) (jint, jboolean, jboolean, jboolean, jboolean);
+typedef jboolean (*glIsEnablediEXTPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

@@ -209,7 +209,7 @@ public class NVShaderBufferLoad {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferParameterui64vNV(GLuint buffer, GLenum pname, GLuint64EXT * params)} */
@@ -219,7 +219,7 @@ public class NVShaderBufferLoad {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(buffer, pname, params, __functionAddress);
+        invokePV(buffer, pname, params, __functionAddress);
     }
 
     /** {@code void glGetIntegerui64vNV(GLenum value, GLuint64EXT * result)} */
@@ -229,7 +229,7 @@ public class NVShaderBufferLoad {
             check(__functionAddress);
             check(result, 1);
         }
-        callPV(value, result, __functionAddress);
+        invokePV(value, result, __functionAddress);
     }
 
     /** {@code void glUniformui64vNV(GLint location, GLsizei count, GLuint64EXT const * value)} */
@@ -238,7 +238,7 @@ public class NVShaderBufferLoad {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length, value, __functionAddress);
+        invokePV(location, value.length, value, __functionAddress);
     }
 
     /** {@code void glGetUniformui64vNV(GLuint program, GLint location, GLuint64EXT * params)} */
@@ -248,7 +248,7 @@ public class NVShaderBufferLoad {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, location, params, __functionAddress);
+        invokePV(program, location, params, __functionAddress);
     }
 
     /** {@code void glProgramUniformui64vNV(GLuint program, GLint location, GLsizei count, GLuint64EXT const * value)} */
@@ -257,7 +257,7 @@ public class NVShaderBufferLoad {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
 }

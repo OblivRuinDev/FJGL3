@@ -46,7 +46,7 @@ public class EXTExternalMemoryHost {
             check(__functionAddress);
             check(pHostPointer);
         }
-        return callPPPI(device.address(), handleType, pHostPointer, pMemoryHostPointerProperties, __functionAddress);
+        return invokePPPI(device.address(), handleType, pHostPointer, pMemoryHostPointerProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetMemoryHostPointerPropertiesEXT(VkDevice device, VkExternalMemoryHandleTypeFlagBits handleType, void const * pHostPointer, VkMemoryHostPointerPropertiesEXT * pMemoryHostPointerProperties)} */

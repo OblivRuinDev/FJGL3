@@ -77,7 +77,7 @@ public class EXTBufferStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(target, Integer.toUnsignedLong(data.length) << 1, data, flags, __functionAddress);
+        invokePPV(target, Integer.toUnsignedLong(data.length) << 1, data, flags, __functionAddress);
     }
 
     /** {@code void glBufferStorageEXT(GLenum target, GLsizeiptr size, void const * data, GLbitfield flags)} */
@@ -86,7 +86,7 @@ public class EXTBufferStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(target, Integer.toUnsignedLong(data.length) << 2, data, flags, __functionAddress);
+        invokePPV(target, Integer.toUnsignedLong(data.length) << 2, data, flags, __functionAddress);
     }
 
     /** {@code void glBufferStorageEXT(GLenum target, GLsizeiptr size, void const * data, GLbitfield flags)} */
@@ -95,7 +95,7 @@ public class EXTBufferStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(target, Integer.toUnsignedLong(data.length) << 2, data, flags, __functionAddress);
+        invokePPV(target, Integer.toUnsignedLong(data.length) << 2, data, flags, __functionAddress);
     }
 
 }

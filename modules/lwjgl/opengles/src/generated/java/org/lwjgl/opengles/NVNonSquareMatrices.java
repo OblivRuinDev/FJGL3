@@ -103,7 +103,7 @@ public class NVNonSquareMatrices {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix3x2fvNV(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -112,7 +112,7 @@ public class NVNonSquareMatrices {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix2x4fvNV(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -121,7 +121,7 @@ public class NVNonSquareMatrices {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix4x2fvNV(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -130,7 +130,7 @@ public class NVNonSquareMatrices {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix3x4fvNV(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -139,7 +139,7 @@ public class NVNonSquareMatrices {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(location, value.length / 12, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix4x3fvNV(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -148,7 +148,7 @@ public class NVNonSquareMatrices {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(location, value.length / 12, transpose, value, __functionAddress);
     }
 
 }

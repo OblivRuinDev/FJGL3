@@ -235,7 +235,7 @@ public class EXTMemoryObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(memoryObjects.length, memoryObjects, __functionAddress);
+        invokePV(memoryObjects.length, memoryObjects, __functionAddress);
     }
 
     /** {@code void glCreateMemoryObjectsEXT(GLsizei n, GLuint * memoryObjects)} */
@@ -244,7 +244,7 @@ public class EXTMemoryObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(memoryObjects.length, memoryObjects, __functionAddress);
+        invokePV(memoryObjects.length, memoryObjects, __functionAddress);
     }
 
     /** {@code void glMemoryObjectParameterivEXT(GLuint memoryObject, GLenum pname, GLint const * params)} */
@@ -254,7 +254,7 @@ public class EXTMemoryObject {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(memoryObject, pname, params, __functionAddress);
+        invokePV(memoryObject, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMemoryObjectParameterivEXT(GLuint memoryObject, GLenum pname, GLint * params)} */
@@ -264,7 +264,7 @@ public class EXTMemoryObject {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(memoryObject, pname, params, __functionAddress);
+        invokePV(memoryObject, pname, params, __functionAddress);
     }
 
 }

@@ -48,7 +48,7 @@ public class EXTHapticParametric {
             check(__functionAddress);
             XrHapticActionInfo.validate(hapticActionInfo);
         }
-        return callPPPI(session.address(), hapticActionInfo, parametricProperties, __functionAddress);
+        return invokePPPI(session.address(), hapticActionInfo, parametricProperties, __functionAddress);
     }
 
     /** {@code XrResult xrHapticParametricGetPropertiesEXT(XrSession session, XrHapticActionInfo const * hapticActionInfo, XrHapticParametricPropertiesEXT * parametricProperties)} */

@@ -50,7 +50,7 @@ public class KHRCopyCommands2 {
             check(__functionAddress);
             VkCopyBufferInfo2.validate(pCopyBufferInfo);
         }
-        callPPV(commandBuffer.address(), pCopyBufferInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pCopyBufferInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyBuffer2KHR(VkCommandBuffer commandBuffer, VkCopyBufferInfo2 const * pCopyBufferInfo)} */
@@ -67,7 +67,7 @@ public class KHRCopyCommands2 {
             check(__functionAddress);
             VkCopyImageInfo2.validate(pCopyImageInfo);
         }
-        callPPV(commandBuffer.address(), pCopyImageInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pCopyImageInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyImage2KHR(VkCommandBuffer commandBuffer, VkCopyImageInfo2 const * pCopyImageInfo)} */
@@ -84,7 +84,7 @@ public class KHRCopyCommands2 {
             check(__functionAddress);
             VkCopyBufferToImageInfo2.validate(pCopyBufferToImageInfo);
         }
-        callPPV(commandBuffer.address(), pCopyBufferToImageInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pCopyBufferToImageInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyBufferToImage2KHR(VkCommandBuffer commandBuffer, VkCopyBufferToImageInfo2 const * pCopyBufferToImageInfo)} */
@@ -101,7 +101,7 @@ public class KHRCopyCommands2 {
             check(__functionAddress);
             VkCopyImageToBufferInfo2.validate(pCopyImageToBufferInfo);
         }
-        callPPV(commandBuffer.address(), pCopyImageToBufferInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pCopyImageToBufferInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyImageToBuffer2KHR(VkCommandBuffer commandBuffer, VkCopyImageToBufferInfo2 const * pCopyImageToBufferInfo)} */
@@ -118,7 +118,7 @@ public class KHRCopyCommands2 {
             check(__functionAddress);
             VkBlitImageInfo2.validate(pBlitImageInfo);
         }
-        callPPV(commandBuffer.address(), pBlitImageInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pBlitImageInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBlitImage2KHR(VkCommandBuffer commandBuffer, VkBlitImageInfo2 const * pBlitImageInfo)} */
@@ -135,7 +135,7 @@ public class KHRCopyCommands2 {
             check(__functionAddress);
             VkResolveImageInfo2.validate(pResolveImageInfo);
         }
-        callPPV(commandBuffer.address(), pResolveImageInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pResolveImageInfo, __functionAddress);
     }
 
     /** {@code void vkCmdResolveImage2KHR(VkCommandBuffer commandBuffer, VkResolveImageInfo2 const * pResolveImageInfo)} */

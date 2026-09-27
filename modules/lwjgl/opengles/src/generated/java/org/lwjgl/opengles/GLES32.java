@@ -1051,7 +1051,7 @@ public class GLES32 extends GLES31 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(source, type, severity, ids.length, ids, enabled, __functionAddress);
+        invokePV(source, type, severity, ids.length, ids, enabled, __functionAddress);
     }
 
     /** {@code GLuint glGetDebugMessageLog(GLuint count, GLsizei bufsize, GLenum * sources, GLenum * types, GLuint * ids, GLenum * severities, GLsizei * lengths, GLchar * messageLog)} */
@@ -1066,7 +1066,7 @@ public class GLES32 extends GLES31 {
             checkSafe(severities, count);
             checkSafe(lengths, count);
         }
-        return callPPPPPPI(count, remainingSafe(messageLog), sources, types, ids, severities, lengths, memAddressSafe(messageLog), __functionAddress);
+        return invokePPPPPPI(count, remainingSafe(messageLog), sources, types, ids, severities, lengths, memAddressSafe(messageLog), __functionAddress);
     }
 
     /** {@code void glGetObjectLabel(GLenum identifier, GLuint name, GLsizei bufSize, GLsizei * length, GLchar * label)} */
@@ -1076,7 +1076,7 @@ public class GLES32 extends GLES31 {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(identifier, name, label.remaining(), length, memAddress(label), __functionAddress);
+        invokePPV(identifier, name, label.remaining(), length, memAddress(label), __functionAddress);
     }
 
     /** {@code void glGetObjectPtrLabel(void * ptr, GLsizei bufSize, GLsizei * length, GLchar * label)} */
@@ -1087,7 +1087,7 @@ public class GLES32 extends GLES31 {
             check(ptr);
             checkSafe(length, 1);
         }
-        callPPPV(ptr, label.remaining(), length, memAddress(label), __functionAddress);
+        invokePPPV(ptr, label.remaining(), length, memAddress(label), __functionAddress);
     }
 
     /** {@code void glReadnPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -1096,7 +1096,7 @@ public class GLES32 extends GLES31 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, pixels.length << 1, pixels, __functionAddress);
+        invokePV(x, y, width, height, format, type, pixels.length << 1, pixels, __functionAddress);
     }
 
     /** {@code void glReadnPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -1105,7 +1105,7 @@ public class GLES32 extends GLES31 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, pixels.length << 2, pixels, __functionAddress);
+        invokePV(x, y, width, height, format, type, pixels.length << 2, pixels, __functionAddress);
     }
 
     /** {@code void glReadnPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -1114,7 +1114,7 @@ public class GLES32 extends GLES31 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, pixels.length << 2, pixels, __functionAddress);
+        invokePV(x, y, width, height, format, type, pixels.length << 2, pixels, __functionAddress);
     }
 
     /** {@code void glGetnUniformfv(GLuint program, GLint location, GLsizei bufSize, GLfloat * params)} */
@@ -1123,7 +1123,7 @@ public class GLES32 extends GLES31 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformiv(GLuint program, GLint location, GLsizei bufSize, GLfloat * params)} */
@@ -1132,7 +1132,7 @@ public class GLES32 extends GLES31 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformuiv(GLuint program, GLint location, GLsizei bufSize, GLfloat * params)} */
@@ -1141,7 +1141,7 @@ public class GLES32 extends GLES31 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glTexParameterIiv(GLenum target, GLenum pname, GLint const * params)} */
@@ -1151,7 +1151,7 @@ public class GLES32 extends GLES31 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glTexParameterIuiv(GLenum target, GLenum pname, GLuint const * params)} */
@@ -1161,7 +1161,7 @@ public class GLES32 extends GLES31 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTexParameterIiv(GLenum target, GLenum pname, GLint * params)} */
@@ -1171,7 +1171,7 @@ public class GLES32 extends GLES31 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTexParameterIuiv(GLenum target, GLenum pname, GLuint * params)} */
@@ -1181,7 +1181,7 @@ public class GLES32 extends GLES31 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glSamplerParameterIiv(GLuint sampler, GLenum pname, GLint const * params)} */
@@ -1191,7 +1191,7 @@ public class GLES32 extends GLES31 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
     /** {@code void glSamplerParameterIuiv(GLuint sampler, GLenum pname, GLuint const * params)} */
@@ -1201,7 +1201,7 @@ public class GLES32 extends GLES31 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
     /** {@code void glGetSamplerParameterIiv(GLuint sampler, GLenum pname, GLint * params)} */
@@ -1211,7 +1211,7 @@ public class GLES32 extends GLES31 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
     /** {@code void glGetSamplerParameterIuiv(GLuint sampler, GLenum pname, GLuint * params)} */
@@ -1221,7 +1221,7 @@ public class GLES32 extends GLES31 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
 }

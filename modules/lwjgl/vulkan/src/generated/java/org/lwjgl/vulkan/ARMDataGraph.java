@@ -98,7 +98,7 @@ public class ARMDataGraph {
             check(__functionAddress);
             Struct.validate(pCreateInfos, createInfoCount, VkDataGraphPipelineCreateInfoARM.SIZEOF, VkDataGraphPipelineCreateInfoARM::validate);
         }
-        return callPJJPPPI(device.address(), deferredOperation, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines, __functionAddress);
+        return invokePJJPPPI(device.address(), deferredOperation, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDataGraphPipelinesARM(VkDevice device, VkDeferredOperationKHR deferredOperation, VkPipelineCache pipelineCache, uint32_t createInfoCount, VkDataGraphPipelineCreateInfoARM const * pCreateInfos, VkAllocationCallbacks const * pAllocator, VkPipeline * pPipelines)} */
@@ -118,7 +118,7 @@ public class ARMDataGraph {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pSession, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pSession, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDataGraphPipelineSessionARM(VkDevice device, VkDataGraphPipelineSessionCreateInfoARM const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkDataGraphPipelineSessionARM * pSession)} */
@@ -138,7 +138,7 @@ public class ARMDataGraph {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pInfo, pBindPointRequirementCount, pBindPointRequirements, __functionAddress);
+        return invokePPPPI(device.address(), pInfo, pBindPointRequirementCount, pBindPointRequirements, __functionAddress);
     }
 
     /** {@code VkResult vkGetDataGraphPipelineSessionBindPointRequirementsARM(VkDevice device, VkDataGraphPipelineSessionBindPointRequirementsInfoARM const * pInfo, uint32_t * pBindPointRequirementCount, VkDataGraphPipelineSessionBindPointRequirementARM * pBindPointRequirements)} */
@@ -159,7 +159,7 @@ public class ARMDataGraph {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetDataGraphPipelineSessionMemoryRequirementsARM(VkDevice device, VkDataGraphPipelineSessionMemoryRequirementsInfoARM const * pInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -175,7 +175,7 @@ public class ARMDataGraph {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
+        return invokePPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
     }
 
     /** {@code VkResult vkBindDataGraphPipelineSessionMemoryARM(VkDevice device, uint32_t bindInfoCount, VkBindDataGraphPipelineSessionMemoryInfoARM const * pBindInfos)} */
@@ -192,7 +192,7 @@ public class ARMDataGraph {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), session, pAllocator, __functionAddress);
+        invokePJPV(device.address(), session, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyDataGraphPipelineSessionARM(VkDevice device, VkDataGraphPipelineSessionARM session, VkAllocationCallbacks const * pAllocator)} */
@@ -208,7 +208,7 @@ public class ARMDataGraph {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(commandBuffer.address(), session, pInfo, __functionAddress);
+        invokePJPV(commandBuffer.address(), session, pInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDispatchDataGraphARM(VkCommandBuffer commandBuffer, VkDataGraphPipelineSessionARM session, VkDataGraphPipelineDispatchInfoARM const * pInfo)} */
@@ -224,7 +224,7 @@ public class ARMDataGraph {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pPipelineInfo, pPropertiesCount, pProperties, __functionAddress);
+        return invokePPPPI(device.address(), pPipelineInfo, pPropertiesCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetDataGraphPipelineAvailablePropertiesARM(VkDevice device, VkDataGraphPipelineInfoARM const * pPipelineInfo, uint32_t * pPropertiesCount, VkDataGraphPipelinePropertyARM * pProperties)} */
@@ -245,7 +245,7 @@ public class ARMDataGraph {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pPipelineInfo, propertiesCount, pProperties, __functionAddress);
+        return invokePPPI(device.address(), pPipelineInfo, propertiesCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetDataGraphPipelinePropertiesARM(VkDevice device, VkDataGraphPipelineInfoARM const * pPipelineInfo, uint32_t propertiesCount, VkDataGraphPipelinePropertyQueryResultARM * pProperties)} */
@@ -262,7 +262,7 @@ public class ARMDataGraph {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), queueFamilyIndex, pQueueFamilyDataGraphPropertyCount, pQueueFamilyDataGraphProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), queueFamilyIndex, pQueueFamilyDataGraphPropertyCount, pQueueFamilyDataGraphProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM(VkPhysicalDevice physicalDevice, uint32_t queueFamilyIndex, uint32_t * pQueueFamilyDataGraphPropertyCount, VkQueueFamilyDataGraphPropertiesARM * pQueueFamilyDataGraphProperties)} */
@@ -283,7 +283,7 @@ public class ARMDataGraph {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(physicalDevice.address(), pQueueFamilyDataGraphProcessingEngineInfo, pQueueFamilyDataGraphProcessingEngineProperties, __functionAddress);
+        invokePPPV(physicalDevice.address(), pQueueFamilyDataGraphProcessingEngineInfo, pQueueFamilyDataGraphProcessingEngineProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM(VkPhysicalDevice physicalDevice, VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM const * pQueueFamilyDataGraphProcessingEngineInfo, VkQueueFamilyDataGraphProcessingEnginePropertiesARM * pQueueFamilyDataGraphProcessingEngineProperties)} */
@@ -300,7 +300,7 @@ public class ARMDataGraph {
             check(pPipelines, pCreateInfos.remaining());
             Struct.validate(pCreateInfos.address(), pCreateInfos.remaining(), VkDataGraphPipelineCreateInfoARM.SIZEOF, VkDataGraphPipelineCreateInfoARM::validate);
         }
-        return callPJJPPPI(device.address(), deferredOperation, pipelineCache, pCreateInfos.remaining(), pCreateInfos.address(), memAddressSafe(pAllocator), pPipelines, __functionAddress);
+        return invokePJJPPPI(device.address(), deferredOperation, pipelineCache, pCreateInfos.remaining(), pCreateInfos.address(), memAddressSafe(pAllocator), pPipelines, __functionAddress);
     }
 
     /** {@code VkResult vkCreateDataGraphPipelineSessionARM(VkDevice device, VkDataGraphPipelineSessionCreateInfoARM const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkDataGraphPipelineSessionARM * pSession)} */
@@ -311,7 +311,7 @@ public class ARMDataGraph {
             check(__functionAddress);
             check(pSession, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSession, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSession, __functionAddress);
     }
 
     /** {@code VkResult vkGetDataGraphPipelineSessionBindPointRequirementsARM(VkDevice device, VkDataGraphPipelineSessionBindPointRequirementsInfoARM const * pInfo, uint32_t * pBindPointRequirementCount, VkDataGraphPipelineSessionBindPointRequirementARM * pBindPointRequirements)} */
@@ -323,7 +323,7 @@ public class ARMDataGraph {
             check(pBindPointRequirementCount, 1);
             checkSafe(pBindPointRequirements, pBindPointRequirementCount[0]);
         }
-        return callPPPPI(device.address(), pInfo.address(), pBindPointRequirementCount, memAddressSafe(pBindPointRequirements), __functionAddress);
+        return invokePPPPI(device.address(), pInfo.address(), pBindPointRequirementCount, memAddressSafe(pBindPointRequirements), __functionAddress);
     }
 
     /** {@code VkResult vkGetDataGraphPipelineAvailablePropertiesARM(VkDevice device, VkDataGraphPipelineInfoARM const * pPipelineInfo, uint32_t * pPropertiesCount, VkDataGraphPipelinePropertyARM * pProperties)} */
@@ -335,7 +335,7 @@ public class ARMDataGraph {
             check(pPropertiesCount, 1);
             checkSafe(pProperties, pPropertiesCount[0]);
         }
-        return callPPPPI(device.address(), pPipelineInfo.address(), pPropertiesCount, pProperties, __functionAddress);
+        return invokePPPPI(device.address(), pPipelineInfo.address(), pPropertiesCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM(VkPhysicalDevice physicalDevice, uint32_t queueFamilyIndex, uint32_t * pQueueFamilyDataGraphPropertyCount, VkQueueFamilyDataGraphPropertiesARM * pQueueFamilyDataGraphProperties)} */
@@ -347,7 +347,7 @@ public class ARMDataGraph {
             check(pQueueFamilyDataGraphPropertyCount, 1);
             checkSafe(pQueueFamilyDataGraphProperties, pQueueFamilyDataGraphPropertyCount[0]);
         }
-        return callPPPI(physicalDevice.address(), queueFamilyIndex, pQueueFamilyDataGraphPropertyCount, memAddressSafe(pQueueFamilyDataGraphProperties), __functionAddress);
+        return invokePPPI(physicalDevice.address(), queueFamilyIndex, pQueueFamilyDataGraphPropertyCount, memAddressSafe(pQueueFamilyDataGraphProperties), __functionAddress);
     }
 
 }

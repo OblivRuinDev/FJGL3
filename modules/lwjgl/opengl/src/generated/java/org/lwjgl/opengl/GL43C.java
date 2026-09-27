@@ -1026,7 +1026,7 @@ public class GL43C extends GL42C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, internalformat, format, type, data, __functionAddress);
+        invokePV(target, internalformat, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearBufferData(GLenum target, GLenum internalformat, GLenum format, GLenum type, void const * data)} */
@@ -1035,7 +1035,7 @@ public class GL43C extends GL42C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, internalformat, format, type, data, __functionAddress);
+        invokePV(target, internalformat, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearBufferData(GLenum target, GLenum internalformat, GLenum format, GLenum type, void const * data)} */
@@ -1044,7 +1044,7 @@ public class GL43C extends GL42C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, internalformat, format, type, data, __functionAddress);
+        invokePV(target, internalformat, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearBufferSubData(GLenum target, GLenum internalformat, GLintptr offset, GLsizeiptr size, GLenum format, GLenum type, void const * data)} */
@@ -1053,7 +1053,7 @@ public class GL43C extends GL42C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, internalformat, offset, size, format, type, data, __functionAddress);
+        invokePPPV(target, internalformat, offset, size, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearBufferSubData(GLenum target, GLenum internalformat, GLintptr offset, GLsizeiptr size, GLenum format, GLenum type, void const * data)} */
@@ -1062,7 +1062,7 @@ public class GL43C extends GL42C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, internalformat, offset, size, format, type, data, __functionAddress);
+        invokePPPV(target, internalformat, offset, size, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearBufferSubData(GLenum target, GLenum internalformat, GLintptr offset, GLsizeiptr size, GLenum format, GLenum type, void const * data)} */
@@ -1071,7 +1071,7 @@ public class GL43C extends GL42C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, internalformat, offset, size, format, type, data, __functionAddress);
+        invokePPPV(target, internalformat, offset, size, format, type, data, __functionAddress);
     }
 
     /** {@code void glDebugMessageControl(GLenum source, GLenum type, GLenum severity, GLsizei count, GLuint const * ids, GLboolean enabled)} */
@@ -1080,7 +1080,7 @@ public class GL43C extends GL42C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(source, type, severity, lengthSafe(ids), ids, enabled, __functionAddress);
+        invokePV(source, type, severity, lengthSafe(ids), ids, enabled, __functionAddress);
     }
 
     /** {@code GLuint glGetDebugMessageLog(GLuint count, GLsizei bufsize, GLenum * sources, GLenum * types, GLuint * ids, GLenum * severities, GLsizei * lengths, GLchar * messageLog)} */
@@ -1095,7 +1095,7 @@ public class GL43C extends GL42C {
             checkSafe(severities, count);
             checkSafe(lengths, count);
         }
-        return callPPPPPPI(count, remainingSafe(messageLog), sources, types, ids, severities, lengths, memAddressSafe(messageLog), __functionAddress);
+        return invokePPPPPPI(count, remainingSafe(messageLog), sources, types, ids, severities, lengths, memAddressSafe(messageLog), __functionAddress);
     }
 
     /** {@code void glGetObjectLabel(GLenum identifier, GLuint name, GLsizei bufSize, GLsizei * length, GLchar * label)} */
@@ -1105,7 +1105,7 @@ public class GL43C extends GL42C {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(identifier, name, label.remaining(), length, memAddress(label), __functionAddress);
+        invokePPV(identifier, name, label.remaining(), length, memAddress(label), __functionAddress);
     }
 
     /** {@code void glGetObjectPtrLabel(void * ptr, GLsizei bufSize, GLsizei * length, GLchar * label)} */
@@ -1116,7 +1116,7 @@ public class GL43C extends GL42C {
             check(ptr);
             checkSafe(length, 1);
         }
-        callPPPV(ptr, label.remaining(), length, memAddress(label), __functionAddress);
+        invokePPPV(ptr, label.remaining(), length, memAddress(label), __functionAddress);
     }
 
     /** {@code void glGetFramebufferParameteriv(GLenum target, GLenum pname, GLint * params)} */
@@ -1126,7 +1126,7 @@ public class GL43C extends GL42C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetInternalformati64v(GLenum target, GLenum internalformat, GLenum pname, GLsizei bufSize, GLint64 * params)} */
@@ -1135,7 +1135,7 @@ public class GL43C extends GL42C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, internalformat, pname, params.length, params, __functionAddress);
+        invokePV(target, internalformat, pname, params.length, params, __functionAddress);
     }
 
     /** {@code void glInvalidateFramebuffer(GLenum target, GLsizei numAttachments, GLenum const * attachments)} */
@@ -1144,7 +1144,7 @@ public class GL43C extends GL42C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, attachments.length, attachments, __functionAddress);
+        invokePV(target, attachments.length, attachments, __functionAddress);
     }
 
     /** {@code void glInvalidateSubFramebuffer(GLenum target, GLsizei numAttachments, GLenum const * attachments, GLint x, GLint y, GLsizei width, GLsizei height)} */
@@ -1153,7 +1153,7 @@ public class GL43C extends GL42C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, attachments.length, attachments, x, y, width, height, __functionAddress);
+        invokePV(target, attachments.length, attachments, x, y, width, height, __functionAddress);
     }
 
     /** {@code void glMultiDrawArraysIndirect(GLenum mode, void const * indirect, GLsizei drawcount, GLsizei stride)} */
@@ -1163,7 +1163,7 @@ public class GL43C extends GL42C {
             check(__functionAddress);
             check(indirect, (drawcount * (stride == 0 ? (4 * 4) : stride)) >> 2);
         }
-        callPV(mode, indirect, drawcount, stride, __functionAddress);
+        invokePV(mode, indirect, drawcount, stride, __functionAddress);
     }
 
     /** {@code void glMultiDrawElementsIndirect(GLenum mode, GLenum type, void const * indirect, GLsizei drawcount, GLsizei stride)} */
@@ -1173,7 +1173,7 @@ public class GL43C extends GL42C {
             check(__functionAddress);
             check(indirect, (drawcount * (stride == 0 ? (5 * 4) : stride)) >> 2);
         }
-        callPV(mode, type, indirect, drawcount, stride, __functionAddress);
+        invokePV(mode, type, indirect, drawcount, stride, __functionAddress);
     }
 
     /** {@code void glGetProgramInterfaceiv(GLuint program, GLenum programInterface, GLenum pname, GLint * params)} */
@@ -1183,7 +1183,7 @@ public class GL43C extends GL42C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, programInterface, pname, params, __functionAddress);
+        invokePV(program, programInterface, pname, params, __functionAddress);
     }
 
     /** {@code void glGetProgramResourceName(GLuint program, GLenum programInterface, GLuint index, GLsizei bufSize, GLsizei * length, GLchar * name)} */
@@ -1193,7 +1193,7 @@ public class GL43C extends GL42C {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(program, programInterface, index, name.remaining(), length, memAddress(name), __functionAddress);
+        invokePPV(program, programInterface, index, name.remaining(), length, memAddress(name), __functionAddress);
     }
 
     /** {@code void glGetProgramResourceiv(GLuint program, GLenum programInterface, GLuint index, GLsizei propCount, GLenum const * props, GLsizei bufSize, GLsizei * length, GLint * params)} */
@@ -1203,7 +1203,7 @@ public class GL43C extends GL42C {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPPV(program, programInterface, index, props.length, props, params.length, length, params, __functionAddress);
+        invokePPPV(program, programInterface, index, props.length, props, params.length, length, params, __functionAddress);
     }
 
 }

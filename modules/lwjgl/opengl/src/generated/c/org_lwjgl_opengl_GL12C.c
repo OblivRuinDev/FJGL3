@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glTexImage3DPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glTexSubImage3DPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCopyTexSubImage3DPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glDrawRangeElementsPROC) (jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glTexImage3DPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glTexSubImage3DPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCopyTexSubImage3DPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glDrawRangeElementsPROC) (jint, jint, jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

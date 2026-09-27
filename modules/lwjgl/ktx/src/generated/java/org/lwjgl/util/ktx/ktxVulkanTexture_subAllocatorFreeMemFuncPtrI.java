@@ -30,7 +30,6 @@ public interface ktxVulkanTexture_subAllocatorFreeMemFuncPtrI extends CallbackI 
         ktxVulkanTexture_subAllocatorFreeMemFuncPtrI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_pointer,
             ffi_type_uint64
         )

@@ -14,14 +14,14 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glGenQueriesARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDeleteQueriesARBPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsQueryARBPROC) (jint);
-typedef void (APIENTRY *glBeginQueryARBPROC) (jint, jint);
-typedef void (APIENTRY *glEndQueryARBPROC) (jint);
-typedef void (APIENTRY *glGetQueryivARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetQueryObjectivARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetQueryObjectuivARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGenQueriesARBPROC) (jint, uintptr_t);
+typedef void (*glDeleteQueriesARBPROC) (jint, uintptr_t);
+typedef jboolean (*glIsQueryARBPROC) (jint);
+typedef void (*glBeginQueryARBPROC) (jint, jint);
+typedef void (*glEndQueryARBPROC) (jint);
+typedef void (*glGetQueryivARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetQueryObjectivARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetQueryObjectuivARBPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

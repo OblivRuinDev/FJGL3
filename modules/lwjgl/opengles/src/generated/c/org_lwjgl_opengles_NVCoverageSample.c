@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glCoverageMaskNVPROC) (jboolean);
-typedef void (APIENTRY *glCoverageOperationNVPROC) (jint);
+typedef void (*glCoverageMaskNVPROC) (jboolean);
+typedef void (*glCoverageOperationNVPROC) (jint);
 
 EXTERN_C_ENTER
 

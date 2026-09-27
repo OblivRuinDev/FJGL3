@@ -48,7 +48,7 @@ public class NVStreamConsumerGLTextureYUV {
             check(dpy);
             check(stream);
         }
-        return callPPPI(dpy, stream, attrib_list, __functionAddress);
+        return invokePPPI(dpy, stream, attrib_list, __functionAddress);
     }
 
     /** {@code EGLBoolean eglStreamConsumerGLTextureExternalAttribsNV(EGLDisplay dpy, EGLStreamKHR stream, EGLAttrib const * attrib_list)} */

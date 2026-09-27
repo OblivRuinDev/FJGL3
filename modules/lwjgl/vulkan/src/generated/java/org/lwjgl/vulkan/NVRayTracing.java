@@ -128,7 +128,7 @@ public class NVRayTracing {
             check(__functionAddress);
             VkAccelerationStructureCreateInfoNV.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pAccelerationStructure, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pAccelerationStructure, __functionAddress);
     }
 
     /** {@code VkResult vkCreateAccelerationStructureNV(VkDevice device, VkAccelerationStructureCreateInfoNV const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkAccelerationStructureNV * pAccelerationStructure)} */
@@ -148,7 +148,7 @@ public class NVRayTracing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), accelerationStructure, pAllocator, __functionAddress);
+        invokePJPV(device.address(), accelerationStructure, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyAccelerationStructureNV(VkDevice device, VkAccelerationStructureNV accelerationStructure, VkAllocationCallbacks const * pAllocator)} */
@@ -164,7 +164,7 @@ public class NVRayTracing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetAccelerationStructureMemoryRequirementsNV(VkDevice device, VkAccelerationStructureMemoryRequirementsInfoNV const * pInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -181,7 +181,7 @@ public class NVRayTracing {
             check(__functionAddress);
             Struct.validate(pBindInfos, bindInfoCount, VkBindAccelerationStructureMemoryInfoNV.SIZEOF, VkBindAccelerationStructureMemoryInfoNV::validate);
         }
-        return callPPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
+        return invokePPI(device.address(), bindInfoCount, pBindInfos, __functionAddress);
     }
 
     /** {@code VkResult vkBindAccelerationStructureMemoryNV(VkDevice device, uint32_t bindInfoCount, VkBindAccelerationStructureMemoryInfoNV const * pBindInfos)} */
@@ -199,7 +199,7 @@ public class NVRayTracing {
             check(__functionAddress);
             VkAccelerationStructureInfoNV.validate(pInfo);
         }
-        callPPJJJJJJV(commandBuffer.address(), pInfo, instanceData, instanceOffset, update, dst, src, scratch, scratchOffset, __functionAddress);
+        invokePPJJJJJJV(commandBuffer.address(), pInfo, instanceData, instanceOffset, update, dst, src, scratch, scratchOffset, __functionAddress);
     }
 
     /** {@code void vkCmdBuildAccelerationStructureNV(VkCommandBuffer commandBuffer, VkAccelerationStructureInfoNV const * pInfo, VkBuffer instanceData, VkDeviceSize instanceOffset, VkBool32 update, VkAccelerationStructureNV dst, VkAccelerationStructureNV src, VkBuffer scratch, VkDeviceSize scratchOffset)} */
@@ -215,7 +215,7 @@ public class NVRayTracing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJV(commandBuffer.address(), dst, src, mode, __functionAddress);
+        invokePJJV(commandBuffer.address(), dst, src, mode, __functionAddress);
     }
 
     // --- [ vkCmdTraceRaysNV ] ---
@@ -226,7 +226,7 @@ public class NVRayTracing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJJJJJJJJJV(commandBuffer.address(), raygenShaderBindingTableBuffer, raygenShaderBindingOffset, missShaderBindingTableBuffer, missShaderBindingOffset, missShaderBindingStride, hitShaderBindingTableBuffer, hitShaderBindingOffset, hitShaderBindingStride, callableShaderBindingTableBuffer, callableShaderBindingOffset, callableShaderBindingStride, width, height, depth, __functionAddress);
+        invokePJJJJJJJJJJJV(commandBuffer.address(), raygenShaderBindingTableBuffer, raygenShaderBindingOffset, missShaderBindingTableBuffer, missShaderBindingOffset, missShaderBindingStride, hitShaderBindingTableBuffer, hitShaderBindingOffset, hitShaderBindingStride, callableShaderBindingTableBuffer, callableShaderBindingOffset, callableShaderBindingStride, width, height, depth, __functionAddress);
     }
 
     // --- [ vkCreateRayTracingPipelinesNV ] ---
@@ -238,7 +238,7 @@ public class NVRayTracing {
             check(__functionAddress);
             Struct.validate(pCreateInfos, createInfoCount, VkRayTracingPipelineCreateInfoNV.SIZEOF, VkRayTracingPipelineCreateInfoNV::validate);
         }
-        return callPJPPPI(device.address(), pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines, __functionAddress);
+        return invokePJPPPI(device.address(), pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines, __functionAddress);
     }
 
     /** {@code VkResult vkCreateRayTracingPipelinesNV(VkDevice device, VkPipelineCache pipelineCache, uint32_t createInfoCount, VkRayTracingPipelineCreateInfoNV const * pCreateInfos, VkAllocationCallbacks const * pAllocator, VkPipeline * pPipelines)} */
@@ -258,7 +258,7 @@ public class NVRayTracing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), pipeline, firstGroup, groupCount, dataSize, pData, __functionAddress);
+        return invokePJPPI(device.address(), pipeline, firstGroup, groupCount, dataSize, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetRayTracingShaderGroupHandlesNV(VkDevice device, VkPipeline pipeline, uint32_t firstGroup, uint32_t groupCount, size_t dataSize, void * pData)} */
@@ -275,7 +275,7 @@ public class NVRayTracing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), accelerationStructure, dataSize, pData, __functionAddress);
+        return invokePJPPI(device.address(), accelerationStructure, dataSize, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetAccelerationStructureHandleNV(VkDevice device, VkAccelerationStructureNV accelerationStructure, size_t dataSize, void * pData)} */
@@ -298,7 +298,7 @@ public class NVRayTracing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPJV(commandBuffer.address(), accelerationStructureCount, pAccelerationStructures, queryType, queryPool, firstQuery, __functionAddress);
+        invokePPJV(commandBuffer.address(), accelerationStructureCount, pAccelerationStructures, queryType, queryPool, firstQuery, __functionAddress);
     }
 
     /** {@code void vkCmdWriteAccelerationStructuresPropertiesNV(VkCommandBuffer commandBuffer, uint32_t accelerationStructureCount, VkAccelerationStructureNV const * pAccelerationStructures, VkQueryType queryType, VkQueryPool queryPool, uint32_t firstQuery)} */
@@ -315,7 +315,7 @@ public class NVRayTracing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(device.address(), pipeline, shader, __functionAddress);
+        return invokePJI(device.address(), pipeline, shader, __functionAddress);
     }
 
     /** {@code VkResult vkCreateAccelerationStructureNV(VkDevice device, VkAccelerationStructureCreateInfoNV const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkAccelerationStructureNV * pAccelerationStructure)} */
@@ -327,7 +327,7 @@ public class NVRayTracing {
             check(pAccelerationStructure, 1);
             VkAccelerationStructureCreateInfoNV.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pAccelerationStructure, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pAccelerationStructure, __functionAddress);
     }
 
     /** {@code VkResult vkCreateRayTracingPipelinesNV(VkDevice device, VkPipelineCache pipelineCache, uint32_t createInfoCount, VkRayTracingPipelineCreateInfoNV const * pCreateInfos, VkAllocationCallbacks const * pAllocator, VkPipeline * pPipelines)} */
@@ -339,7 +339,7 @@ public class NVRayTracing {
             check(pPipelines, pCreateInfos.remaining());
             Struct.validate(pCreateInfos.address(), pCreateInfos.remaining(), VkRayTracingPipelineCreateInfoNV.SIZEOF, VkRayTracingPipelineCreateInfoNV::validate);
         }
-        return callPJPPPI(device.address(), pipelineCache, pCreateInfos.remaining(), pCreateInfos.address(), memAddressSafe(pAllocator), pPipelines, __functionAddress);
+        return invokePJPPPI(device.address(), pipelineCache, pCreateInfos.remaining(), pCreateInfos.address(), memAddressSafe(pAllocator), pPipelines, __functionAddress);
     }
 
     /** {@code VkResult vkGetAccelerationStructureHandleNV(VkDevice device, VkAccelerationStructureNV accelerationStructure, size_t dataSize, void * pData)} */
@@ -349,7 +349,7 @@ public class NVRayTracing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), accelerationStructure, Integer.toUnsignedLong(pData.length) << 3, pData, __functionAddress);
+        return invokePJPPI(device.address(), accelerationStructure, Integer.toUnsignedLong(pData.length) << 3, pData, __functionAddress);
     }
 
     /** {@code void vkCmdWriteAccelerationStructuresPropertiesNV(VkCommandBuffer commandBuffer, uint32_t accelerationStructureCount, VkAccelerationStructureNV const * pAccelerationStructures, VkQueryType queryType, VkQueryPool queryPool, uint32_t firstQuery)} */
@@ -358,7 +358,7 @@ public class NVRayTracing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPJV(commandBuffer.address(), pAccelerationStructures.length, pAccelerationStructures, queryType, queryPool, firstQuery, __functionAddress);
+        invokePPJV(commandBuffer.address(), pAccelerationStructures.length, pAccelerationStructures, queryType, queryPool, firstQuery, __functionAddress);
     }
 
 }

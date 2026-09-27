@@ -62,7 +62,7 @@ public class ANDROIDDeviceAnchorPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, trackableTypeCapacityInput, trackableTypeCountOutput, trackableTypes, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, trackableTypeCapacityInput, trackableTypeCountOutput, trackableTypes, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSupportedPersistenceAnchorTypesANDROID(XrInstance instance, XrSystemId systemId, uint32_t trackableTypeCapacityInput, uint32_t * trackableTypeCountOutput, XrTrackableTypeANDROID * trackableTypes)} */
@@ -82,7 +82,7 @@ public class ANDROIDDeviceAnchorPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, outHandle, __functionAddress);
+        return invokePPPI(session.address(), createInfo, outHandle, __functionAddress);
     }
 
     /** {@code XrResult xrCreateDeviceAnchorPersistenceANDROID(XrSession session, XrDeviceAnchorPersistenceCreateInfoANDROID const * createInfo, XrDeviceAnchorPersistenceANDROID * outHandle)} */
@@ -103,7 +103,7 @@ public class ANDROIDDeviceAnchorPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(handle.address(), __functionAddress);
+        return invokePI(handle.address(), __functionAddress);
     }
 
     // --- [ xrPersistAnchorANDROID ] ---
@@ -115,7 +115,7 @@ public class ANDROIDDeviceAnchorPersistence {
             check(__functionAddress);
             XrPersistedAnchorSpaceInfoANDROID.validate(persistedInfo);
         }
-        return callPPPI(handle.address(), persistedInfo, anchorIdOutput, __functionAddress);
+        return invokePPPI(handle.address(), persistedInfo, anchorIdOutput, __functionAddress);
     }
 
     /** {@code XrResult xrPersistAnchorANDROID(XrDeviceAnchorPersistenceANDROID handle, XrPersistedAnchorSpaceInfoANDROID const * persistedInfo, XrUuidEXT * anchorIdOutput)} */
@@ -132,7 +132,7 @@ public class ANDROIDDeviceAnchorPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(handle.address(), anchorId, persistState, __functionAddress);
+        return invokePPPI(handle.address(), anchorId, persistState, __functionAddress);
     }
 
     /** {@code XrResult xrGetAnchorPersistStateANDROID(XrDeviceAnchorPersistenceANDROID handle, XrUuidEXT const * anchorId, XrAnchorPersistStateANDROID * persistState)} */
@@ -152,7 +152,7 @@ public class ANDROIDDeviceAnchorPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(handle.address(), createInfo, anchorOutput, __functionAddress);
+        return invokePPPI(handle.address(), createInfo, anchorOutput, __functionAddress);
     }
 
     /** {@code XrResult xrCreatePersistedAnchorSpaceANDROID(XrDeviceAnchorPersistenceANDROID handle, XrPersistedAnchorSpaceCreateInfoANDROID const * createInfo, XrSpace * anchorOutput)} */
@@ -172,7 +172,7 @@ public class ANDROIDDeviceAnchorPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(handle.address(), anchorIdCapacityInput, anchorIdCountOutput, anchorIds, __functionAddress);
+        return invokePPPI(handle.address(), anchorIdCapacityInput, anchorIdCountOutput, anchorIds, __functionAddress);
     }
 
     /** {@code XrResult xrEnumeratePersistedAnchorsANDROID(XrDeviceAnchorPersistenceANDROID handle, uint32_t anchorIdCapacityInput, uint32_t * anchorIdCountOutput, XrUuidEXT * anchorIds)} */
@@ -192,7 +192,7 @@ public class ANDROIDDeviceAnchorPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(handle.address(), anchorId, __functionAddress);
+        return invokePPI(handle.address(), anchorId, __functionAddress);
     }
 
     /** {@code XrResult xrUnpersistAnchorANDROID(XrDeviceAnchorPersistenceANDROID handle, XrUuidEXT const * anchorId)} */

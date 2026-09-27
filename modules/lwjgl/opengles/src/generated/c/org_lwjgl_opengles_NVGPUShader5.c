@@ -14,40 +14,40 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glUniform1i64NVPROC) (jint, jlong);
-typedef void (APIENTRY *glUniform2i64NVPROC) (jint, jlong, jlong);
-typedef void (APIENTRY *glUniform3i64NVPROC) (jint, jlong, jlong, jlong);
-typedef void (APIENTRY *glUniform4i64NVPROC) (jint, jlong, jlong, jlong, jlong);
-typedef void (APIENTRY *glUniform1i64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform2i64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform3i64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform4i64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform1ui64NVPROC) (jint, jlong);
-typedef void (APIENTRY *glUniform2ui64NVPROC) (jint, jlong, jlong);
-typedef void (APIENTRY *glUniform3ui64NVPROC) (jint, jlong, jlong, jlong);
-typedef void (APIENTRY *glUniform4ui64NVPROC) (jint, jlong, jlong, jlong, jlong);
-typedef void (APIENTRY *glUniform1ui64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform2ui64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform3ui64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform4ui64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetUniformi64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetUniformui64vNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform1i64NVPROC) (jint, jint, jlong);
-typedef void (APIENTRY *glProgramUniform2i64NVPROC) (jint, jint, jlong, jlong);
-typedef void (APIENTRY *glProgramUniform3i64NVPROC) (jint, jint, jlong, jlong, jlong);
-typedef void (APIENTRY *glProgramUniform4i64NVPROC) (jint, jint, jlong, jlong, jlong, jlong);
-typedef void (APIENTRY *glProgramUniform1i64vNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform2i64vNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform3i64vNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform4i64vNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform1ui64NVPROC) (jint, jint, jlong);
-typedef void (APIENTRY *glProgramUniform2ui64NVPROC) (jint, jint, jlong, jlong);
-typedef void (APIENTRY *glProgramUniform3ui64NVPROC) (jint, jint, jlong, jlong, jlong);
-typedef void (APIENTRY *glProgramUniform4ui64NVPROC) (jint, jint, jlong, jlong, jlong, jlong);
-typedef void (APIENTRY *glProgramUniform1ui64vNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform2ui64vNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform3ui64vNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform4ui64vNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glUniform1i64NVPROC) (jint, jlong);
+typedef void (*glUniform2i64NVPROC) (jint, jlong, jlong);
+typedef void (*glUniform3i64NVPROC) (jint, jlong, jlong, jlong);
+typedef void (*glUniform4i64NVPROC) (jint, jlong, jlong, jlong, jlong);
+typedef void (*glUniform1i64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glUniform2i64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glUniform3i64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glUniform4i64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glUniform1ui64NVPROC) (jint, jlong);
+typedef void (*glUniform2ui64NVPROC) (jint, jlong, jlong);
+typedef void (*glUniform3ui64NVPROC) (jint, jlong, jlong, jlong);
+typedef void (*glUniform4ui64NVPROC) (jint, jlong, jlong, jlong, jlong);
+typedef void (*glUniform1ui64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glUniform2ui64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glUniform3ui64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glUniform4ui64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glGetUniformi64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glGetUniformui64vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramUniform1i64NVPROC) (jint, jint, jlong);
+typedef void (*glProgramUniform2i64NVPROC) (jint, jint, jlong, jlong);
+typedef void (*glProgramUniform3i64NVPROC) (jint, jint, jlong, jlong, jlong);
+typedef void (*glProgramUniform4i64NVPROC) (jint, jint, jlong, jlong, jlong, jlong);
+typedef void (*glProgramUniform1i64vNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramUniform2i64vNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramUniform3i64vNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramUniform4i64vNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramUniform1ui64NVPROC) (jint, jint, jlong);
+typedef void (*glProgramUniform2ui64NVPROC) (jint, jint, jlong, jlong);
+typedef void (*glProgramUniform3ui64NVPROC) (jint, jint, jlong, jlong, jlong);
+typedef void (*glProgramUniform4ui64NVPROC) (jint, jint, jlong, jlong, jlong, jlong);
+typedef void (*glProgramUniform1ui64vNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramUniform2ui64vNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramUniform3ui64vNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramUniform4ui64vNVPROC) (jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

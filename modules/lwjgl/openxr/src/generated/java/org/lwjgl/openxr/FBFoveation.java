@@ -50,7 +50,7 @@ public class FBFoveation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, profile, __functionAddress);
+        return invokePPPI(session.address(), createInfo, profile, __functionAddress);
     }
 
     /** {@code XrResult xrCreateFoveationProfileFB(XrSession session, XrFoveationProfileCreateInfoFB const * createInfo, XrFoveationProfileFB * profile)} */
@@ -71,7 +71,7 @@ public class FBFoveation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(profile.address(), __functionAddress);
+        return invokePI(profile.address(), __functionAddress);
     }
 
 }

@@ -104,7 +104,7 @@ public class ARMDataGraphOpticalFlow {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPPI(physicalDevice.address(), queueFamilyIndex, pQueueFamilyDataGraphProperties, pOpticalFlowImageFormatInfo, pFormatCount, pImageFormatProperties, __functionAddress);
+        return invokePPPPPI(physicalDevice.address(), queueFamilyIndex, pQueueFamilyDataGraphProperties, pOpticalFlowImageFormatInfo, pFormatCount, pImageFormatProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM(VkPhysicalDevice physicalDevice, uint32_t queueFamilyIndex, VkQueueFamilyDataGraphPropertiesARM const * pQueueFamilyDataGraphProperties, VkDataGraphOpticalFlowImageFormatInfoARM const * pOpticalFlowImageFormatInfo, uint32_t * pFormatCount, VkDataGraphOpticalFlowImageFormatPropertiesARM * pImageFormatProperties)} */
@@ -125,7 +125,7 @@ public class ARMDataGraphOpticalFlow {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), queueFamilyIndex, pQueueFamilyDataGraphProperties, pProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), queueFamilyIndex, pQueueFamilyDataGraphProperties, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM(VkPhysicalDevice physicalDevice, uint32_t queueFamilyIndex, VkQueueFamilyDataGraphPropertiesARM const * pQueueFamilyDataGraphProperties, VkBaseOutStructure * pProperties)} */
@@ -143,7 +143,7 @@ public class ARMDataGraphOpticalFlow {
             check(pFormatCount, 1);
             checkSafe(pImageFormatProperties, pFormatCount[0]);
         }
-        return callPPPPPI(physicalDevice.address(), queueFamilyIndex, pQueueFamilyDataGraphProperties.address(), pOpticalFlowImageFormatInfo.address(), pFormatCount, memAddressSafe(pImageFormatProperties), __functionAddress);
+        return invokePPPPPI(physicalDevice.address(), queueFamilyIndex, pQueueFamilyDataGraphProperties.address(), pOpticalFlowImageFormatInfo.address(), pFormatCount, memAddressSafe(pImageFormatProperties), __functionAddress);
     }
 
 }

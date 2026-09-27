@@ -14,18 +14,18 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBufferAddressRangeNVPROC) (jint, jint, jlong, uintptr_t);
-typedef void (APIENTRY *glVertexFormatNVPROC) (jint, jint, jint);
-typedef void (APIENTRY *glNormalFormatNVPROC) (jint, jint);
-typedef void (APIENTRY *glColorFormatNVPROC) (jint, jint, jint);
-typedef void (APIENTRY *glIndexFormatNVPROC) (jint, jint);
-typedef void (APIENTRY *glTexCoordFormatNVPROC) (jint, jint, jint);
-typedef void (APIENTRY *glEdgeFlagFormatNVPROC) (jint);
-typedef void (APIENTRY *glSecondaryColorFormatNVPROC) (jint, jint, jint);
-typedef void (APIENTRY *glFogCoordFormatNVPROC) (jint, jint);
-typedef void (APIENTRY *glVertexAttribFormatNVPROC) (jint, jint, jint, jboolean, jint);
-typedef void (APIENTRY *glVertexAttribIFormatNVPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glGetIntegerui64i_vNVPROC) (jint, jint, uintptr_t);
+typedef void (*glBufferAddressRangeNVPROC) (jint, jint, jlong, uintptr_t);
+typedef void (*glVertexFormatNVPROC) (jint, jint, jint);
+typedef void (*glNormalFormatNVPROC) (jint, jint);
+typedef void (*glColorFormatNVPROC) (jint, jint, jint);
+typedef void (*glIndexFormatNVPROC) (jint, jint);
+typedef void (*glTexCoordFormatNVPROC) (jint, jint, jint);
+typedef void (*glEdgeFlagFormatNVPROC) (jint);
+typedef void (*glSecondaryColorFormatNVPROC) (jint, jint, jint);
+typedef void (*glFogCoordFormatNVPROC) (jint, jint);
+typedef void (*glVertexAttribFormatNVPROC) (jint, jint, jint, jboolean, jint);
+typedef void (*glVertexAttribIFormatNVPROC) (jint, jint, jint, jint);
+typedef void (*glGetIntegerui64i_vNVPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

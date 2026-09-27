@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glDrawTransformFeedbackEXTPROC) (jint, jint);
-typedef void (APIENTRY *glDrawTransformFeedbackInstancedEXTPROC) (jint, jint, jint);
+typedef void (*glDrawTransformFeedbackEXTPROC) (jint, jint);
+typedef void (*glDrawTransformFeedbackInstancedEXTPROC) (jint, jint, jint);
 
 EXTERN_C_ENTER
 

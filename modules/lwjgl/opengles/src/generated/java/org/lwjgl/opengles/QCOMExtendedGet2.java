@@ -83,7 +83,7 @@ public class QCOMExtendedGet2 {
             check(__functionAddress);
             checkSafe(numShaders, 1);
         }
-        callPPV(shaders, lengthSafe(shaders), numShaders, __functionAddress);
+        invokePPV(shaders, lengthSafe(shaders), numShaders, __functionAddress);
     }
 
     /** {@code void glExtGetProgramsQCOM(GLuint * programs, GLint maxPrograms, GLint * numPrograms)} */
@@ -93,7 +93,7 @@ public class QCOMExtendedGet2 {
             check(__functionAddress);
             checkSafe(numPrograms, 1);
         }
-        callPPV(programs, lengthSafe(programs), numPrograms, __functionAddress);
+        invokePPV(programs, lengthSafe(programs), numPrograms, __functionAddress);
     }
 
     /** {@code void glExtGetProgramBinarySourceQCOM(GLuint program, GLenum shadertype, GLchar * source, GLint * length)} */
@@ -103,7 +103,7 @@ public class QCOMExtendedGet2 {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(program, shadertype, memAddress(source), length, __functionAddress);
+        invokePPV(program, shadertype, memAddress(source), length, __functionAddress);
     }
 
 }

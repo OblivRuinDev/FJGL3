@@ -30,7 +30,6 @@ public interface FSBANK_MEMORY_ALLOC_CALLBACKI extends CallbackI {
         FSBANK_MEMORY_ALLOC_CALLBACKI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_pointer,
             ffi_type_uint32, ffi_type_uint32, ffi_type_pointer
         )

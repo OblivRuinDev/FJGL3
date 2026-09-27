@@ -36,7 +36,7 @@ public class WGLARBExtensionsString {
             check(__functionAddress);
             check(hdc);
         }
-        return callPP(hdc, __functionAddress);
+        return invokePP(hdc, __functionAddress);
     }
 
     /** {@code char const * wglGetExtensionsStringARB(HDC hdc)} */

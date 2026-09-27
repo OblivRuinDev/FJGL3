@@ -44,7 +44,7 @@ public class EXTDevicePersistentID {
             check(__functionAddress);
             check(device);
         }
-        return callPPPI(device, name, max_size, value, size, __functionAddress);
+        return invokePPPI(device, name, max_size, value, size, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryDeviceBinaryEXT(EGLDeviceEXT device, EGLint name, EGLint max_size, void * value, EGLint * size)} */
@@ -65,7 +65,7 @@ public class EXTDevicePersistentID {
             check(device);
             check(size, 1);
         }
-        return callPPPI(device, name, remainingSafe(value), memAddressSafe(value), size, __functionAddress) != 0;
+        return invokePPPI(device, name, remainingSafe(value), memAddressSafe(value), size, __functionAddress) != 0;
     }
 
 }

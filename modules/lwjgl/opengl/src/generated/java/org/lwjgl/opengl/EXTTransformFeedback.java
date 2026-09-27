@@ -207,7 +207,7 @@ public class EXTTransformFeedback {
             check(size, 1);
             check(type, 1);
         }
-        callPPPPV(program, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
+        invokePPPPV(program, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
     }
 
     /** {@code void glGetIntegerIndexedvEXT(GLenum target, GLuint index, GLint * data)} */

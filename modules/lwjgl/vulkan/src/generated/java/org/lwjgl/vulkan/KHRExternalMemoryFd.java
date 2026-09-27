@@ -44,7 +44,7 @@ public class KHRExternalMemoryFd {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pGetFdInfo, pFd, __functionAddress);
+        return invokePPPI(device.address(), pGetFdInfo, pFd, __functionAddress);
     }
 
     /** {@code VkResult vkGetMemoryFdKHR(VkDevice device, VkMemoryGetFdInfoKHR const * pGetFdInfo, int * pFd)} */
@@ -64,7 +64,7 @@ public class KHRExternalMemoryFd {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), handleType, fd, pMemoryFdProperties, __functionAddress);
+        return invokePPI(device.address(), handleType, fd, pMemoryFdProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetMemoryFdPropertiesKHR(VkDevice device, VkExternalMemoryHandleTypeFlagBits handleType, int fd, VkMemoryFdPropertiesKHR * pMemoryFdProperties)} */
@@ -81,7 +81,7 @@ public class KHRExternalMemoryFd {
             check(__functionAddress);
             check(pFd, 1);
         }
-        return callPPPI(device.address(), pGetFdInfo.address(), pFd, __functionAddress);
+        return invokePPPI(device.address(), pGetFdInfo.address(), pFd, __functionAddress);
     }
 
 }

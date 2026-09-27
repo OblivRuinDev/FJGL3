@@ -41,7 +41,7 @@ public class GLX11 extends GLX {
             check(__functionAddress);
             check(display);
         }
-        return callPP(display, screen, __functionAddress);
+        return invokePP(display, screen, __functionAddress);
     }
 
     /** {@code char const * glXQueryExtensionsString(Display * display, int screen)} */
@@ -60,7 +60,7 @@ public class GLX11 extends GLX {
             check(__functionAddress);
             check(display);
         }
-        return callPP(display, name, __functionAddress);
+        return invokePP(display, name, __functionAddress);
     }
 
     /** {@code char const * glXGetClientString(Display * display, int name)} */
@@ -79,7 +79,7 @@ public class GLX11 extends GLX {
             check(__functionAddress);
             check(display);
         }
-        return callPP(display, screen, name, __functionAddress);
+        return invokePP(display, screen, name, __functionAddress);
     }
 
     /** {@code char const * glXQueryServerString(Display * display, int screen, int name)} */

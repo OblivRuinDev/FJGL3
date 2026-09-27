@@ -60,7 +60,7 @@ public class NVPartitionedAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pInfo, pSizeInfo, __functionAddress);
+        invokePPPV(device.address(), pInfo, pSizeInfo, __functionAddress);
     }
 
     /** {@code void vkGetPartitionedAccelerationStructuresBuildSizesNV(VkDevice device, VkPartitionedAccelerationStructureInstancesInputNV const * pInfo, VkAccelerationStructureBuildSizesInfoKHR * pSizeInfo)} */
@@ -76,7 +76,7 @@ public class NVPartitionedAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pBuildInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pBuildInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBuildPartitionedAccelerationStructuresNV(VkCommandBuffer commandBuffer, VkBuildPartitionedAccelerationStructureInfoNV const * pBuildInfo)} */

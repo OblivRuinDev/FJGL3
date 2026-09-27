@@ -115,7 +115,7 @@ public class NVBindlessTexture {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, values.length, values, __functionAddress);
+        invokePV(location, values.length, values, __functionAddress);
     }
 
     /** {@code void glProgramUniformHandleui64vNV(GLuint program, GLint location, GLsizei count, GLuint64 const * values)} */
@@ -124,7 +124,7 @@ public class NVBindlessTexture {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, values.length, values, __functionAddress);
+        invokePV(program, location, values.length, values, __functionAddress);
     }
 
 }

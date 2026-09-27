@@ -39,7 +39,7 @@ public class MESAImageDMABufExport {
             check(dpy);
             check(image);
         }
-        return callPPPPPI(dpy, image, fourcc, num_planes, modifiers, __functionAddress);
+        return invokePPPPPI(dpy, image, fourcc, num_planes, modifiers, __functionAddress);
     }
 
     /** {@code EGLBoolean eglExportDMABUFImageQueryMESA(EGLDisplay dpy, EGLImageKHR image, int * fourcc, int * num_planes, EGLuint64KHR * modifiers)} */
@@ -63,7 +63,7 @@ public class MESAImageDMABufExport {
             check(dpy);
             check(image);
         }
-        return callPPPPPI(dpy, image, fds, strides, offsets, __functionAddress);
+        return invokePPPPPI(dpy, image, fds, strides, offsets, __functionAddress);
     }
 
     /** {@code EGLBoolean eglExportDMABUFImageMESA(EGLDisplay dpy, EGLImageKHR image, int * fds, EGLint * strides, EGLint * offsets)} */
@@ -89,7 +89,7 @@ public class MESAImageDMABufExport {
             checkSafe(num_planes, 1);
             checkSafe(modifiers, 1);
         }
-        return callPPPPPI(dpy, image, fourcc, num_planes, modifiers, __functionAddress) != 0;
+        return invokePPPPPI(dpy, image, fourcc, num_planes, modifiers, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglExportDMABUFImageMESA(EGLDisplay dpy, EGLImageKHR image, int * fds, EGLint * strides, EGLint * offsets)} */
@@ -104,7 +104,7 @@ public class MESAImageDMABufExport {
             checkSafe(strides, 1);
             checkSafe(offsets, 1);
         }
-        return callPPPPPI(dpy, image, fds, strides, offsets, __functionAddress) != 0;
+        return invokePPPPPI(dpy, image, fds, strides, offsets, __functionAddress) != 0;
     }
 
 }

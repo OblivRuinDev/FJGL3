@@ -36,7 +36,7 @@ public class NVNativeQuery {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPI(dpy, display_id, __functionAddress);
+        return invokePPI(dpy, display_id, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryNativeDisplayNV(EGLDisplay dpy, EGLNativeDisplayType * display_id)} */
@@ -58,7 +58,7 @@ public class NVNativeQuery {
             check(dpy);
             check(surf);
         }
-        return callPPPI(dpy, surf, window, __functionAddress);
+        return invokePPPI(dpy, surf, window, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryNativeWindowNV(EGLDisplay dpy, EGLSurface surf, EGLNativeWindowType * window)} */
@@ -80,7 +80,7 @@ public class NVNativeQuery {
             check(dpy);
             check(surf);
         }
-        return callPPPI(dpy, surf, pixmap, __functionAddress);
+        return invokePPPI(dpy, surf, pixmap, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryNativePixmapNV(EGLDisplay dpy, EGLSurface surf, EGLNativePixmapType * pixmap)} */

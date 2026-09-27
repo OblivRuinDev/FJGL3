@@ -50,7 +50,7 @@ public class ANDROIDSpatialDiscoveryRaycast {
             check(__functionAddress);
             XrSpatialRaycastSnapshotCreateInfoANDROID.validate(createInfo);
         }
-        return callPPPI(spatialContext.address(), createInfo, snapshot, __functionAddress);
+        return invokePPPI(spatialContext.address(), createInfo, snapshot, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialRaycastSnapshotANDROID(XrSpatialContextEXT spatialContext, XrSpatialRaycastSnapshotCreateInfoANDROID const * createInfo, XrSpatialSnapshotEXT * snapshot)} */

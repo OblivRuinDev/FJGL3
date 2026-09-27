@@ -30,7 +30,6 @@ public interface VkReallocationFunctionI extends CallbackI {
         VkReallocationFunctionI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_pointer,
             ffi_type_pointer, ffi_type_pointer, ffi_type_pointer, ffi_type_pointer, ffi_type_uint32
         )

@@ -34,7 +34,7 @@ public class GLXSGIXSwapGroup {
             check(display);
             check(drawable);
         }
-        callPPPV(display, drawable, member, __functionAddress);
+        invokePPPV(display, drawable, member, __functionAddress);
     }
 
 }

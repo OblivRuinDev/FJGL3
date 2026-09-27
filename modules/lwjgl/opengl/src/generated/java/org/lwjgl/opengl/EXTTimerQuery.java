@@ -101,7 +101,7 @@ public class EXTTimerQuery {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(id, pname, params, __functionAddress);
+        invokePV(id, pname, params, __functionAddress);
     }
 
     /** {@code void glGetQueryObjectui64vEXT(GLuint id, GLenum pname, GLuint64 * params)} */
@@ -111,7 +111,7 @@ public class EXTTimerQuery {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(id, pname, params, __functionAddress);
+        invokePV(id, pname, params, __functionAddress);
     }
 
 }

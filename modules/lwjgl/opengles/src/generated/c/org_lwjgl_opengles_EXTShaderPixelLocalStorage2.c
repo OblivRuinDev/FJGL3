@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glFramebufferPixelLocalStorageSizeEXTPROC) (jint, jint);
-typedef jint (APIENTRY *glGetFramebufferPixelLocalStorageSizeEXTPROC) (jint);
-typedef void (APIENTRY *glClearPixelLocalStorageuiEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glFramebufferPixelLocalStorageSizeEXTPROC) (jint, jint);
+typedef jint (*glGetFramebufferPixelLocalStorageSizeEXTPROC) (jint);
+typedef void (*glClearPixelLocalStorageuiEXTPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

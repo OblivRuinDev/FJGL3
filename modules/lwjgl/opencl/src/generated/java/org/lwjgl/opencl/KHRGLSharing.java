@@ -53,7 +53,7 @@ public class KHRGLSharing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(properties, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(properties, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetGLContextInfoKHR(cl_context_properties const * properties, cl_gl_context_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */

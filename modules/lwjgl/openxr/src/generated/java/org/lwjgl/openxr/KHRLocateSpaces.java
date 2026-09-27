@@ -42,7 +42,7 @@ public class KHRLocateSpaces {
             check(__functionAddress);
             XrSpacesLocateInfo.validate(locateInfo);
         }
-        return callPPPI(session.address(), locateInfo, spaceLocations, __functionAddress);
+        return invokePPPI(session.address(), locateInfo, spaceLocations, __functionAddress);
     }
 
     /** {@code XrResult xrLocateSpacesKHR(XrSession session, XrSpacesLocateInfo const * locateInfo, XrSpaceLocations * spaceLocations)} */

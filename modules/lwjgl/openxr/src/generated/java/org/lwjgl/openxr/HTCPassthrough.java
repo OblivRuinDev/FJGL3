@@ -51,7 +51,7 @@ public class HTCPassthrough {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, passthrough, __functionAddress);
+        return invokePPPI(session.address(), createInfo, passthrough, __functionAddress);
     }
 
     /** {@code XrResult xrCreatePassthroughHTC(XrSession session, XrPassthroughCreateInfoHTC const * createInfo, XrPassthroughHTC * passthrough)} */
@@ -72,7 +72,7 @@ public class HTCPassthrough {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(passthrough.address(), __functionAddress);
+        return invokePI(passthrough.address(), __functionAddress);
     }
 
 }

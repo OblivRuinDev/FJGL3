@@ -64,7 +64,7 @@ public class ARBDrawBuffers {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(bufs.length, bufs, __functionAddress);
+        invokePV(bufs.length, bufs, __functionAddress);
     }
 
 }

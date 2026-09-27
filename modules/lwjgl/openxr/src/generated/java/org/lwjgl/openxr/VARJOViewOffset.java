@@ -37,7 +37,7 @@ public class VARJOViewOffset {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(session.address(), offset, __functionAddress);
+        return invokePI(session.address(), offset, __functionAddress);
     }
 
 }

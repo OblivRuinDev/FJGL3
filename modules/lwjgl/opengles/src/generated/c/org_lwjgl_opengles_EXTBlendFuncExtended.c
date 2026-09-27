@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glBindFragDataLocationIndexedEXTPROC) (jint, jint, jint, uintptr_t);
-typedef jint (APIENTRY *glGetFragDataIndexEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glBindFragDataLocationEXTPROC) (jint, jint, uintptr_t);
-typedef jint (APIENTRY *glGetProgramResourceLocationIndexEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glBindFragDataLocationIndexedEXTPROC) (jint, jint, jint, uintptr_t);
+typedef jint (*glGetFragDataIndexEXTPROC) (jint, uintptr_t);
+typedef void (*glBindFragDataLocationEXTPROC) (jint, jint, uintptr_t);
+typedef jint (*glGetProgramResourceLocationIndexEXTPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

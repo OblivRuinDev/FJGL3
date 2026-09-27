@@ -40,7 +40,7 @@ public class EXTAttachmentFeedbackLoopDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), aspectMask, __functionAddress);
+        invokePV(commandBuffer.address(), aspectMask, __functionAddress);
     }
 
 }

@@ -35,7 +35,7 @@ public class WLCreateWaylandBufferFromImage {
             check(dpy);
             check(image);
         }
-        return callPPP(dpy, image, __functionAddress);
+        return invokePPP(dpy, image, __functionAddress);
     }
 
 }

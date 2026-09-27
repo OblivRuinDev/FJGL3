@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glTexStorageSparseAMDPROC) (jint, jint, jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glTextureStorageSparseAMDPROC) (jint, jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glTexStorageSparseAMDPROC) (jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glTextureStorageSparseAMDPROC) (jint, jint, jint, jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

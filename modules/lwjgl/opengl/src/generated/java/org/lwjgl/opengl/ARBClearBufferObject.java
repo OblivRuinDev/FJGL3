@@ -171,7 +171,7 @@ public class ARBClearBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffer, internalformat, format, type, data, __functionAddress);
+        invokePV(buffer, internalformat, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearNamedBufferDataEXT(GLuint buffer, GLenum internalformat, GLenum format, GLenum type, void const * data)} */
@@ -180,7 +180,7 @@ public class ARBClearBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffer, internalformat, format, type, data, __functionAddress);
+        invokePV(buffer, internalformat, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearNamedBufferDataEXT(GLuint buffer, GLenum internalformat, GLenum format, GLenum type, void const * data)} */
@@ -189,7 +189,7 @@ public class ARBClearBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffer, internalformat, format, type, data, __functionAddress);
+        invokePV(buffer, internalformat, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearNamedBufferSubDataEXT(GLuint buffer, GLenum internalformat, GLintptr offset, GLsizeiptr size, GLenum format, GLenum type, void const * data)} */
@@ -198,7 +198,7 @@ public class ARBClearBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, internalformat, offset, size, format, type, data, __functionAddress);
+        invokePPPV(buffer, internalformat, offset, size, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearNamedBufferSubDataEXT(GLuint buffer, GLenum internalformat, GLintptr offset, GLsizeiptr size, GLenum format, GLenum type, void const * data)} */
@@ -207,7 +207,7 @@ public class ARBClearBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, internalformat, offset, size, format, type, data, __functionAddress);
+        invokePPPV(buffer, internalformat, offset, size, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearNamedBufferSubDataEXT(GLuint buffer, GLenum internalformat, GLintptr offset, GLsizeiptr size, GLenum format, GLenum type, void const * data)} */
@@ -216,7 +216,7 @@ public class ARBClearBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, internalformat, offset, size, format, type, data, __functionAddress);
+        invokePPPV(buffer, internalformat, offset, size, format, type, data, __functionAddress);
     }
 
 }

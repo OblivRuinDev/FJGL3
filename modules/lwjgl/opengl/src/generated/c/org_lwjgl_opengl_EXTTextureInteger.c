@@ -14,12 +14,12 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glClearColorIiEXTPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glClearColorIuiEXTPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glTexParameterIivEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glTexParameterIuivEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetTexParameterIivEXTPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetTexParameterIuivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glClearColorIiEXTPROC) (jint, jint, jint, jint);
+typedef void (*glClearColorIuiEXTPROC) (jint, jint, jint, jint);
+typedef void (*glTexParameterIivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glTexParameterIuivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glGetTexParameterIivEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glGetTexParameterIuivEXTPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

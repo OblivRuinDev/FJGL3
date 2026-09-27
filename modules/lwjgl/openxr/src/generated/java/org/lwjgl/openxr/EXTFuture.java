@@ -52,7 +52,7 @@ public class EXTFuture {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(instance.address(), pollInfo, pollResult, __functionAddress);
+        return invokePPPI(instance.address(), pollInfo, pollResult, __functionAddress);
     }
 
     /** {@code XrResult xrPollFutureEXT(XrInstance instance, XrFuturePollInfoEXT const * pollInfo, XrFuturePollResultEXT * pollResult)} */
@@ -69,7 +69,7 @@ public class EXTFuture {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(instance.address(), cancelInfo, __functionAddress);
+        return invokePPI(instance.address(), cancelInfo, __functionAddress);
     }
 
     /** {@code XrResult xrCancelFutureEXT(XrInstance instance, XrFutureCancelInfoEXT const * cancelInfo)} */

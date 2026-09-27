@@ -47,7 +47,7 @@ public class HUAWEIClusterCullingShader {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), groupCountX, groupCountY, groupCountZ, __functionAddress);
+        invokePV(commandBuffer.address(), groupCountX, groupCountY, groupCountZ, __functionAddress);
     }
 
     // --- [ vkCmdDrawClusterIndirectHUAWEI ] ---
@@ -58,7 +58,7 @@ public class HUAWEIClusterCullingShader {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJV(commandBuffer.address(), buffer, offset, __functionAddress);
+        invokePJJV(commandBuffer.address(), buffer, offset, __functionAddress);
     }
 
 }

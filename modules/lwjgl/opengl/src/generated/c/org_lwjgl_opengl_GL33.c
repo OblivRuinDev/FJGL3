@@ -14,36 +14,36 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glVertexP2uiPROC) (jint, jint);
-typedef void (APIENTRY *glVertexP3uiPROC) (jint, jint);
-typedef void (APIENTRY *glVertexP4uiPROC) (jint, jint);
-typedef void (APIENTRY *glVertexP2uivPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexP3uivPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glVertexP4uivPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glTexCoordP1uiPROC) (jint, jint);
-typedef void (APIENTRY *glTexCoordP2uiPROC) (jint, jint);
-typedef void (APIENTRY *glTexCoordP3uiPROC) (jint, jint);
-typedef void (APIENTRY *glTexCoordP4uiPROC) (jint, jint);
-typedef void (APIENTRY *glTexCoordP1uivPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glTexCoordP2uivPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glTexCoordP3uivPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glTexCoordP4uivPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoordP1uiPROC) (jint, jint, jint);
-typedef void (APIENTRY *glMultiTexCoordP2uiPROC) (jint, jint, jint);
-typedef void (APIENTRY *glMultiTexCoordP3uiPROC) (jint, jint, jint);
-typedef void (APIENTRY *glMultiTexCoordP4uiPROC) (jint, jint, jint);
-typedef void (APIENTRY *glMultiTexCoordP1uivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoordP2uivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoordP3uivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glMultiTexCoordP4uivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glNormalP3uiPROC) (jint, jint);
-typedef void (APIENTRY *glNormalP3uivPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glColorP3uiPROC) (jint, jint);
-typedef void (APIENTRY *glColorP4uiPROC) (jint, jint);
-typedef void (APIENTRY *glColorP3uivPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glColorP4uivPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glSecondaryColorP3uiPROC) (jint, jint);
-typedef void (APIENTRY *glSecondaryColorP3uivPROC) (jint, uintptr_t);
+typedef void (*glVertexP2uiPROC) (jint, jint);
+typedef void (*glVertexP3uiPROC) (jint, jint);
+typedef void (*glVertexP4uiPROC) (jint, jint);
+typedef void (*glVertexP2uivPROC) (jint, uintptr_t);
+typedef void (*glVertexP3uivPROC) (jint, uintptr_t);
+typedef void (*glVertexP4uivPROC) (jint, uintptr_t);
+typedef void (*glTexCoordP1uiPROC) (jint, jint);
+typedef void (*glTexCoordP2uiPROC) (jint, jint);
+typedef void (*glTexCoordP3uiPROC) (jint, jint);
+typedef void (*glTexCoordP4uiPROC) (jint, jint);
+typedef void (*glTexCoordP1uivPROC) (jint, uintptr_t);
+typedef void (*glTexCoordP2uivPROC) (jint, uintptr_t);
+typedef void (*glTexCoordP3uivPROC) (jint, uintptr_t);
+typedef void (*glTexCoordP4uivPROC) (jint, uintptr_t);
+typedef void (*glMultiTexCoordP1uiPROC) (jint, jint, jint);
+typedef void (*glMultiTexCoordP2uiPROC) (jint, jint, jint);
+typedef void (*glMultiTexCoordP3uiPROC) (jint, jint, jint);
+typedef void (*glMultiTexCoordP4uiPROC) (jint, jint, jint);
+typedef void (*glMultiTexCoordP1uivPROC) (jint, jint, uintptr_t);
+typedef void (*glMultiTexCoordP2uivPROC) (jint, jint, uintptr_t);
+typedef void (*glMultiTexCoordP3uivPROC) (jint, jint, uintptr_t);
+typedef void (*glMultiTexCoordP4uivPROC) (jint, jint, uintptr_t);
+typedef void (*glNormalP3uiPROC) (jint, jint);
+typedef void (*glNormalP3uivPROC) (jint, uintptr_t);
+typedef void (*glColorP3uiPROC) (jint, jint);
+typedef void (*glColorP4uiPROC) (jint, jint);
+typedef void (*glColorP3uivPROC) (jint, uintptr_t);
+typedef void (*glColorP4uivPROC) (jint, uintptr_t);
+typedef void (*glSecondaryColorP3uiPROC) (jint, jint);
+typedef void (*glSecondaryColorP3uivPROC) (jint, uintptr_t);
 
 EXTERN_C_ENTER
 

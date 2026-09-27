@@ -14,11 +14,11 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glDrawVkImageNVPROC) (jlong, jint, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
-typedef uintptr_t (APIENTRY *glGetVkProcAddrNVPROC) (uintptr_t);
-typedef void (APIENTRY *glWaitVkSemaphoreNVPROC) (jlong);
-typedef void (APIENTRY *glSignalVkSemaphoreNVPROC) (jlong);
-typedef void (APIENTRY *glSignalVkFenceNVPROC) (jlong);
+typedef void (*glDrawVkImageNVPROC) (jlong, jint, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+typedef uintptr_t (*glGetVkProcAddrNVPROC) (uintptr_t);
+typedef void (*glWaitVkSemaphoreNVPROC) (jlong);
+typedef void (*glSignalVkSemaphoreNVPROC) (jlong);
+typedef void (*glSignalVkFenceNVPROC) (jlong);
 
 EXTERN_C_ENTER
 

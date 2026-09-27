@@ -44,7 +44,7 @@ public class EGL14 extends EGL13 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
 }

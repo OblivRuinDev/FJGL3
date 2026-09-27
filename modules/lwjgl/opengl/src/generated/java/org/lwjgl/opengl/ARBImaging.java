@@ -659,7 +659,7 @@ public class ARBImaging {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, internalformat, width, format, type, table, __functionAddress);
+        invokePV(target, internalformat, width, format, type, table, __functionAddress);
     }
 
     /** {@code void glColorTable(GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, void const * table)} */
@@ -668,7 +668,7 @@ public class ARBImaging {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, internalformat, width, format, type, table, __functionAddress);
+        invokePV(target, internalformat, width, format, type, table, __functionAddress);
     }
 
     /** {@code void glColorTable(GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, void const * table)} */
@@ -677,7 +677,7 @@ public class ARBImaging {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, internalformat, width, format, type, table, __functionAddress);
+        invokePV(target, internalformat, width, format, type, table, __functionAddress);
     }
 
     /** {@code void glColorTableParameteriv(GLenum target, GLenum pname, GLint const * params)} */
@@ -687,7 +687,7 @@ public class ARBImaging {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glColorTableParameterfv(GLenum target, GLenum pname, GLfloat const * params)} */
@@ -697,7 +697,7 @@ public class ARBImaging {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetColorTable(GLenum target, GLenum format, GLenum type, void * table)} */
@@ -706,7 +706,7 @@ public class ARBImaging {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, format, type, table, __functionAddress);
+        invokePV(target, format, type, table, __functionAddress);
     }
 
     /** {@code void glGetColorTable(GLenum target, GLenum format, GLenum type, void * table)} */
@@ -715,7 +715,7 @@ public class ARBImaging {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, format, type, table, __functionAddress);
+        invokePV(target, format, type, table, __functionAddress);
     }
 
     /** {@code void glGetColorTable(GLenum target, GLenum format, GLenum type, void * table)} */
@@ -724,7 +724,7 @@ public class ARBImaging {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, format, type, table, __functionAddress);
+        invokePV(target, format, type, table, __functionAddress);
     }
 
     /** {@code void glGetColorTableParameteriv(GLenum target, GLenum pname, GLint * params)} */
@@ -734,7 +734,7 @@ public class ARBImaging {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetColorTableParameterfv(GLenum target, GLenum pname, GLfloat * params)} */
@@ -744,7 +744,7 @@ public class ARBImaging {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glConvolutionParameteriv(GLenum target, GLenum pname, GLint const * params)} */
@@ -754,7 +754,7 @@ public class ARBImaging {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glConvolutionParameterfv(GLenum target, GLenum pname, GLfloat const * params)} */
@@ -764,7 +764,7 @@ public class ARBImaging {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetConvolutionParameteriv(GLenum target, GLenum pname, GLint * params)} */
@@ -774,7 +774,7 @@ public class ARBImaging {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetConvolutionParameterfv(GLenum target, GLenum pname, GLfloat * params)} */
@@ -784,7 +784,7 @@ public class ARBImaging {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetHistogramParameteriv(GLenum target, GLenum pname, GLint * params)} */
@@ -794,7 +794,7 @@ public class ARBImaging {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetHistogramParameterfv(GLenum target, GLenum pname, GLfloat * params)} */
@@ -804,7 +804,7 @@ public class ARBImaging {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMinmaxParameteriv(GLenum target, GLenum pname, GLint * params)} */
@@ -814,7 +814,7 @@ public class ARBImaging {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetMinmaxParameterfv(GLenum target, GLenum pname, GLfloat * params)} */
@@ -824,7 +824,7 @@ public class ARBImaging {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
 }

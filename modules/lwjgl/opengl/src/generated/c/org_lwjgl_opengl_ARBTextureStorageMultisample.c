@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glTextureStorage2DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jint, jboolean);
-typedef void (APIENTRY *glTextureStorage3DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTextureStorage2DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTextureStorage3DMultisampleEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jboolean);
 
 EXTERN_C_ENTER
 

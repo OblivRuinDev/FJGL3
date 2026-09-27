@@ -222,7 +222,7 @@ public class EXTSecondaryColor {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glSecondaryColor3ivEXT(GLint const * v)} */
@@ -232,7 +232,7 @@ public class EXTSecondaryColor {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glSecondaryColor3fvEXT(GLfloat const * v)} */
@@ -242,7 +242,7 @@ public class EXTSecondaryColor {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glSecondaryColor3dvEXT(GLdouble const * v)} */
@@ -252,7 +252,7 @@ public class EXTSecondaryColor {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glSecondaryColor3usvEXT(GLushort const * v)} */
@@ -262,7 +262,7 @@ public class EXTSecondaryColor {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glSecondaryColor3uivEXT(GLuint const * v)} */
@@ -272,7 +272,7 @@ public class EXTSecondaryColor {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(v, __functionAddress);
+        invokePV(v, __functionAddress);
     }
 
     /** {@code void glSecondaryColorPointerEXT(GLint size, GLenum type, GLsizei stride, void const * pointer)} */
@@ -281,7 +281,7 @@ public class EXTSecondaryColor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(size, type, stride, pointer, __functionAddress);
+        invokePV(size, type, stride, pointer, __functionAddress);
     }
 
     /** {@code void glSecondaryColorPointerEXT(GLint size, GLenum type, GLsizei stride, void const * pointer)} */
@@ -290,7 +290,7 @@ public class EXTSecondaryColor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(size, type, stride, pointer, __functionAddress);
+        invokePV(size, type, stride, pointer, __functionAddress);
     }
 
     /** {@code void glSecondaryColorPointerEXT(GLint size, GLenum type, GLsizei stride, void const * pointer)} */
@@ -299,7 +299,7 @@ public class EXTSecondaryColor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(size, type, stride, pointer, __functionAddress);
+        invokePV(size, type, stride, pointer, __functionAddress);
     }
 
 }

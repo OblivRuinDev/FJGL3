@@ -57,7 +57,7 @@ public class EXTHostImageCopy {
             check(__functionAddress);
             VkCopyMemoryToImageInfo.validate(pCopyMemoryToImageInfo);
         }
-        return callPPI(device.address(), pCopyMemoryToImageInfo, __functionAddress);
+        return invokePPI(device.address(), pCopyMemoryToImageInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCopyMemoryToImageEXT(VkDevice device, VkCopyMemoryToImageInfo const * pCopyMemoryToImageInfo)} */
@@ -75,7 +75,7 @@ public class EXTHostImageCopy {
             check(__functionAddress);
             VkCopyImageToMemoryInfo.validate(pCopyImageToMemoryInfo);
         }
-        return callPPI(device.address(), pCopyImageToMemoryInfo, __functionAddress);
+        return invokePPI(device.address(), pCopyImageToMemoryInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCopyImageToMemoryEXT(VkDevice device, VkCopyImageToMemoryInfo const * pCopyImageToMemoryInfo)} */
@@ -93,7 +93,7 @@ public class EXTHostImageCopy {
             check(__functionAddress);
             VkCopyImageToImageInfo.validate(pCopyImageToImageInfo);
         }
-        return callPPI(device.address(), pCopyImageToImageInfo, __functionAddress);
+        return invokePPI(device.address(), pCopyImageToImageInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCopyImageToImageEXT(VkDevice device, VkCopyImageToImageInfo const * pCopyImageToImageInfo)} */
@@ -110,7 +110,7 @@ public class EXTHostImageCopy {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), transitionCount, pTransitions, __functionAddress);
+        return invokePPI(device.address(), transitionCount, pTransitions, __functionAddress);
     }
 
     /** {@code VkResult vkTransitionImageLayoutEXT(VkDevice device, uint32_t transitionCount, VkHostImageLayoutTransitionInfo const * pTransitions)} */
@@ -127,7 +127,7 @@ public class EXTHostImageCopy {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPPV(device.address(), image, pSubresource, pLayout, __functionAddress);
+        invokePJPPV(device.address(), image, pSubresource, pLayout, __functionAddress);
     }
 
     /** {@code void vkGetImageSubresourceLayout2EXT(VkDevice device, VkImage image, VkImageSubresource2 const * pSubresource, VkSubresourceLayout2 * pLayout)} */

@@ -481,7 +481,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI2ivEXT(GLuint index, GLint const * v)} */
@@ -491,7 +491,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI3ivEXT(GLuint index, GLint const * v)} */
@@ -501,7 +501,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI4ivEXT(GLuint index, GLint const * v)} */
@@ -511,7 +511,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI1uivEXT(GLuint index, GLuint const * v)} */
@@ -521,7 +521,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI2uivEXT(GLuint index, GLuint const * v)} */
@@ -531,7 +531,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI3uivEXT(GLuint index, GLuint const * v)} */
@@ -541,7 +541,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI4uivEXT(GLuint index, GLuint const * v)} */
@@ -551,7 +551,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI4svEXT(GLuint index, GLshort const * v)} */
@@ -561,7 +561,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribI4usvEXT(GLuint index, GLshort const * v)} */
@@ -571,7 +571,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribIPointerEXT(GLuint index, GLint size, GLenum type, GLsizei stride, void const * pointer)} */
@@ -580,7 +580,7 @@ public class EXTGPUShader4 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(index, size, type, stride, pointer, __functionAddress);
+        invokePV(index, size, type, stride, pointer, __functionAddress);
     }
 
     /** {@code void glVertexAttribIPointerEXT(GLuint index, GLint size, GLenum type, GLsizei stride, void const * pointer)} */
@@ -589,7 +589,7 @@ public class EXTGPUShader4 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(index, size, type, stride, pointer, __functionAddress);
+        invokePV(index, size, type, stride, pointer, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribIivEXT(GLuint index, GLenum pname, GLint * params)} */
@@ -599,7 +599,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribIuivEXT(GLuint index, GLenum pname, GLuint * params)} */
@@ -609,7 +609,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
     /** {@code void glGetUniformuivEXT(GLuint program, GLint location, GLuint * params)} */
@@ -619,7 +619,7 @@ public class EXTGPUShader4 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, location, params, __functionAddress);
+        invokePV(program, location, params, __functionAddress);
     }
 
     /** {@code void glUniform1uivEXT(GLint location, GLsizei count, GLuint const * value)} */
@@ -628,7 +628,7 @@ public class EXTGPUShader4 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length, value, __functionAddress);
+        invokePV(location, value.length, value, __functionAddress);
     }
 
     /** {@code void glUniform2uivEXT(GLint location, GLsizei count, GLuint const * value)} */
@@ -637,7 +637,7 @@ public class EXTGPUShader4 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 1, value, __functionAddress);
+        invokePV(location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glUniform3uivEXT(GLint location, GLsizei count, GLuint const * value)} */
@@ -646,7 +646,7 @@ public class EXTGPUShader4 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 3, value, __functionAddress);
+        invokePV(location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glUniform4uivEXT(GLint location, GLsizei count, GLuint const * value)} */
@@ -655,7 +655,7 @@ public class EXTGPUShader4 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 2, value, __functionAddress);
+        invokePV(location, value.length >> 2, value, __functionAddress);
     }
 
 }

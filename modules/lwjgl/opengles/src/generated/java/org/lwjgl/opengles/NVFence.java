@@ -134,7 +134,7 @@ public class NVFence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(fences.length, fences, __functionAddress);
+        invokePV(fences.length, fences, __functionAddress);
     }
 
     /** {@code void glGenFencesNV(GLsizei n, GLuint * fences)} */
@@ -143,7 +143,7 @@ public class NVFence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(fences.length, fences, __functionAddress);
+        invokePV(fences.length, fences, __functionAddress);
     }
 
     /** {@code void glGetFenceivNV(GLuint fence, GLenum pname, GLint * params)} */
@@ -153,7 +153,7 @@ public class NVFence {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(fence, pname, params, __functionAddress);
+        invokePV(fence, pname, params, __functionAddress);
     }
 
 }

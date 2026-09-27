@@ -64,7 +64,7 @@ public class ANDROIDEyeTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, eyeTracker, __functionAddress);
+        return invokePPPI(session.address(), createInfo, eyeTracker, __functionAddress);
     }
 
     /** {@code XrResult xrCreateEyeTrackerANDROID(XrSession session, XrEyeTrackerCreateInfoANDROID const * createInfo, XrEyeTrackerANDROID * eyeTracker)} */
@@ -85,7 +85,7 @@ public class ANDROIDEyeTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(eyeTracker.address(), __functionAddress);
+        return invokePI(eyeTracker.address(), __functionAddress);
     }
 
     // --- [ xrGetFineTrackingEyesInfoANDROID ] ---
@@ -97,7 +97,7 @@ public class ANDROIDEyeTracking {
             check(__functionAddress);
             XrEyesGetInfoANDROID.validate(getInfo);
         }
-        return callPPPI(eyeTracker.address(), getInfo, eyesOutput, __functionAddress);
+        return invokePPPI(eyeTracker.address(), getInfo, eyesOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetFineTrackingEyesInfoANDROID(XrEyeTrackerANDROID eyeTracker, XrEyesGetInfoANDROID const * getInfo, XrEyesANDROID * eyesOutput)} */
@@ -115,7 +115,7 @@ public class ANDROIDEyeTracking {
             check(__functionAddress);
             XrEyesGetInfoANDROID.validate(getInfo);
         }
-        return callPPPI(eyeTracker.address(), getInfo, eyesOutput, __functionAddress);
+        return invokePPPI(eyeTracker.address(), getInfo, eyesOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetCoarseTrackingEyesInfoANDROID(XrEyeTrackerANDROID eyeTracker, XrEyesGetInfoANDROID const * getInfo, XrEyesANDROID * eyesOutput)} */

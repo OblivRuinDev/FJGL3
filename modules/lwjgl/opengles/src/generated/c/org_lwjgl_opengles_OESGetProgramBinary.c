@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glGetProgramBinaryOESPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glProgramBinaryOESPROC) (jint, jint, uintptr_t, jint);
+typedef void (*glGetProgramBinaryOESPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glProgramBinaryOESPROC) (jint, jint, uintptr_t, jint);
 
 EXTERN_C_ENTER
 

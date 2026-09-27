@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glStencilClearTagEXTPROC) (jint, jint);
+typedef void (*glStencilClearTagEXTPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

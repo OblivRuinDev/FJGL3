@@ -37,7 +37,7 @@ public class NVPostSubBuffer {
             check(dpy);
             check(surface);
         }
-        return callPPI(dpy, surface, x, y, width, height, __functionAddress) != 0;
+        return invokePPI(dpy, surface, x, y, width, height, __functionAddress) != 0;
     }
 
 }

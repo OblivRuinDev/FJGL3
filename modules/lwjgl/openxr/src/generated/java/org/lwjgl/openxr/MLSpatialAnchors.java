@@ -55,7 +55,7 @@ public class MLSpatialAnchors {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, future, __functionAddress);
+        return invokePPPI(session.address(), createInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorsAsyncML(XrSession session, XrSpatialAnchorsCreateInfoBaseHeaderML const * createInfo, XrFutureEXT * future)} */
@@ -75,7 +75,7 @@ public class MLSpatialAnchors {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), future, completion, __functionAddress);
+        return invokePJPI(session.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorsCompleteML(XrSession session, XrFutureEXT future, XrCreateSpatialAnchorsCompletionML * completion)} */
@@ -92,7 +92,7 @@ public class MLSpatialAnchors {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(anchor.address(), state, __functionAddress);
+        return invokePPI(anchor.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpatialAnchorStateML(XrSpace anchor, XrSpatialAnchorStateML * state)} */

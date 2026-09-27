@@ -44,7 +44,7 @@ public class VALVEDescriptorSetHostMapping {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pBindingReference, pHostMapping, __functionAddress);
+        invokePPPV(device.address(), pBindingReference, pHostMapping, __functionAddress);
     }
 
     /** {@code void vkGetDescriptorSetLayoutHostMappingInfoVALVE(VkDevice device, VkDescriptorSetBindingReferenceVALVE const * pBindingReference, VkDescriptorSetLayoutHostMappingInfoVALVE * pHostMapping)} */
@@ -60,7 +60,7 @@ public class VALVEDescriptorSetHostMapping {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), descriptorSet, ppData, __functionAddress);
+        invokePJPV(device.address(), descriptorSet, ppData, __functionAddress);
     }
 
     /** {@code void vkGetDescriptorSetHostMappingVALVE(VkDevice device, VkDescriptorSet descriptorSet, void ** ppData)} */

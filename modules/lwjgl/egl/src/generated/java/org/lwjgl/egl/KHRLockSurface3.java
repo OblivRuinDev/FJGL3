@@ -65,7 +65,7 @@ public class KHRLockSurface3 {
             check(dpy);
             check(surface);
         }
-        return callPPPI(dpy, surface, attrib_list, __functionAddress);
+        return invokePPPI(dpy, surface, attrib_list, __functionAddress);
     }
 
     /** {@code EGLBoolean eglLockSurfaceKHR(EGLDisplay dpy, EGLSurface surface, EGLint const * attrib_list)} */
@@ -88,7 +88,7 @@ public class KHRLockSurface3 {
             check(dpy);
             check(surface);
         }
-        return callPPI(dpy, surface, __functionAddress) != 0;
+        return invokePPI(dpy, surface, __functionAddress) != 0;
     }
 
     // --- [ eglQuerySurface64KHR ] ---
@@ -101,7 +101,7 @@ public class KHRLockSurface3 {
             check(dpy);
             check(surface);
         }
-        return callPPPI(dpy, surface, attribute, value, __functionAddress);
+        return invokePPPI(dpy, surface, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQuerySurface64KHR(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLAttribKHR * value)} */
@@ -123,7 +123,7 @@ public class KHRLockSurface3 {
             check(surface);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPPI(dpy, surface, attrib_list, __functionAddress) != 0;
+        return invokePPPI(dpy, surface, attrib_list, __functionAddress) != 0;
     }
 
 }

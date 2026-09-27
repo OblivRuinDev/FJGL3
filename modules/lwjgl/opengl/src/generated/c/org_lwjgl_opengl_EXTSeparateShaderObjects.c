@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glUseShaderProgramEXTPROC) (jint, jint);
-typedef void (APIENTRY *glActiveProgramEXTPROC) (jint);
-typedef jint (APIENTRY *glCreateShaderProgramEXTPROC) (jint, uintptr_t);
+typedef void (*glUseShaderProgramEXTPROC) (jint, jint);
+typedef void (*glActiveProgramEXTPROC) (jint);
+typedef jint (*glCreateShaderProgramEXTPROC) (jint, uintptr_t);
 
 EXTERN_C_ENTER
 

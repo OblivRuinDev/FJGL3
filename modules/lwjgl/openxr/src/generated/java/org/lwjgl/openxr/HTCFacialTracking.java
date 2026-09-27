@@ -113,7 +113,7 @@ public class HTCFacialTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, facialTracker, __functionAddress);
+        return invokePPPI(session.address(), createInfo, facialTracker, __functionAddress);
     }
 
     /** {@code XrResult xrCreateFacialTrackerHTC(XrSession session, XrFacialTrackerCreateInfoHTC const * createInfo, XrFacialTrackerHTC * facialTracker)} */
@@ -134,7 +134,7 @@ public class HTCFacialTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(facialTracker.address(), __functionAddress);
+        return invokePI(facialTracker.address(), __functionAddress);
     }
 
     // --- [ xrGetFacialExpressionsHTC ] ---
@@ -145,7 +145,7 @@ public class HTCFacialTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(facialTracker.address(), facialExpressions, __functionAddress);
+        return invokePPI(facialTracker.address(), facialExpressions, __functionAddress);
     }
 
     /** {@code XrResult xrGetFacialExpressionsHTC(XrFacialTrackerHTC facialTracker, XrFacialExpressionsHTC * facialExpressions)} */

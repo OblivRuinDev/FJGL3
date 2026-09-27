@@ -30,7 +30,6 @@ public interface ktxStream_skipI extends CallbackI {
         ktxStream_skipI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_uint32,
             ffi_type_pointer, ffi_type_pointer
         )

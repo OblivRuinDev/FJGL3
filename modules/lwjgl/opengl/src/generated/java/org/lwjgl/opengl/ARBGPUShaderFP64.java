@@ -471,7 +471,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2dvEXT(GLuint program, GLint location, GLsizei count, GLdouble const * value)} */
@@ -480,7 +480,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3dvEXT(GLuint program, GLint location, GLsizei count, GLdouble const * value)} */
@@ -489,7 +489,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4dvEXT(GLuint program, GLint location, GLsizei count, GLdouble const * value)} */
@@ -498,7 +498,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2dvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -507,7 +507,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3dvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -516,7 +516,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 9, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 9, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4dvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -525,7 +525,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 4, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 4, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2x3dvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -534,7 +534,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2x4dvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -543,7 +543,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3x2dvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -552,7 +552,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3x4dvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -561,7 +561,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 12, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4x2dvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -570,7 +570,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4x3dvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLdouble const * value)} */
@@ -579,7 +579,7 @@ public class ARBGPUShaderFP64 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 12, transpose, value, __functionAddress);
     }
 
 }

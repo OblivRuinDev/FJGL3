@@ -45,7 +45,7 @@ public class FBDisplayRefreshRate {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), displayRefreshRateCapacityInput, displayRefreshRateCountOutput, displayRefreshRates, __functionAddress);
+        return invokePPPI(session.address(), displayRefreshRateCapacityInput, displayRefreshRateCountOutput, displayRefreshRates, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateDisplayRefreshRatesFB(XrSession session, uint32_t displayRefreshRateCapacityInput, uint32_t * displayRefreshRateCountOutput, float * displayRefreshRates)} */
@@ -65,7 +65,7 @@ public class FBDisplayRefreshRate {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), displayRefreshRate, __functionAddress);
+        return invokePPI(session.address(), displayRefreshRate, __functionAddress);
     }
 
     /** {@code XrResult xrGetDisplayRefreshRateFB(XrSession session, float * displayRefreshRate)} */
@@ -86,7 +86,7 @@ public class FBDisplayRefreshRate {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(session.address(), displayRefreshRate, __functionAddress);
+        return invokePI(session.address(), displayRefreshRate, __functionAddress);
     }
 
 }

@@ -93,7 +93,7 @@ public class APPLEVertexArrayObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(arrays.length, arrays, __functionAddress);
+        invokePV(arrays.length, arrays, __functionAddress);
     }
 
     /** {@code void glGenVertexArraysAPPLE(GLsizei n, GLuint * arrays)} */
@@ -102,7 +102,7 @@ public class APPLEVertexArrayObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(arrays.length, arrays, __functionAddress);
+        invokePV(arrays.length, arrays, __functionAddress);
     }
 
 }

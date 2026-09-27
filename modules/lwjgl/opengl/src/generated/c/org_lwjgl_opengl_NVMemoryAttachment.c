@@ -14,12 +14,12 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glGetMemoryObjectDetachedResourcesuivNVPROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glResetMemoryObjectParameterNVPROC) (jint, jint);
-typedef void (APIENTRY *glTexAttachMemoryNVPROC) (jint, jint, jlong);
-typedef void (APIENTRY *glBufferAttachMemoryNVPROC) (jint, jint, jlong);
-typedef void (APIENTRY *glTextureAttachMemoryNVPROC) (jint, jint, jlong);
-typedef void (APIENTRY *glNamedBufferAttachMemoryNVPROC) (jint, jint, jlong);
+typedef void (*glGetMemoryObjectDetachedResourcesuivNVPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glResetMemoryObjectParameterNVPROC) (jint, jint);
+typedef void (*glTexAttachMemoryNVPROC) (jint, jint, jlong);
+typedef void (*glBufferAttachMemoryNVPROC) (jint, jint, jlong);
+typedef void (*glTextureAttachMemoryNVPROC) (jint, jint, jlong);
+typedef void (*glNamedBufferAttachMemoryNVPROC) (jint, jint, jlong);
 
 EXTERN_C_ENTER
 

@@ -14,23 +14,23 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef jboolean (APIENTRY *glIsRenderbufferEXTPROC) (jint);
-typedef void (APIENTRY *glBindRenderbufferEXTPROC) (jint, jint);
-typedef void (APIENTRY *glDeleteRenderbuffersEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGenRenderbuffersEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glRenderbufferStorageEXTPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glGetRenderbufferParameterivEXTPROC) (jint, jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsFramebufferEXTPROC) (jint);
-typedef void (APIENTRY *glBindFramebufferEXTPROC) (jint, jint);
-typedef void (APIENTRY *glDeleteFramebuffersEXTPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGenFramebuffersEXTPROC) (jint, uintptr_t);
-typedef jint (APIENTRY *glCheckFramebufferStatusEXTPROC) (jint);
-typedef void (APIENTRY *glFramebufferTexture1DEXTPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glFramebufferTexture2DEXTPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glFramebufferTexture3DEXTPROC) (jint, jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glFramebufferRenderbufferEXTPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glGetFramebufferAttachmentParameterivEXTPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGenerateMipmapEXTPROC) (jint);
+typedef jboolean (*glIsRenderbufferEXTPROC) (jint);
+typedef void (*glBindRenderbufferEXTPROC) (jint, jint);
+typedef void (*glDeleteRenderbuffersEXTPROC) (jint, uintptr_t);
+typedef void (*glGenRenderbuffersEXTPROC) (jint, uintptr_t);
+typedef void (*glRenderbufferStorageEXTPROC) (jint, jint, jint, jint);
+typedef void (*glGetRenderbufferParameterivEXTPROC) (jint, jint, uintptr_t);
+typedef jboolean (*glIsFramebufferEXTPROC) (jint);
+typedef void (*glBindFramebufferEXTPROC) (jint, jint);
+typedef void (*glDeleteFramebuffersEXTPROC) (jint, uintptr_t);
+typedef void (*glGenFramebuffersEXTPROC) (jint, uintptr_t);
+typedef jint (*glCheckFramebufferStatusEXTPROC) (jint);
+typedef void (*glFramebufferTexture1DEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glFramebufferTexture2DEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glFramebufferTexture3DEXTPROC) (jint, jint, jint, jint, jint, jint);
+typedef void (*glFramebufferRenderbufferEXTPROC) (jint, jint, jint, jint);
+typedef void (*glGetFramebufferAttachmentParameterivEXTPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGenerateMipmapEXTPROC) (jint);
 
 EXTERN_C_ENTER
 

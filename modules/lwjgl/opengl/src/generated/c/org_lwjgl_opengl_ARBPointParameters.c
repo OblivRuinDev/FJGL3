@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glPointParameterfARBPROC) (jint, jfloat);
-typedef void (APIENTRY *glPointParameterfvARBPROC) (jint, uintptr_t);
+typedef void (*glPointParameterfARBPROC) (jint, jfloat);
+typedef void (*glPointParameterfvARBPROC) (jint, uintptr_t);
 
 EXTERN_C_ENTER
 

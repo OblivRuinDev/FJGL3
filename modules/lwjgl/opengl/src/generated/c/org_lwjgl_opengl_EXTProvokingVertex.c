@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glProvokingVertexEXTPROC) (jint);
+typedef void (*glProvokingVertexEXTPROC) (jint);
 
 EXTERN_C_ENTER
 

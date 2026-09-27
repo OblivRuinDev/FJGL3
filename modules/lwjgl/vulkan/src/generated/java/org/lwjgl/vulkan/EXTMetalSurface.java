@@ -43,7 +43,7 @@ public class EXTMetalSurface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(instance.address(), pCreateInfo, pAllocator, pSurface, __functionAddress);
+        return invokePPPPI(instance.address(), pCreateInfo, pAllocator, pSurface, __functionAddress);
     }
 
     /** {@code VkResult vkCreateMetalSurfaceEXT(VkInstance instance, VkMetalSurfaceCreateInfoEXT const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkSurfaceKHR * pSurface)} */
@@ -63,7 +63,7 @@ public class EXTMetalSurface {
             check(__functionAddress);
             check(pSurface, 1);
         }
-        return callPPPPI(instance.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSurface, __functionAddress);
+        return invokePPPPI(instance.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSurface, __functionAddress);
     }
 
 }

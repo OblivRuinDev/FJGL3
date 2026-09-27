@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glClipControlEXTPROC) (jint, jint);
+typedef void (*glClipControlEXTPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

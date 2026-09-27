@@ -135,7 +135,7 @@ public class ANDROIDFaceTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, faceTracker, __functionAddress);
+        return invokePPPI(session.address(), createInfo, faceTracker, __functionAddress);
     }
 
     /** {@code XrResult xrCreateFaceTrackerANDROID(XrSession session, XrFaceTrackerCreateInfoANDROID const * createInfo, XrFaceTrackerANDROID * faceTracker)} */
@@ -156,7 +156,7 @@ public class ANDROIDFaceTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(faceTracker.address(), __functionAddress);
+        return invokePI(faceTracker.address(), __functionAddress);
     }
 
     // --- [ xrGetFaceStateANDROID ] ---
@@ -167,7 +167,7 @@ public class ANDROIDFaceTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(faceTracker.address(), getInfo, faceStateOutput, __functionAddress);
+        return invokePPPI(faceTracker.address(), getInfo, faceStateOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetFaceStateANDROID(XrFaceTrackerANDROID faceTracker, XrFaceStateGetInfoANDROID const * getInfo, XrFaceStateANDROID * faceStateOutput)} */
@@ -184,7 +184,7 @@ public class ANDROIDFaceTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(faceTracker.address(), faceIsCalibratedOutput, __functionAddress);
+        return invokePPI(faceTracker.address(), faceIsCalibratedOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetFaceCalibrationStateANDROID(XrFaceTrackerANDROID faceTracker, XrBool32 * faceIsCalibratedOutput)} */

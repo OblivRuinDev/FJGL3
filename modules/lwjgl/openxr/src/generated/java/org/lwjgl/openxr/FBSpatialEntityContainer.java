@@ -38,7 +38,7 @@ public class FBSpatialEntityContainer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), space.address(), spaceContainerOutput, __functionAddress);
+        return invokePPPI(session.address(), space.address(), spaceContainerOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpaceContainerFB(XrSession session, XrSpace space, XrSpaceContainerFB * spaceContainerOutput)} */

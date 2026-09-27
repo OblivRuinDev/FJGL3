@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glMultiDrawArraysIndirectBindlessNVPROC) (jint, uintptr_t, jint, jint, jint);
-typedef void (APIENTRY *glMultiDrawElementsIndirectBindlessNVPROC) (jint, jint, uintptr_t, jint, jint, jint);
+typedef void (*glMultiDrawArraysIndirectBindlessNVPROC) (jint, uintptr_t, jint, jint, jint);
+typedef void (*glMultiDrawElementsIndirectBindlessNVPROC) (jint, jint, uintptr_t, jint, jint, jint);
 
 EXTERN_C_ENTER
 

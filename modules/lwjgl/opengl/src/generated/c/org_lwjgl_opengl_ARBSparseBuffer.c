@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBufferPageCommitmentARBPROC) (jint, uintptr_t, uintptr_t, jboolean);
-typedef void (APIENTRY *glNamedBufferPageCommitmentEXTPROC) (jint, uintptr_t, uintptr_t, jboolean);
-typedef void (APIENTRY *glNamedBufferPageCommitmentARBPROC) (jint, uintptr_t, uintptr_t, jboolean);
+typedef void (*glBufferPageCommitmentARBPROC) (jint, uintptr_t, uintptr_t, jboolean);
+typedef void (*glNamedBufferPageCommitmentEXTPROC) (jint, uintptr_t, uintptr_t, jboolean);
+typedef void (*glNamedBufferPageCommitmentARBPROC) (jint, uintptr_t, uintptr_t, jboolean);
 
 EXTERN_C_ENTER
 

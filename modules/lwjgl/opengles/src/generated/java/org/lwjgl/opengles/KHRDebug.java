@@ -342,7 +342,7 @@ public class KHRDebug {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(source, type, severity, lengthSafe(ids), ids, enabled, __functionAddress);
+        invokePV(source, type, severity, lengthSafe(ids), ids, enabled, __functionAddress);
     }
 
     /** {@code GLuint glGetDebugMessageLogKHR(GLuint count, GLsizei bufsize, GLenum * sources, GLenum * types, GLuint * ids, GLenum * severities, GLsizei * lengths, GLchar * messageLog)} */
@@ -357,7 +357,7 @@ public class KHRDebug {
             checkSafe(severities, count);
             checkSafe(lengths, count);
         }
-        return callPPPPPPI(count, remainingSafe(messageLog), sources, types, ids, severities, lengths, memAddressSafe(messageLog), __functionAddress);
+        return invokePPPPPPI(count, remainingSafe(messageLog), sources, types, ids, severities, lengths, memAddressSafe(messageLog), __functionAddress);
     }
 
     /** {@code void glGetObjectLabelKHR(GLenum identifier, GLuint name, GLsizei bufSize, GLsizei * length, GLchar * label)} */
@@ -367,7 +367,7 @@ public class KHRDebug {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(identifier, name, label.remaining(), length, memAddress(label), __functionAddress);
+        invokePPV(identifier, name, label.remaining(), length, memAddress(label), __functionAddress);
     }
 
     /** {@code void glGetObjectPtrLabelKHR(void * ptr, GLsizei bufSize, GLsizei * length, GLchar * label)} */
@@ -378,7 +378,7 @@ public class KHRDebug {
             check(ptr);
             checkSafe(length, 1);
         }
-        callPPPV(ptr, label.remaining(), length, memAddress(label), __functionAddress);
+        invokePPPV(ptr, label.remaining(), length, memAddress(label), __functionAddress);
     }
 
 }

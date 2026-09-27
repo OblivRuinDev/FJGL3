@@ -1028,7 +1028,7 @@ public class GLES31 extends GLES30 {
             check(__functionAddress);
             check(indirect, (4 * 4) >> 2);
         }
-        callPV(mode, indirect, __functionAddress);
+        invokePV(mode, indirect, __functionAddress);
     }
 
     /** {@code void glDrawElementsIndirect(GLenum mode, GLenum type, void const * indirect)} */
@@ -1038,7 +1038,7 @@ public class GLES31 extends GLES30 {
             check(__functionAddress);
             check(indirect, (5 * 4) >> 2);
         }
-        callPV(mode, type, indirect, __functionAddress);
+        invokePV(mode, type, indirect, __functionAddress);
     }
 
     /** {@code void glGetFramebufferParameteriv(GLenum target, GLenum pname, GLint * params)} */
@@ -1048,7 +1048,7 @@ public class GLES31 extends GLES30 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetProgramInterfaceiv(GLuint program, GLenum programInterface, GLenum pname, GLint * params)} */
@@ -1058,7 +1058,7 @@ public class GLES31 extends GLES30 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, programInterface, pname, params, __functionAddress);
+        invokePV(program, programInterface, pname, params, __functionAddress);
     }
 
     /** {@code void glGetProgramResourceName(GLuint program, GLenum programInterface, GLuint index, GLsizei bufSize, GLsizei * length, GLchar * name)} */
@@ -1068,7 +1068,7 @@ public class GLES31 extends GLES30 {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(program, programInterface, index, name.remaining(), length, memAddress(name), __functionAddress);
+        invokePPV(program, programInterface, index, name.remaining(), length, memAddress(name), __functionAddress);
     }
 
     /** {@code void glGetProgramResourceiv(GLuint program, GLenum programInterface, GLuint index, GLsizei propCount, GLenum const * props, GLsizei bufSize, GLsizei * length, GLint * params)} */
@@ -1078,7 +1078,7 @@ public class GLES31 extends GLES30 {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPPV(program, programInterface, index, props.length, props, params.length, length, params, __functionAddress);
+        invokePPPV(program, programInterface, index, props.length, props, params.length, length, params, __functionAddress);
     }
 
     /** {@code void glDeleteProgramPipelines(GLsizei n, GLuint const * pipelines)} */
@@ -1087,7 +1087,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(pipelines.length, pipelines, __functionAddress);
+        invokePV(pipelines.length, pipelines, __functionAddress);
     }
 
     /** {@code void glGenProgramPipelines(GLsizei n, GLuint * pipelines)} */
@@ -1096,7 +1096,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(pipelines.length, pipelines, __functionAddress);
+        invokePV(pipelines.length, pipelines, __functionAddress);
     }
 
     /** {@code void glGetProgramPipelineiv(GLuint pipeline, GLenum pname, GLint * params)} */
@@ -1106,7 +1106,7 @@ public class GLES31 extends GLES30 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pipeline, pname, params, __functionAddress);
+        invokePV(pipeline, pname, params, __functionAddress);
     }
 
     /** {@code void glProgramUniform1iv(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -1115,7 +1115,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2iv(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -1124,7 +1124,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3iv(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -1133,7 +1133,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4iv(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -1142,7 +1142,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform1uiv(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -1151,7 +1151,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2uiv(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -1160,7 +1160,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3uiv(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -1169,7 +1169,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4uiv(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -1178,7 +1178,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform1fv(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -1187,7 +1187,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2fv(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -1196,7 +1196,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3fv(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -1205,7 +1205,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4fv(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -1214,7 +1214,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1223,7 +1223,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1232,7 +1232,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 9, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 9, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1241,7 +1241,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 4, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 4, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2x3fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1250,7 +1250,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3x2fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1259,7 +1259,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2x4fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1268,7 +1268,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4x2fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1277,7 +1277,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3x4fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1286,7 +1286,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 12, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4x3fv(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -1295,7 +1295,7 @@ public class GLES31 extends GLES30 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 12, transpose, value, __functionAddress);
     }
 
     /** {@code void glGetProgramPipelineInfoLog(GLuint pipeline, GLsizei bufSize, GLsizei * length, GLchar * infoLog)} */
@@ -1305,7 +1305,7 @@ public class GLES31 extends GLES30 {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(pipeline, infoLog.remaining(), length, memAddress(infoLog), __functionAddress);
+        invokePPV(pipeline, infoLog.remaining(), length, memAddress(infoLog), __functionAddress);
     }
 
     /** {@code void glGetMultisamplefv(GLenum pname, GLuint index, GLfloat * val)} */
@@ -1315,7 +1315,7 @@ public class GLES31 extends GLES30 {
             check(__functionAddress);
             check(val, 1);
         }
-        callPV(pname, index, val, __functionAddress);
+        invokePV(pname, index, val, __functionAddress);
     }
 
     /** {@code void glGetTexLevelParameteriv(GLenum target, GLint level, GLenum pname, GLint * params)} */
@@ -1325,7 +1325,7 @@ public class GLES31 extends GLES30 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, level, pname, params, __functionAddress);
+        invokePV(target, level, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTexLevelParameterfv(GLenum target, GLint level, GLenum pname, GLfloat * params)} */
@@ -1335,7 +1335,7 @@ public class GLES31 extends GLES30 {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, level, pname, params, __functionAddress);
+        invokePV(target, level, pname, params, __functionAddress);
     }
 
 }

@@ -66,7 +66,7 @@ public class BDBodyTrackingAuxiliaryMetrics {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(session.address(), __functionAddress);
+        return invokePI(session.address(), __functionAddress);
     }
 
     // --- [ xrGetBodyTrackingStateBD ] ---
@@ -77,7 +77,7 @@ public class BDBodyTrackingAuxiliaryMetrics {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), state, __functionAddress);
+        return invokePPI(session.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrGetBodyTrackingStateBD(XrSession session, XrBodyTrackingStateBD * state)} */

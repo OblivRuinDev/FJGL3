@@ -348,7 +348,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(pfnGLGetProcAddress, __functionAddress);
+        return invokePI(pfnGLGetProcAddress, __functionAddress);
     }
 
     // --- [ ktxTexture_CreateFromNamedFile ] ---
@@ -356,7 +356,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture_CreateFromNamedFile(char const * const filename, ktxTextureCreateFlags createFlags, ktxTexture ** newTex)} */
     public static int nktxTexture_CreateFromNamedFile(long filename, int createFlags, long newTex) {
         long __functionAddress = Functions.Texture_CreateFromNamedFile;
-        return callPPI(filename, createFlags, newTex, __functionAddress);
+        return invokePPI(filename, createFlags, newTex, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture_CreateFromNamedFile(char const * const filename, ktxTextureCreateFlags createFlags, ktxTexture ** newTex)} */
@@ -390,7 +390,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture_CreateFromMemory(ktx_uint8_t const * bytes, ktx_size_t size, ktxTextureCreateFlags createFlags, ktxTexture ** newTex)} */
     public static int nktxTexture_CreateFromMemory(long bytes, long size, int createFlags, long newTex) {
         long __functionAddress = Functions.Texture_CreateFromMemory;
-        return callPPPI(bytes, size, createFlags, newTex, __functionAddress);
+        return invokePPPI(bytes, size, createFlags, newTex, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture_CreateFromMemory(ktx_uint8_t const * bytes, ktx_size_t size, ktxTextureCreateFlags createFlags, ktxTexture ** newTex)} */
@@ -407,7 +407,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture_CreateFromStream(struct ktxStream * stream, ktxTextureCreateFlags createFlags, ktxTexture ** newTex)} */
     public static int nktxTexture_CreateFromStream(long stream, int createFlags, long newTex) {
         long __functionAddress = Functions.Texture_CreateFromStream;
-        return callPPI(stream, createFlags, newTex, __functionAddress);
+        return invokePPI(stream, createFlags, newTex, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture_CreateFromStream(struct ktxStream * stream, ktxTextureCreateFlags createFlags, ktxTexture ** newTex)} */
@@ -424,7 +424,7 @@ public class KTX {
     /** {@code ktx_uint8_t * ktxTexture_GetData(ktxTexture * This)} */
     public static long nktxTexture_GetData(long This) {
         long __functionAddress = Functions.Texture_GetData;
-        return callPP(This, __functionAddress);
+        return invokePP(This, __functionAddress);
     }
 
     /** {@code ktx_uint8_t * ktxTexture_GetData(ktxTexture * This)} */
@@ -446,7 +446,7 @@ public class KTX {
     /** {@code ktx_uint32_t ktxTexture_GetRowPitch(ktxTexture * This, ktx_uint32_t level)} */
     public static int nktxTexture_GetRowPitch(long This, int level) {
         long __functionAddress = Functions.Texture_GetRowPitch;
-        return callPI(This, level, __functionAddress);
+        return invokePI(This, level, __functionAddress);
     }
 
     /** {@code ktx_uint32_t ktxTexture_GetRowPitch(ktxTexture * This, ktx_uint32_t level)} */
@@ -460,7 +460,7 @@ public class KTX {
     /** {@code ktx_uint32_t ktxTexture_GetElementSize(ktxTexture * This)} */
     public static int nktxTexture_GetElementSize(long This) {
         long __functionAddress = Functions.Texture_GetElementSize;
-        return callPI(This, __functionAddress);
+        return invokePI(This, __functionAddress);
     }
 
     /** {@code ktx_uint32_t ktxTexture_GetElementSize(ktxTexture * This)} */
@@ -474,7 +474,7 @@ public class KTX {
     /** {@code ktx_size_t ktxTexture_GetDataSize(ktxTexture * This)} */
     public static long nktxTexture_GetDataSize(long This) {
         long __functionAddress = Functions.Texture_GetDataSize;
-        return callPP(This, __functionAddress);
+        return invokePP(This, __functionAddress);
     }
 
     /** {@code ktx_size_t ktxTexture_GetDataSize(ktxTexture * This)} */
@@ -488,7 +488,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture_GLUpload(ktxTexture * This, GLuint * pTexture, GLenum * pTarget, GLenum * pGlerror)} */
     public static int nktxTexture_GLUpload(long This, long pTexture, long pTarget, long pGlerror) {
         long __functionAddress = Functions.Texture_GLUpload;
-        return callPPPPI(This, pTexture, pTarget, pGlerror, __functionAddress);
+        return invokePPPPI(This, pTexture, pTarget, pGlerror, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture_GLUpload(ktxTexture * This, GLuint * pTexture, GLenum * pTarget, GLenum * pGlerror)} */
@@ -507,7 +507,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture_IterateLevelFaces(ktxTexture * This, PFNKTXITERCB iterCb, void * userdata)} */
     public static int nktxTexture_IterateLevelFaces(long This, long iterCb, long userdata) {
         long __functionAddress = Functions.Texture_IterateLevelFaces;
-        return callPPPI(This, iterCb, userdata, __functionAddress);
+        return invokePPPI(This, iterCb, userdata, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture_IterateLevelFaces(ktxTexture * This, PFNKTXITERCB iterCb, void * userdata)} */
@@ -521,7 +521,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture1_Create(ktxTextureCreateInfo const * const createInfo, ktxTextureCreateStorageEnum storageAllocation, ktxTexture1 ** newTex)} */
     public static int nktxTexture1_Create(long createInfo, int storageAllocation, long newTex) {
         long __functionAddress = Functions.Texture1_Create;
-        return callPPI(createInfo, storageAllocation, newTex, __functionAddress);
+        return invokePPI(createInfo, storageAllocation, newTex, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_Create(ktxTextureCreateInfo const * const createInfo, ktxTextureCreateStorageEnum storageAllocation, ktxTexture1 ** newTex)} */
@@ -538,7 +538,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture1_CreateFromNamedFile(char const * const filename, ktxTextureCreateFlags createFlags, ktxTexture1 ** newTex)} */
     public static int nktxTexture1_CreateFromNamedFile(long filename, int createFlags, long newTex) {
         long __functionAddress = Functions.Texture1_CreateFromNamedFile;
-        return callPPI(filename, createFlags, newTex, __functionAddress);
+        return invokePPI(filename, createFlags, newTex, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_CreateFromNamedFile(char const * const filename, ktxTextureCreateFlags createFlags, ktxTexture1 ** newTex)} */
@@ -572,7 +572,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture1_CreateFromMemory(ktx_uint8_t const * bytes, ktx_size_t size, ktxTextureCreateFlags createFlags, ktxTexture1 ** newTex)} */
     public static int nktxTexture1_CreateFromMemory(long bytes, long size, int createFlags, long newTex) {
         long __functionAddress = Functions.Texture1_CreateFromMemory;
-        return callPPPI(bytes, size, createFlags, newTex, __functionAddress);
+        return invokePPPI(bytes, size, createFlags, newTex, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_CreateFromMemory(ktx_uint8_t const * bytes, ktx_size_t size, ktxTextureCreateFlags createFlags, ktxTexture1 ** newTex)} */
@@ -589,7 +589,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture1_CreateFromStream(struct ktxStream * stream, ktxTextureCreateFlags createFlags, ktxTexture1 ** newTex)} */
     public static int nktxTexture1_CreateFromStream(long stream, int createFlags, long newTex) {
         long __functionAddress = Functions.Texture1_CreateFromStream;
-        return callPPI(stream, createFlags, newTex, __functionAddress);
+        return invokePPI(stream, createFlags, newTex, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_CreateFromStream(struct ktxStream * stream, ktxTextureCreateFlags createFlags, ktxTexture1 ** newTex)} */
@@ -609,7 +609,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(This, __functionAddress);
+        invokePV(This, __functionAddress);
     }
 
     /** {@code void ktxTexture1_Destroy(ktxTexture1 * This)} */
@@ -625,7 +625,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(This, level, layer, faceSlice, pOffset, __functionAddress);
+        return invokePPI(This, level, layer, faceSlice, pOffset, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_GetImageOffset(ktxTexture1 * This, ktx_uint32_t level, ktx_uint32_t layer, ktx_uint32_t faceSlice, ktx_size_t * pOffset)} */
@@ -642,7 +642,7 @@ public class KTX {
     /** {@code ktx_bool_t ktxTexture1_IsHDR(ktxTexture1 * This)} */
     public static boolean nktxTexture1_IsHDR(long This) {
         long __functionAddress = Functions.Texture1_IsHDR;
-        return callPZ(This, __functionAddress);
+        return invokePZ(This, __functionAddress);
     }
 
     /** {@code ktx_bool_t ktxTexture1_IsHDR(ktxTexture1 * This)} */
@@ -656,7 +656,7 @@ public class KTX {
     /** {@code ktx_bool_t ktxTexture1_NeedsTranscoding(ktxTexture1 * This)} */
     public static boolean nktxTexture1_NeedsTranscoding(long This) {
         long __functionAddress = Functions.Texture1_NeedsTranscoding;
-        return callPZ(This, __functionAddress);
+        return invokePZ(This, __functionAddress);
     }
 
     /** {@code ktx_bool_t ktxTexture1_NeedsTranscoding(ktxTexture1 * This)} */
@@ -670,7 +670,7 @@ public class KTX {
     /** {@code ktx_bool_t ktxTexture1_IsTranscodable(ktxTexture1 * This)} */
     public static boolean nktxTexture1_IsTranscodable(long This) {
         long __functionAddress = Functions.Texture1_IsTranscodable;
-        return callPZ(This, __functionAddress);
+        return invokePZ(This, __functionAddress);
     }
 
     /** {@code ktx_bool_t ktxTexture1_IsTranscodable(ktxTexture1 * This)} */
@@ -684,7 +684,7 @@ public class KTX {
     /** {@code ktx_size_t ktxTexture1_GetDataSizeUncompressed(ktxTexture1 * This)} */
     public static long nktxTexture1_GetDataSizeUncompressed(long This) {
         long __functionAddress = Functions.Texture1_GetDataSizeUncompressed;
-        return callPP(This, __functionAddress);
+        return invokePP(This, __functionAddress);
     }
 
     /** {@code ktx_size_t ktxTexture1_GetDataSizeUncompressed(ktxTexture1 * This)} */
@@ -698,7 +698,7 @@ public class KTX {
     /** {@code ktx_size_t ktxTexture1_GetImageSize(ktxTexture1 * This, ktx_uint32_t level)} */
     public static long nktxTexture1_GetImageSize(long This, int level) {
         long __functionAddress = Functions.Texture1_GetImageSize;
-        return callPP(This, level, __functionAddress);
+        return invokePP(This, level, __functionAddress);
     }
 
     /** {@code ktx_size_t ktxTexture1_GetImageSize(ktxTexture1 * This, ktx_uint32_t level)} */
@@ -715,7 +715,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(This, pBuffer, bufSize, __functionAddress);
+        return invokePPPI(This, pBuffer, bufSize, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_LoadImageData(ktxTexture1 * This, ktx_uint8_t * pBuffer, ktx_size_t bufSize)} */
@@ -732,7 +732,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(This, dstname, __functionAddress);
+        return invokePPI(This, dstname, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_WriteToNamedFile(ktxTexture1 * This, char const * const dstname)} */
@@ -765,7 +765,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(This, bytes, size, __functionAddress);
+        return invokePPPI(This, bytes, size, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_WriteToMemory(ktxTexture1 * This, ktx_uint8_t ** bytes, ktx_size_t * size)} */
@@ -786,7 +786,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(This, dststr, __functionAddress);
+        return invokePPI(This, dststr, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_WriteToStream(ktxTexture1 * This, struct ktxStream * dststr)} */
@@ -803,7 +803,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(This, dstname, __functionAddress);
+        return invokePPI(This, dstname, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_WriteKTX2ToNamedFile(ktxTexture1 * This, char const * const dstname)} */
@@ -836,7 +836,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(This, bytes, size, __functionAddress);
+        return invokePPPI(This, bytes, size, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_WriteKTX2ToMemory(ktxTexture1 * This, ktx_uint8_t ** bytes, ktx_size_t * size)} */
@@ -857,7 +857,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(This, dststr, __functionAddress);
+        return invokePPI(This, dststr, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture1_WriteKTX2ToStream(ktxTexture1 * This, struct ktxStream * dststr)} */
@@ -871,7 +871,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_Create(ktxTextureCreateInfo const * const createInfo, ktxTextureCreateStorageEnum storageAllocation, ktxTexture2 ** newTex)} */
     public static int nktxTexture2_Create(long createInfo, int storageAllocation, long newTex) {
         long __functionAddress = Functions.Texture2_Create;
-        return callPPI(createInfo, storageAllocation, newTex, __functionAddress);
+        return invokePPI(createInfo, storageAllocation, newTex, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_Create(ktxTextureCreateInfo const * const createInfo, ktxTextureCreateStorageEnum storageAllocation, ktxTexture2 ** newTex)} */
@@ -888,7 +888,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_CreateCopy(ktxTexture2 * orig, ktxTexture2 ** newTex)} */
     public static int nktxTexture2_CreateCopy(long orig, long newTex) {
         long __functionAddress = Functions.Texture2_CreateCopy;
-        return callPPI(orig, newTex, __functionAddress);
+        return invokePPI(orig, newTex, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_CreateCopy(ktxTexture2 * orig, ktxTexture2 ** newTex)} */
@@ -905,7 +905,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_CreateFromNamedFile(char const * const filename, ktxTextureCreateFlags createFlags, ktxTexture2 ** newTex)} */
     public static int nktxTexture2_CreateFromNamedFile(long filename, int createFlags, long newTex) {
         long __functionAddress = Functions.Texture2_CreateFromNamedFile;
-        return callPPI(filename, createFlags, newTex, __functionAddress);
+        return invokePPI(filename, createFlags, newTex, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_CreateFromNamedFile(char const * const filename, ktxTextureCreateFlags createFlags, ktxTexture2 ** newTex)} */
@@ -939,7 +939,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_CreateFromMemory(ktx_uint8_t const * bytes, ktx_size_t size, ktxTextureCreateFlags createFlags, ktxTexture2 ** newTex)} */
     public static int nktxTexture2_CreateFromMemory(long bytes, long size, int createFlags, long newTex) {
         long __functionAddress = Functions.Texture2_CreateFromMemory;
-        return callPPPI(bytes, size, createFlags, newTex, __functionAddress);
+        return invokePPPI(bytes, size, createFlags, newTex, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_CreateFromMemory(ktx_uint8_t const * bytes, ktx_size_t size, ktxTextureCreateFlags createFlags, ktxTexture2 ** newTex)} */
@@ -956,7 +956,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_CreateFromStream(struct ktxStream * stream, ktxTextureCreateFlags createFlags, ktxTexture2 ** newTex)} */
     public static int nktxTexture2_CreateFromStream(long stream, int createFlags, long newTex) {
         long __functionAddress = Functions.Texture2_CreateFromStream;
-        return callPPI(stream, createFlags, newTex, __functionAddress);
+        return invokePPI(stream, createFlags, newTex, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_CreateFromStream(struct ktxStream * stream, ktxTextureCreateFlags createFlags, ktxTexture2 ** newTex)} */
@@ -976,7 +976,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(This, __functionAddress);
+        invokePV(This, __functionAddress);
     }
 
     /** {@code void ktxTexture2_Destroy(ktxTexture2 * This)} */
@@ -992,7 +992,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(This, quality, __functionAddress);
+        return invokePI(This, quality, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_CompressBasis(ktxTexture2 * This, ktx_uint32_t quality)} */
@@ -1009,7 +1009,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(This, level, __functionAddress);
+        return invokePI(This, level, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_DeflateZstd(ktxTexture2 * This, ktx_uint32_t level)} */
@@ -1023,7 +1023,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_DeflateZLIB(ktxTexture2 * This, ktx_uint32_t level)} */
     public static int nktxTexture2_DeflateZLIB(long This, int level) {
         long __functionAddress = Functions.Texture2_DeflateZLIB;
-        return callPI(This, level, __functionAddress);
+        return invokePI(This, level, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_DeflateZLIB(ktxTexture2 * This, ktx_uint32_t level)} */
@@ -1037,7 +1037,7 @@ public class KTX {
     /** {@code void ktxTexture2_GetComponentInfo(ktxTexture2 * This, ktx_uint32_t * numComponents, ktx_uint32_t * componentByteLength)} */
     public static void nktxTexture2_GetComponentInfo(long This, long numComponents, long componentByteLength) {
         long __functionAddress = Functions.Texture2_GetComponentInfo;
-        callPPPV(This, numComponents, componentByteLength, __functionAddress);
+        invokePPPV(This, numComponents, componentByteLength, __functionAddress);
     }
 
     /** {@code void ktxTexture2_GetComponentInfo(ktxTexture2 * This, ktx_uint32_t * numComponents, ktx_uint32_t * componentByteLength)} */
@@ -1057,7 +1057,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(This, level, layer, faceSlice, pOffset, __functionAddress);
+        return invokePPI(This, level, layer, faceSlice, pOffset, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_GetImageOffset(ktxTexture2 * This, ktx_uint32_t level, ktx_uint32_t layer, ktx_uint32_t faceSlice, ktx_size_t * pOffset)} */
@@ -1074,7 +1074,7 @@ public class KTX {
     /** {@code ktx_uint32_t ktxTexture2_GetNumComponents(ktxTexture2 * This)} */
     public static int nktxTexture2_GetNumComponents(long This) {
         long __functionAddress = Functions.Texture2_GetNumComponents;
-        return callPI(This, __functionAddress);
+        return invokePI(This, __functionAddress);
     }
 
     /** {@code ktx_uint32_t ktxTexture2_GetNumComponents(ktxTexture2 * This)} */
@@ -1091,7 +1091,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(This, __functionAddress);
+        return invokePI(This, __functionAddress);
     }
 
     /** {@code khr_df_transfer_e ktxTexture2_GetTransferFunction_e(ktxTexture2 * This)} */
@@ -1105,7 +1105,7 @@ public class KTX {
     /** {@code khr_df_transfer_e ktxTexture2_GetOETF_e(ktxTexture2 * This)} */
     public static int nktxTexture2_GetOETF_e(long This) {
         long __functionAddress = Functions.Texture2_GetOETF_e;
-        return callPI(This, __functionAddress);
+        return invokePI(This, __functionAddress);
     }
 
     /** {@code khr_df_transfer_e ktxTexture2_GetOETF_e(ktxTexture2 * This)} */
@@ -1119,7 +1119,7 @@ public class KTX {
     /** {@code ktx_uint32_t ktxTexture2_GetOETF(ktxTexture2 * This)} */
     public static int nktxTexture2_GetOETF(long This) {
         long __functionAddress = Functions.Texture2_GetOETF;
-        return callPI(This, __functionAddress);
+        return invokePI(This, __functionAddress);
     }
 
     /** {@code ktx_uint32_t ktxTexture2_GetOETF(ktxTexture2 * This)} */
@@ -1133,7 +1133,7 @@ public class KTX {
     /** {@code khr_df_model_e ktxTexture2_GetColorModel_e(ktxTexture2 * This)} */
     public static int nktxTexture2_GetColorModel_e(long This) {
         long __functionAddress = Functions.Texture2_GetColorModel_e;
-        return callPI(This, __functionAddress);
+        return invokePI(This, __functionAddress);
     }
 
     /** {@code khr_df_model_e ktxTexture2_GetColorModel_e(ktxTexture2 * This)} */
@@ -1147,7 +1147,7 @@ public class KTX {
     /** {@code ktx_bool_t ktxTexture2_GetPremultipliedAlpha(ktxTexture2 * This)} */
     public static boolean nktxTexture2_GetPremultipliedAlpha(long This) {
         long __functionAddress = Functions.Texture2_GetPremultipliedAlpha;
-        return callPZ(This, __functionAddress);
+        return invokePZ(This, __functionAddress);
     }
 
     /** {@code ktx_bool_t ktxTexture2_GetPremultipliedAlpha(ktxTexture2 * This)} */
@@ -1164,7 +1164,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(This, __functionAddress);
+        return invokePI(This, __functionAddress);
     }
 
     /** {@code khr_df_primaries_e ktxTexture2_GetPrimaries_e(ktxTexture2 * This)} */
@@ -1178,7 +1178,7 @@ public class KTX {
     /** {@code ktx_bool_t ktxTexture2_IsHDR(ktxTexture2 * This)} */
     public static boolean nktxTexture2_IsHDR(long This) {
         long __functionAddress = Functions.Texture2_IsHDR;
-        return callPZ(This, __functionAddress);
+        return invokePZ(This, __functionAddress);
     }
 
     /** {@code ktx_bool_t ktxTexture2_IsHDR(ktxTexture2 * This)} */
@@ -1192,7 +1192,7 @@ public class KTX {
     /** {@code ktx_bool_t ktxTexture2_NeedsTranscoding(ktxTexture2 * This)} */
     public static boolean nktxTexture2_NeedsTranscoding(long This) {
         long __functionAddress = Functions.Texture2_NeedsTranscoding;
-        return callPZ(This, __functionAddress);
+        return invokePZ(This, __functionAddress);
     }
 
     /** {@code ktx_bool_t ktxTexture2_NeedsTranscoding(ktxTexture2 * This)} */
@@ -1206,7 +1206,7 @@ public class KTX {
     /** {@code ktx_bool_t ktxTexture2_IsTranscodable(ktxTexture2 * This)} */
     public static boolean nktxTexture2_IsTranscodable(long This) {
         long __functionAddress = Functions.Texture2_IsTranscodable;
-        return callPZ(This, __functionAddress);
+        return invokePZ(This, __functionAddress);
     }
 
     /** {@code ktx_bool_t ktxTexture2_IsTranscodable(ktxTexture2 * This)} */
@@ -1220,7 +1220,7 @@ public class KTX {
     /** {@code ktx_size_t ktxTexture2_GetDataSizeUncompressed(ktxTexture2 * This)} */
     public static long nktxTexture2_GetDataSizeUncompressed(long This) {
         long __functionAddress = Functions.Texture2_GetDataSizeUncompressed;
-        return callPP(This, __functionAddress);
+        return invokePP(This, __functionAddress);
     }
 
     /** {@code ktx_size_t ktxTexture2_GetDataSizeUncompressed(ktxTexture2 * This)} */
@@ -1234,7 +1234,7 @@ public class KTX {
     /** {@code ktx_size_t ktxTexture2_GetImageSize(ktxTexture2 * This, ktx_uint32_t level)} */
     public static long nktxTexture2_GetImageSize(long This, int level) {
         long __functionAddress = Functions.Texture2_GetImageSize;
-        return callPP(This, level, __functionAddress);
+        return invokePP(This, level, __functionAddress);
     }
 
     /** {@code ktx_size_t ktxTexture2_GetImageSize(ktxTexture2 * This, ktx_uint32_t level)} */
@@ -1248,7 +1248,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_SetTransferFunction(ktxTexture2 * This, khr_df_transfer_e tf)} */
     public static int nktxTexture2_SetTransferFunction(long This, int tf) {
         long __functionAddress = Functions.Texture2_SetTransferFunction;
-        return callPI(This, tf, __functionAddress);
+        return invokePI(This, tf, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_SetTransferFunction(ktxTexture2 * This, khr_df_transfer_e tf)} */
@@ -1262,7 +1262,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_SetOETF(ktxTexture2 * This, khr_df_transfer_e oetf)} */
     public static int nktxTexture2_SetOETF(long This, int oetf) {
         long __functionAddress = Functions.Texture2_SetOETF;
-        return callPI(This, oetf, __functionAddress);
+        return invokePI(This, oetf, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_SetOETF(ktxTexture2 * This, khr_df_transfer_e oetf)} */
@@ -1276,7 +1276,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_SetPrimaries(ktxTexture2 * This, khr_df_primaries_e primaries)} */
     public static int nktxTexture2_SetPrimaries(long This, int primaries) {
         long __functionAddress = Functions.Texture2_SetPrimaries;
-        return callPI(This, primaries, __functionAddress);
+        return invokePI(This, primaries, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_SetPrimaries(ktxTexture2 * This, khr_df_primaries_e primaries)} */
@@ -1290,7 +1290,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_LoadImageData(ktxTexture2 * This, ktx_uint8_t * pBuffer, ktx_size_t bufSize)} */
     public static int nktxTexture2_LoadImageData(long This, long pBuffer, long bufSize) {
         long __functionAddress = Functions.Texture2_LoadImageData;
-        return callPPPI(This, pBuffer, bufSize, __functionAddress);
+        return invokePPPI(This, pBuffer, bufSize, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_LoadImageData(ktxTexture2 * This, ktx_uint8_t * pBuffer, ktx_size_t bufSize)} */
@@ -1304,7 +1304,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_LoadDeflatedImageData(ktxTexture2 * This, ktx_uint8_t * pBuffer, ktx_size_t bufSize)} */
     public static int nktxTexture2_LoadDeflatedImageData(long This, long pBuffer, long bufSize) {
         long __functionAddress = Functions.Texture2_LoadDeflatedImageData;
-        return callPPPI(This, pBuffer, bufSize, __functionAddress);
+        return invokePPPI(This, pBuffer, bufSize, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_LoadDeflatedImageData(ktxTexture2 * This, ktx_uint8_t * pBuffer, ktx_size_t bufSize)} */
@@ -1318,7 +1318,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_WriteToNamedFile(ktxTexture2 * This, char const * const dstname)} */
     public static int nktxTexture2_WriteToNamedFile(long This, long dstname) {
         long __functionAddress = Functions.Texture2_WriteToNamedFile;
-        return callPPI(This, dstname, __functionAddress);
+        return invokePPI(This, dstname, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_WriteToNamedFile(ktxTexture2 * This, char const * const dstname)} */
@@ -1348,7 +1348,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_WriteToMemory(ktxTexture2 * This, ktx_uint8_t ** bytes, ktx_size_t * size)} */
     public static int nktxTexture2_WriteToMemory(long This, long bytes, long size) {
         long __functionAddress = Functions.Texture2_WriteToMemory;
-        return callPPPI(This, bytes, size, __functionAddress);
+        return invokePPPI(This, bytes, size, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_WriteToMemory(ktxTexture2 * This, ktx_uint8_t ** bytes, ktx_size_t * size)} */
@@ -1366,7 +1366,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_WriteToStream(ktxTexture2 * This, struct ktxStream * dststr)} */
     public static int nktxTexture2_WriteToStream(long This, long dststr) {
         long __functionAddress = Functions.Texture2_WriteToStream;
-        return callPPI(This, dststr, __functionAddress);
+        return invokePPI(This, dststr, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_WriteToStream(ktxTexture2 * This, struct ktxStream * dststr)} */
@@ -1383,7 +1383,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(This, params, __functionAddress);
+        return invokePPI(This, params, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_CompressAstcEx(ktxTexture2 * This, ktxAstcParams * params)} */
@@ -1397,7 +1397,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_DecodeAstc(ktxTexture2 * This)} */
     public static int nktxTexture2_DecodeAstc(long This) {
         long __functionAddress = Functions.Texture2_DecodeAstc;
-        return callPI(This, __functionAddress);
+        return invokePI(This, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_DecodeAstc(ktxTexture2 * This)} */
@@ -1414,7 +1414,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(This, quality, __functionAddress);
+        return invokePI(This, quality, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_CompressAstc(ktxTexture2 * This, ktx_uint32_t quality)} */
@@ -1431,7 +1431,7 @@ public class KTX {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(This, params, __functionAddress);
+        return invokePPI(This, params, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_CompressBasisEx(ktxTexture2 * This, ktxBasisParams * params)} */
@@ -1445,7 +1445,7 @@ public class KTX {
     /** {@code KTX_error_code ktxTexture2_TranscodeBasis(ktxTexture2 * This, ktx_transcode_fmt_e fmt, ktx_transcode_flags transcodeFlags)} */
     public static int nktxTexture2_TranscodeBasis(long This, int fmt, int transcodeFlags) {
         long __functionAddress = Functions.Texture2_TranscodeBasis;
-        return callPI(This, fmt, transcodeFlags, __functionAddress);
+        return invokePI(This, fmt, transcodeFlags, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxTexture2_TranscodeBasis(ktxTexture2 * This, ktx_transcode_fmt_e fmt, ktx_transcode_flags transcodeFlags)} */
@@ -1459,7 +1459,7 @@ public class KTX {
     /** {@code char const * ktxErrorString(KTX_error_code error)} */
     public static long nktxErrorString(int error) {
         long __functionAddress = Functions.ErrorString;
-        return callP(error, __functionAddress);
+        return invokeP(error, __functionAddress);
     }
 
     /** {@code char const * ktxErrorString(KTX_error_code error)} */
@@ -1474,7 +1474,7 @@ public class KTX {
     /** {@code char const * ktxSupercompressionSchemeString(ktxSupercmpScheme scheme)} */
     public static long nktxSupercompressionSchemeString(int scheme) {
         long __functionAddress = Functions.SupercompressionSchemeString;
-        return callP(scheme, __functionAddress);
+        return invokeP(scheme, __functionAddress);
     }
 
     /** {@code char const * ktxSupercompressionSchemeString(ktxSupercmpScheme scheme)} */
@@ -1489,7 +1489,7 @@ public class KTX {
     /** {@code char const * ktxTranscodeFormatString(ktx_transcode_fmt_e format)} */
     public static long nktxTranscodeFormatString(int format) {
         long __functionAddress = Functions.TranscodeFormatString;
-        return callP(format, __functionAddress);
+        return invokeP(format, __functionAddress);
     }
 
     /** {@code char const * ktxTranscodeFormatString(ktx_transcode_fmt_e format)} */
@@ -1504,7 +1504,7 @@ public class KTX {
     /** {@code KTX_error_code ktxHashList_Create(ktxHashList** ppHl)} */
     public static int nktxHashList_Create(long ppHl) {
         long __functionAddress = Functions.HashList_Create;
-        return callPI(ppHl, __functionAddress);
+        return invokePI(ppHl, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxHashList_Create(ktxHashList** ppHl)} */
@@ -1524,7 +1524,7 @@ public class KTX {
         if (CHECKS) {
             check(orig);
         }
-        return callPPI(ppHl, orig, __functionAddress);
+        return invokePPI(ppHl, orig, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxHashList_CreateCopy(ktxHashList** ppHl, ktxHashList orig)} */
@@ -1544,7 +1544,7 @@ public class KTX {
         if (CHECKS) {
             check(pHl);
         }
-        callPV(pHl, __functionAddress);
+        invokePV(pHl, __functionAddress);
     }
 
     // --- [ ktxHashList_ConstructCopy ] ---
@@ -1556,7 +1556,7 @@ public class KTX {
             check(pHl);
             check(orig);
         }
-        callPPV(pHl, orig, __functionAddress);
+        invokePPV(pHl, orig, __functionAddress);
     }
 
     // --- [ ktxHashList_Destroy ] ---
@@ -1567,7 +1567,7 @@ public class KTX {
         if (CHECKS) {
             check(head);
         }
-        callPV(head, __functionAddress);
+        invokePV(head, __functionAddress);
     }
 
     // --- [ ktxHashList_Destruct ] ---
@@ -1578,7 +1578,7 @@ public class KTX {
         if (CHECKS) {
             check(head);
         }
-        callPV(head, __functionAddress);
+        invokePV(head, __functionAddress);
     }
 
     // --- [ ktxHashList_AddKVPair ] ---
@@ -1589,7 +1589,7 @@ public class KTX {
         if (CHECKS) {
             check(pHead);
         }
-        return callPPPI(pHead, key, valueLen, value, __functionAddress);
+        return invokePPPI(pHead, key, valueLen, value, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxHashList_AddKVPair(ktxHashList* pHead, char const * key, unsigned int valueLen, void const * value)} */
@@ -1624,7 +1624,7 @@ public class KTX {
             check(pHead);
             check(pEntry);
         }
-        return callPPI(pHead, pEntry, __functionAddress);
+        return invokePPI(pHead, pEntry, __functionAddress);
     }
 
     // --- [ ktxHashList_DeleteKVPair ] ---
@@ -1635,7 +1635,7 @@ public class KTX {
         if (CHECKS) {
             check(pHead);
         }
-        return callPPI(pHead, key, __functionAddress);
+        return invokePPI(pHead, key, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxHashList_DeleteKVPair(ktxHashList* pHead, char const * key)} */
@@ -1668,7 +1668,7 @@ public class KTX {
         if (CHECKS) {
             check(pHead);
         }
-        return callPPPI(pHead, key, ppEntry, __functionAddress);
+        return invokePPPI(pHead, key, ppEntry, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxHashList_FindEntry(ktxHashList* pHead, char const * key, ktxHashListEntry ** ppEntry)} */
@@ -1705,7 +1705,7 @@ public class KTX {
         if (CHECKS) {
             check(pHead);
         }
-        return callPPPPI(pHead, key, pValueLen, pValue, __functionAddress);
+        return invokePPPPI(pHead, key, pValueLen, pValue, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxHashList_FindValue(ktxHashList* pHead, char const * key, unsigned int * pValueLen, void ** pValue)} */
@@ -1745,7 +1745,7 @@ public class KTX {
         if (CHECKS) {
             check(entry);
         }
-        return callPP(entry, __functionAddress);
+        return invokePP(entry, __functionAddress);
     }
 
     // --- [ ktxHashList_Sort ] ---
@@ -1757,7 +1757,7 @@ public class KTX {
         if (CHECKS) {
             check(pHead);
         }
-        return callPI(pHead, __functionAddress);
+        return invokePI(pHead, __functionAddress);
     }
 
     // --- [ ktxHashList_Serialize ] ---
@@ -1768,7 +1768,7 @@ public class KTX {
         if (CHECKS) {
             check(pHead);
         }
-        return callPPPI(pHead, kvdLen, kvd, __functionAddress);
+        return invokePPPI(pHead, kvdLen, kvd, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxHashList_Serialize(ktxHashList* pHead, unsigned int * kvdLen, unsigned char ** kvd)} */
@@ -1789,7 +1789,7 @@ public class KTX {
         if (CHECKS) {
             check(pHead);
         }
-        return callPPI(pHead, kvdLen, kvd, __functionAddress);
+        return invokePPI(pHead, kvdLen, kvd, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxHashList_Deserialize(ktxHashList* pHead, unsigned int kvdLen, void * kvd)} */
@@ -1806,7 +1806,7 @@ public class KTX {
         if (CHECKS) {
             check(This);
         }
-        return callPPPI(This, pKeyLen, ppKey, __functionAddress);
+        return invokePPPI(This, pKeyLen, ppKey, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxHashListEntry_GetKey(ktxHashListEntry * This, unsigned int * pKeyLen, char ** ppKey)} */
@@ -1827,7 +1827,7 @@ public class KTX {
         if (CHECKS) {
             check(This);
         }
-        return callPPPI(This, pValueLen, ppValue, __functionAddress);
+        return invokePPPI(This, pValueLen, ppValue, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxHashListEntry_GetValue(ktxHashListEntry * This, unsigned int * pValueLen, void ** ppValue)} */
@@ -1845,7 +1845,7 @@ public class KTX {
     /** {@code KTX_error_code ktxPrintInfoForNamedFile(char const * const filename)} */
     public static int nktxPrintInfoForNamedFile(long filename) {
         long __functionAddress = Functions.PrintInfoForNamedFile;
-        return callPI(filename, __functionAddress);
+        return invokePI(filename, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxPrintInfoForNamedFile(char const * const filename)} */
@@ -1875,7 +1875,7 @@ public class KTX {
     /** {@code KTX_error_code ktxPrintInfoForMemory(ktx_uint8_t const * bytes, ktx_size_t size)} */
     public static int nktxPrintInfoForMemory(long bytes, long size) {
         long __functionAddress = Functions.PrintInfoForMemory;
-        return callPPI(bytes, size, __functionAddress);
+        return invokePPI(bytes, size, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxPrintInfoForMemory(ktx_uint8_t const * bytes, ktx_size_t size)} */
@@ -1889,7 +1889,7 @@ public class KTX {
     /** {@code KTX_error_code ktxPrintKTX1InfoTextForStream(struct ktxStream * stream)} */
     public static int nktxPrintKTX1InfoTextForStream(long stream) {
         long __functionAddress = Functions.PrintKTX1InfoTextForStream;
-        return callPI(stream, __functionAddress);
+        return invokePI(stream, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxPrintKTX1InfoTextForStream(struct ktxStream * stream)} */
@@ -1903,7 +1903,7 @@ public class KTX {
     /** {@code KTX_error_code ktxPrintKTX2InfoTextForMemory(ktx_uint8_t const * bytes, ktx_size_t size)} */
     public static int nktxPrintKTX2InfoTextForMemory(long bytes, long size) {
         long __functionAddress = Functions.PrintKTX2InfoTextForMemory;
-        return callPPI(bytes, size, __functionAddress);
+        return invokePPI(bytes, size, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxPrintKTX2InfoTextForMemory(ktx_uint8_t const * bytes, ktx_size_t size)} */
@@ -1917,7 +1917,7 @@ public class KTX {
     /** {@code KTX_error_code ktxPrintKTX2InfoTextForNamedFile(char const * const filename)} */
     public static int nktxPrintKTX2InfoTextForNamedFile(long filename) {
         long __functionAddress = Functions.PrintKTX2InfoTextForNamedFile;
-        return callPI(filename, __functionAddress);
+        return invokePI(filename, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxPrintKTX2InfoTextForNamedFile(char const * const filename)} */
@@ -1947,7 +1947,7 @@ public class KTX {
     /** {@code KTX_error_code ktxPrintKTX2InfoTextForStream(struct ktxStream * stream)} */
     public static int nktxPrintKTX2InfoTextForStream(long stream) {
         long __functionAddress = Functions.PrintKTX2InfoTextForStream;
-        return callPI(stream, __functionAddress);
+        return invokePI(stream, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxPrintKTX2InfoTextForStream(struct ktxStream * stream)} */
@@ -1961,7 +1961,7 @@ public class KTX {
     /** {@code KTX_error_code ktxPrintKTX2InfoJSONForMemory(ktx_uint8_t const * bytes, ktx_size_t size, ktx_uint32_t base_indent, ktx_uint32_t indent_width, bool minified)} */
     public static int nktxPrintKTX2InfoJSONForMemory(long bytes, long size, int base_indent, int indent_width, boolean minified) {
         long __functionAddress = Functions.PrintKTX2InfoJSONForMemory;
-        return callPPI(bytes, size, base_indent, indent_width, minified, __functionAddress);
+        return invokePPI(bytes, size, base_indent, indent_width, minified, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxPrintKTX2InfoJSONForMemory(ktx_uint8_t const * bytes, ktx_size_t size, ktx_uint32_t base_indent, ktx_uint32_t indent_width, bool minified)} */
@@ -1975,7 +1975,7 @@ public class KTX {
     /** {@code KTX_error_code ktxPrintKTX2InfoJSONForNamedFile(char const * const filename, ktx_uint32_t base_indent, ktx_uint32_t indent_width, bool minified)} */
     public static int nktxPrintKTX2InfoJSONForNamedFile(long filename, int base_indent, int indent_width, boolean minified) {
         long __functionAddress = Functions.PrintKTX2InfoJSONForNamedFile;
-        return callPI(filename, base_indent, indent_width, minified, __functionAddress);
+        return invokePI(filename, base_indent, indent_width, minified, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxPrintKTX2InfoJSONForNamedFile(char const * const filename, ktx_uint32_t base_indent, ktx_uint32_t indent_width, bool minified)} */
@@ -2005,7 +2005,7 @@ public class KTX {
     /** {@code KTX_error_code ktxPrintKTX2InfoJSONForStream(struct ktxStream * stream, ktx_uint32_t base_indent, ktx_uint32_t indent_width, bool minified)} */
     public static int nktxPrintKTX2InfoJSONForStream(long stream, int base_indent, int indent_width, boolean minified) {
         long __functionAddress = Functions.PrintKTX2InfoJSONForStream;
-        return callPI(stream, base_indent, indent_width, minified, __functionAddress);
+        return invokePI(stream, base_indent, indent_width, minified, __functionAddress);
     }
 
     /** {@code KTX_error_code ktxPrintKTX2InfoJSONForStream(struct ktxStream * stream, ktx_uint32_t base_indent, ktx_uint32_t indent_width, bool minified)} */

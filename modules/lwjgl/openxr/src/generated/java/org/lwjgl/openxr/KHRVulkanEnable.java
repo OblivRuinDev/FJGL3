@@ -50,7 +50,7 @@ public class KHRVulkanEnable {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetVulkanInstanceExtensionsKHR(XrInstance instance, XrSystemId systemId, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, char * buffer)} */
@@ -70,7 +70,7 @@ public class KHRVulkanEnable {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetVulkanDeviceExtensionsKHR(XrInstance instance, XrSystemId systemId, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, char * buffer)} */
@@ -90,7 +90,7 @@ public class KHRVulkanEnable {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, vkInstance.address(), vkPhysicalDevice, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, vkInstance.address(), vkPhysicalDevice, __functionAddress);
     }
 
     /** {@code XrResult xrGetVulkanGraphicsDeviceKHR(XrInstance instance, XrSystemId systemId, VkInstance vkInstance, VkPhysicalDevice * vkPhysicalDevice)} */
@@ -110,7 +110,7 @@ public class KHRVulkanEnable {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(instance.address(), systemId, graphicsRequirements, __functionAddress);
+        return invokePJPI(instance.address(), systemId, graphicsRequirements, __functionAddress);
     }
 
     /** {@code XrResult xrGetVulkanGraphicsRequirementsKHR(XrInstance instance, XrSystemId systemId, XrGraphicsRequirementsVulkanKHR * graphicsRequirements)} */

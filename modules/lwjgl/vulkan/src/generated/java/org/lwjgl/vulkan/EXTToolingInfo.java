@@ -52,7 +52,7 @@ public class EXTToolingInfo {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pToolCount, pToolProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pToolCount, pToolProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceToolPropertiesEXT(VkPhysicalDevice physicalDevice, uint32_t * pToolCount, VkPhysicalDeviceToolProperties * pToolProperties)} */
@@ -74,7 +74,7 @@ public class EXTToolingInfo {
             check(pToolCount, 1);
             checkSafe(pToolProperties, pToolCount[0]);
         }
-        return callPPPI(physicalDevice.address(), pToolCount, memAddressSafe(pToolProperties), __functionAddress);
+        return invokePPPI(physicalDevice.address(), pToolCount, memAddressSafe(pToolProperties), __functionAddress);
     }
 
 }

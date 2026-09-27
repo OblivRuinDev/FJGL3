@@ -41,7 +41,7 @@ public class EXTHdrMetadata {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), swapchainCount, pSwapchains, pMetadata, __functionAddress);
+        invokePPPV(device.address(), swapchainCount, pSwapchains, pMetadata, __functionAddress);
     }
 
     /** {@code void vkSetHdrMetadataEXT(VkDevice device, uint32_t swapchainCount, VkSwapchainKHR const * pSwapchains, VkHdrMetadataEXT const * pMetadata)} */
@@ -59,7 +59,7 @@ public class EXTHdrMetadata {
             check(__functionAddress);
             check(pMetadata, pSwapchains.length);
         }
-        callPPPV(device.address(), pSwapchains.length, pSwapchains, pMetadata.address(), __functionAddress);
+        invokePPPV(device.address(), pSwapchains.length, pSwapchains, pMetadata.address(), __functionAddress);
     }
 
 }

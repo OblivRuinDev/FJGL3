@@ -78,7 +78,7 @@ public class NVDeviceGeneratedCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetGeneratedCommandsMemoryRequirementsNV(VkDevice device, VkGeneratedCommandsMemoryRequirementsInfoNV const * pInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -95,7 +95,7 @@ public class NVDeviceGeneratedCommands {
             check(__functionAddress);
             VkGeneratedCommandsInfoNV.validate(pGeneratedCommandsInfo);
         }
-        callPPV(commandBuffer.address(), pGeneratedCommandsInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pGeneratedCommandsInfo, __functionAddress);
     }
 
     /** {@code void vkCmdPreprocessGeneratedCommandsNV(VkCommandBuffer commandBuffer, VkGeneratedCommandsInfoNV const * pGeneratedCommandsInfo)} */
@@ -112,7 +112,7 @@ public class NVDeviceGeneratedCommands {
             check(__functionAddress);
             VkGeneratedCommandsInfoNV.validate(pGeneratedCommandsInfo);
         }
-        callPPV(commandBuffer.address(), isPreprocessed, pGeneratedCommandsInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), isPreprocessed, pGeneratedCommandsInfo, __functionAddress);
     }
 
     /** {@code void vkCmdExecuteGeneratedCommandsNV(VkCommandBuffer commandBuffer, VkBool32 isPreprocessed, VkGeneratedCommandsInfoNV const * pGeneratedCommandsInfo)} */
@@ -128,7 +128,7 @@ public class NVDeviceGeneratedCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(commandBuffer.address(), pipelineBindPoint, pipeline, groupIndex, __functionAddress);
+        invokePJV(commandBuffer.address(), pipelineBindPoint, pipeline, groupIndex, __functionAddress);
     }
 
     // --- [ vkCreateIndirectCommandsLayoutNV ] ---
@@ -140,7 +140,7 @@ public class NVDeviceGeneratedCommands {
             check(__functionAddress);
             VkIndirectCommandsLayoutCreateInfoNV.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pIndirectCommandsLayout, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pIndirectCommandsLayout, __functionAddress);
     }
 
     /** {@code VkResult vkCreateIndirectCommandsLayoutNV(VkDevice device, VkIndirectCommandsLayoutCreateInfoNV const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkIndirectCommandsLayoutNV * pIndirectCommandsLayout)} */
@@ -160,7 +160,7 @@ public class NVDeviceGeneratedCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), indirectCommandsLayout, pAllocator, __functionAddress);
+        invokePJPV(device.address(), indirectCommandsLayout, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyIndirectCommandsLayoutNV(VkDevice device, VkIndirectCommandsLayoutNV indirectCommandsLayout, VkAllocationCallbacks const * pAllocator)} */
@@ -177,7 +177,7 @@ public class NVDeviceGeneratedCommands {
             check(pIndirectCommandsLayout, 1);
             VkIndirectCommandsLayoutCreateInfoNV.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pIndirectCommandsLayout, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pIndirectCommandsLayout, __functionAddress);
     }
 
 }

@@ -14,17 +14,17 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glDebugMessageControlKHRPROC) (jint, jint, jint, jint, uintptr_t, jboolean);
-typedef void (APIENTRY *glDebugMessageInsertKHRPROC) (jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glDebugMessageCallbackKHRPROC) (uintptr_t, uintptr_t);
-typedef jint (APIENTRY *glGetDebugMessageLogKHRPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetPointervKHRPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glPushDebugGroupKHRPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glPopDebugGroupKHRPROC) (void);
-typedef void (APIENTRY *glObjectLabelKHRPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetObjectLabelKHRPROC) (jint, jint, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glObjectPtrLabelKHRPROC) (uintptr_t, jint, uintptr_t);
-typedef void (APIENTRY *glGetObjectPtrLabelKHRPROC) (uintptr_t, jint, uintptr_t, uintptr_t);
+typedef void (*glDebugMessageControlKHRPROC) (jint, jint, jint, jint, uintptr_t, jboolean);
+typedef void (*glDebugMessageInsertKHRPROC) (jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glDebugMessageCallbackKHRPROC) (uintptr_t, uintptr_t);
+typedef jint (*glGetDebugMessageLogKHRPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glGetPointervKHRPROC) (jint, uintptr_t);
+typedef void (*glPushDebugGroupKHRPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glPopDebugGroupKHRPROC) (void);
+typedef void (*glObjectLabelKHRPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetObjectLabelKHRPROC) (jint, jint, jint, uintptr_t, uintptr_t);
+typedef void (*glObjectPtrLabelKHRPROC) (uintptr_t, jint, uintptr_t);
+typedef void (*glGetObjectPtrLabelKHRPROC) (uintptr_t, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

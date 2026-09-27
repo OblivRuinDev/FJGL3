@@ -14,13 +14,13 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glDeleteFencesNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGenFencesNVPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsFenceNVPROC) (jint);
-typedef jboolean (APIENTRY *glTestFenceNVPROC) (jint);
-typedef void (APIENTRY *glGetFenceivNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glFinishFenceNVPROC) (jint);
-typedef void (APIENTRY *glSetFenceNVPROC) (jint, jint);
+typedef void (*glDeleteFencesNVPROC) (jint, uintptr_t);
+typedef void (*glGenFencesNVPROC) (jint, uintptr_t);
+typedef jboolean (*glIsFenceNVPROC) (jint);
+typedef jboolean (*glTestFenceNVPROC) (jint);
+typedef void (*glGetFenceivNVPROC) (jint, jint, uintptr_t);
+typedef void (*glFinishFenceNVPROC) (jint);
+typedef void (*glSetFenceNVPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

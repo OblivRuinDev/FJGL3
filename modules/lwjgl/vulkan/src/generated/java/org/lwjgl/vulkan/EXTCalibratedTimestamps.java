@@ -49,7 +49,7 @@ public class EXTCalibratedTimestamps {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pTimeDomainCount, pTimeDomains, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pTimeDomainCount, pTimeDomains, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceCalibrateableTimeDomainsEXT(VkPhysicalDevice physicalDevice, uint32_t * pTimeDomainCount, VkTimeDomainKHR * pTimeDomains)} */
@@ -70,7 +70,7 @@ public class EXTCalibratedTimestamps {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation, __functionAddress);
+        return invokePPPPI(device.address(), timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation, __functionAddress);
     }
 
     /** {@code VkResult vkGetCalibratedTimestampsEXT(VkDevice device, uint32_t timestampCount, VkCalibratedTimestampInfoKHR const * pTimestampInfos, uint64_t * pTimestamps, uint64_t * pMaxDeviation)} */
@@ -92,7 +92,7 @@ public class EXTCalibratedTimestamps {
             check(pTimeDomainCount, 1);
             checkSafe(pTimeDomains, pTimeDomainCount[0]);
         }
-        return callPPPI(physicalDevice.address(), pTimeDomainCount, pTimeDomains, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pTimeDomainCount, pTimeDomains, __functionAddress);
     }
 
     /** {@code VkResult vkGetCalibratedTimestampsEXT(VkDevice device, uint32_t timestampCount, VkCalibratedTimestampInfoKHR const * pTimestampInfos, uint64_t * pTimestamps, uint64_t * pMaxDeviation)} */
@@ -104,7 +104,7 @@ public class EXTCalibratedTimestamps {
             check(pTimestamps, pTimestampInfos.remaining());
             check(pMaxDeviation, 1);
         }
-        return callPPPPI(device.address(), pTimestampInfos.remaining(), pTimestampInfos.address(), pTimestamps, pMaxDeviation, __functionAddress);
+        return invokePPPPI(device.address(), pTimestampInfos.remaining(), pTimestampInfos.address(), pTimestamps, pMaxDeviation, __functionAddress);
     }
 
 }

@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glFramebufferFetchBarrierEXTPROC) (void);
+typedef void (*glFramebufferFetchBarrierEXTPROC) (void);
 
 EXTERN_C_ENTER
 

@@ -87,7 +87,7 @@ public class FBPassthrough {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, outPassthrough, __functionAddress);
+        return invokePPPI(session.address(), createInfo, outPassthrough, __functionAddress);
     }
 
     /** {@code XrResult xrCreatePassthroughFB(XrSession session, XrPassthroughCreateInfoFB const * createInfo, XrPassthroughFB * outPassthrough)} */
@@ -108,7 +108,7 @@ public class FBPassthrough {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(passthrough.address(), __functionAddress);
+        return invokePI(passthrough.address(), __functionAddress);
     }
 
     // --- [ xrPassthroughStartFB ] ---
@@ -120,7 +120,7 @@ public class FBPassthrough {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(passthrough.address(), __functionAddress);
+        return invokePI(passthrough.address(), __functionAddress);
     }
 
     // --- [ xrPassthroughPauseFB ] ---
@@ -132,7 +132,7 @@ public class FBPassthrough {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(passthrough.address(), __functionAddress);
+        return invokePI(passthrough.address(), __functionAddress);
     }
 
     // --- [ xrCreatePassthroughLayerFB ] ---
@@ -144,7 +144,7 @@ public class FBPassthrough {
             check(__functionAddress);
             XrPassthroughLayerCreateInfoFB.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, outLayer, __functionAddress);
+        return invokePPPI(session.address(), createInfo, outLayer, __functionAddress);
     }
 
     /** {@code XrResult xrCreatePassthroughLayerFB(XrSession session, XrPassthroughLayerCreateInfoFB const * createInfo, XrPassthroughLayerFB * outLayer)} */
@@ -165,7 +165,7 @@ public class FBPassthrough {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(layer.address(), __functionAddress);
+        return invokePI(layer.address(), __functionAddress);
     }
 
     // --- [ xrPassthroughLayerPauseFB ] ---
@@ -177,7 +177,7 @@ public class FBPassthrough {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(layer.address(), __functionAddress);
+        return invokePI(layer.address(), __functionAddress);
     }
 
     // --- [ xrPassthroughLayerResumeFB ] ---
@@ -189,7 +189,7 @@ public class FBPassthrough {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(layer.address(), __functionAddress);
+        return invokePI(layer.address(), __functionAddress);
     }
 
     // --- [ xrPassthroughLayerSetStyleFB ] ---
@@ -200,7 +200,7 @@ public class FBPassthrough {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(layer.address(), style, __functionAddress);
+        return invokePPI(layer.address(), style, __functionAddress);
     }
 
     /** {@code XrResult xrPassthroughLayerSetStyleFB(XrPassthroughLayerFB layer, XrPassthroughStyleFB const * style)} */
@@ -218,7 +218,7 @@ public class FBPassthrough {
             check(__functionAddress);
             XrGeometryInstanceCreateInfoFB.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, outGeometryInstance, __functionAddress);
+        return invokePPPI(session.address(), createInfo, outGeometryInstance, __functionAddress);
     }
 
     /** {@code XrResult xrCreateGeometryInstanceFB(XrSession session, XrGeometryInstanceCreateInfoFB const * createInfo, XrGeometryInstanceFB * outGeometryInstance)} */
@@ -239,7 +239,7 @@ public class FBPassthrough {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(instance.address(), __functionAddress);
+        return invokePI(instance.address(), __functionAddress);
     }
 
     // --- [ xrGeometryInstanceSetTransformFB ] ---
@@ -251,7 +251,7 @@ public class FBPassthrough {
             check(__functionAddress);
             XrGeometryInstanceTransformFB.validate(transformation);
         }
-        return callPPI(instance.address(), transformation, __functionAddress);
+        return invokePPI(instance.address(), transformation, __functionAddress);
     }
 
     /** {@code XrResult xrGeometryInstanceSetTransformFB(XrGeometryInstanceFB instance, XrGeometryInstanceTransformFB const * transformation)} */

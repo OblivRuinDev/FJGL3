@@ -33,7 +33,7 @@ public class ANDROIDBlobCache {
             check(__functionAddress);
             check(dpy);
         }
-        callPPPV(dpy, set, get, __functionAddress);
+        invokePPPV(dpy, set, get, __functionAddress);
     }
 
     /** {@code void eglSetBlobCacheFuncsANDROID(EGLDisplay dpy, EGLSetBlobFuncANDROID set, EGLGetBlobFuncANDROID get)} */

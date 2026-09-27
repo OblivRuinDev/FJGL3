@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glTexStorage3DMultisampleOESPROC) (jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTexStorage3DMultisampleOESPROC) (jint, jint, jint, jint, jint, jint, jboolean);
 
 EXTERN_C_ENTER
 

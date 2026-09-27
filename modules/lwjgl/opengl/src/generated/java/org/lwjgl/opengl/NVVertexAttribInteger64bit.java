@@ -242,7 +242,7 @@ public class NVVertexAttribInteger64bit {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL2i64vNV(GLuint index, GLint64EXT const * v)} */
@@ -252,7 +252,7 @@ public class NVVertexAttribInteger64bit {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL3i64vNV(GLuint index, GLint64EXT const * v)} */
@@ -262,7 +262,7 @@ public class NVVertexAttribInteger64bit {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL4i64vNV(GLuint index, GLint64EXT const * v)} */
@@ -272,7 +272,7 @@ public class NVVertexAttribInteger64bit {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL1ui64vNV(GLuint index, GLuint64EXT const * v)} */
@@ -282,7 +282,7 @@ public class NVVertexAttribInteger64bit {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL2ui64vNV(GLuint index, GLuint64EXT const * v)} */
@@ -292,7 +292,7 @@ public class NVVertexAttribInteger64bit {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL3ui64vNV(GLuint index, GLuint64EXT const * v)} */
@@ -302,7 +302,7 @@ public class NVVertexAttribInteger64bit {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glVertexAttribL4ui64vNV(GLuint index, GLuint64EXT const * v)} */
@@ -312,7 +312,7 @@ public class NVVertexAttribInteger64bit {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(index, v, __functionAddress);
+        invokePV(index, v, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribLi64vNV(GLuint index, GLenum pname, GLint64EXT * params)} */
@@ -322,7 +322,7 @@ public class NVVertexAttribInteger64bit {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
     /** {@code void glGetVertexAttribLui64vNV(GLuint index, GLenum pname, GLuint64EXT * params)} */
@@ -332,7 +332,7 @@ public class NVVertexAttribInteger64bit {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(index, pname, params, __functionAddress);
+        invokePV(index, pname, params, __functionAddress);
     }
 
 }

@@ -47,7 +47,7 @@ public class NVExternalMemoryCapabilities {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(physicalDevice.address(), format, type, tiling, usage, flags, externalHandleType, pExternalImageFormatProperties, __functionAddress);
+        return invokePPI(physicalDevice.address(), format, type, tiling, usage, flags, externalHandleType, pExternalImageFormatProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceExternalImageFormatPropertiesNV(VkPhysicalDevice physicalDevice, VkFormat format, VkImageType type, VkImageTiling tiling, VkImageUsageFlags usage, VkImageCreateFlags flags, VkExternalMemoryHandleTypeFlagsNV externalHandleType, VkExternalImageFormatPropertiesNV * pExternalImageFormatProperties)} */

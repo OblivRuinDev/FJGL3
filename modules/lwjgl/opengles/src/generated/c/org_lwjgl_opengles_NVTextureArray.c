@@ -14,12 +14,12 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glTexImage3DNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glTexSubImage3DNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCopyTexSubImage3DNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glCompressedTexImage3DNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glCompressedTexSubImage3DNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glFramebufferTextureLayerNVPROC) (jint, jint, jint, jint, jint);
+typedef void (*glTexImage3DNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glTexSubImage3DNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCopyTexSubImage3DNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glCompressedTexImage3DNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glCompressedTexSubImage3DNVPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glFramebufferTextureLayerNVPROC) (jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

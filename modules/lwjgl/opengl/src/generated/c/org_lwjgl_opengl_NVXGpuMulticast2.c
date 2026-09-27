@@ -14,12 +14,12 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef jint (APIENTRY *glAsyncCopyImageSubDataNVXPROC) (jint, uintptr_t, uintptr_t, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t, uintptr_t);
-typedef uintptr_t (APIENTRY *glAsyncCopyBufferSubDataNVXPROC) (jint, uintptr_t, uintptr_t, jint, jint, jint, jint, uintptr_t, uintptr_t, uintptr_t, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glUploadGpuMaskNVXPROC) (jint);
-typedef void (APIENTRY *glMulticastViewportArrayvNVXPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glMulticastScissorArrayvNVXPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glMulticastViewportPositionWScaleNVXPROC) (jint, jint, jfloat, jfloat);
+typedef jint (*glAsyncCopyImageSubDataNVXPROC) (jint, uintptr_t, uintptr_t, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t, uintptr_t);
+typedef uintptr_t (*glAsyncCopyBufferSubDataNVXPROC) (jint, uintptr_t, uintptr_t, jint, jint, jint, jint, uintptr_t, uintptr_t, uintptr_t, jint, uintptr_t, uintptr_t);
+typedef void (*glUploadGpuMaskNVXPROC) (jint);
+typedef void (*glMulticastViewportArrayvNVXPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glMulticastScissorArrayvNVXPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glMulticastViewportPositionWScaleNVXPROC) (jint, jint, jfloat, jfloat);
 
 EXTERN_C_ENTER
 

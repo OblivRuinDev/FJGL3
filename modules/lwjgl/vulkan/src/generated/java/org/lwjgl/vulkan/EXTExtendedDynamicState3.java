@@ -78,7 +78,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthClampEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), depthClampEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetPolygonModeEXT ] ---
@@ -89,7 +89,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), polygonMode, __functionAddress);
+        invokePV(commandBuffer.address(), polygonMode, __functionAddress);
     }
 
     // --- [ vkCmdSetRasterizationSamplesEXT ] ---
@@ -100,7 +100,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), rasterizationSamples, __functionAddress);
+        invokePV(commandBuffer.address(), rasterizationSamples, __functionAddress);
     }
 
     // --- [ vkCmdSetSampleMaskEXT ] ---
@@ -111,7 +111,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), samples, pSampleMask, __functionAddress);
+        invokePPV(commandBuffer.address(), samples, pSampleMask, __functionAddress);
     }
 
     /** {@code void vkCmdSetSampleMaskEXT(VkCommandBuffer commandBuffer, VkSampleCountFlagBits samples, VkSampleMask const * pSampleMask)} */
@@ -127,7 +127,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), alphaToCoverageEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), alphaToCoverageEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetAlphaToOneEnableEXT ] ---
@@ -138,7 +138,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), alphaToOneEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), alphaToOneEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetLogicOpEnableEXT ] ---
@@ -149,7 +149,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), logicOpEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), logicOpEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetColorBlendEnableEXT ] ---
@@ -160,7 +160,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorBlendEnables, __functionAddress);
+        invokePPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorBlendEnables, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorBlendEnableEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, VkBool32 const * pColorBlendEnables)} */
@@ -176,7 +176,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorBlendEquations, __functionAddress);
+        invokePPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorBlendEquations, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorBlendEquationEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, VkColorBlendEquationEXT const * pColorBlendEquations)} */
@@ -192,7 +192,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorWriteMasks, __functionAddress);
+        invokePPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorWriteMasks, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorWriteMaskEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, VkColorComponentFlags const * pColorWriteMasks)} */
@@ -208,7 +208,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), domainOrigin, __functionAddress);
+        invokePV(commandBuffer.address(), domainOrigin, __functionAddress);
     }
 
     // --- [ vkCmdSetRasterizationStreamEXT ] ---
@@ -219,7 +219,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), rasterizationStream, __functionAddress);
+        invokePV(commandBuffer.address(), rasterizationStream, __functionAddress);
     }
 
     // --- [ vkCmdSetConservativeRasterizationModeEXT ] ---
@@ -230,7 +230,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), conservativeRasterizationMode, __functionAddress);
+        invokePV(commandBuffer.address(), conservativeRasterizationMode, __functionAddress);
     }
 
     // --- [ vkCmdSetExtraPrimitiveOverestimationSizeEXT ] ---
@@ -241,7 +241,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), extraPrimitiveOverestimationSize, __functionAddress);
+        invokePV(commandBuffer.address(), extraPrimitiveOverestimationSize, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthClipEnableEXT ] ---
@@ -252,7 +252,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthClipEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), depthClipEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetSampleLocationsEnableEXT ] ---
@@ -263,7 +263,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), sampleLocationsEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), sampleLocationsEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetColorBlendAdvancedEXT ] ---
@@ -274,7 +274,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorBlendAdvanced, __functionAddress);
+        invokePPV(commandBuffer.address(), firstAttachment, attachmentCount, pColorBlendAdvanced, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorBlendAdvancedEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, VkColorBlendAdvancedEXT const * pColorBlendAdvanced)} */
@@ -290,7 +290,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), provokingVertexMode, __functionAddress);
+        invokePV(commandBuffer.address(), provokingVertexMode, __functionAddress);
     }
 
     // --- [ vkCmdSetLineRasterizationModeEXT ] ---
@@ -301,7 +301,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), lineRasterizationMode, __functionAddress);
+        invokePV(commandBuffer.address(), lineRasterizationMode, __functionAddress);
     }
 
     // --- [ vkCmdSetLineStippleEnableEXT ] ---
@@ -312,7 +312,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), stippledLineEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), stippledLineEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthClipNegativeOneToOneEXT ] ---
@@ -323,7 +323,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), negativeOneToOne ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), negativeOneToOne ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetViewportWScalingEnableNV ] ---
@@ -334,7 +334,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), viewportWScalingEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), viewportWScalingEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetViewportSwizzleNV ] ---
@@ -345,7 +345,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstViewport, viewportCount, pViewportSwizzles, __functionAddress);
+        invokePPV(commandBuffer.address(), firstViewport, viewportCount, pViewportSwizzles, __functionAddress);
     }
 
     /** {@code void vkCmdSetViewportSwizzleNV(VkCommandBuffer commandBuffer, uint32_t firstViewport, uint32_t viewportCount, VkViewportSwizzleNV const * pViewportSwizzles)} */
@@ -361,7 +361,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), coverageToColorEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), coverageToColorEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetCoverageToColorLocationNV ] ---
@@ -372,7 +372,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), coverageToColorLocation, __functionAddress);
+        invokePV(commandBuffer.address(), coverageToColorLocation, __functionAddress);
     }
 
     // --- [ vkCmdSetCoverageModulationModeNV ] ---
@@ -383,7 +383,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), coverageModulationMode, __functionAddress);
+        invokePV(commandBuffer.address(), coverageModulationMode, __functionAddress);
     }
 
     // --- [ vkCmdSetCoverageModulationTableEnableNV ] ---
@@ -394,7 +394,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), coverageModulationTableEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), coverageModulationTableEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetCoverageModulationTableNV ] ---
@@ -405,7 +405,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), coverageModulationTableCount, pCoverageModulationTable, __functionAddress);
+        invokePPV(commandBuffer.address(), coverageModulationTableCount, pCoverageModulationTable, __functionAddress);
     }
 
     /** {@code void vkCmdSetCoverageModulationTableNV(VkCommandBuffer commandBuffer, uint32_t coverageModulationTableCount, float const * pCoverageModulationTable)} */
@@ -421,7 +421,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), shadingRateImageEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), shadingRateImageEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetRepresentativeFragmentTestEnableNV ] ---
@@ -432,7 +432,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), representativeFragmentTestEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), representativeFragmentTestEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetCoverageReductionModeNV ] ---
@@ -443,7 +443,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), coverageReductionMode, __functionAddress);
+        invokePV(commandBuffer.address(), coverageReductionMode, __functionAddress);
     }
 
     /** {@code void vkCmdSetSampleMaskEXT(VkCommandBuffer commandBuffer, VkSampleCountFlagBits samples, VkSampleMask const * pSampleMask)} */
@@ -452,7 +452,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), samples, pSampleMask, __functionAddress);
+        invokePPV(commandBuffer.address(), samples, pSampleMask, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorBlendEnableEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, VkBool32 const * pColorBlendEnables)} */
@@ -461,7 +461,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstAttachment, pColorBlendEnables.length, pColorBlendEnables, __functionAddress);
+        invokePPV(commandBuffer.address(), firstAttachment, pColorBlendEnables.length, pColorBlendEnables, __functionAddress);
     }
 
     /** {@code void vkCmdSetColorWriteMaskEXT(VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, VkColorComponentFlags const * pColorWriteMasks)} */
@@ -470,7 +470,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), firstAttachment, pColorWriteMasks.length, pColorWriteMasks, __functionAddress);
+        invokePPV(commandBuffer.address(), firstAttachment, pColorWriteMasks.length, pColorWriteMasks, __functionAddress);
     }
 
     /** {@code void vkCmdSetCoverageModulationTableNV(VkCommandBuffer commandBuffer, uint32_t coverageModulationTableCount, float const * pCoverageModulationTable)} */
@@ -479,7 +479,7 @@ public class EXTExtendedDynamicState3 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pCoverageModulationTable.length, pCoverageModulationTable, __functionAddress);
+        invokePPV(commandBuffer.address(), pCoverageModulationTable.length, pCoverageModulationTable, __functionAddress);
     }
 
 }

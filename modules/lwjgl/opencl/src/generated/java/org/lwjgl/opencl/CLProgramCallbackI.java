@@ -30,7 +30,6 @@ public interface CLProgramCallbackI extends CallbackI {
         CLProgramCallbackI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_void,
             ffi_type_pointer, ffi_type_pointer
         )

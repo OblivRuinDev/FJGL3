@@ -161,7 +161,7 @@ public class GL46C extends GL45C {
             check(__functionAddress);
             check(indirect, (maxdrawcount * (stride == 0 ? (4 * 4) : stride)) >> 2);
         }
-        callPPV(mode, indirect, drawcount, maxdrawcount, stride, __functionAddress);
+        invokePPV(mode, indirect, drawcount, maxdrawcount, stride, __functionAddress);
     }
 
     /** {@code void glMultiDrawElementsIndirectCount(GLenum mode, GLenum type, void const * indirect, GLintptr drawcount, GLsizei maxdrawcount, GLsizei stride)} */
@@ -171,7 +171,7 @@ public class GL46C extends GL45C {
             check(__functionAddress);
             check(indirect, (maxdrawcount * (stride == 0 ? (5 * 4) : stride)) >> 2);
         }
-        callPPV(mode, type, indirect, drawcount, maxdrawcount, stride, __functionAddress);
+        invokePPV(mode, type, indirect, drawcount, maxdrawcount, stride, __functionAddress);
     }
 
     /** {@code void glSpecializeShader(GLuint shader, GLchar const * pEntryPoint, GLuint numSpecializationConstants, GLuint const * pConstantIndex, GLuint const * pConstantValue)} */
@@ -182,7 +182,7 @@ public class GL46C extends GL45C {
             checkNT1(pEntryPoint);
             checkSafe(pConstantValue, lengthSafe(pConstantIndex));
         }
-        callPPPV(shader, memAddress(pEntryPoint), lengthSafe(pConstantIndex), pConstantIndex, pConstantValue, __functionAddress);
+        invokePPPV(shader, memAddress(pEntryPoint), lengthSafe(pConstantIndex), pConstantIndex, pConstantValue, __functionAddress);
     }
 
     /** {@code void glSpecializeShader(GLuint shader, GLchar const * pEntryPoint, GLuint numSpecializationConstants, GLuint const * pConstantIndex, GLuint const * pConstantValue)} */
@@ -196,7 +196,7 @@ public class GL46C extends GL45C {
         try {
             stack.nUTF8(pEntryPoint, true);
             long pEntryPointEncoded = stack.getPointerAddress();
-            callPPPV(shader, pEntryPointEncoded, lengthSafe(pConstantIndex), pConstantIndex, pConstantValue, __functionAddress);
+            invokePPPV(shader, pEntryPointEncoded, lengthSafe(pConstantIndex), pConstantIndex, pConstantValue, __functionAddress);
         } finally {
             stack.setPointer(stackPointer);
         }

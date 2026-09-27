@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glRenderbufferStorageMultisampleAPPLEPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glResolveMultisampleFramebufferAPPLEPROC) (void);
+typedef void (*glRenderbufferStorageMultisampleAPPLEPROC) (jint, jint, jint, jint, jint);
+typedef void (*glResolveMultisampleFramebufferAPPLEPROC) (void);
 
 EXTERN_C_ENTER
 

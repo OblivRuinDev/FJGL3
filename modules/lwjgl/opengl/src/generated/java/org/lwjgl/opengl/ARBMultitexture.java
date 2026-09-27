@@ -373,7 +373,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord1svARB(GLenum texture, GLshort const * v)} */
@@ -383,7 +383,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord1ivARB(GLenum texture, GLint const * v)} */
@@ -393,7 +393,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord1dvARB(GLenum texture, GLdouble const * v)} */
@@ -403,7 +403,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 1);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord2fvARB(GLenum texture, GLfloat const * v)} */
@@ -413,7 +413,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord2svARB(GLenum texture, GLshort const * v)} */
@@ -423,7 +423,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord2ivARB(GLenum texture, GLint const * v)} */
@@ -433,7 +433,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord2dvARB(GLenum texture, GLdouble const * v)} */
@@ -443,7 +443,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 2);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord3fvARB(GLenum texture, GLfloat const * v)} */
@@ -453,7 +453,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord3svARB(GLenum texture, GLshort const * v)} */
@@ -463,7 +463,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord3ivARB(GLenum texture, GLint const * v)} */
@@ -473,7 +473,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord3dvARB(GLenum texture, GLdouble const * v)} */
@@ -483,7 +483,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 3);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord4fvARB(GLenum texture, GLfloat const * v)} */
@@ -493,7 +493,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord4svARB(GLenum texture, GLshort const * v)} */
@@ -503,7 +503,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord4ivARB(GLenum texture, GLint const * v)} */
@@ -513,7 +513,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
     /** {@code void glMultiTexCoord4dvARB(GLenum texture, GLdouble const * v)} */
@@ -523,7 +523,7 @@ public class ARBMultitexture {
             check(__functionAddress);
             check(v, 4);
         }
-        callPV(texture, v, __functionAddress);
+        invokePV(texture, v, __functionAddress);
     }
 
 }

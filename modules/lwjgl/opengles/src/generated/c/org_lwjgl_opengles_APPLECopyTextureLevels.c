@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glCopyTextureLevelsAPPLEPROC) (jint, jint, jint, jint);
+typedef void (*glCopyTextureLevelsAPPLEPROC) (jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

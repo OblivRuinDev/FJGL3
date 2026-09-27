@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef jboolean (APIENTRY *glAcquireKeyedMutexWin32EXTPROC) (jint, jlong, jint);
-typedef jboolean (APIENTRY *glReleaseKeyedMutexWin32EXTPROC) (jint, jlong);
+typedef jboolean (*glAcquireKeyedMutexWin32EXTPROC) (jint, jlong, jint);
+typedef jboolean (*glReleaseKeyedMutexWin32EXTPROC) (jint, jlong);
 
 EXTERN_C_ENTER
 

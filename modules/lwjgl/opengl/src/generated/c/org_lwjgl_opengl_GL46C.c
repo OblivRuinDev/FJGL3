@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glMultiDrawArraysIndirectCountPROC) (jint, uintptr_t, uintptr_t, jint, jint);
-typedef void (APIENTRY *glMultiDrawElementsIndirectCountPROC) (jint, jint, uintptr_t, uintptr_t, jint, jint);
-typedef void (APIENTRY *glPolygonOffsetClampPROC) (jfloat, jfloat, jfloat);
-typedef void (APIENTRY *glSpecializeShaderPROC) (jint, uintptr_t, jint, uintptr_t, uintptr_t);
+typedef void (*glMultiDrawArraysIndirectCountPROC) (jint, uintptr_t, uintptr_t, jint, jint);
+typedef void (*glMultiDrawElementsIndirectCountPROC) (jint, jint, uintptr_t, uintptr_t, jint, jint);
+typedef void (*glPolygonOffsetClampPROC) (jfloat, jfloat, jfloat);
+typedef void (*glSpecializeShaderPROC) (jint, uintptr_t, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -53,7 +53,7 @@ public class ARMDataGraphInstructionSetTosa {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), queueFamilyIndex, pQueueFamilyDataGraphProperties, pProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), queueFamilyIndex, pQueueFamilyDataGraphProperties, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM(VkPhysicalDevice physicalDevice, uint32_t queueFamilyIndex, VkQueueFamilyDataGraphPropertiesARM const * pQueueFamilyDataGraphProperties, VkBaseOutStructure * pProperties)} */

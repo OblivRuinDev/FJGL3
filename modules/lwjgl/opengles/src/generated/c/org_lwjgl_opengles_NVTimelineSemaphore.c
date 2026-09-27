@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glCreateSemaphoresNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glSemaphoreParameterivNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetSemaphoreParameterivNVPROC) (jint, jint, uintptr_t);
+typedef void (*glCreateSemaphoresNVPROC) (jint, uintptr_t);
+typedef void (*glSemaphoreParameterivNVPROC) (jint, jint, uintptr_t);
+typedef void (*glGetSemaphoreParameterivNVPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

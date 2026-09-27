@@ -97,7 +97,7 @@ public class EXTDeviceGeneratedCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetGeneratedCommandsMemoryRequirementsEXT(VkDevice device, VkGeneratedCommandsMemoryRequirementsInfoEXT const * pInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -113,7 +113,7 @@ public class EXTDeviceGeneratedCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), pGeneratedCommandsInfo, stateCommandBuffer.address(), __functionAddress);
+        invokePPPV(commandBuffer.address(), pGeneratedCommandsInfo, stateCommandBuffer.address(), __functionAddress);
     }
 
     /** {@code void vkCmdPreprocessGeneratedCommandsEXT(VkCommandBuffer commandBuffer, VkGeneratedCommandsInfoEXT const * pGeneratedCommandsInfo, VkCommandBuffer stateCommandBuffer)} */
@@ -129,7 +129,7 @@ public class EXTDeviceGeneratedCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), isPreprocessed, pGeneratedCommandsInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), isPreprocessed, pGeneratedCommandsInfo, __functionAddress);
     }
 
     /** {@code void vkCmdExecuteGeneratedCommandsEXT(VkCommandBuffer commandBuffer, VkBool32 isPreprocessed, VkGeneratedCommandsInfoEXT const * pGeneratedCommandsInfo)} */
@@ -146,7 +146,7 @@ public class EXTDeviceGeneratedCommands {
             check(__functionAddress);
             VkIndirectCommandsLayoutCreateInfoEXT.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pIndirectCommandsLayout, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pIndirectCommandsLayout, __functionAddress);
     }
 
     /** {@code VkResult vkCreateIndirectCommandsLayoutEXT(VkDevice device, VkIndirectCommandsLayoutCreateInfoEXT const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkIndirectCommandsLayoutEXT * pIndirectCommandsLayout)} */
@@ -166,7 +166,7 @@ public class EXTDeviceGeneratedCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), indirectCommandsLayout, pAllocator, __functionAddress);
+        invokePJPV(device.address(), indirectCommandsLayout, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyIndirectCommandsLayoutEXT(VkDevice device, VkIndirectCommandsLayoutEXT indirectCommandsLayout, VkAllocationCallbacks const * pAllocator)} */
@@ -182,7 +182,7 @@ public class EXTDeviceGeneratedCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pIndirectExecutionSet, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pIndirectExecutionSet, __functionAddress);
     }
 
     /** {@code VkResult vkCreateIndirectExecutionSetEXT(VkDevice device, VkIndirectExecutionSetCreateInfoEXT const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkIndirectExecutionSetEXT * pIndirectExecutionSet)} */
@@ -202,7 +202,7 @@ public class EXTDeviceGeneratedCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), indirectExecutionSet, pAllocator, __functionAddress);
+        invokePJPV(device.address(), indirectExecutionSet, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyIndirectExecutionSetEXT(VkDevice device, VkIndirectExecutionSetEXT indirectExecutionSet, VkAllocationCallbacks const * pAllocator)} */
@@ -218,7 +218,7 @@ public class EXTDeviceGeneratedCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), indirectExecutionSet, executionSetWriteCount, pExecutionSetWrites, __functionAddress);
+        invokePJPV(device.address(), indirectExecutionSet, executionSetWriteCount, pExecutionSetWrites, __functionAddress);
     }
 
     /** {@code void vkUpdateIndirectExecutionSetPipelineEXT(VkDevice device, VkIndirectExecutionSetEXT indirectExecutionSet, uint32_t executionSetWriteCount, VkWriteIndirectExecutionSetPipelineEXT const * pExecutionSetWrites)} */
@@ -234,7 +234,7 @@ public class EXTDeviceGeneratedCommands {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), indirectExecutionSet, executionSetWriteCount, pExecutionSetWrites, __functionAddress);
+        invokePJPV(device.address(), indirectExecutionSet, executionSetWriteCount, pExecutionSetWrites, __functionAddress);
     }
 
     /** {@code void vkUpdateIndirectExecutionSetShaderEXT(VkDevice device, VkIndirectExecutionSetEXT indirectExecutionSet, uint32_t executionSetWriteCount, VkWriteIndirectExecutionSetShaderEXT const * pExecutionSetWrites)} */
@@ -251,7 +251,7 @@ public class EXTDeviceGeneratedCommands {
             check(pIndirectCommandsLayout, 1);
             VkIndirectCommandsLayoutCreateInfoEXT.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pIndirectCommandsLayout, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pIndirectCommandsLayout, __functionAddress);
     }
 
     /** {@code VkResult vkCreateIndirectExecutionSetEXT(VkDevice device, VkIndirectExecutionSetCreateInfoEXT const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkIndirectExecutionSetEXT * pIndirectExecutionSet)} */
@@ -262,7 +262,7 @@ public class EXTDeviceGeneratedCommands {
             check(__functionAddress);
             check(pIndirectExecutionSet, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pIndirectExecutionSet, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pIndirectExecutionSet, __functionAddress);
     }
 
 }

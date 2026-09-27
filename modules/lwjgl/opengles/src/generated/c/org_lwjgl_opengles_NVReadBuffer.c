@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glReadBufferNVPROC) (jint);
+typedef void (*glReadBufferNVPROC) (jint);
 
 EXTERN_C_ENTER
 

@@ -56,7 +56,7 @@ public class EXTDisplayControl {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), display, pDisplayPowerInfo, __functionAddress);
+        return invokePJPI(device.address(), display, pDisplayPowerInfo, __functionAddress);
     }
 
     /** {@code VkResult vkDisplayPowerControlEXT(VkDevice device, VkDisplayKHR display, VkDisplayPowerInfoEXT const * pDisplayPowerInfo)} */
@@ -73,7 +73,7 @@ public class EXTDisplayControl {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pDeviceEventInfo, pAllocator, pFence, __functionAddress);
+        return invokePPPPI(device.address(), pDeviceEventInfo, pAllocator, pFence, __functionAddress);
     }
 
     /** {@code VkResult vkRegisterDeviceEventEXT(VkDevice device, VkDeviceEventInfoEXT const * pDeviceEventInfo, VkAllocationCallbacks const * pAllocator, VkFence * pFence)} */
@@ -93,7 +93,7 @@ public class EXTDisplayControl {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPPI(device.address(), display, pDisplayEventInfo, pAllocator, pFence, __functionAddress);
+        return invokePJPPPI(device.address(), display, pDisplayEventInfo, pAllocator, pFence, __functionAddress);
     }
 
     /** {@code VkResult vkRegisterDisplayEventEXT(VkDevice device, VkDisplayKHR display, VkDisplayEventInfoEXT const * pDisplayEventInfo, VkAllocationCallbacks const * pAllocator, VkFence * pFence)} */
@@ -113,7 +113,7 @@ public class EXTDisplayControl {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), swapchain, counter, pCounterValue, __functionAddress);
+        return invokePJPI(device.address(), swapchain, counter, pCounterValue, __functionAddress);
     }
 
     /** {@code VkResult vkGetSwapchainCounterEXT(VkDevice device, VkSwapchainKHR swapchain, VkSurfaceCounterFlagBitsEXT counter, uint64_t * pCounterValue)} */
@@ -133,7 +133,7 @@ public class EXTDisplayControl {
             check(__functionAddress);
             check(pFence, 1);
         }
-        return callPPPPI(device.address(), pDeviceEventInfo.address(), memAddressSafe(pAllocator), pFence, __functionAddress);
+        return invokePPPPI(device.address(), pDeviceEventInfo.address(), memAddressSafe(pAllocator), pFence, __functionAddress);
     }
 
     /** {@code VkResult vkRegisterDisplayEventEXT(VkDevice device, VkDisplayKHR display, VkDisplayEventInfoEXT const * pDisplayEventInfo, VkAllocationCallbacks const * pAllocator, VkFence * pFence)} */
@@ -144,7 +144,7 @@ public class EXTDisplayControl {
             check(__functionAddress);
             check(pFence, 1);
         }
-        return callPJPPPI(device.address(), display, pDisplayEventInfo.address(), memAddressSafe(pAllocator), pFence, __functionAddress);
+        return invokePJPPPI(device.address(), display, pDisplayEventInfo.address(), memAddressSafe(pAllocator), pFence, __functionAddress);
     }
 
     /** {@code VkResult vkGetSwapchainCounterEXT(VkDevice device, VkSwapchainKHR swapchain, VkSurfaceCounterFlagBitsEXT counter, uint64_t * pCounterValue)} */
@@ -155,7 +155,7 @@ public class EXTDisplayControl {
             check(__functionAddress);
             check(pCounterValue, 1);
         }
-        return callPJPI(device.address(), swapchain, counter, pCounterValue, __functionAddress);
+        return invokePJPI(device.address(), swapchain, counter, pCounterValue, __functionAddress);
     }
 
 }

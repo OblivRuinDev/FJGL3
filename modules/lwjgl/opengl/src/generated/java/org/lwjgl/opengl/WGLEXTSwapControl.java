@@ -33,7 +33,7 @@ public class WGLEXTSwapControl {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(interval, __functionAddress) != 0;
+        return invokeI(interval, __functionAddress) != 0;
     }
 
     // --- [ wglGetSwapIntervalEXT ] ---
@@ -44,7 +44,7 @@ public class WGLEXTSwapControl {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(__functionAddress);
+        return invokeI(__functionAddress);
     }
 
 }

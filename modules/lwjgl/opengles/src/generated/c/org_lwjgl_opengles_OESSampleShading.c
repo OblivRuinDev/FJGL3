@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glMinSampleShadingOESPROC) (jfloat);
+typedef void (*glMinSampleShadingOESPROC) (jfloat);
 
 EXTERN_C_ENTER
 

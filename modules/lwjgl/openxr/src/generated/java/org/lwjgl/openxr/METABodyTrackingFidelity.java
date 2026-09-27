@@ -45,7 +45,7 @@ public class METABodyTrackingFidelity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(bodyTracker.address(), fidelity, __functionAddress);
+        return invokePI(bodyTracker.address(), fidelity, __functionAddress);
     }
 
 }

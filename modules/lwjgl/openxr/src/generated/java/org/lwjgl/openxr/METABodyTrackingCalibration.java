@@ -46,7 +46,7 @@ public class METABodyTrackingCalibration {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(bodyTracker.address(), calibrationInfo, __functionAddress);
+        return invokePPI(bodyTracker.address(), calibrationInfo, __functionAddress);
     }
 
     /** {@code XrResult xrSuggestBodyTrackingCalibrationOverrideMETA(XrBodyTrackerFB bodyTracker, XrBodyTrackingCalibrationInfoMETA const * calibrationInfo)} */
@@ -64,7 +64,7 @@ public class METABodyTrackingCalibration {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(bodyTracker.address(), __functionAddress);
+        return invokePI(bodyTracker.address(), __functionAddress);
     }
 
 }

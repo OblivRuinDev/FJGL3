@@ -38,7 +38,7 @@ public class GLXEXTSwapControl {
             check(display);
             check(drawable);
         }
-        callPPV(display, drawable, interval, __functionAddress);
+        invokePPV(display, drawable, interval, __functionAddress);
     }
 
 }

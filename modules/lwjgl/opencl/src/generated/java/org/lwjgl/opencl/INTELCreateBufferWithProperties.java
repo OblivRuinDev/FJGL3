@@ -38,7 +38,7 @@ public class INTELCreateBufferWithProperties {
             check(__functionAddress);
             check(context);
         }
-        return callPPJPPPP(context, properties, flags, size, host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPP(context, properties, flags, size, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferWithPropertiesINTEL(cl_context context, cl_mem_properties_intel const * properties, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -111,7 +111,7 @@ public class INTELCreateBufferWithProperties {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPP(context, properties, flags, (long)host_ptr.remaining(), memAddress(host_ptr), errcode_ret, __functionAddress);
+        return invokePPJPPPP(context, properties, flags, (long)host_ptr.remaining(), memAddress(host_ptr), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferWithPropertiesINTEL(cl_context context, cl_mem_properties_intel const * properties, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -124,7 +124,7 @@ public class INTELCreateBufferWithProperties {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 1, host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 1, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferWithPropertiesINTEL(cl_context context, cl_mem_properties_intel const * properties, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -137,7 +137,7 @@ public class INTELCreateBufferWithProperties {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferWithPropertiesINTEL(cl_context context, cl_mem_properties_intel const * properties, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -150,7 +150,7 @@ public class INTELCreateBufferWithProperties {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferWithPropertiesINTEL(cl_context context, cl_mem_properties_intel const * properties, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -163,7 +163,7 @@ public class INTELCreateBufferWithProperties {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 3, host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 3, host_ptr, errcode_ret, __functionAddress);
     }
 
 }

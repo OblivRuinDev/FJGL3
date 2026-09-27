@@ -66,7 +66,7 @@ public class KHRPipelineBinary {
             check(__functionAddress);
             VkPipelineBinaryCreateInfoKHR.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pBinaries, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pBinaries, __functionAddress);
     }
 
     /** {@code VkResult vkCreatePipelineBinariesKHR(VkDevice device, VkPipelineBinaryCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkPipelineBinaryHandlesInfoKHR * pBinaries)} */
@@ -83,7 +83,7 @@ public class KHRPipelineBinary {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), pipelineBinary, pAllocator, __functionAddress);
+        invokePJPV(device.address(), pipelineBinary, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyPipelineBinaryKHR(VkDevice device, VkPipelineBinaryKHR pipelineBinary, VkAllocationCallbacks const * pAllocator)} */
@@ -99,7 +99,7 @@ public class KHRPipelineBinary {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pPipelineCreateInfo, pPipelineKey, __functionAddress);
+        return invokePPPI(device.address(), pPipelineCreateInfo, pPipelineKey, __functionAddress);
     }
 
     /** {@code VkResult vkGetPipelineKeyKHR(VkDevice device, VkPipelineCreateInfoKHR const * pPipelineCreateInfo, VkPipelineBinaryKeyKHR * pPipelineKey)} */
@@ -116,7 +116,7 @@ public class KHRPipelineBinary {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPPI(device.address(), pInfo, pPipelineBinaryKey, pPipelineBinaryDataSize, pPipelineBinaryData, __functionAddress);
+        return invokePPPPPI(device.address(), pInfo, pPipelineBinaryKey, pPipelineBinaryDataSize, pPipelineBinaryData, __functionAddress);
     }
 
     /** {@code VkResult vkGetPipelineBinaryDataKHR(VkDevice device, VkPipelineBinaryDataInfoKHR const * pInfo, VkPipelineBinaryKeyKHR * pPipelineBinaryKey, size_t * pPipelineBinaryDataSize, void * pPipelineBinaryData)} */
@@ -137,7 +137,7 @@ public class KHRPipelineBinary {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pInfo, pAllocator, __functionAddress);
+        return invokePPPI(device.address(), pInfo, pAllocator, __functionAddress);
     }
 
     /** {@code VkResult vkReleaseCapturedPipelineDataKHR(VkDevice device, VkReleaseCapturedPipelineDataInfoKHR const * pInfo, VkAllocationCallbacks const * pAllocator)} */

@@ -482,7 +482,7 @@ public class GL33C extends GL32C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(samplers.length, samplers, __functionAddress);
+        invokePV(samplers.length, samplers, __functionAddress);
     }
 
     /** {@code void glDeleteSamplers(GLsizei count, GLuint const * samplers)} */
@@ -491,7 +491,7 @@ public class GL33C extends GL32C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(samplers.length, samplers, __functionAddress);
+        invokePV(samplers.length, samplers, __functionAddress);
     }
 
     /** {@code void glSamplerParameteriv(GLuint sampler, GLenum pname, GLint const * params)} */
@@ -501,7 +501,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
     /** {@code void glSamplerParameterfv(GLuint sampler, GLenum pname, GLfloat const * params)} */
@@ -511,7 +511,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
     /** {@code void glSamplerParameterIiv(GLuint sampler, GLenum pname, GLint const * params)} */
@@ -521,7 +521,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
     /** {@code void glSamplerParameterIuiv(GLuint sampler, GLenum pname, GLuint const * params)} */
@@ -531,7 +531,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
     /** {@code void glGetSamplerParameteriv(GLuint sampler, GLenum pname, GLint * params)} */
@@ -541,7 +541,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
     /** {@code void glGetSamplerParameterfv(GLuint sampler, GLenum pname, GLfloat * params)} */
@@ -551,7 +551,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
     /** {@code void glGetSamplerParameterIiv(GLuint sampler, GLenum pname, GLint * params)} */
@@ -561,7 +561,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
     /** {@code void glGetSamplerParameterIuiv(GLuint sampler, GLenum pname, GLuint * params)} */
@@ -571,7 +571,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
     /** {@code void glGetQueryObjecti64v(GLuint id, GLenum pname, GLint64 * params)} */
@@ -581,7 +581,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(id, pname, params, __functionAddress);
+        invokePV(id, pname, params, __functionAddress);
     }
 
     /** {@code void glGetQueryObjectui64v(GLuint id, GLenum pname, GLuint64 * params)} */
@@ -591,7 +591,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(id, pname, params, __functionAddress);
+        invokePV(id, pname, params, __functionAddress);
     }
 
     /** {@code void glVertexAttribP1uiv(GLuint index, GLenum type, GLboolean normalized, GLuint const * value)} */
@@ -601,7 +601,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(index, type, normalized, value, __functionAddress);
+        invokePV(index, type, normalized, value, __functionAddress);
     }
 
     /** {@code void glVertexAttribP2uiv(GLuint index, GLenum type, GLboolean normalized, GLuint const * value)} */
@@ -611,7 +611,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(index, type, normalized, value, __functionAddress);
+        invokePV(index, type, normalized, value, __functionAddress);
     }
 
     /** {@code void glVertexAttribP3uiv(GLuint index, GLenum type, GLboolean normalized, GLuint const * value)} */
@@ -621,7 +621,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(index, type, normalized, value, __functionAddress);
+        invokePV(index, type, normalized, value, __functionAddress);
     }
 
     /** {@code void glVertexAttribP4uiv(GLuint index, GLenum type, GLboolean normalized, GLuint const * value)} */
@@ -631,7 +631,7 @@ public class GL33C extends GL32C {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(index, type, normalized, value, __functionAddress);
+        invokePV(index, type, normalized, value, __functionAddress);
     }
 
 }

@@ -38,7 +38,7 @@ public class EXTHostQueryReset {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(device.address(), queryPool, firstQuery, queryCount, __functionAddress);
+        invokePJV(device.address(), queryPool, firstQuery, queryCount, __functionAddress);
     }
 
 }

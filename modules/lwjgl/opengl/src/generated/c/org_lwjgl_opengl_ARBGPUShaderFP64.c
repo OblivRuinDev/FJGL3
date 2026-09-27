@@ -14,23 +14,23 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glProgramUniform1dEXTPROC) (jint, jint, jdouble);
-typedef void (APIENTRY *glProgramUniform2dEXTPROC) (jint, jint, jdouble, jdouble);
-typedef void (APIENTRY *glProgramUniform3dEXTPROC) (jint, jint, jdouble, jdouble, jdouble);
-typedef void (APIENTRY *glProgramUniform4dEXTPROC) (jint, jint, jdouble, jdouble, jdouble, jdouble);
-typedef void (APIENTRY *glProgramUniform1dvEXTPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform2dvEXTPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform3dvEXTPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform4dvEXTPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniformMatrix2dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glProgramUniformMatrix3dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glProgramUniformMatrix4dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glProgramUniformMatrix2x3dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glProgramUniformMatrix2x4dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glProgramUniformMatrix3x2dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glProgramUniformMatrix3x4dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glProgramUniformMatrix4x2dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glProgramUniformMatrix4x3dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
+typedef void (*glProgramUniform1dEXTPROC) (jint, jint, jdouble);
+typedef void (*glProgramUniform2dEXTPROC) (jint, jint, jdouble, jdouble);
+typedef void (*glProgramUniform3dEXTPROC) (jint, jint, jdouble, jdouble, jdouble);
+typedef void (*glProgramUniform4dEXTPROC) (jint, jint, jdouble, jdouble, jdouble, jdouble);
+typedef void (*glProgramUniform1dvEXTPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramUniform2dvEXTPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramUniform3dvEXTPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramUniform4dvEXTPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramUniformMatrix2dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
+typedef void (*glProgramUniformMatrix3dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
+typedef void (*glProgramUniformMatrix4dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
+typedef void (*glProgramUniformMatrix2x3dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
+typedef void (*glProgramUniformMatrix2x4dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
+typedef void (*glProgramUniformMatrix3x2dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
+typedef void (*glProgramUniformMatrix3x4dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
+typedef void (*glProgramUniformMatrix4x2dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
+typedef void (*glProgramUniformMatrix4x3dvEXTPROC) (jint, jint, jint, jboolean, uintptr_t);
 
 EXTERN_C_ENTER
 

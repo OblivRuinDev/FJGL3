@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glMaxActiveShaderCoresARMPROC) (jint);
+typedef void (*glMaxActiveShaderCoresARMPROC) (jint);
 
 EXTERN_C_ENTER
 

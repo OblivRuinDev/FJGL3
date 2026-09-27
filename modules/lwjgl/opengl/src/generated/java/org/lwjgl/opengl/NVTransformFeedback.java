@@ -229,7 +229,7 @@ public class NVTransformFeedback {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(attribs.length, attribs, bufferMode, __functionAddress);
+        invokePV(attribs.length, attribs, bufferMode, __functionAddress);
     }
 
     /** {@code void glTransformFeedbackVaryingsNV(GLuint program, GLsizei count, GLint const * locations, GLenum bufferMode)} */
@@ -238,7 +238,7 @@ public class NVTransformFeedback {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, locations.length, locations, bufferMode, __functionAddress);
+        invokePV(program, locations.length, locations, bufferMode, __functionAddress);
     }
 
     /** {@code void glGetActiveVaryingNV(GLuint program, GLuint index, GLsizei bufSize, GLsizei * length, GLsizei * size, GLenum * type, GLchar * name)} */
@@ -250,7 +250,7 @@ public class NVTransformFeedback {
             check(size, 1);
             check(type, 1);
         }
-        callPPPPV(program, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
+        invokePPPPV(program, index, name.remaining(), length, size, type, memAddress(name), __functionAddress);
     }
 
     /** {@code void glGetTransformFeedbackVaryingNV(GLuint program, GLuint index, GLint * location)} */
@@ -260,7 +260,7 @@ public class NVTransformFeedback {
             check(__functionAddress);
             check(location, 1);
         }
-        callPV(program, index, location, __functionAddress);
+        invokePV(program, index, location, __functionAddress);
     }
 
     /** {@code void glTransformFeedbackStreamAttribsNV(GLsizei count, GLint const * attribs, GLsizei nbuffers, GLint const * bufstreams, GLenum bufferMode)} */
@@ -269,7 +269,7 @@ public class NVTransformFeedback {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(attribs.length, attribs, bufstreams.length, bufstreams, bufferMode, __functionAddress);
+        invokePPV(attribs.length, attribs, bufstreams.length, bufstreams, bufferMode, __functionAddress);
     }
 
 }

@@ -44,7 +44,7 @@ public class HUAWEIInvocationMask {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(commandBuffer.address(), imageView, imageLayout, __functionAddress);
+        invokePJV(commandBuffer.address(), imageView, imageLayout, __functionAddress);
     }
 
 }

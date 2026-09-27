@@ -65,7 +65,7 @@ public class NVLowLatency2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), swapchain, pSleepModeInfo, __functionAddress);
+        return invokePJPI(device.address(), swapchain, pSleepModeInfo, __functionAddress);
     }
 
     /** {@code VkResult vkSetLatencySleepModeNV(VkDevice device, VkSwapchainKHR swapchain, VkLatencySleepModeInfoNV const * pSleepModeInfo)} */
@@ -82,7 +82,7 @@ public class NVLowLatency2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), swapchain, pSleepInfo, __functionAddress);
+        return invokePJPI(device.address(), swapchain, pSleepInfo, __functionAddress);
     }
 
     /** {@code VkResult vkLatencySleepNV(VkDevice device, VkSwapchainKHR swapchain, VkLatencySleepInfoNV const * pSleepInfo)} */
@@ -99,7 +99,7 @@ public class NVLowLatency2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), swapchain, pLatencyMarkerInfo, __functionAddress);
+        invokePJPV(device.address(), swapchain, pLatencyMarkerInfo, __functionAddress);
     }
 
     /** {@code void vkSetLatencyMarkerNV(VkDevice device, VkSwapchainKHR swapchain, VkSetLatencyMarkerInfoNV const * pLatencyMarkerInfo)} */
@@ -115,7 +115,7 @@ public class NVLowLatency2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), swapchain, pLatencyMarkerInfo, __functionAddress);
+        invokePJPV(device.address(), swapchain, pLatencyMarkerInfo, __functionAddress);
     }
 
     /** {@code void vkGetLatencyTimingsNV(VkDevice device, VkSwapchainKHR swapchain, VkGetLatencyMarkerInfoNV * pLatencyMarkerInfo)} */
@@ -131,7 +131,7 @@ public class NVLowLatency2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(queue.address(), pQueueTypeInfo, __functionAddress);
+        invokePPV(queue.address(), pQueueTypeInfo, __functionAddress);
     }
 
     /** {@code void vkQueueNotifyOutOfBandNV(VkQueue queue, VkOutOfBandQueueTypeInfoNV const * pQueueTypeInfo)} */

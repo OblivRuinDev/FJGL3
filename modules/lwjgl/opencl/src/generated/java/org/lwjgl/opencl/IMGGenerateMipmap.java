@@ -46,7 +46,7 @@ public class IMGGenerateMipmap {
             check(src_image);
             check(dst_image);
         }
-        return callPPPPPPPI(command_queue, src_image, dst_image, mipmap_filter_mode, array_region, mip_region, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPI(command_queue, src_image, dst_image, mipmap_filter_mode, array_region, mip_region, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueGenerateMipmapIMG(cl_command_queue command_queue, cl_mem src_image, cl_mem dst_image, cl_mipmap_filter_mode_img mipmap_filter_mode, size_t const * array_region, size_t const * mip_region, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */

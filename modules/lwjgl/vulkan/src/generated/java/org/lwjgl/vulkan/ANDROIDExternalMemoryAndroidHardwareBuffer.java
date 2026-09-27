@@ -51,7 +51,7 @@ public class ANDROIDExternalMemoryAndroidHardwareBuffer {
             check(__functionAddress);
             check(buffer);
         }
-        return callPPPI(device.address(), buffer, pProperties, __functionAddress);
+        return invokePPPI(device.address(), buffer, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetAndroidHardwareBufferPropertiesANDROID(VkDevice device, AHardwareBuffer const * buffer, VkAndroidHardwareBufferPropertiesANDROID * pProperties)} */
@@ -68,7 +68,7 @@ public class ANDROIDExternalMemoryAndroidHardwareBuffer {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pInfo, pBuffer, __functionAddress);
+        return invokePPPI(device.address(), pInfo, pBuffer, __functionAddress);
     }
 
     /** {@code VkResult vkGetMemoryAndroidHardwareBufferANDROID(VkDevice device, VkMemoryGetAndroidHardwareBufferInfoANDROID const * pInfo, AHardwareBuffer ** pBuffer)} */

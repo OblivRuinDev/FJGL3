@@ -47,7 +47,7 @@ public class FBScene {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), space.address(), boundingBox2DOutput, __functionAddress);
+        return invokePPPI(session.address(), space.address(), boundingBox2DOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpaceBoundingBox2DFB(XrSession session, XrSpace space, XrRect2Df * boundingBox2DOutput)} */
@@ -64,7 +64,7 @@ public class FBScene {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), space.address(), boundingBox3DOutput, __functionAddress);
+        return invokePPPI(session.address(), space.address(), boundingBox3DOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpaceBoundingBox3DFB(XrSession session, XrSpace space, XrRect3DfFB * boundingBox3DOutput)} */
@@ -81,7 +81,7 @@ public class FBScene {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), space.address(), semanticLabelsOutput, __functionAddress);
+        return invokePPPI(session.address(), space.address(), semanticLabelsOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpaceSemanticLabelsFB(XrSession session, XrSpace space, XrSemanticLabelsFB * semanticLabelsOutput)} */
@@ -98,7 +98,7 @@ public class FBScene {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), space.address(), boundary2DOutput, __functionAddress);
+        return invokePPPI(session.address(), space.address(), boundary2DOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpaceBoundary2DFB(XrSession session, XrSpace space, XrBoundary2DFB * boundary2DOutput)} */
@@ -115,7 +115,7 @@ public class FBScene {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), space.address(), roomLayoutOutput, __functionAddress);
+        return invokePPPI(session.address(), space.address(), roomLayoutOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpaceRoomLayoutFB(XrSession session, XrSpace space, XrRoomLayoutFB * roomLayoutOutput)} */

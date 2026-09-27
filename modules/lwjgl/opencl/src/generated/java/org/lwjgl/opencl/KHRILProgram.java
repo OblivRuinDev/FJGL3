@@ -42,7 +42,7 @@ public class KHRILProgram {
             check(__functionAddress);
             check(context);
         }
-        return callPPPPP(context, il, length, errcode_ret, __functionAddress);
+        return invokePPPPP(context, il, length, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_program clCreateProgramWithILKHR(cl_context context, void const * il, size_t length, cl_int * errcode_ret)} */
@@ -63,7 +63,7 @@ public class KHRILProgram {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPPP(context, memAddress(il), (long)il.remaining(), errcode_ret, __functionAddress);
+        return invokePPPPP(context, memAddress(il), (long)il.remaining(), errcode_ret, __functionAddress);
     }
 
 }

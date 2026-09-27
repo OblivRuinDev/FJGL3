@@ -58,7 +58,7 @@ public class QCOMFramebufferFoveated {
             check(__functionAddress);
             check(providedFeatures, 1);
         }
-        callPV(fbo, numLayers, focalPointsPerLayer, requestedFeatures, providedFeatures, __functionAddress);
+        invokePV(fbo, numLayers, focalPointsPerLayer, requestedFeatures, providedFeatures, __functionAddress);
     }
 
 }

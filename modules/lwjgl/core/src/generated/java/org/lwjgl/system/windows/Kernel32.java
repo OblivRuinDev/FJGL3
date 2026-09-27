@@ -56,7 +56,7 @@ public class Kernel32 {
     @NativeType("HANDLE")
     public static long GetCurrentProcess() {
         long __functionAddress = Functions.GetCurrentProcess;
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
     // --- [ GetCurrentProcessId ] ---
@@ -65,7 +65,7 @@ public class Kernel32 {
     @NativeType("DWORD")
     public static int GetCurrentProcessId() {
         long __functionAddress = Functions.GetCurrentProcessId;
-        return callI(__functionAddress);
+        return invokeI(__functionAddress);
     }
 
     // --- [ GetProcessId ] ---
@@ -77,7 +77,7 @@ public class Kernel32 {
         if (CHECKS) {
             check(Process);
         }
-        return callPI(Process, __functionAddress);
+        return invokePI(Process, __functionAddress);
     }
 
     // --- [ GetCurrentThread ] ---
@@ -86,7 +86,7 @@ public class Kernel32 {
     @NativeType("HANDLE")
     public static long GetCurrentThread() {
         long __functionAddress = Functions.GetCurrentThread;
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
     // --- [ GetCurrentThreadId ] ---
@@ -95,7 +95,7 @@ public class Kernel32 {
     @NativeType("DWORD")
     public static int GetCurrentThreadId() {
         long __functionAddress = Functions.GetCurrentThreadId;
-        return callI(__functionAddress);
+        return invokeI(__functionAddress);
     }
 
     // --- [ GetThreadId ] ---
@@ -108,7 +108,7 @@ public class Kernel32 {
             check(__functionAddress);
             check(Thread);
         }
-        return callPI(Thread, __functionAddress);
+        return invokePI(Thread, __functionAddress);
     }
 
     // --- [ GetProcessIdOfThread ] ---
@@ -121,7 +121,7 @@ public class Kernel32 {
             check(__functionAddress);
             check(Thread);
         }
-        return callPI(Thread, __functionAddress);
+        return invokePI(Thread, __functionAddress);
     }
 
     // --- [ GetCurrentProcessorNumber ] ---
@@ -133,7 +133,7 @@ public class Kernel32 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(__functionAddress);
+        return invokeI(__functionAddress);
     }
 
 }

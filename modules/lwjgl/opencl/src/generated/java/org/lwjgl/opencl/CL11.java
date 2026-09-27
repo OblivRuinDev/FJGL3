@@ -88,7 +88,7 @@ public class CL11 extends CL10 {
             check(__functionAddress);
             check(buffer);
         }
-        return callPJPPP(buffer, flags, buffer_create_type, buffer_create_info, errcode_ret, __functionAddress);
+        return invokePJPPP(buffer, flags, buffer_create_type, buffer_create_info, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateSubBuffer(cl_mem buffer, cl_mem_flags flags, cl_buffer_create_type buffer_create_type, void const * buffer_create_info, cl_int * errcode_ret)} */
@@ -109,7 +109,7 @@ public class CL11 extends CL10 {
             check(__functionAddress);
             check(memobj);
         }
-        return callPPPI(memobj, pfn_notify, user_data, __functionAddress);
+        return invokePPPI(memobj, pfn_notify, user_data, __functionAddress);
     }
 
     /** {@code cl_int clSetMemObjectDestructorCallback(cl_mem memobj, void (*) (cl_mem, void *) pfn_notify, void * user_data)} */
@@ -128,7 +128,7 @@ public class CL11 extends CL10 {
             check(command_queue);
             check(buffer);
         }
-        return callPPPPPPPPPPPPI(command_queue, buffer, blocking_read, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPPPPPPI(command_queue, buffer, blocking_read, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadBufferRect(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_read, size_t const * buffer_origin, size_t const * host_origin, size_t const * region, size_t buffer_row_pitch, size_t buffer_slice_pitch, size_t host_row_pitch, size_t host_slice_pitch, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -201,7 +201,7 @@ public class CL11 extends CL10 {
             check(command_queue);
             check(buffer);
         }
-        return callPPPPPPPPPPPPI(command_queue, buffer, blocking_write, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPPPPPPI(command_queue, buffer, blocking_write, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteBufferRect(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_write, size_t const * buffer_origin, size_t const * host_origin, size_t const * region, size_t buffer_row_pitch, size_t buffer_slice_pitch, size_t host_row_pitch, size_t host_slice_pitch, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -275,7 +275,7 @@ public class CL11 extends CL10 {
             check(src_buffer);
             check(dst_buffer);
         }
-        return callPPPPPPPPPPPPI(command_queue, src_buffer, dst_buffer, src_origin, dst_origin, region, src_row_pitch, src_slice_pitch, dst_row_pitch, dst_slice_pitch, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPPPPPPI(command_queue, src_buffer, dst_buffer, src_origin, dst_origin, region, src_row_pitch, src_slice_pitch, dst_row_pitch, dst_slice_pitch, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueCopyBufferRect(cl_command_queue command_queue, cl_mem src_buffer, cl_mem dst_buffer, size_t * src_origin, size_t * dst_origin, size_t * region, size_t src_row_pitch, size_t src_slice_pitch, size_t dst_row_pitch, size_t dst_slice_pitch, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -299,7 +299,7 @@ public class CL11 extends CL10 {
             check(__functionAddress);
             check(context);
         }
-        return callPPP(context, errcode_ret, __functionAddress);
+        return invokePPP(context, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_event clCreateUserEvent(cl_context context, cl_int * errcode_ret)} */
@@ -321,7 +321,7 @@ public class CL11 extends CL10 {
             check(__functionAddress);
             check(event);
         }
-        return callPI(event, execution_status, __functionAddress);
+        return invokePI(event, execution_status, __functionAddress);
     }
 
     // --- [ clSetEventCallback ] ---
@@ -333,7 +333,7 @@ public class CL11 extends CL10 {
             check(__functionAddress);
             check(event);
         }
-        return callPPPI(event, command_exec_callback_type, pfn_notify, user_data, __functionAddress);
+        return invokePPPI(event, command_exec_callback_type, pfn_notify, user_data, __functionAddress);
     }
 
     /** {@code cl_int clSetEventCallback(cl_event event, cl_int command_exec_callback_type, void (*) (cl_event, cl_int, void *) pfn_notify, void * user_data)} */
@@ -351,7 +351,7 @@ public class CL11 extends CL10 {
             check(buffer);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPP(buffer, flags, buffer_create_type, memAddress(buffer_create_info), errcode_ret, __functionAddress);
+        return invokePJPPP(buffer, flags, buffer_create_type, memAddress(buffer_create_info), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadBufferRect(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_read, size_t const * buffer_origin, size_t const * host_origin, size_t const * region, size_t buffer_row_pitch, size_t buffer_slice_pitch, size_t host_row_pitch, size_t host_slice_pitch, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -368,7 +368,7 @@ public class CL11 extends CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadBufferRect(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_read, size_t const * buffer_origin, size_t const * host_origin, size_t const * region, size_t buffer_row_pitch, size_t buffer_slice_pitch, size_t host_row_pitch, size_t host_slice_pitch, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -385,7 +385,7 @@ public class CL11 extends CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadBufferRect(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_read, size_t const * buffer_origin, size_t const * host_origin, size_t const * region, size_t buffer_row_pitch, size_t buffer_slice_pitch, size_t host_row_pitch, size_t host_slice_pitch, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -402,7 +402,7 @@ public class CL11 extends CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadBufferRect(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_read, size_t const * buffer_origin, size_t const * host_origin, size_t const * region, size_t buffer_row_pitch, size_t buffer_slice_pitch, size_t host_row_pitch, size_t host_slice_pitch, void * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -419,7 +419,7 @@ public class CL11 extends CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPPPPI(command_queue, buffer, blocking_read ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteBufferRect(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_write, size_t const * buffer_origin, size_t const * host_origin, size_t const * region, size_t buffer_row_pitch, size_t buffer_slice_pitch, size_t host_row_pitch, size_t host_slice_pitch, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -436,7 +436,7 @@ public class CL11 extends CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteBufferRect(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_write, size_t const * buffer_origin, size_t const * host_origin, size_t const * region, size_t buffer_row_pitch, size_t buffer_slice_pitch, size_t host_row_pitch, size_t host_slice_pitch, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -453,7 +453,7 @@ public class CL11 extends CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteBufferRect(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_write, size_t const * buffer_origin, size_t const * host_origin, size_t const * region, size_t buffer_row_pitch, size_t buffer_slice_pitch, size_t host_row_pitch, size_t host_slice_pitch, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -470,7 +470,7 @@ public class CL11 extends CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteBufferRect(cl_command_queue command_queue, cl_mem buffer, cl_bool blocking_write, size_t const * buffer_origin, size_t const * host_origin, size_t const * region, size_t buffer_row_pitch, size_t buffer_slice_pitch, size_t host_row_pitch, size_t host_slice_pitch, void const * ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -487,7 +487,7 @@ public class CL11 extends CL10 {
             check(region, 3);
             checkSafe(event, 1);
         }
-        return callPPPPPPPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPPPPPPPPI(command_queue, buffer, blocking_write ? 1 : 0, memAddress(buffer_origin), memAddress(host_origin), memAddress(region), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_event clCreateUserEvent(cl_context context, cl_int * errcode_ret)} */
@@ -499,7 +499,7 @@ public class CL11 extends CL10 {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPPP(context, errcode_ret, __functionAddress);
+        return invokePPP(context, errcode_ret, __functionAddress);
     }
 
 }

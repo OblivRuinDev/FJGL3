@@ -47,7 +47,7 @@ public class ANDROIDRaycast {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, trackableTypeCapacityInput, trackableTypeCountOutput, trackableTypes, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, trackableTypeCapacityInput, trackableTypeCountOutput, trackableTypes, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateRaycastSupportedTrackableTypesANDROID(XrInstance instance, XrSystemId systemId, uint32_t trackableTypeCapacityInput, uint32_t * trackableTypeCountOutput, XrTrackableTypeANDROID * trackableTypes)} */
@@ -68,7 +68,7 @@ public class ANDROIDRaycast {
             check(__functionAddress);
             XrRaycastInfoANDROID.validate(rayInfo);
         }
-        return callPPPI(session.address(), rayInfo, results, __functionAddress);
+        return invokePPPI(session.address(), rayInfo, results, __functionAddress);
     }
 
     /** {@code XrResult xrRaycastANDROID(XrSession session, XrRaycastInfoANDROID const * rayInfo, XrRaycastHitResultsANDROID * results)} */

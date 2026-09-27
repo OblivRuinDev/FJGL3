@@ -139,7 +139,7 @@ public class CL30 extends CL22 {
             check(__functionAddress);
             check(context);
         }
-        return callPPPI(context, pfn_notify, user_data, __functionAddress);
+        return invokePPPI(context, pfn_notify, user_data, __functionAddress);
     }
 
     /** {@code cl_int clSetContextDestructorCallback(cl_context context, void (*) (cl_context, void *) pfn_notify, void * user_data)} */
@@ -157,7 +157,7 @@ public class CL30 extends CL22 {
             check(__functionAddress);
             check(context);
         }
-        return callPPJPPPP(context, properties, flags, size, host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPP(context, properties, flags, size, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferWithProperties(cl_context context, cl_mem_properties const * properties, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -229,7 +229,7 @@ public class CL30 extends CL22 {
             check(__functionAddress);
             check(context);
         }
-        return callPPJPPPPP(context, properties, flags, image_format, image_desc, host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPPP(context, properties, flags, image_format, image_desc, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImageWithProperties(cl_context context, cl_mem_properties const * properties, cl_mem_flags flags, cl_image_format const * image_format, cl_image_desc const * image_desc, void * host_ptr, cl_int * errcode_ret)} */
@@ -282,7 +282,7 @@ public class CL30 extends CL22 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPP(context, properties, flags, (long)host_ptr.remaining(), memAddress(host_ptr), errcode_ret, __functionAddress);
+        return invokePPJPPPP(context, properties, flags, (long)host_ptr.remaining(), memAddress(host_ptr), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferWithProperties(cl_context context, cl_mem_properties const * properties, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -295,7 +295,7 @@ public class CL30 extends CL22 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 1, host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 1, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferWithProperties(cl_context context, cl_mem_properties const * properties, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -308,7 +308,7 @@ public class CL30 extends CL22 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferWithProperties(cl_context context, cl_mem_properties const * properties, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -321,7 +321,7 @@ public class CL30 extends CL22 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferWithProperties(cl_context context, cl_mem_properties const * properties, cl_mem_flags flags, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -334,7 +334,7 @@ public class CL30 extends CL22 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 3, host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPP(context, properties, flags, Integer.toUnsignedLong(host_ptr.length) << 3, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImageWithProperties(cl_context context, cl_mem_properties const * properties, cl_mem_flags flags, cl_image_format const * image_format, cl_image_desc const * image_desc, void * host_ptr, cl_int * errcode_ret)} */
@@ -347,7 +347,7 @@ public class CL30 extends CL22 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPPP(context, properties, flags, image_format.address(), image_desc.address(), memAddressSafe(host_ptr), errcode_ret, __functionAddress);
+        return invokePPJPPPPP(context, properties, flags, image_format.address(), image_desc.address(), memAddressSafe(host_ptr), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImageWithProperties(cl_context context, cl_mem_properties const * properties, cl_mem_flags flags, cl_image_format const * image_format, cl_image_desc const * image_desc, void * host_ptr, cl_int * errcode_ret)} */
@@ -360,7 +360,7 @@ public class CL30 extends CL22 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPPP(context, properties, flags, image_format.address(), image_desc.address(), host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPPP(context, properties, flags, image_format.address(), image_desc.address(), host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImageWithProperties(cl_context context, cl_mem_properties const * properties, cl_mem_flags flags, cl_image_format const * image_format, cl_image_desc const * image_desc, void * host_ptr, cl_int * errcode_ret)} */
@@ -373,7 +373,7 @@ public class CL30 extends CL22 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPPP(context, properties, flags, image_format.address(), image_desc.address(), host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPPP(context, properties, flags, image_format.address(), image_desc.address(), host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateImageWithProperties(cl_context context, cl_mem_properties const * properties, cl_mem_flags flags, cl_image_format const * image_format, cl_image_desc const * image_desc, void * host_ptr, cl_int * errcode_ret)} */
@@ -386,7 +386,7 @@ public class CL30 extends CL22 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPJPPPPP(context, properties, flags, image_format.address(), image_desc.address(), host_ptr, errcode_ret, __functionAddress);
+        return invokePPJPPPPP(context, properties, flags, image_format.address(), image_desc.address(), host_ptr, errcode_ret, __functionAddress);
     }
 
 }

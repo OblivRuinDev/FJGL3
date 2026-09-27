@@ -77,7 +77,7 @@ public class BDBodyTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, bodyTracker, __functionAddress);
+        return invokePPPI(session.address(), createInfo, bodyTracker, __functionAddress);
     }
 
     /** {@code XrResult xrCreateBodyTrackerBD(XrSession session, XrBodyTrackerCreateInfoBD const * createInfo, XrBodyTrackerBD * bodyTracker)} */
@@ -98,7 +98,7 @@ public class BDBodyTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(bodyTracker.address(), __functionAddress);
+        return invokePI(bodyTracker.address(), __functionAddress);
     }
 
     // --- [ xrLocateBodyJointsBD ] ---
@@ -110,7 +110,7 @@ public class BDBodyTracking {
             check(__functionAddress);
             XrBodyJointsLocateInfoBD.validate(locateInfo);
         }
-        return callPPPI(bodyTracker.address(), locateInfo, locations, __functionAddress);
+        return invokePPPI(bodyTracker.address(), locateInfo, locations, __functionAddress);
     }
 
     /** {@code XrResult xrLocateBodyJointsBD(XrBodyTrackerBD bodyTracker, XrBodyJointsLocateInfoBD const * locateInfo, XrBodyJointLocationsBD * locations)} */

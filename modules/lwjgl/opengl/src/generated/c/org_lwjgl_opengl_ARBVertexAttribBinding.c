@@ -14,12 +14,12 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glVertexArrayBindVertexBufferEXTPROC) (jint, jint, jint, uintptr_t, jint);
-typedef void (APIENTRY *glVertexArrayVertexAttribFormatEXTPROC) (jint, jint, jint, jint, jboolean, jint);
-typedef void (APIENTRY *glVertexArrayVertexAttribIFormatEXTPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glVertexArrayVertexAttribLFormatEXTPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glVertexArrayVertexAttribBindingEXTPROC) (jint, jint, jint);
-typedef void (APIENTRY *glVertexArrayVertexBindingDivisorEXTPROC) (jint, jint, jint);
+typedef void (*glVertexArrayBindVertexBufferEXTPROC) (jint, jint, jint, uintptr_t, jint);
+typedef void (*glVertexArrayVertexAttribFormatEXTPROC) (jint, jint, jint, jint, jboolean, jint);
+typedef void (*glVertexArrayVertexAttribIFormatEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glVertexArrayVertexAttribLFormatEXTPROC) (jint, jint, jint, jint, jint);
+typedef void (*glVertexArrayVertexAttribBindingEXTPROC) (jint, jint, jint);
+typedef void (*glVertexArrayVertexBindingDivisorEXTPROC) (jint, jint, jint);
 
 EXTERN_C_ENTER
 

@@ -14,14 +14,14 @@
 #include "common_tools.h"
 #include "WindowsLWJGL.h"
 
-typedef uintptr_t (APIENTRY *wglCreateContextPROC) (uintptr_t);
-typedef uintptr_t (APIENTRY *wglCreateLayerContextPROC) (uintptr_t, jint);
-typedef jint (APIENTRY *wglCopyContextPROC) (uintptr_t, uintptr_t, jint);
-typedef jint (APIENTRY *wglDeleteContextPROC) (uintptr_t);
-typedef uintptr_t (APIENTRY *wglGetCurrentContextPROC) (void);
-typedef uintptr_t (APIENTRY *wglGetProcAddressPROC) (uintptr_t);
-typedef jint (APIENTRY *wglMakeCurrentPROC) (uintptr_t, uintptr_t);
-typedef jint (APIENTRY *wglShareListsPROC) (uintptr_t, uintptr_t);
+typedef uintptr_t (*wglCreateContextPROC) (uintptr_t);
+typedef uintptr_t (*wglCreateLayerContextPROC) (uintptr_t, jint);
+typedef jint (*wglCopyContextPROC) (uintptr_t, uintptr_t, jint);
+typedef jint (*wglDeleteContextPROC) (uintptr_t);
+typedef uintptr_t (*wglGetCurrentContextPROC) (void);
+typedef uintptr_t (*wglGetProcAddressPROC) (uintptr_t);
+typedef jint (*wglMakeCurrentPROC) (uintptr_t, uintptr_t);
+typedef jint (*wglShareListsPROC) (uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

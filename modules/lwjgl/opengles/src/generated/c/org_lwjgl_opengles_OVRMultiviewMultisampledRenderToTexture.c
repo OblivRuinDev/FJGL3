@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glFramebufferTextureMultisampleMultiviewOVRPROC) (jint, jint, jint, jint, jint, jint, jint);
+typedef void (*glFramebufferTextureMultisampleMultiviewOVRPROC) (jint, jint, jint, jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

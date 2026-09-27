@@ -44,7 +44,7 @@ public class KHRImageBase {
             check(ctx);
             check(buffer);
         }
-        return callPPPPP(dpy, ctx, target, buffer, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, ctx, target, buffer, attrib_list, __functionAddress);
     }
 
     /** {@code EGLImageKHR eglCreateImageKHR(EGLDisplay dpy, EGLContext ctx, EGLenum target, EGLClientBuffer buffer, EGLint const * attrib_list)} */
@@ -67,7 +67,7 @@ public class KHRImageBase {
             check(dpy);
             check(image);
         }
-        return callPPI(dpy, image, __functionAddress) != 0;
+        return invokePPI(dpy, image, __functionAddress) != 0;
     }
 
     /** {@code EGLImageKHR eglCreateImageKHR(EGLDisplay dpy, EGLContext ctx, EGLenum target, EGLClientBuffer buffer, EGLint const * attrib_list)} */
@@ -81,7 +81,7 @@ public class KHRImageBase {
             check(buffer);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPPPP(dpy, ctx, target, buffer, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, ctx, target, buffer, attrib_list, __functionAddress);
     }
 
 }

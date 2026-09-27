@@ -71,7 +71,7 @@ public class INTELPerformanceQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pInitializeInfo, __functionAddress);
+        return invokePPI(device.address(), pInitializeInfo, __functionAddress);
     }
 
     /** {@code VkResult vkInitializePerformanceApiINTEL(VkDevice device, VkInitializePerformanceApiInfoINTEL const * pInitializeInfo)} */
@@ -88,7 +88,7 @@ public class INTELPerformanceQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(device.address(), __functionAddress);
+        invokePV(device.address(), __functionAddress);
     }
 
     // --- [ vkCmdSetPerformanceMarkerINTEL ] ---
@@ -99,7 +99,7 @@ public class INTELPerformanceQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(commandBuffer.address(), pMarkerInfo, __functionAddress);
+        return invokePPI(commandBuffer.address(), pMarkerInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCmdSetPerformanceMarkerINTEL(VkCommandBuffer commandBuffer, VkPerformanceMarkerInfoINTEL const * pMarkerInfo)} */
@@ -116,7 +116,7 @@ public class INTELPerformanceQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(commandBuffer.address(), pMarkerInfo, __functionAddress);
+        return invokePPI(commandBuffer.address(), pMarkerInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCmdSetPerformanceStreamMarkerINTEL(VkCommandBuffer commandBuffer, VkPerformanceStreamMarkerInfoINTEL const * pMarkerInfo)} */
@@ -133,7 +133,7 @@ public class INTELPerformanceQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(commandBuffer.address(), pOverrideInfo, __functionAddress);
+        return invokePPI(commandBuffer.address(), pOverrideInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCmdSetPerformanceOverrideINTEL(VkCommandBuffer commandBuffer, VkPerformanceOverrideInfoINTEL const * pOverrideInfo)} */
@@ -150,7 +150,7 @@ public class INTELPerformanceQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pAcquireInfo, pConfiguration, __functionAddress);
+        return invokePPPI(device.address(), pAcquireInfo, pConfiguration, __functionAddress);
     }
 
     /** {@code VkResult vkAcquirePerformanceConfigurationINTEL(VkDevice device, VkPerformanceConfigurationAcquireInfoINTEL const * pAcquireInfo, VkPerformanceConfigurationINTEL * pConfiguration)} */
@@ -171,7 +171,7 @@ public class INTELPerformanceQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(device.address(), configuration, __functionAddress);
+        return invokePJI(device.address(), configuration, __functionAddress);
     }
 
     // --- [ vkQueueSetPerformanceConfigurationINTEL ] ---
@@ -183,7 +183,7 @@ public class INTELPerformanceQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(queue.address(), configuration, __functionAddress);
+        return invokePJI(queue.address(), configuration, __functionAddress);
     }
 
     // --- [ vkGetPerformanceParameterINTEL ] ---
@@ -194,7 +194,7 @@ public class INTELPerformanceQuery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), parameter, pValue, __functionAddress);
+        return invokePPI(device.address(), parameter, pValue, __functionAddress);
     }
 
     /** {@code VkResult vkGetPerformanceParameterINTEL(VkDevice device, VkPerformanceParameterTypeINTEL parameter, VkPerformanceValueINTEL * pValue)} */
@@ -211,7 +211,7 @@ public class INTELPerformanceQuery {
             check(__functionAddress);
             check(pConfiguration, 1);
         }
-        return callPPPI(device.address(), pAcquireInfo.address(), pConfiguration, __functionAddress);
+        return invokePPPI(device.address(), pAcquireInfo.address(), pConfiguration, __functionAddress);
     }
 
 }

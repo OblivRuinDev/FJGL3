@@ -86,7 +86,7 @@ public class JAWTFunctions {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(ds, __functionAddress);
+        return invokePI(ds, __functionAddress);
     }
 
     /** {@code jint JAWT_DrawingSurface_Lock(JAWT_DrawingSurface * ds, void * __functionAddress)} */
@@ -102,7 +102,7 @@ public class JAWTFunctions {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPP(ds, __functionAddress);
+        return invokePP(ds, __functionAddress);
     }
 
     /** {@code JAWT_DrawingSurfaceInfo * JAWT_DrawingSurface_GetDrawingSurfaceInfo(JAWT_DrawingSurface * ds, void * __functionAddress)} */
@@ -119,7 +119,7 @@ public class JAWTFunctions {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(dsi, __functionAddress);
+        invokePV(dsi, __functionAddress);
     }
 
     /** {@code void JAWT_DrawingSurface_FreeDrawingSurfaceInfo(JAWT_DrawingSurfaceInfo * dsi, void * __functionAddress)} */
@@ -134,7 +134,7 @@ public class JAWTFunctions {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(ds, __functionAddress);
+        invokePV(ds, __functionAddress);
     }
 
     /** {@code void JAWT_DrawingSurface_Unlock(JAWT_DrawingSurface * ds, void * __functionAddress)} */
@@ -164,7 +164,7 @@ public class JAWTFunctions {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(ds, __functionAddress);
+        invokePV(ds, __functionAddress);
     }
 
     /** {@code void JAWT_FreeDrawingSurface(JAWT_DrawingSurface * ds, void * __functionAddress)} */

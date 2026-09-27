@@ -300,7 +300,7 @@ public class EXTFramebufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(renderbuffers.length, renderbuffers, __functionAddress);
+        invokePV(renderbuffers.length, renderbuffers, __functionAddress);
     }
 
     /** {@code void glGenRenderbuffersEXT(GLsizei n, GLuint * renderbuffers)} */
@@ -309,7 +309,7 @@ public class EXTFramebufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(renderbuffers.length, renderbuffers, __functionAddress);
+        invokePV(renderbuffers.length, renderbuffers, __functionAddress);
     }
 
     /** {@code void glGetRenderbufferParameterivEXT(GLenum target, GLenum pname, GLint * params)} */
@@ -319,7 +319,7 @@ public class EXTFramebufferObject {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glDeleteFramebuffersEXT(GLsizei n, GLuint const * framebuffers)} */
@@ -328,7 +328,7 @@ public class EXTFramebufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(framebuffers.length, framebuffers, __functionAddress);
+        invokePV(framebuffers.length, framebuffers, __functionAddress);
     }
 
     /** {@code void glGenFramebuffersEXT(GLsizei n, GLuint * framebuffers)} */
@@ -337,7 +337,7 @@ public class EXTFramebufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(framebuffers.length, framebuffers, __functionAddress);
+        invokePV(framebuffers.length, framebuffers, __functionAddress);
     }
 
     /** {@code void glGetFramebufferAttachmentParameterivEXT(GLenum target, GLenum attachment, GLenum pname, GLint * params)} */
@@ -347,7 +347,7 @@ public class EXTFramebufferObject {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, attachment, pname, params, __functionAddress);
+        invokePV(target, attachment, pname, params, __functionAddress);
     }
 
 }

@@ -48,7 +48,7 @@ public class EXTCooperativeMatrixMaintenance1 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(physicalDevice.address(), pCooperativeMatrixInfo, pPropertyCount, pProperties, __functionAddress);
+        return invokePPPPI(physicalDevice.address(), pCooperativeMatrixInfo, pPropertyCount, pProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceCooperativeMatrixProperties2EXT(VkPhysicalDevice physicalDevice, VkPhysicalDeviceCooperativeMatrixInfo2EXT const * pCooperativeMatrixInfo, uint32_t * pPropertyCount, VkCooperativeMatrixProperties2EXT * pProperties)} */
@@ -70,7 +70,7 @@ public class EXTCooperativeMatrixMaintenance1 {
             check(pPropertyCount, 1);
             checkSafe(pProperties, pPropertyCount[0]);
         }
-        return callPPPPI(physicalDevice.address(), pCooperativeMatrixInfo.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
+        return invokePPPPI(physicalDevice.address(), pCooperativeMatrixInfo.address(), pPropertyCount, memAddressSafe(pProperties), __functionAddress);
     }
 
 }

@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glTexPageCommitmentEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jboolean);
+typedef void (*glTexPageCommitmentEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jboolean);
 
 EXTERN_C_ENTER
 

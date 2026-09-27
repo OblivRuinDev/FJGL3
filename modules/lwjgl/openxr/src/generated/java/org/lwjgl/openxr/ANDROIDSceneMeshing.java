@@ -72,7 +72,7 @@ public class ANDROIDSceneMeshing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, supportedSemanticLabelSetsInputCapacity, supportedSemanticLabelSetsOutputCount, supportedSemanticLabelSets, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, supportedSemanticLabelSetsInputCapacity, supportedSemanticLabelSetsOutputCount, supportedSemanticLabelSets, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSupportedSemanticLabelSetsANDROID(XrInstance instance, XrSystemId systemId, uint32_t supportedSemanticLabelSetsInputCapacity, uint32_t * supportedSemanticLabelSetsOutputCount, XrSceneMeshSemanticLabelSetANDROID * supportedSemanticLabelSets)} */
@@ -92,7 +92,7 @@ public class ANDROIDSceneMeshing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, tracker, __functionAddress);
+        return invokePPPI(session.address(), createInfo, tracker, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSceneMeshingTrackerANDROID(XrSession session, XrSceneMeshingTrackerCreateInfoANDROID const * createInfo, XrSceneMeshingTrackerANDROID * tracker)} */
@@ -113,7 +113,7 @@ public class ANDROIDSceneMeshing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(tracker.address(), __functionAddress);
+        return invokePI(tracker.address(), __functionAddress);
     }
 
     // --- [ xrCreateSceneMeshSnapshotANDROID ] ---
@@ -125,7 +125,7 @@ public class ANDROIDSceneMeshing {
             check(__functionAddress);
             XrSceneMeshSnapshotCreateInfoANDROID.validate(createInfo);
         }
-        return callPPPI(tracker.address(), createInfo, outSnapshotCreationResult, __functionAddress);
+        return invokePPPI(tracker.address(), createInfo, outSnapshotCreationResult, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSceneMeshSnapshotANDROID(XrSceneMeshingTrackerANDROID tracker, XrSceneMeshSnapshotCreateInfoANDROID const * createInfo, XrSceneMeshSnapshotCreationResultANDROID * outSnapshotCreationResult)} */
@@ -143,7 +143,7 @@ public class ANDROIDSceneMeshing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(snapshot.address(), __functionAddress);
+        return invokePI(snapshot.address(), __functionAddress);
     }
 
     // --- [ xrGetAllSubmeshStatesANDROID ] ---
@@ -154,7 +154,7 @@ public class ANDROIDSceneMeshing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(snapshot.address(), submeshStateCapacityInput, submeshStateCountOutput, submeshStates, __functionAddress);
+        return invokePPPI(snapshot.address(), submeshStateCapacityInput, submeshStateCountOutput, submeshStates, __functionAddress);
     }
 
     /** {@code XrResult xrGetAllSubmeshStatesANDROID(XrSceneMeshSnapshotANDROID snapshot, uint32_t submeshStateCapacityInput, uint32_t * submeshStateCountOutput, XrSceneSubmeshStateANDROID * submeshStates)} */
@@ -174,7 +174,7 @@ public class ANDROIDSceneMeshing {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(snapshot.address(), submeshDataCount, inoutSubmeshData, __functionAddress);
+        return invokePPI(snapshot.address(), submeshDataCount, inoutSubmeshData, __functionAddress);
     }
 
     /** {@code XrResult xrGetSubmeshDataANDROID(XrSceneMeshSnapshotANDROID snapshot, uint32_t submeshDataCount, XrSceneSubmeshDataANDROID * inoutSubmeshData)} */

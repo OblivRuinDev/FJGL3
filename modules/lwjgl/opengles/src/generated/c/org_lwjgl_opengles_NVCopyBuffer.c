@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glCopyBufferSubDataNVPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glCopyBufferSubDataNVPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

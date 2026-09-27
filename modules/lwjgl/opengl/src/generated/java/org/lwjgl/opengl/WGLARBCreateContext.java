@@ -50,7 +50,7 @@ public class WGLARBCreateContext {
             check(__functionAddress);
             check(hdc);
         }
-        return callPPPP(hdc, shareContext, attribList, __functionAddress);
+        return invokePPPP(hdc, shareContext, attribList, __functionAddress);
     }
 
     /** {@code HGLRC wglCreateContextAttribsARB(HDC hdc, HGLRC shareContext, int const * attribList)} */
@@ -71,7 +71,7 @@ public class WGLARBCreateContext {
             check(hdc);
             checkNTSafe(attribList);
         }
-        return callPPPP(hdc, shareContext, attribList, __functionAddress);
+        return invokePPPP(hdc, shareContext, attribList, __functionAddress);
     }
 
 }

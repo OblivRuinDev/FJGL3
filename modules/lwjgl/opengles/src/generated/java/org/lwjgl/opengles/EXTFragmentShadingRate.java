@@ -97,7 +97,7 @@ public class EXTFragmentShadingRate {
             check(__functionAddress);
             check(count, 1);
         }
-        callPPV(samples, shadingRates.length, count, shadingRates, __functionAddress);
+        invokePPV(samples, shadingRates.length, count, shadingRates, __functionAddress);
     }
 
 }

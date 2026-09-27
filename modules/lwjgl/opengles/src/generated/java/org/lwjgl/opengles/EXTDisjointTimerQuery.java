@@ -273,7 +273,7 @@ public class EXTDisjointTimerQuery {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(id, pname, params, __functionAddress);
+        invokePV(id, pname, params, __functionAddress);
     }
 
     /** {@code void glGetQueryObjecti64vEXT(GLuint id, GLenum pname, GLint64 * params)} */
@@ -283,7 +283,7 @@ public class EXTDisjointTimerQuery {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(id, pname, params, __functionAddress);
+        invokePV(id, pname, params, __functionAddress);
     }
 
     /** {@code void glGetQueryObjectui64vEXT(GLuint id, GLenum pname, GLuint64 * params)} */
@@ -293,7 +293,7 @@ public class EXTDisjointTimerQuery {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(id, pname, params, __functionAddress);
+        invokePV(id, pname, params, __functionAddress);
     }
 
     /** {@code void glGetInteger64vEXT(GLenum pname, GLint64 * data)} */
@@ -303,7 +303,7 @@ public class EXTDisjointTimerQuery {
             check(__functionAddress);
             check(data, 1);
         }
-        callPV(pname, data, __functionAddress);
+        invokePV(pname, data, __functionAddress);
     }
 
 }

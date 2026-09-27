@@ -14,13 +14,13 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef uintptr_t (APIENTRY *glFenceSyncAPPLEPROC) (jint, jint);
-typedef jboolean (APIENTRY *glIsSyncAPPLEPROC) (uintptr_t);
-typedef void (APIENTRY *glDeleteSyncAPPLEPROC) (uintptr_t);
-typedef jint (APIENTRY *glClientWaitSyncAPPLEPROC) (uintptr_t, jint, jlong);
-typedef void (APIENTRY *glWaitSyncAPPLEPROC) (uintptr_t, jint, jlong);
-typedef void (APIENTRY *glGetInteger64vAPPLEPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGetSyncivAPPLEPROC) (uintptr_t, jint, jint, uintptr_t, uintptr_t);
+typedef uintptr_t (*glFenceSyncAPPLEPROC) (jint, jint);
+typedef jboolean (*glIsSyncAPPLEPROC) (uintptr_t);
+typedef void (*glDeleteSyncAPPLEPROC) (uintptr_t);
+typedef jint (*glClientWaitSyncAPPLEPROC) (uintptr_t, jint, jlong);
+typedef void (*glWaitSyncAPPLEPROC) (uintptr_t, jint, jlong);
+typedef void (*glGetInteger64vAPPLEPROC) (jint, uintptr_t);
+typedef void (*glGetSyncivAPPLEPROC) (uintptr_t, jint, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

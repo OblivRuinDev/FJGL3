@@ -41,7 +41,7 @@ public class METASimultaneousHandsAndControllers {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), resumeInfo, __functionAddress);
+        return invokePPI(session.address(), resumeInfo, __functionAddress);
     }
 
     /** {@code XrResult xrResumeSimultaneousHandsAndControllersTrackingMETA(XrSession session, XrSimultaneousHandsAndControllersTrackingResumeInfoMETA const * resumeInfo)} */
@@ -58,7 +58,7 @@ public class METASimultaneousHandsAndControllers {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), pauseInfo, __functionAddress);
+        return invokePPI(session.address(), pauseInfo, __functionAddress);
     }
 
     /** {@code XrResult xrPauseSimultaneousHandsAndControllersTrackingMETA(XrSession session, XrSimultaneousHandsAndControllersTrackingPauseInfoMETA const * pauseInfo)} */

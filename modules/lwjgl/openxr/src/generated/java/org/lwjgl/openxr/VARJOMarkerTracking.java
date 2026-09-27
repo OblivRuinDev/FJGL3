@@ -49,7 +49,7 @@ public class VARJOMarkerTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(session.address(), enabled ? 1 : 0, __functionAddress);
+        return invokePI(session.address(), enabled ? 1 : 0, __functionAddress);
     }
 
     // --- [ xrSetMarkerTrackingTimeoutVARJO ] ---
@@ -61,7 +61,7 @@ public class VARJOMarkerTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJJI(session.address(), markerId, timeout, __functionAddress);
+        return invokePJJI(session.address(), markerId, timeout, __functionAddress);
     }
 
     // --- [ xrSetMarkerTrackingPredictionVARJO ] ---
@@ -73,7 +73,7 @@ public class VARJOMarkerTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(session.address(), markerId, enable ? 1 : 0, __functionAddress);
+        return invokePJI(session.address(), markerId, enable ? 1 : 0, __functionAddress);
     }
 
     // --- [ xrGetMarkerSizeVARJO ] ---
@@ -84,7 +84,7 @@ public class VARJOMarkerTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), markerId, size, __functionAddress);
+        return invokePJPI(session.address(), markerId, size, __functionAddress);
     }
 
     /** {@code XrResult xrGetMarkerSizeVARJO(XrSession session, uint64_t markerId, XrExtent2Df * size)} */
@@ -101,7 +101,7 @@ public class VARJOMarkerTracking {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, space, __functionAddress);
+        return invokePPPI(session.address(), createInfo, space, __functionAddress);
     }
 
     /** {@code XrResult xrCreateMarkerSpaceVARJO(XrSession session, XrMarkerSpaceCreateInfoVARJO const * createInfo, XrSpace * space)} */

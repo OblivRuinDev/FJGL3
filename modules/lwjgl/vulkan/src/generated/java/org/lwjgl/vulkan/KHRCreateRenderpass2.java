@@ -51,7 +51,7 @@ public class KHRCreateRenderpass2 {
             check(__functionAddress);
             VkRenderPassCreateInfo2.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pRenderPass, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pRenderPass, __functionAddress);
     }
 
     /** {@code VkResult vkCreateRenderPass2KHR(VkDevice device, VkRenderPassCreateInfo2 const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkRenderPass * pRenderPass)} */
@@ -71,7 +71,7 @@ public class KHRCreateRenderpass2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), pRenderPassBegin, pSubpassBeginInfo, __functionAddress);
+        invokePPPV(commandBuffer.address(), pRenderPassBegin, pSubpassBeginInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBeginRenderPass2KHR(VkCommandBuffer commandBuffer, VkRenderPassBeginInfo const * pRenderPassBegin, VkSubpassBeginInfo const * pSubpassBeginInfo)} */
@@ -87,7 +87,7 @@ public class KHRCreateRenderpass2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), pSubpassBeginInfo, pSubpassEndInfo, __functionAddress);
+        invokePPPV(commandBuffer.address(), pSubpassBeginInfo, pSubpassEndInfo, __functionAddress);
     }
 
     /** {@code void vkCmdNextSubpass2KHR(VkCommandBuffer commandBuffer, VkSubpassBeginInfo const * pSubpassBeginInfo, VkSubpassEndInfo const * pSubpassEndInfo)} */
@@ -103,7 +103,7 @@ public class KHRCreateRenderpass2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pSubpassEndInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pSubpassEndInfo, __functionAddress);
     }
 
     /** {@code void vkCmdEndRenderPass2KHR(VkCommandBuffer commandBuffer, VkSubpassEndInfo const * pSubpassEndInfo)} */
@@ -120,7 +120,7 @@ public class KHRCreateRenderpass2 {
             check(pRenderPass, 1);
             VkRenderPassCreateInfo2.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pRenderPass, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pRenderPass, __functionAddress);
     }
 
 }

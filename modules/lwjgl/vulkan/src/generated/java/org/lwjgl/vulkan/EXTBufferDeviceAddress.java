@@ -48,7 +48,7 @@ public class EXTBufferDeviceAddress {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPJ(device.address(), pInfo, __functionAddress);
+        return invokePPJ(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code VkDeviceAddress vkGetBufferDeviceAddressEXT(VkDevice device, VkBufferDeviceAddressInfo const * pInfo)} */

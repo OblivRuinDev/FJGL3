@@ -30,7 +30,6 @@ public interface ktxVulkanTexture_subAllocatorBindImageFuncPtrI extends Callback
         ktxVulkanTexture_subAllocatorBindImageFuncPtrI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_pointer,
             ffi_type_uint64, ffi_type_uint64
         )

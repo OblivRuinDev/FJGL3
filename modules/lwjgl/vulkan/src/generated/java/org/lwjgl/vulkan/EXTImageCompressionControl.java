@@ -78,7 +78,7 @@ public class EXTImageCompressionControl {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPPV(device.address(), image, pSubresource, pLayout, __functionAddress);
+        invokePJPPV(device.address(), image, pSubresource, pLayout, __functionAddress);
     }
 
     /** {@code void vkGetImageSubresourceLayout2EXT(VkDevice device, VkImage image, VkImageSubresource2 const * pSubresource, VkSubresourceLayout2 * pLayout)} */

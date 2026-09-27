@@ -135,7 +135,7 @@ public class CL20 extends CL12 {
             check(context);
             check(device);
         }
-        return callPPPPP(context, device, properties, errcode_ret, __functionAddress);
+        return invokePPPPP(context, device, properties, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_command_queue clCreateCommandQueueWithProperties(cl_context context, cl_device_id device, cl_queue_properties const * properties, cl_int * errcode_ret)} */
@@ -157,7 +157,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(context);
         }
-        return callPJPPP(context, flags, pipe_packet_size, pipe_max_packets, properties, errcode_ret, __functionAddress);
+        return invokePJPPP(context, flags, pipe_packet_size, pipe_max_packets, properties, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreatePipe(cl_context context, cl_mem_flags flags, cl_uint pipe_packet_size, cl_uint pipe_max_packets, cl_pipe_properties const * properties, cl_int * errcode_ret)} */
@@ -179,7 +179,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(pipe);
         }
-        return callPPPPI(pipe, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(pipe, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetPipeInfo(cl_mem pipe, cl_pipe_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -209,7 +209,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(context);
         }
-        return callPJPP(context, flags, size, alignment, __functionAddress);
+        return invokePJPP(context, flags, size, alignment, __functionAddress);
     }
 
     /** {@code void * clSVMAlloc(cl_context context, cl_svm_mem_flags flags, size_t size, unsigned int alignment)} */
@@ -228,7 +228,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(context);
         }
-        callPPV(context, svm_pointer, __functionAddress);
+        invokePPV(context, svm_pointer, __functionAddress);
     }
 
     /** {@code void clSVMFree(cl_context context, void * svm_pointer)} */
@@ -245,7 +245,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPPPI(command_queue, num_svm_pointers, svm_pointers, pfn_free_func, user_data, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPI(command_queue, num_svm_pointers, svm_pointers, pfn_free_func, user_data, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueSVMFree(cl_command_queue command_queue, cl_uint num_svm_pointers, void ** svm_pointers, void (*) (cl_command_queue, cl_uint, void **, void *) pfn_free_func, void * user_data, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -266,7 +266,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPPPI(command_queue, blocking_copy, dst_ptr, src_ptr, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPI(command_queue, blocking_copy, dst_ptr, src_ptr, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueSVMMemcpy(cl_command_queue command_queue, cl_bool blocking_copy, void * dst_ptr, void const * src_ptr, size_t size, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -288,7 +288,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPPPPI(command_queue, svm_ptr, pattern, pattern_size, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPI(command_queue, svm_ptr, pattern, pattern_size, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueSVMMemFill(cl_command_queue command_queue, void * svm_ptr, void const * pattern, size_t pattern_size, size_t size, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -309,7 +309,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPJPPPPI(command_queue, blocking_map, map_flags, svm_ptr, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePJPPPPI(command_queue, blocking_map, map_flags, svm_ptr, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueSVMMap(cl_command_queue command_queue, cl_bool blocking_map, cl_map_flags map_flags, void * svm_ptr, size_t size, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -330,7 +330,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPI(command_queue, svm_ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPI(command_queue, svm_ptr, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueSVMUnmap(cl_command_queue command_queue, void * svm_ptr, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -351,7 +351,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(kernel);
         }
-        return callPPI(kernel, arg_index, arg_value, __functionAddress);
+        return invokePPI(kernel, arg_index, arg_value, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArgSVMPointer(cl_kernel kernel, cl_uint arg_index, void const * arg_value)} */
@@ -369,7 +369,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(kernel);
         }
-        return callPPPI(kernel, param_name, param_value_size, param_value, __functionAddress);
+        return invokePPPI(kernel, param_name, param_value_size, param_value, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelExecInfo(cl_kernel kernel, cl_kernel_exec_info param_name, size_t param_value_size, void const * param_value)} */
@@ -399,7 +399,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(context);
         }
-        return callPPPP(context, sampler_properties, errcode_ret, __functionAddress);
+        return invokePPPP(context, sampler_properties, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_sampler clCreateSamplerWithProperties(cl_context context, cl_sampler_properties const * sampler_properties, cl_int * errcode_ret)} */
@@ -423,7 +423,7 @@ public class CL20 extends CL12 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPPP(context, device, properties, errcode_ret, __functionAddress);
+        return invokePPPPP(context, device, properties, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreatePipe(cl_context context, cl_mem_flags flags, cl_uint pipe_packet_size, cl_uint pipe_max_packets, cl_pipe_properties const * properties, cl_int * errcode_ret)} */
@@ -436,7 +436,7 @@ public class CL20 extends CL12 {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPP(context, flags, pipe_packet_size, pipe_max_packets, memAddressSafe(properties), errcode_ret, __functionAddress);
+        return invokePJPPP(context, flags, pipe_packet_size, pipe_max_packets, memAddressSafe(properties), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetPipeInfo(cl_mem pipe, cl_pipe_info param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -448,7 +448,7 @@ public class CL20 extends CL12 {
             check(pipe);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(pipe, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(pipe, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clSetKernelExecInfo(cl_kernel kernel, cl_kernel_exec_info param_name, size_t param_value_size, void const * param_value)} */
@@ -459,7 +459,7 @@ public class CL20 extends CL12 {
             check(__functionAddress);
             check(kernel);
         }
-        return callPPPI(kernel, param_name, Integer.toUnsignedLong(param_value.length) << 2, param_value, __functionAddress);
+        return invokePPPI(kernel, param_name, Integer.toUnsignedLong(param_value.length) << 2, param_value, __functionAddress);
     }
 
     /** {@code cl_sampler clCreateSamplerWithProperties(cl_context context, cl_sampler_properties const * sampler_properties, cl_int * errcode_ret)} */
@@ -472,7 +472,7 @@ public class CL20 extends CL12 {
             checkNTSafe(sampler_properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPP(context, sampler_properties, errcode_ret, __functionAddress);
+        return invokePPPP(context, sampler_properties, errcode_ret, __functionAddress);
     }
 
 }

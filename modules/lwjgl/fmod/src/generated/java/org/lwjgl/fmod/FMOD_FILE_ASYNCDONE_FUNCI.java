@@ -30,7 +30,6 @@ public interface FMOD_FILE_ASYNCDONE_FUNCI extends CallbackI {
         FMOD_FILE_ASYNCDONE_FUNCI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_void,
             ffi_type_pointer, ffi_type_uint32
         )

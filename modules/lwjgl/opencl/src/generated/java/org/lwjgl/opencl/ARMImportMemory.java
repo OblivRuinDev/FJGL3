@@ -56,7 +56,7 @@ public class ARMImportMemory {
             check(__functionAddress);
             check(context);
         }
-        return callPJPPPPP(context, flags, properties, memory, size, errcode_ret, __functionAddress);
+        return invokePJPPPPP(context, flags, properties, memory, size, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clImportMemoryARM(cl_context context, cl_mem_flags flags, cl_import_properties_arm const * properties, void * memory, size_t size, cl_int * errcode_ret)} */
@@ -79,7 +79,7 @@ public class ARMImportMemory {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPJPPPPP(context, flags, memAddressSafe(properties), memAddress(memory), (long)memory.remaining(), errcode_ret, __functionAddress);
+        return invokePJPPPPP(context, flags, memAddressSafe(properties), memAddress(memory), (long)memory.remaining(), errcode_ret, __functionAddress);
     }
 
 }

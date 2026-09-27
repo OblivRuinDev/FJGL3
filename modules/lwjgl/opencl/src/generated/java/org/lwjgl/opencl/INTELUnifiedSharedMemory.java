@@ -86,7 +86,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(context);
         }
-        return callPPPPP(context, properties, size, alignment, errcode_ret, __functionAddress);
+        return invokePPPPP(context, properties, size, alignment, errcode_ret, __functionAddress);
     }
 
     /** {@code void * clHostMemAllocINTEL(cl_context context, cl_mem_properties_intel const * properties, size_t size, cl_uint alignment, cl_int * errcode_ret)} */
@@ -110,7 +110,7 @@ public class INTELUnifiedSharedMemory {
             check(context);
             check(device);
         }
-        return callPPPPPP(context, device, properties, size, alignment, errcode_ret, __functionAddress);
+        return invokePPPPPP(context, device, properties, size, alignment, errcode_ret, __functionAddress);
     }
 
     /** {@code void * clDeviceMemAllocINTEL(cl_context context, cl_device_id device, cl_mem_properties_intel const * properties, size_t size, cl_uint alignment, cl_int * errcode_ret)} */
@@ -133,7 +133,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(context);
         }
-        return callPPPPPP(context, device, properties, size, alignment, errcode_ret, __functionAddress);
+        return invokePPPPPP(context, device, properties, size, alignment, errcode_ret, __functionAddress);
     }
 
     /** {@code void * clSharedMemAllocINTEL(cl_context context, cl_device_id device, cl_mem_properties_intel const * properties, size_t size, cl_uint alignment, cl_int * errcode_ret)} */
@@ -156,7 +156,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(context);
         }
-        return callPPI(context, ptr, __functionAddress);
+        return invokePPI(context, ptr, __functionAddress);
     }
 
     /** {@code cl_int clMemFreeINTEL(cl_context context, void * ptr)} */
@@ -174,7 +174,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(context);
         }
-        return callPPI(context, ptr, __functionAddress);
+        return invokePPI(context, ptr, __functionAddress);
     }
 
     /** {@code cl_int clMemBlockingFreeINTEL(cl_context context, void * ptr)} */
@@ -192,7 +192,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(context);
         }
-        return callPPPPPI(context, ptr, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPPI(context, ptr, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetMemAllocInfoINTEL(cl_context context, void const * ptr, cl_mem_info_intel param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -231,7 +231,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(kernel);
         }
-        return callPPI(kernel, arg_index, arg_value, __functionAddress);
+        return invokePPI(kernel, arg_index, arg_value, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArgMemPointerINTEL(cl_kernel kernel, cl_uint arg_index, void const * arg_value)} */
@@ -285,7 +285,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPPPPI(command_queue, dst_ptr, pattern, pattern_size, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPI(command_queue, dst_ptr, pattern, pattern_size, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueMemFillINTEL(cl_command_queue command_queue, void * dst_ptr, void const * pattern, size_t pattern_size, size_t size, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -306,7 +306,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPPPI(command_queue, blocking, dst_ptr, src_ptr, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPI(command_queue, blocking, dst_ptr, src_ptr, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueMemcpyINTEL(cl_command_queue command_queue, cl_bool blocking, void * dst_ptr, void const * src_ptr, size_t size, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -329,7 +329,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPJPPI(command_queue, ptr, size, flags, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPJPPI(command_queue, ptr, size, flags, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueMigrateMemINTEL(cl_command_queue command_queue, void const * ptr, size_t size, cl_mem_migration_flags flags, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -350,7 +350,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPJPPI(command_queue, ptr, size, advice, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPJPPI(command_queue, ptr, size, advice, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueMemAdviseINTEL(cl_command_queue command_queue, void const * ptr, size_t size, cl_mem_advice_intel advice, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -372,7 +372,7 @@ public class INTELUnifiedSharedMemory {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        long __result = callPPPPP(context, properties, size, alignment, errcode_ret, __functionAddress);
+        long __result = invokePPPPP(context, properties, size, alignment, errcode_ret, __functionAddress);
         return memByteBufferSafe(__result, (int)size);
     }
 
@@ -387,7 +387,7 @@ public class INTELUnifiedSharedMemory {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        long __result = callPPPPPP(context, device, properties, size, alignment, errcode_ret, __functionAddress);
+        long __result = invokePPPPPP(context, device, properties, size, alignment, errcode_ret, __functionAddress);
         return memByteBufferSafe(__result, (int)size);
     }
 
@@ -401,7 +401,7 @@ public class INTELUnifiedSharedMemory {
             checkNTSafe(properties);
             checkSafe(errcode_ret, 1);
         }
-        long __result = callPPPPPP(context, device, properties, size, alignment, errcode_ret, __functionAddress);
+        long __result = invokePPPPPP(context, device, properties, size, alignment, errcode_ret, __functionAddress);
         return memByteBufferSafe(__result, (int)size);
     }
 
@@ -414,7 +414,7 @@ public class INTELUnifiedSharedMemory {
             check(context);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPPI(context, memAddress(ptr), param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPPI(context, memAddress(ptr), param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArgMemPointerINTEL(cl_kernel kernel, cl_uint arg_index, void const * arg_value)} */
@@ -425,7 +425,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(kernel);
         }
-        return callPPI(kernel, arg_index, arg_value, __functionAddress);
+        return invokePPI(kernel, arg_index, arg_value, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArgMemPointerINTEL(cl_kernel kernel, cl_uint arg_index, void const * arg_value)} */
@@ -436,7 +436,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(kernel);
         }
-        return callPPI(kernel, arg_index, arg_value, __functionAddress);
+        return invokePPI(kernel, arg_index, arg_value, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArgMemPointerINTEL(cl_kernel kernel, cl_uint arg_index, void const * arg_value)} */
@@ -447,7 +447,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(kernel);
         }
-        return callPPI(kernel, arg_index, arg_value, __functionAddress);
+        return invokePPI(kernel, arg_index, arg_value, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArgMemPointerINTEL(cl_kernel kernel, cl_uint arg_index, void const * arg_value)} */
@@ -458,7 +458,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(kernel);
         }
-        return callPPI(kernel, arg_index, arg_value, __functionAddress);
+        return invokePPI(kernel, arg_index, arg_value, __functionAddress);
     }
 
     /** {@code cl_int clSetKernelArgMemPointerINTEL(cl_kernel kernel, cl_uint arg_index, void const * arg_value)} */
@@ -469,7 +469,7 @@ public class INTELUnifiedSharedMemory {
             check(__functionAddress);
             check(kernel);
         }
-        return callPPI(kernel, arg_index, arg_value, __functionAddress);
+        return invokePPI(kernel, arg_index, arg_value, __functionAddress);
     }
 
 }

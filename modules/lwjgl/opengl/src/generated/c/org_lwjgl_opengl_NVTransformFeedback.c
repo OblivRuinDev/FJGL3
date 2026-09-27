@@ -14,18 +14,18 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBeginTransformFeedbackNVPROC) (jint);
-typedef void (APIENTRY *glEndTransformFeedbackNVPROC) (void);
-typedef void (APIENTRY *glTransformFeedbackAttribsNVPROC) (jint, uintptr_t, jint);
-typedef void (APIENTRY *glBindBufferRangeNVPROC) (jint, jint, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glBindBufferOffsetNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glBindBufferBaseNVPROC) (jint, jint, jint);
-typedef void (APIENTRY *glTransformFeedbackVaryingsNVPROC) (jint, jint, uintptr_t, jint);
-typedef void (APIENTRY *glActiveVaryingNVPROC) (jint, uintptr_t);
-typedef jint (APIENTRY *glGetVaryingLocationNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGetActiveVaryingNVPROC) (jint, jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetTransformFeedbackVaryingNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glTransformFeedbackStreamAttribsNVPROC) (jint, uintptr_t, jint, uintptr_t, jint);
+typedef void (*glBeginTransformFeedbackNVPROC) (jint);
+typedef void (*glEndTransformFeedbackNVPROC) (void);
+typedef void (*glTransformFeedbackAttribsNVPROC) (jint, uintptr_t, jint);
+typedef void (*glBindBufferRangeNVPROC) (jint, jint, jint, uintptr_t, uintptr_t);
+typedef void (*glBindBufferOffsetNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glBindBufferBaseNVPROC) (jint, jint, jint);
+typedef void (*glTransformFeedbackVaryingsNVPROC) (jint, jint, uintptr_t, jint);
+typedef void (*glActiveVaryingNVPROC) (jint, uintptr_t);
+typedef jint (*glGetVaryingLocationNVPROC) (jint, uintptr_t);
+typedef void (*glGetActiveVaryingNVPROC) (jint, jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glGetTransformFeedbackVaryingNVPROC) (jint, jint, uintptr_t);
+typedef void (*glTransformFeedbackStreamAttribsNVPROC) (jint, uintptr_t, jint, uintptr_t, jint);
 
 EXTERN_C_ENTER
 

@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glDrawMeshTasksNVPROC) (jint, jint);
-typedef void (APIENTRY *glDrawMeshTasksIndirectNVPROC) (uintptr_t);
-typedef void (APIENTRY *glMultiDrawMeshTasksIndirectNVPROC) (uintptr_t, jint, jint);
-typedef void (APIENTRY *glMultiDrawMeshTasksIndirectCountNVPROC) (uintptr_t, uintptr_t, jint, jint);
+typedef void (*glDrawMeshTasksNVPROC) (jint, jint);
+typedef void (*glDrawMeshTasksIndirectNVPROC) (uintptr_t);
+typedef void (*glMultiDrawMeshTasksIndirectNVPROC) (uintptr_t, jint, jint);
+typedef void (*glMultiDrawMeshTasksIndirectCountNVPROC) (uintptr_t, uintptr_t, jint, jint);
 
 EXTERN_C_ENTER
 

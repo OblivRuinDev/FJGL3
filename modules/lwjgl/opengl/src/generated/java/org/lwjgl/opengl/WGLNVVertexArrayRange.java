@@ -37,7 +37,7 @@ public class WGLNVVertexArrayRange {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callP(size, readfreq, writefreq, priority, __functionAddress);
+        return invokeP(size, readfreq, writefreq, priority, __functionAddress);
     }
 
     /** {@code void * wglAllocateMemoryNV(GLsizei size, GLfloat readfreq, GLfloat writefreq, GLfloat priority)} */
@@ -55,7 +55,7 @@ public class WGLNVVertexArrayRange {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(pointer, __functionAddress);
+        invokePV(pointer, __functionAddress);
     }
 
     /** {@code void wglFreeMemoryNV(void * pointer)} */

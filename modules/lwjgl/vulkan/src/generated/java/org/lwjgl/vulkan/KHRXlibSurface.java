@@ -45,7 +45,7 @@ public class KHRXlibSurface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(instance.address(), pCreateInfo, pAllocator, pSurface, __functionAddress);
+        return invokePPPPI(instance.address(), pCreateInfo, pAllocator, pSurface, __functionAddress);
     }
 
     /** {@code VkResult vkCreateXlibSurfaceKHR(VkInstance instance, VkXlibSurfaceCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkSurfaceKHR * pSurface)} */
@@ -67,7 +67,7 @@ public class KHRXlibSurface {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPNI(physicalDevice.address(), queueFamilyIndex, dpy, visualID, __functionAddress) != 0;
+        return invokePPNI(physicalDevice.address(), queueFamilyIndex, dpy, visualID, __functionAddress) != 0;
     }
 
     /** {@code VkResult vkCreateXlibSurfaceKHR(VkInstance instance, VkXlibSurfaceCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkSurfaceKHR * pSurface)} */
@@ -78,7 +78,7 @@ public class KHRXlibSurface {
             check(__functionAddress);
             check(pSurface, 1);
         }
-        return callPPPPI(instance.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSurface, __functionAddress);
+        return invokePPPPI(instance.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSurface, __functionAddress);
     }
 
 }

@@ -14,23 +14,23 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glCreateStatesNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDeleteStatesNVPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsStateNVPROC) (jint);
-typedef void (APIENTRY *glStateCaptureNVPROC) (jint, jint);
-typedef jint (APIENTRY *glGetCommandHeaderNVPROC) (jint, jint);
-typedef uint16_t (APIENTRY *glGetStageIndexNVPROC) (jint);
-typedef void (APIENTRY *glDrawCommandsNVPROC) (jint, jint, uintptr_t, uintptr_t, jint);
-typedef void (APIENTRY *glDrawCommandsAddressNVPROC) (jint, uintptr_t, uintptr_t, jint);
-typedef void (APIENTRY *glDrawCommandsStatesNVPROC) (jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, jint);
-typedef void (APIENTRY *glDrawCommandsStatesAddressNVPROC) (uintptr_t, uintptr_t, uintptr_t, uintptr_t, jint);
-typedef void (APIENTRY *glCreateCommandListsNVPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDeleteCommandListsNVPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsCommandListNVPROC) (jint);
-typedef void (APIENTRY *glListDrawCommandsStatesClientNVPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, jint);
-typedef void (APIENTRY *glCommandListSegmentsNVPROC) (jint, jint);
-typedef void (APIENTRY *glCompileCommandListNVPROC) (jint);
-typedef void (APIENTRY *glCallCommandListNVPROC) (jint);
+typedef void (*glCreateStatesNVPROC) (jint, uintptr_t);
+typedef void (*glDeleteStatesNVPROC) (jint, uintptr_t);
+typedef jboolean (*glIsStateNVPROC) (jint);
+typedef void (*glStateCaptureNVPROC) (jint, jint);
+typedef jint (*glGetCommandHeaderNVPROC) (jint, jint);
+typedef uint16_t (*glGetStageIndexNVPROC) (jint);
+typedef void (*glDrawCommandsNVPROC) (jint, jint, uintptr_t, uintptr_t, jint);
+typedef void (*glDrawCommandsAddressNVPROC) (jint, uintptr_t, uintptr_t, jint);
+typedef void (*glDrawCommandsStatesNVPROC) (jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, jint);
+typedef void (*glDrawCommandsStatesAddressNVPROC) (uintptr_t, uintptr_t, uintptr_t, uintptr_t, jint);
+typedef void (*glCreateCommandListsNVPROC) (jint, uintptr_t);
+typedef void (*glDeleteCommandListsNVPROC) (jint, uintptr_t);
+typedef jboolean (*glIsCommandListNVPROC) (jint);
+typedef void (*glListDrawCommandsStatesClientNVPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t, uintptr_t, jint);
+typedef void (*glCommandListSegmentsNVPROC) (jint, jint);
+typedef void (*glCompileCommandListNVPROC) (jint);
+typedef void (*glCallCommandListNVPROC) (jint);
 
 EXTERN_C_ENTER
 

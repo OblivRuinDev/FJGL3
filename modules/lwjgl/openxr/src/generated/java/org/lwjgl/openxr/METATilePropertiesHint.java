@@ -41,7 +41,7 @@ public class METATilePropertiesHint {
             check(__functionAddress);
             XrTilePropertiesHintMETA.validate(properties);
         }
-        return callPPI(session.address(), properties, __functionAddress);
+        return invokePPI(session.address(), properties, __functionAddress);
     }
 
     /** {@code XrResult xrSetTilePropertiesHintMETA(XrSession session, XrTilePropertiesHintMETA const * properties)} */

@@ -197,7 +197,7 @@ public class EXTTextureBorderClamp {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glTexParameterIuivEXT(GLenum target, GLenum pname, GLuint const * params)} */
@@ -207,7 +207,7 @@ public class EXTTextureBorderClamp {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTexParameterIivEXT(GLenum target, GLenum pname, GLint * params)} */
@@ -217,7 +217,7 @@ public class EXTTextureBorderClamp {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTexParameterIuivEXT(GLenum target, GLenum pname, GLuint * params)} */
@@ -227,7 +227,7 @@ public class EXTTextureBorderClamp {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
     /** {@code void glSamplerParameterIivEXT(GLuint sampler, GLenum pname, GLint const * param)} */
@@ -237,7 +237,7 @@ public class EXTTextureBorderClamp {
             check(__functionAddress);
             check(param, 1);
         }
-        callPV(sampler, pname, param, __functionAddress);
+        invokePV(sampler, pname, param, __functionAddress);
     }
 
     /** {@code void glSamplerParameterIuivEXT(GLuint sampler, GLenum pname, GLuint const * param)} */
@@ -247,7 +247,7 @@ public class EXTTextureBorderClamp {
             check(__functionAddress);
             check(param, 1);
         }
-        callPV(sampler, pname, param, __functionAddress);
+        invokePV(sampler, pname, param, __functionAddress);
     }
 
     /** {@code void glGetSamplerParameterIivEXT(GLuint sampler, GLenum pname, GLint * params)} */
@@ -257,7 +257,7 @@ public class EXTTextureBorderClamp {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
     /** {@code void glGetSamplerParameterIuivEXT(GLuint sampler, GLenum pname, GLuint * params)} */
@@ -267,7 +267,7 @@ public class EXTTextureBorderClamp {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(sampler, pname, params, __functionAddress);
+        invokePV(sampler, pname, params, __functionAddress);
     }
 
 }

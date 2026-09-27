@@ -53,7 +53,7 @@ public class KHRBufferDeviceAddress {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPJ(device.address(), pInfo, __functionAddress);
+        return invokePPJ(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code VkDeviceAddress vkGetBufferDeviceAddressKHR(VkDevice device, VkBufferDeviceAddressInfo const * pInfo)} */
@@ -70,7 +70,7 @@ public class KHRBufferDeviceAddress {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPJ(device.address(), pInfo, __functionAddress);
+        return invokePPJ(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code uint64_t vkGetBufferOpaqueCaptureAddressKHR(VkDevice device, VkBufferDeviceAddressInfo const * pInfo)} */
@@ -87,7 +87,7 @@ public class KHRBufferDeviceAddress {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPJ(device.address(), pInfo, __functionAddress);
+        return invokePPJ(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code uint64_t vkGetDeviceMemoryOpaqueCaptureAddressKHR(VkDevice device, VkDeviceMemoryOpaqueCaptureAddressInfo const * pInfo)} */

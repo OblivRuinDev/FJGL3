@@ -50,7 +50,7 @@ public class KHRMaintenance4 {
             check(__functionAddress);
             VkDeviceBufferMemoryRequirements.validate(pInfo);
         }
-        callPPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetDeviceBufferMemoryRequirementsKHR(VkDevice device, VkDeviceBufferMemoryRequirements const * pInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -67,7 +67,7 @@ public class KHRMaintenance4 {
             check(__functionAddress);
             VkDeviceImageMemoryRequirements.validate(pInfo);
         }
-        callPPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetDeviceImageMemoryRequirementsKHR(VkDevice device, VkDeviceImageMemoryRequirements const * pInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -84,7 +84,7 @@ public class KHRMaintenance4 {
             check(__functionAddress);
             VkDeviceImageMemoryRequirements.validate(pInfo);
         }
-        callPPPPV(device.address(), pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements, __functionAddress);
+        invokePPPPV(device.address(), pInfo, pSparseMemoryRequirementCount, pSparseMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetDeviceImageSparseMemoryRequirementsKHR(VkDevice device, VkDeviceImageMemoryRequirements const * pInfo, uint32_t * pSparseMemoryRequirementCount, VkSparseImageMemoryRequirements2 * pSparseMemoryRequirements)} */
@@ -105,7 +105,7 @@ public class KHRMaintenance4 {
             checkSafe(pSparseMemoryRequirements, pSparseMemoryRequirementCount[0]);
             VkDeviceImageMemoryRequirements.validate(pInfo.address());
         }
-        callPPPPV(device.address(), pInfo.address(), pSparseMemoryRequirementCount, memAddressSafe(pSparseMemoryRequirements), __functionAddress);
+        invokePPPPV(device.address(), pInfo.address(), pSparseMemoryRequirementCount, memAddressSafe(pSparseMemoryRequirements), __functionAddress);
     }
 
 }

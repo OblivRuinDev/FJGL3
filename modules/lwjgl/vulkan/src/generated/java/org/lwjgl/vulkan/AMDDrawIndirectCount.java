@@ -36,7 +36,7 @@ public class AMDDrawIndirectCount {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
+        invokePJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
     }
 
     // --- [ vkCmdDrawIndexedIndirectCountAMD ] ---
@@ -47,7 +47,7 @@ public class AMDDrawIndirectCount {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
+        invokePJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
     }
 
 }

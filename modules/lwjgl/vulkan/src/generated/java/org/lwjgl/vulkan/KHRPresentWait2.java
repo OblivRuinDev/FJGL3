@@ -43,7 +43,7 @@ public class KHRPresentWait2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), swapchain, pPresentWait2Info, __functionAddress);
+        return invokePJPI(device.address(), swapchain, pPresentWait2Info, __functionAddress);
     }
 
     /** {@code VkResult vkWaitForPresent2KHR(VkDevice device, VkSwapchainKHR swapchain, VkPresentWait2InfoKHR const * pPresentWait2Info)} */

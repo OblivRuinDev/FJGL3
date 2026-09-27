@@ -50,7 +50,7 @@ public class INTELProgramScopeHostPipe {
             check(command_queue);
             check(program);
         }
-        return callPPPPPPPI(command_queue, program, pipe_symbol, blocking_read, ptr, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPI(command_queue, program, pipe_symbol, blocking_read, ptr, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueReadHostPipeINTEL(cl_command_queue command_queue, cl_program program, char const * pipe_symbol, cl_bool blocking_read, void * ptr, size_t size, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -89,7 +89,7 @@ public class INTELProgramScopeHostPipe {
             check(command_queue);
             check(program);
         }
-        return callPPPPPPPI(command_queue, program, pipe_symbol, blocking_write, ptr, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPPPI(command_queue, program, pipe_symbol, blocking_write, ptr, size, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteHostPipeINTEL(cl_command_queue command_queue, cl_program program, char const * pipe_symbol, cl_bool blocking_write, void const * ptr, size_t size, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */

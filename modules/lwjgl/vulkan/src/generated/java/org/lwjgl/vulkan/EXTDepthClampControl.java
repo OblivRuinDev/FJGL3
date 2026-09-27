@@ -49,7 +49,7 @@ public class EXTDepthClampControl {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), depthClampMode, pDepthClampRange, __functionAddress);
+        invokePPV(commandBuffer.address(), depthClampMode, pDepthClampRange, __functionAddress);
     }
 
     /** {@code void vkCmdSetDepthClampRangeEXT(VkCommandBuffer commandBuffer, VkDepthClampModeEXT depthClampMode, VkDepthClampRangeEXT const * pDepthClampRange)} */

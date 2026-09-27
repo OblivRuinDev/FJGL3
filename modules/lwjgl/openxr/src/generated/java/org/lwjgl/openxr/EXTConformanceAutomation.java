@@ -42,7 +42,7 @@ public class EXTConformanceAutomation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJJI(session.address(), interactionProfile, topLevelPath, isActive ? 1 : 0, __functionAddress);
+        return invokePJJI(session.address(), interactionProfile, topLevelPath, isActive ? 1 : 0, __functionAddress);
     }
 
     // --- [ xrSetInputDeviceStateBoolEXT ] ---
@@ -54,7 +54,7 @@ public class EXTConformanceAutomation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJJI(session.address(), topLevelPath, inputSourcePath, state ? 1 : 0, __functionAddress);
+        return invokePJJI(session.address(), topLevelPath, inputSourcePath, state ? 1 : 0, __functionAddress);
     }
 
     // --- [ xrSetInputDeviceStateFloatEXT ] ---
@@ -66,14 +66,14 @@ public class EXTConformanceAutomation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJJI(session.address(), topLevelPath, inputSourcePath, state, __functionAddress);
+        return invokePJJI(session.address(), topLevelPath, inputSourcePath, state, __functionAddress);
     }
 
     // --- [ xrSetInputDeviceStateVector2fEXT ] ---
 
     private static final class xrSetInputDeviceStateVector2fEXT {
         static final FFICIF CIF = apiCreateCIF(
-            apiStdcall(), ffi_type_uint32,
+            ffi_type_uint32,
             ffi_type_pointer, ffi_type_uint64, ffi_type_uint64, apiCreateStruct(ffi_type_float, ffi_type_float)
         );
     }
@@ -111,7 +111,7 @@ public class EXTConformanceAutomation {
 
     private static final class xrSetInputDeviceLocationEXT {
         static final FFICIF CIF = apiCreateCIF(
-            apiStdcall(), ffi_type_uint32,
+            ffi_type_uint32,
             ffi_type_pointer, ffi_type_uint64, ffi_type_uint64, ffi_type_pointer, apiCreateStruct(apiCreateStruct(ffi_type_float, ffi_type_float, ffi_type_float, ffi_type_float), apiCreateStruct(ffi_type_float, ffi_type_float, ffi_type_float))
         );
     }

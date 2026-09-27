@@ -49,7 +49,7 @@ public class MSFTSceneUnderstandingSerialization {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(sceneObserver.address(), deserializeInfo, __functionAddress);
+        return invokePPI(sceneObserver.address(), deserializeInfo, __functionAddress);
     }
 
     /** {@code XrResult xrDeserializeSceneMSFT(XrSceneObserverMSFT sceneObserver, XrSceneDeserializeInfoMSFT const * deserializeInfo)} */
@@ -66,7 +66,7 @@ public class MSFTSceneUnderstandingSerialization {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(scene.address(), getInfo, countInput, readOutput, buffer, __functionAddress);
+        return invokePPPPI(scene.address(), getInfo, countInput, readOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetSerializedSceneFragmentDataMSFT(XrSceneMSFT scene, XrSerializedSceneFragmentDataGetInfoMSFT const * getInfo, uint32_t countInput, uint32_t * readOutput, uint8_t * buffer)} */

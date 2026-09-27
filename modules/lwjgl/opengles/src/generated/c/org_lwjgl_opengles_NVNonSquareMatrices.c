@@ -14,12 +14,12 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glUniformMatrix2x3fvNVPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glUniformMatrix3x2fvNVPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glUniformMatrix2x4fvNVPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glUniformMatrix4x2fvNVPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glUniformMatrix3x4fvNVPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glUniformMatrix4x3fvNVPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glUniformMatrix2x3fvNVPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glUniformMatrix3x2fvNVPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glUniformMatrix2x4fvNVPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glUniformMatrix4x2fvNVPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glUniformMatrix3x4fvNVPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glUniformMatrix4x3fvNVPROC) (jint, jint, jboolean, uintptr_t);
 
 EXTERN_C_ENTER
 

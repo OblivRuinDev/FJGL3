@@ -55,7 +55,7 @@ public class EXTDeviceFault {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pFaultCounts, pFaultInfo, __functionAddress);
+        return invokePPPI(device.address(), pFaultCounts, pFaultInfo, __functionAddress);
     }
 
     /** {@code VkResult vkGetDeviceFaultInfoEXT(VkDevice device, VkDeviceFaultCountsEXT * pFaultCounts, VkDeviceFaultInfoEXT * pFaultInfo)} */

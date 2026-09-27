@@ -39,7 +39,7 @@ public class EXTSwapBuffersWithDamage {
             check(dpy);
             check(surface);
         }
-        return callPPPI(dpy, surface, rects, n_rects, __functionAddress);
+        return invokePPPI(dpy, surface, rects, n_rects, __functionAddress);
     }
 
     /** {@code EGLBoolean eglSwapBuffersWithDamageEXT(EGLDisplay dpy, EGLSurface surface, EGLint * rects, EGLint n_rects)} */
@@ -57,7 +57,7 @@ public class EXTSwapBuffersWithDamage {
             check(dpy);
             check(surface);
         }
-        return callPPPI(dpy, surface, rects, lengthSafe(rects), __functionAddress) != 0;
+        return invokePPPI(dpy, surface, rects, lengthSafe(rects), __functionAddress) != 0;
     }
 
 }

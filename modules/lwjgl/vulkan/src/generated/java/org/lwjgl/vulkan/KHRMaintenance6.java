@@ -48,7 +48,7 @@ public class KHRMaintenance6 {
             check(__functionAddress);
             VkBindDescriptorSetsInfo.validate(pBindDescriptorSetsInfo);
         }
-        callPPV(commandBuffer.address(), pBindDescriptorSetsInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pBindDescriptorSetsInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBindDescriptorSets2KHR(VkCommandBuffer commandBuffer, VkBindDescriptorSetsInfo const * pBindDescriptorSetsInfo)} */
@@ -65,7 +65,7 @@ public class KHRMaintenance6 {
             check(__functionAddress);
             VkPushConstantsInfo.validate(pPushConstantsInfo);
         }
-        callPPV(commandBuffer.address(), pPushConstantsInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pPushConstantsInfo, __functionAddress);
     }
 
     /** {@code void vkCmdPushConstants2KHR(VkCommandBuffer commandBuffer, VkPushConstantsInfo const * pPushConstantsInfo)} */
@@ -82,7 +82,7 @@ public class KHRMaintenance6 {
             check(__functionAddress);
             VkPushDescriptorSetInfo.validate(pPushDescriptorSetInfo);
         }
-        callPPV(commandBuffer.address(), pPushDescriptorSetInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pPushDescriptorSetInfo, __functionAddress);
     }
 
     /** {@code void vkCmdPushDescriptorSet2KHR(VkCommandBuffer commandBuffer, VkPushDescriptorSetInfo const * pPushDescriptorSetInfo)} */
@@ -99,7 +99,7 @@ public class KHRMaintenance6 {
             check(__functionAddress);
             VkPushDescriptorSetWithTemplateInfo.validate(pPushDescriptorSetWithTemplateInfo);
         }
-        callPPV(commandBuffer.address(), pPushDescriptorSetWithTemplateInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pPushDescriptorSetWithTemplateInfo, __functionAddress);
     }
 
     /** {@code void vkCmdPushDescriptorSetWithTemplate2KHR(VkCommandBuffer commandBuffer, VkPushDescriptorSetWithTemplateInfo const * pPushDescriptorSetWithTemplateInfo)} */
@@ -116,7 +116,7 @@ public class KHRMaintenance6 {
             check(__functionAddress);
             VkSetDescriptorBufferOffsetsInfoEXT.validate(pSetDescriptorBufferOffsetsInfo);
         }
-        callPPV(commandBuffer.address(), pSetDescriptorBufferOffsetsInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pSetDescriptorBufferOffsetsInfo, __functionAddress);
     }
 
     /** {@code void vkCmdSetDescriptorBufferOffsets2EXT(VkCommandBuffer commandBuffer, VkSetDescriptorBufferOffsetsInfoEXT const * pSetDescriptorBufferOffsetsInfo)} */
@@ -132,7 +132,7 @@ public class KHRMaintenance6 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pBindDescriptorBufferEmbeddedSamplersInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pBindDescriptorBufferEmbeddedSamplersInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBindDescriptorBufferEmbeddedSamplers2EXT(VkCommandBuffer commandBuffer, VkBindDescriptorBufferEmbeddedSamplersInfoEXT const * pBindDescriptorBufferEmbeddedSamplersInfo)} */

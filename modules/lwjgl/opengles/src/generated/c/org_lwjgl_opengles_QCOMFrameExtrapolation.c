@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glExtrapolateTex2DQCOMPROC) (jint, jint, jint, jfloat);
+typedef void (*glExtrapolateTex2DQCOMPROC) (jint, jint, jint, jfloat);
 
 EXTERN_C_ENTER
 

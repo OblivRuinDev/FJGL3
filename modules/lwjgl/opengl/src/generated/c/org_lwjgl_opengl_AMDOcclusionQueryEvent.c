@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glQueryObjectParameteruiAMDPROC) (jint, jint, jint, jint);
+typedef void (*glQueryObjectParameteruiAMDPROC) (jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

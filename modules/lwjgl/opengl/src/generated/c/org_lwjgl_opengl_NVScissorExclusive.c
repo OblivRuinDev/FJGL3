@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glScissorExclusiveArrayvNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glScissorExclusiveNVPROC) (jint, jint, jint, jint);
+typedef void (*glScissorExclusiveArrayvNVPROC) (jint, jint, uintptr_t);
+typedef void (*glScissorExclusiveNVPROC) (jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

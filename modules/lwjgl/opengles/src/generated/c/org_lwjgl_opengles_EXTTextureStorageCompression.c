@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glTexStorageAttribs2DEXTPROC) (jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glTexStorageAttribs3DEXTPROC) (jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glTexStorageAttribs2DEXTPROC) (jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glTexStorageAttribs3DEXTPROC) (jint, jint, jint, jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

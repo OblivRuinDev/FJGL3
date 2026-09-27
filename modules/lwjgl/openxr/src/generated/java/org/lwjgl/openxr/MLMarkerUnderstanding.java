@@ -135,7 +135,7 @@ public class MLMarkerUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, markerDetector, __functionAddress);
+        return invokePPPI(session.address(), createInfo, markerDetector, __functionAddress);
     }
 
     /** {@code XrResult xrCreateMarkerDetectorML(XrSession session, XrMarkerDetectorCreateInfoML const * createInfo, XrMarkerDetectorML * markerDetector)} */
@@ -156,7 +156,7 @@ public class MLMarkerUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(markerDetector.address(), __functionAddress);
+        return invokePI(markerDetector.address(), __functionAddress);
     }
 
     // --- [ xrSnapshotMarkerDetectorML ] ---
@@ -167,7 +167,7 @@ public class MLMarkerUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(markerDetector.address(), snapshotInfo, __functionAddress);
+        return invokePPI(markerDetector.address(), snapshotInfo, __functionAddress);
     }
 
     /** {@code XrResult xrSnapshotMarkerDetectorML(XrMarkerDetectorML markerDetector, XrMarkerDetectorSnapshotInfoML * snapshotInfo)} */
@@ -184,7 +184,7 @@ public class MLMarkerUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(markerDetector.address(), state, __functionAddress);
+        return invokePPI(markerDetector.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrGetMarkerDetectorStateML(XrMarkerDetectorML markerDetector, XrMarkerDetectorStateML * state)} */
@@ -201,7 +201,7 @@ public class MLMarkerUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(markerDetector.address(), markerCapacityInput, markerCountOutput, markers, __functionAddress);
+        return invokePPPI(markerDetector.address(), markerCapacityInput, markerCountOutput, markers, __functionAddress);
     }
 
     /** {@code XrResult xrGetMarkersML(XrMarkerDetectorML markerDetector, uint32_t markerCapacityInput, uint32_t * markerCountOutput, XrMarkerML * markers)} */
@@ -221,7 +221,7 @@ public class MLMarkerUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(markerDetector.address(), marker, reprojectionErrorMeters, __functionAddress);
+        return invokePJPI(markerDetector.address(), marker, reprojectionErrorMeters, __functionAddress);
     }
 
     /** {@code XrResult xrGetMarkerReprojectionErrorML(XrMarkerDetectorML markerDetector, XrMarkerML marker, float * reprojectionErrorMeters)} */
@@ -241,7 +241,7 @@ public class MLMarkerUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(markerDetector.address(), marker, meters, __functionAddress);
+        return invokePJPI(markerDetector.address(), marker, meters, __functionAddress);
     }
 
     /** {@code XrResult xrGetMarkerLengthML(XrMarkerDetectorML markerDetector, XrMarkerML marker, float * meters)} */
@@ -261,7 +261,7 @@ public class MLMarkerUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(markerDetector.address(), marker, number, __functionAddress);
+        return invokePJPI(markerDetector.address(), marker, number, __functionAddress);
     }
 
     /** {@code XrResult xrGetMarkerNumberML(XrMarkerDetectorML markerDetector, XrMarkerML marker, uint64_t * number)} */
@@ -281,7 +281,7 @@ public class MLMarkerUnderstanding {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(markerDetector.address(), marker, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePJPPI(markerDetector.address(), marker, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetMarkerStringML(XrMarkerDetectorML markerDetector, XrMarkerML marker, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, char * buffer)} */
@@ -302,7 +302,7 @@ public class MLMarkerUnderstanding {
             check(__functionAddress);
             XrMarkerSpaceCreateInfoML.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, space, __functionAddress);
+        return invokePPPI(session.address(), createInfo, space, __functionAddress);
     }
 
     /** {@code XrResult xrCreateMarkerSpaceML(XrSession session, XrMarkerSpaceCreateInfoML const * createInfo, XrSpace * space)} */

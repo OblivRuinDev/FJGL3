@@ -51,7 +51,7 @@ public class KHRCopyMemoryIndirect {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pCopyMemoryIndirectInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pCopyMemoryIndirectInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyMemoryIndirectKHR(VkCommandBuffer commandBuffer, VkCopyMemoryIndirectInfoKHR const * pCopyMemoryIndirectInfo)} */
@@ -68,7 +68,7 @@ public class KHRCopyMemoryIndirect {
             check(__functionAddress);
             VkCopyMemoryToImageIndirectInfoKHR.validate(pCopyMemoryToImageIndirectInfo);
         }
-        callPPV(commandBuffer.address(), pCopyMemoryToImageIndirectInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pCopyMemoryToImageIndirectInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCopyMemoryToImageIndirectKHR(VkCommandBuffer commandBuffer, VkCopyMemoryToImageIndirectInfoKHR const * pCopyMemoryToImageIndirectInfo)} */

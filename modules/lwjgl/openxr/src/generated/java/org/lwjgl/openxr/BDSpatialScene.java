@@ -47,7 +47,7 @@ public class BDSpatialScene {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(provider.address(), info, future, __functionAddress);
+        return invokePPPI(provider.address(), info, future, __functionAddress);
     }
 
     /** {@code XrResult xrCaptureSceneAsyncBD(XrSenseDataProviderBD provider, XrSceneCaptureInfoBD const * info, XrFutureEXT * future)} */
@@ -67,7 +67,7 @@ public class BDSpatialScene {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(provider.address(), future, completion, __functionAddress);
+        return invokePJPI(provider.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrCaptureSceneCompleteBD(XrSenseDataProviderBD provider, XrFutureEXT future, XrFutureCompletionEXT * completion)} */

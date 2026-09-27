@@ -43,7 +43,7 @@ public class WGLNVDXInterop {
             check(dxObject);
             check(shareHandle);
         }
-        return callPPI(dxObject, shareHandle, __functionAddress) != 0;
+        return invokePPI(dxObject, shareHandle, __functionAddress) != 0;
     }
 
     // --- [ wglDXOpenDeviceNV ] ---
@@ -56,7 +56,7 @@ public class WGLNVDXInterop {
             check(__functionAddress);
             check(dxDevice);
         }
-        return callPP(dxDevice, __functionAddress);
+        return invokePP(dxDevice, __functionAddress);
     }
 
     // --- [ wglDXCloseDeviceNV ] ---
@@ -69,7 +69,7 @@ public class WGLNVDXInterop {
             check(__functionAddress);
             check(device);
         }
-        return callPI(device, __functionAddress) != 0;
+        return invokePI(device, __functionAddress) != 0;
     }
 
     // --- [ wglDXRegisterObjectNV ] ---
@@ -83,7 +83,7 @@ public class WGLNVDXInterop {
             check(device);
             check(dxResource);
         }
-        return callPPP(device, dxResource, name, type, access, __functionAddress);
+        return invokePPP(device, dxResource, name, type, access, __functionAddress);
     }
 
     // --- [ wglDXUnregisterObjectNV ] ---
@@ -97,7 +97,7 @@ public class WGLNVDXInterop {
             check(device);
             check(object);
         }
-        return callPPI(device, object, __functionAddress) != 0;
+        return invokePPI(device, object, __functionAddress) != 0;
     }
 
     // --- [ wglDXObjectAccessNV ] ---
@@ -110,7 +110,7 @@ public class WGLNVDXInterop {
             check(__functionAddress);
             check(object);
         }
-        return callPI(object, access, __functionAddress) != 0;
+        return invokePI(object, access, __functionAddress) != 0;
     }
 
     // --- [ wglDXLockObjectsNV ] ---
@@ -122,7 +122,7 @@ public class WGLNVDXInterop {
             check(__functionAddress);
             check(device);
         }
-        return callPPI(device, count, objects, __functionAddress);
+        return invokePPI(device, count, objects, __functionAddress);
     }
 
     /** {@code BOOL wglDXLockObjectsNV(HANDLE device, GLint count, HANDLE * objects)} */
@@ -140,7 +140,7 @@ public class WGLNVDXInterop {
             check(__functionAddress);
             check(device);
         }
-        return callPPI(device, count, objects, __functionAddress);
+        return invokePPI(device, count, objects, __functionAddress);
     }
 
     /** {@code BOOL wglDXUnlockObjectsNV(HANDLE device, GLint count, HANDLE * objects)} */

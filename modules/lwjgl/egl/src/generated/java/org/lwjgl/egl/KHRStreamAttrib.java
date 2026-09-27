@@ -38,7 +38,7 @@ public class KHRStreamAttrib {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPP(dpy, attrib_list, __functionAddress);
+        return invokePPP(dpy, attrib_list, __functionAddress);
     }
 
     /** {@code EGLStreamKHR eglCreateStreamAttribKHR(EGLDisplay dpy, EGLAttrib const * attrib_list)} */
@@ -61,7 +61,7 @@ public class KHRStreamAttrib {
             check(dpy);
             check(stream);
         }
-        return callPPPI(dpy, stream, attribute, value, __functionAddress) != 0;
+        return invokePPPI(dpy, stream, attribute, value, __functionAddress) != 0;
     }
 
     // --- [ eglQueryStreamAttribKHR ] ---
@@ -74,7 +74,7 @@ public class KHRStreamAttrib {
             check(dpy);
             check(stream);
         }
-        return callPPPI(dpy, stream, attribute, value, __functionAddress);
+        return invokePPPI(dpy, stream, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryStreamAttribKHR(EGLDisplay dpy, EGLStreamKHR stream, EGLenum attribute, EGLAttrib * value)} */
@@ -96,7 +96,7 @@ public class KHRStreamAttrib {
             check(dpy);
             check(stream);
         }
-        return callPPPI(dpy, stream, attrib_list, __functionAddress);
+        return invokePPPI(dpy, stream, attrib_list, __functionAddress);
     }
 
     /** {@code EGLBoolean eglStreamConsumerAcquireAttribKHR(EGLDisplay dpy, EGLStreamKHR stream, EGLAttrib const * attrib_list)} */
@@ -118,7 +118,7 @@ public class KHRStreamAttrib {
             check(dpy);
             check(stream);
         }
-        return callPPPI(dpy, stream, attrib_list, __functionAddress);
+        return invokePPPI(dpy, stream, attrib_list, __functionAddress);
     }
 
     /** {@code EGLBoolean eglStreamConsumerReleaseAttribKHR(EGLDisplay dpy, EGLStreamKHR stream, EGLAttrib const * attrib_list)} */

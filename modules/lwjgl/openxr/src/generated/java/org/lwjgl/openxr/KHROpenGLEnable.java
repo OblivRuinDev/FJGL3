@@ -44,7 +44,7 @@ public class KHROpenGLEnable {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(instance.address(), systemId, graphicsRequirements, __functionAddress);
+        return invokePJPI(instance.address(), systemId, graphicsRequirements, __functionAddress);
     }
 
     /** {@code XrResult xrGetOpenGLGraphicsRequirementsKHR(XrInstance instance, XrSystemId systemId, XrGraphicsRequirementsOpenGLKHR * graphicsRequirements)} */

@@ -38,7 +38,7 @@ public class EXTPlatformBase {
             check(__functionAddress);
             check(native_display);
         }
-        return callPPP(platform, native_display, attrib_list, __functionAddress);
+        return invokePPP(platform, native_display, attrib_list, __functionAddress);
     }
 
     /** {@code EGLDisplay eglGetPlatformDisplayEXT(EGLenum platform, void * native_display, EGLint const * attrib_list)} */
@@ -61,7 +61,7 @@ public class EXTPlatformBase {
             check(config);
             check(native_window);
         }
-        return callPPPPP(dpy, config, native_window, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, native_window, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreatePlatformWindowSurfaceEXT(EGLDisplay dpy, EGLConfig config, void * native_window, EGLint const * attrib_list)} */
@@ -84,7 +84,7 @@ public class EXTPlatformBase {
             check(config);
             check(native_pixmap);
         }
-        return callPPPPP(dpy, config, native_pixmap, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, native_pixmap, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreatePlatformPixmapSurfaceEXT(EGLDisplay dpy, EGLConfig config, void * native_pixmap, EGLint const * attrib_list)} */
@@ -105,7 +105,7 @@ public class EXTPlatformBase {
             check(native_display);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPP(platform, native_display, attrib_list, __functionAddress);
+        return invokePPP(platform, native_display, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreatePlatformWindowSurfaceEXT(EGLDisplay dpy, EGLConfig config, void * native_window, EGLint const * attrib_list)} */
@@ -119,7 +119,7 @@ public class EXTPlatformBase {
             check(native_window);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPPPP(dpy, config, native_window, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, native_window, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreatePlatformPixmapSurfaceEXT(EGLDisplay dpy, EGLConfig config, void * native_pixmap, EGLint const * attrib_list)} */
@@ -133,7 +133,7 @@ public class EXTPlatformBase {
             check(native_pixmap);
             checkNTSafe(attrib_list, EGL10.EGL_NONE);
         }
-        return callPPPPP(dpy, config, native_pixmap, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, native_pixmap, attrib_list, __functionAddress);
     }
 
 }

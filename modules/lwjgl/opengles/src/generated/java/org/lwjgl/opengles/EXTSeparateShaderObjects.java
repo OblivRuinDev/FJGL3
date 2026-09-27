@@ -495,7 +495,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(pipelines.length, pipelines, __functionAddress);
+        invokePV(pipelines.length, pipelines, __functionAddress);
     }
 
     /** {@code void glGenProgramPipelinesEXT(GLsizei n, GLuint * pipelines)} */
@@ -504,7 +504,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(pipelines.length, pipelines, __functionAddress);
+        invokePV(pipelines.length, pipelines, __functionAddress);
     }
 
     /** {@code void glGetProgramPipelineInfoLogEXT(GLuint pipeline, GLsizei bufSize, GLsizei * length, GLchar * infoLog)} */
@@ -514,7 +514,7 @@ public class EXTSeparateShaderObjects {
             check(__functionAddress);
             checkSafe(length, 1);
         }
-        callPPV(pipeline, infoLog.remaining(), length, memAddress(infoLog), __functionAddress);
+        invokePPV(pipeline, infoLog.remaining(), length, memAddress(infoLog), __functionAddress);
     }
 
     /** {@code void glGetProgramPipelineivEXT(GLuint pipeline, GLenum pname, GLint * params)} */
@@ -524,7 +524,7 @@ public class EXTSeparateShaderObjects {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(pipeline, pname, params, __functionAddress);
+        invokePV(pipeline, pname, params, __functionAddress);
     }
 
     /** {@code void glProgramUniform1fvEXT(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -533,7 +533,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform1ivEXT(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -542,7 +542,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2fvEXT(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -551,7 +551,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2ivEXT(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -560,7 +560,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3fvEXT(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -569,7 +569,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3ivEXT(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -578,7 +578,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4fvEXT(GLuint program, GLint location, GLsizei count, GLfloat const * value)} */
@@ -587,7 +587,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4ivEXT(GLuint program, GLint location, GLsizei count, GLint const * value)} */
@@ -596,7 +596,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -605,7 +605,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -614,7 +614,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 9, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 9, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -623,7 +623,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 4, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 4, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform1uivEXT(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -632,7 +632,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length, value, __functionAddress);
+        invokePV(program, location, value.length, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform2uivEXT(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -641,7 +641,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 1, value, __functionAddress);
+        invokePV(program, location, value.length >> 1, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform3uivEXT(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -650,7 +650,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 3, value, __functionAddress);
+        invokePV(program, location, value.length / 3, value, __functionAddress);
     }
 
     /** {@code void glProgramUniform4uivEXT(GLuint program, GLint location, GLsizei count, GLuint const * value)} */
@@ -659,7 +659,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 2, value, __functionAddress);
+        invokePV(program, location, value.length >> 2, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2x3fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -668,7 +668,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3x2fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -677,7 +677,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix2x4fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -686,7 +686,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4x2fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -695,7 +695,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(program, location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix3x4fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -704,7 +704,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 12, transpose, value, __functionAddress);
     }
 
     /** {@code void glProgramUniformMatrix4x3fvEXT(GLuint program, GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -713,7 +713,7 @@ public class EXTSeparateShaderObjects {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(program, location, value.length / 12, transpose, value, __functionAddress);
     }
 
 }

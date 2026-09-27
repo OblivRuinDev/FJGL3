@@ -50,7 +50,7 @@ public class AMDAntiLag {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(device.address(), pData, __functionAddress);
+        invokePPV(device.address(), pData, __functionAddress);
     }
 
     /** {@code void vkAntiLagUpdateAMD(VkDevice device, VkAntiLagDataAMD const * pData)} */

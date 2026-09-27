@@ -319,7 +319,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffers.length, buffers, __functionAddress);
+        invokePV(buffers.length, buffers, __functionAddress);
     }
 
     /** {@code void glGenBuffersARB(GLsizei n, GLuint * buffers)} */
@@ -328,7 +328,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffers.length, buffers, __functionAddress);
+        invokePV(buffers.length, buffers, __functionAddress);
     }
 
     /** {@code void glBufferDataARB(GLenum target, GLsizeiptrARB size, void const * data, GLenum usage)} */
@@ -337,7 +337,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(target, Integer.toUnsignedLong(data.length) << 1, data, usage, __functionAddress);
+        invokePPV(target, Integer.toUnsignedLong(data.length) << 1, data, usage, __functionAddress);
     }
 
     /** {@code void glBufferDataARB(GLenum target, GLsizeiptrARB size, void const * data, GLenum usage)} */
@@ -346,7 +346,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(target, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
+        invokePPV(target, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
     }
 
     /** {@code void glBufferDataARB(GLenum target, GLsizeiptrARB size, void const * data, GLenum usage)} */
@@ -355,7 +355,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(target, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
+        invokePPV(target, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
     }
 
     /** {@code void glBufferDataARB(GLenum target, GLsizeiptrARB size, void const * data, GLenum usage)} */
@@ -364,7 +364,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(target, Integer.toUnsignedLong(data.length) << 3, data, usage, __functionAddress);
+        invokePPV(target, Integer.toUnsignedLong(data.length) << 3, data, usage, __functionAddress);
     }
 
     /** {@code void glBufferSubDataARB(GLenum target, GLintptrARB offset, GLsizeiptrARB size, void const * data)} */
@@ -373,7 +373,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
     }
 
     /** {@code void glBufferSubDataARB(GLenum target, GLintptrARB offset, GLsizeiptrARB size, void const * data)} */
@@ -382,7 +382,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glBufferSubDataARB(GLenum target, GLintptrARB offset, GLsizeiptrARB size, void const * data)} */
@@ -391,7 +391,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glBufferSubDataARB(GLenum target, GLintptrARB offset, GLsizeiptrARB size, void const * data)} */
@@ -400,7 +400,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glGetBufferSubDataARB(GLenum target, GLintptrARB offset, GLsizeiptrARB size, void * data)} */
@@ -409,7 +409,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
     }
 
     /** {@code void glGetBufferSubDataARB(GLenum target, GLintptrARB offset, GLsizeiptrARB size, void * data)} */
@@ -418,7 +418,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glGetBufferSubDataARB(GLenum target, GLintptrARB offset, GLsizeiptrARB size, void * data)} */
@@ -427,7 +427,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glGetBufferSubDataARB(GLenum target, GLintptrARB offset, GLsizeiptrARB size, void * data)} */
@@ -436,7 +436,7 @@ public class ARBVertexBufferObject {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(target, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(target, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glGetBufferParameterivARB(GLenum target, GLenum pname, GLint * params)} */
@@ -446,7 +446,7 @@ public class ARBVertexBufferObject {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(target, pname, params, __functionAddress);
+        invokePV(target, pname, params, __functionAddress);
     }
 
 }

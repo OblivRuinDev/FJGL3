@@ -36,7 +36,7 @@ public class FBSwapchainUpdateState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(swapchain.address(), state, __functionAddress);
+        return invokePPI(swapchain.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrUpdateSwapchainFB(XrSwapchain swapchain, XrSwapchainStateBaseHeaderFB const * state)} */
@@ -53,7 +53,7 @@ public class FBSwapchainUpdateState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(swapchain.address(), state, __functionAddress);
+        return invokePPI(swapchain.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrGetSwapchainStateFB(XrSwapchain swapchain, XrSwapchainStateBaseHeaderFB * state)} */

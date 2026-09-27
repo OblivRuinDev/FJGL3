@@ -1128,7 +1128,7 @@ public class User32 {
         if (CHECKS) {
             check(hWnd);
         }
-        return callPPPP(hWnd, Msg, wParam, lParam, __functionAddress);
+        return invokePPPP(hWnd, Msg, wParam, lParam, __functionAddress);
     }
 
     // --- [ CallWindowProc ] ---
@@ -1139,7 +1139,7 @@ public class User32 {
         if (CHECKS) {
             check(hWnd);
         }
-        return callPPPPP(lpPrevWndFunc, hWnd, Msg, wParam, lParam, __functionAddress);
+        return invokePPPPP(lpPrevWndFunc, hWnd, Msg, wParam, lParam, __functionAddress);
     }
 
     /** {@code LRESULT CallWindowProc(WNDPROC lpPrevWndFunc, HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)} */
@@ -1157,7 +1157,7 @@ public class User32 {
         if (CHECKS) {
             check(hWnd);
         }
-        return callPI(hWnd, nCmdShow, __functionAddress) != 0;
+        return invokePI(hWnd, nCmdShow, __functionAddress) != 0;
     }
 
     // --- [ UpdateWindow ] ---
@@ -1169,7 +1169,7 @@ public class User32 {
         if (CHECKS) {
             check(hWnd);
         }
-        return callPI(hWnd, __functionAddress) != 0;
+        return invokePI(hWnd, __functionAddress) != 0;
     }
 
     // --- [ SetWindowPos ] ---
@@ -1260,7 +1260,7 @@ public class User32 {
     /** {@code BOOL PeekMessage(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg)} */
     public static int nPeekMessage(long lpMsg, long hWnd, int wMsgFilterMin, int wMsgFilterMax, int wRemoveMsg) {
         long __functionAddress = Functions.PeekMessage;
-        return callPPI(lpMsg, hWnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg, __functionAddress);
+        return invokePPI(lpMsg, hWnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg, __functionAddress);
     }
 
     /** {@code BOOL PeekMessage(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg)} */
@@ -1274,7 +1274,7 @@ public class User32 {
     /** {@code BOOL TranslateMessage(MSG const * lpMsg)} */
     public static int nTranslateMessage(long lpMsg) {
         long __functionAddress = Functions.TranslateMessage;
-        return callPI(lpMsg, __functionAddress);
+        return invokePI(lpMsg, __functionAddress);
     }
 
     /** {@code BOOL TranslateMessage(MSG const * lpMsg)} */
@@ -1308,7 +1308,7 @@ public class User32 {
     /** {@code LRESULT DispatchMessage(MSG const * lpmsg)} */
     public static long nDispatchMessage(long lpmsg) {
         long __functionAddress = Functions.DispatchMessage;
-        return callPP(lpmsg, __functionAddress);
+        return invokePP(lpmsg, __functionAddress);
     }
 
     /** {@code LRESULT DispatchMessage(MSG const * lpmsg)} */
@@ -1481,7 +1481,7 @@ public class User32 {
         if (CHECKS) {
             check(hWnd);
         }
-        return callPI(hWnd, __functionAddress) != 0;
+        return invokePI(hWnd, __functionAddress) != 0;
     }
 
     // --- [ IsIconic ] ---
@@ -1493,7 +1493,7 @@ public class User32 {
         if (CHECKS) {
             check(hWnd);
         }
-        return callPI(hWnd, __functionAddress) != 0;
+        return invokePI(hWnd, __functionAddress) != 0;
     }
 
     // --- [ IsZoomed ] ---
@@ -1505,7 +1505,7 @@ public class User32 {
         if (CHECKS) {
             check(hWnd);
         }
-        return callPI(hWnd, __functionAddress) != 0;
+        return invokePI(hWnd, __functionAddress) != 0;
     }
 
     // --- [ BringWindowToTop ] ---
@@ -1517,7 +1517,7 @@ public class User32 {
         if (CHECKS) {
             check(hWnd);
         }
-        return callPI(hWnd, __functionAddress) != 0;
+        return invokePI(hWnd, __functionAddress) != 0;
     }
 
     // --- [ SetWindowLongPtr ] ---
@@ -1715,7 +1715,7 @@ public class User32 {
     @NativeType("HDC")
     public static long GetDC(@NativeType("HWND") long hWnd) {
         long __functionAddress = Functions.GetDC;
-        return callPP(hWnd, __functionAddress);
+        return invokePP(hWnd, __functionAddress);
     }
 
     // --- [ ReleaseDC ] ---
@@ -1728,7 +1728,7 @@ public class User32 {
             check(hWnd);
             check(hDC);
         }
-        return callPPI(hWnd, hDC, __functionAddress) != 0;
+        return invokePPI(hWnd, hDC, __functionAddress) != 0;
     }
 
     // --- [ GetSystemMetrics ] ---
@@ -1736,7 +1736,7 @@ public class User32 {
     /** {@code int GetSystemMetrics(int index)} */
     public static int GetSystemMetrics(int index) {
         long __functionAddress = Functions.GetSystemMetrics;
-        return callI(index, __functionAddress);
+        return invokeI(index, __functionAddress);
     }
 
     // --- [ RegisterTouchWindow ] ---
@@ -1796,7 +1796,7 @@ public class User32 {
             check(__functionAddress);
             check(hWnd);
         }
-        return callPPI(hWnd, pulFlags, __functionAddress);
+        return invokePPI(hWnd, pulFlags, __functionAddress);
     }
 
     /** {@code BOOL IsTouchWindow(HWND hWnd, PULONG pulFlags)} */
@@ -1865,7 +1865,7 @@ public class User32 {
         if (CHECKS) {
             check(hWnd);
         }
-        return callPP(hWnd, dwFlags, __functionAddress);
+        return invokePP(hWnd, dwFlags, __functionAddress);
     }
 
     // --- [ GetMonitorInfo ] ---
@@ -1876,7 +1876,7 @@ public class User32 {
         if (CHECKS) {
             check(hMonitor);
         }
-        return callPPI(hMonitor, lpmi, __functionAddress);
+        return invokePPI(hMonitor, lpmi, __functionAddress);
     }
 
     /** {@code BOOL GetMonitorInfo(HMONITOR hMonitor, LPMONITORINFOEX lpmi)} */
@@ -1890,7 +1890,7 @@ public class User32 {
     /** {@code BOOL EnumDisplayDevices(LPCTSTR lpDevice, DWORD iDevNum, PDISPLAY_DEVICE lpDisplayDevice, DWORD dwFlags)} */
     public static int nEnumDisplayDevices(long lpDevice, int iDevNum, long lpDisplayDevice, int dwFlags) {
         long __functionAddress = Functions.EnumDisplayDevices;
-        return callPPI(lpDevice, iDevNum, lpDisplayDevice, dwFlags, __functionAddress);
+        return invokePPI(lpDevice, iDevNum, lpDisplayDevice, dwFlags, __functionAddress);
     }
 
     /** {@code BOOL EnumDisplayDevices(LPCTSTR lpDevice, DWORD iDevNum, PDISPLAY_DEVICE lpDisplayDevice, DWORD dwFlags)} */
@@ -1920,7 +1920,7 @@ public class User32 {
     /** {@code BOOL EnumDisplaySettingsEx(LPCTSTR lpszDeviceName, DWORD iModeNum, DEVMODE * lpDevMode, DWORD dwFlags)} */
     public static int nEnumDisplaySettingsEx(long lpszDeviceName, int iModeNum, long lpDevMode, int dwFlags) {
         long __functionAddress = Functions.EnumDisplaySettingsEx;
-        return callPPI(lpszDeviceName, iModeNum, lpDevMode, dwFlags, __functionAddress);
+        return invokePPI(lpszDeviceName, iModeNum, lpDevMode, dwFlags, __functionAddress);
     }
 
     /** {@code BOOL EnumDisplaySettingsEx(LPCTSTR lpszDeviceName, DWORD iModeNum, DEVMODE * lpDevMode, DWORD dwFlags)} */
@@ -1950,7 +1950,7 @@ public class User32 {
     /** {@code LONG ChangeDisplaySettingsEx(LPCTSTR lpszDeviceName, DEVMODE * lpDevMode, HWND hwnd, DWORD dwflags, LPVOID lParam)} */
     public static int nChangeDisplaySettingsEx(long lpszDeviceName, long lpDevMode, long hwnd, int dwflags, long lParam) {
         long __functionAddress = Functions.ChangeDisplaySettingsEx;
-        return callPPPPI(lpszDeviceName, lpDevMode, hwnd, dwflags, lParam, __functionAddress);
+        return invokePPPPI(lpszDeviceName, lpDevMode, hwnd, dwflags, lParam, __functionAddress);
     }
 
     /** {@code LONG ChangeDisplaySettingsEx(LPCTSTR lpszDeviceName, DEVMODE * lpDevMode, HWND hwnd, DWORD dwflags, LPVOID lParam)} */
@@ -1980,7 +1980,7 @@ public class User32 {
     /** {@code BOOL GetCursorPos(LPPOINT point)} */
     public static int nGetCursorPos(long point) {
         long __functionAddress = Functions.GetCursorPos;
-        return callPI(point, __functionAddress);
+        return invokePI(point, __functionAddress);
     }
 
     /** {@code BOOL GetCursorPos(LPPOINT point)} */
@@ -1995,7 +1995,7 @@ public class User32 {
     @NativeType("BOOL")
     public static boolean SetCursorPos(int X, int Y) {
         long __functionAddress = Functions.SetCursorPos;
-        return callI(X, Y, __functionAddress) != 0;
+        return invokeI(X, Y, __functionAddress) != 0;
     }
 
     // --- [ ClipCursor ] ---
@@ -2003,7 +2003,7 @@ public class User32 {
     /** {@code BOOL ClipCursor(RECT const * rect)} */
     public static int nClipCursor(long rect) {
         long __functionAddress = Functions.ClipCursor;
-        return callPI(rect, __functionAddress);
+        return invokePI(rect, __functionAddress);
     }
 
     /** {@code BOOL ClipCursor(RECT const * rect)} */
@@ -2017,7 +2017,7 @@ public class User32 {
     /** {@code int ShowCursor(BOOL show)} */
     public static int ShowCursor(@NativeType("BOOL") boolean show) {
         long __functionAddress = Functions.ShowCursor;
-        return callI(show ? 1 : 0, __functionAddress);
+        return invokeI(show ? 1 : 0, __functionAddress);
     }
 
     // --- [ SetCursor ] ---
@@ -2026,7 +2026,7 @@ public class User32 {
     @NativeType("HCURSOR")
     public static long SetCursor(@NativeType("HCURSOR") long hCursor) {
         long __functionAddress = Functions.SetCursor;
-        return callPP(hCursor, __functionAddress);
+        return invokePP(hCursor, __functionAddress);
     }
 
     // --- [ ClientToScreen ] ---
@@ -2037,7 +2037,7 @@ public class User32 {
         if (CHECKS) {
             check(hWnd);
         }
-        return callPPI(hWnd, lpPoint, __functionAddress);
+        return invokePPI(hWnd, lpPoint, __functionAddress);
     }
 
     /** {@code BOOL ClientToScreen(HWND hWnd, LPPOINT lpPoint)} */
@@ -2052,7 +2052,7 @@ public class User32 {
     @NativeType("SHORT")
     public static short GetAsyncKeyState(int vKey) {
         long __functionAddress = Functions.GetAsyncKeyState;
-        return callS(vKey, __functionAddress);
+        return invokeS(vKey, __functionAddress);
     }
 
     // --- [ GetMessageExtraInfo ] ---
@@ -2061,7 +2061,7 @@ public class User32 {
     @NativeType("LPARAM")
     public static long GetMessageExtraInfo() {
         long __functionAddress = Functions.GetMessageExtraInfo;
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
     // --- [ SendInput ] ---
@@ -2069,7 +2069,7 @@ public class User32 {
     /** {@code UINT SendInput(UINT cInputs, PINPUT pInputs, int cbSize)} */
     public static int nSendInput(int cInputs, long pInputs, int cbSize) {
         long __functionAddress = Functions.SendInput;
-        return callPI(cInputs, pInputs, cbSize, __functionAddress);
+        return invokePI(cInputs, pInputs, cbSize, __functionAddress);
     }
 
     /** {@code UINT SendInput(UINT cInputs, PINPUT pInputs, int cbSize)} */
@@ -2087,7 +2087,7 @@ public class User32 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(__functionAddress);
+        return invokeI(__functionAddress);
     }
 
     // --- [ GetDpiForWindow ] ---
@@ -2100,7 +2100,7 @@ public class User32 {
             check(__functionAddress);
             check(hwnd);
         }
-        return callPI(hwnd, __functionAddress);
+        return invokePI(hwnd, __functionAddress);
     }
 
     // --- [ GetAwarenessFromDpiAwarenessContext ] ---
@@ -2113,7 +2113,7 @@ public class User32 {
             check(__functionAddress);
             check(value);
         }
-        return callPI(value, __functionAddress);
+        return invokePI(value, __functionAddress);
     }
 
     // --- [ GetThreadDpiAwarenessContext ] ---
@@ -2125,7 +2125,7 @@ public class User32 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
     // --- [ GetWindowDpiAwarenessContext ] ---
@@ -2138,7 +2138,7 @@ public class User32 {
             check(__functionAddress);
             check(hwnd);
         }
-        return callPP(hwnd, __functionAddress);
+        return invokePP(hwnd, __functionAddress);
     }
 
     // --- [ IsValidDpiAwarenessContext ] ---
@@ -2150,7 +2150,7 @@ public class User32 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(value, __functionAddress) != 0;
+        return invokePI(value, __functionAddress) != 0;
     }
 
     // --- [ SetThreadDpiAwarenessContext ] ---
@@ -2163,7 +2163,7 @@ public class User32 {
             check(__functionAddress);
             check(dpiContext);
         }
-        return callPP(dpiContext, __functionAddress);
+        return invokePP(dpiContext, __functionAddress);
     }
 
     /** {@code BOOL IsTouchWindow(HWND hWnd, PULONG pulFlags)} */
@@ -2175,7 +2175,7 @@ public class User32 {
             check(hWnd);
             checkSafe(pulFlags, 1);
         }
-        return callPPI(hWnd, pulFlags, __functionAddress) != 0;
+        return invokePPI(hWnd, pulFlags, __functionAddress) != 0;
     }
 
     @NativeType("LONG_PTR")

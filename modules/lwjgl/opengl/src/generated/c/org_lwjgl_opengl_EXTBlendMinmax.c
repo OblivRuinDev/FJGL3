@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBlendEquationEXTPROC) (jint);
+typedef void (*glBlendEquationEXTPROC) (jint);
 
 EXTERN_C_ENTER
 

@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glFramebufferFoveationConfigQCOMPROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glFramebufferFoveationParametersQCOMPROC) (jint, jint, jint, jfloat, jfloat, jfloat, jfloat, jfloat);
+typedef void (*glFramebufferFoveationConfigQCOMPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glFramebufferFoveationParametersQCOMPROC) (jint, jint, jint, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 EXTERN_C_ENTER
 

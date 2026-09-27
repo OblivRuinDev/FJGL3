@@ -53,7 +53,7 @@ public class BDSpatialAnchor {
             check(__functionAddress);
             XrSpatialAnchorCreateInfoBD.validate(info);
         }
-        return callPPPI(provider.address(), info, future, __functionAddress);
+        return invokePPPI(provider.address(), info, future, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorAsyncBD(XrSenseDataProviderBD provider, XrSpatialAnchorCreateInfoBD const * info, XrFutureEXT * future)} */
@@ -73,7 +73,7 @@ public class BDSpatialAnchor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(provider.address(), future, completion, __functionAddress);
+        return invokePJPI(provider.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorCompleteBD(XrSenseDataProviderBD provider, XrFutureEXT future, XrSpatialAnchorCreateCompletionBD * completion)} */
@@ -91,7 +91,7 @@ public class BDSpatialAnchor {
             check(__functionAddress);
             XrSpatialAnchorPersistInfoBD.validate(info);
         }
-        return callPPPI(provider.address(), info, future, __functionAddress);
+        return invokePPPI(provider.address(), info, future, __functionAddress);
     }
 
     /** {@code XrResult xrPersistSpatialAnchorAsyncBD(XrSenseDataProviderBD provider, XrSpatialAnchorPersistInfoBD const * info, XrFutureEXT * future)} */
@@ -111,7 +111,7 @@ public class BDSpatialAnchor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(provider.address(), future, completion, __functionAddress);
+        return invokePJPI(provider.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrPersistSpatialAnchorCompleteBD(XrSenseDataProviderBD provider, XrFutureEXT future, XrFutureCompletionEXT * completion)} */
@@ -129,7 +129,7 @@ public class BDSpatialAnchor {
             check(__functionAddress);
             XrSpatialAnchorUnpersistInfoBD.validate(info);
         }
-        return callPPPI(provider.address(), info, future, __functionAddress);
+        return invokePPPI(provider.address(), info, future, __functionAddress);
     }
 
     /** {@code XrResult xrUnpersistSpatialAnchorAsyncBD(XrSenseDataProviderBD provider, XrSpatialAnchorUnpersistInfoBD const * info, XrFutureEXT * future)} */
@@ -149,7 +149,7 @@ public class BDSpatialAnchor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(provider.address(), future, completion, __functionAddress);
+        return invokePJPI(provider.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrUnpersistSpatialAnchorCompleteBD(XrSenseDataProviderBD provider, XrFutureEXT future, XrFutureCompletionEXT * completion)} */

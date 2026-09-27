@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glPointParameterfEXTPROC) (jint, jfloat);
-typedef void (APIENTRY *glPointParameterfvEXTPROC) (jint, uintptr_t);
+typedef void (*glPointParameterfEXTPROC) (jint, jfloat);
+typedef void (*glPointParameterfvEXTPROC) (jint, uintptr_t);
 
 EXTERN_C_ENTER
 

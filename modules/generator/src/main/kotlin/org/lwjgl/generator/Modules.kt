@@ -57,8 +57,7 @@ enum class Module(
     CORE_WINDOWS(
         "core.windows",
         "org.lwjgl.system.windows",
-        "Contains bindings to native APIs specific to the Windows operating system.",
-        CallingConvention.STDCALL
+        "Contains bindings to native APIs specific to the Windows operating system."
     ),
 
     ASSIMP(
@@ -120,8 +119,7 @@ enum class Module(
             url("https://registry.khronos.org/EGL/", "EGL Registry"),
             url("https://github.com/KhronosGroup/EGL-Registry", "Source Repository")
         )}
-        """,
-        CallingConvention.STDCALL
+        """
     ),
     FMOD(
         "fmod",
@@ -142,7 +140,6 @@ enum class Module(
         options. For example, setting {@link org.lwjgl.system.Configuration\#FMOD_LIBRARY_NAME FMOD_LIBRARY_NAME} to "fmodL" will load the logging version of
         the FMOD core library.
         """,
-        CallingConvention.STDCALL,
         arrayOverloads = false
     ),
     FREETYPE(
@@ -233,8 +230,7 @@ enum class Module(
     JAWT(
         "jawt",
         "org.lwjgl.system.jawt",
-        "Contains bindings to the AWT native interface (jawt.h).",
-        CallingConvention.STDCALL
+        "Contains bindings to the AWT native interface (jawt.h)."
     ),
     JEMALLOC(
         "jemalloc",
@@ -285,7 +281,6 @@ enum class Module(
             url("https://github.com/KhronosGroup/KTX-Software", "Source Repository")
         )}
         """,
-        CallingConvention.STDCALL,
         arrayOverloads = false
     ),
     LLVM(
@@ -441,7 +436,6 @@ enum class Module(
             url("https://learn.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference", "Documentation")
         )}
         """,
-        CallingConvention.STDCALL,
         arrayOverloads = false
     ),
     OPENAL(
@@ -480,8 +474,7 @@ enum class Module(
             url("https://github.com/KhronosGroup/OpenCL-Registry", "Source Repository"),
             url("https://github.com/KhronosGroup/OpenCL-Headers", "Source Repository (headers)")
         )}
-        """,
-        CallingConvention.STDCALL
+        """
     ),
     OPENGL(
         "opengl",
@@ -524,7 +517,6 @@ enum class Module(
             url("https://github.com/KhronosGroup/OpenGL-Registry", "Source Repository")
         )}
         """,
-        CallingConvention.STDCALL,
         library = JNILibrary.create("GL", custom = true)
     ),
     OPENGLES(
@@ -543,7 +535,6 @@ enum class Module(
             url("https://github.com/KhronosGroup/OpenGL-Registry", "Source Repository")
         )}
         """,
-        CallingConvention.STDCALL,
         library = JNILibrary.create("GLES", custom = true)
     ),
     OPENXR(
@@ -562,7 +553,6 @@ enum class Module(
             url("https://github.com/KhronosGroup/OpenXR-SDK", "Source Repository (loader)"),
         )}
         """,
-        CallingConvention.STDCALL,
         arrayOverloads = false
     ),
     OPUS(
@@ -834,8 +824,7 @@ git branch -D @{-1}""")}"""}()}
             url("https://github.com/KhronosGroup/Vulkan-Docs", "Source Repository"),
             url("https://github.com/KhronosGroup/Vulkan-Headers", "Source Repository (headers)")
         )}
-        """,
-        CallingConvention.STDCALL
+        """
     ),
     XXHASH(
         "xxhash",

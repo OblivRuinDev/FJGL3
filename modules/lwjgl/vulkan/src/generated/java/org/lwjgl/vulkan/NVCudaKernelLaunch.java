@@ -59,7 +59,7 @@ public class NVCudaKernelLaunch {
             check(__functionAddress);
             VkCudaModuleCreateInfoNV.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pModule, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pModule, __functionAddress);
     }
 
     /** {@code VkResult vkCreateCudaModuleNV(VkDevice device, VkCudaModuleCreateInfoNV const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkCudaModuleNV * pModule)} */
@@ -79,7 +79,7 @@ public class NVCudaKernelLaunch {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), module, pCacheSize, pCacheData, __functionAddress);
+        return invokePJPPI(device.address(), module, pCacheSize, pCacheData, __functionAddress);
     }
 
     /** {@code VkResult vkGetCudaModuleCacheNV(VkDevice device, VkCudaModuleNV module, size_t * pCacheSize, void * pCacheData)} */
@@ -101,7 +101,7 @@ public class NVCudaKernelLaunch {
             check(__functionAddress);
             VkCudaFunctionCreateInfoNV.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pFunction, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pFunction, __functionAddress);
     }
 
     /** {@code VkResult vkCreateCudaFunctionNV(VkDevice device, VkCudaFunctionCreateInfoNV const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkCudaFunctionNV * pFunction)} */
@@ -121,7 +121,7 @@ public class NVCudaKernelLaunch {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), module, pAllocator, __functionAddress);
+        invokePJPV(device.address(), module, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyCudaModuleNV(VkDevice device, VkCudaModuleNV module, VkAllocationCallbacks const * pAllocator)} */
@@ -137,7 +137,7 @@ public class NVCudaKernelLaunch {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), function, pAllocator, __functionAddress);
+        invokePJPV(device.address(), function, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyCudaFunctionNV(VkDevice device, VkCudaFunctionNV function, VkAllocationCallbacks const * pAllocator)} */
@@ -153,7 +153,7 @@ public class NVCudaKernelLaunch {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pLaunchInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pLaunchInfo, __functionAddress);
     }
 
     /** {@code void vkCmdCudaLaunchKernelNV(VkCommandBuffer commandBuffer, VkCudaLaunchInfoNV const * pLaunchInfo)} */
@@ -170,7 +170,7 @@ public class NVCudaKernelLaunch {
             check(pModule, 1);
             VkCudaModuleCreateInfoNV.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pModule, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pModule, __functionAddress);
     }
 
     /** {@code VkResult vkCreateCudaFunctionNV(VkDevice device, VkCudaFunctionCreateInfoNV const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkCudaFunctionNV * pFunction)} */
@@ -182,7 +182,7 @@ public class NVCudaKernelLaunch {
             check(pFunction, 1);
             VkCudaFunctionCreateInfoNV.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pFunction, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pFunction, __functionAddress);
     }
 
 }

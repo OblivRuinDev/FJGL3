@@ -40,7 +40,7 @@ public class ALMALENCEDigitalLensControl {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), digitalLensControl, __functionAddress);
+        return invokePPI(session.address(), digitalLensControl, __functionAddress);
     }
 
     /** {@code XrResult xrSetDigitalLensControlALMALENCE(XrSession session, XrDigitalLensControlALMALENCE const * digitalLensControl)} */

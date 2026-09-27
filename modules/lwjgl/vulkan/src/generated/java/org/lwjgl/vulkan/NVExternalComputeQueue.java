@@ -52,7 +52,7 @@ public class NVExternalComputeQueue {
             check(__functionAddress);
             VkExternalComputeQueueCreateInfoNV.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pExternalQueue, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pExternalQueue, __functionAddress);
     }
 
     /** {@code VkResult vkCreateExternalComputeQueueNV(VkDevice device, VkExternalComputeQueueCreateInfoNV const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkExternalComputeQueueNV * pExternalQueue)} */
@@ -72,7 +72,7 @@ public class NVExternalComputeQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), externalQueue.address(), pAllocator, __functionAddress);
+        invokePPPV(device.address(), externalQueue.address(), pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyExternalComputeQueueNV(VkDevice device, VkExternalComputeQueueNV externalQueue, VkAllocationCallbacks const * pAllocator)} */
@@ -88,7 +88,7 @@ public class NVExternalComputeQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(externalQueue.address(), params, pData, __functionAddress);
+        invokePPPV(externalQueue.address(), params, pData, __functionAddress);
     }
 
     /** {@code void vkGetExternalComputeQueueDataNV(VkExternalComputeQueueNV externalQueue, VkExternalComputeQueueDataParamsNV * params, void * pData)} */

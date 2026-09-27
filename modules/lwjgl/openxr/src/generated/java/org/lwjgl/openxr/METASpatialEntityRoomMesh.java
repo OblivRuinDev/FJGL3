@@ -43,7 +43,7 @@ public class METASpatialEntityRoomMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(space.address(), getInfo, roomMeshOutput, __functionAddress);
+        return invokePPPI(space.address(), getInfo, roomMeshOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpaceRoomMeshMETA(XrSpace space, XrSpaceRoomMeshGetInfoMETA const * getInfo, XrRoomMeshMETA * roomMeshOutput)} */
@@ -60,7 +60,7 @@ public class METASpatialEntityRoomMesh {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(space.address(), faceUuid, roomMeshFaceIndicesOutput, __functionAddress);
+        return invokePPPI(space.address(), faceUuid, roomMeshFaceIndicesOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpaceRoomMeshFaceIndicesMETA(XrSpace space, XrUuid const * faceUuid, XrRoomMeshFaceIndicesMETA * roomMeshFaceIndicesOutput)} */

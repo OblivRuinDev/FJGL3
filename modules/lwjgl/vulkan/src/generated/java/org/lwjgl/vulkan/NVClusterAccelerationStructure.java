@@ -89,7 +89,7 @@ public class NVClusterAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(device.address(), pInfo, pSizeInfo, __functionAddress);
+        invokePPPV(device.address(), pInfo, pSizeInfo, __functionAddress);
     }
 
     /** {@code void vkGetClusterAccelerationStructureBuildSizesNV(VkDevice device, VkClusterAccelerationStructureInputInfoNV const * pInfo, VkAccelerationStructureBuildSizesInfoKHR * pSizeInfo)} */
@@ -105,7 +105,7 @@ public class NVClusterAccelerationStructure {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pCommandInfos, __functionAddress);
+        invokePPV(commandBuffer.address(), pCommandInfos, __functionAddress);
     }
 
     /** {@code void vkCmdBuildClusterAccelerationStructureIndirectNV(VkCommandBuffer commandBuffer, VkClusterAccelerationStructureCommandsInfoNV const * pCommandInfos)} */

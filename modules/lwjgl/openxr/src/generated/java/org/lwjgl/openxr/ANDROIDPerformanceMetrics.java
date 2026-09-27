@@ -57,7 +57,7 @@ public class ANDROIDPerformanceMetrics {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(instance.address(), counterPathCapacityInput, counterPathCountOutput, counterPaths, __functionAddress);
+        return invokePPPI(instance.address(), counterPathCapacityInput, counterPathCountOutput, counterPaths, __functionAddress);
     }
 
     /** {@code XrResult xrEnumeratePerformanceMetricsCounterPathsANDROID(XrInstance instance, uint32_t counterPathCapacityInput, uint32_t * counterPathCountOutput, XrPath * counterPaths)} */
@@ -77,7 +77,7 @@ public class ANDROIDPerformanceMetrics {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), state, __functionAddress);
+        return invokePPI(session.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrSetPerformanceMetricsStateANDROID(XrSession session, XrPerformanceMetricsStateANDROID const * state)} */
@@ -94,7 +94,7 @@ public class ANDROIDPerformanceMetrics {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), state, __functionAddress);
+        return invokePPI(session.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrGetPerformanceMetricsStateANDROID(XrSession session, XrPerformanceMetricsStateANDROID * state)} */
@@ -111,7 +111,7 @@ public class ANDROIDPerformanceMetrics {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), counterPath, counter, __functionAddress);
+        return invokePJPI(session.address(), counterPath, counter, __functionAddress);
     }
 
     /** {@code XrResult xrQueryPerformanceMetricsCounterANDROID(XrSession session, XrPath counterPath, XrPerformanceMetricsCounterANDROID * counter)} */

@@ -53,7 +53,7 @@ public class ANDROIDGeospatialAnchor {
             check(__functionAddress);
             XrGeospatialAnchorCreateInfoANDROID.validate(createInfo);
         }
-        return callPPPI(spatialContext.address(), createInfo, anchorEntityId, __functionAddress);
+        return invokePPPI(spatialContext.address(), createInfo, anchorEntityId, __functionAddress);
     }
 
     /** {@code XrResult xrCreateGeospatialAnchorANDROID(XrSpatialContextEXT spatialContext, XrGeospatialAnchorCreateInfoANDROID const * createInfo, XrSpatialEntityIdEXT * anchorEntityId)} */
@@ -74,7 +74,7 @@ public class ANDROIDGeospatialAnchor {
             check(__functionAddress);
             XrSurfaceAnchorCreateInfoANDROID.validate(createInfo);
         }
-        return callPPPI(spatialContext.address(), createInfo, future, __functionAddress);
+        return invokePPPI(spatialContext.address(), createInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSurfaceAnchorAsyncANDROID(XrSpatialContextEXT spatialContext, XrSurfaceAnchorCreateInfoANDROID const * createInfo, XrFutureEXT * future)} */
@@ -94,7 +94,7 @@ public class ANDROIDGeospatialAnchor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(spatialContext.address(), future, completion, __functionAddress);
+        return invokePJPI(spatialContext.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSurfaceAnchorCompleteANDROID(XrSpatialContextEXT spatialContext, XrFutureEXT future, XrSurfaceAnchorCreateCompletionANDROID * completion)} */

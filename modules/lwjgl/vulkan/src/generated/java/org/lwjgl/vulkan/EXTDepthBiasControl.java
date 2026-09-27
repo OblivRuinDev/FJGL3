@@ -46,7 +46,7 @@ public class EXTDepthBiasControl {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pDepthBiasInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pDepthBiasInfo, __functionAddress);
     }
 
     /** {@code void vkCmdSetDepthBias2EXT(VkCommandBuffer commandBuffer, VkDepthBiasInfoEXT const * pDepthBiasInfo)} */

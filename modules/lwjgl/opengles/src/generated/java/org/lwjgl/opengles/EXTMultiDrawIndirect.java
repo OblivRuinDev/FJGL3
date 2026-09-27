@@ -88,7 +88,7 @@ public class EXTMultiDrawIndirect {
             check(__functionAddress);
             check(indirect, (drawcount * (stride == 0 ? (4 * 4) : stride)) >> 2);
         }
-        callPV(mode, indirect, drawcount, stride, __functionAddress);
+        invokePV(mode, indirect, drawcount, stride, __functionAddress);
     }
 
     /** {@code void glMultiDrawElementsIndirectEXT(GLenum mode, GLenum type, void const * indirect, GLsizei drawcount, GLsizei stride)} */
@@ -98,7 +98,7 @@ public class EXTMultiDrawIndirect {
             check(__functionAddress);
             check(indirect, (drawcount * (stride == 0 ? (5 * 4) : stride)) >> 2);
         }
-        callPV(mode, type, indirect, drawcount, stride, __functionAddress);
+        invokePV(mode, type, indirect, drawcount, stride, __functionAddress);
     }
 
 }

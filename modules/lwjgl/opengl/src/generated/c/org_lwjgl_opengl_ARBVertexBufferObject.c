@@ -14,17 +14,17 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBindBufferARBPROC) (jint, jint);
-typedef void (APIENTRY *glDeleteBuffersARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGenBuffersARBPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsBufferARBPROC) (jint);
-typedef void (APIENTRY *glBufferDataARBPROC) (jint, uintptr_t, uintptr_t, jint);
-typedef void (APIENTRY *glBufferSubDataARBPROC) (jint, uintptr_t, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetBufferSubDataARBPROC) (jint, uintptr_t, uintptr_t, uintptr_t);
-typedef uintptr_t (APIENTRY *glMapBufferARBPROC) (jint, jint);
-typedef jboolean (APIENTRY *glUnmapBufferARBPROC) (jint);
-typedef void (APIENTRY *glGetBufferParameterivARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetBufferPointervARBPROC) (jint, jint, uintptr_t);
+typedef void (*glBindBufferARBPROC) (jint, jint);
+typedef void (*glDeleteBuffersARBPROC) (jint, uintptr_t);
+typedef void (*glGenBuffersARBPROC) (jint, uintptr_t);
+typedef jboolean (*glIsBufferARBPROC) (jint);
+typedef void (*glBufferDataARBPROC) (jint, uintptr_t, uintptr_t, jint);
+typedef void (*glBufferSubDataARBPROC) (jint, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glGetBufferSubDataARBPROC) (jint, uintptr_t, uintptr_t, uintptr_t);
+typedef uintptr_t (*glMapBufferARBPROC) (jint, jint);
+typedef jboolean (*glUnmapBufferARBPROC) (jint);
+typedef void (*glGetBufferParameterivARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetBufferPointervARBPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glVertexAttribDivisorARBPROC) (jint, jint);
-typedef void (APIENTRY *glVertexArrayVertexAttribDivisorEXTPROC) (jint, jint, jint);
+typedef void (*glVertexAttribDivisorARBPROC) (jint, jint);
+typedef void (*glVertexArrayVertexAttribDivisorEXTPROC) (jint, jint, jint);
 
 EXTERN_C_ENTER
 

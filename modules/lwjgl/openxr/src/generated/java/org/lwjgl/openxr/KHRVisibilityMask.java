@@ -45,7 +45,7 @@ public class KHRVisibilityMask {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(session.address(), viewConfigurationType, viewIndex, visibilityMaskType, visibilityMask, __functionAddress);
+        return invokePPI(session.address(), viewConfigurationType, viewIndex, visibilityMaskType, visibilityMask, __functionAddress);
     }
 
     /** {@code XrResult xrGetVisibilityMaskKHR(XrSession session, XrViewConfigurationType viewConfigurationType, uint32_t viewIndex, XrVisibilityMaskTypeKHR visibilityMaskType, XrVisibilityMaskKHR * visibilityMask)} */

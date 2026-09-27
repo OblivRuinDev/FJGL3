@@ -62,7 +62,7 @@ public class EXTSpatialPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, persistenceScopeCapacityInput, persistenceScopeCountOutput, persistenceScopes, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, persistenceScopeCapacityInput, persistenceScopeCountOutput, persistenceScopes, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSpatialPersistenceScopesEXT(XrInstance instance, XrSystemId systemId, uint32_t persistenceScopeCapacityInput, uint32_t * persistenceScopeCountOutput, XrSpatialPersistenceScopeEXT * persistenceScopes)} */
@@ -82,7 +82,7 @@ public class EXTSpatialPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, future, __functionAddress);
+        return invokePPPI(session.address(), createInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialPersistenceContextAsyncEXT(XrSession session, XrSpatialPersistenceContextCreateInfoEXT const * createInfo, XrFutureEXT * future)} */
@@ -102,7 +102,7 @@ public class EXTSpatialPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), future, completion, __functionAddress);
+        return invokePJPI(session.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialPersistenceContextCompleteEXT(XrSession session, XrFutureEXT future, XrCreateSpatialPersistenceContextCompletionEXT * completion)} */
@@ -120,7 +120,7 @@ public class EXTSpatialPersistence {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(persistenceContext.address(), __functionAddress);
+        return invokePI(persistenceContext.address(), __functionAddress);
     }
 
 }

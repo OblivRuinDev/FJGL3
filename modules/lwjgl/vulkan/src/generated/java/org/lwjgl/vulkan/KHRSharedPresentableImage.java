@@ -45,7 +45,7 @@ public class KHRSharedPresentableImage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(device.address(), swapchain, __functionAddress);
+        return invokePJI(device.address(), swapchain, __functionAddress);
     }
 
 }

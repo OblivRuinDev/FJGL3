@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glImportSemaphoreFdEXTPROC) (jint, jint, jint);
+typedef void (*glImportSemaphoreFdEXTPROC) (jint, jint, jint);
 
 EXTERN_C_ENTER
 

@@ -14,25 +14,25 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBindBufferPROC) (jint, jint);
-typedef void (APIENTRY *glDeleteBuffersPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGenBuffersPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsBufferPROC) (jint);
-typedef void (APIENTRY *glBufferDataPROC) (jint, uintptr_t, uintptr_t, jint);
-typedef void (APIENTRY *glBufferSubDataPROC) (jint, uintptr_t, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetBufferSubDataPROC) (jint, uintptr_t, uintptr_t, uintptr_t);
-typedef uintptr_t (APIENTRY *glMapBufferPROC) (jint, jint);
-typedef jboolean (APIENTRY *glUnmapBufferPROC) (jint);
-typedef void (APIENTRY *glGetBufferParameterivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetBufferPointervPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGenQueriesPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDeleteQueriesPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsQueryPROC) (jint);
-typedef void (APIENTRY *glBeginQueryPROC) (jint, jint);
-typedef void (APIENTRY *glEndQueryPROC) (jint);
-typedef void (APIENTRY *glGetQueryivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetQueryObjectivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetQueryObjectuivPROC) (jint, jint, uintptr_t);
+typedef void (*glBindBufferPROC) (jint, jint);
+typedef void (*glDeleteBuffersPROC) (jint, uintptr_t);
+typedef void (*glGenBuffersPROC) (jint, uintptr_t);
+typedef jboolean (*glIsBufferPROC) (jint);
+typedef void (*glBufferDataPROC) (jint, uintptr_t, uintptr_t, jint);
+typedef void (*glBufferSubDataPROC) (jint, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glGetBufferSubDataPROC) (jint, uintptr_t, uintptr_t, uintptr_t);
+typedef uintptr_t (*glMapBufferPROC) (jint, jint);
+typedef jboolean (*glUnmapBufferPROC) (jint);
+typedef void (*glGetBufferParameterivPROC) (jint, jint, uintptr_t);
+typedef void (*glGetBufferPointervPROC) (jint, jint, uintptr_t);
+typedef void (*glGenQueriesPROC) (jint, uintptr_t);
+typedef void (*glDeleteQueriesPROC) (jint, uintptr_t);
+typedef jboolean (*glIsQueryPROC) (jint);
+typedef void (*glBeginQueryPROC) (jint, jint);
+typedef void (*glEndQueryPROC) (jint);
+typedef void (*glGetQueryivPROC) (jint, jint, uintptr_t);
+typedef void (*glGetQueryObjectivPROC) (jint, jint, uintptr_t);
+typedef void (*glGetQueryObjectuivPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

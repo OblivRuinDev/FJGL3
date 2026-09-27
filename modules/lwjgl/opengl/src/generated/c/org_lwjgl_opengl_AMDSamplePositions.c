@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glSetMultisamplefvAMDPROC) (jint, jint, uintptr_t);
+typedef void (*glSetMultisamplefvAMDPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

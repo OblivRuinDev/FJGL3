@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glClearTexImageEXTPROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glClearTexSubImageEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glClearTexImageEXTPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glClearTexSubImageEXTPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -81,7 +81,7 @@ public class NVXProgressFence {
             check(__functionAddress);
             check(fenceValueArray, semaphoreArray.length);
         }
-        callPPV(signalGpu, semaphoreArray.length, semaphoreArray, fenceValueArray, __functionAddress);
+        invokePPV(signalGpu, semaphoreArray.length, semaphoreArray, fenceValueArray, __functionAddress);
     }
 
     /** {@code void glWaitSemaphoreui64NVX(GLuint waitGpu, GLsizei fenceObjectCount, GLuint const * semaphoreArray, GLuint64 const * fenceValueArray)} */
@@ -91,7 +91,7 @@ public class NVXProgressFence {
             check(__functionAddress);
             check(fenceValueArray, semaphoreArray.length);
         }
-        callPPV(waitGpu, semaphoreArray.length, semaphoreArray, fenceValueArray, __functionAddress);
+        invokePPV(waitGpu, semaphoreArray.length, semaphoreArray, fenceValueArray, __functionAddress);
     }
 
     /** {@code void glClientWaitSemaphoreui64NVX(GLsizei fenceObjectCount, GLuint const * semaphoreArray, GLuint64 const * fenceValueArray)} */
@@ -101,7 +101,7 @@ public class NVXProgressFence {
             check(__functionAddress);
             check(fenceValueArray, semaphoreArray.length);
         }
-        callPPV(semaphoreArray.length, semaphoreArray, fenceValueArray, __functionAddress);
+        invokePPV(semaphoreArray.length, semaphoreArray, fenceValueArray, __functionAddress);
     }
 
 }

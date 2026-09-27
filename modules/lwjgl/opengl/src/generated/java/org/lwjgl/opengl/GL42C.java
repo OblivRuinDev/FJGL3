@@ -329,7 +329,7 @@ public class GL42C extends GL41C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(program, bufferIndex, pname, params, __functionAddress);
+        invokePV(program, bufferIndex, pname, params, __functionAddress);
     }
 
     /** {@code void glGetInternalformativ(GLenum target, GLenum internalformat, GLenum pname, GLsizei bufSize, GLint * params)} */
@@ -338,7 +338,7 @@ public class GL42C extends GL41C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, internalformat, pname, params.length, params, __functionAddress);
+        invokePV(target, internalformat, pname, params.length, params, __functionAddress);
     }
 
 }

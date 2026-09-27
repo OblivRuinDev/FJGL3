@@ -43,7 +43,7 @@ public class EXTCompositor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(external_ref_ids, num_entries, __functionAddress);
+        return invokePI(external_ref_ids, num_entries, __functionAddress);
     }
 
     /** {@code EGLBoolean eglCompositorSetContextListEXT(EGLint const * external_ref_ids, EGLint num_entries)} */
@@ -60,7 +60,7 @@ public class EXTCompositor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(external_ref_id, context_attributes, num_entries, __functionAddress);
+        return invokePI(external_ref_id, context_attributes, num_entries, __functionAddress);
     }
 
     /** {@code EGLBoolean eglCompositorSetContextAttributesEXT(EGLint external_ref_id, EGLint const * context_attributes, EGLint num_entries)} */
@@ -77,7 +77,7 @@ public class EXTCompositor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(external_ref_id, external_win_ids, num_entries, __functionAddress);
+        return invokePI(external_ref_id, external_win_ids, num_entries, __functionAddress);
     }
 
     /** {@code EGLBoolean eglCompositorSetWindowListEXT(EGLint external_ref_id, EGLint const * external_win_ids, EGLint num_entries)} */
@@ -94,7 +94,7 @@ public class EXTCompositor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(external_win_id, window_attributes, num_entries, __functionAddress);
+        return invokePI(external_win_id, window_attributes, num_entries, __functionAddress);
     }
 
     /** {@code EGLBoolean eglCompositorSetWindowAttributesEXT(EGLint external_win_id, EGLint const * window_attributes, EGLint num_entries)} */
@@ -112,7 +112,7 @@ public class EXTCompositor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(external_win_id, __functionAddress) != 0;
+        return invokeI(external_win_id, __functionAddress) != 0;
     }
 
     // --- [ eglCompositorSetSizeEXT ] ---
@@ -124,7 +124,7 @@ public class EXTCompositor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(external_win_id, width, height, __functionAddress) != 0;
+        return invokeI(external_win_id, width, height, __functionAddress) != 0;
     }
 
     // --- [ eglCompositorSwapPolicyEXT ] ---
@@ -136,7 +136,7 @@ public class EXTCompositor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callI(external_win_id, policy, __functionAddress) != 0;
+        return invokeI(external_win_id, policy, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglCompositorSetContextListEXT(EGLint const * external_ref_ids, EGLint num_entries)} */
@@ -146,7 +146,7 @@ public class EXTCompositor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(external_ref_ids, external_ref_ids.length, __functionAddress) != 0;
+        return invokePI(external_ref_ids, external_ref_ids.length, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglCompositorSetContextAttributesEXT(EGLint external_ref_id, EGLint const * context_attributes, EGLint num_entries)} */
@@ -156,7 +156,7 @@ public class EXTCompositor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(external_ref_id, context_attributes, context_attributes.length, __functionAddress) != 0;
+        return invokePI(external_ref_id, context_attributes, context_attributes.length, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglCompositorSetWindowListEXT(EGLint external_ref_id, EGLint const * external_win_ids, EGLint num_entries)} */
@@ -166,7 +166,7 @@ public class EXTCompositor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(external_ref_id, external_win_ids, external_win_ids.length, __functionAddress) != 0;
+        return invokePI(external_ref_id, external_win_ids, external_win_ids.length, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglCompositorSetWindowAttributesEXT(EGLint external_win_id, EGLint const * window_attributes, EGLint num_entries)} */
@@ -176,7 +176,7 @@ public class EXTCompositor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(external_win_id, window_attributes, window_attributes.length, __functionAddress) != 0;
+        return invokePI(external_win_id, window_attributes, window_attributes.length, __functionAddress) != 0;
     }
 
 }

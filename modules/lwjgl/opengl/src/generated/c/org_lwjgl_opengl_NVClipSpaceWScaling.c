@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glViewportPositionWScaleNVPROC) (jint, jfloat, jfloat);
+typedef void (*glViewportPositionWScaleNVPROC) (jint, jfloat, jfloat);
 
 EXTERN_C_ENTER
 

@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glTessellationFactorAMDPROC) (jfloat);
-typedef void (APIENTRY *glTessellationModeAMDPROC) (jint);
+typedef void (*glTessellationFactorAMDPROC) (jfloat);
+typedef void (*glTessellationModeAMDPROC) (jint);
 
 EXTERN_C_ENTER
 

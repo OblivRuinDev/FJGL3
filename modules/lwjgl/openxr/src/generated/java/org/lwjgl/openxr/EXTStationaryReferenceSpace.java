@@ -45,7 +45,7 @@ public class EXTStationaryReferenceSpace {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), getInfo, generationIdResult, __functionAddress);
+        return invokePPPI(session.address(), getInfo, generationIdResult, __functionAddress);
     }
 
     /** {@code XrResult xrGetStationaryReferenceSpaceGenerationIdEXT(XrSession session, XrStationaryReferenceSpaceGenerationIdGetInfoEXT const * getInfo, XrStationaryReferenceSpaceGenerationIdResultEXT * generationIdResult)} */

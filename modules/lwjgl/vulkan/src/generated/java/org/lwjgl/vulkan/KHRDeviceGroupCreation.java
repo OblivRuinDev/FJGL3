@@ -49,7 +49,7 @@ public class KHRDeviceGroupCreation {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(instance.address(), pPhysicalDeviceGroupCount, pPhysicalDeviceGroupProperties, __functionAddress);
+        return invokePPPI(instance.address(), pPhysicalDeviceGroupCount, pPhysicalDeviceGroupProperties, __functionAddress);
     }
 
     /** {@code VkResult vkEnumeratePhysicalDeviceGroupsKHR(VkInstance instance, uint32_t * pPhysicalDeviceGroupCount, VkPhysicalDeviceGroupProperties * pPhysicalDeviceGroupProperties)} */
@@ -71,7 +71,7 @@ public class KHRDeviceGroupCreation {
             check(pPhysicalDeviceGroupCount, 1);
             checkSafe(pPhysicalDeviceGroupProperties, pPhysicalDeviceGroupCount[0]);
         }
-        return callPPPI(instance.address(), pPhysicalDeviceGroupCount, memAddressSafe(pPhysicalDeviceGroupProperties), __functionAddress);
+        return invokePPPI(instance.address(), pPhysicalDeviceGroupCount, memAddressSafe(pPhysicalDeviceGroupProperties), __functionAddress);
     }
 
 }

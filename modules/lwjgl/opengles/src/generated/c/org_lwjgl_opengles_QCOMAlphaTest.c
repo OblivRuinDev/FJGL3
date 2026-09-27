@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glAlphaFuncQCOMPROC) (jint, jfloat);
+typedef void (*glAlphaFuncQCOMPROC) (jint, jfloat);
 
 EXTERN_C_ENTER
 

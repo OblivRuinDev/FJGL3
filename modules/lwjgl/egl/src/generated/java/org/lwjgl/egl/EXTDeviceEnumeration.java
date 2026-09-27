@@ -39,7 +39,7 @@ public class EXTDeviceEnumeration {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(max_devices, devices, num_devices, __functionAddress);
+        return invokePPI(max_devices, devices, num_devices, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryDevicesEXT(EGLint max_devices, EGLDeviceEXT * devices, EGLint * num_devices)} */
@@ -59,7 +59,7 @@ public class EXTDeviceEnumeration {
             check(__functionAddress);
             check(num_devices, 1);
         }
-        return callPPI(remainingSafe(devices), memAddressSafe(devices), num_devices, __functionAddress) != 0;
+        return invokePPI(remainingSafe(devices), memAddressSafe(devices), num_devices, __functionAddress) != 0;
     }
 
 }

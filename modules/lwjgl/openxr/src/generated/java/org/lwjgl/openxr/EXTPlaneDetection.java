@@ -87,7 +87,7 @@ public class EXTPlaneDetection {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, planeDetector, __functionAddress);
+        return invokePPPI(session.address(), createInfo, planeDetector, __functionAddress);
     }
 
     /** {@code XrResult xrCreatePlaneDetectorEXT(XrSession session, XrPlaneDetectorCreateInfoEXT const * createInfo, XrPlaneDetectorEXT * planeDetector)} */
@@ -108,7 +108,7 @@ public class EXTPlaneDetection {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(planeDetector.address(), __functionAddress);
+        return invokePI(planeDetector.address(), __functionAddress);
     }
 
     // --- [ xrBeginPlaneDetectionEXT ] ---
@@ -120,7 +120,7 @@ public class EXTPlaneDetection {
             check(__functionAddress);
             XrPlaneDetectorBeginInfoEXT.validate(beginInfo);
         }
-        return callPPI(planeDetector.address(), beginInfo, __functionAddress);
+        return invokePPI(planeDetector.address(), beginInfo, __functionAddress);
     }
 
     /** {@code XrResult xrBeginPlaneDetectionEXT(XrPlaneDetectorEXT planeDetector, XrPlaneDetectorBeginInfoEXT const * beginInfo)} */
@@ -137,7 +137,7 @@ public class EXTPlaneDetection {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(planeDetector.address(), state, __functionAddress);
+        return invokePPI(planeDetector.address(), state, __functionAddress);
     }
 
     /** {@code XrResult xrGetPlaneDetectionStateEXT(XrPlaneDetectorEXT planeDetector, XrPlaneDetectionStateEXT * state)} */
@@ -158,7 +158,7 @@ public class EXTPlaneDetection {
             check(__functionAddress);
             XrPlaneDetectorGetInfoEXT.validate(info);
         }
-        return callPPPI(planeDetector.address(), info, locations, __functionAddress);
+        return invokePPPI(planeDetector.address(), info, locations, __functionAddress);
     }
 
     /** {@code XrResult xrGetPlaneDetectionsEXT(XrPlaneDetectorEXT planeDetector, XrPlaneDetectorGetInfoEXT const * info, XrPlaneDetectorLocationsEXT * locations)} */
@@ -175,7 +175,7 @@ public class EXTPlaneDetection {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(planeDetector.address(), planeId, polygonBufferIndex, polygonBuffer, __functionAddress);
+        return invokePJPI(planeDetector.address(), planeId, polygonBufferIndex, polygonBuffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetPlanePolygonBufferEXT(XrPlaneDetectorEXT planeDetector, uint64_t planeId, uint32_t polygonBufferIndex, XrPlaneDetectorPolygonBufferEXT * polygonBuffer)} */

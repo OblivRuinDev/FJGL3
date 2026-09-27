@@ -45,7 +45,7 @@ public class KHRDisplaySwapchain {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), swapchainCount, pCreateInfos, pAllocator, pSwapchains, __functionAddress);
+        return invokePPPPI(device.address(), swapchainCount, pCreateInfos, pAllocator, pSwapchains, __functionAddress);
     }
 
     /** {@code VkResult vkCreateSharedSwapchainsKHR(VkDevice device, uint32_t swapchainCount, VkSwapchainCreateInfoKHR const * pCreateInfos, VkAllocationCallbacks const * pAllocator, VkSwapchainKHR * pSwapchains)} */
@@ -65,7 +65,7 @@ public class KHRDisplaySwapchain {
             check(__functionAddress);
             check(pSwapchains, pCreateInfos.remaining());
         }
-        return callPPPPI(device.address(), pCreateInfos.remaining(), pCreateInfos.address(), memAddressSafe(pAllocator), pSwapchains, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfos.remaining(), pCreateInfos.address(), memAddressSafe(pAllocator), pSwapchains, __functionAddress);
     }
 
 }

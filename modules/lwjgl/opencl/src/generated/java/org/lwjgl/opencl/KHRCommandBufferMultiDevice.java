@@ -55,7 +55,7 @@ public class KHRCommandBufferMultiDevice {
             check(__functionAddress);
             check(command_buffer);
         }
-        return callPPPPPP(command_buffer, automatic, num_queues, queues, num_handles, handles, handles_ret, errcode_ret, __functionAddress);
+        return invokePPPPPP(command_buffer, automatic, num_queues, queues, num_handles, handles, handles_ret, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_command_buffer_khr clRemapCommandBufferKHR(cl_command_buffer_khr command_buffer, cl_bool automatic, cl_uint num_queues, cl_command_queue const * queues, cl_uint num_handles, cl_mutable_command_khr const * handles, cl_mutable_command_khr * handles_ret, cl_int * errcode_ret)} */
@@ -78,7 +78,7 @@ public class KHRCommandBufferMultiDevice {
             checkSafe(handles_ret, remainingSafe(handles));
             checkSafe(errcode_ret, 1);
         }
-        return callPPPPPP(command_buffer, automatic ? 1 : 0, queues.remaining(), memAddress(queues), remainingSafe(handles), memAddressSafe(handles), memAddressSafe(handles_ret), errcode_ret, __functionAddress);
+        return invokePPPPPP(command_buffer, automatic ? 1 : 0, queues.remaining(), memAddress(queues), remainingSafe(handles), memAddressSafe(handles), memAddressSafe(handles_ret), errcode_ret, __functionAddress);
     }
 
 }

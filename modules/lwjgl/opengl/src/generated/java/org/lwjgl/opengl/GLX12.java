@@ -33,7 +33,7 @@ public class GLX12 extends GLX11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
 }

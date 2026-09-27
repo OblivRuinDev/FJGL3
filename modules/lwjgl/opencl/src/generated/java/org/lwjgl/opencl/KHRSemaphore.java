@@ -65,7 +65,7 @@ public class KHRSemaphore {
             check(__functionAddress);
             check(context);
         }
-        return callPPPP(context, sema_props, errcode_ret, __functionAddress);
+        return invokePPPP(context, sema_props, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_semaphore_khr clCreateSemaphoreWithPropertiesKHR(cl_context context, cl_semaphore_properties_khr const * sema_props, cl_int * errcode_ret)} */
@@ -87,7 +87,7 @@ public class KHRSemaphore {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPPI(command_queue, num_sema_objects, sema_objects, sema_payload_list, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPI(command_queue, num_sema_objects, sema_objects, sema_payload_list, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWaitSemaphoresKHR(cl_command_queue command_queue, cl_uint num_sema_objects, cl_semaphore_khr const * sema_objects, cl_semaphore_payload_khr const * sema_payload_list, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -109,7 +109,7 @@ public class KHRSemaphore {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPPI(command_queue, num_sema_objects, sema_objects, sema_payload_list, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPI(command_queue, num_sema_objects, sema_objects, sema_payload_list, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueSignalSemaphoresKHR(cl_command_queue command_queue, cl_uint num_sema_objects, cl_semaphore_khr const * sema_objects, cl_semaphore_payload_khr const * sema_payload_list, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -131,7 +131,7 @@ public class KHRSemaphore {
             check(__functionAddress);
             check(sema_object);
         }
-        return callPPPPI(sema_object, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPI(sema_object, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetSemaphoreInfoKHR(cl_semaphore_khr sema_object, cl_semaphore_info_khr param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -171,7 +171,7 @@ public class KHRSemaphore {
             check(__functionAddress);
             check(sema_object);
         }
-        return callPI(sema_object, __functionAddress);
+        return invokePI(sema_object, __functionAddress);
     }
 
     // --- [ clRetainSemaphoreKHR ] ---
@@ -184,7 +184,7 @@ public class KHRSemaphore {
             check(__functionAddress);
             check(sema_object);
         }
-        return callPI(sema_object, __functionAddress);
+        return invokePI(sema_object, __functionAddress);
     }
 
     /** {@code cl_semaphore_khr clCreateSemaphoreWithPropertiesKHR(cl_context context, cl_semaphore_properties_khr const * sema_props, cl_int * errcode_ret)} */
@@ -197,7 +197,7 @@ public class KHRSemaphore {
             checkNT(sema_props);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPP(context, sema_props, errcode_ret, __functionAddress);
+        return invokePPPP(context, sema_props, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWaitSemaphoresKHR(cl_command_queue command_queue, cl_uint num_sema_objects, cl_semaphore_khr const * sema_objects, cl_semaphore_payload_khr const * sema_payload_list, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -210,7 +210,7 @@ public class KHRSemaphore {
             checkSafe(sema_payload_list, sema_objects.remaining());
             checkSafe(event, 1);
         }
-        return callPPPPPI(command_queue, sema_objects.remaining(), memAddress(sema_objects), sema_payload_list, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPI(command_queue, sema_objects.remaining(), memAddress(sema_objects), sema_payload_list, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clEnqueueSignalSemaphoresKHR(cl_command_queue command_queue, cl_uint num_sema_objects, cl_semaphore_khr const * sema_objects, cl_semaphore_payload_khr const * sema_payload_list, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -223,7 +223,7 @@ public class KHRSemaphore {
             checkSafe(sema_payload_list, sema_objects.remaining());
             checkSafe(event, 1);
         }
-        return callPPPPPI(command_queue, sema_objects.remaining(), memAddress(sema_objects), sema_payload_list, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
+        return invokePPPPPI(command_queue, sema_objects.remaining(), memAddress(sema_objects), sema_payload_list, remainingSafe(event_wait_list), memAddressSafe(event_wait_list), memAddressSafe(event), __functionAddress);
     }
 
     /** {@code cl_int clGetSemaphoreInfoKHR(cl_semaphore_khr sema_object, cl_semaphore_info_khr param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -235,7 +235,7 @@ public class KHRSemaphore {
             check(sema_object);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPI(sema_object, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPI(sema_object, param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
 }

@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBlendFuncIndexedAMDPROC) (jint, jint, jint);
-typedef void (APIENTRY *glBlendFuncSeparateIndexedAMDPROC) (jint, jint, jint, jint, jint);
-typedef void (APIENTRY *glBlendEquationIndexedAMDPROC) (jint, jint);
-typedef void (APIENTRY *glBlendEquationSeparateIndexedAMDPROC) (jint, jint, jint);
+typedef void (*glBlendFuncIndexedAMDPROC) (jint, jint, jint);
+typedef void (*glBlendFuncSeparateIndexedAMDPROC) (jint, jint, jint, jint, jint);
+typedef void (*glBlendEquationIndexedAMDPROC) (jint, jint);
+typedef void (*glBlendEquationSeparateIndexedAMDPROC) (jint, jint, jint);
 
 EXTERN_C_ENTER
 

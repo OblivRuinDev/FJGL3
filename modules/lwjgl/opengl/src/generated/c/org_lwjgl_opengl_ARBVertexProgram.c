@@ -14,25 +14,25 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glProgramStringARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glBindProgramARBPROC) (jint, jint);
-typedef void (APIENTRY *glDeleteProgramsARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGenProgramsARBPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glProgramEnvParameter4dARBPROC) (jint, jint, jdouble, jdouble, jdouble, jdouble);
-typedef void (APIENTRY *glProgramEnvParameter4dvARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramEnvParameter4fARBPROC) (jint, jint, jfloat, jfloat, jfloat, jfloat);
-typedef void (APIENTRY *glProgramEnvParameter4fvARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramLocalParameter4dARBPROC) (jint, jint, jdouble, jdouble, jdouble, jdouble);
-typedef void (APIENTRY *glProgramLocalParameter4dvARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramLocalParameter4fARBPROC) (jint, jint, jfloat, jfloat, jfloat, jfloat);
-typedef void (APIENTRY *glProgramLocalParameter4fvARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetProgramEnvParameterfvARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetProgramEnvParameterdvARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetProgramLocalParameterfvARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetProgramLocalParameterdvARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetProgramivARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetProgramStringARBPROC) (jint, jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsProgramARBPROC) (jint);
+typedef void (*glProgramStringARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glBindProgramARBPROC) (jint, jint);
+typedef void (*glDeleteProgramsARBPROC) (jint, uintptr_t);
+typedef void (*glGenProgramsARBPROC) (jint, uintptr_t);
+typedef void (*glProgramEnvParameter4dARBPROC) (jint, jint, jdouble, jdouble, jdouble, jdouble);
+typedef void (*glProgramEnvParameter4dvARBPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramEnvParameter4fARBPROC) (jint, jint, jfloat, jfloat, jfloat, jfloat);
+typedef void (*glProgramEnvParameter4fvARBPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramLocalParameter4dARBPROC) (jint, jint, jdouble, jdouble, jdouble, jdouble);
+typedef void (*glProgramLocalParameter4dvARBPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramLocalParameter4fARBPROC) (jint, jint, jfloat, jfloat, jfloat, jfloat);
+typedef void (*glProgramLocalParameter4fvARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetProgramEnvParameterfvARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetProgramEnvParameterdvARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetProgramLocalParameterfvARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetProgramLocalParameterdvARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetProgramivARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetProgramStringARBPROC) (jint, jint, uintptr_t);
+typedef jboolean (*glIsProgramARBPROC) (jint);
 
 EXTERN_C_ENTER
 

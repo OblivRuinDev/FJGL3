@@ -119,7 +119,7 @@ public class GL21C extends GL20C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix3x2fv(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -128,7 +128,7 @@ public class GL21C extends GL20C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 6, transpose, value, __functionAddress);
+        invokePV(location, value.length / 6, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix2x4fv(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -137,7 +137,7 @@ public class GL21C extends GL20C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix4x2fv(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -146,7 +146,7 @@ public class GL21C extends GL20C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length >> 3, transpose, value, __functionAddress);
+        invokePV(location, value.length >> 3, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix3x4fv(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -155,7 +155,7 @@ public class GL21C extends GL20C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(location, value.length / 12, transpose, value, __functionAddress);
     }
 
     /** {@code void glUniformMatrix4x3fv(GLint location, GLsizei count, GLboolean transpose, GLfloat const * value)} */
@@ -164,7 +164,7 @@ public class GL21C extends GL20C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(location, value.length / 12, transpose, value, __functionAddress);
+        invokePV(location, value.length / 12, transpose, value, __functionAddress);
     }
 
 }

@@ -104,7 +104,7 @@ public class KHRVideoQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pVideoProfile, pCapabilities, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pVideoProfile, pCapabilities, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceVideoCapabilitiesKHR(VkPhysicalDevice physicalDevice, VkVideoProfileInfoKHR const * pVideoProfile, VkVideoCapabilitiesKHR * pCapabilities)} */
@@ -121,7 +121,7 @@ public class KHRVideoQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(physicalDevice.address(), pVideoFormatInfo, pVideoFormatPropertyCount, pVideoFormatProperties, __functionAddress);
+        return invokePPPPI(physicalDevice.address(), pVideoFormatInfo, pVideoFormatPropertyCount, pVideoFormatProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceVideoFormatPropertiesKHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceVideoFormatInfoKHR const * pVideoFormatInfo, uint32_t * pVideoFormatPropertyCount, VkVideoFormatPropertiesKHR * pVideoFormatProperties)} */
@@ -143,7 +143,7 @@ public class KHRVideoQueue {
             check(__functionAddress);
             VkVideoSessionCreateInfoKHR.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pVideoSession, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pVideoSession, __functionAddress);
     }
 
     /** {@code VkResult vkCreateVideoSessionKHR(VkDevice device, VkVideoSessionCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkVideoSessionKHR * pVideoSession)} */
@@ -163,7 +163,7 @@ public class KHRVideoQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), videoSession, pAllocator, __functionAddress);
+        invokePJPV(device.address(), videoSession, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyVideoSessionKHR(VkDevice device, VkVideoSessionKHR videoSession, VkAllocationCallbacks const * pAllocator)} */
@@ -179,7 +179,7 @@ public class KHRVideoQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), videoSession, pMemoryRequirementsCount, pMemoryRequirements, __functionAddress);
+        return invokePJPPI(device.address(), videoSession, pMemoryRequirementsCount, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code VkResult vkGetVideoSessionMemoryRequirementsKHR(VkDevice device, VkVideoSessionKHR videoSession, uint32_t * pMemoryRequirementsCount, VkVideoSessionMemoryRequirementsKHR * pMemoryRequirements)} */
@@ -200,7 +200,7 @@ public class KHRVideoQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), videoSession, bindSessionMemoryInfoCount, pBindSessionMemoryInfos, __functionAddress);
+        return invokePJPI(device.address(), videoSession, bindSessionMemoryInfoCount, pBindSessionMemoryInfos, __functionAddress);
     }
 
     /** {@code VkResult vkBindVideoSessionMemoryKHR(VkDevice device, VkVideoSessionKHR videoSession, uint32_t bindSessionMemoryInfoCount, VkBindVideoSessionMemoryInfoKHR const * pBindSessionMemoryInfos)} */
@@ -217,7 +217,7 @@ public class KHRVideoQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pVideoSessionParameters, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pVideoSessionParameters, __functionAddress);
     }
 
     /** {@code VkResult vkCreateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkVideoSessionParametersKHR * pVideoSessionParameters)} */
@@ -237,7 +237,7 @@ public class KHRVideoQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), videoSessionParameters, pUpdateInfo, __functionAddress);
+        return invokePJPI(device.address(), videoSessionParameters, pUpdateInfo, __functionAddress);
     }
 
     /** {@code VkResult vkUpdateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersKHR videoSessionParameters, VkVideoSessionParametersUpdateInfoKHR const * pUpdateInfo)} */
@@ -254,7 +254,7 @@ public class KHRVideoQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), videoSessionParameters, pAllocator, __functionAddress);
+        invokePJPV(device.address(), videoSessionParameters, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersKHR videoSessionParameters, VkAllocationCallbacks const * pAllocator)} */
@@ -271,7 +271,7 @@ public class KHRVideoQueue {
             check(__functionAddress);
             VkVideoBeginCodingInfoKHR.validate(pBeginInfo);
         }
-        callPPV(commandBuffer.address(), pBeginInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pBeginInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBeginVideoCodingKHR(VkCommandBuffer commandBuffer, VkVideoBeginCodingInfoKHR const * pBeginInfo)} */
@@ -287,7 +287,7 @@ public class KHRVideoQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pEndCodingInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pEndCodingInfo, __functionAddress);
     }
 
     /** {@code void vkCmdEndVideoCodingKHR(VkCommandBuffer commandBuffer, VkVideoEndCodingInfoKHR const * pEndCodingInfo)} */
@@ -303,7 +303,7 @@ public class KHRVideoQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pCodingControlInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pCodingControlInfo, __functionAddress);
     }
 
     /** {@code void vkCmdControlVideoCodingKHR(VkCommandBuffer commandBuffer, VkVideoCodingControlInfoKHR const * pCodingControlInfo)} */
@@ -320,7 +320,7 @@ public class KHRVideoQueue {
             check(pVideoFormatPropertyCount, 1);
             checkSafe(pVideoFormatProperties, pVideoFormatPropertyCount[0]);
         }
-        return callPPPPI(physicalDevice.address(), pVideoFormatInfo.address(), pVideoFormatPropertyCount, memAddressSafe(pVideoFormatProperties), __functionAddress);
+        return invokePPPPI(physicalDevice.address(), pVideoFormatInfo.address(), pVideoFormatPropertyCount, memAddressSafe(pVideoFormatProperties), __functionAddress);
     }
 
     /** {@code VkResult vkCreateVideoSessionKHR(VkDevice device, VkVideoSessionCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkVideoSessionKHR * pVideoSession)} */
@@ -332,7 +332,7 @@ public class KHRVideoQueue {
             check(pVideoSession, 1);
             VkVideoSessionCreateInfoKHR.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pVideoSession, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pVideoSession, __functionAddress);
     }
 
     /** {@code VkResult vkGetVideoSessionMemoryRequirementsKHR(VkDevice device, VkVideoSessionKHR videoSession, uint32_t * pMemoryRequirementsCount, VkVideoSessionMemoryRequirementsKHR * pMemoryRequirements)} */
@@ -344,7 +344,7 @@ public class KHRVideoQueue {
             check(pMemoryRequirementsCount, 1);
             checkSafe(pMemoryRequirements, pMemoryRequirementsCount[0]);
         }
-        return callPJPPI(device.address(), videoSession, pMemoryRequirementsCount, memAddressSafe(pMemoryRequirements), __functionAddress);
+        return invokePJPPI(device.address(), videoSession, pMemoryRequirementsCount, memAddressSafe(pMemoryRequirements), __functionAddress);
     }
 
     /** {@code VkResult vkCreateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersCreateInfoKHR const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkVideoSessionParametersKHR * pVideoSessionParameters)} */
@@ -355,7 +355,7 @@ public class KHRVideoQueue {
             check(__functionAddress);
             check(pVideoSessionParameters, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pVideoSessionParameters, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pVideoSessionParameters, __functionAddress);
     }
 
 }

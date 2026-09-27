@@ -48,7 +48,7 @@ public class AMDBusAddressableMemory {
             check(command_queue);
             check(mem_object);
         }
-        return callPPPPI(command_queue, mem_object, value, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPI(command_queue, mem_object, value, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWaitSignalAMD(cl_command_queue command_queue, cl_mem mem_object, cl_uint value, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -70,7 +70,7 @@ public class AMDBusAddressableMemory {
             check(command_queue);
             check(mem_object);
         }
-        return callPPJPPI(command_queue, mem_object, value, offset, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPJPPI(command_queue, mem_object, value, offset, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueWriteSignalAMD(cl_command_queue command_queue, cl_mem mem_object, cl_uint value, cl_ulong offset, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */
@@ -91,7 +91,7 @@ public class AMDBusAddressableMemory {
             check(__functionAddress);
             check(command_queue);
         }
-        return callPPPPPI(command_queue, num_mem_objs, mem_objects, blocking_make_resident, bus_addresses, num_events_in_wait_list, event_wait_list, event, __functionAddress);
+        return invokePPPPPI(command_queue, num_mem_objs, mem_objects, blocking_make_resident, bus_addresses, num_events_in_wait_list, event_wait_list, event, __functionAddress);
     }
 
     /** {@code cl_int clEnqueueMakeBuffersResidentAMD(cl_command_queue command_queue, cl_uint num_mem_objs, cl_mem const * mem_objects, cl_bool blocking_make_resident, cl_bus_address_amd * bus_addresses, cl_uint num_events_in_wait_list, cl_event const * event_wait_list, cl_event * event)} */

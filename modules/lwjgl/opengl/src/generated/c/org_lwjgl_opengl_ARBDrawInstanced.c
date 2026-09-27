@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glDrawArraysInstancedARBPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glDrawElementsInstancedARBPROC) (jint, jint, jint, uintptr_t, jint);
+typedef void (*glDrawArraysInstancedARBPROC) (jint, jint, jint, jint);
+typedef void (*glDrawElementsInstancedARBPROC) (jint, jint, jint, uintptr_t, jint);
 
 EXTERN_C_ENTER
 

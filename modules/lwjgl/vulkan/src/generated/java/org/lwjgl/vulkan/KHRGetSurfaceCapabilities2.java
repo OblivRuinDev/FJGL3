@@ -46,7 +46,7 @@ public class KHRGetSurfaceCapabilities2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(physicalDevice.address(), pSurfaceInfo, pSurfaceCapabilities, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pSurfaceInfo, pSurfaceCapabilities, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceSurfaceCapabilities2KHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceSurfaceInfo2KHR const * pSurfaceInfo, VkSurfaceCapabilities2KHR * pSurfaceCapabilities)} */
@@ -63,7 +63,7 @@ public class KHRGetSurfaceCapabilities2 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(physicalDevice.address(), pSurfaceInfo, pSurfaceFormatCount, pSurfaceFormats, __functionAddress);
+        return invokePPPPI(physicalDevice.address(), pSurfaceInfo, pSurfaceFormatCount, pSurfaceFormats, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceSurfaceFormats2KHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceSurfaceInfo2KHR const * pSurfaceInfo, uint32_t * pSurfaceFormatCount, VkSurfaceFormat2KHR * pSurfaceFormats)} */
@@ -85,7 +85,7 @@ public class KHRGetSurfaceCapabilities2 {
             check(pSurfaceFormatCount, 1);
             checkSafe(pSurfaceFormats, pSurfaceFormatCount[0]);
         }
-        return callPPPPI(physicalDevice.address(), pSurfaceInfo.address(), pSurfaceFormatCount, memAddressSafe(pSurfaceFormats), __functionAddress);
+        return invokePPPPI(physicalDevice.address(), pSurfaceInfo.address(), pSurfaceFormatCount, memAddressSafe(pSurfaceFormats), __functionAddress);
     }
 
 }

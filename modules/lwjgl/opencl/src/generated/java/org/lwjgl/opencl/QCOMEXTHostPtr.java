@@ -56,7 +56,7 @@ public class QCOMEXTHostPtr {
             check(__functionAddress);
             check(device);
         }
-        return callPPPPPPPI(device, image_width, image_height, image_format, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
+        return invokePPPPPPPI(device, image_width, image_height, image_format, param_name, param_value_size, param_value, param_value_size_ret, __functionAddress);
     }
 
     /** {@code cl_int clGetDeviceImageInfoQCOM(cl_device_id device, size_t image_width, size_t image_height, cl_image_format const * image_format, cl_image_pitch_info_qcom param_name, size_t param_value_size, void * param_value, size_t * param_value_size_ret)} */
@@ -86,7 +86,7 @@ public class QCOMEXTHostPtr {
             check(device);
             checkSafe(param_value_size_ret, 1);
         }
-        return callPPPPPPPI(device, image_width, image_height, image_format.address(), param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
+        return invokePPPPPPPI(device, image_width, image_height, image_format.address(), param_name, Integer.toUnsignedLong(lengthSafe(param_value)) << 2, param_value, memAddressSafe(param_value_size_ret), __functionAddress);
     }
 
 }

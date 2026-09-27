@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glExtGetShadersQCOMPROC) (uintptr_t, jint, uintptr_t);
-typedef void (APIENTRY *glExtGetProgramsQCOMPROC) (uintptr_t, jint, uintptr_t);
-typedef jboolean (APIENTRY *glExtIsProgramBinaryQCOMPROC) (jint);
-typedef void (APIENTRY *glExtGetProgramBinarySourceQCOMPROC) (jint, jint, uintptr_t, uintptr_t);
+typedef void (*glExtGetShadersQCOMPROC) (uintptr_t, jint, uintptr_t);
+typedef void (*glExtGetProgramsQCOMPROC) (uintptr_t, jint, uintptr_t);
+typedef jboolean (*glExtIsProgramBinaryQCOMPROC) (jint);
+typedef void (*glExtGetProgramBinarySourceQCOMPROC) (jint, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

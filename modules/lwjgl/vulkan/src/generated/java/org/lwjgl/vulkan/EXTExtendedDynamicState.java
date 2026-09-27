@@ -57,7 +57,7 @@ public class EXTExtendedDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), cullMode, __functionAddress);
+        invokePV(commandBuffer.address(), cullMode, __functionAddress);
     }
 
     // --- [ vkCmdSetFrontFaceEXT ] ---
@@ -68,7 +68,7 @@ public class EXTExtendedDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), frontFace, __functionAddress);
+        invokePV(commandBuffer.address(), frontFace, __functionAddress);
     }
 
     // --- [ vkCmdSetPrimitiveTopologyEXT ] ---
@@ -79,7 +79,7 @@ public class EXTExtendedDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), primitiveTopology, __functionAddress);
+        invokePV(commandBuffer.address(), primitiveTopology, __functionAddress);
     }
 
     // --- [ vkCmdSetViewportWithCountEXT ] ---
@@ -90,7 +90,7 @@ public class EXTExtendedDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), viewportCount, pViewports, __functionAddress);
+        invokePPV(commandBuffer.address(), viewportCount, pViewports, __functionAddress);
     }
 
     /** {@code void vkCmdSetViewportWithCountEXT(VkCommandBuffer commandBuffer, uint32_t viewportCount, VkViewport const * pViewports)} */
@@ -106,7 +106,7 @@ public class EXTExtendedDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), scissorCount, pScissors, __functionAddress);
+        invokePPV(commandBuffer.address(), scissorCount, pScissors, __functionAddress);
     }
 
     /** {@code void vkCmdSetScissorWithCountEXT(VkCommandBuffer commandBuffer, uint32_t scissorCount, VkRect2D const * pScissors)} */
@@ -122,7 +122,7 @@ public class EXTExtendedDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPPPV(commandBuffer.address(), firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides, __functionAddress);
+        invokePPPPPV(commandBuffer.address(), firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides, __functionAddress);
     }
 
     /** {@code void vkCmdBindVertexBuffers2EXT(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, VkBuffer const * pBuffers, VkDeviceSize const * pOffsets, VkDeviceSize const * pSizes, VkDeviceSize const * pStrides)} */
@@ -143,7 +143,7 @@ public class EXTExtendedDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthTestEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), depthTestEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthWriteEnableEXT ] ---
@@ -154,7 +154,7 @@ public class EXTExtendedDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthWriteEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), depthWriteEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthCompareOpEXT ] ---
@@ -165,7 +165,7 @@ public class EXTExtendedDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthCompareOp, __functionAddress);
+        invokePV(commandBuffer.address(), depthCompareOp, __functionAddress);
     }
 
     // --- [ vkCmdSetDepthBoundsTestEnableEXT ] ---
@@ -176,7 +176,7 @@ public class EXTExtendedDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), depthBoundsTestEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), depthBoundsTestEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetStencilTestEnableEXT ] ---
@@ -187,7 +187,7 @@ public class EXTExtendedDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), stencilTestEnable ? 1 : 0, __functionAddress);
+        invokePV(commandBuffer.address(), stencilTestEnable ? 1 : 0, __functionAddress);
     }
 
     // --- [ vkCmdSetStencilOpEXT ] ---
@@ -198,7 +198,7 @@ public class EXTExtendedDynamicState {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(commandBuffer.address(), faceMask, failOp, passOp, depthFailOp, compareOp, __functionAddress);
+        invokePV(commandBuffer.address(), faceMask, failOp, passOp, depthFailOp, compareOp, __functionAddress);
     }
 
     /** {@code void vkCmdBindVertexBuffers2EXT(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, VkBuffer const * pBuffers, VkDeviceSize const * pOffsets, VkDeviceSize const * pSizes, VkDeviceSize const * pStrides)} */
@@ -210,7 +210,7 @@ public class EXTExtendedDynamicState {
             checkSafe(pSizes, pBuffers.length);
             checkSafe(pStrides, pBuffers.length);
         }
-        callPPPPPV(commandBuffer.address(), firstBinding, pBuffers.length, pBuffers, pOffsets, pSizes, pStrides, __functionAddress);
+        invokePPPPPV(commandBuffer.address(), firstBinding, pBuffers.length, pBuffers, pOffsets, pSizes, pStrides, __functionAddress);
     }
 
 }

@@ -251,7 +251,7 @@ public class INTELPerformanceQuery {
             check(__functionAddress);
             check(queryHandle, 1);
         }
-        callPV(queryId, queryHandle, __functionAddress);
+        invokePV(queryId, queryHandle, __functionAddress);
     }
 
     /** {@code void glGetFirstPerfQueryIdINTEL(GLuint * queryId)} */
@@ -261,7 +261,7 @@ public class INTELPerformanceQuery {
             check(__functionAddress);
             check(queryId, 1);
         }
-        callPV(queryId, __functionAddress);
+        invokePV(queryId, __functionAddress);
     }
 
     /** {@code void glGetNextPerfQueryIdINTEL(GLuint queryId, GLuint * nextQueryId)} */
@@ -271,7 +271,7 @@ public class INTELPerformanceQuery {
             check(__functionAddress);
             check(nextQueryId, 1);
         }
-        callPV(queryId, nextQueryId, __functionAddress);
+        invokePV(queryId, nextQueryId, __functionAddress);
     }
 
     /** {@code void glGetPerfCounterInfoINTEL(GLuint queryId, GLuint counterId, GLuint counterNameLength, GLchar * counterName, GLuint counterDescLength, GLchar * counterDesc, GLuint * counterOffset, GLuint * counterDataSize, GLuint * counterTypeEnum, GLuint * counterDataTypeEnum, GLuint64 * rawCounterMaxValue)} */
@@ -285,7 +285,7 @@ public class INTELPerformanceQuery {
             check(counterDataTypeEnum, 1);
             check(rawCounterMaxValue, 1);
         }
-        callPPPPPPPV(queryId, counterId, counterName.remaining(), memAddress(counterName), counterDesc.remaining(), memAddress(counterDesc), counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue, __functionAddress);
+        invokePPPPPPPV(queryId, counterId, counterName.remaining(), memAddress(counterName), counterDesc.remaining(), memAddress(counterDesc), counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue, __functionAddress);
     }
 
     /** {@code void glGetPerfQueryDataINTEL(GLuint queryHandle, GLuint flags, GLsizei dataSize, void * data, GLuint * bytesWritten)} */
@@ -295,7 +295,7 @@ public class INTELPerformanceQuery {
             check(__functionAddress);
             check(bytesWritten, 1);
         }
-        callPPV(queryHandle, flags, data.remaining(), memAddress(data), bytesWritten, __functionAddress);
+        invokePPV(queryHandle, flags, data.remaining(), memAddress(data), bytesWritten, __functionAddress);
     }
 
     /** {@code void glGetPerfQueryIdByNameINTEL(GLchar * queryName, GLuint * queryId)} */
@@ -306,7 +306,7 @@ public class INTELPerformanceQuery {
             checkNT1(queryName);
             check(queryId, 1);
         }
-        callPPV(memAddress(queryName), queryId, __functionAddress);
+        invokePPV(memAddress(queryName), queryId, __functionAddress);
     }
 
     /** {@code void glGetPerfQueryIdByNameINTEL(GLchar * queryName, GLuint * queryId)} */
@@ -320,7 +320,7 @@ public class INTELPerformanceQuery {
         try {
             stack.nASCII(queryName, true);
             long queryNameEncoded = stack.getPointerAddress();
-            callPPV(queryNameEncoded, queryId, __functionAddress);
+            invokePPV(queryNameEncoded, queryId, __functionAddress);
         } finally {
             stack.setPointer(stackPointer);
         }
@@ -336,7 +336,7 @@ public class INTELPerformanceQuery {
             check(noInstances, 1);
             check(capsMask, 1);
         }
-        callPPPPPV(queryId, queryName.remaining(), memAddress(queryName), dataSize, noCounters, noInstances, capsMask, __functionAddress);
+        invokePPPPPV(queryId, queryName.remaining(), memAddress(queryName), dataSize, noCounters, noInstances, capsMask, __functionAddress);
     }
 
 }

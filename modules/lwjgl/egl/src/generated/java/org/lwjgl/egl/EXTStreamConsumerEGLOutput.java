@@ -36,7 +36,7 @@ public class EXTStreamConsumerEGLOutput {
             check(stream);
             check(layer);
         }
-        return callPPPI(dpy, stream, layer, __functionAddress) != 0;
+        return invokePPPI(dpy, stream, layer, __functionAddress) != 0;
     }
 
 }

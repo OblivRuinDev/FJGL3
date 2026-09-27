@@ -42,7 +42,7 @@ public class MLSystemNotifications {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(instance.address(), info, __functionAddress);
+        return invokePPI(instance.address(), info, __functionAddress);
     }
 
     /** {@code XrResult xrSetSystemNotificationsML(XrInstance instance, XrSystemNotificationsSetInfoML const * info)} */

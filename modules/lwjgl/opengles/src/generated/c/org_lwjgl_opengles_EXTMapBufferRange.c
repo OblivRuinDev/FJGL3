@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef uintptr_t (APIENTRY *glMapBufferRangeEXTPROC) (jint, uintptr_t, uintptr_t, jint);
-typedef void (APIENTRY *glFlushMappedBufferRangeEXTPROC) (jint, uintptr_t, uintptr_t);
+typedef uintptr_t (*glMapBufferRangeEXTPROC) (jint, uintptr_t, uintptr_t, jint);
+typedef void (*glFlushMappedBufferRangeEXTPROC) (jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

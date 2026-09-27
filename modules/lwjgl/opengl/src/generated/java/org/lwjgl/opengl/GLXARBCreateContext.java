@@ -48,7 +48,7 @@ public class GLXARBCreateContext {
             check(display);
             check(config);
         }
-        return callPPPPP(display, config, share_context, direct, attrib_list, __functionAddress);
+        return invokePPPPP(display, config, share_context, direct, attrib_list, __functionAddress);
     }
 
     /** {@code GLXContext glXCreateContextAttribsARB(Display * display, GLXFBConfig config, GLXContext share_context, Bool direct, int const * attrib_list)} */
@@ -70,7 +70,7 @@ public class GLXARBCreateContext {
             check(config);
             checkNTSafe(attrib_list);
         }
-        return callPPPPP(display, config, share_context, direct ? 1 : 0, attrib_list, __functionAddress);
+        return invokePPPPP(display, config, share_context, direct ? 1 : 0, attrib_list, __functionAddress);
     }
 
 }

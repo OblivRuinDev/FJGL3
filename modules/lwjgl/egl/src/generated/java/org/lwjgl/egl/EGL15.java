@@ -85,7 +85,7 @@ public class EGL15 extends EGL14 {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPP(dpy, type, attrib_list, __functionAddress);
+        return invokePPP(dpy, type, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSync eglCreateSync(EGLDisplay dpy, EGLenum type, EGLAttrib const * attrib_list)} */
@@ -108,7 +108,7 @@ public class EGL15 extends EGL14 {
             check(dpy);
             check(sync);
         }
-        return callPPI(dpy, sync, __functionAddress) != 0;
+        return invokePPI(dpy, sync, __functionAddress) != 0;
     }
 
     // --- [ eglClientWaitSync ] ---
@@ -122,7 +122,7 @@ public class EGL15 extends EGL14 {
             check(dpy);
             check(sync);
         }
-        return callPPJI(dpy, sync, flags, timeout, __functionAddress);
+        return invokePPJI(dpy, sync, flags, timeout, __functionAddress);
     }
 
     // --- [ eglGetSyncAttrib ] ---
@@ -135,7 +135,7 @@ public class EGL15 extends EGL14 {
             check(dpy);
             check(sync);
         }
-        return callPPPI(dpy, sync, attribute, value, __functionAddress);
+        return invokePPPI(dpy, sync, attribute, value, __functionAddress);
     }
 
     /** {@code EGLBoolean eglGetSyncAttrib(EGLDisplay dpy, EGLSync sync, EGLint attribute, EGLAttrib const * value)} */
@@ -158,7 +158,7 @@ public class EGL15 extends EGL14 {
             check(ctx);
             check(buffer);
         }
-        return callPPPPP(dpy, ctx, target, buffer, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, ctx, target, buffer, attrib_list, __functionAddress);
     }
 
     /** {@code EGLImage eglCreateImage(EGLDisplay dpy, EGLContext ctx, EGLenum target, EGLClientBuffer buffer, EGLAttrib const * attrib_list)} */
@@ -181,7 +181,7 @@ public class EGL15 extends EGL14 {
             check(dpy);
             check(image);
         }
-        return callPPI(dpy, image, __functionAddress) != 0;
+        return invokePPI(dpy, image, __functionAddress) != 0;
     }
 
     // --- [ eglGetPlatformDisplay ] ---
@@ -193,7 +193,7 @@ public class EGL15 extends EGL14 {
             check(__functionAddress);
             check(native_display);
         }
-        return callPPP(platform, native_display, attrib_list, __functionAddress);
+        return invokePPP(platform, native_display, attrib_list, __functionAddress);
     }
 
     /** {@code EGLDisplay eglGetPlatformDisplay(EGLenum platform, void * native_display, EGLAttrib const * attrib_list)} */
@@ -216,7 +216,7 @@ public class EGL15 extends EGL14 {
             check(config);
             check(native_window);
         }
-        return callPPPPP(dpy, config, native_window, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, native_window, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreatePlatformWindowSurface(EGLDisplay dpy, EGLConfig config, void * native_window, EGLAttrib const * attrib_list)} */
@@ -239,7 +239,7 @@ public class EGL15 extends EGL14 {
             check(config);
             check(native_pixmap);
         }
-        return callPPPPP(dpy, config, native_pixmap, attrib_list, __functionAddress);
+        return invokePPPPP(dpy, config, native_pixmap, attrib_list, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreatePlatformPixmapSurface(EGLDisplay dpy, EGLConfig config, void * native_pixmap, EGLAttrib const * attrib_list)} */
@@ -262,7 +262,7 @@ public class EGL15 extends EGL14 {
             check(dpy);
             check(sync);
         }
-        return callPPI(dpy, sync, flags, __functionAddress) != 0;
+        return invokePPI(dpy, sync, flags, __functionAddress) != 0;
     }
 
 }

@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBlendColorEXTPROC) (jfloat, jfloat, jfloat, jfloat);
+typedef void (*glBlendColorEXTPROC) (jfloat, jfloat, jfloat, jfloat);
 
 EXTERN_C_ENTER
 

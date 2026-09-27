@@ -134,7 +134,7 @@ public class KHRVideoEncodeQueue {
             check(__functionAddress);
             VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR.validate(pQualityLevelInfo);
         }
-        return callPPPI(physicalDevice.address(), pQualityLevelInfo, pQualityLevelProperties, __functionAddress);
+        return invokePPPI(physicalDevice.address(), pQualityLevelInfo, pQualityLevelProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR const * pQualityLevelInfo, VkVideoEncodeQualityLevelPropertiesKHR * pQualityLevelProperties)} */
@@ -151,7 +151,7 @@ public class KHRVideoEncodeQueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPPI(device.address(), pVideoSessionParametersInfo, pFeedbackInfo, pDataSize, pData, __functionAddress);
+        return invokePPPPPI(device.address(), pVideoSessionParametersInfo, pFeedbackInfo, pDataSize, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, VkVideoEncodeSessionParametersGetInfoKHR const * pVideoSessionParametersInfo, VkVideoEncodeSessionParametersFeedbackInfoKHR * pFeedbackInfo, size_t * pDataSize, void * pData)} */
@@ -173,7 +173,7 @@ public class KHRVideoEncodeQueue {
             check(__functionAddress);
             VkVideoEncodeInfoKHR.validate(pEncodeInfo);
         }
-        callPPV(commandBuffer.address(), pEncodeInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pEncodeInfo, __functionAddress);
     }
 
     /** {@code void vkCmdEncodeVideoKHR(VkCommandBuffer commandBuffer, VkVideoEncodeInfoKHR const * pEncodeInfo)} */

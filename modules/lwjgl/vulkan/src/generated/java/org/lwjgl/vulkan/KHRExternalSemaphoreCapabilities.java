@@ -54,7 +54,7 @@ public class KHRExternalSemaphoreCapabilities {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(physicalDevice.address(), pExternalSemaphoreInfo, pExternalSemaphoreProperties, __functionAddress);
+        invokePPPV(physicalDevice.address(), pExternalSemaphoreInfo, pExternalSemaphoreProperties, __functionAddress);
     }
 
     /** {@code void vkGetPhysicalDeviceExternalSemaphorePropertiesKHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceExternalSemaphoreInfo const * pExternalSemaphoreInfo, VkExternalSemaphoreProperties * pExternalSemaphoreProperties)} */

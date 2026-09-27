@@ -77,7 +77,7 @@ public class NVShadingRateImage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(commandBuffer.address(), imageView, imageLayout, __functionAddress);
+        invokePJV(commandBuffer.address(), imageView, imageLayout, __functionAddress);
     }
 
     // --- [ vkCmdSetViewportShadingRatePaletteNV ] ---
@@ -89,7 +89,7 @@ public class NVShadingRateImage {
             check(__functionAddress);
             Struct.validate(pShadingRatePalettes, viewportCount, VkShadingRatePaletteNV.SIZEOF, VkShadingRatePaletteNV::validate);
         }
-        callPPV(commandBuffer.address(), firstViewport, viewportCount, pShadingRatePalettes, __functionAddress);
+        invokePPV(commandBuffer.address(), firstViewport, viewportCount, pShadingRatePalettes, __functionAddress);
     }
 
     /** {@code void vkCmdSetViewportShadingRatePaletteNV(VkCommandBuffer commandBuffer, uint32_t firstViewport, uint32_t viewportCount, VkShadingRatePaletteNV const * pShadingRatePalettes)} */
@@ -106,7 +106,7 @@ public class NVShadingRateImage {
             check(__functionAddress);
             if (pCustomSampleOrders != NULL) { Struct.validate(pCustomSampleOrders, customSampleOrderCount, VkCoarseSampleOrderCustomNV.SIZEOF, VkCoarseSampleOrderCustomNV::validate); }
         }
-        callPPV(commandBuffer.address(), sampleOrderType, customSampleOrderCount, pCustomSampleOrders, __functionAddress);
+        invokePPV(commandBuffer.address(), sampleOrderType, customSampleOrderCount, pCustomSampleOrders, __functionAddress);
     }
 
     /** {@code void vkCmdSetCoarseSampleOrderNV(VkCommandBuffer commandBuffer, VkCoarseSampleOrderTypeNV sampleOrderType, uint32_t customSampleOrderCount, VkCoarseSampleOrderCustomNV const * pCustomSampleOrders)} */

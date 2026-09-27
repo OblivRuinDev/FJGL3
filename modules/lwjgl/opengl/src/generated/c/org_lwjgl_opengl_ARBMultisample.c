@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glSampleCoverageARBPROC) (jfloat, jboolean);
+typedef void (*glSampleCoverageARBPROC) (jfloat, jboolean);
 
 EXTERN_C_ENTER
 

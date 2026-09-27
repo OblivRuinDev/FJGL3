@@ -49,7 +49,7 @@ public class METASpatialEntityDiscovery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), info, requestId, __functionAddress);
+        return invokePPPI(session.address(), info, requestId, __functionAddress);
     }
 
     /** {@code XrResult xrDiscoverSpacesMETA(XrSession session, XrSpaceDiscoveryInfoMETA const * info, XrAsyncRequestIdFB * requestId)} */
@@ -69,7 +69,7 @@ public class METASpatialEntityDiscovery {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(session.address(), requestId, results, __functionAddress);
+        return invokePJPI(session.address(), requestId, results, __functionAddress);
     }
 
     /** {@code XrResult xrRetrieveSpaceDiscoveryResultsMETA(XrSession session, XrAsyncRequestIdFB requestId, XrSpaceDiscoveryResultsMETA * results)} */

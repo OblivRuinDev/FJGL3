@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glBufferStorageEXTPROC) (jint, uintptr_t, uintptr_t, jint);
+typedef void (*glBufferStorageEXTPROC) (jint, uintptr_t, uintptr_t, jint);
 
 EXTERN_C_ENTER
 

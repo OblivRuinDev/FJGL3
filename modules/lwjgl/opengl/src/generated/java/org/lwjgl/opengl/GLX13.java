@@ -101,7 +101,7 @@ public class GLX13 extends GLX12 {
             check(__functionAddress);
             check(display);
         }
-        return callPPP(display, screen, nelements, __functionAddress);
+        return invokePPP(display, screen, nelements, __functionAddress);
     }
 
     /** {@code GLXFBConfig * glXGetFBConfigs(Display * display, int screen, int * nelements)} */
@@ -126,7 +126,7 @@ public class GLX13 extends GLX12 {
             check(__functionAddress);
             check(display);
         }
-        return callPPPP(display, screen, attrib_list, nelements, __functionAddress);
+        return invokePPPP(display, screen, attrib_list, nelements, __functionAddress);
     }
 
     /** {@code GLXFBConfig * glXChooseFBConfig(Display * display, int screen, int const * attrib_list, int * nelements)} */
@@ -155,7 +155,7 @@ public class GLX13 extends GLX12 {
             check(display);
             check(config);
         }
-        return callPPPI(display, config, attribute, value, __functionAddress);
+        return invokePPPI(display, config, attribute, value, __functionAddress);
     }
 
     /** {@code int glXGetFBConfigAttrib(Display * display, GLXFBConfig config, int attribute, int * value)} */
@@ -176,7 +176,7 @@ public class GLX13 extends GLX12 {
             check(display);
             check(config);
         }
-        return callPPP(display, config, __functionAddress);
+        return invokePPP(display, config, __functionAddress);
     }
 
     /** {@code XVisualInfo * glXGetVisualFromFBConfig(Display * display, GLXFBConfig config)} */
@@ -196,7 +196,7 @@ public class GLX13 extends GLX12 {
             check(display);
             check(config);
         }
-        return callPPNPP(display, config, win, attrib_list, __functionAddress);
+        return invokePPNPP(display, config, win, attrib_list, __functionAddress);
     }
 
     /** {@code GLXWindow glXCreateWindow(Display * display, GLXFBConfig config, Window win, int const * attrib_list)} */
@@ -218,7 +218,7 @@ public class GLX13 extends GLX12 {
             check(display);
             check(config);
         }
-        return callPPNPP(display, config, pixmap, attrib_list, __functionAddress);
+        return invokePPNPP(display, config, pixmap, attrib_list, __functionAddress);
     }
 
     /** {@code GLXPixmap glXCreatePixmap(Display * display, GLXFBConfig config, Pixmap pixmap, int const * attrib_list)} */
@@ -240,7 +240,7 @@ public class GLX13 extends GLX12 {
             check(display);
             check(pixmap);
         }
-        callPPV(display, pixmap, __functionAddress);
+        invokePPV(display, pixmap, __functionAddress);
     }
 
     // --- [ glXCreatePbuffer ] ---
@@ -253,7 +253,7 @@ public class GLX13 extends GLX12 {
             check(display);
             check(config);
         }
-        return callPPPP(display, config, attrib_list, __functionAddress);
+        return invokePPPP(display, config, attrib_list, __functionAddress);
     }
 
     /** {@code GLXPbuffer glXCreatePbuffer(Display * display, GLXFBConfig config, int const * attrib_list)} */
@@ -275,7 +275,7 @@ public class GLX13 extends GLX12 {
             check(display);
             check(pbuf);
         }
-        callPPV(display, pbuf, __functionAddress);
+        invokePPV(display, pbuf, __functionAddress);
     }
 
     // --- [ glXQueryDrawable ] ---
@@ -288,7 +288,7 @@ public class GLX13 extends GLX12 {
             check(display);
             check(draw);
         }
-        callPPPV(display, draw, attribute, value, __functionAddress);
+        invokePPPV(display, draw, attribute, value, __functionAddress);
     }
 
     /** {@code void glXQueryDrawable(Display * display, GLXDrawable draw, int attribute, unsigned int * value)} */
@@ -323,7 +323,7 @@ public class GLX13 extends GLX12 {
             check(display);
             check(config);
         }
-        return callPPPP(display, config, render_type, share_list, direct ? 1 : 0, __functionAddress);
+        return invokePPPP(display, config, render_type, share_list, direct ? 1 : 0, __functionAddress);
     }
 
     // --- [ glXMakeContextCurrent ] ---
@@ -336,7 +336,7 @@ public class GLX13 extends GLX12 {
             check(__functionAddress);
             check(display);
         }
-        return callPPPPI(display, draw, read, ctx, __functionAddress) != 0;
+        return invokePPPPI(display, draw, read, ctx, __functionAddress) != 0;
     }
 
     // --- [ glXGetCurrentReadDrawable ] ---
@@ -348,7 +348,7 @@ public class GLX13 extends GLX12 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
     // --- [ glXQueryContext ] ---
@@ -361,7 +361,7 @@ public class GLX13 extends GLX12 {
             check(display);
             check(ctx);
         }
-        return callPPPI(display, ctx, attribute, value, __functionAddress);
+        return invokePPPI(display, ctx, attribute, value, __functionAddress);
     }
 
     /** {@code int glXQueryContext(Display * display, GLXContext ctx, int attribute, int * value)} */
@@ -382,7 +382,7 @@ public class GLX13 extends GLX12 {
             check(display);
             check(draw);
         }
-        callPPNV(display, draw, event_mask, __functionAddress);
+        invokePPNV(display, draw, event_mask, __functionAddress);
     }
 
     // --- [ glXGetSelectedEvent ] ---
@@ -395,7 +395,7 @@ public class GLX13 extends GLX12 {
             check(display);
             check(draw);
         }
-        callPPPV(display, draw, event_mask, __functionAddress);
+        invokePPPV(display, draw, event_mask, __functionAddress);
     }
 
     /** {@code void glXGetSelectedEvent(Display * display, GLXDrawable draw, unsigned long * event_mask)} */
@@ -418,7 +418,7 @@ public class GLX13 extends GLX12 {
         MemoryStack stack = stackGet(); int stackPointer = stack.getPointer();
         IntBuffer nelements = stack.callocInt(1);
         try {
-            long __result = callPPPP(display, screen, attrib_list, memAddress(nelements), __functionAddress);
+            long __result = invokePPPP(display, screen, attrib_list, memAddress(nelements), __functionAddress);
             return memPointerBufferSafe(__result, nelements.get(0));
         } finally {
             stack.setPointer(stackPointer);
@@ -434,7 +434,7 @@ public class GLX13 extends GLX12 {
             check(config);
             check(value, 1);
         }
-        return callPPPI(display, config, attribute, value, __functionAddress);
+        return invokePPPI(display, config, attribute, value, __functionAddress);
     }
 
     /** {@code GLXWindow glXCreateWindow(Display * display, GLXFBConfig config, Window win, int const * attrib_list)} */
@@ -447,7 +447,7 @@ public class GLX13 extends GLX12 {
             check(config);
             checkNTSafe(attrib_list);
         }
-        return callPPNPP(display, config, win, attrib_list, __functionAddress);
+        return invokePPNPP(display, config, win, attrib_list, __functionAddress);
     }
 
     /** {@code GLXPixmap glXCreatePixmap(Display * display, GLXFBConfig config, Pixmap pixmap, int const * attrib_list)} */
@@ -460,7 +460,7 @@ public class GLX13 extends GLX12 {
             check(config);
             checkNTSafe(attrib_list);
         }
-        return callPPNPP(display, config, pixmap, attrib_list, __functionAddress);
+        return invokePPNPP(display, config, pixmap, attrib_list, __functionAddress);
     }
 
     /** {@code GLXPbuffer glXCreatePbuffer(Display * display, GLXFBConfig config, int const * attrib_list)} */
@@ -473,7 +473,7 @@ public class GLX13 extends GLX12 {
             check(config);
             checkNTSafe(attrib_list);
         }
-        return callPPPP(display, config, attrib_list, __functionAddress);
+        return invokePPPP(display, config, attrib_list, __functionAddress);
     }
 
     /** {@code void glXQueryDrawable(Display * display, GLXDrawable draw, int attribute, unsigned int * value)} */
@@ -485,7 +485,7 @@ public class GLX13 extends GLX12 {
             check(draw);
             check(value, 1);
         }
-        callPPPV(display, draw, attribute, value, __functionAddress);
+        invokePPPV(display, draw, attribute, value, __functionAddress);
     }
 
     /** {@code int glXQueryContext(Display * display, GLXContext ctx, int attribute, int * value)} */
@@ -497,7 +497,7 @@ public class GLX13 extends GLX12 {
             check(ctx);
             check(value, 1);
         }
-        return callPPPI(display, ctx, attribute, value, __functionAddress);
+        return invokePPPI(display, ctx, attribute, value, __functionAddress);
     }
 
 }

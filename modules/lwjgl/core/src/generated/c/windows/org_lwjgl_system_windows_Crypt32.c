@@ -14,10 +14,10 @@
 #include "common_tools.h"
 #include "WindowsLWJGL.h"
 
-typedef jint (APIENTRY *CryptProtectDataPROC) (uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, jint, uintptr_t);
-typedef jint (APIENTRY *CryptProtectMemoryPROC) (uintptr_t, jint, jint);
-typedef jint (APIENTRY *CryptUnprotectDataPROC) (uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, jint, uintptr_t);
-typedef jint (APIENTRY *CryptUnprotectMemoryPROC) (uintptr_t, jint, jint);
+typedef jint (*CryptProtectDataPROC) (uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, jint, uintptr_t);
+typedef jint (*CryptProtectMemoryPROC) (uintptr_t, jint, jint);
+typedef jint (*CryptUnprotectDataPROC) (uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, jint, uintptr_t);
+typedef jint (*CryptUnprotectMemoryPROC) (uintptr_t, jint, jint);
 
 EXTERN_C_ENTER
 

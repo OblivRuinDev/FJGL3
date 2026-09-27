@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glTexBufferEXTPROC) (jint, jint, jint);
+typedef void (*glTexBufferEXTPROC) (jint, jint, jint);
 
 EXTERN_C_ENTER
 

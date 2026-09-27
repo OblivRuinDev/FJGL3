@@ -47,7 +47,7 @@ public class KHRSwapchainMaintenance1 {
             check(__functionAddress);
             VkReleaseSwapchainImagesInfoKHR.validate(pReleaseInfo);
         }
-        return callPPI(device.address(), pReleaseInfo, __functionAddress);
+        return invokePPI(device.address(), pReleaseInfo, __functionAddress);
     }
 
     /** {@code VkResult vkReleaseSwapchainImagesKHR(VkDevice device, VkReleaseSwapchainImagesInfoKHR const * pReleaseInfo)} */

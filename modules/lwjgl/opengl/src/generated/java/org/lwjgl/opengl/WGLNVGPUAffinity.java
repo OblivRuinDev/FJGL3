@@ -39,7 +39,7 @@ public class WGLNVGPUAffinity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(gpuIndex, gpu, __functionAddress);
+        return invokePI(gpuIndex, gpu, __functionAddress);
     }
 
     /** {@code BOOL wglEnumGpusNV(UINT gpuIndex, HGPUNV * gpu)} */
@@ -60,7 +60,7 @@ public class WGLNVGPUAffinity {
             check(__functionAddress);
             check(gpu);
         }
-        return callPPI(gpu, deviceIndex, gpuDevice, __functionAddress);
+        return invokePPI(gpu, deviceIndex, gpuDevice, __functionAddress);
     }
 
     /** {@code BOOL wglEnumGpuDevicesNV(HGPUNV gpu, UINT deviceIndex, PGPU_DEVICE gpuDevice)} */
@@ -77,7 +77,7 @@ public class WGLNVGPUAffinity {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPP(gpuList, __functionAddress);
+        return invokePP(gpuList, __functionAddress);
     }
 
     /** {@code HDC wglCreateAffinityDCNV(HGPUNV const * gpuList)} */
@@ -98,7 +98,7 @@ public class WGLNVGPUAffinity {
             check(__functionAddress);
             check(affinityDC);
         }
-        return callPPI(affinityDC, gpuIndex, gpu, __functionAddress);
+        return invokePPI(affinityDC, gpuIndex, gpu, __functionAddress);
     }
 
     /** {@code BOOL wglEnumGpusFromAffinityDCNV(HDC affinityDC, UINT gpuIndex, HGPUNV * gpu)} */
@@ -120,7 +120,7 @@ public class WGLNVGPUAffinity {
             check(__functionAddress);
             check(hdc);
         }
-        return callPI(hdc, __functionAddress) != 0;
+        return invokePI(hdc, __functionAddress) != 0;
     }
 
 }

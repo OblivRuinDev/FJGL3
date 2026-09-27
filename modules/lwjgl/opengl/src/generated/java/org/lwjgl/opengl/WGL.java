@@ -210,7 +210,7 @@ public class WGL {
     @NativeType("HDC")
     public static long wglGetCurrentDC() {
         long __functionAddress = Functions.GetCurrentDC;
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
     // --- [ wglGetProcAddress ] ---

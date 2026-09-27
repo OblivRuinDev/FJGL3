@@ -47,7 +47,7 @@ public class METABoundaryVisibility {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(session.address(), boundaryVisibility, __functionAddress);
+        return invokePI(session.address(), boundaryVisibility, __functionAddress);
     }
 
 }

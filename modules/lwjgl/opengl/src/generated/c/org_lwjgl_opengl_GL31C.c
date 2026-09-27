@@ -14,18 +14,18 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glDrawArraysInstancedPROC) (jint, jint, jint, jint);
-typedef void (APIENTRY *glDrawElementsInstancedPROC) (jint, jint, jint, uintptr_t, jint);
-typedef void (APIENTRY *glCopyBufferSubDataPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glPrimitiveRestartIndexPROC) (jint);
-typedef void (APIENTRY *glTexBufferPROC) (jint, jint, jint);
-typedef void (APIENTRY *glGetUniformIndicesPROC) (jint, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glGetActiveUniformsivPROC) (jint, jint, uintptr_t, jint, uintptr_t);
-typedef void (APIENTRY *glGetActiveUniformNamePROC) (jint, jint, jint, uintptr_t, uintptr_t);
-typedef jint (APIENTRY *glGetUniformBlockIndexPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGetActiveUniformBlockivPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetActiveUniformBlockNamePROC) (jint, jint, jint, uintptr_t, uintptr_t);
-typedef void (APIENTRY *glUniformBlockBindingPROC) (jint, jint, jint);
+typedef void (*glDrawArraysInstancedPROC) (jint, jint, jint, jint);
+typedef void (*glDrawElementsInstancedPROC) (jint, jint, jint, uintptr_t, jint);
+typedef void (*glCopyBufferSubDataPROC) (jint, jint, uintptr_t, uintptr_t, uintptr_t);
+typedef void (*glPrimitiveRestartIndexPROC) (jint);
+typedef void (*glTexBufferPROC) (jint, jint, jint);
+typedef void (*glGetUniformIndicesPROC) (jint, jint, uintptr_t, uintptr_t);
+typedef void (*glGetActiveUniformsivPROC) (jint, jint, uintptr_t, jint, uintptr_t);
+typedef void (*glGetActiveUniformNamePROC) (jint, jint, jint, uintptr_t, uintptr_t);
+typedef jint (*glGetUniformBlockIndexPROC) (jint, uintptr_t);
+typedef void (*glGetActiveUniformBlockivPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetActiveUniformBlockNamePROC) (jint, jint, jint, uintptr_t, uintptr_t);
+typedef void (*glUniformBlockBindingPROC) (jint, jint, jint);
 
 EXTERN_C_ENTER
 

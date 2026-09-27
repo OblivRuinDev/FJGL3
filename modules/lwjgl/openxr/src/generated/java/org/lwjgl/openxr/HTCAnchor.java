@@ -48,7 +48,7 @@ public class HTCAnchor {
             check(__functionAddress);
             XrSpatialAnchorCreateInfoHTC.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, anchor, __functionAddress);
+        return invokePPPI(session.address(), createInfo, anchor, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorHTC(XrSession session, XrSpatialAnchorCreateInfoHTC const * createInfo, XrSpace * anchor)} */
@@ -68,7 +68,7 @@ public class HTCAnchor {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(anchor.address(), name, __functionAddress);
+        return invokePPI(anchor.address(), name, __functionAddress);
     }
 
     /** {@code XrResult xrGetSpatialAnchorNameHTC(XrSpace anchor, XrSpatialAnchorNameHTC * name)} */

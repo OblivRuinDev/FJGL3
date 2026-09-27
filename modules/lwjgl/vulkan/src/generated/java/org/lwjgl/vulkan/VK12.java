@@ -185,7 +185,7 @@ public class VK12 extends VK11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(device.address(), queryPool, firstQuery, queryCount, __functionAddress);
+        invokePJV(device.address(), queryPool, firstQuery, queryCount, __functionAddress);
     }
 
     // --- [ vkGetSemaphoreCounterValue ] ---
@@ -196,7 +196,7 @@ public class VK12 extends VK11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), semaphore, pValue, __functionAddress);
+        return invokePJPI(device.address(), semaphore, pValue, __functionAddress);
     }
 
     /** {@code VkResult vkGetSemaphoreCounterValue(VkDevice device, VkSemaphore semaphore, uint64_t * pValue)} */
@@ -217,7 +217,7 @@ public class VK12 extends VK11 {
             check(__functionAddress);
             VkSemaphoreWaitInfo.validate(pWaitInfo);
         }
-        return callPPJI(device.address(), pWaitInfo, timeout, __functionAddress);
+        return invokePPJI(device.address(), pWaitInfo, timeout, __functionAddress);
     }
 
     /** {@code VkResult vkWaitSemaphores(VkDevice device, VkSemaphoreWaitInfo const * pWaitInfo, uint64_t timeout)} */
@@ -234,7 +234,7 @@ public class VK12 extends VK11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pSignalInfo, __functionAddress);
+        return invokePPI(device.address(), pSignalInfo, __functionAddress);
     }
 
     /** {@code VkResult vkSignalSemaphore(VkDevice device, VkSemaphoreSignalInfo const * pSignalInfo)} */
@@ -251,7 +251,7 @@ public class VK12 extends VK11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPJ(device.address(), pInfo, __functionAddress);
+        return invokePPJ(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code VkDeviceAddress vkGetBufferDeviceAddress(VkDevice device, VkBufferDeviceAddressInfo const * pInfo)} */
@@ -268,7 +268,7 @@ public class VK12 extends VK11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPJ(device.address(), pInfo, __functionAddress);
+        return invokePPJ(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code uint64_t vkGetBufferOpaqueCaptureAddress(VkDevice device, VkBufferDeviceAddressInfo const * pInfo)} */
@@ -285,7 +285,7 @@ public class VK12 extends VK11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPJ(device.address(), pInfo, __functionAddress);
+        return invokePPJ(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code uint64_t vkGetDeviceMemoryOpaqueCaptureAddress(VkDevice device, VkDeviceMemoryOpaqueCaptureAddressInfo const * pInfo)} */
@@ -302,7 +302,7 @@ public class VK12 extends VK11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
+        invokePJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
     }
 
     // --- [ vkCmdDrawIndexedIndirectCount ] ---
@@ -313,7 +313,7 @@ public class VK12 extends VK11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
+        invokePJJJJV(commandBuffer.address(), buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride, __functionAddress);
     }
 
     // --- [ vkCreateRenderPass2 ] ---
@@ -325,7 +325,7 @@ public class VK12 extends VK11 {
             check(__functionAddress);
             VkRenderPassCreateInfo2.validate(pCreateInfo);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pRenderPass, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pRenderPass, __functionAddress);
     }
 
     /** {@code VkResult vkCreateRenderPass2(VkDevice device, VkRenderPassCreateInfo2 const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkRenderPass * pRenderPass)} */
@@ -345,7 +345,7 @@ public class VK12 extends VK11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), pRenderPassBegin, pSubpassBeginInfo, __functionAddress);
+        invokePPPV(commandBuffer.address(), pRenderPassBegin, pSubpassBeginInfo, __functionAddress);
     }
 
     /** {@code void vkCmdBeginRenderPass2(VkCommandBuffer commandBuffer, VkRenderPassBeginInfo const * pRenderPassBegin, VkSubpassBeginInfo const * pSubpassBeginInfo)} */
@@ -361,7 +361,7 @@ public class VK12 extends VK11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(commandBuffer.address(), pSubpassBeginInfo, pSubpassEndInfo, __functionAddress);
+        invokePPPV(commandBuffer.address(), pSubpassBeginInfo, pSubpassEndInfo, __functionAddress);
     }
 
     /** {@code void vkCmdNextSubpass2(VkCommandBuffer commandBuffer, VkSubpassBeginInfo const * pSubpassBeginInfo, VkSubpassEndInfo const * pSubpassEndInfo)} */
@@ -377,7 +377,7 @@ public class VK12 extends VK11 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(commandBuffer.address(), pSubpassEndInfo, __functionAddress);
+        invokePPV(commandBuffer.address(), pSubpassEndInfo, __functionAddress);
     }
 
     /** {@code void vkCmdEndRenderPass2(VkCommandBuffer commandBuffer, VkSubpassEndInfo const * pSubpassEndInfo)} */
@@ -393,7 +393,7 @@ public class VK12 extends VK11 {
             check(__functionAddress);
             check(pValue, 1);
         }
-        return callPJPI(device.address(), semaphore, pValue, __functionAddress);
+        return invokePJPI(device.address(), semaphore, pValue, __functionAddress);
     }
 
     /** {@code VkResult vkCreateRenderPass2(VkDevice device, VkRenderPassCreateInfo2 const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkRenderPass * pRenderPass)} */
@@ -405,7 +405,7 @@ public class VK12 extends VK11 {
             check(pRenderPass, 1);
             VkRenderPassCreateInfo2.validate(pCreateInfo.address());
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pRenderPass, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pRenderPass, __functionAddress);
     }
 
 }

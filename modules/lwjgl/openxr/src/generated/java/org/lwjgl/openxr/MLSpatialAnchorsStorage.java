@@ -60,7 +60,7 @@ public class MLSpatialAnchorsStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, storage, __functionAddress);
+        return invokePPPI(session.address(), createInfo, storage, __functionAddress);
     }
 
     /** {@code XrResult xrCreateSpatialAnchorsStorageML(XrSession session, XrSpatialAnchorsCreateStorageInfoML const * createInfo, XrSpatialAnchorsStorageML * storage)} */
@@ -81,7 +81,7 @@ public class MLSpatialAnchorsStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(storage.address(), __functionAddress);
+        return invokePI(storage.address(), __functionAddress);
     }
 
     // --- [ xrQuerySpatialAnchorsAsyncML ] ---
@@ -92,7 +92,7 @@ public class MLSpatialAnchorsStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(storage.address(), queryInfo, future, __functionAddress);
+        return invokePPPI(storage.address(), queryInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrQuerySpatialAnchorsAsyncML(XrSpatialAnchorsStorageML storage, XrSpatialAnchorsQueryInfoBaseHeaderML const * queryInfo, XrFutureEXT * future)} */
@@ -112,7 +112,7 @@ public class MLSpatialAnchorsStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(storage.address(), future, completion, __functionAddress);
+        return invokePJPI(storage.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrQuerySpatialAnchorsCompleteML(XrSpatialAnchorsStorageML storage, XrFutureEXT future, XrSpatialAnchorsQueryCompletionML * completion)} */
@@ -130,7 +130,7 @@ public class MLSpatialAnchorsStorage {
             check(__functionAddress);
             XrSpatialAnchorsPublishInfoML.validate(publishInfo);
         }
-        return callPPPI(storage.address(), publishInfo, future, __functionAddress);
+        return invokePPPI(storage.address(), publishInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrPublishSpatialAnchorsAsyncML(XrSpatialAnchorsStorageML storage, XrSpatialAnchorsPublishInfoML const * publishInfo, XrFutureEXT * future)} */
@@ -150,7 +150,7 @@ public class MLSpatialAnchorsStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(storage.address(), future, completion, __functionAddress);
+        return invokePJPI(storage.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrPublishSpatialAnchorsCompleteML(XrSpatialAnchorsStorageML storage, XrFutureEXT future, XrSpatialAnchorsPublishCompletionML * completion)} */
@@ -168,7 +168,7 @@ public class MLSpatialAnchorsStorage {
             check(__functionAddress);
             XrSpatialAnchorsDeleteInfoML.validate(deleteInfo);
         }
-        return callPPPI(storage.address(), deleteInfo, future, __functionAddress);
+        return invokePPPI(storage.address(), deleteInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrDeleteSpatialAnchorsAsyncML(XrSpatialAnchorsStorageML storage, XrSpatialAnchorsDeleteInfoML const * deleteInfo, XrFutureEXT * future)} */
@@ -188,7 +188,7 @@ public class MLSpatialAnchorsStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(storage.address(), future, completion, __functionAddress);
+        return invokePJPI(storage.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrDeleteSpatialAnchorsCompleteML(XrSpatialAnchorsStorageML storage, XrFutureEXT future, XrSpatialAnchorsDeleteCompletionML * completion)} */
@@ -206,7 +206,7 @@ public class MLSpatialAnchorsStorage {
             check(__functionAddress);
             XrSpatialAnchorsUpdateExpirationInfoML.validate(updateInfo);
         }
-        return callPPPI(storage.address(), updateInfo, future, __functionAddress);
+        return invokePPPI(storage.address(), updateInfo, future, __functionAddress);
     }
 
     /** {@code XrResult xrUpdateSpatialAnchorsExpirationAsyncML(XrSpatialAnchorsStorageML storage, XrSpatialAnchorsUpdateExpirationInfoML const * updateInfo, XrFutureEXT * future)} */
@@ -226,7 +226,7 @@ public class MLSpatialAnchorsStorage {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(storage.address(), future, completion, __functionAddress);
+        return invokePJPI(storage.address(), future, completion, __functionAddress);
     }
 
     /** {@code XrResult xrUpdateSpatialAnchorsExpirationCompleteML(XrSpatialAnchorsStorageML storage, XrFutureEXT future, XrSpatialAnchorsUpdateExpirationCompletionML * completion)} */

@@ -2389,7 +2389,7 @@ public class GL45 extends GL44 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, query, data.length, data, __functionAddress);
+        invokePV(target, query, data.length, data, __functionAddress);
     }
 
     /** {@code void glGetnMapfv(GLenum target, GLenum query, GLsizei bufSize, GLfloat * data)} */
@@ -2398,7 +2398,7 @@ public class GL45 extends GL44 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, query, data.length, data, __functionAddress);
+        invokePV(target, query, data.length, data, __functionAddress);
     }
 
     /** {@code void glGetnMapiv(GLenum target, GLenum query, GLsizei bufSize, GLint * data)} */
@@ -2407,7 +2407,7 @@ public class GL45 extends GL44 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, query, data.length, data, __functionAddress);
+        invokePV(target, query, data.length, data, __functionAddress);
     }
 
     /** {@code void glGetnPixelMapfv(GLenum map, GLsizei bufSize, GLfloat * data)} */
@@ -2416,7 +2416,7 @@ public class GL45 extends GL44 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(map, data.length, data, __functionAddress);
+        invokePV(map, data.length, data, __functionAddress);
     }
 
     /** {@code void glGetnPixelMapuiv(GLenum map, GLsizei bufSize, GLuint * data)} */
@@ -2425,7 +2425,7 @@ public class GL45 extends GL44 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(map, data.length, data, __functionAddress);
+        invokePV(map, data.length, data, __functionAddress);
     }
 
     /** {@code void glGetnPixelMapusv(GLenum map, GLsizei bufSize, GLushort * data)} */
@@ -2434,7 +2434,7 @@ public class GL45 extends GL44 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(map, data.length, data, __functionAddress);
+        invokePV(map, data.length, data, __functionAddress);
     }
 
     /** {@code void glGetnTexImage(GLenum tex, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * img)} */
@@ -2478,7 +2478,7 @@ public class GL45 extends GL44 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, format, type, table.length << 1, table, __functionAddress);
+        invokePV(target, format, type, table.length << 1, table, __functionAddress);
     }
 
     /** {@code void glGetnColorTable(GLenum target, GLenum format, GLenum type, GLsizei bufSize, void * table)} */
@@ -2487,7 +2487,7 @@ public class GL45 extends GL44 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, format, type, table.length << 2, table, __functionAddress);
+        invokePV(target, format, type, table.length << 2, table, __functionAddress);
     }
 
     /** {@code void glGetnColorTable(GLenum target, GLenum format, GLenum type, GLsizei bufSize, void * table)} */
@@ -2496,7 +2496,7 @@ public class GL45 extends GL44 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, format, type, table.length << 2, table, __functionAddress);
+        invokePV(target, format, type, table.length << 2, table, __functionAddress);
     }
 
     /** {@code void glGetnUniformfv(GLuint program, GLint location, GLsizei bufSize, GLfloat * params)} */

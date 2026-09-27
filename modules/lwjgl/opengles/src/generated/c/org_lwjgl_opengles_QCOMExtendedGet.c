@@ -14,14 +14,14 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glExtGetTexturesQCOMPROC) (uintptr_t, jint, uintptr_t);
-typedef void (APIENTRY *glExtGetBuffersQCOMPROC) (uintptr_t, jint, uintptr_t);
-typedef void (APIENTRY *glExtGetRenderbuffersQCOMPROC) (uintptr_t, jint, uintptr_t);
-typedef void (APIENTRY *glExtGetFramebuffersQCOMPROC) (uintptr_t, jint, uintptr_t);
-typedef void (APIENTRY *glExtGetTexLevelParameterivQCOMPROC) (jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glExtTexObjectStateOverrideiQCOMPROC) (jint, jint, jint);
-typedef void (APIENTRY *glExtGetTexSubImageQCOMPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glExtGetBufferPointervQCOMPROC) (jint, uintptr_t);
+typedef void (*glExtGetTexturesQCOMPROC) (uintptr_t, jint, uintptr_t);
+typedef void (*glExtGetBuffersQCOMPROC) (uintptr_t, jint, uintptr_t);
+typedef void (*glExtGetRenderbuffersQCOMPROC) (uintptr_t, jint, uintptr_t);
+typedef void (*glExtGetFramebuffersQCOMPROC) (uintptr_t, jint, uintptr_t);
+typedef void (*glExtGetTexLevelParameterivQCOMPROC) (jint, jint, jint, jint, uintptr_t);
+typedef void (*glExtTexObjectStateOverrideiQCOMPROC) (jint, jint, jint);
+typedef void (*glExtGetTexSubImageQCOMPROC) (jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, uintptr_t);
+typedef void (*glExtGetBufferPointervQCOMPROC) (jint, uintptr_t);
 
 EXTERN_C_ENTER
 

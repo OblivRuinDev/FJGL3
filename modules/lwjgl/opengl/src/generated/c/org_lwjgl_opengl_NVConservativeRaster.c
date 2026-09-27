@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glSubpixelPrecisionBiasNVPROC) (jint, jint);
+typedef void (*glSubpixelPrecisionBiasNVPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

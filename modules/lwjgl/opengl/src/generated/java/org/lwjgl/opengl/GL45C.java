@@ -1878,7 +1878,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(ids.length, ids, __functionAddress);
+        invokePV(ids.length, ids, __functionAddress);
     }
 
     /** {@code void glGetTransformFeedbackiv(GLuint xfb, GLenum pname, GLint * param)} */
@@ -1888,7 +1888,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(param, 1);
         }
-        callPV(xfb, pname, param, __functionAddress);
+        invokePV(xfb, pname, param, __functionAddress);
     }
 
     /** {@code void glGetTransformFeedbacki_v(GLuint xfb, GLenum pname, GLuint index, GLint * param)} */
@@ -1898,7 +1898,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(param, 1);
         }
-        callPV(xfb, pname, index, param, __functionAddress);
+        invokePV(xfb, pname, index, param, __functionAddress);
     }
 
     /** {@code void glGetTransformFeedbacki64_v(GLuint xfb, GLenum pname, GLuint index, GLint64 * param)} */
@@ -1908,7 +1908,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(param, 1);
         }
-        callPV(xfb, pname, index, param, __functionAddress);
+        invokePV(xfb, pname, index, param, __functionAddress);
     }
 
     /** {@code void glCreateBuffers(GLsizei n, GLuint * buffers)} */
@@ -1917,7 +1917,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffers.length, buffers, __functionAddress);
+        invokePV(buffers.length, buffers, __functionAddress);
     }
 
     /** {@code void glNamedBufferStorage(GLuint buffer, GLsizeiptr size, void const * data, GLbitfield flags)} */
@@ -1926,7 +1926,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 1, data, flags, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 1, data, flags, __functionAddress);
     }
 
     /** {@code void glNamedBufferStorage(GLuint buffer, GLsizeiptr size, void const * data, GLbitfield flags)} */
@@ -1935,7 +1935,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, flags, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, flags, __functionAddress);
     }
 
     /** {@code void glNamedBufferStorage(GLuint buffer, GLsizeiptr size, void const * data, GLbitfield flags)} */
@@ -1944,7 +1944,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, flags, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, flags, __functionAddress);
     }
 
     /** {@code void glNamedBufferStorage(GLuint buffer, GLsizeiptr size, void const * data, GLbitfield flags)} */
@@ -1953,7 +1953,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 3, data, flags, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 3, data, flags, __functionAddress);
     }
 
     /** {@code void glNamedBufferData(GLuint buffer, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -1962,7 +1962,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 1, data, usage, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 1, data, usage, __functionAddress);
     }
 
     /** {@code void glNamedBufferData(GLuint buffer, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -1971,7 +1971,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
     }
 
     /** {@code void glNamedBufferData(GLuint buffer, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -1980,7 +1980,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 3, data, usage, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 3, data, usage, __functionAddress);
     }
 
     /** {@code void glNamedBufferData(GLuint buffer, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -1989,7 +1989,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 2, data, usage, __functionAddress);
     }
 
     /** {@code void glNamedBufferData(GLuint buffer, GLsizeiptr size, void const * data, GLenum usage)} */
@@ -1998,7 +1998,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPV(buffer, Integer.toUnsignedLong(data.length) << 3, data, usage, __functionAddress);
+        invokePPV(buffer, Integer.toUnsignedLong(data.length) << 3, data, usage, __functionAddress);
     }
 
     /** {@code void glNamedBufferSubData(GLuint buffer, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -2007,7 +2007,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
     }
 
     /** {@code void glNamedBufferSubData(GLuint buffer, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -2016,7 +2016,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glNamedBufferSubData(GLuint buffer, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -2025,7 +2025,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glNamedBufferSubData(GLuint buffer, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -2034,7 +2034,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glNamedBufferSubData(GLuint buffer, GLintptr offset, GLsizeiptr size, void const * data)} */
@@ -2043,7 +2043,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glClearNamedBufferData(GLuint buffer, GLenum internalformat, GLenum format, GLenum type, void const * data)} */
@@ -2052,7 +2052,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffer, internalformat, format, type, data, __functionAddress);
+        invokePV(buffer, internalformat, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearNamedBufferData(GLuint buffer, GLenum internalformat, GLenum format, GLenum type, void const * data)} */
@@ -2061,7 +2061,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffer, internalformat, format, type, data, __functionAddress);
+        invokePV(buffer, internalformat, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearNamedBufferData(GLuint buffer, GLenum internalformat, GLenum format, GLenum type, void const * data)} */
@@ -2070,7 +2070,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(buffer, internalformat, format, type, data, __functionAddress);
+        invokePV(buffer, internalformat, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearNamedBufferSubData(GLuint buffer, GLenum internalformat, GLintptr offset, GLsizeiptr size, GLenum format, GLenum type, void const * data)} */
@@ -2079,7 +2079,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, internalformat, offset, size, format, type, data, __functionAddress);
+        invokePPPV(buffer, internalformat, offset, size, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearNamedBufferSubData(GLuint buffer, GLenum internalformat, GLintptr offset, GLsizeiptr size, GLenum format, GLenum type, void const * data)} */
@@ -2088,7 +2088,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, internalformat, offset, size, format, type, data, __functionAddress);
+        invokePPPV(buffer, internalformat, offset, size, format, type, data, __functionAddress);
     }
 
     /** {@code void glClearNamedBufferSubData(GLuint buffer, GLenum internalformat, GLintptr offset, GLsizeiptr size, GLenum format, GLenum type, void const * data)} */
@@ -2097,7 +2097,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, internalformat, offset, size, format, type, data, __functionAddress);
+        invokePPPV(buffer, internalformat, offset, size, format, type, data, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferParameteriv(GLuint buffer, GLenum pname, GLint * params)} */
@@ -2107,7 +2107,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(buffer, pname, params, __functionAddress);
+        invokePV(buffer, pname, params, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferParameteri64v(GLuint buffer, GLenum pname, GLint64 * params)} */
@@ -2117,7 +2117,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(buffer, pname, params, __functionAddress);
+        invokePV(buffer, pname, params, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferSubData(GLuint buffer, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -2126,7 +2126,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 1, data, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferSubData(GLuint buffer, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -2135,7 +2135,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferSubData(GLuint buffer, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -2144,7 +2144,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferSubData(GLuint buffer, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -2153,7 +2153,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 2, data, __functionAddress);
     }
 
     /** {@code void glGetNamedBufferSubData(GLuint buffer, GLintptr offset, GLsizeiptr size, void * data)} */
@@ -2162,7 +2162,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
+        invokePPPV(buffer, offset, Integer.toUnsignedLong(data.length) << 3, data, __functionAddress);
     }
 
     /** {@code void glCreateFramebuffers(GLsizei n, GLuint * framebuffers)} */
@@ -2171,7 +2171,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(framebuffers.length, framebuffers, __functionAddress);
+        invokePV(framebuffers.length, framebuffers, __functionAddress);
     }
 
     /** {@code void glNamedFramebufferDrawBuffers(GLuint framebuffer, GLsizei n, GLenum const * bufs)} */
@@ -2180,7 +2180,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(framebuffer, bufs.length, bufs, __functionAddress);
+        invokePV(framebuffer, bufs.length, bufs, __functionAddress);
     }
 
     /** {@code void glInvalidateNamedFramebufferData(GLuint framebuffer, GLsizei numAttachments, GLenum const * attachments)} */
@@ -2189,7 +2189,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(framebuffer, attachments.length, attachments, __functionAddress);
+        invokePV(framebuffer, attachments.length, attachments, __functionAddress);
     }
 
     /** {@code void glInvalidateNamedFramebufferSubData(GLuint framebuffer, GLsizei numAttachments, GLenum const * attachments, GLint x, GLint y, GLsizei width, GLsizei height)} */
@@ -2198,7 +2198,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(framebuffer, attachments.length, attachments, x, y, width, height, __functionAddress);
+        invokePV(framebuffer, attachments.length, attachments, x, y, width, height, __functionAddress);
     }
 
     /** {@code void glClearNamedFramebufferiv(GLuint framebuffer, GLenum buffer, GLint drawbuffer, GLint const * value)} */
@@ -2208,7 +2208,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(framebuffer, buffer, drawbuffer, value, __functionAddress);
+        invokePV(framebuffer, buffer, drawbuffer, value, __functionAddress);
     }
 
     /** {@code void glClearNamedFramebufferuiv(GLuint framebuffer, GLenum buffer, GLint drawbuffer, GLint const * value)} */
@@ -2218,7 +2218,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(value, 4);
         }
-        callPV(framebuffer, buffer, drawbuffer, value, __functionAddress);
+        invokePV(framebuffer, buffer, drawbuffer, value, __functionAddress);
     }
 
     /** {@code void glClearNamedFramebufferfv(GLuint framebuffer, GLenum buffer, GLint drawbuffer, GLfloat const * value)} */
@@ -2228,7 +2228,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(value, 1);
         }
-        callPV(framebuffer, buffer, drawbuffer, value, __functionAddress);
+        invokePV(framebuffer, buffer, drawbuffer, value, __functionAddress);
     }
 
     /** {@code void glGetNamedFramebufferParameteriv(GLuint framebuffer, GLenum pname, GLint * params)} */
@@ -2238,7 +2238,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(framebuffer, pname, params, __functionAddress);
+        invokePV(framebuffer, pname, params, __functionAddress);
     }
 
     /** {@code void glGetNamedFramebufferAttachmentParameteriv(GLuint framebuffer, GLenum attachment, GLenum pname, GLint * params)} */
@@ -2248,7 +2248,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(framebuffer, attachment, pname, params, __functionAddress);
+        invokePV(framebuffer, attachment, pname, params, __functionAddress);
     }
 
     /** {@code void glCreateRenderbuffers(GLsizei n, GLuint * renderbuffers)} */
@@ -2257,7 +2257,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(renderbuffers.length, renderbuffers, __functionAddress);
+        invokePV(renderbuffers.length, renderbuffers, __functionAddress);
     }
 
     /** {@code void glGetNamedRenderbufferParameteriv(GLuint renderbuffer, GLenum pname, GLint * params)} */
@@ -2267,7 +2267,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(renderbuffer, pname, params, __functionAddress);
+        invokePV(renderbuffer, pname, params, __functionAddress);
     }
 
     /** {@code void glCreateTextures(GLenum target, GLsizei n, GLuint * textures)} */
@@ -2276,7 +2276,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, textures.length, textures, __functionAddress);
+        invokePV(target, textures.length, textures, __functionAddress);
     }
 
     /** {@code void glTextureSubImage1D(GLuint texture, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -2285,7 +2285,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage1D(GLuint texture, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -2294,7 +2294,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage1D(GLuint texture, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -2303,7 +2303,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage1D(GLuint texture, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void const * pixels)} */
@@ -2312,7 +2312,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, width, format, type, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, width, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage2D(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -2321,7 +2321,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage2D(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -2330,7 +2330,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage2D(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -2339,7 +2339,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage2D(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void const * pixels)} */
@@ -2348,7 +2348,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, width, height, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage3D(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -2357,7 +2357,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage3D(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -2366,7 +2366,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage3D(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -2375,7 +2375,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureSubImage3D(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void const * pixels)} */
@@ -2384,7 +2384,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels, __functionAddress);
     }
 
     /** {@code void glTextureParameterfv(GLuint texture, GLenum pname, GLfloat const * params)} */
@@ -2394,7 +2394,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(texture, pname, params, __functionAddress);
+        invokePV(texture, pname, params, __functionAddress);
     }
 
     /** {@code void glTextureParameterIiv(GLuint texture, GLenum pname, GLint const * params)} */
@@ -2404,7 +2404,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, pname, params, __functionAddress);
+        invokePV(texture, pname, params, __functionAddress);
     }
 
     /** {@code void glTextureParameterIuiv(GLuint texture, GLenum pname, GLuint const * params)} */
@@ -2414,7 +2414,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, pname, params, __functionAddress);
+        invokePV(texture, pname, params, __functionAddress);
     }
 
     /** {@code void glTextureParameteriv(GLuint texture, GLenum pname, GLint const * params)} */
@@ -2424,7 +2424,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 4);
         }
-        callPV(texture, pname, params, __functionAddress);
+        invokePV(texture, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTextureImage(GLuint texture, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -2433,7 +2433,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, format, type, pixels.length << 1, pixels, __functionAddress);
+        invokePV(texture, level, format, type, pixels.length << 1, pixels, __functionAddress);
     }
 
     /** {@code void glGetTextureImage(GLuint texture, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -2442,7 +2442,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, format, type, pixels.length << 2, pixels, __functionAddress);
+        invokePV(texture, level, format, type, pixels.length << 2, pixels, __functionAddress);
     }
 
     /** {@code void glGetTextureImage(GLuint texture, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -2451,7 +2451,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, format, type, pixels.length << 2, pixels, __functionAddress);
+        invokePV(texture, level, format, type, pixels.length << 2, pixels, __functionAddress);
     }
 
     /** {@code void glGetTextureImage(GLuint texture, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -2460,7 +2460,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, format, type, pixels.length << 3, pixels, __functionAddress);
+        invokePV(texture, level, format, type, pixels.length << 3, pixels, __functionAddress);
     }
 
     /** {@code void glGetTextureLevelParameterfv(GLuint texture, GLint level, GLenum pname, GLfloat * params)} */
@@ -2470,7 +2470,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, level, pname, params, __functionAddress);
+        invokePV(texture, level, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTextureLevelParameteriv(GLuint texture, GLint level, GLenum pname, GLint * params)} */
@@ -2480,7 +2480,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, level, pname, params, __functionAddress);
+        invokePV(texture, level, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTextureParameterfv(GLuint texture, GLenum pname, GLfloat * params)} */
@@ -2490,7 +2490,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, pname, params, __functionAddress);
+        invokePV(texture, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTextureParameterIiv(GLuint texture, GLenum pname, GLint * params)} */
@@ -2500,7 +2500,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, pname, params, __functionAddress);
+        invokePV(texture, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTextureParameterIuiv(GLuint texture, GLenum pname, GLuint * params)} */
@@ -2510,7 +2510,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, pname, params, __functionAddress);
+        invokePV(texture, pname, params, __functionAddress);
     }
 
     /** {@code void glGetTextureParameteriv(GLuint texture, GLenum pname, GLint * params)} */
@@ -2520,7 +2520,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(params, 1);
         }
-        callPV(texture, pname, params, __functionAddress);
+        invokePV(texture, pname, params, __functionAddress);
     }
 
     /** {@code void glCreateVertexArrays(GLsizei n, GLuint * arrays)} */
@@ -2529,7 +2529,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(arrays.length, arrays, __functionAddress);
+        invokePV(arrays.length, arrays, __functionAddress);
     }
 
     /** {@code void glVertexArrayVertexBuffers(GLuint vaobj, GLuint first, GLsizei count, GLuint const * buffers, GLintptr const * offsets, GLsizei const * strides)} */
@@ -2540,7 +2540,7 @@ public class GL45C extends GL44C {
             checkSafe(offsets, lengthSafe(buffers));
             checkSafe(strides, lengthSafe(buffers));
         }
-        callPPPV(vaobj, first, lengthSafe(buffers), buffers, memAddressSafe(offsets), strides, __functionAddress);
+        invokePPPV(vaobj, first, lengthSafe(buffers), buffers, memAddressSafe(offsets), strides, __functionAddress);
     }
 
     /** {@code void glGetVertexArrayiv(GLuint vaobj, GLenum pname, GLint * param)} */
@@ -2550,7 +2550,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(param, 1);
         }
-        callPV(vaobj, pname, param, __functionAddress);
+        invokePV(vaobj, pname, param, __functionAddress);
     }
 
     /** {@code void glGetVertexArrayIndexediv(GLuint vaobj, GLuint index, GLenum pname, GLint * param)} */
@@ -2560,7 +2560,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(param, 1);
         }
-        callPV(vaobj, index, pname, param, __functionAddress);
+        invokePV(vaobj, index, pname, param, __functionAddress);
     }
 
     /** {@code void glGetVertexArrayIndexed64iv(GLuint vaobj, GLuint index, GLenum pname, GLint64 * param)} */
@@ -2570,7 +2570,7 @@ public class GL45C extends GL44C {
             check(__functionAddress);
             check(param, 1);
         }
-        callPV(vaobj, index, pname, param, __functionAddress);
+        invokePV(vaobj, index, pname, param, __functionAddress);
     }
 
     /** {@code void glCreateSamplers(GLsizei n, GLuint * samplers)} */
@@ -2579,7 +2579,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(samplers.length, samplers, __functionAddress);
+        invokePV(samplers.length, samplers, __functionAddress);
     }
 
     /** {@code void glCreateProgramPipelines(GLsizei n, GLuint * pipelines)} */
@@ -2588,7 +2588,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(pipelines.length, pipelines, __functionAddress);
+        invokePV(pipelines.length, pipelines, __functionAddress);
     }
 
     /** {@code void glCreateQueries(GLenum target, GLsizei n, GLuint * ids)} */
@@ -2597,7 +2597,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(target, ids.length, ids, __functionAddress);
+        invokePV(target, ids.length, ids, __functionAddress);
     }
 
     /** {@code void glGetTextureSubImage(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -2606,7 +2606,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels.length << 1, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels.length << 1, pixels, __functionAddress);
     }
 
     /** {@code void glGetTextureSubImage(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -2615,7 +2615,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels.length << 2, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels.length << 2, pixels, __functionAddress);
     }
 
     /** {@code void glGetTextureSubImage(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -2624,7 +2624,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels.length << 2, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels.length << 2, pixels, __functionAddress);
     }
 
     /** {@code void glGetTextureSubImage(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -2633,7 +2633,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels.length << 3, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels.length << 3, pixels, __functionAddress);
     }
 
     /** {@code void glGetCompressedTextureSubImage(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLsizei bufSize, void * pixels)} */
@@ -2642,7 +2642,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, pixels.length << 1, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, pixels.length << 1, pixels, __functionAddress);
     }
 
     /** {@code void glGetCompressedTextureSubImage(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLsizei bufSize, void * pixels)} */
@@ -2651,7 +2651,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, pixels.length << 2, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, pixels.length << 2, pixels, __functionAddress);
     }
 
     /** {@code void glGetCompressedTextureSubImage(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLsizei bufSize, void * pixels)} */
@@ -2660,7 +2660,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, pixels.length << 2, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, pixels.length << 2, pixels, __functionAddress);
     }
 
     /** {@code void glGetCompressedTextureSubImage(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLsizei bufSize, void * pixels)} */
@@ -2669,7 +2669,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(texture, level, xoffset, yoffset, zoffset, width, height, depth, pixels.length << 3, pixels, __functionAddress);
+        invokePV(texture, level, xoffset, yoffset, zoffset, width, height, depth, pixels.length << 3, pixels, __functionAddress);
     }
 
     /** {@code void glGetnTexImage(GLenum tex, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * img)} */
@@ -2678,7 +2678,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tex, level, format, type, img.length << 1, img, __functionAddress);
+        invokePV(tex, level, format, type, img.length << 1, img, __functionAddress);
     }
 
     /** {@code void glGetnTexImage(GLenum tex, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * img)} */
@@ -2687,7 +2687,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tex, level, format, type, img.length << 2, img, __functionAddress);
+        invokePV(tex, level, format, type, img.length << 2, img, __functionAddress);
     }
 
     /** {@code void glGetnTexImage(GLenum tex, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * img)} */
@@ -2696,7 +2696,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tex, level, format, type, img.length << 2, img, __functionAddress);
+        invokePV(tex, level, format, type, img.length << 2, img, __functionAddress);
     }
 
     /** {@code void glGetnTexImage(GLenum tex, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * img)} */
@@ -2705,7 +2705,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(tex, level, format, type, img.length << 3, img, __functionAddress);
+        invokePV(tex, level, format, type, img.length << 3, img, __functionAddress);
     }
 
     /** {@code void glReadnPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -2714,7 +2714,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, pixels.length << 1, pixels, __functionAddress);
+        invokePV(x, y, width, height, format, type, pixels.length << 1, pixels, __functionAddress);
     }
 
     /** {@code void glReadnPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -2723,7 +2723,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, pixels.length << 2, pixels, __functionAddress);
+        invokePV(x, y, width, height, format, type, pixels.length << 2, pixels, __functionAddress);
     }
 
     /** {@code void glReadnPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * pixels)} */
@@ -2732,7 +2732,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(x, y, width, height, format, type, pixels.length << 2, pixels, __functionAddress);
+        invokePV(x, y, width, height, format, type, pixels.length << 2, pixels, __functionAddress);
     }
 
     /** {@code void glGetnUniformfv(GLuint program, GLint location, GLsizei bufSize, GLfloat * params)} */
@@ -2741,7 +2741,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformdv(GLuint program, GLint location, GLsizei bufSize, GLdouble * params)} */
@@ -2750,7 +2750,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformiv(GLuint program, GLint location, GLsizei bufSize, GLint * params)} */
@@ -2759,7 +2759,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
     /** {@code void glGetnUniformuiv(GLuint program, GLint location, GLsizei bufSize, GLuint * params)} */
@@ -2768,7 +2768,7 @@ public class GL45C extends GL44C {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(program, location, params.length, params, __functionAddress);
+        invokePV(program, location, params.length, params, __functionAddress);
     }
 
 }

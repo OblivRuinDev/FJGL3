@@ -55,7 +55,7 @@ public class FBColorSpace {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), colorSpaceCapacityInput, colorSpaceCountOutput, colorSpaces, __functionAddress);
+        return invokePPPI(session.address(), colorSpaceCapacityInput, colorSpaceCountOutput, colorSpaces, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateColorSpacesFB(XrSession session, uint32_t colorSpaceCapacityInput, uint32_t * colorSpaceCountOutput, XrColorSpaceFB * colorSpaces)} */
@@ -76,7 +76,7 @@ public class FBColorSpace {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(session.address(), colorSpace, __functionAddress);
+        return invokePI(session.address(), colorSpace, __functionAddress);
     }
 
 }

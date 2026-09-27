@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glUniformBufferEXTPROC) (jint, jint, jint);
-typedef jint (APIENTRY *glGetUniformBufferSizeEXTPROC) (jint, jint);
-typedef uintptr_t (APIENTRY *glGetUniformOffsetEXTPROC) (jint, jint);
+typedef void (*glUniformBufferEXTPROC) (jint, jint, jint);
+typedef jint (*glGetUniformBufferSizeEXTPROC) (jint, jint);
+typedef uintptr_t (*glGetUniformOffsetEXTPROC) (jint, jint);
 
 EXTERN_C_ENTER
 

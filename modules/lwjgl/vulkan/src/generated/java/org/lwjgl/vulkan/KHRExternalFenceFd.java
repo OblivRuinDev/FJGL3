@@ -43,7 +43,7 @@ public class KHRExternalFenceFd {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pImportFenceFdInfo, __functionAddress);
+        return invokePPI(device.address(), pImportFenceFdInfo, __functionAddress);
     }
 
     /** {@code VkResult vkImportFenceFdKHR(VkDevice device, VkImportFenceFdInfoKHR const * pImportFenceFdInfo)} */
@@ -60,7 +60,7 @@ public class KHRExternalFenceFd {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pGetFdInfo, pFd, __functionAddress);
+        return invokePPPI(device.address(), pGetFdInfo, pFd, __functionAddress);
     }
 
     /** {@code VkResult vkGetFenceFdKHR(VkDevice device, VkFenceGetFdInfoKHR const * pGetFdInfo, int * pFd)} */
@@ -80,7 +80,7 @@ public class KHRExternalFenceFd {
             check(__functionAddress);
             check(pFd, 1);
         }
-        return callPPPI(device.address(), pGetFdInfo.address(), pFd, __functionAddress);
+        return invokePPPI(device.address(), pGetFdInfo.address(), pFd, __functionAddress);
     }
 
 }

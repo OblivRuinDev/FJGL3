@@ -37,7 +37,7 @@ public class HIClientpixmap {
             check(config);
             EGLClientPixmapHI.validate(pixmap);
         }
-        return callPPPP(dpy, config, pixmap, __functionAddress);
+        return invokePPPP(dpy, config, pixmap, __functionAddress);
     }
 
     /** {@code EGLSurface eglCreatePixmapSurfaceHI(EGLDisplay dpy, EGLConfig config, struct EGLClientPixmapHI * pixmap)} */

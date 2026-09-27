@@ -14,13 +14,13 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBindShadingRateImageNVPROC) (jint);
-typedef void (APIENTRY *glShadingRateImagePaletteNVPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetShadingRateImagePaletteNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glShadingRateImageBarrierNVPROC) (jboolean);
-typedef void (APIENTRY *glShadingRateSampleOrderNVPROC) (jint);
-typedef void (APIENTRY *glShadingRateSampleOrderCustomNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetShadingRateSampleLocationivNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glBindShadingRateImageNVPROC) (jint);
+typedef void (*glShadingRateImagePaletteNVPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetShadingRateImagePaletteNVPROC) (jint, jint, uintptr_t);
+typedef void (*glShadingRateImageBarrierNVPROC) (jboolean);
+typedef void (*glShadingRateSampleOrderNVPROC) (jint);
+typedef void (*glShadingRateSampleOrderCustomNVPROC) (jint, jint, uintptr_t);
+typedef void (*glGetShadingRateSampleLocationivNVPROC) (jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

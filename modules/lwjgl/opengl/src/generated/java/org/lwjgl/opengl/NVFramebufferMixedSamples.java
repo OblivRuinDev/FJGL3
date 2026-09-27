@@ -85,7 +85,7 @@ public class NVFramebufferMixedSamples {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(v.length, v, __functionAddress);
+        invokePV(v.length, v, __functionAddress);
     }
 
     /** {@code void glGetCoverageModulationTableNV(GLsizei bufsize, GLfloat * v)} */
@@ -94,7 +94,7 @@ public class NVFramebufferMixedSamples {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPV(v.length, v, __functionAddress);
+        invokePV(v.length, v, __functionAddress);
     }
 
 }

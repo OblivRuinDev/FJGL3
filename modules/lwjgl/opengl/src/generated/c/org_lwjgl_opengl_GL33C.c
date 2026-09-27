@@ -14,34 +14,34 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBindFragDataLocationIndexedPROC) (jint, jint, jint, uintptr_t);
-typedef jint (APIENTRY *glGetFragDataIndexPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glGenSamplersPROC) (jint, uintptr_t);
-typedef void (APIENTRY *glDeleteSamplersPROC) (jint, uintptr_t);
-typedef jboolean (APIENTRY *glIsSamplerPROC) (jint);
-typedef void (APIENTRY *glBindSamplerPROC) (jint, jint);
-typedef void (APIENTRY *glSamplerParameteriPROC) (jint, jint, jint);
-typedef void (APIENTRY *glSamplerParameterfPROC) (jint, jint, jfloat);
-typedef void (APIENTRY *glSamplerParameterivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glSamplerParameterfvPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glSamplerParameterIivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glSamplerParameterIuivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetSamplerParameterivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetSamplerParameterfvPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetSamplerParameterIivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetSamplerParameterIuivPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glQueryCounterPROC) (jint, jint);
-typedef void (APIENTRY *glGetQueryObjecti64vPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetQueryObjectui64vPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glVertexAttribDivisorPROC) (jint, jint);
-typedef void (APIENTRY *glVertexAttribP1uiPROC) (jint, jint, jboolean, jint);
-typedef void (APIENTRY *glVertexAttribP2uiPROC) (jint, jint, jboolean, jint);
-typedef void (APIENTRY *glVertexAttribP3uiPROC) (jint, jint, jboolean, jint);
-typedef void (APIENTRY *glVertexAttribP4uiPROC) (jint, jint, jboolean, jint);
-typedef void (APIENTRY *glVertexAttribP1uivPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glVertexAttribP2uivPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glVertexAttribP3uivPROC) (jint, jint, jboolean, uintptr_t);
-typedef void (APIENTRY *glVertexAttribP4uivPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glBindFragDataLocationIndexedPROC) (jint, jint, jint, uintptr_t);
+typedef jint (*glGetFragDataIndexPROC) (jint, uintptr_t);
+typedef void (*glGenSamplersPROC) (jint, uintptr_t);
+typedef void (*glDeleteSamplersPROC) (jint, uintptr_t);
+typedef jboolean (*glIsSamplerPROC) (jint);
+typedef void (*glBindSamplerPROC) (jint, jint);
+typedef void (*glSamplerParameteriPROC) (jint, jint, jint);
+typedef void (*glSamplerParameterfPROC) (jint, jint, jfloat);
+typedef void (*glSamplerParameterivPROC) (jint, jint, uintptr_t);
+typedef void (*glSamplerParameterfvPROC) (jint, jint, uintptr_t);
+typedef void (*glSamplerParameterIivPROC) (jint, jint, uintptr_t);
+typedef void (*glSamplerParameterIuivPROC) (jint, jint, uintptr_t);
+typedef void (*glGetSamplerParameterivPROC) (jint, jint, uintptr_t);
+typedef void (*glGetSamplerParameterfvPROC) (jint, jint, uintptr_t);
+typedef void (*glGetSamplerParameterIivPROC) (jint, jint, uintptr_t);
+typedef void (*glGetSamplerParameterIuivPROC) (jint, jint, uintptr_t);
+typedef void (*glQueryCounterPROC) (jint, jint);
+typedef void (*glGetQueryObjecti64vPROC) (jint, jint, uintptr_t);
+typedef void (*glGetQueryObjectui64vPROC) (jint, jint, uintptr_t);
+typedef void (*glVertexAttribDivisorPROC) (jint, jint);
+typedef void (*glVertexAttribP1uiPROC) (jint, jint, jboolean, jint);
+typedef void (*glVertexAttribP2uiPROC) (jint, jint, jboolean, jint);
+typedef void (*glVertexAttribP3uiPROC) (jint, jint, jboolean, jint);
+typedef void (*glVertexAttribP4uiPROC) (jint, jint, jboolean, jint);
+typedef void (*glVertexAttribP1uivPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glVertexAttribP2uivPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glVertexAttribP3uivPROC) (jint, jint, jboolean, uintptr_t);
+typedef void (*glVertexAttribP4uivPROC) (jint, jint, jboolean, uintptr_t);
 
 EXTERN_C_ENTER
 

@@ -58,7 +58,7 @@ public class MSFTSceneMarker {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(scene.address(), markerId, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePPPPI(scene.address(), markerId, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetSceneMarkerRawDataMSFT(XrSceneMSFT scene, XrUuidMSFT const * markerId, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, uint8_t * buffer)} */
@@ -78,7 +78,7 @@ public class MSFTSceneMarker {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(scene.address(), markerId, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
+        return invokePPPPI(scene.address(), markerId, bufferCapacityInput, bufferCountOutput, buffer, __functionAddress);
     }
 
     /** {@code XrResult xrGetSceneMarkerDecodedStringMSFT(XrSceneMSFT scene, XrUuidMSFT const * markerId, uint32_t bufferCapacityInput, uint32_t * bufferCountOutput, char * buffer)} */

@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glBufferParameteriAPPLEPROC) (jint, jint, jint);
-typedef void (APIENTRY *glFlushMappedBufferRangeAPPLEPROC) (jint, uintptr_t, uintptr_t);
+typedef void (*glBufferParameteriAPPLEPROC) (jint, jint, jint);
+typedef void (*glFlushMappedBufferRangeAPPLEPROC) (jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

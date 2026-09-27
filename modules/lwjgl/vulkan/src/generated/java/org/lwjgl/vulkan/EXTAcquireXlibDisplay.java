@@ -43,7 +43,7 @@ public class EXTAcquireXlibDisplay {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPJI(physicalDevice.address(), dpy, display, __functionAddress);
+        return invokePPJI(physicalDevice.address(), dpy, display, __functionAddress);
     }
 
     // --- [ vkGetRandROutputDisplayEXT ] ---
@@ -55,7 +55,7 @@ public class EXTAcquireXlibDisplay {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPNPI(physicalDevice.address(), dpy, rrOutput, pDisplay, __functionAddress);
+        return invokePPNPI(physicalDevice.address(), dpy, rrOutput, pDisplay, __functionAddress);
     }
 
     /** {@code VkResult vkGetRandROutputDisplayEXT(VkPhysicalDevice physicalDevice, Display * dpy, RROutput rrOutput, VkDisplayKHR * pDisplay)} */
@@ -76,7 +76,7 @@ public class EXTAcquireXlibDisplay {
             check(dpy);
             check(pDisplay, 1);
         }
-        return callPPNPI(physicalDevice.address(), dpy, rrOutput, pDisplay, __functionAddress);
+        return invokePPNPI(physicalDevice.address(), dpy, rrOutput, pDisplay, __functionAddress);
     }
 
 }

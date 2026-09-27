@@ -30,7 +30,6 @@ public interface FMOD_MEMORY_REALLOC_CALLBACKI extends CallbackI {
         FMOD_MEMORY_REALLOC_CALLBACKI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_pointer,
             ffi_type_pointer, ffi_type_uint32, ffi_type_uint32, ffi_type_pointer
         )

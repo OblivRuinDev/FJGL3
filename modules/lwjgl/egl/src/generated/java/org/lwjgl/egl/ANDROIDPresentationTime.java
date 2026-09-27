@@ -35,7 +35,7 @@ public class ANDROIDPresentationTime {
             check(dpy);
             check(surface);
         }
-        return callPPJI(dpy, surface, time, __functionAddress) != 0;
+        return invokePPJI(dpy, surface, time, __functionAddress) != 0;
     }
 
 }

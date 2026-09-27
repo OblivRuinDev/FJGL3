@@ -59,7 +59,7 @@ public class AMDXShaderEnqueue {
             check(__functionAddress);
             Struct.validate(pCreateInfos, createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX.SIZEOF, VkExecutionGraphPipelineCreateInfoAMDX::validate);
         }
-        return callPJPPPI(device.address(), pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines, __functionAddress);
+        return invokePJPPPI(device.address(), pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines, __functionAddress);
     }
 
     /** {@code VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint32_t createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX const * pCreateInfos, VkAllocationCallbacks const * pAllocator, VkPipeline * pPipelines)} */
@@ -79,7 +79,7 @@ public class AMDXShaderEnqueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(device.address(), executionGraph, pSizeInfo, __functionAddress);
+        return invokePJPI(device.address(), executionGraph, pSizeInfo, __functionAddress);
     }
 
     /** {@code VkResult vkGetExecutionGraphPipelineScratchSizeAMDX(VkDevice device, VkPipeline executionGraph, VkExecutionGraphPipelineScratchSizeAMDX * pSizeInfo)} */
@@ -96,7 +96,7 @@ public class AMDXShaderEnqueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), executionGraph, pNodeInfo, pNodeIndex, __functionAddress);
+        return invokePJPPI(device.address(), executionGraph, pNodeInfo, pNodeIndex, __functionAddress);
     }
 
     /** {@code VkResult vkGetExecutionGraphPipelineNodeIndexAMDX(VkDevice device, VkPipeline executionGraph, VkPipelineShaderStageNodeCreateInfoAMDX const * pNodeInfo, uint32_t * pNodeIndex)} */
@@ -116,7 +116,7 @@ public class AMDXShaderEnqueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJV(commandBuffer.address(), executionGraph, scratch, scratchSize, __functionAddress);
+        invokePJJJV(commandBuffer.address(), executionGraph, scratch, scratchSize, __functionAddress);
     }
 
     // --- [ vkCmdDispatchGraphAMDX ] ---
@@ -127,7 +127,7 @@ public class AMDXShaderEnqueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJPV(commandBuffer.address(), scratch, scratchSize, pCountInfo, __functionAddress);
+        invokePJJPV(commandBuffer.address(), scratch, scratchSize, pCountInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDispatchGraphAMDX(VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, VkDispatchGraphCountInfoAMDX const * pCountInfo)} */
@@ -143,7 +143,7 @@ public class AMDXShaderEnqueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJPV(commandBuffer.address(), scratch, scratchSize, pCountInfo, __functionAddress);
+        invokePJJPV(commandBuffer.address(), scratch, scratchSize, pCountInfo, __functionAddress);
     }
 
     /** {@code void vkCmdDispatchGraphIndirectAMDX(VkCommandBuffer commandBuffer, VkDeviceAddress scratch, VkDeviceSize scratchSize, VkDispatchGraphCountInfoAMDX const * pCountInfo)} */
@@ -159,7 +159,7 @@ public class AMDXShaderEnqueue {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJJJV(commandBuffer.address(), scratch, scratchSize, countInfo, __functionAddress);
+        invokePJJJV(commandBuffer.address(), scratch, scratchSize, countInfo, __functionAddress);
     }
 
     /** {@code VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint32_t createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX const * pCreateInfos, VkAllocationCallbacks const * pAllocator, VkPipeline * pPipelines)} */
@@ -171,7 +171,7 @@ public class AMDXShaderEnqueue {
             check(pPipelines, pCreateInfos.remaining());
             Struct.validate(pCreateInfos.address(), pCreateInfos.remaining(), VkExecutionGraphPipelineCreateInfoAMDX.SIZEOF, VkExecutionGraphPipelineCreateInfoAMDX::validate);
         }
-        return callPJPPPI(device.address(), pipelineCache, pCreateInfos.remaining(), pCreateInfos.address(), memAddressSafe(pAllocator), pPipelines, __functionAddress);
+        return invokePJPPPI(device.address(), pipelineCache, pCreateInfos.remaining(), pCreateInfos.address(), memAddressSafe(pAllocator), pPipelines, __functionAddress);
     }
 
     /** {@code VkResult vkGetExecutionGraphPipelineNodeIndexAMDX(VkDevice device, VkPipeline executionGraph, VkPipelineShaderStageNodeCreateInfoAMDX const * pNodeInfo, uint32_t * pNodeIndex)} */
@@ -182,7 +182,7 @@ public class AMDXShaderEnqueue {
             check(__functionAddress);
             check(pNodeIndex, 1);
         }
-        return callPJPPI(device.address(), executionGraph, pNodeInfo.address(), pNodeIndex, __functionAddress);
+        return invokePJPPI(device.address(), executionGraph, pNodeInfo.address(), pNodeIndex, __functionAddress);
     }
 
 }

@@ -49,7 +49,7 @@ public class EXTExternalMemoryMetal {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(device.address(), pGetMetalHandleInfo, pHandle, __functionAddress);
+        return invokePPPI(device.address(), pGetMetalHandleInfo, pHandle, __functionAddress);
     }
 
     /** {@code VkResult vkGetMemoryMetalHandleEXT(VkDevice device, VkMemoryGetMetalHandleInfoEXT const * pGetMetalHandleInfo, void ** pHandle)} */
@@ -70,7 +70,7 @@ public class EXTExternalMemoryMetal {
             check(__functionAddress);
             check(pHandle);
         }
-        return callPPPI(device.address(), handleType, pHandle, pMemoryMetalHandleProperties, __functionAddress);
+        return invokePPPI(device.address(), handleType, pHandle, pMemoryMetalHandleProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetMemoryMetalHandlePropertiesEXT(VkDevice device, VkExternalMemoryHandleTypeFlagBits handleType, void const * pHandle, VkMemoryMetalHandlePropertiesEXT * pMemoryMetalHandleProperties)} */

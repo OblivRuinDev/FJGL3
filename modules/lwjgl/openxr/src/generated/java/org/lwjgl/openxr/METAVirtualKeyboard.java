@@ -81,7 +81,7 @@ public class METAVirtualKeyboard {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, keyboard, __functionAddress);
+        return invokePPPI(session.address(), createInfo, keyboard, __functionAddress);
     }
 
     /** {@code XrResult xrCreateVirtualKeyboardMETA(XrSession session, XrVirtualKeyboardCreateInfoMETA const * createInfo, XrVirtualKeyboardMETA * keyboard)} */
@@ -102,7 +102,7 @@ public class METAVirtualKeyboard {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(keyboard.address(), __functionAddress);
+        return invokePI(keyboard.address(), __functionAddress);
     }
 
     // --- [ xrCreateVirtualKeyboardSpaceMETA ] ---
@@ -114,7 +114,7 @@ public class METAVirtualKeyboard {
             check(__functionAddress);
             XrVirtualKeyboardSpaceCreateInfoMETA.validate(createInfo);
         }
-        return callPPPPI(session.address(), keyboard.address(), createInfo, keyboardSpace, __functionAddress);
+        return invokePPPPI(session.address(), keyboard.address(), createInfo, keyboardSpace, __functionAddress);
     }
 
     /** {@code XrResult xrCreateVirtualKeyboardSpaceMETA(XrSession session, XrVirtualKeyboardMETA keyboard, XrVirtualKeyboardSpaceCreateInfoMETA const * createInfo, XrSpace * keyboardSpace)} */
@@ -135,7 +135,7 @@ public class METAVirtualKeyboard {
             check(__functionAddress);
             XrVirtualKeyboardLocationInfoMETA.validate(locationInfo);
         }
-        return callPPI(keyboard.address(), locationInfo, __functionAddress);
+        return invokePPI(keyboard.address(), locationInfo, __functionAddress);
     }
 
     /** {@code XrResult xrSuggestVirtualKeyboardLocationMETA(XrVirtualKeyboardMETA keyboard, XrVirtualKeyboardLocationInfoMETA const * locationInfo)} */
@@ -152,7 +152,7 @@ public class METAVirtualKeyboard {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(keyboard.address(), scale, __functionAddress);
+        return invokePPI(keyboard.address(), scale, __functionAddress);
     }
 
     /** {@code XrResult xrGetVirtualKeyboardScaleMETA(XrVirtualKeyboardMETA keyboard, float * scale)} */
@@ -172,7 +172,7 @@ public class METAVirtualKeyboard {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(keyboard.address(), modelVisibility, __functionAddress);
+        return invokePPI(keyboard.address(), modelVisibility, __functionAddress);
     }
 
     /** {@code XrResult xrSetVirtualKeyboardModelVisibilityMETA(XrVirtualKeyboardMETA keyboard, XrVirtualKeyboardModelVisibilitySetInfoMETA const * modelVisibility)} */
@@ -189,7 +189,7 @@ public class METAVirtualKeyboard {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(keyboard.address(), animationStates, __functionAddress);
+        return invokePPI(keyboard.address(), animationStates, __functionAddress);
     }
 
     /** {@code XrResult xrGetVirtualKeyboardModelAnimationStatesMETA(XrVirtualKeyboardMETA keyboard, XrVirtualKeyboardModelAnimationStatesMETA * animationStates)} */
@@ -206,7 +206,7 @@ public class METAVirtualKeyboard {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(keyboard.address(), textureIdCapacityInput, textureIdCountOutput, textureIds, __functionAddress);
+        return invokePPPI(keyboard.address(), textureIdCapacityInput, textureIdCountOutput, textureIds, __functionAddress);
     }
 
     /** {@code XrResult xrGetVirtualKeyboardDirtyTexturesMETA(XrVirtualKeyboardMETA keyboard, uint32_t textureIdCapacityInput, uint32_t * textureIdCountOutput, uint64_t * textureIds)} */
@@ -226,7 +226,7 @@ public class METAVirtualKeyboard {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPI(keyboard.address(), textureId, textureData, __functionAddress);
+        return invokePJPI(keyboard.address(), textureId, textureData, __functionAddress);
     }
 
     /** {@code XrResult xrGetVirtualKeyboardTextureDataMETA(XrVirtualKeyboardMETA keyboard, uint64_t textureId, XrVirtualKeyboardTextureDataMETA * textureData)} */
@@ -243,7 +243,7 @@ public class METAVirtualKeyboard {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(keyboard.address(), info, interactorRootPose, __functionAddress);
+        return invokePPPI(keyboard.address(), info, interactorRootPose, __functionAddress);
     }
 
     /** {@code XrResult xrSendVirtualKeyboardInputMETA(XrVirtualKeyboardMETA keyboard, XrVirtualKeyboardInputInfoMETA const * info, XrPosef * interactorRootPose)} */
@@ -261,7 +261,7 @@ public class METAVirtualKeyboard {
             check(__functionAddress);
             XrVirtualKeyboardTextContextChangeInfoMETA.validate(changeInfo);
         }
-        return callPPI(keyboard.address(), changeInfo, __functionAddress);
+        return invokePPI(keyboard.address(), changeInfo, __functionAddress);
     }
 
     /** {@code XrResult xrChangeVirtualKeyboardTextContextMETA(XrVirtualKeyboardMETA keyboard, XrVirtualKeyboardTextContextChangeInfoMETA const * changeInfo)} */

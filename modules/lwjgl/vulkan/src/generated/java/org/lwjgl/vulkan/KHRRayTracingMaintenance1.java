@@ -48,7 +48,7 @@ public class KHRRayTracingMaintenance1 {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(commandBuffer.address(), indirectDeviceAddress, __functionAddress);
+        invokePJV(commandBuffer.address(), indirectDeviceAddress, __functionAddress);
     }
 
 }

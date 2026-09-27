@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glLabelObjectEXTPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetObjectLabelEXTPROC) (jint, jint, jint, uintptr_t, uintptr_t);
+typedef void (*glLabelObjectEXTPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetObjectLabelEXTPROC) (jint, jint, jint, uintptr_t, uintptr_t);
 
 EXTERN_C_ENTER
 

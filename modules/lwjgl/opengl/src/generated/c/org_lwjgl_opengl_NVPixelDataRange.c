@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glPixelDataRangeNVPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glFlushPixelDataRangeNVPROC) (jint);
+typedef void (*glPixelDataRangeNVPROC) (jint, jint, uintptr_t);
+typedef void (*glFlushPixelDataRangeNVPROC) (jint);
 
 EXTERN_C_ENTER
 

@@ -42,7 +42,7 @@ public class NVCreateBuffer {
             check(__functionAddress);
             check(context);
         }
-        return callPJJPPPP(context, flags, flags_NV, size, host_ptr, errcode_ret, __functionAddress);
+        return invokePJJPPPP(context, flags, flags_NV, size, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferNV(cl_context context, cl_mem_flags flags, cl_mem_flags_NV flags_NV, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -108,7 +108,7 @@ public class NVCreateBuffer {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJJPPPP(context, flags, flags_NV, (long)host_ptr.remaining(), memAddress(host_ptr), errcode_ret, __functionAddress);
+        return invokePJJPPPP(context, flags, flags_NV, (long)host_ptr.remaining(), memAddress(host_ptr), errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferNV(cl_context context, cl_mem_flags flags, cl_mem_flags_NV flags_NV, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -120,7 +120,7 @@ public class NVCreateBuffer {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJJPPPP(context, flags, flags_NV, Integer.toUnsignedLong(host_ptr.length) << 1, host_ptr, errcode_ret, __functionAddress);
+        return invokePJJPPPP(context, flags, flags_NV, Integer.toUnsignedLong(host_ptr.length) << 1, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferNV(cl_context context, cl_mem_flags flags, cl_mem_flags_NV flags_NV, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -132,7 +132,7 @@ public class NVCreateBuffer {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJJPPPP(context, flags, flags_NV, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
+        return invokePJJPPPP(context, flags, flags_NV, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferNV(cl_context context, cl_mem_flags flags, cl_mem_flags_NV flags_NV, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -144,7 +144,7 @@ public class NVCreateBuffer {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJJPPPP(context, flags, flags_NV, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
+        return invokePJJPPPP(context, flags, flags_NV, Integer.toUnsignedLong(host_ptr.length) << 2, host_ptr, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_mem clCreateBufferNV(cl_context context, cl_mem_flags flags, cl_mem_flags_NV flags_NV, size_t size, void * host_ptr, cl_int * errcode_ret)} */
@@ -156,7 +156,7 @@ public class NVCreateBuffer {
             check(context);
             checkSafe(errcode_ret, 1);
         }
-        return callPJJPPPP(context, flags, flags_NV, Integer.toUnsignedLong(host_ptr.length) << 3, host_ptr, errcode_ret, __functionAddress);
+        return invokePJJPPPP(context, flags, flags_NV, Integer.toUnsignedLong(host_ptr.length) << 3, host_ptr, errcode_ret, __functionAddress);
     }
 
 }

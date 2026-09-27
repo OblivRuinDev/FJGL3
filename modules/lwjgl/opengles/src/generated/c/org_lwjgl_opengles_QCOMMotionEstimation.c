@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glTexEstimateMotionQCOMPROC) (jint, jint, jint);
-typedef void (APIENTRY *glTexEstimateMotionRegionsQCOMPROC) (jint, jint, jint, jint);
+typedef void (*glTexEstimateMotionQCOMPROC) (jint, jint, jint);
+typedef void (*glTexEstimateMotionRegionsQCOMPROC) (jint, jint, jint, jint);
 
 EXTERN_C_ENTER
 

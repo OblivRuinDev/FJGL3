@@ -78,7 +78,7 @@ public class ANDROIDTrackables {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, trackableTypeCapacityInput, trackableTypeCountOutput, trackableTypes, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, trackableTypeCapacityInput, trackableTypeCountOutput, trackableTypes, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSupportedTrackableTypesANDROID(XrInstance instance, XrSystemId systemId, uint32_t trackableTypeCapacityInput, uint32_t * trackableTypeCountOutput, XrTrackableTypeANDROID * trackableTypes)} */
@@ -98,7 +98,7 @@ public class ANDROIDTrackables {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(instance.address(), systemId, trackableTypeCapacityInput, trackableTypeCountOutput, trackableTypes, __functionAddress);
+        return invokePJPPI(instance.address(), systemId, trackableTypeCapacityInput, trackableTypeCountOutput, trackableTypes, __functionAddress);
     }
 
     /** {@code XrResult xrEnumerateSupportedAnchorTrackableTypesANDROID(XrInstance instance, XrSystemId systemId, uint32_t trackableTypeCapacityInput, uint32_t * trackableTypeCountOutput, XrTrackableTypeANDROID * trackableTypes)} */
@@ -118,7 +118,7 @@ public class ANDROIDTrackables {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(session.address(), createInfo, trackableTracker, __functionAddress);
+        return invokePPPI(session.address(), createInfo, trackableTracker, __functionAddress);
     }
 
     /** {@code XrResult xrCreateTrackableTrackerANDROID(XrSession session, XrTrackableTrackerCreateInfoANDROID const * createInfo, XrTrackableTrackerANDROID * trackableTracker)} */
@@ -139,7 +139,7 @@ public class ANDROIDTrackables {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPI(trackableTracker.address(), __functionAddress);
+        return invokePI(trackableTracker.address(), __functionAddress);
     }
 
     // --- [ xrGetAllTrackablesANDROID ] ---
@@ -150,7 +150,7 @@ public class ANDROIDTrackables {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPI(trackableTracker.address(), trackableCapacityInput, trackableCountOutput, trackables, __functionAddress);
+        return invokePPPI(trackableTracker.address(), trackableCapacityInput, trackableCountOutput, trackables, __functionAddress);
     }
 
     /** {@code XrResult xrGetAllTrackablesANDROID(XrTrackableTrackerANDROID trackableTracker, uint32_t trackableCapacityInput, uint32_t * trackableCountOutput, XrTrackableANDROID * trackables)} */
@@ -171,7 +171,7 @@ public class ANDROIDTrackables {
             check(__functionAddress);
             XrTrackableGetInfoANDROID.validate(getInfo);
         }
-        return callPPPI(trackableTracker.address(), getInfo, planeOutput, __functionAddress);
+        return invokePPPI(trackableTracker.address(), getInfo, planeOutput, __functionAddress);
     }
 
     /** {@code XrResult xrGetTrackablePlaneANDROID(XrTrackableTrackerANDROID trackableTracker, XrTrackableGetInfoANDROID const * getInfo, XrTrackablePlaneANDROID * planeOutput)} */
@@ -189,7 +189,7 @@ public class ANDROIDTrackables {
             check(__functionAddress);
             XrAnchorSpaceCreateInfoANDROID.validate(createInfo);
         }
-        return callPPPI(session.address(), createInfo, anchorOutput, __functionAddress);
+        return invokePPPI(session.address(), createInfo, anchorOutput, __functionAddress);
     }
 
     /** {@code XrResult xrCreateAnchorSpaceANDROID(XrSession session, XrAnchorSpaceCreateInfoANDROID const * createInfo, XrSpace * anchorOutput)} */

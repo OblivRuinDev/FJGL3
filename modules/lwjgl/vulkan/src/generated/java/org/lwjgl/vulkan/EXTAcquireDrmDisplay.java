@@ -40,7 +40,7 @@ public class EXTAcquireDrmDisplay {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(physicalDevice.address(), drmFd, display, __functionAddress);
+        return invokePJI(physicalDevice.address(), drmFd, display, __functionAddress);
     }
 
     // --- [ vkGetDrmDisplayEXT ] ---
@@ -51,7 +51,7 @@ public class EXTAcquireDrmDisplay {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(physicalDevice.address(), drmFd, connectorId, display, __functionAddress);
+        return invokePPI(physicalDevice.address(), drmFd, connectorId, display, __functionAddress);
     }
 
     /** {@code VkResult vkGetDrmDisplayEXT(VkPhysicalDevice physicalDevice, int32_t drmFd, uint32_t connectorId, VkDisplayKHR * display)} */
@@ -71,7 +71,7 @@ public class EXTAcquireDrmDisplay {
             check(__functionAddress);
             check(display, 1);
         }
-        return callPPI(physicalDevice.address(), drmFd, connectorId, display, __functionAddress);
+        return invokePPI(physicalDevice.address(), drmFd, connectorId, display, __functionAddress);
     }
 
 }

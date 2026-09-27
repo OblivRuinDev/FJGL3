@@ -48,7 +48,7 @@ public class AMDShaderInfo {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), pipeline, shaderStage, infoType, pInfoSize, pInfo, __functionAddress);
+        return invokePJPPI(device.address(), pipeline, shaderStage, infoType, pInfoSize, pInfo, __functionAddress);
     }
 
     /** {@code VkResult vkGetShaderInfoAMD(VkDevice device, VkPipeline pipeline, VkShaderStageFlagBits shaderStage, VkShaderInfoTypeAMD infoType, size_t * pInfoSize, void * pInfo)} */

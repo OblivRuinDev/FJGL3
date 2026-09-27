@@ -110,7 +110,7 @@ public class GLX {
         if (CHECKS) {
             check(display);
         }
-        return callPPPI(display, error_base, event_base, __functionAddress);
+        return invokePPPI(display, error_base, event_base, __functionAddress);
     }
 
     /** {@code Bool glXQueryExtension(Display * display, int * error_base, int * event_base)} */
@@ -131,7 +131,7 @@ public class GLX {
         if (CHECKS) {
             check(display);
         }
-        return callPPPI(display, major, minor, __functionAddress);
+        return invokePPPI(display, major, minor, __functionAddress);
     }
 
     /** {@code Bool glXQueryVersion(Display * display, int * major, int * minor)} */
@@ -153,7 +153,7 @@ public class GLX {
             check(display);
             XVisualInfo.validate(visual);
         }
-        return callPPPI(display, visual, attribute, value, __functionAddress);
+        return invokePPPI(display, visual, attribute, value, __functionAddress);
     }
 
     /** {@code int glXGetConfig(Display * display, XVisualInfo * visual, int attribute, int * value)} */
@@ -172,7 +172,7 @@ public class GLX {
         if (CHECKS) {
             check(display);
         }
-        return callPPP(display, screen, attrib_list, __functionAddress);
+        return invokePPP(display, screen, attrib_list, __functionAddress);
     }
 
     /** {@code XVisualInfo * glXChooseVisual(Display * display, int screen, int * attrib_list)} */
@@ -194,7 +194,7 @@ public class GLX {
             check(display);
             XVisualInfo.validate(visual);
         }
-        return callPPPP(display, visual, share_list, direct, __functionAddress);
+        return invokePPPP(display, visual, share_list, direct, __functionAddress);
     }
 
     /** {@code GLXContext glXCreateContext(Display * display, XVisualInfo * visual, GLXContext share_list, Bool direct)} */
@@ -212,7 +212,7 @@ public class GLX {
         if (CHECKS) {
             check(display);
         }
-        return callPPPI(display, draw, ctx, __functionAddress) != 0;
+        return invokePPPI(display, draw, ctx, __functionAddress) != 0;
     }
 
     // --- [ glXCopyContext ] ---
@@ -225,7 +225,7 @@ public class GLX {
             check(source);
             check(dest);
         }
-        callPPPNV(display, source, dest, mask, __functionAddress);
+        invokePPPNV(display, source, dest, mask, __functionAddress);
     }
 
     // --- [ glXIsDirect ] ---
@@ -238,7 +238,7 @@ public class GLX {
             check(display);
             check(ctx);
         }
-        return callPPI(display, ctx, __functionAddress) != 0;
+        return invokePPI(display, ctx, __functionAddress) != 0;
     }
 
     // --- [ glXDestroyContext ] ---
@@ -250,7 +250,7 @@ public class GLX {
             check(display);
             check(ctx);
         }
-        callPPV(display, ctx, __functionAddress);
+        invokePPV(display, ctx, __functionAddress);
     }
 
     // --- [ glXGetCurrentContext ] ---
@@ -259,7 +259,7 @@ public class GLX {
     @NativeType("GLXContext")
     public static long glXGetCurrentContext() {
         long __functionAddress = Functions.GetCurrentContext;
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
     // --- [ glXGetCurrentDrawable ] ---
@@ -268,7 +268,7 @@ public class GLX {
     @NativeType("GLXDrawable")
     public static long glXGetCurrentDrawable() {
         long __functionAddress = Functions.GetCurrentDrawable;
-        return callP(__functionAddress);
+        return invokeP(__functionAddress);
     }
 
     // --- [ glXWaitGL ] ---
@@ -276,7 +276,7 @@ public class GLX {
     /** {@code void glXWaitGL(void)} */
     public static void glXWaitGL() {
         long __functionAddress = Functions.WaitGL;
-        callV(__functionAddress);
+        invokeV(__functionAddress);
     }
 
     // --- [ glXWaitX ] ---
@@ -284,7 +284,7 @@ public class GLX {
     /** {@code void glXWaitX(void)} */
     public static void glXWaitX() {
         long __functionAddress = Functions.WaitX;
-        callV(__functionAddress);
+        invokeV(__functionAddress);
     }
 
     // --- [ glXSwapBuffers ] ---
@@ -296,7 +296,7 @@ public class GLX {
             check(display);
             check(draw);
         }
-        callPPV(display, draw, __functionAddress);
+        invokePPV(display, draw, __functionAddress);
     }
 
     // --- [ glXUseXFont ] ---
@@ -304,7 +304,7 @@ public class GLX {
     /** {@code void glXUseXFont(Font font, int first, int count, int list_base)} */
     public static void glXUseXFont(@NativeType("Font") long font, int first, int count, int list_base) {
         long __functionAddress = Functions.UseXFont;
-        callNV(font, first, count, list_base, __functionAddress);
+        invokeNV(font, first, count, list_base, __functionAddress);
     }
 
     // --- [ glXCreateGLXPixmap ] ---
@@ -316,7 +316,7 @@ public class GLX {
             check(display);
             XVisualInfo.validate(visual);
         }
-        return callPPNP(display, visual, pixmap, __functionAddress);
+        return invokePPNP(display, visual, pixmap, __functionAddress);
     }
 
     /** {@code GLXPixmap glXCreateGLXPixmap(Display * display, XVisualInfo * visual, Pixmap pixmap)} */
@@ -334,7 +334,7 @@ public class GLX {
             check(display);
             check(pixmap);
         }
-        callPPV(display, pixmap, __functionAddress);
+        invokePPV(display, pixmap, __functionAddress);
     }
 
     /** {@code Bool glXQueryExtension(Display * display, int * error_base, int * event_base)} */
@@ -346,7 +346,7 @@ public class GLX {
             check(error_base, 1);
             check(event_base, 1);
         }
-        return callPPPI(display, error_base, event_base, __functionAddress) != 0;
+        return invokePPPI(display, error_base, event_base, __functionAddress) != 0;
     }
 
     /** {@code Bool glXQueryVersion(Display * display, int * major, int * minor)} */
@@ -358,7 +358,7 @@ public class GLX {
             check(major, 1);
             check(minor, 1);
         }
-        return callPPPI(display, major, minor, __functionAddress) != 0;
+        return invokePPPI(display, major, minor, __functionAddress) != 0;
     }
 
     /** {@code int glXGetConfig(Display * display, XVisualInfo * visual, int attribute, int * value)} */
@@ -369,7 +369,7 @@ public class GLX {
             check(value, 1);
             XVisualInfo.validate(visual.address());
         }
-        return callPPPI(display, visual.address(), attribute, value, __functionAddress);
+        return invokePPPI(display, visual.address(), attribute, value, __functionAddress);
     }
 
     /** {@code XVisualInfo * glXChooseVisual(Display * display, int screen, int * attrib_list)} */
@@ -380,7 +380,7 @@ public class GLX {
             check(display);
             checkNTSafe(attrib_list);
         }
-        long __result = callPPP(display, screen, attrib_list, __functionAddress);
+        long __result = invokePPP(display, screen, attrib_list, __functionAddress);
         return XVisualInfo.createSafe(__result);
     }
 

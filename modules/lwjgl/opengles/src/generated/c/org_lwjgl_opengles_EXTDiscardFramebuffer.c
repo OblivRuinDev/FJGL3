@@ -14,7 +14,7 @@
 #include "common_tools.h"
 #include "opengles.h"
 
-typedef void (APIENTRY *glDiscardFramebufferEXTPROC) (jint, jint, uintptr_t);
+typedef void (*glDiscardFramebufferEXTPROC) (jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

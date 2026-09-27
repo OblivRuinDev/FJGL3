@@ -48,7 +48,7 @@ public class NVDeviceGeneratedCommandsCompute {
             check(__functionAddress);
             VkComputePipelineCreateInfo.validate(pCreateInfo);
         }
-        callPPPV(device.address(), pCreateInfo, pMemoryRequirements, __functionAddress);
+        invokePPPV(device.address(), pCreateInfo, pMemoryRequirements, __functionAddress);
     }
 
     /** {@code void vkGetPipelineIndirectMemoryRequirementsNV(VkDevice device, VkComputePipelineCreateInfo const * pCreateInfo, VkMemoryRequirements2 * pMemoryRequirements)} */
@@ -64,7 +64,7 @@ public class NVDeviceGeneratedCommandsCompute {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(commandBuffer.address(), pipelineBindPoint, pipeline, __functionAddress);
+        invokePJV(commandBuffer.address(), pipelineBindPoint, pipeline, __functionAddress);
     }
 
     // --- [ vkGetPipelineIndirectDeviceAddressNV ] ---
@@ -75,7 +75,7 @@ public class NVDeviceGeneratedCommandsCompute {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPJ(device.address(), pInfo, __functionAddress);
+        return invokePPJ(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code VkDeviceAddress vkGetPipelineIndirectDeviceAddressNV(VkDevice device, VkPipelineIndirectDeviceAddressInfoNV const * pInfo)} */

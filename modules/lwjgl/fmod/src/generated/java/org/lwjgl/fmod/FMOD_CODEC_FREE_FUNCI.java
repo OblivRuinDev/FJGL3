@@ -30,7 +30,6 @@ public interface FMOD_CODEC_FREE_FUNCI extends CallbackI {
         FMOD_CODEC_FREE_FUNCI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_void,
             ffi_type_pointer, ffi_type_pointer, ffi_type_sint32
         )

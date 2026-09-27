@@ -14,9 +14,9 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef jint (APIENTRY *glObjectPurgeableAPPLEPROC) (jint, jint, jint);
-typedef jint (APIENTRY *glObjectUnpurgeableAPPLEPROC) (jint, jint, jint);
-typedef void (APIENTRY *glGetObjectParameterivAPPLEPROC) (jint, jint, jint, uintptr_t);
+typedef jint (*glObjectPurgeableAPPLEPROC) (jint, jint, jint);
+typedef jint (*glObjectUnpurgeableAPPLEPROC) (jint, jint, jint);
+typedef void (*glGetObjectParameterivAPPLEPROC) (jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

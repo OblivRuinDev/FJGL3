@@ -46,7 +46,7 @@ public class APPLECommandQueuePriority {
             check(context);
             check(device);
         }
-        return callPPPPP(context, device, properties, errcode_ret, __functionAddress);
+        return invokePPPPP(context, device, properties, errcode_ret, __functionAddress);
     }
 
     /** {@code cl_command_queue clCreateCommandQueueWithPropertiesAPPLE(cl_context context, cl_device_id device, cl_queue_properties_APPLE const * properties, cl_int * errcode_ret)} */
@@ -70,7 +70,7 @@ public class APPLECommandQueuePriority {
             checkNT(properties);
             checkSafe(errcode_ret, 1);
         }
-        return callPPPPP(context, device, memAddress(properties), errcode_ret, __functionAddress);
+        return invokePPPPP(context, device, memAddress(properties), errcode_ret, __functionAddress);
     }
 
 }

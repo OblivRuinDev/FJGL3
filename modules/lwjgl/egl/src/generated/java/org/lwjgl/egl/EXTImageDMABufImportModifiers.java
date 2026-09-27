@@ -51,7 +51,7 @@ public class EXTImageDMABufImportModifiers {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPPI(dpy, max_formats, formats, num_formats, __functionAddress);
+        return invokePPPI(dpy, max_formats, formats, num_formats, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryDmaBufFormatsEXT(EGLDisplay dpy, EGLint max_formats, EGLint * formats, EGLint * num_formats)} */
@@ -72,7 +72,7 @@ public class EXTImageDMABufImportModifiers {
             check(__functionAddress);
             check(dpy);
         }
-        return callPPPPI(dpy, format, max_modifiers, modifiers, external_only, num_modifiers, __functionAddress);
+        return invokePPPPI(dpy, format, max_modifiers, modifiers, external_only, num_modifiers, __functionAddress);
     }
 
     /** {@code EGLBoolean eglQueryDmaBufModifiersEXT(EGLDisplay dpy, EGLint format, EGLint max_modifiers, EGLuint64KHR * modifiers, EGLBoolean * external_only, EGLint * num_modifiers)} */
@@ -94,7 +94,7 @@ public class EXTImageDMABufImportModifiers {
             check(dpy);
             check(num_formats, 1);
         }
-        return callPPPI(dpy, lengthSafe(formats), formats, num_formats, __functionAddress) != 0;
+        return invokePPPI(dpy, lengthSafe(formats), formats, num_formats, __functionAddress) != 0;
     }
 
     /** {@code EGLBoolean eglQueryDmaBufModifiersEXT(EGLDisplay dpy, EGLint format, EGLint max_modifiers, EGLuint64KHR * modifiers, EGLBoolean * external_only, EGLint * num_modifiers)} */
@@ -107,7 +107,7 @@ public class EXTImageDMABufImportModifiers {
             checkSafe(external_only, lengthSafe(modifiers));
             check(num_modifiers, 1);
         }
-        return callPPPPI(dpy, format, lengthSafe(modifiers), modifiers, external_only, num_modifiers, __functionAddress) != 0;
+        return invokePPPPI(dpy, format, lengthSafe(modifiers), modifiers, external_only, num_modifiers, __functionAddress) != 0;
     }
 
 }

@@ -110,7 +110,7 @@ public class NVOpticalFlow {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(physicalDevice.address(), pOpticalFlowImageFormatInfo, pFormatCount, pImageFormatProperties, __functionAddress);
+        return invokePPPPI(physicalDevice.address(), pOpticalFlowImageFormatInfo, pFormatCount, pImageFormatProperties, __functionAddress);
     }
 
     /** {@code VkResult vkGetPhysicalDeviceOpticalFlowImageFormatsNV(VkPhysicalDevice physicalDevice, VkOpticalFlowImageFormatInfoNV const * pOpticalFlowImageFormatInfo, uint32_t * pFormatCount, VkOpticalFlowImageFormatPropertiesNV * pImageFormatProperties)} */
@@ -131,7 +131,7 @@ public class NVOpticalFlow {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pSession, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pSession, __functionAddress);
     }
 
     /** {@code VkResult vkCreateOpticalFlowSessionNV(VkDevice device, VkOpticalFlowSessionCreateInfoNV const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkOpticalFlowSessionNV * pSession)} */
@@ -151,7 +151,7 @@ public class NVOpticalFlow {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), session, pAllocator, __functionAddress);
+        invokePJPV(device.address(), session, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyOpticalFlowSessionNV(VkDevice device, VkOpticalFlowSessionNV session, VkAllocationCallbacks const * pAllocator)} */
@@ -168,7 +168,7 @@ public class NVOpticalFlow {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJJI(device.address(), session, bindingPoint, view, layout, __functionAddress);
+        return invokePJJI(device.address(), session, bindingPoint, view, layout, __functionAddress);
     }
 
     // --- [ vkCmdOpticalFlowExecuteNV ] ---
@@ -180,7 +180,7 @@ public class NVOpticalFlow {
             check(__functionAddress);
             VkOpticalFlowExecuteInfoNV.validate(pExecuteInfo);
         }
-        callPJPV(commandBuffer.address(), session, pExecuteInfo, __functionAddress);
+        invokePJPV(commandBuffer.address(), session, pExecuteInfo, __functionAddress);
     }
 
     /** {@code void vkCmdOpticalFlowExecuteNV(VkCommandBuffer commandBuffer, VkOpticalFlowSessionNV session, VkOpticalFlowExecuteInfoNV const * pExecuteInfo)} */
@@ -197,7 +197,7 @@ public class NVOpticalFlow {
             check(pFormatCount, 1);
             checkSafe(pImageFormatProperties, pFormatCount[0]);
         }
-        return callPPPPI(physicalDevice.address(), pOpticalFlowImageFormatInfo.address(), pFormatCount, memAddressSafe(pImageFormatProperties), __functionAddress);
+        return invokePPPPI(physicalDevice.address(), pOpticalFlowImageFormatInfo.address(), pFormatCount, memAddressSafe(pImageFormatProperties), __functionAddress);
     }
 
     /** {@code VkResult vkCreateOpticalFlowSessionNV(VkDevice device, VkOpticalFlowSessionCreateInfoNV const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkOpticalFlowSessionNV * pSession)} */
@@ -208,7 +208,7 @@ public class NVOpticalFlow {
             check(__functionAddress);
             check(pSession, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSession, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pSession, __functionAddress);
     }
 
 }

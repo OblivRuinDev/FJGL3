@@ -30,7 +30,6 @@ public interface FMOD_OUTPUT_DEVICELISTCHANGED_CALLBACKI extends CallbackI {
         FMOD_OUTPUT_DEVICELISTCHANGED_CALLBACKI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_uint32,
             ffi_type_pointer
         )

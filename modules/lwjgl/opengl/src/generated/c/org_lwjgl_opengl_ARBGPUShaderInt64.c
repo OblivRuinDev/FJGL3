@@ -14,42 +14,42 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glUniform1i64ARBPROC) (jint, jlong);
-typedef void (APIENTRY *glUniform1i64vARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform1i64ARBPROC) (jint, jint, jlong);
-typedef void (APIENTRY *glProgramUniform1i64vARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform2i64ARBPROC) (jint, jlong, jlong);
-typedef void (APIENTRY *glUniform2i64vARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform2i64ARBPROC) (jint, jint, jlong, jlong);
-typedef void (APIENTRY *glProgramUniform2i64vARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform3i64ARBPROC) (jint, jlong, jlong, jlong);
-typedef void (APIENTRY *glUniform3i64vARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform3i64ARBPROC) (jint, jint, jlong, jlong, jlong);
-typedef void (APIENTRY *glProgramUniform3i64vARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform4i64ARBPROC) (jint, jlong, jlong, jlong, jlong);
-typedef void (APIENTRY *glUniform4i64vARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform4i64ARBPROC) (jint, jint, jlong, jlong, jlong, jlong);
-typedef void (APIENTRY *glProgramUniform4i64vARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform1ui64ARBPROC) (jint, jlong);
-typedef void (APIENTRY *glUniform1ui64vARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform1ui64ARBPROC) (jint, jint, jlong);
-typedef void (APIENTRY *glProgramUniform1ui64vARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform2ui64ARBPROC) (jint, jlong, jlong);
-typedef void (APIENTRY *glUniform2ui64vARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform2ui64ARBPROC) (jint, jint, jlong, jlong);
-typedef void (APIENTRY *glProgramUniform2ui64vARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform3ui64ARBPROC) (jint, jlong, jlong, jlong);
-typedef void (APIENTRY *glUniform3ui64vARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform3ui64ARBPROC) (jint, jint, jlong, jlong, jlong);
-typedef void (APIENTRY *glProgramUniform3ui64vARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glUniform4ui64ARBPROC) (jint, jlong, jlong, jlong, jlong);
-typedef void (APIENTRY *glUniform4ui64vARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramUniform4ui64ARBPROC) (jint, jint, jlong, jlong, jlong, jlong);
-typedef void (APIENTRY *glProgramUniform4ui64vARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetUniformi64vARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetUniformui64vARBPROC) (jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnUniformi64vARBPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glGetnUniformui64vARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glUniform1i64ARBPROC) (jint, jlong);
+typedef void (*glUniform1i64vARBPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramUniform1i64ARBPROC) (jint, jint, jlong);
+typedef void (*glProgramUniform1i64vARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glUniform2i64ARBPROC) (jint, jlong, jlong);
+typedef void (*glUniform2i64vARBPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramUniform2i64ARBPROC) (jint, jint, jlong, jlong);
+typedef void (*glProgramUniform2i64vARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glUniform3i64ARBPROC) (jint, jlong, jlong, jlong);
+typedef void (*glUniform3i64vARBPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramUniform3i64ARBPROC) (jint, jint, jlong, jlong, jlong);
+typedef void (*glProgramUniform3i64vARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glUniform4i64ARBPROC) (jint, jlong, jlong, jlong, jlong);
+typedef void (*glUniform4i64vARBPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramUniform4i64ARBPROC) (jint, jint, jlong, jlong, jlong, jlong);
+typedef void (*glProgramUniform4i64vARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glUniform1ui64ARBPROC) (jint, jlong);
+typedef void (*glUniform1ui64vARBPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramUniform1ui64ARBPROC) (jint, jint, jlong);
+typedef void (*glProgramUniform1ui64vARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glUniform2ui64ARBPROC) (jint, jlong, jlong);
+typedef void (*glUniform2ui64vARBPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramUniform2ui64ARBPROC) (jint, jint, jlong, jlong);
+typedef void (*glProgramUniform2ui64vARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glUniform3ui64ARBPROC) (jint, jlong, jlong, jlong);
+typedef void (*glUniform3ui64vARBPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramUniform3ui64ARBPROC) (jint, jint, jlong, jlong, jlong);
+typedef void (*glProgramUniform3ui64vARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glUniform4ui64ARBPROC) (jint, jlong, jlong, jlong, jlong);
+typedef void (*glUniform4ui64vARBPROC) (jint, jint, uintptr_t);
+typedef void (*glProgramUniform4ui64ARBPROC) (jint, jint, jlong, jlong, jlong, jlong);
+typedef void (*glProgramUniform4ui64vARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetUniformi64vARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetUniformui64vARBPROC) (jint, jint, uintptr_t);
+typedef void (*glGetnUniformi64vARBPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glGetnUniformui64vARBPROC) (jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

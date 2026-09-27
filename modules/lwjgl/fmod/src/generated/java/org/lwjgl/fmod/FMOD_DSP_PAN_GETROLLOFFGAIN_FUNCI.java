@@ -30,7 +30,6 @@ public interface FMOD_DSP_PAN_GETROLLOFFGAIN_FUNCI extends CallbackI {
         FMOD_DSP_PAN_GETROLLOFFGAIN_FUNCI.class,
         MethodHandles.lookup(),
         apiCreateCIF(
-            apiStdcall(),
             ffi_type_uint32,
             ffi_type_pointer, ffi_type_uint32, ffi_type_float, ffi_type_float, ffi_type_float, ffi_type_pointer
         )

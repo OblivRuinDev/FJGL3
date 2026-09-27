@@ -80,7 +80,7 @@ public class GLXSGIXPbuffer {
             check(display);
             check(config);
         }
-        return callPPPP(display, config, width, height, attrib_list, __functionAddress);
+        return invokePPPP(display, config, width, height, attrib_list, __functionAddress);
     }
 
     /** {@code GLXPbuffer glXCreateGLXPbufferSGIX(Display * display, GLXFBConfig config, unsigned int width, unsigned int height, int * attrib_list)} */
@@ -102,7 +102,7 @@ public class GLXSGIXPbuffer {
             check(display);
             check(pbuf);
         }
-        callPPV(display, pbuf, __functionAddress);
+        invokePPV(display, pbuf, __functionAddress);
     }
 
     // --- [ glXQueryGLXPbufferSGIX ] ---
@@ -115,7 +115,7 @@ public class GLXSGIXPbuffer {
             check(display);
             check(pbuf);
         }
-        callPPPV(display, pbuf, attribute, value, __functionAddress);
+        invokePPPV(display, pbuf, attribute, value, __functionAddress);
     }
 
     /** {@code void glXQueryGLXPbufferSGIX(Display * display, GLXPbuffer pbuf, int attribute, unsigned int * value)} */
@@ -136,7 +136,7 @@ public class GLXSGIXPbuffer {
             check(display);
             check(drawable);
         }
-        callPPNV(display, drawable, mask, __functionAddress);
+        invokePPNV(display, drawable, mask, __functionAddress);
     }
 
     // --- [ glXGetSelectedEventSGIX ] ---
@@ -149,7 +149,7 @@ public class GLXSGIXPbuffer {
             check(display);
             check(drawable);
         }
-        callPPPV(display, drawable, mask, __functionAddress);
+        invokePPPV(display, drawable, mask, __functionAddress);
     }
 
     /** {@code void glXGetSelectedEventSGIX(Display * display, GLXDrawable drawable, unsigned long * mask)} */
@@ -170,7 +170,7 @@ public class GLXSGIXPbuffer {
             check(config);
             checkNTSafe(attrib_list);
         }
-        return callPPPP(display, config, width, height, attrib_list, __functionAddress);
+        return invokePPPP(display, config, width, height, attrib_list, __functionAddress);
     }
 
     /** {@code void glXQueryGLXPbufferSGIX(Display * display, GLXPbuffer pbuf, int attribute, unsigned int * value)} */
@@ -182,7 +182,7 @@ public class GLXSGIXPbuffer {
             check(pbuf);
             check(value, 1);
         }
-        callPPPV(display, pbuf, attribute, value, __functionAddress);
+        invokePPPV(display, pbuf, attribute, value, __functionAddress);
     }
 
 }

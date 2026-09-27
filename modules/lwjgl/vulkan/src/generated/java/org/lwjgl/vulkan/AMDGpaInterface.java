@@ -137,7 +137,7 @@ public class AMDGpaInterface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPPPI(device.address(), pCreateInfo, pAllocator, pGpaSession, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo, pAllocator, pGpaSession, __functionAddress);
     }
 
     /** {@code VkResult vkCreateGpaSessionAMD(VkDevice device, VkGpaSessionCreateInfoAMD const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkGpaSessionAMD * pGpaSession)} */
@@ -157,7 +157,7 @@ public class AMDGpaInterface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJPV(device.address(), gpaSession, pAllocator, __functionAddress);
+        invokePJPV(device.address(), gpaSession, pAllocator, __functionAddress);
     }
 
     /** {@code void vkDestroyGpaSessionAMD(VkDevice device, VkGpaSessionAMD gpaSession, VkAllocationCallbacks const * pAllocator)} */
@@ -173,7 +173,7 @@ public class AMDGpaInterface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pInfo, __functionAddress);
+        return invokePPI(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code VkResult vkSetGpaDeviceClockModeAMD(VkDevice device, VkGpaDeviceClockModeInfoAMD * pInfo)} */
@@ -190,7 +190,7 @@ public class AMDGpaInterface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPPI(device.address(), pInfo, __functionAddress);
+        return invokePPI(device.address(), pInfo, __functionAddress);
     }
 
     /** {@code VkResult vkGetGpaDeviceClockInfoAMD(VkDevice device, VkGpaDeviceGetClockInfoAMD * pInfo)} */
@@ -208,7 +208,7 @@ public class AMDGpaInterface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(commandBuffer.address(), gpaSession, __functionAddress);
+        return invokePJI(commandBuffer.address(), gpaSession, __functionAddress);
     }
 
     // --- [ vkCmdEndGpaSessionAMD ] ---
@@ -220,7 +220,7 @@ public class AMDGpaInterface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(commandBuffer.address(), gpaSession, __functionAddress);
+        return invokePJI(commandBuffer.address(), gpaSession, __functionAddress);
     }
 
     // --- [ vkCmdBeginGpaSampleAMD ] ---
@@ -232,7 +232,7 @@ public class AMDGpaInterface {
             check(__functionAddress);
             VkGpaSampleBeginInfoAMD.validate(pGpaSampleBeginInfo);
         }
-        return callPJPPI(commandBuffer.address(), gpaSession, pGpaSampleBeginInfo, pSampleID, __functionAddress);
+        return invokePJPPI(commandBuffer.address(), gpaSession, pGpaSampleBeginInfo, pSampleID, __functionAddress);
     }
 
     /** {@code VkResult vkCmdBeginGpaSampleAMD(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession, VkGpaSampleBeginInfoAMD const * pGpaSampleBeginInfo, uint32_t * pSampleID)} */
@@ -249,7 +249,7 @@ public class AMDGpaInterface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(commandBuffer.address(), gpaSession, sampleID, __functionAddress);
+        invokePJV(commandBuffer.address(), gpaSession, sampleID, __functionAddress);
     }
 
     // --- [ vkGetGpaSessionStatusAMD ] ---
@@ -261,7 +261,7 @@ public class AMDGpaInterface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(device.address(), gpaSession, __functionAddress);
+        return invokePJI(device.address(), gpaSession, __functionAddress);
     }
 
     // --- [ vkGetGpaSessionResultsAMD ] ---
@@ -272,7 +272,7 @@ public class AMDGpaInterface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJPPI(device.address(), gpaSession, sampleID, pSizeInBytes, pData, __functionAddress);
+        return invokePJPPI(device.address(), gpaSession, sampleID, pSizeInBytes, pData, __functionAddress);
     }
 
     /** {@code VkResult vkGetGpaSessionResultsAMD(VkDevice device, VkGpaSessionAMD gpaSession, uint32_t sampleID, size_t * pSizeInBytes, void * pData)} */
@@ -294,7 +294,7 @@ public class AMDGpaInterface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        return callPJI(device.address(), gpaSession, __functionAddress);
+        return invokePJI(device.address(), gpaSession, __functionAddress);
     }
 
     // --- [ vkCmdCopyGpaSessionResultsAMD ] ---
@@ -305,7 +305,7 @@ public class AMDGpaInterface {
         if (CHECKS) {
             check(__functionAddress);
         }
-        callPJV(commandBuffer.address(), gpaSession, __functionAddress);
+        invokePJV(commandBuffer.address(), gpaSession, __functionAddress);
     }
 
     /** {@code VkResult vkCreateGpaSessionAMD(VkDevice device, VkGpaSessionCreateInfoAMD const * pCreateInfo, VkAllocationCallbacks const * pAllocator, VkGpaSessionAMD * pGpaSession)} */
@@ -316,7 +316,7 @@ public class AMDGpaInterface {
             check(__functionAddress);
             check(pGpaSession, 1);
         }
-        return callPPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pGpaSession, __functionAddress);
+        return invokePPPPI(device.address(), pCreateInfo.address(), memAddressSafe(pAllocator), pGpaSession, __functionAddress);
     }
 
     /** {@code VkResult vkCmdBeginGpaSampleAMD(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession, VkGpaSampleBeginInfoAMD const * pGpaSampleBeginInfo, uint32_t * pSampleID)} */
@@ -327,7 +327,7 @@ public class AMDGpaInterface {
             check(__functionAddress);
             VkGpaSampleBeginInfoAMD.validate(pGpaSampleBeginInfo.address());
         }
-        return callPJPPI(commandBuffer.address(), gpaSession, pGpaSampleBeginInfo.address(), pSampleID, __functionAddress);
+        return invokePJPPI(commandBuffer.address(), gpaSession, pGpaSampleBeginInfo.address(), pSampleID, __functionAddress);
     }
 
 }

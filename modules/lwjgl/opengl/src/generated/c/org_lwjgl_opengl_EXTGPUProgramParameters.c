@@ -14,8 +14,8 @@
 #include "common_tools.h"
 #include "opengl.h"
 
-typedef void (APIENTRY *glProgramEnvParameters4fvEXTPROC) (jint, jint, jint, uintptr_t);
-typedef void (APIENTRY *glProgramLocalParameters4fvEXTPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramEnvParameters4fvEXTPROC) (jint, jint, jint, uintptr_t);
+typedef void (*glProgramLocalParameters4fvEXTPROC) (jint, jint, jint, uintptr_t);
 
 EXTERN_C_ENTER
 

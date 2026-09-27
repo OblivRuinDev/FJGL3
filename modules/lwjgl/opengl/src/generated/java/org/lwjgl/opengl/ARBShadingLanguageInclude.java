@@ -223,7 +223,7 @@ public class ARBShadingLanguageInclude {
             check(__functionAddress);
             checkSafe(length, path.remaining());
         }
-        callPPV(shader, path.remaining(), memAddress(path), length, __functionAddress);
+        invokePPV(shader, path.remaining(), memAddress(path), length, __functionAddress);
     }
 
     /** {@code void glGetNamedStringARB(GLint namelen, GLchar const * name, GLsizei bufSize, GLint * stringlen, GLchar * string)} */
@@ -233,7 +233,7 @@ public class ARBShadingLanguageInclude {
             check(__functionAddress);
             checkSafe(stringlen, 1);
         }
-        callPPPV(name.remaining(), memAddress(name), string.remaining(), stringlen, memAddress(string), __functionAddress);
+        invokePPPV(name.remaining(), memAddress(name), string.remaining(), stringlen, memAddress(string), __functionAddress);
     }
 
     /** {@code void glGetNamedStringARB(GLint namelen, GLchar const * name, GLsizei bufSize, GLint * stringlen, GLchar * string)} */
@@ -247,7 +247,7 @@ public class ARBShadingLanguageInclude {
         try {
             int nameEncodedLength = stack.nASCII(name, false);
             long nameEncoded = stack.getPointerAddress();
-            callPPPV(nameEncodedLength, nameEncoded, string.remaining(), stringlen, memAddress(string), __functionAddress);
+            invokePPPV(nameEncodedLength, nameEncoded, string.remaining(), stringlen, memAddress(string), __functionAddress);
         } finally {
             stack.setPointer(stackPointer);
         }
@@ -260,7 +260,7 @@ public class ARBShadingLanguageInclude {
             check(__functionAddress);
             check(params, 1);
         }
-        callPPV(name.remaining(), memAddress(name), pname, params, __functionAddress);
+        invokePPV(name.remaining(), memAddress(name), pname, params, __functionAddress);
     }
 
     /** {@code void glGetNamedStringivARB(GLint namelen, GLchar const * name, GLenum pname, GLint * params)} */
@@ -274,7 +274,7 @@ public class ARBShadingLanguageInclude {
         try {
             int nameEncodedLength = stack.nASCII(name, false);
             long nameEncoded = stack.getPointerAddress();
-            callPPV(nameEncodedLength, nameEncoded, pname, params, __functionAddress);
+            invokePPV(nameEncodedLength, nameEncoded, pname, params, __functionAddress);
         } finally {
             stack.setPointer(stackPointer);
         }
