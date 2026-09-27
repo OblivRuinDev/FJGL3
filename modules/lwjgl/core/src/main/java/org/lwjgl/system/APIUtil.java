@@ -12,6 +12,7 @@
 package org.lwjgl.system;
 
 import jdk.internal.foreign.*;
+import jdk.internal.vm.annotation.*;
 import org.jspecify.annotations.*;
 import org.lwjgl.*;
 import org.lwjgl.system.freebsd.*;
@@ -202,6 +203,7 @@ public final class APIUtil {
         return mappedAddress == NULL ? null : wrapBufferByte(mappedAddress, capacity);
     }
 
+    @ForceInline
     public static long apiGetBytes(int elements, int elementShift) {
         return (elements & 0xFFFF_FFFFL) << elementShift;
     }

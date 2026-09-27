@@ -9,9 +9,9 @@ import org.jspecify.annotations.*;
 import org.lwjgl.*;
 
 import java.nio.*;
+import java.util.*;
 
 import static org.lwjgl.system.APIUtil.*;
-import static org.lwjgl.system.CheckIntrinsics.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
 /**
@@ -545,7 +545,7 @@ public final class Checks {
 
     public static long check(int index, int length) {
         if (CHECKS) {
-            checkIndex(index, length);
+            Objects.checkIndex(index, length);
         }
         // Convert to long to support addressing up to 2^31-1 elements, regardless of sizeof(element).
         // The unsigned conversion helps the JIT produce code that is as fast as if int was returned.
@@ -557,7 +557,7 @@ public final class Checks {
             if (address == NULL) {
                 throw new NullPointerException();
             }
-            checkFromIndexSize(offset, size, length);
+            Objects.checkFromIndexSize(offset, size, length);
         }
     }
 

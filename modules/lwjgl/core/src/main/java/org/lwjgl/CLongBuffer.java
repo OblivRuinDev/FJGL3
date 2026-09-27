@@ -15,8 +15,8 @@ import org.jspecify.annotations.*;
 import org.lwjgl.system.*;
 
 import java.nio.*;
+import java.util.*;
 
-import static org.lwjgl.system.CheckIntrinsics.*;
 import static org.lwjgl.system.Checks.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
@@ -155,7 +155,7 @@ public class CLongBuffer extends CustomBuffer<CLongBuffer> implements Comparable
      * @param index  the index at which the long will be read
      */
     public static long get(ByteBuffer source, int index) {
-        checkFromIndexSize(index, CLONG_SIZE, source.limit());
+        Objects.checkFromIndexSize(index, CLONG_SIZE, source.limit());
         return memGetCLong(memAddress0(source) + index);
     }
 
@@ -184,7 +184,7 @@ public class CLongBuffer extends CustomBuffer<CLongBuffer> implements Comparable
      * @param p      the long value to be written
      */
     public static void put(ByteBuffer target, int index, long p) {
-        checkFromIndexSize(index, CLONG_SIZE, target.limit());
+        Objects.checkFromIndexSize(index, CLONG_SIZE, target.limit());
         memPutCLong(memAddress0(target) + index, p);
     }
 
@@ -246,7 +246,7 @@ public class CLongBuffer extends CustomBuffer<CLongBuffer> implements Comparable
     }
 
     private void get32(long[] dst, int offset, int length) {
-        checkFromIndexSize(offset, length, dst.length);
+        Objects.checkFromIndexSize(offset, length, dst.length);
         if (remaining() < length) {
             throw new BufferUnderflowException();
         }
@@ -311,7 +311,7 @@ public class CLongBuffer extends CustomBuffer<CLongBuffer> implements Comparable
     }
 
     private void put32(long[] src, int offset, int length) {
-        checkFromIndexSize(offset, length, src.length);
+        Objects.checkFromIndexSize(offset, length, src.length);
         if (remaining() < length) {
             throw new BufferOverflowException();
         }

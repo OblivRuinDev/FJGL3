@@ -15,8 +15,8 @@ import org.jspecify.annotations.*;
 import org.lwjgl.system.*;
 
 import java.nio.*;
+import java.util.*;
 
-import static org.lwjgl.system.CheckIntrinsics.*;
 import static org.lwjgl.system.Checks.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
@@ -150,7 +150,7 @@ public class PointerBuffer extends CustomBuffer<PointerBuffer> implements Compar
      * @param index  the index at which the pointer will be read
      */
     public static long get(ByteBuffer source, int index) {
-        checkFromIndexSize(index, POINTER_SIZE, source.limit());
+        Objects.checkFromIndexSize(index, POINTER_SIZE, source.limit());
         return memGetAddress(memAddress0(source) + index);
     }
 
@@ -179,7 +179,7 @@ public class PointerBuffer extends CustomBuffer<PointerBuffer> implements Compar
      * @param p      the pointer value to be written
      */
     public static void put(ByteBuffer target, int index, long p) {
-        checkFromIndexSize(index, POINTER_SIZE, target.limit());
+        Objects.checkFromIndexSize(index, POINTER_SIZE, target.limit());
         memPutAddress(memAddress0(target) + index, p);
     }
 
@@ -513,7 +513,7 @@ public class PointerBuffer extends CustomBuffer<PointerBuffer> implements Compar
     }
 
     private void get32(long[] dst, int offset, int length) {
-        checkFromIndexSize(offset, length, dst.length);
+        Objects.checkFromIndexSize(offset, length, dst.length);
         if (remaining() < length) {
             throw new BufferUnderflowException();
         }
@@ -578,7 +578,7 @@ public class PointerBuffer extends CustomBuffer<PointerBuffer> implements Compar
     }
 
     private void put32(long[] src, int offset, int length) {
-        checkFromIndexSize(offset, length, src.length);
+        Objects.checkFromIndexSize(offset, length, src.length);
         if (remaining() < length) {
             throw new BufferOverflowException();
         }
