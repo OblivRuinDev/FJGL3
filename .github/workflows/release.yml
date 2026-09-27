@@ -9,11 +9,6 @@ permissions:
   contents: read
 
 env:
-  ORG_GRADLE_PROJECT_signingKeyId: 263D4349
-  ORG_GRADLE_PROJECT_signingKey: ${{ secrets.SIGNING_KEY }}
-  ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.SIGNING_PWD }}
-  ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.SONATYPE_USER }}
-  ORG_GRADLE_PROJECT_sonatypePassword: ${{ secrets.SONATYPE_PWD }}
   ANT_OPTS: -Xmx8G
   LWJGL_BUILD_TYPE: stable
   LWJGL_BUILD_OFFLINE: true
@@ -126,6 +121,12 @@ jobs:
           ant -emacs release -Dbuild.version=${{env.FJGL_VERSION}} -Dbuild.revision=${{env.LWJGL_BUILD}}
           $JAVA_HOME/bin/jar cfM lwjgl.zip -C bin/RELEASE .
       - name: Publish release to Maven
+        env:
+          ORG_GRADLE_PROJECT_signingKeyId: 263D4349
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.SIGNING_KEY }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.SIGNING_PWD }}
+          ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.SONATYPE_USER }}
+          ORG_GRADLE_PROJECT_sonatypePassword: ${{ secrets.SONATYPE_PWD }}
         run: ./gradlew -Prelease publish --parallel --configuration-cache --max-workers=8 --info
       - name: Transfer Maven deployment to Central Publisher Portal
         run: |
