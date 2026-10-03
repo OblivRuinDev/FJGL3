@@ -7,7 +7,8 @@ package vulkan.templates
 import org.lwjgl.generator.*
 import vulkan.*
 
-val STD_vulkan_video_codec_vp9 = "STDVulkanVideoCodecVP9".nativeClassVK("STD_vulkan_video_codec_vp9", prefix = "STD_VIDEO", type = "device", postfix = STD) {
+val STD_vulkan_video_codec_vp9 = "STDVulkanVideoCodecVP9".nativeClassVK("STD_vulkan_video_codec_vp9",
+    prefix = "STD_VIDEO", type = "device", postfix = STD, cinitSetRTConst = false) {
     subpackage = "video"
     javaImport("static org.lwjgl.vulkan.video.STDVulkanVideo.*")
 

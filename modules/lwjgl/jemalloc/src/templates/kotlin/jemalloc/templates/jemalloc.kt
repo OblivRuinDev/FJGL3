@@ -11,7 +11,7 @@ val jemalloc = "JEmalloc".nativeClass(Module.JEMALLOC, prefixMethod = "je_", bin
     Module.JEMALLOC,
     libraryExpression = """Configuration.JEMALLOC_LIBRARY_NAME.get(Platform.mapLibraryNameBundled("jemalloc"))""",
     bundledWithLWJGL = true
-)) {
+), cinitSetRTConst = false) {
     IntConstant(
         "JEMALLOC_VERSION_MAJOR".."5",
         "JEMALLOC_VERSION_MINOR".."2",

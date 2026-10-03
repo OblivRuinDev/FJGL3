@@ -37,7 +37,7 @@ public class LibFFI {
         FFI_TYPE_INT        = 1,
         FFI_TYPE_FLOAT      = 2,
         FFI_TYPE_DOUBLE     = 3,
-        FFI_TYPE_LONGDOUBLE = FFI_TYPE_DOUBLE(),
+        FFI_TYPE_LONGDOUBLE,
         FFI_TYPE_UINT8      = 5,
         FFI_TYPE_SINT8      = 6,
         FFI_TYPE_UINT16     = 7,
@@ -54,27 +54,130 @@ public class LibFFI {
         FFI_TYPE_VECTOR     = 18;
 
     public static final int
-        FFI_FIRST_ABI   = FFI_FIRST_ABI(),
-        FFI_WIN64       = FFI_WIN64(),
-        FFI_GNUW64      = FFI_GNUW64(),
-        FFI_UNIX64      = FFI_UNIX64(),
-        FFI_EFI64       = FFI_EFI64(),
-        FFI_SYSV        = FFI_SYSV(),
-        FFI_STDCALL     = FFI_STDCALL(),
-        FFI_THISCALL    = FFI_THISCALL(),
-        FFI_FASTCALL    = FFI_FASTCALL(),
-        FFI_MS_CDECL    = FFI_MS_CDECL(),
-        FFI_PASCAL      = FFI_PASCAL(),
-        FFI_REGISTER    = FFI_REGISTER(),
-        FFI_VFP         = FFI_VFP(),
-        FFI_LAST_ABI    = FFI_LAST_ABI(),
-        FFI_DEFAULT_ABI = FFI_DEFAULT_ABI();
+        FFI_FIRST_ABI  ,
+        FFI_WIN64      ,
+        FFI_GNUW64     ,
+        FFI_UNIX64     ,
+        FFI_EFI64      ,
+        FFI_SYSV       ,
+        FFI_STDCALL    ,
+        FFI_THISCALL   ,
+        FFI_FASTCALL   ,
+        FFI_MS_CDECL   ,
+        FFI_PASCAL     ,
+        FFI_REGISTER   ,
+        FFI_VFP        ,
+        FFI_LAST_ABI   ,
+        FFI_DEFAULT_ABI;
 
     public static final int
         FFI_OK          = 0,
         FFI_BAD_TYPEDEF = 1,
         FFI_BAD_ABI     = 2,
         FFI_BAD_ARGTYPE = 3;
+
+    /** {@code ffi_type * ffi_type_void(void)} */
+    public static final FFIType ffi_type_void;
+
+    /** {@code ffi_type * ffi_type_uint8(void)} */
+    public static final FFIType ffi_type_uint8;
+
+    /** {@code ffi_type * ffi_type_sint8(void)} */
+    public static final FFIType ffi_type_sint8;
+
+    /** {@code ffi_type * ffi_type_uint16(void)} */
+    public static final FFIType ffi_type_uint16;
+
+    /** {@code ffi_type * ffi_type_sint16(void)} */
+    public static final FFIType ffi_type_sint16;
+
+    /** {@code ffi_type * ffi_type_uint32(void)} */
+    public static final FFIType ffi_type_uint32;
+
+    /** {@code ffi_type * ffi_type_sint32(void)} */
+    public static final FFIType ffi_type_sint32;
+
+    /** {@code ffi_type * ffi_type_uint64(void)} */
+    public static final FFIType ffi_type_uint64;
+
+    /** {@code ffi_type * ffi_type_sint64(void)} */
+    public static final FFIType ffi_type_sint64;
+
+    /** {@code ffi_type * ffi_type_uchar(void)} */
+    public static final FFIType ffi_type_uchar;
+
+    /** {@code ffi_type * ffi_type_schar(void)} */
+    public static final FFIType ffi_type_schar;
+
+    /** {@code ffi_type * ffi_type_ushort(void)} */
+    public static final FFIType ffi_type_ushort;
+
+    /** {@code ffi_type * ffi_type_sshort(void)} */
+    public static final FFIType ffi_type_sshort;
+
+    /** {@code ffi_type * ffi_type_uint(void)} */
+    public static final FFIType ffi_type_uint;
+
+    /** {@code ffi_type * ffi_type_sint(void)} */
+    public static final FFIType ffi_type_sint;
+
+    /** {@code ffi_type * ffi_type_ulong(void)} */
+    public static final FFIType ffi_type_ulong;
+
+    /** {@code ffi_type * ffi_type_slong(void)} */
+    public static final FFIType ffi_type_slong;
+
+    /** {@code ffi_type * ffi_type_float(void)} */
+    public static final FFIType ffi_type_float;
+
+    /** {@code ffi_type * ffi_type_double(void)} */
+    public static final FFIType ffi_type_double;
+
+    /** {@code ffi_type * ffi_type_longdouble(void)} */
+    public static final FFIType ffi_type_longdouble;
+
+    /** {@code ffi_type * ffi_type_pointer(void)} */
+    public static final FFIType ffi_type_pointer;
+
+    static {
+        ffi_type_void = FFIType.create(nffi_type_void());
+        ffi_type_uint8 = FFIType.create(nffi_type_uint8());
+        ffi_type_sint8 = FFIType.create(nffi_type_sint8());
+        ffi_type_uint16 = FFIType.create(nffi_type_uint16());
+        ffi_type_sint16 = FFIType.create(nffi_type_sint16());
+        ffi_type_uint32 = FFIType.create(nffi_type_uint32());
+        ffi_type_sint32 = FFIType.create(nffi_type_sint32());
+        ffi_type_uint64 = FFIType.create(nffi_type_uint64());
+        ffi_type_sint64 = FFIType.create(nffi_type_sint64());
+        ffi_type_uchar = FFIType.create(nffi_type_uchar());
+        ffi_type_schar = FFIType.create(nffi_type_schar());
+        ffi_type_ushort = FFIType.create(nffi_type_ushort());
+        ffi_type_sshort = FFIType.create(nffi_type_sshort());
+        ffi_type_uint = FFIType.create(nffi_type_uint());
+        ffi_type_sint = FFIType.create(nffi_type_sint());
+        ffi_type_ulong = FFIType.create(nffi_type_ulong());
+        ffi_type_slong = FFIType.create(nffi_type_slong());
+        ffi_type_float = FFIType.create(nffi_type_float());
+        ffi_type_double = FFIType.create(nffi_type_double());
+        ffi_type_longdouble = FFIType.create(nffi_type_longdouble());
+        ffi_type_pointer = FFIType.create(nffi_type_pointer());
+        FFI_TYPE_LONGDOUBLE = FFI_TYPE_DOUBLE();
+        FFI_FIRST_ABI = FFI_FIRST_ABI();
+        FFI_WIN64 = FFI_WIN64();
+        FFI_GNUW64 = FFI_GNUW64();
+        FFI_UNIX64 = FFI_UNIX64();
+        FFI_EFI64 = FFI_EFI64();
+        FFI_SYSV = FFI_SYSV();
+        FFI_STDCALL = FFI_STDCALL();
+        FFI_THISCALL = FFI_THISCALL();
+        FFI_FASTCALL = FFI_FASTCALL();
+        FFI_MS_CDECL = FFI_MS_CDECL();
+        FFI_PASCAL = FFI_PASCAL();
+        FFI_REGISTER = FFI_REGISTER();
+        FFI_VFP = FFI_VFP();
+        FFI_LAST_ABI = FFI_LAST_ABI();
+        FFI_DEFAULT_ABI = FFI_DEFAULT_ABI();
+    }
 
     protected LibFFI() {
         throw new UnsupportedOperationException();
@@ -164,274 +267,85 @@ public class LibFFI {
 
     private static native long nffi_type_void();
 
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_void() {
-        long __result = nffi_type_void();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_void(void)} */
-    public static final FFIType ffi_type_void = ffi_type_void();
-
     // --- [ ffi_type_uint8 ] ---
 
     private static native long nffi_type_uint8();
-
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_uint8() {
-        long __result = nffi_type_uint8();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_uint8(void)} */
-    public static final FFIType ffi_type_uint8 = ffi_type_uint8();
 
     // --- [ ffi_type_sint8 ] ---
 
     private static native long nffi_type_sint8();
 
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_sint8() {
-        long __result = nffi_type_sint8();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_sint8(void)} */
-    public static final FFIType ffi_type_sint8 = ffi_type_sint8();
-
     // --- [ ffi_type_uint16 ] ---
 
     private static native long nffi_type_uint16();
-
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_uint16() {
-        long __result = nffi_type_uint16();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_uint16(void)} */
-    public static final FFIType ffi_type_uint16 = ffi_type_uint16();
 
     // --- [ ffi_type_sint16 ] ---
 
     private static native long nffi_type_sint16();
 
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_sint16() {
-        long __result = nffi_type_sint16();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_sint16(void)} */
-    public static final FFIType ffi_type_sint16 = ffi_type_sint16();
-
     // --- [ ffi_type_uint32 ] ---
 
     private static native long nffi_type_uint32();
-
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_uint32() {
-        long __result = nffi_type_uint32();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_uint32(void)} */
-    public static final FFIType ffi_type_uint32 = ffi_type_uint32();
 
     // --- [ ffi_type_sint32 ] ---
 
     private static native long nffi_type_sint32();
 
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_sint32() {
-        long __result = nffi_type_sint32();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_sint32(void)} */
-    public static final FFIType ffi_type_sint32 = ffi_type_sint32();
-
     // --- [ ffi_type_uint64 ] ---
 
     private static native long nffi_type_uint64();
-
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_uint64() {
-        long __result = nffi_type_uint64();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_uint64(void)} */
-    public static final FFIType ffi_type_uint64 = ffi_type_uint64();
 
     // --- [ ffi_type_sint64 ] ---
 
     private static native long nffi_type_sint64();
 
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_sint64() {
-        long __result = nffi_type_sint64();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_sint64(void)} */
-    public static final FFIType ffi_type_sint64 = ffi_type_sint64();
-
     // --- [ ffi_type_uchar ] ---
 
     private static native long nffi_type_uchar();
-
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_uchar() {
-        long __result = nffi_type_uchar();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_uchar(void)} */
-    public static final FFIType ffi_type_uchar = ffi_type_uchar();
 
     // --- [ ffi_type_schar ] ---
 
     private static native long nffi_type_schar();
 
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_schar() {
-        long __result = nffi_type_schar();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_schar(void)} */
-    public static final FFIType ffi_type_schar = ffi_type_schar();
-
     // --- [ ffi_type_ushort ] ---
 
     private static native long nffi_type_ushort();
-
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_ushort() {
-        long __result = nffi_type_ushort();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_ushort(void)} */
-    public static final FFIType ffi_type_ushort = ffi_type_ushort();
 
     // --- [ ffi_type_sshort ] ---
 
     private static native long nffi_type_sshort();
 
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_sshort() {
-        long __result = nffi_type_sshort();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_sshort(void)} */
-    public static final FFIType ffi_type_sshort = ffi_type_sshort();
-
     // --- [ ffi_type_uint ] ---
 
     private static native long nffi_type_uint();
-
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_uint() {
-        long __result = nffi_type_uint();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_uint(void)} */
-    public static final FFIType ffi_type_uint = ffi_type_uint();
 
     // --- [ ffi_type_sint ] ---
 
     private static native long nffi_type_sint();
 
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_sint() {
-        long __result = nffi_type_sint();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_sint(void)} */
-    public static final FFIType ffi_type_sint = ffi_type_sint();
-
     // --- [ ffi_type_ulong ] ---
 
     private static native long nffi_type_ulong();
-
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_ulong() {
-        long __result = nffi_type_ulong();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_ulong(void)} */
-    public static final FFIType ffi_type_ulong = ffi_type_ulong();
 
     // --- [ ffi_type_slong ] ---
 
     private static native long nffi_type_slong();
 
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_slong() {
-        long __result = nffi_type_slong();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_slong(void)} */
-    public static final FFIType ffi_type_slong = ffi_type_slong();
-
     // --- [ ffi_type_float ] ---
 
     private static native long nffi_type_float();
-
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_float() {
-        long __result = nffi_type_float();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_float(void)} */
-    public static final FFIType ffi_type_float = ffi_type_float();
 
     // --- [ ffi_type_double ] ---
 
     private static native long nffi_type_double();
 
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_double() {
-        long __result = nffi_type_double();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_double(void)} */
-    public static final FFIType ffi_type_double = ffi_type_double();
-
     // --- [ ffi_type_longdouble ] ---
 
     private static native long nffi_type_longdouble();
 
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_longdouble() {
-        long __result = nffi_type_longdouble();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_longdouble(void)} */
-    public static final FFIType ffi_type_longdouble = ffi_type_longdouble();
-
     // --- [ ffi_type_pointer ] ---
 
     private static native long nffi_type_pointer();
-
-    @NativeType("ffi_type *")
-    private static FFIType ffi_type_pointer() {
-        long __result = nffi_type_pointer();
-        return FFIType.create(__result);
-    }
-
-    /** {@code ffi_type * ffi_type_pointer(void)} */
-    public static final FFIType ffi_type_pointer = ffi_type_pointer();
 
     // --- [ ffi_get_version ] ---
 

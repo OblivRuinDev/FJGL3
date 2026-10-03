@@ -87,6 +87,21 @@ public class NanoVG {
         NVG_IMAGE_PREMULTIPLIED    = 1<<4,
         NVG_IMAGE_NEAREST          = 1<<5;
 
+    /** {@code void * nvgCreateInternal(void)} */
+    static final long nvgCreateInternal;
+
+    /** {@code void * nvgInternalParams(void)} */
+    static final long nvgInternalParams;
+
+    /** {@code void * nvgDeleteInternal(void)} */
+    static final long nvgDeleteInternal;
+
+    static {
+        nvgCreateInternal = nvgCreateInternal();
+        nvgInternalParams = nvgInternalParams();
+        nvgDeleteInternal = nvgDeleteInternal();
+    }
+
     protected NanoVG() {
         throw new UnsupportedOperationException();
     }
@@ -1639,24 +1654,15 @@ public class NanoVG {
     @NativeType("void *")
     private static native long nvgCreateInternal();
 
-    /** {@code void * nvgCreateInternal(void)} */
-    static final long nvgCreateInternal = nvgCreateInternal();
-
     // --- [ nvgInternalParams ] ---
 
     @NativeType("void *")
     private static native long nvgInternalParams();
 
-    /** {@code void * nvgInternalParams(void)} */
-    static final long nvgInternalParams = nvgInternalParams();
-
     // --- [ nvgDeleteInternal ] ---
 
     @NativeType("void *")
     private static native long nvgDeleteInternal();
-
-    /** {@code void * nvgDeleteInternal(void)} */
-    static final long nvgDeleteInternal = nvgDeleteInternal();
 
     /** {@code void nvgCurrentTransform(NVGcontext * ctx, float * xform)} */
     public static native void nnvgCurrentTransform(long ctx, float[] xform);

@@ -8,7 +8,7 @@ package openxr.templates
 import org.lwjgl.generator.*
 import openxr.*
 
-val XR11 = "XR11".nativeClass(Module.OPENXR, "XR11", prefix = "XR", binding = XR_BINDING_INSTANCE) {
+val XR11 = "XR11".nativeClass(Module.OPENXR, "XR11", prefix = "XR", binding = XR_BINDING_INSTANCE, cinitSetRTConst = false) {
     EnumConstant(
         "ERROR_PERMISSION_INSUFFICIENT".."-1000710000",
         "ERROR_EXTENSION_DEPENDENCY_NOT_ENABLED".."-1000710001"

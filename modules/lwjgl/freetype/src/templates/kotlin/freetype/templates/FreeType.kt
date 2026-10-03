@@ -7,7 +7,7 @@ package freetype.templates
 import org.lwjgl.generator.*
 import freetype.*
 
-val freetype = "FreeType".nativeClass(Module.FREETYPE, prefix = "FT", prefixMethod = "FT_", binding = FREETYPE_BINDING) {
+val freetype = "FreeType".nativeClass(Module.FREETYPE, prefix = "FT", prefixMethod = "FT_", binding = FREETYPE_BINDING, cinitSetRTConst = false) {
     // freetype.h
 
     customMethod("""

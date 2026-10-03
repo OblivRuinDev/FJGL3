@@ -96,11 +96,19 @@ public class SDLMouse {
         SDL_BUTTON_X2     = 5;
 
     public static final int
-        SDL_BUTTON_LMASK  = SDL_BUTTON_MASK(SDL_BUTTON_LEFT),
-        SDL_BUTTON_MMASK  = SDL_BUTTON_MASK(SDL_BUTTON_MIDDLE),
-        SDL_BUTTON_RMASK  = SDL_BUTTON_MASK(SDL_BUTTON_RIGHT),
-        SDL_BUTTON_X1MASK = SDL_BUTTON_MASK(SDL_BUTTON_X1),
-        SDL_BUTTON_X2MASK = SDL_BUTTON_MASK(SDL_BUTTON_X2);
+        SDL_BUTTON_LMASK ,
+        SDL_BUTTON_MMASK ,
+        SDL_BUTTON_RMASK ,
+        SDL_BUTTON_X1MASK,
+        SDL_BUTTON_X2MASK;
+
+    static {
+        SDL_BUTTON_LMASK = (1 << (SDL_BUTTON_LEFT - 1));
+        SDL_BUTTON_MMASK = (1 << (SDL_BUTTON_MIDDLE - 1));
+        SDL_BUTTON_RMASK = (1 << (SDL_BUTTON_RIGHT - 1));
+        SDL_BUTTON_X1MASK = (1 << (SDL_BUTTON_X1 - 1));
+        SDL_BUTTON_X2MASK = (1 << (SDL_BUTTON_X2 - 1));
+    }
 
     protected SDLMouse() {
         throw new UnsupportedOperationException();
@@ -393,14 +401,6 @@ public class SDLMouse {
     public static boolean SDL_CursorVisible() {
         long __functionAddress = Functions.CursorVisible;
         return invokeZ(__functionAddress);
-    }
-
-    // --- [ SDL_BUTTON_MASK ] ---
-
-    /** {@code uint32_t SDL_BUTTON_MASK(uint32_t X)} */
-    @NativeType("uint32_t")
-    private static int SDL_BUTTON_MASK(@NativeType("uint32_t") int X) {
-        return 1 << (X - 1);
     }
 
 }

@@ -135,6 +135,28 @@ public class Yoga {
 
     public static final float YGUndefined = Float.NaN;
 
+    /** {@code YGValue YGValueAuto(void)} */
+    public static final YGValue YGValueAuto;
+
+    /** {@code YGValue YGValueUndefined(void)} */
+    public static final YGValue YGValueUndefined;
+
+    /** {@code YGValue YGValueZero(void)} */
+    public static final YGValue YGValueZero;
+
+    static {
+        YGValue __result;
+        __result = YGValue.create();
+        nYGValueAuto(__result.address());
+        YGValueAuto = __result;
+        __result = YGValue.create();
+        nYGValueUndefined(__result.address());
+        YGValueUndefined = __result;
+        __result = YGValue.create();
+        nYGValueZero(__result.address());
+        YGValueZero = __result;
+    }
+
     protected Yoga() {
         throw new UnsupportedOperationException();
     }
@@ -1917,37 +1939,13 @@ public class Yoga {
 
     private static native void nYGValueAuto(long __result);
 
-    private static YGValue YGValueAuto(YGValue __result) {
-        nYGValueAuto(__result.address());
-        return __result;
-    }
-
-    /** {@code YGValue YGValueAuto(void)} */
-    public static final YGValue YGValueAuto = YGValueAuto(YGValue.create());
-
     // --- [ YGValueUndefined ] ---
 
     private static native void nYGValueUndefined(long __result);
 
-    private static YGValue YGValueUndefined(YGValue __result) {
-        nYGValueUndefined(__result.address());
-        return __result;
-    }
-
-    /** {@code YGValue YGValueUndefined(void)} */
-    public static final YGValue YGValueUndefined = YGValueUndefined(YGValue.create());
-
     // --- [ YGValueZero ] ---
 
     private static native void nYGValueZero(long __result);
-
-    private static YGValue YGValueZero(YGValue __result) {
-        nYGValueZero(__result.address());
-        return __result;
-    }
-
-    /** {@code YGValue YGValueZero(void)} */
-    public static final YGValue YGValueZero = YGValueZero(YGValue.create());
 
     // --- [ YGFloatIsUndefined ] ---
 

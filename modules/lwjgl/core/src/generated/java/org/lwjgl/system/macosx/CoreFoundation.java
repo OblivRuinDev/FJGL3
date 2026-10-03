@@ -49,6 +49,33 @@ public class CoreFoundation {
         kCFURLHFSPathStyle     = 1,
         kCFURLWindowsPathStyle = 2;
 
+    /** {@code CFAllocatorRef kCFAllocatorDefault(void)} */
+    public static final long kCFAllocatorDefault;
+
+    /** {@code CFAllocatorRef kCFAllocatorSystemDefault(void)} */
+    public static final long kCFAllocatorSystemDefault;
+
+    /** {@code CFAllocatorRef kCFAllocatorMalloc(void)} */
+    public static final long kCFAllocatorMalloc;
+
+    /** {@code CFAllocatorRef kCFAllocatorMallocZone(void)} */
+    public static final long kCFAllocatorMallocZone;
+
+    /** {@code CFAllocatorRef kCFAllocatorNull(void)} */
+    public static final long kCFAllocatorNull;
+
+    /** {@code CFAllocatorRef kCFAllocatorUseContext(void)} */
+    public static final long kCFAllocatorUseContext;
+
+    static {
+        kCFAllocatorDefault = kCFAllocatorDefault();
+        kCFAllocatorSystemDefault = kCFAllocatorSystemDefault();
+        kCFAllocatorMalloc = kCFAllocatorMalloc();
+        kCFAllocatorMallocZone = kCFAllocatorMallocZone();
+        kCFAllocatorNull = kCFAllocatorNull();
+        kCFAllocatorUseContext = kCFAllocatorUseContext();
+    }
+
     protected CoreFoundation() {
         throw new UnsupportedOperationException();
     }
@@ -58,48 +85,30 @@ public class CoreFoundation {
     @NativeType("CFAllocatorRef")
     private static native long kCFAllocatorDefault();
 
-    /** {@code CFAllocatorRef kCFAllocatorDefault(void)} */
-    public static final long kCFAllocatorDefault = kCFAllocatorDefault();
-
     // --- [ kCFAllocatorSystemDefault ] ---
 
     @NativeType("CFAllocatorRef")
     private static native long kCFAllocatorSystemDefault();
-
-    /** {@code CFAllocatorRef kCFAllocatorSystemDefault(void)} */
-    public static final long kCFAllocatorSystemDefault = kCFAllocatorSystemDefault();
 
     // --- [ kCFAllocatorMalloc ] ---
 
     @NativeType("CFAllocatorRef")
     private static native long kCFAllocatorMalloc();
 
-    /** {@code CFAllocatorRef kCFAllocatorMalloc(void)} */
-    public static final long kCFAllocatorMalloc = kCFAllocatorMalloc();
-
     // --- [ kCFAllocatorMallocZone ] ---
 
     @NativeType("CFAllocatorRef")
     private static native long kCFAllocatorMallocZone();
-
-    /** {@code CFAllocatorRef kCFAllocatorMallocZone(void)} */
-    public static final long kCFAllocatorMallocZone = kCFAllocatorMallocZone();
 
     // --- [ kCFAllocatorNull ] ---
 
     @NativeType("CFAllocatorRef")
     private static native long kCFAllocatorNull();
 
-    /** {@code CFAllocatorRef kCFAllocatorNull(void)} */
-    public static final long kCFAllocatorNull = kCFAllocatorNull();
-
     // --- [ kCFAllocatorUseContext ] ---
 
     @NativeType("CFAllocatorRef")
     private static native long kCFAllocatorUseContext();
-
-    /** {@code CFAllocatorRef kCFAllocatorUseContext(void)} */
-    public static final long kCFAllocatorUseContext = kCFAllocatorUseContext();
 
     // --- [ CFRetain ] ---
 

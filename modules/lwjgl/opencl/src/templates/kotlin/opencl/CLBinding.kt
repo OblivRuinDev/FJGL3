@@ -117,5 +117,5 @@ private val CLBinding = Generator.register(object : APIBinding(
 
 // DSL Extensions
 
-fun String.nativeClassCL(templateName: String, postfix: String = "", init: (NativeClass.() -> Unit)? = null) =
-    nativeClass(Module.OPENCL, templateName, prefix = "CL", postfix = postfix, prefixTemplate = "cl", binding = CLBinding, init = init)
+fun String.nativeClassCL(templateName: String, postfix: String = "", cinitSetRTConst: Boolean = true, init: (NativeClass.() -> Unit)? = null) =
+    nativeClass(Module.OPENCL, templateName, prefix = "CL", postfix = postfix, prefixTemplate = "cl", binding = CLBinding, cinitSetRTConst = cinitSetRTConst, init = init)

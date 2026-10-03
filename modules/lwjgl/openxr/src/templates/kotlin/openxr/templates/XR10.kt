@@ -8,7 +8,7 @@ package openxr.templates
 import org.lwjgl.generator.*
 import openxr.*
 
-val XR10 = "XR10".nativeClass(Module.OPENXR, "XR10", prefix = "XR", binding = XR_BINDING_INSTANCE) {
+val XR10 = "XR10".nativeClass(Module.OPENXR, "XR10", prefix = "XR", binding = XR_BINDING_INSTANCE, cinitSetRTConst = false)  {
     EnumConstant(
         "SUCCESS".."0",
         "TIMEOUT_EXPIRED".."1",

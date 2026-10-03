@@ -387,6 +387,7 @@ fun String.nativeClassVK(
     prefix: String = "VK",
     prefixMethod: String = prefix.lowercase(),
     postfix: String = "",
+    cinitSetRTConst: Boolean = true,
     init: (NativeClass.() -> Unit)? = null
 ): NativeClass {
     EXTENSION_TYPES[templateName] = type
@@ -397,6 +398,7 @@ fun String.nativeClassVK(
         prefixMethod = prefixMethod,
         postfix = postfix,
         binding = VK_BINDING_INSTANCE,
+        cinitSetRTConst = cinitSetRTConst,
         init = init
     )
 }

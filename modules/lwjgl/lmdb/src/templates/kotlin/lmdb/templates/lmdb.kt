@@ -7,7 +7,7 @@ package lmdb.templates
 import org.lwjgl.generator.*
 import lmdb.*
 
-val lmdb = "LMDB".nativeClass(Module.LMDB, prefix = "MDB", prefixMethod = "mdb_") {
+val lmdb = "LMDB".nativeClass(Module.LMDB, prefix = "MDB", prefixMethod = "mdb_", cinitSetRTConst = false) {
     nativeDirective(
         """DISABLE_WARNINGS()
 #ifdef LWJGL_x86

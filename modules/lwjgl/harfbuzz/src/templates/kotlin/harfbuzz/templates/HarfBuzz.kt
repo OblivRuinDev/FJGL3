@@ -7,7 +7,7 @@ package harfbuzz.templates
 import org.lwjgl.generator.*
 import harfbuzz.*
 
-val hb = "HarfBuzz".nativeClass(Module.HARFBUZZ, prefix = "HB", prefixMethod = "hb_", binding = HARFBUZZ_BINDING) {
+val hb = "HarfBuzz".nativeClass(Module.HARFBUZZ, prefix = "HB", prefixMethod = "hb_", binding = HARFBUZZ_BINDING, cinitSetRTConst = false) {
     // hb-common.h
 
     IntConstant(

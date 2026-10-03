@@ -18,6 +18,33 @@ final class MemoryAccessJNI {
 
     static { Library.initialize(); }
 
+    /** {@code void * (*) (size_t) malloc(void)} */
+    static final long malloc;
+
+    /** {@code void * (*) (size_t, size_t) calloc(void)} */
+    static final long calloc;
+
+    /** {@code void * (*) (void *, size_t) realloc(void)} */
+    static final long realloc;
+
+    /** {@code void (*) (void *) free(void)} */
+    static final long free;
+
+    /** {@code void * (*) (size_t, size_t) aligned_alloc(void)} */
+    static final long aligned_alloc;
+
+    /** {@code void (*) (void *) aligned_free(void)} */
+    static final long aligned_free;
+
+    static {
+        malloc = malloc();
+        calloc = calloc();
+        realloc = realloc();
+        free = free();
+        aligned_alloc = aligned_alloc();
+        aligned_free = aligned_free();
+    }
+
     private MemoryAccessJNI() {
         throw new UnsupportedOperationException();
     }
@@ -27,47 +54,29 @@ final class MemoryAccessJNI {
     @NativeType("void * (*) (size_t)")
     private static native long malloc();
 
-    /** {@code void * (*) (size_t) malloc(void)} */
-    static final long malloc = malloc();
-
     // --- [ calloc ] ---
 
     @NativeType("void * (*) (size_t, size_t)")
     private static native long calloc();
-
-    /** {@code void * (*) (size_t, size_t) calloc(void)} */
-    static final long calloc = calloc();
 
     // --- [ realloc ] ---
 
     @NativeType("void * (*) (void *, size_t)")
     private static native long realloc();
 
-    /** {@code void * (*) (void *, size_t) realloc(void)} */
-    static final long realloc = realloc();
-
     // --- [ free ] ---
 
     @NativeType("void (*) (void *)")
     private static native long free();
-
-    /** {@code void (*) (void *) free(void)} */
-    static final long free = free();
 
     // --- [ aligned_alloc ] ---
 
     @NativeType("void * (*) (size_t, size_t)")
     private static native long aligned_alloc();
 
-    /** {@code void * (*) (size_t, size_t) aligned_alloc(void)} */
-    static final long aligned_alloc = aligned_alloc();
-
     // --- [ aligned_free ] ---
 
     @NativeType("void (*) (void *)")
     private static native long aligned_free();
-
-    /** {@code void (*) (void *) aligned_free(void)} */
-    static final long aligned_free = aligned_free();
 
 }

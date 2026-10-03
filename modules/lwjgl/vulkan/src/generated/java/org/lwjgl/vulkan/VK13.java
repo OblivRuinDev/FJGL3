@@ -247,7 +247,11 @@ public class VK13 extends VK12 {
         VK_RENDERING_SUSPENDING_BIT                         = 0x2,
         VK_RENDERING_RESUMING_BIT                           = 0x4;
 
-    public static final int VK_API_VERSION_1_3 = VK_MAKE_API_VERSION(0, 1, 3, 0);
+    public static final int VK_API_VERSION_1_3;
+
+    static {
+        VK_API_VERSION_1_3 = VK_MAKE_API_VERSION(0, 1, 3, 0);
+    }
 
     protected VK13() {
         throw new UnsupportedOperationException();

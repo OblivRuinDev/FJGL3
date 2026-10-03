@@ -113,15 +113,22 @@ public class SDLAudio {
         SDL_AUDIO_S32BE   = 0x9020,
         SDL_AUDIO_F32LE   = 0x8120,
         SDL_AUDIO_F32BE   = 0x9120,
-        SDL_AUDIO_S16     = ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_AUDIO_S16LE : SDL_AUDIO_S16BE,
-        SDL_AUDIO_S32     = ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_AUDIO_S32LE : SDL_AUDIO_S32BE,
-        SDL_AUDIO_F32     = ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_AUDIO_F32LE : SDL_AUDIO_F32BE;
+        SDL_AUDIO_S16    ,
+        SDL_AUDIO_S32    ,
+        SDL_AUDIO_F32    ;
 
     public static final int
         SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK  = 0xFFFFFFFF,
         SDL_AUDIO_DEVICE_DEFAULT_RECORDING = 0xFFFFFFFE;
 
     public static final String SDL_PROP_AUDIOSTREAM_AUTO_CLEANUP_BOOLEAN = "SDL.audiostream.auto_cleanup";
+
+    static {
+        boolean nativeLittleEndian = ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN;
+        SDL_AUDIO_S16 = nativeLittleEndian ? SDL_AUDIO_S16LE : SDL_AUDIO_S16BE;
+        SDL_AUDIO_S32 = nativeLittleEndian ? SDL_AUDIO_S32LE : SDL_AUDIO_S32BE;
+        SDL_AUDIO_F32 = nativeLittleEndian ? SDL_AUDIO_F32LE : SDL_AUDIO_F32BE;
+    }
 
     protected SDLAudio() {
         throw new UnsupportedOperationException();

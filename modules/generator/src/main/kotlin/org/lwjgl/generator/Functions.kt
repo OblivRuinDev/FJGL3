@@ -117,8 +117,12 @@ class Func(
 
     val nativeName get() = if (has<NativeName> { !nativeName.contains(' ') }) get<NativeName>().nativeName else this.name
 
-    private val accessModifier
+    internal val accessModifier
         get() = (if (has<AccessModifier>()) get<AccessModifier>().access else nativeClass.access).modifier
+
+    /** The Java type of the field generated for a constant macro. */
+    internal val constantFieldType
+        get() = if (returns.nativeType is CharSequenceType) "String" else returns.javaMethodType
 
     private fun stripPostfix(functionName: String = name): String {
         if (!hasNativeParams)
@@ -630,8 +634,24 @@ class Func(
 
         val constantMacro = has<Macro> { constant }
 
+        if (nativeClass.cinitSetRTConst && has<Macro> { expression != null } && has(private) && !hasReuse) {
+            // Only used to define constants, so its expression is inlined at the call sites and the method is removed.
+            requireRemovableWrapper()
+            return
+        }
+
         if (hasCustomJNI && !(hasReuse && nativeOnly))
             writer.generateNativeMethod(constantMacro, nativeOnly, hasReuse)
+
+        if (nativeClass.cinitSetRTConst && constantMacro && !has(private) && !hasReuse) {
+            // The constant field is declared together with the other constants and assigned in the class initializer.
+            requireRemovableWrapper()
+            if (has<MapPointer>()) {
+                // The wrapper cannot be expanded safely, so it is retained and called from the initializer emitted by the class.
+                writer.generateJavaMethod(constantMacro, hasReuse)
+            }
+            return
+        }
 
         if (!nativeOnly || hasReuse) {
             if (hasUnsafeMethod)
@@ -646,10 +666,76 @@ class Func(
         if (constantMacro && !has(private)) {
             writer.println()
             writer.printDocumentation()
-            writer.println("$t${accessModifier}static final ${if (returns.nativeType is CharSequenceType) "String" else returns.javaMethodType} $name = $name(${
+            writer.println("$t${accessModifier}static final ${constantFieldType} $name = $name(${
                 if (returns.nativeType !is StructType) "" else "${returns.nativeType.javaMethodType}.create()"
             });")
         }
+    }
+
+    /**
+     * Verifies that the wrapper method of a constant macro is not part of the public API before it is removed. Constant macro wrappers are always generated
+     * as private methods, so this is a safety check against future changes.
+     */
+    private fun requireRemovableWrapper() {
+        // Constant macro wrappers are always generated as private methods, independently of the declared access.
+        val access = if (has<Macro> { constant }) Access.PRIVATE else if (has<AccessModifier>()) get<AccessModifier>().access else nativeClass.access
+        check(access === Access.PRIVATE || access === Access.INTERNAL) {
+            "Cannot remove the wrapper method ${nativeClass.className}.$name: its access modifier must be private or package-private, but is " +
+            "${access.name}. Removing it would be an incompatible change."
+        }
+    }
+
+    /** Emits the field declaration of a constant macro (with its javadoc). The value is assigned in the class initializer. */
+    internal fun appendConstantField(writer: PrintWriter) {
+        writer.println()
+        writer.printDocumentation()
+        writer.println("$t${accessModifier}static final ${constantFieldType} $name;")
+    }
+
+    private val resultLocal = "long $RESULT = "
+
+    /**
+     * Emits the initializer of a constant macro field: either a call to the retained wrapper, or the wrapper body expanded inline.
+     *
+     * @param resultVars the cache variable declared in the class initializer for each struct result type, see {@see #structResultVariable}
+     */
+    internal fun generateConstantInitializer(writer: PrintWriter, resultVars: Map<String, String>) {
+        if (has<MapPointer>()) {
+            // The wrapper is retained, because its body cannot be expanded safely.
+            writer.print("$t${t}$name = $name();")
+        } else {
+            val buffer = StringWriter()
+            PrintWriter(buffer).use { it.generateJavaMethod(constantMacro = true, hasReuse = false, assignTo = name) }
+
+            var body = inlineResultLocal(buffer.toString())
+            if (returns.isStructValue) {
+                val resultVar = resultVars[returns.nativeType.javaMethodType]!!
+                writer.println("$t${t}$resultVar = ${returns.nativeType.javaMethodType}.create();")
+                body = body.replace(RESULT, resultVar)
+            }
+            writer.print(body)
+        }
+    }
+
+    /** Inlines the `long __result = call();` temporary used by pointer return values. */
+    private fun inlineResultLocal(body: String): String {
+        val marker = resultLocal
+        val markerIndex = body.indexOf(marker)
+        if (markerIndex < 0)
+            return body
+
+        val lineEnd = body.indexOf('\n', markerIndex)
+        if (lineEnd < 0)
+            return body
+
+        val lineStart = body.lastIndexOf('\n', markerIndex - 1) + 1
+        val expressionStart = markerIndex + marker.length
+        val semicolon = body.indexOf(';', expressionStart)
+        if (semicolon !in 0..lineEnd)
+            return body
+
+        val call = body.substring(expressionStart, semicolon)
+        return body.removeRange(lineStart, lineEnd + 1).replace(RESULT, call)
     }
 
     // --[ JAVA METHODS ]--
@@ -894,13 +980,19 @@ class Func(
         println("$t}")
     }
 
-    private fun PrintWriter.generateJavaMethod(constantMacro: Boolean, hasReuse: Boolean) {
-        println()
+    private fun PrintWriter.generateJavaMethod(constantMacro: Boolean, hasReuse: Boolean, assignTo: String? = null) {
+        // When `assignTo` is set, only the method body is generated, with the final return replaced by an assignment. It is used to expand a constant
+        // macro wrapper into the class initializer.
+        val bodyOnly = assignTo != null
 
-        // JavaDoc
+        if (!bodyOnly) {
+            println()
 
-        if (!constantMacro) {
-            printDocumentation()
+            // JavaDoc
+
+            if (!constantMacro) {
+                printDocumentation()
+            }
         }
 
         // Method signature
@@ -909,22 +1001,24 @@ class Func(
             if (returns.nativeType.isReference && returnsNull) it.nullable else it
         }
 
-        val retTypeAnnotation = returns.nativeType.annotation(retType)
-        if (retTypeAnnotation != null) {
-            println("$t$retTypeAnnotation")
-        }
+        if (!bodyOnly) {
+            val retTypeAnnotation = returns.nativeType.annotation(retType)
+            if (retTypeAnnotation != null) {
+                println("$t$retTypeAnnotation")
+            }
 
-        print("$t${if (constantMacro) "private " else accessModifier}static ${if (has<MapPointer>() && returns.nativeType.dereference is StructType) "$retType.Buffer" else retType} $name(")
-        printList(getNativeParams(withAutoSizeResultParams = false)) {
-            it.asJavaMethodParam(true)
-        }
+            print("$t${if (constantMacro) "private " else accessModifier}static ${if (has<MapPointer>() && returns.nativeType.dereference is StructType) "$retType.Buffer" else retType} $name(")
+            printList(getNativeParams(withAutoSizeResultParams = false)) {
+                it.asJavaMethodParam(true)
+            }
 
-        if (returns.isStructValue && !hasParam { it has ReturnParam }) {
-            if (parameters.isNotEmpty()) print(", ")
-            print("${returns.nativeType.annotate(retType)} $RESULT")
-        }
+            if (returns.isStructValue && !hasParam { it has ReturnParam }) {
+                if (parameters.isNotEmpty()) print(", ")
+                print("${returns.nativeType.annotate(retType)} $RESULT")
+            }
 
-        println(") {")
+            println(") {")
+        }
 
         if (hasReuse) {
             print("$t$t")
@@ -975,7 +1069,8 @@ class Func(
             generateNativeMethodCall(
                 code,
                 code.hasStatements(code.javaAfterNative, false, hasArrays),
-                hasStack || code.hasStatements(code.javaFinally, false, hasArrays)
+                hasStack || code.hasStatements(code.javaFinally, false, hasArrays),
+                assignTo
             ) {
                 printList(getNativeParams()) {
                     it.asNativeMethodArgument(NORMAL)
@@ -986,12 +1081,16 @@ class Func(
         generateCodeAfterNative(code, false, hasArrays, hasFinally)
 
         if (returns.isStructValue) {
-            println("${if (hasFinally) "$t$t$t" else "$t$t"}return ${getParams { it has ReturnParam }.map { it.name }.singleOrNull() ?: RESULT};")
+            println(
+                "${if (hasFinally) "$t$t$t" else "$t$t"}${if (assignTo != null) "$assignTo = " else "return "}${
+                    getParams { it has ReturnParam }.map { it.name }.singleOrNull() ?: RESULT
+                };"
+            )
         } else if (!returns.isVoid) {
             if (returns.nativeType is PointerType<*> && returns.nativeType.mapping !== PointerMapping.OPAQUE_POINTER) {
                 if (hasFinally)
                     print(t)
-                print("$t${t}return ")
+                print("$t${t}${if (assignTo != null) "$assignTo = " else "return "}")
 
                 val isNullTerminated = returns.nativeType is CharSequenceType
                 print(
@@ -1046,13 +1145,15 @@ class Func(
             } else if (code.hasStatements(code.javaAfterNative, false, hasArrays)) {
                 if (hasFinally)
                     print(t)
-                println("$t${t}return $RESULT;")
+                println("$t${t}${if (assignTo != null) "$assignTo = " else "return "}$RESULT;")
             }
         }
 
         generateCodeFinally(code, false, hasArrays, hasStack)
 
-        println("$t}")
+        if (!bodyOnly) {
+            println("$t}")
+        }
     }
 
     private fun PrintWriter.printCode(statements: List<Code.Statement>, alternative: Boolean, arrays: Boolean, indent: String = "") {
@@ -1118,6 +1219,7 @@ class Func(
         code: Code,
         returnLater: Boolean,
         hasFinally: Boolean,
+        assignTo: String? = null,
         printParams: PrintWriter.() -> Unit
     ) {
         val returnsObject = returns.nativeType is WrappedPointerType
@@ -1138,7 +1240,7 @@ class Func(
                 if (returnsObject)
                     print("$returnType.createSafe(")
             } else {
-                print("return ")
+                print(if (assignTo != null) "$assignTo = " else "return ")
                 if (returnsObject)
                     print("$returnType.createSafe(")
             }

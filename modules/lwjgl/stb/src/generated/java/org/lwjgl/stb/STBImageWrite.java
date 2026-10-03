@@ -27,6 +27,25 @@ public class STBImageWrite {
 
     static { LibSTB.initialize(); }
 
+    /** {@code int * stbi_write_png_compression_level(void)} */
+    public static final IntBuffer stbi_write_png_compression_level;
+
+    /** {@code int * stbi_write_force_png_filter(void)} */
+    public static final IntBuffer stbi_write_force_png_filter;
+
+    /** {@code unsigned char * (*) (unsigned char *, int, int *, int) * stbi_zlib_compress(void)} */
+    public static final PointerBuffer stbi_zlib_compress;
+
+    /** {@code int * stbi_write_tga_with_rle(void)} */
+    public static final IntBuffer stbi_write_tga_with_rle;
+
+    static {
+        stbi_write_png_compression_level = memIntBuffer(nstbi_write_png_compression_level(), 1);
+        stbi_write_force_png_filter = memIntBuffer(nstbi_write_force_png_filter(), 1);
+        stbi_zlib_compress = memPointerBuffer(nstbi_zlib_compress(), 1);
+        stbi_write_tga_with_rle = memIntBuffer(nstbi_write_tga_with_rle(), 1);
+    }
+
     protected STBImageWrite() {
         throw new UnsupportedOperationException();
     }
@@ -66,40 +85,13 @@ public class STBImageWrite {
 
     private static native long nstbi_write_png_compression_level();
 
-    @NativeType("int *")
-    private static IntBuffer stbi_write_png_compression_level() {
-        long __result = nstbi_write_png_compression_level();
-        return memIntBuffer(__result, 1);
-    }
-
-    /** {@code int * stbi_write_png_compression_level(void)} */
-    public static final IntBuffer stbi_write_png_compression_level = stbi_write_png_compression_level();
-
     // --- [ stbi_write_force_png_filter ] ---
 
     private static native long nstbi_write_force_png_filter();
 
-    @NativeType("int *")
-    private static IntBuffer stbi_write_force_png_filter() {
-        long __result = nstbi_write_force_png_filter();
-        return memIntBuffer(__result, 1);
-    }
-
-    /** {@code int * stbi_write_force_png_filter(void)} */
-    public static final IntBuffer stbi_write_force_png_filter = stbi_write_force_png_filter();
-
     // --- [ stbi_zlib_compress ] ---
 
     private static native long nstbi_zlib_compress();
-
-    @NativeType("unsigned char * (*) (unsigned char *, int, int *, int) *")
-    private static PointerBuffer stbi_zlib_compress() {
-        long __result = nstbi_zlib_compress();
-        return memPointerBuffer(__result, 1);
-    }
-
-    /** {@code unsigned char * (*) (unsigned char *, int, int *, int) * stbi_zlib_compress(void)} */
-    public static final PointerBuffer stbi_zlib_compress = stbi_zlib_compress();
 
     // --- [ stbi_write_bmp ] ---
 
@@ -166,15 +158,6 @@ public class STBImageWrite {
     // --- [ stbi_write_tga_with_rle ] ---
 
     private static native long nstbi_write_tga_with_rle();
-
-    @NativeType("int *")
-    private static IntBuffer stbi_write_tga_with_rle() {
-        long __result = nstbi_write_tga_with_rle();
-        return memIntBuffer(__result, 1);
-    }
-
-    /** {@code int * stbi_write_tga_with_rle(void)} */
-    public static final IntBuffer stbi_write_tga_with_rle = stbi_write_tga_with_rle();
 
     // --- [ stbi_write_hdr ] ---
 

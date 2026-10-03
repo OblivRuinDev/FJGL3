@@ -217,12 +217,13 @@ class ConstantBlock<T : Any>(
         }
     }
 
-    internal fun generate(writer: PrintWriter) {
-        if (constantType === EnumConstant || constantType === EnumConstantByte || constantType === EnumConstantLong) {
-            // Increment/update the current enum value while iterating the enum constants.
-            // Constants without documentation are added to the root block.
-            // Constants with documentation go to their own block.
+    private var resolvedValue: Pair<ConstantType<*>, List<Constant<*>>>? = null
 
+    private fun resolved(): Pair<ConstantType<*>, List<Constant<*>>> {
+        resolvedValue?.let { return it }
+
+        val result: Pair<ConstantType<*>, List<Constant<*>>> = if (constantType === EnumConstant || constantType === EnumConstantByte || constantType === EnumConstantLong) {
+            // Increment/update the current enum value while iterating the enum constants.
             val rootBlock = ArrayList<Constant<Number>>()
 
             val constantTypeRender = if (constantType === EnumConstant) {
@@ -236,56 +237,231 @@ class ConstantBlock<T : Any>(
                 LongConstant
             }
 
-            ConstantBlock(nativeClass, access, constantTypeRender, *rootBlock.toArray(emptyArray())).let {
-                it.noPrefix = noPrefix
-                it.generate(writer)
-            }
+            constantTypeRender to rootBlock
         } else {
-            writer.generateBlock()
+            constantType to constants.toList()
         }
+
+        resolvedValue = result
+        return result
     }
 
-    private fun PrintWriter.generateBlock() {
-        println()
-        print("$t${access.modifier}static final ${constantType.javaType}")
+    /** The names of the constants that cannot be initialized inline, because their value is not a compile-time constant. */
+    private var runtimeNames: Set<String> = emptySet()
+
+    /** Private expression macros (name -> parameter names and expression) that are inlined at their call sites. */
+    private var expressionMacros: Map<String, Pair<List<String>, String>> = emptyMap()
+
+    /** The name and, for expressions, the value expression of every resolved constant. Used to compute the runtime constants of the whole class. */
+    internal fun allConstants(): List<Pair<String, String?>> {
+        val (_, constants) = resolved()
+        return constants.map { constant -> getConstantName(constant.name) to (constant as? ConstantExpression)?.expression }
+    }
+
+    /**
+     * Emits the field declaration. Compile-time constants are initialized inline (they remain constant variables), while runtime constants are assigned in
+     * the class initializer by [generateInitializers].
+     */
+    internal fun generate(
+        writer: PrintWriter,
+        runtimeNames: Set<String> = emptySet(),
+        expressionMacros: Map<String, Pair<List<String>, String>> = emptyMap()
+    ) {
+        this.runtimeNames = runtimeNames
+        this.expressionMacros = expressionMacros
+
+        val (type, constants) = resolved()
+
+        writer.println()
+        writer.print("$t${access.modifier}static final ${type.javaType}")
 
         val indent = if (constants.size == 1) {
             " "
         } else {
-            print('\n')
+            writer.print('\n')
             "$t$t"
         }
 
-        // Find maximum constant name length
-        val alignment = constants.map {
-            it.name.length
-        }.fold(0) { left, right ->
-            max(left, right)
-        }
+        val alignment = constants.map { it.name.length }.fold(0) { left, right -> max(left, right) }
 
-        constants.forEachWithMore { it, more ->
+        constants.forEachWithMore { constant, more ->
             if (more)
-                println(',')
-            printConstant(it, indent, alignment)
+                writer.println(',')
+            writer.print("$indent${getConstantName(constant.name)}")
+            (0 until alignment - constant.name.length).forEach { writer.print(' ') }
+            if (!isRuntime(constant)) {
+                writer.print(" = ")
+                writer.print(constantValue(type, constant))
+            }
         }
-        println(";")
+        writer.println(";")
     }
 
-    private fun PrintWriter.printConstant(constant: Constant<T>, indent: String, alignment: Int) {
-        print("$indent${getConstantName(constant.name)}")
-        (0 until alignment - constant.name.length).forEach {
-            print(' ')
-        }
+    /** Emits a `NAME = value;` assignment for every runtime constant. */
+    internal fun generateInitializers(writer: PrintWriter) {
+        val (type, constants) = resolved()
 
-        print(" = ")
+        constants.forEach { constant ->
+            if (isRuntime(constant)) {
+                writer.print("$t${t}${getConstantName(constant.name)} = ")
+                writer.print(constantValue(type, constant))
+                writer.println(";")
+            }
+        }
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    private fun constantValue(type: ConstantType<*>, constant: Constant<*>): String =
         if (constant is ConstantExpression) {
-            print(if (constantType !== StringConstant || constant.unwrapped)
-                constant.expression
-            else
-                constantType.print(constant.expression)
-            )
+            val value = if (type !== StringConstant || constant.unwrapped) constant.expression else (type as ConstantType<Any>).print(constant.expression)
+            inlineMacroCalls(value, expressionMacros)
         } else
-            print(constantType.print(constant.value!!))
-    }
+            (type as ConstantType<Any>).print(constant.value!!)
+
+    private fun isRuntime(constant: Constant<*>) = getConstantName(constant.name) in runtimeNames
 
 }
+
+/** True when the expression is a runtime (non compile-time constant) expression, i.e. it invokes a method. */
+internal fun isRuntimeExpression(expression: String) = METHOD_CALL.containsMatchIn(expression)
+
+/**
+ * Replaces calls to expression macros with their expression, substituting call arguments for parameters.
+ * Expansion is recursive so nested macros are handled in a single pass, and recursive definitions are rejected.
+ */
+internal fun inlineMacroCalls(expression: String, macros: Map<String, Pair<List<String>, String>>): String {
+    if (macros.isEmpty() || expression.isEmpty())
+        return expression
+
+    return expandMacroCalls(expression, macros, emptySet())
+}
+
+private fun expandMacroCalls(
+    expression: String,
+    macros: Map<String, Pair<List<String>, String>>,
+    expanding: Set<String>
+): String {
+    val result = StringBuilder(expression.length)
+    var index = 0
+
+    while (index < expression.length) {
+        val c = expression[index]
+        if (!c.isJavaIdentifierStart()) {
+            result.append(c)
+            index++
+            continue
+        }
+
+        val start = index++
+        while (index < expression.length && expression[index].isJavaIdentifierPart())
+            index++
+
+        val name = expression.substring(start, index)
+        val definition = macros[name]
+        if (definition == null) {
+            result.append(name)
+            continue
+        }
+
+        var open = index
+        while (open < expression.length && expression[open].isWhitespace())
+            open++
+
+        if (open >= expression.length || expression[open] != '(') {
+            result.append(name)
+            continue
+        }
+
+        val close = matchingParen(expression, open)
+        if (close < 0) {
+            result.append(name)
+            continue
+        }
+
+        check(name !in expanding) {
+            "Recursive expression macro: $name"
+        }
+
+        val arguments = splitArguments(expression.substring(open + 1, close))
+        val (parameters, body) = definition
+        var expanded = body
+        parameters.forEachIndexed { i, parameter ->
+            if (i < arguments.size)
+                expanded = replaceIdentifier(expanded, parameter, arguments[i])
+        }
+
+        result.append('(')
+        result.append(expandMacroCalls(expanded, macros, expanding + name))
+        result.append(')')
+        index = close + 1
+    }
+
+    return result.toString()
+}
+
+private fun replaceIdentifier(expression: String, name: String, replacement: String): String {
+    if (expression.isEmpty() || name.isEmpty())
+        return expression
+
+    val result = StringBuilder(expression.length)
+    var index = 0
+
+    while (index < expression.length) {
+        val match = expression.indexOf(name, index)
+        if (match < 0) {
+            result.append(expression, index, expression.length)
+            break
+        }
+
+        val before = match == 0 || !expression[match - 1].isJavaIdentifierPart()
+        val end = match + name.length
+        val after = end == expression.length || !expression[end].isJavaIdentifierPart()
+        if (before && after) {
+            result.append(expression, index, match)
+            result.append(replacement)
+            index = end
+        } else {
+            result.append(expression, index, end)
+            index = end
+        }
+    }
+
+    return result.toString()
+}
+
+private fun matchingParen(s: String, openIndex: Int): Int {
+    var depth = 0
+    for (i in openIndex until s.length) {
+        when (s[i]) {
+            '(' -> depth++
+            ')' -> {
+                depth--
+                if (depth == 0) return i
+            }
+        }
+    }
+    return -1
+}
+
+private fun splitArguments(s: String): List<String> {
+    if (s.isBlank())
+        return emptyList()
+
+    val arguments = ArrayList<String>()
+    var depth = 0
+    var start = 0
+    for (i in s.indices) {
+        when (s[i]) {
+            '(', '[' -> depth++
+            ')', ']' -> depth--
+            ',' -> if (depth == 0) {
+                arguments.add(s.substring(start, i).trim())
+                start = i + 1
+            }
+        }
+    }
+    arguments.add(s.substring(start).trim())
+    return arguments
+}
+
+private val METHOD_CALL = Regex("""[A-Za-z_$][\w$.]*\(""")

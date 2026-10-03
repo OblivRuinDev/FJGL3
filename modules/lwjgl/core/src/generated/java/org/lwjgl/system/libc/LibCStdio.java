@@ -27,6 +27,37 @@ public class LibCStdio {
 
     static { Library.initialize(); }
 
+    /** {@code FILE * stdin(void)} */
+    public static final long stdin;
+
+    /** {@code FILE * stdout(void)} */
+    public static final long stdout;
+
+    /** {@code FILE * stderr(void)} */
+    public static final long stderr;
+
+    /** {@code void * fscanf(void)} */
+    public static final long fscanf;
+
+    /** {@code void * sscanf(void)} */
+    public static final long sscanf;
+
+    /** {@code void * fprintf(void)} */
+    public static final long fprintf;
+
+    /** {@code void * snprintf(void)} */
+    public static final long snprintf;
+
+    static {
+        stdin = stdin();
+        stdout = stdout();
+        stderr = stderr();
+        fscanf = fscanf();
+        sscanf = sscanf();
+        fprintf = fprintf();
+        snprintf = snprintf();
+    }
+
     protected LibCStdio() {
         throw new UnsupportedOperationException();
     }
@@ -36,24 +67,15 @@ public class LibCStdio {
     @NativeType("FILE *")
     private static native long stdin();
 
-    /** {@code FILE * stdin(void)} */
-    public static final long stdin = stdin();
-
     // --- [ stdout ] ---
 
     @NativeType("FILE *")
     private static native long stdout();
 
-    /** {@code FILE * stdout(void)} */
-    public static final long stdout = stdout();
-
     // --- [ stderr ] ---
 
     @NativeType("FILE *")
     private static native long stderr();
-
-    /** {@code FILE * stderr(void)} */
-    public static final long stderr = stderr();
 
     // --- [ fflush ] ---
 
@@ -99,16 +121,10 @@ public class LibCStdio {
     @NativeType("void *")
     private static native long fscanf();
 
-    /** {@code void * fscanf(void)} */
-    public static final long fscanf = fscanf();
-
     // --- [ sscanf ] ---
 
     @NativeType("void *")
     private static native long sscanf();
-
-    /** {@code void * sscanf(void)} */
-    public static final long sscanf = sscanf();
 
     // --- [ vsscanf ] ---
 
@@ -147,16 +163,10 @@ public class LibCStdio {
     @NativeType("void *")
     private static native long fprintf();
 
-    /** {@code void * fprintf(void)} */
-    public static final long fprintf = fprintf();
-
     // --- [ snprintf ] ---
 
     @NativeType("void *")
     private static native long snprintf();
-
-    /** {@code void * snprintf(void)} */
-    public static final long snprintf = snprintf();
 
     // --- [ vsnprintf ] ---
 

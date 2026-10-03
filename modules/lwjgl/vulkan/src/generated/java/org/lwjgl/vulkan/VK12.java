@@ -167,11 +167,15 @@ public class VK12 extends VK11 {
         VK_SAMPLER_REDUCTION_MODE_MIN              = 1,
         VK_SAMPLER_REDUCTION_MODE_MAX              = 2;
 
-    public static final int VK_API_VERSION_1_2 = VK_MAKE_API_VERSION(0, 1, 2, 0);
+    public static final int VK_API_VERSION_1_2;
 
     public static final int
         VK_MAX_DRIVER_NAME_SIZE = 256,
         VK_MAX_DRIVER_INFO_SIZE = 256;
+
+    static {
+        VK_API_VERSION_1_2 = VK_MAKE_API_VERSION(0, 1, 2, 0);
+    }
 
     protected VK12() {
         throw new UnsupportedOperationException();

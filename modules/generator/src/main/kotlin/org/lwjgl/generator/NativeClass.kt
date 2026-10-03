@@ -188,7 +188,8 @@ class NativeClass internal constructor(
     val prefixTemplate: String,
     val postfix: String,
     val binding: APIBinding?,
-    internal val callingConvention: CallingConvention
+    internal val callingConvention: CallingConvention,
+    val cinitSetRTConst: Boolean = true
 ) : GeneratorTargetNative(module, className, nativeSubPath) {
     companion object {
         private val VOID_ARGS = Parameter(void, ANONYMOUS)
@@ -197,6 +198,9 @@ class NativeClass internal constructor(
     var extends: NativeClass? = null
 
     private val constantBlocks = ArrayList<ConstantBlock<*>>()
+
+    /** The local variables declared in the class initializer, in declaration order: name -> (type, expression). */
+    private val cinitVariables = LinkedHashMap<String, Pair<String, String>>()
 
     private val _functions = LinkedHashMap<String, Func>()
     val functions: Sequence<Func>
@@ -546,25 +550,70 @@ class NativeClass internal constructor(
             binding.generateFunctionSetup(this, this@NativeClass)
         }
 
+        // Constant macros (e.g. `macro..Address..ffi_type.p(...)`) produce a field instead of a method. Their field is declared together with the regular
+        // constants, and the value is assigned in the class initializer below.
+        val constantMacros = genFunctions.filter { it.has<Macro> { constant } && !it.has(private) && !it.has<Reuse>() }
+        // Class initializer variables are local to the initializer, so any constant that references one is a runtime constant.
+        val runtimeConstants = if (cinitSetRTConst)
+            computeRuntimeConstantNames(constantBlocks, constantMacros.map { it.name } + cinitVariables.keys)
+        else
+            emptySet()
+
+        // Private expression macros are only used to define constants, so their expression is inlined at the call sites and the method is removed.
+        val inlinableMacros = if (cinitSetRTConst)
+            genFunctions
+                .filter { it.has<Macro> { expression != null } && it.has(private) && !it.has<Reuse>() }
+                .associate { it.name to (it.parameters.map { parameter -> parameter.name } to it.get<Macro>().expression!!) }
+        else
+            emptyMap()
+
         constantBlocks.forEach {
-            it.generate(this)
+            it.generate(this, runtimeConstants, inlinableMacros)
+        }
+
+        // Constants initializer. It is emitted before the methods and the custom static fields, so that any field initializer that references a constant sees
+        // the assigned value. When disabled, the constant macros are initialized inline by generateMethods.
+        if (cinitSetRTConst) {
+            constantMacros.forEach { func -> func.appendConstantField(this) }
+
+            if (constantMacros.isNotEmpty() || runtimeConstants.isNotEmpty() || cinitVariables.isNotEmpty()) {
+                // A cache variable is declared for every struct result type of the constant macros and reused by their assignments.
+                val resultVars = constantMacros
+                    .filter { it.returns.isStructValue }
+                    .map { it.returns.nativeType.javaMethodType }
+                    .distinct()
+                    .mapIndexed { index, type -> type to if (index == 0) RESULT else "$RESULT${index + 1}" }
+                    .toMap()
+
+                print("\n    static {\n")
+                cinitVariables.forEach { (name, definition) -> print("        ${definition.first} $name = ${definition.second};\n") }
+                resultVars.forEach { (type, variable) -> print("        $type $variable;\n") }
+                constantMacros.forEach { func -> func.generateConstantInitializer(this, resultVars) }
+                constantBlocks.forEach { block -> block.generateInitializers(this) }
+                print("    }\n")
+            }
+        } else {
+            check(cinitVariables.isEmpty()) {
+                "cinitVariable() cannot be used in ${className}: cinitSetRTConst is false"
+            }
         }
 
         if (hasFunctions || binding is SimpleBinding) {
             printCustomMethods(static = true)
 
             // This allows binding classes to be "statically" extended. Not a good practice, but usable with static imports.
-            println("""
+            print("""
     ${if (isOpen) "protected" else "private"} $className() {
         throw new UnsupportedOperationException();
-    }""")
+    }
+""")
         } else {
-            println("\n$t${if (isOpen) "protected" else "private"} $className() {}")
+            print("\n$t${if (isOpen) "protected" else "private"} $className() {}\n")
         }
 
         genFunctions.forEach { func ->
-            if (!func.hasParam { it.nativeType is ArrayType<*> })
-                println("\n$t// --- [ ${func.name} ] ---")
+            if (func.name !in inlinableMacros && !func.hasParam { it.nativeType is ArrayType<*> })
+                print("\n$t// --- [ ${func.name} ] ---\n")
             try {
                 func.generateMethods(this)
             } catch (e: Exception) {
@@ -647,6 +696,20 @@ class NativeClass internal constructor(
         val block = ConstantBlock(this@NativeClass, access, this, *constants)
         constantBlocks.add(block)
         return block
+    }
+
+    /**
+     * Declares a local variable of the class initializer with the specified type and expression, and returns its name. It is used to factor out repeated
+     * expressions from the constants (e.g. `ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN`). Declaring the same name with the same type and expression
+     * more than once is a no-op.
+     */
+    fun cinitVariable(name: String, type: String, expression: String): String {
+        val existing = cinitVariables[name]
+        check(existing == null || existing == (type to expression)) {
+            "Conflicting class initializer variable: $name is already declared as ${existing?.first} = ${existing?.second}"
+        }
+        cinitVariables[name] = type to expression
+        return name
     }
 
     /** Adds a new constant. */
@@ -839,13 +902,106 @@ fun String.nativeClass(
     postfix: String = "",
     binding: APIBinding? = null,
     callingConvention: CallingConvention = module.callingConvention,
+    cinitSetRTConst: Boolean = true,
     init: (NativeClass.() -> Unit)? = null
 ): NativeClass {
-    val ext = NativeClass(module, this, nativeSubPath, templateName, prefix, prefixMethod, prefixConstant, prefixTemplate, postfix, binding, callingConvention)
+    val ext = NativeClass(module, this, nativeSubPath, templateName, prefix, prefixMethod, prefixConstant, prefixTemplate, postfix, binding, callingConvention, cinitSetRTConst)
     if (init != null)
         ext.init()
 
     binding?.addClass(ext)
 
     return ext
+}
+/**
+ * Computes the names of constants that cannot be initialized inline.
+ *
+ * A constant is runtime when it is explicitly seeded, contains a method call, or depends on another runtime
+ * constant. Dependencies are collected once and propagated through the graph instead of repeatedly rescanning
+ * every constant until a fixed point is reached.
+ */
+private fun computeRuntimeConstantNames(blocks: List<ConstantBlock<*>>, seed: List<String>): Set<String> {
+    val constants = blocks.flatMap { it.allConstants() }
+    // The referenced names include the seeded (macro) constants, so that a block constant that references a macro field is also detected as runtime.
+    val names = HashSet<String>(constants.size + seed.size)
+    constants.mapTo(names) { it.first }
+    names.addAll(seed)
+    val dependents = HashMap<String, MutableList<String>>()
+
+    for ((name, expression) in constants) {
+        if (expression == null)
+            continue
+
+        if (isRuntimeExpression(expression))
+            continue
+
+        for (reference in constantReferences(expression, names))
+            dependents.getOrPut(reference) { ArrayList() }.add(name)
+    }
+
+    val runtime = HashSet(seed)
+    val queue = java.util.ArrayDeque<String>()
+    queue.addAll(seed)
+
+    for ((name, expression) in constants) {
+        if (expression != null && isRuntimeExpression(expression) && runtime.add(name))
+            queue.addLast(name)
+    }
+
+    while (queue.isNotEmpty()) {
+        val runtimeName = queue.removeFirst()
+        for (dependent in dependents[runtimeName].orEmpty()) {
+            if (runtime.add(dependent))
+                queue.addLast(dependent)
+        }
+    }
+
+    return runtime
+}
+
+/** Returns constant identifiers referenced by a Java expression. String/character literals and comments are ignored. */
+private fun constantReferences(expression: String, names: Set<String>): Sequence<String> = sequence {
+    var index = 0
+    while (index < expression.length) {
+        when (val c = expression[index]) {
+            '"', '\'' -> {
+                val quote = c
+                index++
+                while (index < expression.length) {
+                    if (expression[index] == '\\') {
+                        index += 2
+                    } else if (expression[index] == quote) {
+                        index++
+                        break
+                    } else {
+                        index++
+                    }
+                }
+            }
+            '/' -> when {
+                index + 1 < expression.length && expression[index + 1] == '/' -> {
+                    index = expression.indexOf('\n', index + 2).let { if (it < 0) expression.length else it + 1 }
+                }
+                index + 1 < expression.length && expression[index + 1] == '*' -> {
+                    val end = expression.indexOf("*/", index + 2)
+                    index = if (end < 0) expression.length else end + 2
+                }
+                else -> index++
+            }
+            else -> {
+                if (!c.isJavaIdentifierStart()) {
+                    index++
+                    continue
+                }
+
+                val start = index++
+                while (index < expression.length && expression[index].isJavaIdentifierPart())
+                    index++
+
+                val name = expression.substring(start, index)
+                if (name in names)
+                    yield(name)
+            }
+        }
+    }
 }

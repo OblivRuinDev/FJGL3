@@ -753,7 +753,7 @@ public class VK10 {
         VK_SUBPASS_CONTENTS_INLINE                    = 0,
         VK_SUBPASS_CONTENTS_SECONDARY_COMMAND_BUFFERS = 1;
 
-    public static final int VK_API_VERSION_1_0 = VK_MAKE_API_VERSION(0, 1, 0, 0);
+    public static final int VK_API_VERSION_1_0;
 
     public static final int VK_HEADER_VERSION = 361;
 
@@ -777,6 +777,10 @@ public class VK10 {
     public static final float VK_LOD_CLAMP_NONE = 1000.0f;
 
     public static final long VK_WHOLE_SIZE = (~0L);
+
+    static {
+        VK_API_VERSION_1_0 = VK_MAKE_API_VERSION(0, 1, 0, 0);
+    }
 
     protected VK10() {
         throw new UnsupportedOperationException();

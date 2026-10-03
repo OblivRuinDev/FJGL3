@@ -27,6 +27,33 @@ public class LibCLocale {
 
     static { Library.initialize(); }
 
+    /** {@code int LC_ALL(void)} */
+    public static final int LC_ALL;
+
+    /** {@code int LC_COLLATE(void)} */
+    public static final int LC_COLLATE;
+
+    /** {@code int LC_CTYPE(void)} */
+    public static final int LC_CTYPE;
+
+    /** {@code int LC_MONETARY(void)} */
+    public static final int LC_MONETARY;
+
+    /** {@code int LC_NUMERIC(void)} */
+    public static final int LC_NUMERIC;
+
+    /** {@code int LC_TIME(void)} */
+    public static final int LC_TIME;
+
+    static {
+        LC_ALL = LC_ALL();
+        LC_COLLATE = LC_COLLATE();
+        LC_CTYPE = LC_CTYPE();
+        LC_MONETARY = LC_MONETARY();
+        LC_NUMERIC = LC_NUMERIC();
+        LC_TIME = LC_TIME();
+    }
+
     protected LibCLocale() {
         throw new UnsupportedOperationException();
     }
@@ -35,43 +62,25 @@ public class LibCLocale {
 
     private static native int LC_ALL();
 
-    /** {@code int LC_ALL(void)} */
-    public static final int LC_ALL = LC_ALL();
-
     // --- [ LC_COLLATE ] ---
 
     private static native int LC_COLLATE();
-
-    /** {@code int LC_COLLATE(void)} */
-    public static final int LC_COLLATE = LC_COLLATE();
 
     // --- [ LC_CTYPE ] ---
 
     private static native int LC_CTYPE();
 
-    /** {@code int LC_CTYPE(void)} */
-    public static final int LC_CTYPE = LC_CTYPE();
-
     // --- [ LC_MONETARY ] ---
 
     private static native int LC_MONETARY();
-
-    /** {@code int LC_MONETARY(void)} */
-    public static final int LC_MONETARY = LC_MONETARY();
 
     // --- [ LC_NUMERIC ] ---
 
     private static native int LC_NUMERIC();
 
-    /** {@code int LC_NUMERIC(void)} */
-    public static final int LC_NUMERIC = LC_NUMERIC();
-
     // --- [ LC_TIME ] ---
 
     private static native int LC_TIME();
-
-    /** {@code int LC_TIME(void)} */
-    public static final int LC_TIME = LC_TIME();
 
     // --- [ setlocale ] ---
 

@@ -96,6 +96,16 @@ public class LZ4Frame {
         LZ4F_ERROR_io_read                        = 23,
         LZ4F_ERROR_maxCode                        = 24;
 
+    /** {@code LZ4F_CustomMem LZ4F_defaultCMem(void)} */
+    public static final LZ4FCustomMem LZ4F_defaultCMem;
+
+    static {
+        LZ4FCustomMem __result;
+        __result = LZ4FCustomMem.create();
+        nLZ4F_defaultCMem(__result.address());
+        LZ4F_defaultCMem = __result;
+    }
+
     protected LZ4Frame() {
         throw new UnsupportedOperationException();
     }
@@ -443,15 +453,6 @@ public class LZ4Frame {
     // --- [ LZ4F_defaultCMem ] ---
 
     private static native void nLZ4F_defaultCMem(long __result);
-
-    @NativeType("LZ4F_CustomMem")
-    private static LZ4FCustomMem LZ4F_defaultCMem(@NativeType("LZ4F_CustomMem") LZ4FCustomMem __result) {
-        nLZ4F_defaultCMem(__result.address());
-        return __result;
-    }
-
-    /** {@code LZ4F_CustomMem LZ4F_defaultCMem(void)} */
-    public static final LZ4FCustomMem LZ4F_defaultCMem = LZ4F_defaultCMem(LZ4FCustomMem.create());
 
     // --- [ LZ4F_createCompressionContext_advanced ] ---
 

@@ -24,6 +24,8 @@ val SDL_audio = "SDLAudio".nativeClassSDL("SDL_audio") {
         uint32_t("size")
     )
 
+    val nativeLittleEndian = cinitVariable("nativeLittleEndian", "boolean", "ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN")
+
     EnumConstant(
         "AUDIO_UNKNOWN".enum("0x0000"),
         "AUDIO_U8".enum("0x0008"),
@@ -34,9 +36,9 @@ val SDL_audio = "SDLAudio".nativeClassSDL("SDL_audio") {
         "AUDIO_S32BE".enum("0x9020"),
         "AUDIO_F32LE".enum("0x8120"),
         "AUDIO_F32BE".enum("0x9120"),
-        "AUDIO_S16".enum("ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_AUDIO_S16LE : SDL_AUDIO_S16BE"),
-        "AUDIO_S32".enum("ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_AUDIO_S32LE : SDL_AUDIO_S32BE"),
-        "AUDIO_F32".enum("ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_AUDIO_F32LE : SDL_AUDIO_F32BE")
+        "AUDIO_S16".enum("$nativeLittleEndian ? SDL_AUDIO_S16LE : SDL_AUDIO_S16BE"),
+        "AUDIO_S32".enum("$nativeLittleEndian ? SDL_AUDIO_S32LE : SDL_AUDIO_S32BE"),
+        "AUDIO_F32".enum("$nativeLittleEndian ? SDL_AUDIO_F32LE : SDL_AUDIO_F32BE")
     )
 
     macro(expression = "x & SDL_AUDIO_MASK_BITSIZE")..uint32_t("AUDIO_BITSIZE", SDL_AudioFormat("x"))

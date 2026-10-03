@@ -7,7 +7,7 @@ package opencl.templates
 import org.lwjgl.generator.*
 import opencl.*
 
-val APPLE_ContextLoggingFunctions = "APPLEContextLoggingFunctions".nativeClassCL("APPLE_ContextLoggingFunctions", APPLE) {
+val APPLE_ContextLoggingFunctions = "APPLEContextLoggingFunctions".nativeClassCL("APPLE_ContextLoggingFunctions", APPLE, cinitSetRTConst = false) {
     LongConstant(
         "clLogMessagesToSystemLogAPPLE".."CL.getICD().clLogMessagesToSystemLogAPPLE"
     ).noPrefix()

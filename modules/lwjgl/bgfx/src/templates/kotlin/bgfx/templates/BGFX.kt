@@ -7,7 +7,7 @@ package bgfx.templates
 import bgfx.*
 import org.lwjgl.generator.*
 
-val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx_", binding = BGFX_BINDING) {
+val BGFX = "BGFX".nativeClass(Module.BGFX, prefix = "BGFX", prefixMethod = "bgfx_", binding = BGFX_BINDING, cinitSetRTConst = false) {
     IntConstant(
         "API_VERSION".."157"
     )

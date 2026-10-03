@@ -7,7 +7,7 @@ package harfbuzz.templates
 import org.lwjgl.generator.*
 import harfbuzz.*
 
-val hb_ot = "OpenType".nativeClass(Module.HARFBUZZ, prefix = "HB_OT", prefixMethod = "hb_ot_", binding = HARFBUZZ_BINDING_DELEGATE) {
+val hb_ot = "OpenType".nativeClass(Module.HARFBUZZ, prefix = "HB_OT", prefixMethod = "hb_ot_", binding = HARFBUZZ_BINDING_DELEGATE, cinitSetRTConst = false) {
     javaImport("static org.lwjgl.util.harfbuzz.HarfBuzz.*")
 
     // hb-ot-fetch.h

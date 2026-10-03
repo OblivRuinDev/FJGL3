@@ -7,7 +7,7 @@ package sdl.templates
 import org.lwjgl.generator.*
 import sdl.*
 
-val SDL_version = "SDLVersion".nativeClassSDL("SDL_version") {
+val SDL_version = "SDLVersion".nativeClassSDL("SDL_version", false) {
     IntConstant("MAJOR_VERSION".."3")
     IntConstant("MINOR_VERSION".."4")
     IntConstant("MICRO_VERSION".."14")

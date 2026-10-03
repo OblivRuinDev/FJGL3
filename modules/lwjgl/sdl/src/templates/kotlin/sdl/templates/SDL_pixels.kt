@@ -10,6 +10,8 @@ import sdl.*
 val SDL_pixels = "SDLPixels".nativeClassSDL("SDL_pixels") {
     javaImport("static org.lwjgl.sdl.SDLStdinc.*")
 
+    val nativeLittleEndian = cinitVariable("nativeLittleEndian", "boolean", "ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN")
+
     IntConstant(
         "ALPHA_OPAQUE".."255",
         "ALPHA_TRANSPARENT".."0"
@@ -142,14 +144,14 @@ val SDL_pixels = "SDLPixels".nativeClassSDL("SDL_pixels") {
         "PIXELFORMAT_P010".enum("0x30313050"),
         "PIXELFORMAT_EXTERNAL_OES".enum("0x2053454f"),
         "PIXELFORMAT_MJPG".enum("0x47504a4d"),
-        "PIXELFORMAT_RGBA32".enum("ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_PIXELFORMAT_ABGR8888 : SDL_PIXELFORMAT_RGBA8888"),
-        "PIXELFORMAT_ARGB32".enum("ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_PIXELFORMAT_BGRA8888 : SDL_PIXELFORMAT_ARGB8888"),
-        "PIXELFORMAT_BGRA32".enum("ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_PIXELFORMAT_ARGB8888 : SDL_PIXELFORMAT_BGRA8888"),
-        "PIXELFORMAT_ABGR32".enum("ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_PIXELFORMAT_RGBA8888 : SDL_PIXELFORMAT_ABGR8888"),
-        "PIXELFORMAT_RGBX32".enum("ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_PIXELFORMAT_XBGR8888 : SDL_PIXELFORMAT_RGBX8888"),
-        "PIXELFORMAT_XRGB32".enum("ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_PIXELFORMAT_BGRX8888 : SDL_PIXELFORMAT_XRGB8888"),
-        "PIXELFORMAT_BGRX32".enum("ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_PIXELFORMAT_XRGB8888 : SDL_PIXELFORMAT_BGRX8888"),
-        "PIXELFORMAT_XBGR32".enum("ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN ? SDL_PIXELFORMAT_RGBX8888 : SDL_PIXELFORMAT_XBGR8888"),
+        "PIXELFORMAT_RGBA32".enum("$nativeLittleEndian ? SDL_PIXELFORMAT_ABGR8888 : SDL_PIXELFORMAT_RGBA8888"),
+        "PIXELFORMAT_ARGB32".enum("$nativeLittleEndian ? SDL_PIXELFORMAT_BGRA8888 : SDL_PIXELFORMAT_ARGB8888"),
+        "PIXELFORMAT_BGRA32".enum("$nativeLittleEndian ? SDL_PIXELFORMAT_ARGB8888 : SDL_PIXELFORMAT_BGRA8888"),
+        "PIXELFORMAT_ABGR32".enum("$nativeLittleEndian ? SDL_PIXELFORMAT_RGBA8888 : SDL_PIXELFORMAT_ABGR8888"),
+        "PIXELFORMAT_RGBX32".enum("$nativeLittleEndian ? SDL_PIXELFORMAT_XBGR8888 : SDL_PIXELFORMAT_RGBX8888"),
+        "PIXELFORMAT_XRGB32".enum("$nativeLittleEndian ? SDL_PIXELFORMAT_BGRX8888 : SDL_PIXELFORMAT_XRGB8888"),
+        "PIXELFORMAT_BGRX32".enum("$nativeLittleEndian ? SDL_PIXELFORMAT_XRGB8888 : SDL_PIXELFORMAT_BGRX8888"),
+        "PIXELFORMAT_XBGR32".enum("$nativeLittleEndian ? SDL_PIXELFORMAT_RGBX8888 : SDL_PIXELFORMAT_XBGR8888"),
     )
 
     EnumConstant(

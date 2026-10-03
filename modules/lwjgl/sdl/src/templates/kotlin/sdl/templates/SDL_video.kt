@@ -7,7 +7,7 @@ package sdl.templates
 import org.lwjgl.generator.*
 import sdl.*
 
-val SDL_video = "SDLVideo".nativeClassSDL("SDL_video") {
+val SDL_video = "SDLVideo".nativeClassSDL("SDL_video", false) {
     StringConstant("PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER".."SDL.video.wayland.wl_display")
 
     EnumConstant(

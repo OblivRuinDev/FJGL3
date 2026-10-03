@@ -273,12 +273,16 @@ public class VK11 extends VK10 {
         VK_TESSELLATION_DOMAIN_ORIGIN_UPPER_LEFT = 0,
         VK_TESSELLATION_DOMAIN_ORIGIN_LOWER_LEFT = 1;
 
-    public static final int VK_API_VERSION_1_1 = VK_MAKE_API_VERSION(0, 1, 1, 0);
+    public static final int VK_API_VERSION_1_1;
 
     public static final int
         VK_LUID_SIZE             = 8,
         VK_QUEUE_FAMILY_EXTERNAL = (~0-1),
         VK_MAX_DEVICE_GROUP_SIZE = 32;
+
+    static {
+        VK_API_VERSION_1_1 = VK_MAKE_API_VERSION(0, 1, 1, 0);
+    }
 
     protected VK11() {
         throw new UnsupportedOperationException();

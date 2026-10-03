@@ -156,9 +156,13 @@ public class VK14 extends VK13 {
         VK_LINE_RASTERIZATION_MODE_BRESENHAM          = 2,
         VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH = 3;
 
-    public static final int VK_API_VERSION_1_4 = VK_MAKE_API_VERSION(0, 1, 4, 0);
+    public static final int VK_API_VERSION_1_4;
 
     public static final int VK_MAX_GLOBAL_PRIORITY_SIZE = 16;
+
+    static {
+        VK_API_VERSION_1_4 = VK_MAKE_API_VERSION(0, 1, 4, 0);
+    }
 
     protected VK14() {
         throw new UnsupportedOperationException();
