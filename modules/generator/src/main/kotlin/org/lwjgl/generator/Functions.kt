@@ -172,6 +172,32 @@ class Func(
                 )
     }
 
+    /**
+     * True when this function is a constant getter that is only used by the class initializer, so that it can be merged into a single `initNative` call.
+     *
+     * <p>A candidate is a non-function macro ({@code Macro.CONSTANT}, or a private {@code Macro.VARIABLE}) with no parameters and a primitive, non-struct
+     * return value. Public macros, regular native functions and expression macros are never merged.</p>
+     */
+    internal val isInitNativeCandidate: Boolean
+        get() = nativeClass.cinitSetRTConst
+            && has<Macro> { !function }
+            && (has<Macro> { constant } || has(private))
+            && parameters.isEmpty()
+            && !returns.isVoid
+            && !returns.isStructValue
+            && !has<MapPointer>()
+            // A custom native call is an opaque statement; only a custom value expression is supported.
+            && !has<Code> { nativeBeforeCall != null || nativeCall != null || nativeAfterCall != null || isSpecial }
+            && !has<Reuse>()
+
+    /** The Java primitive type of the array element that carries this function's value out of `initNative`. */
+    internal val initNativeArrayType: String
+        get() = returns.nativeMethodType(nullable = false)
+
+    /** The name of the generated Java method that provides this function's value, used to replace the native call with an array read. */
+    internal val initNativeCallName: String
+        get() = if (isNativeOnly) name else "n$name"
+
     private val hasUnsafeMethod by lazy(LazyThreadSafetyMode.NONE) {
         hasFunctionAddressParam
         && !(hasExplicitFunctionAddress && hasNativeCode)
@@ -629,6 +655,11 @@ class Func(
 
     /** This is where we start generating java code. */
     internal fun generateMethods(writer: PrintWriter) {
+        if (isInitNativeCandidate) {
+            // The value is provided by the merged initNative call, no Java native method is generated.
+            return
+        }
+
         val hasReuse = has<Reuse>()
         val nativeOnly = isNativeOnly
 
@@ -713,6 +744,8 @@ class Func(
                 writer.println("$t${t}$resultVar = ${returns.nativeType.javaMethodType}.create();")
                 body = body.replace(RESULT, resultVar)
             }
+            // Constant macros whose native value is provided by initNative read it from the merged array.
+            body = inlineGetterCalls(body, nativeClass.initNativeConstantReads)
             writer.print(body)
         }
     }
@@ -1945,6 +1978,51 @@ class Func(
         writer.generateFunctionImpl(hasArrays, hasCritical, critical = false)
     }
 
+    /**
+     * Emits the C expression that produces the value returned by the native function. It is the single implementation shared by the JNI wrapper and the
+     * merged `initNative` initializer, so both sides use the same semantics.
+     */
+    internal fun generateNativeValueExpression(writer: PrintWriter) {
+        val custom = if (has<Code>()) get<Code>().nativeValue else null
+        with(writer) {
+            if (custom != null) {
+                print(custom)
+                return@with
+            }
+            if (!returns.isStructValue && !returns.isVoid) {
+                if (returns.jniFunctionType != returns.toNativeType(nativeClass.binding))
+                    print("(${returns.jniFunctionType})")
+                if (returns.nativeType is PointerType<*> && nativeClass.binding == null)
+                    print("(uintptr_t)")
+                if (has<Address>())
+                    print('&')
+            }
+            if (parameters.isNotEmpty() && parameters[0] === JNI_ENV && nativeClass.className == "JNINativeInterface")
+                print("(*$JNIENV)->")
+            print(nativeName)
+            if (!has<Macro> { !function }) print('(')
+            printList(getNativeParams(withExplicitFunctionAddress = false, withJNIEnv = true, withCaptureCallState = false)) { param ->
+                param.nativeType.let {
+                    val name = param.name
+                    if (it is StructType) {
+                        "*${name}"
+                    } else if (it.castAddressToPointer) {
+                        name
+                    } else if (it === va_list) {
+                        "VA_LIST_CAST(${name})"
+                    } else {
+                        val nativeType = param.toNativeType(nativeClass.binding)
+                        if (nativeType != it.jniFunctionType && "j$nativeType" != it.jniFunctionType)
+                            "($nativeType)${name}" // Avoid implicit cast warnings
+                        else
+                            name
+                    }
+                }
+            }
+            if (!has<Macro> { !function }) print(')')
+        }
+    }
+
     private fun PrintWriter.generateFunctionImpl(hasArrays: Boolean, hasCritical: Boolean, critical: Boolean) {
         if (ifDirective != null) {
             println("#if${ifDirective}")
@@ -2105,36 +2183,8 @@ class Func(
                     }
                 } else if (!returns.isVoid) {
                     print(if (code.nativeAfterCall != null) "$RESULT = " else "return ")
-                    if (returns.jniFunctionType != returns.toNativeType(nativeClass.binding))
-                        print("(${returns.jniFunctionType})")
-                    if (returns.nativeType is PointerType<*> && nativeClass.binding == null)
-                        print("(uintptr_t)")
-                    if (has<Address>())
-                        print('&')
                 }
-                if (parameters.isNotEmpty() && parameters[0] === JNI_ENV && nativeClass.className == "JNINativeInterface")
-                    print("(*$JNIENV)->")
-                print(nativeName)
-                if (!has<Macro> { !function }) print('(')
-                printList(getNativeParams(withExplicitFunctionAddress = false, withJNIEnv = true, withCaptureCallState = false)) { param ->
-                    param.nativeType.let {
-                        val name = param.name
-                        if (it is StructType) {
-                            "*${name}"
-                        } else if (it.castAddressToPointer) {
-                            name
-                        } else if (it === va_list) {
-                            "VA_LIST_CAST(${name})"
-                        } else {
-                            val nativeType = param.toNativeType(nativeClass.binding)
-                            if (nativeType != it.jniFunctionType && "j$nativeType" != it.jniFunctionType)
-                                "($nativeType)${name}" // Avoid implicit cast warnings
-                            else
-                                name
-                        }
-                    }
-                }
-                if (!has<Macro> { !function }) print(')')
+                generateNativeValueExpression(this)
                 println(';')
             }
         }

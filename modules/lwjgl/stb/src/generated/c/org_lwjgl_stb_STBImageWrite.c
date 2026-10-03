@@ -36,21 +36,6 @@ JNIEXPORT jint JNICALL Java_org_lwjgl_stb_STBImageWrite_nstbi_1write_1png(JNIEnv
     return (jint)stbi_write_png(filename, w, h, comp, data, stride_in_bytes);
 }
 
-JNIEXPORT jlong JNICALL Java_org_lwjgl_stb_STBImageWrite_nstbi_1write_1png_1compression_1level(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&stbi_write_png_compression_level;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_stb_STBImageWrite_nstbi_1write_1force_1png_1filter(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&stbi_write_force_png_filter;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_stb_STBImageWrite_nstbi_1zlib_1compress(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&stbi_zlib_compress;
-}
-
 JNIEXPORT jint JNICALL Java_org_lwjgl_stb_STBImageWrite_nstbi_1write_1bmp(JNIEnv *__env, jclass clazz, jlong filenameAddress, jint w, jint h, jint comp, jlong dataAddress) {
     char const *filename = (char const *)(uintptr_t)filenameAddress;
     void const *data = (void const *)(uintptr_t)dataAddress;
@@ -63,11 +48,6 @@ JNIEXPORT jint JNICALL Java_org_lwjgl_stb_STBImageWrite_nstbi_1write_1tga(JNIEnv
     void const *data = (void const *)(uintptr_t)dataAddress;
     UNUSED_PARAMS(__env, clazz)
     return (jint)stbi_write_tga(filename, w, h, comp, data);
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_stb_STBImageWrite_nstbi_1write_1tga_1with_1rle(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&stbi_write_tga_with_rle;
 }
 
 JNIEXPORT jint JNICALL Java_org_lwjgl_stb_STBImageWrite_nstbi_1write_1hdr__JIIIJ(JNIEnv *__env, jclass clazz, jlong filenameAddress, jint w, jint h, jint comp, jlong dataAddress) {
@@ -148,6 +128,16 @@ JNIEXPORT jint JNICALL Java_org_lwjgl_stb_STBImageWrite_nstbi_1write_1hdr_1to_1f
     __result = (jint)stbi_write_hdr_to_func(func, context, w, h, comp, (float const *)data);
     (*__env)->ReleaseFloatArrayElements(__env, dataAddress, data, 0);
     return __result;
+}
+
+JNIEXPORT void JNICALL Java_org_lwjgl_stb_STBImageWrite_initNative(JNIEnv *__env, jclass clazz, jlongArray __longs) {
+    UNUSED_PARAM(clazz)
+    jlong *__longs_ptr = (*__env)->GetLongArrayElements(__env, __longs, NULL);
+    __longs_ptr[0] = (jlong)(uintptr_t)&stbi_write_png_compression_level;
+    __longs_ptr[1] = (jlong)(uintptr_t)&stbi_write_force_png_filter;
+    __longs_ptr[2] = (jlong)(uintptr_t)&stbi_zlib_compress;
+    __longs_ptr[3] = (jlong)(uintptr_t)&stbi_write_tga_with_rle;
+    (*__env)->ReleaseLongArrayElements(__env, __longs, __longs_ptr, 0);
 }
 
 EXTERN_C_EXIT

@@ -19,21 +19,6 @@
 
 EXTERN_C_ENTER
 
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libc_LibCStdio_stdin(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)stdin;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libc_LibCStdio_stdout(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)stdout;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libc_LibCStdio_stderr(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)stderr;
-}
-
 JNIEXPORT jint JNICALL Java_org_lwjgl_system_libc_LibCStdio_nfflush(JNIEnv *__env, jclass clazz, jlong streamAddress) {
     FILE *stream = (FILE *)(uintptr_t)streamAddress;
     UNUSED_PARAMS(__env, clazz)
@@ -52,16 +37,6 @@ JNIEXPORT jint JNICALL Java_org_lwjgl_system_libc_LibCStdio_nferror(JNIEnv *__en
     return (jint)ferror(stream);
 }
 
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libc_LibCStdio_fscanf(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)fscanf;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libc_LibCStdio_sscanf(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)sscanf;
-}
-
 JNIEXPORT jint JNICALL Java_org_lwjgl_system_libc_LibCStdio_nvsscanf(JNIEnv *__env, jclass clazz, jlong bufferAddress, jlong formatAddress, jlong vlistAddress) {
     char const *buffer = (char const *)(uintptr_t)bufferAddress;
     char const *format = (char const *)(uintptr_t)formatAddress;
@@ -69,21 +44,24 @@ JNIEXPORT jint JNICALL Java_org_lwjgl_system_libc_LibCStdio_nvsscanf(JNIEnv *__e
     return (jint)vsscanf(buffer, format, VA_LIST_CAST(vlist));
 }
 
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libc_LibCStdio_fprintf(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)fprintf;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libc_LibCStdio_snprintf(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)snprintf;
-}
-
 JNIEXPORT jint JNICALL Java_org_lwjgl_system_libc_LibCStdio_nvsnprintf(JNIEnv *__env, jclass clazz, jlong bufferAddress, jlong buf_size, jlong formatAddress, jlong vlistAddress) {
     char *buffer = (char *)(uintptr_t)bufferAddress;
     char const *format = (char const *)(uintptr_t)formatAddress;
     UNUSED_PARAMS(__env, clazz)
     return (jint)vsnprintf(buffer, (size_t)buf_size, format, VA_LIST_CAST(vlist));
+}
+
+JNIEXPORT void JNICALL Java_org_lwjgl_system_libc_LibCStdio_initNative(JNIEnv *__env, jclass clazz, jlongArray __longs) {
+    UNUSED_PARAM(clazz)
+    jlong *__longs_ptr = (*__env)->GetLongArrayElements(__env, __longs, NULL);
+    __longs_ptr[0] = (jlong)(uintptr_t)stdin;
+    __longs_ptr[1] = (jlong)(uintptr_t)stdout;
+    __longs_ptr[2] = (jlong)(uintptr_t)stderr;
+    __longs_ptr[3] = (jlong)(uintptr_t)fscanf;
+    __longs_ptr[4] = (jlong)(uintptr_t)sscanf;
+    __longs_ptr[5] = (jlong)(uintptr_t)fprintf;
+    __longs_ptr[6] = (jlong)(uintptr_t)snprintf;
+    (*__env)->ReleaseLongArrayElements(__env, __longs, __longs_ptr, 0);
 }
 
 EXTERN_C_EXIT

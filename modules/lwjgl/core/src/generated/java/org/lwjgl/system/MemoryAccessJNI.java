@@ -37,46 +37,20 @@ final class MemoryAccessJNI {
     static final long aligned_free;
 
     static {
-        malloc = malloc();
-        calloc = calloc();
-        realloc = realloc();
-        free = free();
-        aligned_alloc = aligned_alloc();
-        aligned_free = aligned_free();
+        long[] __longs = new long[6];
+        initNative(__longs);
+        malloc = __longs[0];
+        calloc = __longs[1];
+        realloc = __longs[2];
+        free = __longs[3];
+        aligned_alloc = __longs[4];
+        aligned_free = __longs[5];
     }
+
+    private static native void initNative(long[] __longs);
 
     private MemoryAccessJNI() {
         throw new UnsupportedOperationException();
     }
-
-    // --- [ malloc ] ---
-
-    @NativeType("void * (*) (size_t)")
-    private static native long malloc();
-
-    // --- [ calloc ] ---
-
-    @NativeType("void * (*) (size_t, size_t)")
-    private static native long calloc();
-
-    // --- [ realloc ] ---
-
-    @NativeType("void * (*) (void *, size_t)")
-    private static native long realloc();
-
-    // --- [ free ] ---
-
-    @NativeType("void (*) (void *)")
-    private static native long free();
-
-    // --- [ aligned_alloc ] ---
-
-    @NativeType("void * (*) (size_t, size_t)")
-    private static native long aligned_alloc();
-
-    // --- [ aligned_free ] ---
-
-    @NativeType("void (*) (void *)")
-    private static native long aligned_free();
 
 }

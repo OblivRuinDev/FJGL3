@@ -68,47 +68,21 @@ public class CoreFoundation {
     public static final long kCFAllocatorUseContext;
 
     static {
-        kCFAllocatorDefault = kCFAllocatorDefault();
-        kCFAllocatorSystemDefault = kCFAllocatorSystemDefault();
-        kCFAllocatorMalloc = kCFAllocatorMalloc();
-        kCFAllocatorMallocZone = kCFAllocatorMallocZone();
-        kCFAllocatorNull = kCFAllocatorNull();
-        kCFAllocatorUseContext = kCFAllocatorUseContext();
+        long[] __longs = new long[6];
+        initNative(__longs);
+        kCFAllocatorDefault = __longs[0];
+        kCFAllocatorSystemDefault = __longs[1];
+        kCFAllocatorMalloc = __longs[2];
+        kCFAllocatorMallocZone = __longs[3];
+        kCFAllocatorNull = __longs[4];
+        kCFAllocatorUseContext = __longs[5];
     }
+
+    private static native void initNative(long[] __longs);
 
     protected CoreFoundation() {
         throw new UnsupportedOperationException();
     }
-
-    // --- [ kCFAllocatorDefault ] ---
-
-    @NativeType("CFAllocatorRef")
-    private static native long kCFAllocatorDefault();
-
-    // --- [ kCFAllocatorSystemDefault ] ---
-
-    @NativeType("CFAllocatorRef")
-    private static native long kCFAllocatorSystemDefault();
-
-    // --- [ kCFAllocatorMalloc ] ---
-
-    @NativeType("CFAllocatorRef")
-    private static native long kCFAllocatorMalloc();
-
-    // --- [ kCFAllocatorMallocZone ] ---
-
-    @NativeType("CFAllocatorRef")
-    private static native long kCFAllocatorMallocZone();
-
-    // --- [ kCFAllocatorNull ] ---
-
-    @NativeType("CFAllocatorRef")
-    private static native long kCFAllocatorNull();
-
-    // --- [ kCFAllocatorUseContext ] ---
-
-    @NativeType("CFAllocatorRef")
-    private static native long kCFAllocatorUseContext();
 
     // --- [ CFRetain ] ---
 

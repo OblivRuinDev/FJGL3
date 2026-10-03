@@ -252,6 +252,9 @@ class ConstantBlock<T : Any>(
     /** Private expression macros (name -> parameter names and expression) that are inlined at their call sites. */
     private var expressionMacros: Map<String, Pair<List<String>, String>> = emptyMap()
 
+    /** Constant getters merged into `initNative` (name -> array read) that replace the getter calls in the constant expressions. */
+    private var initNativeGetters: Map<String, String> = emptyMap()
+
     /** The name and, for expressions, the value expression of every resolved constant. Used to compute the runtime constants of the whole class. */
     internal fun allConstants(): List<Pair<String, String?>> {
         val (_, constants) = resolved()
@@ -265,10 +268,12 @@ class ConstantBlock<T : Any>(
     internal fun generate(
         writer: PrintWriter,
         runtimeNames: Set<String> = emptySet(),
-        expressionMacros: Map<String, Pair<List<String>, String>> = emptyMap()
+        expressionMacros: Map<String, Pair<List<String>, String>> = emptyMap(),
+        initNativeGetters: Map<String, String> = emptyMap()
     ) {
         this.runtimeNames = runtimeNames
         this.expressionMacros = expressionMacros
+        this.initNativeGetters = initNativeGetters
 
         val (type, constants) = resolved()
 
@@ -314,7 +319,7 @@ class ConstantBlock<T : Any>(
     private fun constantValue(type: ConstantType<*>, constant: Constant<*>): String =
         if (constant is ConstantExpression) {
             val value = if (type !== StringConstant || constant.unwrapped) constant.expression else (type as ConstantType<Any>).print(constant.expression)
-            inlineMacroCalls(value, expressionMacros)
+            inlineGetterCalls(inlineMacroCalls(value, expressionMacros), initNativeGetters)
         } else
             (type as ConstantType<Any>).print(constant.value!!)
 
@@ -324,6 +329,22 @@ class ConstantBlock<T : Any>(
 
 /** True when the expression is a runtime (non compile-time constant) expression, i.e. it invokes a method. */
 internal fun isRuntimeExpression(expression: String) = METHOD_CALL.containsMatchIn(expression)
+
+/**
+ * Replaces calls to the specified no-argument getters with their replacement expression. Unlike [inlineMacroCalls], the replacement is not wrapped in
+ * parentheses, because these getters only read a value.
+ */
+internal fun inlineGetterCalls(expression: String, getters: Map<String, String>): String {
+    if (getters.isEmpty() || expression.isEmpty())
+        return expression
+
+    var result = expression
+    getters.forEach { (name, replacement) ->
+        if (name in result)
+            result = Regex("""\b${Regex.escape(name)}\s*\(\s*\)""").replace(result) { replacement }
+    }
+    return result
+}
 
 /**
  * Replaces calls to expression macros with their expression, substituting call arguments for parameters.

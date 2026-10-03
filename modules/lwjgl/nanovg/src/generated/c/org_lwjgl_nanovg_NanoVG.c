@@ -681,21 +681,6 @@ JNIEXPORT jint JNICALL Java_org_lwjgl_nanovg_NanoVG_nnvgTextBreakLines(JNIEnv *_
     return (jint)nvgTextBreakLines(ctx, string, end, breakRowWidth, rows, maxRows);
 }
 
-JNIEXPORT jlong JNICALL Java_org_lwjgl_nanovg_NanoVG_nvgCreateInternal(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&nvgCreateInternal;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_nanovg_NanoVG_nvgInternalParams(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&nvgInternalParams;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_nanovg_NanoVG_nvgDeleteInternal(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&nvgDeleteInternal;
-}
-
 JNIEXPORT void JNICALL Java_org_lwjgl_nanovg_NanoVG_nnvgCurrentTransform__J_3F(JNIEnv *__env, jclass clazz, jlong ctxAddress, jfloatArray xformAddress) {
     NVGcontext *ctx = (NVGcontext *)(uintptr_t)ctxAddress;
     jfloat *xform = (*__env)->GetFloatArrayElements(__env, xformAddress, NULL);
@@ -828,6 +813,15 @@ JNIEXPORT void JNICALL Java_org_lwjgl_nanovg_NanoVG_nnvgTextMetrics__J_3F_3F_3F(
     if (lineh != NULL) { (*__env)->ReleaseFloatArrayElements(__env, linehAddress, lineh, 0); }
     if (descender != NULL) { (*__env)->ReleaseFloatArrayElements(__env, descenderAddress, descender, 0); }
     if (ascender != NULL) { (*__env)->ReleaseFloatArrayElements(__env, ascenderAddress, ascender, 0); }
+}
+
+JNIEXPORT void JNICALL Java_org_lwjgl_nanovg_NanoVG_initNative(JNIEnv *__env, jclass clazz, jlongArray __longs) {
+    UNUSED_PARAM(clazz)
+    jlong *__longs_ptr = (*__env)->GetLongArrayElements(__env, __longs, NULL);
+    __longs_ptr[0] = (jlong)(uintptr_t)&nvgCreateInternal;
+    __longs_ptr[1] = (jlong)(uintptr_t)&nvgInternalParams;
+    __longs_ptr[2] = (jlong)(uintptr_t)&nvgDeleteInternal;
+    (*__env)->ReleaseLongArrayElements(__env, __longs, __longs_ptr, 0);
 }
 
 EXTERN_C_EXIT

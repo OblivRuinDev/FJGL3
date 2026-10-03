@@ -59,191 +59,6 @@ typedef void (*FFI_CLOSURE_FUN)(ffi_cif*, void*, void**, void*);
 
 EXTERN_C_ENTER
 
-JNIEXPORT jshort JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1TYPE_1DOUBLE(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jshort)FFI_TYPE_DOUBLE;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1WIN64(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_WIN64;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1GNUW64(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_GNUW64;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1UNIX64(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_UNIX64;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1EFI64(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_EFI64;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1SYSV(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_SYSV;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1STDCALL(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_STDCALL;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1THISCALL(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_THISCALL;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1FASTCALL(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_FASTCALL;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1MS_1CDECL(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_MS_CDECL;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1PASCAL(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_PASCAL;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1REGISTER(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_REGISTER;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1VFP(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_VFP;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1FIRST_1ABI(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_FIRST_ABI;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1LAST_1ABI(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_LAST_ABI;
-}
-
-JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_FFI_1DEFAULT_1ABI(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jint)FFI_DEFAULT_ABI;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1void(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_void;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1uint8(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_uint8;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1sint8(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_sint8;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1uint16(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_uint16;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1sint16(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_sint16;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1uint32(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_uint32;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1sint32(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_sint32;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1uint64(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_uint64;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1sint64(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_sint64;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1uchar(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_uchar;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1schar(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_schar;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1ushort(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_ushort;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1sshort(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_sshort;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1uint(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_uint;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1sint(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_sint;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1ulong(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_ulong;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1slong(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_slong;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1float(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_float;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1double(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_double;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1longdouble(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_longdouble;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1type_1pointer(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)&ffi_type_pointer;
-}
-
 JNIEXPORT jlong JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1get_1version(JNIEnv *__env, jclass clazz) {
     UNUSED_PARAMS(__env, clazz)
     return (jlong)(uintptr_t)ffi_get_version();
@@ -343,6 +158,53 @@ JNIEXPORT jint JNICALL Java_org_lwjgl_system_libffi_LibFFI_nffi_1prep_1closure_1
     void *codeloc = (void *)(uintptr_t)codelocAddress;
     UNUSED_PARAMS(__env, clazz)
     return (jint)ffi_prep_closure_loc(closure, cif, fun, user_data, codeloc);
+}
+
+JNIEXPORT void JNICALL Java_org_lwjgl_system_libffi_LibFFI_initNative(JNIEnv *__env, jclass clazz, jshortArray __shorts, jintArray __ints, jlongArray __longs) {
+    UNUSED_PARAM(clazz)
+    jshort *__shorts_ptr = (*__env)->GetShortArrayElements(__env, __shorts, NULL);
+    jint *__ints_ptr = (*__env)->GetIntArrayElements(__env, __ints, NULL);
+    jlong *__longs_ptr = (*__env)->GetLongArrayElements(__env, __longs, NULL);
+    __shorts_ptr[0] = (jshort)FFI_TYPE_DOUBLE;
+    __ints_ptr[0] = (jint)FFI_WIN64;
+    __ints_ptr[1] = (jint)FFI_GNUW64;
+    __ints_ptr[2] = (jint)FFI_UNIX64;
+    __ints_ptr[3] = (jint)FFI_EFI64;
+    __ints_ptr[4] = (jint)FFI_SYSV;
+    __ints_ptr[5] = (jint)FFI_STDCALL;
+    __ints_ptr[6] = (jint)FFI_THISCALL;
+    __ints_ptr[7] = (jint)FFI_FASTCALL;
+    __ints_ptr[8] = (jint)FFI_MS_CDECL;
+    __ints_ptr[9] = (jint)FFI_PASCAL;
+    __ints_ptr[10] = (jint)FFI_REGISTER;
+    __ints_ptr[11] = (jint)FFI_VFP;
+    __ints_ptr[12] = (jint)FFI_FIRST_ABI;
+    __ints_ptr[13] = (jint)FFI_LAST_ABI;
+    __ints_ptr[14] = (jint)FFI_DEFAULT_ABI;
+    __longs_ptr[0] = (jlong)(uintptr_t)&ffi_type_void;
+    __longs_ptr[1] = (jlong)(uintptr_t)&ffi_type_uint8;
+    __longs_ptr[2] = (jlong)(uintptr_t)&ffi_type_sint8;
+    __longs_ptr[3] = (jlong)(uintptr_t)&ffi_type_uint16;
+    __longs_ptr[4] = (jlong)(uintptr_t)&ffi_type_sint16;
+    __longs_ptr[5] = (jlong)(uintptr_t)&ffi_type_uint32;
+    __longs_ptr[6] = (jlong)(uintptr_t)&ffi_type_sint32;
+    __longs_ptr[7] = (jlong)(uintptr_t)&ffi_type_uint64;
+    __longs_ptr[8] = (jlong)(uintptr_t)&ffi_type_sint64;
+    __longs_ptr[9] = (jlong)(uintptr_t)&ffi_type_uchar;
+    __longs_ptr[10] = (jlong)(uintptr_t)&ffi_type_schar;
+    __longs_ptr[11] = (jlong)(uintptr_t)&ffi_type_ushort;
+    __longs_ptr[12] = (jlong)(uintptr_t)&ffi_type_sshort;
+    __longs_ptr[13] = (jlong)(uintptr_t)&ffi_type_uint;
+    __longs_ptr[14] = (jlong)(uintptr_t)&ffi_type_sint;
+    __longs_ptr[15] = (jlong)(uintptr_t)&ffi_type_ulong;
+    __longs_ptr[16] = (jlong)(uintptr_t)&ffi_type_slong;
+    __longs_ptr[17] = (jlong)(uintptr_t)&ffi_type_float;
+    __longs_ptr[18] = (jlong)(uintptr_t)&ffi_type_double;
+    __longs_ptr[19] = (jlong)(uintptr_t)&ffi_type_longdouble;
+    __longs_ptr[20] = (jlong)(uintptr_t)&ffi_type_pointer;
+    (*__env)->ReleaseShortArrayElements(__env, __shorts, __shorts_ptr, 0);
+    (*__env)->ReleaseIntArrayElements(__env, __ints, __ints_ptr, 0);
+    (*__env)->ReleaseLongArrayElements(__env, __longs, __longs_ptr, 0);
 }
 
 EXTERN_C_EXIT

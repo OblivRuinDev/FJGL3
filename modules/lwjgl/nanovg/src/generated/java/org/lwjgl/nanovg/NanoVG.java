@@ -97,10 +97,14 @@ public class NanoVG {
     static final long nvgDeleteInternal;
 
     static {
-        nvgCreateInternal = nvgCreateInternal();
-        nvgInternalParams = nvgInternalParams();
-        nvgDeleteInternal = nvgDeleteInternal();
+        long[] __longs = new long[3];
+        initNative(__longs);
+        nvgCreateInternal = __longs[0];
+        nvgInternalParams = __longs[1];
+        nvgDeleteInternal = __longs[2];
     }
+
+    private static native void initNative(long[] __longs);
 
     protected NanoVG() {
         throw new UnsupportedOperationException();
@@ -1648,21 +1652,6 @@ public class NanoVG {
             stack.setPointer(stackPointer);
         }
     }
-
-    // --- [ nvgCreateInternal ] ---
-
-    @NativeType("void *")
-    private static native long nvgCreateInternal();
-
-    // --- [ nvgInternalParams ] ---
-
-    @NativeType("void *")
-    private static native long nvgInternalParams();
-
-    // --- [ nvgDeleteInternal ] ---
-
-    @NativeType("void *")
-    private static native long nvgDeleteInternal();
 
     /** {@code void nvgCurrentTransform(NVGcontext * ctx, float * xform)} */
     public static native void nnvgCurrentTransform(long ctx, float[] xform);

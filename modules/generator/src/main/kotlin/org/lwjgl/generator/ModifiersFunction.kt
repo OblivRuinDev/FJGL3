@@ -58,7 +58,10 @@ class Code(
 
     val nativeBeforeCall: String? = null,
     val nativeCall: String? = null,
-    val nativeAfterCall: String? = null
+    val nativeAfterCall: String? = null,
+
+    /** A custom C expression that produces the value returned by the native function. Used instead of the generated call expression. */
+    val nativeValue: String? = null
 ) : FunctionModifier {
     companion object {
         // Used to avoid null checks
@@ -102,7 +105,9 @@ class Code(
 
         nativeBeforeCall: String? = null,
         nativeCall: String? = null,
-        nativeAfterCall: String? = null
+        nativeAfterCall: String? = null,
+
+        nativeValue: String? = null
     ) = Code(
         this.javaInit.append(javaInit),
 
@@ -112,7 +117,9 @@ class Code(
 
         this.nativeBeforeCall.append(nativeBeforeCall),
         this.nativeCall.append(nativeCall),
-        this.nativeAfterCall.append(nativeAfterCall)
+        this.nativeAfterCall.append(nativeAfterCall),
+
+        this.nativeValue.append(nativeValue)
     )
 }
 

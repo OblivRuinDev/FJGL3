@@ -140,212 +140,54 @@ public class LibFFI {
     public static final FFIType ffi_type_pointer;
 
     static {
-        ffi_type_void = FFIType.create(nffi_type_void());
-        ffi_type_uint8 = FFIType.create(nffi_type_uint8());
-        ffi_type_sint8 = FFIType.create(nffi_type_sint8());
-        ffi_type_uint16 = FFIType.create(nffi_type_uint16());
-        ffi_type_sint16 = FFIType.create(nffi_type_sint16());
-        ffi_type_uint32 = FFIType.create(nffi_type_uint32());
-        ffi_type_sint32 = FFIType.create(nffi_type_sint32());
-        ffi_type_uint64 = FFIType.create(nffi_type_uint64());
-        ffi_type_sint64 = FFIType.create(nffi_type_sint64());
-        ffi_type_uchar = FFIType.create(nffi_type_uchar());
-        ffi_type_schar = FFIType.create(nffi_type_schar());
-        ffi_type_ushort = FFIType.create(nffi_type_ushort());
-        ffi_type_sshort = FFIType.create(nffi_type_sshort());
-        ffi_type_uint = FFIType.create(nffi_type_uint());
-        ffi_type_sint = FFIType.create(nffi_type_sint());
-        ffi_type_ulong = FFIType.create(nffi_type_ulong());
-        ffi_type_slong = FFIType.create(nffi_type_slong());
-        ffi_type_float = FFIType.create(nffi_type_float());
-        ffi_type_double = FFIType.create(nffi_type_double());
-        ffi_type_longdouble = FFIType.create(nffi_type_longdouble());
-        ffi_type_pointer = FFIType.create(nffi_type_pointer());
-        FFI_TYPE_LONGDOUBLE = FFI_TYPE_DOUBLE();
-        FFI_FIRST_ABI = FFI_FIRST_ABI();
-        FFI_WIN64 = FFI_WIN64();
-        FFI_GNUW64 = FFI_GNUW64();
-        FFI_UNIX64 = FFI_UNIX64();
-        FFI_EFI64 = FFI_EFI64();
-        FFI_SYSV = FFI_SYSV();
-        FFI_STDCALL = FFI_STDCALL();
-        FFI_THISCALL = FFI_THISCALL();
-        FFI_FASTCALL = FFI_FASTCALL();
-        FFI_MS_CDECL = FFI_MS_CDECL();
-        FFI_PASCAL = FFI_PASCAL();
-        FFI_REGISTER = FFI_REGISTER();
-        FFI_VFP = FFI_VFP();
-        FFI_LAST_ABI = FFI_LAST_ABI();
-        FFI_DEFAULT_ABI = FFI_DEFAULT_ABI();
+        short[] __shorts = new short[1];
+        int[] __ints = new int[15];
+        long[] __longs = new long[21];
+        initNative(__shorts, __ints, __longs);
+        ffi_type_void = FFIType.create(__longs[0]);
+        ffi_type_uint8 = FFIType.create(__longs[1]);
+        ffi_type_sint8 = FFIType.create(__longs[2]);
+        ffi_type_uint16 = FFIType.create(__longs[3]);
+        ffi_type_sint16 = FFIType.create(__longs[4]);
+        ffi_type_uint32 = FFIType.create(__longs[5]);
+        ffi_type_sint32 = FFIType.create(__longs[6]);
+        ffi_type_uint64 = FFIType.create(__longs[7]);
+        ffi_type_sint64 = FFIType.create(__longs[8]);
+        ffi_type_uchar = FFIType.create(__longs[9]);
+        ffi_type_schar = FFIType.create(__longs[10]);
+        ffi_type_ushort = FFIType.create(__longs[11]);
+        ffi_type_sshort = FFIType.create(__longs[12]);
+        ffi_type_uint = FFIType.create(__longs[13]);
+        ffi_type_sint = FFIType.create(__longs[14]);
+        ffi_type_ulong = FFIType.create(__longs[15]);
+        ffi_type_slong = FFIType.create(__longs[16]);
+        ffi_type_float = FFIType.create(__longs[17]);
+        ffi_type_double = FFIType.create(__longs[18]);
+        ffi_type_longdouble = FFIType.create(__longs[19]);
+        ffi_type_pointer = FFIType.create(__longs[20]);
+        FFI_TYPE_LONGDOUBLE = __shorts[0];
+        FFI_FIRST_ABI = __ints[12];
+        FFI_WIN64 = __ints[0];
+        FFI_GNUW64 = __ints[1];
+        FFI_UNIX64 = __ints[2];
+        FFI_EFI64 = __ints[3];
+        FFI_SYSV = __ints[4];
+        FFI_STDCALL = __ints[5];
+        FFI_THISCALL = __ints[6];
+        FFI_FASTCALL = __ints[7];
+        FFI_MS_CDECL = __ints[8];
+        FFI_PASCAL = __ints[9];
+        FFI_REGISTER = __ints[10];
+        FFI_VFP = __ints[11];
+        FFI_LAST_ABI = __ints[13];
+        FFI_DEFAULT_ABI = __ints[14];
     }
+
+    private static native void initNative(short[] __shorts, int[] __ints, long[] __longs);
 
     protected LibFFI() {
         throw new UnsupportedOperationException();
     }
-
-    // --- [ FFI_TYPE_DOUBLE ] ---
-
-    /** {@code short FFI_TYPE_DOUBLE(void)} */
-    private static native short FFI_TYPE_DOUBLE();
-
-    // --- [ FFI_WIN64 ] ---
-
-    /** {@code int FFI_WIN64(void)} */
-    private static native int FFI_WIN64();
-
-    // --- [ FFI_GNUW64 ] ---
-
-    /** {@code int FFI_GNUW64(void)} */
-    private static native int FFI_GNUW64();
-
-    // --- [ FFI_UNIX64 ] ---
-
-    /** {@code int FFI_UNIX64(void)} */
-    private static native int FFI_UNIX64();
-
-    // --- [ FFI_EFI64 ] ---
-
-    /** {@code int FFI_EFI64(void)} */
-    private static native int FFI_EFI64();
-
-    // --- [ FFI_SYSV ] ---
-
-    /** {@code int FFI_SYSV(void)} */
-    private static native int FFI_SYSV();
-
-    // --- [ FFI_STDCALL ] ---
-
-    /** {@code int FFI_STDCALL(void)} */
-    private static native int FFI_STDCALL();
-
-    // --- [ FFI_THISCALL ] ---
-
-    /** {@code int FFI_THISCALL(void)} */
-    private static native int FFI_THISCALL();
-
-    // --- [ FFI_FASTCALL ] ---
-
-    /** {@code int FFI_FASTCALL(void)} */
-    private static native int FFI_FASTCALL();
-
-    // --- [ FFI_MS_CDECL ] ---
-
-    /** {@code int FFI_MS_CDECL(void)} */
-    private static native int FFI_MS_CDECL();
-
-    // --- [ FFI_PASCAL ] ---
-
-    /** {@code int FFI_PASCAL(void)} */
-    private static native int FFI_PASCAL();
-
-    // --- [ FFI_REGISTER ] ---
-
-    /** {@code int FFI_REGISTER(void)} */
-    private static native int FFI_REGISTER();
-
-    // --- [ FFI_VFP ] ---
-
-    /** {@code int FFI_VFP(void)} */
-    private static native int FFI_VFP();
-
-    // --- [ FFI_FIRST_ABI ] ---
-
-    /** {@code int FFI_FIRST_ABI(void)} */
-    private static native int FFI_FIRST_ABI();
-
-    // --- [ FFI_LAST_ABI ] ---
-
-    /** {@code int FFI_LAST_ABI(void)} */
-    private static native int FFI_LAST_ABI();
-
-    // --- [ FFI_DEFAULT_ABI ] ---
-
-    /** {@code int FFI_DEFAULT_ABI(void)} */
-    private static native int FFI_DEFAULT_ABI();
-
-    // --- [ ffi_type_void ] ---
-
-    private static native long nffi_type_void();
-
-    // --- [ ffi_type_uint8 ] ---
-
-    private static native long nffi_type_uint8();
-
-    // --- [ ffi_type_sint8 ] ---
-
-    private static native long nffi_type_sint8();
-
-    // --- [ ffi_type_uint16 ] ---
-
-    private static native long nffi_type_uint16();
-
-    // --- [ ffi_type_sint16 ] ---
-
-    private static native long nffi_type_sint16();
-
-    // --- [ ffi_type_uint32 ] ---
-
-    private static native long nffi_type_uint32();
-
-    // --- [ ffi_type_sint32 ] ---
-
-    private static native long nffi_type_sint32();
-
-    // --- [ ffi_type_uint64 ] ---
-
-    private static native long nffi_type_uint64();
-
-    // --- [ ffi_type_sint64 ] ---
-
-    private static native long nffi_type_sint64();
-
-    // --- [ ffi_type_uchar ] ---
-
-    private static native long nffi_type_uchar();
-
-    // --- [ ffi_type_schar ] ---
-
-    private static native long nffi_type_schar();
-
-    // --- [ ffi_type_ushort ] ---
-
-    private static native long nffi_type_ushort();
-
-    // --- [ ffi_type_sshort ] ---
-
-    private static native long nffi_type_sshort();
-
-    // --- [ ffi_type_uint ] ---
-
-    private static native long nffi_type_uint();
-
-    // --- [ ffi_type_sint ] ---
-
-    private static native long nffi_type_sint();
-
-    // --- [ ffi_type_ulong ] ---
-
-    private static native long nffi_type_ulong();
-
-    // --- [ ffi_type_slong ] ---
-
-    private static native long nffi_type_slong();
-
-    // --- [ ffi_type_float ] ---
-
-    private static native long nffi_type_float();
-
-    // --- [ ffi_type_double ] ---
-
-    private static native long nffi_type_double();
-
-    // --- [ ffi_type_longdouble ] ---
-
-    private static native long nffi_type_longdouble();
-
-    // --- [ ffi_type_pointer ] ---
-
-    private static native long nffi_type_pointer();
 
     // --- [ ffi_get_version ] ---
 

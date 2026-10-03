@@ -16,36 +16,6 @@
 
 EXTERN_C_ENTER
 
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_macosx_CoreFoundation_kCFAllocatorDefault(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)kCFAllocatorDefault;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_macosx_CoreFoundation_kCFAllocatorSystemDefault(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)kCFAllocatorSystemDefault;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_macosx_CoreFoundation_kCFAllocatorMalloc(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)kCFAllocatorMalloc;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_macosx_CoreFoundation_kCFAllocatorMallocZone(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)kCFAllocatorMallocZone;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_macosx_CoreFoundation_kCFAllocatorNull(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)kCFAllocatorNull;
-}
-
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_macosx_CoreFoundation_kCFAllocatorUseContext(JNIEnv *__env, jclass clazz) {
-    UNUSED_PARAMS(__env, clazz)
-    return (jlong)(uintptr_t)kCFAllocatorUseContext;
-}
-
 JNIEXPORT jlong JNICALL Java_org_lwjgl_system_macosx_CoreFoundation_nCFRetain(JNIEnv *__env, jclass clazz, jlong cfAddress) {
     CFTypeRef cf = (CFTypeRef)(uintptr_t)cfAddress;
     UNUSED_PARAMS(__env, clazz)
@@ -98,6 +68,18 @@ JNIEXPORT jlong JNICALL Java_org_lwjgl_system_macosx_CoreFoundation_nCFURLCreate
     CFStringRef filePath = (CFStringRef)(uintptr_t)filePathAddress;
     UNUSED_PARAMS(__env, clazz)
     return (jlong)(uintptr_t)CFURLCreateWithFileSystemPath(allocator, filePath, (CFURLPathStyle)pathStyle, (Boolean)isDirectory);
+}
+
+JNIEXPORT void JNICALL Java_org_lwjgl_system_macosx_CoreFoundation_initNative(JNIEnv *__env, jclass clazz, jlongArray __longs) {
+    UNUSED_PARAM(clazz)
+    jlong *__longs_ptr = (*__env)->GetLongArrayElements(__env, __longs, NULL);
+    __longs_ptr[0] = (jlong)(uintptr_t)kCFAllocatorDefault;
+    __longs_ptr[1] = (jlong)(uintptr_t)kCFAllocatorSystemDefault;
+    __longs_ptr[2] = (jlong)(uintptr_t)kCFAllocatorMalloc;
+    __longs_ptr[3] = (jlong)(uintptr_t)kCFAllocatorMallocZone;
+    __longs_ptr[4] = (jlong)(uintptr_t)kCFAllocatorNull;
+    __longs_ptr[5] = (jlong)(uintptr_t)kCFAllocatorUseContext;
+    (*__env)->ReleaseLongArrayElements(__env, __longs, __longs_ptr, 0);
 }
 
 EXTERN_C_EXIT

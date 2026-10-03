@@ -46,41 +46,21 @@ public class LibCLocale {
     public static final int LC_TIME;
 
     static {
-        LC_ALL = LC_ALL();
-        LC_COLLATE = LC_COLLATE();
-        LC_CTYPE = LC_CTYPE();
-        LC_MONETARY = LC_MONETARY();
-        LC_NUMERIC = LC_NUMERIC();
-        LC_TIME = LC_TIME();
+        int[] __ints = new int[6];
+        initNative(__ints);
+        LC_ALL = __ints[0];
+        LC_COLLATE = __ints[1];
+        LC_CTYPE = __ints[2];
+        LC_MONETARY = __ints[3];
+        LC_NUMERIC = __ints[4];
+        LC_TIME = __ints[5];
     }
+
+    private static native void initNative(int[] __ints);
 
     protected LibCLocale() {
         throw new UnsupportedOperationException();
     }
-
-    // --- [ LC_ALL ] ---
-
-    private static native int LC_ALL();
-
-    // --- [ LC_COLLATE ] ---
-
-    private static native int LC_COLLATE();
-
-    // --- [ LC_CTYPE ] ---
-
-    private static native int LC_CTYPE();
-
-    // --- [ LC_MONETARY ] ---
-
-    private static native int LC_MONETARY();
-
-    // --- [ LC_NUMERIC ] ---
-
-    private static native int LC_NUMERIC();
-
-    // --- [ LC_TIME ] ---
-
-    private static native int LC_TIME();
 
     // --- [ setlocale ] ---
 

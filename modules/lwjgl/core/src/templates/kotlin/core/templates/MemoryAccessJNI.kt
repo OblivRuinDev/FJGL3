@@ -53,14 +53,14 @@ val MemoryAccessJNI = "MemoryAccessJNI".nativeClass(Module.CORE) {
     }
 
     Code(
-        nativeCall = "${t}return (jlong)(uintptr_t)&__aligned_alloc;"
+        nativeValue = "(jlong)(uintptr_t)&__aligned_alloc"
     )..macro..Address.."void * (*) (size_t, size_t)".handle(
         "aligned_alloc",
         void()
     )
 
     Code(
-        nativeCall = "${t}return (jlong)(uintptr_t)&__aligned_free;"
+        nativeValue = "(jlong)(uintptr_t)&__aligned_free"
     )..macro..Address.."void (*) (void *)".handle(
         "aligned_free",
         void()

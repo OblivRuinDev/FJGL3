@@ -49,33 +49,22 @@ public class LibCStdio {
     public static final long snprintf;
 
     static {
-        stdin = stdin();
-        stdout = stdout();
-        stderr = stderr();
-        fscanf = fscanf();
-        sscanf = sscanf();
-        fprintf = fprintf();
-        snprintf = snprintf();
+        long[] __longs = new long[7];
+        initNative(__longs);
+        stdin = __longs[0];
+        stdout = __longs[1];
+        stderr = __longs[2];
+        fscanf = __longs[3];
+        sscanf = __longs[4];
+        fprintf = __longs[5];
+        snprintf = __longs[6];
     }
+
+    private static native void initNative(long[] __longs);
 
     protected LibCStdio() {
         throw new UnsupportedOperationException();
     }
-
-    // --- [ stdin ] ---
-
-    @NativeType("FILE *")
-    private static native long stdin();
-
-    // --- [ stdout ] ---
-
-    @NativeType("FILE *")
-    private static native long stdout();
-
-    // --- [ stderr ] ---
-
-    @NativeType("FILE *")
-    private static native long stderr();
 
     // --- [ fflush ] ---
 
@@ -116,16 +105,6 @@ public class LibCStdio {
         return nferror(stream);
     }
 
-    // --- [ fscanf ] ---
-
-    @NativeType("void *")
-    private static native long fscanf();
-
-    // --- [ sscanf ] ---
-
-    @NativeType("void *")
-    private static native long sscanf();
-
     // --- [ vsscanf ] ---
 
     /** {@code int vsscanf(char const * buffer, char const * format, va_list vlist)} */
@@ -157,16 +136,6 @@ public class LibCStdio {
             stack.setPointer(stackPointer);
         }
     }
-
-    // --- [ fprintf ] ---
-
-    @NativeType("void *")
-    private static native long fprintf();
-
-    // --- [ snprintf ] ---
-
-    @NativeType("void *")
-    private static native long snprintf();
 
     // --- [ vsnprintf ] ---
 

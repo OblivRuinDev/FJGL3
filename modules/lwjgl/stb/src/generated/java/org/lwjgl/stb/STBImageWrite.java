@@ -40,11 +40,15 @@ public class STBImageWrite {
     public static final IntBuffer stbi_write_tga_with_rle;
 
     static {
-        stbi_write_png_compression_level = memIntBuffer(nstbi_write_png_compression_level(), 1);
-        stbi_write_force_png_filter = memIntBuffer(nstbi_write_force_png_filter(), 1);
-        stbi_zlib_compress = memPointerBuffer(nstbi_zlib_compress(), 1);
-        stbi_write_tga_with_rle = memIntBuffer(nstbi_write_tga_with_rle(), 1);
+        long[] __longs = new long[4];
+        initNative(__longs);
+        stbi_write_png_compression_level = memIntBuffer(__longs[0], 1);
+        stbi_write_force_png_filter = memIntBuffer(__longs[1], 1);
+        stbi_zlib_compress = memPointerBuffer(__longs[2], 1);
+        stbi_write_tga_with_rle = memIntBuffer(__longs[3], 1);
     }
+
+    private static native void initNative(long[] __longs);
 
     protected STBImageWrite() {
         throw new UnsupportedOperationException();
@@ -80,18 +84,6 @@ public class STBImageWrite {
             stack.setPointer(stackPointer);
         }
     }
-
-    // --- [ stbi_write_png_compression_level ] ---
-
-    private static native long nstbi_write_png_compression_level();
-
-    // --- [ stbi_write_force_png_filter ] ---
-
-    private static native long nstbi_write_force_png_filter();
-
-    // --- [ stbi_zlib_compress ] ---
-
-    private static native long nstbi_zlib_compress();
 
     // --- [ stbi_write_bmp ] ---
 
@@ -154,10 +146,6 @@ public class STBImageWrite {
             stack.setPointer(stackPointer);
         }
     }
-
-    // --- [ stbi_write_tga_with_rle ] ---
-
-    private static native long nstbi_write_tga_with_rle();
 
     // --- [ stbi_write_hdr ] ---
 
