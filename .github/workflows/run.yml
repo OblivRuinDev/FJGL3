@@ -390,11 +390,11 @@ jobs:
       - name: Install build dependencies (Build)
         if: ${{ inputs.buildType == 'build' }}
         shell: cpa.sh {0} # zizmor: ignore[misfeature] cpa.sh runs the step inside the FreeBSD VM
-        run: sudo pkg install -y openjdk8 apache-ant git
+        run: sudo pkg install -y git
 
       - name: Install FJGL dependencies
         shell: cpa.sh {0} # zizmor: ignore[misfeature] cpa.sh runs the step inside the FreeBSD VM
-        run: sudo pkg install -y gtk3 dbus
+        run: sudo pkg install -y gtk3 dbus apache-ant openjdk8
       - name: Restore native cache
         id: native-cache
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0

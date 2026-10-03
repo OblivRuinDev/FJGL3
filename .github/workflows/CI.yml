@@ -14,8 +14,11 @@ env:
   LWJGL_BUILD_TYPE: nightly
 
 jobs:
-  run:
-    name: Build
+  Build:
     uses: ./.github/workflows/run.yml
     with:
       buildType: ci
+
+  Release:
+    needs: Build
+    uses: ./.github/workflows/release.yml
