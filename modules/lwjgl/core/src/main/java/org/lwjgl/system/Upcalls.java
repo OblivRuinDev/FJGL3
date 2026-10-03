@@ -38,7 +38,7 @@ final class Upcalls {
 
     private static final ConcurrentHashMap<Long, Upcall> UPCALL_REGISTRY = new ConcurrentHashMap<>();
 
-    private static enum ArenaType {
+    static enum ArenaType {
         AUTO,
         CONFINED,
         SHARED;
