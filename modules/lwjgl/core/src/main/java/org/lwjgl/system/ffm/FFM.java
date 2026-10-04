@@ -1,4 +1,11 @@
 /*
+ * Copyright (c) 2026-present OblivRuinDev. All rights reserved.
+ * License terms: https://github.com/OblivRuinDev/FJGL3/blob/master/LICENSE.md
+ *
+ * Modified from LWJGL source code.
+ * Original copyright notice below.
+ */
+/*
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
@@ -78,32 +85,6 @@ public final class FFM {
     static final ScopedValue<Arena> ARENA = ScopedValue.newInstance();
 
     private FFM() {
-    }
-
-    static void main() {
-        var path = Path.of("bin", "classes", "lwjgl", "core", "module-info.class");
-
-        var moduleAttr = ModuleAttribute.of(ModuleDesc.of("dev.oblivruin.fjgl"), mab -> mab
-            .moduleVersion(System.getProperty("module.version"))
-            .requires(ModuleRequireInfo.of(ModuleDesc.of("java.base"), AccessFlag.MODULE.mask(), "25"))
-            .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl"), 0))
-            .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl.system"), 0))
-            .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl.system.ffm"), 0))
-            .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl.system.ffm.mapping"), 0))
-            .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl.system.freebsd"), 0))
-            .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl.system.jni"), 0))
-            .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl.system.libc"), 0))
-            .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl.system.libffi"), 0))
-            .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl.system.linux"), 0))
-            .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl.system.macosx"), 0))
-            .exports(ModuleExportInfo.of(PackageDesc.of("org.lwjgl.system.windows"), 0)));
-
-        try {
-            ClassFile.of()
-                .buildModuleTo(path, moduleAttr, cb -> cb.withVersion(JAVA_25_VERSION, 0));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     static FFMConfig getConfig(Class<?> bindingInterface) {

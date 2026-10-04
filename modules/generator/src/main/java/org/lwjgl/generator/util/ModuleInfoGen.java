@@ -1,4 +1,11 @@
 /*
+ * Copyright (c) 2026-present OblivRuinDev. All rights reserved.
+ * License terms: https://github.com/OblivRuinDev/FJGL3/blob/master/LICENSE.md
+ *
+ * Modified from LWJGL source code.
+ * Original copyright notice below.
+ */
+/*
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
@@ -6,11 +13,17 @@ package org.lwjgl.generator.util;
 
 import javax.tools.*;
 import java.io.*;
+import java.lang.classfile.*;
+import java.lang.classfile.attribute.*;
+import java.lang.constant.*;
+import java.lang.reflect.*;
 import java.nio.charset.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.regex.*;
 import java.util.stream.*;
+
+import static java.lang.classfile.ClassFile.*;
 
 public final class ModuleInfoGen implements AutoCloseable {
 
@@ -19,6 +32,11 @@ public final class ModuleInfoGen implements AutoCloseable {
     private static final Pattern
         MODULE_NAME = Pattern.compile("^\\s*(?:open\\s+)?module\\s+(" + JAVA_PACKAGE + ")\\s*\\{", Pattern.MULTILINE),
         REQUIRES    = Pattern.compile("^\\s*requires(?:\\s+(static))?(?:\\s+(transitive))?\\s+(.+)\\s*;", Pattern.MULTILINE);
+
+    static final Path PATH_BIN = Path.of("bin");
+    static final Path PATH_BIN_CLASSES = PATH_BIN.resolve("classes");
+    static final Path PATH_BIN_CLASSES_LWJGL = PATH_BIN_CLASSES.resolve("lwjgl");
+
     private final JavaCompiler compiler;
 
     private final DiagnosticCollector<JavaFileObject> diagnostics;
@@ -45,6 +63,27 @@ public final class ModuleInfoGen implements AutoCloseable {
         } else {
             generateNativeModuleInfoClasses();
         }
+
+        ClassFile.of().buildModuleTo(PATH_BIN_CLASSES_LWJGL.resolve("core", "module-info.class"),
+            ModuleAttribute.of(ModuleDesc.of("dev.oblivruin.fjgl"), mab -> { mab
+                .moduleVersion(System.getProperty("module.version"))
+                .requires(ModuleDesc.of("java.base"), AccessFlag.MODULE.mask(), "25");
+                for (String pkg : new String[] {
+                    "org.lwjgl",
+                    "org.lwjgl.system",
+                    "org.lwjgl.system.ffm",
+                    "org.lwjgl.system.ffm.mapping",
+                    "org.lwjgl.system.freebsd",
+                    "org.lwjgl.system.jni",
+                    "org.lwjgl.system.libc",
+                    "org.lwjgl.system.libffi",
+                    "org.lwjgl.system.linux",
+                    "org.lwjgl.system.macosx",
+                    "org.lwjgl.system.windows"}) {
+                    mab.exports(PackageDesc.of(pkg), 0);
+                }
+            }),
+            cb -> cb.withVersion(JAVA_25_VERSION, 0));
     }
 
     private static class Module implements Comparable<Module> {
@@ -98,7 +137,7 @@ public final class ModuleInfoGen implements AutoCloseable {
                 info,
                 modulePath,
                 Paths.get("modules", "lwjgl", name, "src", "main", "java"),
-                Paths.get("bin", "classes", "lwjgl", name),
+                PATH_BIN_CLASSES_LWJGL.resolve(name),
                 null
             );
         }
@@ -152,7 +191,7 @@ public final class ModuleInfoGen implements AutoCloseable {
             throw new IllegalStateException("Module source & release names must be specified.");
         }
 
-        Path root = Paths.get("bin", "RELEASE", moduleNameRelease, "native");
+        Path root = PATH_BIN.resolve("RELEASE", moduleNameRelease, "native");
 
         Module module = parseModuleInfo(Files.readAllBytes(Paths.get("modules", "lwjgl", moduleNameSource, "src", "main", "resources", "module-info.java")));
 

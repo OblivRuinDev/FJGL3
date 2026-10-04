@@ -1357,19 +1357,6 @@
                     <fileset dir="config/native-image/META-INF/native-image" includes="**" excludes="resource-config.json"/>
                 </copy>
             </quiet>
-            <!-- Generate module-info classes -->
-            <java
-                    classname="org.lwjgl.system.ffm.FFM"
-                    fork="true"
-                    failonerror="true"
-                    taskname="module-info-gen :: java 25"
-            >
-                <classpath>
-                    <pathelement path="bin/classes/lwjgl/core"/>
-                </classpath>
-                <jvmarg value="-Dmodule.version=${module.version}"/>
-                <jvmarg value="--enable-native-access=ALL-UNNAMED"/>
-            </java>
 
             <release-module name="core" native-library="fjgl" title="Core"/>
 
