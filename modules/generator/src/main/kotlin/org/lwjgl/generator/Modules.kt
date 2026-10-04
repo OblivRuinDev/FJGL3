@@ -33,6 +33,13 @@ enum class Module(
         conventions. This allows a programmer to call any function specified by a call interface description at run-time.
         """
     ),
+    CORE_CALLBACK(
+        "core.callback",
+        "org.lwjgl.system.callback",
+        """
+        Contains
+        """
+    ),
     CORE_LINUX(
         "core.linux",
         "org.lwjgl.system.linux",

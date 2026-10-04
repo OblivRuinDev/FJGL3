@@ -128,6 +128,13 @@ fun main(args: Array<String>) {
                 latch.await()
             }
 
+            // Write the real bytecode of the fake classes (sources whose .class files differ from what javac produces).
+            try {
+                generateFakeClasses()
+            } catch (t: Throwable) {
+                errorQueue.add(t)
+            }
+
             if (errorQueue.peek() != null) {
                 val ex = RuntimeException("Generation failed")
                 while (true) {
@@ -192,8 +199,8 @@ class Generator(private val moduleRoot: String) {
     private fun methodFilter(method: Method, javaClass: Class<*>) =
     // static
         method.modifiers and Modifier.STATIC != 0 &&
-        // returns NativeClass
-        method.returnType === javaClass &&
+        // returns javaClass, or a subclass of it (e.g. NativeClassFFM)
+        javaClass.isAssignableFrom(method.returnType) &&
         // has no arguments
         method.parameterTypes.isEmpty()
 
@@ -362,6 +369,11 @@ class Generator(private val moduleRoot: String) {
         }
     }
 
+    /** Writes the real bytecode of every registered [FakeGeneratorTarget]. */
+    internal fun generateFakeClasses() {
+        FakeGeneratorTarget.doGen(moduleRoot)
+    }
+
     private fun generateNative(target: GeneratorTargetNative, generate: (Path) -> Unit) {
         val targetFile =
             "${target.nativeSubPath.let { if (it.isEmpty()) "" else "$it/" }}${target.nativeFileName}.${if (target.cpp) "cpp" else "c"}"
@@ -397,7 +409,7 @@ internal fun Path.lastModified(
         .reduce(0L, Math::max)
 }
 
-private fun ensurePath(path: Path) {
+internal fun ensurePath(path: Path) {
     val parent = path.parent ?: throw IllegalArgumentException("The given path has no parent directory.")
 
     if (!Files.isDirectory(parent)) {
@@ -419,7 +431,7 @@ private fun readFile(file: Path) = Files.newByteChannel(file).use {
     buffer
 }
 
-private fun <T> generateOutput(
+internal fun <T> generateOutput(
     target: T,
     file: Path,
     /** If not null, the file timestamp will be updated if no change occured since last generation. */

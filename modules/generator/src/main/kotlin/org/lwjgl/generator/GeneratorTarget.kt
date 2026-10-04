@@ -12,7 +12,13 @@
 package org.lwjgl.generator
 
 import java.io.*
+import java.lang.classfile.ClassBuilder
+import java.lang.classfile.ClassFile
+import java.lang.classfile.ClassFile.*
+import java.lang.constant.ClassDesc
+import java.lang.constant.ConstantDescs.*
 import java.nio.file.*
+import java.util.concurrent.ConcurrentLinkedQueue
 
 internal const val HEADER = """/*
  * Copyright (c) 2026-present OblivRuinDev. All rights reserved.
@@ -134,14 +140,183 @@ internal val String.asJNIName
     else
         this.replace(JNI_UNDERSCORE_ESCAPE_PATTERN, "_1")
 
-enum class Access(val modifier: String) {
-    PUBLIC("public "),
-    INTERNAL(""),
-    PRIVATE("private ")
+enum class Access(val modifier: String, val flag: Int) {
+    PUBLIC("public ", ACC_PUBLIC),
+    INTERNAL("", 0),
+    PRIVATE("private ", ACC_PRIVATE),
+    PROTECTED("protected ", ACC_PROTECTED),
 }
 
 @DslMarker
 annotation class GeneratorDslMarker
+
+@GeneratorDslMarker
+abstract class FakeGeneratorTarget(
+    val module: Module,
+    val className: String
+) {
+    init {
+        maps.offer(this)
+    }
+
+    /** An optional sub-package of the module package. */
+    var subpackage: String? = null
+
+    val packageName get() = if (subpackage == null) module.packageName else "${module.packageName}.$subpackage"
+
+    /** The JVM access flags of the generated (real) class. */
+    var flags: Int = ACC_PUBLIC
+
+    private class FakeField(val name: String, val type: ClassDesc, val access: Access, val isStatic: Boolean, val isFinal: Boolean)
+
+    private class FakeMethod(
+        val name: String,
+        val returnType: ClassDesc,
+        val parameters: List<ClassDesc>,
+        val access: Access,
+        val isStatic: Boolean
+    )
+
+    private class FakeConstructor(val parameters: List<ClassDesc>, val access: Access)
+
+    private val fakeFields = ArrayList<FakeField>()
+    private val fakeMethods = ArrayList<FakeMethod>()
+    private val fakeConstructors = ArrayList<FakeConstructor>()
+
+    /**
+     * Declares a field for the fake Java source.
+     *
+     * <p>Static final fields are emitted as blank finals that are assigned in a generated static initializer. This is required because javac would otherwise
+     * emit a {@code ConstantValue} attribute for primitive (and {@code String}) constants and inline them at use sites, which would leak the fake value into
+     * the classes that reference this one.</p>
+     */
+    protected fun addFakeField(
+        name: String,
+        type: ClassDesc,
+        access: Access = Access.PUBLIC,
+        isStatic: Boolean = true,
+        isFinal: Boolean = false
+    ) = fakeFields.add(FakeField(name, type, access, isStatic, isFinal))
+    /** Declares a method for the fake Java source. The emitted body always throws. */
+    protected fun addFakeMethod(
+        name: String,
+        returnType: ClassDesc,
+        parameters: List<ClassDesc> = emptyList(),
+        access: Access = Access.PUBLIC,
+        isStatic: Boolean = true
+    ) = fakeMethods.add(FakeMethod(name, returnType, parameters, access, isStatic))
+
+    /** Declares a constructor for the fake Java source. */
+    protected fun addFakeConstructor(access: Access = Access.PRIVATE, parameters: List<ClassDesc> = emptyList()) =
+        fakeConstructors.add(FakeConstructor(parameters, access))
+
+    /** Subclasses declare their fake fields/methods here. It runs once, after every target has been registered and before generation. */
+    protected open fun declareFake() {}
+
+    /** Builds the real class body. */
+    abstract fun ClassBuilder.gen()
+
+    private fun classDesc() = ClassDesc.of(packageName, className)
+
+    private fun buildClass() = ClassFile.of().build(classDesc()) {
+        it.withFlags(flags)
+        it.gen()
+    }
+
+    private fun writeSource(moduleRoot: String) {
+        val file = Paths.get("$moduleRoot/${module.path}/src/generated/java/${packageName.replace('.', '/')}/$className.java")
+        generateOutput(this@FakeGeneratorTarget, file) { out -> emitFakeJava(out) }
+    }
+
+    private fun emitFakeJava(out: PrintWriter) {
+        out.print(HEADER)
+        out.println("package $packageName;\n")
+
+        val classModifiers = buildString {
+            if (flags and ACC_PUBLIC != 0) append("public ")
+            if (flags and ACC_FINAL != 0) append("final ")
+            if (flags and ACC_ABSTRACT != 0) append("abstract ")
+        }
+
+        out.print("${classModifiers}class $className {\n\n")
+
+        fakeFields.forEach { field ->
+            out.println(
+                "$t${field.access.modifier}${if (field.isStatic) "static " else ""}${if (field.isFinal) "final " else ""}${
+                    field.type.displayName()
+                } ${field.name};"
+            )
+        }
+
+        fakeConstructors.forEach { constructor ->
+            out.println("$t${constructor.access.modifier}$className(${constructor.parameters.joinToString(", ") { it.displayName() }}) {}")
+        }
+
+        fakeMethods.forEach { method ->
+            val parameters = method.parameters.mapIndexed { i, type -> "${type.displayName()} param$i" }.joinToString(", ")
+            out.print(
+                "    ${method.access.modifier}${if (method.isStatic) "static " else ""}${method.returnType.displayName()} ${
+                    method.name
+                }($parameters) { throw ex(); }\n"
+            )
+        }
+
+        // Assign the static final fields in the static initializer, so that javac cannot turn them into ConstantValue constants.
+        val assigned = fakeFields.filter { it.isStatic && it.isFinal }
+        out.print("\n    static {\n")
+        if (assigned.isNotEmpty()) {
+            assigned.forEach { field -> out.print("$t${t}${field.name} = ${field.type.defaultValue()};\n") }
+        }
+        out.print("""
+        throwInit();
+    }
+    private static void throwInit() {
+        throw new UnsupportedOperationException();
+    }
+    private static UnsupportedOperationException ex() {
+        return new UnsupportedOperationException();
+    }
+}""")
+
+    }
+
+    private fun ClassDesc.defaultValue(): String = when (this) {
+        CD_boolean -> "false"
+        CD_byte,
+        CD_short,
+        CD_int,
+        CD_char    -> "0"
+        CD_long    -> "0L"
+        CD_float   -> "0.0f"
+        CD_double  -> "0.0"
+        else       -> "null"
+    }
+
+    private fun writeClass(moduleRoot: String) {
+        val file = Paths.get("$moduleRoot/${module.path}/src/generated/class/${packageName.replace('.', '/')}/$className.class")
+        ensurePath(file)
+
+        val bytes = buildClass()
+        if (Files.isRegularFile(file) && Files.readAllBytes(file).contentEquals(bytes))
+            return
+
+        println("\tWRITING CLASS: $file")
+        Files.write(file, bytes)
+    }
+
+    companion object {
+        internal val maps = ConcurrentLinkedQueue<FakeGeneratorTarget>()
+
+        /** Declares and writes the fake source and the real bytecode of every registered fake class. */
+        fun doGen(moduleRoot: String) {
+            maps.forEach {
+                it.declareFake()
+                it.writeSource(moduleRoot)
+                it.writeClass(moduleRoot)
+            }
+        }
+    }
+}
 
 @GeneratorDslMarker
 abstract class GeneratorTarget(
@@ -222,9 +397,9 @@ abstract class GeneratorTarget(
 
     abstract fun PrintWriter.generateJava()
 
-    open fun processDocumentation(documentation: String, forcePackage: Boolean = false): String {
-        return processDocumentation(documentation, "", "", forcePackage)
-    }
+    open fun processDocumentation(documentation: String, forcePackage: Boolean = false) =
+        processDocumentation(documentation, "", "", forcePackage)
+
 
     open fun getFieldLink(field: String): String? = null
     open fun getMethodLink(method: String): String? = null

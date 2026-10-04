@@ -176,8 +176,39 @@ fun APIBinding.delegate(
         writer.generateFunctionsClass(nativeClass, "\n$t/** Contains the function pointers loaded from {@code $libraryExpression}. */")
     }
 }
+class NativeClassFFM internal constructor(
+    module: Module,
+    className: String,
+    nativeSubPath: String,
+    templateName: String = className,
+    prefix: String,
+    prefixMethod: String,
+    prefixConstant: String,
+    prefixTemplate: String,
+    postfix: String,
+    binding: APIBinding?,
+    callingConvention: CallingConvention
+) : NativeClass(module, className, nativeSubPath, templateName, prefix, prefixMethod, prefixConstant, prefixTemplate, postfix, binding, callingConvention) {
 
-class NativeClass internal constructor(
+    private var lookupExpression: String? = null
+
+    /**
+     * Declares the {@code SymbolsLookup} used to resolve the addresses of the functions of this class.
+     *
+     * <p>The declaration is automatically inserted in the class' static initializer, before the function address assignments, and is a local variable of
+     * that initializer.</p>
+     *
+     * @param expression the {@code SymbolLookup} the lookup is initialized with. Defaults to the native linker's default lookup.
+     */
+    fun lookup(expression: String) {
+        lookupExpression = expression
+    }
+
+    override val lookupStatement: String?
+        get() = "SymbolsLookup lookup = SymbolsLookup.cast(" + (lookupExpression ?: "Linker.nativeLinker().defaultLookup()") + ");"
+}
+
+open class NativeClass internal constructor(
     module: Module,
     className: String,
     nativeSubPath: String,
@@ -291,14 +322,31 @@ class NativeClass internal constructor(
             "$className#${it.name}()"
     }
 
+    /**
+     * The statement that declares the {@code SymbolLookup} used by the functions of this class, or null when the class does not expose one. It is inserted
+     * in the class' static initializer, before the function address assignments.
+     */
+    internal open val lookupStatement: String? get() = null
+
     internal fun registerFunctions(generateArrayOverloads: Boolean) {
+        functions.asSequence()
+            .filter { it.critical && !it.has<Macro>() }
+            .forEach {
+                CriticalCall.register(it)
+            }
+
         if (binding != null) {
             functions.asSequence()
                 // This will generate additional signatures that cover the entire
                 // GL/GLES API. They will not be used by LWJGL, but may be useful
                 // to users. Using !it.hasCustomJNI here will eliminate them.
                 .filter { !it.hasCustomJNIWithIgnoreAddress && (!it.has<Macro>() || !it.get<Macro>().function) }
-                .forEach { JNI.register(it) }
+                .forEach {
+                    JNI.register(it)
+                    // Downcall is the FFM alternative of JNI: every function without array parameters can also be invoked through it.
+                    if (!it.hasParam { param -> param.nativeType is ArrayType<*> })
+                        Downcall.register(it)
+                }
         }
 
         genFunctions
@@ -558,6 +606,9 @@ class NativeClass internal constructor(
             println()
         }
 
+        if (functions.any { it.critical })
+            javaImport("java.lang.foreign.Linker", "org.lwjgl.system.SymbolsLookup")
+
         preamble.printJava(this)
 
         val isOpen = access === Access.PUBLIC && (hasFunctions || extends != null)
@@ -587,6 +638,23 @@ class NativeClass internal constructor(
         }
         if (binding is SimpleBinding) {
             binding.generateFunctionSetup(this, this@NativeClass)
+        }
+
+        if (functions.any { it.critical }) {
+            val lookupFunctions = genFunctions.filter { it.criticalUsesLookup }.toList()
+
+            println()
+            lookupFunctions.forEach { func ->
+                println("${t}private static final long ${func.criticalMethodName};")
+            }
+            println()
+            println("${t}static {")
+            println("$t${t}${lookupStatement ?: "SymbolsLookup lookup = SymbolsLookup.cast(Linker.nativeLinker().defaultLookup());"}")
+            lookupFunctions.forEach { func ->
+                println("$t${t}${func.criticalMethodName} = lookup.find0(${func.functionAddress});")
+            }
+            println("$t}")
+            println()
         }
 
         // Constant macros (e.g. `macro..Address..ffi_type.p(...)`) produce a field instead of a method. Their field is declared together with the regular
@@ -682,14 +750,14 @@ class NativeClass internal constructor(
         if (binding != null) {
             // Generate typedefs for casting the function pointers
             println()
-            functions.asSequence().filter { it.hasCustomJNI && !it.has<Reuse>() && !it.isInitNativeCandidate }.forEach {
+            functions.asSequence().filter { !it.critical && it.hasCustomJNI && !it.has<Reuse>() && !it.isInitNativeCandidate }.forEach {
                 it.generateFunctionDefinition(this)
             }
         }
 
         println("\nEXTERN_C_ENTER")
 
-        genFunctions.asSequence().filter { it.hasCustomJNI && !it.has<Reuse>() && !it.isInitNativeCandidate }.forEach {
+        genFunctions.asSequence().filter { !it.critical && it.hasCustomJNI && !it.has<Reuse>() && !it.isInitNativeCandidate }.forEach {
             println()
             it.generateFunction(this)
         }
@@ -986,6 +1054,27 @@ fun String.nativeClass(
     init: (NativeClass.() -> Unit)? = null
 ): NativeClass {
     val ext = NativeClass(module, this, nativeSubPath, templateName, prefix, prefixMethod, prefixConstant, prefixTemplate, postfix, binding, callingConvention, cinitSetRTConst)
+    if (init != null)
+        ext.init()
+
+    binding?.addClass(ext)
+
+    return ext
+}
+fun String.nativeClassFFM(
+    module: Module,
+    templateName: String = this,
+    nativeSubPath: String = "",
+    prefix: String = "",
+    prefixMethod: String = prefix.lowercase(),
+    prefixConstant: String = if (prefix.isEmpty() || prefix.endsWith('_')) prefix else "${prefix}_",
+    prefixTemplate: String = prefix,
+    postfix: String = "",
+    binding: APIBinding? = null,
+    callingConvention: CallingConvention = module.callingConvention,
+    init: (NativeClassFFM.() -> Unit)? = null
+): NativeClassFFM {
+    val ext = NativeClassFFM(module, this, nativeSubPath, templateName, prefix, prefixMethod, prefixConstant, prefixTemplate, postfix, binding, callingConvention)
     if (init != null)
         ext.init()
 

@@ -216,7 +216,7 @@ object JNI : GeneratorTargetNative(Module.CORE, "JNI") {
     }
 }
 
-private open class Signature constructor(
+open class Signature constructor(
     val callingConvention: CallingConvention,
     val returnType: NativeType,
     val arguments: List<NativeType>
@@ -246,7 +246,7 @@ private open class Signature constructor(
 
     override fun equals(other: Any?) = other is Signature && this.signatureNative == other.signatureNative
 
-    override fun hashCode(): Int = signatureNative.hashCode()
+    override fun hashCode() = signatureNative.hashCode()
 
     override fun compareTo(other: Signature): Int {
         this.callingConvention.ordinal.compareTo(other.callingConvention.ordinal).let { if (it != 0) return it }
