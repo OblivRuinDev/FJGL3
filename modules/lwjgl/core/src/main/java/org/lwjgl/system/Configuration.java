@@ -11,6 +11,7 @@
  */
 package org.lwjgl.system;
 
+import jdk.internal.misc.*;
 import org.jspecify.annotations.*;
 import org.lwjgl.system.MemoryUtil.*;
 
@@ -876,7 +877,7 @@ public class Configuration<T> {
     /** Similar to {@link #LIBRARY_NAME} for the Vulkan library (<b>org.lwjgl.vulkan.libname</b>). */
     public static final Configuration<String> VULKAN_LIBRARY_NAME = new Configuration<>("org.lwjgl.vulkan.libname", StateInit.STRING);
 
-    private static final long STATE_OFFSET = UNSAFE.objectFieldOffset(Configuration.class, "state");
+    private static final long STATE_OFFSET = Unsafe.getUnsafe().objectFieldOffset(Configuration.class, "state");
 
     private interface StateInit<T> extends Function<String, @Nullable T> {
         StateInit<Boolean> BOOLEAN = property -> {

@@ -66,10 +66,10 @@ public final class MemoryUtil {
     /** The cache-line size, in bytes. This value is always a power-of-two. */
     public static final int CACHE_LINE_SIZE;
 
-    static final int ARRAY_TLC_SIZE = Configuration.ARRAY_TLC_SIZE.get(8192);
+    static final int ARRAY_TLC_SIZE;
 
-    static final ThreadLocal<byte[]> ARRAY_TLC_BYTE = ThreadLocal.withInitial(() -> new byte[ARRAY_TLC_SIZE]);
-    static final ThreadLocal<char[]> ARRAY_TLC_CHAR = ThreadLocal.withInitial(() -> new char[ARRAY_TLC_SIZE]);
+    static final ThreadLocal<byte[]> ARRAY_TLC_BYTE;
+    static final ThreadLocal<char[]> ARRAY_TLC_CHAR;
 
     static final jdk.internal.misc.Unsafe UNSAFE;
 
@@ -94,9 +94,12 @@ public final class MemoryUtil {
     static final long STRUCT_CONTAINER;
 
     static {
-        Library.initialize();
-
         UNSAFE = jdk.internal.misc.Unsafe.getUnsafe();
+        ARRAY_TLC_SIZE = Configuration.ARRAY_TLC_SIZE.get(8192);
+        ARRAY_TLC_BYTE = ThreadLocal.withInitial(() -> new byte[ARRAY_TLC_SIZE]);
+        ARRAY_TLC_CHAR = ThreadLocal.withInitial(() -> new char[ARRAY_TLC_SIZE]);
+
+        Library.initialize();
 
         try {
             BYTE_ATT =   UNSAFE.objectFieldOffset(BUFFER_BYTE   = Class.forName("java.nio.DirectByteBuffer"   ), "att");
