@@ -4,6 +4,9 @@ LWJGL {
         *org_lwjgl_*;
         JNI_On*;
 
+    # Expose the JMH benchmark targets (see bench.c)
+    bench_*;
+
     # Hide everything else
     local: *;
 };
