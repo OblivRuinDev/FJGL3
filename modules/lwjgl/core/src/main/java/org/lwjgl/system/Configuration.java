@@ -17,6 +17,8 @@ import org.lwjgl.system.MemoryUtil.*;
 import java.io.*;
 import java.util.function.*;
 
+import static org.lwjgl.system.MemoryUtil.*;
+
 /**
  * This class can be used to programmatically set the LWJGL runtime configuration. It is an alternative to using system properties.
  *
@@ -874,6 +876,8 @@ public class Configuration<T> {
     /** Similar to {@link #LIBRARY_NAME} for the Vulkan library (<b>org.lwjgl.vulkan.libname</b>). */
     public static final Configuration<String> VULKAN_LIBRARY_NAME = new Configuration<>("org.lwjgl.vulkan.libname", StateInit.STRING);
 
+    private static final long STATE_OFFSET = UNSAFE.objectFieldOffset(Configuration.class, "state");
+
     private interface StateInit<T> extends Function<String, @Nullable T> {
         StateInit<Boolean> BOOLEAN = property -> {
             String value = System.getProperty(property);
@@ -887,7 +891,8 @@ public class Configuration<T> {
 
     private final String property;
 
-    private volatile @Nullable T state;
+    @SuppressWarnings("unused")
+    private @Nullable T state;
 
     Configuration(String property, StateInit<? extends T> init) {
         this.property = property;
@@ -904,7 +909,7 @@ public class Configuration<T> {
      * @param value the value to set
      */
     public void set(@Nullable T value) {
-        this.state = value;
+        UNSAFE.putReferenceRelease(this, STATE_OFFSET, value);
     }
 
     /**
@@ -912,8 +917,9 @@ public class Configuration<T> {
      *
      * <p>If the option value has not been set, null will be returned.</p>
      */
+    @SuppressWarnings("unchecked")
     public @Nullable T get() {
-        return state;
+        return (T) UNSAFE.getReferenceAcquire(this, STATE_OFFSET);
     }
 
     /**
@@ -924,7 +930,7 @@ public class Configuration<T> {
      * @param defaultValue the default value
      */
     public T get(T defaultValue) {
-        T state = this.state;
+        T state = (T) UNSAFE.getReferenceAcquire(this, STATE_OFFSET);
         if (state == null) {
             state = defaultValue;
         }
