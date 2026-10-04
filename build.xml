@@ -883,39 +883,6 @@
         <get-quiet name="favicon" url="https://www.lwjgl.org/favicon.ico" dest="${bin.javadoc}"/>
     </target>
 
-    <target name="upload-native" description="Uploads native build artifacts to build.lwjgl.org" depends="compile-native,-check-AWS-credentials">
-        <local name="revision"/>
-        <property name="revision" value="liblwjgl.so.git" if:set="platform.freebsd"/>
-        <property name="revision" value="liblwjgl.so.git" if:set="platform.linux"/>
-        <property name="revision" value="liblwjgl.dylib.git" if:set="platform.macos"/>
-        <property name="revision" value="lwjgl.dll.git" if:set="platform.windows"/>
-
-        <exec executable="git" failonerror="true" taskname="Git revision">
-            <arg value="log"/>
-            <arg value="--first-parent"/>
-            <arg value="--pretty=format:%H"/>
-            <arg line="--skip 1 -n 1"/> <!-- Skip the CI commit -->
-            <redirector output="${lib.native}/org/lwjgl/${revision}" binaryOutput="true" logError="true"/>
-        </exec>
-
-        <apply executable="aws" failonerror="true" relative="true" taskname="S3 upload">
-            <arg value="s3"/>
-            <arg value="cp"/>
-
-            <srcfile/>
-
-            <arg value="s3://lwjgl-build/${build.type}/${platform.remote}/${build.arch}/"/>
-            <arg line='--cache-control "public, must-revalidate, proxy-revalidate, max-age=0"'/>
-
-            <fileset dir=".">
-                <and>
-                    <filename name="${lib.native}/**"/>
-                    <filename regex="\${file.separator}(?:lib)?lwjgl.*?\.(?:dll|dylib|so)(?:\.git)?$"/>
-                </and>
-            </fileset>
-        </apply>
-    </target>
-
     <macrodef name="get-release">
         <attribute name="platform"/>
         <attribute name="arch"/>
