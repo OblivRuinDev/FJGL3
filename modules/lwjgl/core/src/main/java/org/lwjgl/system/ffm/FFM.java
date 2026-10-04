@@ -589,6 +589,7 @@ public final class FFM {
             return self();
         }
 
+        @SuppressWarnings("unchecked")
         protected L layout(@Nullable String name) {
             var byteAlignment = Math.max(1L, max(this.alignof, this.alignas));
 
@@ -613,7 +614,6 @@ public final class FFM {
                 }
             }
 
-            //noinspection unchecked
             return (L)layout;
         }
     }
