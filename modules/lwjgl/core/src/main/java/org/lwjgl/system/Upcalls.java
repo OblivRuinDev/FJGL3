@@ -28,7 +28,7 @@ final class Upcalls {
 
     private static final boolean DEBUG_ALLOCATOR = Configuration.DEBUG_MEMORY_ALLOCATOR.get(false);
 
-    private static final ConcurrentHashMap<Class<?>, Class<?>>        CALLBACK_INTERFACE_CACHE = new ConcurrentHashMap<>();
+    //private static final ConcurrentHashMap<Class<?>, Class<?>>        CALLBACK_INTERFACE_CACHE = new ConcurrentHashMap<>();
     private static final ConcurrentHashMap<Class<?>, UpcallBinder<?>> BINDER_CACHE             = new ConcurrentHashMap<>();
 
     private record Upcall(
@@ -73,7 +73,8 @@ final class Upcalls {
 
         MemoryUtil.getAllocator();
 
-        Runtime.getRuntime().addShutdownHook(new Thread(Upcalls::shutdown, "LWJGL Upcalls Shutdown Hook"));
+        //todo: consider remove it? Temporarily hold on, waiting for the FFM callback to mature.
+        //Runtime.getRuntime().addShutdownHook(new Thread(Upcalls::shutdown, "LWJGL Upcalls Shutdown Hook"));
     }
 
     private Upcalls() {
