@@ -4,6 +4,15 @@ name: FJGL Release
 on:
   workflow_dispatch:
   workflow_call:
+    secrets:
+      SIGNING_KEY:
+        required: true
+      SIGNING_PWD:
+        required: true
+      SONATYPE_USER:
+        required: true
+      SONATYPE_PWD:
+        required: true
 
 permissions:
   contents: read
