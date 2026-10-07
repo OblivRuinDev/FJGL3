@@ -930,6 +930,7 @@ public class Configuration<T> {
      *
      * @param defaultValue the default value
      */
+    @SuppressWarnings("unchecked")
     public T get(T defaultValue) {
         T state = (T) UNSAFE.getReferenceAcquire(this, STATE_OFFSET);
         if (state == null) {
