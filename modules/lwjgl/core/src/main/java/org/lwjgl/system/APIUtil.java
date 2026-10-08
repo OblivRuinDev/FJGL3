@@ -653,31 +653,35 @@ public final class APIUtil {
         return (offset + alignment - 1) & -alignment;
     }
 
-    private static FFIType prep(FFIType type) {
-        try (MemoryStack stack = stackPush()) {
-            FFICIF cif = FFICIF.calloc(stack);
-            if (ffi_prep_cif(cif, FFI_DEFAULT_ABI, type, null) != FFI_OK) {
-                throw new IllegalStateException("Failed to prepare LibFFI type.");
-            }
-        }
-        return type;
-    }
-
     public static FFIType apiCreateUnion(FFIType... members) {
         MemoryAllocator allocator = MemoryUtil.getAllocator();
 
-        // ffi_prep_cif is used to make libffi initialize size/alignment of each member
-        FFIType maxType      = prep(members[0]);
-        short   maxAlignment = members[0].alignment();
-        for (int i = 1; i < members.length; i++) {
-            FFIType type = prep(members[i]);
-            if (maxType.size() < type.size()) {
-                maxType = type;
+        FFIType maxType;
+        short   maxAlignment;
+
+        try (MemoryStack stack = stackPush()) {
+            FFICIF cif = FFICIF.calloc(stack);
+
+            // ffi_prep_cif is used to make libffi initialize size/alignment of each member
+            maxType = members[0];
+            if (ffi_prep_cif(cif, FFI_DEFAULT_ABI, maxType, null) != FFI_OK) {
+                throw new IllegalStateException("Failed to prepare LibFFI type.");
             }
-            if (maxAlignment < type.alignment()) {
-                maxAlignment = type.alignment();
+            maxAlignment = members[0].alignment();
+            for (int i = 1; i < members.length; i++) {
+                FFIType type = members[i];
+                if (ffi_prep_cif(cif, FFI_DEFAULT_ABI, type, null) != FFI_OK) {
+                    throw new IllegalStateException("Failed to prepare LibFFI type.");
+                }
+                if (maxType.size() < type.size()) {
+                    maxType = type;
+                }
+                if (maxAlignment < type.alignment()) {
+                    maxAlignment = type.alignment();
+                }
             }
         }
+
 
         return FFIType.create(allocator.malloc(FFIType.SIZEOF))
             .size(maxType.size())
