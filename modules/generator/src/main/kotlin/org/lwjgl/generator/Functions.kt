@@ -161,6 +161,24 @@ class Func(
         (!hasFunctionAddressParam || hasNativeCode || ((nativeClass.module.library != null || nativeClass.module.key.startsWith("core.")) && (returns.isStructValue || hasParam { it.nativeType is StructType }))) && !has<Macro> { expression != null }
     }
 
+    /** True when this function is bound to the FFM backend ({@code org.lwjgl.system.CriticalCall}) instead of JNI. */
+    internal val critical get() = has<Critical>()
+
+    /** The name of the generated Java method (and of its function address constant) for a critical function. */
+    internal val criticalMethodName: String get() = if (isNativeOnly) name else "n" + name
+
+    /** True when this critical function resolves its address through the per-class {@code SymbolLookup}. */
+    internal val criticalUsesLookup: Boolean get() = critical && !hasFunctionAddressParam && !hasExplicitFunctionAddress
+
+    /** The expression that evaluates to the native function address, when this function is bound to the FFM backend. */
+    private fun criticalAddress(): String =
+        if (hasExplicitFunctionAddress)
+            parameters.last().name
+        else if (hasFunctionAddressParam)
+            FUNCTION_ADDRESS
+        else
+            criticalMethodName
+
     private val isNativeOnly: Boolean by lazy(LazyThreadSafetyMode.NONE) {
         (nativeClass.binding == null || nativeClass.binding.apiCapabilities === APICapabilities.JNI_CAPABILITIES) &&
             !(
@@ -205,6 +223,7 @@ class Func(
         && !has<Address>()
         && !hasParam { it.nativeType is ArrayType<*> }
         && (!has<Macro> { expression != null })
+        && !critical
     }
 
     internal val hasArrayOverloads
@@ -790,7 +809,7 @@ class Func(
                 println("$t$retTypeAnnotation")
         }
 
-        print("$t${if (constantMacro) "private " else accessModifier}static${if (hasReuse) "" else " native"} $retType ")
+        print("$t${if (constantMacro) "private " else accessModifier}static${if (hasReuse || critical) "" else " native"} $retType ")
         if (!nativeOnly) print('n')
         print(name)
         print("(")
@@ -806,6 +825,20 @@ class Func(
         if (returns.isStructValue && !hasParam { it has ReturnParam }) {
             if (nativeClass.binding != null || nativeParams.any()) print(", ")
             print("long $RESULT")
+        }
+
+        if (critical) {
+            TODO("Not implementation")
+            // No native declaration and no native implementation: the generated Java method delegates to the FFM backend.
+            print(") {\n        ")
+            if (retType != "void") print("return ")
+            print("CriticalCall." + this@Func.downcallType + "(" + criticalAddress())
+            nativeParams.forEach { param ->
+                if (param !== EXPLICIT_FUNCTION_ADDRESS)
+                    print(", " + param.name)
+            }
+            print(");\n    }\n")
+            return
         }
 
         if (hasReuse) {

@@ -207,6 +207,14 @@ object OffHeapOnly : FunctionModifier {
     override val isSpecial = false
 }
 
+object Critical : FunctionModifier {
+    override val isSpecial = true
+
+    override fun validate(func: Func) = require(!func.hasParam { it.nativeType is ArrayType<*> }) {
+        "The Critical modifier cannot be applied to functions with array parameters: ${func.name}"
+    }
+}
+
 /** Marks a return value as a pointer that should be mapped (wrapped in a buffer of some capacity). */
 class MapPointer(
     /** An expression that defines the buffer capacity. */

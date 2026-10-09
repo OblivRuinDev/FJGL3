@@ -292,13 +292,24 @@ class NativeClass internal constructor(
     }
 
     internal fun registerFunctions(generateArrayOverloads: Boolean) {
+        functions.asSequence()
+            .filter { it.critical && !it.has<Macro>() }
+            .forEach {
+                CriticalCall.register(it)
+            }
+
         if (binding != null) {
             functions.asSequence()
                 // This will generate additional signatures that cover the entire
                 // GL/GLES API. They will not be used by LWJGL, but may be useful
                 // to users. Using !it.hasCustomJNI here will eliminate them.
                 .filter { !it.hasCustomJNIWithIgnoreAddress && (!it.has<Macro>() || !it.get<Macro>().function) }
-                .forEach { JNI.register(it) }
+                .forEach {
+                    JNI.register(it)
+                    // Downcall is the FFM alternative of JNI: every function without array parameters can also be invoked through it.
+                    if (!it.hasParam { param -> param.nativeType is ArrayType<*> })
+                        Downcall.register(it)
+                }
         }
 
         genFunctions
@@ -589,6 +600,24 @@ class NativeClass internal constructor(
             binding.generateFunctionSetup(this, this@NativeClass)
         }
 
+        if (functions.any { it.critical }) {
+            TODO("Not implementation")
+//            val lookupFunctions = genFunctions.filter { it.criticalUsesLookup }.toList()
+//
+//            println()
+//            lookupFunctions.forEach { func ->
+//                println("${t}private static final long ${func.criticalMethodName};")
+//            }
+//            println()
+//            println("${t}static {")
+//            println("$t${t}${lookupStatement ?: "SymbolsLookup lookup = SymbolsLookup.cast(Linker.nativeLinker().defaultLookup());"}")
+//            lookupFunctions.forEach { func ->
+//                println("$t${t}${func.criticalMethodName} = lookup.find0(${func.functionAddress});")
+//            }
+//            println("$t}")
+//            println()
+        }
+
         // Constant macros (e.g. `macro..Address..ffi_type.p(...)`) produce a field instead of a method. Their field is declared together with the regular
         // constants, and the value is assigned in the class initializer below.
         val constantMacros = genFunctions.filter { it.has<Macro> { constant } && !it.has(private) && !it.has<Reuse>() }
@@ -682,14 +711,14 @@ class NativeClass internal constructor(
         if (binding != null) {
             // Generate typedefs for casting the function pointers
             println()
-            functions.asSequence().filter { it.hasCustomJNI && !it.has<Reuse>() && !it.isInitNativeCandidate }.forEach {
+            functions.asSequence().filter { !it.critical && it.hasCustomJNI && !it.has<Reuse>() && !it.isInitNativeCandidate }.forEach {
                 it.generateFunctionDefinition(this)
             }
         }
 
         println("\nEXTERN_C_ENTER")
 
-        genFunctions.asSequence().filter { it.hasCustomJNI && !it.has<Reuse>() && !it.isInitNativeCandidate }.forEach {
+        genFunctions.asSequence().filter { !it.critical && it.hasCustomJNI && !it.has<Reuse>() && !it.isInitNativeCandidate }.forEach {
             println()
             it.generateFunction(this)
         }

@@ -128,6 +128,13 @@ fun main(args: Array<String>) {
                 latch.await()
             }
 
+            // Write the real bytecode of the fake classes (sources whose .class files differ from what javac produces).
+            try {
+                FakeGeneratorTarget.doGen(this.moduleRoot)
+            } catch (t: Throwable) {
+                errorQueue.add(t)
+            }
+
             if (errorQueue.peek() != null) {
                 val ex = RuntimeException("Generation failed")
                 while (true) {
@@ -142,7 +149,7 @@ fun main(args: Array<String>) {
     }
 }
 
-class Generator(private val moduleRoot: String) {
+class Generator(internal val moduleRoot: String) {
 
     companion object {
         // package -> #name -> class#prefix_name
@@ -192,8 +199,8 @@ class Generator(private val moduleRoot: String) {
     private fun methodFilter(method: Method, javaClass: Class<*>) =
     // static
         method.modifiers and Modifier.STATIC != 0 &&
-        // returns NativeClass
-        method.returnType === javaClass &&
+        // returns javaClass, or a subclass of it (e.g. NativeClassFFM)
+        javaClass.isAssignableFrom(method.returnType) &&
         // has no arguments
         method.parameterTypes.isEmpty()
 
@@ -397,7 +404,7 @@ internal fun Path.lastModified(
         .reduce(0L, Math::max)
 }
 
-private fun ensurePath(path: Path) {
+internal fun ensurePath(path: Path) {
     val parent = path.parent ?: throw IllegalArgumentException("The given path has no parent directory.")
 
     if (!Files.isDirectory(parent)) {
@@ -419,7 +426,7 @@ private fun readFile(file: Path) = Files.newByteChannel(file).use {
     buffer
 }
 
-private fun <T> generateOutput(
+internal fun <T> generateOutput(
     target: T,
     file: Path,
     /** If not null, the file timestamp will be updated if no change occured since last generation. */
