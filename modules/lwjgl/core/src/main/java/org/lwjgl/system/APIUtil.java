@@ -23,7 +23,6 @@ import org.lwjgl.system.windows.*;
 
 import java.io.*;
 import java.lang.foreign.*;
-import java.lang.invoke.*;
 import java.lang.reflect.*;
 import java.nio.*;
 import java.nio.file.*;
@@ -54,7 +53,6 @@ public final class APIUtil {
     public static final PrintStream DEBUG_STREAM = getDebugStream();
 
     private static final Pattern API_VERSION_PATTERN;
-    private static final boolean USE_JAVA_FOREIGN_LINKER;
 
     static {
         String PREFIX         = "[^\\d\\n\\r]*";
@@ -62,26 +60,6 @@ public final class APIUtil {
         String IMPLEMENTATION = "(?:\\s+(.+?))?\\s*";
 
         API_VERSION_PATTERN = Pattern.compile("^" + PREFIX + VERSION + IMPLEMENTATION + "$", Pattern.DOTALL);
-
-        boolean useJavaForeign = FORCE_USE_JAVA_FOREIGN_LINKER.get(false);
-        if (useJavaForeign) {
-            try {
-                Linker.nativeLinker();
-            } catch (Exception e) {
-                throw new IllegalStateException("Force use java foreign linker but failed to get it!", e);
-            }
-        }
-
-        CABI cabi;
-        try {
-            cabi = CABI.current();
-            if (cabi == CABI.UNSUPPORTED && useJavaForeign) {
-                throw new IllegalArgumentException("Force use java foreign linker but it is unsupported");
-            }
-        } catch (LinkageError e) {
-            throw new RuntimeException(e);
-        }
-        USE_JAVA_FOREIGN_LINKER = useJavaForeign || cabi != CABI.FALLBACK;
     }
 
     @SuppressWarnings({"unchecked", "UseOfSystemOutOrSystemErr"})
@@ -136,6 +114,12 @@ public final class APIUtil {
         if (DEBUG) {
             String function = memASCII(functionName, functionName.remaining() - 1);
             DEBUG_STREAM.print("[LWJGL] Failed to locate address for " + api + " function " + function + "\n");
+        }
+    }
+
+    public static void apiLogException(Throwable t) {
+        if (DEBUG) {
+            t.printStackTrace(DEBUG_STREAM);
         }
     }
 
@@ -710,7 +694,7 @@ public final class APIUtil {
     }
 
     public static boolean apiUseJavaForeignLinker() {
-        return USE_JAVA_FOREIGN_LINKER;
+        return Foreign.USE_JAVA_FOREIGN_LINKER;
     }
 
     /** Allocates and prepares a libffi CIF using the default ABI. */

@@ -474,7 +474,25 @@ public class Configuration<T> {
      * &nbsp; &nbsp;Usage: Dynamic</p>
      */
     public static final Configuration<Object> FFM_UPCALL_EXCEPTION_HANDLER = new Configuration<>("org.lwjgl.system.ffm.upcall.exception.handler", StateInit.STRING);
-
+    /**
+     * <h1>Internal API</h1>
+     * This is an internal API and it may be changed without prior notice.
+     */
+    public static final Configuration<Object> FFM_DOWNCALL_SEGMENT_ALLOCATOR = new Configuration<>("org.lwjgl.system.downcall.SegmentAllocator", StateInit.STRING);
+    /**
+     * <h1>Internal API</h1>
+     * This is an internal API and it may be changed without prior notice.
+     */
+    public static final Configuration<Boolean> FFM_DOWNCALL = new Configuration<>("org.lwjgl.system.downcall.ffm", StateInit.BOOLEAN);
+    /**
+     * <h1>Internal API</h1>
+     * This is an internal API and it may be changed without prior notice.
+     */
+    public static final Configuration<Boolean> FFM_UPCALL = new Configuration<>("org.lwjgl.system.upcall.ffm", StateInit.BOOLEAN);
+    /**
+     * <h1>Internal API</h1>
+     * This is an internal API and it may be changed without prior notice.
+     */
     public static final Configuration<Boolean> FORCE_USE_JAVA_FOREIGN_LINKER = new Configuration<>("org.lwjgl.system.api.forceUseJavaForeignLinker", StateInit.BOOLEAN);
 
     // -- ASSIMP
