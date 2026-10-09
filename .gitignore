@@ -1,6 +1,8 @@
 /nbproject/private/
 /bin
-/wiki
+.vscode
+.idea/shelf/
+**/generated/class/
 .gradle
 .DS_Store
 *.bat
