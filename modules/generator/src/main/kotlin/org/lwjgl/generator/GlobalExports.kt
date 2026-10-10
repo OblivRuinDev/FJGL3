@@ -44,7 +44,16 @@ class GlobalExports(
         private val CONTEXTS = ConcurrentHashMap<String, GlobalExports>()
 
         internal fun of(module: Module, nativeSubPath: String): GlobalExports =
-            CONTEXTS.computeIfAbsent("${module.path}\u0000$nativeSubPath") { GlobalExports(module, nativeSubPath) }
+            CONTEXTS.computeIfAbsent("${module.path}\u0000$nativeSubPath") {
+                // The native build maps source files to object files by base name only (regexpmapper `([\w\-]+)\.c` -> `\1.o`), so a sub-path's export file must
+                // not share its base name with the module's default one. Otherwise `macos/exports.c` and `exports.c` both produce `exports.o` and one of them
+                // overwrites the other (only macOS compiles both), dropping the overwritten file's symbols.
+                val fileName = if (nativeSubPath.isEmpty())
+                    "exports"
+                else
+                    "${nativeSubPath.map { c -> if (c.isLetterOrDigit()) c else '_' }.joinToString("")}_exports"
+                GlobalExports(module, nativeSubPath, fileName)
+            }
 
         /** Every context that has been created, for output generation. */
         internal val contexts: Collection<GlobalExports>
