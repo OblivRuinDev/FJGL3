@@ -18,7 +18,7 @@ import org.lwjgl.system.MemoryUtil.*;
 import java.io.*;
 import java.util.function.*;
 
-import static org.lwjgl.system.MemoryUtil.*;
+import static org.lwjgl.system.JDK.*;
 
 /**
  * This class can be used to programmatically set the LWJGL runtime configuration. It is an alternative to using system properties.
