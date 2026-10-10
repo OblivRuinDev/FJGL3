@@ -36,9 +36,9 @@ ENABLE_WARNINGS()
 DISABLE_WARNINGS()
 
 JNIEXPORT void* org_lwjgl_nanovg_exports_address[3] = {
-    &nvgCreateInternal,
-    &nvgInternalParams,
-    &nvgDeleteInternal,
+    (void*)(uintptr_t)(&nvgCreateInternal),
+    (void*)(uintptr_t)(&nvgInternalParams),
+    (void*)(uintptr_t)(&nvgDeleteInternal),
 };
 
 ENABLE_WARNINGS()

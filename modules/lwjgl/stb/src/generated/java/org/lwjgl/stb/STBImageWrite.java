@@ -41,10 +41,10 @@ public class STBImageWrite {
 
     static {
         long __exports_address = org.lwjgl.stb.LibSTB.EXPORTS_ADDRESS;
-        stbi_write_png_compression_level = memIntBuffer(MemoryUtil.memGetAddressAtIndex(__exports_address, 0), 1);
-        stbi_write_force_png_filter = memIntBuffer(MemoryUtil.memGetAddressAtIndex(__exports_address, 1), 1);
-        stbi_zlib_compress = memPointerBuffer(MemoryUtil.memGetAddressAtIndex(__exports_address, 2), 1);
-        stbi_write_tga_with_rle = memIntBuffer(MemoryUtil.memGetAddressAtIndex(__exports_address, 3), 1);
+        stbi_write_png_compression_level = memIntBuffer(memGetAddressAtIndex(__exports_address, 0), 1);
+        stbi_write_force_png_filter = memIntBuffer(memGetAddressAtIndex(__exports_address, 1), 1);
+        stbi_zlib_compress = memPointerBuffer(memGetAddressAtIndex(__exports_address, 2), 1);
+        stbi_write_tga_with_rle = memIntBuffer(memGetAddressAtIndex(__exports_address, 3), 1);
     }
 
     protected STBImageWrite() {

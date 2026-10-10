@@ -31,10 +31,10 @@ ENABLE_WARNINGS()
 DISABLE_WARNINGS()
 
 JNIEXPORT void* org_lwjgl_stb_exports_address[4] = {
-    &stbi_write_png_compression_level,
-    &stbi_write_force_png_filter,
-    &stbi_zlib_compress,
-    &stbi_write_tga_with_rle,
+    (void*)(uintptr_t)(&stbi_write_png_compression_level),
+    (void*)(uintptr_t)(&stbi_write_force_png_filter),
+    (void*)(uintptr_t)(&stbi_zlib_compress),
+    (void*)(uintptr_t)(&stbi_write_tga_with_rle),
 };
 
 ENABLE_WARNINGS()

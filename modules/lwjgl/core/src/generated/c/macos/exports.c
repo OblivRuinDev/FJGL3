@@ -17,24 +17,17 @@
 
 DISABLE_WARNINGS()
 
-JNIEXPORT void* org_lwjgl_core_macos_exports_address[6] = {
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-};
+JNIEXPORT void* org_lwjgl_core_macos_exports_address[6];
 
 ENABLE_WARNINGS()
 
 EXPORTS_INIT(org_lwjgl_core_macos_exports_init) {
     DISABLE_WARNINGS()
-    org_lwjgl_core_macos_exports_address[0] = kCFAllocatorDefault;
-    org_lwjgl_core_macos_exports_address[1] = kCFAllocatorSystemDefault;
-    org_lwjgl_core_macos_exports_address[2] = kCFAllocatorMalloc;
-    org_lwjgl_core_macos_exports_address[3] = kCFAllocatorMallocZone;
-    org_lwjgl_core_macos_exports_address[4] = kCFAllocatorNull;
-    org_lwjgl_core_macos_exports_address[5] = kCFAllocatorUseContext;
+    org_lwjgl_core_macos_exports_address[0] = (void*)(uintptr_t)(kCFAllocatorDefault);
+    org_lwjgl_core_macos_exports_address[1] = (void*)(uintptr_t)(kCFAllocatorSystemDefault);
+    org_lwjgl_core_macos_exports_address[2] = (void*)(uintptr_t)(kCFAllocatorMalloc);
+    org_lwjgl_core_macos_exports_address[3] = (void*)(uintptr_t)(kCFAllocatorMallocZone);
+    org_lwjgl_core_macos_exports_address[4] = (void*)(uintptr_t)(kCFAllocatorNull);
+    org_lwjgl_core_macos_exports_address[5] = (void*)(uintptr_t)(kCFAllocatorUseContext);
     ENABLE_WARNINGS()
 }

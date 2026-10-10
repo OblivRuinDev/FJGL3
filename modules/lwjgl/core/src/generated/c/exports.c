@@ -85,40 +85,40 @@ typedef void (*FFI_CLOSURE_FUN)(ffi_cif*, void*, void**, void*);
 DISABLE_WARNINGS()
 
 JNIEXPORT void* org_lwjgl_core_exports_address[34] = {
-    &malloc,
-    &calloc,
-    &realloc,
-    &free,
-    &__aligned_alloc,
-    &__aligned_free,
+    (void*)(uintptr_t)(&malloc),
+    (void*)(uintptr_t)(&calloc),
+    (void*)(uintptr_t)(&realloc),
+    (void*)(uintptr_t)(&free),
+    (void*)(uintptr_t)(&__aligned_alloc),
+    (void*)(uintptr_t)(&__aligned_free),
     0,
     0,
     0,
-    &fscanf,
-    &sscanf,
-    &fprintf,
-    &snprintf,
-    &ffi_type_void,
-    &ffi_type_uint8,
-    &ffi_type_sint8,
-    &ffi_type_uint16,
-    &ffi_type_sint16,
-    &ffi_type_uint32,
-    &ffi_type_sint32,
-    &ffi_type_uint64,
-    &ffi_type_sint64,
-    &ffi_type_uchar,
-    &ffi_type_schar,
-    &ffi_type_ushort,
-    &ffi_type_sshort,
-    &ffi_type_uint,
-    &ffi_type_sint,
-    &ffi_type_ulong,
-    &ffi_type_slong,
-    &ffi_type_float,
-    &ffi_type_double,
-    &ffi_type_longdouble,
-    &ffi_type_pointer,
+    (void*)(uintptr_t)(&fscanf),
+    (void*)(uintptr_t)(&sscanf),
+    (void*)(uintptr_t)(&fprintf),
+    (void*)(uintptr_t)(&snprintf),
+    (void*)(uintptr_t)(&ffi_type_void),
+    (void*)(uintptr_t)(&ffi_type_uint8),
+    (void*)(uintptr_t)(&ffi_type_sint8),
+    (void*)(uintptr_t)(&ffi_type_uint16),
+    (void*)(uintptr_t)(&ffi_type_sint16),
+    (void*)(uintptr_t)(&ffi_type_uint32),
+    (void*)(uintptr_t)(&ffi_type_sint32),
+    (void*)(uintptr_t)(&ffi_type_uint64),
+    (void*)(uintptr_t)(&ffi_type_sint64),
+    (void*)(uintptr_t)(&ffi_type_uchar),
+    (void*)(uintptr_t)(&ffi_type_schar),
+    (void*)(uintptr_t)(&ffi_type_ushort),
+    (void*)(uintptr_t)(&ffi_type_sshort),
+    (void*)(uintptr_t)(&ffi_type_uint),
+    (void*)(uintptr_t)(&ffi_type_sint),
+    (void*)(uintptr_t)(&ffi_type_ulong),
+    (void*)(uintptr_t)(&ffi_type_slong),
+    (void*)(uintptr_t)(&ffi_type_float),
+    (void*)(uintptr_t)(&ffi_type_double),
+    (void*)(uintptr_t)(&ffi_type_longdouble),
+    (void*)(uintptr_t)(&ffi_type_pointer),
 };
 
 JNIEXPORT int32_t org_lwjgl_core_exports_int[21] = {
@@ -153,8 +153,8 @@ ENABLE_WARNINGS()
 
 EXPORTS_INIT(org_lwjgl_core_exports_init) {
     DISABLE_WARNINGS()
-    org_lwjgl_core_exports_address[6] = stdin;
-    org_lwjgl_core_exports_address[7] = stdout;
-    org_lwjgl_core_exports_address[8] = stderr;
+    org_lwjgl_core_exports_address[6] = (void*)(uintptr_t)(stdin);
+    org_lwjgl_core_exports_address[7] = (void*)(uintptr_t)(stdout);
+    org_lwjgl_core_exports_address[8] = (void*)(uintptr_t)(stderr);
     ENABLE_WARNINGS()
 }

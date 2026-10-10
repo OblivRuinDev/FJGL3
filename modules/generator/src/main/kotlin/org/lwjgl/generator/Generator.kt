@@ -383,31 +383,43 @@ class Generator(internal val moduleRoot: String) {
         generate(Paths.get("$moduleRoot/${target.module.path}/src/generated/c/$targetFile"))
     }
 
-    /** Writes the exported C arrays of every enabled module that registered values. */
+    /** Writes the exported C arrays of every enabled module that registered values, plus the `ExportTable` class of those with manual registrations. */
     internal fun generateExports() {
         GlobalExports.contexts.forEach { exports ->
             if (!exports.module.enabled || exports.isEmpty)
                 return@forEach
 
             val subPath = exports.nativeSubPath.let { if (it.isEmpty()) "" else "$it/" }
-            val file = Paths.get("$moduleRoot/${exports.module.path}/src/generated/c/$subPath${exports.fileName}.c")
-            ensurePath(file)
+            val cFile = Paths.get("$moduleRoot/${exports.module.path}/src/generated/c/$subPath${exports.fileName}.c")
+            writeIfChanged(cFile, "EXPORTS") { out -> with(exports) { out.gen() } }
 
-            val baos = ByteArrayOutputStream(8 * 1024)
-            PrintWriter(OutputStreamWriter(baos, Charsets.UTF_8)).use { out -> with(exports) { out.gen() } }
-            val after = baos.toByteArray()
-
-            if (Files.isRegularFile(file)) {
-                val before = readFile(file)
-                if (before.remaining() == after.size && (0 until before.limit()).all { before.get(it) == after[it] })
-                    return@forEach
-
-                println("\tUPDATING EXPORTS: $file")
-            } else
-                println("\tWRITING EXPORTS: $file")
-
-            Files.write(file, after)
+            if (exports.manualSymbols.isNotEmpty()) {
+                val javaFile = Paths.get(
+                    "$moduleRoot/${exports.module.path}/src/generated/java/${exports.module.packageName.replace('.', '/')}/ExportTable.java"
+                )
+                writeIfChanged(javaFile, "EXPORTS") { out -> with(exports) { out.genExportTable() } }
+            }
         }
+    }
+
+    /** Writes [file] only when its content changes. [generate] writes the new content. */
+    private fun writeIfChanged(file: Path, label: String, generate: (PrintWriter) -> Unit) {
+        ensurePath(file)
+
+        val baos = ByteArrayOutputStream(8 * 1024)
+        PrintWriter(OutputStreamWriter(baos, Charsets.UTF_8)).use { out -> generate(out) }
+        val after = baos.toByteArray()
+
+        if (Files.isRegularFile(file)) {
+            val before = readFile(file)
+            if (before.remaining() == after.size && (0 until before.limit()).all { before.get(it) == after[it] })
+                return
+
+            println("\tUPDATING $label: $file")
+        } else
+            println("\tWRITING $label: $file")
+
+        Files.write(file, after)
     }
 
 }

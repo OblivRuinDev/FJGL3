@@ -98,9 +98,9 @@ public class NanoVG {
 
     static {
         long __exports_address = org.lwjgl.nanovg.LibNanoVG.EXPORTS_ADDRESS;
-        nvgCreateInternal = MemoryUtil.memGetAddressAtIndex(__exports_address, 0);
-        nvgInternalParams = MemoryUtil.memGetAddressAtIndex(__exports_address, 1);
-        nvgDeleteInternal = MemoryUtil.memGetAddressAtIndex(__exports_address, 2);
+        nvgCreateInternal = memGetAddressAtIndex(__exports_address, 0);
+        nvgInternalParams = memGetAddressAtIndex(__exports_address, 1);
+        nvgDeleteInternal = memGetAddressAtIndex(__exports_address, 2);
     }
 
     protected NanoVG() {

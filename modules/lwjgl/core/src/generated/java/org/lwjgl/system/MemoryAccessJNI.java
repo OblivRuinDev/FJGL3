@@ -14,6 +14,8 @@
 package org.lwjgl.system;
 
 
+import static org.lwjgl.system.MemoryUtil.*;
+
 final class MemoryAccessJNI {
 
     static { Library.initialize(); }
@@ -38,12 +40,12 @@ final class MemoryAccessJNI {
 
     static {
         long __exports_address = org.lwjgl.system.Library.EXPORTS_ADDRESS;
-        malloc = MemoryUtil.memGetAddressAtIndex(__exports_address, 0);
-        calloc = MemoryUtil.memGetAddressAtIndex(__exports_address, 1);
-        realloc = MemoryUtil.memGetAddressAtIndex(__exports_address, 2);
-        free = MemoryUtil.memGetAddressAtIndex(__exports_address, 3);
-        aligned_alloc = MemoryUtil.memGetAddressAtIndex(__exports_address, 4);
-        aligned_free = MemoryUtil.memGetAddressAtIndex(__exports_address, 5);
+        malloc = memGetAddressAtIndex(__exports_address, 0);
+        calloc = memGetAddressAtIndex(__exports_address, 1);
+        realloc = memGetAddressAtIndex(__exports_address, 2);
+        free = memGetAddressAtIndex(__exports_address, 3);
+        aligned_alloc = memGetAddressAtIndex(__exports_address, 4);
+        aligned_free = memGetAddressAtIndex(__exports_address, 5);
     }
 
     private MemoryAccessJNI() {

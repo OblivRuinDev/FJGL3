@@ -63,6 +63,9 @@ class GlobalExports(
 
     private val entries = LinkedHashMap<ExportsType, MutableList<Entry>>()
 
+    /** The manually registered symbols, keyed by name, with the index of their address in the [ExportsType.ADDRESS] array. */
+    private val manual = LinkedHashMap<String, Int>()
+
     /**
      * The native preamble shared by all registered statements. Statements from several classes may reference different symbols, so every registering class
      * merges its own imports and directives here.
@@ -110,12 +113,27 @@ class GlobalExports(
     /** Registers the given C address expressions in the [ExportsType.ADDRESS] array. */
     fun registerAddresses(vararg statements: String) = register(ExportsType.ADDRESS, *statements)
 
-    val isEmpty: Boolean
+    /**
+     * Registers a manually named C symbol whose address goes into the [ExportsType.ADDRESS] array and returns its index. The index is exposed to Java as a
+     * compile-time constant through the generated `ExportTable` class, so callers do not hardcode an index that may change between builds.
+     */
+    @Synchronized
+    fun registerManual(name: String, statement: String): Int {
+        val index = register(ExportsType.ADDRESS, name, statement)
+        manual[name] = index
+        return index
+    }
+
+    val isEmpty
         get() = entries.values.all { it.isEmpty() }
 
     /** The exported array types that have at least one registered value. */
     val types: List<ExportsType>
         get() = entries.filterValues { it.isNotEmpty() }.keys.toList()
+
+    /** The manually registered symbols, keyed by name, with their index in the [ExportsType.ADDRESS] array. */
+    internal val manualSymbols: Map<String, Int>
+        get() = manual
 
     fun PrintWriter.gen() {
         print(HEADER)
@@ -125,18 +143,23 @@ class GlobalExports(
 
         val nonEmpty = entries.filterValues { it.isNotEmpty() }
 
-        // Values that are not constant expressions (for example the value of `stdin`) are assigned when the library is loaded. Everything else, including the
-        // addresses of symbols linked into this library, is statically initialized (the runtime slots are set to `0` here and overwritten at load time).
+        // Constant elements are statically initialized. Values that are not constant expressions (for example the value of `stdin`) are assigned when the library
+        // is loaded and their slots are set to `0` here. Address elements are cast through `uintptr_t`: strict C forbids initializing a `void*` from a function
+        // pointer, and a `const` pointer cannot be assigned to `void*` without a warning.
         println("DISABLE_WARNINGS()")
         nonEmpty.forEach { (type, list) ->
             println()
-            print("JNIEXPORT ${type.cType} ${symbol(type)}[${list.size}] = {")
-            list.forEach { entry ->
+            if (list.all { it.isRuntime }) {
+                println("JNIEXPORT ${type.cType} ${symbol(type)}[${list.size}];")
+            } else {
+                print("JNIEXPORT ${type.cType} ${symbol(type)}[${list.size}] = {")
+                list.forEach { entry ->
+                    println()
+                    print(if (entry.isRuntime) "${t}0," else "$t${type.cast(entry.statement)},")
+                }
                 println()
-                print(if (entry.isRuntime) "${t}0," else "$t${entry.statement},")
+                println("};")
             }
-            println()
-            println("};")
         }
         println()
         println("ENABLE_WARNINGS()")
@@ -149,12 +172,27 @@ class GlobalExports(
                 val name = symbol(type)
                 list.forEachIndexed { index, entry ->
                     if (entry.isRuntime)
-                        println("$t$name[$index] = ${entry.statement};")
+                        println("$t$name[$index] = ${type.cast(entry.statement)};")
                 }
             }
             println("${t}ENABLE_WARNINGS()")
             println("}")
         }
+    }
+
+    /**
+     * Generates the `ExportTable` Java class, which exposes the index of every manually registered symbol as a compile-time constant. The index is the position
+     * of the symbol's address in the exported address array ([symbol]`(ExportsType.ADDRESS)`).
+     */
+    fun PrintWriter.genExportTable() {
+        print(HEADER)
+        println("package ${module.packageName};\n")
+        println("/** The indices of manually registered C symbols in the exported address array of the ${module.key} library. */")
+        println("public final class ExportTable {\n")
+        manual.forEach { (name, index) -> println("${t}public static final int $name = $index;") }
+        println()
+        println("${t}private ExportTable() {}")
+        println("}")
     }
 
 }
@@ -166,3 +204,10 @@ private fun exportPreamble(expression: String) =
 private val EXPORT_IMPLEMENTATION_INCLUDE = Regex("""#include\s+"([^"]+)\.c"""")
 
 private val BARE_IDENTIFIER = Regex("""^[A-Za-z_]\w*$""")
+
+/**
+ * When a statement goes into the exported `void*` array it is cast through `uintptr_t`. This is required because neither implicit conversion of a function
+ * pointer to `void*` nor of a `const` pointer to `void*` is allowed by `-Wpedantic`/Clang warnings.
+ */
+private fun ExportsType.cast(statement: String) =
+    if (this == ExportsType.ADDRESS) "(void*)(uintptr_t)($statement)" else statement

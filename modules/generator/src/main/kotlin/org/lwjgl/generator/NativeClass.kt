@@ -752,7 +752,7 @@ class NativeClass internal constructor(
         print("\n}")
     }
 
-    override val skipNative get() = functions.none { it.hasCustomJNI && !it.has<Reuse>() }
+    override val skipNative get() = functions.none { it.hasCustomJNI && !it.has<Reuse>() && !it.isInitNativeCandidate }
 
     override fun PrintWriter.generateNative() {
         print(HEADER)

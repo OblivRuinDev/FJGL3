@@ -69,12 +69,12 @@ public class CoreFoundation {
 
     static {
         long __exports_address = java.lang.foreign.SymbolLookup.loaderLookup().find("org_lwjgl_core_macos_exports_address").orElseThrow().address();
-        kCFAllocatorDefault = MemoryUtil.memGetAddressAtIndex(__exports_address, 0);
-        kCFAllocatorSystemDefault = MemoryUtil.memGetAddressAtIndex(__exports_address, 1);
-        kCFAllocatorMalloc = MemoryUtil.memGetAddressAtIndex(__exports_address, 2);
-        kCFAllocatorMallocZone = MemoryUtil.memGetAddressAtIndex(__exports_address, 3);
-        kCFAllocatorNull = MemoryUtil.memGetAddressAtIndex(__exports_address, 4);
-        kCFAllocatorUseContext = MemoryUtil.memGetAddressAtIndex(__exports_address, 5);
+        kCFAllocatorDefault = memGetAddressAtIndex(__exports_address, 0);
+        kCFAllocatorSystemDefault = memGetAddressAtIndex(__exports_address, 1);
+        kCFAllocatorMalloc = memGetAddressAtIndex(__exports_address, 2);
+        kCFAllocatorMallocZone = memGetAddressAtIndex(__exports_address, 3);
+        kCFAllocatorNull = memGetAddressAtIndex(__exports_address, 4);
+        kCFAllocatorUseContext = memGetAddressAtIndex(__exports_address, 5);
     }
 
     protected CoreFoundation() {
