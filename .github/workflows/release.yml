@@ -119,11 +119,6 @@ jobs:
           key: fjgl-native-${{ github.sha }}-windows-arm64
           enableCrossOsArchive: true
 
-
-      - name: Generate bindings
-        run: ant -emacs touch-kotlinc clean-generated generate
-      - name: Build Java
-        run: ant -emacs compile
       - name: "Package ${{env.FJGL_VERSION}}+${{env.LWJGL_BUILD}}"
         run: |
           ant -emacs release -Dbuild.version=${{env.FJGL_VERSION}} -Dbuild.revision=${{env.LWJGL_BUILD}}
