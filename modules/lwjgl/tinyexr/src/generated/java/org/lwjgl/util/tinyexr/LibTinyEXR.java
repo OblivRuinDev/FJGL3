@@ -22,7 +22,7 @@ final class LibTinyEXR {
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_tinyexr");
-        Library.loadSystem(LibTinyEXR.class, "dev.oblivruin.fjgl.tinyexr", libName);
+        Library.loadSystem(System::load, System::loadLibrary, LibTinyEXR.class, "dev.oblivruin.fjgl.tinyexr", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

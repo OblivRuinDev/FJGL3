@@ -22,7 +22,7 @@ final class LibZstd {
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_zstd");
-        Library.loadSystem(LibZstd.class, "dev.oblivruin.fjgl.zstd", libName);
+        Library.loadSystem(System::load, System::loadLibrary, LibZstd.class, "dev.oblivruin.fjgl.zstd", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

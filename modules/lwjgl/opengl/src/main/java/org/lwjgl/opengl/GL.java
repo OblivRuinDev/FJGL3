@@ -71,7 +71,7 @@ public final class GL {
     private static @Nullable GLXCapabilities capabilitiesGLX;
 
     static {
-        Library.loadSystem(GL.class, "dev.oblivruin.fjgl.opengl", Platform.mapLibraryNameBundled("fjgl_opengl"));
+        Library.loadSystem(System::load, System::loadLibrary, GL.class, "dev.oblivruin.fjgl.opengl", Platform.mapLibraryNameBundled("fjgl_opengl"));
 
         MAX_VERSION = apiParseVersion(Configuration.OPENGL_MAXVERSION);
 

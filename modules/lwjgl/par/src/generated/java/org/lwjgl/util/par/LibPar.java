@@ -22,7 +22,7 @@ final class LibPar {
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_par");
-        Library.loadSystem(LibPar.class, "dev.oblivruin.fjgl.par", libName);
+        Library.loadSystem(System::load, System::loadLibrary, LibPar.class, "dev.oblivruin.fjgl.par", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

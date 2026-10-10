@@ -20,7 +20,7 @@ final class LibMsdfGen {
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_msdfgen");
-        Library.loadSystem(LibMsdfGen.class, "dev.oblivruin.fjgl.msdfgen", libName);
+        Library.loadSystem(System::load, System::loadLibrary, LibMsdfGen.class, "dev.oblivruin.fjgl.msdfgen", libName);
     }
 
     private LibMsdfGen() {

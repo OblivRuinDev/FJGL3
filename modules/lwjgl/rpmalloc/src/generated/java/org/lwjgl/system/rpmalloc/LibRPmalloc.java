@@ -20,7 +20,7 @@ final class LibRPmalloc {
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_rpmalloc");
-        Library.loadSystem(LibRPmalloc.class, "dev.oblivruin.fjgl.rpmalloc", libName);
+        Library.loadSystem(System::load, System::loadLibrary, LibRPmalloc.class, "dev.oblivruin.fjgl.rpmalloc", libName);
     }
 
     private LibRPmalloc() {

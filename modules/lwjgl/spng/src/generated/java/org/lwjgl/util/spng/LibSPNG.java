@@ -22,7 +22,7 @@ final class LibSPNG {
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_spng");
-        Library.loadSystem(LibSPNG.class, "dev.oblivruin.fjgl.spng", libName);
+        Library.loadSystem(System::load, System::loadLibrary, LibSPNG.class, "dev.oblivruin.fjgl.spng", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

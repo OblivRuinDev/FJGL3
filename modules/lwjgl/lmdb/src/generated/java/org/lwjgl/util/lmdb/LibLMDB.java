@@ -22,7 +22,7 @@ final class LibLMDB {
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_lmdb");
-        Library.loadSystem(LibLMDB.class, "dev.oblivruin.fjgl.lmdb", libName);
+        Library.loadSystem(System::load, System::loadLibrary, LibLMDB.class, "dev.oblivruin.fjgl.lmdb", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

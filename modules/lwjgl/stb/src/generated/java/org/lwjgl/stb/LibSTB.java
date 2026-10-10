@@ -24,7 +24,7 @@ final class LibSTB {
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_stb");
-        Library.loadSystem(LibSTB.class, "dev.oblivruin.fjgl.stb", libName);
+        Library.loadSystem(System::load, System::loadLibrary, LibSTB.class, "dev.oblivruin.fjgl.stb", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

@@ -58,7 +58,7 @@ public final class GLES {
     private static ICD icd = new ICDStatic();
 
     static {
-        Library.loadSystem(GLES.class, "dev.oblivruin.fjgl.opengles", Platform.mapLibraryNameBundled("fjgl_opengles"));
+        Library.loadSystem(System::load, System::loadLibrary, GLES.class, "dev.oblivruin.fjgl.opengles", Platform.mapLibraryNameBundled("fjgl_opengles"));
 
         MAX_VERSION = apiParseVersion(Configuration.OPENGLES_MAXVERSION);
 
