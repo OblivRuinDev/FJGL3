@@ -1,0 +1,106 @@
+name: Cache Recovery
+
+on:
+  workflow_dispatch:
+    inputs:
+      cache_key:
+        description: "Exact GitHub Actions cache key"
+        required: true
+        type: string
+
+      restore_keys:
+        description: "Optional fallback keys, one prefix per line"
+        required: false
+        default: ""
+        type: string
+
+      runner:
+        description: "Runner operating system"
+        required: true
+        default: ubuntu-latest
+        type: choice
+        options:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+          - macos-15
+          - macos-13
+
+      cache_path:
+        description: "Path(s) stored in the cache, one per line"
+        required: true
+        default: "bin/libs/native"
+        type: string
+
+      cross_os:
+        description: "Allow compatible cross-OS cache archives"
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  recover:
+    name: Recover cache
+    runs-on: ${{ inputs.runner }}
+
+    steps:
+      - name: Restore cache
+        id: restore
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ inputs.cache_path }}
+          key: ${{ inputs.cache_key }}
+          restore-keys: ${{ inputs.restore_keys }}
+          enableCrossOsArchive: ${{ inputs.cross_os }}
+          fail-on-cache-miss: false
+
+      - name: Report result
+        if: always()
+        shell: bash
+        env:
+          CACHE_HIT: ${{ steps.restore.outputs.cache-hit }}
+          CACHE_KEY: ${{ steps.restore.outputs.cache-primary-key }}
+          CACHE_MATCHED_KEY: ${{ steps.restore.outputs.cache-matched-key }}
+          CACHE_PATH: ${{ inputs.cache_path }}
+        run: |
+          echo "Requested key: $CACHE_KEY"
+          echo "Matched key: ${CACHE_MATCHED_KEY:-none}"
+          echo "Cache hit: ${CACHE_HIT:-false}"
+          echo "Requested paths:"
+          printf '%s\n' "$CACHE_PATH"
+
+          if [ "$CACHE_HIT" != "true" ]; then
+            echo "::warning::No matching cache was restored."
+            exit 0
+          fi
+
+          echo "=== Restored files ==="
+          while IFS= read -r path; do
+            [ -z "$path" ] && continue
+            if [ -e "$path" ]; then
+              find "$path" -maxdepth 4 -type f -print 2>/dev/null || true
+            else
+              echo "Path not found: $path"
+            fi
+          done <<< "$CACHE_PATH"
+
+      - name: Upload recovered files
+        if: steps.restore.outputs.cache-hit == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: recovered-cache-${{ inputs.runner }}-${{ github.run_id }}
+          path: ${{ inputs.cache_path }}
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+
+      - name: Fail when cache is missing
+        if: steps.restore.outputs.cache-hit != 'true'
+        shell: bash
+        run: |
+          echo "::error::Cache miss. No matching cache was restored."
+          exit 1
