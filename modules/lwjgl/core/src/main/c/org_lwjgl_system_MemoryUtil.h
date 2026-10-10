@@ -1,0 +1,113 @@
+/*
+ * Copyright (c) 2026-present OblivRuinDev. All rights reserved.
+ * License terms: https://github.com/OblivRuinDev/FJGL3/blob/master/LICENSE.md
+ *
+ * Modified from LWJGL source code.
+ * Original copyright notice below.
+ */
+/*
+ * Copyright LWJGL. All rights reserved.
+ * License terms: https://www.lwjgl.org/license
+ */
+#ifndef FJGL_ORG_LWJGL_SYSTEM_MEMORYUTIL_H
+#define FJGL_ORG_LWJGL_SYSTEM_MEMORYUTIL_H
+
+#include <stdint.h>
+#include <stdlib.h>
+
+#if defined(LWJGL_WINDOWS)
+    #include "WindowsLWJGL.h"
+#elif defined(LWJGL_LINUX)
+    #include <unistd.h>
+    #if !defined(_SC_PAGESIZE)
+        #define _SC_PAGESIZE 30
+    #endif
+    #if !defined(_SC_LEVEL1_DCACHE_LINESIZE)
+        #define _SC_LEVEL1_DCACHE_LINESIZE 190
+    #endif
+#elif defined(LWJGL_MACOS) || defined(LWJGL_FREEBSD)
+    #include <unistd.h>
+    #include <sys/types.h>
+    #include <sys/sysctl.h>
+
+    static inline int64_t sysctlbyname_i64(const char *name) {
+        union {
+            uint32_t u32;
+            uint64_t u64;
+        } value = { 0 };
+        size_t length = sizeof(value);
+
+        if (sysctlbyname(name, &value, &length, NULL, 0) != 0) {
+            return 0;
+        }
+
+        switch (length) {
+            case sizeof(uint32_t):
+                return value.u32;
+            case sizeof(uint64_t):
+                return (int64_t)value.u64;
+            default:
+                return 0;
+        }
+    }
+#endif
+
+/** Returns the CPU level 1 data cache line size, or 0 if it could not be queried. */
+static inline int64_t org_lwjgl_queryCacheLineSize(void) {
+#if defined(LWJGL_FREEBSD)
+    return sysctlbyname_i64("machdep.cacheline_size");
+#elif defined(LWJGL_LINUX)
+    return sysconf(_SC_LEVEL1_DCACHE_LINESIZE);
+#elif defined(LWJGL_MACOS)
+    return sysctlbyname_i64("hw.cachelinesize");
+#elif defined(LWJGL_WINDOWS)
+    DWORD byteSize = 0;
+    DWORD i;
+    SYSTEM_LOGICAL_PROCESSOR_INFORMATION *buffer;
+    int64_t fallback = 0;
+
+    if (GetLogicalProcessorInformation(NULL, &byteSize) || GetLastError() != ERROR_INSUFFICIENT_BUFFER || byteSize == 0) {
+        return 0;
+    }
+
+    buffer = (SYSTEM_LOGICAL_PROCESSOR_INFORMATION *)malloc(byteSize);
+    if (buffer == NULL) {
+        return 0;
+    }
+
+    if (!GetLogicalProcessorInformation(buffer, &byteSize)) {
+        free(buffer);
+        return 0;
+    }
+
+    for (i = 0; i < byteSize / sizeof(SYSTEM_LOGICAL_PROCESSOR_INFORMATION); i++) {
+        CACHE_DESCRIPTOR cache;
+
+        if (buffer[i].Relationship != RelationCache) {
+            continue;
+        }
+
+        cache = buffer[i].Cache;
+        if (cache.LineSize == 0) {
+            continue;
+        }
+
+        if (cache.Level == 1 && (cache.Type == CacheData || cache.Type == CacheUnified)) {
+            int64_t lineSize = cache.LineSize;
+            free(buffer);
+            return lineSize;
+        }
+
+        if (fallback == 0) {
+            fallback = cache.LineSize;
+        }
+    }
+
+    free(buffer);
+    return fallback;
+#else
+    return 0;
+#endif
+}
+
+#endif

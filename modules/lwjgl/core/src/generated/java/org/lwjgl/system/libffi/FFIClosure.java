@@ -47,19 +47,12 @@ public class FFIClosure extends Struct<FFIClosure> implements NativeResource {
         USER_DATA;
 
     static {
-        try (MemoryStack stack = stackPush()) {
-            IntBuffer offsets = stack.mallocInt(4);
-            SIZEOF = offsets(memAddress(offsets));
-
-            CIF = offsets.get(0);
-            FUN = offsets.get(1);
-            USER_DATA = offsets.get(2);
-
-            ALIGNOF = offsets.get(3);
-        }
+        SIZEOF = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)19 << 2));
+        CIF = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)15 << 2));
+        FUN = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)16 << 2));
+        USER_DATA = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)17 << 2));
+        ALIGNOF = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)18 << 2));
     }
-
-    private static native int offsets(long buffer);
 
     public FFIClosure(long address, @Nullable ByteBuffer container) {
         super(address, container);

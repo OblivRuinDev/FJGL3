@@ -11,27 +11,21 @@
  * License terms: https://www.lwjgl.org/license
  * MACHINE GENERATED FILE, DO NOT EDIT
  */
+
 #include "common_tools.h"
 #include <stddef.h>
-DISABLE_WARNINGS()
-#include "stb_truetype.h"
-ENABLE_WARNINGS()
+#include "nfd.h"
 #ifdef LWJGL_WINDOWS
     #define alignof __alignof
 #else
     #include <stdalign.h>
 #endif
 
-EXTERN_C_ENTER
+DISABLE_WARNINGS()
 
-JNIEXPORT jint JNICALL Java_org_lwjgl_stb_STBTTFontinfo_offsets(JNIEnv *__env, jclass clazz, jlong bufferAddress) {
-    jint *buffer = (jint *)(uintptr_t)bufferAddress;
+JNIEXPORT int32_t org_lwjgl_nfd_exports_int[2] = {
+    (jint)alignof(nfdpathsetenum_t),
+    (jint)sizeof(nfdpathsetenum_t),
+};
 
-    UNUSED_PARAMS(__env, clazz)
-
-    buffer[0] = alignof(stbtt_fontinfo);
-
-    return sizeof(stbtt_fontinfo);
-}
-
-EXTERN_C_EXIT
+ENABLE_WARNINGS()

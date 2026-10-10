@@ -13,6 +13,7 @@
  */
 
 #include "common_tools.h"
+#include <stddef.h>
 DISABLE_WARNINGS()
 #include "lwjgl_malloc.h"
 #define STBIW_MALLOC(sz)    org_lwjgl_malloc(sz)
@@ -27,6 +28,14 @@ DISABLE_WARNINGS()
 #endif
 #include "stb_image_write.h"
 ENABLE_WARNINGS()
+#ifdef LWJGL_WINDOWS
+    #define alignof __alignof
+#else
+    #include <stdalign.h>
+#endif
+DISABLE_WARNINGS()
+#include "stb_truetype.h"
+ENABLE_WARNINGS()
 
 DISABLE_WARNINGS()
 
@@ -35,6 +44,11 @@ JNIEXPORT void* org_lwjgl_stb_exports_address[4] = {
     (void*)(uintptr_t)(&stbi_write_force_png_filter),
     (void*)(uintptr_t)(&stbi_zlib_compress),
     (void*)(uintptr_t)(&stbi_write_tga_with_rle),
+};
+
+JNIEXPORT int32_t org_lwjgl_stb_exports_int[2] = {
+    (jint)alignof(stbtt_fontinfo),
+    (jint)sizeof(stbtt_fontinfo),
 };
 
 ENABLE_WARNINGS()

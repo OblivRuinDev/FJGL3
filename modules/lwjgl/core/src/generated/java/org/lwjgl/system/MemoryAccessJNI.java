@@ -40,12 +40,12 @@ final class MemoryAccessJNI {
 
     static {
         long __exports_address = org.lwjgl.system.Library.EXPORTS_ADDRESS;
-        malloc = memGetAddressAtIndex(__exports_address, 0);
-        calloc = memGetAddressAtIndex(__exports_address, 1);
-        realloc = memGetAddressAtIndex(__exports_address, 2);
-        free = memGetAddressAtIndex(__exports_address, 3);
-        aligned_alloc = memGetAddressAtIndex(__exports_address, 4);
-        aligned_free = memGetAddressAtIndex(__exports_address, 5);
+        malloc = memGetAddressAtIndex(__exports_address, 1);
+        calloc = memGetAddressAtIndex(__exports_address, 2);
+        realloc = memGetAddressAtIndex(__exports_address, 3);
+        free = memGetAddressAtIndex(__exports_address, 4);
+        aligned_alloc = memGetAddressAtIndex(__exports_address, 5);
+        aligned_free = memGetAddressAtIndex(__exports_address, 6);
     }
 
     private MemoryAccessJNI() {

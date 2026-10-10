@@ -136,9 +136,8 @@ public final class MemoryUtil {
         return pageSize;
     }
 
-    static native int ngetCacheLineSize();
     static int getCacheLineSize() {
-        int cacheLineSize = ngetCacheLineSize();
+        int cacheLineSize = memGetInt(Library.EXPORTS_INT + ((long)ExportTable.CACHE_LINE_SIZE << 2));
         if (cacheLineSize <= 0 || 4096 < cacheLineSize || (cacheLineSize & (cacheLineSize - 1)) != 0) {
             apiLog("Failed to query CPU cache line size: " + cacheLineSize);
             return Platform.get() == Platform.MACOSX && Platform.getArchitecture() == Platform.Architecture.ARM64 ? 128 : 64;

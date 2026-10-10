@@ -50,13 +50,13 @@ public class LibCStdio {
 
     static {
         long __exports_address = org.lwjgl.system.Library.EXPORTS_ADDRESS;
-        stdin = memGetAddressAtIndex(__exports_address, 6);
-        stdout = memGetAddressAtIndex(__exports_address, 7);
-        stderr = memGetAddressAtIndex(__exports_address, 8);
-        fscanf = memGetAddressAtIndex(__exports_address, 9);
-        sscanf = memGetAddressAtIndex(__exports_address, 10);
-        fprintf = memGetAddressAtIndex(__exports_address, 11);
-        snprintf = memGetAddressAtIndex(__exports_address, 12);
+        stdin = memGetAddressAtIndex(__exports_address, 7);
+        stdout = memGetAddressAtIndex(__exports_address, 8);
+        stderr = memGetAddressAtIndex(__exports_address, 9);
+        fscanf = memGetAddressAtIndex(__exports_address, 10);
+        sscanf = memGetAddressAtIndex(__exports_address, 11);
+        fprintf = memGetAddressAtIndex(__exports_address, 12);
+        snprintf = memGetAddressAtIndex(__exports_address, 13);
     }
 
     protected LibCStdio() {

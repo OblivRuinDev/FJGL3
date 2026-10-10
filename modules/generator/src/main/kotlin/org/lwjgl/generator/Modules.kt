@@ -997,15 +997,21 @@ private class JNILibraryWithInit constructor(
                 generateJavaPreamble()
                 println("Initializes the ${module.key} shared library.".toJavaDoc(indentation = ""))
                 val exports = GlobalExports.of(module, "")
-                val exportFields = exports.types.joinToString("") { type ->
-                    "\n\n    static final long EXPORTS_${type.name} = java.lang.foreign.SymbolLookup.loaderLookup().find(\"${exports.symbol(type)}\").orElseThrow().address();"
-                }
-                println(
-                    """${access.modifier}final class $className {
+                // Declare a base address field for every exported array type used by this module and resolve it once the library has been loaded. Unused
+                // types are not declared.
+                val exportTypes = exports.types
 
+print("${access.modifier}final class $className {\n")
+if (exportTypes.isNotEmpty()) {
+    for (type in exportTypes) {
+        print("    static final long EXPORTS_${type.name};\n")
+    }
+}
+print("""
     static {
         String libName = Platform.mapLibraryNameBundled(${libraryName ?: "\"fjgl_${module.key}\""});
-        Library.loadSystem($className.class, "${module.java}", libName);${if (setupAllocator) """
+        Library.loadSystem($className.class, "${module.java}", libName);""")
+if (setupAllocator) print("""
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(
@@ -1015,8 +1021,17 @@ private class JNILibraryWithInit constructor(
             allocator.getFree(),
             allocator.getAlignedAlloc(),
             allocator.getAlignedFree()
-        );""" else ""}
-    }${exportFields}
+        );""")
+if (exportTypes.isNotEmpty()) {
+    print("\n        var lookup = java.lang.foreign.SymbolLookup.loaderLookup();")
+    for (type in exportTypes) {
+        print("\n        EXPORTS_${type.name} = lookup.findOrThrow(\"${exports.symbol(type)}\").address();")
+    }
+}
+
+
+print("""
+    }
 
     private $className() {
     }
@@ -1034,7 +1049,8 @@ private class JNILibraryWithInit constructor(
         long aligned_free
     );""" else ""}
 
-}"""
+}
+"""
                 )
             }
 

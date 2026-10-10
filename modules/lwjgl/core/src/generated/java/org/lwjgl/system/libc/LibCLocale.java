@@ -47,12 +47,12 @@ public class LibCLocale {
 
     static {
         long __exports_int = org.lwjgl.system.Library.EXPORTS_INT;
-        LC_ALL = memGetInt(__exports_int + ((long)0 << 2));
-        LC_COLLATE = memGetInt(__exports_int + ((long)1 << 2));
-        LC_CTYPE = memGetInt(__exports_int + ((long)2 << 2));
-        LC_MONETARY = memGetInt(__exports_int + ((long)3 << 2));
-        LC_NUMERIC = memGetInt(__exports_int + ((long)4 << 2));
-        LC_TIME = memGetInt(__exports_int + ((long)5 << 2));
+        LC_ALL = memGetInt(__exports_int + ((long)1 << 2));
+        LC_COLLATE = memGetInt(__exports_int + ((long)2 << 2));
+        LC_CTYPE = memGetInt(__exports_int + ((long)3 << 2));
+        LC_MONETARY = memGetInt(__exports_int + ((long)4 << 2));
+        LC_NUMERIC = memGetInt(__exports_int + ((long)5 << 2));
+        LC_TIME = memGetInt(__exports_int + ((long)6 << 2));
     }
 
     protected LibCLocale() {

@@ -60,20 +60,19 @@ class GlobalExports(
             get() = CONTEXTS.values
     }
 
-    /** A registered array element: the C [statement] used verbatim and the [source] that registered it (kept for debugging). */
-    class Entry(val statement: String, val source: String) {
-        /**
-         * True when [statement] is a plain identifier, which may be a variable's value (for example `stdin`) rather than a constant expression. Such an array
-         * cannot be statically initialized and is filled when the library is loaded instead.
-         */
-        val isRuntime: Boolean
-            get() = BARE_IDENTIFIER.matches(statement)
-    }
+    /**
+     * A registered array element: the C [statement] used verbatim, the [source] that registered it (kept for debugging) and whether it is not a constant
+     * expression (for example the value of `stdin`) and must therefore be assigned when the library is loaded.
+     */
+    class Entry(val statement: String, val source: String, val isRuntime: Boolean = BARE_IDENTIFIER.matches(statement))
+
+    /** A manually registered symbol: the [type] of the array it was added to and the [index] of its value, exposed to Java through `ExportTable`. */
+    class ManualEntry(val type: ExportsType, val index: Int)
 
     private val entries = LinkedHashMap<ExportsType, MutableList<Entry>>()
 
-    /** The manually registered symbols, keyed by name, with the index of their address in the [ExportsType.ADDRESS] array. */
-    private val manual = LinkedHashMap<String, Int>()
+    /** The manually registered symbols, keyed by name. */
+    private val manual = LinkedHashMap<String, ManualEntry>()
 
     /**
      * The native preamble shared by all registered statements. Statements from several classes may reference different symbols, so every registering class
@@ -99,6 +98,11 @@ class GlobalExports(
         preamble.nativeImport(*files)
     }
 
+    /** Registers a native directive required by the registered statements (for example an `extern` declaration of a helper they call). */
+    fun nativeDirective(expression: String, beforeIncludes: Boolean = false) {
+        preamble.nativeDirective(expression, beforeIncludes)
+    }
+
     /**
      * Registers [statements] as elements of the array of the given [type]. The statements are emitted verbatim as array elements. Returns the index of every
      * registered element, in registration order.
@@ -119,17 +123,30 @@ class GlobalExports(
         return list.size - 1
     }
 
+    /** Registers [statements] with an explicit [runtime] flag, for values that are not constant expressions on every compiler (for example `offsetof`). */
+    @Synchronized
+    fun register(type: ExportsType, statements: List<String>, runtime: Boolean): IntArray {
+        val list = entries.getOrPut(type) { ArrayList() }
+        val base = list.size
+        statements.forEach { list.add(Entry(it, it, runtime)) }
+        return IntArray(statements.size) { base + it }
+    }
+
     /** Registers the given C address expressions in the [ExportsType.ADDRESS] array. */
     fun registerAddresses(vararg statements: String) = register(ExportsType.ADDRESS, *statements)
 
     /**
-     * Registers a manually named C symbol whose address goes into the [ExportsType.ADDRESS] array and returns its index. The index is exposed to Java as a
+     * Registers a manually named C [statement] as an element of the array of the given [type] and returns its index. The index is exposed to Java as a
      * compile-time constant through the generated `ExportTable` class, so callers do not hardcode an index that may change between builds.
+     *
+     * @param runtime `true` when [statement] is not a constant expression and must be assigned when the library is loaded
      */
     @Synchronized
-    fun registerManual(name: String, statement: String): Int {
-        val index = register(ExportsType.ADDRESS, name, statement)
-        manual[name] = index
+    fun registerManual(type: ExportsType, name: String, statement: String, runtime: Boolean = BARE_IDENTIFIER.matches(statement)): Int {
+        val list = entries.getOrPut(type) { ArrayList() }
+        val index = list.size
+        list.add(Entry(statement, name, runtime))
+        manual[name] = ManualEntry(type, index)
         return index
     }
 
@@ -140,8 +157,8 @@ class GlobalExports(
     val types: List<ExportsType>
         get() = entries.filterValues { it.isNotEmpty() }.keys.toList()
 
-    /** The manually registered symbols, keyed by name, with their index in the [ExportsType.ADDRESS] array. */
-    internal val manualSymbols: Map<String, Int>
+    /** The manually registered symbols, keyed by name. */
+    internal val manualSymbols: Map<String, ManualEntry>
         get() = manual
 
     fun PrintWriter.gen() {
@@ -191,14 +208,14 @@ class GlobalExports(
 
     /**
      * Generates the `ExportTable` Java class, which exposes the index of every manually registered symbol as a compile-time constant. The index is the position
-     * of the symbol's address in the exported address array ([symbol]`(ExportsType.ADDRESS)`).
+     * of the symbol's value in the exported array of its type.
      */
     fun PrintWriter.genExportTable() {
         print(HEADER)
         println("package ${module.packageName};\n")
-        println("/** The indices of manually registered C symbols in the exported address array of the ${module.key} library. */")
-        println("public final class ExportTable {\n")
-        manual.forEach { (name, index) -> println("${t}public static final int $name = $index;") }
+        println("/** The indices of manually registered C symbols in the exported arrays of the ${module.key} library. */")
+        println("final class ExportTable {\n")
+        manual.forEach { (name, entry) -> println("${t}static final int $name = ${entry.index}; // ${entry.type.name.lowercase()}") }
         println()
         println("${t}private ExportTable() {}")
         println("}")

@@ -19,6 +19,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 /** Initializes the nfd shared library. */
 final class LibNFD {
+    static final long EXPORTS_INT;
 
     static {
         String libName = Platform.mapLibraryNameBundled((Platform.get() == Platform.FREEBSD || Platform.get() == Platform.LINUX) && Configuration.NFD_LINUX_PORTAL.get(false) ? "fjgl_nfd_portal" : "fjgl_nfd");
@@ -33,6 +34,8 @@ final class LibNFD {
             allocator.getAlignedAlloc(),
             allocator.getAlignedFree()
         );
+        var lookup = java.lang.foreign.SymbolLookup.loaderLookup();
+        EXPORTS_INT = lookup.findOrThrow("org_lwjgl_nfd_exports_int").address();
     }
 
     private LibNFD() {

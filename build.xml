@@ -426,6 +426,11 @@
         </compileBinding>
 
         <antcall target="fixupCompile"/>
+
+        <!-- ExportTable provides compile-time constants only, so its class files are never loaded at runtime -->
+        <delete quiet="true">
+            <fileset dir="${bin.lwjgl}" includes="**/ExportTable.class"/>
+        </delete>
     </target>
     <target name="fixupCompile" description="Replaces the classes compiled by javac with the bytecode generated for the fake classes" depends="generate">
         <forEachModule>
@@ -1292,7 +1297,7 @@
             </quiet>
             <jar destfile="${release}/${module}/${module}-sources.jar" level="9">
                 <fileset dir="${module.lwjgl}/@{name}/src/main/java" includes="**" if:set="hasMain"/>
-                <fileset dir="${module.lwjgl}/@{name}/src/generated/java" includes="**"/>
+                <fileset dir="${module.lwjgl}/@{name}/src/generated/java" includes="**" excludes="**/ExportTable.java"/>
             </jar>
             <quiet>
                 <delete dir="${module.lwjgl}/@{name}/src/generated/java/META-INF" quiet="true"/>

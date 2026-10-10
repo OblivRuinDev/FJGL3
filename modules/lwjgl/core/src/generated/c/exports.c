@@ -16,10 +16,13 @@
     #define _CRT_SECURE_NO_WARNINGS
 #endif
 #include "common_tools.h"
+#include "org_lwjgl_system_MemoryUtil.h"
 #include <stdlib.h>
 #include <stdint.h>
 #include <locale.h>
 #include <stdio.h>
+#include <stddef.h>
+extern void JNICALL functionMissingAbort(void);
 #ifdef LWJGL_WINDOWS
     static void* __aligned_alloc(size_t alignment, size_t size) {
         return _aligned_malloc(size, alignment);
@@ -81,10 +84,20 @@ typedef void (*FFI_CLOSURE_FUN)(ffi_cif*, void*, void**, void*);
 #ifndef HAS_FFI_VFP
 #define FFI_VFP -1
 #endif
+#ifdef LWJGL_WINDOWS
+    #define alignof __alignof
+#else
+    #include <stdalign.h>
+#endif
+
+DISABLE_WARNINGS()
+#include "ffi.h"
+ENABLE_WARNINGS()
 
 DISABLE_WARNINGS()
 
-JNIEXPORT void* org_lwjgl_core_exports_address[34] = {
+JNIEXPORT void* org_lwjgl_core_exports_address[35] = {
+    (void*)(uintptr_t)(&functionMissingAbort),
     (void*)(uintptr_t)(&malloc),
     (void*)(uintptr_t)(&calloc),
     (void*)(uintptr_t)(&realloc),
@@ -121,13 +134,27 @@ JNIEXPORT void* org_lwjgl_core_exports_address[34] = {
     (void*)(uintptr_t)(&ffi_type_pointer),
 };
 
-JNIEXPORT int32_t org_lwjgl_core_exports_int[21] = {
+JNIEXPORT int32_t org_lwjgl_core_exports_int[35] = {
+    0,
     (jint)LC_ALL,
     (jint)LC_COLLATE,
     (jint)LC_CTYPE,
     (jint)LC_MONETARY,
     (jint)LC_NUMERIC,
     (jint)LC_TIME,
+    (jint)offsetof(ffi_cif, abi),
+    (jint)offsetof(ffi_cif, nargs),
+    (jint)offsetof(ffi_cif, arg_types),
+    (jint)offsetof(ffi_cif, rtype),
+    (jint)offsetof(ffi_cif, bytes),
+    (jint)offsetof(ffi_cif, flags),
+    (jint)alignof(ffi_cif),
+    (jint)sizeof(ffi_cif),
+    (jint)offsetof(ffi_closure, cif),
+    (jint)offsetof(ffi_closure, fun),
+    (jint)offsetof(ffi_closure, user_data),
+    (jint)alignof(ffi_closure),
+    (jint)sizeof(ffi_closure),
     (jint)FFI_WIN64,
     (jint)FFI_GNUW64,
     (jint)FFI_UNIX64,
@@ -153,8 +180,9 @@ ENABLE_WARNINGS()
 
 EXPORTS_INIT(org_lwjgl_core_exports_init) {
     DISABLE_WARNINGS()
-    org_lwjgl_core_exports_address[6] = (void*)(uintptr_t)(stdin);
-    org_lwjgl_core_exports_address[7] = (void*)(uintptr_t)(stdout);
-    org_lwjgl_core_exports_address[8] = (void*)(uintptr_t)(stderr);
+    org_lwjgl_core_exports_address[7] = (void*)(uintptr_t)(stdin);
+    org_lwjgl_core_exports_address[8] = (void*)(uintptr_t)(stdout);
+    org_lwjgl_core_exports_address[9] = (void*)(uintptr_t)(stderr);
+    org_lwjgl_core_exports_int[0] = (int32_t)org_lwjgl_queryCacheLineSize();
     ENABLE_WARNINGS()
 }

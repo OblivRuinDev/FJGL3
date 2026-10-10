@@ -35,14 +35,9 @@ public class STBTTFontinfo extends Struct<STBTTFontinfo> implements NativeResour
     static {
         LibSTB.initialize();
 
-        try (MemoryStack stack = stackPush()) {
-            IntBuffer offsets = stack.mallocInt(1);
-            SIZEOF = offsets(memAddress(offsets));
-            ALIGNOF = offsets.get(0);
-        }
+        SIZEOF = memGetInt(org.lwjgl.stb.LibSTB.EXPORTS_INT + ((long)1 << 2));
+        ALIGNOF = memGetInt(org.lwjgl.stb.LibSTB.EXPORTS_INT + ((long)0 << 2));
     }
-
-    private static native int offsets(long buffer);
 
     public STBTTFontinfo(long address, @Nullable ByteBuffer container) {
         super(address, container);

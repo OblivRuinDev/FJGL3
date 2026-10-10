@@ -190,12 +190,93 @@ class Struct(
 
     internal val members = ArrayList<StructMember>()
 
+    /**
+     * The C statements of this struct's layout constants, in the order they were written to the `offsets()` buffer: every member offset, then the alignment,
+     * then the size. All of them are compile-time constants, so they are exported instead of being computed by a JNI call.
+     */
+    private val layoutStatements: List<String> by lazy(LazyThreadSafetyMode.NONE) {
+        val statements = ArrayList<String>()
+        collectLayoutStatements(members, statements)
+        statements.add("(jint)alignof($nativeName)")
+        statements.add("(jint)sizeof($nativeName)")
+        statements
+    }
+
+    /** The indices of [layoutStatements] in the module's exported int array. */
+    private val layoutIndices: IntArray by lazy(LazyThreadSafetyMode.NONE) {
+        module.exports.register(ExportsType.INT, *layoutStatements.toTypedArray())
+    }
+
+    private var layoutPreambleMerged = false
+
+    /**
+     * Merges the struct's native preamble into the module's export context, so that the exported `offsetof`/`alignof`/`sizeof` expressions see the struct type
+     * and the required headers. This is done lazily (not when the indices are registered), because the module's class directives (for example the one that
+     * defines `FFI_STATIC_BUILD` before including `ffi.h`) must come first.
+     */
+    private fun mergeLayoutPreamble() {
+        if (layoutPreambleMerged)
+            return
+        layoutPreambleMerged = true
+
+        val layoutPreamble = Preamble()
+        layoutPreamble.nativeImport("<stddef.h>")
+        layoutPreamble.nativeDirective(
+            """#ifdef LWJGL_WINDOWS
+    #define alignof __alignof
+#else
+    #include <stdalign.h>
+#endif""",
+            false
+        )
+        layoutPreamble.addAll(preamble)
+
+        module.exports.preamble.addAll(layoutPreamble)
+    }
+
+    /** The Java expression that reads a layout constant from the module's exported int array. */
+    private fun layoutRead(index: Int) = "memGetInt($exportIntBase + ((long)$index << 2))"
+
+    /** The Java expression of the exported int array's base for this struct's module. */
+    private val exportIntBase: String
+        get() = if (module.path == "core")
+            "org.lwjgl.system.Library.EXPORTS_INT"
+        else
+            module.library?.className?.let { "${module.packageName}.$it.EXPORTS_INT" } ?: "org.lwjgl.system.Library.EXPORTS_INT"
+
+    /** Collects the member offset statements, mirroring the order of the members and the padding slots. */
+    private fun collectLayoutStatements(members: List<StructMember>, statements: MutableList<String>, prefix: String = "") {
+        members.forEach {
+            when {
+                it.name === ANONYMOUS && it.isNestedStruct ->
+                    collectLayoutStatements((it.nativeType as StructType).definition.members, statements, prefix) // recursion
+                it is StructMemberPadding ->
+                    statements.add("0") // padding occupies a slot but is never read
+                it.bits == -1 -> {
+                    statements.add("(jint)offsetof($nativeName, $prefix${if (it.has<NativeName>()) it.get<NativeName>().nativeName else it.name})")
+
+                    if (it.isNestedStruct) {
+                        val structType = it.nativeType as StructType
+                        if (structType.name === ANONYMOUS)
+                            collectLayoutStatements(structType.definition.members, statements, "$prefix${it.name}.") // recursion
+                    }
+                }
+            }
+        }
+    }
+
     internal fun init(setup: (Struct.() -> Unit)? = null): StructType {
         if (setup != null) {
             this.setup()
         }
         if (setup != null || nativeLayout) {
             Generator.register(this)
+        }
+        // Bitfields add virtual members; generate them before checking whether the struct uses the native layout.
+        generateBitfields()
+        if (nativeLayout || members.any { it.bits != -1 && it.getter == null }) {
+            // Register the layout constants eagerly, before the library class (which exposes the exported int array) is generated.
+            layoutIndices
         }
         return nativeType
     }
@@ -708,7 +789,13 @@ $indentation}"""
         throw IllegalArgumentException("$msg [${this@Struct.className}, member: $name]")
     }
 
+    private var bitfieldsGenerated = false
+
     private fun generateBitfields() {
+        if (bitfieldsGenerated)
+            return
+        bitfieldsGenerated = true
+
         var bitfieldIndex = 0
         var m = 0
         while (m < members.size) {
@@ -809,7 +896,7 @@ $indentation}"""
         val mallocable = mutableMembers().any() || usageOutput || (usageInput && !usageResultPointer)
         validate(mallocable)
 
-        val nativeLayout = !skipNative
+        val nativeLayout = this@Struct.nativeLayout || members.any { it.bits != -1 && it.getter == null } || members.isEmpty()
         if (nativeLayout) {
             if (module !== Module.CORE && !module.key.startsWith("core.")) {
                 checkNotNull(module.library) {
@@ -939,25 +1026,18 @@ $indentation}"""
                 // Member offset initialization
 
                 if (nativeLayout) {
+                    mergeLayoutPreamble()
                     if (module.library != null) {
                         print(
                         """
         ${module.library.expression(module)}""")
                     }
-                    print(
-                        """
-        try (MemoryStack stack = stackPush()) {
-            IntBuffer offsets = stack.mallocInt(${memberCount + 1});
-            SIZEOF = offsets(memAddress(offsets));
-
-"""
-                    )
-                    generateOffsetInit(true, members, indentation = "$t$t$t")
                     println(
                         """
-            ALIGNOF = offsets.get($memberCount);
-        }"""
+        SIZEOF = ${layoutRead(layoutIndices[memberCount + 1])};"""
                     )
+                    generateOffsetInit(true, members, indentation = "$t$t")
+                    println("${t}${t}ALIGNOF = ${layoutRead(layoutIndices[memberCount])};")
                 } else {
                     print(
                         """
@@ -977,6 +1057,7 @@ $indentation}"""
 
                 println("$t}")
             } else if (nativeLayout) {
+                mergeLayoutPreamble()
                 print(
                     """
     static {"""
@@ -991,20 +1072,11 @@ $indentation}"""
                     """
         ${module.library!!.expression(module)}
 
-        try (MemoryStack stack = stackPush()) {
-            IntBuffer offsets = stack.mallocInt(1);
-            SIZEOF = offsets(memAddress(offsets));
-            ALIGNOF = offsets.get(0);
-        }
+        SIZEOF = ${layoutRead(layoutIndices[1])};
+        ALIGNOF = ${layoutRead(layoutIndices[0])};
     }"""
                 )
             }
-
-            if (nativeLayout)
-                println(
-                    """
-    private static native int offsets(long buffer);"""
-                )
         }
 
         printCustomMethods(customMethods, static = true)
@@ -1406,7 +1478,12 @@ ${validations.joinToString("\n")}
                 index++
             } else if (it.bits == -1) {
                 val field = it.offsetField(parentField)
-                println("$indentation$field = ${if (nativeLayout) "offsets.get" else "layout.offsetof"}(${index++});")
+                if (nativeLayout)
+                    println("$indentation$field = ${layoutRead(layoutIndices[index])};")
+                else
+                    println("$indentation$field = layout.offsetof($index);")
+
+                index++
 
                 // Output nested fields
                 if (it.isNestedStructDefinition)
@@ -2303,7 +2380,9 @@ ${validations.joinToString("\n")}
         bufferMethodMap[javaType] ?: throw UnsupportedOperationException("Unsupported struct member java type: $className.${member.name} ($javaType)")
         }("
 
-    override val skipNative get() = !nativeLayout && members.isNotEmpty() && members.none { it.bits != -1 && it.getter == null }
+    override val skipNative get() =
+        (members.none { it.bits != -1 && it.getter == null } && (nativeLayout || members.isNotEmpty()))
+            || (members.isEmpty() && !virtual)
 
     override fun PrintWriter.generateNative() {
         print(HEADER)
@@ -2320,11 +2399,6 @@ ${validations.joinToString("\n")}
 
         println("""
 EXTERN_C_ENTER
-
-JNIEXPORT jint JNICALL Java_${nativeFileNameJNI}_offsets(JNIEnv *$JNIENV, jclass clazz, jlong bufferAddress) {
-    jint *buffer = (jint *)(uintptr_t)bufferAddress;
-
-    UNUSED_PARAMS($JNIENV, clazz)
 """)
 
         if (virtual) {
@@ -2337,45 +2411,11 @@ JNIEXPORT jint JNICALL Java_${nativeFileNameJNI}_offsets(JNIEnv *$JNIENV, jclass
             println("$t} $nativeName;\n")
         }
 
-        var index = 0
-        if (members.isNotEmpty()) {
-            index = generateNativeMembers(members)
-            if (index != 0) {
-                println()
-            }
-        }
-        print(
-            """    buffer[$index] = alignof($nativeName);
-
-    return sizeof($nativeName);
-}""")
         generateNativeGetters(members)
         generateNativeSetters(mutableMembers())
         println("""
 
 EXTERN_C_EXIT""")
-    }
-
-    private fun PrintWriter.generateNativeMembers(members: List<StructMember>, offset: Int = 0, prefix: String = ""): Int {
-        var index = offset
-        members.forEach {
-            if (it.name === ANONYMOUS && it.isNestedStruct) {
-                index = generateNativeMembers((it.nativeType as StructType).definition.members, index + 1, prefix) // recursion
-            } else if (it is StructMemberPadding) {
-                index++
-            } else if (it.bits == -1) {
-                println("${t}buffer[$index] = (jint)offsetof($nativeName, $prefix${if (it.has<NativeName>()) it.get<NativeName>().nativeName else it.name});")
-                index++
-
-                if (it.isNestedStruct) {
-                    // Output nested structs
-                    val structType = it.nativeType as StructType
-                    if (structType.name === ANONYMOUS)
-                        index = generateNativeMembers(structType.definition.members, index, prefix = "$prefix${it.name}.") // recursion
-                }
-            }
-        }
-        return index
     }
 
     private fun PrintWriter.generateNativeGetters(members: List<StructMember>, prefix: String = "") {

@@ -35,14 +35,9 @@ public class NFDPathSetEnum extends Struct<NFDPathSetEnum> implements NativeReso
     static {
         LibNFD.initialize();
 
-        try (MemoryStack stack = stackPush()) {
-            IntBuffer offsets = stack.mallocInt(1);
-            SIZEOF = offsets(memAddress(offsets));
-            ALIGNOF = offsets.get(0);
-        }
+        SIZEOF = memGetInt(org.lwjgl.util.nfd.LibNFD.EXPORTS_INT + ((long)1 << 2));
+        ALIGNOF = memGetInt(org.lwjgl.util.nfd.LibNFD.EXPORTS_INT + ((long)0 << 2));
     }
-
-    private static native int offsets(long buffer);
 
     public NFDPathSetEnum(long address, @Nullable ByteBuffer container) {
         super(address, container);

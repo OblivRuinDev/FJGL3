@@ -104,7 +104,7 @@ public final class ThreadLocalUtil {
     private static final int JNI_NATIVE_INTERFACE_FUNCTION_COUNT;
 
     /** A function to delegate to when an unsupported function is called. */
-    private static final long FUNCTION_MISSING_ABORT = getFunctionMissingAbort();
+    private static final long FUNCTION_MISSING_ABORT = memGetAddress(Library.EXPORTS_ADDRESS + ((long)ExportTable.FUNCTION_MISSING_ABORT << POINTER_SHIFT));
 
     /**
      * An array filled with {@link #FUNCTION_MISSING_ABORT}.
@@ -164,8 +164,6 @@ public final class ThreadLocalUtil {
     }
 
     private static native long getThreadJNIEnv();
-
-    private static native long getFunctionMissingAbort();
 
     private static native long setupEnvData(int functionCount);
 

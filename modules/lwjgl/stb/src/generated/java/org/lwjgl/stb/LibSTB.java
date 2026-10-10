@@ -19,6 +19,8 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 /** Initializes the stb shared library. */
 final class LibSTB {
+    static final long EXPORTS_ADDRESS;
+    static final long EXPORTS_INT;
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_stb");
@@ -33,9 +35,10 @@ final class LibSTB {
             allocator.getAlignedAlloc(),
             allocator.getAlignedFree()
         );
+        var lookup = java.lang.foreign.SymbolLookup.loaderLookup();
+        EXPORTS_ADDRESS = lookup.findOrThrow("org_lwjgl_stb_exports_address").address();
+        EXPORTS_INT = lookup.findOrThrow("org_lwjgl_stb_exports_int").address();
     }
-
-    static final long EXPORTS_ADDRESS = java.lang.foreign.SymbolLookup.loaderLookup().find("org_lwjgl_stb_exports_address").orElseThrow().address();
 
     private LibSTB() {
     }

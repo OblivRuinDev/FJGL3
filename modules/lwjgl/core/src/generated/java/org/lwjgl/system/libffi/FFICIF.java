@@ -53,22 +53,15 @@ public class FFICIF extends Struct<FFICIF> implements NativeResource {
         FLAGS;
 
     static {
-        try (MemoryStack stack = stackPush()) {
-            IntBuffer offsets = stack.mallocInt(7);
-            SIZEOF = offsets(memAddress(offsets));
-
-            ABI = offsets.get(0);
-            NARGS = offsets.get(1);
-            ARG_TYPES = offsets.get(2);
-            RTYPE = offsets.get(3);
-            BYTES = offsets.get(4);
-            FLAGS = offsets.get(5);
-
-            ALIGNOF = offsets.get(6);
-        }
+        SIZEOF = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)14 << 2));
+        ABI = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)7 << 2));
+        NARGS = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)8 << 2));
+        ARG_TYPES = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)9 << 2));
+        RTYPE = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)10 << 2));
+        BYTES = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)11 << 2));
+        FLAGS = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)12 << 2));
+        ALIGNOF = memGetInt(org.lwjgl.system.Library.EXPORTS_INT + ((long)13 << 2));
     }
-
-    private static native int offsets(long buffer);
 
     public FFICIF(long address, @Nullable ByteBuffer container) {
         super(address, container);

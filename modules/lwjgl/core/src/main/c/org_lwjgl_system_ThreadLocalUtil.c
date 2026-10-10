@@ -5,7 +5,7 @@
 #include "common_tools.h"
 #include <string.h>
 
-static void JNICALL functionMissingAbort(void) {
+void JNICALL functionMissingAbort(void) {
     jboolean async;
     JNIEnv* env = getEnv(&async);
 
@@ -29,12 +29,6 @@ JNIEXPORT jlong JNICALL Java_org_lwjgl_system_ThreadLocalUtil_getThreadJNIEnv(JN
     UNUSED_PARAM(clazz)
 
     return (jlong)(uintptr_t)env;
-}
-
-// getFunctionMissingAbort()J
-JNIEXPORT jlong JNICALL Java_org_lwjgl_system_ThreadLocalUtil_getFunctionMissingAbort(JNIEnv *env, jclass clazz) {
-    UNUSED_PARAMS(env, clazz)
-    return (jlong)(uintptr_t)functionMissingAbort;
 }
 
 extern EnvData* tlsCreateEnvDataWithCopy(JNIEnv* env);

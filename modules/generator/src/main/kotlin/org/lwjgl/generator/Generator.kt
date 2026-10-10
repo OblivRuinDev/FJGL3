@@ -91,7 +91,16 @@ fun main(args: Array<String>) {
 
             // Generate utility classes. These are auto-registered during the process above.
 
-            CountDownLatch(4).let { latch ->
+            // Structs are generated first: they may register export entries (their layout constants) that the generated library classes expose.
+            Generator.structs.forEach {
+                try {
+                    generateSimple(it) { target -> target.generateJava() }
+                } catch (e: Exception) {
+                    throw RuntimeException("Uncaught exception while generating struct: ${it.packageName}.${it.className}", e)
+                }
+            }
+
+            CountDownLatch(3).let { latch ->
                 fun submit(work: () -> Unit) {
                     pool.submit {
                         try {
@@ -113,7 +122,6 @@ fun main(args: Array<String>) {
                     }
                 }
 
-                submit { generateRegistered("struct", Generator.structs) }
                 submit { generateRegistered("callback", Generator.callbacks) }
                 submit { generateRegistered("custom class", Generator.customClasses) }
 

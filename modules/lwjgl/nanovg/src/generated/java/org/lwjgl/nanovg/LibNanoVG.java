@@ -19,6 +19,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 /** Initializes the nanovg shared library. */
 final class LibNanoVG {
+    static final long EXPORTS_ADDRESS;
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_nanovg");
@@ -33,9 +34,9 @@ final class LibNanoVG {
             allocator.getAlignedAlloc(),
             allocator.getAlignedFree()
         );
+        var lookup = java.lang.foreign.SymbolLookup.loaderLookup();
+        EXPORTS_ADDRESS = lookup.findOrThrow("org_lwjgl_nanovg_exports_address").address();
     }
-
-    static final long EXPORTS_ADDRESS = java.lang.foreign.SymbolLookup.loaderLookup().find("org_lwjgl_nanovg_exports_address").orElseThrow().address();
 
     private LibNanoVG() {
     }
