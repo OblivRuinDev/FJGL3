@@ -123,10 +123,6 @@ jobs:
           enableCrossOsArchive: true
           fail-on-cache-miss: true
 
-      - name: Generate bindings
-        run: ant -emacs clean-generated generate
-      - name: Build Java
-        run: ant -emacs compile
       - name: Restore native cache
         id: native-cache
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
@@ -317,10 +313,6 @@ jobs:
           enableCrossOsArchive: true
           fail-on-cache-miss: true
 
-      - name: Generate bindings
-        run: ant -emacs clean-generated generate
-      - name: Build Java
-        run: ant -emacs compile
       - name: Restore native cache
         id: native-cache
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
@@ -367,11 +359,6 @@ jobs:
           key: fjgl-compile-${{ github.sha }}
           enableCrossOsArchive: true
           fail-on-cache-miss: true
-
-      - name: Generate bindings
-        run: ant -emacs clean-generated generate
-      - name: Build Java
-        run: ant -emacs compile
 
       - name: Start VM
         uses: cross-platform-actions/action@24ef01df165c76df1ed2b9f9e9212e78dc2fc963 # v1.4.0
@@ -460,10 +447,6 @@ jobs:
           enableCrossOsArchive: true
           fail-on-cache-miss: true
 
-      - name: Generate bindings
-        run: ant -emacs clean-generated generate
-      - name: Build Java
-        run: ant -emacs compile
       - name: Restore native cache
         id: native-cache
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
