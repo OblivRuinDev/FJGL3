@@ -22,7 +22,7 @@ final class LibNanoVG {
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_nanovg");
-        Library.loadSystem(System::load, System::loadLibrary, LibNanoVG.class, "dev.oblivruin.fjgl.nanovg", libName);
+        Library.loadSystem(LibNanoVG.class, "dev.oblivruin.fjgl.nanovg", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

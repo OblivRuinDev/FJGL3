@@ -649,7 +649,7 @@ class NativeClass internal constructor(
                         else if (library.endsWith(");"))
                             "\n${t}static { $library }"
                         else
-                            "\n${t}static { Library.loadSystem(System::load, System::loadLibrary, $className.class, \"${module.java}\", Platform.mapLibraryNameBundled(\"$library\")); }"
+                            "\n${t}static { Library.loadSystem($className.class, \"${module.java}\", Platform.mapLibraryNameBundled(\"$library\")); }"
                     })
         }
         if (binding is SimpleBinding) {

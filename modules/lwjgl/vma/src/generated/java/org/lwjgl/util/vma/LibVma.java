@@ -22,7 +22,7 @@ final class LibVma {
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_vma");
-        Library.loadSystem(System::load, System::loadLibrary, LibVma.class, "dev.oblivruin.fjgl.vma", libName);
+        Library.loadSystem(LibVma.class, "dev.oblivruin.fjgl.vma", libName);
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(

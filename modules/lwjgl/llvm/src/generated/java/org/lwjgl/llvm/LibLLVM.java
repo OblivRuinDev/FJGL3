@@ -20,7 +20,7 @@ final class LibLLVM {
 
     static {
         String libName = Platform.mapLibraryNameBundled("fjgl_llvm");
-        Library.loadSystem(System::load, System::loadLibrary, LibLLVM.class, "dev.oblivruin.fjgl.llvm", libName);
+        Library.loadSystem(LibLLVM.class, "dev.oblivruin.fjgl.llvm", libName);
     }
 
     private LibLLVM() {

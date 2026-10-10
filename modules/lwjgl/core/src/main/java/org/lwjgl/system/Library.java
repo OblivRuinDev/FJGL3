@@ -87,6 +87,15 @@ public final class Library {
     /**
      * Loads a JNI shared library.
      *
+     * @see #loadSystem(Consumer, Consumer, Class, String, String)
+     */
+    public static void loadSystem(Class<?> context, String module, String name) throws UnsatisfiedLinkError {
+        loadSystem(System::load, System::loadLibrary, context, module, name);
+    }
+
+    /**
+     * Loads a JNI shared library.
+     *
      * @param load        should be the {@code System::load} expression. This ensures that {@code System.load} has the same caller as this method.
      * @param loadLibrary should be the {@code System::loadLibrary} expression. This ensures that {@code System.loadLibrary} has the same caller as this
      *                    method.

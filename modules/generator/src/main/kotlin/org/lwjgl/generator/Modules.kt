@@ -782,7 +782,7 @@ git branch -D @{-1}""")}"""}()}
         "org.lwjgl.util.tinyfd",
         "Contains bindings to ${url("https://sourceforge.net/projects/tinyfiledialogs/", "tiny file dialogs")}.",
         library = JNILibrary.simple(
-            """Library.loadSystem(System::load, System::loadLibrary, TinyFileDialogs.class, "org.lwjgl.tinyfd", Platform.mapLibraryNameBundled("fjgl_tinyfd"));
+            """Library.loadSystem(TinyFileDialogs.class, "org.lwjgl.tinyfd", Platform.mapLibraryNameBundled("fjgl_tinyfd"));
         if (Platform.get() == Platform.WINDOWS) {
             tinyfd_setGlobalInt("tinyfd_winUtf8", 1);
         }"""
@@ -1005,7 +1005,7 @@ private class JNILibraryWithInit constructor(
 
     static {
         String libName = Platform.mapLibraryNameBundled(${libraryName ?: "\"fjgl_${module.key}\""});
-        Library.loadSystem(System::load, System::loadLibrary, $className.class, "${module.java}", libName);${if (setupAllocator) """
+        Library.loadSystem($className.class, "${module.java}", libName);${if (setupAllocator) """
 
         MemoryAllocator allocator = getAllocator(Configuration.DEBUG_MEMORY_ALLOCATOR_INTERNAL.get(true));
         setupMalloc(
