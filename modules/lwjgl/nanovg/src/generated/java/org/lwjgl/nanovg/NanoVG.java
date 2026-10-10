@@ -97,14 +97,11 @@ public class NanoVG {
     static final long nvgDeleteInternal;
 
     static {
-        long[] __longs = new long[3];
-        initNative(__longs);
-        nvgCreateInternal = __longs[0];
-        nvgInternalParams = __longs[1];
-        nvgDeleteInternal = __longs[2];
+        long __exports_address = org.lwjgl.nanovg.LibNanoVG.EXPORTS_ADDRESS;
+        nvgCreateInternal = MemoryUtil.memGetAddressAtIndex(__exports_address, 0);
+        nvgInternalParams = MemoryUtil.memGetAddressAtIndex(__exports_address, 1);
+        nvgDeleteInternal = MemoryUtil.memGetAddressAtIndex(__exports_address, 2);
     }
-
-    private static native void initNative(long[] __longs);
 
     protected NanoVG() {
         throw new UnsupportedOperationException();

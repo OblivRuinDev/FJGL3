@@ -2686,6 +2686,12 @@ public final class MemoryUtil {
         else                 UNSAFE.putIntUnaligned (null, ptr, (int)value);
     }
 
+    public static long memGetAddressAtIndex(long ptr, int index) {
+        ptr += (index << POINTER_SHIFT);
+        return BITS64 ? UNSAFE.getLong(null, ptr)
+                      : UNSAFE.getInt (null, ptr) & 0xFFFFFFFFL;
+    }
+
     // Unsafe accessors that bypass buffer bounds & session liveness checks.
 
     public static byte memGet(ByteBuffer buffer, long offset)                                   { return memGetByte(memAddress0(buffer) + offset); }

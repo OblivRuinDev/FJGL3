@@ -23,6 +23,22 @@ DISABLE_WARNINGS()
 #include <stdio.h>
 ENABLE_WARNINGS()
 
+/*
+ * Declares a function that runs when the shared library is loaded. It is used to fill the exported constant arrays, whose values are not always constant
+ * expressions (for example the value of `stdin`), so they cannot be used as static initializers.
+ */
+#if defined(_MSC_VER) && !defined(__clang__)
+    #define EXPORTS_INIT(name) \
+        static void name(void); \
+        __pragma(section(".CRT$XCU", read)) \
+        __declspec(allocate(".CRT$XCU")) void (__cdecl *name##_guard)(void) = name; \
+        static void name(void)
+#else
+    #define EXPORTS_INIT(name) \
+        static void name(void) __attribute__((constructor)); \
+        static void name(void)
+#endif
+
 // Per-thread data, stored in a platform-specific thread-local.
 // Present in threads that had Callback invocations or OpenGL(ES) contexts made current.
 // Clean up is automatic via DllMain notifications (on Windows) or pthread destructors (on Linux/OSX).

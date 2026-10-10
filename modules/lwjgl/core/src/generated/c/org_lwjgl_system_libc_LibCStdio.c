@@ -51,17 +51,4 @@ JNIEXPORT jint JNICALL Java_org_lwjgl_system_libc_LibCStdio_nvsnprintf(JNIEnv *_
     return (jint)vsnprintf(buffer, (size_t)buf_size, format, VA_LIST_CAST(vlist));
 }
 
-JNIEXPORT void JNICALL Java_org_lwjgl_system_libc_LibCStdio_initNative(JNIEnv *__env, jclass clazz, jlongArray __longs) {
-    UNUSED_PARAM(clazz)
-    jlong *__longs_ptr = (*__env)->GetLongArrayElements(__env, __longs, NULL);
-    __longs_ptr[0] = (jlong)(uintptr_t)stdin;
-    __longs_ptr[1] = (jlong)(uintptr_t)stdout;
-    __longs_ptr[2] = (jlong)(uintptr_t)stderr;
-    __longs_ptr[3] = (jlong)(uintptr_t)fscanf;
-    __longs_ptr[4] = (jlong)(uintptr_t)sscanf;
-    __longs_ptr[5] = (jlong)(uintptr_t)fprintf;
-    __longs_ptr[6] = (jlong)(uintptr_t)snprintf;
-    (*__env)->ReleaseLongArrayElements(__env, __longs, __longs_ptr, 0);
-}
-
 EXTERN_C_EXIT

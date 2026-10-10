@@ -815,13 +815,4 @@ JNIEXPORT void JNICALL Java_org_lwjgl_nanovg_NanoVG_nnvgTextMetrics__J_3F_3F_3F(
     if (ascender != NULL) { (*__env)->ReleaseFloatArrayElements(__env, ascenderAddress, ascender, 0); }
 }
 
-JNIEXPORT void JNICALL Java_org_lwjgl_nanovg_NanoVG_initNative(JNIEnv *__env, jclass clazz, jlongArray __longs) {
-    UNUSED_PARAM(clazz)
-    jlong *__longs_ptr = (*__env)->GetLongArrayElements(__env, __longs, NULL);
-    __longs_ptr[0] = (jlong)(uintptr_t)&nvgCreateInternal;
-    __longs_ptr[1] = (jlong)(uintptr_t)&nvgInternalParams;
-    __longs_ptr[2] = (jlong)(uintptr_t)&nvgDeleteInternal;
-    (*__env)->ReleaseLongArrayElements(__env, __longs, __longs_ptr, 0);
-}
-
 EXTERN_C_EXIT

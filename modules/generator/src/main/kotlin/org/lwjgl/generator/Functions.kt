@@ -208,13 +208,33 @@ class Func(
             && !has<Code> { nativeBeforeCall != null || nativeCall != null || nativeAfterCall != null || isSpecial }
             && !has<Reuse>()
 
-    /** The Java primitive type of the array element that carries this function's value out of `initNative`. */
-    internal val initNativeArrayType: String
-        get() = returns.nativeMethodType(nullable = false)
-
     /** The name of the generated Java method that provides this function's value, used to replace the native call with an array read. */
     internal val initNativeCallName: String
         get() = if (isNativeOnly) name else "n$name"
+
+    /** The element type of the module's exported array that carries this function's value. */
+    internal val exportType: ExportsType
+        get() = if (returns.nativeType is PointerType<*>)
+            ExportsType.ADDRESS
+        else
+            when (returns.nativeMethodType(nullable = false)) {
+                "long"  -> ExportsType.LONG
+                "int"   -> ExportsType.INT
+                "short" -> ExportsType.SHORT
+                "byte"  -> ExportsType.BYTE
+                else    -> error("Unsupported export type for ${name}: ${returns.nativeMethodType(nullable = false)}")
+            }
+
+    /** The C statement used verbatim as an element of the module's exported array. */
+    internal fun generateExportStatement(): String {
+        val out = java.io.StringWriter()
+        PrintWriter(out).use { generateNativeValueExpression(it, asPointer = true) }
+        // An ADDRESS element is a `void*`, so redundant integer/address casts around the pointer expression are removed.
+        return if (exportType == ExportsType.ADDRESS)
+            out.toString().replace(EXPORT_ADDRESS_CAST, "")
+        else
+            out.toString()
+    }
 
     private val hasUnsafeMethod by lazy(LazyThreadSafetyMode.NONE) {
         hasFunctionAddressParam
@@ -764,7 +784,7 @@ class Func(
                 body = body.replace(RESULT, resultVar)
             }
             // Constant macros whose native value is provided by initNative read it from the merged array.
-            body = inlineGetterCalls(body, nativeClass.initNativeConstantReads)
+            body = inlineGetterCalls(body, nativeClass.exportConstantReads)
             writer.print(body)
         }
     }
@@ -2015,7 +2035,7 @@ class Func(
      * Emits the C expression that produces the value returned by the native function. It is the single implementation shared by the JNI wrapper and the
      * merged `initNative` initializer, so both sides use the same semantics.
      */
-    internal fun generateNativeValueExpression(writer: PrintWriter) {
+    internal fun generateNativeValueExpression(writer: PrintWriter, asPointer: Boolean = false) {
         val custom = if (has<Code>()) get<Code>().nativeValue else null
         with(writer) {
             if (custom != null) {
@@ -2025,7 +2045,7 @@ class Func(
             if (!returns.isStructValue && !returns.isVoid) {
                 if (returns.jniFunctionType != returns.toNativeType(nativeClass.binding))
                     print("(${returns.jniFunctionType})")
-                if (returns.nativeType is PointerType<*> && nativeClass.binding == null)
+                if (returns.nativeType is PointerType<*> && nativeClass.binding == null && !asPointer)
                     print("(uintptr_t)")
                 if (has<Address>())
                     print('&')
@@ -2284,3 +2304,6 @@ class Func(
     }
 
 }
+
+/** Leading integer/address casts that are redundant when a pointer expression is stored in a `void*` exported array element. */
+private val EXPORT_ADDRESS_CAST = Regex("""^(?:\((?:jlong|uintptr_t)\))+""")

@@ -18,7 +18,6 @@ import java.nio.file.*
 import java.nio.file.attribute.*
 import java.util.*
 import java.util.concurrent.*
-import java.util.concurrent.atomic.*
 import kotlin.math.*
 
 /*
@@ -64,12 +63,14 @@ fun main(args: Array<String>) {
         try {
             val errorQueue = ConcurrentLinkedQueue<Throwable>()
 
-            Module.values().let { modules ->
-                val latch = CountDownLatch(modules.size)
-                modules.forEach {
+            // Entries that share a physical module (e.g. CORE, CORE_LIBC, CORE_LIBFFI) are processed sequentially, so that the order in which they register
+            // their exported constants (and therefore the exported array indices) is deterministic.
+            Module.values().groupBy { it.path }.values.let { groups ->
+                val latch = CountDownLatch(groups.size)
+                groups.forEach { group ->
                     pool.submit {
                         try {
-                            this.generateModule(it)
+                            group.forEach { this.generateModule(it) }
                         } catch (t: Throwable) {
                             errorQueue.add(t)
                         }
@@ -131,6 +132,13 @@ fun main(args: Array<String>) {
             // Write the real bytecode of the fake classes (sources whose .class files differ from what javac produces).
             try {
                 FakeGeneratorTarget.doGen(this.moduleRoot)
+            } catch (t: Throwable) {
+                errorQueue.add(t)
+            }
+
+            // Write the global exports of every module that registered values.
+            try {
+                generateExports()
             } catch (t: Throwable) {
                 errorQueue.add(t)
             }
@@ -328,7 +336,7 @@ class Generator(internal val moduleRoot: String) {
                     out.generateNative()
                 }
             }
-        } else
+        } else if (nativeClass.exportEntries.isEmpty())
             nativeClass.nativeDirectivesWarning()
     }
 
@@ -373,6 +381,33 @@ class Generator(internal val moduleRoot: String) {
         val targetFile =
             "${target.nativeSubPath.let { if (it.isEmpty()) "" else "$it/" }}${target.nativeFileName}.${if (target.cpp) "cpp" else "c"}"
         generate(Paths.get("$moduleRoot/${target.module.path}/src/generated/c/$targetFile"))
+    }
+
+    /** Writes the exported C arrays of every enabled module that registered values. */
+    internal fun generateExports() {
+        GlobalExports.contexts.forEach { exports ->
+            if (!exports.module.enabled || exports.isEmpty)
+                return@forEach
+
+            val subPath = exports.nativeSubPath.let { if (it.isEmpty()) "" else "$it/" }
+            val file = Paths.get("$moduleRoot/${exports.module.path}/src/generated/c/$subPath${exports.fileName}.c")
+            ensurePath(file)
+
+            val baos = ByteArrayOutputStream(8 * 1024)
+            PrintWriter(OutputStreamWriter(baos, Charsets.UTF_8)).use { out -> with(exports) { out.gen() } }
+            val after = baos.toByteArray()
+
+            if (Files.isRegularFile(file)) {
+                val before = readFile(file)
+                if (before.remaining() == after.size && (0 until before.limit()).all { before.get(it) == after[it] })
+                    return@forEach
+
+                println("\tUPDATING EXPORTS: $file")
+            } else
+                println("\tWRITING EXPORTS: $file")
+
+            Files.write(file, after)
+        }
     }
 
 }

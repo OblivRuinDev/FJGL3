@@ -38,8 +38,8 @@ val stdio = "LibCStdio".nativeClass(Module.CORE_LIBC) {
         FILE.p("stream")
     )
 
-    macro..opaque_p("fscanf", void())
-    macro..opaque_p("sscanf", void())
+    macro..Address..opaque_p("fscanf", void())
+    macro..Address..opaque_p("sscanf", void())
 
     int(
         "vsscanf",
@@ -49,8 +49,8 @@ val stdio = "LibCStdio".nativeClass(Module.CORE_LIBC) {
         va_list("vlist")
     )
 
-    macro..opaque_p("fprintf", void())
-    macro..opaque_p("snprintf", void())
+    macro..Address..opaque_p("fprintf", void())
+    macro..Address..opaque_p("snprintf", void())
 
     int(
         "vsnprintf",

@@ -130,14 +130,4 @@ JNIEXPORT jint JNICALL Java_org_lwjgl_stb_STBImageWrite_nstbi_1write_1hdr_1to_1f
     return __result;
 }
 
-JNIEXPORT void JNICALL Java_org_lwjgl_stb_STBImageWrite_initNative(JNIEnv *__env, jclass clazz, jlongArray __longs) {
-    UNUSED_PARAM(clazz)
-    jlong *__longs_ptr = (*__env)->GetLongArrayElements(__env, __longs, NULL);
-    __longs_ptr[0] = (jlong)(uintptr_t)&stbi_write_png_compression_level;
-    __longs_ptr[1] = (jlong)(uintptr_t)&stbi_write_force_png_filter;
-    __longs_ptr[2] = (jlong)(uintptr_t)&stbi_zlib_compress;
-    __longs_ptr[3] = (jlong)(uintptr_t)&stbi_write_tga_with_rle;
-    (*__env)->ReleaseLongArrayElements(__env, __longs, __longs_ptr, 0);
-}
-
 EXTERN_C_EXIT

@@ -40,15 +40,12 @@ public class STBImageWrite {
     public static final IntBuffer stbi_write_tga_with_rle;
 
     static {
-        long[] __longs = new long[4];
-        initNative(__longs);
-        stbi_write_png_compression_level = memIntBuffer(__longs[0], 1);
-        stbi_write_force_png_filter = memIntBuffer(__longs[1], 1);
-        stbi_zlib_compress = memPointerBuffer(__longs[2], 1);
-        stbi_write_tga_with_rle = memIntBuffer(__longs[3], 1);
+        long __exports_address = org.lwjgl.stb.LibSTB.EXPORTS_ADDRESS;
+        stbi_write_png_compression_level = memIntBuffer(MemoryUtil.memGetAddressAtIndex(__exports_address, 0), 1);
+        stbi_write_force_png_filter = memIntBuffer(MemoryUtil.memGetAddressAtIndex(__exports_address, 1), 1);
+        stbi_zlib_compress = memPointerBuffer(MemoryUtil.memGetAddressAtIndex(__exports_address, 2), 1);
+        stbi_write_tga_with_rle = memIntBuffer(MemoryUtil.memGetAddressAtIndex(__exports_address, 3), 1);
     }
-
-    private static native void initNative(long[] __longs);
 
     protected STBImageWrite() {
         throw new UnsupportedOperationException();

@@ -18,6 +18,7 @@ val MemoryAccessJNI = "MemoryAccessJNI".nativeClass(Module.CORE) {
         "<stdlib.h>",
         "<stdint.h>"
     )
+    javaImport("static org.lwjgl.system.MemoryUtil.*")
 
     access = Access.INTERNAL
 

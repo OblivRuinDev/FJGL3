@@ -35,6 +35,8 @@ final class LibSTB {
         );
     }
 
+    static final long EXPORTS_ADDRESS = java.lang.foreign.SymbolLookup.loaderLookup().find("org_lwjgl_stb_exports_address").orElseThrow().address();
+
     private LibSTB() {
     }
 

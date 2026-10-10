@@ -35,6 +35,8 @@ final class LibNanoVG {
         );
     }
 
+    static final long EXPORTS_ADDRESS = java.lang.foreign.SymbolLookup.loaderLookup().find("org_lwjgl_nanovg_exports_address").orElseThrow().address();
+
     private LibNanoVG() {
     }
 

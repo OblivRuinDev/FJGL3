@@ -93,6 +93,24 @@ internal class Preamble {
         nativeDirectives.add(NativeDefine(expression, beforeIncludes))
     }
 
+    /** Merges [other] into this preamble, skipping imports and directives that are already present. */
+    internal fun addAll(other: Preamble) {
+        other.nativeImports.forEach { file ->
+            if (file !in nativeImports) {
+                if (nativeImports === EMPTY_IMPORTS)
+                    nativeImports = ArrayList()
+                nativeImports.add(file)
+            }
+        }
+        other.nativeDirectives.forEach { define ->
+            if (define !in nativeDirectives) {
+                if (nativeDirectives === EMPTY_DIRECTIVES)
+                    nativeDirectives = ArrayList()
+                nativeDirectives.add(define)
+            }
+        }
+    }
+
     fun printJava(writer: PrintWriter) {
         if (javaImports.isEmpty())
             return
@@ -111,22 +129,22 @@ internal class Preamble {
         writer.println()
     }
 
-    internal fun printNative(writer: PrintWriter) {
+    internal fun printNative(writer: PrintWriter, transform: (String) -> String = { it }) {
         nativeDirectives
             .filter { (_, beforeIncludes) -> beforeIncludes }
             .forEach { (expression) ->
-                writer.println(expression)
+                writer.println(transform(expression))
             }
 
         writer.println("#include \"common_tools.h\"")
         nativeImports.forEach {
-            writer.println("#include $it")
+            writer.println(transform("#include $it"))
         }
 
         nativeDirectives
             .filter { (_, beforeIncludes) -> !beforeIncludes }
             .forEach { (expression) ->
-                writer.println(expression)
+                writer.println(transform(expression))
             }
     }
 

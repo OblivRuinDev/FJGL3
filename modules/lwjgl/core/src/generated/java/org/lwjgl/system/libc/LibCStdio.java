@@ -49,18 +49,15 @@ public class LibCStdio {
     public static final long snprintf;
 
     static {
-        long[] __longs = new long[7];
-        initNative(__longs);
-        stdin = __longs[0];
-        stdout = __longs[1];
-        stderr = __longs[2];
-        fscanf = __longs[3];
-        sscanf = __longs[4];
-        fprintf = __longs[5];
-        snprintf = __longs[6];
+        long __exports_address = org.lwjgl.system.Library.EXPORTS_ADDRESS;
+        stdin = MemoryUtil.memGetAddressAtIndex(__exports_address, 6);
+        stdout = MemoryUtil.memGetAddressAtIndex(__exports_address, 7);
+        stderr = MemoryUtil.memGetAddressAtIndex(__exports_address, 8);
+        fscanf = MemoryUtil.memGetAddressAtIndex(__exports_address, 9);
+        sscanf = MemoryUtil.memGetAddressAtIndex(__exports_address, 10);
+        fprintf = MemoryUtil.memGetAddressAtIndex(__exports_address, 11);
+        snprintf = MemoryUtil.memGetAddressAtIndex(__exports_address, 12);
     }
-
-    private static native void initNative(long[] __longs);
 
     protected LibCStdio() {
         throw new UnsupportedOperationException();

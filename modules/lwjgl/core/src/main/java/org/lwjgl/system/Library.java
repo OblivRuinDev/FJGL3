@@ -8,6 +8,7 @@ import org.jspecify.annotations.*;
 import org.lwjgl.*;
 
 import java.io.*;
+import java.lang.foreign.*;
 import java.lang.reflect.*;
 import java.net.*;
 import java.nio.channels.*;
@@ -40,6 +41,15 @@ public final class Library {
 
     private static final String EXPECTED_MANIFEST_PLATFORM =
         Platform.get().name().toLowerCase() + '/' + Platform.getArchitecture().name().toLowerCase();
+    /**
+     * The addresses of the core library's exported constant arrays, resolved once when the library is loaded. A type that is not used by any core class
+     * resolves to {@code 0}.
+     */
+    public static final long EXPORTS_ADDRESS;
+    //public static final long EXPORTS_LONG;
+    public static final long EXPORTS_INT;
+    public static final long EXPORTS_SHORT;
+    //public static final long EXPORTS_BYTE;
 
     static {
         if (DEBUG) {
@@ -53,6 +63,13 @@ public final class Library {
         }
 
         loadSystem("dev.oblivruin.fjgl", JNI_LIBRARY_NAME);
+
+        var lookup = SymbolLookup.loaderLookup();
+        EXPORTS_ADDRESS = lookup.findOrThrow("org_lwjgl_core_exports_address").address();
+        //EXPORTS_LONG    = lookup.findOrThrow("org_lwjgl_core_exports_long").address();
+        EXPORTS_INT     = lookup.findOrThrow("org_lwjgl_core_exports_int").address();
+        EXPORTS_SHORT   = lookup.findOrThrow("org_lwjgl_core_exports_short").address();
+        //EXPORTS_BYTE    = lookup.findOrThrow("org_lwjgl_core_exports_byte").address();
     }
 
     private Library() {}

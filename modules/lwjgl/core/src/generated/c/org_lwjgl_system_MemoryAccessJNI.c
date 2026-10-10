@@ -34,16 +34,4 @@
 
 EXTERN_C_ENTER
 
-JNIEXPORT void JNICALL Java_org_lwjgl_system_MemoryAccessJNI_initNative(JNIEnv *__env, jclass clazz, jlongArray __longs) {
-    UNUSED_PARAM(clazz)
-    jlong *__longs_ptr = (*__env)->GetLongArrayElements(__env, __longs, NULL);
-    __longs_ptr[0] = (jlong)(uintptr_t)&malloc;
-    __longs_ptr[1] = (jlong)(uintptr_t)&calloc;
-    __longs_ptr[2] = (jlong)(uintptr_t)&realloc;
-    __longs_ptr[3] = (jlong)(uintptr_t)&free;
-    __longs_ptr[4] = (jlong)(uintptr_t)&__aligned_alloc;
-    __longs_ptr[5] = (jlong)(uintptr_t)&__aligned_free;
-    (*__env)->ReleaseLongArrayElements(__env, __longs, __longs_ptr, 0);
-}
-
 EXTERN_C_EXIT

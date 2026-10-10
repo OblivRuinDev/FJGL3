@@ -922,6 +922,13 @@ git branch -D @{-1}""")}"""}()}
             }
         }
 
+    /**
+     * The default [GlobalExports] of the physical module. All `CORE_*` entries share the same `core` library, so they share the same instance. Additional
+     * contexts are created by classes generated in a platform-specific native sub-path or explicitly by a template.
+     */
+    val exports: GlobalExports
+        get() = GlobalExports.of(this, "")
+
     @Suppress("LeakingThis")
     private val CALLBACK_RECEIVER = ANONYMOUS.nativeClass(this)
 
@@ -943,9 +950,15 @@ internal interface JNILibrary {
 
     fun expression(module: Module): String
     fun configure(module: Module)
+
+    /** The simple name of the generated library class, or `null` if the module has no generated library class. */
+    val className: String?
 }
 
 private class JNILibrarySimple(private val expression: String?) : JNILibrary {
+    override val className: String?
+        get() = null
+
     override fun expression(module: Module) = if (expression != null)
         expression
     else
@@ -954,7 +967,7 @@ private class JNILibrarySimple(private val expression: String?) : JNILibrary {
 }
 
 private class JNILibraryWithInit constructor(
-    private val className: String,
+    override val className: String,
     private val libraryName: String?,
     private val custom: Boolean,
     private val setupAllocator: Boolean,
@@ -983,6 +996,10 @@ private class JNILibraryWithInit constructor(
             override fun PrintWriter.generateJava() {
                 generateJavaPreamble()
                 println("Initializes the ${module.key} shared library.".toJavaDoc(indentation = ""))
+                val exports = GlobalExports.of(module, "")
+                val exportFields = exports.types.joinToString("") { type ->
+                    "\n\n    static final long EXPORTS_${type.name} = java.lang.foreign.SymbolLookup.loaderLookup().find(\"${exports.symbol(type)}\").orElseThrow().address();"
+                }
                 println(
                     """${access.modifier}final class $className {
 
@@ -999,7 +1016,7 @@ private class JNILibraryWithInit constructor(
             allocator.getAlignedAlloc(),
             allocator.getAlignedFree()
         );""" else ""}
-    }
+    }${exportFields}
 
     private $className() {
     }

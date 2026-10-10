@@ -46,17 +46,14 @@ public class LibCLocale {
     public static final int LC_TIME;
 
     static {
-        int[] __ints = new int[6];
-        initNative(__ints);
-        LC_ALL = __ints[0];
-        LC_COLLATE = __ints[1];
-        LC_CTYPE = __ints[2];
-        LC_MONETARY = __ints[3];
-        LC_NUMERIC = __ints[4];
-        LC_TIME = __ints[5];
+        long __exports_int = org.lwjgl.system.Library.EXPORTS_INT;
+        LC_ALL = memGetInt(__exports_int + ((long)0 << 2));
+        LC_COLLATE = memGetInt(__exports_int + ((long)1 << 2));
+        LC_CTYPE = memGetInt(__exports_int + ((long)2 << 2));
+        LC_MONETARY = memGetInt(__exports_int + ((long)3 << 2));
+        LC_NUMERIC = memGetInt(__exports_int + ((long)4 << 2));
+        LC_TIME = memGetInt(__exports_int + ((long)5 << 2));
     }
-
-    private static native void initNative(int[] __ints);
 
     protected LibCLocale() {
         throw new UnsupportedOperationException();

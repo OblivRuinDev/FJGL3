@@ -37,17 +37,14 @@ final class MemoryAccessJNI {
     static final long aligned_free;
 
     static {
-        long[] __longs = new long[6];
-        initNative(__longs);
-        malloc = __longs[0];
-        calloc = __longs[1];
-        realloc = __longs[2];
-        free = __longs[3];
-        aligned_alloc = __longs[4];
-        aligned_free = __longs[5];
+        long __exports_address = org.lwjgl.system.Library.EXPORTS_ADDRESS;
+        malloc = MemoryUtil.memGetAddressAtIndex(__exports_address, 0);
+        calloc = MemoryUtil.memGetAddressAtIndex(__exports_address, 1);
+        realloc = MemoryUtil.memGetAddressAtIndex(__exports_address, 2);
+        free = MemoryUtil.memGetAddressAtIndex(__exports_address, 3);
+        aligned_alloc = MemoryUtil.memGetAddressAtIndex(__exports_address, 4);
+        aligned_free = MemoryUtil.memGetAddressAtIndex(__exports_address, 5);
     }
-
-    private static native void initNative(long[] __longs);
 
     private MemoryAccessJNI() {
         throw new UnsupportedOperationException();

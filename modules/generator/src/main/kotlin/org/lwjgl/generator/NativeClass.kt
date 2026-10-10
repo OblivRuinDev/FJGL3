@@ -202,43 +202,97 @@ class NativeClass internal constructor(
     /** The local variables declared in the class initializer, in declaration order: name -> (type, expression). */
     private val cinitVariables = LinkedHashMap<String, Pair<String, String>>()
 
-    /** A constant getter that is merged into the single `initNative` JNI call, with the array type and index of its value. */
-    internal class InitNativeEntry(val func: Func, val arrayType: String, val index: Int)
+    /** A constant getter that is exported in the module's C arrays, with the element type and index of its value. */
+    internal class ExportEntry(val func: Func, val type: ExportsType, val index: Int)
 
-    /** The merged constant getters, in declaration order. Java and C generation both read this same list, so their order and indices agree. */
-    internal val initNativeEntries: List<InitNativeEntry> by lazy(LazyThreadSafetyMode.NONE) {
-        val counts = HashMap<String, Int>()
-        // Filter the original functions, not genFunctions, which may also contain the array overloads added by registerFunctions().
-        _functions.values.filter { it.isInitNativeCandidate }.map { func ->
-            val arrayType = func.initNativeArrayType
-            val index = counts.getOrDefault(arrayType, 0)
-            counts[arrayType] = index + 1
-            InitNativeEntry(func, arrayType, index)
+    /**
+     * The exported constant getters of this class, in declaration order. Java and C generation both read this same list, so their order and indices agree.
+     *
+     * <p>It is populated in [registerFunctions], which always runs (even when this class's Java output is up to date), so the module's C file is always
+     * complete.</p>
+     */
+    internal var exportEntries: List<ExportEntry> = emptyList()
+        private set
+
+    /** The [GlobalExports] this class registers into. Classes in a native sub-path get their own context, because their C file has its own preamble. */
+    private val exportsContext: GlobalExports
+        get() = GlobalExports.of(module, nativeSubPath)
+
+    /** Registers this class's constant getters into the module's exported arrays and records their indices. */
+    private fun registerExports() {
+        val candidates = _functions.values.filter { it.isInitNativeCandidate }
+        if (candidates.isEmpty())
+            return
+
+        val context = exportsContext
+
+        val entries = ArrayList<ExportEntry>(candidates.size)
+        synchronized(context) {
+            // The exported statements may reference symbols that require this class's native preamble (imports and directives).
+            context.preamble.addAll(preamble)
+
+            candidates.forEach { func ->
+                val type = func.exportType
+                entries += ExportEntry(func, type, context.register(type, func.name, func.generateExportStatement()))
+            }
         }
+        exportEntries = entries
     }
 
-    /** The primitive array parameters of `initNative`, in first-appearance order, with their element count. */
-    private val initNativeArrays: List<Pair<String, Int>> by lazy(LazyThreadSafetyMode.NONE) {
-        val arrays = LinkedHashMap<String, Int>()
-        initNativeEntries.forEach { arrays.merge(it.arrayType, 1, Int::plus) }
-        arrays.entries.map { it.key to it.value }
+    /** The exported array types used by this class, in first-appearance order. */
+    private val exportTypes: List<ExportsType> by lazy(LazyThreadSafetyMode.NONE) {
+        val types = LinkedHashSet<ExportsType>()
+        exportEntries.forEach { types.add(it.type) }
+        types.toList()
+    }
+
+    /** The Java expression that reads the address of the module's exported array of the given [type]. */
+    private fun exportLookup(type: ExportsType): String {
+        val holder = exportsHolderClass()
+        if (holder != null)
+            return "$holder.EXPORTS_${type.name}"
+
+        // No library class holds this context (for example a platform-specific sub-path), so resolve the symbol directly.
+        val symbol = exportsContext.symbol(type)
+        return "java.lang.foreign.SymbolLookup.loaderLookup().find(\"$symbol\").orElseThrow().address()"
+    }
+
+    /** The qualified name of the library class that stores this context's base addresses, or `null` when the context has no such class. */
+    private fun exportsHolderClass(): String? {
+        // Platform-specific sub-paths have their own symbol, which is absent on other platforms, so they resolve directly.
+        if (exportsContext.nativeSubPath.isNotEmpty())
+            return null
+
+        return if (module.path == "core")
+            "org.lwjgl.system.Library"
+        else
+            module.library?.className?.let { "${module.packageName}.$it" }
+    }
+
+    /** The Java expression that reads the value at [index] from the module's exported array of the given [type]. */
+    private fun exportRead(type: ExportsType, index: Int): String = when (type) {
+        ExportsType.ADDRESS -> "memGetAddressAtIndex(__exports_address, $index)"
+        ExportsType.LONG    -> "memGetLong(__exports_long + ((long)$index << 3))"
+        ExportsType.INT     -> "memGetInt(__exports_int + ((long)$index << 2))"
+        ExportsType.SHORT   -> "memGetShort(__exports_short + ((long)$index << 1))"
+        ExportsType.BYTE    -> "memGetByte(__exports_byte + (long)$index)"
     }
 
     /**
-     * The replacements that read a constant macro's value from the merged array, keyed by the generated native method name. The body of a constant macro
-     * calls its native method, which is replaced by the array read.
+     * The replacements that read a constant macro's value from the module's exported array, keyed by the generated native method name. The body of a constant
+     * macro calls its native method, which is replaced by the array read.
      */
-    internal val initNativeConstantReads: Map<String, String> by lazy(LazyThreadSafetyMode.NONE) {
-        initNativeEntries
+    internal val exportConstantReads: Map<String, String> by lazy(LazyThreadSafetyMode.NONE) {
+        exportEntries
             .filter { it.func.has<Macro> { constant } }
-            .associate { it.func.initNativeCallName to "${initNativeArrayName(it.arrayType)}[${it.index}]" }
+            .associate { it.func.initNativeCallName to exportRead(it.type, it.index) }
     }
 
-    /** The replacements that read a private constant getter's value from the merged array, keyed by the getter's Java method name. */
-    internal val initNativeGetterReads: Map<String, String> by lazy(LazyThreadSafetyMode.NONE) {
-        initNativeEntries
+    /** The replacements that read a private constant getter's value from the module's exported array, keyed by the getter's Java method name. */
+    internal val exportGetterReads: Map<String, String> by lazy(LazyThreadSafetyMode.NONE) {
+        exportEntries
             .filter { !it.func.has<Macro> { constant } }
-            .associate { it.func.name to "${initNativeArrayName(it.arrayType)}[${it.index}]" }
+            .associate { it.func.name to exportRead(it.type, it.index) }
     }
 
     private val _functions = LinkedHashMap<String, Func>()
@@ -292,6 +346,8 @@ class NativeClass internal constructor(
     }
 
     internal fun registerFunctions(generateArrayOverloads: Boolean) {
+        registerExports()
+
         functions.asSequence()
             .filter { it.critical && !it.has<Macro>() }
             .forEach {
@@ -636,7 +692,7 @@ class NativeClass internal constructor(
             emptyMap()
 
         constantBlocks.forEach {
-            it.generate(this, runtimeConstants, inlinableMacros, initNativeGetterReads)
+            it.generate(this, runtimeConstants, inlinableMacros, exportGetterReads)
         }
 
         // Constants initializer. It is emitted before the methods and the custom static fields, so that any field initializer that references a constant sees
@@ -644,7 +700,7 @@ class NativeClass internal constructor(
         if (cinitSetRTConst) {
             constantMacros.forEach { func -> func.appendConstantField(this) }
 
-            if (constantMacros.isNotEmpty() || runtimeConstants.isNotEmpty() || cinitVariables.isNotEmpty() || initNativeEntries.isNotEmpty()) {
+            if (constantMacros.isNotEmpty() || runtimeConstants.isNotEmpty() || cinitVariables.isNotEmpty() || exportEntries.isNotEmpty()) {
                 // A cache variable is declared for every struct result type of the constant macros and reused by their assignments.
                 val resultVars = constantMacros
                     .filter { it.returns.isStructValue }
@@ -654,19 +710,13 @@ class NativeClass internal constructor(
                     .toMap()
 
                 print("\n    static {\n")
-                if (initNativeEntries.isNotEmpty()) {
-                    initNativeArrays.forEach { (type, count) -> print("        ${type}[] ${initNativeArrayName(type)} = new ${type}[$count];\n") }
-                    print("        initNative(${initNativeArrays.joinToString(", ") { initNativeArrayName(it.first) }});\n")
-                }
+                // Resolve the module's exported arrays once and read every constant through plain memory access.
+                exportTypes.forEach { type -> print("        long __exports_${type.name.lowercase()} = ${exportLookup(type)};\n") }
                 cinitVariables.forEach { (name, definition) -> print("        ${definition.first} $name = ${definition.second};\n") }
                 resultVars.forEach { (type, variable) -> print("        $type $variable;\n") }
                 constantMacros.forEach { func -> func.generateConstantInitializer(this, resultVars) }
                 constantBlocks.forEach { block -> block.generateInitializers(this) }
                 print("    }\n")
-            }
-
-            if (initNativeEntries.isNotEmpty()) {
-                print("\n    private static native void initNative(${initNativeArrays.joinToString(", ") { "${it.first}[] ${initNativeArrayName(it.first)}" }});\n")
             }
         } else {
             check(cinitVariables.isEmpty()) {
@@ -723,40 +773,7 @@ class NativeClass internal constructor(
             it.generateFunction(this)
         }
 
-        if (initNativeEntries.isNotEmpty()) {
-            println()
-            generateInitNative()
-        }
-
         println("\nEXTERN_C_EXIT")
-    }
-
-    /**
-     * Emits the merged JNI initializer: it fills each primitive array with the values of all the constant getters of this class, so that the class initializer
-     * only performs a single JNI call.
-     */
-    private fun PrintWriter.generateInitNative() {
-        print("JNIEXPORT void JNICALL Java_${nativeFileNameJNI}_initNative(JNIEnv *$JNIENV, jclass clazz")
-        initNativeArrays.forEach { (type, _) -> print(", ${jniArrayType(type)} ${initNativeArrayName(type)}") }
-        println(") {")
-
-        println("$t${"UNUSED_PARAM"}(clazz)")
-
-        initNativeArrays.forEach { (type, _) ->
-            println("$t${jniPrimitiveType(type)} *${initNativeArrayName(type)}_ptr = (*$JNIENV)->Get${type.upperCaseFirst}ArrayElements($JNIENV, ${initNativeArrayName(type)}, NULL);")
-        }
-
-        initNativeEntries.forEach { entry ->
-            print("$t${initNativeArrayName(entry.arrayType)}_ptr[${entry.index}] = ")
-            entry.func.generateNativeValueExpression(this)
-            println(';')
-        }
-
-        initNativeArrays.forEach { (type, _) ->
-            println("$t(*$JNIENV)->Release${type.upperCaseFirst}ArrayElements($JNIENV, ${initNativeArrayName(type)}, ${initNativeArrayName(type)}_ptr, 0);")
-        }
-
-        println("}")
     }
 
     internal fun nativeDirectivesWarning() {
@@ -1115,11 +1132,3 @@ private fun constantReferences(expression: String, names: Set<String>): Sequence
     }
 }
 
-/** The name of the `initNative` primitive array parameter that carries values of the specified Java primitive type. */
-private fun initNativeArrayName(type: String) = "__${type}s"
-
-/** The JNI array type of the specified Java primitive type. */
-private fun jniArrayType(type: String) = "j${type}Array"
-
-/** The JNI scalar type of the specified Java primitive type. */
-private fun jniPrimitiveType(type: String) = "j$type"

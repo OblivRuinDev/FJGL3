@@ -68,17 +68,14 @@ public class CoreFoundation {
     public static final long kCFAllocatorUseContext;
 
     static {
-        long[] __longs = new long[6];
-        initNative(__longs);
-        kCFAllocatorDefault = __longs[0];
-        kCFAllocatorSystemDefault = __longs[1];
-        kCFAllocatorMalloc = __longs[2];
-        kCFAllocatorMallocZone = __longs[3];
-        kCFAllocatorNull = __longs[4];
-        kCFAllocatorUseContext = __longs[5];
+        long __exports_address = java.lang.foreign.SymbolLookup.loaderLookup().find("org_lwjgl_core_macos_exports_address").orElseThrow().address();
+        kCFAllocatorDefault = MemoryUtil.memGetAddressAtIndex(__exports_address, 0);
+        kCFAllocatorSystemDefault = MemoryUtil.memGetAddressAtIndex(__exports_address, 1);
+        kCFAllocatorMalloc = MemoryUtil.memGetAddressAtIndex(__exports_address, 2);
+        kCFAllocatorMallocZone = MemoryUtil.memGetAddressAtIndex(__exports_address, 3);
+        kCFAllocatorNull = MemoryUtil.memGetAddressAtIndex(__exports_address, 4);
+        kCFAllocatorUseContext = MemoryUtil.memGetAddressAtIndex(__exports_address, 5);
     }
-
-    private static native void initNative(long[] __longs);
 
     protected CoreFoundation() {
         throw new UnsupportedOperationException();
