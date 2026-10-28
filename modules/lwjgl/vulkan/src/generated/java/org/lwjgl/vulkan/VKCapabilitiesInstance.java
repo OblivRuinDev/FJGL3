@@ -395,79 +395,161 @@ public class VKCapabilitiesInstance {
     /** When true, {@code SEC_ubm_surface} is supported. */
     public final boolean VK_SEC_ubm_surface;
 
+
+    private static boolean checkExt1(String extName, MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext, int from, int to, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, caps, from, to, functions) || reportMissing("VK", extName);
+    }
+
+    private static boolean checkExt2(String extName, MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext, int index, String function) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunction(stack, provider, caps, index, function) || reportMissing("VK", extName);
+    }
+
+    private static boolean checkExt3(String extName, MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext, int[] indices, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, caps, indices, functions) || reportMissing("VK", extName);
+    }
+
     VKCapabilitiesInstance(FunctionProvider provider, int apiVersion, Set<String> ext, Set<String> deviceExt) {
         this.apiVersion = apiVersion;
 
         long[] caps = new long[119];
+        MemoryStack stack = MemoryStack.stackGet();
 
-        Vulkan10 = check_VK10(provider, caps, ext);
-        Vulkan11 = check_VK11(provider, caps, ext);
+        Vulkan10 = checkExt1("Vulkan10", stack, provider, caps, ext, 0, 12,
+            "vkDestroyInstance", "vkEnumeratePhysicalDevices", "vkGetPhysicalDeviceFeatures", "vkGetPhysicalDeviceFormatProperties", 
+            "vkGetPhysicalDeviceImageFormatProperties", "vkGetPhysicalDeviceProperties", "vkGetPhysicalDeviceQueueFamilyProperties", 
+            "vkGetPhysicalDeviceMemoryProperties", "vkCreateDevice", "vkEnumerateDeviceExtensionProperties", "vkEnumerateDeviceLayerProperties", 
+            "vkGetPhysicalDeviceSparseImageFormatProperties"
+        );
+        Vulkan11 = checkExt1("Vulkan11", stack, provider, caps, ext, 12, 23,
+            "vkEnumeratePhysicalDeviceGroups", "vkGetPhysicalDeviceFeatures2", "vkGetPhysicalDeviceProperties2", "vkGetPhysicalDeviceFormatProperties2", 
+            "vkGetPhysicalDeviceImageFormatProperties2", "vkGetPhysicalDeviceQueueFamilyProperties2", "vkGetPhysicalDeviceMemoryProperties2", 
+            "vkGetPhysicalDeviceSparseImageFormatProperties2", "vkGetPhysicalDeviceExternalBufferProperties", "vkGetPhysicalDeviceExternalFenceProperties", 
+            "vkGetPhysicalDeviceExternalSemaphoreProperties"
+        );
         Vulkan12 = ext.contains("Vulkan12");
-        Vulkan13 = check_VK13(provider, caps, ext);
+        Vulkan13 = checkExt2("Vulkan13", stack, provider, caps, ext, 23, "vkGetPhysicalDeviceToolProperties");
         Vulkan14 = ext.contains("Vulkan14");
-        check_ARM_data_graph(provider, caps, deviceExt);
-        check_ARM_data_graph_instruction_set_tosa(provider, caps, deviceExt);
-        check_ARM_data_graph_optical_flow(provider, caps, deviceExt);
-        check_ARM_performance_counters_by_region(provider, caps, deviceExt);
-        check_ARM_shader_instrumentation(provider, caps, deviceExt);
-        check_ARM_tensors(provider, caps, deviceExt);
-        VK_EXT_acquire_drm_display = check_EXT_acquire_drm_display(provider, caps, ext);
-        VK_EXT_acquire_xlib_display = check_EXT_acquire_xlib_display(provider, caps, ext);
-        check_EXT_calibrated_timestamps(provider, caps, deviceExt);
-        check_EXT_cooperative_matrix_maintenance1(provider, caps, deviceExt);
-        VK_EXT_debug_report = check_EXT_debug_report(provider, caps, ext);
-        VK_EXT_debug_utils = check_EXT_debug_utils(provider, caps, ext);
-        check_EXT_descriptor_heap(provider, caps, deviceExt);
-        VK_EXT_direct_mode_display = check_EXT_direct_mode_display(provider, caps, ext);
-        VK_EXT_directfb_surface = check_EXT_directfb_surface(provider, caps, ext);
-        VK_EXT_display_surface_counter = check_EXT_display_surface_counter(provider, caps, ext);
-        check_EXT_full_screen_exclusive(provider, caps, deviceExt);
-        VK_EXT_headless_surface = check_EXT_headless_surface(provider, caps, ext);
+        checkExt1("VK_ARM_data_graph", stack, provider, caps, deviceExt, 24, 26,
+            "vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM", "vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM"
+        );
+        checkExt2("VK_ARM_data_graph_instruction_set_tosa", stack, provider, caps, deviceExt, 26, "vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM");
+        checkExt3("VK_ARM_data_graph_optical_flow", stack, provider, caps, deviceExt, new int[] {
+            26, 27
+        },
+            "vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM", "vkGetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM"
+        );
+        checkExt2("VK_ARM_performance_counters_by_region", stack, provider, caps, deviceExt, 28, "vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM");
+        checkExt2("VK_ARM_shader_instrumentation", stack, provider, caps, deviceExt, 29, "vkEnumeratePhysicalDeviceShaderInstrumentationMetricsARM");
+        checkExt2("VK_ARM_tensors", stack, provider, caps, deviceExt, 30, "vkGetPhysicalDeviceExternalTensorPropertiesARM");
+        VK_EXT_acquire_drm_display = checkExt1("VK_EXT_acquire_drm_display", stack, provider, caps, ext, 31, 33,
+            "vkAcquireDrmDisplayEXT", "vkGetDrmDisplayEXT"
+        );
+        VK_EXT_acquire_xlib_display = checkExt1("VK_EXT_acquire_xlib_display", stack, provider, caps, ext, 33, 35,
+            "vkAcquireXlibDisplayEXT", "vkGetRandROutputDisplayEXT"
+        );
+        checkExt2("VK_EXT_calibrated_timestamps", stack, provider, caps, deviceExt, 35, "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT");
+        checkExt2("VK_EXT_cooperative_matrix_maintenance1", stack, provider, caps, deviceExt, 36, "vkGetPhysicalDeviceCooperativeMatrixProperties2EXT");
+        VK_EXT_debug_report = checkExt1("VK_EXT_debug_report", stack, provider, caps, ext, 37, 40,
+            "vkCreateDebugReportCallbackEXT", "vkDestroyDebugReportCallbackEXT", "vkDebugReportMessageEXT"
+        );
+        VK_EXT_debug_utils = checkExt1("VK_EXT_debug_utils", stack, provider, caps, ext, 40, 51,
+            "vkSetDebugUtilsObjectNameEXT", "vkSetDebugUtilsObjectTagEXT", "vkQueueBeginDebugUtilsLabelEXT", "vkQueueEndDebugUtilsLabelEXT", 
+            "vkQueueInsertDebugUtilsLabelEXT", "vkCmdBeginDebugUtilsLabelEXT", "vkCmdEndDebugUtilsLabelEXT", "vkCmdInsertDebugUtilsLabelEXT", 
+            "vkCreateDebugUtilsMessengerEXT", "vkDestroyDebugUtilsMessengerEXT", "vkSubmitDebugUtilsMessageEXT"
+        );
+        checkExt2("VK_EXT_descriptor_heap", stack, provider, caps, deviceExt, 51, "vkGetPhysicalDeviceDescriptorSizeEXT");
+        VK_EXT_direct_mode_display = checkExt2("VK_EXT_direct_mode_display", stack, provider, caps, ext, 52, "vkReleaseDisplayEXT");
+        VK_EXT_directfb_surface = checkExt1("VK_EXT_directfb_surface", stack, provider, caps, ext, 53, 55,
+            "vkCreateDirectFBSurfaceEXT", "vkGetPhysicalDeviceDirectFBPresentationSupportEXT"
+        );
+        VK_EXT_display_surface_counter = checkExt2("VK_EXT_display_surface_counter", stack, provider, caps, ext, 55, "vkGetPhysicalDeviceSurfaceCapabilities2EXT");
+        checkExt2("VK_EXT_full_screen_exclusive", stack, provider, caps, deviceExt, 56, "vkGetPhysicalDeviceSurfacePresentModes2EXT");
+        VK_EXT_headless_surface = checkExt2("VK_EXT_headless_surface", stack, provider, caps, ext, 57, "vkCreateHeadlessSurfaceEXT");
         VK_EXT_layer_settings = ext.contains("VK_EXT_layer_settings");
-        VK_EXT_metal_surface = check_EXT_metal_surface(provider, caps, ext);
-        check_EXT_sample_locations(provider, caps, deviceExt);
+        VK_EXT_metal_surface = checkExt2("VK_EXT_metal_surface", stack, provider, caps, ext, 58, "vkCreateMetalSurfaceEXT");
+        checkExt2("VK_EXT_sample_locations", stack, provider, caps, deviceExt, 59, "vkGetPhysicalDeviceMultisamplePropertiesEXT");
         VK_EXT_surface_maintenance1 = ext.contains("VK_EXT_surface_maintenance1");
         VK_EXT_swapchain_colorspace = ext.contains("VK_EXT_swapchain_colorspace");
-        check_EXT_tooling_info(provider, caps, deviceExt);
+        checkExt2("VK_EXT_tooling_info", stack, provider, caps, deviceExt, 60, "vkGetPhysicalDeviceToolPropertiesEXT");
         VK_EXT_validation_features = ext.contains("VK_EXT_validation_features");
         VK_EXT_validation_flags = ext.contains("VK_EXT_validation_flags");
         VK_GOOGLE_surfaceless_query = ext.contains("VK_GOOGLE_surfaceless_query");
-        VK_KHR_android_surface = check_KHR_android_surface(provider, caps, ext);
-        check_KHR_calibrated_timestamps(provider, caps, deviceExt);
-        check_KHR_cooperative_matrix(provider, caps, deviceExt);
-        check_KHR_device_group(provider, caps, deviceExt);
-        VK_KHR_device_group_creation = check_KHR_device_group_creation(provider, caps, ext);
-        VK_KHR_display = check_KHR_display(provider, caps, ext);
-        VK_KHR_external_fence_capabilities = check_KHR_external_fence_capabilities(provider, caps, ext);
-        VK_KHR_external_memory_capabilities = check_KHR_external_memory_capabilities(provider, caps, ext);
-        VK_KHR_external_semaphore_capabilities = check_KHR_external_semaphore_capabilities(provider, caps, ext);
-        check_KHR_fragment_shading_rate(provider, caps, deviceExt);
-        VK_KHR_get_display_properties2 = check_KHR_get_display_properties2(provider, caps, ext);
-        VK_KHR_get_physical_device_properties2 = check_KHR_get_physical_device_properties2(provider, caps, ext);
-        VK_KHR_get_surface_capabilities2 = check_KHR_get_surface_capabilities2(provider, caps, ext);
-        check_KHR_performance_query(provider, caps, deviceExt);
+        VK_KHR_android_surface = checkExt2("VK_KHR_android_surface", stack, provider, caps, ext, 61, "vkCreateAndroidSurfaceKHR");
+        checkExt2("VK_KHR_calibrated_timestamps", stack, provider, caps, deviceExt, 62, "vkGetPhysicalDeviceCalibrateableTimeDomainsKHR");
+        checkExt2("VK_KHR_cooperative_matrix", stack, provider, caps, deviceExt, 63, "vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR");
+        check_KHR_device_group(stack, provider, caps, deviceExt);
+        VK_KHR_device_group_creation = checkExt2("VK_KHR_device_group_creation", stack, provider, caps, ext, 65, "vkEnumeratePhysicalDeviceGroupsKHR");
+        VK_KHR_display = checkExt1("VK_KHR_display", stack, provider, caps, ext, 66, 73,
+            "vkGetPhysicalDeviceDisplayPropertiesKHR", "vkGetPhysicalDeviceDisplayPlanePropertiesKHR", "vkGetDisplayPlaneSupportedDisplaysKHR", 
+            "vkGetDisplayModePropertiesKHR", "vkCreateDisplayModeKHR", "vkGetDisplayPlaneCapabilitiesKHR", "vkCreateDisplayPlaneSurfaceKHR"
+        );
+        VK_KHR_external_fence_capabilities = checkExt2("VK_KHR_external_fence_capabilities", stack, provider, caps, ext, 73, "vkGetPhysicalDeviceExternalFencePropertiesKHR");
+        VK_KHR_external_memory_capabilities = checkExt2("VK_KHR_external_memory_capabilities", stack, provider, caps, ext, 74, "vkGetPhysicalDeviceExternalBufferPropertiesKHR");
+        VK_KHR_external_semaphore_capabilities = checkExt2("VK_KHR_external_semaphore_capabilities", stack, provider, caps, ext, 75, "vkGetPhysicalDeviceExternalSemaphorePropertiesKHR");
+        checkExt2("VK_KHR_fragment_shading_rate", stack, provider, caps, deviceExt, 76, "vkGetPhysicalDeviceFragmentShadingRatesKHR");
+        VK_KHR_get_display_properties2 = checkExt1("VK_KHR_get_display_properties2", stack, provider, caps, ext, 77, 81,
+            "vkGetPhysicalDeviceDisplayProperties2KHR", "vkGetPhysicalDeviceDisplayPlaneProperties2KHR", "vkGetDisplayModeProperties2KHR", 
+            "vkGetDisplayPlaneCapabilities2KHR"
+        );
+        VK_KHR_get_physical_device_properties2 = checkExt1("VK_KHR_get_physical_device_properties2", stack, provider, caps, ext, 81, 88,
+            "vkGetPhysicalDeviceFeatures2KHR", "vkGetPhysicalDeviceProperties2KHR", "vkGetPhysicalDeviceFormatProperties2KHR", 
+            "vkGetPhysicalDeviceImageFormatProperties2KHR", "vkGetPhysicalDeviceQueueFamilyProperties2KHR", "vkGetPhysicalDeviceMemoryProperties2KHR", 
+            "vkGetPhysicalDeviceSparseImageFormatProperties2KHR"
+        );
+        VK_KHR_get_surface_capabilities2 = checkExt1("VK_KHR_get_surface_capabilities2", stack, provider, caps, ext, 88, 90,
+            "vkGetPhysicalDeviceSurfaceCapabilities2KHR", "vkGetPhysicalDeviceSurfaceFormats2KHR"
+        );
+        checkExt1("VK_KHR_performance_query", stack, provider, caps, deviceExt, 90, 92,
+            "vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR", "vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR"
+        );
         VK_KHR_portability_enumeration = ext.contains("VK_KHR_portability_enumeration");
-        VK_KHR_surface = check_KHR_surface(provider, caps, ext);
+        VK_KHR_surface = checkExt1("VK_KHR_surface", stack, provider, caps, ext, 92, 97,
+            "vkDestroySurfaceKHR", "vkGetPhysicalDeviceSurfaceSupportKHR", "vkGetPhysicalDeviceSurfaceCapabilitiesKHR", "vkGetPhysicalDeviceSurfaceFormatsKHR", 
+            "vkGetPhysicalDeviceSurfacePresentModesKHR"
+        );
         VK_KHR_surface_maintenance1 = ext.contains("VK_KHR_surface_maintenance1");
         VK_KHR_surface_protected_capabilities = ext.contains("VK_KHR_surface_protected_capabilities");
-        check_KHR_swapchain(provider, caps, deviceExt);
-        check_KHR_video_encode_queue(provider, caps, deviceExt);
-        check_KHR_video_queue(provider, caps, deviceExt);
-        VK_KHR_wayland_surface = check_KHR_wayland_surface(provider, caps, ext);
-        VK_KHR_win32_surface = check_KHR_win32_surface(provider, caps, ext);
-        VK_KHR_xcb_surface = check_KHR_xcb_surface(provider, caps, ext);
-        VK_KHR_xlib_surface = check_KHR_xlib_surface(provider, caps, ext);
+        check_KHR_swapchain(stack, provider, caps, deviceExt);
+        checkExt2("VK_KHR_video_encode_queue", stack, provider, caps, deviceExt, 97, "vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR");
+        checkExt1("VK_KHR_video_queue", stack, provider, caps, deviceExt, 98, 100,
+            "vkGetPhysicalDeviceVideoCapabilitiesKHR", "vkGetPhysicalDeviceVideoFormatPropertiesKHR"
+        );
+        VK_KHR_wayland_surface = checkExt1("VK_KHR_wayland_surface", stack, provider, caps, ext, 100, 102,
+            "vkCreateWaylandSurfaceKHR", "vkGetPhysicalDeviceWaylandPresentationSupportKHR"
+        );
+        VK_KHR_win32_surface = checkExt1("VK_KHR_win32_surface", stack, provider, caps, ext, 102, 104,
+            "vkCreateWin32SurfaceKHR", "vkGetPhysicalDeviceWin32PresentationSupportKHR"
+        );
+        VK_KHR_xcb_surface = checkExt1("VK_KHR_xcb_surface", stack, provider, caps, ext, 104, 106,
+            "vkCreateXcbSurfaceKHR", "vkGetPhysicalDeviceXcbPresentationSupportKHR"
+        );
+        VK_KHR_xlib_surface = checkExt1("VK_KHR_xlib_surface", stack, provider, caps, ext, 106, 108,
+            "vkCreateXlibSurfaceKHR", "vkGetPhysicalDeviceXlibPresentationSupportKHR"
+        );
         VK_LUNARG_direct_driver_loading = ext.contains("VK_LUNARG_direct_driver_loading");
-        VK_MVK_macos_surface = check_MVK_macos_surface(provider, caps, ext);
-        check_NV_acquire_winrt_display(provider, caps, deviceExt);
-        check_NV_cooperative_matrix(provider, caps, deviceExt);
-        check_NV_cooperative_matrix2(provider, caps, deviceExt);
-        check_NV_cooperative_vector(provider, caps, deviceExt);
-        check_NV_coverage_reduction_mode(provider, caps, deviceExt);
+        VK_MVK_macos_surface = checkExt2("VK_MVK_macos_surface", stack, provider, caps, ext, 108, "vkCreateMacOSSurfaceMVK");
+        checkExt1("VK_NV_acquire_winrt_display", stack, provider, caps, deviceExt, 109, 111,
+            "vkAcquireWinrtDisplayNV", "vkGetWinrtDisplayNV"
+        );
+        checkExt2("VK_NV_cooperative_matrix", stack, provider, caps, deviceExt, 111, "vkGetPhysicalDeviceCooperativeMatrixPropertiesNV");
+        checkExt2("VK_NV_cooperative_matrix2", stack, provider, caps, deviceExt, 112, "vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV");
+        checkExt2("VK_NV_cooperative_vector", stack, provider, caps, deviceExt, 113, "vkGetPhysicalDeviceCooperativeVectorPropertiesNV");
+        checkExt2("VK_NV_coverage_reduction_mode", stack, provider, caps, deviceExt, 114, "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV");
         VK_NV_display_stereo = ext.contains("VK_NV_display_stereo");
-        VK_NV_external_memory_capabilities = check_NV_external_memory_capabilities(provider, caps, ext);
-        check_NV_optical_flow(provider, caps, deviceExt);
-        VK_SEC_ubm_surface = check_SEC_ubm_surface(provider, caps, ext);
+        VK_NV_external_memory_capabilities = checkExt2("VK_NV_external_memory_capabilities", stack, provider, caps, ext, 115, "vkGetPhysicalDeviceExternalImageFormatPropertiesNV");
+        checkExt2("VK_NV_optical_flow", stack, provider, caps, deviceExt, 116, "vkGetPhysicalDeviceOpticalFlowImageFormatsNV");
+        VK_SEC_ubm_surface = checkExt1("VK_SEC_ubm_surface", stack, provider, caps, ext, 117, 119,
+            "vkCreateUbmSurfaceSEC", "vkGetPhysicalDeviceUbmPresentationSupportSEC"
+        );
 
         vkDestroyInstance = caps[0];
         vkEnumeratePhysicalDevices = caps[1];
@@ -590,681 +672,32 @@ public class VKCapabilitiesInstance {
         vkGetPhysicalDeviceUbmPresentationSupportSEC = caps[118];
     }
 
-    private static boolean check_VK10(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("Vulkan10")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
-        },
-            "vkDestroyInstance", "vkEnumeratePhysicalDevices", "vkGetPhysicalDeviceFeatures", "vkGetPhysicalDeviceFormatProperties", 
-            "vkGetPhysicalDeviceImageFormatProperties", "vkGetPhysicalDeviceProperties", "vkGetPhysicalDeviceQueueFamilyProperties", 
-            "vkGetPhysicalDeviceMemoryProperties", "vkCreateDevice", "vkEnumerateDeviceExtensionProperties", "vkEnumerateDeviceLayerProperties", 
-            "vkGetPhysicalDeviceSparseImageFormatProperties"
-        ) || reportMissing("VK", "Vulkan10");
-    }
-
-    private static boolean check_VK11(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("Vulkan11")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22
-        },
-            "vkEnumeratePhysicalDeviceGroups", "vkGetPhysicalDeviceFeatures2", "vkGetPhysicalDeviceProperties2", "vkGetPhysicalDeviceFormatProperties2", 
-            "vkGetPhysicalDeviceImageFormatProperties2", "vkGetPhysicalDeviceQueueFamilyProperties2", "vkGetPhysicalDeviceMemoryProperties2", 
-            "vkGetPhysicalDeviceSparseImageFormatProperties2", "vkGetPhysicalDeviceExternalBufferProperties", "vkGetPhysicalDeviceExternalFenceProperties", 
-            "vkGetPhysicalDeviceExternalSemaphoreProperties"
-        ) || reportMissing("VK", "Vulkan11");
-    }
-
-    private static boolean check_VK13(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("Vulkan13")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            23
-        },
-            "vkGetPhysicalDeviceToolProperties"
-        ) || reportMissing("VK", "Vulkan13");
-    }
-
-    private static boolean check_ARM_data_graph(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_ARM_data_graph")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            24, 25
-        },
-            "vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM", "vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM"
-        ) || reportMissing("VK", "VK_ARM_data_graph");
-    }
-
-    private static boolean check_ARM_data_graph_instruction_set_tosa(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_ARM_data_graph_instruction_set_tosa")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            26
-        },
-            "vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM"
-        ) || reportMissing("VK", "VK_ARM_data_graph_instruction_set_tosa");
-    }
-
-    private static boolean check_ARM_data_graph_optical_flow(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_ARM_data_graph_optical_flow")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            27, 26
-        },
-            "vkGetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM", "vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM"
-        ) || reportMissing("VK", "VK_ARM_data_graph_optical_flow");
-    }
-
-    private static boolean check_ARM_performance_counters_by_region(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_ARM_performance_counters_by_region")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            28
-        },
-            "vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM"
-        ) || reportMissing("VK", "VK_ARM_performance_counters_by_region");
-    }
-
-    private static boolean check_ARM_shader_instrumentation(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_ARM_shader_instrumentation")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            29
-        },
-            "vkEnumeratePhysicalDeviceShaderInstrumentationMetricsARM"
-        ) || reportMissing("VK", "VK_ARM_shader_instrumentation");
-    }
-
-    private static boolean check_ARM_tensors(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_ARM_tensors")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            30
-        },
-            "vkGetPhysicalDeviceExternalTensorPropertiesARM"
-        ) || reportMissing("VK", "VK_ARM_tensors");
-    }
-
-    private static boolean check_EXT_acquire_drm_display(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_acquire_drm_display")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            31, 32
-        },
-            "vkAcquireDrmDisplayEXT", "vkGetDrmDisplayEXT"
-        ) || reportMissing("VK", "VK_EXT_acquire_drm_display");
-    }
-
-    private static boolean check_EXT_acquire_xlib_display(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_acquire_xlib_display")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            33, 34
-        },
-            "vkAcquireXlibDisplayEXT", "vkGetRandROutputDisplayEXT"
-        ) || reportMissing("VK", "VK_EXT_acquire_xlib_display");
-    }
-
-    private static boolean check_EXT_calibrated_timestamps(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_calibrated_timestamps")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            35
-        },
-            "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT"
-        ) || reportMissing("VK", "VK_EXT_calibrated_timestamps");
-    }
-
-    private static boolean check_EXT_cooperative_matrix_maintenance1(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_cooperative_matrix_maintenance1")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            36
-        },
-            "vkGetPhysicalDeviceCooperativeMatrixProperties2EXT"
-        ) || reportMissing("VK", "VK_EXT_cooperative_matrix_maintenance1");
-    }
-
-    private static boolean check_EXT_debug_report(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_debug_report")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            37, 38, 39
-        },
-            "vkCreateDebugReportCallbackEXT", "vkDestroyDebugReportCallbackEXT", "vkDebugReportMessageEXT"
-        ) || reportMissing("VK", "VK_EXT_debug_report");
-    }
-
-    private static boolean check_EXT_debug_utils(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_debug_utils")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50
-        },
-            "vkSetDebugUtilsObjectNameEXT", "vkSetDebugUtilsObjectTagEXT", "vkQueueBeginDebugUtilsLabelEXT", "vkQueueEndDebugUtilsLabelEXT", 
-            "vkQueueInsertDebugUtilsLabelEXT", "vkCmdBeginDebugUtilsLabelEXT", "vkCmdEndDebugUtilsLabelEXT", "vkCmdInsertDebugUtilsLabelEXT", 
-            "vkCreateDebugUtilsMessengerEXT", "vkDestroyDebugUtilsMessengerEXT", "vkSubmitDebugUtilsMessageEXT"
-        ) || reportMissing("VK", "VK_EXT_debug_utils");
-    }
-
-    private static boolean check_EXT_descriptor_heap(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_descriptor_heap")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            51
-        },
-            "vkGetPhysicalDeviceDescriptorSizeEXT"
-        ) || reportMissing("VK", "VK_EXT_descriptor_heap");
-    }
-
-    private static boolean check_EXT_direct_mode_display(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_direct_mode_display")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            52
-        },
-            "vkReleaseDisplayEXT"
-        ) || reportMissing("VK", "VK_EXT_direct_mode_display");
-    }
-
-    private static boolean check_EXT_directfb_surface(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_directfb_surface")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            53, 54
-        },
-            "vkCreateDirectFBSurfaceEXT", "vkGetPhysicalDeviceDirectFBPresentationSupportEXT"
-        ) || reportMissing("VK", "VK_EXT_directfb_surface");
-    }
-
-    private static boolean check_EXT_display_surface_counter(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_display_surface_counter")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            55
-        },
-            "vkGetPhysicalDeviceSurfaceCapabilities2EXT"
-        ) || reportMissing("VK", "VK_EXT_display_surface_counter");
-    }
-
-    private static boolean check_EXT_full_screen_exclusive(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_full_screen_exclusive")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            56
-        },
-            "vkGetPhysicalDeviceSurfacePresentModes2EXT"
-        ) || reportMissing("VK", "VK_EXT_full_screen_exclusive");
-    }
-
-    private static boolean check_EXT_headless_surface(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_headless_surface")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            57
-        },
-            "vkCreateHeadlessSurfaceEXT"
-        ) || reportMissing("VK", "VK_EXT_headless_surface");
-    }
-
-    private static boolean check_EXT_metal_surface(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_metal_surface")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            58
-        },
-            "vkCreateMetalSurfaceEXT"
-        ) || reportMissing("VK", "VK_EXT_metal_surface");
-    }
-
-    private static boolean check_EXT_sample_locations(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_sample_locations")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            59
-        },
-            "vkGetPhysicalDeviceMultisamplePropertiesEXT"
-        ) || reportMissing("VK", "VK_EXT_sample_locations");
-    }
-
-    private static boolean check_EXT_tooling_info(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_tooling_info")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            60
-        },
-            "vkGetPhysicalDeviceToolPropertiesEXT"
-        ) || reportMissing("VK", "VK_EXT_tooling_info");
-    }
-
-    private static boolean check_KHR_android_surface(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_android_surface")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            61
-        },
-            "vkCreateAndroidSurfaceKHR"
-        ) || reportMissing("VK", "VK_KHR_android_surface");
-    }
-
-    private static boolean check_KHR_calibrated_timestamps(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_calibrated_timestamps")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            62
-        },
-            "vkGetPhysicalDeviceCalibrateableTimeDomainsKHR"
-        ) || reportMissing("VK", "VK_KHR_calibrated_timestamps");
-    }
-
-    private static boolean check_KHR_cooperative_matrix(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_cooperative_matrix")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            63
-        },
-            "vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR"
-        ) || reportMissing("VK", "VK_KHR_cooperative_matrix");
-    }
-
-    private static boolean check_KHR_device_group(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_KHR_device_group(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_KHR_device_group")) {
             return false;
         }
 
         int flag0 = ext.contains("VK_KHR_surface") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             flag0 + 64
         },
             "vkGetPhysicalDevicePresentRectanglesKHR"
         ) || reportMissing("VK", "VK_KHR_device_group");
     }
 
-    private static boolean check_KHR_device_group_creation(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_device_group_creation")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            65
-        },
-            "vkEnumeratePhysicalDeviceGroupsKHR"
-        ) || reportMissing("VK", "VK_KHR_device_group_creation");
-    }
-
-    private static boolean check_KHR_display(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_display")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            66, 67, 68, 69, 70, 71, 72
-        },
-            "vkGetPhysicalDeviceDisplayPropertiesKHR", "vkGetPhysicalDeviceDisplayPlanePropertiesKHR", "vkGetDisplayPlaneSupportedDisplaysKHR", 
-            "vkGetDisplayModePropertiesKHR", "vkCreateDisplayModeKHR", "vkGetDisplayPlaneCapabilitiesKHR", "vkCreateDisplayPlaneSurfaceKHR"
-        ) || reportMissing("VK", "VK_KHR_display");
-    }
-
-    private static boolean check_KHR_external_fence_capabilities(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_external_fence_capabilities")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            73
-        },
-            "vkGetPhysicalDeviceExternalFencePropertiesKHR"
-        ) || reportMissing("VK", "VK_KHR_external_fence_capabilities");
-    }
-
-    private static boolean check_KHR_external_memory_capabilities(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_external_memory_capabilities")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            74
-        },
-            "vkGetPhysicalDeviceExternalBufferPropertiesKHR"
-        ) || reportMissing("VK", "VK_KHR_external_memory_capabilities");
-    }
-
-    private static boolean check_KHR_external_semaphore_capabilities(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_external_semaphore_capabilities")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            75
-        },
-            "vkGetPhysicalDeviceExternalSemaphorePropertiesKHR"
-        ) || reportMissing("VK", "VK_KHR_external_semaphore_capabilities");
-    }
-
-    private static boolean check_KHR_fragment_shading_rate(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_fragment_shading_rate")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            76
-        },
-            "vkGetPhysicalDeviceFragmentShadingRatesKHR"
-        ) || reportMissing("VK", "VK_KHR_fragment_shading_rate");
-    }
-
-    private static boolean check_KHR_get_display_properties2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_get_display_properties2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            77, 78, 79, 80
-        },
-            "vkGetPhysicalDeviceDisplayProperties2KHR", "vkGetPhysicalDeviceDisplayPlaneProperties2KHR", "vkGetDisplayModeProperties2KHR", 
-            "vkGetDisplayPlaneCapabilities2KHR"
-        ) || reportMissing("VK", "VK_KHR_get_display_properties2");
-    }
-
-    private static boolean check_KHR_get_physical_device_properties2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_get_physical_device_properties2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            81, 82, 83, 84, 85, 86, 87
-        },
-            "vkGetPhysicalDeviceFeatures2KHR", "vkGetPhysicalDeviceProperties2KHR", "vkGetPhysicalDeviceFormatProperties2KHR", 
-            "vkGetPhysicalDeviceImageFormatProperties2KHR", "vkGetPhysicalDeviceQueueFamilyProperties2KHR", "vkGetPhysicalDeviceMemoryProperties2KHR", 
-            "vkGetPhysicalDeviceSparseImageFormatProperties2KHR"
-        ) || reportMissing("VK", "VK_KHR_get_physical_device_properties2");
-    }
-
-    private static boolean check_KHR_get_surface_capabilities2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_get_surface_capabilities2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            88, 89
-        },
-            "vkGetPhysicalDeviceSurfaceCapabilities2KHR", "vkGetPhysicalDeviceSurfaceFormats2KHR"
-        ) || reportMissing("VK", "VK_KHR_get_surface_capabilities2");
-    }
-
-    private static boolean check_KHR_performance_query(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_performance_query")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            90, 91
-        },
-            "vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR", "vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR"
-        ) || reportMissing("VK", "VK_KHR_performance_query");
-    }
-
-    private static boolean check_KHR_surface(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_surface")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            92, 93, 94, 95, 96
-        },
-            "vkDestroySurfaceKHR", "vkGetPhysicalDeviceSurfaceSupportKHR", "vkGetPhysicalDeviceSurfaceCapabilitiesKHR", "vkGetPhysicalDeviceSurfaceFormatsKHR", 
-            "vkGetPhysicalDeviceSurfacePresentModesKHR"
-        ) || reportMissing("VK", "VK_KHR_surface");
-    }
-
-    private static boolean check_KHR_swapchain(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_KHR_swapchain(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_KHR_swapchain")) {
             return false;
         }
 
         int flag0 = ext.contains("Vulkan11") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             flag0 + 64
         },
             "vkGetPhysicalDevicePresentRectanglesKHR"
         ) || reportMissing("VK", "VK_KHR_swapchain");
-    }
-
-    private static boolean check_KHR_video_encode_queue(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_video_encode_queue")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            97
-        },
-            "vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR"
-        ) || reportMissing("VK", "VK_KHR_video_encode_queue");
-    }
-
-    private static boolean check_KHR_video_queue(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_video_queue")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            98, 99
-        },
-            "vkGetPhysicalDeviceVideoCapabilitiesKHR", "vkGetPhysicalDeviceVideoFormatPropertiesKHR"
-        ) || reportMissing("VK", "VK_KHR_video_queue");
-    }
-
-    private static boolean check_KHR_wayland_surface(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_wayland_surface")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            100, 101
-        },
-            "vkCreateWaylandSurfaceKHR", "vkGetPhysicalDeviceWaylandPresentationSupportKHR"
-        ) || reportMissing("VK", "VK_KHR_wayland_surface");
-    }
-
-    private static boolean check_KHR_win32_surface(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_win32_surface")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            102, 103
-        },
-            "vkCreateWin32SurfaceKHR", "vkGetPhysicalDeviceWin32PresentationSupportKHR"
-        ) || reportMissing("VK", "VK_KHR_win32_surface");
-    }
-
-    private static boolean check_KHR_xcb_surface(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_xcb_surface")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            104, 105
-        },
-            "vkCreateXcbSurfaceKHR", "vkGetPhysicalDeviceXcbPresentationSupportKHR"
-        ) || reportMissing("VK", "VK_KHR_xcb_surface");
-    }
-
-    private static boolean check_KHR_xlib_surface(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_xlib_surface")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            106, 107
-        },
-            "vkCreateXlibSurfaceKHR", "vkGetPhysicalDeviceXlibPresentationSupportKHR"
-        ) || reportMissing("VK", "VK_KHR_xlib_surface");
-    }
-
-    private static boolean check_MVK_macos_surface(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_MVK_macos_surface")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            108
-        },
-            "vkCreateMacOSSurfaceMVK"
-        ) || reportMissing("VK", "VK_MVK_macos_surface");
-    }
-
-    private static boolean check_NV_acquire_winrt_display(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_acquire_winrt_display")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            109, 110
-        },
-            "vkAcquireWinrtDisplayNV", "vkGetWinrtDisplayNV"
-        ) || reportMissing("VK", "VK_NV_acquire_winrt_display");
-    }
-
-    private static boolean check_NV_cooperative_matrix(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_cooperative_matrix")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            111
-        },
-            "vkGetPhysicalDeviceCooperativeMatrixPropertiesNV"
-        ) || reportMissing("VK", "VK_NV_cooperative_matrix");
-    }
-
-    private static boolean check_NV_cooperative_matrix2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_cooperative_matrix2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            112
-        },
-            "vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV"
-        ) || reportMissing("VK", "VK_NV_cooperative_matrix2");
-    }
-
-    private static boolean check_NV_cooperative_vector(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_cooperative_vector")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            113
-        },
-            "vkGetPhysicalDeviceCooperativeVectorPropertiesNV"
-        ) || reportMissing("VK", "VK_NV_cooperative_vector");
-    }
-
-    private static boolean check_NV_coverage_reduction_mode(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_coverage_reduction_mode")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            114
-        },
-            "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV"
-        ) || reportMissing("VK", "VK_NV_coverage_reduction_mode");
-    }
-
-    private static boolean check_NV_external_memory_capabilities(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_external_memory_capabilities")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            115
-        },
-            "vkGetPhysicalDeviceExternalImageFormatPropertiesNV"
-        ) || reportMissing("VK", "VK_NV_external_memory_capabilities");
-    }
-
-    private static boolean check_NV_optical_flow(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_optical_flow")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            116
-        },
-            "vkGetPhysicalDeviceOpticalFlowImageFormatsNV"
-        ) || reportMissing("VK", "VK_NV_optical_flow");
-    }
-
-    private static boolean check_SEC_ubm_surface(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_SEC_ubm_surface")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            117, 118
-        },
-            "vkCreateUbmSurfaceSEC", "vkGetPhysicalDeviceUbmPresentationSupportSEC"
-        ) || reportMissing("VK", "VK_SEC_ubm_surface");
     }
 
 }

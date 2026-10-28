@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
@@ -9,7 +9,7 @@ import java.io.*
 
 private const val CAPABILITIES_CLASS = "GLXCapabilities"
 
-val GLXBinding = Generator.register(object : APIBinding(
+val GLXBinding = Generator.register(object : AbstractBinding(
     Module.OPENGL,
     CAPABILITIES_CLASS,
     APICapabilities.JAVA_CAPABILITIES
@@ -19,49 +19,22 @@ val GLXBinding = Generator.register(object : APIBinding(
 
     private val functions by lazy { classes.getFunctionPointers() }
 
-    private val functionOrdinals by lazy {
-        LinkedHashMap<String, Int>().also { functionOrdinals ->
-            classes.asSequence()
-                .filter { it.hasNativeFunctions }
-                .forEach {
-                    it.functions.asSequence()
-                        .forEach { cmd ->
-                            if (!cmd.has<Macro>() && !functionOrdinals.contains(cmd.name)) {
-                                functionOrdinals[cmd.name] = functionOrdinals.size
-                            }
-                        }
-                }
-        }
+    private val checks = CapsChecks("MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext", "stack, provider, caps", "GLX")
+
+    override val ordinalFunctions by lazy {
+        classes.asSequence()
+            .filter { it.hasNativeFunctions }
+            .flatMap { it.functions.asSequence() }
+            .filter { !it.has<Macro>() }
+            .toList()
     }
 
     override fun generateFunctionAddress(writer: PrintWriter, function: Func) {
         writer.println("$t${t}long $FUNCTION_ADDRESS = GL.getCapabilitiesGLXClient().${function.name};")
     }
 
-    private fun PrintWriter.printCheckFunctions(
-        nativeClass: NativeClass,
-        filter: (Func) -> Boolean
-    ) {
-        print("checkFunctions(provider, caps, new int[] {")
-        nativeClass.printPointers(this, { func -> functionOrdinals[func.name].toString() }, filter)
-        print("},")
-        nativeClass.printPointers(this, { "\"${it.name}\"" }, filter)
-        print(")")
-    }
-
     private fun PrintWriter.checkExtensionFunctions(nativeClass: NativeClass) {
-        val capName = nativeClass.capName
-
-        print("""
-    private static boolean check_${nativeClass.templateName}(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("$capName")) {
-            return false;
-        }""")
-
-        print("\n\n$t${t}return ")
-        printCheckFunctions(nativeClass) { it-> !it.has(IgnoreMissing) }
-        println(" || reportMissing(\"GLX\", \"$capName\");")
-        println("$t}")
+        printExtCheckMethod(checks, nativeClass, nativeClass.capName, { it -> !it.has(IgnoreMissing) }, functionOrdinals)
     }
 
     init {
@@ -105,25 +78,25 @@ val GLXBinding = Generator.register(object : APIBinding(
             println("${t}public final boolean ${it.capName};")
         }
 
+        if (classes.any { isReducedCheck(it, { it -> !it.has(IgnoreMissing) }, functionOrdinals) }) printCheckHelper(checks)
+
         print("""
     $CAPABILITIES_CLASS(FunctionProvider provider, Set<String> ext) {
         long[] caps = new long[${functions.size}];
+        MemoryStack stack = MemoryStack.stackGet();
 """)
 
         for (extension in classes) {
             val capName = extension.capName
-            print(
-                if (extension.hasNativeFunctions)
-                    "\n$t$t$capName = check_${extension.templateName}(provider, caps, ext);"
-                else
-                    "\n$t$t$capName = ext.contains(\"$capName\");"
-            )
+            if (extension.hasNativeFunctions) {
+                printCapCheck(this, checks, extension, capName, "ext", { it -> !it.has(IgnoreMissing) }, functionOrdinals, { "check_${it.templateName}(stack, provider, caps, ext)" })
+            } else {
+                print("\n$t$t$capName = ext.contains(\"$capName\");")
+            }
         }
 
         println()
-        functionOrdinals.forEach { (it, index) ->
-            print("\n$t$t$it = caps[$index];")
-        }
+        printCapsAssignments(this, functionOrdinals) { "caps[$it]" }
         print("""
     }
 """)

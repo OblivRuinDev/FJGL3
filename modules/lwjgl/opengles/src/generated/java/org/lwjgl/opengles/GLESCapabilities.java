@@ -1974,137 +1974,304 @@ public final class GLESCapabilities {
     /** When true, {@code VIV_shader_binary} is supported. */
     public final boolean GL_VIV_shader_binary;
 
+
+    private static boolean checkExt1(String extName, MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext, int from, int to, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, caps, from, to, functions) || reportMissing("GLES", extName);
+    }
+
+    private static boolean checkExt2(String extName, MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext, int index, String function) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunction(stack, provider, caps, index, function) || reportMissing("GLES", extName);
+    }
+
+    private static boolean checkExt3(String extName, MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext, int[] indices, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, caps, indices, functions) || reportMissing("GLES", extName);
+    }
+
     /** Off-heap array of the above function addresses. */
     final PointerBuffer addresses;
 
     GLESCapabilities(FunctionProvider provider, Set<String> ext, IntFunction<PointerBuffer> bufferFactory) {
         PointerBuffer caps = bufferFactory.apply(ADDRESS_BUFFER_SIZE);
+        MemoryStack stack = MemoryStack.stackGet();
 
-        GLES20 = check_GLES20(provider, caps, ext);
-        GLES30 = check_GLES30(provider, caps, ext);
-        GLES31 = check_GLES31(provider, caps, ext);
-        GLES32 = check_GLES32(provider, caps, ext);
+        GLES20 = checkExt1("GLES20", stack, provider, caps, ext, 0, 142,
+            "glActiveTexture", "glAttachShader", "glBindAttribLocation", "glBindBuffer", "glBindFramebuffer", "glBindRenderbuffer", "glBindTexture", 
+            "glBlendColor", "glBlendEquation", "glBlendEquationSeparate", "glBlendFunc", "glBlendFuncSeparate", "glBufferData", "glBufferSubData", 
+            "glCheckFramebufferStatus", "glClear", "glClearColor", "glClearDepthf", "glClearStencil", "glColorMask", "glCompileShader", 
+            "glCompressedTexImage2D", "glCompressedTexSubImage2D", "glCopyTexImage2D", "glCopyTexSubImage2D", "glCreateProgram", "glCreateShader", "glCullFace", 
+            "glDeleteBuffers", "glDeleteFramebuffers", "glDeleteProgram", "glDeleteRenderbuffers", "glDeleteShader", "glDeleteTextures", "glDepthFunc", 
+            "glDepthMask", "glDepthRangef", "glDetachShader", "glDisable", "glDisableVertexAttribArray", "glDrawArrays", "glDrawElements", "glEnable", 
+            "glEnableVertexAttribArray", "glFinish", "glFlush", "glFramebufferRenderbuffer", "glFramebufferTexture2D", "glFrontFace", "glGenBuffers", 
+            "glGenerateMipmap", "glGenFramebuffers", "glGenRenderbuffers", "glGenTextures", "glGetActiveAttrib", "glGetActiveUniform", "glGetAttachedShaders", 
+            "glGetAttribLocation", "glGetBooleanv", "glGetBufferParameteriv", "glGetError", "glGetFloatv", "glGetFramebufferAttachmentParameteriv", 
+            "glGetIntegerv", "glGetProgramiv", "glGetProgramInfoLog", "glGetRenderbufferParameteriv", "glGetShaderiv", "glGetShaderInfoLog", 
+            "glGetShaderPrecisionFormat", "glGetShaderSource", "glGetString", "glGetTexParameterfv", "glGetTexParameteriv", "glGetUniformfv", "glGetUniformiv", 
+            "glGetUniformLocation", "glGetVertexAttribfv", "glGetVertexAttribiv", "glGetVertexAttribPointerv", "glHint", "glIsBuffer", "glIsEnabled", 
+            "glIsFramebuffer", "glIsProgram", "glIsRenderbuffer", "glIsShader", "glIsTexture", "glLineWidth", "glLinkProgram", "glPixelStorei", 
+            "glPolygonOffset", "glReadPixels", "glReleaseShaderCompiler", "glRenderbufferStorage", "glSampleCoverage", "glScissor", "glShaderBinary", 
+            "glShaderSource", "glStencilFunc", "glStencilFuncSeparate", "glStencilMask", "glStencilMaskSeparate", "glStencilOp", "glStencilOpSeparate", 
+            "glTexImage2D", "glTexParameterf", "glTexParameterfv", "glTexParameteri", "glTexParameteriv", "glTexSubImage2D", "glUniform1f", "glUniform1fv", 
+            "glUniform1i", "glUniform1iv", "glUniform2f", "glUniform2fv", "glUniform2i", "glUniform2iv", "glUniform3f", "glUniform3fv", "glUniform3i", 
+            "glUniform3iv", "glUniform4f", "glUniform4fv", "glUniform4i", "glUniform4iv", "glUniformMatrix2fv", "glUniformMatrix3fv", "glUniformMatrix4fv", 
+            "glUseProgram", "glValidateProgram", "glVertexAttrib1f", "glVertexAttrib1fv", "glVertexAttrib2f", "glVertexAttrib2fv", "glVertexAttrib3f", 
+            "glVertexAttrib3fv", "glVertexAttrib4f", "glVertexAttrib4fv", "glVertexAttribPointer", "glViewport"
+        );
+        GLES30 = checkExt1("GLES30", stack, provider, caps, ext, 142, 246,
+            "glReadBuffer", "glDrawRangeElements", "glTexImage3D", "glTexSubImage3D", "glCopyTexSubImage3D", "glCompressedTexImage3D", 
+            "glCompressedTexSubImage3D", "glGenQueries", "glDeleteQueries", "glIsQuery", "glBeginQuery", "glEndQuery", "glGetQueryiv", "glGetQueryObjectuiv", 
+            "glUnmapBuffer", "glGetBufferPointerv", "glDrawBuffers", "glUniformMatrix2x3fv", "glUniformMatrix3x2fv", "glUniformMatrix2x4fv", 
+            "glUniformMatrix4x2fv", "glUniformMatrix3x4fv", "glUniformMatrix4x3fv", "glBlitFramebuffer", "glRenderbufferStorageMultisample", 
+            "glFramebufferTextureLayer", "glMapBufferRange", "glFlushMappedBufferRange", "glBindVertexArray", "glDeleteVertexArrays", "glGenVertexArrays", 
+            "glIsVertexArray", "glGetIntegeri_v", "glBeginTransformFeedback", "glEndTransformFeedback", "glBindBufferRange", "glBindBufferBase", 
+            "glTransformFeedbackVaryings", "glGetTransformFeedbackVarying", "glVertexAttribIPointer", "glGetVertexAttribIiv", "glGetVertexAttribIuiv", 
+            "glVertexAttribI4i", "glVertexAttribI4ui", "glVertexAttribI4iv", "glVertexAttribI4uiv", "glGetUniformuiv", "glGetFragDataLocation", "glUniform1ui", 
+            "glUniform2ui", "glUniform3ui", "glUniform4ui", "glUniform1uiv", "glUniform2uiv", "glUniform3uiv", "glUniform4uiv", "glClearBufferiv", 
+            "glClearBufferuiv", "glClearBufferfv", "glClearBufferfi", "glGetStringi", "glCopyBufferSubData", "glGetUniformIndices", "glGetActiveUniformsiv", 
+            "glGetUniformBlockIndex", "glGetActiveUniformBlockiv", "glGetActiveUniformBlockName", "glUniformBlockBinding", "glDrawArraysInstanced", 
+            "glDrawElementsInstanced", "glFenceSync", "glIsSync", "glDeleteSync", "glClientWaitSync", "glWaitSync", "glGetInteger64v", "glGetSynciv", 
+            "glGetInteger64i_v", "glGetBufferParameteri64v", "glGenSamplers", "glDeleteSamplers", "glIsSampler", "glBindSampler", "glSamplerParameteri", 
+            "glSamplerParameteriv", "glSamplerParameterf", "glSamplerParameterfv", "glGetSamplerParameteriv", "glGetSamplerParameterfv", 
+            "glVertexAttribDivisor", "glBindTransformFeedback", "glDeleteTransformFeedbacks", "glGenTransformFeedbacks", "glIsTransformFeedback", 
+            "glPauseTransformFeedback", "glResumeTransformFeedback", "glGetProgramBinary", "glProgramBinary", "glProgramParameteri", "glInvalidateFramebuffer", 
+            "glInvalidateSubFramebuffer", "glTexStorage2D", "glTexStorage3D", "glGetInternalformativ"
+        );
+        GLES31 = checkExt1("GLES31", stack, provider, caps, ext, 246, 314,
+            "glDispatchCompute", "glDispatchComputeIndirect", "glDrawArraysIndirect", "glDrawElementsIndirect", "glFramebufferParameteri", 
+            "glGetFramebufferParameteriv", "glGetProgramInterfaceiv", "glGetProgramResourceIndex", "glGetProgramResourceName", "glGetProgramResourceiv", 
+            "glGetProgramResourceLocation", "glUseProgramStages", "glActiveShaderProgram", "glCreateShaderProgramv", "glBindProgramPipeline", 
+            "glDeleteProgramPipelines", "glGenProgramPipelines", "glIsProgramPipeline", "glGetProgramPipelineiv", "glProgramUniform1i", "glProgramUniform2i", 
+            "glProgramUniform3i", "glProgramUniform4i", "glProgramUniform1ui", "glProgramUniform2ui", "glProgramUniform3ui", "glProgramUniform4ui", 
+            "glProgramUniform1f", "glProgramUniform2f", "glProgramUniform3f", "glProgramUniform4f", "glProgramUniform1iv", "glProgramUniform2iv", 
+            "glProgramUniform3iv", "glProgramUniform4iv", "glProgramUniform1uiv", "glProgramUniform2uiv", "glProgramUniform3uiv", "glProgramUniform4uiv", 
+            "glProgramUniform1fv", "glProgramUniform2fv", "glProgramUniform3fv", "glProgramUniform4fv", "glProgramUniformMatrix2fv", 
+            "glProgramUniformMatrix3fv", "glProgramUniformMatrix4fv", "glProgramUniformMatrix2x3fv", "glProgramUniformMatrix3x2fv", 
+            "glProgramUniformMatrix2x4fv", "glProgramUniformMatrix4x2fv", "glProgramUniformMatrix3x4fv", "glProgramUniformMatrix4x3fv", 
+            "glValidateProgramPipeline", "glGetProgramPipelineInfoLog", "glBindImageTexture", "glGetBooleani_v", "glMemoryBarrier", "glMemoryBarrierByRegion", 
+            "glTexStorage2DMultisample", "glGetMultisamplefv", "glSampleMaski", "glGetTexLevelParameteriv", "glGetTexLevelParameterfv", "glBindVertexBuffer", 
+            "glVertexAttribFormat", "glVertexAttribIFormat", "glVertexAttribBinding", "glVertexBindingDivisor"
+        );
+        GLES32 = checkExt1("GLES32", stack, provider, caps, ext, 314, 358,
+            "glBlendBarrier", "glCopyImageSubData", "glDebugMessageControl", "glDebugMessageInsert", "glDebugMessageCallback", "glGetDebugMessageLog", 
+            "glGetPointerv", "glPushDebugGroup", "glPopDebugGroup", "glObjectLabel", "glGetObjectLabel", "glObjectPtrLabel", "glGetObjectPtrLabel", "glEnablei", 
+            "glDisablei", "glBlendEquationi", "glBlendEquationSeparatei", "glBlendFunci", "glBlendFuncSeparatei", "glColorMaski", "glIsEnabledi", 
+            "glDrawElementsBaseVertex", "glDrawRangeElementsBaseVertex", "glDrawElementsInstancedBaseVertex", "glFramebufferTexture", "glPrimitiveBoundingBox", 
+            "glGetGraphicsResetStatus", "glReadnPixels", "glGetnUniformfv", "glGetnUniformiv", "glGetnUniformuiv", "glMinSampleShading", "glPatchParameteri", 
+            "glTexParameterIiv", "glTexParameterIuiv", "glGetTexParameterIiv", "glGetTexParameterIuiv", "glSamplerParameterIiv", "glSamplerParameterIuiv", 
+            "glGetSamplerParameterIiv", "glGetSamplerParameterIuiv", "glTexBuffer", "glTexBufferRange", "glTexStorage3DMultisample"
+        );
         GL_AMD_compressed_3DC_texture = ext.contains("GL_AMD_compressed_3DC_texture");
         GL_AMD_compressed_ATC_texture = ext.contains("GL_AMD_compressed_ATC_texture");
-        GL_AMD_framebuffer_multisample_advanced = check_AMD_framebuffer_multisample_advanced(provider, caps, ext);
-        GL_AMD_performance_monitor = check_AMD_performance_monitor(provider, caps, ext);
+        GL_AMD_framebuffer_multisample_advanced = checkExt1("GL_AMD_framebuffer_multisample_advanced", stack, provider, caps, ext, 358, 360,
+            "glRenderbufferStorageMultisampleAdvancedAMD", "glNamedRenderbufferStorageMultisampleAdvancedAMD"
+        );
+        GL_AMD_performance_monitor = checkExt1("GL_AMD_performance_monitor", stack, provider, caps, ext, 360, 371,
+            "glGetPerfMonitorGroupsAMD", "glGetPerfMonitorCountersAMD", "glGetPerfMonitorGroupStringAMD", "glGetPerfMonitorCounterStringAMD", 
+            "glGetPerfMonitorCounterInfoAMD", "glGenPerfMonitorsAMD", "glDeletePerfMonitorsAMD", "glSelectPerfMonitorCountersAMD", "glBeginPerfMonitorAMD", 
+            "glEndPerfMonitorAMD", "glGetPerfMonitorCounterDataAMD"
+        );
         GL_AMD_program_binary_Z400 = ext.contains("GL_AMD_program_binary_Z400");
         GL_ANDROID_extension_pack_es31a = ext.contains("GL_ANDROID_extension_pack_es31a");
         GL_ANGLE_depth_texture = ext.contains("GL_ANGLE_depth_texture");
-        GL_ANGLE_framebuffer_blit = check_ANGLE_framebuffer_blit(provider, caps, ext);
-        GL_ANGLE_framebuffer_multisample = check_ANGLE_framebuffer_multisample(provider, caps, ext);
-        GL_ANGLE_instanced_arrays = check_ANGLE_instanced_arrays(provider, caps, ext);
+        GL_ANGLE_framebuffer_blit = checkExt2("GL_ANGLE_framebuffer_blit", stack, provider, caps, ext, 371, "glBlitFramebufferANGLE");
+        GL_ANGLE_framebuffer_multisample = checkExt2("GL_ANGLE_framebuffer_multisample", stack, provider, caps, ext, 372, "glRenderbufferStorageMultisampleANGLE");
+        GL_ANGLE_instanced_arrays = checkExt1("GL_ANGLE_instanced_arrays", stack, provider, caps, ext, 373, 376,
+            "glDrawArraysInstancedANGLE", "glDrawElementsInstancedANGLE", "glVertexAttribDivisorANGLE"
+        );
         GL_ANGLE_pack_reverse_row_order = ext.contains("GL_ANGLE_pack_reverse_row_order");
         GL_ANGLE_program_binary = ext.contains("GL_ANGLE_program_binary");
         GL_ANGLE_texture_compression_dxt1 = ext.contains("GL_ANGLE_texture_compression_dxt1");
         GL_ANGLE_texture_compression_dxt3 = ext.contains("GL_ANGLE_texture_compression_dxt3");
         GL_ANGLE_texture_compression_dxt5 = ext.contains("GL_ANGLE_texture_compression_dxt5");
         GL_ANGLE_texture_usage = ext.contains("GL_ANGLE_texture_usage");
-        GL_ANGLE_translated_shader_source = check_ANGLE_translated_shader_source(provider, caps, ext);
+        GL_ANGLE_translated_shader_source = checkExt2("GL_ANGLE_translated_shader_source", stack, provider, caps, ext, 376, "glGetTranslatedShaderSourceANGLE");
         GL_APPLE_clip_distance = ext.contains("GL_APPLE_clip_distance");
         GL_APPLE_color_buffer_packed_float = ext.contains("GL_APPLE_color_buffer_packed_float");
-        GL_APPLE_copy_texture_levels = check_APPLE_copy_texture_levels(provider, caps, ext);
-        GL_APPLE_framebuffer_multisample = check_APPLE_framebuffer_multisample(provider, caps, ext);
+        GL_APPLE_copy_texture_levels = checkExt2("GL_APPLE_copy_texture_levels", stack, provider, caps, ext, 377, "glCopyTextureLevelsAPPLE");
+        GL_APPLE_framebuffer_multisample = checkExt1("GL_APPLE_framebuffer_multisample", stack, provider, caps, ext, 378, 380,
+            "glRenderbufferStorageMultisampleAPPLE", "glResolveMultisampleFramebufferAPPLE"
+        );
         GL_APPLE_rgb_422 = ext.contains("GL_APPLE_rgb_422");
-        GL_APPLE_sync = check_APPLE_sync(provider, caps, ext);
+        GL_APPLE_sync = checkExt1("GL_APPLE_sync", stack, provider, caps, ext, 380, 387,
+            "glFenceSyncAPPLE", "glIsSyncAPPLE", "glDeleteSyncAPPLE", "glClientWaitSyncAPPLE", "glWaitSyncAPPLE", "glGetInteger64vAPPLE", "glGetSyncivAPPLE"
+        );
         GL_APPLE_texture_format_BGRA8888 = ext.contains("GL_APPLE_texture_format_BGRA8888");
         GL_APPLE_texture_max_level = ext.contains("GL_APPLE_texture_max_level");
         GL_APPLE_texture_packed_float = ext.contains("GL_APPLE_texture_packed_float");
         GL_ARM_mali_program_binary = ext.contains("GL_ARM_mali_program_binary");
         GL_ARM_mali_shader_binary = ext.contains("GL_ARM_mali_shader_binary");
         GL_ARM_rgba8 = ext.contains("GL_ARM_rgba8");
-        GL_ARM_shader_core_properties = check_ARM_shader_core_properties(provider, caps, ext);
+        GL_ARM_shader_core_properties = checkExt2("GL_ARM_shader_core_properties", stack, provider, caps, ext, 387, "glMaxActiveShaderCoresARM");
         GL_ARM_shader_framebuffer_fetch = ext.contains("GL_ARM_shader_framebuffer_fetch");
         GL_ARM_shader_framebuffer_fetch_depth_stencil = ext.contains("GL_ARM_shader_framebuffer_fetch_depth_stencil");
         GL_ARM_texture_unnormalized_coordinates = ext.contains("GL_ARM_texture_unnormalized_coordinates");
         GL_DMP_program_binary = ext.contains("GL_DMP_program_binary");
         GL_DMP_shader_binary = ext.contains("GL_DMP_shader_binary");
-        GL_EXT_base_instance = check_EXT_base_instance(provider, caps, ext);
-        GL_EXT_blend_func_extended = check_EXT_blend_func_extended(provider, caps, ext);
+        GL_EXT_base_instance = checkExt1("GL_EXT_base_instance", stack, provider, caps, ext, 388, 391,
+            "glDrawArraysInstancedBaseInstanceEXT", "glDrawElementsInstancedBaseInstanceEXT", "glDrawElementsInstancedBaseVertexBaseInstanceEXT"
+        );
+        GL_EXT_blend_func_extended = check_EXT_blend_func_extended(stack, provider, caps, ext);
         GL_EXT_blend_minmax = ext.contains("GL_EXT_blend_minmax");
-        GL_EXT_buffer_storage = check_EXT_buffer_storage(provider, caps, ext);
-        GL_EXT_clear_texture = check_EXT_clear_texture(provider, caps, ext);
-        GL_EXT_clip_control = check_EXT_clip_control(provider, caps, ext);
+        GL_EXT_buffer_storage = checkExt2("GL_EXT_buffer_storage", stack, provider, caps, ext, 395, "glBufferStorageEXT");
+        GL_EXT_clear_texture = checkExt1("GL_EXT_clear_texture", stack, provider, caps, ext, 396, 398,
+            "glClearTexImageEXT", "glClearTexSubImageEXT"
+        );
+        GL_EXT_clip_control = checkExt2("GL_EXT_clip_control", stack, provider, caps, ext, 398, "glClipControlEXT");
         GL_EXT_clip_cull_distance = ext.contains("GL_EXT_clip_cull_distance");
         GL_EXT_color_buffer_float = ext.contains("GL_EXT_color_buffer_float");
         GL_EXT_color_buffer_half_float = ext.contains("GL_EXT_color_buffer_half_float");
         GL_EXT_compressed_ETC1_RGB8_sub_texture = ext.contains("GL_EXT_compressed_ETC1_RGB8_sub_texture");
         GL_EXT_conservative_depth = ext.contains("GL_EXT_conservative_depth");
-        GL_EXT_copy_image = check_EXT_copy_image(provider, caps, ext);
-        GL_EXT_debug_label = check_EXT_debug_label(provider, caps, ext);
-        GL_EXT_debug_marker = check_EXT_debug_marker(provider, caps, ext);
+        GL_EXT_copy_image = checkExt2("GL_EXT_copy_image", stack, provider, caps, ext, 399, "glCopyImageSubDataEXT");
+        GL_EXT_debug_label = checkExt1("GL_EXT_debug_label", stack, provider, caps, ext, 400, 402,
+            "glLabelObjectEXT", "glGetObjectLabelEXT"
+        );
+        GL_EXT_debug_marker = checkExt1("GL_EXT_debug_marker", stack, provider, caps, ext, 402, 405,
+            "glInsertEventMarkerEXT", "glPushGroupMarkerEXT", "glPopGroupMarkerEXT"
+        );
         GL_EXT_depth_clamp = ext.contains("GL_EXT_depth_clamp");
-        GL_EXT_discard_framebuffer = check_EXT_discard_framebuffer(provider, caps, ext);
-        GL_EXT_disjoint_timer_query = check_EXT_disjoint_timer_query(provider, caps, ext);
-        GL_EXT_draw_buffers = check_EXT_draw_buffers(provider, caps, ext);
-        GL_EXT_draw_buffers_indexed = check_EXT_draw_buffers_indexed(provider, caps, ext);
-        GL_EXT_draw_elements_base_vertex = check_EXT_draw_elements_base_vertex(provider, caps, ext);
-        GL_EXT_draw_instanced = check_EXT_draw_instanced(provider, caps, ext);
-        GL_EXT_draw_transform_feedback = check_EXT_draw_transform_feedback(provider, caps, ext);
+        GL_EXT_discard_framebuffer = checkExt2("GL_EXT_discard_framebuffer", stack, provider, caps, ext, 405, "glDiscardFramebufferEXT");
+        GL_EXT_disjoint_timer_query = checkExt3("GL_EXT_disjoint_timer_query", stack, provider, caps, ext, new int[] {
+            406, 407, 408, 409, 410, 411, 412, 413, 415, 416
+        },
+            "glGenQueriesEXT", "glDeleteQueriesEXT", "glIsQueryEXT", "glBeginQueryEXT", "glEndQueryEXT", "glGetQueryivEXT", "glGetQueryObjectuivEXT", 
+            "glQueryCounterEXT", "glGetQueryObjecti64vEXT", "glGetQueryObjectui64vEXT"
+        );
+        GL_EXT_draw_buffers = checkExt2("GL_EXT_draw_buffers", stack, provider, caps, ext, 418, "glDrawBuffersEXT");
+        GL_EXT_draw_buffers_indexed = checkExt1("GL_EXT_draw_buffers_indexed", stack, provider, caps, ext, 419, 427,
+            "glEnableiEXT", "glDisableiEXT", "glBlendEquationiEXT", "glBlendEquationSeparateiEXT", "glBlendFunciEXT", "glBlendFuncSeparateiEXT", 
+            "glColorMaskiEXT", "glIsEnablediEXT"
+        );
+        GL_EXT_draw_elements_base_vertex = check_EXT_draw_elements_base_vertex(stack, provider, caps, ext);
+        GL_EXT_draw_instanced = checkExt1("GL_EXT_draw_instanced", stack, provider, caps, ext, 431, 433,
+            "glDrawArraysInstancedEXT", "glDrawElementsInstancedEXT"
+        );
+        GL_EXT_draw_transform_feedback = checkExt1("GL_EXT_draw_transform_feedback", stack, provider, caps, ext, 433, 435,
+            "glDrawTransformFeedbackEXT", "glDrawTransformFeedbackInstancedEXT"
+        );
         GL_EXT_EGL_image_array = ext.contains("GL_EXT_EGL_image_array");
         GL_EXT_EGL_image_external_wrap_modes = ext.contains("GL_EXT_EGL_image_external_wrap_modes");
-        GL_EXT_EGL_image_storage = check_EXT_EGL_image_storage(provider, caps, ext);
+        GL_EXT_EGL_image_storage = check_EXT_EGL_image_storage(stack, provider, caps, ext);
         GL_EXT_EGL_image_storage_compression = ext.contains("GL_EXT_EGL_image_storage_compression");
-        GL_EXT_external_buffer = check_EXT_external_buffer(provider, caps, ext);
+        GL_EXT_external_buffer = check_EXT_external_buffer(stack, provider, caps, ext);
         GL_EXT_float_blend = ext.contains("GL_EXT_float_blend");
-        GL_EXT_fragment_shading_rate = check_EXT_fragment_shading_rate(provider, caps, ext);
+        GL_EXT_fragment_shading_rate = checkExt1("GL_EXT_fragment_shading_rate", stack, provider, caps, ext, 439, 443,
+            "glShadingRateEXT", "glShadingRateCombinerOpsEXT", "glFramebufferShadingRateEXT", "glGetFragmentShadingRatesEXT"
+        );
         GL_EXT_fragment_shading_rate_attachment = ext.contains("GL_EXT_fragment_shading_rate_attachment");
         GL_EXT_fragment_shading_rate_primitive = ext.contains("GL_EXT_fragment_shading_rate_primitive");
-        GL_EXT_framebuffer_blit_layers = check_EXT_framebuffer_blit_layers(provider, caps, ext);
+        GL_EXT_framebuffer_blit_layers = checkExt1("GL_EXT_framebuffer_blit_layers", stack, provider, caps, ext, 443, 445,
+            "glBlitFramebufferLayersEXT", "glBlitFramebufferLayerEXT"
+        );
         GL_EXT_geometry_point_size = ext.contains("GL_EXT_geometry_point_size");
-        GL_EXT_geometry_shader = check_EXT_geometry_shader(provider, caps, ext);
+        GL_EXT_geometry_shader = checkExt2("GL_EXT_geometry_shader", stack, provider, caps, ext, 445, "glFramebufferTextureEXT");
         GL_EXT_gpu_shader5 = ext.contains("GL_EXT_gpu_shader5");
-        GL_EXT_instanced_arrays = check_EXT_instanced_arrays(provider, caps, ext);
-        GL_EXT_map_buffer_range = check_EXT_map_buffer_range(provider, caps, ext);
-        GL_EXT_memory_object = check_EXT_memory_object(provider, caps, ext);
-        GL_EXT_memory_object_fd = check_EXT_memory_object_fd(provider, caps, ext);
-        GL_EXT_memory_object_win32 = check_EXT_memory_object_win32(provider, caps, ext);
-        GL_EXT_mesh_shader = check_EXT_mesh_shader(provider, caps, ext);
-        GL_EXT_multi_draw_arrays = check_EXT_multi_draw_arrays(provider, caps, ext);
-        GL_EXT_multi_draw_indirect = check_EXT_multi_draw_indirect(provider, caps, ext);
+        GL_EXT_instanced_arrays = checkExt3("GL_EXT_instanced_arrays", stack, provider, caps, ext, new int[] {
+            431, 432, 446
+        },
+            "glDrawArraysInstancedEXT", "glDrawElementsInstancedEXT", "glVertexAttribDivisorEXT"
+        );
+        GL_EXT_map_buffer_range = checkExt1("GL_EXT_map_buffer_range", stack, provider, caps, ext, 447, 449,
+            "glMapBufferRangeEXT", "glFlushMappedBufferRangeEXT"
+        );
+        GL_EXT_memory_object = check_EXT_memory_object(stack, provider, caps, ext);
+        GL_EXT_memory_object_fd = checkExt2("GL_EXT_memory_object_fd", stack, provider, caps, ext, 466, "glImportMemoryFdEXT");
+        GL_EXT_memory_object_win32 = checkExt1("GL_EXT_memory_object_win32", stack, provider, caps, ext, 467, 469,
+            "glImportMemoryWin32HandleEXT", "glImportMemoryWin32NameEXT"
+        );
+        GL_EXT_mesh_shader = checkExt1("GL_EXT_mesh_shader", stack, provider, caps, ext, 469, 473,
+            "glDrawMeshTasksEXT", "glDrawMeshTasksIndirectEXT", "glMultiDrawMeshTasksIndirectEXT", "glMultiDrawMeshTasksIndirectCountEXT"
+        );
+        GL_EXT_multi_draw_arrays = checkExt1("GL_EXT_multi_draw_arrays", stack, provider, caps, ext, 473, 475,
+            "glMultiDrawArraysEXT", "glMultiDrawElementsEXT"
+        );
+        GL_EXT_multi_draw_indirect = checkExt1("GL_EXT_multi_draw_indirect", stack, provider, caps, ext, 475, 477,
+            "glMultiDrawArraysIndirectEXT", "glMultiDrawElementsIndirectEXT"
+        );
         GL_EXT_multisample_compatibility = ext.contains("GL_EXT_multisample_compatibility");
-        GL_EXT_multisampled_render_to_texture = check_EXT_multisampled_render_to_texture(provider, caps, ext);
+        GL_EXT_multisampled_render_to_texture = checkExt1("GL_EXT_multisampled_render_to_texture", stack, provider, caps, ext, 477, 479,
+            "glRenderbufferStorageMultisampleEXT", "glFramebufferTexture2DMultisampleEXT"
+        );
         GL_EXT_multisampled_render_to_texture2 = ext.contains("GL_EXT_multisampled_render_to_texture2");
-        GL_EXT_multiview_draw_buffers = check_EXT_multiview_draw_buffers(provider, caps, ext);
+        GL_EXT_multiview_draw_buffers = checkExt1("GL_EXT_multiview_draw_buffers", stack, provider, caps, ext, 479, 482,
+            "glReadBufferIndexedEXT", "glDrawBuffersIndexedEXT", "glGetIntegeri_vEXT"
+        );
         GL_EXT_multiview_tessellation_geometry_shader = ext.contains("GL_EXT_multiview_tessellation_geometry_shader");
         GL_EXT_multiview_texture_multisample = ext.contains("GL_EXT_multiview_texture_multisample");
         GL_EXT_multiview_timer_query = ext.contains("GL_EXT_multiview_timer_query");
-        GL_EXT_occlusion_query_boolean = check_EXT_occlusion_query_boolean(provider, caps, ext);
-        GL_EXT_polygon_offset_clamp = check_EXT_polygon_offset_clamp(provider, caps, ext);
+        GL_EXT_occlusion_query_boolean = checkExt1("GL_EXT_occlusion_query_boolean", stack, provider, caps, ext, 406, 413,
+            "glGenQueriesEXT", "glDeleteQueriesEXT", "glIsQueryEXT", "glBeginQueryEXT", "glEndQueryEXT", "glGetQueryivEXT", "glGetQueryObjectuivEXT"
+        );
+        GL_EXT_polygon_offset_clamp = checkExt2("GL_EXT_polygon_offset_clamp", stack, provider, caps, ext, 482, "glPolygonOffsetClampEXT");
         GL_EXT_post_depth_coverage = ext.contains("GL_EXT_post_depth_coverage");
-        GL_EXT_primitive_bounding_box = check_EXT_primitive_bounding_box(provider, caps, ext);
+        GL_EXT_primitive_bounding_box = checkExt2("GL_EXT_primitive_bounding_box", stack, provider, caps, ext, 483, "glPrimitiveBoundingBoxEXT");
         GL_EXT_protected_textures = ext.contains("GL_EXT_protected_textures");
         GL_EXT_pvrtc_sRGB = ext.contains("GL_EXT_pvrtc_sRGB");
-        GL_EXT_raster_multisample = check_EXT_raster_multisample(provider, caps, ext);
+        GL_EXT_raster_multisample = checkExt2("GL_EXT_raster_multisample", stack, provider, caps, ext, 484, "glRasterSamplesEXT");
         GL_EXT_read_format_bgra = ext.contains("GL_EXT_read_format_bgra");
         GL_EXT_render_snorm = ext.contains("GL_EXT_render_snorm");
-        GL_EXT_robustness = check_EXT_robustness(provider, caps, ext);
-        GL_EXT_semaphore = check_EXT_semaphore(provider, caps, ext);
-        GL_EXT_semaphore_fd = check_EXT_semaphore_fd(provider, caps, ext);
-        GL_EXT_semaphore_win32 = check_EXT_semaphore_win32(provider, caps, ext);
+        GL_EXT_robustness = checkExt1("GL_EXT_robustness", stack, provider, caps, ext, 485, 489,
+            "glGetGraphicsResetStatusEXT", "glReadnPixelsEXT", "glGetnUniformfvEXT", "glGetnUniformivEXT"
+        );
+        GL_EXT_semaphore = checkExt3("GL_EXT_semaphore", stack, provider, caps, ext, new int[] {
+            449, 450, 489, 490, 491, 492, 493, 494, 495
+        },
+            "glGetUnsignedBytevEXT", "glGetUnsignedBytei_vEXT", "glGenSemaphoresEXT", "glDeleteSemaphoresEXT", "glIsSemaphoreEXT", 
+            "glSemaphoreParameterui64vEXT", "glGetSemaphoreParameterui64vEXT", "glWaitSemaphoreEXT", "glSignalSemaphoreEXT"
+        );
+        GL_EXT_semaphore_fd = checkExt2("GL_EXT_semaphore_fd", stack, provider, caps, ext, 496, "glImportSemaphoreFdEXT");
+        GL_EXT_semaphore_win32 = checkExt1("GL_EXT_semaphore_win32", stack, provider, caps, ext, 497, 499,
+            "glImportSemaphoreWin32HandleEXT", "glImportSemaphoreWin32NameEXT"
+        );
         GL_EXT_separate_depth_stencil = ext.contains("GL_EXT_separate_depth_stencil");
-        GL_EXT_separate_shader_objects = check_EXT_separate_shader_objects(provider, caps, ext);
+        GL_EXT_separate_shader_objects = checkExt1("GL_EXT_separate_shader_objects", stack, provider, caps, ext, 499, 543,
+            "glActiveShaderProgramEXT", "glBindProgramPipelineEXT", "glCreateShaderProgramvEXT", "glDeleteProgramPipelinesEXT", "glGenProgramPipelinesEXT", 
+            "glGetProgramPipelineInfoLogEXT", "glGetProgramPipelineivEXT", "glIsProgramPipelineEXT", "glProgramParameteriEXT", "glProgramUniform1fEXT", 
+            "glProgramUniform1fvEXT", "glProgramUniform1iEXT", "glProgramUniform1ivEXT", "glProgramUniform2fEXT", "glProgramUniform2fvEXT", 
+            "glProgramUniform2iEXT", "glProgramUniform2ivEXT", "glProgramUniform3fEXT", "glProgramUniform3fvEXT", "glProgramUniform3iEXT", 
+            "glProgramUniform3ivEXT", "glProgramUniform4fEXT", "glProgramUniform4fvEXT", "glProgramUniform4iEXT", "glProgramUniform4ivEXT", 
+            "glProgramUniformMatrix2fvEXT", "glProgramUniformMatrix3fvEXT", "glProgramUniformMatrix4fvEXT", "glUseProgramStagesEXT", 
+            "glValidateProgramPipelineEXT", "glProgramUniform1uiEXT", "glProgramUniform2uiEXT", "glProgramUniform3uiEXT", "glProgramUniform4uiEXT", 
+            "glProgramUniform1uivEXT", "glProgramUniform2uivEXT", "glProgramUniform3uivEXT", "glProgramUniform4uivEXT", "glProgramUniformMatrix2x3fvEXT", 
+            "glProgramUniformMatrix3x2fvEXT", "glProgramUniformMatrix2x4fvEXT", "glProgramUniformMatrix4x2fvEXT", "glProgramUniformMatrix3x4fvEXT", 
+            "glProgramUniformMatrix4x3fvEXT"
+        );
         GL_EXT_shader_framebuffer_fetch = ext.contains("GL_EXT_shader_framebuffer_fetch");
-        GL_EXT_shader_framebuffer_fetch_non_coherent = check_EXT_shader_framebuffer_fetch_non_coherent(provider, caps, ext);
+        GL_EXT_shader_framebuffer_fetch_non_coherent = checkExt2("GL_EXT_shader_framebuffer_fetch_non_coherent", stack, provider, caps, ext, 543, "glFramebufferFetchBarrierEXT");
         GL_EXT_shader_group_vote = ext.contains("GL_EXT_shader_group_vote");
         GL_EXT_shader_implicit_conversions = ext.contains("GL_EXT_shader_implicit_conversions");
         GL_EXT_shader_integer_mix = ext.contains("GL_EXT_shader_integer_mix");
         GL_EXT_shader_io_blocks = ext.contains("GL_EXT_shader_io_blocks");
         GL_EXT_shader_non_constant_global_initializers = ext.contains("GL_EXT_shader_non_constant_global_initializers");
         GL_EXT_shader_pixel_local_storage = ext.contains("GL_EXT_shader_pixel_local_storage");
-        GL_EXT_shader_pixel_local_storage2 = check_EXT_shader_pixel_local_storage2(provider, caps, ext);
+        GL_EXT_shader_pixel_local_storage2 = checkExt1("GL_EXT_shader_pixel_local_storage2", stack, provider, caps, ext, 544, 547,
+            "glFramebufferPixelLocalStorageSizeEXT", "glGetFramebufferPixelLocalStorageSizeEXT", "glClearPixelLocalStorageuiEXT"
+        );
         GL_EXT_shader_realtime_clock = ext.contains("GL_EXT_shader_realtime_clock");
         GL_EXT_shader_samples_identical = ext.contains("GL_EXT_shader_samples_identical");
         GL_EXT_shader_texture_lod = ext.contains("GL_EXT_shader_texture_lod");
         GL_EXT_shadow_samplers = ext.contains("GL_EXT_shadow_samplers");
-        GL_EXT_sparse_texture = check_EXT_sparse_texture(provider, caps, ext);
+        GL_EXT_sparse_texture = checkExt2("GL_EXT_sparse_texture", stack, provider, caps, ext, 547, "glTexPageCommitmentEXT");
         GL_EXT_sparse_texture2 = ext.contains("GL_EXT_sparse_texture2");
         GL_EXT_sRGB = ext.contains("GL_EXT_sRGB");
         GL_EXT_sRGB_write_control = ext.contains("GL_EXT_sRGB_write_control");
         GL_EXT_tessellation_point_size = ext.contains("GL_EXT_tessellation_point_size");
-        GL_EXT_tessellation_shader = check_EXT_tessellation_shader(provider, caps, ext);
-        GL_EXT_texture_border_clamp = check_EXT_texture_border_clamp(provider, caps, ext);
-        GL_EXT_texture_buffer = check_EXT_texture_buffer(provider, caps, ext);
+        GL_EXT_tessellation_shader = checkExt2("GL_EXT_tessellation_shader", stack, provider, caps, ext, 548, "glPatchParameteriEXT");
+        GL_EXT_texture_border_clamp = checkExt1("GL_EXT_texture_border_clamp", stack, provider, caps, ext, 549, 557,
+            "glTexParameterIivEXT", "glTexParameterIuivEXT", "glGetTexParameterIivEXT", "glGetTexParameterIuivEXT", "glSamplerParameterIivEXT", 
+            "glSamplerParameterIuivEXT", "glGetSamplerParameterIivEXT", "glGetSamplerParameterIuivEXT"
+        );
+        GL_EXT_texture_buffer = checkExt1("GL_EXT_texture_buffer", stack, provider, caps, ext, 557, 559,
+            "glTexBufferEXT", "glTexBufferRangeEXT"
+        );
         GL_EXT_texture_compression_astc_decode_mode = ext.contains("GL_EXT_texture_compression_astc_decode_mode");
         GL_EXT_texture_compression_bptc = ext.contains("GL_EXT_texture_compression_bptc");
         GL_EXT_texture_compression_dxt1 = ext.contains("GL_EXT_texture_compression_dxt1");
@@ -2123,19 +2290,27 @@ public final class GLESCapabilities {
         GL_EXT_texture_sRGB_decode = ext.contains("GL_EXT_texture_sRGB_decode");
         GL_EXT_texture_sRGB_R8 = ext.contains("GL_EXT_texture_sRGB_R8");
         GL_EXT_texture_sRGB_RG8 = ext.contains("GL_EXT_texture_sRGB_RG8");
-        GL_EXT_texture_storage = check_EXT_texture_storage(provider, caps, ext);
-        GL_EXT_texture_storage_compression = check_EXT_texture_storage_compression(provider, caps, ext);
+        GL_EXT_texture_storage = check_EXT_texture_storage(stack, provider, caps, ext);
+        GL_EXT_texture_storage_compression = checkExt1("GL_EXT_texture_storage_compression", stack, provider, caps, ext, 565, 567,
+            "glTexStorageAttribs2DEXT", "glTexStorageAttribs3DEXT"
+        );
         GL_EXT_texture_type_2_10_10_10_REV = ext.contains("GL_EXT_texture_type_2_10_10_10_REV");
-        GL_EXT_texture_view = check_EXT_texture_view(provider, caps, ext);
+        GL_EXT_texture_view = checkExt2("GL_EXT_texture_view", stack, provider, caps, ext, 567, "glTextureViewEXT");
         GL_EXT_unpack_subimage = ext.contains("GL_EXT_unpack_subimage");
-        GL_EXT_win32_keyed_mutex = check_EXT_win32_keyed_mutex(provider, caps, ext);
-        GL_EXT_window_rectangles = check_EXT_window_rectangles(provider, caps, ext);
+        GL_EXT_win32_keyed_mutex = checkExt1("GL_EXT_win32_keyed_mutex", stack, provider, caps, ext, 568, 570,
+            "glAcquireKeyedMutexWin32EXT", "glReleaseKeyedMutexWin32EXT"
+        );
+        GL_EXT_window_rectangles = checkExt2("GL_EXT_window_rectangles", stack, provider, caps, ext, 570, "glWindowRectanglesEXT");
         GL_EXT_YUV_target = ext.contains("GL_EXT_YUV_target");
         GL_FJ_shader_binary_GCCSO = ext.contains("GL_FJ_shader_binary_GCCSO");
         GL_EXT_texture_compression_astc_decode_mode_rgb9e5 = ext.contains("GL_EXT_texture_compression_astc_decode_mode_rgb9e5");
         GL_EXT_texture_query_lod = ext.contains("GL_EXT_texture_query_lod");
-        GL_IMG_framebuffer_downsample = check_IMG_framebuffer_downsample(provider, caps, ext);
-        GL_IMG_multisampled_render_to_texture = check_IMG_multisampled_render_to_texture(provider, caps, ext);
+        GL_IMG_framebuffer_downsample = checkExt1("GL_IMG_framebuffer_downsample", stack, provider, caps, ext, 571, 573,
+            "glFramebufferTexture2DDownsampleIMG", "glFramebufferTextureLayerDownsampleIMG"
+        );
+        GL_IMG_multisampled_render_to_texture = checkExt1("GL_IMG_multisampled_render_to_texture", stack, provider, caps, ext, 573, 575,
+            "glRenderbufferStorageMultisampleIMG", "glFramebufferTexture2DMultisampleIMG"
+        );
         GL_IMG_program_binary = ext.contains("GL_IMG_program_binary");
         GL_IMG_read_format = ext.contains("GL_IMG_read_format");
         GL_IMG_shader_binary = ext.contains("GL_IMG_shader_binary");
@@ -2144,78 +2319,137 @@ public final class GLESCapabilities {
         GL_IMG_texture_filter_cubic = ext.contains("GL_IMG_texture_filter_cubic");
         GL_INTEL_blackhole_render = ext.contains("GL_INTEL_blackhole_render");
         GL_INTEL_conservative_rasterization = ext.contains("GL_INTEL_conservative_rasterization");
-        GL_INTEL_framebuffer_CMAA = check_INTEL_framebuffer_CMAA(provider, caps, ext);
-        GL_INTEL_performance_query = check_INTEL_performance_query(provider, caps, ext);
+        GL_INTEL_framebuffer_CMAA = checkExt2("GL_INTEL_framebuffer_CMAA", stack, provider, caps, ext, 575, "glApplyFramebufferAttachmentCMAAINTEL");
+        GL_INTEL_performance_query = checkExt1("GL_INTEL_performance_query", stack, provider, caps, ext, 576, 586,
+            "glBeginPerfQueryINTEL", "glCreatePerfQueryINTEL", "glDeletePerfQueryINTEL", "glEndPerfQueryINTEL", "glGetFirstPerfQueryIdINTEL", 
+            "glGetNextPerfQueryIdINTEL", "glGetPerfCounterInfoINTEL", "glGetPerfQueryDataINTEL", "glGetPerfQueryIdByNameINTEL", "glGetPerfQueryInfoINTEL"
+        );
         GL_INTEL_shader_integer_functions2 = ext.contains("GL_INTEL_shader_integer_functions2");
-        GL_KHR_blend_equation_advanced = check_KHR_blend_equation_advanced(provider, caps, ext);
+        GL_KHR_blend_equation_advanced = checkExt2("GL_KHR_blend_equation_advanced", stack, provider, caps, ext, 586, "glBlendBarrierKHR");
         GL_KHR_blend_equation_advanced_coherent = ext.contains("GL_KHR_blend_equation_advanced_coherent");
         GL_KHR_context_flush_control = ext.contains("GL_KHR_context_flush_control");
-        GL_KHR_debug = check_KHR_debug(provider, caps, ext);
+        GL_KHR_debug = checkExt1("GL_KHR_debug", stack, provider, caps, ext, 587, 598,
+            "glDebugMessageControlKHR", "glDebugMessageInsertKHR", "glDebugMessageCallbackKHR", "glGetDebugMessageLogKHR", "glGetPointervKHR", 
+            "glPushDebugGroupKHR", "glPopDebugGroupKHR", "glObjectLabelKHR", "glGetObjectLabelKHR", "glObjectPtrLabelKHR", "glGetObjectPtrLabelKHR"
+        );
         GL_KHR_no_error = ext.contains("GL_KHR_no_error");
-        GL_KHR_parallel_shader_compile = check_KHR_parallel_shader_compile(provider, caps, ext);
+        GL_KHR_parallel_shader_compile = checkExt2("GL_KHR_parallel_shader_compile", stack, provider, caps, ext, 598, "glMaxShaderCompilerThreadsKHR");
         GL_KHR_robust_buffer_access_behavior = ext.contains("GL_KHR_robust_buffer_access_behavior");
-        GL_KHR_robustness = check_KHR_robustness(provider, caps, ext);
+        GL_KHR_robustness = checkExt1("GL_KHR_robustness", stack, provider, caps, ext, 599, 604,
+            "glGetGraphicsResetStatusKHR", "glReadnPixelsKHR", "glGetnUniformfvKHR", "glGetnUniformivKHR", "glGetnUniformuivKHR"
+        );
         GL_KHR_shader_subgroup = ext.contains("GL_KHR_shader_subgroup");
         GL_KHR_texture_compression_astc_hdr = ext.contains("GL_KHR_texture_compression_astc_hdr");
         GL_KHR_texture_compression_astc_ldr = ext.contains("GL_KHR_texture_compression_astc_ldr");
         GL_KHR_texture_compression_astc_sliced_3d = ext.contains("GL_KHR_texture_compression_astc_sliced_3d");
         GL_MESA_bgra = ext.contains("GL_MESA_bgra");
         GL_MESA_framebuffer_flip_x = ext.contains("GL_MESA_framebuffer_flip_x");
-        GL_MESA_framebuffer_flip_y = check_MESA_framebuffer_flip_y(provider, caps, ext);
+        GL_MESA_framebuffer_flip_y = checkExt1("GL_MESA_framebuffer_flip_y", stack, provider, caps, ext, 604, 606,
+            "glFramebufferParameteriMESA", "glGetFramebufferParameterivMESA"
+        );
         GL_MESA_framebuffer_swap_xy = ext.contains("GL_MESA_framebuffer_swap_xy");
         GL_MESA_program_binary_formats = ext.contains("GL_MESA_program_binary_formats");
         GL_MESA_tile_raster_order = ext.contains("GL_MESA_tile_raster_order");
-        GL_NV_alpha_to_coverage_dither_control = check_NV_alpha_to_coverage_dither_control(provider, caps, ext);
-        GL_NV_bindless_texture = check_NV_bindless_texture(provider, caps, ext);
-        GL_NV_blend_equation_advanced = check_NV_blend_equation_advanced(provider, caps, ext);
+        GL_NV_alpha_to_coverage_dither_control = checkExt2("GL_NV_alpha_to_coverage_dither_control", stack, provider, caps, ext, 606, "glAlphaToCoverageDitherControlNV");
+        GL_NV_bindless_texture = checkExt1("GL_NV_bindless_texture", stack, provider, caps, ext, 607, 620,
+            "glGetTextureHandleNV", "glGetTextureSamplerHandleNV", "glMakeTextureHandleResidentNV", "glMakeTextureHandleNonResidentNV", "glGetImageHandleNV", 
+            "glMakeImageHandleResidentNV", "glMakeImageHandleNonResidentNV", "glUniformHandleui64NV", "glUniformHandleui64vNV", "glProgramUniformHandleui64NV", 
+            "glProgramUniformHandleui64vNV", "glIsTextureHandleResidentNV", "glIsImageHandleResidentNV"
+        );
+        GL_NV_blend_equation_advanced = checkExt1("GL_NV_blend_equation_advanced", stack, provider, caps, ext, 620, 622,
+            "glBlendParameteriNV", "glBlendBarrierNV"
+        );
         GL_NV_blend_equation_advanced_coherent = ext.contains("GL_NV_blend_equation_advanced_coherent");
         GL_NV_blend_minmax_factor = ext.contains("GL_NV_blend_minmax_factor");
-        GL_NV_clip_space_w_scaling = check_NV_clip_space_w_scaling(provider, caps, ext);
+        GL_NV_clip_space_w_scaling = checkExt2("GL_NV_clip_space_w_scaling", stack, provider, caps, ext, 622, "glViewportPositionWScaleNV");
         GL_NV_compute_shader_derivatives = ext.contains("GL_NV_compute_shader_derivatives");
-        GL_NV_conditional_render = check_NV_conditional_render(provider, caps, ext);
-        GL_NV_conservative_raster = check_NV_conservative_raster(provider, caps, ext);
+        GL_NV_conditional_render = checkExt1("GL_NV_conditional_render", stack, provider, caps, ext, 623, 625,
+            "glBeginConditionalRenderNV", "glEndConditionalRenderNV"
+        );
+        GL_NV_conservative_raster = checkExt2("GL_NV_conservative_raster", stack, provider, caps, ext, 625, "glSubpixelPrecisionBiasNV");
         GL_NV_conservative_raster_pre_snap = ext.contains("GL_NV_conservative_raster_pre_snap");
-        GL_NV_conservative_raster_pre_snap_triangles = check_NV_conservative_raster_pre_snap_triangles(provider, caps, ext);
-        GL_NV_copy_buffer = check_NV_copy_buffer(provider, caps, ext);
-        GL_NV_coverage_sample = check_NV_coverage_sample(provider, caps, ext);
+        GL_NV_conservative_raster_pre_snap_triangles = checkExt2("GL_NV_conservative_raster_pre_snap_triangles", stack, provider, caps, ext, 626, "glConservativeRasterParameteriNV");
+        GL_NV_copy_buffer = checkExt2("GL_NV_copy_buffer", stack, provider, caps, ext, 627, "glCopyBufferSubDataNV");
+        GL_NV_coverage_sample = checkExt1("GL_NV_coverage_sample", stack, provider, caps, ext, 628, 630,
+            "glCoverageMaskNV", "glCoverageOperationNV"
+        );
         GL_NV_depth_nonlinear = ext.contains("GL_NV_depth_nonlinear");
-        GL_NV_draw_buffers = check_NV_draw_buffers(provider, caps, ext);
-        GL_NV_draw_instanced = check_NV_draw_instanced(provider, caps, ext);
-        GL_NV_draw_vulkan_image = check_NV_draw_vulkan_image(provider, caps, ext);
+        GL_NV_draw_buffers = checkExt2("GL_NV_draw_buffers", stack, provider, caps, ext, 630, "glDrawBuffersNV");
+        GL_NV_draw_instanced = checkExt1("GL_NV_draw_instanced", stack, provider, caps, ext, 631, 633,
+            "glDrawArraysInstancedNV", "glDrawElementsInstancedNV"
+        );
+        GL_NV_draw_vulkan_image = checkExt1("GL_NV_draw_vulkan_image", stack, provider, caps, ext, 633, 638,
+            "glDrawVkImageNV", "glGetVkProcAddrNV", "glWaitVkSemaphoreNV", "glSignalVkSemaphoreNV", "glSignalVkFenceNV"
+        );
         GL_NV_explicit_attrib_location = ext.contains("GL_NV_explicit_attrib_location");
         GL_NV_fbo_color_attachments = ext.contains("GL_NV_fbo_color_attachments");
-        GL_NV_fence = check_NV_fence(provider, caps, ext);
+        GL_NV_fence = checkExt1("GL_NV_fence", stack, provider, caps, ext, 638, 645,
+            "glDeleteFencesNV", "glGenFencesNV", "glIsFenceNV", "glTestFenceNV", "glGetFenceivNV", "glFinishFenceNV", "glSetFenceNV"
+        );
         GL_NV_fill_rectangle = ext.contains("GL_NV_fill_rectangle");
-        GL_NV_fragment_coverage_to_color = check_NV_fragment_coverage_to_color(provider, caps, ext);
+        GL_NV_fragment_coverage_to_color = checkExt2("GL_NV_fragment_coverage_to_color", stack, provider, caps, ext, 645, "glFragmentCoverageColorNV");
         GL_NV_fragment_shader_barycentric = ext.contains("GL_NV_fragment_shader_barycentric");
         GL_NV_fragment_shader_interlock = ext.contains("GL_NV_fragment_shader_interlock");
-        GL_NV_framebuffer_blit = check_NV_framebuffer_blit(provider, caps, ext);
-        GL_NV_framebuffer_mixed_samples = check_NV_framebuffer_mixed_samples(provider, caps, ext);
-        GL_NV_framebuffer_multisample = check_NV_framebuffer_multisample(provider, caps, ext);
+        GL_NV_framebuffer_blit = checkExt2("GL_NV_framebuffer_blit", stack, provider, caps, ext, 646, "glBlitFramebufferNV");
+        GL_NV_framebuffer_mixed_samples = checkExt3("GL_NV_framebuffer_mixed_samples", stack, provider, caps, ext, new int[] {
+            484, 647, 648, 649
+        },
+            "glRasterSamplesEXT", "glCoverageModulationTableNV", "glGetCoverageModulationTableNV", "glCoverageModulationNV"
+        );
+        GL_NV_framebuffer_multisample = checkExt2("GL_NV_framebuffer_multisample", stack, provider, caps, ext, 650, "glRenderbufferStorageMultisampleNV");
         GL_NV_generate_mipmap_sRGB = ext.contains("GL_NV_generate_mipmap_sRGB");
         GL_NV_geometry_shader_passthrough = ext.contains("GL_NV_geometry_shader_passthrough");
-        GL_NV_gpu_shader5 = check_NV_gpu_shader5(provider, caps, ext);
+        GL_NV_gpu_shader5 = checkExt1("GL_NV_gpu_shader5", stack, provider, caps, ext, 651, 685,
+            "glUniform1i64NV", "glUniform2i64NV", "glUniform3i64NV", "glUniform4i64NV", "glUniform1i64vNV", "glUniform2i64vNV", "glUniform3i64vNV", 
+            "glUniform4i64vNV", "glUniform1ui64NV", "glUniform2ui64NV", "glUniform3ui64NV", "glUniform4ui64NV", "glUniform1ui64vNV", "glUniform2ui64vNV", 
+            "glUniform3ui64vNV", "glUniform4ui64vNV", "glGetUniformi64vNV", "glGetUniformui64vNV", "glProgramUniform1i64NV", "glProgramUniform2i64NV", 
+            "glProgramUniform3i64NV", "glProgramUniform4i64NV", "glProgramUniform1i64vNV", "glProgramUniform2i64vNV", "glProgramUniform3i64vNV", 
+            "glProgramUniform4i64vNV", "glProgramUniform1ui64NV", "glProgramUniform2ui64NV", "glProgramUniform3ui64NV", "glProgramUniform4ui64NV", 
+            "glProgramUniform1ui64vNV", "glProgramUniform2ui64vNV", "glProgramUniform3ui64vNV", "glProgramUniform4ui64vNV"
+        );
         GL_NV_image_formats = ext.contains("GL_NV_image_formats");
-        GL_NV_instanced_arrays = check_NV_instanced_arrays(provider, caps, ext);
-        GL_NV_internalformat_sample_query = check_NV_internalformat_sample_query(provider, caps, ext);
-        GL_NV_memory_attachment = check_NV_memory_attachment(provider, caps, ext);
-        GL_NV_memory_object_sparse = check_NV_memory_object_sparse(provider, caps, ext);
-        GL_NV_mesh_shader = check_NV_mesh_shader(provider, caps, ext);
-        GL_NV_non_square_matrices = check_NV_non_square_matrices(provider, caps, ext);
+        GL_NV_instanced_arrays = checkExt2("GL_NV_instanced_arrays", stack, provider, caps, ext, 685, "glVertexAttribDivisorNV");
+        GL_NV_internalformat_sample_query = checkExt2("GL_NV_internalformat_sample_query", stack, provider, caps, ext, 686, "glGetInternalformatSampleivNV");
+        GL_NV_memory_attachment = check_NV_memory_attachment(stack, provider, caps, ext);
+        GL_NV_memory_object_sparse = checkExt1("GL_NV_memory_object_sparse", stack, provider, caps, ext, 693, 697,
+            "glBufferPageCommitmentMemNV", "glNamedBufferPageCommitmentMemNV", "glTexPageCommitmentMemNV", "glTexturePageCommitmentMemNV"
+        );
+        GL_NV_mesh_shader = checkExt1("GL_NV_mesh_shader", stack, provider, caps, ext, 697, 700,
+            "glDrawMeshTasksNV", "glDrawMeshTasksIndirectNV", "glMultiDrawMeshTasksIndirectNV"
+        );
+        GL_NV_non_square_matrices = checkExt1("GL_NV_non_square_matrices", stack, provider, caps, ext, 700, 706,
+            "glUniformMatrix2x3fvNV", "glUniformMatrix3x2fvNV", "glUniformMatrix2x4fvNV", "glUniformMatrix4x2fvNV", "glUniformMatrix3x4fvNV", 
+            "glUniformMatrix4x3fvNV"
+        );
         GL_NV_pack_subimage = ext.contains("GL_NV_pack_subimage");
-        GL_NV_path_rendering = check_NV_path_rendering(provider, caps, ext);
+        GL_NV_path_rendering = checkExt3("GL_NV_path_rendering", stack, provider, caps, ext, new int[] {
+            706, 707, 708, 709, 710, 711, 712, 715, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 
+            744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755
+        },
+            "glPathCommandsNV", "glPathCoordsNV", "glPathSubCommandsNV", "glPathSubCoordsNV", "glPathStringNV", "glPathGlyphsNV", "glPathGlyphRangeNV", 
+            "glCopyPathNV", "glInterpolatePathsNV", "glTransformPathNV", "glPathParameterivNV", "glPathParameteriNV", "glPathParameterfvNV", 
+            "glPathParameterfNV", "glPathDashArrayNV", "glGenPathsNV", "glDeletePathsNV", "glIsPathNV", "glPathStencilFuncNV", "glPathStencilDepthOffsetNV", 
+            "glStencilFillPathNV", "glStencilStrokePathNV", "glStencilFillPathInstancedNV", "glStencilStrokePathInstancedNV", "glPathCoverDepthFuncNV", 
+            "glCoverFillPathNV", "glCoverStrokePathNV", "glCoverFillPathInstancedNV", "glCoverStrokePathInstancedNV", "glGetPathParameterivNV", 
+            "glGetPathParameterfvNV", "glGetPathCommandsNV", "glGetPathCoordsNV", "glGetPathDashArrayNV", "glGetPathMetricsNV", "glGetPathMetricRangeNV", 
+            "glGetPathSpacingNV", "glIsPointInFillPathNV", "glIsPointInStrokePathNV", "glGetPathLengthNV", "glPointAlongPathNV"
+        );
         GL_NV_path_rendering_shared_edge = ext.contains("GL_NV_path_rendering_shared_edge");
-        GL_NV_polygon_mode = check_NV_polygon_mode(provider, caps, ext);
+        GL_NV_polygon_mode = checkExt2("GL_NV_polygon_mode", stack, provider, caps, ext, 763, "glPolygonModeNV");
         GL_NV_primitive_shading_rate = ext.contains("GL_NV_primitive_shading_rate");
-        GL_NV_read_buffer = check_NV_read_buffer(provider, caps, ext);
+        GL_NV_read_buffer = checkExt2("GL_NV_read_buffer", stack, provider, caps, ext, 764, "glReadBufferNV");
         GL_NV_read_buffer_front = ext.contains("GL_NV_read_buffer_front");
         GL_NV_read_depth = ext.contains("GL_NV_read_depth");
         GL_NV_read_depth_stencil = ext.contains("GL_NV_read_depth_stencil");
         GL_NV_read_stencil = ext.contains("GL_NV_read_stencil");
         GL_NV_representative_fragment_test = ext.contains("GL_NV_representative_fragment_test");
-        GL_NV_sample_locations = check_NV_sample_locations(provider, caps, ext);
+        GL_NV_sample_locations = checkExt1("GL_NV_sample_locations", stack, provider, caps, ext, 765, 768,
+            "glFramebufferSampleLocationsfvNV", "glNamedFramebufferSampleLocationsfvNV", "glResolveDepthValuesNV"
+        );
         GL_NV_sample_mask_override_coverage = ext.contains("GL_NV_sample_mask_override_coverage");
-        GL_NV_scissor_exclusive = check_NV_scissor_exclusive(provider, caps, ext);
+        GL_NV_scissor_exclusive = checkExt1("GL_NV_scissor_exclusive", stack, provider, caps, ext, 768, 770,
+            "glScissorExclusiveArrayvNV", "glScissorExclusiveNV"
+        );
         GL_NV_shader_atomic_fp16_vector = ext.contains("GL_NV_shader_atomic_fp16_vector");
         GL_NV_shader_noperspective_interpolation = ext.contains("GL_NV_shader_noperspective_interpolation");
         GL_NV_shader_subgroup_partitioned = ext.contains("GL_NV_shader_subgroup_partitioned");
@@ -2224,41 +2458,58 @@ public final class GLESCapabilities {
         GL_NV_shadow_samplers_cube = ext.contains("GL_NV_shadow_samplers_cube");
         GL_NV_sRGB_formats = ext.contains("GL_NV_sRGB_formats");
         GL_NV_stereo_view_rendering = ext.contains("GL_NV_stereo_view_rendering");
-        GL_NV_texture_array = check_NV_texture_array(provider, caps, ext);
-        GL_NV_texture_barrier = check_NV_texture_barrier(provider, caps, ext);
+        GL_NV_texture_array = checkExt1("GL_NV_texture_array", stack, provider, caps, ext, 770, 776,
+            "glTexImage3DNV", "glTexSubImage3DNV", "glCopyTexSubImage3DNV", "glCompressedTexImage3DNV", "glCompressedTexSubImage3DNV", 
+            "glFramebufferTextureLayerNV"
+        );
+        GL_NV_texture_barrier = checkExt2("GL_NV_texture_barrier", stack, provider, caps, ext, 776, "glTextureBarrierNV");
         GL_NV_texture_border_clamp = ext.contains("GL_NV_texture_border_clamp");
         GL_NV_texture_compression_s3tc = ext.contains("GL_NV_texture_compression_s3tc");
         GL_NV_texture_compression_s3tc_update = ext.contains("GL_NV_texture_compression_s3tc_update");
         GL_NV_texture_npot_2D_mipmap = ext.contains("GL_NV_texture_npot_2D_mipmap");
-        GL_NV_timeline_semaphore = check_NV_timeline_semaphore(provider, caps, ext);
-        GL_NV_viewport_array = check_NV_viewport_array(provider, caps, ext);
+        GL_NV_timeline_semaphore = checkExt1("GL_NV_timeline_semaphore", stack, provider, caps, ext, 777, 780,
+            "glCreateSemaphoresNV", "glSemaphoreParameterivNV", "glGetSemaphoreParameterivNV"
+        );
+        GL_NV_viewport_array = checkExt1("GL_NV_viewport_array", stack, provider, caps, ext, 780, 792,
+            "glViewportArrayvNV", "glViewportIndexedfNV", "glViewportIndexedfvNV", "glScissorArrayvNV", "glScissorIndexedNV", "glScissorIndexedvNV", 
+            "glDepthRangeArrayfvNV", "glDepthRangeIndexedfNV", "glGetFloati_vNV", "glEnableiNV", "glDisableiNV", "glIsEnablediNV"
+        );
         GL_NV_viewport_array2 = ext.contains("GL_NV_viewport_array2");
-        GL_NV_viewport_swizzle = check_NV_viewport_swizzle(provider, caps, ext);
+        GL_NV_viewport_swizzle = checkExt2("GL_NV_viewport_swizzle", stack, provider, caps, ext, 792, "glViewportSwizzleNV");
         GL_NVX_blend_equation_advanced_multi_draw_buffers = ext.contains("GL_NVX_blend_equation_advanced_multi_draw_buffers");
         GL_OES_compressed_ETC1_RGB8_texture = ext.contains("GL_OES_compressed_ETC1_RGB8_texture");
         GL_OES_compressed_paletted_texture = ext.contains("GL_OES_compressed_paletted_texture");
-        GL_OES_copy_image = check_OES_copy_image(provider, caps, ext);
+        GL_OES_copy_image = checkExt2("GL_OES_copy_image", stack, provider, caps, ext, 793, "glCopyImageSubDataOES");
         GL_OES_depth24 = ext.contains("GL_OES_depth24");
         GL_OES_depth32 = ext.contains("GL_OES_depth32");
         GL_OES_depth_texture = ext.contains("GL_OES_depth_texture");
         GL_OES_depth_texture_cube_map = ext.contains("GL_OES_depth_texture_cube_map");
-        GL_OES_draw_buffers_indexed = check_OES_draw_buffers_indexed(provider, caps, ext);
-        GL_OES_draw_elements_base_vertex = check_OES_draw_elements_base_vertex(provider, caps, ext);
-        GL_OES_EGL_image = check_OES_EGL_image(provider, caps, ext);
+        GL_OES_draw_buffers_indexed = checkExt1("GL_OES_draw_buffers_indexed", stack, provider, caps, ext, 794, 802,
+            "glEnableiOES", "glDisableiOES", "glBlendEquationiOES", "glBlendEquationSeparateiOES", "glBlendFunciOES", "glBlendFuncSeparateiOES", 
+            "glColorMaskiOES", "glIsEnablediOES"
+        );
+        GL_OES_draw_elements_base_vertex = check_OES_draw_elements_base_vertex(stack, provider, caps, ext);
+        GL_OES_EGL_image = checkExt1("GL_OES_EGL_image", stack, provider, caps, ext, 806, 808,
+            "glEGLImageTargetTexture2DOES", "glEGLImageTargetRenderbufferStorageOES"
+        );
         GL_OES_EGL_image_external = ext.contains("GL_OES_EGL_image_external");
         GL_OES_EGL_image_external_essl3 = ext.contains("GL_OES_EGL_image_external_essl3");
         GL_OES_element_index_uint = ext.contains("GL_OES_element_index_uint");
         GL_OES_fbo_render_mipmap = ext.contains("GL_OES_fbo_render_mipmap");
         GL_OES_geometry_point_size = ext.contains("GL_OES_geometry_point_size");
-        GL_OES_geometry_shader = check_OES_geometry_shader(provider, caps, ext);
-        GL_OES_get_program_binary = check_OES_get_program_binary(provider, caps, ext);
+        GL_OES_geometry_shader = checkExt2("GL_OES_geometry_shader", stack, provider, caps, ext, 808, "glFramebufferTextureOES");
+        GL_OES_get_program_binary = checkExt1("GL_OES_get_program_binary", stack, provider, caps, ext, 809, 811,
+            "glGetProgramBinaryOES", "glProgramBinaryOES"
+        );
         GL_OES_gpu_shader5 = ext.contains("GL_OES_gpu_shader5");
-        GL_OES_mapbuffer = check_OES_mapbuffer(provider, caps, ext);
+        GL_OES_mapbuffer = checkExt1("GL_OES_mapbuffer", stack, provider, caps, ext, 811, 814,
+            "glMapBufferOES", "glUnmapBufferOES", "glGetBufferPointervOES"
+        );
         GL_OES_packed_depth_stencil = ext.contains("GL_OES_packed_depth_stencil");
-        GL_OES_primitive_bounding_box = check_OES_primitive_bounding_box(provider, caps, ext);
+        GL_OES_primitive_bounding_box = checkExt2("GL_OES_primitive_bounding_box", stack, provider, caps, ext, 814, "glPrimitiveBoundingBoxOES");
         GL_OES_required_internalformat = ext.contains("GL_OES_required_internalformat");
         GL_OES_rgb8_rgba8 = ext.contains("GL_OES_rgb8_rgba8");
-        GL_OES_sample_shading = check_OES_sample_shading(provider, caps, ext);
+        GL_OES_sample_shading = checkExt2("GL_OES_sample_shading", stack, provider, caps, ext, 815, "glMinSampleShadingOES");
         GL_OES_sample_variables = ext.contains("GL_OES_sample_variables");
         GL_OES_shader_image_atomic = ext.contains("GL_OES_shader_image_atomic");
         GL_OES_shader_io_blocks = ext.contains("GL_OES_shader_io_blocks");
@@ -2269,10 +2520,18 @@ public final class GLESCapabilities {
         GL_OES_stencil8 = ext.contains("GL_OES_stencil8");
         GL_OES_surfaceless_context = ext.contains("GL_OES_surfaceless_context");
         GL_OES_tessellation_point_size = ext.contains("GL_OES_tessellation_point_size");
-        GL_OES_tessellation_shader = check_OES_tessellation_shader(provider, caps, ext);
-        GL_OES_texture_3D = check_OES_texture_3D(provider, caps, ext);
-        GL_OES_texture_border_clamp = check_OES_texture_border_clamp(provider, caps, ext);
-        GL_OES_texture_buffer = check_OES_texture_buffer(provider, caps, ext);
+        GL_OES_tessellation_shader = checkExt2("GL_OES_tessellation_shader", stack, provider, caps, ext, 816, "glPatchParameteriOES");
+        GL_OES_texture_3D = checkExt1("GL_OES_texture_3D", stack, provider, caps, ext, 817, 823,
+            "glTexImage3DOES", "glTexSubImage3DOES", "glCopyTexSubImage3DOES", "glCompressedTexImage3DOES", "glCompressedTexSubImage3DOES", 
+            "glFramebufferTexture3DOES"
+        );
+        GL_OES_texture_border_clamp = checkExt1("GL_OES_texture_border_clamp", stack, provider, caps, ext, 823, 831,
+            "glTexParameterIivOES", "glTexParameterIuivOES", "glGetTexParameterIivOES", "glGetTexParameterIuivOES", "glSamplerParameterIivOES", 
+            "glSamplerParameterIuivOES", "glGetSamplerParameterIivOES", "glGetSamplerParameterIuivOES"
+        );
+        GL_OES_texture_buffer = checkExt1("GL_OES_texture_buffer", stack, provider, caps, ext, 831, 833,
+            "glTexBufferOES", "glTexBufferRangeOES"
+        );
         GL_OES_texture_compression_astc = ext.contains("GL_OES_texture_compression_astc");
         GL_OES_texture_cube_map_array = ext.contains("GL_OES_texture_cube_map_array");
         GL_OES_texture_float = ext.contains("GL_OES_texture_float");
@@ -2281,34 +2540,54 @@ public final class GLESCapabilities {
         GL_OES_texture_half_float_linear = ext.contains("GL_OES_texture_half_float_linear");
         GL_OES_texture_npot = ext.contains("GL_OES_texture_npot");
         GL_OES_texture_stencil8 = ext.contains("GL_OES_texture_stencil8");
-        GL_OES_texture_storage_multisample_2d_array = check_OES_texture_storage_multisample_2d_array(provider, caps, ext);
-        GL_OES_texture_view = check_OES_texture_view(provider, caps, ext);
-        GL_OES_vertex_array_object = check_OES_vertex_array_object(provider, caps, ext);
+        GL_OES_texture_storage_multisample_2d_array = checkExt2("GL_OES_texture_storage_multisample_2d_array", stack, provider, caps, ext, 833, "glTexStorage3DMultisampleOES");
+        GL_OES_texture_view = checkExt2("GL_OES_texture_view", stack, provider, caps, ext, 834, "glTextureViewOES");
+        GL_OES_vertex_array_object = checkExt1("GL_OES_vertex_array_object", stack, provider, caps, ext, 835, 839,
+            "glBindVertexArrayOES", "glDeleteVertexArraysOES", "glGenVertexArraysOES", "glIsVertexArrayOES"
+        );
         GL_OES_vertex_half_float = ext.contains("GL_OES_vertex_half_float");
         GL_OES_vertex_type_10_10_10_2 = ext.contains("GL_OES_vertex_type_10_10_10_2");
-        GL_OES_viewport_array = check_OES_viewport_array(provider, caps, ext);
-        GL_OVR_multiview = check_OVR_multiview(provider, caps, ext);
+        GL_OES_viewport_array = checkExt3("GL_OES_viewport_array", stack, provider, caps, ext, new int[] {
+            794, 795, 801, 839, 840, 841, 842, 843, 844, 845, 846, 847
+        },
+            "glEnableiOES", "glDisableiOES", "glIsEnablediOES", "glViewportArrayvOES", "glViewportIndexedfOES", "glViewportIndexedfvOES", "glScissorArrayvOES", 
+            "glScissorIndexedOES", "glScissorIndexedvOES", "glDepthRangeArrayfvOES", "glDepthRangeIndexedfOES", "glGetFloati_vOES"
+        );
+        GL_OVR_multiview = check_OVR_multiview(stack, provider, caps, ext);
         GL_OVR_multiview2 = ext.contains("GL_OVR_multiview2");
-        GL_OVR_multiview_multisampled_render_to_texture = check_OVR_multiview_multisampled_render_to_texture(provider, caps, ext);
-        GL_QCOM_alpha_test = check_QCOM_alpha_test(provider, caps, ext);
+        GL_OVR_multiview_multisampled_render_to_texture = checkExt2("GL_OVR_multiview_multisampled_render_to_texture", stack, provider, caps, ext, 850, "glFramebufferTextureMultisampleMultiviewOVR");
+        GL_QCOM_alpha_test = checkExt2("GL_QCOM_alpha_test", stack, provider, caps, ext, 851, "glAlphaFuncQCOM");
         GL_QCOM_binning_control = ext.contains("GL_QCOM_binning_control");
-        GL_QCOM_driver_control = check_QCOM_driver_control(provider, caps, ext);
-        GL_QCOM_extended_get = check_QCOM_extended_get(provider, caps, ext);
-        GL_QCOM_extended_get2 = check_QCOM_extended_get2(provider, caps, ext);
-        GL_QCOM_frame_extrapolation = check_QCOM_frame_extrapolation(provider, caps, ext);
-        GL_QCOM_framebuffer_foveated = check_QCOM_framebuffer_foveated(provider, caps, ext);
-        GL_QCOM_motion_estimation = check_QCOM_motion_estimation(provider, caps, ext);
+        GL_QCOM_driver_control = checkExt1("GL_QCOM_driver_control", stack, provider, caps, ext, 852, 856,
+            "glGetDriverControlsQCOM", "glGetDriverControlStringQCOM", "glEnableDriverControlQCOM", "glDisableDriverControlQCOM"
+        );
+        GL_QCOM_extended_get = checkExt1("GL_QCOM_extended_get", stack, provider, caps, ext, 856, 864,
+            "glExtGetTexturesQCOM", "glExtGetBuffersQCOM", "glExtGetRenderbuffersQCOM", "glExtGetFramebuffersQCOM", "glExtGetTexLevelParameterivQCOM", 
+            "glExtTexObjectStateOverrideiQCOM", "glExtGetTexSubImageQCOM", "glExtGetBufferPointervQCOM"
+        );
+        GL_QCOM_extended_get2 = checkExt1("GL_QCOM_extended_get2", stack, provider, caps, ext, 864, 868,
+            "glExtGetShadersQCOM", "glExtGetProgramsQCOM", "glExtIsProgramBinaryQCOM", "glExtGetProgramBinarySourceQCOM"
+        );
+        GL_QCOM_frame_extrapolation = checkExt2("GL_QCOM_frame_extrapolation", stack, provider, caps, ext, 868, "glExtrapolateTex2DQCOM");
+        GL_QCOM_framebuffer_foveated = checkExt1("GL_QCOM_framebuffer_foveated", stack, provider, caps, ext, 869, 871,
+            "glFramebufferFoveationConfigQCOM", "glFramebufferFoveationParametersQCOM"
+        );
+        GL_QCOM_motion_estimation = checkExt1("GL_QCOM_motion_estimation", stack, provider, caps, ext, 871, 873,
+            "glTexEstimateMotionQCOM", "glTexEstimateMotionRegionsQCOM"
+        );
         GL_QCOM_perfmon_global_mode = ext.contains("GL_QCOM_perfmon_global_mode");
         GL_QCOM_render_shared_exponent = ext.contains("GL_QCOM_render_shared_exponent");
         GL_QCOM_render_sRGB_R8_RG8 = ext.contains("GL_QCOM_render_sRGB_R8_RG8");
-        GL_QCOM_shader_framebuffer_fetch_noncoherent = check_QCOM_shader_framebuffer_fetch_noncoherent(provider, caps, ext);
+        GL_QCOM_shader_framebuffer_fetch_noncoherent = checkExt2("GL_QCOM_shader_framebuffer_fetch_noncoherent", stack, provider, caps, ext, 873, "glFramebufferFetchBarrierQCOM");
         GL_QCOM_shader_framebuffer_fetch_rate = ext.contains("GL_QCOM_shader_framebuffer_fetch_rate");
         GL_QCOM_shading_rate = ext.contains("GL_QCOM_shading_rate");
-        GL_QCOM_texture_foveated = check_QCOM_texture_foveated(provider, caps, ext);
+        GL_QCOM_texture_foveated = checkExt2("GL_QCOM_texture_foveated", stack, provider, caps, ext, 874, "glTextureFoveationParametersQCOM");
         GL_QCOM_texture_foveated2 = ext.contains("GL_QCOM_texture_foveated2");
         GL_QCOM_texture_foveated_subsampled_layout = ext.contains("GL_QCOM_texture_foveated_subsampled_layout");
         GL_QCOM_texture_lod_bias = ext.contains("GL_QCOM_texture_lod_bias");
-        GL_QCOM_tiled_rendering = check_QCOM_tiled_rendering(provider, caps, ext);
+        GL_QCOM_tiled_rendering = checkExt1("GL_QCOM_tiled_rendering", stack, provider, caps, ext, 875, 877,
+            "glStartTilingQCOM", "glEndTilingQCOM"
+        );
         GL_QCOM_writeonly_rendering = ext.contains("GL_QCOM_writeonly_rendering");
         GL_QCOM_ycbcr_degamma = ext.contains("GL_QCOM_ycbcr_degamma");
         GL_QCOM_YUV_texture_gather = ext.contains("GL_QCOM_YUV_texture_gather");
@@ -3200,252 +3479,7 @@ public final class GLESCapabilities {
         return addresses;
     }
 
-    private static boolean check_GLES20(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GLES20")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 
-            39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 
-            76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 
-            110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 
-            139, 140, 141
-        },
-            "glActiveTexture", "glAttachShader", "glBindAttribLocation", "glBindBuffer", "glBindFramebuffer", "glBindRenderbuffer", "glBindTexture", 
-            "glBlendColor", "glBlendEquation", "glBlendEquationSeparate", "glBlendFunc", "glBlendFuncSeparate", "glBufferData", "glBufferSubData", 
-            "glCheckFramebufferStatus", "glClear", "glClearColor", "glClearDepthf", "glClearStencil", "glColorMask", "glCompileShader", 
-            "glCompressedTexImage2D", "glCompressedTexSubImage2D", "glCopyTexImage2D", "glCopyTexSubImage2D", "glCreateProgram", "glCreateShader", "glCullFace", 
-            "glDeleteBuffers", "glDeleteFramebuffers", "glDeleteProgram", "glDeleteRenderbuffers", "glDeleteShader", "glDeleteTextures", "glDepthFunc", 
-            "glDepthMask", "glDepthRangef", "glDetachShader", "glDisable", "glDisableVertexAttribArray", "glDrawArrays", "glDrawElements", "glEnable", 
-            "glEnableVertexAttribArray", "glFinish", "glFlush", "glFramebufferRenderbuffer", "glFramebufferTexture2D", "glFrontFace", "glGenBuffers", 
-            "glGenerateMipmap", "glGenFramebuffers", "glGenRenderbuffers", "glGenTextures", "glGetActiveAttrib", "glGetActiveUniform", "glGetAttachedShaders", 
-            "glGetAttribLocation", "glGetBooleanv", "glGetBufferParameteriv", "glGetError", "glGetFloatv", "glGetFramebufferAttachmentParameteriv", 
-            "glGetIntegerv", "glGetProgramiv", "glGetProgramInfoLog", "glGetRenderbufferParameteriv", "glGetShaderiv", "glGetShaderInfoLog", 
-            "glGetShaderPrecisionFormat", "glGetShaderSource", "glGetString", "glGetTexParameterfv", "glGetTexParameteriv", "glGetUniformfv", "glGetUniformiv", 
-            "glGetUniformLocation", "glGetVertexAttribfv", "glGetVertexAttribiv", "glGetVertexAttribPointerv", "glHint", "glIsBuffer", "glIsEnabled", 
-            "glIsFramebuffer", "glIsProgram", "glIsRenderbuffer", "glIsShader", "glIsTexture", "glLineWidth", "glLinkProgram", "glPixelStorei", 
-            "glPolygonOffset", "glReadPixels", "glReleaseShaderCompiler", "glRenderbufferStorage", "glSampleCoverage", "glScissor", "glShaderBinary", 
-            "glShaderSource", "glStencilFunc", "glStencilFuncSeparate", "glStencilMask", "glStencilMaskSeparate", "glStencilOp", "glStencilOpSeparate", 
-            "glTexImage2D", "glTexParameterf", "glTexParameterfv", "glTexParameteri", "glTexParameteriv", "glTexSubImage2D", "glUniform1f", "glUniform1fv", 
-            "glUniform1i", "glUniform1iv", "glUniform2f", "glUniform2fv", "glUniform2i", "glUniform2iv", "glUniform3f", "glUniform3fv", "glUniform3i", 
-            "glUniform3iv", "glUniform4f", "glUniform4fv", "glUniform4i", "glUniform4iv", "glUniformMatrix2fv", "glUniformMatrix3fv", "glUniformMatrix4fv", 
-            "glUseProgram", "glValidateProgram", "glVertexAttrib1f", "glVertexAttrib1fv", "glVertexAttrib2f", "glVertexAttrib2fv", "glVertexAttrib3f", 
-            "glVertexAttrib3fv", "glVertexAttrib4f", "glVertexAttrib4fv", "glVertexAttribPointer", "glViewport"
-        ) || reportMissing("GLES", "GLES20");
-    }
-
-    private static boolean check_GLES30(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GLES30")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 
-            171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 
-            200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 
-            229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245
-        },
-            "glReadBuffer", "glDrawRangeElements", "glTexImage3D", "glTexSubImage3D", "glCopyTexSubImage3D", "glCompressedTexImage3D", 
-            "glCompressedTexSubImage3D", "glGenQueries", "glDeleteQueries", "glIsQuery", "glBeginQuery", "glEndQuery", "glGetQueryiv", "glGetQueryObjectuiv", 
-            "glUnmapBuffer", "glGetBufferPointerv", "glDrawBuffers", "glUniformMatrix2x3fv", "glUniformMatrix3x2fv", "glUniformMatrix2x4fv", 
-            "glUniformMatrix4x2fv", "glUniformMatrix3x4fv", "glUniformMatrix4x3fv", "glBlitFramebuffer", "glRenderbufferStorageMultisample", 
-            "glFramebufferTextureLayer", "glMapBufferRange", "glFlushMappedBufferRange", "glBindVertexArray", "glDeleteVertexArrays", "glGenVertexArrays", 
-            "glIsVertexArray", "glGetIntegeri_v", "glBeginTransformFeedback", "glEndTransformFeedback", "glBindBufferRange", "glBindBufferBase", 
-            "glTransformFeedbackVaryings", "glGetTransformFeedbackVarying", "glVertexAttribIPointer", "glGetVertexAttribIiv", "glGetVertexAttribIuiv", 
-            "glVertexAttribI4i", "glVertexAttribI4ui", "glVertexAttribI4iv", "glVertexAttribI4uiv", "glGetUniformuiv", "glGetFragDataLocation", "glUniform1ui", 
-            "glUniform2ui", "glUniform3ui", "glUniform4ui", "glUniform1uiv", "glUniform2uiv", "glUniform3uiv", "glUniform4uiv", "glClearBufferiv", 
-            "glClearBufferuiv", "glClearBufferfv", "glClearBufferfi", "glGetStringi", "glCopyBufferSubData", "glGetUniformIndices", "glGetActiveUniformsiv", 
-            "glGetUniformBlockIndex", "glGetActiveUniformBlockiv", "glGetActiveUniformBlockName", "glUniformBlockBinding", "glDrawArraysInstanced", 
-            "glDrawElementsInstanced", "glFenceSync", "glIsSync", "glDeleteSync", "glClientWaitSync", "glWaitSync", "glGetInteger64v", "glGetSynciv", 
-            "glGetInteger64i_v", "glGetBufferParameteri64v", "glGenSamplers", "glDeleteSamplers", "glIsSampler", "glBindSampler", "glSamplerParameteri", 
-            "glSamplerParameteriv", "glSamplerParameterf", "glSamplerParameterfv", "glGetSamplerParameteriv", "glGetSamplerParameterfv", 
-            "glVertexAttribDivisor", "glBindTransformFeedback", "glDeleteTransformFeedbacks", "glGenTransformFeedbacks", "glIsTransformFeedback", 
-            "glPauseTransformFeedback", "glResumeTransformFeedback", "glGetProgramBinary", "glProgramBinary", "glProgramParameteri", "glInvalidateFramebuffer", 
-            "glInvalidateSubFramebuffer", "glTexStorage2D", "glTexStorage3D", "glGetInternalformativ"
-        ) || reportMissing("GLES", "GLES30");
-    }
-
-    private static boolean check_GLES31(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GLES31")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 
-            275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 
-            304, 305, 306, 307, 308, 309, 310, 311, 312, 313
-        },
-            "glDispatchCompute", "glDispatchComputeIndirect", "glDrawArraysIndirect", "glDrawElementsIndirect", "glFramebufferParameteri", 
-            "glGetFramebufferParameteriv", "glGetProgramInterfaceiv", "glGetProgramResourceIndex", "glGetProgramResourceName", "glGetProgramResourceiv", 
-            "glGetProgramResourceLocation", "glUseProgramStages", "glActiveShaderProgram", "glCreateShaderProgramv", "glBindProgramPipeline", 
-            "glDeleteProgramPipelines", "glGenProgramPipelines", "glIsProgramPipeline", "glGetProgramPipelineiv", "glProgramUniform1i", "glProgramUniform2i", 
-            "glProgramUniform3i", "glProgramUniform4i", "glProgramUniform1ui", "glProgramUniform2ui", "glProgramUniform3ui", "glProgramUniform4ui", 
-            "glProgramUniform1f", "glProgramUniform2f", "glProgramUniform3f", "glProgramUniform4f", "glProgramUniform1iv", "glProgramUniform2iv", 
-            "glProgramUniform3iv", "glProgramUniform4iv", "glProgramUniform1uiv", "glProgramUniform2uiv", "glProgramUniform3uiv", "glProgramUniform4uiv", 
-            "glProgramUniform1fv", "glProgramUniform2fv", "glProgramUniform3fv", "glProgramUniform4fv", "glProgramUniformMatrix2fv", 
-            "glProgramUniformMatrix3fv", "glProgramUniformMatrix4fv", "glProgramUniformMatrix2x3fv", "glProgramUniformMatrix3x2fv", 
-            "glProgramUniformMatrix2x4fv", "glProgramUniformMatrix4x2fv", "glProgramUniformMatrix3x4fv", "glProgramUniformMatrix4x3fv", 
-            "glValidateProgramPipeline", "glGetProgramPipelineInfoLog", "glBindImageTexture", "glGetBooleani_v", "glMemoryBarrier", "glMemoryBarrierByRegion", 
-            "glTexStorage2DMultisample", "glGetMultisamplefv", "glSampleMaski", "glGetTexLevelParameteriv", "glGetTexLevelParameterfv", "glBindVertexBuffer", 
-            "glVertexAttribFormat", "glVertexAttribIFormat", "glVertexAttribBinding", "glVertexBindingDivisor"
-        ) || reportMissing("GLES", "GLES31");
-    }
-
-    private static boolean check_GLES32(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GLES32")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 
-            343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357
-        },
-            "glBlendBarrier", "glCopyImageSubData", "glDebugMessageControl", "glDebugMessageInsert", "glDebugMessageCallback", "glGetDebugMessageLog", 
-            "glGetPointerv", "glPushDebugGroup", "glPopDebugGroup", "glObjectLabel", "glGetObjectLabel", "glObjectPtrLabel", "glGetObjectPtrLabel", "glEnablei", 
-            "glDisablei", "glBlendEquationi", "glBlendEquationSeparatei", "glBlendFunci", "glBlendFuncSeparatei", "glColorMaski", "glIsEnabledi", 
-            "glDrawElementsBaseVertex", "glDrawRangeElementsBaseVertex", "glDrawElementsInstancedBaseVertex", "glFramebufferTexture", "glPrimitiveBoundingBox", 
-            "glGetGraphicsResetStatus", "glReadnPixels", "glGetnUniformfv", "glGetnUniformiv", "glGetnUniformuiv", "glMinSampleShading", "glPatchParameteri", 
-            "glTexParameterIiv", "glTexParameterIuiv", "glGetTexParameterIiv", "glGetTexParameterIuiv", "glSamplerParameterIiv", "glSamplerParameterIuiv", 
-            "glGetSamplerParameterIiv", "glGetSamplerParameterIuiv", "glTexBuffer", "glTexBufferRange", "glTexStorage3DMultisample"
-        ) || reportMissing("GLES", "GLES32");
-    }
-
-    private static boolean check_AMD_framebuffer_multisample_advanced(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_AMD_framebuffer_multisample_advanced")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            358, 359
-        },
-            "glRenderbufferStorageMultisampleAdvancedAMD", "glNamedRenderbufferStorageMultisampleAdvancedAMD"
-        ) || reportMissing("GLES", "GL_AMD_framebuffer_multisample_advanced");
-    }
-
-    private static boolean check_AMD_performance_monitor(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_AMD_performance_monitor")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370
-        },
-            "glGetPerfMonitorGroupsAMD", "glGetPerfMonitorCountersAMD", "glGetPerfMonitorGroupStringAMD", "glGetPerfMonitorCounterStringAMD", 
-            "glGetPerfMonitorCounterInfoAMD", "glGenPerfMonitorsAMD", "glDeletePerfMonitorsAMD", "glSelectPerfMonitorCountersAMD", "glBeginPerfMonitorAMD", 
-            "glEndPerfMonitorAMD", "glGetPerfMonitorCounterDataAMD"
-        ) || reportMissing("GLES", "GL_AMD_performance_monitor");
-    }
-
-    private static boolean check_ANGLE_framebuffer_blit(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_ANGLE_framebuffer_blit")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            371
-        },
-            "glBlitFramebufferANGLE"
-        ) || reportMissing("GLES", "GL_ANGLE_framebuffer_blit");
-    }
-
-    private static boolean check_ANGLE_framebuffer_multisample(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_ANGLE_framebuffer_multisample")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            372
-        },
-            "glRenderbufferStorageMultisampleANGLE"
-        ) || reportMissing("GLES", "GL_ANGLE_framebuffer_multisample");
-    }
-
-    private static boolean check_ANGLE_instanced_arrays(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_ANGLE_instanced_arrays")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            373, 374, 375
-        },
-            "glDrawArraysInstancedANGLE", "glDrawElementsInstancedANGLE", "glVertexAttribDivisorANGLE"
-        ) || reportMissing("GLES", "GL_ANGLE_instanced_arrays");
-    }
-
-    private static boolean check_ANGLE_translated_shader_source(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_ANGLE_translated_shader_source")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            376
-        },
-            "glGetTranslatedShaderSourceANGLE"
-        ) || reportMissing("GLES", "GL_ANGLE_translated_shader_source");
-    }
-
-    private static boolean check_APPLE_copy_texture_levels(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_APPLE_copy_texture_levels")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            377
-        },
-            "glCopyTextureLevelsAPPLE"
-        ) || reportMissing("GLES", "GL_APPLE_copy_texture_levels");
-    }
-
-    private static boolean check_APPLE_framebuffer_multisample(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_APPLE_framebuffer_multisample")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            378, 379
-        },
-            "glRenderbufferStorageMultisampleAPPLE", "glResolveMultisampleFramebufferAPPLE"
-        ) || reportMissing("GLES", "GL_APPLE_framebuffer_multisample");
-    }
-
-    private static boolean check_APPLE_sync(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_APPLE_sync")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            380, 381, 382, 383, 384, 385, 386
-        },
-            "glFenceSyncAPPLE", "glIsSyncAPPLE", "glDeleteSyncAPPLE", "glClientWaitSyncAPPLE", "glWaitSyncAPPLE", "glGetInteger64vAPPLE", "glGetSyncivAPPLE"
-        ) || reportMissing("GLES", "GL_APPLE_sync");
-    }
-
-    private static boolean check_ARM_shader_core_properties(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_ARM_shader_core_properties")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            387
-        },
-            "glMaxActiveShaderCoresARM"
-        ) || reportMissing("GLES", "GL_ARM_shader_core_properties");
-    }
-
-    private static boolean check_EXT_base_instance(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_base_instance")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            388, 389, 390
-        },
-            "glDrawArraysInstancedBaseInstanceEXT", "glDrawElementsInstancedBaseInstanceEXT", "glDrawElementsInstancedBaseVertexBaseInstanceEXT"
-        ) || reportMissing("GLES", "GL_EXT_base_instance");
-    }
-
-    private static boolean check_EXT_blend_func_extended(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
+    private static boolean check_EXT_blend_func_extended(MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
         if (!ext.contains("GL_EXT_blend_func_extended")) {
             return false;
         }
@@ -3453,136 +3487,14 @@ public final class GLESCapabilities {
         int flag0 = ext.contains("GLES30") ? 0 : Integer.MIN_VALUE;
         int flag3 = ext.contains("GLES31") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             flag0 + 391, flag0 + 392, flag0 + 393
         },
             "glBindFragDataLocationIndexedEXT", "glGetFragDataIndexEXT", "glBindFragDataLocationEXT"
         ) || reportMissing("GLES", "GL_EXT_blend_func_extended");
     }
 
-    private static boolean check_EXT_buffer_storage(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_buffer_storage")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            395
-        },
-            "glBufferStorageEXT"
-        ) || reportMissing("GLES", "GL_EXT_buffer_storage");
-    }
-
-    private static boolean check_EXT_clear_texture(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_clear_texture")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            396, 397
-        },
-            "glClearTexImageEXT", "glClearTexSubImageEXT"
-        ) || reportMissing("GLES", "GL_EXT_clear_texture");
-    }
-
-    private static boolean check_EXT_clip_control(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_clip_control")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            398
-        },
-            "glClipControlEXT"
-        ) || reportMissing("GLES", "GL_EXT_clip_control");
-    }
-
-    private static boolean check_EXT_copy_image(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_copy_image")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            399
-        },
-            "glCopyImageSubDataEXT"
-        ) || reportMissing("GLES", "GL_EXT_copy_image");
-    }
-
-    private static boolean check_EXT_debug_label(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_debug_label")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            400, 401
-        },
-            "glLabelObjectEXT", "glGetObjectLabelEXT"
-        ) || reportMissing("GLES", "GL_EXT_debug_label");
-    }
-
-    private static boolean check_EXT_debug_marker(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_debug_marker")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            402, 403, 404
-        },
-            "glInsertEventMarkerEXT", "glPushGroupMarkerEXT", "glPopGroupMarkerEXT"
-        ) || reportMissing("GLES", "GL_EXT_debug_marker");
-    }
-
-    private static boolean check_EXT_discard_framebuffer(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_discard_framebuffer")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            405
-        },
-            "glDiscardFramebufferEXT"
-        ) || reportMissing("GLES", "GL_EXT_discard_framebuffer");
-    }
-
-    private static boolean check_EXT_disjoint_timer_query(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_disjoint_timer_query")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            406, 407, 408, 409, 410, 411, 412, 413, 415, 416
-        },
-            "glGenQueriesEXT", "glDeleteQueriesEXT", "glIsQueryEXT", "glBeginQueryEXT", "glEndQueryEXT", "glGetQueryivEXT", "glGetQueryObjectuivEXT", 
-            "glQueryCounterEXT", "glGetQueryObjecti64vEXT", "glGetQueryObjectui64vEXT"
-        ) || reportMissing("GLES", "GL_EXT_disjoint_timer_query");
-    }
-
-    private static boolean check_EXT_draw_buffers(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_draw_buffers")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            418
-        },
-            "glDrawBuffersEXT"
-        ) || reportMissing("GLES", "GL_EXT_draw_buffers");
-    }
-
-    private static boolean check_EXT_draw_buffers_indexed(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_draw_buffers_indexed")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            419, 420, 421, 422, 423, 424, 425, 426
-        },
-            "glEnableiEXT", "glDisableiEXT", "glBlendEquationiEXT", "glBlendEquationSeparateiEXT", "glBlendFunciEXT", "glBlendFuncSeparateiEXT", 
-            "glColorMaskiEXT", "glIsEnablediEXT"
-        ) || reportMissing("GLES", "GL_EXT_draw_buffers_indexed");
-    }
-
-    private static boolean check_EXT_draw_elements_base_vertex(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
+    private static boolean check_EXT_draw_elements_base_vertex(MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
         if (!ext.contains("GL_EXT_draw_elements_base_vertex")) {
             return false;
         }
@@ -3590,133 +3502,49 @@ public final class GLESCapabilities {
         int flag0 = ext.contains("GLES30") ? 0 : Integer.MIN_VALUE;
         int flag2 = ext.contains("GL_EXT_multi_draw_arrays") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             427, flag0 + 428, flag0 + 429, flag2 + 430
         },
             "glDrawElementsBaseVertexEXT", "glDrawRangeElementsBaseVertexEXT", "glDrawElementsInstancedBaseVertexEXT", "glMultiDrawElementsBaseVertexEXT"
         ) || reportMissing("GLES", "GL_EXT_draw_elements_base_vertex");
     }
 
-    private static boolean check_EXT_draw_instanced(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_draw_instanced")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            431, 432
-        },
-            "glDrawArraysInstancedEXT", "glDrawElementsInstancedEXT"
-        ) || reportMissing("GLES", "GL_EXT_draw_instanced");
-    }
-
-    private static boolean check_EXT_draw_transform_feedback(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_draw_transform_feedback")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            433, 434
-        },
-            "glDrawTransformFeedbackEXT", "glDrawTransformFeedbackInstancedEXT"
-        ) || reportMissing("GLES", "GL_EXT_draw_transform_feedback");
-    }
-
-    private static boolean check_EXT_EGL_image_storage(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
+    private static boolean check_EXT_EGL_image_storage(MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
         if (!ext.contains("GL_EXT_EGL_image_storage")) {
             return false;
         }
 
         int flag0 = hasDSA(ext) ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             435, flag0 + 436
         },
             "glEGLImageTargetTexStorageEXT", "glEGLImageTargetTextureStorageEXT"
         ) || reportMissing("GLES", "GL_EXT_EGL_image_storage");
     }
 
-    private static boolean check_EXT_external_buffer(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
+    private static boolean check_EXT_external_buffer(MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
         if (!ext.contains("GL_EXT_external_buffer")) {
             return false;
         }
 
         int flag0 = hasDSA(ext) ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             437, flag0 + 438
         },
             "glBufferStorageExternalEXT", "glNamedBufferStorageExternalEXT"
         ) || reportMissing("GLES", "GL_EXT_external_buffer");
     }
 
-    private static boolean check_EXT_fragment_shading_rate(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_fragment_shading_rate")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            439, 440, 441, 442
-        },
-            "glShadingRateEXT", "glShadingRateCombinerOpsEXT", "glFramebufferShadingRateEXT", "glGetFragmentShadingRatesEXT"
-        ) || reportMissing("GLES", "GL_EXT_fragment_shading_rate");
-    }
-
-    private static boolean check_EXT_framebuffer_blit_layers(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_framebuffer_blit_layers")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            443, 444
-        },
-            "glBlitFramebufferLayersEXT", "glBlitFramebufferLayerEXT"
-        ) || reportMissing("GLES", "GL_EXT_framebuffer_blit_layers");
-    }
-
-    private static boolean check_EXT_geometry_shader(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_geometry_shader")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            445
-        },
-            "glFramebufferTextureEXT"
-        ) || reportMissing("GLES", "GL_EXT_geometry_shader");
-    }
-
-    private static boolean check_EXT_instanced_arrays(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_instanced_arrays")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            431, 432, 446
-        },
-            "glDrawArraysInstancedEXT", "glDrawElementsInstancedEXT", "glVertexAttribDivisorEXT"
-        ) || reportMissing("GLES", "GL_EXT_instanced_arrays");
-    }
-
-    private static boolean check_EXT_map_buffer_range(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_map_buffer_range")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            447, 448
-        },
-            "glMapBufferRangeEXT", "glFlushMappedBufferRangeEXT"
-        ) || reportMissing("GLES", "GL_EXT_map_buffer_range");
-    }
-
-    private static boolean check_EXT_memory_object(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
+    private static boolean check_EXT_memory_object(MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
         if (!ext.contains("GL_EXT_memory_object")) {
             return false;
         }
 
         int flag0 = hasDSA(ext) ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, flag0 + 461, flag0 + 462, flag0 + 463, flag0 + 464, flag0 + 465
         },
             "glGetUnsignedBytevEXT", "glGetUnsignedBytei_vEXT", "glDeleteMemoryObjectsEXT", "glIsMemoryObjectEXT", "glCreateMemoryObjectsEXT", 
@@ -3726,710 +3554,28 @@ public final class GLESCapabilities {
         ) || reportMissing("GLES", "GL_EXT_memory_object");
     }
 
-    private static boolean check_EXT_memory_object_fd(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_memory_object_fd")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            466
-        },
-            "glImportMemoryFdEXT"
-        ) || reportMissing("GLES", "GL_EXT_memory_object_fd");
-    }
-
-    private static boolean check_EXT_memory_object_win32(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_memory_object_win32")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            467, 468
-        },
-            "glImportMemoryWin32HandleEXT", "glImportMemoryWin32NameEXT"
-        ) || reportMissing("GLES", "GL_EXT_memory_object_win32");
-    }
-
-    private static boolean check_EXT_mesh_shader(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_mesh_shader")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            469, 470, 471, 472
-        },
-            "glDrawMeshTasksEXT", "glDrawMeshTasksIndirectEXT", "glMultiDrawMeshTasksIndirectEXT", "glMultiDrawMeshTasksIndirectCountEXT"
-        ) || reportMissing("GLES", "GL_EXT_mesh_shader");
-    }
-
-    private static boolean check_EXT_multi_draw_arrays(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_multi_draw_arrays")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            473, 474
-        },
-            "glMultiDrawArraysEXT", "glMultiDrawElementsEXT"
-        ) || reportMissing("GLES", "GL_EXT_multi_draw_arrays");
-    }
-
-    private static boolean check_EXT_multi_draw_indirect(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_multi_draw_indirect")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            475, 476
-        },
-            "glMultiDrawArraysIndirectEXT", "glMultiDrawElementsIndirectEXT"
-        ) || reportMissing("GLES", "GL_EXT_multi_draw_indirect");
-    }
-
-    private static boolean check_EXT_multisampled_render_to_texture(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_multisampled_render_to_texture")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            477, 478
-        },
-            "glRenderbufferStorageMultisampleEXT", "glFramebufferTexture2DMultisampleEXT"
-        ) || reportMissing("GLES", "GL_EXT_multisampled_render_to_texture");
-    }
-
-    private static boolean check_EXT_multiview_draw_buffers(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_multiview_draw_buffers")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            479, 480, 481
-        },
-            "glReadBufferIndexedEXT", "glDrawBuffersIndexedEXT", "glGetIntegeri_vEXT"
-        ) || reportMissing("GLES", "GL_EXT_multiview_draw_buffers");
-    }
-
-    private static boolean check_EXT_occlusion_query_boolean(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_occlusion_query_boolean")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            406, 407, 408, 409, 410, 411, 412
-        },
-            "glGenQueriesEXT", "glDeleteQueriesEXT", "glIsQueryEXT", "glBeginQueryEXT", "glEndQueryEXT", "glGetQueryivEXT", "glGetQueryObjectuivEXT"
-        ) || reportMissing("GLES", "GL_EXT_occlusion_query_boolean");
-    }
-
-    private static boolean check_EXT_polygon_offset_clamp(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_polygon_offset_clamp")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            482
-        },
-            "glPolygonOffsetClampEXT"
-        ) || reportMissing("GLES", "GL_EXT_polygon_offset_clamp");
-    }
-
-    private static boolean check_EXT_primitive_bounding_box(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_primitive_bounding_box")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            483
-        },
-            "glPrimitiveBoundingBoxEXT"
-        ) || reportMissing("GLES", "GL_EXT_primitive_bounding_box");
-    }
-
-    private static boolean check_EXT_raster_multisample(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_raster_multisample")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            484
-        },
-            "glRasterSamplesEXT"
-        ) || reportMissing("GLES", "GL_EXT_raster_multisample");
-    }
-
-    private static boolean check_EXT_robustness(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_robustness")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            485, 486, 487, 488
-        },
-            "glGetGraphicsResetStatusEXT", "glReadnPixelsEXT", "glGetnUniformfvEXT", "glGetnUniformivEXT"
-        ) || reportMissing("GLES", "GL_EXT_robustness");
-    }
-
-    private static boolean check_EXT_semaphore(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_semaphore")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            449, 450, 489, 490, 491, 492, 493, 494, 495
-        },
-            "glGetUnsignedBytevEXT", "glGetUnsignedBytei_vEXT", "glGenSemaphoresEXT", "glDeleteSemaphoresEXT", "glIsSemaphoreEXT", 
-            "glSemaphoreParameterui64vEXT", "glGetSemaphoreParameterui64vEXT", "glWaitSemaphoreEXT", "glSignalSemaphoreEXT"
-        ) || reportMissing("GLES", "GL_EXT_semaphore");
-    }
-
-    private static boolean check_EXT_semaphore_fd(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_semaphore_fd")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            496
-        },
-            "glImportSemaphoreFdEXT"
-        ) || reportMissing("GLES", "GL_EXT_semaphore_fd");
-    }
-
-    private static boolean check_EXT_semaphore_win32(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_semaphore_win32")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            497, 498
-        },
-            "glImportSemaphoreWin32HandleEXT", "glImportSemaphoreWin32NameEXT"
-        ) || reportMissing("GLES", "GL_EXT_semaphore_win32");
-    }
-
-    private static boolean check_EXT_separate_shader_objects(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_separate_shader_objects")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 
-            528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542
-        },
-            "glActiveShaderProgramEXT", "glBindProgramPipelineEXT", "glCreateShaderProgramvEXT", "glDeleteProgramPipelinesEXT", "glGenProgramPipelinesEXT", 
-            "glGetProgramPipelineInfoLogEXT", "glGetProgramPipelineivEXT", "glIsProgramPipelineEXT", "glProgramParameteriEXT", "glProgramUniform1fEXT", 
-            "glProgramUniform1fvEXT", "glProgramUniform1iEXT", "glProgramUniform1ivEXT", "glProgramUniform2fEXT", "glProgramUniform2fvEXT", 
-            "glProgramUniform2iEXT", "glProgramUniform2ivEXT", "glProgramUniform3fEXT", "glProgramUniform3fvEXT", "glProgramUniform3iEXT", 
-            "glProgramUniform3ivEXT", "glProgramUniform4fEXT", "glProgramUniform4fvEXT", "glProgramUniform4iEXT", "glProgramUniform4ivEXT", 
-            "glProgramUniformMatrix2fvEXT", "glProgramUniformMatrix3fvEXT", "glProgramUniformMatrix4fvEXT", "glUseProgramStagesEXT", 
-            "glValidateProgramPipelineEXT", "glProgramUniform1uiEXT", "glProgramUniform2uiEXT", "glProgramUniform3uiEXT", "glProgramUniform4uiEXT", 
-            "glProgramUniform1uivEXT", "glProgramUniform2uivEXT", "glProgramUniform3uivEXT", "glProgramUniform4uivEXT", "glProgramUniformMatrix2x3fvEXT", 
-            "glProgramUniformMatrix3x2fvEXT", "glProgramUniformMatrix2x4fvEXT", "glProgramUniformMatrix4x2fvEXT", "glProgramUniformMatrix3x4fvEXT", 
-            "glProgramUniformMatrix4x3fvEXT"
-        ) || reportMissing("GLES", "GL_EXT_separate_shader_objects");
-    }
-
-    private static boolean check_EXT_shader_framebuffer_fetch_non_coherent(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_shader_framebuffer_fetch_non_coherent")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            543
-        },
-            "glFramebufferFetchBarrierEXT"
-        ) || reportMissing("GLES", "GL_EXT_shader_framebuffer_fetch_non_coherent");
-    }
-
-    private static boolean check_EXT_shader_pixel_local_storage2(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_shader_pixel_local_storage2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            544, 545, 546
-        },
-            "glFramebufferPixelLocalStorageSizeEXT", "glGetFramebufferPixelLocalStorageSizeEXT", "glClearPixelLocalStorageuiEXT"
-        ) || reportMissing("GLES", "GL_EXT_shader_pixel_local_storage2");
-    }
-
-    private static boolean check_EXT_sparse_texture(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_sparse_texture")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            547
-        },
-            "glTexPageCommitmentEXT"
-        ) || reportMissing("GLES", "GL_EXT_sparse_texture");
-    }
-
-    private static boolean check_EXT_tessellation_shader(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_tessellation_shader")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            548
-        },
-            "glPatchParameteriEXT"
-        ) || reportMissing("GLES", "GL_EXT_tessellation_shader");
-    }
-
-    private static boolean check_EXT_texture_border_clamp(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_texture_border_clamp")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            549, 550, 551, 552, 553, 554, 555, 556
-        },
-            "glTexParameterIivEXT", "glTexParameterIuivEXT", "glGetTexParameterIivEXT", "glGetTexParameterIuivEXT", "glSamplerParameterIivEXT", 
-            "glSamplerParameterIuivEXT", "glGetSamplerParameterIivEXT", "glGetSamplerParameterIuivEXT"
-        ) || reportMissing("GLES", "GL_EXT_texture_border_clamp");
-    }
-
-    private static boolean check_EXT_texture_buffer(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_texture_buffer")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            557, 558
-        },
-            "glTexBufferEXT", "glTexBufferRangeEXT"
-        ) || reportMissing("GLES", "GL_EXT_texture_buffer");
-    }
-
-    private static boolean check_EXT_texture_storage(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
+    private static boolean check_EXT_texture_storage(MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
         if (!ext.contains("GL_EXT_texture_storage")) {
             return false;
         }
 
         int flag0 = hasDSA(ext) ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             559, 560, 561, flag0 + 562, flag0 + 563, flag0 + 564
         },
             "glTexStorage1DEXT", "glTexStorage2DEXT", "glTexStorage3DEXT", "glTextureStorage1DEXT", "glTextureStorage2DEXT", "glTextureStorage3DEXT"
         ) || reportMissing("GLES", "GL_EXT_texture_storage");
     }
 
-    private static boolean check_EXT_texture_storage_compression(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_texture_storage_compression")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            565, 566
-        },
-            "glTexStorageAttribs2DEXT", "glTexStorageAttribs3DEXT"
-        ) || reportMissing("GLES", "GL_EXT_texture_storage_compression");
-    }
-
-    private static boolean check_EXT_texture_view(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_texture_view")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            567
-        },
-            "glTextureViewEXT"
-        ) || reportMissing("GLES", "GL_EXT_texture_view");
-    }
-
-    private static boolean check_EXT_win32_keyed_mutex(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_win32_keyed_mutex")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            568, 569
-        },
-            "glAcquireKeyedMutexWin32EXT", "glReleaseKeyedMutexWin32EXT"
-        ) || reportMissing("GLES", "GL_EXT_win32_keyed_mutex");
-    }
-
-    private static boolean check_EXT_window_rectangles(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_EXT_window_rectangles")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            570
-        },
-            "glWindowRectanglesEXT"
-        ) || reportMissing("GLES", "GL_EXT_window_rectangles");
-    }
-
-    private static boolean check_IMG_framebuffer_downsample(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_IMG_framebuffer_downsample")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            571, 572
-        },
-            "glFramebufferTexture2DDownsampleIMG", "glFramebufferTextureLayerDownsampleIMG"
-        ) || reportMissing("GLES", "GL_IMG_framebuffer_downsample");
-    }
-
-    private static boolean check_IMG_multisampled_render_to_texture(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_IMG_multisampled_render_to_texture")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            573, 574
-        },
-            "glRenderbufferStorageMultisampleIMG", "glFramebufferTexture2DMultisampleIMG"
-        ) || reportMissing("GLES", "GL_IMG_multisampled_render_to_texture");
-    }
-
-    private static boolean check_INTEL_framebuffer_CMAA(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_INTEL_framebuffer_CMAA")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            575
-        },
-            "glApplyFramebufferAttachmentCMAAINTEL"
-        ) || reportMissing("GLES", "GL_INTEL_framebuffer_CMAA");
-    }
-
-    private static boolean check_INTEL_performance_query(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_INTEL_performance_query")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            576, 577, 578, 579, 580, 581, 582, 583, 584, 585
-        },
-            "glBeginPerfQueryINTEL", "glCreatePerfQueryINTEL", "glDeletePerfQueryINTEL", "glEndPerfQueryINTEL", "glGetFirstPerfQueryIdINTEL", 
-            "glGetNextPerfQueryIdINTEL", "glGetPerfCounterInfoINTEL", "glGetPerfQueryDataINTEL", "glGetPerfQueryIdByNameINTEL", "glGetPerfQueryInfoINTEL"
-        ) || reportMissing("GLES", "GL_INTEL_performance_query");
-    }
-
-    private static boolean check_KHR_blend_equation_advanced(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_KHR_blend_equation_advanced")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            586
-        },
-            "glBlendBarrierKHR"
-        ) || reportMissing("GLES", "GL_KHR_blend_equation_advanced");
-    }
-
-    private static boolean check_KHR_debug(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_KHR_debug")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597
-        },
-            "glDebugMessageControlKHR", "glDebugMessageInsertKHR", "glDebugMessageCallbackKHR", "glGetDebugMessageLogKHR", "glGetPointervKHR", 
-            "glPushDebugGroupKHR", "glPopDebugGroupKHR", "glObjectLabelKHR", "glGetObjectLabelKHR", "glObjectPtrLabelKHR", "glGetObjectPtrLabelKHR"
-        ) || reportMissing("GLES", "GL_KHR_debug");
-    }
-
-    private static boolean check_KHR_parallel_shader_compile(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_KHR_parallel_shader_compile")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            598
-        },
-            "glMaxShaderCompilerThreadsKHR"
-        ) || reportMissing("GLES", "GL_KHR_parallel_shader_compile");
-    }
-
-    private static boolean check_KHR_robustness(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_KHR_robustness")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            599, 600, 601, 602, 603
-        },
-            "glGetGraphicsResetStatusKHR", "glReadnPixelsKHR", "glGetnUniformfvKHR", "glGetnUniformivKHR", "glGetnUniformuivKHR"
-        ) || reportMissing("GLES", "GL_KHR_robustness");
-    }
-
-    private static boolean check_MESA_framebuffer_flip_y(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_MESA_framebuffer_flip_y")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            604, 605
-        },
-            "glFramebufferParameteriMESA", "glGetFramebufferParameterivMESA"
-        ) || reportMissing("GLES", "GL_MESA_framebuffer_flip_y");
-    }
-
-    private static boolean check_NV_alpha_to_coverage_dither_control(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_alpha_to_coverage_dither_control")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            606
-        },
-            "glAlphaToCoverageDitherControlNV"
-        ) || reportMissing("GLES", "GL_NV_alpha_to_coverage_dither_control");
-    }
-
-    private static boolean check_NV_bindless_texture(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_bindless_texture")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619
-        },
-            "glGetTextureHandleNV", "glGetTextureSamplerHandleNV", "glMakeTextureHandleResidentNV", "glMakeTextureHandleNonResidentNV", "glGetImageHandleNV", 
-            "glMakeImageHandleResidentNV", "glMakeImageHandleNonResidentNV", "glUniformHandleui64NV", "glUniformHandleui64vNV", "glProgramUniformHandleui64NV", 
-            "glProgramUniformHandleui64vNV", "glIsTextureHandleResidentNV", "glIsImageHandleResidentNV"
-        ) || reportMissing("GLES", "GL_NV_bindless_texture");
-    }
-
-    private static boolean check_NV_blend_equation_advanced(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_blend_equation_advanced")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            620, 621
-        },
-            "glBlendParameteriNV", "glBlendBarrierNV"
-        ) || reportMissing("GLES", "GL_NV_blend_equation_advanced");
-    }
-
-    private static boolean check_NV_clip_space_w_scaling(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_clip_space_w_scaling")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            622
-        },
-            "glViewportPositionWScaleNV"
-        ) || reportMissing("GLES", "GL_NV_clip_space_w_scaling");
-    }
-
-    private static boolean check_NV_conditional_render(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_conditional_render")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            623, 624
-        },
-            "glBeginConditionalRenderNV", "glEndConditionalRenderNV"
-        ) || reportMissing("GLES", "GL_NV_conditional_render");
-    }
-
-    private static boolean check_NV_conservative_raster(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_conservative_raster")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            625
-        },
-            "glSubpixelPrecisionBiasNV"
-        ) || reportMissing("GLES", "GL_NV_conservative_raster");
-    }
-
-    private static boolean check_NV_conservative_raster_pre_snap_triangles(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_conservative_raster_pre_snap_triangles")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            626
-        },
-            "glConservativeRasterParameteriNV"
-        ) || reportMissing("GLES", "GL_NV_conservative_raster_pre_snap_triangles");
-    }
-
-    private static boolean check_NV_copy_buffer(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_copy_buffer")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            627
-        },
-            "glCopyBufferSubDataNV"
-        ) || reportMissing("GLES", "GL_NV_copy_buffer");
-    }
-
-    private static boolean check_NV_coverage_sample(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_coverage_sample")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            628, 629
-        },
-            "glCoverageMaskNV", "glCoverageOperationNV"
-        ) || reportMissing("GLES", "GL_NV_coverage_sample");
-    }
-
-    private static boolean check_NV_draw_buffers(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_draw_buffers")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            630
-        },
-            "glDrawBuffersNV"
-        ) || reportMissing("GLES", "GL_NV_draw_buffers");
-    }
-
-    private static boolean check_NV_draw_instanced(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_draw_instanced")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            631, 632
-        },
-            "glDrawArraysInstancedNV", "glDrawElementsInstancedNV"
-        ) || reportMissing("GLES", "GL_NV_draw_instanced");
-    }
-
-    private static boolean check_NV_draw_vulkan_image(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_draw_vulkan_image")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            633, 634, 635, 636, 637
-        },
-            "glDrawVkImageNV", "glGetVkProcAddrNV", "glWaitVkSemaphoreNV", "glSignalVkSemaphoreNV", "glSignalVkFenceNV"
-        ) || reportMissing("GLES", "GL_NV_draw_vulkan_image");
-    }
-
-    private static boolean check_NV_fence(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_fence")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            638, 639, 640, 641, 642, 643, 644
-        },
-            "glDeleteFencesNV", "glGenFencesNV", "glIsFenceNV", "glTestFenceNV", "glGetFenceivNV", "glFinishFenceNV", "glSetFenceNV"
-        ) || reportMissing("GLES", "GL_NV_fence");
-    }
-
-    private static boolean check_NV_fragment_coverage_to_color(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_fragment_coverage_to_color")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            645
-        },
-            "glFragmentCoverageColorNV"
-        ) || reportMissing("GLES", "GL_NV_fragment_coverage_to_color");
-    }
-
-    private static boolean check_NV_framebuffer_blit(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_framebuffer_blit")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            646
-        },
-            "glBlitFramebufferNV"
-        ) || reportMissing("GLES", "GL_NV_framebuffer_blit");
-    }
-
-    private static boolean check_NV_framebuffer_mixed_samples(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_framebuffer_mixed_samples")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            484, 647, 648, 649
-        },
-            "glRasterSamplesEXT", "glCoverageModulationTableNV", "glGetCoverageModulationTableNV", "glCoverageModulationNV"
-        ) || reportMissing("GLES", "GL_NV_framebuffer_mixed_samples");
-    }
-
-    private static boolean check_NV_framebuffer_multisample(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_framebuffer_multisample")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            650
-        },
-            "glRenderbufferStorageMultisampleNV"
-        ) || reportMissing("GLES", "GL_NV_framebuffer_multisample");
-    }
-
-    private static boolean check_NV_gpu_shader5(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_gpu_shader5")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 
-            680, 681, 682, 683, 684
-        },
-            "glUniform1i64NV", "glUniform2i64NV", "glUniform3i64NV", "glUniform4i64NV", "glUniform1i64vNV", "glUniform2i64vNV", "glUniform3i64vNV", 
-            "glUniform4i64vNV", "glUniform1ui64NV", "glUniform2ui64NV", "glUniform3ui64NV", "glUniform4ui64NV", "glUniform1ui64vNV", "glUniform2ui64vNV", 
-            "glUniform3ui64vNV", "glUniform4ui64vNV", "glGetUniformi64vNV", "glGetUniformui64vNV", "glProgramUniform1i64NV", "glProgramUniform2i64NV", 
-            "glProgramUniform3i64NV", "glProgramUniform4i64NV", "glProgramUniform1i64vNV", "glProgramUniform2i64vNV", "glProgramUniform3i64vNV", 
-            "glProgramUniform4i64vNV", "glProgramUniform1ui64NV", "glProgramUniform2ui64NV", "glProgramUniform3ui64NV", "glProgramUniform4ui64NV", 
-            "glProgramUniform1ui64vNV", "glProgramUniform2ui64vNV", "glProgramUniform3ui64vNV", "glProgramUniform4ui64vNV"
-        ) || reportMissing("GLES", "GL_NV_gpu_shader5");
-    }
-
-    private static boolean check_NV_instanced_arrays(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_instanced_arrays")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            685
-        },
-            "glVertexAttribDivisorNV"
-        ) || reportMissing("GLES", "GL_NV_instanced_arrays");
-    }
-
-    private static boolean check_NV_internalformat_sample_query(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_internalformat_sample_query")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            686
-        },
-            "glGetInternalformatSampleivNV"
-        ) || reportMissing("GLES", "GL_NV_internalformat_sample_query");
-    }
-
-    private static boolean check_NV_memory_attachment(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
+    private static boolean check_NV_memory_attachment(MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
         if (!ext.contains("GL_NV_memory_attachment")) {
             return false;
         }
 
         int flag0 = hasDSA(ext) ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             687, 688, 689, 690, flag0 + 691, flag0 + 692
         },
             "glGetMemoryObjectDetachedResourcesuivNV", "glResetMemoryObjectParameterNV", "glTexAttachMemoryNV", "glBufferAttachMemoryNV", 
@@ -4437,198 +3583,7 @@ public final class GLESCapabilities {
         ) || reportMissing("GLES", "GL_NV_memory_attachment");
     }
 
-    private static boolean check_NV_memory_object_sparse(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_memory_object_sparse")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            693, 694, 695, 696
-        },
-            "glBufferPageCommitmentMemNV", "glNamedBufferPageCommitmentMemNV", "glTexPageCommitmentMemNV", "glTexturePageCommitmentMemNV"
-        ) || reportMissing("GLES", "GL_NV_memory_object_sparse");
-    }
-
-    private static boolean check_NV_mesh_shader(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_mesh_shader")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            697, 698, 699
-        },
-            "glDrawMeshTasksNV", "glDrawMeshTasksIndirectNV", "glMultiDrawMeshTasksIndirectNV"
-        ) || reportMissing("GLES", "GL_NV_mesh_shader");
-    }
-
-    private static boolean check_NV_non_square_matrices(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_non_square_matrices")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            700, 701, 702, 703, 704, 705
-        },
-            "glUniformMatrix2x3fvNV", "glUniformMatrix3x2fvNV", "glUniformMatrix2x4fvNV", "glUniformMatrix4x2fvNV", "glUniformMatrix3x4fvNV", 
-            "glUniformMatrix4x3fvNV"
-        ) || reportMissing("GLES", "GL_NV_non_square_matrices");
-    }
-
-    private static boolean check_NV_path_rendering(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_path_rendering")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            706, 707, 708, 709, 710, 711, 712, 715, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 
-            744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755
-        },
-            "glPathCommandsNV", "glPathCoordsNV", "glPathSubCommandsNV", "glPathSubCoordsNV", "glPathStringNV", "glPathGlyphsNV", "glPathGlyphRangeNV", 
-            "glCopyPathNV", "glInterpolatePathsNV", "glTransformPathNV", "glPathParameterivNV", "glPathParameteriNV", "glPathParameterfvNV", 
-            "glPathParameterfNV", "glPathDashArrayNV", "glGenPathsNV", "glDeletePathsNV", "glIsPathNV", "glPathStencilFuncNV", "glPathStencilDepthOffsetNV", 
-            "glStencilFillPathNV", "glStencilStrokePathNV", "glStencilFillPathInstancedNV", "glStencilStrokePathInstancedNV", "glPathCoverDepthFuncNV", 
-            "glCoverFillPathNV", "glCoverStrokePathNV", "glCoverFillPathInstancedNV", "glCoverStrokePathInstancedNV", "glGetPathParameterivNV", 
-            "glGetPathParameterfvNV", "glGetPathCommandsNV", "glGetPathCoordsNV", "glGetPathDashArrayNV", "glGetPathMetricsNV", "glGetPathMetricRangeNV", 
-            "glGetPathSpacingNV", "glIsPointInFillPathNV", "glIsPointInStrokePathNV", "glGetPathLengthNV", "glPointAlongPathNV"
-        ) || reportMissing("GLES", "GL_NV_path_rendering");
-    }
-
-    private static boolean check_NV_polygon_mode(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_polygon_mode")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            763
-        },
-            "glPolygonModeNV"
-        ) || reportMissing("GLES", "GL_NV_polygon_mode");
-    }
-
-    private static boolean check_NV_read_buffer(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_read_buffer")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            764
-        },
-            "glReadBufferNV"
-        ) || reportMissing("GLES", "GL_NV_read_buffer");
-    }
-
-    private static boolean check_NV_sample_locations(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_sample_locations")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            765, 766, 767
-        },
-            "glFramebufferSampleLocationsfvNV", "glNamedFramebufferSampleLocationsfvNV", "glResolveDepthValuesNV"
-        ) || reportMissing("GLES", "GL_NV_sample_locations");
-    }
-
-    private static boolean check_NV_scissor_exclusive(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_scissor_exclusive")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            768, 769
-        },
-            "glScissorExclusiveArrayvNV", "glScissorExclusiveNV"
-        ) || reportMissing("GLES", "GL_NV_scissor_exclusive");
-    }
-
-    private static boolean check_NV_texture_array(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_texture_array")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            770, 771, 772, 773, 774, 775
-        },
-            "glTexImage3DNV", "glTexSubImage3DNV", "glCopyTexSubImage3DNV", "glCompressedTexImage3DNV", "glCompressedTexSubImage3DNV", 
-            "glFramebufferTextureLayerNV"
-        ) || reportMissing("GLES", "GL_NV_texture_array");
-    }
-
-    private static boolean check_NV_texture_barrier(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_texture_barrier")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            776
-        },
-            "glTextureBarrierNV"
-        ) || reportMissing("GLES", "GL_NV_texture_barrier");
-    }
-
-    private static boolean check_NV_timeline_semaphore(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_timeline_semaphore")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            777, 778, 779
-        },
-            "glCreateSemaphoresNV", "glSemaphoreParameterivNV", "glGetSemaphoreParameterivNV"
-        ) || reportMissing("GLES", "GL_NV_timeline_semaphore");
-    }
-
-    private static boolean check_NV_viewport_array(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_viewport_array")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791
-        },
-            "glViewportArrayvNV", "glViewportIndexedfNV", "glViewportIndexedfvNV", "glScissorArrayvNV", "glScissorIndexedNV", "glScissorIndexedvNV", 
-            "glDepthRangeArrayfvNV", "glDepthRangeIndexedfNV", "glGetFloati_vNV", "glEnableiNV", "glDisableiNV", "glIsEnablediNV"
-        ) || reportMissing("GLES", "GL_NV_viewport_array");
-    }
-
-    private static boolean check_NV_viewport_swizzle(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_NV_viewport_swizzle")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            792
-        },
-            "glViewportSwizzleNV"
-        ) || reportMissing("GLES", "GL_NV_viewport_swizzle");
-    }
-
-    private static boolean check_OES_copy_image(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_copy_image")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            793
-        },
-            "glCopyImageSubDataOES"
-        ) || reportMissing("GLES", "GL_OES_copy_image");
-    }
-
-    private static boolean check_OES_draw_buffers_indexed(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_draw_buffers_indexed")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            794, 795, 796, 797, 798, 799, 800, 801
-        },
-            "glEnableiOES", "glDisableiOES", "glBlendEquationiOES", "glBlendEquationSeparateiOES", "glBlendFunciOES", "glBlendFuncSeparateiOES", 
-            "glColorMaskiOES", "glIsEnablediOES"
-        ) || reportMissing("GLES", "GL_OES_draw_buffers_indexed");
-    }
-
-    private static boolean check_OES_draw_elements_base_vertex(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
+    private static boolean check_OES_draw_elements_base_vertex(MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
         if (!ext.contains("GL_OES_draw_elements_base_vertex")) {
             return false;
         }
@@ -4636,329 +3591,25 @@ public final class GLESCapabilities {
         int flag0 = ext.contains("GLES30") ? 0 : Integer.MIN_VALUE;
         int flag2 = ext.contains("EXT_multi_draw_arrays") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             802, flag0 + 803, flag0 + 804, flag2 + 805
         },
             "glDrawElementsBaseVertexOES", "glDrawRangeElementsBaseVertexOES", "glDrawElementsInstancedBaseVertexOES", "glMultiDrawElementsBaseVertexOES"
         ) || reportMissing("GLES", "GL_OES_draw_elements_base_vertex");
     }
 
-    private static boolean check_OES_EGL_image(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_EGL_image")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            806, 807
-        },
-            "glEGLImageTargetTexture2DOES", "glEGLImageTargetRenderbufferStorageOES"
-        ) || reportMissing("GLES", "GL_OES_EGL_image");
-    }
-
-    private static boolean check_OES_geometry_shader(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_geometry_shader")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            808
-        },
-            "glFramebufferTextureOES"
-        ) || reportMissing("GLES", "GL_OES_geometry_shader");
-    }
-
-    private static boolean check_OES_get_program_binary(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_get_program_binary")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            809, 810
-        },
-            "glGetProgramBinaryOES", "glProgramBinaryOES"
-        ) || reportMissing("GLES", "GL_OES_get_program_binary");
-    }
-
-    private static boolean check_OES_mapbuffer(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_mapbuffer")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            811, 812, 813
-        },
-            "glMapBufferOES", "glUnmapBufferOES", "glGetBufferPointervOES"
-        ) || reportMissing("GLES", "GL_OES_mapbuffer");
-    }
-
-    private static boolean check_OES_primitive_bounding_box(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_primitive_bounding_box")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            814
-        },
-            "glPrimitiveBoundingBoxOES"
-        ) || reportMissing("GLES", "GL_OES_primitive_bounding_box");
-    }
-
-    private static boolean check_OES_sample_shading(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_sample_shading")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            815
-        },
-            "glMinSampleShadingOES"
-        ) || reportMissing("GLES", "GL_OES_sample_shading");
-    }
-
-    private static boolean check_OES_tessellation_shader(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_tessellation_shader")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            816
-        },
-            "glPatchParameteriOES"
-        ) || reportMissing("GLES", "GL_OES_tessellation_shader");
-    }
-
-    private static boolean check_OES_texture_3D(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_texture_3D")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            817, 818, 819, 820, 821, 822
-        },
-            "glTexImage3DOES", "glTexSubImage3DOES", "glCopyTexSubImage3DOES", "glCompressedTexImage3DOES", "glCompressedTexSubImage3DOES", 
-            "glFramebufferTexture3DOES"
-        ) || reportMissing("GLES", "GL_OES_texture_3D");
-    }
-
-    private static boolean check_OES_texture_border_clamp(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_texture_border_clamp")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            823, 824, 825, 826, 827, 828, 829, 830
-        },
-            "glTexParameterIivOES", "glTexParameterIuivOES", "glGetTexParameterIivOES", "glGetTexParameterIuivOES", "glSamplerParameterIivOES", 
-            "glSamplerParameterIuivOES", "glGetSamplerParameterIivOES", "glGetSamplerParameterIuivOES"
-        ) || reportMissing("GLES", "GL_OES_texture_border_clamp");
-    }
-
-    private static boolean check_OES_texture_buffer(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_texture_buffer")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            831, 832
-        },
-            "glTexBufferOES", "glTexBufferRangeOES"
-        ) || reportMissing("GLES", "GL_OES_texture_buffer");
-    }
-
-    private static boolean check_OES_texture_storage_multisample_2d_array(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_texture_storage_multisample_2d_array")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            833
-        },
-            "glTexStorage3DMultisampleOES"
-        ) || reportMissing("GLES", "GL_OES_texture_storage_multisample_2d_array");
-    }
-
-    private static boolean check_OES_texture_view(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_texture_view")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            834
-        },
-            "glTextureViewOES"
-        ) || reportMissing("GLES", "GL_OES_texture_view");
-    }
-
-    private static boolean check_OES_vertex_array_object(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_vertex_array_object")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            835, 836, 837, 838
-        },
-            "glBindVertexArrayOES", "glDeleteVertexArraysOES", "glGenVertexArraysOES", "glIsVertexArrayOES"
-        ) || reportMissing("GLES", "GL_OES_vertex_array_object");
-    }
-
-    private static boolean check_OES_viewport_array(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OES_viewport_array")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            839, 840, 841, 842, 843, 844, 845, 846, 847, 794, 795, 801
-        },
-            "glViewportArrayvOES", "glViewportIndexedfOES", "glViewportIndexedfvOES", "glScissorArrayvOES", "glScissorIndexedOES", "glScissorIndexedvOES", 
-            "glDepthRangeArrayfvOES", "glDepthRangeIndexedfOES", "glGetFloati_vOES", "glEnableiOES", "glDisableiOES", "glIsEnablediOES"
-        ) || reportMissing("GLES", "GL_OES_viewport_array");
-    }
-
-    private static boolean check_OVR_multiview(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
+    private static boolean check_OVR_multiview(MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
         if (!ext.contains("GL_OVR_multiview")) {
             return false;
         }
 
         int flag0 = hasDSA(ext) ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             848, flag0 + 849
         },
             "glFramebufferTextureMultiviewOVR", "glNamedFramebufferTextureMultiviewOVR"
         ) || reportMissing("GLES", "GL_OVR_multiview");
-    }
-
-    private static boolean check_OVR_multiview_multisampled_render_to_texture(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_OVR_multiview_multisampled_render_to_texture")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            850
-        },
-            "glFramebufferTextureMultisampleMultiviewOVR"
-        ) || reportMissing("GLES", "GL_OVR_multiview_multisampled_render_to_texture");
-    }
-
-    private static boolean check_QCOM_alpha_test(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_QCOM_alpha_test")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            851
-        },
-            "glAlphaFuncQCOM"
-        ) || reportMissing("GLES", "GL_QCOM_alpha_test");
-    }
-
-    private static boolean check_QCOM_driver_control(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_QCOM_driver_control")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            852, 853, 854, 855
-        },
-            "glGetDriverControlsQCOM", "glGetDriverControlStringQCOM", "glEnableDriverControlQCOM", "glDisableDriverControlQCOM"
-        ) || reportMissing("GLES", "GL_QCOM_driver_control");
-    }
-
-    private static boolean check_QCOM_extended_get(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_QCOM_extended_get")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            856, 857, 858, 859, 860, 861, 862, 863
-        },
-            "glExtGetTexturesQCOM", "glExtGetBuffersQCOM", "glExtGetRenderbuffersQCOM", "glExtGetFramebuffersQCOM", "glExtGetTexLevelParameterivQCOM", 
-            "glExtTexObjectStateOverrideiQCOM", "glExtGetTexSubImageQCOM", "glExtGetBufferPointervQCOM"
-        ) || reportMissing("GLES", "GL_QCOM_extended_get");
-    }
-
-    private static boolean check_QCOM_extended_get2(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_QCOM_extended_get2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            864, 865, 866, 867
-        },
-            "glExtGetShadersQCOM", "glExtGetProgramsQCOM", "glExtIsProgramBinaryQCOM", "glExtGetProgramBinarySourceQCOM"
-        ) || reportMissing("GLES", "GL_QCOM_extended_get2");
-    }
-
-    private static boolean check_QCOM_frame_extrapolation(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_QCOM_frame_extrapolation")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            868
-        },
-            "glExtrapolateTex2DQCOM"
-        ) || reportMissing("GLES", "GL_QCOM_frame_extrapolation");
-    }
-
-    private static boolean check_QCOM_framebuffer_foveated(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_QCOM_framebuffer_foveated")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            869, 870
-        },
-            "glFramebufferFoveationConfigQCOM", "glFramebufferFoveationParametersQCOM"
-        ) || reportMissing("GLES", "GL_QCOM_framebuffer_foveated");
-    }
-
-    private static boolean check_QCOM_motion_estimation(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_QCOM_motion_estimation")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            871, 872
-        },
-            "glTexEstimateMotionQCOM", "glTexEstimateMotionRegionsQCOM"
-        ) || reportMissing("GLES", "GL_QCOM_motion_estimation");
-    }
-
-    private static boolean check_QCOM_shader_framebuffer_fetch_noncoherent(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_QCOM_shader_framebuffer_fetch_noncoherent")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            873
-        },
-            "glFramebufferFetchBarrierQCOM"
-        ) || reportMissing("GLES", "GL_QCOM_shader_framebuffer_fetch_noncoherent");
-    }
-
-    private static boolean check_QCOM_texture_foveated(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_QCOM_texture_foveated")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            874
-        },
-            "glTextureFoveationParametersQCOM"
-        ) || reportMissing("GLES", "GL_QCOM_texture_foveated");
-    }
-
-    private static boolean check_QCOM_tiled_rendering(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("GL_QCOM_tiled_rendering")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            875, 876
-        },
-            "glStartTilingQCOM", "glEndTilingQCOM"
-        ) || reportMissing("GLES", "GL_QCOM_tiled_rendering");
     }
 
     private static boolean hasDSA(Set<String> ext) {

@@ -642,225 +642,51 @@ public class CLCapabilities {
     public final boolean cl_qcom_perf_hint;
 
     CLCapabilities(FunctionProvider provider, Set<String> ext) {
-        this(ext,
-            provider.getFunctionAddress("clGetPlatformIDs"),
-            provider.getFunctionAddress("clGetPlatformInfo"),
-            provider.getFunctionAddress("clGetDeviceIDs"),
-            provider.getFunctionAddress("clGetDeviceInfo"),
-            provider.getFunctionAddress("clCreateContext"),
-            provider.getFunctionAddress("clCreateContextFromType"),
-            provider.getFunctionAddress("clRetainContext"),
-            provider.getFunctionAddress("clReleaseContext"),
-            provider.getFunctionAddress("clGetContextInfo"),
-            provider.getFunctionAddress("clCreateCommandQueue"),
-            provider.getFunctionAddress("clRetainCommandQueue"),
-            provider.getFunctionAddress("clReleaseCommandQueue"),
-            provider.getFunctionAddress("clGetCommandQueueInfo"),
-            provider.getFunctionAddress("clCreateBuffer"),
-            provider.getFunctionAddress("clEnqueueReadBuffer"),
-            provider.getFunctionAddress("clEnqueueWriteBuffer"),
-            provider.getFunctionAddress("clEnqueueCopyBuffer"),
-            provider.getFunctionAddress("clEnqueueMapBuffer"),
-            provider.getFunctionAddress("clCreateImage2D"),
-            provider.getFunctionAddress("clCreateImage3D"),
-            provider.getFunctionAddress("clGetSupportedImageFormats"),
-            provider.getFunctionAddress("clEnqueueReadImage"),
-            provider.getFunctionAddress("clEnqueueWriteImage"),
-            provider.getFunctionAddress("clEnqueueCopyImage"),
-            provider.getFunctionAddress("clEnqueueCopyImageToBuffer"),
-            provider.getFunctionAddress("clEnqueueCopyBufferToImage"),
-            provider.getFunctionAddress("clEnqueueMapImage"),
-            provider.getFunctionAddress("clGetImageInfo"),
-            provider.getFunctionAddress("clRetainMemObject"),
-            provider.getFunctionAddress("clReleaseMemObject"),
-            provider.getFunctionAddress("clEnqueueUnmapMemObject"),
-            provider.getFunctionAddress("clGetMemObjectInfo"),
-            provider.getFunctionAddress("clCreateSampler"),
-            provider.getFunctionAddress("clRetainSampler"),
-            provider.getFunctionAddress("clReleaseSampler"),
-            provider.getFunctionAddress("clGetSamplerInfo"),
-            provider.getFunctionAddress("clCreateProgramWithSource"),
-            provider.getFunctionAddress("clCreateProgramWithBinary"),
-            provider.getFunctionAddress("clRetainProgram"),
-            provider.getFunctionAddress("clReleaseProgram"),
-            provider.getFunctionAddress("clBuildProgram"),
-            provider.getFunctionAddress("clUnloadCompiler"),
-            provider.getFunctionAddress("clGetProgramInfo"),
-            provider.getFunctionAddress("clGetProgramBuildInfo"),
-            provider.getFunctionAddress("clCreateKernel"),
-            provider.getFunctionAddress("clCreateKernelsInProgram"),
-            provider.getFunctionAddress("clRetainKernel"),
-            provider.getFunctionAddress("clReleaseKernel"),
-            provider.getFunctionAddress("clSetKernelArg"),
-            provider.getFunctionAddress("clGetKernelInfo"),
-            provider.getFunctionAddress("clGetKernelWorkGroupInfo"),
-            provider.getFunctionAddress("clEnqueueNDRangeKernel"),
-            provider.getFunctionAddress("clEnqueueTask"),
-            provider.getFunctionAddress("clEnqueueNativeKernel"),
-            provider.getFunctionAddress("clWaitForEvents"),
-            provider.getFunctionAddress("clGetEventInfo"),
-            provider.getFunctionAddress("clRetainEvent"),
-            provider.getFunctionAddress("clReleaseEvent"),
-            provider.getFunctionAddress("clEnqueueMarker"),
-            provider.getFunctionAddress("clEnqueueBarrier"),
-            provider.getFunctionAddress("clEnqueueWaitForEvents"),
-            provider.getFunctionAddress("clGetEventProfilingInfo"),
-            provider.getFunctionAddress("clFlush"),
-            provider.getFunctionAddress("clFinish"),
-            provider.getFunctionAddress("clGetExtensionFunctionAddress"),
-            provider.getFunctionAddress("clCreateFromGLBuffer"),
-            provider.getFunctionAddress("clCreateFromGLTexture2D"),
-            provider.getFunctionAddress("clCreateFromGLTexture3D"),
-            provider.getFunctionAddress("clCreateFromGLRenderbuffer"),
-            provider.getFunctionAddress("clGetGLObjectInfo"),
-            provider.getFunctionAddress("clGetGLTextureInfo"),
-            provider.getFunctionAddress("clEnqueueAcquireGLObjects"),
-            provider.getFunctionAddress("clEnqueueReleaseGLObjects"),
-            provider.getFunctionAddress("clCreateSubBuffer"),
-            provider.getFunctionAddress("clSetMemObjectDestructorCallback"),
-            provider.getFunctionAddress("clEnqueueReadBufferRect"),
-            provider.getFunctionAddress("clEnqueueWriteBufferRect"),
-            provider.getFunctionAddress("clEnqueueCopyBufferRect"),
-            provider.getFunctionAddress("clCreateUserEvent"),
-            provider.getFunctionAddress("clSetUserEventStatus"),
-            provider.getFunctionAddress("clSetEventCallback"),
-            provider.getFunctionAddress("clGetExtensionFunctionAddressForPlatform"),
-            provider.getFunctionAddress("clRetainDevice"),
-            provider.getFunctionAddress("clReleaseDevice"),
-            provider.getFunctionAddress("clCreateSubDevices"),
-            provider.getFunctionAddress("clCreateImage"),
-            provider.getFunctionAddress("clCreateProgramWithBuiltInKernels"),
-            provider.getFunctionAddress("clCompileProgram"),
-            provider.getFunctionAddress("clLinkProgram"),
-            provider.getFunctionAddress("clUnloadPlatformCompiler"),
-            provider.getFunctionAddress("clGetKernelArgInfo"),
-            provider.getFunctionAddress("clEnqueueFillBuffer"),
-            provider.getFunctionAddress("clEnqueueFillImage"),
-            provider.getFunctionAddress("clEnqueueMigrateMemObjects"),
-            provider.getFunctionAddress("clEnqueueMarkerWithWaitList"),
-            provider.getFunctionAddress("clEnqueueBarrierWithWaitList"),
-            provider.getFunctionAddress("clCreateFromGLTexture"),
-            provider.getFunctionAddress("clCreateCommandQueueWithProperties"),
-            provider.getFunctionAddress("clCreatePipe"),
-            provider.getFunctionAddress("clGetPipeInfo"),
-            provider.getFunctionAddress("clSVMAlloc"),
-            provider.getFunctionAddress("clSVMFree"),
-            provider.getFunctionAddress("clEnqueueSVMFree"),
-            provider.getFunctionAddress("clEnqueueSVMMemcpy"),
-            provider.getFunctionAddress("clEnqueueSVMMemFill"),
-            provider.getFunctionAddress("clEnqueueSVMMap"),
-            provider.getFunctionAddress("clEnqueueSVMUnmap"),
-            provider.getFunctionAddress("clSetKernelArgSVMPointer"),
-            provider.getFunctionAddress("clSetKernelExecInfo"),
-            provider.getFunctionAddress("clCreateSamplerWithProperties"),
-            provider.getFunctionAddress("clSetDefaultDeviceCommandQueue"),
-            provider.getFunctionAddress("clGetDeviceAndHostTimer"),
-            provider.getFunctionAddress("clGetHostTimer"),
-            provider.getFunctionAddress("clCreateProgramWithIL"),
-            provider.getFunctionAddress("clCloneKernel"),
-            provider.getFunctionAddress("clGetKernelSubGroupInfo"),
-            provider.getFunctionAddress("clEnqueueSVMMigrateMem"),
-            provider.getFunctionAddress("clSetProgramReleaseCallback"),
-            provider.getFunctionAddress("clSetProgramSpecializationConstant"),
-            provider.getFunctionAddress("clSetContextDestructorCallback"),
-            provider.getFunctionAddress("clCreateBufferWithProperties"),
-            provider.getFunctionAddress("clCreateImageWithProperties"),
-            provider.getFunctionAddress("clGetKernelSuggestedLocalWorkSize"),
-            provider.getFunctionAddress("clTrackLiveObjectsAltera"),
-            provider.getFunctionAddress("clReportLiveObjectsAltera"),
-            provider.getFunctionAddress("clEnqueueWaitSignalAMD"),
-            provider.getFunctionAddress("clEnqueueWriteSignalAMD"),
-            provider.getFunctionAddress("clEnqueueMakeBuffersResidentAMD"),
-            provider.getFunctionAddress("clCreateCommandQueueWithPropertiesAPPLE"),
-            provider.getFunctionAddress("clLogMessagesToSystemLogAPPLE"),
-            provider.getFunctionAddress("clLogMessagesToStdoutAPPLE"),
-            provider.getFunctionAddress("clLogMessagesToStderrAPPLE"),
-            provider.getFunctionAddress("clGetGLContextInfoAPPLE"),
-            provider.getFunctionAddress("clImportMemoryARM"),
-            provider.getFunctionAddress("clSetKernelArgDevicePointerEXT"),
-            provider.getFunctionAddress("clReleaseDeviceEXT"),
-            provider.getFunctionAddress("clRetainDeviceEXT"),
-            provider.getFunctionAddress("clCreateSubDevicesEXT"),
-            provider.getFunctionAddress("clGetImageRequirementsInfoEXT"),
-            provider.getFunctionAddress("clEnqueueMigrateMemObjectEXT"),
-            provider.getFunctionAddress("clCancelCommandsIMG"),
-            provider.getFunctionAddress("clEnqueueGenerateMipmapIMG"),
-            provider.getFunctionAddress("clEnqueueAcquireGrallocObjectsIMG"),
-            provider.getFunctionAddress("clEnqueueReleaseGrallocObjectsIMG"),
-            provider.getFunctionAddress("clCreateAcceleratorINTEL"),
-            provider.getFunctionAddress("clRetainAcceleratorINTEL"),
-            provider.getFunctionAddress("clReleaseAcceleratorINTEL"),
-            provider.getFunctionAddress("clGetAcceleratorInfoINTEL"),
-            provider.getFunctionAddress("clCreateBufferWithPropertiesINTEL"),
-            provider.getFunctionAddress("clEnqueueReadHostPipeINTEL"),
-            provider.getFunctionAddress("clEnqueueWriteHostPipeINTEL"),
-            provider.getFunctionAddress("clGetSupportedGLTextureFormatsINTEL"),
-            provider.getFunctionAddress("clGetSupportedVA_APIMediaSurfaceFormatsINTEL"),
-            provider.getFunctionAddress("clHostMemAllocINTEL"),
-            provider.getFunctionAddress("clDeviceMemAllocINTEL"),
-            provider.getFunctionAddress("clSharedMemAllocINTEL"),
-            provider.getFunctionAddress("clMemFreeINTEL"),
-            provider.getFunctionAddress("clMemBlockingFreeINTEL"),
-            provider.getFunctionAddress("clGetMemAllocInfoINTEL"),
-            provider.getFunctionAddress("clSetKernelArgMemPointerINTEL"),
-            provider.getFunctionAddress("clEnqueueMemFillINTEL"),
-            provider.getFunctionAddress("clEnqueueMemcpyINTEL"),
-            provider.getFunctionAddress("clEnqueueMigrateMemINTEL"),
-            provider.getFunctionAddress("clEnqueueMemAdviseINTEL"),
-            provider.getFunctionAddress("clGetDeviceIDsFromVA_APIMediaAdapterINTEL"),
-            provider.getFunctionAddress("clCreateFromVA_APIMediaSurfaceINTEL"),
-            provider.getFunctionAddress("clEnqueueAcquireVA_APIMediaSurfacesINTEL"),
-            provider.getFunctionAddress("clEnqueueReleaseVA_APIMediaSurfacesINTEL"),
-            provider.getFunctionAddress("clCreateCommandBufferKHR"),
-            provider.getFunctionAddress("clRetainCommandBufferKHR"),
-            provider.getFunctionAddress("clReleaseCommandBufferKHR"),
-            provider.getFunctionAddress("clFinalizeCommandBufferKHR"),
-            provider.getFunctionAddress("clEnqueueCommandBufferKHR"),
-            provider.getFunctionAddress("clCommandBarrierWithWaitListKHR"),
-            provider.getFunctionAddress("clCommandCopyBufferKHR"),
-            provider.getFunctionAddress("clCommandCopyBufferRectKHR"),
-            provider.getFunctionAddress("clCommandCopyBufferToImageKHR"),
-            provider.getFunctionAddress("clCommandCopyImageKHR"),
-            provider.getFunctionAddress("clCommandCopyImageToBufferKHR"),
-            provider.getFunctionAddress("clCommandFillBufferKHR"),
-            provider.getFunctionAddress("clCommandFillImageKHR"),
-            provider.getFunctionAddress("clCommandNDRangeKernelKHR"),
-            provider.getFunctionAddress("clGetCommandBufferInfoKHR"),
-            provider.getFunctionAddress("clCommandSVMMemcpyKHR"),
-            provider.getFunctionAddress("clCommandSVMMemFillKHR"),
-            provider.getFunctionAddress("clRemapCommandBufferKHR"),
-            provider.getFunctionAddress("clUpdateMutableCommandsKHR"),
-            provider.getFunctionAddress("clGetMutableCommandInfoKHR"),
-            provider.getFunctionAddress("clCreateCommandQueueWithPropertiesKHR"),
-            provider.getFunctionAddress("clCreateEventFromEGLSyncKHR"),
-            provider.getFunctionAddress("clCreateFromEGLImageKHR"),
-            provider.getFunctionAddress("clEnqueueAcquireEGLObjectsKHR"),
-            provider.getFunctionAddress("clEnqueueReleaseEGLObjectsKHR"),
-            provider.getFunctionAddress("clEnqueueAcquireExternalMemObjectsKHR"),
-            provider.getFunctionAddress("clEnqueueReleaseExternalMemObjectsKHR"),
-            provider.getFunctionAddress("clReImportSemaphoreSyncFdKHR"),
-            provider.getFunctionAddress("clCreateEventFromGLsyncKHR"),
-            provider.getFunctionAddress("clGetGLContextInfoKHR"),
-            provider.getFunctionAddress("clCreateProgramWithILKHR"),
-            provider.getFunctionAddress("clCreateSemaphoreWithPropertiesKHR"),
-            provider.getFunctionAddress("clEnqueueWaitSemaphoresKHR"),
-            provider.getFunctionAddress("clEnqueueSignalSemaphoresKHR"),
-            provider.getFunctionAddress("clGetSemaphoreInfoKHR"),
-            provider.getFunctionAddress("clReleaseSemaphoreKHR"),
-            provider.getFunctionAddress("clRetainSemaphoreKHR"),
-            provider.getFunctionAddress("clGetKernelSubGroupInfoKHR"),
-            provider.getFunctionAddress("clGetKernelSuggestedLocalWorkSizeKHR"),
-            provider.getFunctionAddress("clTerminateContextKHR"),
-            provider.getFunctionAddress("clSVMAllocWithPropertiesKHR"),
-            provider.getFunctionAddress("clSVMFreeWithPropertiesKHR"),
-            provider.getFunctionAddress("clGetSVMPointerInfoKHR"),
-            provider.getFunctionAddress("clGetSVMSuggestedTypeIndexKHR"),
-            provider.getFunctionAddress("clGetICDLoaderInfoOCLICD"),
-            provider.getFunctionAddress("clCreateBufferNV"),
-            provider.getFunctionAddress("clSetContentSizeBufferPoCL"),
-            provider.getFunctionAddress("clGetDeviceImageInfoQCOM"),
-            provider.getFunctionAddress("clSetPerfHintQCOM")
-        );
+        this(ext, provider.getFunctionAddresses(
+            "clGetPlatformIDs", "clGetPlatformInfo", "clGetDeviceIDs", "clGetDeviceInfo", "clCreateContext", "clCreateContextFromType", "clRetainContext", 
+            "clReleaseContext", "clGetContextInfo", "clCreateCommandQueue", "clRetainCommandQueue", "clReleaseCommandQueue", "clGetCommandQueueInfo", 
+            "clCreateBuffer", "clEnqueueReadBuffer", "clEnqueueWriteBuffer", "clEnqueueCopyBuffer", "clEnqueueMapBuffer", "clCreateImage2D", "clCreateImage3D", 
+            "clGetSupportedImageFormats", "clEnqueueReadImage", "clEnqueueWriteImage", "clEnqueueCopyImage", "clEnqueueCopyImageToBuffer", 
+            "clEnqueueCopyBufferToImage", "clEnqueueMapImage", "clGetImageInfo", "clRetainMemObject", "clReleaseMemObject", "clEnqueueUnmapMemObject", 
+            "clGetMemObjectInfo", "clCreateSampler", "clRetainSampler", "clReleaseSampler", "clGetSamplerInfo", "clCreateProgramWithSource", 
+            "clCreateProgramWithBinary", "clRetainProgram", "clReleaseProgram", "clBuildProgram", "clUnloadCompiler", "clGetProgramInfo", 
+            "clGetProgramBuildInfo", "clCreateKernel", "clCreateKernelsInProgram", "clRetainKernel", "clReleaseKernel", "clSetKernelArg", "clGetKernelInfo", 
+            "clGetKernelWorkGroupInfo", "clEnqueueNDRangeKernel", "clEnqueueTask", "clEnqueueNativeKernel", "clWaitForEvents", "clGetEventInfo", 
+            "clRetainEvent", "clReleaseEvent", "clEnqueueMarker", "clEnqueueBarrier", "clEnqueueWaitForEvents", "clGetEventProfilingInfo", "clFlush", 
+            "clFinish", "clGetExtensionFunctionAddress", "clCreateFromGLBuffer", "clCreateFromGLTexture2D", "clCreateFromGLTexture3D", 
+            "clCreateFromGLRenderbuffer", "clGetGLObjectInfo", "clGetGLTextureInfo", "clEnqueueAcquireGLObjects", "clEnqueueReleaseGLObjects", 
+            "clCreateSubBuffer", "clSetMemObjectDestructorCallback", "clEnqueueReadBufferRect", "clEnqueueWriteBufferRect", "clEnqueueCopyBufferRect", 
+            "clCreateUserEvent", "clSetUserEventStatus", "clSetEventCallback", "clGetExtensionFunctionAddressForPlatform", "clRetainDevice", "clReleaseDevice", 
+            "clCreateSubDevices", "clCreateImage", "clCreateProgramWithBuiltInKernels", "clCompileProgram", "clLinkProgram", "clUnloadPlatformCompiler", 
+            "clGetKernelArgInfo", "clEnqueueFillBuffer", "clEnqueueFillImage", "clEnqueueMigrateMemObjects", "clEnqueueMarkerWithWaitList", 
+            "clEnqueueBarrierWithWaitList", "clCreateFromGLTexture", "clCreateCommandQueueWithProperties", "clCreatePipe", "clGetPipeInfo", "clSVMAlloc", 
+            "clSVMFree", "clEnqueueSVMFree", "clEnqueueSVMMemcpy", "clEnqueueSVMMemFill", "clEnqueueSVMMap", "clEnqueueSVMUnmap", "clSetKernelArgSVMPointer", 
+            "clSetKernelExecInfo", "clCreateSamplerWithProperties", "clSetDefaultDeviceCommandQueue", "clGetDeviceAndHostTimer", "clGetHostTimer", 
+            "clCreateProgramWithIL", "clCloneKernel", "clGetKernelSubGroupInfo", "clEnqueueSVMMigrateMem", "clSetProgramReleaseCallback", 
+            "clSetProgramSpecializationConstant", "clSetContextDestructorCallback", "clCreateBufferWithProperties", "clCreateImageWithProperties", 
+            "clGetKernelSuggestedLocalWorkSize", "clTrackLiveObjectsAltera", "clReportLiveObjectsAltera", "clEnqueueWaitSignalAMD", "clEnqueueWriteSignalAMD", 
+            "clEnqueueMakeBuffersResidentAMD", "clCreateCommandQueueWithPropertiesAPPLE", "clLogMessagesToSystemLogAPPLE", "clLogMessagesToStdoutAPPLE", 
+            "clLogMessagesToStderrAPPLE", "clGetGLContextInfoAPPLE", "clImportMemoryARM", "clSetKernelArgDevicePointerEXT", "clReleaseDeviceEXT", 
+            "clRetainDeviceEXT", "clCreateSubDevicesEXT", "clGetImageRequirementsInfoEXT", "clEnqueueMigrateMemObjectEXT", "clCancelCommandsIMG", 
+            "clEnqueueGenerateMipmapIMG", "clEnqueueAcquireGrallocObjectsIMG", "clEnqueueReleaseGrallocObjectsIMG", "clCreateAcceleratorINTEL", 
+            "clRetainAcceleratorINTEL", "clReleaseAcceleratorINTEL", "clGetAcceleratorInfoINTEL", "clCreateBufferWithPropertiesINTEL", 
+            "clEnqueueReadHostPipeINTEL", "clEnqueueWriteHostPipeINTEL", "clGetSupportedGLTextureFormatsINTEL", "clGetSupportedVA_APIMediaSurfaceFormatsINTEL", 
+            "clHostMemAllocINTEL", "clDeviceMemAllocINTEL", "clSharedMemAllocINTEL", "clMemFreeINTEL", "clMemBlockingFreeINTEL", "clGetMemAllocInfoINTEL", 
+            "clSetKernelArgMemPointerINTEL", "clEnqueueMemFillINTEL", "clEnqueueMemcpyINTEL", "clEnqueueMigrateMemINTEL", "clEnqueueMemAdviseINTEL", 
+            "clGetDeviceIDsFromVA_APIMediaAdapterINTEL", "clCreateFromVA_APIMediaSurfaceINTEL", "clEnqueueAcquireVA_APIMediaSurfacesINTEL", 
+            "clEnqueueReleaseVA_APIMediaSurfacesINTEL", "clCreateCommandBufferKHR", "clRetainCommandBufferKHR", "clReleaseCommandBufferKHR", 
+            "clFinalizeCommandBufferKHR", "clEnqueueCommandBufferKHR", "clCommandBarrierWithWaitListKHR", "clCommandCopyBufferKHR", 
+            "clCommandCopyBufferRectKHR", "clCommandCopyBufferToImageKHR", "clCommandCopyImageKHR", "clCommandCopyImageToBufferKHR", "clCommandFillBufferKHR", 
+            "clCommandFillImageKHR", "clCommandNDRangeKernelKHR", "clGetCommandBufferInfoKHR", "clCommandSVMMemcpyKHR", "clCommandSVMMemFillKHR", 
+            "clRemapCommandBufferKHR", "clUpdateMutableCommandsKHR", "clGetMutableCommandInfoKHR", "clCreateCommandQueueWithPropertiesKHR", 
+            "clCreateEventFromEGLSyncKHR", "clCreateFromEGLImageKHR", "clEnqueueAcquireEGLObjectsKHR", "clEnqueueReleaseEGLObjectsKHR", 
+            "clEnqueueAcquireExternalMemObjectsKHR", "clEnqueueReleaseExternalMemObjectsKHR", "clReImportSemaphoreSyncFdKHR", "clCreateEventFromGLsyncKHR", 
+            "clGetGLContextInfoKHR", "clCreateProgramWithILKHR", "clCreateSemaphoreWithPropertiesKHR", "clEnqueueWaitSemaphoresKHR", 
+            "clEnqueueSignalSemaphoresKHR", "clGetSemaphoreInfoKHR", "clReleaseSemaphoreKHR", "clRetainSemaphoreKHR", "clGetKernelSubGroupInfoKHR", 
+            "clGetKernelSuggestedLocalWorkSizeKHR", "clTerminateContextKHR", "clSVMAllocWithPropertiesKHR", "clSVMFreeWithPropertiesKHR", 
+            "clGetSVMPointerInfoKHR", "clGetSVMSuggestedTypeIndexKHR", "clGetICDLoaderInfoOCLICD", "clCreateBufferNV", "clSetContentSizeBufferPoCL", 
+            "clGetDeviceImageInfoQCOM", "clSetPerfHintQCOM"
+        ));
     }
 
     CLCapabilities(CLCapabilities caps, Set<String> ext) {
@@ -1304,20 +1130,71 @@ public class CLCapabilities {
         clGetDeviceImageInfoQCOM = functions[215];
         clSetPerfHintQCOM = functions[216];
 
-        OpenCL10 = check_CL10(ext);
-        OpenCL10GL = check_CL10GL(ext);
-        OpenCL11 = check_CL11(ext);
-        OpenCL12 = check_CL12(ext);
-        OpenCL12GL = check_CL12GL(ext);
-        OpenCL20 = check_CL20(ext);
-        OpenCL21 = check_CL21(ext);
-        OpenCL22 = check_CL22(ext);
-        OpenCL30 = check_CL30(ext);
-        OpenCL31 = check_CL31(ext);
+        OpenCL10 = check("OpenCL10", ext,
+            clGetPlatformIDs, clGetPlatformInfo, clGetDeviceIDs, clGetDeviceInfo, clCreateContext, clCreateContextFromType, clRetainContext, clReleaseContext, 
+            clGetContextInfo, clCreateCommandQueue, clRetainCommandQueue, clReleaseCommandQueue, clGetCommandQueueInfo, clCreateBuffer, clEnqueueReadBuffer, 
+            clEnqueueWriteBuffer, clEnqueueCopyBuffer, clEnqueueMapBuffer, clCreateImage2D, clCreateImage3D, clGetSupportedImageFormats, clEnqueueReadImage, 
+            clEnqueueWriteImage, clEnqueueCopyImage, clEnqueueCopyImageToBuffer, clEnqueueCopyBufferToImage, clEnqueueMapImage, clGetImageInfo, 
+            clRetainMemObject, clReleaseMemObject, clEnqueueUnmapMemObject, clGetMemObjectInfo, clCreateSampler, clRetainSampler, clReleaseSampler, 
+            clGetSamplerInfo, clCreateProgramWithSource, clCreateProgramWithBinary, clRetainProgram, clReleaseProgram, clBuildProgram, clUnloadCompiler, 
+            clGetProgramInfo, clGetProgramBuildInfo, clCreateKernel, clCreateKernelsInProgram, clRetainKernel, clReleaseKernel, clSetKernelArg, clGetKernelInfo, 
+            clGetKernelWorkGroupInfo, clEnqueueNDRangeKernel, clEnqueueTask, clEnqueueNativeKernel, clWaitForEvents, clGetEventInfo, clRetainEvent, 
+            clReleaseEvent, clEnqueueMarker, clEnqueueBarrier, clEnqueueWaitForEvents, clGetEventProfilingInfo, clFlush, clFinish, 
+            clGetExtensionFunctionAddress
+        );
+
+        OpenCL10GL = check("OpenCL10GL", ext,
+            clCreateFromGLBuffer, clCreateFromGLTexture2D, clCreateFromGLTexture3D, clCreateFromGLRenderbuffer, clGetGLObjectInfo, clGetGLTextureInfo, 
+            clEnqueueAcquireGLObjects, clEnqueueReleaseGLObjects
+        );
+
+        OpenCL11 = check("OpenCL11", ext,
+            clCreateSubBuffer, clSetMemObjectDestructorCallback, clEnqueueReadBufferRect, clEnqueueWriteBufferRect, clEnqueueCopyBufferRect, clCreateUserEvent, 
+            clSetUserEventStatus, clSetEventCallback
+        );
+
+        OpenCL12 = check("OpenCL12", ext,
+            clGetExtensionFunctionAddressForPlatform, clRetainDevice, clReleaseDevice, clCreateSubDevices, clCreateImage, clCreateProgramWithBuiltInKernels, 
+            clCompileProgram, clLinkProgram, clUnloadPlatformCompiler, clGetKernelArgInfo, clEnqueueFillBuffer, clEnqueueFillImage, clEnqueueMigrateMemObjects, 
+            clEnqueueMarkerWithWaitList, clEnqueueBarrierWithWaitList
+        );
+
+        OpenCL12GL = check("OpenCL12GL", ext,
+            clCreateFromGLTexture
+        );
+
+        OpenCL20 = check("OpenCL20", ext,
+            clCreateCommandQueueWithProperties, clCreatePipe, clGetPipeInfo, clSVMAlloc, clSVMFree, clEnqueueSVMFree, clEnqueueSVMMemcpy, clEnqueueSVMMemFill, 
+            clEnqueueSVMMap, clEnqueueSVMUnmap, clSetKernelArgSVMPointer, clSetKernelExecInfo, clCreateSamplerWithProperties
+        );
+
+        OpenCL21 = check("OpenCL21", ext,
+            clSetDefaultDeviceCommandQueue, clGetDeviceAndHostTimer, clGetHostTimer, clCreateProgramWithIL, clCloneKernel, clGetKernelSubGroupInfo, 
+            clEnqueueSVMMigrateMem
+        );
+
+        OpenCL22 = check("OpenCL22", ext,
+            clSetProgramReleaseCallback, clSetProgramSpecializationConstant
+        );
+
+        OpenCL30 = check("OpenCL30", ext,
+            clSetContextDestructorCallback, clCreateBufferWithProperties, clCreateImageWithProperties
+        );
+
+        OpenCL31 = check("OpenCL31", ext,
+            clGetKernelSuggestedLocalWorkSize
+        );
+
         cl_altera_compiler_mode = ext.contains("cl_altera_compiler_mode");
         cl_altera_device_temperature = ext.contains("cl_altera_device_temperature");
-        cl_altera_live_object_tracking = check_altera_live_object_tracking(ext);
-        cl_amd_bus_addressable_memory = check_amd_bus_addressable_memory(ext);
+        cl_altera_live_object_tracking = check("cl_altera_live_object_tracking", ext,
+            clTrackLiveObjectsAltera, clReportLiveObjectsAltera
+        );
+
+        cl_amd_bus_addressable_memory = check("cl_amd_bus_addressable_memory", ext,
+            clEnqueueWaitSignalAMD, clEnqueueWriteSignalAMD, clEnqueueMakeBuffersResidentAMD
+        );
+
         cl_amd_compile_options = ext.contains("cl_amd_compile_options");
         cl_amd_device_attribute_query = ext.contains("cl_amd_device_attribute_query");
         cl_amd_device_board_name = ext.contains("cl_amd_device_board_name");
@@ -1334,16 +1211,31 @@ public class CLCapabilities {
         cl_amd_printf = ext.contains("cl_amd_printf");
         cl_amd_vec3 = ext.contains("cl_amd_vec3");
         cl_APPLE_biased_fixed_point_image_formats = ext.contains("cl_APPLE_biased_fixed_point_image_formats");
-        cl_APPLE_command_queue_priority = check_APPLE_command_queue_priority(ext);
-        cl_APPLE_command_queue_select_compute_units = check_APPLE_command_queue_select_compute_units(ext);
-        cl_APPLE_ContextLoggingFunctions = check_APPLE_ContextLoggingFunctions(ext);
+        cl_APPLE_command_queue_priority = check("cl_APPLE_command_queue_priority", ext,
+            clCreateCommandQueueWithPropertiesAPPLE
+        );
+
+        cl_APPLE_command_queue_select_compute_units = check("cl_APPLE_command_queue_select_compute_units", ext,
+            clCreateCommandQueueWithPropertiesAPPLE
+        );
+
+        cl_APPLE_ContextLoggingFunctions = check("cl_APPLE_ContextLoggingFunctions", ext,
+            clLogMessagesToSystemLogAPPLE, clLogMessagesToStdoutAPPLE, clLogMessagesToStderrAPPLE
+        );
+
         cl_APPLE_fixed_alpha_channel_orders = ext.contains("cl_APPLE_fixed_alpha_channel_orders");
         cl_APPLE_fp64_basic_ops = ext.contains("cl_APPLE_fp64_basic_ops");
-        cl_APPLE_gl_sharing = check_APPLE_gl_sharing(ext);
+        cl_APPLE_gl_sharing = check("cl_APPLE_gl_sharing", ext,
+            clGetGLContextInfoAPPLE
+        );
+
         cl_APPLE_query_kernel_names = ext.contains("cl_APPLE_query_kernel_names");
         cl_arm_controlled_kernel_termination = ext.contains("cl_arm_controlled_kernel_termination");
         cl_arm_core_id = ext.contains("cl_arm_core_id");
-        cl_arm_import_memory = check_arm_import_memory(ext);
+        cl_arm_import_memory = check("cl_arm_import_memory", ext,
+            clImportMemoryARM
+        );
+
         cl_arm_integer_dot_product_accumulate_int16 = ext.contains("cl_arm_integer_dot_product_accumulate_int16");
         cl_arm_integer_dot_product_accumulate_int8 = ext.contains("cl_arm_integer_dot_product_accumulate_int8");
         cl_arm_integer_dot_product_accumulate_saturate_int8 = ext.contains("cl_arm_integer_dot_product_accumulate_saturate_int8");
@@ -1360,33 +1252,60 @@ public class CLCapabilities {
         cl_cl_arm_import_memory_protected = ext.contains("cl_cl_arm_import_memory_protected");
         cl_ext_atomic_counters_32 = ext.contains("cl_ext_atomic_counters_32");
         cl_ext_atomic_counters_64 = ext.contains("cl_ext_atomic_counters_64");
-        cl_ext_buffer_device_address = check_ext_buffer_device_address(ext);
+        cl_ext_buffer_device_address = check("cl_ext_buffer_device_address", ext,
+            clSetKernelArgDevicePointerEXT
+        );
+
         cl_ext_cxx_for_opencl = ext.contains("cl_ext_cxx_for_opencl");
-        cl_ext_device_fission = check_ext_device_fission(ext);
+        cl_ext_device_fission = check("cl_ext_device_fission", ext,
+            clReleaseDeviceEXT, clRetainDeviceEXT, clCreateSubDevicesEXT
+        );
+
         cl_ext_float_atomics = ext.contains("cl_ext_float_atomics");
         cl_ext_image_from_buffer = ext.contains("cl_ext_image_from_buffer");
         cl_ext_image_raw10_raw12 = ext.contains("cl_ext_image_raw10_raw12");
-        cl_ext_image_requirements_info = check_ext_image_requirements_info(ext);
+        cl_ext_image_requirements_info = check("cl_ext_image_requirements_info", ext,
+            clGetImageRequirementsInfoEXT
+        );
+
         cl_ext_image_unorm_int_2_101010 = ext.contains("cl_ext_image_unorm_int_2_101010");
         cl_ext_image_unsigned_10x6_12x4_14x2 = ext.contains("cl_ext_image_unsigned_10x6_12x4_14x2");
         cl_ext_immutable_memory_objects = ext.contains("cl_ext_immutable_memory_objects");
-        cl_ext_migrate_memobject = check_ext_migrate_memobject(ext);
+        cl_ext_migrate_memobject = check("cl_ext_migrate_memobject", ext,
+            clEnqueueMigrateMemObjectEXT
+        );
+
         cl_img_bitwise_ops = ext.contains("cl_img_bitwise_ops");
         cl_img_cached_allocations = ext.contains("cl_img_cached_allocations");
-        cl_img_cancel_command = check_img_cancel_command(ext);
-        cl_img_generate_mipmap = check_img_generate_mipmap(ext);
+        cl_img_cancel_command = check("cl_img_cancel_command", ext,
+            clCancelCommandsIMG
+        );
+
+        cl_img_generate_mipmap = check("cl_img_generate_mipmap", ext,
+            clEnqueueGenerateMipmapIMG
+        );
+
         cl_img_matrix_multiply = ext.contains("cl_img_matrix_multiply");
         cl_img_mem_properties = ext.contains("cl_img_mem_properties");
         cl_img_memory_management = ext.contains("cl_img_memory_management");
         cl_img_safety_mechanisms = ext.contains("cl_img_safety_mechanisms");
         cl_img_swap_ops = ext.contains("cl_img_swap_ops");
-        cl_img_use_gralloc_ptr = check_img_use_gralloc_ptr(ext);
+        cl_img_use_gralloc_ptr = check("cl_img_use_gralloc_ptr", ext,
+            clEnqueueAcquireGrallocObjectsIMG, clEnqueueReleaseGrallocObjectsIMG
+        );
+
         cl_img_yuv_image = ext.contains("cl_img_yuv_image");
-        cl_intel_accelerator = check_intel_accelerator(ext);
+        cl_intel_accelerator = check("cl_intel_accelerator", ext,
+            clCreateAcceleratorINTEL, clRetainAcceleratorINTEL, clReleaseAcceleratorINTEL, clGetAcceleratorInfoINTEL
+        );
+
         cl_intel_advanced_motion_estimation = ext.contains("cl_intel_advanced_motion_estimation");
         cl_intel_bfloat16_conversions = ext.contains("cl_intel_bfloat16_conversions");
         cl_intel_command_queue_families = ext.contains("cl_intel_command_queue_families");
-        cl_intel_create_buffer_with_properties = check_intel_create_buffer_with_properties(ext);
+        cl_intel_create_buffer_with_properties = check("cl_intel_create_buffer_with_properties", ext,
+            clCreateBufferWithPropertiesINTEL
+        );
+
         cl_intel_create_mem_object_properties = ext.contains("cl_intel_create_mem_object_properties");
         cl_intel_device_attribute_query = ext.contains("cl_intel_device_attribute_query");
         cl_intel_device_partition_by_names = ext.contains("cl_intel_device_partition_by_names");
@@ -1403,10 +1322,16 @@ public class CLCapabilities {
         cl_intel_packed_yuv = ext.contains("cl_intel_packed_yuv");
         cl_intel_planar_yuv = ext.contains("cl_intel_planar_yuv");
         cl_intel_printf = ext.contains("cl_intel_printf");
-        cl_intel_program_scope_host_pipe = check_intel_program_scope_host_pipe(ext);
+        cl_intel_program_scope_host_pipe = check("cl_intel_program_scope_host_pipe", ext,
+            clEnqueueReadHostPipeINTEL, clEnqueueWriteHostPipeINTEL
+        );
+
         cl_intel_queue_no_sync_operations = ext.contains("cl_intel_queue_no_sync_operations");
         cl_intel_required_subgroup_size = ext.contains("cl_intel_required_subgroup_size");
-        cl_intel_sharing_format_query = check_intel_sharing_format_query(ext);
+        cl_intel_sharing_format_query = check("cl_intel_sharing_format_query", ext,
+            clGetSupportedGLTextureFormatsINTEL, clGetSupportedVA_APIMediaSurfaceFormatsINTEL
+        );
+
         cl_intel_simultaneous_sharing = ext.contains("cl_intel_simultaneous_sharing");
         cl_intel_spirv_device_side_avc_motion_estimation = ext.contains("cl_intel_spirv_device_side_avc_motion_estimation");
         cl_intel_spirv_media_block_io = ext.contains("cl_intel_spirv_media_block_io");
@@ -1422,43 +1347,88 @@ public class CLCapabilities {
         cl_intel_subgroups_char = ext.contains("cl_intel_subgroups_char");
         cl_intel_subgroups_long = ext.contains("cl_intel_subgroups_long");
         cl_intel_subgroups_short = ext.contains("cl_intel_subgroups_short");
-        cl_intel_unified_shared_memory = check_intel_unified_shared_memory(ext);
-        cl_intel_va_api_media_sharing = check_intel_va_api_media_sharing(ext);
+        cl_intel_unified_shared_memory = check("cl_intel_unified_shared_memory", ext,
+            clHostMemAllocINTEL, clDeviceMemAllocINTEL, clSharedMemAllocINTEL, clMemFreeINTEL, clMemBlockingFreeINTEL, clGetMemAllocInfoINTEL, 
+            clSetKernelArgMemPointerINTEL, clEnqueueMemFillINTEL, clEnqueueMemcpyINTEL, clEnqueueMigrateMemINTEL, clEnqueueMemAdviseINTEL
+        );
+
+        cl_intel_va_api_media_sharing = check("cl_intel_va_api_media_sharing", ext,
+            clGetDeviceIDsFromVA_APIMediaAdapterINTEL, clCreateFromVA_APIMediaSurfaceINTEL, clEnqueueAcquireVA_APIMediaSurfacesINTEL, 
+            clEnqueueReleaseVA_APIMediaSurfacesINTEL
+        );
+
         cl_khr_3d_image_writes = ext.contains("cl_khr_3d_image_writes");
         cl_khr_async_work_group_copy_fence = ext.contains("cl_khr_async_work_group_copy_fence");
         cl_khr_byte_addressable_store = ext.contains("cl_khr_byte_addressable_store");
-        cl_khr_command_buffer = check_khr_command_buffer(ext);
-        cl_khr_command_buffer_multi_device = check_khr_command_buffer_multi_device(ext);
-        cl_khr_command_buffer_mutable_dispatch = check_khr_command_buffer_mutable_dispatch(ext);
-        cl_khr_create_command_queue = check_khr_create_command_queue(ext);
+        cl_khr_command_buffer = check("cl_khr_command_buffer", ext,
+            clCreateCommandBufferKHR, clRetainCommandBufferKHR, clReleaseCommandBufferKHR, clFinalizeCommandBufferKHR, clEnqueueCommandBufferKHR, 
+            clCommandBarrierWithWaitListKHR, clCommandCopyBufferKHR, clCommandCopyBufferRectKHR, clCommandCopyBufferToImageKHR, clCommandCopyImageKHR, 
+            clCommandCopyImageToBufferKHR, clCommandFillBufferKHR, clCommandFillImageKHR, clCommandNDRangeKernelKHR, clGetCommandBufferInfoKHR, 
+            clCommandSVMMemcpyKHR, clCommandSVMMemFillKHR
+        );
+
+        cl_khr_command_buffer_multi_device = check("cl_khr_command_buffer_multi_device", ext,
+            clRemapCommandBufferKHR
+        );
+
+        cl_khr_command_buffer_mutable_dispatch = check("cl_khr_command_buffer_mutable_dispatch", ext,
+            clUpdateMutableCommandsKHR, clGetMutableCommandInfoKHR
+        );
+
+        cl_khr_create_command_queue = check("cl_khr_create_command_queue", ext,
+            clCreateCommandQueueWithPropertiesKHR
+        );
+
         cl_khr_depth_images = ext.contains("cl_khr_depth_images");
         cl_khr_device_enqueue_local_arg_types = ext.contains("cl_khr_device_enqueue_local_arg_types");
         cl_khr_device_uuid = ext.contains("cl_khr_device_uuid");
-        cl_khr_egl_event = check_khr_egl_event(ext);
-        cl_khr_egl_image = check_khr_egl_image(ext);
+        cl_khr_egl_event = check("cl_khr_egl_event", ext,
+            clCreateEventFromEGLSyncKHR
+        );
+
+        cl_khr_egl_image = check("cl_khr_egl_image", ext,
+            clCreateFromEGLImageKHR, clEnqueueAcquireEGLObjectsKHR, clEnqueueReleaseEGLObjectsKHR
+        );
+
         cl_khr_expect_assume = ext.contains("cl_khr_expect_assume");
         cl_khr_extended_async_copies = ext.contains("cl_khr_extended_async_copies");
         cl_khr_extended_bit_ops = ext.contains("cl_khr_extended_bit_ops");
-        cl_khr_extended_versioning = check_khr_extended_versioning(ext);
-        cl_khr_external_memory = check_khr_external_memory(ext);
+        cl_khr_extended_versioning = check("cl_khr_extended_versioning", ext);
+
+        cl_khr_external_memory = check("cl_khr_external_memory", ext,
+            clEnqueueAcquireExternalMemObjectsKHR, clEnqueueReleaseExternalMemObjectsKHR
+        );
+
         cl_khr_external_memory_dma_buf = ext.contains("cl_khr_external_memory_dma_buf");
         cl_khr_external_memory_opaque_fd = ext.contains("cl_khr_external_memory_opaque_fd");
         cl_khr_external_memory_win32 = ext.contains("cl_khr_external_memory_win32");
         cl_khr_external_semaphore = ext.contains("cl_khr_external_semaphore");
         cl_khr_external_semaphore_opaque_fd = ext.contains("cl_khr_external_semaphore_opaque_fd");
-        cl_khr_external_semaphore_sync_fd = check_khr_external_semaphore_sync_fd(ext);
+        cl_khr_external_semaphore_sync_fd = check("cl_khr_external_semaphore_sync_fd", ext,
+            clReImportSemaphoreSyncFdKHR
+        );
+
         cl_khr_external_semaphore_win32 = ext.contains("cl_khr_external_semaphore_win32");
         cl_khr_fp16 = ext.contains("cl_khr_fp16");
         cl_khr_fp64 = ext.contains("cl_khr_fp64");
         cl_khr_gl_depth_images = ext.contains("cl_khr_gl_depth_images");
-        cl_khr_gl_event = check_khr_gl_event(ext);
+        cl_khr_gl_event = check("cl_khr_gl_event", ext,
+            clCreateEventFromGLsyncKHR
+        );
+
         cl_khr_gl_msaa_sharing = ext.contains("cl_khr_gl_msaa_sharing");
-        cl_khr_gl_sharing = check_khr_gl_sharing(ext);
+        cl_khr_gl_sharing = check("cl_khr_gl_sharing", ext,
+            clGetGLContextInfoKHR
+        );
+
         cl_khr_global_int32_base_atomics = ext.contains("cl_khr_global_int32_base_atomics");
         cl_khr_global_int32_extended_atomics = ext.contains("cl_khr_global_int32_extended_atomics");
         cl_khr_icd = ext.contains("cl_khr_icd");
         cl_khr_icd_unloadable = ext.contains("cl_khr_icd_unloadable");
-        cl_khr_il_program = check_khr_il_program(ext);
+        cl_khr_il_program = check("cl_khr_il_program", ext,
+            clCreateProgramWithILKHR
+        );
+
         cl_khr_image2d_from_buffer = ext.contains("cl_khr_image2d_from_buffer");
         cl_khr_initialize_memory = ext.contains("cl_khr_initialize_memory");
         cl_khr_int64_base_atomics = ext.contains("cl_khr_int64_base_atomics");
@@ -1472,7 +1442,11 @@ public class CLCapabilities {
         cl_khr_pci_bus_info = ext.contains("cl_khr_pci_bus_info");
         cl_khr_priority_hints = ext.contains("cl_khr_priority_hints");
         cl_khr_select_fprounding_mode = ext.contains("cl_khr_select_fprounding_mode");
-        cl_khr_semaphore = check_khr_semaphore(ext);
+        cl_khr_semaphore = check("cl_khr_semaphore", ext,
+            clCreateSemaphoreWithPropertiesKHR, clEnqueueWaitSemaphoresKHR, clEnqueueSignalSemaphoresKHR, clGetSemaphoreInfoKHR, clReleaseSemaphoreKHR, 
+            clRetainSemaphoreKHR
+        );
+
         cl_khr_spir = ext.contains("cl_khr_spir");
         cl_khr_spirv_extended_debug_info = ext.contains("cl_khr_spirv_extended_debug_info");
         cl_khr_spirv_linkonce_odr = ext.contains("cl_khr_spirv_linkonce_odr");
@@ -1488,364 +1462,69 @@ public class CLCapabilities {
         cl_khr_subgroup_rotate = ext.contains("cl_khr_subgroup_rotate");
         cl_khr_subgroup_shuffle = ext.contains("cl_khr_subgroup_shuffle");
         cl_khr_subgroup_shuffle_relative = ext.contains("cl_khr_subgroup_shuffle_relative");
-        cl_khr_subgroups = check_khr_subgroups(ext);
-        cl_khr_suggested_local_work_size = check_khr_suggested_local_work_size(ext);
-        cl_khr_terminate_context = check_khr_terminate_context(ext);
+        cl_khr_subgroups = check("cl_khr_subgroups", ext,
+            clGetKernelSubGroupInfoKHR
+        );
+
+        cl_khr_suggested_local_work_size = check("cl_khr_suggested_local_work_size", ext,
+            clGetKernelSuggestedLocalWorkSizeKHR
+        );
+
+        cl_khr_terminate_context = check("cl_khr_terminate_context", ext,
+            clTerminateContextKHR
+        );
+
         cl_khr_throttle_hints = ext.contains("cl_khr_throttle_hints");
-        cl_khr_unified_svm = check_khr_unified_svm(ext);
+        cl_khr_unified_svm = check("cl_khr_unified_svm", ext,
+            clSVMAllocWithPropertiesKHR, clSVMFreeWithPropertiesKHR, clGetSVMPointerInfoKHR, clGetSVMSuggestedTypeIndexKHR
+        );
+
         cl_khr_work_group_uniform_arithmetic = ext.contains("cl_khr_work_group_uniform_arithmetic");
-        cl_loader_info = check_loader_info(ext);
+        cl_loader_info = check("cl_loader_info", ext,
+            clGetICDLoaderInfoOCLICD
+        );
+
         cl_nv_compiler_options = ext.contains("cl_nv_compiler_options");
         cl_nv_copy_opts = ext.contains("cl_nv_copy_opts");
-        cl_nv_create_buffer = check_nv_create_buffer(ext);
+        cl_nv_create_buffer = check("cl_nv_create_buffer", ext,
+            clCreateBufferNV
+        );
+
         cl_nv_device_attribute_query = ext.contains("cl_nv_device_attribute_query");
         cl_nv_pragma_unroll = ext.contains("cl_nv_pragma_unroll");
-        cl_pocl_content_size = check_pocl_content_size(ext);
-        cl_qcom_ext_host_ptr = check_qcom_ext_host_ptr(ext);
+        cl_pocl_content_size = check("cl_pocl_content_size", ext,
+            clSetContentSizeBufferPoCL
+        );
+
+        cl_qcom_ext_host_ptr = check("cl_qcom_ext_host_ptr", ext,
+            clGetDeviceImageInfoQCOM
+        );
+
         cl_qcom_ext_host_ptr_iocoherent = ext.contains("cl_qcom_ext_host_ptr_iocoherent");
-        cl_qcom_perf_hint = check_qcom_perf_hint(ext);
+        cl_qcom_perf_hint = check("cl_qcom_perf_hint", ext,
+            clSetPerfHintQCOM
+        );
+
     }
 
-    private static boolean checkExtension(String extension, boolean supported) {
-        if (supported) {
+    private boolean check(String extName, Set<String> ext, long... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        if (checkFunctions(functions)) {
             return true;
         }
-
-        apiLog("[CL] " + extension + " was reported as available but an entry point is missing.");
+        apiLog("[CL] " + ext + " was reported as available but an entry point is missing.");
         return false;
     }
-
-    private boolean check_CL10(Set<String> ext) {
-        return ext.contains("OpenCL10") && checkExtension("OpenCL10", checkFunctions(
-            clGetPlatformIDs, clGetPlatformInfo, clGetDeviceIDs, clGetDeviceInfo, clCreateContext, clCreateContextFromType, clRetainContext, clReleaseContext, 
-            clGetContextInfo, clCreateCommandQueue, clRetainCommandQueue, clReleaseCommandQueue, clGetCommandQueueInfo, clCreateBuffer, clEnqueueReadBuffer, 
-            clEnqueueWriteBuffer, clEnqueueCopyBuffer, clEnqueueMapBuffer, clCreateImage2D, clCreateImage3D, clGetSupportedImageFormats, clEnqueueReadImage, 
-            clEnqueueWriteImage, clEnqueueCopyImage, clEnqueueCopyImageToBuffer, clEnqueueCopyBufferToImage, clEnqueueMapImage, clGetImageInfo, 
-            clRetainMemObject, clReleaseMemObject, clEnqueueUnmapMemObject, clGetMemObjectInfo, clCreateSampler, clRetainSampler, clReleaseSampler, 
-            clGetSamplerInfo, clCreateProgramWithSource, clCreateProgramWithBinary, clRetainProgram, clReleaseProgram, clBuildProgram, clUnloadCompiler, 
-            clGetProgramInfo, clGetProgramBuildInfo, clCreateKernel, clCreateKernelsInProgram, clRetainKernel, clReleaseKernel, clSetKernelArg, clGetKernelInfo, 
-            clGetKernelWorkGroupInfo, clEnqueueNDRangeKernel, clEnqueueTask, clEnqueueNativeKernel, clWaitForEvents, clGetEventInfo, clRetainEvent, 
-            clReleaseEvent, clEnqueueMarker, clEnqueueBarrier, clEnqueueWaitForEvents, clGetEventProfilingInfo, clFlush, clFinish, 
-            clGetExtensionFunctionAddress
-        ));
+    private boolean check(String extName, Set<String> ext, long function) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        if (function != MemoryUtil.NULL) {
+            return true;
+        }
+        apiLog("[CL] " + ext + " was reported as available but an entry point is missing.");
+        return false;
     }
-
-    private boolean check_CL10GL(Set<String> ext) {
-        return ext.contains("OpenCL10GL") && checkExtension("OpenCL10GL", checkFunctions(
-            clCreateFromGLBuffer, clCreateFromGLTexture2D, clCreateFromGLTexture3D, clCreateFromGLRenderbuffer, clGetGLObjectInfo, clGetGLTextureInfo, 
-            clEnqueueAcquireGLObjects, clEnqueueReleaseGLObjects
-        ));
-    }
-
-    private boolean check_CL11(Set<String> ext) {
-        return ext.contains("OpenCL11") && checkExtension("OpenCL11", checkFunctions(
-            clCreateSubBuffer, clSetMemObjectDestructorCallback, clEnqueueReadBufferRect, clEnqueueWriteBufferRect, clEnqueueCopyBufferRect, clCreateUserEvent, 
-            clSetUserEventStatus, clSetEventCallback
-        ));
-    }
-
-    private boolean check_CL12(Set<String> ext) {
-        return ext.contains("OpenCL12") && checkExtension("OpenCL12", checkFunctions(
-            clGetExtensionFunctionAddressForPlatform, clRetainDevice, clReleaseDevice, clCreateSubDevices, clCreateImage, clCreateProgramWithBuiltInKernels, 
-            clCompileProgram, clLinkProgram, clUnloadPlatformCompiler, clGetKernelArgInfo, clEnqueueFillBuffer, clEnqueueFillImage, clEnqueueMigrateMemObjects, 
-            clEnqueueMarkerWithWaitList, clEnqueueBarrierWithWaitList
-        ));
-    }
-
-    private boolean check_CL12GL(Set<String> ext) {
-        return ext.contains("OpenCL12GL") && checkExtension("OpenCL12GL", checkFunctions(
-            clCreateFromGLTexture
-        ));
-    }
-
-    private boolean check_CL20(Set<String> ext) {
-        return ext.contains("OpenCL20") && checkExtension("OpenCL20", checkFunctions(
-            clCreateCommandQueueWithProperties, clCreatePipe, clGetPipeInfo, clSVMAlloc, clSVMFree, clEnqueueSVMFree, clEnqueueSVMMemcpy, clEnqueueSVMMemFill, 
-            clEnqueueSVMMap, clEnqueueSVMUnmap, clSetKernelArgSVMPointer, clSetKernelExecInfo, clCreateSamplerWithProperties
-        ));
-    }
-
-    private boolean check_CL21(Set<String> ext) {
-        return ext.contains("OpenCL21") && checkExtension("OpenCL21", checkFunctions(
-            clSetDefaultDeviceCommandQueue, clGetDeviceAndHostTimer, clGetHostTimer, clCreateProgramWithIL, clCloneKernel, clGetKernelSubGroupInfo, 
-            clEnqueueSVMMigrateMem
-        ));
-    }
-
-    private boolean check_CL22(Set<String> ext) {
-        return ext.contains("OpenCL22") && checkExtension("OpenCL22", checkFunctions(
-            clSetProgramReleaseCallback, clSetProgramSpecializationConstant
-        ));
-    }
-
-    private boolean check_CL30(Set<String> ext) {
-        return ext.contains("OpenCL30") && checkExtension("OpenCL30", checkFunctions(
-            clSetContextDestructorCallback, clCreateBufferWithProperties, clCreateImageWithProperties
-        ));
-    }
-
-    private boolean check_CL31(Set<String> ext) {
-        return ext.contains("OpenCL31") && checkExtension("OpenCL31", checkFunctions(
-            clGetKernelSuggestedLocalWorkSize
-        ));
-    }
-
-    private boolean check_altera_live_object_tracking(Set<String> ext) {
-        return ext.contains("cl_altera_live_object_tracking") && checkExtension("cl_altera_live_object_tracking", checkFunctions(
-            clTrackLiveObjectsAltera, clReportLiveObjectsAltera
-        ));
-    }
-
-    private boolean check_amd_bus_addressable_memory(Set<String> ext) {
-        return ext.contains("cl_amd_bus_addressable_memory") && checkExtension("cl_amd_bus_addressable_memory", checkFunctions(
-            clEnqueueWaitSignalAMD, clEnqueueWriteSignalAMD, clEnqueueMakeBuffersResidentAMD
-        ));
-    }
-
-    private boolean check_APPLE_command_queue_priority(Set<String> ext) {
-        return ext.contains("cl_APPLE_command_queue_priority") && checkExtension("cl_APPLE_command_queue_priority", checkFunctions(
-            clCreateCommandQueueWithPropertiesAPPLE
-        ));
-    }
-
-    private boolean check_APPLE_command_queue_select_compute_units(Set<String> ext) {
-        return ext.contains("cl_APPLE_command_queue_select_compute_units") && checkExtension("cl_APPLE_command_queue_select_compute_units", checkFunctions(
-            clCreateCommandQueueWithPropertiesAPPLE
-        ));
-    }
-
-    private boolean check_APPLE_ContextLoggingFunctions(Set<String> ext) {
-        return ext.contains("cl_APPLE_ContextLoggingFunctions") && checkExtension("cl_APPLE_ContextLoggingFunctions", checkFunctions(
-            clLogMessagesToSystemLogAPPLE, clLogMessagesToStdoutAPPLE, clLogMessagesToStderrAPPLE
-        ));
-    }
-
-    private boolean check_APPLE_gl_sharing(Set<String> ext) {
-        return ext.contains("cl_APPLE_gl_sharing") && checkExtension("cl_APPLE_gl_sharing", checkFunctions(
-            clGetGLContextInfoAPPLE
-        ));
-    }
-
-    private boolean check_arm_import_memory(Set<String> ext) {
-        return ext.contains("cl_arm_import_memory") && checkExtension("cl_arm_import_memory", checkFunctions(
-            clImportMemoryARM
-        ));
-    }
-
-    private boolean check_ext_buffer_device_address(Set<String> ext) {
-        return ext.contains("cl_ext_buffer_device_address") && checkExtension("cl_ext_buffer_device_address", checkFunctions(
-            clSetKernelArgDevicePointerEXT
-        ));
-    }
-
-    private boolean check_ext_device_fission(Set<String> ext) {
-        return ext.contains("cl_ext_device_fission") && checkExtension("cl_ext_device_fission", checkFunctions(
-            clReleaseDeviceEXT, clRetainDeviceEXT, clCreateSubDevicesEXT
-        ));
-    }
-
-    private boolean check_ext_image_requirements_info(Set<String> ext) {
-        return ext.contains("cl_ext_image_requirements_info") && checkExtension("cl_ext_image_requirements_info", checkFunctions(
-            clGetImageRequirementsInfoEXT
-        ));
-    }
-
-    private boolean check_ext_migrate_memobject(Set<String> ext) {
-        return ext.contains("cl_ext_migrate_memobject") && checkExtension("cl_ext_migrate_memobject", checkFunctions(
-            clEnqueueMigrateMemObjectEXT
-        ));
-    }
-
-    private boolean check_img_cancel_command(Set<String> ext) {
-        return ext.contains("cl_img_cancel_command") && checkExtension("cl_img_cancel_command", checkFunctions(
-            clCancelCommandsIMG
-        ));
-    }
-
-    private boolean check_img_generate_mipmap(Set<String> ext) {
-        return ext.contains("cl_img_generate_mipmap") && checkExtension("cl_img_generate_mipmap", checkFunctions(
-            clEnqueueGenerateMipmapIMG
-        ));
-    }
-
-    private boolean check_img_use_gralloc_ptr(Set<String> ext) {
-        return ext.contains("cl_img_use_gralloc_ptr") && checkExtension("cl_img_use_gralloc_ptr", checkFunctions(
-            clEnqueueAcquireGrallocObjectsIMG, clEnqueueReleaseGrallocObjectsIMG
-        ));
-    }
-
-    private boolean check_intel_accelerator(Set<String> ext) {
-        return ext.contains("cl_intel_accelerator") && checkExtension("cl_intel_accelerator", checkFunctions(
-            clCreateAcceleratorINTEL, clRetainAcceleratorINTEL, clReleaseAcceleratorINTEL, clGetAcceleratorInfoINTEL
-        ));
-    }
-
-    private boolean check_intel_create_buffer_with_properties(Set<String> ext) {
-        return ext.contains("cl_intel_create_buffer_with_properties") && checkExtension("cl_intel_create_buffer_with_properties", checkFunctions(
-            clCreateBufferWithPropertiesINTEL
-        ));
-    }
-
-    private boolean check_intel_program_scope_host_pipe(Set<String> ext) {
-        return ext.contains("cl_intel_program_scope_host_pipe") && checkExtension("cl_intel_program_scope_host_pipe", checkFunctions(
-            clEnqueueReadHostPipeINTEL, clEnqueueWriteHostPipeINTEL
-        ));
-    }
-
-    private boolean check_intel_sharing_format_query(Set<String> ext) {
-        return ext.contains("cl_intel_sharing_format_query") && checkExtension("cl_intel_sharing_format_query", checkFunctions(
-            clGetSupportedGLTextureFormatsINTEL, clGetSupportedVA_APIMediaSurfaceFormatsINTEL
-        ));
-    }
-
-    private boolean check_intel_unified_shared_memory(Set<String> ext) {
-        return ext.contains("cl_intel_unified_shared_memory") && checkExtension("cl_intel_unified_shared_memory", checkFunctions(
-            clHostMemAllocINTEL, clDeviceMemAllocINTEL, clSharedMemAllocINTEL, clMemFreeINTEL, clMemBlockingFreeINTEL, clGetMemAllocInfoINTEL, 
-            clSetKernelArgMemPointerINTEL, clEnqueueMemFillINTEL, clEnqueueMemcpyINTEL, clEnqueueMigrateMemINTEL, clEnqueueMemAdviseINTEL
-        ));
-    }
-
-    private boolean check_intel_va_api_media_sharing(Set<String> ext) {
-        return ext.contains("cl_intel_va_api_media_sharing") && checkExtension("cl_intel_va_api_media_sharing", checkFunctions(
-            clGetDeviceIDsFromVA_APIMediaAdapterINTEL, clCreateFromVA_APIMediaSurfaceINTEL, clEnqueueAcquireVA_APIMediaSurfacesINTEL, 
-            clEnqueueReleaseVA_APIMediaSurfacesINTEL
-        ));
-    }
-
-    private boolean check_khr_command_buffer(Set<String> ext) {
-        return ext.contains("cl_khr_command_buffer") && checkExtension("cl_khr_command_buffer", checkFunctions(
-            clCreateCommandBufferKHR, clRetainCommandBufferKHR, clReleaseCommandBufferKHR, clFinalizeCommandBufferKHR, clEnqueueCommandBufferKHR, 
-            clCommandBarrierWithWaitListKHR, clCommandCopyBufferKHR, clCommandCopyBufferRectKHR, clCommandCopyBufferToImageKHR, clCommandCopyImageKHR, 
-            clCommandCopyImageToBufferKHR, clCommandFillBufferKHR, clCommandFillImageKHR, clCommandNDRangeKernelKHR, clGetCommandBufferInfoKHR, 
-            clCommandSVMMemcpyKHR, clCommandSVMMemFillKHR
-        ));
-    }
-
-    private boolean check_khr_command_buffer_multi_device(Set<String> ext) {
-        return ext.contains("cl_khr_command_buffer_multi_device") && checkExtension("cl_khr_command_buffer_multi_device", checkFunctions(
-            clRemapCommandBufferKHR
-        ));
-    }
-
-    private boolean check_khr_command_buffer_mutable_dispatch(Set<String> ext) {
-        return ext.contains("cl_khr_command_buffer_mutable_dispatch") && checkExtension("cl_khr_command_buffer_mutable_dispatch", checkFunctions(
-            clUpdateMutableCommandsKHR, clGetMutableCommandInfoKHR
-        ));
-    }
-
-    private boolean check_khr_create_command_queue(Set<String> ext) {
-        return ext.contains("cl_khr_create_command_queue") && checkExtension("cl_khr_create_command_queue", checkFunctions(
-            clCreateCommandQueueWithPropertiesKHR
-        ));
-    }
-
-    private boolean check_khr_egl_event(Set<String> ext) {
-        return ext.contains("cl_khr_egl_event") && checkExtension("cl_khr_egl_event", checkFunctions(
-            clCreateEventFromEGLSyncKHR
-        ));
-    }
-
-    private boolean check_khr_egl_image(Set<String> ext) {
-        return ext.contains("cl_khr_egl_image") && checkExtension("cl_khr_egl_image", checkFunctions(
-            clCreateFromEGLImageKHR, clEnqueueAcquireEGLObjectsKHR, clEnqueueReleaseEGLObjectsKHR
-        ));
-    }
-
-    private boolean check_khr_extended_versioning(Set<String> ext) {
-        return ext.contains("cl_khr_extended_versioning") && checkExtension("cl_khr_extended_versioning", checkFunctions(
-            
-        ));
-    }
-
-    private boolean check_khr_external_memory(Set<String> ext) {
-        return ext.contains("cl_khr_external_memory") && checkExtension("cl_khr_external_memory", checkFunctions(
-            clEnqueueAcquireExternalMemObjectsKHR, clEnqueueReleaseExternalMemObjectsKHR
-        ));
-    }
-
-    private boolean check_khr_external_semaphore_sync_fd(Set<String> ext) {
-        return ext.contains("cl_khr_external_semaphore_sync_fd") && checkExtension("cl_khr_external_semaphore_sync_fd", checkFunctions(
-            clReImportSemaphoreSyncFdKHR
-        ));
-    }
-
-    private boolean check_khr_gl_event(Set<String> ext) {
-        return ext.contains("cl_khr_gl_event") && checkExtension("cl_khr_gl_event", checkFunctions(
-            clCreateEventFromGLsyncKHR
-        ));
-    }
-
-    private boolean check_khr_gl_sharing(Set<String> ext) {
-        return ext.contains("cl_khr_gl_sharing") && checkExtension("cl_khr_gl_sharing", checkFunctions(
-            clGetGLContextInfoKHR
-        ));
-    }
-
-    private boolean check_khr_il_program(Set<String> ext) {
-        return ext.contains("cl_khr_il_program") && checkExtension("cl_khr_il_program", checkFunctions(
-            clCreateProgramWithILKHR
-        ));
-    }
-
-    private boolean check_khr_semaphore(Set<String> ext) {
-        return ext.contains("cl_khr_semaphore") && checkExtension("cl_khr_semaphore", checkFunctions(
-            clCreateSemaphoreWithPropertiesKHR, clEnqueueWaitSemaphoresKHR, clEnqueueSignalSemaphoresKHR, clGetSemaphoreInfoKHR, clReleaseSemaphoreKHR, 
-            clRetainSemaphoreKHR
-        ));
-    }
-
-    private boolean check_khr_subgroups(Set<String> ext) {
-        return ext.contains("cl_khr_subgroups") && checkExtension("cl_khr_subgroups", checkFunctions(
-            clGetKernelSubGroupInfoKHR
-        ));
-    }
-
-    private boolean check_khr_suggested_local_work_size(Set<String> ext) {
-        return ext.contains("cl_khr_suggested_local_work_size") && checkExtension("cl_khr_suggested_local_work_size", checkFunctions(
-            clGetKernelSuggestedLocalWorkSizeKHR
-        ));
-    }
-
-    private boolean check_khr_terminate_context(Set<String> ext) {
-        return ext.contains("cl_khr_terminate_context") && checkExtension("cl_khr_terminate_context", checkFunctions(
-            clTerminateContextKHR
-        ));
-    }
-
-    private boolean check_khr_unified_svm(Set<String> ext) {
-        return ext.contains("cl_khr_unified_svm") && checkExtension("cl_khr_unified_svm", checkFunctions(
-            clSVMAllocWithPropertiesKHR, clSVMFreeWithPropertiesKHR, clGetSVMPointerInfoKHR, clGetSVMSuggestedTypeIndexKHR
-        ));
-    }
-
-    private boolean check_loader_info(Set<String> ext) {
-        return ext.contains("cl_loader_info") && checkExtension("cl_loader_info", checkFunctions(
-            clGetICDLoaderInfoOCLICD
-        ));
-    }
-
-    private boolean check_nv_create_buffer(Set<String> ext) {
-        return ext.contains("cl_nv_create_buffer") && checkExtension("cl_nv_create_buffer", checkFunctions(
-            clCreateBufferNV
-        ));
-    }
-
-    private boolean check_pocl_content_size(Set<String> ext) {
-        return ext.contains("cl_pocl_content_size") && checkExtension("cl_pocl_content_size", checkFunctions(
-            clSetContentSizeBufferPoCL
-        ));
-    }
-
-    private boolean check_qcom_ext_host_ptr(Set<String> ext) {
-        return ext.contains("cl_qcom_ext_host_ptr") && checkExtension("cl_qcom_ext_host_ptr", checkFunctions(
-            clGetDeviceImageInfoQCOM
-        ));
-    }
-
-    private boolean check_qcom_perf_hint(Set<String> ext) {
-        return ext.contains("cl_qcom_perf_hint") && checkExtension("cl_qcom_perf_hint", checkFunctions(
-            clSetPerfHintQCOM
-        ));
-    }
-
 }

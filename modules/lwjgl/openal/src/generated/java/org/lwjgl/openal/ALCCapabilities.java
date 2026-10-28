@@ -132,6 +132,28 @@ public final class ALCCapabilities {
     /** When true, {@code SOFT_system_events} is supported. */
     public final boolean ALC_SOFT_system_events;
 
+
+    private static boolean checkExt1(String extName, MemoryStack stack, FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext, int from, int to, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, device, caps, from, to, functions) || reportMissing("ALC", extName);
+    }
+
+    private static boolean checkExt2(String extName, MemoryStack stack, FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext, int index, String function) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunction(stack, provider, device, caps, index, function) || reportMissing("ALC", extName);
+    }
+
+    private static boolean checkExt3(String extName, MemoryStack stack, FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext, int[] indices, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, device, caps, indices, functions) || reportMissing("ALC", extName);
+    }
+
     /** Device handle. */
     final long device;
 
@@ -142,29 +164,48 @@ public final class ALCCapabilities {
         this.device = device;
 
         PointerBuffer caps = bufferFactory.apply(35);
+        MemoryStack stack = MemoryStack.stackGet();
 
-        OpenALC10 = check_ALC10(provider, device, caps, ext);
-        OpenALC11 = check_ALC11(provider, device, caps, ext);
+        OpenALC10 = checkExt1("OpenALC10", stack, provider, device, caps, ext, 0, 15,
+            "alcOpenDevice", "alcCloseDevice", "alcCreateContext", "alcMakeContextCurrent", "alcProcessContext", "alcSuspendContext", "alcDestroyContext", 
+            "alcGetCurrentContext", "alcGetContextsDevice", "alcIsExtensionPresent", "alcGetProcAddress", "alcGetEnumValue", "alcGetError", "alcGetString", 
+            "alcGetIntegerv"
+        );
+        OpenALC11 = checkExt1("OpenALC11", stack, provider, device, caps, ext, 15, 20,
+            "alcCaptureOpenDevice", "alcCaptureCloseDevice", "alcCaptureStart", "alcCaptureStop", "alcCaptureSamples"
+        );
         OpenALC_SOFT_loopback_bformat = ext.contains("OpenALC_SOFT_loopback_bformat");
         ALC_ENUMERATE_ALL_EXT = ext.contains("ALC_ENUMERATE_ALL_EXT");
         ALC_ENUMERATION_EXT = ext.contains("ALC_ENUMERATION_EXT");
-        ALC_EXT_CAPTURE = check_EXT_CAPTURE(provider, device, caps, ext);
+        ALC_EXT_CAPTURE = checkExt1("ALC_EXT_CAPTURE", stack, provider, device, caps, ext, 15, 20,
+            "alcCaptureOpenDevice", "alcCaptureCloseDevice", "alcCaptureStart", "alcCaptureStop", "alcCaptureSamples"
+        );
         ALC_EXT_debug = ext.contains("ALC_EXT_debug");
         ALC_EXT_DEDICATED = ext.contains("ALC_EXT_DEDICATED");
         ALC_EXT_DEFAULT_FILTER_ORDER = ext.contains("ALC_EXT_DEFAULT_FILTER_ORDER");
-        ALC_EXT_direct_context = check_EXT_direct_context(provider, device, caps, ext);
+        ALC_EXT_direct_context = checkExt2("ALC_EXT_direct_context", stack, provider, device, caps, ext, 20, "alcGetProcAddress2");
         ALC_EXT_disconnect = ext.contains("ALC_EXT_disconnect");
         ALC_EXT_EFX = ext.contains("ALC_EXT_EFX");
-        ALC_EXT_thread_local_context = check_EXT_thread_local_context(provider, device, caps, ext);
+        ALC_EXT_thread_local_context = checkExt1("ALC_EXT_thread_local_context", stack, provider, device, caps, ext, 21, 23,
+            "alcSetThreadContext", "alcGetThreadContext"
+        );
         ALC_LOKI_audio_channel = ext.contains("ALC_LOKI_audio_channel");
-        ALC_SOFT_device_clock = check_SOFT_device_clock(provider, device, caps, ext);
-        ALC_SOFT_HRTF = check_SOFT_HRTF(provider, device, caps, ext);
-        ALC_SOFT_loopback = check_SOFT_loopback(provider, device, caps, ext);
+        ALC_SOFT_device_clock = checkExt2("ALC_SOFT_device_clock", stack, provider, device, caps, ext, 23, "alcGetInteger64vSOFT");
+        ALC_SOFT_HRTF = checkExt1("ALC_SOFT_HRTF", stack, provider, device, caps, ext, 24, 26,
+            "alcGetStringiSOFT", "alcResetDeviceSOFT"
+        );
+        ALC_SOFT_loopback = checkExt1("ALC_SOFT_loopback", stack, provider, device, caps, ext, 26, 29,
+            "alcLoopbackOpenDeviceSOFT", "alcIsRenderFormatSupportedSOFT", "alcRenderSamplesSOFT"
+        );
         ALC_SOFT_output_limiter = ext.contains("ALC_SOFT_output_limiter");
         ALC_SOFT_output_mode = ext.contains("ALC_SOFT_output_mode");
-        ALC_SOFT_pause_device = check_SOFT_pause_device(provider, device, caps, ext);
-        ALC_SOFT_reopen_device = check_SOFT_reopen_device(provider, device, caps, ext);
-        ALC_SOFT_system_events = check_SOFT_system_events(provider, device, caps, ext);
+        ALC_SOFT_pause_device = checkExt1("ALC_SOFT_pause_device", stack, provider, device, caps, ext, 29, 31,
+            "alcDevicePauseSOFT", "alcDeviceResumeSOFT"
+        );
+        ALC_SOFT_reopen_device = checkExt2("ALC_SOFT_reopen_device", stack, provider, device, caps, ext, 31, "alcReopenDeviceSOFT");
+        ALC_SOFT_system_events = checkExt1("ALC_SOFT_system_events", stack, provider, device, caps, ext, 32, 35,
+            "alcEventIsSupportedSOFT", "alcEventControlSOFT", "alcEventCallbackSOFT"
+        );
 
         alcOpenDevice = caps.get(0);
         alcCloseDevice = caps.get(1);
@@ -208,140 +249,6 @@ public final class ALCCapabilities {
     /** Returns the buffer of OpenAL function pointers. */
     public PointerBuffer getAddressBuffer() {
         return addresses;
-    }
-
-    private static boolean check_ALC10(FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("OpenALC10")) {
-            return false;
-        }
-
-        return checkFunctions(provider, device, caps, new int[] {
-            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
-        },
-            "alcOpenDevice", "alcCloseDevice", "alcCreateContext", "alcMakeContextCurrent", "alcProcessContext", "alcSuspendContext", "alcDestroyContext", 
-            "alcGetCurrentContext", "alcGetContextsDevice", "alcIsExtensionPresent", "alcGetProcAddress", "alcGetEnumValue", "alcGetError", "alcGetString", 
-            "alcGetIntegerv"
-        ) || reportMissing("ALC", "OpenALC10");
-    }
-
-    private static boolean check_ALC11(FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("OpenALC11")) {
-            return false;
-        }
-
-        return checkFunctions(provider, device, caps, new int[] {
-            15, 16, 17, 18, 19
-        },
-            "alcCaptureOpenDevice", "alcCaptureCloseDevice", "alcCaptureStart", "alcCaptureStop", "alcCaptureSamples"
-        ) || reportMissing("ALC", "OpenALC11");
-    }
-
-    private static boolean check_EXT_CAPTURE(FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("ALC_EXT_CAPTURE")) {
-            return false;
-        }
-
-        return checkFunctions(provider, device, caps, new int[] {
-            15, 16, 17, 18, 19
-        },
-            "alcCaptureOpenDevice", "alcCaptureCloseDevice", "alcCaptureStart", "alcCaptureStop", "alcCaptureSamples"
-        ) || reportMissing("ALC", "ALC_EXT_CAPTURE");
-    }
-
-    private static boolean check_EXT_direct_context(FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("ALC_EXT_direct_context")) {
-            return false;
-        }
-
-        return checkFunctions(provider, device, caps, new int[] {
-            20
-        },
-            "alcGetProcAddress2"
-        ) || reportMissing("ALC", "ALC_EXT_direct_context");
-    }
-
-    private static boolean check_EXT_thread_local_context(FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("ALC_EXT_thread_local_context")) {
-            return false;
-        }
-
-        return checkFunctions(provider, device, caps, new int[] {
-            21, 22
-        },
-            "alcSetThreadContext", "alcGetThreadContext"
-        ) || reportMissing("ALC", "ALC_EXT_thread_local_context");
-    }
-
-    private static boolean check_SOFT_device_clock(FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("ALC_SOFT_device_clock")) {
-            return false;
-        }
-
-        return checkFunctions(provider, device, caps, new int[] {
-            23
-        },
-            "alcGetInteger64vSOFT"
-        ) || reportMissing("ALC", "ALC_SOFT_device_clock");
-    }
-
-    private static boolean check_SOFT_HRTF(FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("ALC_SOFT_HRTF")) {
-            return false;
-        }
-
-        return checkFunctions(provider, device, caps, new int[] {
-            24, 25
-        },
-            "alcGetStringiSOFT", "alcResetDeviceSOFT"
-        ) || reportMissing("ALC", "ALC_SOFT_HRTF");
-    }
-
-    private static boolean check_SOFT_loopback(FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("ALC_SOFT_loopback")) {
-            return false;
-        }
-
-        return checkFunctions(provider, device, caps, new int[] {
-            26, 27, 28
-        },
-            "alcLoopbackOpenDeviceSOFT", "alcIsRenderFormatSupportedSOFT", "alcRenderSamplesSOFT"
-        ) || reportMissing("ALC", "ALC_SOFT_loopback");
-    }
-
-    private static boolean check_SOFT_pause_device(FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("ALC_SOFT_pause_device")) {
-            return false;
-        }
-
-        return checkFunctions(provider, device, caps, new int[] {
-            29, 30
-        },
-            "alcDevicePauseSOFT", "alcDeviceResumeSOFT"
-        ) || reportMissing("ALC", "ALC_SOFT_pause_device");
-    }
-
-    private static boolean check_SOFT_reopen_device(FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("ALC_SOFT_reopen_device")) {
-            return false;
-        }
-
-        return checkFunctions(provider, device, caps, new int[] {
-            31
-        },
-            "alcReopenDeviceSOFT"
-        ) || reportMissing("ALC", "ALC_SOFT_reopen_device");
-    }
-
-    private static boolean check_SOFT_system_events(FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("ALC_SOFT_system_events")) {
-            return false;
-        }
-
-        return checkFunctions(provider, device, caps, new int[] {
-            32, 33, 34
-        },
-            "alcEventIsSupportedSOFT", "alcEventControlSOFT", "alcEventCallbackSOFT"
-        ) || reportMissing("ALC", "ALC_SOFT_system_events");
     }
 
 }

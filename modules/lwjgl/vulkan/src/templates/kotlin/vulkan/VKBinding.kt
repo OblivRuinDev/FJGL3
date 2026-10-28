@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
@@ -45,42 +45,13 @@ private val Func.type: VKFunctionType
 private val Func.isInstanceFunction get() = type === INSTANCE && !has<Macro>()
 private val Func.isDeviceFunction get() = type === DEVICE && !has<Macro>()
 
-private val EXTENSION_NAME = "[A-Za-z0-9_]+".toRegex()
-
-private fun getFunctionDependencyExpression(func: Func) = func.get<DependsOn>()
-    .reference
-    .let { expression ->
-        if (EXTENSION_NAME.matches(expression))
-            "ext.contains(\"$expression\")"
-        else
-            expression
-    }
-
-private fun PrintWriter.printCheckFunctions(
-    nativeClass: NativeClass,
-    commands: Map<String, Int>,
-    dependencies: LinkedHashMap<String, Int>,
-    filter: (Func) -> Boolean
-) {
-    print("checkFunctions(provider, caps, new int[] {")
-    nativeClass.printPointers(this, { func ->
-        val index = commands[func.name]
-        if (func.has<DependsOn>()) {
-            "flag${dependencies[getFunctionDependencyExpression(func)]} + $index"
-        } else{
-            index.toString()
-        }
-    }, filter)
-    print("},")
-    nativeClass.printPointers(this, { "\"${it.name}\"" }, filter)
-    print(")")
-}
-
-val VK_BINDING_INSTANCE = Generator.register(object : APIBinding(
+val VK_BINDING_INSTANCE = Generator.register(object : AbstractBinding(
     Module.VULKAN,
     CAPS_INSTANCE,
     APICapabilities.PARAM_CAPABILITIES
 ) {
+
+    private val instanceChecks = CapsChecks("MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext", "stack, provider, caps", "VK", supportsDependencies = true)
 
     override fun shouldCheckFunctionAddress(function: Func): Boolean = function.nativeClass.templateName != "VK10"
 
@@ -99,34 +70,10 @@ val VK_BINDING_INSTANCE = Generator.register(object : APIBinding(
     }
 
     private fun PrintWriter.checkExtensionFunctions(nativeClass: NativeClass, commands: Map<String, Int>) {
-        val capName = nativeClass.capName
-
-        print("""
-    private static boolean check_${nativeClass.templateName}(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("$capName")) {
-            return false;
-        }""")
-
-        val dependencies = nativeClass.functions
-            .filter { it.isInstanceFunction && it.has<DependsOn>() }
-            .map(::getFunctionDependencyExpression)
-            .foldIndexed(LinkedHashMap<String, Int>()) { index, map, expression ->
-                if (!map.containsKey(expression)) {
-                    map[expression] = index
-                }
-                map
-            }
-        if (dependencies.isNotEmpty()) {
-            println()
-            dependencies.forEach { (expression, index) ->
-                print("\n$t${t}int flag$index = $expression ? 0 : Integer.MIN_VALUE;")
-            }
-        }
-
-        print("\n\n$t${t}return ")
-        printCheckFunctions(nativeClass, commands, dependencies) { it.isInstanceFunction }
-        println(" || reportMissing(\"VK\", \"$capName\");")
-        println("$t}")
+        printExtCheckMethod(
+            instanceChecks, nativeClass, nativeClass.capName, { it.isInstanceFunction }, commands,
+            buildDependencyFlags(nativeClass.functions.filter { it.isInstanceFunction && it.has<DependsOn>() })
+        )
     }
 
     init {
@@ -184,33 +131,33 @@ val VK_BINDING_INSTANCE = Generator.register(object : APIBinding(
                 println("${t}public final boolean ${it.capName};")
             }
 
+        if (classes.any { isReducedCheck(it, { func -> func.isInstanceFunction }, instanceCommands) }) printCheckHelper(instanceChecks)
+
         print(
             """
     $CAPS_INSTANCE(FunctionProvider provider, int apiVersion, Set<String> ext, Set<String> deviceExt) {
         this.apiVersion = apiVersion;
 
         long[] caps = new long[${instanceCommands.size}];
+        MemoryStack stack = MemoryStack.stackGet();
 """
         )
 
         classes.forEach {
             val capName = it.capName
             if (it.functions.any { func -> func.isInstanceFunction }) {
-                print(
-                    if (it.isInstanceExtension)
-                        "\n$t$t$capName = check_${it.templateName}(provider, caps, ext);"
-                    else
-                        "\n$t${t}check_${it.templateName}(provider, caps, deviceExt);"
-                )
+                if (it.isInstanceExtension) {
+                    printCapCheck(this, instanceChecks, it, capName, "ext", { func -> func.isInstanceFunction }, instanceCommands, { "check_${it.templateName}(stack, provider, caps, ext)" })
+                } else {
+                    printCapCheck(this, instanceChecks, it, capName, "deviceExt", { func -> func.isInstanceFunction }, instanceCommands, { "check_${it.templateName}(stack, provider, caps, deviceExt)" }, assign = false)
+                }
             } else if (it.isInstanceExtension) {
                 print("\n$t$t$capName = ext.contains(\"$capName\");")
             }
         }
 
         println()
-        instanceCommands.forEach { (it, index) ->
-            print("\n$t$t$it = caps[$index];")
-        }
+        printCapsAssignments(this, instanceCommands) { "caps[$it]" }
 
         print(
             """
@@ -230,47 +177,47 @@ val VK_BINDING_INSTANCE = Generator.register(object : APIBinding(
 
 val VK_BINDING_DEVICE = Generator.register(object : GeneratorTarget(Module.VULKAN, CAPS_DEVICE) {
 
+    /**
+     * The shared generation logic lives in [AbstractBinding], whose members are only visible from inside an {@code AbstractBinding} subclasses. The device
+     * capabilities class is generated by a plain [GeneratorTarget] (to keep its generated preamble untouched), so the emission is delegated through this
+     * private stub that is never registered with the Generator.
+     */
+    private val shared = object : AbstractBinding(Module.VULKAN, CAPS_DEVICE) {
+
+        override fun PrintWriter.generateJava() {
+            error("This stub is never registered with the Generator.")
+        }
+
+        override fun generateFunctionAddress(writer: PrintWriter, function: Func) {
+            error("This stub is never registered with the Generator.")
+        }
+
+        private val deviceChecks = CapsChecks("MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext", "stack, provider, caps", "VK", supportsDependencies = true)
+
+        fun checkExtensionFunctions(writer: PrintWriter, nativeClass: NativeClass, commands: Map<String, Int>) {
+            writer.printExtCheckMethod(
+                deviceChecks, nativeClass, nativeClass.capName, { it.isDeviceFunction }, commands,
+                buildDependencyFlags(nativeClass.functions.filter { it.isDeviceFunction && it.has<DependsOn>() })
+            )
+        }
+
+        fun printCheckHelper(writer: PrintWriter, classes: List<NativeClass>, filter: (Func) -> Boolean, ordinals: Map<String, Int>) {
+            if (classes.any { isReducedCheck(it, filter, ordinals) }) {
+                writer.printCheckHelper(deviceChecks)
+            }
+        }
+
+        fun printCapCheck(writer: PrintWriter, nativeClass: NativeClass, capName: String, extRef: String, filter: (Func) -> Boolean, ordinals: Map<String, Int>, fullCall: (NativeClass) -> String, assign: Boolean = true) {
+            printCapCheck(writer, deviceChecks, nativeClass, capName, extRef, filter, ordinals, fullCall, assign)
+        }
+
+        fun printCapsAssignments(writer: PrintWriter, commands: Map<String, Int>) {
+            printCapsAssignments(writer, commands) { "caps[$it]" }
+        }
+    }
+
     private fun PrintWriter.checkExtensionFunctions(nativeClass: NativeClass, commands: Map<String, Int>) {
-        val capName = nativeClass.capName
-
-        val isDeviceExtension = nativeClass.isDeviceExtension
-        val hasDependencies = nativeClass.functions.any { it.has<DependsOn>() }
-        print("""
-    private static boolean check_${nativeClass.templateName}(FunctionProvider provider, long[] caps""")
-        if (isDeviceExtension || hasDependencies) {
-            print(", Set<String> ext")
-        } else if (!isDeviceExtension) {
-            print(", VKCapabilitiesInstance capsInstance")
-        }
-        print(""") {
-        if (!${if (isDeviceExtension) {
-            "ext.contains(\"$capName\")"
-        } else {
-            "capsInstance.$capName"
-        }}) {
-            return false;
-        }""")
-
-        val dependencies = nativeClass.functions
-            .filter { it.isDeviceFunction && it.has<DependsOn>() }
-            .map(::getFunctionDependencyExpression)
-            .foldIndexed(LinkedHashMap<String, Int>()) { index, map, expression ->
-                if (!map.containsKey(expression)) {
-                    map[expression] = index
-                }
-                map
-            }
-        if (dependencies.isNotEmpty()) {
-            println()
-            dependencies.forEach { (expression, index) ->
-                print("\n$t${t}int flag$index = $expression ? 0 : Integer.MIN_VALUE;")
-            }
-        }
-
-        print("\n\n$t${t}return ")
-        printCheckFunctions(nativeClass, commands, dependencies) { it.isDeviceFunction }
-        println(" || reportMissing(\"VK\", \"$capName\");")
-        println("$t}")
+        shared.checkExtensionFunctions(this, nativeClass, commands)
     }
 
     init {
@@ -333,33 +280,33 @@ val VK_BINDING_DEVICE = Generator.register(object : GeneratorTarget(Module.VULKA
             println("${t}public final boolean ${it.capName};")
         }
 
+        shared.printCheckHelper(this, classes, { func -> func.isDeviceFunction }, deviceCommands)
+
         print(
             """
     $CAPS_DEVICE(FunctionProvider provider, VKCapabilitiesInstance capsInstance, int apiVersion, Set<String> ext) {
         this.apiVersion = apiVersion;
 
         long[] caps = new long[${deviceCommands.size}];
+        MemoryStack stack = MemoryStack.stackGet();
 """
         )
 
         classes.forEach {
             val capName = it.capName
             if (it.functions.any { func -> func.isDeviceFunction }) {
-                print(
-                    if (it.isDeviceExtension)
-                        "\n$t$t$capName = check_${it.templateName}(provider, caps, ext);"
-                    else
-                        "\n$t${t}check_${it.templateName}(provider, caps, capsInstance);"
-                )
+                if (it.isDeviceExtension) {
+                    shared.printCapCheck(this, it, capName, "ext", { func -> func.isDeviceFunction }, deviceCommands, { "check_${it.templateName}(stack, provider, caps, ext)" })
+                } else {
+                    shared.printCapCheck(this, it, capName, "capsInstance", { func -> func.isDeviceFunction }, deviceCommands, { "check_${it.templateName}(stack, provider, caps, capsInstance)" }, assign = false)
+                }
             } else if (it.isDeviceExtension) {
                 print("\n$t$t$capName = ext.contains(\"$capName\");")
             }
         }
 
         println()
-        deviceCommands.forEach { (it, index) ->
-            print("\n$t$t$it = caps[$index];")
-        }
+        shared.printCapsAssignments(this, deviceCommands)
 
         print(
             """

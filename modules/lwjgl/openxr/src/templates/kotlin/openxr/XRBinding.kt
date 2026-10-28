@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
@@ -33,38 +33,13 @@ private val Func.type: XRFunctionType
 
 private val Func.isInstanceFunction get() = type === INSTANCE && !has<Macro>()
 
-private val EXTENSION_NAME = "[A-Za-z0-9_]+".toRegex()
-
-private fun getFunctionDependencyExpression(func: Func) = func.get<DependsOn>()
-    .reference
-    .let { expression ->
-        if (EXTENSION_NAME.matches(expression))
-            "ext.contains(\"$expression\")"
-        else
-            expression
-    }
-
-private fun PrintWriter.printCheckFunctions(
-    nativeClass: NativeClass,
-    commands: Map<String, Int>,
-    dependencies: LinkedHashMap<String, Int>,
-    filter: (Func) -> Boolean
+val XR_BINDING_INSTANCE = Generator.register(object : AbstractBinding(
+    Module.OPENXR,
+    "XRCapabilities",
+    APICapabilities.PARAM_CAPABILITIES
 ) {
-    print("checkFunctions(provider, caps, new int[] {")
-    nativeClass.printPointers(this, { func ->
-        val index = commands[func.name]
-        if (func.has<DependsOn>()) {
-            "flag${dependencies[getFunctionDependencyExpression(func)]} + $index"
-        } else{
-            index.toString()
-        }
-    }, filter)
-    print("},")
-    nativeClass.printPointers(this, { "\"${it.name}\"" }, filter)
-    print(")")
-}
 
-val XR_BINDING_INSTANCE = Generator.register(object : APIBinding(Module.OPENXR, "XRCapabilities", APICapabilities.PARAM_CAPABILITIES) {
+    private val checks = CapsChecks("MemoryStack stack, FunctionProvider provider, long[] caps, java.util.Set<String> ext", "stack, provider, caps", "XR", supportsDependencies = true)
 
     override fun shouldCheckFunctionAddress(function: Func): Boolean = function.nativeClass.templateName != "XR10"
 
@@ -78,34 +53,10 @@ val XR_BINDING_INSTANCE = Generator.register(object : APIBinding(Module.OPENXR, 
     }
 
     private fun PrintWriter.checkExtensionFunctions(nativeClass: NativeClass, commands: Map<String, Int>) {
-        val capName = nativeClass.capName
-
-        print("""
-    private static boolean check_${nativeClass.templateName}(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("$capName")) {
-            return false;
-        }""")
-
-        val dependencies = nativeClass.functions
-            .filter { it.isInstanceFunction && it.has<DependsOn>() }
-            .map(::getFunctionDependencyExpression)
-            .foldIndexed(LinkedHashMap<String, Int>()) { index, map, expression ->
-                if (!map.containsKey(expression)) {
-                    map[expression] = index
-                }
-                map
-            }
-        if (dependencies.isNotEmpty()) {
-            println()
-            dependencies.forEach { (expression, index) ->
-                print("\n$t${t}int flag$index = $expression ? 0 : Integer.MIN_VALUE;")
-            }
-        }
-
-        print("\n\n$t${t}return ")
-        printCheckFunctions(nativeClass, commands, dependencies) { it.isInstanceFunction }
-        println(" || reportMissing(\"XR\", \"$capName\");")
-        println("$t}")
+        printExtCheckMethod(
+            checks, nativeClass, nativeClass.capName, { it.isInstanceFunction }, commands,
+            buildDependencyFlags(nativeClass.functions.filter { it.isInstanceFunction && it.has<DependsOn>() })
+        )
     }
 
     init {
@@ -156,28 +107,29 @@ val XR_BINDING_INSTANCE = Generator.register(object : APIBinding(Module.OPENXR, 
                 println("${t}public final boolean ${it.capName};")
             }
 
+        if (classes.any { isReducedCheck(it, { func -> func.isInstanceFunction }, instanceCommands) }) printCheckHelper(checks)
+
         print(
             """
     XRCapabilities(FunctionProvider provider, long apiVersion, Set<String> ext) {
         this.apiVersion = apiVersion;
 
         long[] caps = new long[${instanceCommands.size}];
+        MemoryStack stack = MemoryStack.stackGet();
 """
         )
 
         classes.forEach {
             val capName = it.capName
             if (it.functions.any { func -> func.isInstanceFunction }) {
-                print("\n$t$t$capName = check_${it.templateName}(provider, caps, ext);")
+                printCapCheck(this, checks, it, capName, "ext", { func -> func.isInstanceFunction }, instanceCommands, { "check_${it.templateName}(stack, provider, caps, ext)" })
             } else {
                 print("\n$t$t$capName = ext.contains(\"$capName\");")
             }
         }
 
         println()
-        instanceCommands.forEach { (it, index) ->
-            print("\n$t$t$it = caps[$index];")
-        }
+        printCapsAssignments(this, instanceCommands) { "caps[$it]" }
 
         print(
             """

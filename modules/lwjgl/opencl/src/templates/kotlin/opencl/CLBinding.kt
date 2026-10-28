@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
@@ -25,20 +25,33 @@ private val CLBinding = Generator.register(object : APIBinding(
     APICapabilities.JAVA_CAPABILITIES
 ) {
 
+    private val classes by lazy { super.getClasses("CL") }
+
+    private val addresses by lazy { classes.getFunctionPointers() }
+
     override fun shouldCheckFunctionAddress(function: Func): Boolean = function.nativeClass.templateName != "CL10"
 
     override fun generateFunctionAddress(writer: PrintWriter, function: Func) {
         writer.println("$t${t}long $FUNCTION_ADDRESS = CL.getICD().${function.name};")
     }
 
-    private fun PrintWriter.checkExtensionFunctions(nativeClass: NativeClass) {
-        val capName = nativeClass.capName
-
-        println("\n${t}private boolean check_${nativeClass.templateName}(Set<String> ext) {")
-        print("$t${t}return ext.contains(\"$capName\") && checkExtension(\"$capName\", checkFunctions(")
-        nativeClass.printPointers(this, { it.name })
-        println("));")
-        println("$t}")
+    /** Prints [items] comma-separated with the same line-wrapping style as [NativeClass.printPointers]. */
+    private fun PrintWriter.printWrapped(items: List<String>) {
+        print("\n${t}${t}${t}")
+        var lineSize = 12
+        items.forEachIndexed { index, item ->
+            if (0 < index) {
+                print(", ")
+                lineSize += 2
+            }
+            lineSize += item.length
+            if (160 <= lineSize) {
+                print("\n${t}${t}${t}")
+                lineSize = 12 + item.length
+            }
+            print(item)
+        }
+        print("\n${t}${t}")
     }
 
     init {
@@ -46,18 +59,13 @@ private val CLBinding = Generator.register(object : APIBinding(
             "static org.lwjgl.system.APIUtil.*",
             "static org.lwjgl.system.Checks.*"
         )
-
     }
 
     override fun PrintWriter.generateJava() {
         generateJavaPreamble()
-        println("public class $CAPABILITIES_CLASS {\n")
+        println("public class $CAPABILITIES_CLASS {")
 
-        val classes = super.getClasses("CL")
-
-        val addresses = classes.getFunctionPointers()
-
-        println("${t}public final long")
+        println("\n${t}public final long")
         println(addresses.joinToString(",\n$t$t", prefix = "$t$t", postfix = ";\n", transform = Func::name))
 
         classes.forEach {
@@ -67,50 +75,55 @@ private val CLBinding = Generator.register(object : APIBinding(
 
         // ICD/Platform constructor
         println("\n$t$CAPABILITIES_CLASS(FunctionProvider provider, Set<String> ext) {")
-        println(addresses.joinToString(",\n$t$t$t", prefix = "$t${t}this(ext,\n$t$t$t", postfix = "\n$t$t);\n$t}") {
-            "provider.getFunctionAddress(${it.functionAddress})"
-        })
+        print("$t${t}this(ext, provider.getFunctionAddresses(")
+        printWrapped(addresses.map { it.functionAddress })
+        print("));\n    }\n")
 
         // Device constructor
         println("\n$t$CAPABILITIES_CLASS(CLCapabilities caps, Set<String> ext) {")
-        println(addresses.joinToString(",\n$t$t$t", prefix = "$t${t}this(ext,\n$t$t$t", postfix = "\n$t$t);\n$t}") {
-            "caps.${it.name}"
-        })
+        println(addresses.joinToString(",\n$t$t$t", prefix = "$t${t}this(ext,\n$t$t$t", postfix = "\n$t$t);\n$t}") { "caps.${it.name}" })
 
         // Common constructor
         println("\n${t}private $CAPABILITIES_CLASS(Set<String> ext, long... functions) {")
         println(addresses.mapIndexed { i, function -> "${function.name} = functions[$i];" }.joinToString("\n$t$t", prefix = "$t$t"))
         for (extension in classes) {
             val capName = extension.capName
-            print(
-                if (extension.hasNativeFunctions)
-                    "\n$t$t$capName = check_${extension.templateName}(ext);"
-                else
-                    "\n$t$t$capName = ext.contains(\"$capName\");"
-            )
+            if (extension.hasNativeFunctions) {
+                print("\n$t$t$capName = check(\"$capName\", ext")
+                // A native class of macro functions only has no entry points to verify; the empty function list is skipped to avoid a trailing comma.
+                if (extension.functions.any { !it.has<Macro>() }) {
+                    print(",")
+                    extension.printPointers(this)
+                }
+                println(");")
+            } else {
+                print("\n$t$t$capName = ext.contains(\"$capName\");")
+            }
         }
         print("""
     }
 
-    private static boolean checkExtension(String extension, boolean supported) {
-        if (supported) {
+    private boolean check(String extName, Set<String> ext, long... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        if (checkFunctions(functions)) {
             return true;
         }
-
-        apiLog("[CL] " + extension + " was reported as available but an entry point is missing.");
+        apiLog("[CL] " + ext + " was reported as available but an entry point is missing.");
         return false;
     }
-""")
-
-        for (extension in classes) {
-            if (!extension.hasNativeFunctions) {
-                continue
-            }
-
-            checkExtensionFunctions(extension)
+    private boolean check(String extName, Set<String> ext, long function) {
+        if (!ext.contains(extName)) {
+            return false;
         }
-
-        println("\n}")
+        if (function != MemoryUtil.NULL) {
+            return true;
+        }
+        apiLog("[CL] " + ext + " was reported as available but an entry point is missing.");
+        return false;
+    }
+}""")
     }
 
 })

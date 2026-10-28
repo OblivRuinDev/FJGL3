@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
@@ -21,7 +21,7 @@ private val NativeClass.isCore: Boolean get() = templateName.startsWith("ALC")
 
 private const val ALC_CAP_CLASS = "ALCCapabilities"
 
-val ALCBinding = Generator.register(object : APIBinding(
+val ALCBinding = Generator.register(object : AbstractBinding(
     Module.OPENAL,
     ALC_CAP_CLASS,
     APICapabilities.JAVA_CAPABILITIES
@@ -35,19 +35,14 @@ val ALCBinding = Generator.register(object : APIBinding(
         }
     }
 
-    private val functionOrdinals by lazy {
-        LinkedHashMap<String, Int>().also { functionOrdinals ->
-            classes.asSequence()
-                .filter { it.hasNativeFunctions && it.prefix == "ALC" }
-                .forEach {
-                    it.functions.asSequence()
-                        .forEach { cmd ->
-                            if (!cmd.has<Macro>() && !functionOrdinals.contains(cmd.name)) {
-                                functionOrdinals[cmd.name] = functionOrdinals.size
-                            }
-                        }
-                }
-        }
+    private val checks = CapsChecks("MemoryStack stack, FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext", "stack, provider, device, caps", "ALC")
+
+    override val ordinalFunctions by lazy {
+        classes.asSequence()
+            .filter { it.hasNativeFunctions && it.prefix == "ALC" }
+            .flatMap { it.functions.asSequence() }
+            .filter { !it.has<Macro>() }
+            .toList()
     }
 
     override fun shouldCheckFunctionAddress(function: Func): Boolean = function.nativeClass.templateName != "ALC10"
@@ -56,32 +51,8 @@ val ALCBinding = Generator.register(object : APIBinding(
         writer.println("\t\tlong $FUNCTION_ADDRESS = ALC.getICD().${function.name};")
     }
 
-    private fun PrintWriter.printCheckFunctions(
-        nativeClass: NativeClass,
-        filter: (Func) -> Boolean
-    ) {
-        print("checkFunctions(provider, device, caps, new int[] {")
-        nativeClass.printPointers(this, { func -> functionOrdinals[func.name].toString() }, filter)
-        print("},")
-        nativeClass.printPointers(this, { "\"${it.name}\"" }, filter)
-        print(")")
-    }
-
     private fun PrintWriter.checkExtensionFunctions(nativeClass: NativeClass) {
-        val capName = nativeClass.capName("ALC")
-
-        print(
-            """
-    private static boolean check_${nativeClass.templateName}(FunctionProviderLocal provider, long device, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("$capName")) {
-            return false;
-        }"""
-        )
-
-        print("\n\n$t${t}return ")
-        printCheckFunctions(nativeClass) { !it.has(IgnoreMissing) }
-        println(" || reportMissing(\"ALC\", \"$capName\");")
-        println("$t}")
+        printExtCheckMethod(checks, nativeClass, nativeClass.capName("ALC"), { !it.has(IgnoreMissing) }, functionOrdinals)
     }
 
     init {
@@ -126,6 +97,8 @@ val ALCBinding = Generator.register(object : APIBinding(
             println("${t}public final boolean ${it.capName("ALC")};")
         }
 
+        if (classes.any { it.hasNativeFunctions && it.prefix == "ALC" && isReducedCheck(it, { !it.has(IgnoreMissing) }, functionOrdinals) }) printCheckHelper(checks)
+
         print(
             """
     /** Device handle. */
@@ -138,23 +111,21 @@ val ALCBinding = Generator.register(object : APIBinding(
         this.device = device;
 
         PointerBuffer caps = bufferFactory.apply(${functions.size});
+        MemoryStack stack = MemoryStack.stackGet();
 """
         )
 
         for (extension in classes) {
             val capName = extension.capName("ALC")
-            print(
-                if (extension.hasNativeFunctions && extension.prefix == "ALC")
-                    "\n$t$t$capName = check_${extension.templateName}(provider, device, caps, ext);"
-                else
-                    "\n$t$t$capName = ext.contains(\"$capName\");"
-            )
+            if (extension.hasNativeFunctions && extension.prefix == "ALC") {
+                printCapCheck(this, checks, extension, capName, "ext", { !it.has(IgnoreMissing) }, functionOrdinals, { "check_${it.templateName}(stack, provider, device, caps, ext)" })
+            } else {
+                print("\n$t$t$capName = ext.contains(\"$capName\");")
+            }
         }
 
         println()
-        functionOrdinals.forEach { (it, index) ->
-            print("\n$t$t$it = caps.get($index);")
-        }
+        printCapsAssignments(this, functionOrdinals) { "caps.get($it)" }
 
         print(
             """

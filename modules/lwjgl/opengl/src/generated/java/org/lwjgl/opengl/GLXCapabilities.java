@@ -250,22 +250,54 @@ public final class GLXCapabilities {
     /** When true, {@code GLX_SGIX_swap_group} is supported. */
     public final boolean GLX_SGIX_swap_group;
 
+
+    private static boolean checkExt1(String extName, MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext, int from, int to, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, caps, from, to, functions) || reportMissing("GLX", extName);
+    }
+
+    private static boolean checkExt2(String extName, MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext, int index, String function) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunction(stack, provider, caps, index, function) || reportMissing("GLX", extName);
+    }
+
+    private static boolean checkExt3(String extName, MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext, int[] indices, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, caps, indices, functions) || reportMissing("GLX", extName);
+    }
+
     GLXCapabilities(FunctionProvider provider, Set<String> ext) {
         long[] caps = new long[69];
+        MemoryStack stack = MemoryStack.stackGet();
 
-        GLX11 = check_GLX11(provider, caps, ext);
-        GLX12 = check_GLX12(provider, caps, ext);
-        GLX13 = check_GLX13(provider, caps, ext);
-        GLX14 = check_GLX14(provider, caps, ext);
-        GLX_AMD_gpu_association = check_GLX_AMD_gpu_association(provider, caps, ext);
+        GLX11 = checkExt1("GLX11", stack, provider, caps, ext, 0, 3,
+            "glXQueryExtensionsString", "glXGetClientString", "glXQueryServerString"
+        );
+        GLX12 = checkExt2("GLX12", stack, provider, caps, ext, 3, "glXGetCurrentDisplay");
+        GLX13 = checkExt1("GLX13", stack, provider, caps, ext, 4, 20,
+            "glXGetFBConfigs", "glXChooseFBConfig", "glXGetFBConfigAttrib", "glXGetVisualFromFBConfig", "glXCreateWindow", "glXCreatePixmap", 
+            "glXDestroyPixmap", "glXCreatePbuffer", "glXDestroyPbuffer", "glXQueryDrawable", "glXCreateNewContext", "glXMakeContextCurrent", 
+            "glXGetCurrentReadDrawable", "glXQueryContext", "glXSelectEvent", "glXGetSelectedEvent"
+        );
+        GLX14 = checkExt2("GLX14", stack, provider, caps, ext, 20, "glXGetProcAddress");
+        GLX_AMD_gpu_association = checkExt1("GLX_AMD_gpu_association", stack, provider, caps, ext, 21, 30,
+            "glXBlitContextFramebufferAMD", "glXCreateAssociatedContextAMD", "glXCreateAssociatedContextAttribsAMD", "glXDeleteAssociatedContextAMD", 
+            "glXGetContextGPUIDAMD", "glXGetCurrentAssociatedContextAMD", "glXGetGPUIDsAMD", "glXGetGPUInfoAMD", "glXMakeAssociatedContextCurrentAMD"
+        );
         GLX_ARB_context_flush_control = ext.contains("GLX_ARB_context_flush_control");
-        GLX_ARB_create_context = check_GLX_ARB_create_context(provider, caps, ext);
+        GLX_ARB_create_context = checkExt2("GLX_ARB_create_context", stack, provider, caps, ext, 30, "glXCreateContextAttribsARB");
         GLX_ARB_create_context_no_error = ext.contains("GLX_ARB_create_context_no_error");
         GLX_ARB_create_context_profile = ext.contains("GLX_ARB_create_context_profile");
         GLX_ARB_create_context_robustness = ext.contains("GLX_ARB_create_context_robustness");
         GLX_ARB_fbconfig_float = ext.contains("GLX_ARB_fbconfig_float");
         GLX_ARB_framebuffer_sRGB = ext.contains("GLX_ARB_framebuffer_sRGB");
-        GLX_ARB_get_proc_address = check_GLX_ARB_get_proc_address(provider, caps, ext);
+        GLX_ARB_get_proc_address = checkExt2("GLX_ARB_get_proc_address", stack, provider, caps, ext, 31, "glXGetProcAddressARB");
         GLX_ARB_multisample = ext.contains("GLX_ARB_multisample");
         GLX_ARB_robustness_application_isolation = ext.contains("GLX_ARB_robustness_application_isolation");
         GLX_ARB_robustness_share_group_isolation = ext.contains("GLX_ARB_robustness_share_group_isolation");
@@ -277,30 +309,49 @@ public final class GLXCapabilities {
         GLX_EXT_fbconfig_packed_float = ext.contains("GLX_EXT_fbconfig_packed_float");
         GLX_EXT_framebuffer_sRGB = ext.contains("GLX_EXT_framebuffer_sRGB");
         GLX_EXT_get_drawable_type = ext.contains("GLX_EXT_get_drawable_type");
-        GLX_EXT_import_context = check_GLX_EXT_import_context(provider, caps, ext);
+        GLX_EXT_import_context = checkExt1("GLX_EXT_import_context", stack, provider, caps, ext, 32, 37,
+            "glXGetCurrentDisplayEXT", "glXQueryContextInfoEXT", "glXGetContextIDEXT", "glXImportContextEXT", "glXFreeContextEXT"
+        );
         GLX_EXT_no_config_context = ext.contains("GLX_EXT_no_config_context");
         GLX_EXT_stereo_tree = ext.contains("GLX_EXT_stereo_tree");
-        GLX_EXT_swap_control = check_GLX_EXT_swap_control(provider, caps, ext);
+        GLX_EXT_swap_control = checkExt2("GLX_EXT_swap_control", stack, provider, caps, ext, 37, "glXSwapIntervalEXT");
         GLX_EXT_swap_control_tear = ext.contains("GLX_EXT_swap_control_tear");
-        GLX_EXT_texture_from_pixmap = check_GLX_EXT_texture_from_pixmap(provider, caps, ext);
+        GLX_EXT_texture_from_pixmap = checkExt1("GLX_EXT_texture_from_pixmap", stack, provider, caps, ext, 38, 40,
+            "glXBindTexImageEXT", "glXReleaseTexImageEXT"
+        );
         GLX_EXT_visual_info = ext.contains("GLX_EXT_visual_info");
         GLX_EXT_visual_rating = ext.contains("GLX_EXT_visual_rating");
         GLX_INTEL_swap_event = ext.contains("GLX_INTEL_swap_event");
-        GLX_NV_copy_buffer = check_GLX_NV_copy_buffer(provider, caps, ext);
-        GLX_NV_copy_image = check_GLX_NV_copy_image(provider, caps, ext);
-        GLX_NV_delay_before_swap = check_GLX_NV_delay_before_swap(provider, caps, ext);
+        GLX_NV_copy_buffer = checkExt1("GLX_NV_copy_buffer", stack, provider, caps, ext, 40, 42,
+            "glXCopyBufferSubDataNV", "glXNamedCopyBufferSubDataNV"
+        );
+        GLX_NV_copy_image = checkExt2("GLX_NV_copy_image", stack, provider, caps, ext, 42, "glXCopyImageSubDataNV");
+        GLX_NV_delay_before_swap = checkExt2("GLX_NV_delay_before_swap", stack, provider, caps, ext, 43, "glXDelayBeforeSwapNV");
         GLX_NV_float_buffer = ext.contains("GLX_NV_float_buffer");
         GLX_NV_multigpu_context = ext.contains("GLX_NV_multigpu_context");
         GLX_NV_multisample_coverage = ext.contains("GLX_NV_multisample_coverage");
         GLX_NV_robustness_video_memory_purge = ext.contains("GLX_NV_robustness_video_memory_purge");
-        GLX_NV_swap_group = check_GLX_NV_swap_group(provider, caps, ext);
-        GLX_SGI_make_current_read = check_GLX_SGI_make_current_read(provider, caps, ext);
-        GLX_SGI_swap_control = check_GLX_SGI_swap_control(provider, caps, ext);
-        GLX_SGI_video_sync = check_GLX_SGI_video_sync(provider, caps, ext);
-        GLX_SGIX_fbconfig = check_GLX_SGIX_fbconfig(provider, caps, ext);
-        GLX_SGIX_pbuffer = check_GLX_SGIX_pbuffer(provider, caps, ext);
-        GLX_SGIX_swap_barrier = check_GLX_SGIX_swap_barrier(provider, caps, ext);
-        GLX_SGIX_swap_group = check_GLX_SGIX_swap_group(provider, caps, ext);
+        GLX_NV_swap_group = checkExt1("GLX_NV_swap_group", stack, provider, caps, ext, 44, 50,
+            "glXJoinSwapGroupNV", "glXBindSwapBarrierNV", "glXQuerySwapGroupNV", "glXQueryMaxSwapGroupsNV", "glXQueryFrameCountNV", "glXResetFrameCountNV"
+        );
+        GLX_SGI_make_current_read = checkExt1("GLX_SGI_make_current_read", stack, provider, caps, ext, 50, 52,
+            "glXMakeCurrentReadSGI", "glXGetCurrentReadDrawableSGI"
+        );
+        GLX_SGI_swap_control = checkExt2("GLX_SGI_swap_control", stack, provider, caps, ext, 52, "glXSwapIntervalSGI");
+        GLX_SGI_video_sync = checkExt1("GLX_SGI_video_sync", stack, provider, caps, ext, 53, 55,
+            "glXGetVideoSyncSGI", "glXWaitVideoSyncSGI"
+        );
+        GLX_SGIX_fbconfig = checkExt1("GLX_SGIX_fbconfig", stack, provider, caps, ext, 55, 61,
+            "glXGetFBConfigAttribSGIX", "glXChooseFBConfigSGIX", "glXCreateGLXPixmapWithConfigSGIX", "glXCreateContextWithConfigSGIX", 
+            "glXGetVisualFromFBConfigSGIX", "glXGetFBConfigFromVisualSGIX"
+        );
+        GLX_SGIX_pbuffer = checkExt1("GLX_SGIX_pbuffer", stack, provider, caps, ext, 61, 66,
+            "glXCreateGLXPbufferSGIX", "glXDestroyGLXPbufferSGIX", "glXQueryGLXPbufferSGIX", "glXSelectEventSGIX", "glXGetSelectedEventSGIX"
+        );
+        GLX_SGIX_swap_barrier = checkExt1("GLX_SGIX_swap_barrier", stack, provider, caps, ext, 66, 68,
+            "glXBindSwapBarrierSGIX", "glXQueryMaxSwapBarriersSGIX"
+        );
+        GLX_SGIX_swap_group = checkExt2("GLX_SGIX_swap_group", stack, provider, caps, ext, 68, "glXJoinSwapGroupSGIX");
 
         glXQueryExtensionsString = caps[0];
         glXGetClientString = caps[1];
@@ -371,262 +422,6 @@ public final class GLXCapabilities {
         glXBindSwapBarrierSGIX = caps[66];
         glXQueryMaxSwapBarriersSGIX = caps[67];
         glXJoinSwapGroupSGIX = caps[68];
-    }
-
-    private static boolean check_GLX11(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX11")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            0, 1, 2
-        },
-            "glXQueryExtensionsString", "glXGetClientString", "glXQueryServerString"
-        ) || reportMissing("GLX", "GLX11");
-    }
-
-    private static boolean check_GLX12(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX12")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            3
-        },
-            "glXGetCurrentDisplay"
-        ) || reportMissing("GLX", "GLX12");
-    }
-
-    private static boolean check_GLX13(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX13")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
-        },
-            "glXGetFBConfigs", "glXChooseFBConfig", "glXGetFBConfigAttrib", "glXGetVisualFromFBConfig", "glXCreateWindow", "glXCreatePixmap", 
-            "glXDestroyPixmap", "glXCreatePbuffer", "glXDestroyPbuffer", "glXQueryDrawable", "glXCreateNewContext", "glXMakeContextCurrent", 
-            "glXGetCurrentReadDrawable", "glXQueryContext", "glXSelectEvent", "glXGetSelectedEvent"
-        ) || reportMissing("GLX", "GLX13");
-    }
-
-    private static boolean check_GLX14(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX14")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            20
-        },
-            "glXGetProcAddress"
-        ) || reportMissing("GLX", "GLX14");
-    }
-
-    private static boolean check_GLX_AMD_gpu_association(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_AMD_gpu_association")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            21, 22, 23, 24, 25, 26, 27, 28, 29
-        },
-            "glXBlitContextFramebufferAMD", "glXCreateAssociatedContextAMD", "glXCreateAssociatedContextAttribsAMD", "glXDeleteAssociatedContextAMD", 
-            "glXGetContextGPUIDAMD", "glXGetCurrentAssociatedContextAMD", "glXGetGPUIDsAMD", "glXGetGPUInfoAMD", "glXMakeAssociatedContextCurrentAMD"
-        ) || reportMissing("GLX", "GLX_AMD_gpu_association");
-    }
-
-    private static boolean check_GLX_ARB_create_context(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_ARB_create_context")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            30
-        },
-            "glXCreateContextAttribsARB"
-        ) || reportMissing("GLX", "GLX_ARB_create_context");
-    }
-
-    private static boolean check_GLX_ARB_get_proc_address(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_ARB_get_proc_address")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            31
-        },
-            "glXGetProcAddressARB"
-        ) || reportMissing("GLX", "GLX_ARB_get_proc_address");
-    }
-
-    private static boolean check_GLX_EXT_import_context(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_EXT_import_context")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            32, 33, 34, 35, 36
-        },
-            "glXGetCurrentDisplayEXT", "glXQueryContextInfoEXT", "glXGetContextIDEXT", "glXImportContextEXT", "glXFreeContextEXT"
-        ) || reportMissing("GLX", "GLX_EXT_import_context");
-    }
-
-    private static boolean check_GLX_EXT_swap_control(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_EXT_swap_control")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            37
-        },
-            "glXSwapIntervalEXT"
-        ) || reportMissing("GLX", "GLX_EXT_swap_control");
-    }
-
-    private static boolean check_GLX_EXT_texture_from_pixmap(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_EXT_texture_from_pixmap")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            38, 39
-        },
-            "glXBindTexImageEXT", "glXReleaseTexImageEXT"
-        ) || reportMissing("GLX", "GLX_EXT_texture_from_pixmap");
-    }
-
-    private static boolean check_GLX_NV_copy_buffer(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_NV_copy_buffer")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            40, 41
-        },
-            "glXCopyBufferSubDataNV", "glXNamedCopyBufferSubDataNV"
-        ) || reportMissing("GLX", "GLX_NV_copy_buffer");
-    }
-
-    private static boolean check_GLX_NV_copy_image(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_NV_copy_image")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            42
-        },
-            "glXCopyImageSubDataNV"
-        ) || reportMissing("GLX", "GLX_NV_copy_image");
-    }
-
-    private static boolean check_GLX_NV_delay_before_swap(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_NV_delay_before_swap")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            43
-        },
-            "glXDelayBeforeSwapNV"
-        ) || reportMissing("GLX", "GLX_NV_delay_before_swap");
-    }
-
-    private static boolean check_GLX_NV_swap_group(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_NV_swap_group")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            44, 45, 46, 47, 48, 49
-        },
-            "glXJoinSwapGroupNV", "glXBindSwapBarrierNV", "glXQuerySwapGroupNV", "glXQueryMaxSwapGroupsNV", "glXQueryFrameCountNV", "glXResetFrameCountNV"
-        ) || reportMissing("GLX", "GLX_NV_swap_group");
-    }
-
-    private static boolean check_GLX_SGI_make_current_read(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_SGI_make_current_read")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            50, 51
-        },
-            "glXMakeCurrentReadSGI", "glXGetCurrentReadDrawableSGI"
-        ) || reportMissing("GLX", "GLX_SGI_make_current_read");
-    }
-
-    private static boolean check_GLX_SGI_swap_control(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_SGI_swap_control")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            52
-        },
-            "glXSwapIntervalSGI"
-        ) || reportMissing("GLX", "GLX_SGI_swap_control");
-    }
-
-    private static boolean check_GLX_SGI_video_sync(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_SGI_video_sync")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            53, 54
-        },
-            "glXGetVideoSyncSGI", "glXWaitVideoSyncSGI"
-        ) || reportMissing("GLX", "GLX_SGI_video_sync");
-    }
-
-    private static boolean check_GLX_SGIX_fbconfig(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_SGIX_fbconfig")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            55, 56, 57, 58, 59, 60
-        },
-            "glXGetFBConfigAttribSGIX", "glXChooseFBConfigSGIX", "glXCreateGLXPixmapWithConfigSGIX", "glXCreateContextWithConfigSGIX", 
-            "glXGetVisualFromFBConfigSGIX", "glXGetFBConfigFromVisualSGIX"
-        ) || reportMissing("GLX", "GLX_SGIX_fbconfig");
-    }
-
-    private static boolean check_GLX_SGIX_pbuffer(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_SGIX_pbuffer")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            61, 62, 63, 64, 65
-        },
-            "glXCreateGLXPbufferSGIX", "glXDestroyGLXPbufferSGIX", "glXQueryGLXPbufferSGIX", "glXSelectEventSGIX", "glXGetSelectedEventSGIX"
-        ) || reportMissing("GLX", "GLX_SGIX_pbuffer");
-    }
-
-    private static boolean check_GLX_SGIX_swap_barrier(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_SGIX_swap_barrier")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            66, 67
-        },
-            "glXBindSwapBarrierSGIX", "glXQueryMaxSwapBarriersSGIX"
-        ) || reportMissing("GLX", "GLX_SGIX_swap_barrier");
-    }
-
-    private static boolean check_GLX_SGIX_swap_group(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("GLX_SGIX_swap_group")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            68
-        },
-            "glXJoinSwapGroupSGIX"
-        ) || reportMissing("GLX", "GLX_SGIX_swap_group");
     }
 
 }

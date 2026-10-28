@@ -28,4 +28,18 @@ public interface FunctionProvider {
      */
     long getFunctionAddress(ByteBuffer functionName);
 
+    default long[] getFunctionAddresses(CharSequence... functionNames) {
+        MemoryStack stack = stackGet();
+        long[] caps = new long[functionNames.length];
+        long pointer = stack.getPointerAddress();
+        for (int i = 0; i < functionNames.length; i++) {
+            try {
+                caps[i] = getFunctionAddress(stack.ASCII(functionNames[i]));
+            } finally {
+                stack.setPointerAddress(pointer);
+            }
+        }
+        return caps;
+    }
+
 }

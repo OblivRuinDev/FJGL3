@@ -353,6 +353,10 @@ public class MemoryStack extends Pointer.Default implements StackAllocator<Memor
         this.pointer = address + pointer;
     }
 
+    void setPointerAddress(long pointer) {
+        this.pointer = pointer;
+    }
+
     private void checkPointer(int pointer) {
         if (pointer < 0 || size < pointer) {
             throw new IndexOutOfBoundsException("Invalid stack pointer");

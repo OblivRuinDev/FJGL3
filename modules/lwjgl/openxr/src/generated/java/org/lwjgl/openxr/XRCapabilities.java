@@ -1399,144 +1399,316 @@ public class XRCapabilities {
     /** When true, {@code YVR_controller_interaction} is supported. */
     public final boolean XR_YVR_controller_interaction;
 
+
+    private static boolean checkExt1(String extName, MemoryStack stack, FunctionProvider provider, long[] caps, java.util.Set<String> ext, int from, int to, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, caps, from, to, functions) || reportMissing("XR", extName);
+    }
+
+    private static boolean checkExt2(String extName, MemoryStack stack, FunctionProvider provider, long[] caps, java.util.Set<String> ext, int index, String function) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunction(stack, provider, caps, index, function) || reportMissing("XR", extName);
+    }
+
+    private static boolean checkExt3(String extName, MemoryStack stack, FunctionProvider provider, long[] caps, java.util.Set<String> ext, int[] indices, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, caps, indices, functions) || reportMissing("XR", extName);
+    }
+
     XRCapabilities(FunctionProvider provider, long apiVersion, Set<String> ext) {
         this.apiVersion = apiVersion;
 
         long[] caps = new long[501];
+        MemoryStack stack = MemoryStack.stackGet();
 
-        OpenXR10 = check_XR10(provider, caps, ext);
-        OpenXR11 = check_XR11(provider, caps, ext);
-        XR_ALMALENCE_digital_lens_control = check_ALMALENCE_digital_lens_control(provider, caps, ext);
-        XR_ANDROID_anchor_sharing_export = check_ANDROID_anchor_sharing_export(provider, caps, ext);
-        XR_ANDROID_composition_layer_passthrough_mesh = check_ANDROID_composition_layer_passthrough_mesh(provider, caps, ext);
-        XR_ANDROID_device_anchor_persistence = check_ANDROID_device_anchor_persistence(provider, caps, ext);
-        XR_ANDROID_eye_tracking = check_ANDROID_eye_tracking(provider, caps, ext);
-        XR_ANDROID_face_tracking = check_ANDROID_face_tracking(provider, caps, ext);
-        XR_ANDROID_geospatial = check_ANDROID_geospatial(provider, caps, ext);
-        XR_ANDROID_geospatial_anchor = check_ANDROID_geospatial_anchor(provider, caps, ext);
-        XR_ANDROID_google_cloud_auth = check_ANDROID_google_cloud_auth(provider, caps, ext);
-        XR_ANDROID_light_estimation = check_ANDROID_light_estimation(provider, caps, ext);
+        OpenXR10 = checkExt1("OpenXR10", stack, provider, caps, ext, 0, 51,
+            "xrDestroyInstance", "xrGetInstanceProperties", "xrPollEvent", "xrResultToString", "xrStructureTypeToString", "xrGetSystem", 
+            "xrGetSystemProperties", "xrEnumerateEnvironmentBlendModes", "xrCreateSession", "xrDestroySession", "xrEnumerateReferenceSpaces", 
+            "xrCreateReferenceSpace", "xrGetReferenceSpaceBoundsRect", "xrCreateActionSpace", "xrLocateSpace", "xrDestroySpace", 
+            "xrEnumerateViewConfigurations", "xrGetViewConfigurationProperties", "xrEnumerateViewConfigurationViews", "xrEnumerateSwapchainFormats", 
+            "xrCreateSwapchain", "xrDestroySwapchain", "xrEnumerateSwapchainImages", "xrAcquireSwapchainImage", "xrWaitSwapchainImage", 
+            "xrReleaseSwapchainImage", "xrBeginSession", "xrEndSession", "xrRequestExitSession", "xrWaitFrame", "xrBeginFrame", "xrEndFrame", "xrLocateViews", 
+            "xrStringToPath", "xrPathToString", "xrCreateActionSet", "xrDestroyActionSet", "xrCreateAction", "xrDestroyAction", 
+            "xrSuggestInteractionProfileBindings", "xrAttachSessionActionSets", "xrGetCurrentInteractionProfile", "xrGetActionStateBoolean", 
+            "xrGetActionStateFloat", "xrGetActionStateVector2f", "xrGetActionStatePose", "xrSyncActions", "xrEnumerateBoundSourcesForAction", 
+            "xrGetInputSourceLocalizedName", "xrApplyHapticFeedback", "xrStopHapticFeedback"
+        );
+        OpenXR11 = checkExt2("OpenXR11", stack, provider, caps, ext, 51, "xrLocateSpaces");
+        XR_ALMALENCE_digital_lens_control = checkExt2("XR_ALMALENCE_digital_lens_control", stack, provider, caps, ext, 52, "xrSetDigitalLensControlALMALENCE");
+        XR_ANDROID_anchor_sharing_export = checkExt1("XR_ANDROID_anchor_sharing_export", stack, provider, caps, ext, 53, 55,
+            "xrShareAnchorANDROID", "xrUnshareAnchorANDROID"
+        );
+        XR_ANDROID_composition_layer_passthrough_mesh = checkExt1("XR_ANDROID_composition_layer_passthrough_mesh", stack, provider, caps, ext, 55, 58,
+            "xrCreatePassthroughLayerANDROID", "xrDestroyPassthroughLayerANDROID", "xrSetPassthroughLayerMeshANDROID"
+        );
+        XR_ANDROID_device_anchor_persistence = checkExt1("XR_ANDROID_device_anchor_persistence", stack, provider, caps, ext, 58, 66,
+            "xrEnumerateSupportedPersistenceAnchorTypesANDROID", "xrCreateDeviceAnchorPersistenceANDROID", "xrDestroyDeviceAnchorPersistenceANDROID", 
+            "xrPersistAnchorANDROID", "xrGetAnchorPersistStateANDROID", "xrCreatePersistedAnchorSpaceANDROID", "xrEnumeratePersistedAnchorsANDROID", 
+            "xrUnpersistAnchorANDROID"
+        );
+        XR_ANDROID_eye_tracking = checkExt1("XR_ANDROID_eye_tracking", stack, provider, caps, ext, 66, 70,
+            "xrCreateEyeTrackerANDROID", "xrDestroyEyeTrackerANDROID", "xrGetFineTrackingEyesInfoANDROID", "xrGetCoarseTrackingEyesInfoANDROID"
+        );
+        XR_ANDROID_face_tracking = checkExt1("XR_ANDROID_face_tracking", stack, provider, caps, ext, 70, 74,
+            "xrCreateFaceTrackerANDROID", "xrDestroyFaceTrackerANDROID", "xrGetFaceStateANDROID", "xrGetFaceCalibrationStateANDROID"
+        );
+        XR_ANDROID_geospatial = checkExt1("XR_ANDROID_geospatial", stack, provider, caps, ext, 74, 80,
+            "xrCreateGeospatialTrackerANDROID", "xrDestroyGeospatialTrackerANDROID", "xrLocateGeospatialPoseFromPoseANDROID", "xrLocateGeospatialPoseANDROID", 
+            "xrCheckVpsAvailabilityAsyncANDROID", "xrCheckVpsAvailabilityCompleteANDROID"
+        );
+        XR_ANDROID_geospatial_anchor = checkExt1("XR_ANDROID_geospatial_anchor", stack, provider, caps, ext, 80, 83,
+            "xrCreateGeospatialAnchorANDROID", "xrCreateSurfaceAnchorAsyncANDROID", "xrCreateSurfaceAnchorCompleteANDROID"
+        );
+        XR_ANDROID_google_cloud_auth = checkExt1("XR_ANDROID_google_cloud_auth", stack, provider, caps, ext, 83, 85,
+            "xrSetGoogleCloudAuthAsyncANDROID", "xrSetGoogleCloudAuthCompleteANDROID"
+        );
+        XR_ANDROID_light_estimation = checkExt1("XR_ANDROID_light_estimation", stack, provider, caps, ext, 85, 88,
+            "xrCreateLightEstimatorANDROID", "xrDestroyLightEstimatorANDROID", "xrGetLightEstimateANDROID"
+        );
         XR_ANDROID_mouse_interaction = ext.contains("XR_ANDROID_mouse_interaction");
-        XR_ANDROID_passthrough_camera_state = check_ANDROID_passthrough_camera_state(provider, caps, ext);
-        XR_ANDROID_performance_metrics = check_ANDROID_performance_metrics(provider, caps, ext);
-        XR_ANDROID_raycast = check_ANDROID_raycast(provider, caps, ext);
+        XR_ANDROID_passthrough_camera_state = checkExt2("XR_ANDROID_passthrough_camera_state", stack, provider, caps, ext, 88, "xrGetPassthroughCameraStateANDROID");
+        XR_ANDROID_performance_metrics = checkExt1("XR_ANDROID_performance_metrics", stack, provider, caps, ext, 89, 93,
+            "xrEnumeratePerformanceMetricsCounterPathsANDROID", "xrSetPerformanceMetricsStateANDROID", "xrGetPerformanceMetricsStateANDROID", 
+            "xrQueryPerformanceMetricsCounterANDROID"
+        );
+        XR_ANDROID_raycast = checkExt1("XR_ANDROID_raycast", stack, provider, caps, ext, 93, 95,
+            "xrEnumerateRaycastSupportedTrackableTypesANDROID", "xrRaycastANDROID"
+        );
         XR_ANDROID_recommended_resolution = ext.contains("XR_ANDROID_recommended_resolution");
-        XR_ANDROID_scene_meshing = check_ANDROID_scene_meshing(provider, caps, ext);
-        XR_ANDROID_spatial_anchor_space = check_ANDROID_spatial_anchor_space(provider, caps, ext);
+        XR_ANDROID_scene_meshing = checkExt1("XR_ANDROID_scene_meshing", stack, provider, caps, ext, 95, 102,
+            "xrEnumerateSupportedSemanticLabelSetsANDROID", "xrCreateSceneMeshingTrackerANDROID", "xrDestroySceneMeshingTrackerANDROID", 
+            "xrCreateSceneMeshSnapshotANDROID", "xrDestroySceneMeshSnapshotANDROID", "xrGetAllSubmeshStatesANDROID", "xrGetSubmeshDataANDROID"
+        );
+        XR_ANDROID_spatial_anchor_space = checkExt1("XR_ANDROID_spatial_anchor_space", stack, provider, caps, ext, 102, 104,
+            "xrCreateSpatialAnchorSpaceANDROID", "xrCreateSpatialAnchorSpaceFromIdANDROID"
+        );
         XR_ANDROID_spatial_component_subsumed_by = ext.contains("XR_ANDROID_spatial_component_subsumed_by");
         XR_ANDROID_spatial_discovery_bounds = ext.contains("XR_ANDROID_spatial_discovery_bounds");
-        XR_ANDROID_spatial_discovery_raycast = check_ANDROID_spatial_discovery_raycast(provider, caps, ext);
-        XR_ANDROID_spatial_entity_bound_anchor = check_ANDROID_spatial_entity_bound_anchor(provider, caps, ext);
+        XR_ANDROID_spatial_discovery_raycast = checkExt2("XR_ANDROID_spatial_discovery_raycast", stack, provider, caps, ext, 104, "xrCreateSpatialRaycastSnapshotANDROID");
+        XR_ANDROID_spatial_entity_bound_anchor = checkExt2("XR_ANDROID_spatial_entity_bound_anchor", stack, provider, caps, ext, 105, "xrEnumerateSpatialAnchorAttachableComponentsANDROID");
         XR_ANDROID_spatial_object_tracking = ext.contains("XR_ANDROID_spatial_object_tracking");
-        XR_ANDROID_trackables = check_ANDROID_trackables(provider, caps, ext);
-        XR_ANDROID_trackables_image = check_ANDROID_trackables_image(provider, caps, ext);
-        XR_ANDROID_trackables_marker = check_ANDROID_trackables_marker(provider, caps, ext);
-        XR_ANDROID_trackables_object = check_ANDROID_trackables_object(provider, caps, ext);
-        XR_ANDROID_trackables_qr_code = check_ANDROID_trackables_qr_code(provider, caps, ext);
+        XR_ANDROID_trackables = checkExt1("XR_ANDROID_trackables", stack, provider, caps, ext, 106, 113,
+            "xrEnumerateSupportedTrackableTypesANDROID", "xrEnumerateSupportedAnchorTrackableTypesANDROID", "xrCreateTrackableTrackerANDROID", 
+            "xrDestroyTrackableTrackerANDROID", "xrGetAllTrackablesANDROID", "xrGetTrackablePlaneANDROID", "xrCreateAnchorSpaceANDROID"
+        );
+        XR_ANDROID_trackables_image = checkExt1("XR_ANDROID_trackables_image", stack, provider, caps, ext, 113, 119,
+            "xrCreateTrackableImageDatabaseAsyncANDROID", "xrCreateTrackableImageDatabaseCompleteANDROID", "xrDestroyTrackableImageDatabaseANDROID", 
+            "xrAddTrackableImageDatabaseANDROID", "xrRemoveTrackableImageDatabaseANDROID", "xrGetTrackableImageANDROID"
+        );
+        XR_ANDROID_trackables_marker = checkExt2("XR_ANDROID_trackables_marker", stack, provider, caps, ext, 119, "xrGetTrackableMarkerANDROID");
+        XR_ANDROID_trackables_object = checkExt2("XR_ANDROID_trackables_object", stack, provider, caps, ext, 120, "xrGetTrackableObjectANDROID");
+        XR_ANDROID_trackables_qr_code = checkExt2("XR_ANDROID_trackables_qr_code", stack, provider, caps, ext, 121, "xrGetTrackableQrCodeANDROID");
         XR_ANDROID_unbounded_reference_space = ext.contains("XR_ANDROID_unbounded_reference_space");
-        XR_BD_body_tracking = check_BD_body_tracking(provider, caps, ext);
-        XR_BD_body_tracking_auxiliary_metrics = check_BD_body_tracking_auxiliary_metrics(provider, caps, ext);
+        XR_BD_body_tracking = checkExt1("XR_BD_body_tracking", stack, provider, caps, ext, 122, 125,
+            "xrCreateBodyTrackerBD", "xrDestroyBodyTrackerBD", "xrLocateBodyJointsBD"
+        );
+        XR_BD_body_tracking_auxiliary_metrics = checkExt1("XR_BD_body_tracking_auxiliary_metrics", stack, provider, caps, ext, 125, 127,
+            "xrStartBodyTrackingCalibrationAppBD", "xrGetBodyTrackingStateBD"
+        );
         XR_BD_controller_interaction = ext.contains("XR_BD_controller_interaction");
         XR_BD_dynamic_object_keyboard = ext.contains("XR_BD_dynamic_object_keyboard");
         XR_BD_dynamic_object_mouse = ext.contains("XR_BD_dynamic_object_mouse");
         XR_BD_dynamic_object_tracking = ext.contains("XR_BD_dynamic_object_tracking");
-        XR_BD_facial_simulation = check_BD_facial_simulation(provider, caps, ext);
+        XR_BD_facial_simulation = checkExt1("XR_BD_facial_simulation", stack, provider, caps, ext, 127, 133,
+            "xrEnumerateFacialSimulationModesBD", "xrCreateFaceTrackerBD", "xrDestroyFaceTrackerBD", "xrGetFacialSimulationDataBD", 
+            "xrSetFacialSimulationModeBD", "xrGetFacialSimulationModeBD"
+        );
         XR_BD_future_progress = ext.contains("XR_BD_future_progress");
-        XR_BD_spatial_anchor = check_BD_spatial_anchor(provider, caps, ext);
-        XR_BD_spatial_anchor_sharing = check_BD_spatial_anchor_sharing(provider, caps, ext);
-        XR_BD_spatial_audio_rendering = check_BD_spatial_audio_rendering(provider, caps, ext);
+        XR_BD_spatial_anchor = checkExt1("XR_BD_spatial_anchor", stack, provider, caps, ext, 133, 139,
+            "xrCreateSpatialAnchorAsyncBD", "xrCreateSpatialAnchorCompleteBD", "xrPersistSpatialAnchorAsyncBD", "xrPersistSpatialAnchorCompleteBD", 
+            "xrUnpersistSpatialAnchorAsyncBD", "xrUnpersistSpatialAnchorCompleteBD"
+        );
+        XR_BD_spatial_anchor_sharing = checkExt1("XR_BD_spatial_anchor_sharing", stack, provider, caps, ext, 139, 143,
+            "xrShareSpatialAnchorAsyncBD", "xrShareSpatialAnchorCompleteBD", "xrDownloadSharedSpatialAnchorAsyncBD", "xrDownloadSharedSpatialAnchorCompleteBD"
+        );
+        XR_BD_spatial_audio_rendering = checkExt1("XR_BD_spatial_audio_rendering", stack, provider, caps, ext, 143, 163,
+            "xrEnumerateSupportedAudioSampleRateBD", "xrQueryFramesPerBufferRangeBD", "xrCreateSpatialAudioRendererBD", "xrDestroySpatialAudioRendererBD", 
+            "xrCreateSoundObstacleMaterialBD", "xrUpdateSoundObstacleMaterialConfigBD", "xrDestroySoundObstacleMaterialBD", "xrCreateSoundObstacleBD", 
+            "xrUpdateSoundObstacleConfigBD", "xrDestroySoundObstacleBD", "xrCreateSoundObjectBD", "xrUpdateSoundObjectConfigBD", "xrSubmitSoundObjectBufferBD", 
+            "xrDestroySoundObjectBD", "xrCreateSoundFieldBD", "xrUpdateSoundFieldConfigBD", "xrSubmitSoundFieldBufferBD", "xrDestroySoundFieldBD", 
+            "xrWaitAudioPeriodBD", "xrEndAudioPeriodBD"
+        );
         XR_BD_spatial_mesh = ext.contains("XR_BD_spatial_mesh");
         XR_BD_spatial_plane = ext.contains("XR_BD_spatial_plane");
-        XR_BD_spatial_scene = check_BD_spatial_scene(provider, caps, ext);
-        XR_BD_spatial_sensing = check_BD_spatial_sensing(provider, caps, ext);
+        XR_BD_spatial_scene = checkExt1("XR_BD_spatial_scene", stack, provider, caps, ext, 163, 165,
+            "xrCaptureSceneAsyncBD", "xrCaptureSceneCompleteBD"
+        );
+        XR_BD_spatial_sensing = checkExt1("XR_BD_spatial_sensing", stack, provider, caps, ext, 165, 182,
+            "xrEnumerateSpatialEntityComponentTypesBD", "xrGetSpatialEntityUuidBD", "xrGetSpatialEntityComponentDataBD", "xrCreateSenseDataProviderBD", 
+            "xrStartSenseDataProviderAsyncBD", "xrStartSenseDataProviderCompleteBD", "xrGetSenseDataProviderStateBD", "xrQuerySenseDataAsyncBD", 
+            "xrQuerySenseDataCompleteBD", "xrDestroySenseDataSnapshotBD", "xrGetQueriedSenseDataBD", "xrStopSenseDataProviderBD", 
+            "xrDestroySenseDataProviderBD", "xrCreateSpatialEntityAnchorBD", "xrDestroyAnchorBD", "xrGetAnchorUuidBD", "xrCreateAnchorSpaceBD"
+        );
         XR_BD_ultra_controller_interaction = ext.contains("XR_BD_ultra_controller_interaction");
         XR_EPIC_view_configuration_fov = ext.contains("XR_EPIC_view_configuration_fov");
         XR_EXT_active_action_set_priority = ext.contains("XR_EXT_active_action_set_priority");
         XR_EXT_composition_layer_inverted_alpha = ext.contains("XR_EXT_composition_layer_inverted_alpha");
-        XR_EXT_conformance_automation = check_EXT_conformance_automation(provider, caps, ext);
-        XR_EXT_debug_utils = check_EXT_debug_utils(provider, caps, ext);
+        XR_EXT_conformance_automation = checkExt1("XR_EXT_conformance_automation", stack, provider, caps, ext, 182, 187,
+            "xrSetInputDeviceActiveEXT", "xrSetInputDeviceStateBoolEXT", "xrSetInputDeviceStateFloatEXT", "xrSetInputDeviceStateVector2fEXT", 
+            "xrSetInputDeviceLocationEXT"
+        );
+        XR_EXT_debug_utils = checkExt1("XR_EXT_debug_utils", stack, provider, caps, ext, 187, 194,
+            "xrSetDebugUtilsObjectNameEXT", "xrCreateDebugUtilsMessengerEXT", "xrDestroyDebugUtilsMessengerEXT", "xrSubmitDebugUtilsMessageEXT", 
+            "xrSessionBeginDebugUtilsLabelRegionEXT", "xrSessionEndDebugUtilsLabelRegionEXT", "xrSessionInsertDebugUtilsLabelEXT"
+        );
         XR_EXT_dpad_binding = ext.contains("XR_EXT_dpad_binding");
         XR_EXT_eye_gaze_interaction = ext.contains("XR_EXT_eye_gaze_interaction");
         XR_EXT_frame_synthesis = ext.contains("XR_EXT_frame_synthesis");
-        XR_EXT_future = check_EXT_future(provider, caps, ext);
+        XR_EXT_future = checkExt1("XR_EXT_future", stack, provider, caps, ext, 194, 196,
+            "xrPollFutureEXT", "xrCancelFutureEXT"
+        );
         XR_EXT_hand_interaction = ext.contains("XR_EXT_hand_interaction");
         XR_EXT_hand_joints_motion_range = ext.contains("XR_EXT_hand_joints_motion_range");
-        XR_EXT_hand_tracking = check_EXT_hand_tracking(provider, caps, ext);
+        XR_EXT_hand_tracking = checkExt1("XR_EXT_hand_tracking", stack, provider, caps, ext, 196, 199,
+            "xrCreateHandTrackerEXT", "xrDestroyHandTrackerEXT", "xrLocateHandJointsEXT"
+        );
         XR_EXT_hand_tracking_data_source = ext.contains("XR_EXT_hand_tracking_data_source");
-        XR_EXT_haptic_parametric = check_EXT_haptic_parametric(provider, caps, ext);
+        XR_EXT_haptic_parametric = checkExt2("XR_EXT_haptic_parametric", stack, provider, caps, ext, 199, "xrHapticParametricGetPropertiesEXT");
         XR_EXT_hp_mixed_reality_controller = ext.contains("XR_EXT_hp_mixed_reality_controller");
         XR_EXT_interaction_profile_battery_state_display = ext.contains("XR_EXT_interaction_profile_battery_state_display");
-        XR_EXT_interaction_render_model = check_EXT_interaction_render_model(provider, caps, ext);
+        XR_EXT_interaction_render_model = checkExt1("XR_EXT_interaction_render_model", stack, provider, caps, ext, 200, 203,
+            "xrEnumerateInteractionRenderModelIdsEXT", "xrEnumerateRenderModelSubactionPathsEXT", "xrGetRenderModelPoseTopLevelUserPathEXT"
+        );
         XR_EXT_loader_init_properties = ext.contains("XR_EXT_loader_init_properties");
         XR_EXT_local_floor = ext.contains("XR_EXT_local_floor");
         XR_EXT_palm_pose = ext.contains("XR_EXT_palm_pose");
-        XR_EXT_performance_settings = check_EXT_performance_settings(provider, caps, ext);
-        XR_EXT_plane_detection = check_EXT_plane_detection(provider, caps, ext);
-        XR_EXT_render_model = check_EXT_render_model(provider, caps, ext);
+        XR_EXT_performance_settings = checkExt2("XR_EXT_performance_settings", stack, provider, caps, ext, 203, "xrPerfSettingsSetPerformanceLevelEXT");
+        XR_EXT_plane_detection = checkExt1("XR_EXT_plane_detection", stack, provider, caps, ext, 204, 210,
+            "xrCreatePlaneDetectorEXT", "xrDestroyPlaneDetectorEXT", "xrBeginPlaneDetectionEXT", "xrGetPlaneDetectionStateEXT", "xrGetPlaneDetectionsEXT", 
+            "xrGetPlanePolygonBufferEXT"
+        );
+        XR_EXT_render_model = checkExt1("XR_EXT_render_model", stack, provider, caps, ext, 210, 219,
+            "xrCreateRenderModelEXT", "xrDestroyRenderModelEXT", "xrGetRenderModelPropertiesEXT", "xrCreateRenderModelSpaceEXT", "xrCreateRenderModelAssetEXT", 
+            "xrDestroyRenderModelAssetEXT", "xrGetRenderModelAssetDataEXT", "xrGetRenderModelAssetPropertiesEXT", "xrGetRenderModelStateEXT"
+        );
         XR_EXT_samsung_odyssey_controller = ext.contains("XR_EXT_samsung_odyssey_controller");
-        XR_EXT_spatial_anchor = check_EXT_spatial_anchor(provider, caps, ext);
-        XR_EXT_spatial_entity = check_EXT_spatial_entity(provider, caps, ext);
+        XR_EXT_spatial_anchor = checkExt2("XR_EXT_spatial_anchor", stack, provider, caps, ext, 219, "xrCreateSpatialAnchorEXT");
+        XR_EXT_spatial_entity = checkExt1("XR_EXT_spatial_entity", stack, provider, caps, ext, 220, 240,
+            "xrEnumerateSpatialCapabilitiesEXT", "xrEnumerateSpatialCapabilityComponentTypesEXT", "xrEnumerateSpatialCapabilityFeaturesEXT", 
+            "xrCreateSpatialContextAsyncEXT", "xrCreateSpatialContextCompleteEXT", "xrDestroySpatialContextEXT", "xrCreateSpatialDiscoverySnapshotAsyncEXT", 
+            "xrCreateSpatialDiscoverySnapshotCompleteEXT", "xrQuerySpatialComponentDataEXT", "xrDestroySpatialSnapshotEXT", "xrCreateSpatialEntityFromIdEXT", 
+            "xrDestroySpatialEntityEXT", "xrCreateSpatialUpdateSnapshotEXT", "xrGetSpatialBufferStringEXT", "xrGetSpatialBufferUint8EXT", 
+            "xrGetSpatialBufferUint16EXT", "xrGetSpatialBufferUint32EXT", "xrGetSpatialBufferFloatEXT", "xrGetSpatialBufferVector2fEXT", 
+            "xrGetSpatialBufferVector3fEXT"
+        );
         XR_EXT_spatial_marker_tracking = ext.contains("XR_EXT_spatial_marker_tracking");
-        XR_EXT_spatial_persistence = check_EXT_spatial_persistence(provider, caps, ext);
-        XR_EXT_spatial_persistence_operations = check_EXT_spatial_persistence_operations(provider, caps, ext);
+        XR_EXT_spatial_persistence = checkExt1("XR_EXT_spatial_persistence", stack, provider, caps, ext, 240, 244,
+            "xrEnumerateSpatialPersistenceScopesEXT", "xrCreateSpatialPersistenceContextAsyncEXT", "xrCreateSpatialPersistenceContextCompleteEXT", 
+            "xrDestroySpatialPersistenceContextEXT"
+        );
+        XR_EXT_spatial_persistence_operations = checkExt1("XR_EXT_spatial_persistence_operations", stack, provider, caps, ext, 244, 248,
+            "xrPersistSpatialEntityAsyncEXT", "xrPersistSpatialEntityCompleteEXT", "xrUnpersistSpatialEntityAsyncEXT", "xrUnpersistSpatialEntityCompleteEXT"
+        );
         XR_EXT_spatial_plane_tracking = ext.contains("XR_EXT_spatial_plane_tracking");
-        XR_EXT_stationary_reference_space = check_EXT_stationary_reference_space(provider, caps, ext);
-        XR_EXT_thermal_query = check_EXT_thermal_query(provider, caps, ext);
+        XR_EXT_stationary_reference_space = checkExt2("XR_EXT_stationary_reference_space", stack, provider, caps, ext, 248, "xrGetStationaryReferenceSpaceGenerationIdEXT");
+        XR_EXT_thermal_query = checkExt2("XR_EXT_thermal_query", stack, provider, caps, ext, 249, "xrThermalGetTemperatureTrendEXT");
         XR_EXT_user_presence = ext.contains("XR_EXT_user_presence");
         XR_EXT_uuid = ext.contains("XR_EXT_uuid");
         XR_EXT_view_configuration_depth_range = ext.contains("XR_EXT_view_configuration_depth_range");
         XR_EXT_view_configuration_views_change = ext.contains("XR_EXT_view_configuration_views_change");
         XR_EXT_win32_appcontainer_compatible = ext.contains("XR_EXT_win32_appcontainer_compatible");
         XR_EXTX_overlay = ext.contains("XR_EXTX_overlay");
-        XR_FB_body_tracking = check_FB_body_tracking(provider, caps, ext);
-        XR_FB_color_space = check_FB_color_space(provider, caps, ext);
+        XR_FB_body_tracking = checkExt1("XR_FB_body_tracking", stack, provider, caps, ext, 250, 254,
+            "xrCreateBodyTrackerFB", "xrDestroyBodyTrackerFB", "xrLocateBodyJointsFB", "xrGetBodySkeletonFB"
+        );
+        XR_FB_color_space = checkExt1("XR_FB_color_space", stack, provider, caps, ext, 254, 256,
+            "xrEnumerateColorSpacesFB", "xrSetColorSpaceFB"
+        );
         XR_FB_composition_layer_alpha_blend = ext.contains("XR_FB_composition_layer_alpha_blend");
         XR_FB_composition_layer_depth_test = ext.contains("XR_FB_composition_layer_depth_test");
         XR_FB_composition_layer_image_layout = ext.contains("XR_FB_composition_layer_image_layout");
         XR_FB_composition_layer_secure_content = ext.contains("XR_FB_composition_layer_secure_content");
         XR_FB_composition_layer_settings = ext.contains("XR_FB_composition_layer_settings");
-        XR_FB_display_refresh_rate = check_FB_display_refresh_rate(provider, caps, ext);
-        XR_FB_eye_tracking_social = check_FB_eye_tracking_social(provider, caps, ext);
-        XR_FB_face_tracking = check_FB_face_tracking(provider, caps, ext);
-        XR_FB_face_tracking2 = check_FB_face_tracking2(provider, caps, ext);
-        XR_FB_foveation = check_FB_foveation(provider, caps, ext);
+        XR_FB_display_refresh_rate = checkExt1("XR_FB_display_refresh_rate", stack, provider, caps, ext, 256, 259,
+            "xrEnumerateDisplayRefreshRatesFB", "xrGetDisplayRefreshRateFB", "xrRequestDisplayRefreshRateFB"
+        );
+        XR_FB_eye_tracking_social = checkExt1("XR_FB_eye_tracking_social", stack, provider, caps, ext, 259, 262,
+            "xrCreateEyeTrackerFB", "xrDestroyEyeTrackerFB", "xrGetEyeGazesFB"
+        );
+        XR_FB_face_tracking = checkExt1("XR_FB_face_tracking", stack, provider, caps, ext, 262, 265,
+            "xrCreateFaceTrackerFB", "xrDestroyFaceTrackerFB", "xrGetFaceExpressionWeightsFB"
+        );
+        XR_FB_face_tracking2 = checkExt1("XR_FB_face_tracking2", stack, provider, caps, ext, 265, 268,
+            "xrCreateFaceTracker2FB", "xrDestroyFaceTracker2FB", "xrGetFaceExpressionWeights2FB"
+        );
+        XR_FB_foveation = checkExt1("XR_FB_foveation", stack, provider, caps, ext, 268, 270,
+            "xrCreateFoveationProfileFB", "xrDestroyFoveationProfileFB"
+        );
         XR_FB_foveation_configuration = ext.contains("XR_FB_foveation_configuration");
         XR_FB_foveation_vulkan = ext.contains("XR_FB_foveation_vulkan");
         XR_FB_hand_tracking_aim = ext.contains("XR_FB_hand_tracking_aim");
         XR_FB_hand_tracking_capsules = ext.contains("XR_FB_hand_tracking_capsules");
-        XR_FB_hand_tracking_mesh = check_FB_hand_tracking_mesh(provider, caps, ext);
+        XR_FB_hand_tracking_mesh = checkExt2("XR_FB_hand_tracking_mesh", stack, provider, caps, ext, 270, "xrGetHandMeshFB");
         XR_FB_haptic_amplitude_envelope = ext.contains("XR_FB_haptic_amplitude_envelope");
-        XR_FB_haptic_pcm = check_FB_haptic_pcm(provider, caps, ext);
-        XR_FB_keyboard_tracking = check_FB_keyboard_tracking(provider, caps, ext);
-        XR_FB_passthrough = check_FB_passthrough(provider, caps, ext);
-        XR_FB_passthrough_keyboard_hands = check_FB_passthrough_keyboard_hands(provider, caps, ext);
-        XR_FB_render_model = check_FB_render_model(provider, caps, ext);
-        XR_FB_scene = check_FB_scene(provider, caps, ext);
-        XR_FB_scene_capture = check_FB_scene_capture(provider, caps, ext);
+        XR_FB_haptic_pcm = checkExt2("XR_FB_haptic_pcm", stack, provider, caps, ext, 271, "xrGetDeviceSampleRateFB");
+        XR_FB_keyboard_tracking = checkExt1("XR_FB_keyboard_tracking", stack, provider, caps, ext, 272, 274,
+            "xrQuerySystemTrackedKeyboardFB", "xrCreateKeyboardSpaceFB"
+        );
+        XR_FB_passthrough = checkExt1("XR_FB_passthrough", stack, provider, caps, ext, 274, 286,
+            "xrCreatePassthroughFB", "xrDestroyPassthroughFB", "xrPassthroughStartFB", "xrPassthroughPauseFB", "xrCreatePassthroughLayerFB", 
+            "xrDestroyPassthroughLayerFB", "xrPassthroughLayerPauseFB", "xrPassthroughLayerResumeFB", "xrPassthroughLayerSetStyleFB", 
+            "xrCreateGeometryInstanceFB", "xrDestroyGeometryInstanceFB", "xrGeometryInstanceSetTransformFB"
+        );
+        XR_FB_passthrough_keyboard_hands = checkExt2("XR_FB_passthrough_keyboard_hands", stack, provider, caps, ext, 286, "xrPassthroughLayerSetKeyboardHandsIntensityFB");
+        XR_FB_render_model = checkExt1("XR_FB_render_model", stack, provider, caps, ext, 287, 290,
+            "xrEnumerateRenderModelPathsFB", "xrGetRenderModelPropertiesFB", "xrLoadRenderModelFB"
+        );
+        XR_FB_scene = checkExt1("XR_FB_scene", stack, provider, caps, ext, 290, 295,
+            "xrGetSpaceBoundingBox2DFB", "xrGetSpaceBoundingBox3DFB", "xrGetSpaceSemanticLabelsFB", "xrGetSpaceBoundary2DFB", "xrGetSpaceRoomLayoutFB"
+        );
+        XR_FB_scene_capture = checkExt2("XR_FB_scene_capture", stack, provider, caps, ext, 295, "xrRequestSceneCaptureFB");
         XR_FB_space_warp = ext.contains("XR_FB_space_warp");
-        XR_FB_spatial_entity = check_FB_spatial_entity(provider, caps, ext);
-        XR_FB_spatial_entity_container = check_FB_spatial_entity_container(provider, caps, ext);
-        XR_FB_spatial_entity_query = check_FB_spatial_entity_query(provider, caps, ext);
-        XR_FB_spatial_entity_sharing = check_FB_spatial_entity_sharing(provider, caps, ext);
-        XR_FB_spatial_entity_storage = check_FB_spatial_entity_storage(provider, caps, ext);
-        XR_FB_spatial_entity_storage_batch = check_FB_spatial_entity_storage_batch(provider, caps, ext);
-        XR_FB_spatial_entity_user = check_FB_spatial_entity_user(provider, caps, ext);
-        XR_FB_swapchain_update_state = check_FB_swapchain_update_state(provider, caps, ext);
+        XR_FB_spatial_entity = checkExt1("XR_FB_spatial_entity", stack, provider, caps, ext, 296, 301,
+            "xrCreateSpatialAnchorFB", "xrGetSpaceUuidFB", "xrEnumerateSpaceSupportedComponentsFB", "xrSetSpaceComponentStatusFB", 
+            "xrGetSpaceComponentStatusFB"
+        );
+        XR_FB_spatial_entity_container = checkExt2("XR_FB_spatial_entity_container", stack, provider, caps, ext, 301, "xrGetSpaceContainerFB");
+        XR_FB_spatial_entity_query = checkExt1("XR_FB_spatial_entity_query", stack, provider, caps, ext, 302, 304,
+            "xrQuerySpacesFB", "xrRetrieveSpaceQueryResultsFB"
+        );
+        XR_FB_spatial_entity_sharing = checkExt2("XR_FB_spatial_entity_sharing", stack, provider, caps, ext, 304, "xrShareSpacesFB");
+        XR_FB_spatial_entity_storage = checkExt1("XR_FB_spatial_entity_storage", stack, provider, caps, ext, 305, 307,
+            "xrSaveSpaceFB", "xrEraseSpaceFB"
+        );
+        XR_FB_spatial_entity_storage_batch = checkExt2("XR_FB_spatial_entity_storage_batch", stack, provider, caps, ext, 307, "xrSaveSpaceListFB");
+        XR_FB_spatial_entity_user = checkExt1("XR_FB_spatial_entity_user", stack, provider, caps, ext, 308, 311,
+            "xrCreateSpaceUserFB", "xrGetSpaceUserIdFB", "xrDestroySpaceUserFB"
+        );
+        XR_FB_swapchain_update_state = checkExt1("XR_FB_swapchain_update_state", stack, provider, caps, ext, 311, 313,
+            "xrUpdateSwapchainFB", "xrGetSwapchainStateFB"
+        );
         XR_FB_swapchain_update_state_opengl_es = ext.contains("XR_FB_swapchain_update_state_opengl_es");
         XR_FB_swapchain_update_state_vulkan = ext.contains("XR_FB_swapchain_update_state_vulkan");
         XR_FB_touch_controller_pro = ext.contains("XR_FB_touch_controller_pro");
         XR_FB_touch_controller_proximity = ext.contains("XR_FB_touch_controller_proximity");
-        XR_FB_triangle_mesh = check_FB_triangle_mesh(provider, caps, ext);
-        XR_HTC_anchor = check_HTC_anchor(provider, caps, ext);
-        XR_HTC_body_tracking = check_HTC_body_tracking(provider, caps, ext);
-        XR_HTC_facial_tracking = check_HTC_facial_tracking(provider, caps, ext);
-        XR_HTC_foveation = check_HTC_foveation(provider, caps, ext);
+        XR_FB_triangle_mesh = checkExt1("XR_FB_triangle_mesh", stack, provider, caps, ext, 313, 321,
+            "xrCreateTriangleMeshFB", "xrDestroyTriangleMeshFB", "xrTriangleMeshGetVertexBufferFB", "xrTriangleMeshGetIndexBufferFB", 
+            "xrTriangleMeshBeginUpdateFB", "xrTriangleMeshEndUpdateFB", "xrTriangleMeshBeginVertexBufferUpdateFB", "xrTriangleMeshEndVertexBufferUpdateFB"
+        );
+        XR_HTC_anchor = checkExt1("XR_HTC_anchor", stack, provider, caps, ext, 321, 323,
+            "xrCreateSpatialAnchorHTC", "xrGetSpatialAnchorNameHTC"
+        );
+        XR_HTC_body_tracking = checkExt1("XR_HTC_body_tracking", stack, provider, caps, ext, 323, 327,
+            "xrCreateBodyTrackerHTC", "xrDestroyBodyTrackerHTC", "xrLocateBodyJointsHTC", "xrGetBodySkeletonHTC"
+        );
+        XR_HTC_facial_tracking = checkExt1("XR_HTC_facial_tracking", stack, provider, caps, ext, 327, 330,
+            "xrCreateFacialTrackerHTC", "xrDestroyFacialTrackerHTC", "xrGetFacialExpressionsHTC"
+        );
+        XR_HTC_foveation = checkExt2("XR_HTC_foveation", stack, provider, caps, ext, 330, "xrApplyFoveationHTC");
         XR_HTC_hand_interaction = ext.contains("XR_HTC_hand_interaction");
-        XR_HTC_passthrough = check_HTC_passthrough(provider, caps, ext);
+        XR_HTC_passthrough = checkExt1("XR_HTC_passthrough", stack, provider, caps, ext, 331, 333,
+            "xrCreatePassthroughHTC", "xrDestroyPassthroughHTC"
+        );
         XR_HTC_vive_cosmos_controller_interaction = ext.contains("XR_HTC_vive_cosmos_controller_interaction");
         XR_HTC_vive_focus3_controller_interaction = ext.contains("XR_HTC_vive_focus3_controller_interaction");
         XR_HTC_vive_wrist_tracker_interaction = ext.contains("XR_HTC_vive_wrist_tracker_interaction");
-        XR_HTCX_vive_tracker_interaction = check_HTCX_vive_tracker_interaction(provider, caps, ext);
+        XR_HTCX_vive_tracker_interaction = checkExt2("XR_HTCX_vive_tracker_interaction", stack, provider, caps, ext, 333, "xrEnumerateViveTrackerPathsHTCX");
         XR_HUAWEI_controller_interaction = ext.contains("XR_HUAWEI_controller_interaction");
         XR_KHR_binding_modification = ext.contains("XR_KHR_binding_modification");
         XR_KHR_composition_layer_color_scale_bias = ext.contains("XR_KHR_composition_layer_color_scale_bias");
@@ -1545,100 +1717,183 @@ public class XRCapabilities {
         XR_KHR_composition_layer_depth = ext.contains("XR_KHR_composition_layer_depth");
         XR_KHR_composition_layer_equirect = ext.contains("XR_KHR_composition_layer_equirect");
         XR_KHR_composition_layer_equirect2 = ext.contains("XR_KHR_composition_layer_equirect2");
-        XR_KHR_convert_timespec_time = check_KHR_convert_timespec_time(provider, caps, ext);
-        XR_KHR_extended_struct_name_lengths = check_KHR_extended_struct_name_lengths(provider, caps, ext);
+        XR_KHR_convert_timespec_time = checkExt1("XR_KHR_convert_timespec_time", stack, provider, caps, ext, 334, 336,
+            "xrConvertTimespecTimeToTimeKHR", "xrConvertTimeToTimespecTimeKHR"
+        );
+        XR_KHR_extended_struct_name_lengths = checkExt2("XR_KHR_extended_struct_name_lengths", stack, provider, caps, ext, 336, "xrStructureTypeToString2KHR");
         XR_KHR_generic_controller = ext.contains("XR_KHR_generic_controller");
         XR_KHR_loader_init = ext.contains("XR_KHR_loader_init");
-        XR_KHR_locate_spaces = check_KHR_locate_spaces(provider, caps, ext);
+        XR_KHR_locate_spaces = checkExt2("XR_KHR_locate_spaces", stack, provider, caps, ext, 337, "xrLocateSpacesKHR");
         XR_KHR_maintenance1 = ext.contains("XR_KHR_maintenance1");
-        XR_KHR_opengl_enable = check_KHR_opengl_enable(provider, caps, ext);
+        XR_KHR_opengl_enable = checkExt2("XR_KHR_opengl_enable", stack, provider, caps, ext, 338, "xrGetOpenGLGraphicsRequirementsKHR");
         XR_KHR_swapchain_usage_input_attachment_bit = ext.contains("XR_KHR_swapchain_usage_input_attachment_bit");
-        XR_KHR_visibility_mask = check_KHR_visibility_mask(provider, caps, ext);
-        XR_KHR_vulkan_enable = check_KHR_vulkan_enable(provider, caps, ext);
-        XR_KHR_vulkan_enable2 = check_KHR_vulkan_enable2(provider, caps, ext);
+        XR_KHR_visibility_mask = checkExt2("XR_KHR_visibility_mask", stack, provider, caps, ext, 339, "xrGetVisibilityMaskKHR");
+        XR_KHR_vulkan_enable = checkExt1("XR_KHR_vulkan_enable", stack, provider, caps, ext, 340, 344,
+            "xrGetVulkanInstanceExtensionsKHR", "xrGetVulkanDeviceExtensionsKHR", "xrGetVulkanGraphicsDeviceKHR", "xrGetVulkanGraphicsRequirementsKHR"
+        );
+        XR_KHR_vulkan_enable2 = checkExt1("XR_KHR_vulkan_enable2", stack, provider, caps, ext, 344, 348,
+            "xrCreateVulkanInstanceKHR", "xrCreateVulkanDeviceKHR", "xrGetVulkanGraphicsDevice2KHR", "xrGetVulkanGraphicsRequirements2KHR"
+        );
         XR_KHR_vulkan_swapchain_format_list = ext.contains("XR_KHR_vulkan_swapchain_format_list");
-        XR_KHR_win32_convert_performance_counter_time = check_KHR_win32_convert_performance_counter_time(provider, caps, ext);
+        XR_KHR_win32_convert_performance_counter_time = checkExt1("XR_KHR_win32_convert_performance_counter_time", stack, provider, caps, ext, 348, 350,
+            "xrConvertWin32PerformanceCounterToTimeKHR", "xrConvertTimeToWin32PerformanceCounterKHR"
+        );
         XR_LOGITECH_mx_ink_stylus_interaction = ext.contains("XR_LOGITECH_mx_ink_stylus_interaction");
         XR_META_automatic_layer_filter = ext.contains("XR_META_automatic_layer_filter");
-        XR_META_body_tracking_calibration = check_META_body_tracking_calibration(provider, caps, ext);
-        XR_META_body_tracking_fidelity = check_META_body_tracking_fidelity(provider, caps, ext);
+        XR_META_body_tracking_calibration = checkExt1("XR_META_body_tracking_calibration", stack, provider, caps, ext, 350, 352,
+            "xrSuggestBodyTrackingCalibrationOverrideMETA", "xrResetBodyTrackingCalibrationMETA"
+        );
+        XR_META_body_tracking_fidelity = checkExt2("XR_META_body_tracking_fidelity", stack, provider, caps, ext, 352, "xrRequestBodyTrackingFidelityMETA");
         XR_META_body_tracking_full_body = ext.contains("XR_META_body_tracking_full_body");
-        XR_META_boundary_visibility = check_META_boundary_visibility(provider, caps, ext);
-        XR_META_colocation_discovery = check_META_colocation_discovery(provider, caps, ext);
+        XR_META_boundary_visibility = checkExt2("XR_META_boundary_visibility", stack, provider, caps, ext, 353, "xrRequestBoundaryVisibilityMETA");
+        XR_META_colocation_discovery = checkExt1("XR_META_colocation_discovery", stack, provider, caps, ext, 354, 358,
+            "xrStartColocationDiscoveryMETA", "xrStopColocationDiscoveryMETA", "xrStartColocationAdvertisementMETA", "xrStopColocationAdvertisementMETA"
+        );
         XR_META_detached_controllers = ext.contains("XR_META_detached_controllers");
-        XR_META_environment_depth = check_META_environment_depth(provider, caps, ext);
-        XR_META_environment_raycast = check_META_environment_raycast(provider, caps, ext);
+        XR_META_environment_depth = checkExt1("XR_META_environment_depth", stack, provider, caps, ext, 358, 368,
+            "xrCreateEnvironmentDepthProviderMETA", "xrDestroyEnvironmentDepthProviderMETA", "xrStartEnvironmentDepthProviderMETA", 
+            "xrStopEnvironmentDepthProviderMETA", "xrCreateEnvironmentDepthSwapchainMETA", "xrDestroyEnvironmentDepthSwapchainMETA", 
+            "xrEnumerateEnvironmentDepthSwapchainImagesMETA", "xrGetEnvironmentDepthSwapchainStateMETA", "xrAcquireEnvironmentDepthImageMETA", 
+            "xrSetEnvironmentDepthHandRemovalMETA"
+        );
+        XR_META_environment_raycast = checkExt1("XR_META_environment_raycast", stack, provider, caps, ext, 368, 372,
+            "xrCreateEnvironmentRaycasterAsyncMETA", "xrCreateEnvironmentRaycasterCompleteMETA", "xrDestroyEnvironmentRaycasterMETA", 
+            "xrPerformEnvironmentRaycastMETA"
+        );
         XR_META_face_tracking_visemes = ext.contains("XR_META_face_tracking_visemes");
-        XR_META_foveation_eye_tracked = check_META_foveation_eye_tracked(provider, caps, ext);
-        XR_META_hand_tracking_frequency_hint = check_META_hand_tracking_frequency_hint(provider, caps, ext);
+        XR_META_foveation_eye_tracked = checkExt2("XR_META_foveation_eye_tracked", stack, provider, caps, ext, 372, "xrGetFoveationEyeTrackedStateMETA");
+        XR_META_hand_tracking_frequency_hint = checkExt2("XR_META_hand_tracking_frequency_hint", stack, provider, caps, ext, 373, "xrSetHandTrackingFrequencyHintMETA");
         XR_META_hand_tracking_microgestures = ext.contains("XR_META_hand_tracking_microgestures");
         XR_META_hand_tracking_unextrapolated_poses = ext.contains("XR_META_hand_tracking_unextrapolated_poses");
         XR_META_hand_tracking_wide_motion_mode2 = ext.contains("XR_META_hand_tracking_wide_motion_mode2");
         XR_META_headset_id = ext.contains("XR_META_headset_id");
         XR_META_local_dimming = ext.contains("XR_META_local_dimming");
-        XR_META_passthrough_color_lut = check_META_passthrough_color_lut(provider, caps, ext);
+        XR_META_passthrough_color_lut = checkExt1("XR_META_passthrough_color_lut", stack, provider, caps, ext, 374, 377,
+            "xrCreatePassthroughColorLutMETA", "xrDestroyPassthroughColorLutMETA", "xrUpdatePassthroughColorLutMETA"
+        );
         XR_META_passthrough_layer_resumed_event = ext.contains("XR_META_passthrough_layer_resumed_event");
-        XR_META_passthrough_preferences = check_META_passthrough_preferences(provider, caps, ext);
-        XR_META_performance_metrics = check_META_performance_metrics(provider, caps, ext);
-        XR_META_recommended_layer_resolution = check_META_recommended_layer_resolution(provider, caps, ext);
-        XR_META_simultaneous_hands_and_controllers = check_META_simultaneous_hands_and_controllers(provider, caps, ext);
-        XR_META_spatial_entity_discovery = check_META_spatial_entity_discovery(provider, caps, ext);
+        XR_META_passthrough_preferences = checkExt2("XR_META_passthrough_preferences", stack, provider, caps, ext, 377, "xrGetPassthroughPreferencesMETA");
+        XR_META_performance_metrics = checkExt1("XR_META_performance_metrics", stack, provider, caps, ext, 378, 382,
+            "xrEnumeratePerformanceMetricsCounterPathsMETA", "xrSetPerformanceMetricsStateMETA", "xrGetPerformanceMetricsStateMETA", 
+            "xrQueryPerformanceMetricsCounterMETA"
+        );
+        XR_META_recommended_layer_resolution = checkExt2("XR_META_recommended_layer_resolution", stack, provider, caps, ext, 382, "xrGetRecommendedLayerResolutionMETA");
+        XR_META_simultaneous_hands_and_controllers = checkExt1("XR_META_simultaneous_hands_and_controllers", stack, provider, caps, ext, 383, 385,
+            "xrResumeSimultaneousHandsAndControllersTrackingMETA", "xrPauseSimultaneousHandsAndControllersTrackingMETA"
+        );
+        XR_META_spatial_entity_discovery = checkExt1("XR_META_spatial_entity_discovery", stack, provider, caps, ext, 385, 387,
+            "xrDiscoverSpacesMETA", "xrRetrieveSpaceDiscoveryResultsMETA"
+        );
         XR_META_spatial_entity_group_sharing = ext.contains("XR_META_spatial_entity_group_sharing");
-        XR_META_spatial_entity_mesh = check_META_spatial_entity_mesh(provider, caps, ext);
-        XR_META_spatial_entity_persistence = check_META_spatial_entity_persistence(provider, caps, ext);
-        XR_META_spatial_entity_room_mesh = check_META_spatial_entity_room_mesh(provider, caps, ext);
+        XR_META_spatial_entity_mesh = checkExt2("XR_META_spatial_entity_mesh", stack, provider, caps, ext, 387, "xrGetSpaceTriangleMeshMETA");
+        XR_META_spatial_entity_persistence = checkExt1("XR_META_spatial_entity_persistence", stack, provider, caps, ext, 388, 390,
+            "xrSaveSpacesMETA", "xrEraseSpacesMETA"
+        );
+        XR_META_spatial_entity_room_mesh = checkExt1("XR_META_spatial_entity_room_mesh", stack, provider, caps, ext, 390, 392,
+            "xrGetSpaceRoomMeshMETA", "xrGetSpaceRoomMeshFaceIndicesMETA"
+        );
         XR_META_spatial_entity_semantic_label = ext.contains("XR_META_spatial_entity_semantic_label");
-        XR_META_spatial_entity_sharing = check_META_spatial_entity_sharing(provider, caps, ext);
-        XR_META_tile_properties_hint = check_META_tile_properties_hint(provider, caps, ext);
+        XR_META_spatial_entity_sharing = checkExt2("XR_META_spatial_entity_sharing", stack, provider, caps, ext, 392, "xrShareSpacesMETA");
+        XR_META_tile_properties_hint = checkExt2("XR_META_tile_properties_hint", stack, provider, caps, ext, 393, "xrSetTilePropertiesHintMETA");
         XR_META_touch_controller_plus = ext.contains("XR_META_touch_controller_plus");
-        XR_META_virtual_keyboard = check_META_virtual_keyboard(provider, caps, ext);
+        XR_META_virtual_keyboard = checkExt1("XR_META_virtual_keyboard", stack, provider, caps, ext, 394, 405,
+            "xrCreateVirtualKeyboardMETA", "xrDestroyVirtualKeyboardMETA", "xrCreateVirtualKeyboardSpaceMETA", "xrSuggestVirtualKeyboardLocationMETA", 
+            "xrGetVirtualKeyboardScaleMETA", "xrSetVirtualKeyboardModelVisibilityMETA", "xrGetVirtualKeyboardModelAnimationStatesMETA", 
+            "xrGetVirtualKeyboardDirtyTexturesMETA", "xrGetVirtualKeyboardTextureDataMETA", "xrSendVirtualKeyboardInputMETA", 
+            "xrChangeVirtualKeyboardTextContextMETA"
+        );
         XR_META_vulkan_swapchain_create_info = ext.contains("XR_META_vulkan_swapchain_create_info");
-        XR_ML_compat = check_ML_compat(provider, caps, ext);
-        XR_ML_facial_expression = check_ML_facial_expression(provider, caps, ext);
+        XR_ML_compat = checkExt2("XR_ML_compat", stack, provider, caps, ext, 405, "xrCreateSpaceFromCoordinateFrameUIDML");
+        XR_ML_facial_expression = checkExt1("XR_ML_facial_expression", stack, provider, caps, ext, 406, 409,
+            "xrCreateFacialExpressionClientML", "xrDestroyFacialExpressionClientML", "xrGetFacialExpressionBlendShapePropertiesML"
+        );
         XR_ML_frame_end_info = ext.contains("XR_ML_frame_end_info");
         XR_ML_global_dimmer = ext.contains("XR_ML_global_dimmer");
-        XR_ML_localization_map = check_ML_localization_map(provider, caps, ext);
-        XR_ML_marker_understanding = check_ML_marker_understanding(provider, caps, ext);
+        XR_ML_localization_map = checkExt1("XR_ML_localization_map", stack, provider, caps, ext, 409, 416,
+            "xrEnableLocalizationEventsML", "xrQueryLocalizationMapsML", "xrRequestMapLocalizationML", "xrImportLocalizationMapML", 
+            "xrCreateExportedLocalizationMapML", "xrDestroyExportedLocalizationMapML", "xrGetExportedLocalizationMapDataML"
+        );
+        XR_ML_marker_understanding = checkExt1("XR_ML_marker_understanding", stack, provider, caps, ext, 416, 426,
+            "xrCreateMarkerDetectorML", "xrDestroyMarkerDetectorML", "xrSnapshotMarkerDetectorML", "xrGetMarkerDetectorStateML", "xrGetMarkersML", 
+            "xrGetMarkerReprojectionErrorML", "xrGetMarkerLengthML", "xrGetMarkerNumberML", "xrGetMarkerStringML", "xrCreateMarkerSpaceML"
+        );
         XR_ML_ml2_controller_interaction = ext.contains("XR_ML_ml2_controller_interaction");
-        XR_ML_spatial_anchors = check_ML_spatial_anchors(provider, caps, ext);
-        XR_ML_spatial_anchors_storage = check_ML_spatial_anchors_storage(provider, caps, ext);
-        XR_ML_system_notifications = check_ML_system_notifications(provider, caps, ext);
-        XR_ML_user_calibration = check_ML_user_calibration(provider, caps, ext);
+        XR_ML_spatial_anchors = checkExt1("XR_ML_spatial_anchors", stack, provider, caps, ext, 426, 429,
+            "xrCreateSpatialAnchorsAsyncML", "xrCreateSpatialAnchorsCompleteML", "xrGetSpatialAnchorStateML"
+        );
+        XR_ML_spatial_anchors_storage = checkExt1("XR_ML_spatial_anchors_storage", stack, provider, caps, ext, 429, 439,
+            "xrCreateSpatialAnchorsStorageML", "xrDestroySpatialAnchorsStorageML", "xrQuerySpatialAnchorsAsyncML", "xrQuerySpatialAnchorsCompleteML", 
+            "xrPublishSpatialAnchorsAsyncML", "xrPublishSpatialAnchorsCompleteML", "xrDeleteSpatialAnchorsAsyncML", "xrDeleteSpatialAnchorsCompleteML", 
+            "xrUpdateSpatialAnchorsExpirationAsyncML", "xrUpdateSpatialAnchorsExpirationCompleteML"
+        );
+        XR_ML_system_notifications = checkExt2("XR_ML_system_notifications", stack, provider, caps, ext, 439, "xrSetSystemNotificationsML");
+        XR_ML_user_calibration = checkExt2("XR_ML_user_calibration", stack, provider, caps, ext, 440, "xrEnableUserCalibrationEventsML");
         XR_ML_view_configuration_depth_range_change = ext.contains("XR_ML_view_configuration_depth_range_change");
-        XR_ML_world_mesh_detection = check_ML_world_mesh_detection(provider, caps, ext);
+        XR_ML_world_mesh_detection = checkExt1("XR_ML_world_mesh_detection", stack, provider, caps, ext, 441, 450,
+            "xrCreateWorldMeshDetectorML", "xrDestroyWorldMeshDetectorML", "xrRequestWorldMeshStateAsyncML", "xrRequestWorldMeshStateCompleteML", 
+            "xrGetWorldMeshBufferRecommendSizeML", "xrAllocateWorldMeshBufferML", "xrFreeWorldMeshBufferML", "xrRequestWorldMeshAsyncML", 
+            "xrRequestWorldMeshCompleteML"
+        );
         XR_MND_headless = ext.contains("XR_MND_headless");
         XR_MND_swapchain_usage_input_attachment_bit = ext.contains("XR_MND_swapchain_usage_input_attachment_bit");
         XR_MNDX_egl_enable = ext.contains("XR_MNDX_egl_enable");
-        XR_MNDX_force_feedback_curl = check_MNDX_force_feedback_curl(provider, caps, ext);
-        XR_MSFT_composition_layer_reprojection = check_MSFT_composition_layer_reprojection(provider, caps, ext);
-        XR_MSFT_controller_model = check_MSFT_controller_model(provider, caps, ext);
+        XR_MNDX_force_feedback_curl = checkExt2("XR_MNDX_force_feedback_curl", stack, provider, caps, ext, 450, "xrApplyForceFeedbackCurlMNDX");
+        XR_MSFT_composition_layer_reprojection = checkExt2("XR_MSFT_composition_layer_reprojection", stack, provider, caps, ext, 451, "xrEnumerateReprojectionModesMSFT");
+        XR_MSFT_controller_model = checkExt1("XR_MSFT_controller_model", stack, provider, caps, ext, 452, 456,
+            "xrGetControllerModelKeyMSFT", "xrLoadControllerModelMSFT", "xrGetControllerModelPropertiesMSFT", "xrGetControllerModelStateMSFT"
+        );
         XR_MSFT_first_person_observer = ext.contains("XR_MSFT_first_person_observer");
         XR_MSFT_hand_interaction = ext.contains("XR_MSFT_hand_interaction");
-        XR_MSFT_hand_tracking_mesh = check_MSFT_hand_tracking_mesh(provider, caps, ext);
+        XR_MSFT_hand_tracking_mesh = checkExt1("XR_MSFT_hand_tracking_mesh", stack, provider, caps, ext, 456, 458,
+            "xrCreateHandMeshSpaceMSFT", "xrUpdateHandMeshMSFT"
+        );
         XR_MSFT_holographic_window_attachment = ext.contains("XR_MSFT_holographic_window_attachment");
-        XR_MSFT_perception_anchor_interop = check_MSFT_perception_anchor_interop(provider, caps, ext);
-        XR_MSFT_scene_marker = check_MSFT_scene_marker(provider, caps, ext);
-        XR_MSFT_scene_understanding = check_MSFT_scene_understanding(provider, caps, ext);
-        XR_MSFT_scene_understanding_serialization = check_MSFT_scene_understanding_serialization(provider, caps, ext);
+        XR_MSFT_perception_anchor_interop = checkExt1("XR_MSFT_perception_anchor_interop", stack, provider, caps, ext, 458, 460,
+            "xrCreateSpatialAnchorFromPerceptionAnchorMSFT", "xrTryGetPerceptionAnchorFromSpatialAnchorMSFT"
+        );
+        XR_MSFT_scene_marker = checkExt1("XR_MSFT_scene_marker", stack, provider, caps, ext, 460, 462,
+            "xrGetSceneMarkerRawDataMSFT", "xrGetSceneMarkerDecodedStringMSFT"
+        );
+        XR_MSFT_scene_understanding = checkExt1("XR_MSFT_scene_understanding", stack, provider, caps, ext, 462, 472,
+            "xrEnumerateSceneComputeFeaturesMSFT", "xrCreateSceneObserverMSFT", "xrDestroySceneObserverMSFT", "xrCreateSceneMSFT", "xrDestroySceneMSFT", 
+            "xrComputeNewSceneMSFT", "xrGetSceneComputeStateMSFT", "xrGetSceneComponentsMSFT", "xrLocateSceneComponentsMSFT", "xrGetSceneMeshBuffersMSFT"
+        );
+        XR_MSFT_scene_understanding_serialization = checkExt1("XR_MSFT_scene_understanding_serialization", stack, provider, caps, ext, 472, 474,
+            "xrDeserializeSceneMSFT", "xrGetSerializedSceneFragmentDataMSFT"
+        );
         XR_MSFT_secondary_view_configuration = ext.contains("XR_MSFT_secondary_view_configuration");
-        XR_MSFT_spatial_anchor = check_MSFT_spatial_anchor(provider, caps, ext);
-        XR_MSFT_spatial_anchor_persistence = check_MSFT_spatial_anchor_persistence(provider, caps, ext);
-        XR_MSFT_spatial_graph_bridge = check_MSFT_spatial_graph_bridge(provider, caps, ext);
+        XR_MSFT_spatial_anchor = checkExt1("XR_MSFT_spatial_anchor", stack, provider, caps, ext, 474, 477,
+            "xrCreateSpatialAnchorMSFT", "xrCreateSpatialAnchorSpaceMSFT", "xrDestroySpatialAnchorMSFT"
+        );
+        XR_MSFT_spatial_anchor_persistence = checkExt1("XR_MSFT_spatial_anchor_persistence", stack, provider, caps, ext, 477, 484,
+            "xrCreateSpatialAnchorStoreConnectionMSFT", "xrDestroySpatialAnchorStoreConnectionMSFT", "xrPersistSpatialAnchorMSFT", 
+            "xrEnumeratePersistedSpatialAnchorNamesMSFT", "xrCreateSpatialAnchorFromPersistedNameMSFT", "xrUnpersistSpatialAnchorMSFT", 
+            "xrClearSpatialAnchorStoreMSFT"
+        );
+        XR_MSFT_spatial_graph_bridge = checkExt1("XR_MSFT_spatial_graph_bridge", stack, provider, caps, ext, 484, 488,
+            "xrCreateSpatialGraphNodeSpaceMSFT", "xrTryCreateSpatialGraphStaticNodeBindingMSFT", "xrDestroySpatialGraphNodeBindingMSFT", 
+            "xrGetSpatialGraphNodeBindingPropertiesMSFT"
+        );
         XR_MSFT_unbounded_reference_space = ext.contains("XR_MSFT_unbounded_reference_space");
-        XR_OCULUS_audio_device_guid = check_OCULUS_audio_device_guid(provider, caps, ext);
-        XR_OCULUS_external_camera = check_OCULUS_external_camera(provider, caps, ext);
+        XR_OCULUS_audio_device_guid = checkExt1("XR_OCULUS_audio_device_guid", stack, provider, caps, ext, 488, 490,
+            "xrGetAudioOutputDeviceGuidOculus", "xrGetAudioInputDeviceGuidOculus"
+        );
+        XR_OCULUS_external_camera = checkExt2("XR_OCULUS_external_camera", stack, provider, caps, ext, 490, "xrEnumerateExternalCamerasOCULUS");
         XR_OPPO_controller_interaction = ext.contains("XR_OPPO_controller_interaction");
-        XR_QCOM_hand_tracking_gesture = check_QCOM_hand_tracking_gesture(provider, caps, ext);
-        XR_QCOM_tracking_optimization_settings = check_QCOM_tracking_optimization_settings(provider, caps, ext);
-        XR_SONY_swapchain_color_space = check_SONY_swapchain_color_space(provider, caps, ext);
+        XR_QCOM_hand_tracking_gesture = checkExt2("XR_QCOM_hand_tracking_gesture", stack, provider, caps, ext, 491, "xrGetHandGestureQCOM");
+        XR_QCOM_tracking_optimization_settings = checkExt2("XR_QCOM_tracking_optimization_settings", stack, provider, caps, ext, 492, "xrSetTrackingOptimizationSettingsHintQCOM");
+        XR_SONY_swapchain_color_space = checkExt2("XR_SONY_swapchain_color_space", stack, provider, caps, ext, 493, "xrEnumerateColorSpacesSONY");
         XR_ULTRALEAP_hand_tracking_forearm = ext.contains("XR_ULTRALEAP_hand_tracking_forearm");
         XR_VALVE_analog_threshold = ext.contains("XR_VALVE_analog_threshold");
         XR_VARJO_composition_layer_depth_test = ext.contains("XR_VARJO_composition_layer_depth_test");
-        XR_VARJO_environment_depth_estimation = check_VARJO_environment_depth_estimation(provider, caps, ext);
+        XR_VARJO_environment_depth_estimation = checkExt2("XR_VARJO_environment_depth_estimation", stack, provider, caps, ext, 494, "xrSetEnvironmentDepthEstimationVARJO");
         XR_VARJO_foveated_rendering = ext.contains("XR_VARJO_foveated_rendering");
-        XR_VARJO_marker_tracking = check_VARJO_marker_tracking(provider, caps, ext);
+        XR_VARJO_marker_tracking = checkExt1("XR_VARJO_marker_tracking", stack, provider, caps, ext, 495, 500,
+            "xrSetMarkerTrackingVARJO", "xrSetMarkerTrackingTimeoutVARJO", "xrSetMarkerTrackingPredictionVARJO", "xrGetMarkerSizeVARJO", 
+            "xrCreateMarkerSpaceVARJO"
+        );
         XR_VARJO_quad_views = ext.contains("XR_VARJO_quad_views");
-        XR_VARJO_view_offset = check_VARJO_view_offset(provider, caps, ext);
+        XR_VARJO_view_offset = checkExt2("XR_VARJO_view_offset", stack, provider, caps, ext, 500, "xrSetViewOffsetVARJO");
         XR_VARJO_xr4_controller_interaction = ext.contains("XR_VARJO_xr4_controller_interaction");
         XR_YVR_controller_interaction = ext.contains("XR_YVR_controller_interaction");
 
@@ -2143,1661 +2398,6 @@ public class XRCapabilities {
         xrGetMarkerSizeVARJO = caps[498];
         xrCreateMarkerSpaceVARJO = caps[499];
         xrSetViewOffsetVARJO = caps[500];
-    }
-
-    private static boolean check_XR10(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("OpenXR10")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 
-            39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50
-        },
-            "xrDestroyInstance", "xrGetInstanceProperties", "xrPollEvent", "xrResultToString", "xrStructureTypeToString", "xrGetSystem", 
-            "xrGetSystemProperties", "xrEnumerateEnvironmentBlendModes", "xrCreateSession", "xrDestroySession", "xrEnumerateReferenceSpaces", 
-            "xrCreateReferenceSpace", "xrGetReferenceSpaceBoundsRect", "xrCreateActionSpace", "xrLocateSpace", "xrDestroySpace", 
-            "xrEnumerateViewConfigurations", "xrGetViewConfigurationProperties", "xrEnumerateViewConfigurationViews", "xrEnumerateSwapchainFormats", 
-            "xrCreateSwapchain", "xrDestroySwapchain", "xrEnumerateSwapchainImages", "xrAcquireSwapchainImage", "xrWaitSwapchainImage", 
-            "xrReleaseSwapchainImage", "xrBeginSession", "xrEndSession", "xrRequestExitSession", "xrWaitFrame", "xrBeginFrame", "xrEndFrame", "xrLocateViews", 
-            "xrStringToPath", "xrPathToString", "xrCreateActionSet", "xrDestroyActionSet", "xrCreateAction", "xrDestroyAction", 
-            "xrSuggestInteractionProfileBindings", "xrAttachSessionActionSets", "xrGetCurrentInteractionProfile", "xrGetActionStateBoolean", 
-            "xrGetActionStateFloat", "xrGetActionStateVector2f", "xrGetActionStatePose", "xrSyncActions", "xrEnumerateBoundSourcesForAction", 
-            "xrGetInputSourceLocalizedName", "xrApplyHapticFeedback", "xrStopHapticFeedback"
-        ) || reportMissing("XR", "OpenXR10");
-    }
-
-    private static boolean check_XR11(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("OpenXR11")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            51
-        },
-            "xrLocateSpaces"
-        ) || reportMissing("XR", "OpenXR11");
-    }
-
-    private static boolean check_ALMALENCE_digital_lens_control(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ALMALENCE_digital_lens_control")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            52
-        },
-            "xrSetDigitalLensControlALMALENCE"
-        ) || reportMissing("XR", "XR_ALMALENCE_digital_lens_control");
-    }
-
-    private static boolean check_ANDROID_anchor_sharing_export(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_anchor_sharing_export")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            53, 54
-        },
-            "xrShareAnchorANDROID", "xrUnshareAnchorANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_anchor_sharing_export");
-    }
-
-    private static boolean check_ANDROID_composition_layer_passthrough_mesh(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_composition_layer_passthrough_mesh")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            55, 56, 57
-        },
-            "xrCreatePassthroughLayerANDROID", "xrDestroyPassthroughLayerANDROID", "xrSetPassthroughLayerMeshANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_composition_layer_passthrough_mesh");
-    }
-
-    private static boolean check_ANDROID_device_anchor_persistence(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_device_anchor_persistence")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            58, 59, 60, 61, 62, 63, 64, 65
-        },
-            "xrEnumerateSupportedPersistenceAnchorTypesANDROID", "xrCreateDeviceAnchorPersistenceANDROID", "xrDestroyDeviceAnchorPersistenceANDROID", 
-            "xrPersistAnchorANDROID", "xrGetAnchorPersistStateANDROID", "xrCreatePersistedAnchorSpaceANDROID", "xrEnumeratePersistedAnchorsANDROID", 
-            "xrUnpersistAnchorANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_device_anchor_persistence");
-    }
-
-    private static boolean check_ANDROID_eye_tracking(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_eye_tracking")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            66, 67, 68, 69
-        },
-            "xrCreateEyeTrackerANDROID", "xrDestroyEyeTrackerANDROID", "xrGetFineTrackingEyesInfoANDROID", "xrGetCoarseTrackingEyesInfoANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_eye_tracking");
-    }
-
-    private static boolean check_ANDROID_face_tracking(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_face_tracking")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            70, 71, 72, 73
-        },
-            "xrCreateFaceTrackerANDROID", "xrDestroyFaceTrackerANDROID", "xrGetFaceStateANDROID", "xrGetFaceCalibrationStateANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_face_tracking");
-    }
-
-    private static boolean check_ANDROID_geospatial(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_geospatial")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            74, 75, 76, 77, 78, 79
-        },
-            "xrCreateGeospatialTrackerANDROID", "xrDestroyGeospatialTrackerANDROID", "xrLocateGeospatialPoseFromPoseANDROID", "xrLocateGeospatialPoseANDROID", 
-            "xrCheckVpsAvailabilityAsyncANDROID", "xrCheckVpsAvailabilityCompleteANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_geospatial");
-    }
-
-    private static boolean check_ANDROID_geospatial_anchor(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_geospatial_anchor")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            80, 81, 82
-        },
-            "xrCreateGeospatialAnchorANDROID", "xrCreateSurfaceAnchorAsyncANDROID", "xrCreateSurfaceAnchorCompleteANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_geospatial_anchor");
-    }
-
-    private static boolean check_ANDROID_google_cloud_auth(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_google_cloud_auth")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            83, 84
-        },
-            "xrSetGoogleCloudAuthAsyncANDROID", "xrSetGoogleCloudAuthCompleteANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_google_cloud_auth");
-    }
-
-    private static boolean check_ANDROID_light_estimation(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_light_estimation")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            85, 86, 87
-        },
-            "xrCreateLightEstimatorANDROID", "xrDestroyLightEstimatorANDROID", "xrGetLightEstimateANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_light_estimation");
-    }
-
-    private static boolean check_ANDROID_passthrough_camera_state(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_passthrough_camera_state")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            88
-        },
-            "xrGetPassthroughCameraStateANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_passthrough_camera_state");
-    }
-
-    private static boolean check_ANDROID_performance_metrics(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_performance_metrics")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            89, 90, 91, 92
-        },
-            "xrEnumeratePerformanceMetricsCounterPathsANDROID", "xrSetPerformanceMetricsStateANDROID", "xrGetPerformanceMetricsStateANDROID", 
-            "xrQueryPerformanceMetricsCounterANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_performance_metrics");
-    }
-
-    private static boolean check_ANDROID_raycast(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_raycast")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            93, 94
-        },
-            "xrEnumerateRaycastSupportedTrackableTypesANDROID", "xrRaycastANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_raycast");
-    }
-
-    private static boolean check_ANDROID_scene_meshing(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_scene_meshing")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            95, 96, 97, 98, 99, 100, 101
-        },
-            "xrEnumerateSupportedSemanticLabelSetsANDROID", "xrCreateSceneMeshingTrackerANDROID", "xrDestroySceneMeshingTrackerANDROID", 
-            "xrCreateSceneMeshSnapshotANDROID", "xrDestroySceneMeshSnapshotANDROID", "xrGetAllSubmeshStatesANDROID", "xrGetSubmeshDataANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_scene_meshing");
-    }
-
-    private static boolean check_ANDROID_spatial_anchor_space(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_spatial_anchor_space")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            102, 103
-        },
-            "xrCreateSpatialAnchorSpaceANDROID", "xrCreateSpatialAnchorSpaceFromIdANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_spatial_anchor_space");
-    }
-
-    private static boolean check_ANDROID_spatial_discovery_raycast(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_spatial_discovery_raycast")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            104
-        },
-            "xrCreateSpatialRaycastSnapshotANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_spatial_discovery_raycast");
-    }
-
-    private static boolean check_ANDROID_spatial_entity_bound_anchor(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_spatial_entity_bound_anchor")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            105
-        },
-            "xrEnumerateSpatialAnchorAttachableComponentsANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_spatial_entity_bound_anchor");
-    }
-
-    private static boolean check_ANDROID_trackables(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_trackables")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            106, 107, 108, 109, 110, 111, 112
-        },
-            "xrEnumerateSupportedTrackableTypesANDROID", "xrEnumerateSupportedAnchorTrackableTypesANDROID", "xrCreateTrackableTrackerANDROID", 
-            "xrDestroyTrackableTrackerANDROID", "xrGetAllTrackablesANDROID", "xrGetTrackablePlaneANDROID", "xrCreateAnchorSpaceANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_trackables");
-    }
-
-    private static boolean check_ANDROID_trackables_image(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_trackables_image")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            113, 114, 115, 116, 117, 118
-        },
-            "xrCreateTrackableImageDatabaseAsyncANDROID", "xrCreateTrackableImageDatabaseCompleteANDROID", "xrDestroyTrackableImageDatabaseANDROID", 
-            "xrAddTrackableImageDatabaseANDROID", "xrRemoveTrackableImageDatabaseANDROID", "xrGetTrackableImageANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_trackables_image");
-    }
-
-    private static boolean check_ANDROID_trackables_marker(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_trackables_marker")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            119
-        },
-            "xrGetTrackableMarkerANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_trackables_marker");
-    }
-
-    private static boolean check_ANDROID_trackables_object(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_trackables_object")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            120
-        },
-            "xrGetTrackableObjectANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_trackables_object");
-    }
-
-    private static boolean check_ANDROID_trackables_qr_code(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ANDROID_trackables_qr_code")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            121
-        },
-            "xrGetTrackableQrCodeANDROID"
-        ) || reportMissing("XR", "XR_ANDROID_trackables_qr_code");
-    }
-
-    private static boolean check_BD_body_tracking(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_BD_body_tracking")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            122, 123, 124
-        },
-            "xrCreateBodyTrackerBD", "xrDestroyBodyTrackerBD", "xrLocateBodyJointsBD"
-        ) || reportMissing("XR", "XR_BD_body_tracking");
-    }
-
-    private static boolean check_BD_body_tracking_auxiliary_metrics(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_BD_body_tracking_auxiliary_metrics")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            125, 126
-        },
-            "xrStartBodyTrackingCalibrationAppBD", "xrGetBodyTrackingStateBD"
-        ) || reportMissing("XR", "XR_BD_body_tracking_auxiliary_metrics");
-    }
-
-    private static boolean check_BD_facial_simulation(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_BD_facial_simulation")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            127, 128, 129, 130, 131, 132
-        },
-            "xrEnumerateFacialSimulationModesBD", "xrCreateFaceTrackerBD", "xrDestroyFaceTrackerBD", "xrGetFacialSimulationDataBD", 
-            "xrSetFacialSimulationModeBD", "xrGetFacialSimulationModeBD"
-        ) || reportMissing("XR", "XR_BD_facial_simulation");
-    }
-
-    private static boolean check_BD_spatial_anchor(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_BD_spatial_anchor")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            133, 134, 135, 136, 137, 138
-        },
-            "xrCreateSpatialAnchorAsyncBD", "xrCreateSpatialAnchorCompleteBD", "xrPersistSpatialAnchorAsyncBD", "xrPersistSpatialAnchorCompleteBD", 
-            "xrUnpersistSpatialAnchorAsyncBD", "xrUnpersistSpatialAnchorCompleteBD"
-        ) || reportMissing("XR", "XR_BD_spatial_anchor");
-    }
-
-    private static boolean check_BD_spatial_anchor_sharing(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_BD_spatial_anchor_sharing")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            139, 140, 141, 142
-        },
-            "xrShareSpatialAnchorAsyncBD", "xrShareSpatialAnchorCompleteBD", "xrDownloadSharedSpatialAnchorAsyncBD", "xrDownloadSharedSpatialAnchorCompleteBD"
-        ) || reportMissing("XR", "XR_BD_spatial_anchor_sharing");
-    }
-
-    private static boolean check_BD_spatial_audio_rendering(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_BD_spatial_audio_rendering")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162
-        },
-            "xrEnumerateSupportedAudioSampleRateBD", "xrQueryFramesPerBufferRangeBD", "xrCreateSpatialAudioRendererBD", "xrDestroySpatialAudioRendererBD", 
-            "xrCreateSoundObstacleMaterialBD", "xrUpdateSoundObstacleMaterialConfigBD", "xrDestroySoundObstacleMaterialBD", "xrCreateSoundObstacleBD", 
-            "xrUpdateSoundObstacleConfigBD", "xrDestroySoundObstacleBD", "xrCreateSoundObjectBD", "xrUpdateSoundObjectConfigBD", "xrSubmitSoundObjectBufferBD", 
-            "xrDestroySoundObjectBD", "xrCreateSoundFieldBD", "xrUpdateSoundFieldConfigBD", "xrSubmitSoundFieldBufferBD", "xrDestroySoundFieldBD", 
-            "xrWaitAudioPeriodBD", "xrEndAudioPeriodBD"
-        ) || reportMissing("XR", "XR_BD_spatial_audio_rendering");
-    }
-
-    private static boolean check_BD_spatial_scene(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_BD_spatial_scene")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            163, 164
-        },
-            "xrCaptureSceneAsyncBD", "xrCaptureSceneCompleteBD"
-        ) || reportMissing("XR", "XR_BD_spatial_scene");
-    }
-
-    private static boolean check_BD_spatial_sensing(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_BD_spatial_sensing")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181
-        },
-            "xrEnumerateSpatialEntityComponentTypesBD", "xrGetSpatialEntityUuidBD", "xrGetSpatialEntityComponentDataBD", "xrCreateSenseDataProviderBD", 
-            "xrStartSenseDataProviderAsyncBD", "xrStartSenseDataProviderCompleteBD", "xrGetSenseDataProviderStateBD", "xrQuerySenseDataAsyncBD", 
-            "xrQuerySenseDataCompleteBD", "xrDestroySenseDataSnapshotBD", "xrGetQueriedSenseDataBD", "xrStopSenseDataProviderBD", 
-            "xrDestroySenseDataProviderBD", "xrCreateSpatialEntityAnchorBD", "xrDestroyAnchorBD", "xrGetAnchorUuidBD", "xrCreateAnchorSpaceBD"
-        ) || reportMissing("XR", "XR_BD_spatial_sensing");
-    }
-
-    private static boolean check_EXT_conformance_automation(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_conformance_automation")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            182, 183, 184, 185, 186
-        },
-            "xrSetInputDeviceActiveEXT", "xrSetInputDeviceStateBoolEXT", "xrSetInputDeviceStateFloatEXT", "xrSetInputDeviceStateVector2fEXT", 
-            "xrSetInputDeviceLocationEXT"
-        ) || reportMissing("XR", "XR_EXT_conformance_automation");
-    }
-
-    private static boolean check_EXT_debug_utils(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_debug_utils")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            187, 188, 189, 190, 191, 192, 193
-        },
-            "xrSetDebugUtilsObjectNameEXT", "xrCreateDebugUtilsMessengerEXT", "xrDestroyDebugUtilsMessengerEXT", "xrSubmitDebugUtilsMessageEXT", 
-            "xrSessionBeginDebugUtilsLabelRegionEXT", "xrSessionEndDebugUtilsLabelRegionEXT", "xrSessionInsertDebugUtilsLabelEXT"
-        ) || reportMissing("XR", "XR_EXT_debug_utils");
-    }
-
-    private static boolean check_EXT_future(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_future")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            194, 195
-        },
-            "xrPollFutureEXT", "xrCancelFutureEXT"
-        ) || reportMissing("XR", "XR_EXT_future");
-    }
-
-    private static boolean check_EXT_hand_tracking(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_hand_tracking")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            196, 197, 198
-        },
-            "xrCreateHandTrackerEXT", "xrDestroyHandTrackerEXT", "xrLocateHandJointsEXT"
-        ) || reportMissing("XR", "XR_EXT_hand_tracking");
-    }
-
-    private static boolean check_EXT_haptic_parametric(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_haptic_parametric")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            199
-        },
-            "xrHapticParametricGetPropertiesEXT"
-        ) || reportMissing("XR", "XR_EXT_haptic_parametric");
-    }
-
-    private static boolean check_EXT_interaction_render_model(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_interaction_render_model")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            200, 201, 202
-        },
-            "xrEnumerateInteractionRenderModelIdsEXT", "xrEnumerateRenderModelSubactionPathsEXT", "xrGetRenderModelPoseTopLevelUserPathEXT"
-        ) || reportMissing("XR", "XR_EXT_interaction_render_model");
-    }
-
-    private static boolean check_EXT_performance_settings(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_performance_settings")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            203
-        },
-            "xrPerfSettingsSetPerformanceLevelEXT"
-        ) || reportMissing("XR", "XR_EXT_performance_settings");
-    }
-
-    private static boolean check_EXT_plane_detection(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_plane_detection")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            204, 205, 206, 207, 208, 209
-        },
-            "xrCreatePlaneDetectorEXT", "xrDestroyPlaneDetectorEXT", "xrBeginPlaneDetectionEXT", "xrGetPlaneDetectionStateEXT", "xrGetPlaneDetectionsEXT", 
-            "xrGetPlanePolygonBufferEXT"
-        ) || reportMissing("XR", "XR_EXT_plane_detection");
-    }
-
-    private static boolean check_EXT_render_model(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_render_model")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            210, 211, 212, 213, 214, 215, 216, 217, 218
-        },
-            "xrCreateRenderModelEXT", "xrDestroyRenderModelEXT", "xrGetRenderModelPropertiesEXT", "xrCreateRenderModelSpaceEXT", "xrCreateRenderModelAssetEXT", 
-            "xrDestroyRenderModelAssetEXT", "xrGetRenderModelAssetDataEXT", "xrGetRenderModelAssetPropertiesEXT", "xrGetRenderModelStateEXT"
-        ) || reportMissing("XR", "XR_EXT_render_model");
-    }
-
-    private static boolean check_EXT_spatial_anchor(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_spatial_anchor")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            219
-        },
-            "xrCreateSpatialAnchorEXT"
-        ) || reportMissing("XR", "XR_EXT_spatial_anchor");
-    }
-
-    private static boolean check_EXT_spatial_entity(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_spatial_entity")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239
-        },
-            "xrEnumerateSpatialCapabilitiesEXT", "xrEnumerateSpatialCapabilityComponentTypesEXT", "xrEnumerateSpatialCapabilityFeaturesEXT", 
-            "xrCreateSpatialContextAsyncEXT", "xrCreateSpatialContextCompleteEXT", "xrDestroySpatialContextEXT", "xrCreateSpatialDiscoverySnapshotAsyncEXT", 
-            "xrCreateSpatialDiscoverySnapshotCompleteEXT", "xrQuerySpatialComponentDataEXT", "xrDestroySpatialSnapshotEXT", "xrCreateSpatialEntityFromIdEXT", 
-            "xrDestroySpatialEntityEXT", "xrCreateSpatialUpdateSnapshotEXT", "xrGetSpatialBufferStringEXT", "xrGetSpatialBufferUint8EXT", 
-            "xrGetSpatialBufferUint16EXT", "xrGetSpatialBufferUint32EXT", "xrGetSpatialBufferFloatEXT", "xrGetSpatialBufferVector2fEXT", 
-            "xrGetSpatialBufferVector3fEXT"
-        ) || reportMissing("XR", "XR_EXT_spatial_entity");
-    }
-
-    private static boolean check_EXT_spatial_persistence(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_spatial_persistence")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            240, 241, 242, 243
-        },
-            "xrEnumerateSpatialPersistenceScopesEXT", "xrCreateSpatialPersistenceContextAsyncEXT", "xrCreateSpatialPersistenceContextCompleteEXT", 
-            "xrDestroySpatialPersistenceContextEXT"
-        ) || reportMissing("XR", "XR_EXT_spatial_persistence");
-    }
-
-    private static boolean check_EXT_spatial_persistence_operations(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_spatial_persistence_operations")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            244, 245, 246, 247
-        },
-            "xrPersistSpatialEntityAsyncEXT", "xrPersistSpatialEntityCompleteEXT", "xrUnpersistSpatialEntityAsyncEXT", "xrUnpersistSpatialEntityCompleteEXT"
-        ) || reportMissing("XR", "XR_EXT_spatial_persistence_operations");
-    }
-
-    private static boolean check_EXT_stationary_reference_space(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_stationary_reference_space")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            248
-        },
-            "xrGetStationaryReferenceSpaceGenerationIdEXT"
-        ) || reportMissing("XR", "XR_EXT_stationary_reference_space");
-    }
-
-    private static boolean check_EXT_thermal_query(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_EXT_thermal_query")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            249
-        },
-            "xrThermalGetTemperatureTrendEXT"
-        ) || reportMissing("XR", "XR_EXT_thermal_query");
-    }
-
-    private static boolean check_FB_body_tracking(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_body_tracking")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            250, 251, 252, 253
-        },
-            "xrCreateBodyTrackerFB", "xrDestroyBodyTrackerFB", "xrLocateBodyJointsFB", "xrGetBodySkeletonFB"
-        ) || reportMissing("XR", "XR_FB_body_tracking");
-    }
-
-    private static boolean check_FB_color_space(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_color_space")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            254, 255
-        },
-            "xrEnumerateColorSpacesFB", "xrSetColorSpaceFB"
-        ) || reportMissing("XR", "XR_FB_color_space");
-    }
-
-    private static boolean check_FB_display_refresh_rate(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_display_refresh_rate")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            256, 257, 258
-        },
-            "xrEnumerateDisplayRefreshRatesFB", "xrGetDisplayRefreshRateFB", "xrRequestDisplayRefreshRateFB"
-        ) || reportMissing("XR", "XR_FB_display_refresh_rate");
-    }
-
-    private static boolean check_FB_eye_tracking_social(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_eye_tracking_social")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            259, 260, 261
-        },
-            "xrCreateEyeTrackerFB", "xrDestroyEyeTrackerFB", "xrGetEyeGazesFB"
-        ) || reportMissing("XR", "XR_FB_eye_tracking_social");
-    }
-
-    private static boolean check_FB_face_tracking(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_face_tracking")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            262, 263, 264
-        },
-            "xrCreateFaceTrackerFB", "xrDestroyFaceTrackerFB", "xrGetFaceExpressionWeightsFB"
-        ) || reportMissing("XR", "XR_FB_face_tracking");
-    }
-
-    private static boolean check_FB_face_tracking2(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_face_tracking2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            265, 266, 267
-        },
-            "xrCreateFaceTracker2FB", "xrDestroyFaceTracker2FB", "xrGetFaceExpressionWeights2FB"
-        ) || reportMissing("XR", "XR_FB_face_tracking2");
-    }
-
-    private static boolean check_FB_foveation(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_foveation")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            268, 269
-        },
-            "xrCreateFoveationProfileFB", "xrDestroyFoveationProfileFB"
-        ) || reportMissing("XR", "XR_FB_foveation");
-    }
-
-    private static boolean check_FB_hand_tracking_mesh(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_hand_tracking_mesh")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            270
-        },
-            "xrGetHandMeshFB"
-        ) || reportMissing("XR", "XR_FB_hand_tracking_mesh");
-    }
-
-    private static boolean check_FB_haptic_pcm(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_haptic_pcm")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            271
-        },
-            "xrGetDeviceSampleRateFB"
-        ) || reportMissing("XR", "XR_FB_haptic_pcm");
-    }
-
-    private static boolean check_FB_keyboard_tracking(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_keyboard_tracking")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            272, 273
-        },
-            "xrQuerySystemTrackedKeyboardFB", "xrCreateKeyboardSpaceFB"
-        ) || reportMissing("XR", "XR_FB_keyboard_tracking");
-    }
-
-    private static boolean check_FB_passthrough(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_passthrough")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285
-        },
-            "xrCreatePassthroughFB", "xrDestroyPassthroughFB", "xrPassthroughStartFB", "xrPassthroughPauseFB", "xrCreatePassthroughLayerFB", 
-            "xrDestroyPassthroughLayerFB", "xrPassthroughLayerPauseFB", "xrPassthroughLayerResumeFB", "xrPassthroughLayerSetStyleFB", 
-            "xrCreateGeometryInstanceFB", "xrDestroyGeometryInstanceFB", "xrGeometryInstanceSetTransformFB"
-        ) || reportMissing("XR", "XR_FB_passthrough");
-    }
-
-    private static boolean check_FB_passthrough_keyboard_hands(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_passthrough_keyboard_hands")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            286
-        },
-            "xrPassthroughLayerSetKeyboardHandsIntensityFB"
-        ) || reportMissing("XR", "XR_FB_passthrough_keyboard_hands");
-    }
-
-    private static boolean check_FB_render_model(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_render_model")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            287, 288, 289
-        },
-            "xrEnumerateRenderModelPathsFB", "xrGetRenderModelPropertiesFB", "xrLoadRenderModelFB"
-        ) || reportMissing("XR", "XR_FB_render_model");
-    }
-
-    private static boolean check_FB_scene(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_scene")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            290, 291, 292, 293, 294
-        },
-            "xrGetSpaceBoundingBox2DFB", "xrGetSpaceBoundingBox3DFB", "xrGetSpaceSemanticLabelsFB", "xrGetSpaceBoundary2DFB", "xrGetSpaceRoomLayoutFB"
-        ) || reportMissing("XR", "XR_FB_scene");
-    }
-
-    private static boolean check_FB_scene_capture(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_scene_capture")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            295
-        },
-            "xrRequestSceneCaptureFB"
-        ) || reportMissing("XR", "XR_FB_scene_capture");
-    }
-
-    private static boolean check_FB_spatial_entity(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_spatial_entity")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            296, 297, 298, 299, 300
-        },
-            "xrCreateSpatialAnchorFB", "xrGetSpaceUuidFB", "xrEnumerateSpaceSupportedComponentsFB", "xrSetSpaceComponentStatusFB", 
-            "xrGetSpaceComponentStatusFB"
-        ) || reportMissing("XR", "XR_FB_spatial_entity");
-    }
-
-    private static boolean check_FB_spatial_entity_container(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_spatial_entity_container")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            301
-        },
-            "xrGetSpaceContainerFB"
-        ) || reportMissing("XR", "XR_FB_spatial_entity_container");
-    }
-
-    private static boolean check_FB_spatial_entity_query(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_spatial_entity_query")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            302, 303
-        },
-            "xrQuerySpacesFB", "xrRetrieveSpaceQueryResultsFB"
-        ) || reportMissing("XR", "XR_FB_spatial_entity_query");
-    }
-
-    private static boolean check_FB_spatial_entity_sharing(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_spatial_entity_sharing")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            304
-        },
-            "xrShareSpacesFB"
-        ) || reportMissing("XR", "XR_FB_spatial_entity_sharing");
-    }
-
-    private static boolean check_FB_spatial_entity_storage(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_spatial_entity_storage")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            305, 306
-        },
-            "xrSaveSpaceFB", "xrEraseSpaceFB"
-        ) || reportMissing("XR", "XR_FB_spatial_entity_storage");
-    }
-
-    private static boolean check_FB_spatial_entity_storage_batch(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_spatial_entity_storage_batch")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            307
-        },
-            "xrSaveSpaceListFB"
-        ) || reportMissing("XR", "XR_FB_spatial_entity_storage_batch");
-    }
-
-    private static boolean check_FB_spatial_entity_user(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_spatial_entity_user")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            308, 309, 310
-        },
-            "xrCreateSpaceUserFB", "xrGetSpaceUserIdFB", "xrDestroySpaceUserFB"
-        ) || reportMissing("XR", "XR_FB_spatial_entity_user");
-    }
-
-    private static boolean check_FB_swapchain_update_state(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_swapchain_update_state")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            311, 312
-        },
-            "xrUpdateSwapchainFB", "xrGetSwapchainStateFB"
-        ) || reportMissing("XR", "XR_FB_swapchain_update_state");
-    }
-
-    private static boolean check_FB_triangle_mesh(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_FB_triangle_mesh")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            313, 314, 315, 316, 317, 318, 319, 320
-        },
-            "xrCreateTriangleMeshFB", "xrDestroyTriangleMeshFB", "xrTriangleMeshGetVertexBufferFB", "xrTriangleMeshGetIndexBufferFB", 
-            "xrTriangleMeshBeginUpdateFB", "xrTriangleMeshEndUpdateFB", "xrTriangleMeshBeginVertexBufferUpdateFB", "xrTriangleMeshEndVertexBufferUpdateFB"
-        ) || reportMissing("XR", "XR_FB_triangle_mesh");
-    }
-
-    private static boolean check_HTC_anchor(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_HTC_anchor")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            321, 322
-        },
-            "xrCreateSpatialAnchorHTC", "xrGetSpatialAnchorNameHTC"
-        ) || reportMissing("XR", "XR_HTC_anchor");
-    }
-
-    private static boolean check_HTC_body_tracking(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_HTC_body_tracking")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            323, 324, 325, 326
-        },
-            "xrCreateBodyTrackerHTC", "xrDestroyBodyTrackerHTC", "xrLocateBodyJointsHTC", "xrGetBodySkeletonHTC"
-        ) || reportMissing("XR", "XR_HTC_body_tracking");
-    }
-
-    private static boolean check_HTC_facial_tracking(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_HTC_facial_tracking")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            327, 328, 329
-        },
-            "xrCreateFacialTrackerHTC", "xrDestroyFacialTrackerHTC", "xrGetFacialExpressionsHTC"
-        ) || reportMissing("XR", "XR_HTC_facial_tracking");
-    }
-
-    private static boolean check_HTC_foveation(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_HTC_foveation")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            330
-        },
-            "xrApplyFoveationHTC"
-        ) || reportMissing("XR", "XR_HTC_foveation");
-    }
-
-    private static boolean check_HTC_passthrough(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_HTC_passthrough")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            331, 332
-        },
-            "xrCreatePassthroughHTC", "xrDestroyPassthroughHTC"
-        ) || reportMissing("XR", "XR_HTC_passthrough");
-    }
-
-    private static boolean check_HTCX_vive_tracker_interaction(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_HTCX_vive_tracker_interaction")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            333
-        },
-            "xrEnumerateViveTrackerPathsHTCX"
-        ) || reportMissing("XR", "XR_HTCX_vive_tracker_interaction");
-    }
-
-    private static boolean check_KHR_convert_timespec_time(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_KHR_convert_timespec_time")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            334, 335
-        },
-            "xrConvertTimespecTimeToTimeKHR", "xrConvertTimeToTimespecTimeKHR"
-        ) || reportMissing("XR", "XR_KHR_convert_timespec_time");
-    }
-
-    private static boolean check_KHR_extended_struct_name_lengths(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_KHR_extended_struct_name_lengths")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            336
-        },
-            "xrStructureTypeToString2KHR"
-        ) || reportMissing("XR", "XR_KHR_extended_struct_name_lengths");
-    }
-
-    private static boolean check_KHR_locate_spaces(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_KHR_locate_spaces")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            337
-        },
-            "xrLocateSpacesKHR"
-        ) || reportMissing("XR", "XR_KHR_locate_spaces");
-    }
-
-    private static boolean check_KHR_opengl_enable(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_KHR_opengl_enable")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            338
-        },
-            "xrGetOpenGLGraphicsRequirementsKHR"
-        ) || reportMissing("XR", "XR_KHR_opengl_enable");
-    }
-
-    private static boolean check_KHR_visibility_mask(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_KHR_visibility_mask")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            339
-        },
-            "xrGetVisibilityMaskKHR"
-        ) || reportMissing("XR", "XR_KHR_visibility_mask");
-    }
-
-    private static boolean check_KHR_vulkan_enable(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_KHR_vulkan_enable")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            340, 341, 342, 343
-        },
-            "xrGetVulkanInstanceExtensionsKHR", "xrGetVulkanDeviceExtensionsKHR", "xrGetVulkanGraphicsDeviceKHR", "xrGetVulkanGraphicsRequirementsKHR"
-        ) || reportMissing("XR", "XR_KHR_vulkan_enable");
-    }
-
-    private static boolean check_KHR_vulkan_enable2(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_KHR_vulkan_enable2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            344, 345, 346, 347
-        },
-            "xrCreateVulkanInstanceKHR", "xrCreateVulkanDeviceKHR", "xrGetVulkanGraphicsDevice2KHR", "xrGetVulkanGraphicsRequirements2KHR"
-        ) || reportMissing("XR", "XR_KHR_vulkan_enable2");
-    }
-
-    private static boolean check_KHR_win32_convert_performance_counter_time(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_KHR_win32_convert_performance_counter_time")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            348, 349
-        },
-            "xrConvertWin32PerformanceCounterToTimeKHR", "xrConvertTimeToWin32PerformanceCounterKHR"
-        ) || reportMissing("XR", "XR_KHR_win32_convert_performance_counter_time");
-    }
-
-    private static boolean check_META_body_tracking_calibration(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_body_tracking_calibration")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            350, 351
-        },
-            "xrSuggestBodyTrackingCalibrationOverrideMETA", "xrResetBodyTrackingCalibrationMETA"
-        ) || reportMissing("XR", "XR_META_body_tracking_calibration");
-    }
-
-    private static boolean check_META_body_tracking_fidelity(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_body_tracking_fidelity")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            352
-        },
-            "xrRequestBodyTrackingFidelityMETA"
-        ) || reportMissing("XR", "XR_META_body_tracking_fidelity");
-    }
-
-    private static boolean check_META_boundary_visibility(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_boundary_visibility")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            353
-        },
-            "xrRequestBoundaryVisibilityMETA"
-        ) || reportMissing("XR", "XR_META_boundary_visibility");
-    }
-
-    private static boolean check_META_colocation_discovery(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_colocation_discovery")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            354, 355, 356, 357
-        },
-            "xrStartColocationDiscoveryMETA", "xrStopColocationDiscoveryMETA", "xrStartColocationAdvertisementMETA", "xrStopColocationAdvertisementMETA"
-        ) || reportMissing("XR", "XR_META_colocation_discovery");
-    }
-
-    private static boolean check_META_environment_depth(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_environment_depth")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            358, 359, 360, 361, 362, 363, 364, 365, 366, 367
-        },
-            "xrCreateEnvironmentDepthProviderMETA", "xrDestroyEnvironmentDepthProviderMETA", "xrStartEnvironmentDepthProviderMETA", 
-            "xrStopEnvironmentDepthProviderMETA", "xrCreateEnvironmentDepthSwapchainMETA", "xrDestroyEnvironmentDepthSwapchainMETA", 
-            "xrEnumerateEnvironmentDepthSwapchainImagesMETA", "xrGetEnvironmentDepthSwapchainStateMETA", "xrAcquireEnvironmentDepthImageMETA", 
-            "xrSetEnvironmentDepthHandRemovalMETA"
-        ) || reportMissing("XR", "XR_META_environment_depth");
-    }
-
-    private static boolean check_META_environment_raycast(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_environment_raycast")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            368, 369, 370, 371
-        },
-            "xrCreateEnvironmentRaycasterAsyncMETA", "xrCreateEnvironmentRaycasterCompleteMETA", "xrDestroyEnvironmentRaycasterMETA", 
-            "xrPerformEnvironmentRaycastMETA"
-        ) || reportMissing("XR", "XR_META_environment_raycast");
-    }
-
-    private static boolean check_META_foveation_eye_tracked(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_foveation_eye_tracked")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            372
-        },
-            "xrGetFoveationEyeTrackedStateMETA"
-        ) || reportMissing("XR", "XR_META_foveation_eye_tracked");
-    }
-
-    private static boolean check_META_hand_tracking_frequency_hint(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_hand_tracking_frequency_hint")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            373
-        },
-            "xrSetHandTrackingFrequencyHintMETA"
-        ) || reportMissing("XR", "XR_META_hand_tracking_frequency_hint");
-    }
-
-    private static boolean check_META_passthrough_color_lut(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_passthrough_color_lut")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            374, 375, 376
-        },
-            "xrCreatePassthroughColorLutMETA", "xrDestroyPassthroughColorLutMETA", "xrUpdatePassthroughColorLutMETA"
-        ) || reportMissing("XR", "XR_META_passthrough_color_lut");
-    }
-
-    private static boolean check_META_passthrough_preferences(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_passthrough_preferences")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            377
-        },
-            "xrGetPassthroughPreferencesMETA"
-        ) || reportMissing("XR", "XR_META_passthrough_preferences");
-    }
-
-    private static boolean check_META_performance_metrics(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_performance_metrics")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            378, 379, 380, 381
-        },
-            "xrEnumeratePerformanceMetricsCounterPathsMETA", "xrSetPerformanceMetricsStateMETA", "xrGetPerformanceMetricsStateMETA", 
-            "xrQueryPerformanceMetricsCounterMETA"
-        ) || reportMissing("XR", "XR_META_performance_metrics");
-    }
-
-    private static boolean check_META_recommended_layer_resolution(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_recommended_layer_resolution")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            382
-        },
-            "xrGetRecommendedLayerResolutionMETA"
-        ) || reportMissing("XR", "XR_META_recommended_layer_resolution");
-    }
-
-    private static boolean check_META_simultaneous_hands_and_controllers(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_simultaneous_hands_and_controllers")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            383, 384
-        },
-            "xrResumeSimultaneousHandsAndControllersTrackingMETA", "xrPauseSimultaneousHandsAndControllersTrackingMETA"
-        ) || reportMissing("XR", "XR_META_simultaneous_hands_and_controllers");
-    }
-
-    private static boolean check_META_spatial_entity_discovery(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_spatial_entity_discovery")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            385, 386
-        },
-            "xrDiscoverSpacesMETA", "xrRetrieveSpaceDiscoveryResultsMETA"
-        ) || reportMissing("XR", "XR_META_spatial_entity_discovery");
-    }
-
-    private static boolean check_META_spatial_entity_mesh(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_spatial_entity_mesh")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            387
-        },
-            "xrGetSpaceTriangleMeshMETA"
-        ) || reportMissing("XR", "XR_META_spatial_entity_mesh");
-    }
-
-    private static boolean check_META_spatial_entity_persistence(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_spatial_entity_persistence")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            388, 389
-        },
-            "xrSaveSpacesMETA", "xrEraseSpacesMETA"
-        ) || reportMissing("XR", "XR_META_spatial_entity_persistence");
-    }
-
-    private static boolean check_META_spatial_entity_room_mesh(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_spatial_entity_room_mesh")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            390, 391
-        },
-            "xrGetSpaceRoomMeshMETA", "xrGetSpaceRoomMeshFaceIndicesMETA"
-        ) || reportMissing("XR", "XR_META_spatial_entity_room_mesh");
-    }
-
-    private static boolean check_META_spatial_entity_sharing(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_spatial_entity_sharing")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            392
-        },
-            "xrShareSpacesMETA"
-        ) || reportMissing("XR", "XR_META_spatial_entity_sharing");
-    }
-
-    private static boolean check_META_tile_properties_hint(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_tile_properties_hint")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            393
-        },
-            "xrSetTilePropertiesHintMETA"
-        ) || reportMissing("XR", "XR_META_tile_properties_hint");
-    }
-
-    private static boolean check_META_virtual_keyboard(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_META_virtual_keyboard")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404
-        },
-            "xrCreateVirtualKeyboardMETA", "xrDestroyVirtualKeyboardMETA", "xrCreateVirtualKeyboardSpaceMETA", "xrSuggestVirtualKeyboardLocationMETA", 
-            "xrGetVirtualKeyboardScaleMETA", "xrSetVirtualKeyboardModelVisibilityMETA", "xrGetVirtualKeyboardModelAnimationStatesMETA", 
-            "xrGetVirtualKeyboardDirtyTexturesMETA", "xrGetVirtualKeyboardTextureDataMETA", "xrSendVirtualKeyboardInputMETA", 
-            "xrChangeVirtualKeyboardTextContextMETA"
-        ) || reportMissing("XR", "XR_META_virtual_keyboard");
-    }
-
-    private static boolean check_ML_compat(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ML_compat")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            405
-        },
-            "xrCreateSpaceFromCoordinateFrameUIDML"
-        ) || reportMissing("XR", "XR_ML_compat");
-    }
-
-    private static boolean check_ML_facial_expression(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ML_facial_expression")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            406, 407, 408
-        },
-            "xrCreateFacialExpressionClientML", "xrDestroyFacialExpressionClientML", "xrGetFacialExpressionBlendShapePropertiesML"
-        ) || reportMissing("XR", "XR_ML_facial_expression");
-    }
-
-    private static boolean check_ML_localization_map(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ML_localization_map")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            409, 410, 411, 412, 413, 414, 415
-        },
-            "xrEnableLocalizationEventsML", "xrQueryLocalizationMapsML", "xrRequestMapLocalizationML", "xrImportLocalizationMapML", 
-            "xrCreateExportedLocalizationMapML", "xrDestroyExportedLocalizationMapML", "xrGetExportedLocalizationMapDataML"
-        ) || reportMissing("XR", "XR_ML_localization_map");
-    }
-
-    private static boolean check_ML_marker_understanding(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ML_marker_understanding")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            416, 417, 418, 419, 420, 421, 422, 423, 424, 425
-        },
-            "xrCreateMarkerDetectorML", "xrDestroyMarkerDetectorML", "xrSnapshotMarkerDetectorML", "xrGetMarkerDetectorStateML", "xrGetMarkersML", 
-            "xrGetMarkerReprojectionErrorML", "xrGetMarkerLengthML", "xrGetMarkerNumberML", "xrGetMarkerStringML", "xrCreateMarkerSpaceML"
-        ) || reportMissing("XR", "XR_ML_marker_understanding");
-    }
-
-    private static boolean check_ML_spatial_anchors(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ML_spatial_anchors")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            426, 427, 428
-        },
-            "xrCreateSpatialAnchorsAsyncML", "xrCreateSpatialAnchorsCompleteML", "xrGetSpatialAnchorStateML"
-        ) || reportMissing("XR", "XR_ML_spatial_anchors");
-    }
-
-    private static boolean check_ML_spatial_anchors_storage(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ML_spatial_anchors_storage")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            429, 430, 431, 432, 433, 434, 435, 436, 437, 438
-        },
-            "xrCreateSpatialAnchorsStorageML", "xrDestroySpatialAnchorsStorageML", "xrQuerySpatialAnchorsAsyncML", "xrQuerySpatialAnchorsCompleteML", 
-            "xrPublishSpatialAnchorsAsyncML", "xrPublishSpatialAnchorsCompleteML", "xrDeleteSpatialAnchorsAsyncML", "xrDeleteSpatialAnchorsCompleteML", 
-            "xrUpdateSpatialAnchorsExpirationAsyncML", "xrUpdateSpatialAnchorsExpirationCompleteML"
-        ) || reportMissing("XR", "XR_ML_spatial_anchors_storage");
-    }
-
-    private static boolean check_ML_system_notifications(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ML_system_notifications")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            439
-        },
-            "xrSetSystemNotificationsML"
-        ) || reportMissing("XR", "XR_ML_system_notifications");
-    }
-
-    private static boolean check_ML_user_calibration(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ML_user_calibration")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            440
-        },
-            "xrEnableUserCalibrationEventsML"
-        ) || reportMissing("XR", "XR_ML_user_calibration");
-    }
-
-    private static boolean check_ML_world_mesh_detection(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_ML_world_mesh_detection")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            441, 442, 443, 444, 445, 446, 447, 448, 449
-        },
-            "xrCreateWorldMeshDetectorML", "xrDestroyWorldMeshDetectorML", "xrRequestWorldMeshStateAsyncML", "xrRequestWorldMeshStateCompleteML", 
-            "xrGetWorldMeshBufferRecommendSizeML", "xrAllocateWorldMeshBufferML", "xrFreeWorldMeshBufferML", "xrRequestWorldMeshAsyncML", 
-            "xrRequestWorldMeshCompleteML"
-        ) || reportMissing("XR", "XR_ML_world_mesh_detection");
-    }
-
-    private static boolean check_MNDX_force_feedback_curl(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_MNDX_force_feedback_curl")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            450
-        },
-            "xrApplyForceFeedbackCurlMNDX"
-        ) || reportMissing("XR", "XR_MNDX_force_feedback_curl");
-    }
-
-    private static boolean check_MSFT_composition_layer_reprojection(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_MSFT_composition_layer_reprojection")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            451
-        },
-            "xrEnumerateReprojectionModesMSFT"
-        ) || reportMissing("XR", "XR_MSFT_composition_layer_reprojection");
-    }
-
-    private static boolean check_MSFT_controller_model(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_MSFT_controller_model")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            452, 453, 454, 455
-        },
-            "xrGetControllerModelKeyMSFT", "xrLoadControllerModelMSFT", "xrGetControllerModelPropertiesMSFT", "xrGetControllerModelStateMSFT"
-        ) || reportMissing("XR", "XR_MSFT_controller_model");
-    }
-
-    private static boolean check_MSFT_hand_tracking_mesh(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_MSFT_hand_tracking_mesh")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            456, 457
-        },
-            "xrCreateHandMeshSpaceMSFT", "xrUpdateHandMeshMSFT"
-        ) || reportMissing("XR", "XR_MSFT_hand_tracking_mesh");
-    }
-
-    private static boolean check_MSFT_perception_anchor_interop(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_MSFT_perception_anchor_interop")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            458, 459
-        },
-            "xrCreateSpatialAnchorFromPerceptionAnchorMSFT", "xrTryGetPerceptionAnchorFromSpatialAnchorMSFT"
-        ) || reportMissing("XR", "XR_MSFT_perception_anchor_interop");
-    }
-
-    private static boolean check_MSFT_scene_marker(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_MSFT_scene_marker")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            460, 461
-        },
-            "xrGetSceneMarkerRawDataMSFT", "xrGetSceneMarkerDecodedStringMSFT"
-        ) || reportMissing("XR", "XR_MSFT_scene_marker");
-    }
-
-    private static boolean check_MSFT_scene_understanding(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_MSFT_scene_understanding")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            462, 463, 464, 465, 466, 467, 468, 469, 470, 471
-        },
-            "xrEnumerateSceneComputeFeaturesMSFT", "xrCreateSceneObserverMSFT", "xrDestroySceneObserverMSFT", "xrCreateSceneMSFT", "xrDestroySceneMSFT", 
-            "xrComputeNewSceneMSFT", "xrGetSceneComputeStateMSFT", "xrGetSceneComponentsMSFT", "xrLocateSceneComponentsMSFT", "xrGetSceneMeshBuffersMSFT"
-        ) || reportMissing("XR", "XR_MSFT_scene_understanding");
-    }
-
-    private static boolean check_MSFT_scene_understanding_serialization(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_MSFT_scene_understanding_serialization")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            472, 473
-        },
-            "xrDeserializeSceneMSFT", "xrGetSerializedSceneFragmentDataMSFT"
-        ) || reportMissing("XR", "XR_MSFT_scene_understanding_serialization");
-    }
-
-    private static boolean check_MSFT_spatial_anchor(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_MSFT_spatial_anchor")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            474, 475, 476
-        },
-            "xrCreateSpatialAnchorMSFT", "xrCreateSpatialAnchorSpaceMSFT", "xrDestroySpatialAnchorMSFT"
-        ) || reportMissing("XR", "XR_MSFT_spatial_anchor");
-    }
-
-    private static boolean check_MSFT_spatial_anchor_persistence(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_MSFT_spatial_anchor_persistence")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            477, 478, 479, 480, 481, 482, 483
-        },
-            "xrCreateSpatialAnchorStoreConnectionMSFT", "xrDestroySpatialAnchorStoreConnectionMSFT", "xrPersistSpatialAnchorMSFT", 
-            "xrEnumeratePersistedSpatialAnchorNamesMSFT", "xrCreateSpatialAnchorFromPersistedNameMSFT", "xrUnpersistSpatialAnchorMSFT", 
-            "xrClearSpatialAnchorStoreMSFT"
-        ) || reportMissing("XR", "XR_MSFT_spatial_anchor_persistence");
-    }
-
-    private static boolean check_MSFT_spatial_graph_bridge(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_MSFT_spatial_graph_bridge")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            484, 485, 486, 487
-        },
-            "xrCreateSpatialGraphNodeSpaceMSFT", "xrTryCreateSpatialGraphStaticNodeBindingMSFT", "xrDestroySpatialGraphNodeBindingMSFT", 
-            "xrGetSpatialGraphNodeBindingPropertiesMSFT"
-        ) || reportMissing("XR", "XR_MSFT_spatial_graph_bridge");
-    }
-
-    private static boolean check_OCULUS_audio_device_guid(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_OCULUS_audio_device_guid")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            488, 489
-        },
-            "xrGetAudioOutputDeviceGuidOculus", "xrGetAudioInputDeviceGuidOculus"
-        ) || reportMissing("XR", "XR_OCULUS_audio_device_guid");
-    }
-
-    private static boolean check_OCULUS_external_camera(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_OCULUS_external_camera")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            490
-        },
-            "xrEnumerateExternalCamerasOCULUS"
-        ) || reportMissing("XR", "XR_OCULUS_external_camera");
-    }
-
-    private static boolean check_QCOM_hand_tracking_gesture(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_QCOM_hand_tracking_gesture")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            491
-        },
-            "xrGetHandGestureQCOM"
-        ) || reportMissing("XR", "XR_QCOM_hand_tracking_gesture");
-    }
-
-    private static boolean check_QCOM_tracking_optimization_settings(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_QCOM_tracking_optimization_settings")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            492
-        },
-            "xrSetTrackingOptimizationSettingsHintQCOM"
-        ) || reportMissing("XR", "XR_QCOM_tracking_optimization_settings");
-    }
-
-    private static boolean check_SONY_swapchain_color_space(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_SONY_swapchain_color_space")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            493
-        },
-            "xrEnumerateColorSpacesSONY"
-        ) || reportMissing("XR", "XR_SONY_swapchain_color_space");
-    }
-
-    private static boolean check_VARJO_environment_depth_estimation(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_VARJO_environment_depth_estimation")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            494
-        },
-            "xrSetEnvironmentDepthEstimationVARJO"
-        ) || reportMissing("XR", "XR_VARJO_environment_depth_estimation");
-    }
-
-    private static boolean check_VARJO_marker_tracking(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_VARJO_marker_tracking")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            495, 496, 497, 498, 499
-        },
-            "xrSetMarkerTrackingVARJO", "xrSetMarkerTrackingTimeoutVARJO", "xrSetMarkerTrackingPredictionVARJO", "xrGetMarkerSizeVARJO", 
-            "xrCreateMarkerSpaceVARJO"
-        ) || reportMissing("XR", "XR_VARJO_marker_tracking");
-    }
-
-    private static boolean check_VARJO_view_offset(FunctionProvider provider, long[] caps, java.util.Set<String> ext) {
-        if (!ext.contains("XR_VARJO_view_offset")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            500
-        },
-            "xrSetViewOffsetVARJO"
-        ) || reportMissing("XR", "XR_VARJO_view_offset");
     }
 
 }

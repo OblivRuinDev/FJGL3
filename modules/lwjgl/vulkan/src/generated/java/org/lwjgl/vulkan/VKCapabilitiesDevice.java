@@ -2026,23 +2026,95 @@ public class VKCapabilitiesDevice {
     /** When true, {@code VALVE_video_encode_rgb_conversion} is supported. */
     public final boolean VK_VALVE_video_encode_rgb_conversion;
 
+
+    private static boolean checkExt1(String extName, MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext, int from, int to, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, caps, from, to, functions) || reportMissing("VK", extName);
+    }
+
+    private static boolean checkExt2(String extName, MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext, int index, String function) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunction(stack, provider, caps, index, function) || reportMissing("VK", extName);
+    }
+
+    private static boolean checkExt3(String extName, MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext, int[] indices, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, caps, indices, functions) || reportMissing("VK", extName);
+    }
+
     VKCapabilitiesDevice(FunctionProvider provider, VKCapabilitiesInstance capsInstance, int apiVersion, Set<String> ext) {
         this.apiVersion = apiVersion;
 
         long[] caps = new long[699];
+        MemoryStack stack = MemoryStack.stackGet();
 
-        Vulkan10 = check_VK10(provider, caps, ext);
-        Vulkan11 = check_VK11(provider, caps, ext);
-        Vulkan12 = check_VK12(provider, caps, ext);
-        Vulkan13 = check_VK13(provider, caps, ext);
-        Vulkan14 = check_VK14(provider, caps, ext);
-        VK_AMD_anti_lag = check_AMD_anti_lag(provider, caps, ext);
-        VK_AMD_buffer_marker = check_AMD_buffer_marker(provider, caps, ext);
+        Vulkan10 = checkExt1("Vulkan10", stack, provider, caps, ext, 0, 121,
+            "vkGetDeviceProcAddr", "vkDestroyDevice", "vkGetDeviceQueue", "vkQueueSubmit", "vkQueueWaitIdle", "vkDeviceWaitIdle", "vkAllocateMemory", 
+            "vkFreeMemory", "vkMapMemory", "vkUnmapMemory", "vkFlushMappedMemoryRanges", "vkInvalidateMappedMemoryRanges", "vkGetDeviceMemoryCommitment", 
+            "vkBindBufferMemory", "vkBindImageMemory", "vkGetBufferMemoryRequirements", "vkGetImageMemoryRequirements", "vkGetImageSparseMemoryRequirements", 
+            "vkQueueBindSparse", "vkCreateFence", "vkDestroyFence", "vkResetFences", "vkGetFenceStatus", "vkWaitForFences", "vkCreateSemaphore", 
+            "vkDestroySemaphore", "vkCreateQueryPool", "vkDestroyQueryPool", "vkGetQueryPoolResults", "vkCreateBuffer", "vkDestroyBuffer", "vkCreateImage", 
+            "vkDestroyImage", "vkGetImageSubresourceLayout", "vkCreateImageView", "vkDestroyImageView", "vkCreateCommandPool", "vkDestroyCommandPool", 
+            "vkResetCommandPool", "vkAllocateCommandBuffers", "vkFreeCommandBuffers", "vkBeginCommandBuffer", "vkEndCommandBuffer", "vkResetCommandBuffer", 
+            "vkCmdCopyBuffer", "vkCmdCopyImage", "vkCmdCopyBufferToImage", "vkCmdCopyImageToBuffer", "vkCmdUpdateBuffer", "vkCmdFillBuffer", 
+            "vkCmdPipelineBarrier", "vkCmdBeginQuery", "vkCmdEndQuery", "vkCmdResetQueryPool", "vkCmdWriteTimestamp", "vkCmdCopyQueryPoolResults", 
+            "vkCmdExecuteCommands", "vkCreateEvent", "vkDestroyEvent", "vkGetEventStatus", "vkSetEvent", "vkResetEvent", "vkCreateBufferView", 
+            "vkDestroyBufferView", "vkCreateShaderModule", "vkDestroyShaderModule", "vkCreatePipelineCache", "vkDestroyPipelineCache", "vkGetPipelineCacheData", 
+            "vkMergePipelineCaches", "vkCreateComputePipelines", "vkDestroyPipeline", "vkCreatePipelineLayout", "vkDestroyPipelineLayout", "vkCreateSampler", 
+            "vkDestroySampler", "vkCreateDescriptorSetLayout", "vkDestroyDescriptorSetLayout", "vkCreateDescriptorPool", "vkDestroyDescriptorPool", 
+            "vkResetDescriptorPool", "vkAllocateDescriptorSets", "vkFreeDescriptorSets", "vkUpdateDescriptorSets", "vkCmdBindPipeline", 
+            "vkCmdBindDescriptorSets", "vkCmdClearColorImage", "vkCmdDispatch", "vkCmdDispatchIndirect", "vkCmdSetEvent", "vkCmdResetEvent", "vkCmdWaitEvents", 
+            "vkCmdPushConstants", "vkCreateGraphicsPipelines", "vkCreateFramebuffer", "vkDestroyFramebuffer", "vkCreateRenderPass", "vkDestroyRenderPass", 
+            "vkGetRenderAreaGranularity", "vkCmdSetViewport", "vkCmdSetScissor", "vkCmdSetLineWidth", "vkCmdSetDepthBias", "vkCmdSetBlendConstants", 
+            "vkCmdSetDepthBounds", "vkCmdSetStencilCompareMask", "vkCmdSetStencilWriteMask", "vkCmdSetStencilReference", "vkCmdBindIndexBuffer", 
+            "vkCmdBindVertexBuffers", "vkCmdDraw", "vkCmdDrawIndexed", "vkCmdDrawIndirect", "vkCmdDrawIndexedIndirect", "vkCmdBlitImage", 
+            "vkCmdClearDepthStencilImage", "vkCmdClearAttachments", "vkCmdResolveImage", "vkCmdBeginRenderPass", "vkCmdNextSubpass", "vkCmdEndRenderPass"
+        );
+        Vulkan11 = checkExt1("Vulkan11", stack, provider, caps, ext, 121, 137,
+            "vkBindBufferMemory2", "vkBindImageMemory2", "vkGetDeviceGroupPeerMemoryFeatures", "vkCmdSetDeviceMask", "vkGetImageMemoryRequirements2", 
+            "vkGetBufferMemoryRequirements2", "vkGetImageSparseMemoryRequirements2", "vkTrimCommandPool", "vkGetDeviceQueue2", "vkCmdDispatchBase", 
+            "vkCreateDescriptorUpdateTemplate", "vkDestroyDescriptorUpdateTemplate", "vkUpdateDescriptorSetWithTemplate", "vkGetDescriptorSetLayoutSupport", 
+            "vkCreateSamplerYcbcrConversion", "vkDestroySamplerYcbcrConversion"
+        );
+        Vulkan12 = checkExt1("Vulkan12", stack, provider, caps, ext, 137, 150,
+            "vkResetQueryPool", "vkGetSemaphoreCounterValue", "vkWaitSemaphores", "vkSignalSemaphore", "vkGetBufferDeviceAddress", 
+            "vkGetBufferOpaqueCaptureAddress", "vkGetDeviceMemoryOpaqueCaptureAddress", "vkCmdDrawIndirectCount", "vkCmdDrawIndexedIndirectCount", 
+            "vkCreateRenderPass2", "vkCmdBeginRenderPass2", "vkCmdNextSubpass2", "vkCmdEndRenderPass2"
+        );
+        Vulkan13 = checkExt1("Vulkan13", stack, provider, caps, ext, 150, 186,
+            "vkCreatePrivateDataSlot", "vkDestroyPrivateDataSlot", "vkSetPrivateData", "vkGetPrivateData", "vkCmdPipelineBarrier2", "vkCmdWriteTimestamp2", 
+            "vkQueueSubmit2", "vkCmdCopyBuffer2", "vkCmdCopyImage2", "vkCmdCopyBufferToImage2", "vkCmdCopyImageToBuffer2", 
+            "vkGetDeviceBufferMemoryRequirements", "vkGetDeviceImageMemoryRequirements", "vkGetDeviceImageSparseMemoryRequirements", "vkCmdSetEvent2", 
+            "vkCmdResetEvent2", "vkCmdWaitEvents2", "vkCmdBlitImage2", "vkCmdResolveImage2", "vkCmdBeginRendering", "vkCmdEndRendering", "vkCmdSetCullMode", 
+            "vkCmdSetFrontFace", "vkCmdSetPrimitiveTopology", "vkCmdSetViewportWithCount", "vkCmdSetScissorWithCount", "vkCmdBindVertexBuffers2", 
+            "vkCmdSetDepthTestEnable", "vkCmdSetDepthWriteEnable", "vkCmdSetDepthCompareOp", "vkCmdSetDepthBoundsTestEnable", "vkCmdSetStencilTestEnable", 
+            "vkCmdSetStencilOp", "vkCmdSetRasterizerDiscardEnable", "vkCmdSetDepthBiasEnable", "vkCmdSetPrimitiveRestartEnable"
+        );
+        Vulkan14 = checkExt1("Vulkan14", stack, provider, caps, ext, 186, 205,
+            "vkMapMemory2", "vkUnmapMemory2", "vkGetDeviceImageSubresourceLayout", "vkGetImageSubresourceLayout2", "vkCopyMemoryToImage", "vkCopyImageToMemory", 
+            "vkCopyImageToImage", "vkTransitionImageLayout", "vkCmdPushDescriptorSet", "vkCmdPushDescriptorSetWithTemplate", "vkCmdBindDescriptorSets2", 
+            "vkCmdPushConstants2", "vkCmdPushDescriptorSet2", "vkCmdPushDescriptorSetWithTemplate2", "vkCmdSetLineStipple", "vkCmdBindIndexBuffer2", 
+            "vkGetRenderingAreaGranularity", "vkCmdSetRenderingAttachmentLocations", "vkCmdSetRenderingInputAttachmentIndices"
+        );
+        VK_AMD_anti_lag = checkExt2("VK_AMD_anti_lag", stack, provider, caps, ext, 205, "vkAntiLagUpdateAMD");
+        VK_AMD_buffer_marker = check_AMD_buffer_marker(stack, provider, caps, ext);
         VK_AMD_device_coherent_memory = ext.contains("VK_AMD_device_coherent_memory");
-        VK_AMD_display_native_hdr = check_AMD_display_native_hdr(provider, caps, ext);
-        VK_AMD_draw_indirect_count = check_AMD_draw_indirect_count(provider, caps, ext);
+        VK_AMD_display_native_hdr = checkExt2("VK_AMD_display_native_hdr", stack, provider, caps, ext, 208, "vkSetLocalDimmingAMD");
+        VK_AMD_draw_indirect_count = checkExt1("VK_AMD_draw_indirect_count", stack, provider, caps, ext, 209, 211,
+            "vkCmdDrawIndirectCountAMD", "vkCmdDrawIndexedIndirectCountAMD"
+        );
         VK_AMD_gcn_shader = ext.contains("VK_AMD_gcn_shader");
-        VK_AMD_gpa_interface = check_AMD_gpa_interface(provider, caps, ext);
+        VK_AMD_gpa_interface = checkExt1("VK_AMD_gpa_interface", stack, provider, caps, ext, 211, 223,
+            "vkCreateGpaSessionAMD", "vkDestroyGpaSessionAMD", "vkSetGpaDeviceClockModeAMD", "vkGetGpaDeviceClockInfoAMD", "vkCmdBeginGpaSessionAMD", 
+            "vkCmdEndGpaSessionAMD", "vkCmdBeginGpaSampleAMD", "vkCmdEndGpaSampleAMD", "vkGetGpaSessionStatusAMD", "vkGetGpaSessionResultsAMD", 
+            "vkResetGpaSessionAMD", "vkCmdCopyGpaSessionResultsAMD"
+        );
         VK_AMD_gpu_shader_half_float = ext.contains("VK_AMD_gpu_shader_half_float");
         VK_AMD_gpu_shader_int16 = ext.contains("VK_AMD_gpu_shader_int16");
         VK_AMD_memory_overallocation_behavior = ext.contains("VK_AMD_memory_overallocation_behavior");
@@ -2057,14 +2129,23 @@ public class VKCapabilitiesDevice {
         VK_AMD_shader_explicit_vertex_parameter = ext.contains("VK_AMD_shader_explicit_vertex_parameter");
         VK_AMD_shader_fragment_mask = ext.contains("VK_AMD_shader_fragment_mask");
         VK_AMD_shader_image_load_store_lod = ext.contains("VK_AMD_shader_image_load_store_lod");
-        VK_AMD_shader_info = check_AMD_shader_info(provider, caps, ext);
+        VK_AMD_shader_info = checkExt2("VK_AMD_shader_info", stack, provider, caps, ext, 223, "vkGetShaderInfoAMD");
         VK_AMD_shader_trinary_minmax = ext.contains("VK_AMD_shader_trinary_minmax");
         VK_AMD_texture_gather_bias_lod = ext.contains("VK_AMD_texture_gather_bias_lod");
         VK_AMDX_dense_geometry_format = ext.contains("VK_AMDX_dense_geometry_format");
-        VK_AMDX_shader_enqueue = check_AMDX_shader_enqueue(provider, caps, ext);
+        VK_AMDX_shader_enqueue = checkExt1("VK_AMDX_shader_enqueue", stack, provider, caps, ext, 224, 231,
+            "vkCreateExecutionGraphPipelinesAMDX", "vkGetExecutionGraphPipelineScratchSizeAMDX", "vkGetExecutionGraphPipelineNodeIndexAMDX", 
+            "vkCmdInitializeGraphScratchMemoryAMDX", "vkCmdDispatchGraphAMDX", "vkCmdDispatchGraphIndirectAMDX", "vkCmdDispatchGraphIndirectCountAMDX"
+        );
         VK_ANDROID_external_format_resolve = ext.contains("VK_ANDROID_external_format_resolve");
-        VK_ANDROID_external_memory_android_hardware_buffer = check_ANDROID_external_memory_android_hardware_buffer(provider, caps, ext);
-        VK_ARM_data_graph = check_ARM_data_graph(provider, caps, ext);
+        VK_ANDROID_external_memory_android_hardware_buffer = checkExt1("VK_ANDROID_external_memory_android_hardware_buffer", stack, provider, caps, ext, 231, 233,
+            "vkGetAndroidHardwareBufferPropertiesANDROID", "vkGetMemoryAndroidHardwareBufferANDROID"
+        );
+        VK_ARM_data_graph = checkExt1("VK_ARM_data_graph", stack, provider, caps, ext, 233, 242,
+            "vkCreateDataGraphPipelinesARM", "vkCreateDataGraphPipelineSessionARM", "vkGetDataGraphPipelineSessionBindPointRequirementsARM", 
+            "vkGetDataGraphPipelineSessionMemoryRequirementsARM", "vkBindDataGraphPipelineSessionMemoryARM", "vkDestroyDataGraphPipelineSessionARM", 
+            "vkCmdDispatchDataGraphARM", "vkGetDataGraphPipelineAvailablePropertiesARM", "vkGetDataGraphPipelinePropertiesARM"
+        );
         VK_ARM_data_graph_instruction_set_tosa = ext.contains("VK_ARM_data_graph_instruction_set_tosa");
         VK_ARM_data_graph_neural_accelerator_statistics = ext.contains("VK_ARM_data_graph_neural_accelerator_statistics");
         VK_ARM_data_graph_optical_flow = ext.contains("VK_ARM_data_graph_optical_flow");
@@ -2073,67 +2154,93 @@ public class VKCapabilitiesDevice {
         VK_ARM_pipeline_opacity_micromap = ext.contains("VK_ARM_pipeline_opacity_micromap");
         VK_ARM_rasterization_order_attachment_access = ext.contains("VK_ARM_rasterization_order_attachment_access");
         VK_ARM_render_pass_striped = ext.contains("VK_ARM_render_pass_striped");
-        VK_ARM_scheduling_controls = check_ARM_scheduling_controls(provider, caps, ext);
+        VK_ARM_scheduling_controls = checkExt2("VK_ARM_scheduling_controls", stack, provider, caps, ext, 242, "vkCmdSetDispatchParametersARM");
         VK_ARM_shader_core_builtins = ext.contains("VK_ARM_shader_core_builtins");
         VK_ARM_shader_core_properties = ext.contains("VK_ARM_shader_core_properties");
-        VK_ARM_shader_instrumentation = check_ARM_shader_instrumentation(provider, caps, ext);
+        VK_ARM_shader_instrumentation = checkExt1("VK_ARM_shader_instrumentation", stack, provider, caps, ext, 243, 249,
+            "vkCreateShaderInstrumentationARM", "vkDestroyShaderInstrumentationARM", "vkCmdBeginShaderInstrumentationARM", "vkCmdEndShaderInstrumentationARM", 
+            "vkGetShaderInstrumentationValuesARM", "vkClearShaderInstrumentationMetricsARM"
+        );
         VK_ARM_tensor_controls = ext.contains("VK_ARM_tensor_controls");
-        VK_ARM_tensors = check_ARM_tensors(provider, caps, ext);
+        VK_ARM_tensors = check_ARM_tensors(stack, provider, caps, ext);
         VK_EXT_4444_formats = ext.contains("VK_EXT_4444_formats");
         VK_EXT_astc_decode_mode = ext.contains("VK_EXT_astc_decode_mode");
-        VK_EXT_attachment_feedback_loop_dynamic_state = check_EXT_attachment_feedback_loop_dynamic_state(provider, caps, ext);
+        VK_EXT_attachment_feedback_loop_dynamic_state = checkExt2("VK_EXT_attachment_feedback_loop_dynamic_state", stack, provider, caps, ext, 259, "vkCmdSetAttachmentFeedbackLoopEnableEXT");
         VK_EXT_attachment_feedback_loop_layout = ext.contains("VK_EXT_attachment_feedback_loop_layout");
         VK_EXT_blend_operation_advanced = ext.contains("VK_EXT_blend_operation_advanced");
         VK_EXT_border_color_swizzle = ext.contains("VK_EXT_border_color_swizzle");
-        VK_EXT_buffer_device_address = check_EXT_buffer_device_address(provider, caps, ext);
-        VK_EXT_calibrated_timestamps = check_EXT_calibrated_timestamps(provider, caps, ext);
-        VK_EXT_color_write_enable = check_EXT_color_write_enable(provider, caps, ext);
-        VK_EXT_conditional_rendering = check_EXT_conditional_rendering(provider, caps, ext);
+        VK_EXT_buffer_device_address = checkExt2("VK_EXT_buffer_device_address", stack, provider, caps, ext, 260, "vkGetBufferDeviceAddressEXT");
+        VK_EXT_calibrated_timestamps = checkExt2("VK_EXT_calibrated_timestamps", stack, provider, caps, ext, 261, "vkGetCalibratedTimestampsEXT");
+        VK_EXT_color_write_enable = checkExt2("VK_EXT_color_write_enable", stack, provider, caps, ext, 262, "vkCmdSetColorWriteEnableEXT");
+        VK_EXT_conditional_rendering = checkExt1("VK_EXT_conditional_rendering", stack, provider, caps, ext, 263, 265,
+            "vkCmdBeginConditionalRenderingEXT", "vkCmdEndConditionalRenderingEXT"
+        );
         VK_EXT_conservative_rasterization = ext.contains("VK_EXT_conservative_rasterization");
         VK_EXT_cooperative_matrix_maintenance1 = ext.contains("VK_EXT_cooperative_matrix_maintenance1");
         VK_EXT_custom_border_color = ext.contains("VK_EXT_custom_border_color");
-        VK_EXT_custom_resolve = check_EXT_custom_resolve(provider, caps, ext);
-        VK_EXT_debug_marker = check_EXT_debug_marker(provider, caps, ext);
-        VK_EXT_depth_bias_control = check_EXT_depth_bias_control(provider, caps, ext);
-        VK_EXT_depth_clamp_control = check_EXT_depth_clamp_control(provider, caps, ext);
+        VK_EXT_custom_resolve = check_EXT_custom_resolve(stack, provider, caps, ext);
+        VK_EXT_debug_marker = checkExt1("VK_EXT_debug_marker", stack, provider, caps, ext, 266, 271,
+            "vkDebugMarkerSetObjectTagEXT", "vkDebugMarkerSetObjectNameEXT", "vkCmdDebugMarkerBeginEXT", "vkCmdDebugMarkerEndEXT", "vkCmdDebugMarkerInsertEXT"
+        );
+        VK_EXT_depth_bias_control = checkExt2("VK_EXT_depth_bias_control", stack, provider, caps, ext, 271, "vkCmdSetDepthBias2EXT");
+        VK_EXT_depth_clamp_control = checkExt2("VK_EXT_depth_clamp_control", stack, provider, caps, ext, 272, "vkCmdSetDepthClampRangeEXT");
         VK_EXT_depth_clamp_zero_one = ext.contains("VK_EXT_depth_clamp_zero_one");
         VK_EXT_depth_clip_control = ext.contains("VK_EXT_depth_clip_control");
         VK_EXT_depth_clip_enable = ext.contains("VK_EXT_depth_clip_enable");
         VK_EXT_depth_range_unrestricted = ext.contains("VK_EXT_depth_range_unrestricted");
-        VK_EXT_descriptor_buffer = check_EXT_descriptor_buffer(provider, caps, ext);
-        VK_EXT_descriptor_heap = check_EXT_descriptor_heap(provider, caps, ext);
+        VK_EXT_descriptor_buffer = check_EXT_descriptor_buffer(stack, provider, caps, ext);
+        VK_EXT_descriptor_heap = check_EXT_descriptor_heap(stack, provider, caps, ext);
         VK_EXT_descriptor_indexing = ext.contains("VK_EXT_descriptor_indexing");
         VK_EXT_device_address_binding_report = ext.contains("VK_EXT_device_address_binding_report");
-        VK_EXT_device_fault = check_EXT_device_fault(provider, caps, ext);
-        VK_EXT_device_generated_commands = check_EXT_device_generated_commands(provider, caps, ext);
+        VK_EXT_device_fault = checkExt2("VK_EXT_device_fault", stack, provider, caps, ext, 293, "vkGetDeviceFaultInfoEXT");
+        VK_EXT_device_generated_commands = checkExt1("VK_EXT_device_generated_commands", stack, provider, caps, ext, 294, 303,
+            "vkGetGeneratedCommandsMemoryRequirementsEXT", "vkCmdPreprocessGeneratedCommandsEXT", "vkCmdExecuteGeneratedCommandsEXT", 
+            "vkCreateIndirectCommandsLayoutEXT", "vkDestroyIndirectCommandsLayoutEXT", "vkCreateIndirectExecutionSetEXT", "vkDestroyIndirectExecutionSetEXT", 
+            "vkUpdateIndirectExecutionSetPipelineEXT", "vkUpdateIndirectExecutionSetShaderEXT"
+        );
         VK_EXT_device_memory_report = ext.contains("VK_EXT_device_memory_report");
-        VK_EXT_discard_rectangles = check_EXT_discard_rectangles(provider, caps, ext);
-        VK_EXT_display_control = check_EXT_display_control(provider, caps, ext);
+        VK_EXT_discard_rectangles = checkExt1("VK_EXT_discard_rectangles", stack, provider, caps, ext, 303, 306,
+            "vkCmdSetDiscardRectangleEXT", "vkCmdSetDiscardRectangleEnableEXT", "vkCmdSetDiscardRectangleModeEXT"
+        );
+        VK_EXT_display_control = checkExt1("VK_EXT_display_control", stack, provider, caps, ext, 306, 310,
+            "vkDisplayPowerControlEXT", "vkRegisterDeviceEventEXT", "vkRegisterDisplayEventEXT", "vkGetSwapchainCounterEXT"
+        );
         VK_EXT_dynamic_rendering_unused_attachments = ext.contains("VK_EXT_dynamic_rendering_unused_attachments");
-        VK_EXT_extended_dynamic_state = check_EXT_extended_dynamic_state(provider, caps, ext);
-        VK_EXT_extended_dynamic_state2 = check_EXT_extended_dynamic_state2(provider, caps, ext);
-        VK_EXT_extended_dynamic_state3 = check_EXT_extended_dynamic_state3(provider, caps, ext);
+        VK_EXT_extended_dynamic_state = checkExt1("VK_EXT_extended_dynamic_state", stack, provider, caps, ext, 310, 322,
+            "vkCmdSetCullModeEXT", "vkCmdSetFrontFaceEXT", "vkCmdSetPrimitiveTopologyEXT", "vkCmdSetViewportWithCountEXT", "vkCmdSetScissorWithCountEXT", 
+            "vkCmdBindVertexBuffers2EXT", "vkCmdSetDepthTestEnableEXT", "vkCmdSetDepthWriteEnableEXT", "vkCmdSetDepthCompareOpEXT", 
+            "vkCmdSetDepthBoundsTestEnableEXT", "vkCmdSetStencilTestEnableEXT", "vkCmdSetStencilOpEXT"
+        );
+        VK_EXT_extended_dynamic_state2 = checkExt1("VK_EXT_extended_dynamic_state2", stack, provider, caps, ext, 322, 327,
+            "vkCmdSetPatchControlPointsEXT", "vkCmdSetRasterizerDiscardEnableEXT", "vkCmdSetDepthBiasEnableEXT", "vkCmdSetLogicOpEXT", 
+            "vkCmdSetPrimitiveRestartEnableEXT"
+        );
+        VK_EXT_extended_dynamic_state3 = check_EXT_extended_dynamic_state3(stack, provider, caps, ext);
         VK_EXT_external_memory_acquire_unmodified = ext.contains("VK_EXT_external_memory_acquire_unmodified");
         VK_EXT_external_memory_dma_buf = ext.contains("VK_EXT_external_memory_dma_buf");
-        VK_EXT_external_memory_host = check_EXT_external_memory_host(provider, caps, ext);
-        VK_EXT_external_memory_metal = check_EXT_external_memory_metal(provider, caps, ext);
+        VK_EXT_external_memory_host = checkExt2("VK_EXT_external_memory_host", stack, provider, caps, ext, 358, "vkGetMemoryHostPointerPropertiesEXT");
+        VK_EXT_external_memory_metal = checkExt1("VK_EXT_external_memory_metal", stack, provider, caps, ext, 359, 361,
+            "vkGetMemoryMetalHandleEXT", "vkGetMemoryMetalHandlePropertiesEXT"
+        );
         VK_EXT_filter_cubic = ext.contains("VK_EXT_filter_cubic");
         VK_EXT_fragment_density_map = ext.contains("VK_EXT_fragment_density_map");
         VK_EXT_fragment_density_map2 = ext.contains("VK_EXT_fragment_density_map2");
-        VK_EXT_fragment_density_map_offset = check_EXT_fragment_density_map_offset(provider, caps, ext);
+        VK_EXT_fragment_density_map_offset = checkExt2("VK_EXT_fragment_density_map_offset", stack, provider, caps, ext, 361, "vkCmdEndRendering2EXT");
         VK_EXT_fragment_shader_interlock = ext.contains("VK_EXT_fragment_shader_interlock");
         VK_EXT_frame_boundary = ext.contains("VK_EXT_frame_boundary");
-        VK_EXT_full_screen_exclusive = check_EXT_full_screen_exclusive(provider, caps, ext);
+        VK_EXT_full_screen_exclusive = check_EXT_full_screen_exclusive(stack, provider, caps, ext);
         VK_EXT_global_priority = ext.contains("VK_EXT_global_priority");
         VK_EXT_global_priority_query = ext.contains("VK_EXT_global_priority_query");
         VK_EXT_graphics_pipeline_library = ext.contains("VK_EXT_graphics_pipeline_library");
-        VK_EXT_hdr_metadata = check_EXT_hdr_metadata(provider, caps, ext);
-        VK_EXT_host_image_copy = check_EXT_host_image_copy(provider, caps, ext);
-        VK_EXT_host_query_reset = check_EXT_host_query_reset(provider, caps, ext);
+        VK_EXT_hdr_metadata = checkExt2("VK_EXT_hdr_metadata", stack, provider, caps, ext, 365, "vkSetHdrMetadataEXT");
+        VK_EXT_host_image_copy = checkExt1("VK_EXT_host_image_copy", stack, provider, caps, ext, 366, 371,
+            "vkCopyMemoryToImageEXT", "vkCopyImageToMemoryEXT", "vkCopyImageToImageEXT", "vkTransitionImageLayoutEXT", "vkGetImageSubresourceLayout2EXT"
+        );
+        VK_EXT_host_query_reset = checkExt2("VK_EXT_host_query_reset", stack, provider, caps, ext, 371, "vkResetQueryPoolEXT");
         VK_EXT_image_2d_view_of_3d = ext.contains("VK_EXT_image_2d_view_of_3d");
-        VK_EXT_image_compression_control = check_EXT_image_compression_control(provider, caps, ext);
+        VK_EXT_image_compression_control = checkExt2("VK_EXT_image_compression_control", stack, provider, caps, ext, 370, "vkGetImageSubresourceLayout2EXT");
         VK_EXT_image_compression_control_swapchain = ext.contains("VK_EXT_image_compression_control_swapchain");
-        VK_EXT_image_drm_format_modifier = check_EXT_image_drm_format_modifier(provider, caps, ext);
+        VK_EXT_image_drm_format_modifier = checkExt2("VK_EXT_image_drm_format_modifier", stack, provider, caps, ext, 372, "vkGetImageDrmFormatModifierPropertiesEXT");
         VK_EXT_image_robustness = ext.contains("VK_EXT_image_robustness");
         VK_EXT_image_sliced_view_of_3d = ext.contains("VK_EXT_image_sliced_view_of_3d");
         VK_EXT_image_tiling_control = ext.contains("VK_EXT_image_tiling_control");
@@ -2142,44 +2249,57 @@ public class VKCapabilitiesDevice {
         VK_EXT_inline_uniform_block = ext.contains("VK_EXT_inline_uniform_block");
         VK_EXT_legacy_dithering = ext.contains("VK_EXT_legacy_dithering");
         VK_EXT_legacy_vertex_attributes = ext.contains("VK_EXT_legacy_vertex_attributes");
-        VK_EXT_line_rasterization = check_EXT_line_rasterization(provider, caps, ext);
+        VK_EXT_line_rasterization = checkExt2("VK_EXT_line_rasterization", stack, provider, caps, ext, 373, "vkCmdSetLineStippleEXT");
         VK_EXT_load_store_op_none = ext.contains("VK_EXT_load_store_op_none");
         VK_EXT_map_memory_placed = ext.contains("VK_EXT_map_memory_placed");
         VK_EXT_memory_budget = ext.contains("VK_EXT_memory_budget");
-        VK_EXT_memory_decompression = check_EXT_memory_decompression(provider, caps, ext);
+        VK_EXT_memory_decompression = checkExt1("VK_EXT_memory_decompression", stack, provider, caps, ext, 374, 376,
+            "vkCmdDecompressMemoryEXT", "vkCmdDecompressMemoryIndirectCountEXT"
+        );
         VK_EXT_memory_priority = ext.contains("VK_EXT_memory_priority");
-        VK_EXT_mesh_shader = check_EXT_mesh_shader(provider, caps, ext);
-        VK_EXT_metal_objects = check_EXT_metal_objects(provider, caps, ext);
-        VK_EXT_multi_draw = check_EXT_multi_draw(provider, caps, ext);
+        VK_EXT_mesh_shader = check_EXT_mesh_shader(stack, provider, caps, ext);
+        VK_EXT_metal_objects = checkExt2("VK_EXT_metal_objects", stack, provider, caps, ext, 379, "vkExportMetalObjectsEXT");
+        VK_EXT_multi_draw = checkExt1("VK_EXT_multi_draw", stack, provider, caps, ext, 380, 382,
+            "vkCmdDrawMultiEXT", "vkCmdDrawMultiIndexedEXT"
+        );
         VK_EXT_multisampled_render_to_single_sampled = ext.contains("VK_EXT_multisampled_render_to_single_sampled");
         VK_EXT_multisampled_render_to_swapchain = ext.contains("VK_EXT_multisampled_render_to_swapchain");
         VK_EXT_mutable_descriptor_type = ext.contains("VK_EXT_mutable_descriptor_type");
         VK_EXT_nested_command_buffer = ext.contains("VK_EXT_nested_command_buffer");
         VK_EXT_non_seamless_cube_map = ext.contains("VK_EXT_non_seamless_cube_map");
-        VK_EXT_opacity_micromap = check_EXT_opacity_micromap(provider, caps, ext);
-        VK_EXT_pageable_device_local_memory = check_EXT_pageable_device_local_memory(provider, caps, ext);
+        VK_EXT_opacity_micromap = checkExt1("VK_EXT_opacity_micromap", stack, provider, caps, ext, 382, 396,
+            "vkCreateMicromapEXT", "vkDestroyMicromapEXT", "vkCmdBuildMicromapsEXT", "vkBuildMicromapsEXT", "vkCopyMicromapEXT", "vkCopyMicromapToMemoryEXT", 
+            "vkCopyMemoryToMicromapEXT", "vkWriteMicromapsPropertiesEXT", "vkCmdCopyMicromapEXT", "vkCmdCopyMicromapToMemoryEXT", 
+            "vkCmdCopyMemoryToMicromapEXT", "vkCmdWriteMicromapsPropertiesEXT", "vkGetDeviceMicromapCompatibilityEXT", "vkGetMicromapBuildSizesEXT"
+        );
+        VK_EXT_pageable_device_local_memory = checkExt2("VK_EXT_pageable_device_local_memory", stack, provider, caps, ext, 396, "vkSetDeviceMemoryPriorityEXT");
         VK_EXT_pci_bus_info = ext.contains("VK_EXT_pci_bus_info");
         VK_EXT_physical_device_drm = ext.contains("VK_EXT_physical_device_drm");
         VK_EXT_pipeline_creation_cache_control = ext.contains("VK_EXT_pipeline_creation_cache_control");
         VK_EXT_pipeline_creation_feedback = ext.contains("VK_EXT_pipeline_creation_feedback");
         VK_EXT_pipeline_library_group_handles = ext.contains("VK_EXT_pipeline_library_group_handles");
-        VK_EXT_pipeline_properties = check_EXT_pipeline_properties(provider, caps, ext);
+        VK_EXT_pipeline_properties = checkExt2("VK_EXT_pipeline_properties", stack, provider, caps, ext, 397, "vkGetPipelinePropertiesEXT");
         VK_EXT_pipeline_protected_access = ext.contains("VK_EXT_pipeline_protected_access");
         VK_EXT_pipeline_robustness = ext.contains("VK_EXT_pipeline_robustness");
         VK_EXT_post_depth_coverage = ext.contains("VK_EXT_post_depth_coverage");
         VK_EXT_present_mode_fifo_latest_ready = ext.contains("VK_EXT_present_mode_fifo_latest_ready");
-        VK_EXT_present_timing = check_EXT_present_timing(provider, caps, ext);
-        VK_EXT_primitive_restart_index = check_EXT_primitive_restart_index(provider, caps, ext);
+        VK_EXT_present_timing = checkExt1("VK_EXT_present_timing", stack, provider, caps, ext, 398, 402,
+            "vkSetSwapchainPresentTimingQueueSizeEXT", "vkGetSwapchainTimingPropertiesEXT", "vkGetSwapchainTimeDomainPropertiesEXT", 
+            "vkGetPastPresentationTimingEXT"
+        );
+        VK_EXT_primitive_restart_index = checkExt2("VK_EXT_primitive_restart_index", stack, provider, caps, ext, 402, "vkCmdSetPrimitiveRestartIndexEXT");
         VK_EXT_primitive_topology_list_restart = ext.contains("VK_EXT_primitive_topology_list_restart");
         VK_EXT_primitives_generated_query = ext.contains("VK_EXT_primitives_generated_query");
-        VK_EXT_private_data = check_EXT_private_data(provider, caps, ext);
+        VK_EXT_private_data = checkExt1("VK_EXT_private_data", stack, provider, caps, ext, 403, 407,
+            "vkCreatePrivateDataSlotEXT", "vkDestroyPrivateDataSlotEXT", "vkSetPrivateDataEXT", "vkGetPrivateDataEXT"
+        );
         VK_EXT_provoking_vertex = ext.contains("VK_EXT_provoking_vertex");
         VK_EXT_queue_family_foreign = ext.contains("VK_EXT_queue_family_foreign");
         VK_EXT_rasterization_order_attachment_access = ext.contains("VK_EXT_rasterization_order_attachment_access");
         VK_EXT_ray_tracing_invocation_reorder = ext.contains("VK_EXT_ray_tracing_invocation_reorder");
         VK_EXT_rgba10x6_formats = ext.contains("VK_EXT_rgba10x6_formats");
         VK_EXT_robustness2 = ext.contains("VK_EXT_robustness2");
-        VK_EXT_sample_locations = check_EXT_sample_locations(provider, caps, ext);
+        VK_EXT_sample_locations = checkExt2("VK_EXT_sample_locations", stack, provider, caps, ext, 407, "vkCmdSetSampleLocationsEXT");
         VK_EXT_sampler_filter_minmax = ext.contains("VK_EXT_sampler_filter_minmax");
         VK_EXT_scalar_block_layout = ext.contains("VK_EXT_scalar_block_layout");
         VK_EXT_separate_stencil_usage = ext.contains("VK_EXT_separate_stencil_usage");
@@ -2190,8 +2310,10 @@ public class VKCapabilitiesDevice {
         VK_EXT_shader_float8 = ext.contains("VK_EXT_shader_float8");
         VK_EXT_shader_image_atomic_int64 = ext.contains("VK_EXT_shader_image_atomic_int64");
         VK_EXT_shader_long_vector = ext.contains("VK_EXT_shader_long_vector");
-        VK_EXT_shader_module_identifier = check_EXT_shader_module_identifier(provider, caps, ext);
-        VK_EXT_shader_object = check_EXT_shader_object(provider, caps, ext);
+        VK_EXT_shader_module_identifier = checkExt1("VK_EXT_shader_module_identifier", stack, provider, caps, ext, 408, 410,
+            "vkGetShaderModuleIdentifierEXT", "vkGetShaderModuleCreateInfoIdentifierEXT"
+        );
+        VK_EXT_shader_object = check_EXT_shader_object(stack, provider, caps, ext);
         VK_EXT_shader_ocp_microscaling_types = ext.contains("VK_EXT_shader_ocp_microscaling_types");
         VK_EXT_shader_replicated_composites = ext.contains("VK_EXT_shader_replicated_composites");
         VK_EXT_shader_split_barrier = ext.contains("VK_EXT_shader_split_barrier");
@@ -2204,112 +2326,188 @@ public class VKCapabilitiesDevice {
         VK_EXT_shader_viewport_index_layer = ext.contains("VK_EXT_shader_viewport_index_layer");
         VK_EXT_subgroup_size_control = ext.contains("VK_EXT_subgroup_size_control");
         VK_EXT_subpass_merge_feedback = ext.contains("VK_EXT_subpass_merge_feedback");
-        VK_EXT_swapchain_maintenance1 = check_EXT_swapchain_maintenance1(provider, caps, ext);
+        VK_EXT_swapchain_maintenance1 = checkExt2("VK_EXT_swapchain_maintenance1", stack, provider, caps, ext, 415, "vkReleaseSwapchainImagesEXT");
         VK_EXT_texel_buffer_alignment = ext.contains("VK_EXT_texel_buffer_alignment");
         VK_EXT_texture_compression_astc_3d = ext.contains("VK_EXT_texture_compression_astc_3d");
         VK_EXT_texture_compression_astc_hdr = ext.contains("VK_EXT_texture_compression_astc_hdr");
         VK_EXT_tooling_info = ext.contains("VK_EXT_tooling_info");
-        VK_EXT_transform_feedback = check_EXT_transform_feedback(provider, caps, ext);
-        VK_EXT_validation_cache = check_EXT_validation_cache(provider, caps, ext);
+        VK_EXT_transform_feedback = checkExt1("VK_EXT_transform_feedback", stack, provider, caps, ext, 416, 422,
+            "vkCmdBindTransformFeedbackBuffersEXT", "vkCmdBeginTransformFeedbackEXT", "vkCmdEndTransformFeedbackEXT", "vkCmdBeginQueryIndexedEXT", 
+            "vkCmdEndQueryIndexedEXT", "vkCmdDrawIndirectByteCountEXT"
+        );
+        VK_EXT_validation_cache = checkExt1("VK_EXT_validation_cache", stack, provider, caps, ext, 422, 426,
+            "vkCreateValidationCacheEXT", "vkDestroyValidationCacheEXT", "vkMergeValidationCachesEXT", "vkGetValidationCacheDataEXT"
+        );
         VK_EXT_vertex_attribute_divisor = ext.contains("VK_EXT_vertex_attribute_divisor");
         VK_EXT_vertex_attribute_robustness = ext.contains("VK_EXT_vertex_attribute_robustness");
-        VK_EXT_vertex_input_dynamic_state = check_EXT_vertex_input_dynamic_state(provider, caps, ext);
+        VK_EXT_vertex_input_dynamic_state = checkExt2("VK_EXT_vertex_input_dynamic_state", stack, provider, caps, ext, 414, "vkCmdSetVertexInputEXT");
         VK_EXT_ycbcr_2plane_444_formats = ext.contains("VK_EXT_ycbcr_2plane_444_formats");
         VK_EXT_ycbcr_image_arrays = ext.contains("VK_EXT_ycbcr_image_arrays");
         VK_EXT_zero_initialize_device_memory = ext.contains("VK_EXT_zero_initialize_device_memory");
         VK_GOOGLE_decorate_string = ext.contains("VK_GOOGLE_decorate_string");
-        VK_GOOGLE_display_timing = check_GOOGLE_display_timing(provider, caps, ext);
+        VK_GOOGLE_display_timing = checkExt1("VK_GOOGLE_display_timing", stack, provider, caps, ext, 426, 428,
+            "vkGetRefreshCycleDurationGOOGLE", "vkGetPastPresentationTimingGOOGLE"
+        );
         VK_GOOGLE_hlsl_functionality1 = ext.contains("VK_GOOGLE_hlsl_functionality1");
         VK_GOOGLE_user_type = ext.contains("VK_GOOGLE_user_type");
-        VK_HUAWEI_cluster_culling_shader = check_HUAWEI_cluster_culling_shader(provider, caps, ext);
+        VK_HUAWEI_cluster_culling_shader = checkExt1("VK_HUAWEI_cluster_culling_shader", stack, provider, caps, ext, 428, 430,
+            "vkCmdDrawClusterHUAWEI", "vkCmdDrawClusterIndirectHUAWEI"
+        );
         VK_HUAWEI_hdr_vivid = ext.contains("VK_HUAWEI_hdr_vivid");
-        VK_HUAWEI_invocation_mask = check_HUAWEI_invocation_mask(provider, caps, ext);
-        VK_HUAWEI_subpass_shading = check_HUAWEI_subpass_shading(provider, caps, ext);
+        VK_HUAWEI_invocation_mask = checkExt2("VK_HUAWEI_invocation_mask", stack, provider, caps, ext, 430, "vkCmdBindInvocationMaskHUAWEI");
+        VK_HUAWEI_subpass_shading = checkExt1("VK_HUAWEI_subpass_shading", stack, provider, caps, ext, 431, 433,
+            "vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI", "vkCmdSubpassShadingHUAWEI"
+        );
         VK_IMG_filter_cubic = ext.contains("VK_IMG_filter_cubic");
         VK_IMG_filter_linear_2d = ext.contains("VK_IMG_filter_linear_2d");
         VK_IMG_format_pvrtc = ext.contains("VK_IMG_format_pvrtc");
         VK_IMG_relaxed_line_rasterization = ext.contains("VK_IMG_relaxed_line_rasterization");
-        VK_INTEL_performance_query = check_INTEL_performance_query(provider, caps, ext);
+        VK_INTEL_performance_query = checkExt1("VK_INTEL_performance_query", stack, provider, caps, ext, 433, 442,
+            "vkInitializePerformanceApiINTEL", "vkUninitializePerformanceApiINTEL", "vkCmdSetPerformanceMarkerINTEL", "vkCmdSetPerformanceStreamMarkerINTEL", 
+            "vkCmdSetPerformanceOverrideINTEL", "vkAcquirePerformanceConfigurationINTEL", "vkReleasePerformanceConfigurationINTEL", 
+            "vkQueueSetPerformanceConfigurationINTEL", "vkGetPerformanceParameterINTEL"
+        );
         VK_INTEL_shader_integer_functions2 = ext.contains("VK_INTEL_shader_integer_functions2");
         VK_KHR_16bit_storage = ext.contains("VK_KHR_16bit_storage");
         VK_KHR_8bit_storage = ext.contains("VK_KHR_8bit_storage");
-        VK_KHR_acceleration_structure = check_KHR_acceleration_structure(provider, caps, ext);
-        VK_KHR_bind_memory2 = check_KHR_bind_memory2(provider, caps, ext);
-        VK_KHR_buffer_device_address = check_KHR_buffer_device_address(provider, caps, ext);
-        VK_KHR_calibrated_timestamps = check_KHR_calibrated_timestamps(provider, caps, ext);
+        VK_KHR_acceleration_structure = checkExt1("VK_KHR_acceleration_structure", stack, provider, caps, ext, 442, 458,
+            "vkCreateAccelerationStructureKHR", "vkDestroyAccelerationStructureKHR", "vkCmdBuildAccelerationStructuresKHR", 
+            "vkCmdBuildAccelerationStructuresIndirectKHR", "vkBuildAccelerationStructuresKHR", "vkCopyAccelerationStructureKHR", 
+            "vkCopyAccelerationStructureToMemoryKHR", "vkCopyMemoryToAccelerationStructureKHR", "vkWriteAccelerationStructuresPropertiesKHR", 
+            "vkCmdCopyAccelerationStructureKHR", "vkCmdCopyAccelerationStructureToMemoryKHR", "vkCmdCopyMemoryToAccelerationStructureKHR", 
+            "vkGetAccelerationStructureDeviceAddressKHR", "vkCmdWriteAccelerationStructuresPropertiesKHR", "vkGetDeviceAccelerationStructureCompatibilityKHR", 
+            "vkGetAccelerationStructureBuildSizesKHR"
+        );
+        VK_KHR_bind_memory2 = checkExt1("VK_KHR_bind_memory2", stack, provider, caps, ext, 458, 460,
+            "vkBindBufferMemory2KHR", "vkBindImageMemory2KHR"
+        );
+        VK_KHR_buffer_device_address = checkExt1("VK_KHR_buffer_device_address", stack, provider, caps, ext, 460, 463,
+            "vkGetBufferDeviceAddressKHR", "vkGetBufferOpaqueCaptureAddressKHR", "vkGetDeviceMemoryOpaqueCaptureAddressKHR"
+        );
+        VK_KHR_calibrated_timestamps = checkExt2("VK_KHR_calibrated_timestamps", stack, provider, caps, ext, 463, "vkGetCalibratedTimestampsKHR");
         VK_KHR_compute_shader_derivatives = ext.contains("VK_KHR_compute_shader_derivatives");
         VK_KHR_cooperative_matrix = ext.contains("VK_KHR_cooperative_matrix");
-        VK_KHR_copy_commands2 = check_KHR_copy_commands2(provider, caps, ext);
-        VK_KHR_copy_memory_indirect = check_KHR_copy_memory_indirect(provider, caps, ext);
-        VK_KHR_create_renderpass2 = check_KHR_create_renderpass2(provider, caps, ext);
+        VK_KHR_copy_commands2 = checkExt1("VK_KHR_copy_commands2", stack, provider, caps, ext, 464, 470,
+            "vkCmdCopyBuffer2KHR", "vkCmdCopyImage2KHR", "vkCmdCopyBufferToImage2KHR", "vkCmdCopyImageToBuffer2KHR", "vkCmdBlitImage2KHR", 
+            "vkCmdResolveImage2KHR"
+        );
+        VK_KHR_copy_memory_indirect = checkExt1("VK_KHR_copy_memory_indirect", stack, provider, caps, ext, 470, 472,
+            "vkCmdCopyMemoryIndirectKHR", "vkCmdCopyMemoryToImageIndirectKHR"
+        );
+        VK_KHR_create_renderpass2 = checkExt1("VK_KHR_create_renderpass2", stack, provider, caps, ext, 472, 476,
+            "vkCreateRenderPass2KHR", "vkCmdBeginRenderPass2KHR", "vkCmdNextSubpass2KHR", "vkCmdEndRenderPass2KHR"
+        );
         VK_KHR_dedicated_allocation = ext.contains("VK_KHR_dedicated_allocation");
-        VK_KHR_deferred_host_operations = check_KHR_deferred_host_operations(provider, caps, ext);
+        VK_KHR_deferred_host_operations = checkExt1("VK_KHR_deferred_host_operations", stack, provider, caps, ext, 476, 481,
+            "vkCreateDeferredOperationKHR", "vkDestroyDeferredOperationKHR", "vkGetDeferredOperationMaxConcurrencyKHR", "vkGetDeferredOperationResultKHR", 
+            "vkDeferredOperationJoinKHR"
+        );
         VK_KHR_depth_clamp_zero_one = ext.contains("VK_KHR_depth_clamp_zero_one");
         VK_KHR_depth_stencil_resolve = ext.contains("VK_KHR_depth_stencil_resolve");
-        VK_KHR_descriptor_update_template = check_KHR_descriptor_update_template(provider, caps, ext);
-        VK_KHR_device_address_commands = check_KHR_device_address_commands(provider, caps, ext);
-        VK_KHR_device_fault = check_KHR_device_fault(provider, caps, ext);
-        VK_KHR_device_group = check_KHR_device_group(provider, caps, ext);
-        VK_KHR_display_swapchain = check_KHR_display_swapchain(provider, caps, ext);
-        VK_KHR_draw_indirect_count = check_KHR_draw_indirect_count(provider, caps, ext);
+        VK_KHR_descriptor_update_template = check_KHR_descriptor_update_template(stack, provider, caps, ext);
+        VK_KHR_device_address_commands = check_KHR_device_address_commands(stack, provider, caps, ext);
+        VK_KHR_device_fault = checkExt1("VK_KHR_device_fault", stack, provider, caps, ext, 507, 509,
+            "vkGetDeviceFaultReportsKHR", "vkGetDeviceFaultDebugInfoKHR"
+        );
+        VK_KHR_device_group = check_KHR_device_group(stack, provider, caps, ext);
+        VK_KHR_display_swapchain = checkExt2("VK_KHR_display_swapchain", stack, provider, caps, ext, 515, "vkCreateSharedSwapchainsKHR");
+        VK_KHR_draw_indirect_count = checkExt1("VK_KHR_draw_indirect_count", stack, provider, caps, ext, 516, 518,
+            "vkCmdDrawIndirectCountKHR", "vkCmdDrawIndexedIndirectCountKHR"
+        );
         VK_KHR_driver_properties = ext.contains("VK_KHR_driver_properties");
-        VK_KHR_dynamic_rendering = check_KHR_dynamic_rendering(provider, caps, ext);
-        VK_KHR_dynamic_rendering_local_read = check_KHR_dynamic_rendering_local_read(provider, caps, ext);
+        VK_KHR_dynamic_rendering = checkExt1("VK_KHR_dynamic_rendering", stack, provider, caps, ext, 518, 520,
+            "vkCmdBeginRenderingKHR", "vkCmdEndRenderingKHR"
+        );
+        VK_KHR_dynamic_rendering_local_read = checkExt1("VK_KHR_dynamic_rendering_local_read", stack, provider, caps, ext, 520, 522,
+            "vkCmdSetRenderingAttachmentLocationsKHR", "vkCmdSetRenderingInputAttachmentIndicesKHR"
+        );
         VK_KHR_extended_flags = ext.contains("VK_KHR_extended_flags");
         VK_KHR_external_fence = ext.contains("VK_KHR_external_fence");
-        VK_KHR_external_fence_fd = check_KHR_external_fence_fd(provider, caps, ext);
-        VK_KHR_external_fence_win32 = check_KHR_external_fence_win32(provider, caps, ext);
+        VK_KHR_external_fence_fd = checkExt1("VK_KHR_external_fence_fd", stack, provider, caps, ext, 522, 524,
+            "vkImportFenceFdKHR", "vkGetFenceFdKHR"
+        );
+        VK_KHR_external_fence_win32 = checkExt1("VK_KHR_external_fence_win32", stack, provider, caps, ext, 524, 526,
+            "vkImportFenceWin32HandleKHR", "vkGetFenceWin32HandleKHR"
+        );
         VK_KHR_external_memory = ext.contains("VK_KHR_external_memory");
-        VK_KHR_external_memory_fd = check_KHR_external_memory_fd(provider, caps, ext);
-        VK_KHR_external_memory_win32 = check_KHR_external_memory_win32(provider, caps, ext);
+        VK_KHR_external_memory_fd = checkExt1("VK_KHR_external_memory_fd", stack, provider, caps, ext, 526, 528,
+            "vkGetMemoryFdKHR", "vkGetMemoryFdPropertiesKHR"
+        );
+        VK_KHR_external_memory_win32 = checkExt1("VK_KHR_external_memory_win32", stack, provider, caps, ext, 528, 530,
+            "vkGetMemoryWin32HandleKHR", "vkGetMemoryWin32HandlePropertiesKHR"
+        );
         VK_KHR_external_semaphore = ext.contains("VK_KHR_external_semaphore");
-        VK_KHR_external_semaphore_fd = check_KHR_external_semaphore_fd(provider, caps, ext);
-        VK_KHR_external_semaphore_win32 = check_KHR_external_semaphore_win32(provider, caps, ext);
+        VK_KHR_external_semaphore_fd = checkExt1("VK_KHR_external_semaphore_fd", stack, provider, caps, ext, 530, 532,
+            "vkImportSemaphoreFdKHR", "vkGetSemaphoreFdKHR"
+        );
+        VK_KHR_external_semaphore_win32 = checkExt1("VK_KHR_external_semaphore_win32", stack, provider, caps, ext, 532, 534,
+            "vkImportSemaphoreWin32HandleKHR", "vkGetSemaphoreWin32HandleKHR"
+        );
         VK_KHR_format_feature_flags2 = ext.contains("VK_KHR_format_feature_flags2");
         VK_KHR_fragment_shader_barycentric = ext.contains("VK_KHR_fragment_shader_barycentric");
-        VK_KHR_fragment_shading_rate = check_KHR_fragment_shading_rate(provider, caps, ext);
-        VK_KHR_get_memory_requirements2 = check_KHR_get_memory_requirements2(provider, caps, ext);
+        VK_KHR_fragment_shading_rate = checkExt2("VK_KHR_fragment_shading_rate", stack, provider, caps, ext, 534, "vkCmdSetFragmentShadingRateKHR");
+        VK_KHR_get_memory_requirements2 = checkExt1("VK_KHR_get_memory_requirements2", stack, provider, caps, ext, 535, 538,
+            "vkGetImageMemoryRequirements2KHR", "vkGetBufferMemoryRequirements2KHR", "vkGetImageSparseMemoryRequirements2KHR"
+        );
         VK_KHR_global_priority = ext.contains("VK_KHR_global_priority");
         VK_KHR_image_format_list = ext.contains("VK_KHR_image_format_list");
         VK_KHR_imageless_framebuffer = ext.contains("VK_KHR_imageless_framebuffer");
         VK_KHR_incremental_present = ext.contains("VK_KHR_incremental_present");
         VK_KHR_index_type_uint8 = ext.contains("VK_KHR_index_type_uint8");
         VK_KHR_internally_synchronized_queues = ext.contains("VK_KHR_internally_synchronized_queues");
-        VK_KHR_line_rasterization = check_KHR_line_rasterization(provider, caps, ext);
+        VK_KHR_line_rasterization = checkExt2("VK_KHR_line_rasterization", stack, provider, caps, ext, 538, "vkCmdSetLineStippleKHR");
         VK_KHR_load_store_op_none = ext.contains("VK_KHR_load_store_op_none");
-        VK_KHR_maintenance1 = check_KHR_maintenance1(provider, caps, ext);
-        VK_KHR_maintenance10 = check_KHR_maintenance10(provider, caps, ext);
+        VK_KHR_maintenance1 = checkExt2("VK_KHR_maintenance1", stack, provider, caps, ext, 539, "vkTrimCommandPoolKHR");
+        VK_KHR_maintenance10 = checkExt2("VK_KHR_maintenance10", stack, provider, caps, ext, 540, "vkCmdEndRendering2KHR");
         VK_KHR_maintenance11 = ext.contains("VK_KHR_maintenance11");
         VK_KHR_maintenance2 = ext.contains("VK_KHR_maintenance2");
-        VK_KHR_maintenance3 = check_KHR_maintenance3(provider, caps, ext);
-        VK_KHR_maintenance4 = check_KHR_maintenance4(provider, caps, ext);
-        VK_KHR_maintenance5 = check_KHR_maintenance5(provider, caps, ext);
-        VK_KHR_maintenance6 = check_KHR_maintenance6(provider, caps, ext);
+        VK_KHR_maintenance3 = checkExt2("VK_KHR_maintenance3", stack, provider, caps, ext, 541, "vkGetDescriptorSetLayoutSupportKHR");
+        VK_KHR_maintenance4 = checkExt1("VK_KHR_maintenance4", stack, provider, caps, ext, 542, 545,
+            "vkGetDeviceBufferMemoryRequirementsKHR", "vkGetDeviceImageMemoryRequirementsKHR", "vkGetDeviceImageSparseMemoryRequirementsKHR"
+        );
+        VK_KHR_maintenance5 = checkExt1("VK_KHR_maintenance5", stack, provider, caps, ext, 545, 549,
+            "vkCmdBindIndexBuffer2KHR", "vkGetRenderingAreaGranularityKHR", "vkGetDeviceImageSubresourceLayoutKHR", "vkGetImageSubresourceLayout2KHR"
+        );
+        VK_KHR_maintenance6 = check_KHR_maintenance6(stack, provider, caps, ext);
         VK_KHR_maintenance7 = ext.contains("VK_KHR_maintenance7");
         VK_KHR_maintenance8 = ext.contains("VK_KHR_maintenance8");
         VK_KHR_maintenance9 = ext.contains("VK_KHR_maintenance9");
-        VK_KHR_map_memory2 = check_KHR_map_memory2(provider, caps, ext);
+        VK_KHR_map_memory2 = checkExt1("VK_KHR_map_memory2", stack, provider, caps, ext, 555, 557,
+            "vkMapMemory2KHR", "vkUnmapMemory2KHR"
+        );
         VK_KHR_multiview = ext.contains("VK_KHR_multiview");
         VK_KHR_opacity_micromap = ext.contains("VK_KHR_opacity_micromap");
-        VK_KHR_performance_query = check_KHR_performance_query(provider, caps, ext);
-        VK_KHR_pipeline_binary = check_KHR_pipeline_binary(provider, caps, ext);
-        VK_KHR_pipeline_executable_properties = check_KHR_pipeline_executable_properties(provider, caps, ext);
+        VK_KHR_performance_query = checkExt1("VK_KHR_performance_query", stack, provider, caps, ext, 557, 559,
+            "vkAcquireProfilingLockKHR", "vkReleaseProfilingLockKHR"
+        );
+        VK_KHR_pipeline_binary = checkExt1("VK_KHR_pipeline_binary", stack, provider, caps, ext, 559, 564,
+            "vkCreatePipelineBinariesKHR", "vkDestroyPipelineBinaryKHR", "vkGetPipelineKeyKHR", "vkGetPipelineBinaryDataKHR", 
+            "vkReleaseCapturedPipelineDataKHR"
+        );
+        VK_KHR_pipeline_executable_properties = checkExt1("VK_KHR_pipeline_executable_properties", stack, provider, caps, ext, 564, 567,
+            "vkGetPipelineExecutablePropertiesKHR", "vkGetPipelineExecutableStatisticsKHR", "vkGetPipelineExecutableInternalRepresentationsKHR"
+        );
         VK_KHR_pipeline_library = ext.contains("VK_KHR_pipeline_library");
         VK_KHR_portability_subset = ext.contains("VK_KHR_portability_subset");
         VK_KHR_present_id = ext.contains("VK_KHR_present_id");
         VK_KHR_present_id2 = ext.contains("VK_KHR_present_id2");
         VK_KHR_present_mode_fifo_latest_ready = ext.contains("VK_KHR_present_mode_fifo_latest_ready");
-        VK_KHR_present_wait = check_KHR_present_wait(provider, caps, ext);
-        VK_KHR_present_wait2 = check_KHR_present_wait2(provider, caps, ext);
-        VK_KHR_push_descriptor = check_KHR_push_descriptor(provider, caps, ext);
+        VK_KHR_present_wait = checkExt2("VK_KHR_present_wait", stack, provider, caps, ext, 567, "vkWaitForPresentKHR");
+        VK_KHR_present_wait2 = checkExt2("VK_KHR_present_wait2", stack, provider, caps, ext, 568, "vkWaitForPresent2KHR");
+        VK_KHR_push_descriptor = check_KHR_push_descriptor(stack, provider, caps, ext);
         VK_KHR_ray_query = ext.contains("VK_KHR_ray_query");
-        VK_KHR_ray_tracing_maintenance1 = check_KHR_ray_tracing_maintenance1(provider, caps, ext);
-        VK_KHR_ray_tracing_pipeline = check_KHR_ray_tracing_pipeline(provider, caps, ext);
+        VK_KHR_ray_tracing_maintenance1 = check_KHR_ray_tracing_maintenance1(stack, provider, caps, ext);
+        VK_KHR_ray_tracing_pipeline = checkExt1("VK_KHR_ray_tracing_pipeline", stack, provider, caps, ext, 571, 578,
+            "vkCmdTraceRaysKHR", "vkCreateRayTracingPipelinesKHR", "vkGetRayTracingShaderGroupHandlesKHR", "vkGetRayTracingCaptureReplayShaderGroupHandlesKHR", 
+            "vkCmdTraceRaysIndirectKHR", "vkGetRayTracingShaderGroupStackSizeKHR", "vkCmdSetRayTracingPipelineStackSizeKHR"
+        );
         VK_KHR_ray_tracing_position_fetch = ext.contains("VK_KHR_ray_tracing_position_fetch");
         VK_KHR_relaxed_block_layout = ext.contains("VK_KHR_relaxed_block_layout");
         VK_KHR_robustness2 = ext.contains("VK_KHR_robustness2");
         VK_KHR_sampler_mirror_clamp_to_edge = ext.contains("VK_KHR_sampler_mirror_clamp_to_edge");
-        VK_KHR_sampler_ycbcr_conversion = check_KHR_sampler_ycbcr_conversion(provider, caps, ext);
+        VK_KHR_sampler_ycbcr_conversion = checkExt1("VK_KHR_sampler_ycbcr_conversion", stack, provider, caps, ext, 578, 580,
+            "vkCreateSamplerYcbcrConversionKHR", "vkDestroySamplerYcbcrConversionKHR"
+        );
         VK_KHR_separate_depth_stencil_layouts = ext.contains("VK_KHR_separate_depth_stencil_layouts");
         VK_KHR_shader_abort = ext.contains("VK_KHR_shader_abort");
         VK_KHR_shader_atomic_int64 = ext.contains("VK_KHR_shader_atomic_int64");
@@ -2332,14 +2530,18 @@ public class VKCapabilitiesDevice {
         VK_KHR_shader_subgroup_uniform_control_flow = ext.contains("VK_KHR_shader_subgroup_uniform_control_flow");
         VK_KHR_shader_terminate_invocation = ext.contains("VK_KHR_shader_terminate_invocation");
         VK_KHR_shader_untyped_pointers = ext.contains("VK_KHR_shader_untyped_pointers");
-        VK_KHR_shared_presentable_image = check_KHR_shared_presentable_image(provider, caps, ext);
+        VK_KHR_shared_presentable_image = checkExt2("VK_KHR_shared_presentable_image", stack, provider, caps, ext, 580, "vkGetSwapchainStatusKHR");
         VK_KHR_spirv_1_4 = ext.contains("VK_KHR_spirv_1_4");
         VK_KHR_storage_buffer_storage_class = ext.contains("VK_KHR_storage_buffer_storage_class");
-        VK_KHR_swapchain = check_KHR_swapchain(provider, caps, ext);
-        VK_KHR_swapchain_maintenance1 = check_KHR_swapchain_maintenance1(provider, caps, ext);
+        VK_KHR_swapchain = check_KHR_swapchain(stack, provider, caps, ext);
+        VK_KHR_swapchain_maintenance1 = checkExt2("VK_KHR_swapchain_maintenance1", stack, provider, caps, ext, 586, "vkReleaseSwapchainImagesKHR");
         VK_KHR_swapchain_mutable_format = ext.contains("VK_KHR_swapchain_mutable_format");
-        VK_KHR_synchronization2 = check_KHR_synchronization2(provider, caps, ext);
-        VK_KHR_timeline_semaphore = check_KHR_timeline_semaphore(provider, caps, ext);
+        VK_KHR_synchronization2 = checkExt1("VK_KHR_synchronization2", stack, provider, caps, ext, 587, 593,
+            "vkCmdSetEvent2KHR", "vkCmdResetEvent2KHR", "vkCmdWaitEvents2KHR", "vkCmdPipelineBarrier2KHR", "vkCmdWriteTimestamp2KHR", "vkQueueSubmit2KHR"
+        );
+        VK_KHR_timeline_semaphore = checkExt1("VK_KHR_timeline_semaphore", stack, provider, caps, ext, 593, 596,
+            "vkGetSemaphoreCounterValueKHR", "vkWaitSemaphoresKHR", "vkSignalSemaphoreKHR"
+        );
         VK_KHR_unified_image_layouts = ext.contains("VK_KHR_unified_image_layouts");
         VK_KHR_uniform_buffer_standard_layout = ext.contains("VK_KHR_uniform_buffer_standard_layout");
         VK_KHR_variable_pointers = ext.contains("VK_KHR_variable_pointers");
@@ -2347,7 +2549,7 @@ public class VKCapabilitiesDevice {
         VK_KHR_video_decode_av1 = ext.contains("VK_KHR_video_decode_av1");
         VK_KHR_video_decode_h264 = ext.contains("VK_KHR_video_decode_h264");
         VK_KHR_video_decode_h265 = ext.contains("VK_KHR_video_decode_h265");
-        VK_KHR_video_decode_queue = check_KHR_video_decode_queue(provider, caps, ext);
+        VK_KHR_video_decode_queue = checkExt2("VK_KHR_video_decode_queue", stack, provider, caps, ext, 596, "vkCmdDecodeVideoKHR");
         VK_KHR_video_decode_vp9 = ext.contains("VK_KHR_video_decode_vp9");
         VK_KHR_video_encode_av1 = ext.contains("VK_KHR_video_encode_av1");
         VK_KHR_video_encode_feedback2 = ext.contains("VK_KHR_video_encode_feedback2");
@@ -2355,10 +2557,16 @@ public class VKCapabilitiesDevice {
         VK_KHR_video_encode_h265 = ext.contains("VK_KHR_video_encode_h265");
         VK_KHR_video_encode_intra_refresh = ext.contains("VK_KHR_video_encode_intra_refresh");
         VK_KHR_video_encode_quantization_map = ext.contains("VK_KHR_video_encode_quantization_map");
-        VK_KHR_video_encode_queue = check_KHR_video_encode_queue(provider, caps, ext);
+        VK_KHR_video_encode_queue = checkExt1("VK_KHR_video_encode_queue", stack, provider, caps, ext, 597, 599,
+            "vkGetEncodedVideoSessionParametersKHR", "vkCmdEncodeVideoKHR"
+        );
         VK_KHR_video_maintenance1 = ext.contains("VK_KHR_video_maintenance1");
         VK_KHR_video_maintenance2 = ext.contains("VK_KHR_video_maintenance2");
-        VK_KHR_video_queue = check_KHR_video_queue(provider, caps, ext);
+        VK_KHR_video_queue = checkExt1("VK_KHR_video_queue", stack, provider, caps, ext, 599, 609,
+            "vkCreateVideoSessionKHR", "vkDestroyVideoSessionKHR", "vkGetVideoSessionMemoryRequirementsKHR", "vkBindVideoSessionMemoryKHR", 
+            "vkCreateVideoSessionParametersKHR", "vkUpdateVideoSessionParametersKHR", "vkDestroyVideoSessionParametersKHR", "vkCmdBeginVideoCodingKHR", 
+            "vkCmdEndVideoCodingKHR", "vkCmdControlVideoCodingKHR"
+        );
         VK_KHR_vulkan_memory_model = ext.contains("VK_KHR_vulkan_memory_model");
         VK_KHR_win32_keyed_mutex = ext.contains("VK_KHR_win32_keyed_mutex");
         VK_KHR_workgroup_memory_explicit_layout = ext.contains("VK_KHR_workgroup_memory_explicit_layout");
@@ -2366,71 +2574,111 @@ public class VKCapabilitiesDevice {
         VK_MESA_image_alignment_control = ext.contains("VK_MESA_image_alignment_control");
         VK_MSFT_layered_driver = ext.contains("VK_MSFT_layered_driver");
         VK_NV_acquire_winrt_display = ext.contains("VK_NV_acquire_winrt_display");
-        VK_NV_clip_space_w_scaling = check_NV_clip_space_w_scaling(provider, caps, ext);
-        VK_NV_cluster_acceleration_structure = check_NV_cluster_acceleration_structure(provider, caps, ext);
+        VK_NV_clip_space_w_scaling = checkExt2("VK_NV_clip_space_w_scaling", stack, provider, caps, ext, 609, "vkCmdSetViewportWScalingNV");
+        VK_NV_cluster_acceleration_structure = checkExt1("VK_NV_cluster_acceleration_structure", stack, provider, caps, ext, 610, 612,
+            "vkGetClusterAccelerationStructureBuildSizesNV", "vkCmdBuildClusterAccelerationStructureIndirectNV"
+        );
         VK_NV_command_buffer_inheritance = ext.contains("VK_NV_command_buffer_inheritance");
-        VK_NV_compute_occupancy_priority = check_NV_compute_occupancy_priority(provider, caps, ext);
+        VK_NV_compute_occupancy_priority = checkExt2("VK_NV_compute_occupancy_priority", stack, provider, caps, ext, 612, "vkCmdSetComputeOccupancyPriorityNV");
         VK_NV_compute_shader_derivatives = ext.contains("VK_NV_compute_shader_derivatives");
         VK_NV_cooperative_matrix = ext.contains("VK_NV_cooperative_matrix");
         VK_NV_cooperative_matrix2 = ext.contains("VK_NV_cooperative_matrix2");
         VK_NV_cooperative_matrix_decode_vector = ext.contains("VK_NV_cooperative_matrix_decode_vector");
-        VK_NV_cooperative_vector = check_NV_cooperative_vector(provider, caps, ext);
-        VK_NV_copy_memory_indirect = check_NV_copy_memory_indirect(provider, caps, ext);
+        VK_NV_cooperative_vector = checkExt1("VK_NV_cooperative_vector", stack, provider, caps, ext, 613, 615,
+            "vkConvertCooperativeVectorMatrixNV", "vkCmdConvertCooperativeVectorMatrixNV"
+        );
+        VK_NV_copy_memory_indirect = checkExt1("VK_NV_copy_memory_indirect", stack, provider, caps, ext, 615, 617,
+            "vkCmdCopyMemoryIndirectNV", "vkCmdCopyMemoryToImageIndirectNV"
+        );
         VK_NV_corner_sampled_image = ext.contains("VK_NV_corner_sampled_image");
         VK_NV_coverage_reduction_mode = ext.contains("VK_NV_coverage_reduction_mode");
-        VK_NV_cuda_kernel_launch = check_NV_cuda_kernel_launch(provider, caps, ext);
+        VK_NV_cuda_kernel_launch = checkExt1("VK_NV_cuda_kernel_launch", stack, provider, caps, ext, 617, 623,
+            "vkCreateCudaModuleNV", "vkGetCudaModuleCacheNV", "vkCreateCudaFunctionNV", "vkDestroyCudaModuleNV", "vkDestroyCudaFunctionNV", 
+            "vkCmdCudaLaunchKernelNV"
+        );
         VK_NV_dedicated_allocation = ext.contains("VK_NV_dedicated_allocation");
         VK_NV_dedicated_allocation_image_aliasing = ext.contains("VK_NV_dedicated_allocation_image_aliasing");
         VK_NV_descriptor_pool_overallocation = ext.contains("VK_NV_descriptor_pool_overallocation");
-        VK_NV_device_diagnostic_checkpoints = check_NV_device_diagnostic_checkpoints(provider, caps, ext);
+        VK_NV_device_diagnostic_checkpoints = check_NV_device_diagnostic_checkpoints(stack, provider, caps, ext);
         VK_NV_device_diagnostics_config = ext.contains("VK_NV_device_diagnostics_config");
-        VK_NV_device_generated_commands = check_NV_device_generated_commands(provider, caps, ext);
-        VK_NV_device_generated_commands_compute = check_NV_device_generated_commands_compute(provider, caps, ext);
+        VK_NV_device_generated_commands = checkExt1("VK_NV_device_generated_commands", stack, provider, caps, ext, 626, 632,
+            "vkGetGeneratedCommandsMemoryRequirementsNV", "vkCmdPreprocessGeneratedCommandsNV", "vkCmdExecuteGeneratedCommandsNV", 
+            "vkCmdBindPipelineShaderGroupNV", "vkCreateIndirectCommandsLayoutNV", "vkDestroyIndirectCommandsLayoutNV"
+        );
+        VK_NV_device_generated_commands_compute = checkExt1("VK_NV_device_generated_commands_compute", stack, provider, caps, ext, 632, 635,
+            "vkGetPipelineIndirectMemoryRequirementsNV", "vkCmdUpdatePipelineIndirectBufferNV", "vkGetPipelineIndirectDeviceAddressNV"
+        );
         VK_NV_displacement_micromap = ext.contains("VK_NV_displacement_micromap");
         VK_NV_extended_sparse_address_space = ext.contains("VK_NV_extended_sparse_address_space");
-        VK_NV_external_compute_queue = check_NV_external_compute_queue(provider, caps, ext);
+        VK_NV_external_compute_queue = checkExt1("VK_NV_external_compute_queue", stack, provider, caps, ext, 635, 638,
+            "vkCreateExternalComputeQueueNV", "vkDestroyExternalComputeQueueNV", "vkGetExternalComputeQueueDataNV"
+        );
         VK_NV_external_memory = ext.contains("VK_NV_external_memory");
-        VK_NV_external_memory_rdma = check_NV_external_memory_rdma(provider, caps, ext);
-        VK_NV_external_memory_win32 = check_NV_external_memory_win32(provider, caps, ext);
+        VK_NV_external_memory_rdma = checkExt2("VK_NV_external_memory_rdma", stack, provider, caps, ext, 638, "vkGetMemoryRemoteAddressNV");
+        VK_NV_external_memory_win32 = checkExt2("VK_NV_external_memory_win32", stack, provider, caps, ext, 639, "vkGetMemoryWin32HandleNV");
         VK_NV_fill_rectangle = ext.contains("VK_NV_fill_rectangle");
         VK_NV_fragment_coverage_to_color = ext.contains("VK_NV_fragment_coverage_to_color");
         VK_NV_fragment_shader_barycentric = ext.contains("VK_NV_fragment_shader_barycentric");
-        VK_NV_fragment_shading_rate_enums = check_NV_fragment_shading_rate_enums(provider, caps, ext);
+        VK_NV_fragment_shading_rate_enums = checkExt2("VK_NV_fragment_shading_rate_enums", stack, provider, caps, ext, 640, "vkCmdSetFragmentShadingRateEnumNV");
         VK_NV_framebuffer_mixed_samples = ext.contains("VK_NV_framebuffer_mixed_samples");
         VK_NV_geometry_shader_passthrough = ext.contains("VK_NV_geometry_shader_passthrough");
         VK_NV_glsl_shader = ext.contains("VK_NV_glsl_shader");
         VK_NV_inherited_viewport_scissor = ext.contains("VK_NV_inherited_viewport_scissor");
         VK_NV_linear_color_attachment = ext.contains("VK_NV_linear_color_attachment");
-        VK_NV_low_latency = check_NV_low_latency(provider, caps, ext);
-        VK_NV_low_latency2 = check_NV_low_latency2(provider, caps, ext);
-        VK_NV_memory_decompression = check_NV_memory_decompression(provider, caps, ext);
-        VK_NV_mesh_shader = check_NV_mesh_shader(provider, caps, ext);
-        VK_NV_optical_flow = check_NV_optical_flow(provider, caps, ext);
-        VK_NV_partitioned_acceleration_structure = check_NV_partitioned_acceleration_structure(provider, caps, ext);
+        VK_NV_low_latency = checkExt1("VK_NV_low_latency", stack, provider, caps, ext, 641, 648,
+            "vkSetLatencySleepModeLegacyNV", "vkLatencySleepLegacyNV", "vkSetLatencyMarkerLegacyNV", "vkGetLatencyTimingsLegacyNV", 
+            "vkQueueNotifyOutOfBandLegacyNV", "vkGetSleepStatusLegacyNV", "vkShutdownLatencyDeviceLegacyNV"
+        );
+        VK_NV_low_latency2 = checkExt1("VK_NV_low_latency2", stack, provider, caps, ext, 648, 653,
+            "vkSetLatencySleepModeNV", "vkLatencySleepNV", "vkSetLatencyMarkerNV", "vkGetLatencyTimingsNV", "vkQueueNotifyOutOfBandNV"
+        );
+        VK_NV_memory_decompression = checkExt1("VK_NV_memory_decompression", stack, provider, caps, ext, 653, 655,
+            "vkCmdDecompressMemoryNV", "vkCmdDecompressMemoryIndirectCountNV"
+        );
+        VK_NV_mesh_shader = check_NV_mesh_shader(stack, provider, caps, ext);
+        VK_NV_optical_flow = checkExt1("VK_NV_optical_flow", stack, provider, caps, ext, 658, 662,
+            "vkCreateOpticalFlowSessionNV", "vkDestroyOpticalFlowSessionNV", "vkBindOpticalFlowSessionImageNV", "vkCmdOpticalFlowExecuteNV"
+        );
+        VK_NV_partitioned_acceleration_structure = checkExt1("VK_NV_partitioned_acceleration_structure", stack, provider, caps, ext, 662, 664,
+            "vkGetPartitionedAccelerationStructuresBuildSizesNV", "vkCmdBuildPartitionedAccelerationStructuresNV"
+        );
         VK_NV_per_stage_descriptor_set = ext.contains("VK_NV_per_stage_descriptor_set");
         VK_NV_present_barrier = ext.contains("VK_NV_present_barrier");
         VK_NV_present_metering = ext.contains("VK_NV_present_metering");
         VK_NV_private_data_base_handle = ext.contains("VK_NV_private_data_base_handle");
         VK_NV_push_constant_bank = ext.contains("VK_NV_push_constant_bank");
         VK_NV_raw_access_chains = ext.contains("VK_NV_raw_access_chains");
-        VK_NV_ray_tracing = check_NV_ray_tracing(provider, caps, ext);
+        VK_NV_ray_tracing = checkExt1("VK_NV_ray_tracing", stack, provider, caps, ext, 664, 676,
+            "vkCreateAccelerationStructureNV", "vkDestroyAccelerationStructureNV", "vkGetAccelerationStructureMemoryRequirementsNV", 
+            "vkBindAccelerationStructureMemoryNV", "vkCmdBuildAccelerationStructureNV", "vkCmdCopyAccelerationStructureNV", "vkCmdTraceRaysNV", 
+            "vkCreateRayTracingPipelinesNV", "vkGetRayTracingShaderGroupHandlesNV", "vkGetAccelerationStructureHandleNV", 
+            "vkCmdWriteAccelerationStructuresPropertiesNV", "vkCompileDeferredNV"
+        );
         VK_NV_ray_tracing_invocation_reorder = ext.contains("VK_NV_ray_tracing_invocation_reorder");
         VK_NV_ray_tracing_linear_swept_spheres = ext.contains("VK_NV_ray_tracing_linear_swept_spheres");
         VK_NV_ray_tracing_motion_blur = ext.contains("VK_NV_ray_tracing_motion_blur");
         VK_NV_ray_tracing_validation = ext.contains("VK_NV_ray_tracing_validation");
         VK_NV_representative_fragment_test = ext.contains("VK_NV_representative_fragment_test");
         VK_NV_sample_mask_override_coverage = ext.contains("VK_NV_sample_mask_override_coverage");
-        VK_NV_scissor_exclusive = check_NV_scissor_exclusive(provider, caps, ext);
+        VK_NV_scissor_exclusive = checkExt1("VK_NV_scissor_exclusive", stack, provider, caps, ext, 676, 678,
+            "vkCmdSetExclusiveScissorEnableNV", "vkCmdSetExclusiveScissorNV"
+        );
         VK_NV_shader_atomic_float16_vector = ext.contains("VK_NV_shader_atomic_float16_vector");
         VK_NV_shader_image_footprint = ext.contains("VK_NV_shader_image_footprint");
         VK_NV_shader_sm_builtins = ext.contains("VK_NV_shader_sm_builtins");
         VK_NV_shader_subgroup_partitioned = ext.contains("VK_NV_shader_subgroup_partitioned");
-        VK_NV_shading_rate_image = check_NV_shading_rate_image(provider, caps, ext);
+        VK_NV_shading_rate_image = checkExt1("VK_NV_shading_rate_image", stack, provider, caps, ext, 678, 681,
+            "vkCmdBindShadingRateImageNV", "vkCmdSetViewportShadingRatePaletteNV", "vkCmdSetCoarseSampleOrderNV"
+        );
         VK_NV_viewport_array2 = ext.contains("VK_NV_viewport_array2");
         VK_NV_viewport_swizzle = ext.contains("VK_NV_viewport_swizzle");
         VK_NV_win32_keyed_mutex = ext.contains("VK_NV_win32_keyed_mutex");
-        VK_NVX_binary_import = check_NVX_binary_import(provider, caps, ext);
-        VK_NVX_image_view_handle = check_NVX_image_view_handle(provider, caps, ext);
+        VK_NVX_binary_import = checkExt1("VK_NVX_binary_import", stack, provider, caps, ext, 681, 686,
+            "vkCreateCuModuleNVX", "vkCreateCuFunctionNVX", "vkDestroyCuModuleNVX", "vkDestroyCuFunctionNVX", "vkCmdCuLaunchKernelNVX"
+        );
+        VK_NVX_image_view_handle = checkExt1("VK_NVX_image_view_handle", stack, provider, caps, ext, 686, 690,
+            "vkGetImageViewHandleNVX", "vkGetImageViewHandle64NVX", "vkGetImageViewAddressNVX", "vkGetDeviceCombinedImageSamplerIndexNVX"
+        );
         VK_NVX_multiview_per_view_attributes = ext.contains("VK_NVX_multiview_per_view_attributes");
         VK_QCOM_cooperative_matrix_conversion = ext.contains("VK_QCOM_cooperative_matrix_conversion");
         VK_QCOM_data_graph_model = ext.contains("VK_QCOM_data_graph_model");
@@ -2443,15 +2691,19 @@ public class VKCapabilitiesDevice {
         VK_QCOM_image_processing3 = ext.contains("VK_QCOM_image_processing3");
         VK_QCOM_multiview_per_view_render_areas = ext.contains("VK_QCOM_multiview_per_view_render_areas");
         VK_QCOM_multiview_per_view_viewports = ext.contains("VK_QCOM_multiview_per_view_viewports");
-        VK_QCOM_queue_perf_hint = check_QCOM_queue_perf_hint(provider, caps, ext);
+        VK_QCOM_queue_perf_hint = checkExt2("VK_QCOM_queue_perf_hint", stack, provider, caps, ext, 690, "vkQueueSetPerfHintQCOM");
         VK_QCOM_render_pass_shader_resolve = ext.contains("VK_QCOM_render_pass_shader_resolve");
         VK_QCOM_render_pass_store_ops = ext.contains("VK_QCOM_render_pass_store_ops");
         VK_QCOM_render_pass_transform = ext.contains("VK_QCOM_render_pass_transform");
         VK_QCOM_rotated_copy_commands = ext.contains("VK_QCOM_rotated_copy_commands");
         VK_QCOM_shader_multiple_wait_queues = ext.contains("VK_QCOM_shader_multiple_wait_queues");
-        VK_QCOM_tile_memory_heap = check_QCOM_tile_memory_heap(provider, caps, ext);
-        VK_QCOM_tile_properties = check_QCOM_tile_properties(provider, caps, ext);
-        VK_QCOM_tile_shading = check_QCOM_tile_shading(provider, caps, ext);
+        VK_QCOM_tile_memory_heap = checkExt2("VK_QCOM_tile_memory_heap", stack, provider, caps, ext, 691, "vkCmdBindTileMemoryQCOM");
+        VK_QCOM_tile_properties = checkExt1("VK_QCOM_tile_properties", stack, provider, caps, ext, 692, 694,
+            "vkGetFramebufferTilePropertiesQCOM", "vkGetDynamicRenderingTilePropertiesQCOM"
+        );
+        VK_QCOM_tile_shading = checkExt1("VK_QCOM_tile_shading", stack, provider, caps, ext, 694, 697,
+            "vkCmdDispatchTileQCOM", "vkCmdBeginPerTileExecutionQCOM", "vkCmdEndPerTileExecutionQCOM"
+        );
         VK_QCOM_ycbcr_degamma = ext.contains("VK_QCOM_ycbcr_degamma");
         VK_SEC_amigo_profiling = ext.contains("VK_SEC_amigo_profiling");
         VK_SEC_pipeline_cache_incremental_mode = ext.contains("VK_SEC_pipeline_cache_incremental_mode");
@@ -2460,7 +2712,9 @@ public class VKCapabilitiesDevice {
         STD_VIDEO_STD_vulkan_video_codec_h264 = ext.contains("STD_VIDEO_STD_vulkan_video_codec_h264");
         STD_VIDEO_STD_vulkan_video_codec_h265 = ext.contains("STD_VIDEO_STD_vulkan_video_codec_h265");
         STD_VIDEO_STD_vulkan_video_codec_vp9 = ext.contains("STD_VIDEO_STD_vulkan_video_codec_vp9");
-        VK_VALVE_descriptor_set_host_mapping = check_VALVE_descriptor_set_host_mapping(provider, caps, ext);
+        VK_VALVE_descriptor_set_host_mapping = checkExt1("VK_VALVE_descriptor_set_host_mapping", stack, provider, caps, ext, 697, 699,
+            "vkGetDescriptorSetLayoutHostMappingInfoVALVE", "vkGetDescriptorSetHostMappingVALVE"
+        );
         VK_VALVE_fragment_density_map_layered = ext.contains("VK_VALVE_fragment_density_map_layered");
         VK_VALVE_mutable_descriptor_type = ext.contains("VK_VALVE_mutable_descriptor_type");
         VK_VALVE_shader_mixed_float_dot_product = ext.contains("VK_VALVE_shader_mixed_float_dot_product");
@@ -3167,251 +3421,28 @@ public class VKCapabilitiesDevice {
         vkGetDescriptorSetHostMappingVALVE = caps[698];
     }
 
-    private static boolean check_VK10(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("Vulkan10")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 
-            39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 
-            76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 
-            110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120
-        },
-            "vkGetDeviceProcAddr", "vkDestroyDevice", "vkGetDeviceQueue", "vkQueueSubmit", "vkQueueWaitIdle", "vkDeviceWaitIdle", "vkAllocateMemory", 
-            "vkFreeMemory", "vkMapMemory", "vkUnmapMemory", "vkFlushMappedMemoryRanges", "vkInvalidateMappedMemoryRanges", "vkGetDeviceMemoryCommitment", 
-            "vkBindBufferMemory", "vkBindImageMemory", "vkGetBufferMemoryRequirements", "vkGetImageMemoryRequirements", "vkGetImageSparseMemoryRequirements", 
-            "vkQueueBindSparse", "vkCreateFence", "vkDestroyFence", "vkResetFences", "vkGetFenceStatus", "vkWaitForFences", "vkCreateSemaphore", 
-            "vkDestroySemaphore", "vkCreateQueryPool", "vkDestroyQueryPool", "vkGetQueryPoolResults", "vkCreateBuffer", "vkDestroyBuffer", "vkCreateImage", 
-            "vkDestroyImage", "vkGetImageSubresourceLayout", "vkCreateImageView", "vkDestroyImageView", "vkCreateCommandPool", "vkDestroyCommandPool", 
-            "vkResetCommandPool", "vkAllocateCommandBuffers", "vkFreeCommandBuffers", "vkBeginCommandBuffer", "vkEndCommandBuffer", "vkResetCommandBuffer", 
-            "vkCmdCopyBuffer", "vkCmdCopyImage", "vkCmdCopyBufferToImage", "vkCmdCopyImageToBuffer", "vkCmdUpdateBuffer", "vkCmdFillBuffer", 
-            "vkCmdPipelineBarrier", "vkCmdBeginQuery", "vkCmdEndQuery", "vkCmdResetQueryPool", "vkCmdWriteTimestamp", "vkCmdCopyQueryPoolResults", 
-            "vkCmdExecuteCommands", "vkCreateEvent", "vkDestroyEvent", "vkGetEventStatus", "vkSetEvent", "vkResetEvent", "vkCreateBufferView", 
-            "vkDestroyBufferView", "vkCreateShaderModule", "vkDestroyShaderModule", "vkCreatePipelineCache", "vkDestroyPipelineCache", "vkGetPipelineCacheData", 
-            "vkMergePipelineCaches", "vkCreateComputePipelines", "vkDestroyPipeline", "vkCreatePipelineLayout", "vkDestroyPipelineLayout", "vkCreateSampler", 
-            "vkDestroySampler", "vkCreateDescriptorSetLayout", "vkDestroyDescriptorSetLayout", "vkCreateDescriptorPool", "vkDestroyDescriptorPool", 
-            "vkResetDescriptorPool", "vkAllocateDescriptorSets", "vkFreeDescriptorSets", "vkUpdateDescriptorSets", "vkCmdBindPipeline", 
-            "vkCmdBindDescriptorSets", "vkCmdClearColorImage", "vkCmdDispatch", "vkCmdDispatchIndirect", "vkCmdSetEvent", "vkCmdResetEvent", "vkCmdWaitEvents", 
-            "vkCmdPushConstants", "vkCreateGraphicsPipelines", "vkCreateFramebuffer", "vkDestroyFramebuffer", "vkCreateRenderPass", "vkDestroyRenderPass", 
-            "vkGetRenderAreaGranularity", "vkCmdSetViewport", "vkCmdSetScissor", "vkCmdSetLineWidth", "vkCmdSetDepthBias", "vkCmdSetBlendConstants", 
-            "vkCmdSetDepthBounds", "vkCmdSetStencilCompareMask", "vkCmdSetStencilWriteMask", "vkCmdSetStencilReference", "vkCmdBindIndexBuffer", 
-            "vkCmdBindVertexBuffers", "vkCmdDraw", "vkCmdDrawIndexed", "vkCmdDrawIndirect", "vkCmdDrawIndexedIndirect", "vkCmdBlitImage", 
-            "vkCmdClearDepthStencilImage", "vkCmdClearAttachments", "vkCmdResolveImage", "vkCmdBeginRenderPass", "vkCmdNextSubpass", "vkCmdEndRenderPass"
-        ) || reportMissing("VK", "Vulkan10");
-    }
-
-    private static boolean check_VK11(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("Vulkan11")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136
-        },
-            "vkBindBufferMemory2", "vkBindImageMemory2", "vkGetDeviceGroupPeerMemoryFeatures", "vkCmdSetDeviceMask", "vkGetImageMemoryRequirements2", 
-            "vkGetBufferMemoryRequirements2", "vkGetImageSparseMemoryRequirements2", "vkTrimCommandPool", "vkGetDeviceQueue2", "vkCmdDispatchBase", 
-            "vkCreateDescriptorUpdateTemplate", "vkDestroyDescriptorUpdateTemplate", "vkUpdateDescriptorSetWithTemplate", "vkGetDescriptorSetLayoutSupport", 
-            "vkCreateSamplerYcbcrConversion", "vkDestroySamplerYcbcrConversion"
-        ) || reportMissing("VK", "Vulkan11");
-    }
-
-    private static boolean check_VK12(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("Vulkan12")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149
-        },
-            "vkResetQueryPool", "vkGetSemaphoreCounterValue", "vkWaitSemaphores", "vkSignalSemaphore", "vkGetBufferDeviceAddress", 
-            "vkGetBufferOpaqueCaptureAddress", "vkGetDeviceMemoryOpaqueCaptureAddress", "vkCmdDrawIndirectCount", "vkCmdDrawIndexedIndirectCount", 
-            "vkCreateRenderPass2", "vkCmdBeginRenderPass2", "vkCmdNextSubpass2", "vkCmdEndRenderPass2"
-        ) || reportMissing("VK", "Vulkan12");
-    }
-
-    private static boolean check_VK13(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("Vulkan13")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 
-            179, 180, 181, 182, 183, 184, 185
-        },
-            "vkCreatePrivateDataSlot", "vkDestroyPrivateDataSlot", "vkSetPrivateData", "vkGetPrivateData", "vkCmdPipelineBarrier2", "vkCmdWriteTimestamp2", 
-            "vkQueueSubmit2", "vkCmdCopyBuffer2", "vkCmdCopyImage2", "vkCmdCopyBufferToImage2", "vkCmdCopyImageToBuffer2", 
-            "vkGetDeviceBufferMemoryRequirements", "vkGetDeviceImageMemoryRequirements", "vkGetDeviceImageSparseMemoryRequirements", "vkCmdSetEvent2", 
-            "vkCmdResetEvent2", "vkCmdWaitEvents2", "vkCmdBlitImage2", "vkCmdResolveImage2", "vkCmdBeginRendering", "vkCmdEndRendering", "vkCmdSetCullMode", 
-            "vkCmdSetFrontFace", "vkCmdSetPrimitiveTopology", "vkCmdSetViewportWithCount", "vkCmdSetScissorWithCount", "vkCmdBindVertexBuffers2", 
-            "vkCmdSetDepthTestEnable", "vkCmdSetDepthWriteEnable", "vkCmdSetDepthCompareOp", "vkCmdSetDepthBoundsTestEnable", "vkCmdSetStencilTestEnable", 
-            "vkCmdSetStencilOp", "vkCmdSetRasterizerDiscardEnable", "vkCmdSetDepthBiasEnable", "vkCmdSetPrimitiveRestartEnable"
-        ) || reportMissing("VK", "Vulkan13");
-    }
-
-    private static boolean check_VK14(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("Vulkan14")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204
-        },
-            "vkMapMemory2", "vkUnmapMemory2", "vkGetDeviceImageSubresourceLayout", "vkGetImageSubresourceLayout2", "vkCopyMemoryToImage", "vkCopyImageToMemory", 
-            "vkCopyImageToImage", "vkTransitionImageLayout", "vkCmdPushDescriptorSet", "vkCmdPushDescriptorSetWithTemplate", "vkCmdBindDescriptorSets2", 
-            "vkCmdPushConstants2", "vkCmdPushDescriptorSet2", "vkCmdPushDescriptorSetWithTemplate2", "vkCmdSetLineStipple", "vkCmdBindIndexBuffer2", 
-            "vkGetRenderingAreaGranularity", "vkCmdSetRenderingAttachmentLocations", "vkCmdSetRenderingInputAttachmentIndices"
-        ) || reportMissing("VK", "Vulkan14");
-    }
-
-    private static boolean check_AMD_anti_lag(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_AMD_anti_lag")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            205
-        },
-            "vkAntiLagUpdateAMD"
-        ) || reportMissing("VK", "VK_AMD_anti_lag");
-    }
-
-    private static boolean check_AMD_buffer_marker(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_AMD_buffer_marker(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_AMD_buffer_marker")) {
             return false;
         }
 
         int flag0 = ext.contains("Vulkan13") || ext.contains("VK_KHR_synchronization2") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             206, flag0 + 207
         },
             "vkCmdWriteBufferMarkerAMD", "vkCmdWriteBufferMarker2AMD"
         ) || reportMissing("VK", "VK_AMD_buffer_marker");
     }
 
-    private static boolean check_AMD_display_native_hdr(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_AMD_display_native_hdr")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            208
-        },
-            "vkSetLocalDimmingAMD"
-        ) || reportMissing("VK", "VK_AMD_display_native_hdr");
-    }
-
-    private static boolean check_AMD_draw_indirect_count(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_AMD_draw_indirect_count")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            209, 210
-        },
-            "vkCmdDrawIndirectCountAMD", "vkCmdDrawIndexedIndirectCountAMD"
-        ) || reportMissing("VK", "VK_AMD_draw_indirect_count");
-    }
-
-    private static boolean check_AMD_gpa_interface(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_AMD_gpa_interface")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222
-        },
-            "vkCreateGpaSessionAMD", "vkDestroyGpaSessionAMD", "vkSetGpaDeviceClockModeAMD", "vkGetGpaDeviceClockInfoAMD", "vkCmdBeginGpaSessionAMD", 
-            "vkCmdEndGpaSessionAMD", "vkCmdBeginGpaSampleAMD", "vkCmdEndGpaSampleAMD", "vkGetGpaSessionStatusAMD", "vkGetGpaSessionResultsAMD", 
-            "vkResetGpaSessionAMD", "vkCmdCopyGpaSessionResultsAMD"
-        ) || reportMissing("VK", "VK_AMD_gpa_interface");
-    }
-
-    private static boolean check_AMD_shader_info(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_AMD_shader_info")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            223
-        },
-            "vkGetShaderInfoAMD"
-        ) || reportMissing("VK", "VK_AMD_shader_info");
-    }
-
-    private static boolean check_AMDX_shader_enqueue(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_AMDX_shader_enqueue")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            224, 225, 226, 227, 228, 229, 230
-        },
-            "vkCreateExecutionGraphPipelinesAMDX", "vkGetExecutionGraphPipelineScratchSizeAMDX", "vkGetExecutionGraphPipelineNodeIndexAMDX", 
-            "vkCmdInitializeGraphScratchMemoryAMDX", "vkCmdDispatchGraphAMDX", "vkCmdDispatchGraphIndirectAMDX", "vkCmdDispatchGraphIndirectCountAMDX"
-        ) || reportMissing("VK", "VK_AMDX_shader_enqueue");
-    }
-
-    private static boolean check_ANDROID_external_memory_android_hardware_buffer(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_ANDROID_external_memory_android_hardware_buffer")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            231, 232
-        },
-            "vkGetAndroidHardwareBufferPropertiesANDROID", "vkGetMemoryAndroidHardwareBufferANDROID"
-        ) || reportMissing("VK", "VK_ANDROID_external_memory_android_hardware_buffer");
-    }
-
-    private static boolean check_ARM_data_graph(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_ARM_data_graph")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            233, 234, 235, 236, 237, 238, 239, 240, 241
-        },
-            "vkCreateDataGraphPipelinesARM", "vkCreateDataGraphPipelineSessionARM", "vkGetDataGraphPipelineSessionBindPointRequirementsARM", 
-            "vkGetDataGraphPipelineSessionMemoryRequirementsARM", "vkBindDataGraphPipelineSessionMemoryARM", "vkDestroyDataGraphPipelineSessionARM", 
-            "vkCmdDispatchDataGraphARM", "vkGetDataGraphPipelineAvailablePropertiesARM", "vkGetDataGraphPipelinePropertiesARM"
-        ) || reportMissing("VK", "VK_ARM_data_graph");
-    }
-
-    private static boolean check_ARM_scheduling_controls(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_ARM_scheduling_controls")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            242
-        },
-            "vkCmdSetDispatchParametersARM"
-        ) || reportMissing("VK", "VK_ARM_scheduling_controls");
-    }
-
-    private static boolean check_ARM_shader_instrumentation(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_ARM_shader_instrumentation")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            243, 244, 245, 246, 247, 248
-        },
-            "vkCreateShaderInstrumentationARM", "vkDestroyShaderInstrumentationARM", "vkCmdBeginShaderInstrumentationARM", "vkCmdEndShaderInstrumentationARM", 
-            "vkGetShaderInstrumentationValuesARM", "vkClearShaderInstrumentationMetricsARM"
-        ) || reportMissing("VK", "VK_ARM_shader_instrumentation");
-    }
-
-    private static boolean check_ARM_tensors(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_ARM_tensors(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_ARM_tensors")) {
             return false;
         }
 
         int flag0 = ext.contains("VK_EXT_descriptor_buffer") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             249, 250, 251, 252, 253, 254, 255, 256, flag0 + 257, flag0 + 258
         },
             "vkCreateTensorARM", "vkDestroyTensorARM", "vkCreateTensorViewARM", "vkDestroyTensorViewARM", "vkGetTensorMemoryRequirementsARM", 
@@ -3420,124 +3451,28 @@ public class VKCapabilitiesDevice {
         ) || reportMissing("VK", "VK_ARM_tensors");
     }
 
-    private static boolean check_EXT_attachment_feedback_loop_dynamic_state(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_attachment_feedback_loop_dynamic_state")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            259
-        },
-            "vkCmdSetAttachmentFeedbackLoopEnableEXT"
-        ) || reportMissing("VK", "VK_EXT_attachment_feedback_loop_dynamic_state");
-    }
-
-    private static boolean check_EXT_buffer_device_address(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_buffer_device_address")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            260
-        },
-            "vkGetBufferDeviceAddressEXT"
-        ) || reportMissing("VK", "VK_EXT_buffer_device_address");
-    }
-
-    private static boolean check_EXT_calibrated_timestamps(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_calibrated_timestamps")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            261
-        },
-            "vkGetCalibratedTimestampsEXT"
-        ) || reportMissing("VK", "VK_EXT_calibrated_timestamps");
-    }
-
-    private static boolean check_EXT_color_write_enable(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_color_write_enable")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            262
-        },
-            "vkCmdSetColorWriteEnableEXT"
-        ) || reportMissing("VK", "VK_EXT_color_write_enable");
-    }
-
-    private static boolean check_EXT_conditional_rendering(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_conditional_rendering")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            263, 264
-        },
-            "vkCmdBeginConditionalRenderingEXT", "vkCmdEndConditionalRenderingEXT"
-        ) || reportMissing("VK", "VK_EXT_conditional_rendering");
-    }
-
-    private static boolean check_EXT_custom_resolve(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_EXT_custom_resolve(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_EXT_custom_resolve")) {
             return false;
         }
 
         int flag0 = ext.contains("VK_KHR_dynamic_rendering") || ext.contains("Vulkan13") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             flag0 + 265
         },
             "vkCmdBeginCustomResolveEXT"
         ) || reportMissing("VK", "VK_EXT_custom_resolve");
     }
 
-    private static boolean check_EXT_debug_marker(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_debug_marker")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            266, 267, 268, 269, 270
-        },
-            "vkDebugMarkerSetObjectTagEXT", "vkDebugMarkerSetObjectNameEXT", "vkCmdDebugMarkerBeginEXT", "vkCmdDebugMarkerEndEXT", "vkCmdDebugMarkerInsertEXT"
-        ) || reportMissing("VK", "VK_EXT_debug_marker");
-    }
-
-    private static boolean check_EXT_depth_bias_control(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_depth_bias_control")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            271
-        },
-            "vkCmdSetDepthBias2EXT"
-        ) || reportMissing("VK", "VK_EXT_depth_bias_control");
-    }
-
-    private static boolean check_EXT_depth_clamp_control(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_depth_clamp_control")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            272
-        },
-            "vkCmdSetDepthClampRangeEXT"
-        ) || reportMissing("VK", "VK_EXT_depth_clamp_control");
-    }
-
-    private static boolean check_EXT_descriptor_buffer(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_EXT_descriptor_buffer(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_EXT_descriptor_buffer")) {
             return false;
         }
 
         int flag0 = ext.contains("VK_KHR_acceleration_structure") || ext.contains("VK_NV_ray_tracing") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             273, 274, 275, 276, 277, 278, 279, 280, 281, 282, flag0 + 283
         },
             "vkGetDescriptorSetLayoutSizeEXT", "vkGetDescriptorSetLayoutBindingOffsetEXT", "vkGetDescriptorEXT", "vkCmdBindDescriptorBuffersEXT", 
@@ -3547,7 +3482,7 @@ public class VKCapabilitiesDevice {
         ) || reportMissing("VK", "VK_EXT_descriptor_buffer");
     }
 
-    private static boolean check_EXT_descriptor_heap(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_EXT_descriptor_heap(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_EXT_descriptor_heap")) {
             return false;
         }
@@ -3555,7 +3490,7 @@ public class VKCapabilitiesDevice {
         int flag0 = ext.contains("VK_EXT_custom_border_color") ? 0 : Integer.MIN_VALUE;
         int flag2 = ext.contains("VK_ARM_tensors") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             284, 285, 286, 287, 288, 289, flag0 + 290, flag0 + 291, flag2 + 292
         },
             "vkWriteSamplerDescriptorsEXT", "vkWriteResourceDescriptorsEXT", "vkCmdBindSamplerHeapEXT", "vkCmdBindResourceHeapEXT", "vkCmdPushDataEXT", 
@@ -3563,84 +3498,7 @@ public class VKCapabilitiesDevice {
         ) || reportMissing("VK", "VK_EXT_descriptor_heap");
     }
 
-    private static boolean check_EXT_device_fault(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_device_fault")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            293
-        },
-            "vkGetDeviceFaultInfoEXT"
-        ) || reportMissing("VK", "VK_EXT_device_fault");
-    }
-
-    private static boolean check_EXT_device_generated_commands(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_device_generated_commands")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            294, 295, 296, 297, 298, 299, 300, 301, 302
-        },
-            "vkGetGeneratedCommandsMemoryRequirementsEXT", "vkCmdPreprocessGeneratedCommandsEXT", "vkCmdExecuteGeneratedCommandsEXT", 
-            "vkCreateIndirectCommandsLayoutEXT", "vkDestroyIndirectCommandsLayoutEXT", "vkCreateIndirectExecutionSetEXT", "vkDestroyIndirectExecutionSetEXT", 
-            "vkUpdateIndirectExecutionSetPipelineEXT", "vkUpdateIndirectExecutionSetShaderEXT"
-        ) || reportMissing("VK", "VK_EXT_device_generated_commands");
-    }
-
-    private static boolean check_EXT_discard_rectangles(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_discard_rectangles")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            303, 304, 305
-        },
-            "vkCmdSetDiscardRectangleEXT", "vkCmdSetDiscardRectangleEnableEXT", "vkCmdSetDiscardRectangleModeEXT"
-        ) || reportMissing("VK", "VK_EXT_discard_rectangles");
-    }
-
-    private static boolean check_EXT_display_control(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_display_control")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            306, 307, 308, 309
-        },
-            "vkDisplayPowerControlEXT", "vkRegisterDeviceEventEXT", "vkRegisterDisplayEventEXT", "vkGetSwapchainCounterEXT"
-        ) || reportMissing("VK", "VK_EXT_display_control");
-    }
-
-    private static boolean check_EXT_extended_dynamic_state(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_extended_dynamic_state")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321
-        },
-            "vkCmdSetCullModeEXT", "vkCmdSetFrontFaceEXT", "vkCmdSetPrimitiveTopologyEXT", "vkCmdSetViewportWithCountEXT", "vkCmdSetScissorWithCountEXT", 
-            "vkCmdBindVertexBuffers2EXT", "vkCmdSetDepthTestEnableEXT", "vkCmdSetDepthWriteEnableEXT", "vkCmdSetDepthCompareOpEXT", 
-            "vkCmdSetDepthBoundsTestEnableEXT", "vkCmdSetStencilTestEnableEXT", "vkCmdSetStencilOpEXT"
-        ) || reportMissing("VK", "VK_EXT_extended_dynamic_state");
-    }
-
-    private static boolean check_EXT_extended_dynamic_state2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_extended_dynamic_state2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            322, 323, 324, 325, 326
-        },
-            "vkCmdSetPatchControlPointsEXT", "vkCmdSetRasterizerDiscardEnableEXT", "vkCmdSetDepthBiasEnableEXT", "vkCmdSetLogicOpEXT", 
-            "vkCmdSetPrimitiveRestartEnableEXT"
-        ) || reportMissing("VK", "VK_EXT_extended_dynamic_state2");
-    }
-
-    private static boolean check_EXT_extended_dynamic_state3(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_EXT_extended_dynamic_state3(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_EXT_extended_dynamic_state3")) {
             return false;
         }
@@ -3662,7 +3520,7 @@ public class VKCapabilitiesDevice {
         int flag19 = ext.contains("VK_NV_representative_fragment_test") ? 0 : Integer.MIN_VALUE;
         int flag20 = ext.contains("VK_NV_coverage_reduction_mode") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             327, 328, 329, 330, 331, 332, 333, 334, 335, 336, flag0 + 337, flag1 + 338, flag2 + 339, flag2 + 340, flag4 + 341, flag5 + 342, flag6 + 343, 
             flag7 + 344, flag8 + 345, flag8 + 346, flag10 + 347, flag11 + 348, flag12 + 349, flag13 + 350, flag13 + 351, flag15 + 352, flag15 + 353, 
             flag15 + 354, flag18 + 355, flag19 + 356, flag20 + 357
@@ -3679,278 +3537,35 @@ public class VKCapabilitiesDevice {
         ) || reportMissing("VK", "VK_EXT_extended_dynamic_state3");
     }
 
-    private static boolean check_EXT_external_memory_host(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_external_memory_host")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            358
-        },
-            "vkGetMemoryHostPointerPropertiesEXT"
-        ) || reportMissing("VK", "VK_EXT_external_memory_host");
-    }
-
-    private static boolean check_EXT_external_memory_metal(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_external_memory_metal")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            359, 360
-        },
-            "vkGetMemoryMetalHandleEXT", "vkGetMemoryMetalHandlePropertiesEXT"
-        ) || reportMissing("VK", "VK_EXT_external_memory_metal");
-    }
-
-    private static boolean check_EXT_fragment_density_map_offset(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_fragment_density_map_offset")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            361
-        },
-            "vkCmdEndRendering2EXT"
-        ) || reportMissing("VK", "VK_EXT_fragment_density_map_offset");
-    }
-
-    private static boolean check_EXT_full_screen_exclusive(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_EXT_full_screen_exclusive(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_EXT_full_screen_exclusive")) {
             return false;
         }
 
         int flag0 = ext.contains("VK_KHR_device_group") || ext.contains("Vulkan11") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             362, 363, flag0 + 364
         },
             "vkAcquireFullScreenExclusiveModeEXT", "vkReleaseFullScreenExclusiveModeEXT", "vkGetDeviceGroupSurfacePresentModes2EXT"
         ) || reportMissing("VK", "VK_EXT_full_screen_exclusive");
     }
 
-    private static boolean check_EXT_hdr_metadata(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_hdr_metadata")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            365
-        },
-            "vkSetHdrMetadataEXT"
-        ) || reportMissing("VK", "VK_EXT_hdr_metadata");
-    }
-
-    private static boolean check_EXT_host_image_copy(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_host_image_copy")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            366, 367, 368, 369, 370
-        },
-            "vkCopyMemoryToImageEXT", "vkCopyImageToMemoryEXT", "vkCopyImageToImageEXT", "vkTransitionImageLayoutEXT", "vkGetImageSubresourceLayout2EXT"
-        ) || reportMissing("VK", "VK_EXT_host_image_copy");
-    }
-
-    private static boolean check_EXT_host_query_reset(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_host_query_reset")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            371
-        },
-            "vkResetQueryPoolEXT"
-        ) || reportMissing("VK", "VK_EXT_host_query_reset");
-    }
-
-    private static boolean check_EXT_image_compression_control(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_image_compression_control")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            370
-        },
-            "vkGetImageSubresourceLayout2EXT"
-        ) || reportMissing("VK", "VK_EXT_image_compression_control");
-    }
-
-    private static boolean check_EXT_image_drm_format_modifier(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_image_drm_format_modifier")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            372
-        },
-            "vkGetImageDrmFormatModifierPropertiesEXT"
-        ) || reportMissing("VK", "VK_EXT_image_drm_format_modifier");
-    }
-
-    private static boolean check_EXT_line_rasterization(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_line_rasterization")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            373
-        },
-            "vkCmdSetLineStippleEXT"
-        ) || reportMissing("VK", "VK_EXT_line_rasterization");
-    }
-
-    private static boolean check_EXT_memory_decompression(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_memory_decompression")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            374, 375
-        },
-            "vkCmdDecompressMemoryEXT", "vkCmdDecompressMemoryIndirectCountEXT"
-        ) || reportMissing("VK", "VK_EXT_memory_decompression");
-    }
-
-    private static boolean check_EXT_mesh_shader(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_EXT_mesh_shader(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_EXT_mesh_shader")) {
             return false;
         }
 
         int flag0 = ext.contains("Vulkan12") || ext.contains("VK_KHR_draw_indirect_count") || ext.contains("VK_AMD_draw_indirect_count") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             376, 377, flag0 + 378
         },
             "vkCmdDrawMeshTasksEXT", "vkCmdDrawMeshTasksIndirectEXT", "vkCmdDrawMeshTasksIndirectCountEXT"
         ) || reportMissing("VK", "VK_EXT_mesh_shader");
     }
 
-    private static boolean check_EXT_metal_objects(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_metal_objects")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            379
-        },
-            "vkExportMetalObjectsEXT"
-        ) || reportMissing("VK", "VK_EXT_metal_objects");
-    }
-
-    private static boolean check_EXT_multi_draw(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_multi_draw")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            380, 381
-        },
-            "vkCmdDrawMultiEXT", "vkCmdDrawMultiIndexedEXT"
-        ) || reportMissing("VK", "VK_EXT_multi_draw");
-    }
-
-    private static boolean check_EXT_opacity_micromap(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_opacity_micromap")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395
-        },
-            "vkCreateMicromapEXT", "vkDestroyMicromapEXT", "vkCmdBuildMicromapsEXT", "vkBuildMicromapsEXT", "vkCopyMicromapEXT", "vkCopyMicromapToMemoryEXT", 
-            "vkCopyMemoryToMicromapEXT", "vkWriteMicromapsPropertiesEXT", "vkCmdCopyMicromapEXT", "vkCmdCopyMicromapToMemoryEXT", 
-            "vkCmdCopyMemoryToMicromapEXT", "vkCmdWriteMicromapsPropertiesEXT", "vkGetDeviceMicromapCompatibilityEXT", "vkGetMicromapBuildSizesEXT"
-        ) || reportMissing("VK", "VK_EXT_opacity_micromap");
-    }
-
-    private static boolean check_EXT_pageable_device_local_memory(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_pageable_device_local_memory")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            396
-        },
-            "vkSetDeviceMemoryPriorityEXT"
-        ) || reportMissing("VK", "VK_EXT_pageable_device_local_memory");
-    }
-
-    private static boolean check_EXT_pipeline_properties(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_pipeline_properties")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            397
-        },
-            "vkGetPipelinePropertiesEXT"
-        ) || reportMissing("VK", "VK_EXT_pipeline_properties");
-    }
-
-    private static boolean check_EXT_present_timing(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_present_timing")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            398, 399, 400, 401
-        },
-            "vkSetSwapchainPresentTimingQueueSizeEXT", "vkGetSwapchainTimingPropertiesEXT", "vkGetSwapchainTimeDomainPropertiesEXT", 
-            "vkGetPastPresentationTimingEXT"
-        ) || reportMissing("VK", "VK_EXT_present_timing");
-    }
-
-    private static boolean check_EXT_primitive_restart_index(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_primitive_restart_index")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            402
-        },
-            "vkCmdSetPrimitiveRestartIndexEXT"
-        ) || reportMissing("VK", "VK_EXT_primitive_restart_index");
-    }
-
-    private static boolean check_EXT_private_data(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_private_data")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            403, 404, 405, 406
-        },
-            "vkCreatePrivateDataSlotEXT", "vkDestroyPrivateDataSlotEXT", "vkSetPrivateDataEXT", "vkGetPrivateDataEXT"
-        ) || reportMissing("VK", "VK_EXT_private_data");
-    }
-
-    private static boolean check_EXT_sample_locations(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_sample_locations")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            407
-        },
-            "vkCmdSetSampleLocationsEXT"
-        ) || reportMissing("VK", "VK_EXT_sample_locations");
-    }
-
-    private static boolean check_EXT_shader_module_identifier(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_shader_module_identifier")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            408, 409
-        },
-            "vkGetShaderModuleIdentifierEXT", "vkGetShaderModuleCreateInfoIdentifierEXT"
-        ) || reportMissing("VK", "VK_EXT_shader_module_identifier");
-    }
-
-    private static boolean check_EXT_shader_object(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_EXT_shader_object(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_EXT_shader_object")) {
             return false;
         }
@@ -3972,7 +3587,7 @@ public class VKCapabilitiesDevice {
         int flag19 = ext.contains("VK_NV_coverage_reduction_mode") ? 0 : Integer.MIN_VALUE;
         int flag20 = ext.contains("VK_EXT_depth_clamp_control") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             410, 411, 412, 413, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 414, 322, 323, 324, 325, 326, 337, 327, 328, 329, 330, 331, 332, 
             333, 334, 335, 336, flag0 + 338, flag1 + 339, flag1 + 340, flag3 + 341, flag4 + 342, flag5 + 343, flag6 + 344, flag7 + 345, flag7 + 346, 
             flag9 + 347, flag10 + 348, flag11 + 349, flag12 + 350, flag12 + 351, flag14 + 352, flag14 + 353, flag14 + 354, flag17 + 355, flag18 + 356, 
@@ -3995,228 +3610,14 @@ public class VKCapabilitiesDevice {
         ) || reportMissing("VK", "VK_EXT_shader_object");
     }
 
-    private static boolean check_EXT_swapchain_maintenance1(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_swapchain_maintenance1")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            415
-        },
-            "vkReleaseSwapchainImagesEXT"
-        ) || reportMissing("VK", "VK_EXT_swapchain_maintenance1");
-    }
-
-    private static boolean check_EXT_transform_feedback(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_transform_feedback")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            416, 417, 418, 419, 420, 421
-        },
-            "vkCmdBindTransformFeedbackBuffersEXT", "vkCmdBeginTransformFeedbackEXT", "vkCmdEndTransformFeedbackEXT", "vkCmdBeginQueryIndexedEXT", 
-            "vkCmdEndQueryIndexedEXT", "vkCmdDrawIndirectByteCountEXT"
-        ) || reportMissing("VK", "VK_EXT_transform_feedback");
-    }
-
-    private static boolean check_EXT_validation_cache(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_validation_cache")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            422, 423, 424, 425
-        },
-            "vkCreateValidationCacheEXT", "vkDestroyValidationCacheEXT", "vkMergeValidationCachesEXT", "vkGetValidationCacheDataEXT"
-        ) || reportMissing("VK", "VK_EXT_validation_cache");
-    }
-
-    private static boolean check_EXT_vertex_input_dynamic_state(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_EXT_vertex_input_dynamic_state")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            414
-        },
-            "vkCmdSetVertexInputEXT"
-        ) || reportMissing("VK", "VK_EXT_vertex_input_dynamic_state");
-    }
-
-    private static boolean check_GOOGLE_display_timing(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_GOOGLE_display_timing")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            426, 427
-        },
-            "vkGetRefreshCycleDurationGOOGLE", "vkGetPastPresentationTimingGOOGLE"
-        ) || reportMissing("VK", "VK_GOOGLE_display_timing");
-    }
-
-    private static boolean check_HUAWEI_cluster_culling_shader(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_HUAWEI_cluster_culling_shader")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            428, 429
-        },
-            "vkCmdDrawClusterHUAWEI", "vkCmdDrawClusterIndirectHUAWEI"
-        ) || reportMissing("VK", "VK_HUAWEI_cluster_culling_shader");
-    }
-
-    private static boolean check_HUAWEI_invocation_mask(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_HUAWEI_invocation_mask")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            430
-        },
-            "vkCmdBindInvocationMaskHUAWEI"
-        ) || reportMissing("VK", "VK_HUAWEI_invocation_mask");
-    }
-
-    private static boolean check_HUAWEI_subpass_shading(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_HUAWEI_subpass_shading")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            431, 432
-        },
-            "vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI", "vkCmdSubpassShadingHUAWEI"
-        ) || reportMissing("VK", "VK_HUAWEI_subpass_shading");
-    }
-
-    private static boolean check_INTEL_performance_query(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_INTEL_performance_query")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            433, 434, 435, 436, 437, 438, 439, 440, 441
-        },
-            "vkInitializePerformanceApiINTEL", "vkUninitializePerformanceApiINTEL", "vkCmdSetPerformanceMarkerINTEL", "vkCmdSetPerformanceStreamMarkerINTEL", 
-            "vkCmdSetPerformanceOverrideINTEL", "vkAcquirePerformanceConfigurationINTEL", "vkReleasePerformanceConfigurationINTEL", 
-            "vkQueueSetPerformanceConfigurationINTEL", "vkGetPerformanceParameterINTEL"
-        ) || reportMissing("VK", "VK_INTEL_performance_query");
-    }
-
-    private static boolean check_KHR_acceleration_structure(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_acceleration_structure")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457
-        },
-            "vkCreateAccelerationStructureKHR", "vkDestroyAccelerationStructureKHR", "vkCmdBuildAccelerationStructuresKHR", 
-            "vkCmdBuildAccelerationStructuresIndirectKHR", "vkBuildAccelerationStructuresKHR", "vkCopyAccelerationStructureKHR", 
-            "vkCopyAccelerationStructureToMemoryKHR", "vkCopyMemoryToAccelerationStructureKHR", "vkWriteAccelerationStructuresPropertiesKHR", 
-            "vkCmdCopyAccelerationStructureKHR", "vkCmdCopyAccelerationStructureToMemoryKHR", "vkCmdCopyMemoryToAccelerationStructureKHR", 
-            "vkGetAccelerationStructureDeviceAddressKHR", "vkCmdWriteAccelerationStructuresPropertiesKHR", "vkGetDeviceAccelerationStructureCompatibilityKHR", 
-            "vkGetAccelerationStructureBuildSizesKHR"
-        ) || reportMissing("VK", "VK_KHR_acceleration_structure");
-    }
-
-    private static boolean check_KHR_bind_memory2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_bind_memory2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            458, 459
-        },
-            "vkBindBufferMemory2KHR", "vkBindImageMemory2KHR"
-        ) || reportMissing("VK", "VK_KHR_bind_memory2");
-    }
-
-    private static boolean check_KHR_buffer_device_address(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_buffer_device_address")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            460, 461, 462
-        },
-            "vkGetBufferDeviceAddressKHR", "vkGetBufferOpaqueCaptureAddressKHR", "vkGetDeviceMemoryOpaqueCaptureAddressKHR"
-        ) || reportMissing("VK", "VK_KHR_buffer_device_address");
-    }
-
-    private static boolean check_KHR_calibrated_timestamps(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_calibrated_timestamps")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            463
-        },
-            "vkGetCalibratedTimestampsKHR"
-        ) || reportMissing("VK", "VK_KHR_calibrated_timestamps");
-    }
-
-    private static boolean check_KHR_copy_commands2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_copy_commands2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            464, 465, 466, 467, 468, 469
-        },
-            "vkCmdCopyBuffer2KHR", "vkCmdCopyImage2KHR", "vkCmdCopyBufferToImage2KHR", "vkCmdCopyImageToBuffer2KHR", "vkCmdBlitImage2KHR", 
-            "vkCmdResolveImage2KHR"
-        ) || reportMissing("VK", "VK_KHR_copy_commands2");
-    }
-
-    private static boolean check_KHR_copy_memory_indirect(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_copy_memory_indirect")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            470, 471
-        },
-            "vkCmdCopyMemoryIndirectKHR", "vkCmdCopyMemoryToImageIndirectKHR"
-        ) || reportMissing("VK", "VK_KHR_copy_memory_indirect");
-    }
-
-    private static boolean check_KHR_create_renderpass2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_create_renderpass2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            472, 473, 474, 475
-        },
-            "vkCreateRenderPass2KHR", "vkCmdBeginRenderPass2KHR", "vkCmdNextSubpass2KHR", "vkCmdEndRenderPass2KHR"
-        ) || reportMissing("VK", "VK_KHR_create_renderpass2");
-    }
-
-    private static boolean check_KHR_deferred_host_operations(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_deferred_host_operations")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            476, 477, 478, 479, 480
-        },
-            "vkCreateDeferredOperationKHR", "vkDestroyDeferredOperationKHR", "vkGetDeferredOperationMaxConcurrencyKHR", "vkGetDeferredOperationResultKHR", 
-            "vkDeferredOperationJoinKHR"
-        ) || reportMissing("VK", "VK_KHR_deferred_host_operations");
-    }
-
-    private static boolean check_KHR_descriptor_update_template(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_KHR_descriptor_update_template(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_KHR_descriptor_update_template")) {
             return false;
         }
 
         int flag0 = ext.contains("VK_KHR_push_descriptor") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             481, 482, 483, flag0 + 484
         },
             "vkCreateDescriptorUpdateTemplateKHR", "vkDestroyDescriptorUpdateTemplateKHR", "vkUpdateDescriptorSetWithTemplateKHR", 
@@ -4224,20 +3625,23 @@ public class VKCapabilitiesDevice {
         ) || reportMissing("VK", "VK_KHR_descriptor_update_template");
     }
 
-    private static boolean check_KHR_device_address_commands(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_KHR_device_address_commands(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_KHR_device_address_commands")) {
             return false;
         }
 
-        int flag0 = ext.contains("VK_KHR_draw_indirect_count") || ext.contains("Vulkan12") ? 0 : Integer.MIN_VALUE;
+        boolean cVK_KHR_draw_indirect_count = ext.contains("VK_KHR_draw_indirect_count");
+        boolean cVK_EXT_mesh_shader = ext.contains("VK_EXT_mesh_shader");
+        boolean cVulkan12 = ext.contains("Vulkan12");
+        int flag0 = cVK_KHR_draw_indirect_count || cVulkan12 ? 0 : Integer.MIN_VALUE;
         int flag2 = ext.contains("VK_EXT_conditional_rendering") ? 0 : Integer.MIN_VALUE;
         int flag3 = ext.contains("VK_EXT_transform_feedback") ? 0 : Integer.MIN_VALUE;
-        int flag7 = ext.contains("VK_EXT_mesh_shader") ? 0 : Integer.MIN_VALUE;
-        int flag8 = (ext.contains("VK_KHR_draw_indirect_count") || ext.contains("Vulkan12")) && ext.contains("VK_EXT_mesh_shader") ? 0 : Integer.MIN_VALUE;
+        int flag7 = cVK_EXT_mesh_shader ? 0 : Integer.MIN_VALUE;
+        int flag8 = (cVK_KHR_draw_indirect_count || cVulkan12) && cVK_EXT_mesh_shader ? 0 : Integer.MIN_VALUE;
         int flag9 = ext.contains("VK_AMD_buffer_marker") ? 0 : Integer.MIN_VALUE;
         int flag10 = ext.contains("VK_KHR_acceleration_structure") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, flag0 + 496, flag0 + 497, flag2 + 498, flag3 + 499, flag3 + 500, flag3 + 501, flag3 + 502, 
             flag7 + 503, flag8 + 504, flag9 + 505, flag10 + 506
         },
@@ -4249,19 +3653,7 @@ public class VKCapabilitiesDevice {
         ) || reportMissing("VK", "VK_KHR_device_address_commands");
     }
 
-    private static boolean check_KHR_device_fault(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_device_fault")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            507, 508
-        },
-            "vkGetDeviceFaultReportsKHR", "vkGetDeviceFaultDebugInfoKHR"
-        ) || reportMissing("VK", "VK_KHR_device_fault");
-    }
-
-    private static boolean check_KHR_device_group(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_KHR_device_group(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_KHR_device_group")) {
             return false;
         }
@@ -4269,7 +3661,7 @@ public class VKCapabilitiesDevice {
         int flag0 = ext.contains("VK_KHR_surface") ? 0 : Integer.MIN_VALUE;
         int flag2 = ext.contains("VK_KHR_swapchain") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             509, 510, 511, flag0 + 512, flag0 + 513, flag2 + 514
         },
             "vkGetDeviceGroupPeerMemoryFeaturesKHR", "vkCmdSetDeviceMaskKHR", "vkCmdDispatchBaseKHR", "vkGetDeviceGroupPresentCapabilitiesKHR", 
@@ -4277,223 +3669,7 @@ public class VKCapabilitiesDevice {
         ) || reportMissing("VK", "VK_KHR_device_group");
     }
 
-    private static boolean check_KHR_display_swapchain(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_display_swapchain")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            515
-        },
-            "vkCreateSharedSwapchainsKHR"
-        ) || reportMissing("VK", "VK_KHR_display_swapchain");
-    }
-
-    private static boolean check_KHR_draw_indirect_count(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_draw_indirect_count")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            516, 517
-        },
-            "vkCmdDrawIndirectCountKHR", "vkCmdDrawIndexedIndirectCountKHR"
-        ) || reportMissing("VK", "VK_KHR_draw_indirect_count");
-    }
-
-    private static boolean check_KHR_dynamic_rendering(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_dynamic_rendering")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            518, 519
-        },
-            "vkCmdBeginRenderingKHR", "vkCmdEndRenderingKHR"
-        ) || reportMissing("VK", "VK_KHR_dynamic_rendering");
-    }
-
-    private static boolean check_KHR_dynamic_rendering_local_read(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_dynamic_rendering_local_read")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            520, 521
-        },
-            "vkCmdSetRenderingAttachmentLocationsKHR", "vkCmdSetRenderingInputAttachmentIndicesKHR"
-        ) || reportMissing("VK", "VK_KHR_dynamic_rendering_local_read");
-    }
-
-    private static boolean check_KHR_external_fence_fd(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_external_fence_fd")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            522, 523
-        },
-            "vkImportFenceFdKHR", "vkGetFenceFdKHR"
-        ) || reportMissing("VK", "VK_KHR_external_fence_fd");
-    }
-
-    private static boolean check_KHR_external_fence_win32(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_external_fence_win32")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            524, 525
-        },
-            "vkImportFenceWin32HandleKHR", "vkGetFenceWin32HandleKHR"
-        ) || reportMissing("VK", "VK_KHR_external_fence_win32");
-    }
-
-    private static boolean check_KHR_external_memory_fd(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_external_memory_fd")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            526, 527
-        },
-            "vkGetMemoryFdKHR", "vkGetMemoryFdPropertiesKHR"
-        ) || reportMissing("VK", "VK_KHR_external_memory_fd");
-    }
-
-    private static boolean check_KHR_external_memory_win32(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_external_memory_win32")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            528, 529
-        },
-            "vkGetMemoryWin32HandleKHR", "vkGetMemoryWin32HandlePropertiesKHR"
-        ) || reportMissing("VK", "VK_KHR_external_memory_win32");
-    }
-
-    private static boolean check_KHR_external_semaphore_fd(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_external_semaphore_fd")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            530, 531
-        },
-            "vkImportSemaphoreFdKHR", "vkGetSemaphoreFdKHR"
-        ) || reportMissing("VK", "VK_KHR_external_semaphore_fd");
-    }
-
-    private static boolean check_KHR_external_semaphore_win32(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_external_semaphore_win32")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            532, 533
-        },
-            "vkImportSemaphoreWin32HandleKHR", "vkGetSemaphoreWin32HandleKHR"
-        ) || reportMissing("VK", "VK_KHR_external_semaphore_win32");
-    }
-
-    private static boolean check_KHR_fragment_shading_rate(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_fragment_shading_rate")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            534
-        },
-            "vkCmdSetFragmentShadingRateKHR"
-        ) || reportMissing("VK", "VK_KHR_fragment_shading_rate");
-    }
-
-    private static boolean check_KHR_get_memory_requirements2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_get_memory_requirements2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            535, 536, 537
-        },
-            "vkGetImageMemoryRequirements2KHR", "vkGetBufferMemoryRequirements2KHR", "vkGetImageSparseMemoryRequirements2KHR"
-        ) || reportMissing("VK", "VK_KHR_get_memory_requirements2");
-    }
-
-    private static boolean check_KHR_line_rasterization(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_line_rasterization")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            538
-        },
-            "vkCmdSetLineStippleKHR"
-        ) || reportMissing("VK", "VK_KHR_line_rasterization");
-    }
-
-    private static boolean check_KHR_maintenance1(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_maintenance1")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            539
-        },
-            "vkTrimCommandPoolKHR"
-        ) || reportMissing("VK", "VK_KHR_maintenance1");
-    }
-
-    private static boolean check_KHR_maintenance10(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_maintenance10")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            540
-        },
-            "vkCmdEndRendering2KHR"
-        ) || reportMissing("VK", "VK_KHR_maintenance10");
-    }
-
-    private static boolean check_KHR_maintenance3(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_maintenance3")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            541
-        },
-            "vkGetDescriptorSetLayoutSupportKHR"
-        ) || reportMissing("VK", "VK_KHR_maintenance3");
-    }
-
-    private static boolean check_KHR_maintenance4(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_maintenance4")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            542, 543, 544
-        },
-            "vkGetDeviceBufferMemoryRequirementsKHR", "vkGetDeviceImageMemoryRequirementsKHR", "vkGetDeviceImageSparseMemoryRequirementsKHR"
-        ) || reportMissing("VK", "VK_KHR_maintenance4");
-    }
-
-    private static boolean check_KHR_maintenance5(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_maintenance5")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            545, 546, 547, 548
-        },
-            "vkCmdBindIndexBuffer2KHR", "vkGetRenderingAreaGranularityKHR", "vkGetDeviceImageSubresourceLayoutKHR", "vkGetImageSubresourceLayout2KHR"
-        ) || reportMissing("VK", "VK_KHR_maintenance5");
-    }
-
-    private static boolean check_KHR_maintenance6(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_KHR_maintenance6(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_KHR_maintenance6")) {
             return false;
         }
@@ -4501,7 +3677,7 @@ public class VKCapabilitiesDevice {
         int flag0 = ext.contains("VK_KHR_push_descriptor") ? 0 : Integer.MIN_VALUE;
         int flag2 = ext.contains("VK_EXT_descriptor_buffer") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             549, 550, flag0 + 551, flag0 + 552, flag2 + 553, flag2 + 554
         },
             "vkCmdBindDescriptorSets2KHR", "vkCmdPushConstants2KHR", "vkCmdPushDescriptorSet2KHR", "vkCmdPushDescriptorSetWithTemplate2KHR", 
@@ -4509,152 +3685,42 @@ public class VKCapabilitiesDevice {
         ) || reportMissing("VK", "VK_KHR_maintenance6");
     }
 
-    private static boolean check_KHR_map_memory2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_map_memory2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            555, 556
-        },
-            "vkMapMemory2KHR", "vkUnmapMemory2KHR"
-        ) || reportMissing("VK", "VK_KHR_map_memory2");
-    }
-
-    private static boolean check_KHR_performance_query(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_performance_query")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            557, 558
-        },
-            "vkAcquireProfilingLockKHR", "vkReleaseProfilingLockKHR"
-        ) || reportMissing("VK", "VK_KHR_performance_query");
-    }
-
-    private static boolean check_KHR_pipeline_binary(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_pipeline_binary")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            559, 560, 561, 562, 563
-        },
-            "vkCreatePipelineBinariesKHR", "vkDestroyPipelineBinaryKHR", "vkGetPipelineKeyKHR", "vkGetPipelineBinaryDataKHR", 
-            "vkReleaseCapturedPipelineDataKHR"
-        ) || reportMissing("VK", "VK_KHR_pipeline_binary");
-    }
-
-    private static boolean check_KHR_pipeline_executable_properties(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_pipeline_executable_properties")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            564, 565, 566
-        },
-            "vkGetPipelineExecutablePropertiesKHR", "vkGetPipelineExecutableStatisticsKHR", "vkGetPipelineExecutableInternalRepresentationsKHR"
-        ) || reportMissing("VK", "VK_KHR_pipeline_executable_properties");
-    }
-
-    private static boolean check_KHR_present_wait(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_present_wait")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            567
-        },
-            "vkWaitForPresentKHR"
-        ) || reportMissing("VK", "VK_KHR_present_wait");
-    }
-
-    private static boolean check_KHR_present_wait2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_present_wait2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            568
-        },
-            "vkWaitForPresent2KHR"
-        ) || reportMissing("VK", "VK_KHR_present_wait2");
-    }
-
-    private static boolean check_KHR_push_descriptor(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_KHR_push_descriptor(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_KHR_push_descriptor")) {
             return false;
         }
 
         int flag0 = ext.contains("Vulkan11") || ext.contains("VK_KHR_descriptor_update_template") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             569, flag0 + 484
         },
             "vkCmdPushDescriptorSetKHR", "vkCmdPushDescriptorSetWithTemplateKHR"
         ) || reportMissing("VK", "VK_KHR_push_descriptor");
     }
 
-    private static boolean check_KHR_ray_tracing_maintenance1(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_KHR_ray_tracing_maintenance1(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_KHR_ray_tracing_maintenance1")) {
             return false;
         }
 
         int flag0 = ext.contains("VK_KHR_ray_tracing_pipeline") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             flag0 + 570
         },
             "vkCmdTraceRaysIndirect2KHR"
         ) || reportMissing("VK", "VK_KHR_ray_tracing_maintenance1");
     }
 
-    private static boolean check_KHR_ray_tracing_pipeline(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_ray_tracing_pipeline")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            571, 572, 573, 574, 575, 576, 577
-        },
-            "vkCmdTraceRaysKHR", "vkCreateRayTracingPipelinesKHR", "vkGetRayTracingShaderGroupHandlesKHR", "vkGetRayTracingCaptureReplayShaderGroupHandlesKHR", 
-            "vkCmdTraceRaysIndirectKHR", "vkGetRayTracingShaderGroupStackSizeKHR", "vkCmdSetRayTracingPipelineStackSizeKHR"
-        ) || reportMissing("VK", "VK_KHR_ray_tracing_pipeline");
-    }
-
-    private static boolean check_KHR_sampler_ycbcr_conversion(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_sampler_ycbcr_conversion")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            578, 579
-        },
-            "vkCreateSamplerYcbcrConversionKHR", "vkDestroySamplerYcbcrConversionKHR"
-        ) || reportMissing("VK", "VK_KHR_sampler_ycbcr_conversion");
-    }
-
-    private static boolean check_KHR_shared_presentable_image(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_shared_presentable_image")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            580
-        },
-            "vkGetSwapchainStatusKHR"
-        ) || reportMissing("VK", "VK_KHR_shared_presentable_image");
-    }
-
-    private static boolean check_KHR_swapchain(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_KHR_swapchain(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_KHR_swapchain")) {
             return false;
         }
 
         int flag0 = ext.contains("Vulkan11") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             581, 582, 583, 584, 585, flag0 + 512, flag0 + 513, flag0 + 514
         },
             "vkCreateSwapchainKHR", "vkDestroySwapchainKHR", "vkGetSwapchainImagesKHR", "vkAcquireNextImageKHR", "vkQueuePresentKHR", 
@@ -4662,436 +3728,32 @@ public class VKCapabilitiesDevice {
         ) || reportMissing("VK", "VK_KHR_swapchain");
     }
 
-    private static boolean check_KHR_swapchain_maintenance1(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_swapchain_maintenance1")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            586
-        },
-            "vkReleaseSwapchainImagesKHR"
-        ) || reportMissing("VK", "VK_KHR_swapchain_maintenance1");
-    }
-
-    private static boolean check_KHR_synchronization2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_synchronization2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            587, 588, 589, 590, 591, 592
-        },
-            "vkCmdSetEvent2KHR", "vkCmdResetEvent2KHR", "vkCmdWaitEvents2KHR", "vkCmdPipelineBarrier2KHR", "vkCmdWriteTimestamp2KHR", "vkQueueSubmit2KHR"
-        ) || reportMissing("VK", "VK_KHR_synchronization2");
-    }
-
-    private static boolean check_KHR_timeline_semaphore(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_timeline_semaphore")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            593, 594, 595
-        },
-            "vkGetSemaphoreCounterValueKHR", "vkWaitSemaphoresKHR", "vkSignalSemaphoreKHR"
-        ) || reportMissing("VK", "VK_KHR_timeline_semaphore");
-    }
-
-    private static boolean check_KHR_video_decode_queue(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_video_decode_queue")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            596
-        },
-            "vkCmdDecodeVideoKHR"
-        ) || reportMissing("VK", "VK_KHR_video_decode_queue");
-    }
-
-    private static boolean check_KHR_video_encode_queue(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_video_encode_queue")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            597, 598
-        },
-            "vkGetEncodedVideoSessionParametersKHR", "vkCmdEncodeVideoKHR"
-        ) || reportMissing("VK", "VK_KHR_video_encode_queue");
-    }
-
-    private static boolean check_KHR_video_queue(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_KHR_video_queue")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            599, 600, 601, 602, 603, 604, 605, 606, 607, 608
-        },
-            "vkCreateVideoSessionKHR", "vkDestroyVideoSessionKHR", "vkGetVideoSessionMemoryRequirementsKHR", "vkBindVideoSessionMemoryKHR", 
-            "vkCreateVideoSessionParametersKHR", "vkUpdateVideoSessionParametersKHR", "vkDestroyVideoSessionParametersKHR", "vkCmdBeginVideoCodingKHR", 
-            "vkCmdEndVideoCodingKHR", "vkCmdControlVideoCodingKHR"
-        ) || reportMissing("VK", "VK_KHR_video_queue");
-    }
-
-    private static boolean check_NV_clip_space_w_scaling(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_clip_space_w_scaling")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            609
-        },
-            "vkCmdSetViewportWScalingNV"
-        ) || reportMissing("VK", "VK_NV_clip_space_w_scaling");
-    }
-
-    private static boolean check_NV_cluster_acceleration_structure(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_cluster_acceleration_structure")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            610, 611
-        },
-            "vkGetClusterAccelerationStructureBuildSizesNV", "vkCmdBuildClusterAccelerationStructureIndirectNV"
-        ) || reportMissing("VK", "VK_NV_cluster_acceleration_structure");
-    }
-
-    private static boolean check_NV_compute_occupancy_priority(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_compute_occupancy_priority")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            612
-        },
-            "vkCmdSetComputeOccupancyPriorityNV"
-        ) || reportMissing("VK", "VK_NV_compute_occupancy_priority");
-    }
-
-    private static boolean check_NV_cooperative_vector(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_cooperative_vector")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            613, 614
-        },
-            "vkConvertCooperativeVectorMatrixNV", "vkCmdConvertCooperativeVectorMatrixNV"
-        ) || reportMissing("VK", "VK_NV_cooperative_vector");
-    }
-
-    private static boolean check_NV_copy_memory_indirect(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_copy_memory_indirect")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            615, 616
-        },
-            "vkCmdCopyMemoryIndirectNV", "vkCmdCopyMemoryToImageIndirectNV"
-        ) || reportMissing("VK", "VK_NV_copy_memory_indirect");
-    }
-
-    private static boolean check_NV_cuda_kernel_launch(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_cuda_kernel_launch")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            617, 618, 619, 620, 621, 622
-        },
-            "vkCreateCudaModuleNV", "vkGetCudaModuleCacheNV", "vkCreateCudaFunctionNV", "vkDestroyCudaModuleNV", "vkDestroyCudaFunctionNV", 
-            "vkCmdCudaLaunchKernelNV"
-        ) || reportMissing("VK", "VK_NV_cuda_kernel_launch");
-    }
-
-    private static boolean check_NV_device_diagnostic_checkpoints(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_NV_device_diagnostic_checkpoints(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_NV_device_diagnostic_checkpoints")) {
             return false;
         }
 
         int flag0 = ext.contains("Vulkan13") || ext.contains("VK_KHR_synchronization2") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             623, 624, flag0 + 625
         },
             "vkCmdSetCheckpointNV", "vkGetQueueCheckpointDataNV", "vkGetQueueCheckpointData2NV"
         ) || reportMissing("VK", "VK_NV_device_diagnostic_checkpoints");
     }
 
-    private static boolean check_NV_device_generated_commands(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_device_generated_commands")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            626, 627, 628, 629, 630, 631
-        },
-            "vkGetGeneratedCommandsMemoryRequirementsNV", "vkCmdPreprocessGeneratedCommandsNV", "vkCmdExecuteGeneratedCommandsNV", 
-            "vkCmdBindPipelineShaderGroupNV", "vkCreateIndirectCommandsLayoutNV", "vkDestroyIndirectCommandsLayoutNV"
-        ) || reportMissing("VK", "VK_NV_device_generated_commands");
-    }
-
-    private static boolean check_NV_device_generated_commands_compute(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_device_generated_commands_compute")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            632, 633, 634
-        },
-            "vkGetPipelineIndirectMemoryRequirementsNV", "vkCmdUpdatePipelineIndirectBufferNV", "vkGetPipelineIndirectDeviceAddressNV"
-        ) || reportMissing("VK", "VK_NV_device_generated_commands_compute");
-    }
-
-    private static boolean check_NV_external_compute_queue(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_external_compute_queue")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            635, 636, 637
-        },
-            "vkCreateExternalComputeQueueNV", "vkDestroyExternalComputeQueueNV", "vkGetExternalComputeQueueDataNV"
-        ) || reportMissing("VK", "VK_NV_external_compute_queue");
-    }
-
-    private static boolean check_NV_external_memory_rdma(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_external_memory_rdma")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            638
-        },
-            "vkGetMemoryRemoteAddressNV"
-        ) || reportMissing("VK", "VK_NV_external_memory_rdma");
-    }
-
-    private static boolean check_NV_external_memory_win32(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_external_memory_win32")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            639
-        },
-            "vkGetMemoryWin32HandleNV"
-        ) || reportMissing("VK", "VK_NV_external_memory_win32");
-    }
-
-    private static boolean check_NV_fragment_shading_rate_enums(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_fragment_shading_rate_enums")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            640
-        },
-            "vkCmdSetFragmentShadingRateEnumNV"
-        ) || reportMissing("VK", "VK_NV_fragment_shading_rate_enums");
-    }
-
-    private static boolean check_NV_low_latency(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_low_latency")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            641, 642, 643, 644, 645, 646, 647
-        },
-            "vkSetLatencySleepModeLegacyNV", "vkLatencySleepLegacyNV", "vkSetLatencyMarkerLegacyNV", "vkGetLatencyTimingsLegacyNV", 
-            "vkQueueNotifyOutOfBandLegacyNV", "vkGetSleepStatusLegacyNV", "vkShutdownLatencyDeviceLegacyNV"
-        ) || reportMissing("VK", "VK_NV_low_latency");
-    }
-
-    private static boolean check_NV_low_latency2(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_low_latency2")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            648, 649, 650, 651, 652
-        },
-            "vkSetLatencySleepModeNV", "vkLatencySleepNV", "vkSetLatencyMarkerNV", "vkGetLatencyTimingsNV", "vkQueueNotifyOutOfBandNV"
-        ) || reportMissing("VK", "VK_NV_low_latency2");
-    }
-
-    private static boolean check_NV_memory_decompression(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_memory_decompression")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            653, 654
-        },
-            "vkCmdDecompressMemoryNV", "vkCmdDecompressMemoryIndirectCountNV"
-        ) || reportMissing("VK", "VK_NV_memory_decompression");
-    }
-
-    private static boolean check_NV_mesh_shader(FunctionProvider provider, long[] caps, Set<String> ext) {
+    private static boolean check_NV_mesh_shader(MemoryStack stack, FunctionProvider provider, long[] caps, Set<String> ext) {
         if (!ext.contains("VK_NV_mesh_shader")) {
             return false;
         }
 
         int flag0 = ext.contains("Vulkan12") || ext.contains("VK_KHR_draw_indirect_count") || ext.contains("VK_AMD_draw_indirect_count") ? 0 : Integer.MIN_VALUE;
 
-        return checkFunctions(provider, caps, new int[] {
+        return checkFunctions(stack, provider, caps, new int[] {
             655, 656, flag0 + 657
         },
             "vkCmdDrawMeshTasksNV", "vkCmdDrawMeshTasksIndirectNV", "vkCmdDrawMeshTasksIndirectCountNV"
         ) || reportMissing("VK", "VK_NV_mesh_shader");
-    }
-
-    private static boolean check_NV_optical_flow(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_optical_flow")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            658, 659, 660, 661
-        },
-            "vkCreateOpticalFlowSessionNV", "vkDestroyOpticalFlowSessionNV", "vkBindOpticalFlowSessionImageNV", "vkCmdOpticalFlowExecuteNV"
-        ) || reportMissing("VK", "VK_NV_optical_flow");
-    }
-
-    private static boolean check_NV_partitioned_acceleration_structure(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_partitioned_acceleration_structure")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            662, 663
-        },
-            "vkGetPartitionedAccelerationStructuresBuildSizesNV", "vkCmdBuildPartitionedAccelerationStructuresNV"
-        ) || reportMissing("VK", "VK_NV_partitioned_acceleration_structure");
-    }
-
-    private static boolean check_NV_ray_tracing(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_ray_tracing")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675
-        },
-            "vkCreateAccelerationStructureNV", "vkDestroyAccelerationStructureNV", "vkGetAccelerationStructureMemoryRequirementsNV", 
-            "vkBindAccelerationStructureMemoryNV", "vkCmdBuildAccelerationStructureNV", "vkCmdCopyAccelerationStructureNV", "vkCmdTraceRaysNV", 
-            "vkCreateRayTracingPipelinesNV", "vkGetRayTracingShaderGroupHandlesNV", "vkGetAccelerationStructureHandleNV", 
-            "vkCmdWriteAccelerationStructuresPropertiesNV", "vkCompileDeferredNV"
-        ) || reportMissing("VK", "VK_NV_ray_tracing");
-    }
-
-    private static boolean check_NV_scissor_exclusive(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_scissor_exclusive")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            676, 677
-        },
-            "vkCmdSetExclusiveScissorEnableNV", "vkCmdSetExclusiveScissorNV"
-        ) || reportMissing("VK", "VK_NV_scissor_exclusive");
-    }
-
-    private static boolean check_NV_shading_rate_image(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NV_shading_rate_image")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            678, 679, 680
-        },
-            "vkCmdBindShadingRateImageNV", "vkCmdSetViewportShadingRatePaletteNV", "vkCmdSetCoarseSampleOrderNV"
-        ) || reportMissing("VK", "VK_NV_shading_rate_image");
-    }
-
-    private static boolean check_NVX_binary_import(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NVX_binary_import")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            681, 682, 683, 684, 685
-        },
-            "vkCreateCuModuleNVX", "vkCreateCuFunctionNVX", "vkDestroyCuModuleNVX", "vkDestroyCuFunctionNVX", "vkCmdCuLaunchKernelNVX"
-        ) || reportMissing("VK", "VK_NVX_binary_import");
-    }
-
-    private static boolean check_NVX_image_view_handle(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_NVX_image_view_handle")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            686, 687, 688, 689
-        },
-            "vkGetImageViewHandleNVX", "vkGetImageViewHandle64NVX", "vkGetImageViewAddressNVX", "vkGetDeviceCombinedImageSamplerIndexNVX"
-        ) || reportMissing("VK", "VK_NVX_image_view_handle");
-    }
-
-    private static boolean check_QCOM_queue_perf_hint(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_QCOM_queue_perf_hint")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            690
-        },
-            "vkQueueSetPerfHintQCOM"
-        ) || reportMissing("VK", "VK_QCOM_queue_perf_hint");
-    }
-
-    private static boolean check_QCOM_tile_memory_heap(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_QCOM_tile_memory_heap")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            691
-        },
-            "vkCmdBindTileMemoryQCOM"
-        ) || reportMissing("VK", "VK_QCOM_tile_memory_heap");
-    }
-
-    private static boolean check_QCOM_tile_properties(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_QCOM_tile_properties")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            692, 693
-        },
-            "vkGetFramebufferTilePropertiesQCOM", "vkGetDynamicRenderingTilePropertiesQCOM"
-        ) || reportMissing("VK", "VK_QCOM_tile_properties");
-    }
-
-    private static boolean check_QCOM_tile_shading(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_QCOM_tile_shading")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            694, 695, 696
-        },
-            "vkCmdDispatchTileQCOM", "vkCmdBeginPerTileExecutionQCOM", "vkCmdEndPerTileExecutionQCOM"
-        ) || reportMissing("VK", "VK_QCOM_tile_shading");
-    }
-
-    private static boolean check_VALVE_descriptor_set_host_mapping(FunctionProvider provider, long[] caps, Set<String> ext) {
-        if (!ext.contains("VK_VALVE_descriptor_set_host_mapping")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            697, 698
-        },
-            "vkGetDescriptorSetLayoutHostMappingInfoVALVE", "vkGetDescriptorSetHostMappingVALVE"
-        ) || reportMissing("VK", "VK_VALVE_descriptor_set_host_mapping");
     }
 
 }

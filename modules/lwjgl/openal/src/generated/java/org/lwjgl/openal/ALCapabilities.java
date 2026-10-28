@@ -450,21 +450,84 @@ public final class ALCapabilities {
     /** When true, {@code SOFTX_hold_on_disconnect} is supported. */
     public final boolean AL_SOFTX_hold_on_disconnect;
 
+
+    private static boolean checkExt1(String extName, MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext, int from, int to, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, caps, from, to, functions) || reportMissing("AL", extName);
+    }
+
+    private static boolean checkExt2(String extName, MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext, int index, String function) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunction(stack, provider, caps, index, function) || reportMissing("AL", extName);
+    }
+
+    private static boolean checkExt3(String extName, MemoryStack stack, FunctionProvider provider, PointerBuffer caps, Set<String> ext, int[] indices, String... functions) {
+        if (!ext.contains(extName)) {
+            return false;
+        }
+        return checkFunctions(stack, provider, caps, indices, functions) || reportMissing("AL", extName);
+    }
+
     /** Off-heap array of the above function addresses. */
     final PointerBuffer addresses;
 
     ALCapabilities(FunctionProvider provider, Set<String> ext, IntFunction<PointerBuffer> bufferFactory) {
         PointerBuffer caps = bufferFactory.apply(289);
+        MemoryStack stack = MemoryStack.stackGet();
 
-        OpenAL10 = check_AL10(provider, caps, ext);
-        OpenAL11 = check_AL11(provider, caps, ext);
+        OpenAL10 = checkExt1("OpenAL10", stack, provider, caps, ext, 0, 109,
+            "alGetError", "alGetErrorDirect", "alEnable", "alEnableDirect", "alDisable", "alDisableDirect", "alIsEnabled", "alIsEnabledDirect", "alGetBoolean", 
+            "alGetBooleanDirect", "alGetInteger", "alGetIntegerDirect", "alGetFloat", "alGetFloatDirect", "alGetDouble", "alGetDoubleDirect", "alGetBooleanv", 
+            "alGetBooleanvDirect", "alGetIntegerv", "alGetIntegervDirect", "alGetFloatv", "alGetFloatvDirect", "alGetDoublev", "alGetDoublevDirect", 
+            "alGetString", "alGetStringDirect", "alDistanceModel", "alDistanceModelDirect", "alDopplerFactor", "alDopplerFactorDirect", "alDopplerVelocity", 
+            "alListenerf", "alListenerfDirect", "alListeneri", "alListeneriDirect", "alListener3f", "alListener3fDirect", "alListenerfv", "alListenerfvDirect", 
+            "alGetListenerf", "alGetListenerfDirect", "alGetListeneri", "alGetListeneriDirect", "alGetListener3f", "alGetListener3fDirect", "alGetListenerfv", 
+            "alGetListenerfvDirect", "alGenSources", "alGenSourcesDirect", "alDeleteSources", "alDeleteSourcesDirect", "alIsSource", "alIsSourceDirect", 
+            "alSourcef", "alSourcefDirect", "alSource3f", "alSource3fDirect", "alSourcefv", "alSourcefvDirect", "alSourcei", "alSourceiDirect", "alGetSourcef", 
+            "alGetSourcefDirect", "alGetSource3f", "alGetSource3fDirect", "alGetSourcefv", "alGetSourcefvDirect", "alGetSourcei", "alGetSourceiDirect", 
+            "alGetSourceiv", "alGetSourceivDirect", "alSourceQueueBuffers", "alSourceQueueBuffersDirect", "alSourceUnqueueBuffers", 
+            "alSourceUnqueueBuffersDirect", "alSourcePlay", "alSourcePlayDirect", "alSourcePause", "alSourcePauseDirect", "alSourceStop", "alSourceStopDirect", 
+            "alSourceRewind", "alSourceRewindDirect", "alSourcePlayv", "alSourcePlayvDirect", "alSourcePausev", "alSourcePausevDirect", "alSourceStopv", 
+            "alSourceStopvDirect", "alSourceRewindv", "alSourceRewindvDirect", "alGenBuffers", "alGenBuffersDirect", "alDeleteBuffers", "alDeleteBuffersDirect", 
+            "alIsBuffer", "alIsBufferDirect", "alGetBufferf", "alGetBufferfDirect", "alGetBufferi", "alGetBufferiDirect", "alBufferData", "alBufferDataDirect", 
+            "alGetEnumValue", "alGetEnumValueDirect", "alGetProcAddress", "alGetProcAddressDirect", "alIsExtensionPresent", "alIsExtensionPresentDirect"
+        );
+        OpenAL11 = checkExt1("OpenAL11", stack, provider, caps, ext, 109, 145,
+            "alListener3i", "alListener3iDirect", "alGetListener3i", "alGetListener3iDirect", "alGetListeneriv", "alGetListenerivDirect", "alSource3i", 
+            "alSource3iDirect", "alGetSource3i", "alGetSource3iDirect", "alListeneriv", "alListenerivDirect", "alSourceiv", "alSourceivDirect", "alBufferf", 
+            "alBufferfDirect", "alBuffer3f", "alBuffer3fDirect", "alBufferfv", "alBufferfvDirect", "alBufferi", "alBufferiDirect", "alBuffer3i", 
+            "alBuffer3iDirect", "alBufferiv", "alBufferivDirect", "alGetBuffer3i", "alGetBuffer3iDirect", "alGetBufferiv", "alGetBufferivDirect", 
+            "alGetBuffer3f", "alGetBuffer3fDirect", "alGetBufferfv", "alGetBufferfvDirect", "alSpeedOfSound", "alSpeedOfSoundDirect"
+        );
         AL_EXT_32bit_formats = ext.contains("AL_EXT_32bit_formats");
         AL_EXT_ALAW = ext.contains("AL_EXT_ALAW");
         AL_EXT_BFORMAT = ext.contains("AL_EXT_BFORMAT");
-        AL_EXT_debug = check_EXT_debug(provider, caps, ext);
+        AL_EXT_debug = checkExt1("AL_EXT_debug", stack, provider, caps, ext, 145, 165,
+            "alDebugMessageCallbackEXT", "alDebugMessageCallbackDirectEXT", "alDebugMessageInsertEXT", "alDebugMessageInsertDirectEXT", 
+            "alDebugMessageControlEXT", "alDebugMessageControlDirectEXT", "alPushDebugGroupEXT", "alPushDebugGroupDirectEXT", "alPopDebugGroupEXT", 
+            "alPopDebugGroupDirectEXT", "alGetDebugMessageLogEXT", "alGetDebugMessageLogDirectEXT", "alObjectLabelEXT", "alObjectLabelDirectEXT", 
+            "alGetObjectLabelEXT", "alGetObjectLabelDirectEXT", "alGetPointerEXT", "alGetPointerDirectEXT", "alGetPointervEXT", "alGetPointervDirectEXT"
+        );
         AL_EXT_direct_context = ext.contains("AL_EXT_direct_context");
         AL_EXT_DOUBLE = ext.contains("AL_EXT_DOUBLE");
-        ALC_EXT_EFX = check_EXT_EFX(provider, caps, ext);
+        ALC_EXT_EFX = checkExt1("ALC_EXT_EFX", stack, provider, caps, ext, 165, 231,
+            "alGenEffects", "alGenEffectsDirect", "alDeleteEffects", "alDeleteEffectsDirect", "alIsEffect", "alIsEffectDirect", "alEffecti", "alEffectiDirect", 
+            "alEffectiv", "alEffectivDirect", "alEffectf", "alEffectfDirect", "alEffectfv", "alEffectfvDirect", "alGetEffecti", "alGetEffectiDirect", 
+            "alGetEffectiv", "alGetEffectivDirect", "alGetEffectf", "alGetEffectfDirect", "alGetEffectfv", "alGetEffectfvDirect", "alGenFilters", 
+            "alGenFiltersDirect", "alDeleteFilters", "alDeleteFiltersDirect", "alIsFilter", "alIsFilterDirect", "alFilteri", "alFilteriDirect", "alFilteriv", 
+            "alFilterivDirect", "alFilterf", "alFilterfDirect", "alFilterfv", "alFilterfvDirect", "alGetFilteri", "alGetFilteriDirect", "alGetFilteriv", 
+            "alGetFilterivDirect", "alGetFilterf", "alGetFilterfDirect", "alGetFilterfv", "alGetFilterfvDirect", "alGenAuxiliaryEffectSlots", 
+            "alGenAuxiliaryEffectSlotsDirect", "alDeleteAuxiliaryEffectSlots", "alDeleteAuxiliaryEffectSlotsDirect", "alIsAuxiliaryEffectSlot", 
+            "alIsAuxiliaryEffectSlotDirect", "alAuxiliaryEffectSloti", "alAuxiliaryEffectSlotiDirect", "alAuxiliaryEffectSlotiv", 
+            "alAuxiliaryEffectSlotivDirect", "alAuxiliaryEffectSlotf", "alAuxiliaryEffectSlotfDirect", "alAuxiliaryEffectSlotfv", 
+            "alAuxiliaryEffectSlotfvDirect", "alGetAuxiliaryEffectSloti", "alGetAuxiliaryEffectSlotiDirect", "alGetAuxiliaryEffectSlotiv", 
+            "alGetAuxiliaryEffectSlotivDirect", "alGetAuxiliaryEffectSlotf", "alGetAuxiliaryEffectSlotfDirect", "alGetAuxiliaryEffectSlotfv", 
+            "alGetAuxiliaryEffectSlotfvDirect"
+        );
         AL_EXT_EXPONENT_DISTANCE = ext.contains("AL_EXT_EXPONENT_DISTANCE");
         AL_EXT_FLOAT32 = ext.contains("AL_EXT_FLOAT32");
         AL_EXT_IMA4 = ext.contains("AL_EXT_IMA4");
@@ -476,7 +539,9 @@ public final class ALCapabilities {
         AL_EXT_OFFSET = ext.contains("AL_EXT_OFFSET");
         AL_EXT_source_distance_model = ext.contains("AL_EXT_source_distance_model");
         AL_EXT_SOURCE_RADIUS = ext.contains("AL_EXT_SOURCE_RADIUS");
-        AL_EXT_STATIC_BUFFER = check_EXT_STATIC_BUFFER(provider, caps, ext);
+        AL_EXT_STATIC_BUFFER = checkExt1("AL_EXT_STATIC_BUFFER", stack, provider, caps, ext, 231, 233,
+            "alBufferDataStatic", "alBufferDataStaticDirect"
+        );
         AL_EXT_STEREO_ANGLES = ext.contains("AL_EXT_STEREO_ANGLES");
         AL_EXT_vorbis = ext.contains("AL_EXT_vorbis");
         AL_LOKI_IMA_ADPCM = ext.contains("AL_LOKI_IMA_ADPCM");
@@ -486,22 +551,43 @@ public final class ALCapabilities {
         AL_SOFT_bformat_hoa = ext.contains("AL_SOFT_bformat_hoa");
         AL_SOFT_block_alignment = ext.contains("AL_SOFT_block_alignment");
         AL_SOFT_buffer_length_query = ext.contains("AL_SOFT_buffer_length_query");
-        AL_SOFT_buffer_samples = check_SOFT_buffer_samples(provider, caps, ext);
-        AL_SOFT_buffer_sub_data = check_SOFT_buffer_sub_data(provider, caps, ext);
-        AL_SOFT_callback_buffer = check_SOFT_callback_buffer(provider, caps, ext);
-        AL_SOFT_deferred_updates = check_SOFT_deferred_updates(provider, caps, ext);
+        AL_SOFT_buffer_samples = checkExt1("AL_SOFT_buffer_samples", stack, provider, caps, ext, 233, 237,
+            "alBufferSamplesSOFT", "alBufferSubSamplesSOFT", "alGetBufferSamplesSOFT", "alIsBufferFormatSupportedSOFT"
+        );
+        AL_SOFT_buffer_sub_data = checkExt1("AL_SOFT_buffer_sub_data", stack, provider, caps, ext, 237, 239,
+            "alBufferSubDataSOFT", "alBufferSubDataDirectSOFT"
+        );
+        AL_SOFT_callback_buffer = checkExt1("AL_SOFT_callback_buffer", stack, provider, caps, ext, 239, 247,
+            "alBufferCallbackSOFT", "alBufferCallbackDirectSOFT", "alGetBufferPtrSOFT", "alGetBufferPtrDirectSOFT", "alGetBuffer3PtrSOFT", 
+            "alGetBuffer3PtrDirectSOFT", "alGetBufferPtrvSOFT", "alGetBufferPtrvDirectSOFT"
+        );
+        AL_SOFT_deferred_updates = checkExt1("AL_SOFT_deferred_updates", stack, provider, caps, ext, 247, 251,
+            "alDeferUpdatesSOFT", "alDeferUpdatesDirectSOFT", "alProcessUpdatesSOFT", "alProcessUpdatesDirectSOFT"
+        );
         AL_SOFT_direct_channels = ext.contains("AL_SOFT_direct_channels");
         AL_SOFT_direct_channels_remix = ext.contains("AL_SOFT_direct_channels_remix");
         AL_SOFT_effect_target = ext.contains("AL_SOFT_effect_target");
-        AL_SOFT_events = check_SOFT_events(provider, caps, ext);
+        AL_SOFT_events = checkExt1("AL_SOFT_events", stack, provider, caps, ext, 251, 259,
+            "alEventControlSOFT", "alEventControlDirectSOFT", "alEventCallbackSOFT", "alEventCallbackDirectSOFT", "alGetPointerSOFT", "alGetPointerDirectSOFT", 
+            "alGetPointervSOFT", "alGetPointervDirectSOFT"
+        );
         AL_SOFT_gain_clamp_ex = ext.contains("AL_SOFT_gain_clamp_ex");
         AL_SOFT_loop_points = ext.contains("AL_SOFT_loop_points");
         AL_SOFT_MSADPCM = ext.contains("AL_SOFT_MSADPCM");
-        AL_SOFT_source_latency = check_SOFT_source_latency(provider, caps, ext);
+        AL_SOFT_source_latency = checkExt1("AL_SOFT_source_latency", stack, provider, caps, ext, 259, 283,
+            "alSourcedSOFT", "alSourcedDirectSOFT", "alSource3dSOFT", "alSource3dDirectSOFT", "alSourcedvSOFT", "alSourcedvDirectSOFT", "alGetSourcedSOFT", 
+            "alGetSourcedDirectSOFT", "alGetSource3dSOFT", "alGetSource3dDirectSOFT", "alGetSourcedvSOFT", "alGetSourcedvDirectSOFT", "alSourcei64SOFT", 
+            "alSourcei64DirectSOFT", "alSource3i64SOFT", "alSource3i64DirectSOFT", "alSourcei64vSOFT", "alSourcei64vDirectSOFT", "alGetSourcei64SOFT", 
+            "alGetSourcei64DirectSOFT", "alGetSource3i64SOFT", "alGetSource3i64DirectSOFT", "alGetSourcei64vSOFT", "alGetSourcei64vDirectSOFT"
+        );
         AL_SOFT_source_length = ext.contains("AL_SOFT_source_length");
-        AL_SOFT_source_resampler = check_SOFT_source_resampler(provider, caps, ext);
+        AL_SOFT_source_resampler = checkExt1("AL_SOFT_source_resampler", stack, provider, caps, ext, 283, 285,
+            "alGetStringiSOFT", "alGetStringiDirectSOFT"
+        );
         AL_SOFT_source_spatialize = ext.contains("AL_SOFT_source_spatialize");
-        AL_SOFT_source_start_delay = check_SOFT_source_start_delay(provider, caps, ext);
+        AL_SOFT_source_start_delay = checkExt1("AL_SOFT_source_start_delay", stack, provider, caps, ext, 285, 289,
+            "alSourcePlayAtTimeSOFT", "alSourcePlayAtTimeDirectSOFT", "alSourcePlayAtTimevSOFT", "alSourcePlayAtTimevDirectSOFT"
+        );
         AL_SOFT_UHJ = ext.contains("AL_SOFT_UHJ");
         AL_SOFT_UHJ_ex = ext.contains("AL_SOFT_UHJ_ex");
         AL_SOFTX_hold_on_disconnect = ext.contains("AL_SOFTX_hold_on_disconnect");
@@ -802,204 +888,6 @@ public final class ALCapabilities {
     /** Returns the buffer of OpenAL function pointers. */
     public PointerBuffer getAddressBuffer() {
         return addresses;
-    }
-
-    private static boolean check_AL10(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("OpenAL10")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 
-            39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 
-            76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108
-        },
-            "alGetError", "alGetErrorDirect", "alEnable", "alEnableDirect", "alDisable", "alDisableDirect", "alIsEnabled", "alIsEnabledDirect", "alGetBoolean", 
-            "alGetBooleanDirect", "alGetInteger", "alGetIntegerDirect", "alGetFloat", "alGetFloatDirect", "alGetDouble", "alGetDoubleDirect", "alGetBooleanv", 
-            "alGetBooleanvDirect", "alGetIntegerv", "alGetIntegervDirect", "alGetFloatv", "alGetFloatvDirect", "alGetDoublev", "alGetDoublevDirect", 
-            "alGetString", "alGetStringDirect", "alDistanceModel", "alDistanceModelDirect", "alDopplerFactor", "alDopplerFactorDirect", "alDopplerVelocity", 
-            "alListenerf", "alListenerfDirect", "alListeneri", "alListeneriDirect", "alListener3f", "alListener3fDirect", "alListenerfv", "alListenerfvDirect", 
-            "alGetListenerf", "alGetListenerfDirect", "alGetListeneri", "alGetListeneriDirect", "alGetListener3f", "alGetListener3fDirect", "alGetListenerfv", 
-            "alGetListenerfvDirect", "alGenSources", "alGenSourcesDirect", "alDeleteSources", "alDeleteSourcesDirect", "alIsSource", "alIsSourceDirect", 
-            "alSourcef", "alSourcefDirect", "alSource3f", "alSource3fDirect", "alSourcefv", "alSourcefvDirect", "alSourcei", "alSourceiDirect", "alGetSourcef", 
-            "alGetSourcefDirect", "alGetSource3f", "alGetSource3fDirect", "alGetSourcefv", "alGetSourcefvDirect", "alGetSourcei", "alGetSourceiDirect", 
-            "alGetSourceiv", "alGetSourceivDirect", "alSourceQueueBuffers", "alSourceQueueBuffersDirect", "alSourceUnqueueBuffers", 
-            "alSourceUnqueueBuffersDirect", "alSourcePlay", "alSourcePlayDirect", "alSourcePause", "alSourcePauseDirect", "alSourceStop", "alSourceStopDirect", 
-            "alSourceRewind", "alSourceRewindDirect", "alSourcePlayv", "alSourcePlayvDirect", "alSourcePausev", "alSourcePausevDirect", "alSourceStopv", 
-            "alSourceStopvDirect", "alSourceRewindv", "alSourceRewindvDirect", "alGenBuffers", "alGenBuffersDirect", "alDeleteBuffers", "alDeleteBuffersDirect", 
-            "alIsBuffer", "alIsBufferDirect", "alGetBufferf", "alGetBufferfDirect", "alGetBufferi", "alGetBufferiDirect", "alBufferData", "alBufferDataDirect", 
-            "alGetEnumValue", "alGetEnumValueDirect", "alGetProcAddress", "alGetProcAddressDirect", "alIsExtensionPresent", "alIsExtensionPresentDirect"
-        ) || reportMissing("AL", "OpenAL10");
-    }
-
-    private static boolean check_AL11(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("OpenAL11")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 
-            138, 139, 140, 141, 142, 143, 144
-        },
-            "alListener3i", "alListener3iDirect", "alGetListener3i", "alGetListener3iDirect", "alGetListeneriv", "alGetListenerivDirect", "alSource3i", 
-            "alSource3iDirect", "alGetSource3i", "alGetSource3iDirect", "alListeneriv", "alListenerivDirect", "alSourceiv", "alSourceivDirect", "alBufferf", 
-            "alBufferfDirect", "alBuffer3f", "alBuffer3fDirect", "alBufferfv", "alBufferfvDirect", "alBufferi", "alBufferiDirect", "alBuffer3i", 
-            "alBuffer3iDirect", "alBufferiv", "alBufferivDirect", "alGetBuffer3i", "alGetBuffer3iDirect", "alGetBufferiv", "alGetBufferivDirect", 
-            "alGetBuffer3f", "alGetBuffer3fDirect", "alGetBufferfv", "alGetBufferfvDirect", "alSpeedOfSound", "alSpeedOfSoundDirect"
-        ) || reportMissing("AL", "OpenAL11");
-    }
-
-    private static boolean check_EXT_debug(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("AL_EXT_debug")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164
-        },
-            "alDebugMessageCallbackEXT", "alDebugMessageCallbackDirectEXT", "alDebugMessageInsertEXT", "alDebugMessageInsertDirectEXT", 
-            "alDebugMessageControlEXT", "alDebugMessageControlDirectEXT", "alPushDebugGroupEXT", "alPushDebugGroupDirectEXT", "alPopDebugGroupEXT", 
-            "alPopDebugGroupDirectEXT", "alGetDebugMessageLogEXT", "alGetDebugMessageLogDirectEXT", "alObjectLabelEXT", "alObjectLabelDirectEXT", 
-            "alGetObjectLabelEXT", "alGetObjectLabelDirectEXT", "alGetPointerEXT", "alGetPointerDirectEXT", "alGetPointervEXT", "alGetPointervDirectEXT"
-        ) || reportMissing("AL", "AL_EXT_debug");
-    }
-
-    private static boolean check_EXT_EFX(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("ALC_EXT_EFX")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 
-            194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 
-            223, 224, 225, 226, 227, 228, 229, 230
-        },
-            "alGenEffects", "alGenEffectsDirect", "alDeleteEffects", "alDeleteEffectsDirect", "alIsEffect", "alIsEffectDirect", "alEffecti", "alEffectiDirect", 
-            "alEffectiv", "alEffectivDirect", "alEffectf", "alEffectfDirect", "alEffectfv", "alEffectfvDirect", "alGetEffecti", "alGetEffectiDirect", 
-            "alGetEffectiv", "alGetEffectivDirect", "alGetEffectf", "alGetEffectfDirect", "alGetEffectfv", "alGetEffectfvDirect", "alGenFilters", 
-            "alGenFiltersDirect", "alDeleteFilters", "alDeleteFiltersDirect", "alIsFilter", "alIsFilterDirect", "alFilteri", "alFilteriDirect", "alFilteriv", 
-            "alFilterivDirect", "alFilterf", "alFilterfDirect", "alFilterfv", "alFilterfvDirect", "alGetFilteri", "alGetFilteriDirect", "alGetFilteriv", 
-            "alGetFilterivDirect", "alGetFilterf", "alGetFilterfDirect", "alGetFilterfv", "alGetFilterfvDirect", "alGenAuxiliaryEffectSlots", 
-            "alGenAuxiliaryEffectSlotsDirect", "alDeleteAuxiliaryEffectSlots", "alDeleteAuxiliaryEffectSlotsDirect", "alIsAuxiliaryEffectSlot", 
-            "alIsAuxiliaryEffectSlotDirect", "alAuxiliaryEffectSloti", "alAuxiliaryEffectSlotiDirect", "alAuxiliaryEffectSlotiv", 
-            "alAuxiliaryEffectSlotivDirect", "alAuxiliaryEffectSlotf", "alAuxiliaryEffectSlotfDirect", "alAuxiliaryEffectSlotfv", 
-            "alAuxiliaryEffectSlotfvDirect", "alGetAuxiliaryEffectSloti", "alGetAuxiliaryEffectSlotiDirect", "alGetAuxiliaryEffectSlotiv", 
-            "alGetAuxiliaryEffectSlotivDirect", "alGetAuxiliaryEffectSlotf", "alGetAuxiliaryEffectSlotfDirect", "alGetAuxiliaryEffectSlotfv", 
-            "alGetAuxiliaryEffectSlotfvDirect"
-        ) || reportMissing("AL", "ALC_EXT_EFX");
-    }
-
-    private static boolean check_EXT_STATIC_BUFFER(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("AL_EXT_STATIC_BUFFER")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            231, 232
-        },
-            "alBufferDataStatic", "alBufferDataStaticDirect"
-        ) || reportMissing("AL", "AL_EXT_STATIC_BUFFER");
-    }
-
-    private static boolean check_SOFT_buffer_samples(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("AL_SOFT_buffer_samples")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            233, 234, 235, 236
-        },
-            "alBufferSamplesSOFT", "alBufferSubSamplesSOFT", "alGetBufferSamplesSOFT", "alIsBufferFormatSupportedSOFT"
-        ) || reportMissing("AL", "AL_SOFT_buffer_samples");
-    }
-
-    private static boolean check_SOFT_buffer_sub_data(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("AL_SOFT_buffer_sub_data")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            237, 238
-        },
-            "alBufferSubDataSOFT", "alBufferSubDataDirectSOFT"
-        ) || reportMissing("AL", "AL_SOFT_buffer_sub_data");
-    }
-
-    private static boolean check_SOFT_callback_buffer(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("AL_SOFT_callback_buffer")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            239, 240, 241, 242, 243, 244, 245, 246
-        },
-            "alBufferCallbackSOFT", "alBufferCallbackDirectSOFT", "alGetBufferPtrSOFT", "alGetBufferPtrDirectSOFT", "alGetBuffer3PtrSOFT", 
-            "alGetBuffer3PtrDirectSOFT", "alGetBufferPtrvSOFT", "alGetBufferPtrvDirectSOFT"
-        ) || reportMissing("AL", "AL_SOFT_callback_buffer");
-    }
-
-    private static boolean check_SOFT_deferred_updates(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("AL_SOFT_deferred_updates")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            247, 248, 249, 250
-        },
-            "alDeferUpdatesSOFT", "alDeferUpdatesDirectSOFT", "alProcessUpdatesSOFT", "alProcessUpdatesDirectSOFT"
-        ) || reportMissing("AL", "AL_SOFT_deferred_updates");
-    }
-
-    private static boolean check_SOFT_events(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("AL_SOFT_events")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            251, 252, 253, 254, 255, 256, 257, 258
-        },
-            "alEventControlSOFT", "alEventControlDirectSOFT", "alEventCallbackSOFT", "alEventCallbackDirectSOFT", "alGetPointerSOFT", "alGetPointerDirectSOFT", 
-            "alGetPointervSOFT", "alGetPointervDirectSOFT"
-        ) || reportMissing("AL", "AL_SOFT_events");
-    }
-
-    private static boolean check_SOFT_source_latency(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("AL_SOFT_source_latency")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282
-        },
-            "alSourcedSOFT", "alSourcedDirectSOFT", "alSource3dSOFT", "alSource3dDirectSOFT", "alSourcedvSOFT", "alSourcedvDirectSOFT", "alGetSourcedSOFT", 
-            "alGetSourcedDirectSOFT", "alGetSource3dSOFT", "alGetSource3dDirectSOFT", "alGetSourcedvSOFT", "alGetSourcedvDirectSOFT", "alSourcei64SOFT", 
-            "alSourcei64DirectSOFT", "alSource3i64SOFT", "alSource3i64DirectSOFT", "alSourcei64vSOFT", "alSourcei64vDirectSOFT", "alGetSourcei64SOFT", 
-            "alGetSourcei64DirectSOFT", "alGetSource3i64SOFT", "alGetSource3i64DirectSOFT", "alGetSourcei64vSOFT", "alGetSourcei64vDirectSOFT"
-        ) || reportMissing("AL", "AL_SOFT_source_latency");
-    }
-
-    private static boolean check_SOFT_source_resampler(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("AL_SOFT_source_resampler")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            283, 284
-        },
-            "alGetStringiSOFT", "alGetStringiDirectSOFT"
-        ) || reportMissing("AL", "AL_SOFT_source_resampler");
-    }
-
-    private static boolean check_SOFT_source_start_delay(FunctionProvider provider, PointerBuffer caps, Set<String> ext) {
-        if (!ext.contains("AL_SOFT_source_start_delay")) {
-            return false;
-        }
-
-        return checkFunctions(provider, caps, new int[] {
-            285, 286, 287, 288
-        },
-            "alSourcePlayAtTimeSOFT", "alSourcePlayAtTimeDirectSOFT", "alSourcePlayAtTimevSOFT", "alSourcePlayAtTimevDirectSOFT"
-        ) || reportMissing("AL", "AL_SOFT_source_start_delay");
     }
 
 }

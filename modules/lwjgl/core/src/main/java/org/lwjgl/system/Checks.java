@@ -100,6 +100,7 @@ public final class Checks {
      *
      * @return true if all functions are available, false otherwise
      */
+    @Deprecated(forRemoval = true)
     public static boolean checkFunctions(FunctionProvider provider, PointerBuffer caps, int[] indices, String... functions) {
         boolean available = true;
         for (int i = 0; i < indices.length; i++) {
@@ -128,6 +129,7 @@ public final class Checks {
      *
      * @return true if all functions are available, false otherwise
      */
+    @Deprecated(forRemoval = true)
     public static boolean checkFunctions(FunctionProviderLocal provider, long handle, PointerBuffer caps, int[] indices, String... functions) {
         boolean available = true;
         for (int i = 0; i < indices.length; i++) {
@@ -155,6 +157,7 @@ public final class Checks {
      *
      * @return true if all functions are available, false otherwise
      */
+    @Deprecated(forRemoval = true)
     public static boolean checkFunctions(FunctionProvider provider, long[] caps, int[] indices, String... functions) {
         boolean available = true;
         for (int i = 0; i < indices.length; i++) {
@@ -168,6 +171,184 @@ public final class Checks {
                 continue;
             }
             caps[index] = address;
+        }
+        return available;
+    }
+
+    public static boolean checkFunction(MemoryStack stack, FunctionProvider provider, PointerBuffer caps, int index, String function) {
+        if (caps.get(index) != NULL) {
+            return true;
+        }
+        long pointer = stack.getPointerAddress();
+        try {
+            long address = provider.getFunctionAddress(stack.ASCII(function));
+            if (address == NULL) {
+                return false;
+            }
+            caps.put(index, address);
+            return true;
+        } finally {
+            stack.setPointerAddress(pointer);
+        }
+    }
+
+    public static boolean checkFunction(MemoryStack stack, FunctionProviderLocal provider, long handle, PointerBuffer caps, int index, String function) {
+        if (caps.get(index) != NULL) {
+            return true;
+        }
+        long pointer = stack.getPointerAddress();
+        try {
+            long address = provider.getFunctionAddress(handle, stack.ASCII(function));
+            if (address == NULL) {
+                return false;
+            }
+            caps.put(index, address);
+            return true;
+        } finally {
+            stack.setPointerAddress(pointer);
+        }
+    }
+    public static boolean checkFunction(MemoryStack stack, FunctionProvider provider, long[] caps, int index, String function) {
+        if (caps[index] != NULL) {
+            return true;
+        }
+        long pointer = stack.getPointerAddress();
+        try {
+            long address = provider.getFunctionAddress(stack.ASCII(function));
+            if (address == NULL) {
+                return false;
+            }
+            caps[index] = address;
+            return true;
+        } finally {
+            stack.setPointerAddress(pointer);
+        }
+    }
+    public static boolean checkFunctions(MemoryStack stack, FunctionProvider provider, long[] caps, int[] indices, String... functions) {
+        boolean available = true;
+        long pointer = stack.getPointerAddress();
+        for (int i = 0; i < indices.length; i++) {
+            int index = indices[i];
+            if (index < 0 || caps[index] != NULL) {
+                continue;
+            }
+            try {
+                long address = provider.getFunctionAddress(stack.ASCII(functions[i]));
+                if (address == NULL) {
+                    available = false;
+                    continue;
+                }
+                caps[index] = address;
+            } finally {
+                stack.setPointerAddress(pointer);
+            }
+        }
+        return available;
+    }
+    public static boolean checkFunctions(MemoryStack stack, FunctionProvider provider, long[] caps, int from, int to, String... functions) {
+        boolean available = true;
+        long pointer = stack.getPointerAddress();
+        for (int i = 0, index = from; index < to; i++, index++) {
+            if (caps[index] != NULL) {
+                continue;
+            }
+            try {
+                long address = provider.getFunctionAddress(stack.ASCII(functions[i]));
+                if (address == NULL) {
+                    available = false;
+                    continue;
+                }
+                caps[index] = address;
+            } finally {
+                stack.setPointerAddress(pointer);
+            }
+        }
+
+        return available;
+    }
+
+    public static boolean checkFunctions(MemoryStack stack, FunctionProvider provider, PointerBuffer caps, int[] indices, String... functions) {
+        boolean available = true;
+        long pointer = stack.getPointerAddress();
+        for (int i = 0; i < indices.length; i++) {
+            int index = indices[i];
+            if (index < 0 || caps.get(index) != NULL) {
+                continue;
+            }
+            try {
+                long address = provider.getFunctionAddress(stack.ASCII(functions[i]));
+                if (address == NULL) {
+                    available = false;
+                    continue;
+                }
+                caps.put(index, address);
+            } finally {
+                stack.setPointerAddress(pointer);
+            }
+        }
+        return available;
+    }
+
+    public static boolean checkFunctions(MemoryStack stack, FunctionProvider provider, PointerBuffer caps, int from, int to, String... functions) {
+        boolean available = true;
+        long pointer = stack.getPointerAddress();
+        for (int i = 0, index = from; index < to; i++, index++) {
+            if (caps.get(index) != NULL) {
+                continue;
+            }
+            try {
+                long address = provider.getFunctionAddress(stack.ASCII(functions[i]));
+                if (address == NULL) {
+                    available = false;
+                    continue;
+                }
+                caps.put(index, address);
+            } finally {
+                stack.setPointerAddress(pointer);
+            }
+        }
+        return available;
+    }
+
+    public static boolean checkFunctions(MemoryStack stack, FunctionProviderLocal provider, long handle, PointerBuffer caps, int[] indices, String... functions) {
+        boolean available = true;
+        long pointer = stack.getPointerAddress();
+        for (int i = 0; i < indices.length; i++) {
+            int index = indices[i];
+            if (index < 0 || caps.get(index) != NULL) {
+                continue;
+            }
+            try {
+                long address = provider.getFunctionAddress(handle, stack.ASCII(functions[i]));
+                if (address == NULL) {
+                    available = false;
+                    continue;
+                }
+                caps.put(index, address);
+            } finally {
+                stack.setPointerAddress(pointer);
+            }
+        }
+        return available;
+    }
+
+    public static boolean checkFunctions(MemoryStack stack, FunctionProviderLocal provider, long handle, PointerBuffer caps, int from, int to, String... functions) {
+        boolean available = true;
+        long pointer = stack.getPointerAddress();
+        for (int i = 0, index = from; index < to; i++, index++) {
+            if (caps.get(index) != NULL) {
+                continue;
+            }
+            try {
+                long address = provider.getFunctionAddress(handle, stack.ASCII(functions[i]));
+                if (address == NULL) {
+                    available = false;
+                    continue;
+                }
+                caps.put(index, address);
+            } finally {
+                stack.setPointerAddress(pointer);
+            }
         }
         return available;
     }
