@@ -64,26 +64,29 @@ public final class ModuleInfoGen implements AutoCloseable {
             generateNativeModuleInfoClasses();
         }
 
-        ClassFile.of().buildModuleTo(PATH_BIN_CLASSES_LWJGL.resolve("core", "module-info.class"),
-            ModuleAttribute.of(ModuleDesc.of("dev.oblivruin.fjgl"), mab -> { mab
-                .moduleVersion(System.getProperty("module.version"))
-                .requires(ModuleDesc.of("java.base"), AccessFlag.MODULE.mask(), "25");
-                for (String pkg : new String[] {
-                    "org.lwjgl",
-                    "org.lwjgl.system",
-                    "org.lwjgl.system.ffm",
-                    "org.lwjgl.system.ffm.mapping",
-                    "org.lwjgl.system.freebsd",
-                    "org.lwjgl.system.jni",
-                    "org.lwjgl.system.libc",
-                    "org.lwjgl.system.libffi",
-                    "org.lwjgl.system.linux",
-                    "org.lwjgl.system.macosx",
-                    "org.lwjgl.system.windows"}) {
-                    mab.exports(PackageDesc.of(pkg), 0);
-                }
-            }),
-            cb -> cb.withVersion(JAVA_25_VERSION, 0));
+        var core = PATH_BIN_CLASSES_LWJGL.resolve("core", "module-info.class");
+        if (!Files.exists(core)) {
+            ClassFile.of().buildModuleTo(core,
+                ModuleAttribute.of(ModuleDesc.of("dev.oblivruin.fjgl"), mab -> { mab
+                    .moduleVersion(System.getProperty("module.version"))
+                    .requires(ModuleDesc.of("java.base"), AccessFlag.MODULE.mask(), "25");
+                    for (String pkg : new String[] {
+                        "org.lwjgl",
+                        "org.lwjgl.system",
+                        "org.lwjgl.system.ffm",
+                        "org.lwjgl.system.ffm.mapping",
+                        "org.lwjgl.system.freebsd",
+                        "org.lwjgl.system.jni",
+                        "org.lwjgl.system.libc",
+                        "org.lwjgl.system.libffi",
+                        "org.lwjgl.system.linux",
+                        "org.lwjgl.system.macosx",
+                        "org.lwjgl.system.windows"}) {
+                        mab.exports(PackageDesc.of(pkg), 0);
+                    }
+                }),
+                cb -> cb.withVersion(JAVA_25_VERSION, 0));
+        }
     }
 
     private static class Module implements Comparable<Module> {
