@@ -9,6 +9,7 @@
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
+import org.gradle.api.tasks.bundling.Zip
 import java.net.URI
 
 plugins {
@@ -578,14 +579,14 @@ allprojects {
 }
 
 // Packages the locally published repository layout into a single zip for the Central Portal
-// bundle upload. Only meaningful for a local, release-shaped publish (e.g. -Pbundle, or
-// -Prelease combined with -PpublishPath); the task skips itself otherwise.
-val zipCentralBundle = tasks.register<Zip>("zipCentralBundle") {
-    if (deployment.local && !deployment.snapshot) {
-        dependsOn("publish")
-    }
+// bundle upload. The task is only registered for a local, release-shaped publish (e.g.
+// -Pbundle, or -Prelease combined with -PpublishPath). A conditional registration avoids any
+// spec closure, whose capture of script state breaks the --configuration-cache store, and it
+// also keeps plain development modes from zipping an unrelated repository such as the local
+// Maven repository. Without a bundle mode, zipCentralBundle is simply "task not found".
+tasks.register<Zip>("zipCentralBundle") {
+    dependsOn("publish")
 
-    onlyIf { deployment.local && !deployment.snapshot }
     from(deployment.repo)
     archiveFileName.set("centralBundleRepo.zip")
     destinationDirectory.set(layout.projectDirectory.dir("bin"))
