@@ -123,17 +123,41 @@ jobs:
         run: |
           ant -emacs release -Dbuild.version=${{env.FJGL_VERSION}} -Dbuild.revision=${{env.LWJGL_BUILD}}
           $JAVA_HOME/bin/jar cfM lwjgl.zip -C bin/RELEASE .
-      - name: Publish release to Maven
+      - name: Publish release bundle to the local Central repository
         env:
           ORG_GRADLE_PROJECT_signingKeyId: 263D4349
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.SIGNING_KEY }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.SIGNING_PWD }}
-          ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.SONATYPE_USER }}
-          ORG_GRADLE_PROJECT_sonatypePassword: ${{ secrets.SONATYPE_PWD }}
-        run: ./gradlew -Prelease publish --parallel --configuration-cache --max-workers=8 --info
-      - name: Transfer Maven deployment to Central Publisher Portal
+        run: ./gradlew -PpublishPath=bin/centralBundleRepo zipCentralBundle --parallel --configuration-cache --max-workers=8 --info
+      - name: Upload bundle to Central Publisher Portal
         run: |
           SONATYPE_TOKEN=$(printf '%s:%s' "${{ secrets.SONATYPE_USER }}" "${{ secrets.SONATYPE_PWD }}" | base64 -w 0)
-          curl --fail-with-body --show-error --request POST \
+          DEPLOYMENT_ID=$(curl --fail-with-body --silent --show-error --request POST \
             --header "Authorization: Bearer $SONATYPE_TOKEN" \
-            "https://ossrh-staging-api.central.sonatype.com/manual/upload/defaultRepository/dev.oblivruin"
+            --form "bundle=@bin/centralBundleRepo.zip" \
+            "https://central.sonatype.com/api/v1/publisher/upload?name=FJGL-${FJGL_VERSION}&publishingType=AUTOMATIC")
+          echo "Central Portal deployment: $DEPLOYMENT_ID"
+          echo "DEPLOYMENT_ID=$DEPLOYMENT_ID" >> "$GITHUB_ENV"
+      - name: Await deployment publication
+        run: |
+          SONATYPE_TOKEN=$(printf '%s:%s' "${{ secrets.SONATYPE_USER }}" "${{ secrets.SONATYPE_PWD }}" | base64 -w 0)
+          for _ in $(seq 1 30); do
+            sleep 60
+            STATUS=$(curl --fail-with-body --silent --show-error --request POST \
+              --header "Authorization: Bearer $SONATYPE_TOKEN" \
+              "https://central.sonatype.com/api/v1/publisher/status?id=${DEPLOYMENT_ID}") || true
+            STATE=$(printf '%s' "$STATUS" | jq -r '.deploymentState // .deployedState' 2>/dev/null) || STATE=
+            echo "Deployment state: ${STATE:-pending}"
+            case "$STATE" in
+              PUBLISHED)
+                echo "Deployment was published to Maven Central"
+                exit 0
+                ;;
+              FAILED)
+                printf '%s\n' "$STATUS"
+                exit 1
+                ;;
+            esac
+          done
+          echo "Timed out waiting for the Central deployment to publish"
+          exit 1

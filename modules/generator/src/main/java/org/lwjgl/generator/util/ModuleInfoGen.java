@@ -161,7 +161,7 @@ public final class ModuleInfoGen implements AutoCloseable {
     private static void generateJavaModuleInfoClasses(String moduleNameList) throws IOException {
         List<String> moduleNames = Pattern.compile(",")
             .splitAsStream(moduleNameList)
-            .collect(Collectors.toList());
+            .toList();
 
         try (ModuleInfoGen gen = new ModuleInfoGen()) {
             // Find module-info sources

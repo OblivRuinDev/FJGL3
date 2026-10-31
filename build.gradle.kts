@@ -17,48 +17,62 @@ plugins {
     signing
 }
 
-val fjglVersion: String by project
-val signingKeyId = "263D4349"
-val signingKey: String? by project
-val signingPassword: String? by project
-val sonatypeUsername: String by project
-val sonatypePassword: String by project
+val fjglVersion = providers.gradleProperty("fjglVersion").get()
+val signingKeyId = providers.gradleProperty("signingKeyId")
+val signingKey = providers.gradleProperty("signingKey")
+val signingPassword = providers.gradleProperty("signingPassword")
+val sonatypeUsername = providers.gradleProperty("sonatypeUsername")
+val sonatypePassword = providers.gradleProperty("sonatypePassword")
 
 defaultTasks = mutableListOf("publish")
 layout.buildDirectory.set(layout.projectDirectory.dir("bin/MAVEN"))
 group = "dev.oblivruin.fjgl"
 
-enum class BuildType {
-    LOCAL,
-    SNAPSHOT,
-    RELEASE
-}
-
 data class Deployment(
-    val type: BuildType,
     val repo: URI,
-    val version: String
+    val version: String,
+    val snapshot: Boolean,
+    val local: Boolean
 )
 
+// Publish mode:
+//   -Prelease              release to the Sonatype Central staging repository
+//   -Psnapshot             snapshot to the Central snapshots repository
+//   -Pbundle               release-shaped publish into the local bin/centralBundleRepo layout,
+//   -PpublishPath=<path>   or into any custom local repository path, for CI local build &
+//                          packaging (zip it with zipCentralBundle, upload via Central Portal)
+//   (no flag)              -SNAPSHOT into the local Maven repository, for development
+val snapshotRequested = hasProperty("snapshot")
+val localPath = providers.gradleProperty("publishPath").orNull?.let { uri(it) }
+
 val deployment = when {
-    hasProperty("release") -> Deployment(
-        type = BuildType.RELEASE,
-        repo = uri("https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/"),
-        version = fjglVersion
+    localPath !== null || hasProperty("bundle") -> Deployment(
+        repo = localPath ?: uri("bin/centralBundleRepo"),
+        version = if (snapshotRequested) "$fjglVersion-SNAPSHOT" else fjglVersion,
+        snapshot = snapshotRequested,
+        local = true
     )
-    hasProperty("snapshot") -> Deployment(
-        type = BuildType.SNAPSHOT,
+    hasProperty("release") -> Deployment(
+        repo = uri("https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/"),
+        version = fjglVersion,
+        snapshot = false,
+        local = false
+    )
+    snapshotRequested -> Deployment(
         repo = uri("https://central.sonatype.com/repository/maven-snapshots/"),
-        version = "$fjglVersion-SNAPSHOT"
+        version = "$fjglVersion-SNAPSHOT",
+        snapshot = true,
+        local = false
     )
     else -> Deployment(
-        type = BuildType.LOCAL,
         repo = repositories.mavenLocal().url,
-        version = "$fjglVersion-SNAPSHOT"
+        version = "$fjglVersion-SNAPSHOT",
+        snapshot = true,
+        local = true
     )
 }
 version = deployment.version
-println("${deployment.type.name} BUILD")
+println("${if (deployment.local) "LOCAL" else if (deployment.snapshot) "SNAPSHOT" else "RELEASE"} BUILD")
 
 val artifactsRoot = layout.projectDirectory.asFile
 
@@ -326,10 +340,12 @@ fun PublishingExtension.setupRepository() {
         maven {
             url = deployment.repo
 
-            if (deployment.type !== BuildType.LOCAL) {
+            // Only the remote Sonatype repositories require credentials; the local and
+            // bundle repositories are plain file repositories.
+            if (!deployment.local) {
                 credentials {
-                    username = sonatypeUsername
-                    password = sonatypePassword
+                    username = sonatypeUsername.get()
+                    password = sonatypePassword.get()
                 }
             }
         }
@@ -383,25 +399,23 @@ Module.values().forEach { module ->
                     create<MavenPublication>("maven${module.name}") {
                         artifactId = module.artifact
                         artifact(module.artifact(artifactsRoot))
-                        if (module.custom != null) {
-                            module.custom.classifiers.forEach {
-                                artifact(module.artifact(artifactsRoot, it)) {
-                                    classifier = it
-                                }
+                        module.custom?.classifiers?.forEach {
+                            artifact(module.artifact(artifactsRoot, it)) {
+                                classifier = it
                             }
                         }
-                        if (deployment.type !== BuildType.LOCAL || module.hasArtifact(artifactsRoot, "sources")) {
+                        if (!deployment.local || module.hasArtifact(artifactsRoot, "sources")) {
                             artifact(module.artifact(artifactsRoot, "sources")) {
                                 classifier = "sources"
                             }
                         }
-                        if (deployment.type !== BuildType.LOCAL || module.hasArtifact(artifactsRoot, "javadoc")) {
+                        if (!deployment.local || module.hasArtifact(artifactsRoot, "javadoc")) {
                             artifact(module.artifact(artifactsRoot, "javadoc")) {
                                 classifier = "javadoc"
                             }
                         }
                         module.platforms.forEach {
-                            if (deployment.type !== BuildType.LOCAL || module.hasArtifact(artifactsRoot, it.classifier)) {
+                            if (!deployment.local || module.hasArtifact(artifactsRoot, it.classifier)) {
                                 artifact(module.artifact(artifactsRoot, it.classifier)) {
                                     classifier = it.classifier
                                 }
@@ -464,9 +478,9 @@ Module.values().forEach { module ->
 
         extensions.configure<SigningExtension> {
             useInMemoryPgpKeys(
-                signingKeyId,
-                signingKey,
-                signingPassword
+                signingKeyId.get(),
+                signingKey.get(),
+                signingPassword.get()
             )
             sign(extensions.getByType<PublishingExtension>().publications)
         }
@@ -538,9 +552,9 @@ tasks.named("publish") {
 
 signing {
     useInMemoryPgpKeys(
-        signingKeyId,
-        signingKey,
-        signingPassword
+        signingKeyId.get(),
+        signingKey.get(),
+        signingPassword.get()
     )
     sign(publishing.publications)
 }
@@ -561,6 +575,20 @@ allprojects {
     tasks.withType<PublishToMavenRepository>().configureEach {
         dependsOn(copyArchives)
     }
+}
+
+// Packages the locally published repository layout into a single zip for the Central Portal
+// bundle upload. Only meaningful for a local, release-shaped publish (e.g. -Pbundle, or
+// -Prelease combined with -PpublishPath); the task skips itself otherwise.
+val zipCentralBundle = tasks.register<Zip>("zipCentralBundle") {
+    if (deployment.local && !deployment.snapshot) {
+        dependsOn("publish")
+    }
+
+    onlyIf { deployment.local && !deployment.snapshot }
+    from(deployment.repo)
+    archiveFileName.set("centralBundleRepo.zip")
+    destinationDirectory.set(layout.projectDirectory.dir("bin"))
 }
 
 dependencies {
